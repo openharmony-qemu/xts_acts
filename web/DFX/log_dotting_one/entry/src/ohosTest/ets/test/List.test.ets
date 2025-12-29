@@ -24,6 +24,7 @@ import webViewContWebMessageExtReturnError from './webViewContWebMessageExtRetur
 import webViewContPageAndprepareForPageLoadErrorOne from './webViewContPageAndprepareForPageLoadErrorOne.test'
 import webViewContPageAndprepareForPageLoadErrorTwo from './webViewContPageAndprepareForPageLoadErrorTwo.test'
 import webViewContCreatePdfAndOthersError from './webViewContCreatePdfAndOthersError.test'
+import WebViewContMicrophoneError from './WebViewContMicrophoneError.test'
 
 export default function testsuite() {
   webViewContMessageError()
@@ -38,5 +39,6 @@ export default function testsuite() {
   //webViewContPageAndprepareForPageLoadErrorOne()
   //webViewContPageAndprepareForPageLoadErrorTwo()
   webViewContCreatePdfAndOthersError()
+  WebViewContMicrophoneError()
 
 }

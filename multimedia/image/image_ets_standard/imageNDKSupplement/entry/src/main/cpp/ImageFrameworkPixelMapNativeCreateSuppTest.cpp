@@ -91,6 +91,19 @@ napi_value OHPixelmapNativeCreateScaledPixelMapSupp(napi_env env, napi_callback_
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
 
+    uint8_t data[96];
+    size_t dataSize = 96;
+    for (int i = 0; i < dataSize; i++) {
+        data[i] = i + 1;
+    }
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_HEIGHT);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    OH_PixelmapNative *pixelMap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
     OH_PixelmapNative *dstPixelmap = nullptr;
     OH_PixelmapNative *srcPixelmap = nullptr;
     float scaleX = 1.5;
@@ -98,19 +111,16 @@ napi_value OHPixelmapNativeCreateScaledPixelMapSupp(napi_env env, napi_callback_
     Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
-        returnValue = OH_PixelmapNative_CreateScaledPixelMap(srcPixelmap, &dstPixelmap, scaleX, scaleY);
+        returnValue = OH_PixelmapNative_CreateScaledPixelMap(pixelMap, &dstPixelmap, scaleX, scaleY);
+        LOGI("OH_PixelmapNative_CreateScaledPixelMap %{public}d", errCode);
         break;
     default:
         break;
     }
     OH_PixelmapNative_Release(dstPixelmap);
     OH_PixelmapNative_Release(srcPixelmap);
-    int code = -1;
-    if (returnValue == IMAGE_BAD_PARAMETER) {
-        code = 0;
-    }
     napi_value result = nullptr;
-    napi_create_int32(env, code, &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env, napi_callback_info info)

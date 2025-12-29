@@ -1177,6 +1177,86 @@ export default function AccessTokenStaticTest() {
       done();
     })
 
+    /**
+     * @tc.name   Test_getSelfPermissionStatus_006
+     * @tc.number Test_getSelfPermissionStatus_006
+     * @tc.desc   Call enum DENIED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Test_getSelfPermissionStatus_006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_006 start");
+      let result = abilityAccessCtrl.PermissionStatus.DENIED;
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_006 result: " + result);
+      expect(result).assertEqual(-1);
+      done();
+    })
+
+    /**
+     * @tc.name   Test_getSelfPermissionStatus_007
+     * @tc.number Test_getSelfPermissionStatus_007
+     * @tc.desc   Call enum GRANTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Test_getSelfPermissionStatus_007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_007 start");
+      let result = abilityAccessCtrl.PermissionStatus.GRANTED;
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_007 result: " + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   Test_getSelfPermissionStatus_008
+     * @tc.number Test_getSelfPermissionStatus_008
+     * @tc.desc   Call enum NOT_DETERMINED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Test_getSelfPermissionStatus_008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_008 start");
+      let result = abilityAccessCtrl.PermissionStatus.NOT_DETERMINED;
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_008 result: " + result);
+      expect(result).assertEqual(1);
+      done();
+    })
+
+    /**
+     * @tc.name   Test_getSelfPermissionStatus_009
+     * @tc.number Test_getSelfPermissionStatus_009
+     * @tc.desc   Call enum INVALID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Test_getSelfPermissionStatus_009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_009 start");
+      let result = abilityAccessCtrl.PermissionStatus.INVALID;
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_009 result: " + result);
+      expect(result).assertEqual(2);
+      done();
+    })
+
+    /**
+     * @tc.name   Test_getSelfPermissionStatus_010
+     * @tc.number Test_getSelfPermissionStatus_010
+     * @tc.desc   Call enum RESTRICTED value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Test_getSelfPermissionStatus_010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_010 start");
+      let result = abilityAccessCtrl.PermissionStatus.RESTRICTED;
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_010 result: " + result);
+      expect(result).assertEqual(3);
+      done();
+    })
+
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 

@@ -37,6 +37,7 @@ import DataView22Test from './DataView/DataView22.test';
 import DataView23Test from './DataView/DataView23.test';
 import DataView24Test from './DataView/DataView24.test';
 import DataView25Test from './DataView/DataView25.test';
+import DataView26Test from './DataView/DataView26.test';
 
 
 export default function testsuite() {
@@ -64,4 +65,5 @@ export default function testsuite() {
   DataView23Test();
   DataView24Test();
   DataView25Test();
+  DataView26Test();
 }

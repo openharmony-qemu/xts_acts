@@ -195,81 +195,40 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testGetColumnTypeErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testGetColumnTypeErrcode0100 start *************");
-    //   try {
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "data1": null,
-    //       "data2": null,
-    //       "data3": null,
-    //       "data4": null,
-    //       "data5": null,
-    //       "data6": null,
-    //       "data7": null,
-    //       "data8": null
-    //     };
-    //     let a:long = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testGetColumnTypeErrcode0100 + ${err}`);
-    //   }
-    //   try {
-    //     let resultSet = await (rdbStore as data_relationalStore.RdbStore).querySql("SELECT * FROM test");
-    //     let count = resultSet.rowCount;
-    //     hilog.info(domain, tag, '%{public}s', `testGetColumnTypeSyncErrcode0100 count=${count}`);
-    //     expect(true).assertEqual(resultSet?.goToRow(count - 1));
-    //     //let type: data_relationalStore.ColumnType | undefined = undefined;
-    //     hilog.info(domain, tag, '%{public}s', `testGetColumnTypeSyncErrcode0100 start CreateCorruptDb`);
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testGetColumnTypeSyncErrcode0100 end CreateCorruptDb');
-    //     await resultSet.getColumnType(0 as int)!;
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testGetColumnTypeErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
-
-    /**
-     * @tc.name   testGetRowsErrcode0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetRowsTest_1000
-     * @tc.desc   getRows errcode is 14800011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it("testGetRowsErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testGetRowsErrcode0100 start *************");
-    //   try {
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "data1": null,
-    //       "data2": null,
-    //       "data3": null,
-    //       "data4": null,
-    //       "data5": null,
-    //       "data6": null,
-    //       "data7": null,
-    //       "data8": null
-    //     };
-    //     await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testGetRowsErrcode0100 + ${err}`);
-    //   }
-    //   try {
-    //     let resultSet = await (rdbStore as data_relationalStore.RdbStore).querySql("SELECT * FROM test");
-    //     let count = resultSet.rowCount;
-    //     expect(true).assertEqual(resultSet?.goToRow(count - 1));
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testGetRowsErrcode0100 end CreateCorruptDb');
-    //     let array:Array<data_relationalStore.ValuesBucket> | null = null;
-    //     array = await resultSet?.getRows(count - 1)!;
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testGetRowsErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
+    it("testGetColumnTypeErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testGetColumnTypeErrcode0100 start *************");
+      try {
+        const valueBucket: data_relationalStore.ValuesBucket = {
+          "data1": null,
+          "data2": null,
+          "data3": null,
+          "data4": null,
+          "data5": null,
+          "data6": null,
+          "data7": null,
+          "data8": null
+        };
+        let a:long = await (rdbStore as data_relationalStore.RdbStore).insert("test", valueBucket);
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testGetColumnTypeErrcode0100 + ${err}`);
+      }
+      try {
+        let resultSet = await (rdbStore as data_relationalStore.RdbStore).querySql("SELECT * FROM test");
+        let count = resultSet.rowCount;
+        hilog.info(domain, tag, '%{public}s', `testGetColumnTypeSyncErrcode0100 count=${count}`);
+        expect(true).assertEqual(resultSet?.goToRow(count - 1));
+        //let type: data_relationalStore.ColumnType | undefined = undefined;
+        hilog.info(domain, tag, '%{public}s', `testGetColumnTypeSyncErrcode0100 start CreateCorruptDb`);
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testGetColumnTypeSyncErrcode0100 end CreateCorruptDb');
+        await resultSet.getColumnType(0 as int)!;
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testGetColumnTypeErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testAttachContextErrcode0100
@@ -279,19 +238,19 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testAttachContextErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testAttachContextErrcode0100 start *************");
-    //   try {
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testAttachContextErrcode0100 end CreateCorruptDb');
-    //     let resulet: int = await rdbStore!.attach(context, STORE_CONFIG, "Resultset.db");
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testAttachContextErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
+    it("testAttachContextErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testAttachContextErrcode0100 start *************");
+      try {
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testAttachContextErrcode0100 end CreateCorruptDb');
+        let resulet: int = await rdbStore!.attach(context, STORE_CONFIG, "Resultset.db");
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testAttachContextErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testAttachFullPathErrcode0100
@@ -301,20 +260,20 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testAttachFullPathErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testAttachFullPathErrcode0100 start *************");
-    //   try {
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testAttachFullPathErrcode0100 end CreateCorruptDb');
-    //     const dbPath = context.databaseDir+"/rdb/Resultset.db";
-    //     let resulet: int = await rdbStore!.attach(dbPath, "Resultset.db");
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testAttachFullPathErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
+    it("testAttachFullPathErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testAttachFullPathErrcode0100 start *************");
+      try {
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testAttachFullPathErrcode0100 end CreateCorruptDb');
+        const dbPath = context.databaseDir+"/rdb/Resultset.db";
+        let resulet: int = await rdbStore!.attach(dbPath, "Resultset.db");
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testAttachFullPathErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testBackupErrcode0100
@@ -324,19 +283,19 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testBackupErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testBackupErrcode0100 start *************");
-    //   try {
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testBackupErrcode0100 end CreateCorruptDb');
-    //     await rdbStore!.backup("Resultset.db");
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testBackupErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
+    it("testBackupErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testBackupErrcode0100 start *************");
+      try {
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testBackupErrcode0100 end CreateCorruptDb');
+        await rdbStore!.backup("ResultsetBackup.db");
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testBackupErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);
+        done();
+      }
+    })
 
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000
@@ -441,28 +400,6 @@ export default function RdbErrorCode14800011() {
     })
 
     /**
-     * @tc.name   testCleanDirtyDataErrcode0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_CleanDirtyDataTest_1000
-     * @tc.desc   cleanDirtyData errcode is 14800011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it("testCleanDirtyDataErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testCleanDirtyDataErrcode0100 start *************");
-    //   try {
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testCleanDirtyDataErrcode0100 end CreateCorruptDb');
-    //     await rdbStore!.cleanDirtyData("test1");
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testCleanDirtyDataErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);
-    //     done();
-    //   }
-    // })
-
-    /**
      * @tc.name   testDeleteSyncErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteSyncTest_1000
      * @tc.desc   deleteSync errcode is 14800011
@@ -541,38 +478,6 @@ export default function RdbErrorCode14800011() {
     })
 
     /**
-     * @tc.name   testGetModifyTimeErrcode0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeTest_1000
-     * @tc.desc   getModifyTime errcode is 14800011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it("testGetModifyTimeErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testGetModifyTimeErrcode0100 start *************");
-    //   rdbStore!.executeSync(CREATE_TABLE_TEST1);
-    //   const u8 = new Uint8Array([1, 2, 3]);
-    //   const valueBucket: data_relationalStore.ValuesBucket = {
-    //     "name": "zhangsan",
-    //     "age": 20 as long,
-    //     "salary": 220.5,
-    //     "blobType": u8,
-    //   };
-    //   await rdbStore!.insert("test1", valueBucket);
-    //   let PRIKey: data_relationalStore.PRIKeyType[] = [0 as long];
-    //   try {
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testGetModifyTimeErrcode0100 end CreateCorruptDb');
-    //     await rdbStore!.getModifyTime("test1", "NAME", PRIKey);
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testGetModifyTimeErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);;
-    //     done();
-    //   }
-    // })
-
-    /**
      * @tc.name   testInsertSyncErrcode0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertSyncTest_1000
      * @tc.desc   insertSync errcode is 14800011
@@ -610,32 +515,33 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it('testLockRowErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
-    //   let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
-    //   await rdbStore1!.execute(CREATE_TABLE_TEST1);
-    //   let u8 = new Uint8Array([1, 2, 3]);
-    //   const valueBucket:data_relationalStore.ValuesBucket = {
-    //     "name": "zhangsan",
-    //     "age": 18 as long,
-    //     "salary": 100.5,
-    //     "blobType": u8,
-    //   }
-    //   let valueBuckets: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(valueBucket, valueBucket, valueBucket);
-    //   rdbStore1.batchInsertSync("test1", valueBuckets);
-    //   let predicates = new data_relationalStore.RdbPredicates("test1");
-    //   predicates.equalTo("NAME", "zhangsan");
-    //   await CreateCorruptDb1();
-    //   hilog.info(domain, tag, '%{public}s', 'testLockRowErrcode0100 end CreateCorruptDb');
-    //   try{
-    //     await rdbStore1.lockRow(predicates);
-    //   } catch (err: BusinessError) {
-    //     console.info(TAG, `testLockRowErrcode0100 err.code ${err.code}, err.message ${err.message}`)
-    //     expect(14800011).assertEqual(err.code);
-    //   }
-    //   await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-    //   console.info('testLockRowErrcode0100');
-    //   done();
-    // })
+    it('testLockRowErrcode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
+      let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      await rdbStore1!.execute(CREATE_TABLE_TEST1);
+      let u8 = new Uint8Array([1, 2, 3]);
+      const valueBucket:data_relationalStore.ValuesBucket = {
+        "name": "zhangsan",
+        "age": 18 as long,
+        "salary": 100.5,
+        "blobType": u8,
+      }
+      let valueBuckets: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(valueBucket, valueBucket, valueBucket);
+      await rdbStore1.setDistributedTables(['test1']);
+      rdbStore1.batchInsertSync("test1", valueBuckets);
+      let predicates = new data_relationalStore.RdbPredicates("test1");
+      predicates.equalTo("NAME", "zhangsan");
+      await CreateCorruptDb1();
+      hilog.info(domain, tag, '%{public}s', 'testLockRowErrcode0100 end CreateCorruptDb');
+      try{
+        await rdbStore1.lockRow(predicates);
+      } catch (err: BusinessError) {
+        console.info(TAG, `testLockRowErrcode0100 err.code ${err.code}, err.message ${err.message}`)
+        expect(14800011).assertEqual(err.code);
+      }
+      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+      console.info('testLockRowErrcode0100');
+      done();
+    })
 
     /**
      * @tc.name   testQueryLockedRowErrcode0100
@@ -682,57 +588,21 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testRestoreErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testRestoreErrcode0100 start *************");
-    //   try {
-    //     rdbStore!.executeSync(CREATE_TABLE_TEST1);
-    //     const u8 = new Uint8Array([1, 2, 3]);
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "name": "zhangsan",
-    //       "age": 20 as long,
-    //       "salary": 220.5,
-    //       "blobType": u8,
-    //     };
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testRestoreErrcode0100 end CreateCorruptDb');
-    //     await rdbStore!.restore();
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testRestoreErrcode0100 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);;
-    //     done();
-    //   }
-    // })
-
-    /**
-     * @tc.name   testRestoreErrcode0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RestoreTest_2000
-     * @tc.desc   restore has argument errcode is 14800011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it("testRestoreErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testRestoreErrcode0200 start *************");
-    //   try {
-    //     rdbStore!.executeSync(CREATE_TABLE_TEST1);
-    //     const u8 = new Uint8Array([1, 2, 3]);
-    //     const valueBucket: data_relationalStore.ValuesBucket = {
-    //       "name": "zhangsan",
-    //       "age": 20 as long,
-    //       "salary": 220.5,
-    //       "blobType": u8,
-    //     };
-    //     await CreateCorruptDb();
-    //     hilog.info(domain, tag, '%{public}s', 'testRestoreErrcode0200 end CreateCorruptDb');
-    //     await rdbStore!.restore("Resultset.db");
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testRestoreErrcode0200 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);;
-    //     done();
-    //   }
-    // })
+    it("testRestoreErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testRestoreErrcode0100 start *************");
+      try {
+        rdbStore!.executeSync(CREATE_TABLE_TEST1);
+        await rdbStore!.backup("ResultsetBackup.db");
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testRestoreErrcode0100 end CreateCorruptDb');
+        await rdbStore!.restore("ResultsetBackup.db");
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testRestoreErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);;
+        done();
+      }
+    })
 
     /**
      * @tc.name   testUnlockRowErrcode0200
@@ -742,34 +612,35 @@ export default function RdbErrorCode14800011() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it("testUnlockRowErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   hilog.info(domain, tag, '%{public}s', "************* testUnlockRowErrcode0200 start *************");
-    //   try {
-    //     let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
-    //     await rdbStore1!.execute(CREATE_TABLE_TEST1);
-    //     let u8 = new Uint8Array([1, 2, 3]);
-    //     const valueBucket:data_relationalStore.ValuesBucket = {
-    //       "name": "zhangsan",
-    //       "age": 18.0 as long,
-    //       "salary": 100.5,
-    //       "blobType": u8,
-    //     }
-    //     let valueBuckets: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(valueBucket, valueBucket, valueBucket);
-    //     rdbStore1.batchInsertSync("test1", valueBuckets);
-    //     let predicates = new data_relationalStore.RdbPredicates("test1");
-    //     predicates.equalTo("NAME", "zhangsan");
-    //     //await rdbStore1.lockRow(predicates);
-    //     await CreateCorruptDb1();
-    //     hilog.info(domain, tag, '%{public}s', 'testUnlockRowErrcode0200 end CreateCorruptDb');
-    //     await rdbStore1.unlockRow(predicates);
-    //     done();
-    //   } catch (err: BusinessError) {
-    //     hilog.info(domain, tag, '%{public}s', `testUnlockRowErrcode0200 + ${err.code} + ${err.message}`);
-    //     expect(14800011).assertEqual(err.code);;
-    //     await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-    //     done();
-    //   }
-    // })
+    it("testUnlockRowErrcode0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testUnlockRowErrcode0200 start *************");
+      try {
+        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        await rdbStore1!.execute(CREATE_TABLE_TEST1);
+        await rdbStore1.setDistributedTables(['test1']);
+        let u8 = new Uint8Array([1, 2, 3]);
+        const valueBucket:data_relationalStore.ValuesBucket = {
+          "name": "zhangsan",
+          "age": 18.0 as long,
+          "salary": 100.5,
+          "blobType": u8,
+        }
+        let valueBuckets: Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(valueBucket, valueBucket, valueBucket);
+        rdbStore1.batchInsertSync("test1", valueBuckets);
+        let predicates = new data_relationalStore.RdbPredicates("test1");
+        predicates.equalTo("NAME", "zhangsan");
+        await rdbStore1.lockRow(predicates);
+        await CreateCorruptDb1();
+        hilog.info(domain, tag, '%{public}s', 'testUnlockRowErrcode0200 end CreateCorruptDb');
+        await rdbStore1.unlockRow(predicates);
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testUnlockRowErrcode0200 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);;
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        done();
+      }
+    })
 
     /**
      * @tc.name   testUpdateSyncErrcode0100

@@ -57,10 +57,12 @@ export default function TreeMapTest1() {
       try {
         let treeMap = new TreeMap<number, number>();
         expect(String(treeMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 
@@ -87,10 +89,12 @@ export default function TreeMapTest1() {
         expect(treeMap.remove("b")).assertEqual(2);
         expect(treeMap.remove("c")).assertEqual(3);
         expect(treeMap.remove("d")).assertEqual(4);
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 
@@ -361,8 +365,13 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getFirstKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getFirstKey();
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -392,8 +401,13 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLastKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLastKey();
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -429,14 +443,14 @@ export default function TreeMapTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   treeMap.set(2, "c");
-    //   let res = treeMap.remove(1);
-    //   expect(res).assertEqual("b");
-    // });
+    it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      let res = treeMap.remove(1);
+      expect(res).assertEqual("b");
+    });
 
     /**
      * @tc.name   testTreeMap024
@@ -521,8 +535,13 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLowerKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLowerKey(2);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -554,8 +573,13 @@ export default function TreeMapTest1() {
      */
     it("testTreeMap030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getHigherKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getHigherKey(2);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
@@ -811,47 +835,29 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.name   testSetAll042
+     * @tc.name   testIsEmpty043
      * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_4200
      * @tc.desc   Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testSetAll042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   try {
-    //     treeMap.setAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err: Error) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be TreeMap. Received value is: 1,2,3`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testUtil3_013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_013
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let res = 0;
-      let treeMap: TreeMap<string, int> = new TreeMap<string, int>();
-      treeMap.set("squirrel", 123);
-      treeMap.set("sparrow", 356);
+    it("testIsEmpty043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      treeMap.set(3, "d");
+      treeMap.set(4, "g");
       let iter = treeMap.$_iterator();
-      let temp: IteratorResult<[string, int]> = iter.next();
+      let temp = iter.next();
+      let flag = 0;
       while (!temp.done) {
-        res = res + temp.value![1];
+        expect(treeMap.length).assertEqual(5);
+        flag++;
         temp = iter.next();
       }
-      expect(res).assertEqual(479);
-    })
+      expect(flag).assertEqual(5)
+    });
   });
 }

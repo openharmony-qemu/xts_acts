@@ -21,9 +21,9 @@ import clientAuthenticationHandlerFour from './ClientAuthenticationHandlerFour.t
 
 export default function testsuite() {
   webJsunit();
-  certChainData();
   clientAuthenticationHandler();
   clientAuthenticationHandlerTwo();
   clientAuthenticationHandlerThree();
   clientAuthenticationHandlerFour();
+  certChainData();
 }

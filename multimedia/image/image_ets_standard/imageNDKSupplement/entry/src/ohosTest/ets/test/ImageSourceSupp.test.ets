@@ -19,7 +19,7 @@ import testNapi from "libimageEffect.so";
 
 const TAG = 'ImageSourceSuppXts';
 const IMAGE_RESULT_BAD_PARAMETER = -1;
-
+const IMAGE_RESULT_SUCCESS = 0;
 
 export default function ImageSourceSuppTest() {
   describe('ImageSourceSuppTest', () => {
@@ -45,6 +45,21 @@ export default function ImageSourceSuppTest() {
       let result: number = testNapi.ImageSourceCreatTest(0);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_RESULT_BAD_PARAMETER);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001
+     * @tc.name     SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001
+     * @tc.desc     OHImageSourceCreate-IMAGE_RESULT_SUCCESS
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageSourceCreatSuccessTest(0);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_RESULT_SUCCESS);
     });
 
     /**

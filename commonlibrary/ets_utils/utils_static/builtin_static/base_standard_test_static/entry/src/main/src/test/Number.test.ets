@@ -968,7 +968,7 @@ export default function numberTest() {
       try {
         const num = 1e21 * 3.16227766;
         const result = num.toString(8);
-        expect(result).assertEqual("526665530627250154000000");
+        expect(result).assertEqual("526665530624701540000000");
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();

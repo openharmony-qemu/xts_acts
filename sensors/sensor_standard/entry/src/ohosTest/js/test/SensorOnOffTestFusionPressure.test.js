@@ -25,8 +25,7 @@ describe("SensorJsTest_sensor_65", function () {
     let Available = false;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
-        expect(typeof (data.value)).assertEqual("number");
-        done();
+        expect(typeof (data.fusionPressure)).assertEqual("number");
     }
 
     let isAvailable = async (data) => {
@@ -57,7 +56,6 @@ describe("SensorJsTest_sensor_65", function () {
                 done();
             });
             hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
-            done();
         } catch (error) {
             hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
             done();

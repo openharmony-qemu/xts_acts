@@ -655,6 +655,8 @@ int SUBAIMindSporeTensorCreate0022()
     ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
     OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_NUMBERTYPE_UINT8);
     ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_UNKNOWN);
+    ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_UNKNOWN);
     OH_AI_TensorDestroy(&tensor);
     return OH_AI_STATUS_SUCCESS;
 }
@@ -1125,7 +1127,8 @@ int SUBAIMindSporeTensorCreate0043()
     OHPrintf("==========OH_AI_TensorCreate==========\n");
     constexpr size_t dataLen = 6;
     float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
-    OH_AI_TensorSetUserData(nullptr, data, userData);
+    auto status = OH_AI_TensorSetUserData(nullptr, data, userData);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NULLPTR);
     return OH_AI_STATUS_SUCCESS;
 }
 
@@ -1148,7 +1151,10 @@ int SUBAIMindSporeTensorCreate0044()
     OH_AI_TensorHandle tensor =
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
     ASSERT_NE(tensor, nullptr);
-    OH_AI_TensorSetUserData(tensor, nullptr, 0);
+    auto status = OH_AI_TensorSetUserData(tensor, nullptr, 0);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
+    auto status01 = OH_AI_TensorSetUserData(tensor, data, 0);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_TensorDestroy(&tensor);
     return OH_AI_STATUS_SUCCESS;
 }
@@ -1174,7 +1180,8 @@ int SUBAIMindSporeTensorCreate0045()
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
     ASSERT_NE(tensor, nullptr);
     float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
-    OH_AI_TensorSetUserData(tensor, data2, userData);
+    auto status = OH_AI_TensorSetUserData(tensor, data2, userData);
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
     ASSERT_NE(retData, nullptr);
     OHPrintf("return data is:");
@@ -1208,8 +1215,10 @@ int SUBAIMindSporeTensorCreate0046()
     ASSERT_NE(tensor, nullptr);
     float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
     float data3[dataLen] = { 13, 23, 33, 43, 53, 63 };
-    OH_AI_TensorSetUserData(tensor, data2, userData);
-    OH_AI_TensorSetUserData(tensor, data3, userData);
+    auto status01 = OH_AI_TensorSetUserData(tensor, data2, userData);
+    ASSERT_EQ(status01, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_TensorSetUserData(tensor, data3, userData);
+    ASSERT_EQ(status02, OH_AI_STATUS_SUCCESS);
     const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
     ASSERT_NE(retData, nullptr);
     OHPrintf("return data is:");
@@ -1241,7 +1250,8 @@ int SUBAIMindSporeTensorCreate0047()
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
     ASSERT_NE(tensor, nullptr);
     void* inAllocator = OH_AI_TensorGetAllocator(tensor);
-    OH_AI_TensorSetAllocator(nullptr, inAllocator);
+    auto status = OH_AI_TensorSetAllocator(nullptr, inAllocator);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_TensorDestroy(&tensor);
     return OH_AI_STATUS_SUCCESS;
 }
@@ -1266,6 +1276,7 @@ int SUBAIMindSporeTensorCreate0048()
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
     ASSERT_NE(tensor, nullptr);
     void* inAllocator = OH_AI_TensorGetAllocator(tensor);
+    ASSERT_EQ(inAllocator, nullptr);
     OH_AI_TensorSetAllocator(tensor, inAllocator);
     OH_AI_TensorDestroy(&tensor);
     return OH_AI_STATUS_SUCCESS;
@@ -1297,7 +1308,7 @@ int SUBAIMindSporeTensorCreate0049()
     return OH_AI_STATUS_SUCCESS;
 }
 
-// OH_AI_TensorSetAllocator接口，tensor为nullptr
+// OH_AI_TensorGetAllocator接口，tensor为nullptr
 /**
  * @tc.name   SUBAIMindSporeTensorCreate0050
  * @tc.number SUBAIMindSporeTensorCreate0050

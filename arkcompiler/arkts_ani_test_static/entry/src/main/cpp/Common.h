@@ -116,7 +116,7 @@ ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
         if (status != ANI_OK) {
             return ANI_ERROR;
         }
-        status = env->Class_FindMethod(cls, "toDouble", ":d", &unboxed);
+        status = env->Class_FindMethod(cls, "unboxed", ":d", &unboxed);
         if (status != ANI_OK) {
             return ANI_ERROR;
         }

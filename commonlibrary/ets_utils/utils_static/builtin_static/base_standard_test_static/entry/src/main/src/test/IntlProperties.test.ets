@@ -1017,7 +1017,7 @@ export default function etsIntlPtsFunTest() {
     it('testDatePrototypeObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
       let value = date.toLocaleString('en-US', {timeZone: 'UTC'});
-      let zerotime = "10/20/2022, 6:00:00 PM";
+      let zerotime = "10/20/2022, 6:00:00 PM";
       expect(value).assertEqual(zerotime);
     })
 
@@ -1263,7 +1263,7 @@ export default function etsIntlPtsFunTest() {
     it('testDatePrototypeObject017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
       let value = date.toLocaleTimeString('en-US', { timeZone: 'UTC' });
-      let zerotime = "6:00:00 PM";
+      let zerotime = "6:00:00 PM";
       expect(value).assertEqual(zerotime);
     })
 
@@ -1350,7 +1350,7 @@ export default function etsIntlPtsFunTest() {
     it('testDatePrototypeObject022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 20, 0, 0));
       let value = date.toLocaleTimeString('en-US', { timeZone: 'UTC' });
-      let zerotime = "8:00:00 PM";
+      let zerotime = "8:00:00 PM";
       expect(value).assertEqual(zerotime);
     })
 

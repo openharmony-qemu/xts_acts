@@ -986,7 +986,7 @@ struct WebComponent {
           console.log('webviewBFCacheButton start');
           let wantInfo: Want = {
             deviceId: '',
-            bundleName: 'com.open.harmony.forwardbackwardcachefivetest',
+            bundleName: 'com.open.harmony.internetvideoplaybacktwelvetest',
             moduleName: '',
             abilityName: 'com.example.myapplication.TestAbility2',
             parameters: {

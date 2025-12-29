@@ -21,6 +21,7 @@ import { JSON } from '@kit.ArkTS';
 const IMAGE_RESULT_BAD_PARAMETER = -1
 const IMAGE_RESULT_JNI_ENV_ABNORMAL = 62980250
 const IMAGE_UNSUPPORTED_OPERATION = 7600201
+const IMAGE_UNSUPPORTED_CONVERSION = 7600203
 const EFFECT_SUCCESS = 0;
 const EFFECT_ERROR_PARAM_INVALID = 401;
 const CASE_INDEX_1 = 1;
@@ -30,6 +31,8 @@ const CASE_INDEX_4 = 4;
 const CASE_INDEX_5 = 5;
 const TAG = 'OHPixelmapNativeCreatePixelmapNativeSupp';
 let fdNumber: number;
+
+
 async function getFd(path: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   console.info(TAG, 'get testContext success',context);
@@ -102,6 +105,36 @@ export default function OHPixelmapNativeCreatePixelmapNativeTest() {
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
     /**
+     * @tc.number  SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_004
+     * @tc.name    SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_004
+     * @tc.desc    OH_PixelmapNative_CreatePixelmapUsingAllocator-EFFECT_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_004', Level.LEVEL0, async () => {
+      const testName = "SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_004"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHPixelmapNativeCreatePixelmapNativeTest(CASE_INDEX_4);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_SUCCESS);
+    });
+    /**
+     * @tc.number  SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_005
+     * @tc.name    SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_005
+     * @tc.desc    OH_PixelmapNative_CreatePixelmapUsingAllocator-IMAGE_UNSUPPORTED_OPERATION
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_005', Level.LEVEL0, async () => {
+      const testName = "SUB_CREATE_PIXELMAP_USING_ALLOCATOR_SUPP_005"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHPixelmapNativeCreatePixelmapNativeTest(CASE_INDEX_5);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_OPERATION);
+    });
+    /**
      * @tc.number  SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_001
      * @tc.name    SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_001
      * @tc.desc    OH_PixelmapNative_GetArgbPixels-IMAGE_BAD_PARAMETER
@@ -145,6 +178,21 @@ export default function OHPixelmapNativeCreatePixelmapNativeTest() {
       let result: number = testNapi.OHPixelmapNativeGetArgbPixelsTest(CASE_INDEX_3);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
+     * @tc.number  SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_004
+     * @tc.name    SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_004
+     * @tc.desc    OH_PixelmapNative_GetArgbPixels-IMAGE_UNSUPPORTED_CONVERSION
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_004', Level.LEVEL0, async () => {
+      const testName = "SUB_CREATE_PIXELMAP_GET_ARGB_PIXELS_SUPP_004"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHPixelmapNativeGetArgbPixelsTest(CASE_INDEX_4);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_UNSUPPORTED_CONVERSION);
     });
     /**
      * @tc.number  SUB_CREATE_PIXELMAP_TO_SDR_SUPP_001

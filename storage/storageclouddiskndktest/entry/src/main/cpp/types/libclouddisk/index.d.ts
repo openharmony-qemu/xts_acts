@@ -24,3 +24,6 @@ export const UnReFolderChanges: (path: string) => number;
 export const GetSyncFolderChanges: (path: string) => number;
 export const SetFileSyncStates: (path: string) => number;
 export const GetFileSyncStates: (path: string) => number;
+export const Tset_CloudDisk_ErrorCode_ENUM: () => number;
+export const Tset_CloudDisk_OperationType_ENUM: () => number;
+export const Tset_CloudDisk_ErrorReason_ENUM: () => number;

@@ -1129,7 +1129,7 @@ napi_value testNativeWindowGetColorSpaceFirst(napi_env env, napi_callback_info i
     }
     OH_NativeBuffer_ColorSpace colorSpace;
     flag = OH_NativeWindow_GetColorSpace(nativeWindow, &colorSpace);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, flag, &result);
         return result;
     }
@@ -1166,13 +1166,13 @@ napi_value testNativeWindowSetColorSpaceNormal(napi_env env, napi_callback_info 
         Region region{.rects = &rect};
         res = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
         flag = OH_NativeWindow_SetColorSpace(nativeWindow, colorspace1);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_1, &result);
             return result;
         }
         OH_NativeBuffer_ColorSpace colorSpace;
         flag = OH_NativeWindow_GetColorSpace(nativeWindow, &colorSpace);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result);
             return result;
         }
@@ -1194,7 +1194,7 @@ napi_value testNativeWindowSetColorSpaceNullptr(napi_env env, napi_callback_info
     napi_value result = nullptr;
 
     int32_t flag = OH_NativeWindow_SetColorSpace(nullptr, OH_COLORSPACE_NONE);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1217,7 +1217,7 @@ napi_value testNativeWindowSetColorSpaceAbnormal(napi_env env, napi_callback_inf
 
     int32_t flag =
         OH_NativeWindow_SetColorSpace(nativeWindow, static_cast<OH_NativeBuffer_ColorSpace>(CONSTANT_100000));
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1235,7 +1235,7 @@ napi_value testNativeWindowGetColorSpaceNullptr(napi_env env, napi_callback_info
     int32_t flag;
     OH_NativeBuffer_ColorSpace ret;
     flag = OH_NativeWindow_GetColorSpace(nullptr, &ret);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1261,7 +1261,7 @@ napi_value testNativeWindowGetMetadataValueFirst(napi_env env, napi_callback_inf
     int32_t ret1;
     uint8_t *ret2;
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &ret1, &ret2);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1280,24 +1280,24 @@ napi_value testNativeWindowSetDynamicMetadataValue1(napi_env env, napi_callback_
     int32_t X = -1;
     uint8_t metaData[CONSTANT_60];
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     // 2. X=0 set调用失败 get调用失败
     X = 0;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1314,12 +1314,12 @@ napi_value testNativeWindowSetDynamicMetadataValue2(napi_env env, napi_callback_
     int32_t X = 1; // 3. X=1 set调用成功 get调用成功 两者一致
     metaData[0] = static_cast<uint8_t>(0);
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1332,12 +1332,12 @@ napi_value testNativeWindowSetDynamicMetadataValue2(napi_env env, napi_callback_
         metaData[i] = static_cast<uint8_t>(i);
     }
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1357,12 +1357,12 @@ napi_value testNativeWindowSetDynamicMetadataValue3(napi_env env, napi_callback_
     uint8_t metaData[CONSTANT_60];
     int32_t X = CONSTANT_2999;
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1372,12 +1372,12 @@ napi_value testNativeWindowSetDynamicMetadataValue3(napi_env env, napi_callback_
     }
     X = CONSTANT_3000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1397,18 +1397,18 @@ napi_value testNativeWindowSetDynamicMetadataValue4(napi_env env, napi_callback_
     uint8_t metaData[CONSTANT_60];
     int32_t X = CONSTANT_3001;
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     X = CONSTANT_100000000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_8 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
@@ -1490,12 +1490,12 @@ napi_value testNativeWindowSetMetadataValueTimes(napi_env env, napi_callback_inf
 
     for (int i = 0; i < CONSTANT_60; ++i) {
         flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, X, metaData);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_1, &result);
             return result;
         }
         flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_1000 * (i + 1) + CONSTANT_2, &result);
             return result;
         }
@@ -1521,24 +1521,24 @@ napi_value testNativeWindowSetStaticMetadataValue1(napi_env env, napi_callback_i
     // 1.
     int32_t X = -1;
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     // 2. X=0 set调用失败 get调用失败
     X = 0;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1556,12 +1556,12 @@ napi_value testNativeWindowSetStaticMetadataValue2(napi_env env, napi_callback_i
     int32_t X = 1; // 3. X=1 set调用成功 get调用成功 两者一致
     metaData[0] = static_cast<uint8_t>(0);
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1574,12 +1574,12 @@ napi_value testNativeWindowSetStaticMetadataValue2(napi_env env, napi_callback_i
         metaData[i] = static_cast<uint8_t>(i);
     }
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, CONSTANT_60, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1600,12 +1600,12 @@ napi_value testNativeWindowSetStaticMetadataValue3(napi_env env, napi_callback_i
 
     int32_t X = CONSTANT_2999;
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1615,12 +1615,12 @@ napi_value testNativeWindowSetStaticMetadataValue3(napi_env env, napi_callback_i
     }
     X = CONSTANT_3000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1640,18 +1640,18 @@ napi_value testNativeWindowSetStaticMetadataValue4(napi_env env, napi_callback_i
     uint8_t metaData[CONSTANT_60];
     int32_t X = CONSTANT_3001;
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, buffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     X = CONSTANT_100000000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_STATIC_METADATA, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_8 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
@@ -1708,24 +1708,24 @@ napi_value testNativeWindowSetMetadataValue1(napi_env env, napi_callback_info in
     uint8_t metaData[CONSTANT_60];
     // 1.
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     // 2. X=0 set调用失败 get调用失败
     X = 0;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1741,12 +1741,12 @@ napi_value testNativeWindowSetMetadataValue2(napi_env env, napi_callback_info in
     uint8_t metaData[CONSTANT_60];
     metaData[0] = static_cast<uint8_t>(X);
     int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1759,12 +1759,12 @@ napi_value testNativeWindowSetMetadataValue2(napi_env env, napi_callback_info in
         metaData[i] = static_cast<uint8_t>(i);
     }
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1786,12 +1786,12 @@ napi_value testNativeWindowSetMetadataValue3(napi_env env, napi_callback_info in
     // 5. X=2999 set调用成功 get调用成功 两者一致
     X = CONSTANT_2999;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_5 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1802,12 +1802,12 @@ napi_value testNativeWindowSetMetadataValue3(napi_env env, napi_callback_info in
     // 6. X=3000 set调用成功 get调用成功 两者一致
     X = CONSTANT_3000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_6 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
@@ -1829,19 +1829,19 @@ napi_value testNativeWindowSetMetadataValue4(napi_env env, napi_callback_info in
     // 7.
     X = CONSTANT_3001;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
     flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_7 * CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
     // 8. X=100000000 set调用失败 get调用失败
     X = CONSTANT_100000000;
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, X, metaData);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_8 * CONSTANT_1000 + CONSTANT_1, &result);
         return result;
     }
@@ -1904,7 +1904,7 @@ napi_value testNativeWindowSetNullMetadataValue(napi_env env, napi_callback_info
     uint8_t *buffer = new uint8_t[CONSTANT_60];
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, static_cast<OH_NativeBuffer_MetadataKey>(CONSTANT_1000000),
                                             CONSTANT_60, buffer);
-    if (flag != CONSTANT_50002000 && flag != CONSTANT_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1930,12 +1930,12 @@ napi_value testNativeWindowSetMetadataValueNullptr(napi_env env, napi_callback_i
     OH_NativeImage *iamge = initNative->returnNativeImage();
     uint8_t *buffer = new uint8_t[CONSTANT_60];
     flag = OH_NativeWindow_SetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, buffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -1961,12 +1961,12 @@ napi_value testNativeWindowGetMetadataValueAbnormal(napi_env env, napi_callback_
     OH_NativeImage *iamge = initNative->returnNativeImage();
     uint8_t *buffer = new uint8_t[CONSTANT_60];
     flag = OH_NativeWindow_SetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, buffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
     flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -1994,25 +1994,25 @@ napi_value testNativeWindowGetMetadataValueNullptr(napi_env env, napi_callback_i
     uint8_t *ret2;
     // 1.
     flag = OH_NativeWindow_SetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, CONSTANT_60, buffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
     // 2.
     flag = OH_NativeWindow_GetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, &ret1, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
     // 3.
     flag = OH_NativeWindow_GetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, nullptr, &ret2);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
     // 4.
     flag = OH_NativeWindow_GetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, &ret1, &ret2);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_4, &result);
         return result;
     }

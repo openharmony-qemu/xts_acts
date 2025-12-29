@@ -370,7 +370,7 @@ int SUBAIMindSporeNNRTCopyFree0003()
         auto oriTensor = inputsHandle.handle_list[i];
         OH_AI_TensorHandle inTensor = CreateTensorLike(oriTensor, false);
         OH_AI_Status setRet = OH_AI_TensorSetAllocator(inTensor, nullptr);
-        ASSERT_NE(setRet, OH_AI_STATUS_SUCCESS);
+        ASSERT_EQ(setRet, OH_AI_STATUS_LITE_PARAM_INVALID);
         inTensorArray.handle_list[i] = inTensor;
     }
     DestroyTensorArray(&inTensorArray);
@@ -554,7 +554,8 @@ void AddContextDeviceHIAI(OH_AI_ContextHandle context)
     auto id1 = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc1);
     OH_AI_DeviceInfoSetDeviceId(nnrtDeviceInfo, id1);
     const char* bandMode = "HIAI_BANDMODE_HIGH";
-    OH_AI_DeviceInfoAddExtension(nnrtDeviceInfo, "BandMode", bandMode, strlen(bandMode));
+    auto status = OH_AI_DeviceInfoAddExtension(nnrtDeviceInfo, "BandMode", bandMode, strlen(bandMode));
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OH_AI_ContextAddDeviceInfo(context, nnrtDeviceInfo);
 }
 

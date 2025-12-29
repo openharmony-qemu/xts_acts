@@ -26,6 +26,7 @@ import TapGestureBasicClickMouseTest from './TapGesture/TapGestureBasicClickMous
 import TapGestureBasicDoubleClickMouseTest from './TapGesture/TapGestureBasicDoubleClickMouseTest.test';
 import TapGestureTemplateTest from './TapGesture/TapGestureTemplateTest.test';
 import tapLocationTest from './TapGestureTest/tapLocation.test';
+import tapLocationTest2 from './TapGestureTest/tapLocation2.test';
 
 export default function testsuite() {
   TapGesture1();
@@ -41,4 +42,5 @@ export default function testsuite() {
   TapGestureBasicDoubleClickMouseTest();
   TapGestureTemplateTest();
   tapLocationTest();
+  tapLocationTest2();
 }

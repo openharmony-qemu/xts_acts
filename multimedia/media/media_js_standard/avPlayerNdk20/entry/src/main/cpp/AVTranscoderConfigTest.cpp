@@ -407,6 +407,43 @@ static napi_value OH_AVTranscoderConfig_EnableBFrame0100(napi_env env, napi_call
 }
 
 
+static napi_value OH_AVTranscoderConfig_Create100(napi_env env, napi_callback_info info)
+{
+    OH_AVTranscoder_Config *Config = OH_AVTranscoderConfig_Create();
+    int32_t res = 1;
+    if (Config != nullptr) {
+        res = 0;
+    }
+    OH_AVTranscoderConfig_Release(Config);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVTranscoderConfig_Release200(napi_env env, napi_callback_info info)
+{
+    OH_AVErrCode errcode = OH_AVTranscoderConfig_Release(nullptr);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_AVTranscoderConfig_SetDstFD200(napi_env env, napi_callback_info info)
+{
+    int32_t dstFd = 1;
+    OH_AVErrCode errcode = OH_AVTranscoderConfig_SetDstFD(nullptr, dstFd);
+    int32_t res = 1;
+    if (errcode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -451,6 +488,9 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_AVTranscoderConfig_EnableBFrame0100", nullptr, OH_AVTranscoderConfig_EnableBFrame0100, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"Create100", nullptr, OH_AVTranscoderConfig_Create100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Release200", nullptr, OH_AVTranscoderConfig_Release200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetDstFD200", nullptr, OH_AVTranscoderConfig_SetDstFD200, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

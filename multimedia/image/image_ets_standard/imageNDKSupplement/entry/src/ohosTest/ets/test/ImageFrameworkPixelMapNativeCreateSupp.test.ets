@@ -14,7 +14,6 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from 'libimageEffect.so'
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { JSON } from '@kit.ArkTS';
 
 const IMAGE_SUCCESS = 0;

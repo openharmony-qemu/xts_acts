@@ -169,11 +169,19 @@ napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &index);
 
     OH_PackingOptions *options;
-    Image_ErrorCode res = OH_PackingOptions_Create(&options);
-
-    int32_t resultValue = res == IMAGE_SUCCESS ? 0 : -1;
+    Image_ErrorCode res;
+    switch (index) {
+    case CASE_INDEX_1:
+         res = OH_PackingOptions_Create(&options);
+        break;
+    case CASE_INDEX_2:
+         res = OH_PackingOptions_Create(nullptr);
+        break;
+    default:
+        break;
+    }
     napi_value ret;
-    napi_create_int32(env, resultValue, &ret);
+    napi_create_int32(env, res, &ret);
     return ret;
 }
 napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info)
@@ -183,19 +191,39 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    OH_PixelmapNative *pixelmapNative = nullptr;
-    OH_Pixelmap_HdrMetadataValue **value = nullptr;
+    uint8_t data[96];
+    size_t dataSize = 96;
+    for (int i = 0; i < dataSize; i++) {
+        data[i] = i + 1;
+    }
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTIONS_SET_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTIONS_SET_HEIGHT);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    OH_PixelmapNative *pixelMap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
+    LOGI("OH_PixelmapNative_CreatePixelmap %{public}d", errCode);
+    OH_Pixelmap_HdrMetadataValue* pvalue = new OH_Pixelmap_HdrMetadataValue;
+    pvalue->type = HDR_METADATA_TYPE_BASE;
+    errCode = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
+    LOGI("OH_PixelmapNative_SetMetadata %{public}d", errCode);
+
+    OH_Pixelmap_HdrMetadataValue *value = nullptr;
     Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
-        returnValue = OH_PixelmapNative_GetMetadata(pixelmapNative, HDR_METADATA_TYPE, value);
+        returnValue = OH_PixelmapNative_GetMetadata(pixelMap, HDR_METADATA_TYPE, &value);
+        LOGI("OH_PixelmapNative_GetMetadata %{public}d", returnValue);
         break;
     case CASE_INDEX_2:
-        returnValue = OH_PixelmapNative_GetMetadata(nullptr, HDR_METADATA_TYPE, value);
+        returnValue = OH_PixelmapNative_GetMetadata(nullptr, HDR_METADATA_TYPE, &value);
         break;
     default:
         break;
     }
+    OH_PixelmapNative_Release(pixelMap);
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -256,24 +284,22 @@ napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info 
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelMap = nullptr;
-    napi_value source = nullptr;
+    napi_value pixelmapNapi = nullptr;
     Image_ErrorCode returnValue;
     Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
+    OH_PixelmapNative_ConvertPixelmapNativeToNapi(env, pixelMap, &pixelmapNapi);
+    OH_PixelmapNative *resPixelMap = nullptr;
     switch (index) {
     case CASE_INDEX_1:
-        returnValue = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, args[0], nullptr);
+        returnValue = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, pixelmapNapi, &resPixelMap);
         break;
     default:
         break;
     }
     OH_PixelmapNative_Release(pixelMap);
     OH_PixelmapInitializationOptions_Release(createOpts);
-    int ret = -1;
-    if (returnValue == IMAGE_BAD_PARAMETER) {
-        ret = 0;
-    }
     napi_value result = nullptr;
-    napi_create_int32(env, ret, &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)

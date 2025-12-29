@@ -892,6 +892,8 @@ int SUBAIMindSporeModelCreate0032()
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
     OH_AI_TensorHandleArray outputs = OH_AI_ModelGetOutputs(model);
+    ASSERT_NE(outputs.handle_list, nullptr);
+    ASSERT_NE(outputs.handle_num, 0);
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -1315,7 +1317,7 @@ int SUBAIMindSporeModelLoadConfig0002()
     std::cout << "loadStatus is " << loadStatus << std::endl;
     ASSERT_EQ(loadStatus, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_Status loadStatus01 = OH_AI_ModelLoadConfig(nullptr, FilePath("ml_face_isface.config").c_str());
-    std::cout << "loadStatus is " << loadStatus01 << std::endl;
+    std::cout << "loadStatus01 is " << loadStatus01 << std::endl;
     ASSERT_EQ(loadStatus01, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);

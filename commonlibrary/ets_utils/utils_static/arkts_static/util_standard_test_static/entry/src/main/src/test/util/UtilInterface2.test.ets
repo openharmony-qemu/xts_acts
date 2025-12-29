@@ -34,14 +34,12 @@ class Temperature implements util.ScopeType<Temperature> {
   constructor(n: number) {
     this.n = n
   }
-  compareTo(other: Object): boolean {
-    return this.compareTo(other as Temperature)
-  }
-
   compareTo(other: Temperature): boolean {
     return this.n >= other.n
   }
-
+  compareTo(other: Object): boolean {
+    return this.compareTo(other as Temperature)
+  }
   toString(): string {
     return `${this.n}`
   }
@@ -52,7 +50,7 @@ class ChildLRUCache extends util.LRUCache<number, number> {
     super();
   }
 
-  createDefault(key: number): number {
+  createDefault(key: number): number | undefined {
     return key;
   }
 }
@@ -189,11 +187,13 @@ export default function Util2Test() {
         let result = base64Helper.encodeSync(array, util.Type.MIME);
         let arrayResult = new Uint8Array([99, 122, 69, 122]);
         expect(result.toString()).assertEqual(arrayResult);
-      } catch (e : BusinessError) {
-        expect(e.code).assertEqual(401)
-      }
-      catch(e :Error){
-        expect().assertFail();
+      } catch (e) {
+        e = e as Error;
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(401)
+        } else {
+          expect().assertFail();
+        }
       }
     })
 
@@ -412,11 +412,13 @@ export default function Util2Test() {
         base64Helper.encode(array, util.Type.MIME).then((val) => {
           expect(val.toString()).assertEqual("99,122,69,122");
         })
-      } catch (e : BusinessError) {
-        expect(e.code).assertEqual(401)
-      }
-      catch(e :Error){
-        expect().assertFail();
+      } catch (e) {
+        e = e as Error;
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(401)
+        } else {
+          expect().assertFail();
+        }
       }
     })
 
@@ -1084,7 +1086,7 @@ export default function Util2Test() {
     it('testUtil_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
       let result = pro.put(2, 10);
-      expect(result).assertEqual(10);
+      expect(result).assertEqual(undefined);
     })
 
     /**

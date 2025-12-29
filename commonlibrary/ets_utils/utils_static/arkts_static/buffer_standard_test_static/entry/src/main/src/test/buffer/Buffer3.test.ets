@@ -157,7 +157,7 @@ export default function bufferTest3() {
     it('testBuffer3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('this')).assertEqual(0);
-      expect(buf.lastIndexOf('buffer')).assertEqual(-1);
+      expect(buf.lastIndexOf('buffer')).assertEqual(17);
     })
 
     /**
@@ -171,7 +171,7 @@ export default function bufferTest3() {
     it('testBuffer3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('this', 0)).assertEqual(0);
-      expect(buf.lastIndexOf('buffer', 0, 'utf8' as buffer.BufferEncoding)).assertEqual(17);
+      expect(buf.lastIndexOf('buffer', 0, 'utf8' as buffer.BufferEncoding)).assertEqual(-1);
 
     })
 
@@ -293,7 +293,7 @@ export default function bufferTest3() {
     it('testBuffer3_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
       let obj = buf1.toJSON();
-      expect(JSON.stringify(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[1,2,3,4,5]}");
+      expect(JSON.stringifyJsonElement(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[1,2,3,4,5]}");
     })
 
     /**
@@ -307,7 +307,113 @@ export default function bufferTest3() {
     it('testBuffer3_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("abcdefg");
       let obj = buf1.toJSON();
-      expect(JSON.stringify(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[97,98,99,100,101,102,103]}");
+      expect(JSON.stringifyJsonElement(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[97,98,99,100,101,102,103]}");
+    })
+
+    /**
+     * @tc.name   testBuffer3_019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_019
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let str1 = "aaaa";
+      let result = buffer.isBuffer(str1);
+      expect(result).assertFalse();
+    })
+
+    /**
+     * @tc.name   testBuffer3_020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_020
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let result = buffer.isBuffer(buffer.alloc(10));
+      expect(result).assertTrue();
+    })
+
+    /**
+     * @tc.name   testBuffer3_021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_021
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let result = buffer.isEncoding('utf-8');
+      expect(result).assertTrue();
+      let result2 = buffer.isEncoding('');
+      expect(result2).assertFalse();
+    })
+
+    /**
+     * @tc.name   testBuffer3_022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_022
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let buf = buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
+      expect(buf.length).assertEqual(6);
+      expect(JSON.stringify(buf.buffer)).assertEqual("{}")
+      expect(buf.byteOffset).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBuffer3_023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_023
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let buf = buffer.allocUninitializedFromPool(6);
+      let result = buf.writeIntBE(0x1234567890ab, 0, 6);
+      expect(result).assertEqual(6);
+    })
+
+    /**
+     * @tc.name   testBuffer3_024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_024
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let buf = buffer.alloc(4);
+      buf[1] = 100;
+      buf[3] = 255;
+      let result1 = buf[1];
+      let result2 = buf[3];
+      expect(result1).assertEqual(100);
+      expect(result2).assertEqual(255);
+    })
+
+    /**
+     * @tc.name   testBuffer3_025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER3_025
+     * @tc.desc   Test the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBuffer3_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let blob: buffer.Blob  = new buffer.Blob(['a', 'b', 'c']);
+      let blob1: buffer.Blob = new buffer.Blob(['a', 'b', 'c'], {endings:'native', type: 'MIME'} as buffer.BlobOptions);
+      expect(blob1.size).assertEqual(3);
+      expect(blob1.type).assertEqual('MIME');
+      expect(blob.size).assertEqual(3);
+      expect(blob.type).assertEqual('');
     })
   })
 }

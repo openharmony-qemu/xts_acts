@@ -47,6 +47,26 @@
             ]
           }
         ]
+      },
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "EntryAbility1",
+        "srcEntry": "./ets/entryability1/EntryAbility1.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background"
       }
     ]
   }

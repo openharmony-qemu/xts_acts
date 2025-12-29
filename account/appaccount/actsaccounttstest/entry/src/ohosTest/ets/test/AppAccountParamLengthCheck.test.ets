@@ -1529,7 +1529,7 @@ export default function AppAccountParamLengthCheck() {
      * @tc.level  LEVEL3
      */
     it('AppAccountParamLengthCheck_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let tag = "====>AppAccountParamLengthCheck_3800 "
+      let tag = "====>AppAccountParamLengthCheck_5900 "
       console.info(tag + "start====");
       let name = '';
       for (let i = 0; i < 512 + 1; i++) {
@@ -1551,6 +1551,34 @@ export default function AppAccountParamLengthCheck() {
         onRequestContinued: () => {
           console.info(tag + "onRequestContinued");
         }
+      });
+    });
+
+    /**
+     * @tc.name   AppAccountParamLengthCheck_6000
+     * @tc.number AppAccountParamLengthCheck_6000
+     * @tc.desc   Parameter Length Check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('AppAccountParamLengthCheck_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>AppAccountParamLengthCheck_6000 "
+      console.info(tag + "start====");
+      let name = '';
+      for (let i = 0; i < 512; i++) {
+        name += 'i';
+      }
+      console.info(tag + "start checkAppAccess");
+      accountManager.checkAppAccess(name, "com.example.fake", (err, data) => {
+        console.info(tag + "err: " + JSON.stringify(err));
+        console.info(tag + "data: " + JSON.stringify(data));
+        try {
+          expect(err.code).assertEqual(12300003);
+        } catch (err) {
+          console.info(tag + "Assert Fail: " + JSON.stringify(err));
+        }
+        done();
       });
     });
   });

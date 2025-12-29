@@ -16,16 +16,27 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import ohosWindow from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@kit.TestKit';
 export default function windowErrCode401_1() {
   describe('windowErrCode401_1', () => {
     console.log('describe windowErrCode401_1 start!!!')
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context : common.UIAbilityContext;
     let windowStage:ohosWindow.WindowStage;
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     /**
      * @tc.name   testShiftAppWindowFocusPromiseErrCode401_0100

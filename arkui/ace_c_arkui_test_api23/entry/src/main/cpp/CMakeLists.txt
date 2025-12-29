@@ -31,6 +31,9 @@ add_library(nativerender SHARED
     text/TextCompressLeadingPunctuationTest.cpp
     textArea/TextAreaCompressLeadingPunctuationTest.cpp
     textInput/TextInputCompressLeadingPunctuationTest.cpp
+    distance/DistanceTest.cpp
+    hoverEffect/HoverEffectTest.cpp
+    monopolize/MonopolizeTest.cpp
 )
 
 add_library(nativefunc SHARED

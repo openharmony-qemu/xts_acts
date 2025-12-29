@@ -112,6 +112,7 @@ int SUBAIMindSporeContextCreate0001()
     OHPrintf("==========OH_AI_ModelGetInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
+    ASSERT_NE(inputs.handle_num, 0);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
     OH_AI_TensorHandleArray outputs;

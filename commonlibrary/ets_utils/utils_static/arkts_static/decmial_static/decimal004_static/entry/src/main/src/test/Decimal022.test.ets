@@ -275,7 +275,8 @@ export default function DecimalTest022() {
       try {
         test_tan_001('e', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

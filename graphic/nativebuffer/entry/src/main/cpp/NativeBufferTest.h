@@ -18,6 +18,64 @@
 
 #include "napi/native_api.h"
 #include <native_buffer/native_buffer.h>
+#include <native_window/graphic_error_code.h>
+#define FAIL (-1)
+#define NUMBER_MINUS_1 (-1)
+#define NUMBER_0 0
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_5 5
+#define NUMBER_6 6
+#define NUMBER_7 7
+#define NUMBER_8 8
+#define NUMBER_9 9
+#define NUMBER_10 10
+#define NUMBER_11 11
+#define NUMBER_12 12
+#define NUMBER_13 13
+#define NUMBER_14 14
+#define NUMBER_15 15
+#define NUMBER_16 16
+#define NUMBER_17 17
+#define NUMBER_18 18
+#define NUMBER_19 19
+#define NUMBER_20 20
+#define NUMBER_32 32
+#define NUMBER_50 50
+#define NUMBER_60 60
+#define NUMBER_100 100
+#define NUMBER_200 200
+#define NUMBER_500 500
+#define NUMBER_1000 1000
+#define NUMBER_1001 1001
+#define NUMBER_1002 1002
+#define NUMBER_2001 2001
+#define NUMBER_2002 2002
+#define NUMBER_2999 2999
+#define NUMBER_3000 3000
+#define NUMBER_3001 3001
+#define NUMBER_3002 3002
+#define NUMBER_3003 3003
+#define NUMBER_4001 4001
+#define NUMBER_4002 4002
+#define NUMBER_4003 4003
+#define NUMBER_5000 5000
+#define NUMBER_5001 5001
+#define NUMBER_5002 5002
+#define NUMBER_5003 5003
+#define NUMBER_6001 6001
+#define NUMBER_6002 6002
+#define NUMBER_6003 6003
+#define NUMBER_7001 7001
+#define NUMBER_7002 7002
+#define NUMBER_8001 8001
+#define NUMBER_8002 8002
+#define NUMBER_8003 8003
+#define NUMBER_10000 10000
+#define NUMBER_100000000 100000000
+#define NUMBER_0X001 0x001
 
 napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info);
@@ -104,4 +162,5 @@ napi_value OHNativeBufferReadFromParcelNormal(napi_env env, napi_callback_info i
 napi_value OHNativeBufferReadFromParcelNull(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

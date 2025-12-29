@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, ShadowStyle,  TimePickerDialogOptions,Color,DialogAlignment,
-  ButtonStyleMode, ButtonRole, FontStyle, TextPickerDialogOptions, TextPickerResult} from '@ohos.arkui.component'
+  Row, ClickEvent, Margin, ButtonType, ShadowStyle, Color,DialogAlignment,
+  ButtonStyleMode, ButtonRole, FontStyle, TextPickerResult, TextPickerDialogOptions} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
@@ -86,7 +86,7 @@ struct TextPickerDialogExampleA {
                 events_emitter.emit(event, eventData)
                 console.info("TextPickerDialog: onDidDisappear()")
               },
-            })
+            } as TextPickerDialogOptions)
           })
       }.width('100%')
     }.height('100%')

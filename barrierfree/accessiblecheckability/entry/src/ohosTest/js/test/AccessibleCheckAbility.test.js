@@ -211,6 +211,133 @@ describe('AccessibleCheckAbility', function () {
             console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0800 failed to getTouchModeSync because ' + JSON.stringify(exception));
         }
     })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300
+     * @tc.desc   Test isAnimationReduceEnabled() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300');
+
+        accessibility.isAnimationReduceEnabled().then((result) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300 result: ${result}`);
+            expect(typeof (result)).assertEqual('boolean');
+            done();
+        }).catch((err) => {
+            console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0300 has error: ${err.code}`);
+            expect(null).assertFail();
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500
+     * @tc.desc   The result of isAnimationReduceEnabledSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500');
+        try {
+            let status = accessibility.isAnimationReduceEnabledSync();
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500 result: ${status}`);
+            expect(typeof (status)).assertEqual('boolean');
+            done();
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0500 failed to isAnimationReduceEnabledSync because ' + JSON.stringify(exception));
+        }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300
+     * @tc.desc   Test isAudioMonoEnabled() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300');
+
+        accessibility.isAudioMonoEnabled().then((result) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300 result: ${result}`);
+            expect(typeof (result)).assertEqual('boolean');
+            done();
+        }).catch((err) => {
+            console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0300 has error: ${err.code}`);
+            expect(null).assertFail();
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500
+     * @tc.desc   The result of isAudioMonoEnabledSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500');
+        try {
+            let status = accessibility.isAudioMonoEnabledSync();
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500 result: ${status}`);
+            expect(typeof (status)).assertEqual('boolean');
+            done();
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0500 failed to isAudioMonoEnabledSync because ' + JSON.stringify(exception));
+        }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300
+     * @tc.desc   Test isFlashReminderEnabled() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300');
+
+        accessibility.isFlashReminderEnabled().then((result) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300 result: ${result}`);
+            expect(typeof (result)).assertEqual('boolean');
+            done();
+        }).catch((err) => {
+            console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0300 has error: ${err.code}`);
+            expect(null).assertFail();
+            done();
+        });
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500
+     * @tc.desc   The result of isFlashReminderEnabledSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500');
+        try {
+            let status = accessibility.isFlashReminderEnabledSync();
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500 result: ${status}`);
+            expect(typeof (status)).assertEqual('boolean');
+            done();
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0500 failed to isFlashReminderEnabledSync because ' + JSON.stringify(exception));
+        }
+    })
+
 })
 
 }

@@ -32,6 +32,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_api11/ace_ets_module_layout_03_api11_static:ActsAceEtsModuleLayout03Api11StaticTest",
       "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11_static:ActsAceEtsModuleLayout04Api11StaticTest",
       "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11_static:ActsAceEtsModuleLayout05Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_06_api11_static:ActsAceEtsModuleLayout06Api11StaticTest",
       "ace_ets_module_layout_column:ActsAceEtsModuleLayoutColumnTest",
       "ace_ets_module_layout_row:ActsAceEtsModuleLayoutRowTest",
       "ace_ets_module_layout_stack:ActsAceEtsModuleLayoutStackTest",
@@ -43,6 +44,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_blank:ActsAceEtsModuleLayoutBlankTest",
       "ace_ets_module_layout_divider:ActsAceEtsModuleLayoutDividerTest",
       "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
       "ace_ets_module_layout_api14_static:ActsAceEtsModuleLayoutApi14StaticTest",
       "ace_ets_module_layout_api18_static:ActsAceEtsModuleLayoutApi18StaticTest",
     ]
@@ -63,6 +65,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_api11/ace_ets_module_layout_03_api11_static:ActsAceEtsModuleLayout03Api11StaticTest",
       "ace_ets_module_layout_api11/ace_ets_module_layout_04_api11_static:ActsAceEtsModuleLayout04Api11StaticTest",
       "ace_ets_module_layout_api11/ace_ets_module_layout_05_api11_static:ActsAceEtsModuleLayout05Api11StaticTest",
+      "ace_ets_module_layout_api11/ace_ets_module_layout_06_api11_static:ActsAceEtsModuleLayout06Api11StaticTest",
       "ace_ets_module_layout_nowear_api11:ActsAceEtsModuleLayoutNowearApi11Test",
       "ace_ets_module_layout_nowear_api12:ActsAceEtsModuleLayoutNowearApi12Test",
       "ace_ets_module_layout_column:ActsAceEtsModuleLayoutColumnTest",
@@ -78,8 +81,11 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_nowear_folderStack:ActsAceEtsModuleLayoutNowearFolderStackTest",
       "ace_ets_module_layout_nowear_columnSplit_rowSplit:ActsAceEtsModuleLayoutNowearColumnSplitRowSplitTest",
       "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
       "ace_ets_module_layout_api14_static:ActsAceEtsModuleLayoutApi14StaticTest",
       "ace_ets_module_layout_api18_static:ActsAceEtsModuleLayoutApi18StaticTest",
+      "ace_ets_module_layout_nowear_api11_static:ActsAceEtsModuleLayoutNowearApi11StaticTest",
+      "ace_ets_module_layout_nowear_api12_static:ActsAceEtsModuleLayoutNowearApi12StaticTest",
     ]
   }
 }

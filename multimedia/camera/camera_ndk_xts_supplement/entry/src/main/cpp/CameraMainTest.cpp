@@ -42,6 +42,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHCaptureSessionDeleteSupportedEffectTypes", OHCaptureSessionDeleteSupportedEffectTypes),
     DESCRIPTOR("OHCameraInputOpenConcurrentCameras", OHCameraInputOpenConcurrentCameras),
     DESCRIPTOR("OHCaptureSessionGetSupportedEffectTypesSupp", OHCaptureSessionGetSupportedEffectTypesSupp),
+    DESCRIPTOR("captureSessionRegisterIsoChangeCallback", captureSessionRegisterIsoChangeCallback),
+    DESCRIPTOR("captureSessionUnregisterIsoChangeCallback", captureSessionUnregisterIsoChangeCallback),
 };
 
 EXTERN_C_START 

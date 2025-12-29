@@ -97,7 +97,6 @@ export default function RelationStoreError32Test() {
     })
 
     afterEach(async (): Promise<void> => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
 

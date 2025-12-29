@@ -74,6 +74,21 @@ export default function windowFocusTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let mainWindowId = windowClass.getWindowProperties().id;
+      console.info(`beforeall mainWindowId: ${mainWindowId}`);
+      let topWindow = await window.getLastWindow(context);
+      let topWindowId = topWindow.getWindowProperties().id;
+      console.info(`beforeall topWindowId: ${topWindowId}`);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     afterEach(async ()=>{
       try {

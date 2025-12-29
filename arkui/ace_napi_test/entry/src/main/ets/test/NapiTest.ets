@@ -14336,5 +14336,68 @@ export default function napiApiTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   testNapiThrowBusinessError0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_NAPITHROWBUSINESSERROR_0001
+     * @tc.desc   Testing NapiThrowBusinessError normal function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNapiThrowBusinessError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('testNapiThrowBusinessError0001 START');
+      try {
+        let value : number = napitest.NapiThrowBusinessError();
+        console.info('NapiThrowBusinessError result is: ' + value);
+        expect().assertFail();
+      } catch (err) {
+        console.error('NapiThrowBusinessError err msg' + err.message);
+        expect(JSON.stringify(err)).assertEqual('{"code":100}');
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testNapiThrowBusinessError0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_NAPITHROWBUSINESSERROR_0002
+     * @tc.desc   Testing NapiThrowBusinessError function when parameters are null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */    
+    it('testNapiThrowBusinessError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('testNapiThrowBusinessError0002 START');
+      try {
+        let value : number = napitest.NapiThrowBusinessErrorPar();
+        console.info('NapiThrowBusinessErrorPar result is: ' + value);
+        expect(value).assertEqual(0);
+      } catch (err) {
+        console.error('NapiThrowBusinessErrorPar err msg' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   testNapiThrowBusinessError0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_NAPITHROWBUSINESSERROR_0003
+     * @tc.desc   Testing NapiThrowBusinessError function when parameters are null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */    
+    it('testNapiThrowBusinessError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('testNapiThrowBusinessError0003 START');
+      try {
+        let value : number = napitest.NapiThrowBusinessErrorPendingError();
+        console.info('NapiThrowBusinessErrorPendingError result is: ' + value);
+        expect(value).assertEqual(0);
+      } catch (err) {
+        console.error('NapiThrowBusinessErrorPendingError err msg' + err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }

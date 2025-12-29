@@ -24,6 +24,7 @@
 #include <resourcemanager/ohresmgr.h>
 #include <string>
 #include <sstream>
+#include <resourcemanager/resmgr_common.h>
 
 const int SUBLEN = 100;
 static napi_value GetFileList(napi_env env, napi_callback_info info)
@@ -1446,7 +1447,6 @@ static napi_value testGetDoublePluralStringByName142(napi_env env, napi_callback
     return value;
 }
 
-
 static napi_value GetResourceConfiguration(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1458,6 +1458,144 @@ static napi_value GetResourceConfiguration(napi_env env, napi_callback_info info
     ResourceManager_ErrorCode codeTwo = OH_ResourceManager_ReleaseConfiguration(&config);
 
     bool flag = (code == 0 && codeTwo == 0);
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value GetRawFileDescriptorFalseOrTrue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+    RawFile *rawFileError = OH_ResourceManager_OpenRawFile(mNativeResMgr, "test");
+    RawFileDescriptor descriptor;
+    bool resultTrue = OH_ResourceManager_GetRawFileDescriptor(rawFile, descriptor);
+    bool resultTrueRelease = OH_ResourceManager_ReleaseRawFileDescriptor(descriptor);
+    bool resultFalse = OH_ResourceManager_GetRawFileDescriptor(rawFileError, descriptor);
+    bool resultFalseRelease = OH_ResourceManager_ReleaseRawFileDescriptor(descriptor);
+    
+    OH_ResourceManager_CloseRawFile(rawFile);
+    OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value GetRawFileDescriptorDataFalseOrTrue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, filename.c_str());
+    RawFile *rawFileError = OH_ResourceManager_OpenRawFile(mNativeResMgr, "test");
+    RawFileDescriptor *descriptor = new RawFileDescriptor();
+    bool resultTrue = OH_ResourceManager_GetRawFileDescriptorData(rawFile, descriptor);
+    bool resultTrueRelease = OH_ResourceManager_ReleaseRawFileDescriptorData(descriptor);
+    bool resultFalse = OH_ResourceManager_GetRawFileDescriptorData(rawFileError, descriptor);
+    bool resultFalseRelease = OH_ResourceManager_ReleaseRawFileDescriptorData(descriptor);
+    
+    OH_ResourceManager_CloseRawFile(rawFile);
+    OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value GetRawFileDescriptor64FalseOrTrue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);
+    RawFile64 *rawFile = OH_ResourceManager_OpenRawFile64(mNativeResMgr, filename.c_str());
+    RawFile64 *rawFileError = OH_ResourceManager_OpenRawFile64(mNativeResMgr, "test");
+    RawFileDescriptor64 *descriptor = new RawFileDescriptor64();
+    bool resultTrue = OH_ResourceManager_GetRawFileDescriptor64(rawFile, descriptor);
+    bool resultTrueRelease = OH_ResourceManager_ReleaseRawFileDescriptor64(descriptor);
+    bool resultFalse = OH_ResourceManager_GetRawFileDescriptor64(rawFileError, descriptor);
+    bool resultFalseRelease = OH_ResourceManager_ReleaseRawFileDescriptor64(descriptor);
+    
+    OH_ResourceManager_CloseRawFile64(rawFile);
+    OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value InitNativeRsMgrOpenRawDirRawFile64Null(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    RawDir *rawDir = OH_ResourceManager_OpenRawDir(mNativeResMgr, "test");
+    RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, "test");
+    RawFile64 *rawFile64 = OH_ResourceManager_OpenRawFile64(mNativeResMgr, "test");
+
+    bool flag = ((mNativeResMgr == nullptr) && (rawDir == nullptr) &&
+                (rawFile == nullptr) && (rawFile64 == nullptr));
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value IsRawDirTrue(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    size_t strSize;
+    char strBuf[256];
+    napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
+    std::string filename(strBuf, strSize);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    bool result = OH_ResourceManager_IsRawDir(mNativeResMgr, filename.c_str());
+    bool flag = result;
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
+static napi_value GetDirectionVertical(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    ResourceManager_Configuration config;
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    OH_ResourceManager_GetResourceConfiguration(mNativeResMgr, &config);
+    config.direction = ResourceManager_Direction::DIRECTION_VERTICAL;
+    bool flag = (config.direction == ResourceManager_Direction::DIRECTION_VERTICAL);
+    OH_ResourceManager_ReleaseConfiguration(&config);
+
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
     return value;
@@ -1552,6 +1690,17 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testGetDoublePluralStringByName142", nullptr, testGetDoublePluralStringByName142, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"getResourceConfiguration", nullptr, GetResourceConfiguration, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"getRawFileDescriptorFalseOrTrue", nullptr, GetRawFileDescriptorFalseOrTrue, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"getRawFileDescriptorDataFalseOrTrue", nullptr, GetRawFileDescriptorDataFalseOrTrue, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"getRawFileDescriptor64FalseOrTrue", nullptr, GetRawFileDescriptor64FalseOrTrue, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"initNativeRsMgrOpenRawDirRawFile64Null", nullptr, InitNativeRsMgrOpenRawDirRawFile64Null, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"isRawDirTrue", nullptr, IsRawDirTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getDirectionVertical", nullptr, GetDirectionVertical, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
 

@@ -285,12 +285,12 @@ export function avVideoRecorderTestOne() {
     }
     beforeAll(async () => {
       screen = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
-      console.info('beforeAll in1');
+      console.info(TAG + 'beforeAll in1');
       let context: common.UIAbilityContext;
       context = globalThis.getContext();
-      console.info('initCamera 002');
+      console.info(TAG + 'initCamera 002');
       cameraManager = camera.getCameraManager(context)
-      console.info('initCamera 003');
+      console.info(TAG + 'initCamera 003');
       if (!cameraManager) {
         console.error("camera.getCameraManager error")
         return new Promise<void>((resolve, reject) => {
@@ -299,34 +299,37 @@ export function avVideoRecorderTestOne() {
       }
       let cameras = cameraManager.getSupportedCameras();
       let cameraDevice = cameras[0];
-      console.info('initCamera 006');
-      let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
-      if (cameraOutputCapability?.videoProfiles) {
-        console.info('initCamera 007');
-        try {
-          let availableVideoProfileList: camera.VideoProfile[] = [];
-          getVideoProfile(cameraOutputCapability.videoProfiles, 720, 1280,
-            availableVideoProfileList, 0);
-          myProfile = availableVideoProfileList[0];
-          let configs =
-            [avConfig, avConfigMpeg, avConfigMpegAac, avConfigH264, avConfigH264Aac, avConfigH265, avConfigH265Aac]
-          for (let i = 0; i < configs.length; i++) {
-            checkDevice(configs[i])
+      console.info(TAG + 'initCamera 006');
+      try {
+        let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
+        console.info(TAG + 'initCamera cameraOutputCapability ' + JSON.stringify(cameraOutputCapability));
+        if (cameraOutputCapability?.videoProfiles) {
+          console.info(TAG + 'initCamera 007');
+          try {
+            let availableVideoProfileList: camera.VideoProfile[] = [];
+            getVideoProfile(cameraOutputCapability.videoProfiles, 720, 1280,
+              availableVideoProfileList, 0);
+            myProfile = availableVideoProfileList[0];
+            let configs =
+              [avConfig, avConfigMpeg, avConfigMpegAac, avConfigH264, avConfigH264Aac, avConfigH265, avConfigH265Aac]
+            for (let i = 0; i < configs.length; i++) {
+              checkDevice(configs[i])
+            }
+            avConfigH264.profile.videoBitrate = 280000;
+            avConfigH264Aac.profile.videoBitrate = 280000;
+          } catch (exception) {
+            console.error(TAG + 'Failed to obtain the default display object. Code: ' + JSON.stringify(exception));
           }
-          avConfigH264.profile.videoBitrate = 280000;
-          avConfigH264Aac.profile.videoBitrate = 280000;
-        } catch (exception) {
-          console.error('Failed to obtain the default display object. Code: ' + JSON.stringify(exception));
+          console.info('beforeAll out');
+        } else {
+          isSupportCameraVideoProfiles = false;
+          console.error(TAG + 'Failed to obtain the default videoProfiles object.Not support usb camera');
+          console.error(TAG + 'beforeAll out');
         }
-        console.info('beforeAll out');
-
-      } else {
-        isSupportCameraVideoProfiles = false;
-        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
-        console.info('beforeAll out');
+      } catch (exception) {
+        console.error(TAG + 'getSupportedOutputCapability error: ' + JSON.stringify(exception));
       }
-
-      console.info('beforeAll out');
+      console.info(TAG + 'beforeAll out');
     })
 
     beforeEach(async () => {
@@ -10926,7 +10929,7 @@ export function executeAVVideoRecorder(): boolean {
     let context: common.UIAbilityContext = globalThis.getContext();
     mCameraManager = camera.getCameraManager(context);
     if (isEmpty(mCameraManager)) {
-      console.info(TAG + "getCameraManager FAILED");
+      console.error(TAG + "getCameraManager FAILED");
       isExecute = false;
       return isExecute;
     }
@@ -10934,6 +10937,21 @@ export function executeAVVideoRecorder(): boolean {
     mCameraDevicesArray = mCameraManager.getSupportedCameras();
     if (isEmpty(mCameraDevicesArray)) {
       isSupportedCameras = false;
+    }
+    // 获取支持的模式类型。
+    let sceneModes: Array<camera.SceneMode> = mCameraManager.getSupportedSceneModes(mCameraDevicesArray[0]);
+    let isSupportVideoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_VIDEO) >= 0;
+      console.error(TAG + 'isSupportVideoMode: ' + isSupportVideoMode);
+    if (!isSupportVideoMode) {
+      console.error(TAG + 'video mode not support');
+      isExecute = false;
+      return isExecute;
+    }
+    let cameraOutputCapability = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0], camera.SceneMode.NORMAL_VIDEO);
+    if (!cameraOutputCapability?.videoProfiles) {
+      console.error(TAG + 'videoProfiles not support camera');
+      isExecute = false;
+      return isExecute;
     }
   } catch (err) {
     console.error(TAG + "getCameraManager FAILED. errorMessage:", err);

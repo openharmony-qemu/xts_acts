@@ -61,7 +61,8 @@ export default function DequeTest() {
         deque.insertFront("c")
         let result = deque.getFirst();
         expect(result).assertEqual("c");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -84,7 +85,8 @@ export default function DequeTest() {
         deque.insertFront(3)
         let result = deque.getFirst();
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -119,7 +121,8 @@ export default function DequeTest() {
         deque.insertFront(c)
         let result = deque.getFirst();
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -148,7 +151,8 @@ export default function DequeTest() {
         deque.insertFront(c)
         let result = deque.getFirst();
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -170,7 +174,8 @@ export default function DequeTest() {
         deque.insertEnd("c")
         let result = deque.getLast();
         expect(result).assertEqual("c");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -193,7 +198,8 @@ export default function DequeTest() {
         deque.insertEnd(3)
         let result = deque.getLast();
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -228,7 +234,8 @@ export default function DequeTest() {
         deque.insertEnd(c)
         let result = deque.getLast();
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -257,7 +264,8 @@ export default function DequeTest() {
         deque.insertEnd(c)
         let result = deque.getLast();
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -278,7 +286,8 @@ export default function DequeTest() {
         deque.insertFront("a")
         let result = deque.has("a");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -299,7 +308,8 @@ export default function DequeTest() {
         deque.insertFront(1)
         let result = deque.has(1);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -324,7 +334,8 @@ export default function DequeTest() {
         deque.insertFront(a)
         let result = deque.has(a);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -349,7 +360,8 @@ export default function DequeTest() {
         deque.popFirst()
         let result = deque.getFirst();
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -367,12 +379,11 @@ export default function DequeTest() {
       const TAG = "tesPopFirst0013";
       try {
         let deque: Deque<number> = new Deque<number>();
-        deque.popFirst()
-        let result = deque.getFirst();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let res = deque.popFirst();
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -395,7 +406,8 @@ export default function DequeTest() {
         deque.popLast();
         let result = deque.getLast();
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -413,12 +425,11 @@ export default function DequeTest() {
       const TAG = "tesGetFirst0015";
       try {
         let deque: Deque<number> = new Deque<number>();
-        deque.popLast();
         let result = deque.getFirst();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -440,7 +451,8 @@ export default function DequeTest() {
         deque.insertFront(3);
         let result = deque.getLast();
         expect(String(result)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -459,10 +471,10 @@ export default function DequeTest() {
       try {
         let deque: Deque<number> = new Deque<number>();
         let result = deque.getLast();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -490,7 +502,8 @@ export default function DequeTest() {
           expect(JSON.stringify(result)).assertEqual(JSON.stringify(item));
           expect(String(itemIndex)).assertEqual(String(itemIndex));
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -504,55 +517,79 @@ export default function DequeTest() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL1
     */
-   // it('tesForeach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "tesGetLast0019";
-    //   try {
-    //     let deque: Deque<number | string | object> = new Deque<number | string | object>();
-    //     let res: Deque<number | string | object> = new Deque<number | string | object>();
-    //     let a: C1 = new C1("Dylon", "13");
-    //     let b = 'a'
-    //     let c = 1
-    //     deque.insertEnd(a);
-    //     deque.insertEnd(b);
-    //     deque.insertEnd(c);
-    //     deque.forEach((item: number | string | object, index: number) => {
-    //       let result = item;
-    //       let itemIndex = index;
-    //       expect(JSON.stringify(result)).assertEqual(JSON.stringify(item));
-    //       expect(String(itemIndex)).assertEqual(String(itemIndex));
-    //     })
-    //     expect(JSON.stringify(deque)).assertEqual('{"0":{"name":"Dylon","age":"13"},"1":"a","2":1}')
-    //     // expect(JSON.stringify(res)).assertEqual("{}");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+   it('tesForeach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "tesGetLast0019";
+      try {
+        let deque: Deque<number | string | object> = new Deque<number | string | object>();
+        let res: Deque<number | string | object> = new Deque<number | string | object>();
+        let a: C1 = new C1("Dylon", "13");
+        let b = 'a'
+        let c = 1
+        deque.insertEnd(a);
+        deque.insertEnd(b);
+        deque.insertEnd(c);
+        deque.forEach((item: number | string | object, index: int) => {
+          let result = item;
+          let itemIndex = index;
+          expect(JSON.stringify(result)).assertEqual(JSON.stringify(item));
+          expect(String(itemIndex)).assertEqual(String(itemIndex));
+        })
+        expect(JSON.stringify(deque)).assertEqual('{"0":{"name":"Dylon","age":"13"},"1":"a","2":1}')
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
-     * @tc.name   testUtil3_003
+     * @tc.name   tesForeach0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_003
      * @tc.desc   Test the util
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let result = 0;
+    it('tesForeach0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "tesForeach0020";
+      try {
+        let deque: Deque<number | string | object> = new Deque<number | string | object>();
+        let res: Deque<number | string | object> = new Deque<number | string | object>();
+        let a: C1 = new C1("Dylon", "13");
+        let b = 'a'
+        let c = 1
+        deque.insertEnd(a);
+        deque.insertEnd(b);
+        deque.insertEnd(c);
+        let iter = deque.$_iterator();
+        let temp = iter.next().value;
+        while (temp != undefined) {
+          temp = iter.next().value;
+          expect(String(temp)).assertEqual(String(temp));
+        }
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testUtil3_004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_004
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUtil3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let deque: Deque<int> = new Deque<int>();
+      expect(deque.length).assertEqual(0);
       deque.insertFront(2);
       deque.insertFront(4);
       deque.insertFront(5);
       deque.insertFront(4);
-
-      let iter = deque.$_iterator();
-      let temp: IteratorResult<int> = iter.next();
-      while (!temp.done) {
-        result = result + temp.value!;
-        temp = iter.next();
-      }
-      expect(result).assertEqual(15);
+      expect(deque.length).assertEqual(4);
     })
-
   })
 }

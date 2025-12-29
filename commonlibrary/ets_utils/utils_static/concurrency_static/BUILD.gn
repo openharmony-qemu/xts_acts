@@ -32,6 +32,9 @@ group("concurrency_static") {
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
       "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
       "timer_test_static:ActsTimerStaticTest",
+      "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
+      "lock_test_static:ActsLockStaticTest",
+      "workerLocal_test_static:ActsWorkerLocalStaticTest",
     ]
 
   }
