@@ -15,42 +15,41 @@
  */
 
 import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges, ColumnOptions,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row, /*ItemRestriction, SegmentButton,SegmentButtonIconItem,
-  SegmentButtonOptions, SegmentButtonTextItem, SegmentButtonItemTuple*/
+  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row,BlurStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { SegmentButtonOptions, ItemRestriction,SegmentButtonIconTextItem, SegmentButton, SegmentButtonItemOptions } from '@ohos.arkui.advanced.SegmentButton'
 
 @Entry
 @Component
 struct SegmentButton005 {
-  // @State singleSelectCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
-  //   buttons:
-  //   [new SegmentButtonItemOptions({
-  //     text: 'splice1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //     selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //     accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'
-  //   }),
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'},
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'},
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'}
-  //   ] as SegmentButtonItemTuple,
-  //   multiply: true,
-  //   backgroundBlurStyle: BlurStyle.BACKGROUND_THICK
-  // })
+  @State singleSelectCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
+    buttons:
+    [
+      { text: 'splice1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonItemOptions'}
+    ] as ItemRestriction<SegmentButtonIconTextItem>,
+    multiply: true,
+    backgroundBlurStyle: BlurStyle.BACKGROUND_THICK
+  })
   @State capsuleSelectedIndexes: int[] = [0]
 
   build() {
     Row() {
       Column() {
         Column({ space: 10 } as ColumnOptions) {
-          // SegmentButton({ options: this.singleSelectCapsuleOptions,
-          //   selectedIndexes: $capsuleSelectedIndexes })
+          SegmentButton({ options: this.singleSelectCapsuleOptions,
+            selectedIndexes: this.capsuleSelectedIndexes })
         }.width('90%')
       }.width('100%')
     }.height('100%')

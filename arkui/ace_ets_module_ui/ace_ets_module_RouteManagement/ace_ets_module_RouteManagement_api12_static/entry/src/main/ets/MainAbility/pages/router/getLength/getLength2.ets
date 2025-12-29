@@ -44,7 +44,7 @@ struct getLength2 {
         .id('getLength2_get')
         .onClick((e:ClickEvent)=>{
           this.sizeValue = this.getUIContext().getRouter().getLength()
-          AppStorage.setOrCreate('getLength2_size', this.sizeValue)
+          AppStorage.setOrCreate<string>('getLength2_size', this.sizeValue)
         })
 
       Button('pushUrl30')

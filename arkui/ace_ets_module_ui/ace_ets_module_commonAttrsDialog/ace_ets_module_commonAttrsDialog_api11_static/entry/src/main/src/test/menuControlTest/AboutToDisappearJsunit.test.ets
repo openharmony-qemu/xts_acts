@@ -78,8 +78,9 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("aboutToDisappearTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-
-        expect(((indexEvent.data) as ESObject)?.getProperty("ACTION")).assertEqual(false);
+        const data = indexEvent.data as Record<string, Object | undefined | null>
+        const event = data['ACTION'] as Record<string, Object | undefined | null>
+        expect(event).assertEqual(false);
         done();
       }
       let indexEvent: events_emitter.InnerEvent = {

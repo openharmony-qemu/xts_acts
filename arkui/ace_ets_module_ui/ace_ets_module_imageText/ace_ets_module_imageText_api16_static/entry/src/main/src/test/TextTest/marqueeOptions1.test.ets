@@ -86,7 +86,7 @@ it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Pro
       await CommonFunc.sleep(2000);
       console.info('marqueeOptionsTest1_static_001 -----22',JSON.parseJsonElement(marqueeOptions).getElement('$attrs'));
       expect(marq.getBoolean('start')).assertTrue();
-      expect(Math.abs(Number(marq.getString('step')) - UIContext.getFocusedUIContext()!.vp2px(6)) <= 1).assertTrue();
+      expect(Math.abs(Number(marq.getString('step')) - UIContext.resolveUIContext()!.vp2px(6)) <= 1).assertTrue();
       expect(Number(marq.getString('loop')) == -1).assertTrue();
       expect(Number(marq.getString('delay')) == 0).assertTrue();
       expect(marq.getBoolean('fadeout')).assertFalse();

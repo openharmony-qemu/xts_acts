@@ -35,18 +35,18 @@ struct datePickerDialog2 {
             // showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            // backgroundEffect: {
-            //   radius: 40.0,
-              // saturation: 25,
-              // brightness: 2,
-              // color: Color.Pink,
-              // adaptiveColor: AdaptiveColor.DEFAULT,
-              // policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              // inactiveColor:Color.Blue,
-              // blurOptions: {
-              //   grayscale: [20,20]
-              // }
-            // } as BackgroundEffectOptions
+            backgroundEffect: {
+              radius: 40.0,
+              saturation: 25,
+              brightness: 2,
+              color: Color.Pink,
+              adaptiveColor: AdaptiveColor.DEFAULT,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
+              blurOptions: {
+                grayscale: [20,20]
+              }
+            } as BackgroundEffectOptions
           })
         })
       Button('DatePickerDialog_Effect002')

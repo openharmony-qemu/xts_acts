@@ -15,39 +15,39 @@
  */
 
 import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row, /*ItemRestriction,SegmentButton,SegmentButtonIconItem,
-  SegmentButtonOptions, SegmentButtonTextItem, SegmentButtonItemTuple*/
+  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { SegmentButtonOptions, ItemRestriction,SegmentButtonIconTextItem, SegmentButton } from '@ohos.arkui.advanced.SegmentButton'
 
 @Entry
 @Component
 struct SegmentButton004 {
-  // @State iconTextCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
-  //   buttons: [
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
-  //     { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'}
-  //   ] as SegmentButtonItemTuple,
-  //   multiply: true
-  // })
+  @State iconTextCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
+    buttons: [
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'},
+      { text: '图标1', icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'SegmentButtonIconTextItem'}
+    ] as ItemRestriction<SegmentButtonIconTextItem>,
+    multiply: true
+  })
   @State multiplySelectIconTextCapsuleSelectedIndexes: int[] = [1, 2]
 
   build() {
     Row() {
       Column() {
         Column({ space: 25 } as ColumnOptions) {
-          // SegmentButton({ options: this.iconTextCapsuleOptions,
-          //   selectedIndexes: $multiplySelectIconTextCapsuleSelectedIndexes })
+          SegmentButton({ options: this.iconTextCapsuleOptions,
+            selectedIndexes: this.multiplySelectIconTextCapsuleSelectedIndexes })
         }.width('90%')
       }.width('100%')
     }.height('100%')

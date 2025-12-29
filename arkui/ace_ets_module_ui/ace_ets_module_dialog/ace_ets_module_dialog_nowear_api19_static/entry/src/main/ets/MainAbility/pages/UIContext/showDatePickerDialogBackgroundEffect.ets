@@ -32,18 +32,18 @@ struct ShowDatePickerDialog2 {
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
-            // backgroundEffect: {
-            //   radius: 40,
-            //   saturation: 25,
-            //   brightness: 2,
-            //   color: Color.Pink,
-            //   adaptiveColor: AdaptiveColor.DEFAULT,
-            //   policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
-            //   inactiveColor:Color.Blue,
-            //   blurOptions: {
-            //     grayscale: [20,20]
-            //   }
-            // } as BackgroundEffectOptions
+            backgroundEffect: {
+              radius: 40,
+              saturation: 25,
+              brightness: 2,
+              color: Color.Pink,
+              adaptiveColor: AdaptiveColor.DEFAULT,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
+              blurOptions: {
+                grayscale: [20,20]
+              }
+            } as BackgroundEffectOptions
           })
         })
       Button('ShowDatePickerDialog_Effect002')

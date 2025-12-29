@@ -19,5 +19,5 @@ import detentSelection from './bindSheet/detentSelection.test'
 
 export default function testsuite() {
   popupKeyboardAvoidMode() //pass:4
-  detentSelection() //pass:1
+  detentSelection() //pass:2
 }

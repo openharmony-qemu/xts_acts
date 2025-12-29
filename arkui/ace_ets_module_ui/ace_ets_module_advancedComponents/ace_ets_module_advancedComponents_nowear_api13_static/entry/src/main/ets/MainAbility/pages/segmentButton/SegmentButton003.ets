@@ -16,40 +16,39 @@
 
 
 import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row, /*ItemRestriction,SegmentButton,SegmentButtonIconItem,
-  SegmentButtonOptions, SegmentButtonTextItem, SegmentButtonItemTuple*/
+  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row,BlurStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-
+import { SegmentButtonOptions, ItemRestriction,SegmentButtonIconItem, SegmentButton } from '@ohos.arkui.advanced.SegmentButton'
 @Entry
 @Component
 struct SegmentButton003 {
-  // @State iconCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
-  //   buttons: [
-  //     { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
-  //     { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
-  //     { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
-  //     { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
-  //       selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
-  //       accessibilityLevel: 'yes', accessibilityDescription: 'Description'}
-  //   ] as SegmentButtonItemTuple,
-  //   multiply: false,
-  //   backgroundBlurStyle: BlurStyle.BACKGROUND_THICK
-  // })
+  @State iconCapsuleOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
+    buttons: [
+      { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
+      { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
+      { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'Description'},
+      { icon: $r('sys.media.ohos_ic_public_email'), iconAccessibilityText: 'notSelect',
+        selectedIcon: $r('sys.media.ohos_ic_public_clock'), selectedIconAccessibilityText: 'select',
+        accessibilityLevel: 'yes', accessibilityDescription: 'Description'}
+    ]  as ItemRestriction<SegmentButtonIconItem>,
+    multiply: false,
+    backgroundBlurStyle: BlurStyle.BACKGROUND_THICK
+  })
   @State singleSelectIconCapsuleSelectedIndexes: int[] = [3]
 
   build() {
     Row() {
       Column() {
         Column({ space: 25 } as ColumnOptions) {
-          // SegmentButton({ options: this.iconCapsuleOptions,
-          //   selectedIndexes: $singleSelectIconCapsuleSelectedIndexes })
+          SegmentButton({ options: this.iconCapsuleOptions,
+            selectedIndexes: this.singleSelectIconCapsuleSelectedIndexes })
         }.width('90%')
       }.width('100%')
     }.height('100%')

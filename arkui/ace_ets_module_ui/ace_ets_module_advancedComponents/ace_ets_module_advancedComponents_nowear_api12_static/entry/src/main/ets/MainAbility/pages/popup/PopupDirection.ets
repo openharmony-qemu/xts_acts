@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { Popup, PopupTextOptions, PopupButtonOptions, PopupIconOptions } from '@ohos.arkui.advanced.Popup';
-import { Entry, Component, Column, ColumnOptions, Row, Stack, Button, ClickEvent, Color, Curve, FontWeight, Direction } from '@ohos.arkui.component';
+import { Popup, PopupTextOptions, PopupButtonOptions, PopupIconOptions, PopupOptions } from '@ohos.arkui.advanced.Popup';
+import { Entry, Component, Column, ColumnOptions, Row, Stack, Button, ClickEvent, Color, Curve, FontWeight, Direction,$r  } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
@@ -46,54 +46,57 @@ struct PopupDirection {
           .backgroundColor(this.currentDirection == Direction.Ltr ? Color.Red : Color.Blue)
       }
 
-      // // popup 自定义高级组件
-      // Popup({
-      //   //PopupIconOptions 类型设置图标内容
-      //   direction: this.currentDirection,
-      //   icon: {
-      //     image: $r('app.media.icon'),
-      //     width: 32,
-      //     height: 32,
-      //     fillColor: Color.White,
-      //     borderRadius: 16,
-      //   } as PopupIconOptions,
-      //   // PopupTextOptions 类型设置文字内容
-      //   title: {
-      //     text: 'Title',
-      //     fontSize: 20,
-      //     fontColor: Color.Black,
-      //     fontWeight: FontWeight.Normal,
-      //
-      //   } as PopupTextOptions,
-      //   //PopupTextOptions 类型设置文字内容
-      //   message: {
-      //     text: 'This is the message',
-      //     fontSize: 15,
-      //     fontColor: Color.Black,
-      //   } as PopupTextOptions,
-      //   showClose: true,
-      //   onClose: () => {
-      //     console.info('close Button click')
-      //   },
-      //   // PopupButtonOptions 类型设置按钮内容
-      //   buttons: [{
-      //     text: 'confirm',
-      //     action: () => {
-      //       console.info('confirm button click')
-      //     },
-      //     fontSize: 15,
-      //     fontColor: Color.Black,
-      //
-      //   },
-      //     {
-      //       text: 'cancel',
-      //       action: () => {
-      //         console.info('cancel button click')
-      //       },
-      //       fontSize: 15,
-      //       fontColor: Color.Black,
-      //     },] as [PopupButtonOptions, PopupButtonOptions],
-      // })
+      // popup 自定义高级组件
+      Popup({
+        //PopupIconOptions 类型设置图标内容
+        direction: this.currentDirection,
+        icon: {
+          image: $r('app.media.icon'),
+          width: 32,
+          height: 32,
+          fillColor: Color.White,
+          borderRadius: 16,
+        } as PopupIconOptions,
+        // PopupTextOptions 类型设置文字内容
+        title: {
+          text: 'Title',
+          fontSize: 20,
+          fontColor: Color.Black,
+          fontWeight: FontWeight.Normal,
+
+        } as PopupTextOptions,
+        //PopupTextOptions 类型设置文字内容
+        message: {
+          text: 'This is the message',
+          fontSize: 15,
+          fontColor: Color.Black,
+        } as PopupTextOptions,
+        showClose: true,
+        onClose: () => {
+          console.info('close Button click')
+        },
+        // PopupButtonOptions 类型设置按钮内容
+        buttons: [{
+          text: 'confirm',
+          action: () => {
+            console.info('confirm button click')
+          },
+          fontSize: 15,
+          fontColor: Color.Black,
+
+        },
+          {
+            text: 'cancel',
+            action: () => {
+              console.info('cancel button click')
+            },
+            fontSize: 15,
+            fontColor: Color.Black,
+          },] as [
+          PopupButtonOptions | undefined,
+          PopupButtonOptions | undefined
+        ],
+      } as PopupOptions)
     }
     .width('100%')
     .height('100%')
