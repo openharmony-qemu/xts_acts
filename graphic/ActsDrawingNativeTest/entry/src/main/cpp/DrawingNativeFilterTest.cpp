@@ -275,7 +275,8 @@ int TestFilterSetMaskFilterMultipleCalls()
         OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(filter, nullptr);
-        OH_Drawing_MaskFilter* maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, LOOP_COUNT + i, true);
+        OH_Drawing_MaskFilter* maskFilter =
+            OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, LOOP_COUNT + i, true);   
         // add assert
         EXPECT_NE(maskFilter, nullptr);
         OH_Drawing_FilterSetMaskFilter(filter, maskFilter);
