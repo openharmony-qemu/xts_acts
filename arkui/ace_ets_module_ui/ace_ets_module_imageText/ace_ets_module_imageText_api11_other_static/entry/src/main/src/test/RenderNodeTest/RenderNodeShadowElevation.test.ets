@@ -113,8 +113,6 @@ export default function RenderNodeShadowElevationJsSuit() {
     
 
     
-
-
 /**
      * @tc.number   RenderNodeShadowElevationJsSuit_static_0100
      * @tc.name     RenderNodeShadowElevationJsSuit_static_0100

@@ -111,8 +111,6 @@ export default function shadowOffsetJsunit() {
     
 
     
-
-
 /**
      * @tc.number   shadowOffsetJsunit_static_0100
      * @tc.name     shadowOffsetJsunit_static_0100

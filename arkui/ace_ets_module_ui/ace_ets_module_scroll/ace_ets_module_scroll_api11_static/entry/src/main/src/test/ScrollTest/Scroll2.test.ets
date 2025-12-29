@@ -63,8 +63,7 @@ export default function ScrollTest2() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Scroll_Visual_static_0010
      * @tc.name     ArkUX_Scroll_Visual_static_0010
      * @tc.desc     ArkUX_Scroll_Visual_static_0010

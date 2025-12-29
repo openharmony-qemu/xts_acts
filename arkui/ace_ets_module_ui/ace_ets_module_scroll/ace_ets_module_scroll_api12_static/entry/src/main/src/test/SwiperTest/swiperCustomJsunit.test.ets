@@ -77,7 +77,6 @@ export default function swiperCustomJsunit() {
     
       
   
-
 /**
      * @tc.number   swiperCustomJsunit_static_0100
      * @tc.name     swiperCustomJsunit_static_0100

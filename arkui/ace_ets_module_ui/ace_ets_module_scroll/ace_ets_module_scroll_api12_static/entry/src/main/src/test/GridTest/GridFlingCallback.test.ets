@@ -66,8 +66,7 @@ export default function GridFlingCallbackJsunit() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   GridFlingCallbackTest_0100
      * @tc.name     GridFlingCallbackTest_0100
      * @tc.desc     GridFlingCallbackTest_0100
@@ -88,8 +87,7 @@ it('GridFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   GridFlingCallbackTest_0200
      * @tc.name     GridFlingCallbackTest_0200
      * @tc.desc     GridFlingCallbackTest_0200

@@ -77,8 +77,6 @@ export default function appendChildTest() {
 
     
     
-
-
 /**
      * @tc.number   appendChildTest_static_0100
      * @tc.name     appendChildTest_static_0100
@@ -102,8 +100,6 @@ it('appendChildTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   appendChildTest_static_0200
      * @tc.name     appendChildTest_static_0200
@@ -127,8 +123,6 @@ it('appendChildTest_static_0200', Level.LEVEL2, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   appendChildTest_static_0300
      * @tc.name     appendChildTest_static_0300
@@ -154,8 +148,6 @@ it('appendChildTest_static_0300', Level.LEVEL2, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   appendChildTest_static_0400
      * @tc.name     appendChildTest_static_0400

@@ -54,7 +54,9 @@ struct bindSheetRadius {
         .height('8%')
         .id('radiusPX')
         .onClick((event: ClickEvent) => {
+          console.log('xyb 111');
           this.radius = LengthMetrics.px(20);
+          console.log('xyb 222');
         })
       Button('radius:20vp')
         .height('8%')

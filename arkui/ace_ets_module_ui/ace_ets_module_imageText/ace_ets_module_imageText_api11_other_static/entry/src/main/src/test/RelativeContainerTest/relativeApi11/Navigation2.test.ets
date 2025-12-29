@@ -77,8 +77,6 @@ export default function Navigation2() {
 
     
     
-
-
 /**
      * @tc.number   Navigation2_static_0100
      * @tc.name     Navigation2_static_0100

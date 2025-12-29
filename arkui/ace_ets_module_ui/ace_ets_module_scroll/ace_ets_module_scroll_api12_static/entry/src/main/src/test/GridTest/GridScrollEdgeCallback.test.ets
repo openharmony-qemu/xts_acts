@@ -66,8 +66,7 @@ export default function GridScrollEdgeCallbackJsunit() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   GridScrollEdgeCallbackTest_1580
      * @tc.name     GridScrollEdgeCallbackTest_1580
      * @tc.desc     GridScrollEdgeCallbackTest_1580

@@ -76,7 +76,6 @@ export default function SwiperApi() {
 
       
   
-
 /**
      * @tc.number   SwiperApi_static_001
      * @tc.name     SwiperApi_static_001

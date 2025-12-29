@@ -84,8 +84,7 @@ export default function ListScrollTest() {
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0100
      * @tc.name     ArkUI_List_Scroll_static_0100
      * @tc.desc     ArkUI_List_Scroll_static_0100
@@ -118,8 +117,7 @@ it('ArkUI_List_Scroll_static_0100', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0200
      * @tc.name     ArkUI_List_Scroll_static_0200
      * @tc.desc     ArkUI_List_Scroll_static_0200
@@ -152,8 +150,7 @@ it('ArkUI_List_Scroll_static_0200', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0300
      * @tc.name     ArkUI_List_Scroll_static_0300
      * @tc.desc     ArkUI_List_Scroll_static_0300
@@ -186,8 +183,7 @@ it('ArkUI_List_Scroll_static_0300', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_static_0400
      * @tc.name     ArkUI_List_Scroll_static_0400
      * @tc.desc     ArkUI_List_Scroll_static_0400

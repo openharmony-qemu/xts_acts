@@ -67,8 +67,7 @@ export default function tabsJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0100
      * @tc.name     testTabs_static_0100
      * @tc.desc     testTabs_static_0100
@@ -89,8 +88,7 @@ it('testTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0200
      * @tc.name     testTabs_static_0200
      * @tc.desc     testTabs_static_0200
@@ -109,8 +107,7 @@ it('testTabs_static_0200', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0300
      * @tc.name     testTabs_static_0300
      * @tc.desc     testTabs_static_0300
@@ -129,8 +126,7 @@ it('testTabs_static_0300', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0400
      * @tc.name     testTabs_static_0400
      * @tc.desc     testTabs_static_0400
@@ -149,8 +145,7 @@ it('testTabs_static_0400', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0500
      * @tc.name     testTabs_static_0500
      * @tc.desc     testTabs_static_0500
@@ -169,8 +164,7 @@ it('testTabs_static_0500', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0600
      * @tc.name     testTabs_static_0600
      * @tc.desc     testTabs_static_0600
@@ -191,8 +185,7 @@ it('testTabs_static_0600', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0700
      * @tc.name     testTabs_static_0700
      * @tc.desc     testTabs_static_0700
@@ -213,8 +206,7 @@ it('testTabs_static_0700', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0800
      * @tc.name     testTabs_static_0800
      * @tc.desc     testTabs_static_0800
@@ -248,8 +240,7 @@ it('testTabs_static_0800', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_0900
      * @tc.name     testTabs_static_0900
      * @tc.desc     testTabs_static_0900
@@ -283,8 +274,7 @@ it('testTabs_static_0900', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_1000
      * @tc.name     testTabs_static_1000
      * @tc.desc     testTabs_static_1000
@@ -318,8 +308,7 @@ it('testTabs_static_1000', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_1100
      * @tc.name     testTabs_static_1100
      * @tc.desc     testTabs_static_1100
@@ -353,8 +342,7 @@ it('testTabs_static_1100', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_1200
      * @tc.name     testTabs_static_1200
      * @tc.desc     testTabs_static_1200
@@ -388,8 +376,7 @@ it('testTabs_static_1200', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_1300
      * @tc.name     testTabs_static_1300
      * @tc.desc     testTabs_static_1300
@@ -423,8 +410,7 @@ it('testTabs_static_1300', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabs_static_1400
      * @tc.name     testTabs_static_1400
      * @tc.desc     testTabs_static_1400

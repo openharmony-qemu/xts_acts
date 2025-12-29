@@ -85,8 +85,7 @@ export default function ListDeleteTest() {
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Delete_static_0100
      * @tc.name     ArkUI_List_Delete_static_0100
      * @tc.desc     ArkUI_List_Delete_static_0100
@@ -133,8 +132,7 @@ it('ArkUI_List_Delete_static_0100', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Delete_static_0200
      * @tc.name     ArkUI_List_Delete_static_0200
      * @tc.desc     ArkUI_List_Delete_static_0200
@@ -180,8 +178,7 @@ it('ArkUI_List_Delete_static_0200', Level.LEVEL1, async (done: () => void): Prom
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Delete_static_0500
      * @tc.name     ArkUI_List_Delete_static_0500
      * @tc.desc     ArkUI_List_Delete_static_0500

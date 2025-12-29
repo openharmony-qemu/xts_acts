@@ -77,8 +77,7 @@ export default function edgeEffectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   edgeEffectTest_static_0100
      * @tc.name     edgeEffectTest_static_0100
      * @tc.desc     edgeEffectTest_static_0100
@@ -97,8 +96,7 @@ it('edgeEffectTest_static_0100', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   edgeEffectTest_static_0200
      * @tc.name     edgeEffectTest_static_0200
      * @tc.desc     edgeEffectTest_static_0200

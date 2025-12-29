@@ -92,8 +92,7 @@ export default function listJsunit1() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listTest_static_001
      * @tc.name     listTest_static_001
      * @tc.desc     listTest_static_001

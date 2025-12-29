@@ -95,8 +95,6 @@ export default function fillModeJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   fillModeTest_static_0100
      * @tc.name     fillModeTest_static_0100
@@ -126,8 +124,6 @@ it('fillModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   fillModeTest_static_0200
      * @tc.name     fillModeTest_static_0200
@@ -157,8 +153,6 @@ it('fillModeTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   fillModeTest_static_0300
      * @tc.name     fillModeTest_static_0300

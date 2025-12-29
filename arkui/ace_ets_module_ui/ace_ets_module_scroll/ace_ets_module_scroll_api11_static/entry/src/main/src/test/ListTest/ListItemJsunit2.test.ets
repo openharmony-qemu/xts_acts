@@ -80,7 +80,6 @@ export default function listItemJsunit2() {
 
       
   
-
 /**
      * @tc.number   testListItem_static_01
      * @tc.name     testListItem_static_01
@@ -100,7 +99,6 @@ it('testListItem_static_01', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_02
      * @tc.name     testListItem_static_02
@@ -135,7 +133,6 @@ it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_03
      * @tc.name     testListItem_static_03
@@ -155,7 +152,6 @@ it('testListItem_static_03', Level.LEVEL1, async (done: () => void): Promise<voi
 
       
   
-
 /**
      * @tc.number   testListItem_static_04
      * @tc.name     testListItem_static_04

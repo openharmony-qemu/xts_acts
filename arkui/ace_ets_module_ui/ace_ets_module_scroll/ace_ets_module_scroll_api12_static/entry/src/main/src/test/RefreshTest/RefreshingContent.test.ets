@@ -79,7 +79,6 @@ export default function RefreshingContent() {
     
       
   
-
 /**
      * @tc.number   RefreshingContent_static_0100
      * @tc.name     RefreshingContent_static_0100

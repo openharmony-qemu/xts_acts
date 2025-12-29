@@ -76,8 +76,7 @@ export default function refreshDragJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testrefreshDrag0011
      * @tc.name     testrefreshDrag0011
      * @tc.desc     testrefreshDrag0011
@@ -110,8 +109,7 @@ it('testrefreshDrag0011', Level.LEVEL1, async (done: () => void): Promise<void> 
 
 
     
-    
-/**
+    /**
      * @tc.number   testrefreshRefresh_static_0001
      * @tc.name     testrefreshRefresh_static_0001
      * @tc.desc     testrefreshRefresh_static_0001

@@ -76,8 +76,7 @@ export default function refreshJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_01
      * @tc.name     testRefresh_static_01
      * @tc.desc     testRefresh_static_01
@@ -98,8 +97,7 @@ it('testRefresh_static_01', Level.LEVEL1, async (done: () => void): Promise<void
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_02
      * @tc.name     testRefresh_static_02
      * @tc.desc     testRefresh_static_02
@@ -115,8 +113,7 @@ it('testRefresh_static_02', Level.LEVEL1, async (done: () => void): Promise<void
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_03
      * @tc.name     testRefresh_static_03
      * @tc.desc     testRefresh_static_03
@@ -132,8 +129,7 @@ it('testRefresh_static_03', Level.LEVEL1, async (done: () => void): Promise<void
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_04
      * @tc.name     testRefresh_static_04
      * @tc.desc     testRefresh_static_04
@@ -149,8 +145,7 @@ it('testRefresh_static_04', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_05
      * @tc.name     testRefresh_static_05
      * @tc.desc     testRefresh_static_05
@@ -166,8 +161,7 @@ it('testRefresh_static_05', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    
-/**
+    /**
      * @tc.number   testRefresh_static_06
      * @tc.name     testRefresh_static_06
      * @tc.desc     testRefresh_static_06

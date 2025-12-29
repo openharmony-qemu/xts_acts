@@ -77,8 +77,6 @@ export default function pivot() {
 
     
     
-
-
 /**
      * @tc.number   pivot_static_0100
      * @tc.name     pivot_static_0100
@@ -103,8 +101,6 @@ it('pivot_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
 
     
     
-
-
 /**
      * @tc.number   pivot_static_0200
      * @tc.name     pivot_static_0200

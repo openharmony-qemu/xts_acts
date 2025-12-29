@@ -62,8 +62,7 @@ export default function SwiperMargin_4() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperPrevMargin_static_0100
      * @tc.name     testSwiperPrevMargin_static_0100
      * @tc.desc     testSwiperPrevMargin_static_0100
@@ -97,8 +96,7 @@ it('testSwiperPrevMargin_static_0100', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperPrevMargin_static_0200
      * @tc.name     testSwiperPrevMargin_static_0200
      * @tc.desc     testSwiperPrevMargin_static_0200
@@ -130,8 +128,7 @@ it('testSwiperPrevMargin_static_0200', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperNextMargin_static_0100
      * @tc.name     testSwiperNextMargin_static_0100
      * @tc.desc     testSwiperNextMargin_static_0100
@@ -163,8 +160,7 @@ it('testSwiperNextMargin_static_0100', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperNextMargin_static_0200
      * @tc.name     testSwiperNextMargin_static_0200
      * @tc.desc     testSwiperNextMargin_static_0200
@@ -198,8 +194,7 @@ it('testSwiperNextMargin_static_0200', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperShowNext_static_0100
      * @tc.name     testSwiperShowNext_static_0100
      * @tc.desc     testSwiperShowNext_static_0100
@@ -227,8 +222,7 @@ it('testSwiperShowNext_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   testSwiperShowPrevious_static_0100
      * @tc.name     testSwiperShowPrevious_static_0100
      * @tc.desc     testSwiperShowPrevious_static_0100

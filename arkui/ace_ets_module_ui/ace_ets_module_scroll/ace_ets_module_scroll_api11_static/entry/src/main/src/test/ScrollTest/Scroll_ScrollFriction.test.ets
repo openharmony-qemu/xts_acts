@@ -66,8 +66,7 @@ export default function scroll_ScrollFrictionTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollFriction_static_0100
      * @tc.name     testScrollFriction_static_0100
      * @tc.desc     testScrollFriction_static_0100
@@ -94,8 +93,7 @@ it('testScrollFriction_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollFriction_static_0200
      * @tc.name     testScrollFriction_static_0200
      * @tc.desc     testScrollFriction_static_0200

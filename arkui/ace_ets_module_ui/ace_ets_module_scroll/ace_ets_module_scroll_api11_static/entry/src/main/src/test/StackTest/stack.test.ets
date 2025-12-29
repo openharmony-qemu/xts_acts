@@ -77,8 +77,7 @@ export default function stackAlignContentJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   teststackAlignContent_static_0001
      * @tc.name     teststackAlignContent_static_0001
      * @tc.desc     teststackAlignContent_static_0001
@@ -99,8 +98,7 @@ it('teststackAlignContent_static_0001', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   teststackAlignContent_static_0002
      * @tc.name     teststackAlignContent_static_0002
      * @tc.desc     teststackAlignContent_static_0002

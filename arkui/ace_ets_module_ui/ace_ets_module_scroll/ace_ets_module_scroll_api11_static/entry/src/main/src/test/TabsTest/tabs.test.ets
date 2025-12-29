@@ -70,8 +70,7 @@ export default function tabsBarPositionJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0001
      * @tc.name     testtabsBarPosition_static_0001
      * @tc.desc     testtabsBarPosition_static_0001
@@ -92,8 +91,7 @@ it('testtabsBarPosition_static_0001', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0002
      * @tc.name     testtabsBarPosition_static_0002
      * @tc.desc     testtabsBarPosition_static_0002
@@ -114,8 +112,7 @@ it('testtabsBarPosition_static_0002', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0003
      * @tc.name     testtabsBarPosition_static_0003
      * @tc.desc     testtabsBarPosition_static_0003
@@ -136,8 +133,7 @@ it('testtabsBarPosition_static_0003', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0004
      * @tc.name     testtabsBarPosition_static_0004
      * @tc.desc     testtabsBarPosition_static_0004
@@ -158,8 +154,7 @@ it('testtabsBarPosition_static_0004', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0005
      * @tc.name     testtabsBarPosition_static_0005
      * @tc.desc     testtabsBarPosition_static_0005
@@ -180,8 +175,7 @@ it('testtabsBarPosition_static_0005', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0006
      * @tc.name     testtabsBarPosition_static_0006
      * @tc.desc     testtabsBarPosition_static_0006
@@ -202,8 +196,7 @@ it('testtabsBarPosition_static_0006', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0007
      * @tc.name     testtabsBarPosition_static_0007
      * @tc.desc     testtabsBarPosition_static_0007
@@ -224,8 +217,7 @@ it('testtabsBarPosition_static_0007', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition_static_0009
      * @tc.name     testtabsBarPosition_static_0009
      * @tc.desc     testtabsBarPosition_static_0009
@@ -246,8 +238,7 @@ it('testtabsBarPosition_static_0009', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition0010
      * @tc.name     testtabsBarPosition0010
      * @tc.desc     testtabsBarPosition0010
@@ -269,8 +260,7 @@ it('testtabsBarPosition0010', Level.LEVEL1, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testtabsBarPosition0011
      * @tc.name     testtabsBarPosition0011
      * @tc.desc     testtabsBarPosition0011

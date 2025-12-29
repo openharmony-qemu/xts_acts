@@ -68,7 +68,8 @@ export default function presentCustomDialogOrder() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   presentCustomDialogOrder_static_0100
      * @tc.name     presentCustomDialogOrder_static_0100
      * @tc.desc     presentCustomDialogOrder_static_0100
@@ -95,7 +96,8 @@ it('presentCustomDialogOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST |
     });
 
     
-    /**
+    
+/**
      * @tc.number   presentCustomDialogOrder_static_0200
      * @tc.name     presentCustomDialogOrder_static_0200
      * @tc.desc     presentCustomDialogOrder_static_0200
@@ -122,7 +124,8 @@ it('presentCustomDialogOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST |
     });
 
     
-    /**
+    
+/**
      * @tc.number   presentCustomDialogOrder_static_0300
      * @tc.name     presentCustomDialogOrder_static_0300
      * @tc.desc     presentCustomDialogOrder_static_0300
@@ -148,7 +151,8 @@ it('presentCustomDialogOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST |
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   presentCustomDialogOrder_static_0400
      * @tc.name     presentCustomDialogOrder_static_0400
      * @tc.desc     presentCustomDialogOrder_static_0400

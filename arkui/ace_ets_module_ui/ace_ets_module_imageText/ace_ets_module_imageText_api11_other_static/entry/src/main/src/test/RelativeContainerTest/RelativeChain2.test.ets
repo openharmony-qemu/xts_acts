@@ -92,8 +92,6 @@ export default function RelativeChain2() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain2_static_001
      * @tc.name     RelativeChain2_static_001
@@ -123,8 +121,6 @@ it('RelativeChain2_static_001', Level.LEVEL3, async (done: () => void): Promise<
     
 
     
-
-
 /**
      * @tc.number   RelativeChain2_static_002
      * @tc.name     RelativeChain2_static_002
@@ -160,8 +156,6 @@ it('RelativeChain2_static_002', Level.LEVEL3, async (done: () => void): Promise<
     
 
     
-
-
 /**
      * @tc.number   RelativeChain2_static_003
      * @tc.name     RelativeChain2_static_003
@@ -197,8 +191,6 @@ it('RelativeChain2_static_003', Level.LEVEL3, async (done: () => void): Promise<
     
 
     
-
-
 /**
      * @tc.number   RelativeChain2_static_004
      * @tc.name     RelativeChain2_static_004

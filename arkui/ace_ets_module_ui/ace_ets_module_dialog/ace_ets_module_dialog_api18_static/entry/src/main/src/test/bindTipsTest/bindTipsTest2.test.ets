@@ -59,7 +59,8 @@ export default function bindTips2Test() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindTips2_static_0100
      * @tc.name     bindTips2_static_0100
      * @tc.desc     bindTips2_static_0100
@@ -71,13 +72,13 @@ it('bindTips2_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
       let button = await driver.findComponent(ON.id('bindTips'));
       let center = await button?.getBoundsCenter()!;
       console.info("[bindTips_0100] component obj is: " + JSON.stringify(center));
-      // await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo(center);
       await UtilsTest.msSleep(2000);
       let tip = await driver.findComponent(ON.text('test bind tips'));
       expect(tip !== null).assertTrue();
-      // await driver.mouseMoveTo({
-      //   x: 0, y: 0
-      // });
+      await driver.mouseMoveTo({
+        x: 0, y: 0
+      });
       await UtilsTest.msSleep(5000);
       done();
     });

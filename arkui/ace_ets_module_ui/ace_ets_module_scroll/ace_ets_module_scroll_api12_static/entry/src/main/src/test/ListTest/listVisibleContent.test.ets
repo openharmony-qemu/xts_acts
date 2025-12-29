@@ -68,8 +68,7 @@ export default function listVisibleContent() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listVisibleContent_static_0100
      * @tc.name     listVisibleContent_static_0100
      * @tc.desc     listVisibleContent_static_0100
@@ -90,8 +89,7 @@ it('listVisibleContent_static_0100', Level.LEVEL1, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   listVisibleContent_static_0200
      * @tc.name     listVisibleContent_static_0200
      * @tc.desc     listVisibleContent_static_0200

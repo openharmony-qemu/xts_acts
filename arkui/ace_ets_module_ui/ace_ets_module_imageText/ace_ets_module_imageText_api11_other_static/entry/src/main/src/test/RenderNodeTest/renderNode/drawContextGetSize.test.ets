@@ -77,8 +77,6 @@ export default function drawContextGetSizeTest() {
 
     
     
-
-
 /**
      * @tc.number   drawContextGetSizeTest_static_0100
      * @tc.name     drawContextGetSizeTest_static_0100

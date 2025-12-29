@@ -82,8 +82,6 @@ export default function SetPositionJsunit() {
 
     
     
-
-
 /**
      * @tc.number   SetPositionJsunit_static_001
      * @tc.name     SetPositionJsunit_static_001

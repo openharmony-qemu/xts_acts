@@ -106,8 +106,6 @@ export default function checkBoxJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0100
      * @tc.name     checkBoxJsunit_static_0100
@@ -133,8 +131,6 @@ it('checkBoxJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0200
      * @tc.name     checkBoxJsunit_static_0200
@@ -164,8 +160,6 @@ it('checkBoxJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0300
      * @tc.name     checkBoxJsunit_static_0300
@@ -187,8 +181,6 @@ it('checkBoxJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0400
      * @tc.name     checkBoxJsunit_static_0400
@@ -215,8 +207,6 @@ it('checkBoxJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0500
      * @tc.name     checkBoxJsunit_static_0500
@@ -238,8 +228,6 @@ it('checkBoxJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0600
      * @tc.name     checkBoxJsunit_static_0600
@@ -261,8 +249,6 @@ it('checkBoxJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   checkBoxJsunit_static_0700
      * @tc.name     checkBoxJsunit_static_0700

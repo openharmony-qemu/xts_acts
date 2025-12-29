@@ -71,13 +71,14 @@ export default function menuitemOnChangeModifierTest() {
       console.info('menuitemOnChangeModifier beforeEach end');
     });
 
+    
     /**
      * @tc.number   ArkUX_Modifier_MenuItem_OnChange_static_1001
      * @tc.name     ArkUX_Modifier_MenuItem_OnChange_static_1001
      * @tc.desc     ArkUX_Modifier_MenuItem_OnChange_static_1001
      * @tc.level    Level.LEVEL2
      */
-    it('ArkUX_Modifier_MenuItem_OnChange_static_1001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ArkUX_Modifier_MenuItem_OnChange_static_1001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Modifier_MenuItem_OnChange_static_1001 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('MenuItemOnButtonID'));

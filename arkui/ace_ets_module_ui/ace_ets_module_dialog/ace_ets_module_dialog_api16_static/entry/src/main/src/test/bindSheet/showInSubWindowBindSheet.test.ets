@@ -75,14 +75,14 @@ export default function showInSubWindowBindSheet() {
     });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0100
      * @tc.name     showInSubWindowBindSheet_static_0100
      * @tc.desc     showInSubWindowBindSheet_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0100 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -104,14 +104,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0200
      * @tc.name     showInSubWindowBindSheet_static_0200
      * @tc.desc     showInSubWindowBindSheet_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0200 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -136,14 +136,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0300
      * @tc.name     showInSubWindowBindSheet_static_0300
      * @tc.desc     showInSubWindowBindSheet_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0300 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -167,14 +167,14 @@ export default function showInSubWindowBindSheet() {
         done();
       });
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0400
      * @tc.name     showInSubWindowBindSheet_static_0400
      * @tc.desc     showInSubWindowBindSheet_static_0400
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0400 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -199,14 +199,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0500
      * @tc.name     showInSubWindowBindSheet_static_0500
      * @tc.desc     showInSubWindowBindSheet_static_0500
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0500 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -234,14 +234,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0600
      * @tc.name     showInSubWindowBindSheet_static_0600
      * @tc.desc     showInSubWindowBindSheet_static_0600
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0600 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -269,14 +269,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0700
      * @tc.name     showInSubWindowBindSheet_static_0700
      * @tc.desc     showInSubWindowBindSheet_static_0700
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0700 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()
@@ -304,14 +304,14 @@ export default function showInSubWindowBindSheet() {
       });
 
 
+    
     /**
      * @tc.number   showInSubWindowBindSheet_static_0800
      * @tc.name     showInSubWindowBindSheet_static_0800
      * @tc.desc     showInSubWindowBindSheet_static_0800
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('showInSubWindowBindSheet_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
+it('showInSubWindowBindSheet_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info('showInSubWindowBindSheet_static_0800 START');
         if (AppStorage.get<number>("winLeft")! > 0) {
           let driver = Driver.create()

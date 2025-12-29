@@ -92,8 +92,6 @@ export default function RelativeChain3() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain3_static_001
      * @tc.name     RelativeChain3_static_001
@@ -115,8 +113,8 @@ it('RelativeChain3_static_001', Level.LEVEL3, async (done: () => void): Promise<
 
       expect(Math.abs(Math.round(row3.left - row2.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(row2.left - row1.right)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row1.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(15))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(35))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row1.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(15))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(UIContext.resolveUIContext()!.vp2px(35))) <= 1).assertTrue();
 
       console.info('[RelativeChain3_001] END');
       done();
@@ -124,8 +122,6 @@ it('RelativeChain3_static_001', Level.LEVEL3, async (done: () => void): Promise<
 
     
     
-
-
 /**
      * @tc.number   RelativeChain3_static_002
      * @tc.name     RelativeChain3_static_002
@@ -147,8 +143,8 @@ it('RelativeChain3_static_002', Level.LEVEL3, async (done: () => void): Promise<
 
       expect(Math.abs(Math.round(row3.top - row2.bottom)) <= 1).assertTrue();
       expect(Math.abs(Math.round(row2.top - row1.bottom)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row1.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(rel.bottom - row3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row1.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.bottom - row3.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(70))) <= 1).assertTrue();
 
       console.info('[RelativeChain3_002] END');
       done();

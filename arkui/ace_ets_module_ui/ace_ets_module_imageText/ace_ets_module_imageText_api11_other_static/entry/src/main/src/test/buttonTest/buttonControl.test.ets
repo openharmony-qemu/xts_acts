@@ -104,8 +104,6 @@ export default function buttonControlTest() {
     
 
     
-
-
 /**
      * @tc.number   buttonControlSize_static_0100
      * @tc.name     buttonControlSize_static_0100

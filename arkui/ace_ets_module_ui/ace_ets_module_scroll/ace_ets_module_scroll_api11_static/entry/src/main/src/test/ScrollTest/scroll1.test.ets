@@ -70,8 +70,7 @@ export default function scrollOnScrollBeginJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0001_static_01
      * @tc.name     testscrollOnScrollBegin0001_static_01
      * @tc.desc     testscrollOnScrollBegin0001_static_01
@@ -92,8 +91,7 @@ it('testscrollOnScrollBegin0001_static_01', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0002_static_02
      * @tc.name     testscrollOnScrollBegin0002_static_02
      * @tc.desc     testscrollOnScrollBegin0002_static_02
@@ -114,8 +112,7 @@ it('testscrollOnScrollBegin0002_static_02', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0003_static_03
      * @tc.name     testscrollOnScrollBegin0003_static_03
      * @tc.desc     testscrollOnScrollBegin0003_static_03
@@ -136,8 +133,7 @@ it('testscrollOnScrollBegin0003_static_03', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0004_static_04
      * @tc.name     testscrollOnScrollBegin0004_static_04
      * @tc.desc     testscrollOnScrollBegin0004_static_04
@@ -158,8 +154,7 @@ it('testscrollOnScrollBegin0004_static_04', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0005_static_05
      * @tc.name     testscrollOnScrollBegin0005_static_05
      * @tc.desc     testscrollOnScrollBegin0005_static_05
@@ -180,8 +175,7 @@ it('testscrollOnScrollBegin0005_static_05', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0006_static_06
      * @tc.name     testscrollOnScrollBegin0006_static_06
      * @tc.desc     testscrollOnScrollBegin0006_static_06
@@ -211,8 +205,7 @@ it('testscrollOnScrollBegin0006_static_06', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0007_static_07
      * @tc.name     testscrollOnScrollBegin0007_static_07
      * @tc.desc     testscrollOnScrollBegin0007_static_07
@@ -235,8 +228,7 @@ it('testscrollOnScrollBegin0007_static_07', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testscrollOnScrollBegin0008_static_08
      * @tc.name     testscrollOnScrollBegin0008_static_08
      * @tc.desc     testscrollOnScrollBegin0008_static_08

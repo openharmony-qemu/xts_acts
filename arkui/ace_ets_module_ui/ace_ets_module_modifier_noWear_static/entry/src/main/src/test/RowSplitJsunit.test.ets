@@ -72,8 +72,7 @@ export default function rowSplitJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   rowSplitTest_static_0001
      * @tc.name     rowSplitTest_static_0001
      * @tc.desc     rowSplitTest_static_0001
@@ -90,8 +89,7 @@ it('rowSplitTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<v
 
 
     
-    
-/**
+    /**
      * @tc.number   rowSplitTest_static_0002
      * @tc.name     rowSplitTest_static_0002
      * @tc.desc     rowSplitTest_static_0002

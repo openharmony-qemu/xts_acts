@@ -61,7 +61,6 @@ export default function nestedScrollSwiper() {
     
       
   
-
 /**
      * @tc.number   nestedScrollSwiper_static_0100
      * @tc.name     nestedScrollSwiper_static_0100
@@ -106,7 +105,6 @@ it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Pro
     
       
   
-
 /**
      * @tc.number   nestedScrollSwiper_static_0200
      * @tc.name     nestedScrollSwiper_static_0200

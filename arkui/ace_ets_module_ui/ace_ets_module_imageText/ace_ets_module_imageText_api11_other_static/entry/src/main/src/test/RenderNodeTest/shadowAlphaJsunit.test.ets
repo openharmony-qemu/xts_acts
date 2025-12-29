@@ -110,8 +110,6 @@ export default function shadowAlphaJsunit() {
 
     
     
-
-
 /**
      * @tc.number   shadowAlphaJsunit_static_0100
      * @tc.name     shadowAlphaJsunit_static_0100

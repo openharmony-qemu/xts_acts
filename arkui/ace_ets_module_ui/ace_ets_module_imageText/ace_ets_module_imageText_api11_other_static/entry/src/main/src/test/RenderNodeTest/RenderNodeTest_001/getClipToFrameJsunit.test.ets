@@ -82,8 +82,6 @@ export default function getClipToFrameJsunit() {
 
     
     
-
-
 /**
      * @tc.number   getClipToFrameJsunit_static_001
      * @tc.name     getClipToFrameJsunit_static_001

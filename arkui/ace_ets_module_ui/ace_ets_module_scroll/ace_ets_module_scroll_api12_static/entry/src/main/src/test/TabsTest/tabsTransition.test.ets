@@ -69,7 +69,6 @@ export default function tabsTransition() {
 
       
   
-
 /**
      * @tc.number   tabsTransition_static_0100
      * @tc.name     tabsTransition_static_0100
@@ -102,7 +101,6 @@ it('tabsTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise
     
       
   
-
 /**
      * @tc.number   tabsTransition_static_0200
      * @tc.name     tabsTransition_static_0200

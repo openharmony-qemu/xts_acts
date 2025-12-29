@@ -106,8 +106,6 @@ export default function transformTest() {
 
     
     
-
-
 /**
      * @tc.number   transformTest_static_0100
      * @tc.name     transformTest_static_0100

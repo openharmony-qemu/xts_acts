@@ -95,15 +95,9 @@ it('ArkUX_Stage_PatternLock_setChallengeResult_static_0100', Level.LEVEL1, async
         done();
       });
 
-    /*
-     *tc.number ArkUX_Stage_PatternLock_onDotConnect_0100
-     *tc.name   Support getting the dot index
-     *tc.desc   Sets the onDotConnect property parameter to undefined
-     */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_PatternLock_onDotConnect_0100
      * @tc.name     ArkUX_Stage_PatternLock_onDotConnect_0100
      * @tc.desc     ArkUX_Stage_PatternLock_onDotConnect_0100

@@ -69,7 +69,6 @@ export default function openCustomDialogMode() {
     
     
 
-
 /**
      * @tc.number   openCustomDialogMode_static_0100
      * @tc.name     openCustomDialogMode_static_0100
@@ -113,7 +112,6 @@ it('openCustomDialogMode_static_0100', Level.LEVEL1, async (done: () => void): P
     
     
 
-
 /**
      * @tc.number   openCustomDialogMode_static_0200
      * @tc.name     openCustomDialogMode_static_0200
@@ -150,14 +148,13 @@ it('openCustomDialogMode_static_0200', Level.LEVEL1, async (done: () => void): P
       await CommonFunc.sleep(1000);
       let btn4: Component = ( await driver.findComponent(ON.id('close')) ) as Component;
       expect(btn4 != null).assertFalse();
-      // await ( btn4?.click() as Promise<void>);
+      await ( btn4?.click() as Promise<void>);
       console.info('[openCustomDialogMode_static_0200] END');
       done();
     });
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogMode_static_0300
@@ -202,7 +199,6 @@ it('openCustomDialogMode_static_0300', Level.LEVEL1, async (done: () => void): P
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogMode_static_0400
@@ -249,7 +245,6 @@ it('openCustomDialogMode_static_0400', Level.LEVEL1, async (done: () => void): P
      
     
 
-
 /**
      * @tc.number   openCustomDialogMode_static_0500
      * @tc.name     openCustomDialogMode_static_0500
@@ -291,7 +286,6 @@ it('openCustomDialogMode_static_0500', Level.LEVEL1, async (done: () => void): P
      
     
 
-
 /**
      * @tc.number   openCustomDialogMode_static_0600
      * @tc.name     openCustomDialogMode_static_0600
@@ -330,7 +324,6 @@ it('openCustomDialogMode_static_0600', Level.LEVEL1, async (done: () => void): P
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogMode_static_0700
@@ -373,7 +366,6 @@ it('openCustomDialogMode_static_0700', Level.LEVEL1, async (done: () => void): P
     });
     
     
-
 
 /**
      * @tc.number   openCustomDialogMode_static_0800

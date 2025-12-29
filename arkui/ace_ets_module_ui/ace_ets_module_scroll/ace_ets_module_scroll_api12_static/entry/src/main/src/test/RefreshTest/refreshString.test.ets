@@ -74,7 +74,6 @@ export default function refreshString() {
 
       
   
-
 /**
      * @tc.number   refreshString_static_0100
      * @tc.name     refreshString_static_0100
@@ -112,7 +111,6 @@ it('refreshString_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
       
   
-
 /**
      * @tc.number   refreshString_static_0200
      * @tc.name     refreshString_static_0200
@@ -150,7 +148,6 @@ it('refreshString_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 
       
   
-
 /**
      * @tc.number   refreshString_static_0300
      * @tc.name     refreshString_static_0300
@@ -188,7 +185,6 @@ it('refreshString_static_0300', Level.LEVEL0, async (done: () => void): Promise<
 
       
   
-
 /**
      * @tc.number   refreshString_static_0400
      * @tc.name     refreshString_static_0400
@@ -226,7 +222,6 @@ it('refreshString_static_0400', Level.LEVEL0, async (done: () => void): Promise<
 
       
   
-
 /**
      * @tc.number   refreshString_static_0500
      * @tc.name     refreshString_static_0500
@@ -264,7 +259,6 @@ it('refreshString_static_0500', Level.LEVEL0, async (done: () => void): Promise<
 
       
   
-
 /**
      * @tc.number   refreshString_static_0600
      * @tc.name     refreshString_static_0600

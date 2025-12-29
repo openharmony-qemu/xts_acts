@@ -69,7 +69,6 @@ export default function uiOpenCustomDialogMode() {
     
     
 
-
 /**
      * @tc.number   uiopenCustomDialogMode_static_0100
      * @tc.name     uiopenCustomDialogMode_static_0100
@@ -123,7 +122,6 @@ it('uiopenCustomDialogMode_static_0100', Level.LEVEL1, async (done: () => void):
     
     
 
-
 /**
      * @tc.number   uiopenCustomDialogMode_static_0200
      * @tc.name     uiopenCustomDialogMode_static_0200
@@ -176,7 +174,6 @@ it('uiopenCustomDialogMode_static_0200', Level.LEVEL1, async (done: () => void):
     
     
 
-
 /**
      * @tc.number   uiopenCustomDialogMode_static_0300
      * @tc.name     uiopenCustomDialogMode_static_0300
@@ -228,7 +225,6 @@ it('uiopenCustomDialogMode_static_0300', Level.LEVEL1, async (done: () => void):
 
     
     
-
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0400
@@ -283,7 +279,6 @@ it('uiopenCustomDialogMode_static_0400', Level.LEVEL1, async (done: () => void):
      
     
 
-
 /**
      * @tc.number   uiopenCustomDialogMode_static_0500
      * @tc.name     uiopenCustomDialogMode_static_0500
@@ -326,7 +321,6 @@ it('uiopenCustomDialogMode_static_0500', Level.LEVEL1, async (done: () => void):
      
     
 
-
 /**
      * @tc.number   uiopenCustomDialogMode_static_0600
      * @tc.name     uiopenCustomDialogMode_static_0600
@@ -366,7 +360,6 @@ it('uiopenCustomDialogMode_static_0600', Level.LEVEL1, async (done: () => void):
 
     
     
-
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0700
@@ -420,7 +413,6 @@ it('uiopenCustomDialogMode_static_0700', Level.LEVEL1, async (done: () => void):
 
     
     
-
 
 /**
      * @tc.number   uiopenCustomDialogMode_static_0800

@@ -81,8 +81,7 @@ export default function list_itemOnSelectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_itemOnSelect_static_0001
      * @tc.name     testlist_itemOnSelect_static_0001
      * @tc.desc     testlist_itemOnSelect_static_0001
@@ -104,8 +103,7 @@ it('testlist_itemOnSelect_static_0001', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_itemOnSelect_static_0002
      * @tc.name     testlist_itemOnSelect_static_0002
      * @tc.desc     testlist_itemOnSelect_static_0002
@@ -126,8 +124,7 @@ it('testlist_itemOnSelect_static_0002', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_itemOnSelect_static_0003
      * @tc.name     testlist_itemOnSelect_static_0003
      * @tc.desc     testlist_itemOnSelect_static_0003
@@ -148,8 +145,7 @@ it('testlist_itemOnSelect_static_0003', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   testlist_itemSwipeAction_static_0004
      * @tc.name     testlist_itemSwipeAction_static_0004
      * @tc.desc     testlist_itemSwipeAction_static_0004

@@ -78,8 +78,6 @@ export default function pixelRoundTest() {
 
     
     
-
-
 /**
      * @tc.number   pixelRoundTest_static_001
      * @tc.name     pixelRoundTest_static_001

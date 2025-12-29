@@ -81,8 +81,7 @@ export default function toIndexStartOffset() {
 
 
     
-    
-/**
+    /**
      * @tc.number   toIndexStartOffset_static_0100
      * @tc.name     toIndexStartOffset_static_0100
      * @tc.desc     toIndexStartOffset_static_0100

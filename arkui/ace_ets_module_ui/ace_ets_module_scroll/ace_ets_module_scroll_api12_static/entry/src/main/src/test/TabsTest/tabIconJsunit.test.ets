@@ -76,7 +76,6 @@ export default function tabIconJsunit() {
     
       
   
-
 /**
      * @tc.number   tabIconJsunit_static_0100
      * @tc.name     tabIconJsunit_static_0100
@@ -101,7 +100,6 @@ it('tabIconJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<
     
       
   
-
 /**
      * @tc.number   tabIconJsunit_static_0200
      * @tc.name     tabIconJsunit_static_0200
