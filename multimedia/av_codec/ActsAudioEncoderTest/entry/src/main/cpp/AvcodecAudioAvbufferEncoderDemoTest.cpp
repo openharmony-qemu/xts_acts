@@ -107,8 +107,8 @@ static void StringReplace(std::string& strBig, const std::string& strsrc, const 
     }
 }
 
-static void GetParamsByName(string decoderName, string inputFile, 
-                            int32_t& channelCount, int32_t& sampleRate, long& bitrate)
+static void GetParamsByName(string decoderName, string inputFile,
+    int32_t &channelCount, int32_t &sampleRate, long &bitrate)
 {
     int32_t opusNameSplitNum = 4;
     int32_t splitNum1 = 1;
@@ -446,8 +446,8 @@ void AudioBufferAacEncDemo::InputFunc()
 {
     int64_t g77mu_size = 320;
     double time_20ms = 0.02;
-    int32_t frameBytes = (audioType_ == AudioBufferFormatType::TYPE_G711MU) ? g77mu_size : 
-                         channels_ * sizeof(short) * sampleRate_ * time_20ms;
+    int32_t frameBytes = (audioType_ == AudioBufferFormatType::TYPE_G711MU) ? g77mu_size :
+        channels_ * sizeof(short) * sampleRate_ * time_20ms;
     DEMO_CHECK_AND_RETURN_LOG(inputFile_.is_open(), "Fatal: open file fail");
     while (isRunning_.load()) {
         unique_lock<mutex> lock(signal_->inMutex_);
@@ -469,7 +469,8 @@ void AudioBufferAacEncDemo::InputFunc()
             break;
         }
         int32_t ret = AV_ERR_OK;
-        OH_AVCodecBufferAttr attr = { flags : isFirstFrame_ ? AVCODEC_BUFFER_FLAGS_CODEC_DATA : AVCODEC_BUFFER_FLAGS_NONE };
+        uint32_t bufferFlags = isFirstFrame_ ? AVCODEC_BUFFER_FLAGS_CODEC_DATA : AVCODEC_BUFFER_FLAGS_NONE;
+        OH_AVCodecBufferAttr attr = { .flags = bufferFlags };
         OH_AVBuffer_SetBufferAttr(buffer, &attr);
         ret = OH_AudioCodec_PushInputBuffer(audioEnc_, index);
         isFirstFrame_ = false;
