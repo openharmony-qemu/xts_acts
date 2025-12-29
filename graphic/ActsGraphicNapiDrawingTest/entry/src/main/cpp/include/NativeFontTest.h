@@ -1,0 +1,51 @@
+/*
+ * Copyright (c) 2022-2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ACTSGRAPHICNAPIDRAWINGTEST_NATIVEFONTTEST_H
+#define ACTSGRAPHICNAPIDRAWINGTEST_NATIVEFONTTEST_H
+
+namespace OHOS {
+namespace Rosen {
+namespace Drawing {
+int NativeFontTest_FontMeasureText015();
+int NativeFontTest_FontMeasureText016();
+int NativeFontTest_FontMeasureText017();
+int NativeDrawingRegisterFontTest001();
+int NativeDrawingRegisterFontTest002();
+int OH_Drawing_FontCollectionTest001();
+int OHDrawingTypographyLargeValueTest016();
+int OHDrawingTypographyLargeValueTest026();
+int OHDrawingTypographyLargeValueTest027();
+int OHDrawingTypographyLargeValueTest042();
+int OHDrawingTypographyLargeValueTestWithIndent();
+int OHDrawingCreateTextTab001();
+int OHDrawingCreateTextTab002();
+int OHDrawingCreateTextTab003();
+int TypographyTest001();
+int TypographyTest002();
+int TypographyTest003();
+int TypographyTest004();
+int TypographyTest005();
+int FontGetTextPath001();
+int FontGetTextPath002();
+int FontGetTextPath003();
+int FontGetTextPath004();
+int FontGetTextPath005();
+} // namespace Drawing
+} // namespace Rosen
+} // namespace OHOS
+
+#endif // ACTSGRAPHICNAPIDRAWINGTEST_NATIVEFONTTEST_H
+
