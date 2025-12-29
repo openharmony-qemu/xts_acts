@@ -780,14 +780,14 @@ int TestCanvasSaveNormal()
 
     // step 2
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // step 3
     OH_Drawing_CanvasTranslate(canvas, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_300);
 
     // step 4
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 3);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_FORMAT_RGBA);
 
     // step 5
     OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
@@ -819,7 +819,7 @@ int TestCanvasSavetestCanvasGetSaveCountNull()
 
     // step 1
     OH_Drawing_CanvasSave(nullptr);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(nullptr), 0);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(nullptr), TEST_PIXELMAP_NEGATIVE_0);
 
     DrawingNativeCanvasTestTearDown();
 
@@ -845,27 +845,27 @@ int TestCanvasSavetestCanvasGetSaveCountMultipleCalls()
     // step 2
     OH_Drawing_CanvasSkew(canvas, TEST_CANVAS_COORD_10, TEST_CANVAS_COORD_20);
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // step 3
     OH_Drawing_CanvasScale(canvas, TEST_CANVAS_SCALE, TEST_CANVAS_SCALE);
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 3);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_FORMAT_RGBA);
 
     // step 4
     OH_Drawing_CanvasTranslate(canvas, TEST_CANVAS_COORD_10, TEST_CANVAS_COORD_20);
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 4);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_SIZE_SMALL);
 
     // step 5
     OH_Drawing_CanvasRotate(canvas, TEST_CANVAS_COORD_10, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0);
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 5);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_WIDTH_5);
 
     // step 6
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 6 + i);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_FORMAT_6 + i);
     }
 
     // step 7
@@ -918,7 +918,7 @@ int TestCanvasGetSaveCountWhenNoSave()
     EXPECT_NE(canvas, nullptr);
 
     // step 2
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // step 3
     OH_Drawing_CanvasScale(canvas, TEST_CANVAS_SCALE, TEST_CANVAS_SCALE);
@@ -927,7 +927,7 @@ int TestCanvasGetSaveCountWhenNoSave()
     OH_Drawing_CanvasSave(canvas);
 
     // step 4
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // step 5
     OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
@@ -966,7 +966,7 @@ int TestCanvasSaveLayerNormal()
     OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
 
     // step 2
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // step 3
     OH_Drawing_RectDestroy(rect);
@@ -1052,6 +1052,76 @@ int TestCanvasSaveLayerNull()
     return OH_DRAWING_SUCCESS;
 }
 
+// 拆分出的第一部分函数：负责初始化和执行测试
+static void TestCanvasSaveLayerAbnormal_Part1(OH_Drawing_Canvas** canvas, OH_Drawing_Brush** brush)
+{
+    DrawingNativeCanvasTestSetUp();
+
+    *canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(*canvas, nullptr);
+
+    *brush = OH_Drawing_BrushCreate();
+    EXPECT_NE(*brush, nullptr);
+
+    // 1. 传入负数坐标
+    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(
+        -TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect1, *brush);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, -TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect2, *brush);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, -TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
+    EXPECT_NE(rect3, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect3, *brush);
+    OH_Drawing_RectDestroy(rect3);
+    OH_Drawing_Rect* rect4 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, -TEST_CANVAS_COORD_600);
+    EXPECT_NE(rect4, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect4, *brush);
+    OH_Drawing_RectDestroy(rect4);
+
+    // 2. 坐标相等 (线)
+    OH_Drawing_Rect* rect5 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_600);
+    EXPECT_NE(rect5, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect5, *brush);
+    OH_Drawing_RectDestroy(rect5);
+    OH_Drawing_Rect* rect6 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_500);
+    EXPECT_NE(rect6, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect6, *brush);
+    OH_Drawing_RectDestroy(rect6);
+
+    // 3. 坐标完全相等 (点)
+    OH_Drawing_Rect* rect7 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500);
+    EXPECT_NE(rect7, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect7, *brush);
+    OH_Drawing_RectDestroy(rect7);
+
+    // 4. 左上角坐标大于右下角坐标
+    OH_Drawing_Rect* rect8 = OH_Drawing_RectCreate(
+        TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500);
+    EXPECT_NE(rect8, nullptr);
+    OH_Drawing_CanvasSaveLayer(*canvas, rect8, *brush);
+    OH_Drawing_RectDestroy(rect8);
+}
+
+// 拆分出的第二部分函数：负责清理
+static void TestCanvasSaveLayerAbnormal_Part2(OH_Drawing_Canvas* canvas, OH_Drawing_Brush* brush)
+{
+    // 5. 释放内存
+    OH_Drawing_BrushDestroy(brush);
+    OH_Drawing_CanvasDestroy(canvas);
+
+    DrawingNativeCanvasTestTearDown();
+}
+
 /**
  * @tc.name   testCanvasSaveLayerAbnormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2700
@@ -1062,81 +1132,11 @@ int TestCanvasSaveLayerNull()
  */
 int TestCanvasSaveLayerAbnormal()
 {
-    DrawingNativeCanvasTestSetUp();
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
 
-    // 1. OH_Drawing_CanvasCreate, OH_Drawing_BrushCreate
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    EXPECT_NE(canvas, nullptr);
-
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    EXPECT_NE(brush, nullptr);
-
-    // 2. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, negative numbers are passed for left, top, right,
-    // and bottom.
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(
-        -TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
-    // add assert
-    EXPECT_NE(rect1, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect1, brush);
-    OH_Drawing_RectDestroy(rect1);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, -TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
-    // add assert
-    EXPECT_NE(rect2, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect2, brush);
-    OH_Drawing_RectDestroy(rect2);
-    OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, -TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600);
-    // add assert
-    EXPECT_NE(rect3, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect3, brush);
-    OH_Drawing_RectDestroy(rect3);
-    OH_Drawing_Rect* rect4 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, -TEST_CANVAS_COORD_600);
-    // add assert
-    EXPECT_NE(rect4, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect4, brush);
-    OH_Drawing_RectDestroy(rect4);
-
-    // 3. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the horizontal coordinate of the top-left corner
-    // of the rectangle is equal to the horizontal coordinate of the bottom-right corner, or the vertical coordinate of
-    // the top-left corner of the rectangle is equal to the vertical coordinate of the bottom-right corner.
-    OH_Drawing_Rect* rect5 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_600);
-    // add assert
-    EXPECT_NE(rect5, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect5, brush);
-    OH_Drawing_RectDestroy(rect5);
-    OH_Drawing_Rect* rect6 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_500);
-    // add assert
-    EXPECT_NE(rect6, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect6, brush);
-    OH_Drawing_RectDestroy(rect6);
-
-    // 4. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the coordinates of the top-left corner are equal
-    // to the coordinates of the bottom-right corner.
-    OH_Drawing_Rect* rect7 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500);
-    // add assert
-    EXPECT_NE(rect7, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect7, brush);
-    OH_Drawing_RectDestroy(rect7);
-
-    // 5. When creating OH_Drawing_Rect in OH_Drawing_CanvasSaveLayer, the coordinates of the top-left corner are
-    // greater than the coordinates of the bottom-right corner.
-    OH_Drawing_Rect* rect8 = OH_Drawing_RectCreate(
-        TEST_CANVAS_COORD_300, TEST_CANVAS_COORD_600, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_500);
-    // add assert
-    EXPECT_NE(rect8, nullptr);
-    OH_Drawing_CanvasSaveLayer(canvas, rect8, brush);
-    OH_Drawing_RectDestroy(rect8);
-
-    // 6. Release memory.
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_CanvasDestroy(canvas);
-
-    DrawingNativeCanvasTestTearDown();
+    TestCanvasSaveLayerAbnormal_Part1(&canvas, &brush);
+    TestCanvasSaveLayerAbnormal_Part2(canvas, brush);
 
     return OH_DRAWING_SUCCESS;
 }
@@ -1165,12 +1165,12 @@ int TestCanvasSaveLayerRestore()
     // 2. Use OH_Drawing_CanvasSaveLayer and call OH_Drawing_CanvasGetSaveCount to retrieve the number of saved states
     // for the canvas.
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // 3. Use the restore interface OH_Drawing_CanvasRestore to discard any changes made to the matrix and clip region
     // and draw the bitmap.
     OH_Drawing_CanvasRestore(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 4. Release memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1208,7 +1208,7 @@ int TestCanvasSaveLayerMultipleCalls()
         // add assert
         EXPECT_NE(rect, nullptr);
         OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + 2);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + TEST_PIXELMAP_VERT_OFFSET_2);
         OH_Drawing_RectDestroy(rect);
     }
 
@@ -1241,12 +1241,12 @@ int TestCanvasRestoreNormal()
     // 2. Use OH_Drawing_CanvasSave and call OH_Drawing_CanvasGetSaveCount to retrieve the number of saved states for
     // the canvas.
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // 3. Use OH_Drawing_CanvasRestore and call OH_Drawing_CanvasGetSaveCount to retrieve the number of saved states for
     // the canvas.
     OH_Drawing_CanvasRestore(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 4. Release memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1275,12 +1275,12 @@ int TestCanvasRestoreNull()
     // 2. Use OH_Drawing_CanvasSave and call OH_Drawing_CanvasGetSaveCount to retrieve the number of saved states for
     // the canvas.
     OH_Drawing_CanvasSave(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // 3. Use OH_Drawing_CanvasRestore with no arguments, and then call OH_Drawing_CanvasGetSaveCount to retrieve the
     // number of saved states for the canvas.
     OH_Drawing_CanvasRestore(nullptr);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 2);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_2);
 
     // 4. Release memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1310,17 +1310,17 @@ int TestCanvasRestoreMultipleCalls()
     // saved states for the canvas.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + 2);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + TEST_PIXELMAP_VERT_OFFSET_2);
     }
 
     // 3. Call OH_Drawing_CanvasRestore 11 times and then call OH_Drawing_CanvasGetSaveCount to retrieve the number of
     // saved states for the canvas.
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT_11; i++) {
         OH_Drawing_CanvasRestore(canvas);
-        if (10 - i <= 0) {
-            EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+        if (TEST_LOOP_COUNT_10 - i <= 0) {
+            EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
         } else {
-            EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 10 - i);
+            EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_LOOP_COUNT_10 - i);
         }
     }
 
@@ -1328,13 +1328,13 @@ int TestCanvasRestoreMultipleCalls()
     // to retrieve the number of saved states for the canvas.
     OH_Drawing_CanvasSave(canvas);
     OH_Drawing_CanvasRestore(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 5. Repeat step 4 for 10 times
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
         OH_Drawing_CanvasRestore(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
     }
 
     // 6. Release memory.
@@ -1364,13 +1364,13 @@ int TestCanvasRestoreBeforeSave()
     // 2. Use OH_Drawing_CanvasRestore and call OH_Drawing_CanvasGetSaveCount to retrieve the number of saved states for
     // the canvas.
     OH_Drawing_CanvasRestore(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 3. Call OH_Drawing_CanvasRestore multiple times and then call OH_Drawing_CanvasGetSaveCount to retrieve the
     // number of saved states for the canvas.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasRestore(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
     }
 
     // 4. Release memory.
@@ -1425,7 +1425,7 @@ int TestCanvasRestoreExceededSaveSavelayerTimes()
     // saved states corresponding to the canvas status.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + 2);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + TEST_PIXELMAP_VERT_OFFSET_2);
     }
 
     // 3、Use OH_Drawing_CanvasTranslate, OH_Drawing_CanvasScale, and OH_Drawing_CanvasSkew to modify the canvas status.
@@ -1437,14 +1437,14 @@ int TestCanvasRestoreExceededSaveSavelayerTimes()
     // saved states corresponding to the canvas status.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSaveLayer(canvas, rect, brush);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 12 + i);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERTICES_SIZE_12 + i);
     }
 
     // 5、Call OH_Drawing_CanvasRestore more than 20 times and then call OH_Drawing_CanvasGetSaveCount to retrieve the
     // number of saved states corresponding to the canvas status.
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT_20; i++) {
         OH_Drawing_CanvasRestore(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 20 - i);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_DATA_LENGTH_20 - i);
     }
 
     // 6、Call OH_Drawing_CanvasSave -> OH_Drawing_CanvasSaveLayer -> Call OH_Drawing_CanvasRestore 3 times, and then
@@ -1454,7 +1454,7 @@ int TestCanvasRestoreExceededSaveSavelayerTimes()
     OH_Drawing_CanvasRestore(canvas);
     OH_Drawing_CanvasRestore(canvas);
     OH_Drawing_CanvasRestore(canvas);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 7、Repeat step 6 ten times
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
@@ -1463,7 +1463,7 @@ int TestCanvasRestoreExceededSaveSavelayerTimes()
         OH_Drawing_CanvasRestore(canvas);
         OH_Drawing_CanvasRestore(canvas);
         OH_Drawing_CanvasRestore(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
     }
 
     // 8、Release memory.
@@ -1496,15 +1496,15 @@ int TestCanvasRestoreToCountNormal()
     // saved states corresponding to the canvas status.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + 2);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + TEST_PIXELMAP_VERT_OFFSET_2);
     }
 
     // 3. Iterate through the parameter saveCount from 1 to the maximum number of canvas states, and use
     // OH_Drawing_CanvasRestoreToCount to restore the canvas to each state. Use OH_Drawing_CanvasGetSaveCount to
     // retrieve the number of saved states corresponding to the canvas status.
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasRestoreToCount(canvas, i);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
     }
 
     // 4. Free the memory.
@@ -1533,13 +1533,13 @@ int TestCanvasRestoreToCountNull()
 
     // 2. Use OH_Drawing_CanvasRestoreToCount with the first parameter empty to retrieve the number of saved states
     // corresponding to the canvas status using OH_Drawing_CanvasGetSaveCount.
-    OH_Drawing_CanvasRestoreToCount(nullptr, 1);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    OH_Drawing_CanvasRestoreToCount(nullptr, TEST_PIXELMAP_VERT_OFFSET_1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 3. Use OH_Drawing_CanvasRestoreToCount with the second parameter as 0 to retrieve the number of saved states
     // corresponding to the canvas status using OH_Drawing_CanvasGetSaveCount.
-    OH_Drawing_CanvasRestoreToCount(canvas, 0);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    OH_Drawing_CanvasRestoreToCount(canvas, TEST_PIXELMAP_NEGATIVE_0);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 4. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1567,13 +1567,13 @@ int TestCanvasRestoreToCountAbnormal()
 
     // 2. Use OH_Drawing_CanvasRestoreToCount with a negative value for the saveCount parameter to retrieve the number
     // of saved states corresponding to the canvas status using OH_Drawing_CanvasGetSaveCount.
-    OH_Drawing_CanvasRestoreToCount(canvas, -1);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    OH_Drawing_CanvasRestoreToCount(canvas, TEST_PIXELMAP_NEGATIVE_1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 3. Use OH_Drawing_CanvasRestoreToCount with a floating-point value for the saveCount parameter to retrieve the
     // number of saved states corresponding to the canvas status using OH_Drawing_CanvasGetSaveCount.
-    OH_Drawing_CanvasRestoreToCount(canvas, 1.0);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    OH_Drawing_CanvasRestoreToCount(canvas, TEST_MATRIX_VALUE_1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 4. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1602,7 +1602,7 @@ int TestCanvasRestoreToCountMaximum()
     // 2. Use OH_Drawing_CanvasRestoreToCount with a very large value for the saveCount parameter to retrieve the number
     // of saved states corresponding to the canvas status using OH_Drawing_CanvasGetSaveCount.
     OH_Drawing_CanvasRestoreToCount(canvas, INT32_MAX_VALUE);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 1);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERT_OFFSET_1);
 
     // 3. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
@@ -1632,14 +1632,14 @@ int TestCanvasRestoreToCountExceeded()
     // saved states corresponding to the canvas status.
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_CanvasSave(canvas);
-        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + 2);
+        EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), i + TEST_PIXELMAP_VERT_OFFSET_2);
     }
 
     // 3. Use OH_Drawing_CanvasRestoreToCount with a saveCount parameter greater than the maximum number of current
     // canvas states to retrieve the number of saved states corresponding to the canvas status using
     // OH_Drawing_CanvasGetSaveCount.
     OH_Drawing_CanvasRestoreToCount(canvas, INT32_MAX_VALUE);
-    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), 11);
+    EXPECT_EQ(OH_Drawing_CanvasGetSaveCount(canvas), TEST_PIXELMAP_VERTICES_SIZE_11);
 
     // 4. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);

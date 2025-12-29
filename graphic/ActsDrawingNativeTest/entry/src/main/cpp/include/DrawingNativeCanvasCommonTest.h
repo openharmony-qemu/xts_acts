@@ -15,11 +15,11 @@
 #ifndef DRAWING_NATIVE_CANVAS_COMMON_TEST_H
 #define DRAWING_NATIVE_CANVAS_COMMON_TEST_H
 
-#include <multimedia/image_framework/image/pixelmap_native.h>
 #include <cfloat>
 #include <climits>
 #include <cmath>
 #include <cstdint>
+#include <multimedia/image_framework/image/pixelmap_native.h>
 
 namespace OHOS {
 namespace Rosen {
@@ -128,6 +128,8 @@ constexpr uint32_t TEST_COLOR_INCREMENT = 0x11111111;
 // Loop and count constants
 constexpr int TEST_CANVAS_LOOP_COUNT = 10;
 constexpr int TEST_LOOP_COUNT_10 = 10;
+constexpr int TEST_LOOP_COUNT_11 = 11;
+constexpr int TEST_LOOP_COUNT_20 = 20;
 constexpr int TEST_FILTER_MODE_COUNT = 2;
 constexpr int TEST_MIPMAP_MODE_COUNT = 3;
 constexpr int TEST_COLOR_FORMAT_COUNT = 6;
@@ -135,6 +137,13 @@ constexpr int TEST_ALPHA_FORMAT_COUNT = 4;
 constexpr int TEST_RECT_PARAMS_COUNT = 5;
 constexpr int TEST_SRC_RECTS_COUNT = 8;
 constexpr int TEST_DST_RECTS_COUNT = 4;
+
+// OFFSET
+constexpr int TEST_OFFSET_NUMER_1 = 1;
+constexpr int TEST_OFFSET_NUMER_2 = 2;
+constexpr int TEST_OFFSET_NUMER_3 = 3;
+constexpr int TEST_OFFSET_NUMER_4 = 4;
+constexpr int TEST_OFFSET_NUMER_5 = 5;
 
 // Bitmap size constants
 constexpr int TEST_BITMAP_SIZE_48 = 48;
@@ -168,6 +177,7 @@ constexpr size_t TEST_PIXELMAP_4K_WIDTH = 4096;
 constexpr size_t TEST_PIXELMAP_4K_HEIGHT = 2160;
 constexpr size_t TEST_PIXELMAP_REPEAT_DIVISOR = 4;
 constexpr int TEST_PIXELMAP_NEGATIVE_1 = -1;
+constexpr int TEST_PIXELMAP_NEGATIVE_0 = 0;
 
 // Pixelmap mesh constants
 constexpr uint32_t TEST_PIXELMAP_MESH_WIDTH_1 = 1;
@@ -179,6 +189,7 @@ constexpr uint32_t TEST_PIXELMAP_MESH_HEIGHT_2 = 2;
 constexpr uint32_t TEST_PIXELMAP_VERT_OFFSET_2 = 2;
 constexpr uint32_t TEST_PIXELMAP_COLOR_OFFSET_2 = 2;
 constexpr size_t TEST_PIXELMAP_VERTICES_SIZE_11 = 11;
+constexpr size_t TEST_PIXELMAP_VERTICES_SIZE_12 = 12;
 constexpr size_t TEST_PIXELMAP_COLORS_SIZE_6 = 6;
 
 // Canvas DrawPixelMapRect related functions

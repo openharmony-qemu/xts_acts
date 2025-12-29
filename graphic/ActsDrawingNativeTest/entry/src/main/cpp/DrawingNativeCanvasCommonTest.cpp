@@ -33,9 +33,9 @@ OH_PixelmapNative* GET_OH_PixelmapNative()
     int32_t alphaType = TEST_PIXELMAP_ALPHA_PREMUL;
     OH_PixelmapInitializationOptions_SetAlphaType(options, alphaType);
     uint8_t data[] = { TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
     size_t dataLength = TEST_PIXELMAP_DATA_LENGTH_16;
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMap);
     OH_PixelmapInitializationOptions_Release(options);
@@ -54,9 +54,9 @@ OH_PixelmapNative* GET_OH_PixelmapNative(uint32_t width, uint32_t height)
     int32_t alphaType = TEST_PIXELMAP_ALPHA_PREMUL;
     OH_PixelmapInitializationOptions_SetAlphaType(options, alphaType);
     uint8_t data[] = { TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
     size_t dataLength = TEST_PIXELMAP_DATA_LENGTH_16;
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMap);
     OH_PixelmapInitializationOptions_Release(options);
@@ -76,18 +76,18 @@ OH_PixelmapNative* GET_OH_PixelmapNative4KBoundary()
     OH_PixelmapInitializationOptions_SetPixelFormat(options, pixelFormat);
     int32_t alphaType = TEST_PIXELMAP_ALPHA_PREMUL;
     OH_PixelmapInitializationOptions_SetAlphaType(options, alphaType);
-    
+
     const size_t pixelCount = width * height;
     const size_t totalBytes = pixelCount * TEST_PIXELMAP_REPEAT_DIVISOR;
     std::vector<uint8_t> data(totalBytes, 0);
-    
-    const uint8_t rgbaValue[] = {TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE};
+
+    const uint8_t rgbaValue[] = { TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
     for (size_t i = 0; i < pixelCount; ++i) {
-        size_t offset = i * 4;
-        data[offset] = rgbaValue[0];     // R
-        data[offset + 1] = rgbaValue[1]; // G
-        data[offset + 2] = rgbaValue[2]; // B
-        data[offset + 3] = rgbaValue[3]; // A
+        size_t offset = i * TEST_OFFSET_NUMER_4;
+        data[offset] = rgbaValue[0];                                         // R
+        data[offset + TEST_OFFSET_NUMER_1] = rgbaValue[TEST_OFFSET_NUMER_1]; // G
+        data[offset + TEST_OFFSET_NUMER_2] = rgbaValue[TEST_OFFSET_NUMER_2]; // B
+        data[offset + TEST_OFFSET_NUMER_3] = rgbaValue[TEST_OFFSET_NUMER_3]; // A
     }
     uint8_t* valueData = data.data();
     OH_PixelmapNative_CreatePixelmap(valueData, totalBytes, options, &pixelMap);
@@ -109,10 +109,10 @@ OH_PixelmapNative* GET_OH_PixelmapNative_4ByteAlignment()
     int32_t alphaType = TEST_PIXELMAP_ALPHA_PREMUL;
     OH_PixelmapInitializationOptions_SetAlphaType(options, alphaType);
     uint8_t data[] = { TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
-        TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE,
+                       TEST_PIXELMAP_COLOR_VALUE, TEST_PIXELMAP_COLOR_VALUE, 0, TEST_PIXELMAP_COLOR_VALUE };
     size_t dataLength = TEST_PIXELMAP_DATA_LENGTH_20;
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMap);
     OH_PixelmapInitializationOptions_Release(options);
