@@ -1332,7 +1332,7 @@ export default function TransBatchInsertWithReturning() {
 
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_23700
-     * @tc.name  transBatchInsertWithReturning027
+     * @tc.name  transBatchInsertWithReturningSync027
      * @tc.desc  conflict: ON_CONFLICT_REPLACE, twice batchInsertWithReturningSync
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -1636,7 +1636,7 @@ export default function TransBatchInsertWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_24300
-     * @tc.name  transBatchInsertWithReturning031
+     * @tc.name  transBatchInsertWithReturningSync031
      * @tc.desc  maxReturningCount < valueBuckets.size < 0x7FFF
      * @tc.size  MediumTest
      * @tc.type  Function
