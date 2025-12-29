@@ -21,9 +21,12 @@ namespace Rosen {
 namespace Drawing {
 // Canvas DrawRecordCmd related functions
 int TestCanvasDrawRecordCmdNormal();
+int TestCanvasDrawRecordCmdABNormal();
+int TestCanvasDrawRecordCmdNestingNormal();
+int TestCanvasDrawRecordCmdNestingAbNormal();
+int TestCanvasDrawRecordCmdNestingAbNormal1();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
 
 #endif // ACTSDRAWINGNATIVETEST_DRAWING_CANVAS_DRAW_RECORD_CMD_TEST_H
-
