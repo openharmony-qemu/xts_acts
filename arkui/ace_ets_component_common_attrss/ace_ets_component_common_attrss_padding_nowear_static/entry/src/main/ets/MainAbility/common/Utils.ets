@@ -167,7 +167,7 @@ static async pushPage(obj: PageConfig) {
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
     console.log('++++++++++++++++++++++'+router.getState().name)
-    if (!('MainAbility/pages/index/Index' == router.getState().name)) {  //'Index' == router.getState().name
+    if (!('Index' == router.getState().name)) {  //'Index' == router.getState().name
       router.back()
     }
     AttrsManager.unRegisterDataChange();

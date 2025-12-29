@@ -109,7 +109,33 @@ struct WebComponent {
             console.log('The request header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
           }
           return this.webResourceResponse;
-        })
+        })//        .onContextMenuShow((event) => {  // 1.1注释
+        //          console.info("x coord = " + event.param.x());
+        //          console.info("y coord = " + event.param.y());
+        //          console.info("link url = " + event.param.getLinkUrl());
+        //          console.info("unfilterendLinkUrl = " + event.param.getUnfilteredLinkUrl());
+        //          console.info("sourceUrl = " + event.param.getSourceUrl());
+        //          console.info("existsImageContents = " + event.param.existsImageContents());
+        //          console.info("closeContextMenu = " + event.result.closeContextMenu());
+        //          console.info("copyImage = " + event.result.copyImage());
+        //        })
+        //        .onPermissionRequest((event) => {
+        //          uiContext.showAlertDialog({
+        //            title: 'title',
+        //            message: 'text',
+        //            confirm: {
+        //              value: 'onConfirm',
+        //              action: () => {
+        //                event.request.grant(event.request.getAccessibleResource());
+        //                console.info('onPermissionRequest getAccessibleResource: ', event.request.getAccessibleResource());
+        //                console.info('onPermissionRequest getOrigin: ', event.request.getOrigin());
+        //              }
+        //            },
+        //            cancel: () => {
+        //              event.request.deny();
+        //            }
+        //          })
+        //        })
         .onScaleChange((event) => {
           console.info('onScaleChange oldScale: ', event.oldScale);
           console.info('onScaleChange newScale: ', event.newScale);

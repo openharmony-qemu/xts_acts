@@ -38,10 +38,10 @@ let testAbilityContext:common.UIAbilityContext;
 export default function paddingTest1() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
-    // 'Select',
-    // 'Stepper',
-    // 'StepperItem',
-    'Web' // app died
+    'Select',
+    'Stepper',
+    'StepperItem',
+    // 'Web' // 外领域 app died
   )
 
   //Called from the parent class when setting the background color.

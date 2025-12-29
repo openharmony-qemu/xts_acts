@@ -16,15 +16,15 @@
 
 import Log from '../../common/Log';
 import emitter from '@ohos.events.emitter';
-// import mediaquery from '@ohos.mediaquery'
-import  mediaquery  from '@ohos.mediaquery';
+
 import {
   Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow,
   Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer,
   Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { UIContext ,MediaQuery} from '@ohos.arkui.UIContext';
+import { UIContext} from '@ohos.arkui.UIContext';
+import  mediaquery  from '@ohos.mediaquery';
 
 const TAG = 'ets_apiLack_add';
 
@@ -36,13 +36,9 @@ struct MediaQueryOff {
   // listener:mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)')
  listener: mediaquery.MediaQueryListener | undefined = UIContext.getFocusedUIContext()?.getMediaQuery()?.matchMediaSync('(orientation: landscape)');
 
-
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear MediaQueryOff start`)
-    if( this.listener != undefined){
-      console.log('++++++++listener != undefined')
-      try{
-        this.listener!.onChange( (mediaQueryResult) => { // 11.17 sdk11.17 appDied
+        this.listener!.onChange( (mediaQueryResult) => {
           if (mediaQueryResult.matches) {
             this.color = '#FFD700'
             this.text = 'Landscape'
@@ -51,12 +47,6 @@ struct MediaQueryOff {
             this.text = 'Portrait'
           }
         })
-      }catch(err){
-        console.log('+++++++++++++++listener!.onChange',err)
-      }
-    } else{
-      console.log('++++++++listener = undefined')
-    }
   }
 
   aboutToDisappear() {
@@ -65,7 +55,6 @@ struct MediaQueryOff {
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text("mediaQuery-Off++++++++++++++++++")
       Text("mediaQuery-Off")
         .width(100)
         .height(70)

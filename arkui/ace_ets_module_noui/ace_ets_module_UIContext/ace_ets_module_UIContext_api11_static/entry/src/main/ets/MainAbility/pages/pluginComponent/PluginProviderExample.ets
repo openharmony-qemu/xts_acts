@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-// import plugin from "../../common/plugin_component.js"
+
 import {
   Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, Padding,
   Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer,

@@ -84,10 +84,10 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextTimer',
+    'TextArea',  // 55000ms pass
+    'TextClock', //TextClock_static_SetNumber
+    'TextInput', // 55000ms pass
+    'TextTimer', //TextTimer_static_SetNumber
     'Toggle',
     'Badge',
     'Column',

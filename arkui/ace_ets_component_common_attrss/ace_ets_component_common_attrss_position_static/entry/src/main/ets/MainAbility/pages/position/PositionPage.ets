@@ -85,9 +85,7 @@ struct PositionPage {
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
-      // console.log('=============== pageValue'+(routerParamOptions.view.testValue as TestValue).setValue)
-      // console.log('=============== pageValue_x'+((routerParamOptions.view.testValue as TestValue).setValue as Position).x)
-      // console.log('=============== pageValue_y'+((routerParamOptions.view.testValue as TestValue).setValue as Position).y)
+      this._position =  (routerParamOptions.view.testValue as TestValue).setValue as Position
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
@@ -199,7 +197,6 @@ struct PositionPage {
           .width(this.parentWidth)
           .height(this.parentHeight)
           .key(this.parentComponentKey)
-          .borderWidth(0).padding(0).margin(0)
         } else if (this.targetView == 'ColumnSplit') {
           Column() {
             Text('The secant line can be dragged').fontSize(9)
@@ -329,7 +326,6 @@ struct PositionPage {
           Row() {
             //Set view by page config.
             if (this.targetView == 'AlphabetIndexer') {
-              // console.info('wj----------position',JSON.stringify(this._position))
               console.info('wj----------position',this._position)
               AlphabetIndexerView({ _position: this._position as Position, componentKey: this.componentKey })
             } else if (this.targetView == 'Blank') {
