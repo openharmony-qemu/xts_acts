@@ -1372,8 +1372,8 @@ export default function bitectorest() {
           let bitVector = new collections.BitVector(0);
           bitVector.push(1);
           bitVector.push(0);
-          let vec: Array<number> = [];
-          let a: Array<number> = [1, 1, 0, 1, 0];
+          let vec: number[] = [];
+          let a: number[] = [1, 1, 0, 1, 0];
           let itr = bitVector.values();
           let tmp: IteratorResult<number> = itr.next();
           while (!tmp.done) {
@@ -1401,7 +1401,7 @@ export default function bitectorest() {
             expect(res0).assertEqual(true);
           }
           expect(bitVector.length).assertEqual(64);
-          let vec: Array<number> = [];
+          let vec: number[] = [];
           let itr = bitVector.values();
           let tmp: IteratorResult<number> = itr.next();
           while (!tmp.done) {
@@ -1429,7 +1429,7 @@ export default function bitectorest() {
             expect(res0).assertEqual(true);
           }
           expect(bitVector.length).assertEqual(bitVectorLength + 10);
-          let vec: Array<number> = [];
+          let vec: number[] = [];
           let itr = bitVector.values();
           let tmp: IteratorResult<number> = itr.next();
           while (!tmp.done) {
@@ -1549,7 +1549,7 @@ export default function bitectorest() {
        * @tc.level  LEVEL1
        */
       it('BitVector_constructor_Func_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-          let tmp:string = "a";
+          let tmp:string = 'a';
           let a:number = JSON.parse(JSON.stringify(tmp)) as number;
           try {
             let bitVector = new collections.BitVector(a);
@@ -1627,7 +1627,7 @@ export default function bitectorest() {
       it('BitVector_setBitsByRange_Func_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
           try {
             let bitVector = new collections.BitVector(0);
-            let tmp:string = "test";
+            let tmp:string = 'test';
             let a:number = JSON.parse(JSON.stringify(tmp)) as number;
             bitVector.push(0);
             bitVector.push(0);
