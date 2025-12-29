@@ -67,7 +67,7 @@ struct StorageProp20 {
   @State num: number = 0
   @State vae: string = ''
 
-  onPageShow() {
+  static {
     AppStorage.clear()
     Environment.envProp<number>('Prop20', 10);
   }

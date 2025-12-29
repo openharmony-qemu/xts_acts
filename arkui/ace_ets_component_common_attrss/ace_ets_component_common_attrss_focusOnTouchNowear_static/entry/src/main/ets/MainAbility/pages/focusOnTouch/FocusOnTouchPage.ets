@@ -130,7 +130,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
 
@@ -143,7 +143,7 @@ import { RouterParams } from '../../common/Utils';
 struct FocusablePage {
   private scroller: Scroller = new Scroller() //For Scroll and Scroll
   private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
-  @StorageProp('_focusOnTouch') _focusOnTouch : boolean = false;
+  @StoragePropRef('_focusOnTouch') _focusOnTouch : boolean = false;
   @State callback: string = '';
   @State targetView: string | undefined = ''
   @State componentKey: string | undefined = ''

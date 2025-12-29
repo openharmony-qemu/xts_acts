@@ -95,7 +95,7 @@ it('PropArrayJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
        let obj = JSON.parseJsonElement(strJson);
        console.info("[PropArrayJsunit_static_0100] component obj is: " + JSON.stringify(obj));
        console.info("[PropArrayJsunit_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-       expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":1},{"value":2},{"value":3}]');
+       expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":1},{"value":2},{"value":3}],"isAPI_":false}');
       console.info('[PropArrayJsunit_static_0100] END');
       done();
     });
@@ -117,7 +117,7 @@ it('PropArrayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
        let obj = JSON.parseJsonElement(strJson);
        console.info("[PropArrayJsunit_static_0200] component obj is: " + JSON.stringify(obj));
        console.info("[PropArrayJsunit_static_0200] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-       expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":8},{"value":2},{"value":3}]');
+       expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":8},{"value":2},{"value":3}],"isAPI_":false}');
       console.info('[PropArrayJsunit_static_0200] END');
       done();
     });
@@ -135,7 +135,7 @@ it('PropArrayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
        let obj = JSON.parseJsonElement(strJson);
        console.info("[PropArrayJsunit_static_0300] component obj is: " + JSON.stringify(obj));
        console.info("[PropArrayJsunit_static_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-       expect(obj.getElement('$attrs').getString('label')).assertEqual('子组件Prop:[{"value":8},{"value":2},{"value":3}]');
+       expect(obj.getElement('$attrs').getString('label')).assertEqual('子组件Prop:{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":8},{"value":2},{"value":3}],"isAPI_":false}');
       done();
     });
 
@@ -156,7 +156,7 @@ it('PropArrayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
        let obj = JSON.parseJsonElement(strJson);
        console.info("[PropArrayJsunit_static_0400] component obj is: " + JSON.stringify(obj));
        console.info("[PropArrayJsunit_static_0400] title: " + JSON.stringify(obj.getElement('$attrs').getString('label')));
-       expect(obj.getElement('$attrs').getString('label')).assertEqual('子组件Prop:[{"value":7},{"value":2},{"value":3}]');
+       expect(obj.getElement('$attrs').getString('label')).assertEqual('子组件Prop:{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":7},{"value":2},{"value":3}],"isAPI_":false}');
       console.info('[PropArrayJsunit_static_0400] END');
       done();
     });

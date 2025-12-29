@@ -88,7 +88,7 @@ import PropNumberJsunit from './State/PropNumberJsunit.test.ets';
 import PropStringJsunit from './State/PropStringJsunit.test.ets';
 import StateArrayNewJsunit from './State/StateArrayNewJsunit.test.ets'
 export default function testsuite() {
-  StateArrayObject();  // 3
+  StateArrayObject();
   WatchTest();
   StateArrayBoolean();
   StateArrayNumber();
@@ -96,64 +96,77 @@ export default function testsuite() {
   StateSet();
   PropArrayBoolean();
   PropArrayNumber();
-  PropArrayObject();  //  2
+  PropArrayObject();
   PropMap();
   PropSet();
 
   ProvideArrayBoolean();
   ProvideArrayNumber();
-  ProvideArrayObject(); // 3
+  ProvideArrayObject();
   ProvideMap();
   ProvideSet();
   LinkArrayBoolean();
   LinkArrayNumber();
-  LinkArrayObject(); // 3
+  LinkArrayObject();
   LinkMap();
   LinkSet();
-  ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  4
-  ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  3
   stateManagementDARKJsunit();
   stateManagementGetSharedJsunit();
-  //
-  LocalStoageLinkOneJsunit();
+  ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  4
+  ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  3
+
   LocalStoageLinkTwoJsunit();
-  LocalStoageLinkThreeJsunit(); // // 0702不合入,只能切master分支
+
+  LocalStoageLinkOneJsunit();
+
+  LocalStoageLinkThreeJsunit();
+
   LocalStoagePropFourJsunit();
+
   LocalStoagePropTwoJsunit();
-  LocalStorage39Jsunit();  // 1
+
+  LocalStorage39Jsunit();
+
   ProvideJsunit();
   Storage11Jsunit();
+
   Storage35Jsunit();
+
   Storage36Jsunit();
+
   Storage38Jsunit();
+
+  StorageProp21Jsunit();
   StorageLinkJsunit1();
   StorageProp19Jsunit();
-  StorageProp20Jsunit();  // Environment.envProp<number | string>('Prop20', 10);  未起作用  4
-  StorageProp21Jsunit();
+  StorageProp20Jsunit();
   StorageProp22Jsunit();
   StorageProp25Jsunit();
   StorageProp26Jsunit();
+
+  LinkSonJsunit();
   StateNumberJsunit();
-  StateArrayJsunit();   // 7
+  StateArrayJsunit();
   StateClassObjectJsunit();
   StateComponentJsunit();
   StateDate1Jsunit();
   StateDate2Jsunit();
-  LinkDataJsunit();  // 1
+  LinkDataJsunit();
   LinkClassArrJsunit();
-  LinkSonJsunit();
+
   ObjectLinkFirJsunit();
   ObjectLinkSecJsunit();
   ObjectLinkFarJsunit();
   ObjectLinkSplJsunit();
   ObjectLinkCanJsunit();
   ObjectLinkNusJsunit();
-  ObjectLinkArrayJsunit();  // 7
+  ObjectLinkArrayJsunit();
   CombinationState2Jsunit();
   CombinationState3Jsunit();
   CombinationState6Jsunit();
   CombinationState7Jsunit();
   CombinationState8Jsunit();
+
   PropArrayJsunit();
   PropBooleanJsunit();
   PropClassObjectJsunit();
