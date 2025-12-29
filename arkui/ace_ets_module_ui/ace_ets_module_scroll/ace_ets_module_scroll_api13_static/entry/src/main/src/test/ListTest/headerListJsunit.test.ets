@@ -76,6 +76,7 @@ export default function headerListJsunit() {
      * @tc.level    Level.LEVEL1
      */
 it('headerListJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
+
       console.info('[headerListJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

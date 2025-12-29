@@ -70,6 +70,7 @@ export default function NavPathStack1_4() {
      * @tc.level    Level.LEVEL0
      */
 it('NavPathStack1_4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavPathStack1_4_static_0100 START');
       await CommonFunc.sleep(1000);
 

@@ -80,13 +80,14 @@ export default function RenderNodeDisposeTest() {
 
 
 
-/**
+    /**
      * @tc.number   renderNodeDisposeTest_static_0100
      * @tc.name     renderNodeDisposeTest_static_0100
      * @tc.desc     renderNodeDisposeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('renderNodeDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+
       console.info('renderNodeDisposeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

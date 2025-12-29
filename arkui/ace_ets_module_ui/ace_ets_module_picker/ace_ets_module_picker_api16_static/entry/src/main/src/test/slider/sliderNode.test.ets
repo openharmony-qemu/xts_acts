@@ -44,11 +44,11 @@ export default function sliderNodeTest() {
         console.info("get sliderNodeTest state pages:" + JSON.stringify(pages));
         if (!("sliderNode" == pages.name)) {
           console.info("get sliderNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push sliderNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push sliderNodeTest page error:" + err);
@@ -72,7 +72,8 @@ export default function sliderNodeTest() {
      * @tc.desc     sliderNode_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('sliderNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {   // 受注释代码影响
+it('sliderNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+   // 受注释代码影响
 
       let tagName = 'sliderNode_static_0100';
       console.info('[' + tagName + '] START============================');

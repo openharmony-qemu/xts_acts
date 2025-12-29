@@ -74,28 +74,14 @@ export default function NavigationSymbolIcon() {
      * @tc.level    Level.LEVEL0
      */
 it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavigationSymbolIcon_static_0100 START');
       await CommonFunc.sleep(1000);
       let str = JSON.stringify(inspector.getInspectorTree())
       await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(str);
       await CommonFunc.sleep(1000);
-
-      let str1 = JSON.stringifyJsonElement(obj1.getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0])
-      console.log('+++++++++++++789',str1)
-      expect(obj1.getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[1]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getArray('$children')[0]
-        .getString('$type')).assertEqual('SymbolGlyph');
+      expect(obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getString('$type')).assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 syb1');
       expect(obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[2].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getString('$type')).assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 syb2');

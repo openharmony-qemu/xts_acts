@@ -88,7 +88,7 @@ struct FrameNodeMoveToErrorCodeTest {
 
   build() {
     Column() {
-      // NodeContainer(this.myNodeController)
+      NodeContainer(this.myNodeController)
       Text(`${this.errorStr}`).id('error_str_id')
       Button('checkError in BuilderNode')
         .id('check_error_id')

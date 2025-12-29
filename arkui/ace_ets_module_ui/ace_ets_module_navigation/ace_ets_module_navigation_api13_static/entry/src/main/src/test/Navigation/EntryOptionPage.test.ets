@@ -80,6 +80,7 @@ export default function EntryOptionPage() {
      * @tc.level    Level.LEVEL0
      */
 it('EntryOptionPage_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EntryOptionPage_0100 START');
       await CommonFunc.sleep(1000);
 

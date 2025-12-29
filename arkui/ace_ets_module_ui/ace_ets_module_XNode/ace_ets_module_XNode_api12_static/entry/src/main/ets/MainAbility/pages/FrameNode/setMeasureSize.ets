@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,27 +76,17 @@ class MyFrameNode extends FrameNode {
     for (let i = 0;i < this.getChildrenCount();i++) {
       let child = this.getChild(i);
       if (child) {
-        console.log('++++++++onMeasureIF1')
         let childConstraint = GetChildLayoutConstraint(constraint, child);
-        console.log('++++++++onMeasureIF2')
         child.measure(childConstraint);
-        console.log('++++++++onMeasureIF3')
         let size = child.getMeasuredSize();
-        console.log('++++++++onMeasureIF4')
         sizeRes.height += size.height + this.space;
-        console.log('++++++++onMeasureIF5')
         sizeRes.width = Math.max(sizeRes.width, size.width);
-        console.log('++++++++onMeasureIF6')
       }
     }
-    console.log('++++++++onMeasure3')
     this.setMeasuredSize(sizeRes);
-    console.log('++++++++onMeasure4')
-
   }
 
   onLayout(position: NodePosition): void {
-    console.log('++++++++++onLayout')
     let y = 0;
     for (let i = 0;i < this.getChildrenCount();i++) {
       let child = this.getChild(i);
@@ -131,11 +121,8 @@ class MyNodeController extends NodeController {
   public rootNode: MyFrameNode | null = null;
 
   makeNode(context: UIContext): FrameNode | null {
-    console.log('++++++++++makeNode1')
     this.rootNode = new MyFrameNode(context);
-    console.log('++++++++++makeNode2')
     this.rootNode?.commonAttribute?.size({ width: 100, height: 100 }).backgroundColor(Color.Green);
-    console.log('++++++++++makeNode3')
     return this.rootNode;
   }
 }
@@ -172,7 +159,6 @@ struct setMeasuredSize1 {
         Button(this.myMeasuredSize).id("getMeasuredSize_id")
           .onClick((e:ClickEvent) => {
             this.myMeasuredSize = "" + this.nodeController?.rootNode?.getMeasuredSize().height;
-            console.log('+++++++++++++this.myMeasuredSize',this.nodeController?.rootNode?.getMeasuredSize().height) //获取的值为0
           })
 
         Button(this.text1).id('APIsetOnDraw')

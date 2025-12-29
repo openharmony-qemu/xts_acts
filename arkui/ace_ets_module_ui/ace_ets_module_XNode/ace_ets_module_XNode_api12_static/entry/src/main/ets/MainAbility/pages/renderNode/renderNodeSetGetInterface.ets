@@ -1,6 +1,6 @@
 
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ struct renderSetGetInterface{
           .onClick((e:ClickEvent) => {
             borderColor!.left = 0xFF00FFEE
             renderNode.invalidate()
-            this.bColor = renderNode!.borderColor!.left
+            this.bColor = renderNode!.borderColor!.left  //master22  bColor:-16711698 equals bColor:4278255598
           })
 
 

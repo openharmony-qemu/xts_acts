@@ -104,13 +104,13 @@ struct BindControllerTest {
         .id('error_bnt401_id')
         .width('100%')
         .onClick((e:ClickEvent):void => {
-          this.errorStr401 = this.myNodeController.builderNodeBindController401();  //取值是空  ""
+          // this.errorStr401 = this.myNodeController.builderNodeBindController401();  //取值是空  ""
         })
       Button('BindController checkError 100021')
         .id('error_bnt100021_id')
         .width('100%')
         .onClick((e:ClickEvent) => {
-          this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
+          // this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
         })
     }
   }

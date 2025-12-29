@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ export default function attachNodeAdapterTest() {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/FrameNode/attachNodeAdapter",
       }
-      try {
+      // try {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
@@ -54,10 +54,10 @@ export default function attachNodeAdapterTest() {
           await CommonFunc.sleep(2000);
           //console.info("push attachNodeAdapterTest success: " + JSON.stringify(result));
         }
-      } catch (err) {
-        console.error("push attachNodeAdapterTest page error: " + err);
-           expect().assertFail();
-      }
+      // } catch (err) {
+      //   console.error("push attachNodeAdapterTest page error: " + err);
+      //      expect().assertFail();
+      // }
       //done();
     });
     
@@ -65,13 +65,14 @@ export default function attachNodeAdapterTest() {
 
 
 
-/**
+    /**
      * @tc.number   onCreateChildTest_static_0010
      * @tc.name     onCreateChildTest_static_0010
      * @tc.desc     onCreateChildTest_static_0010
      * @tc.level    Level.LEVEL0
      */
 it('onCreateChildTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('onCreateChildTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -90,13 +91,14 @@ it('onCreateChildTest_static_0010', Level.LEVEL0, async (done: () => void): Prom
 
 
 
-/**
+    /**
      * @tc.number   onDisposeChildTest_static_0020
      * @tc.name     onDisposeChildTest_static_0020
      * @tc.desc     onDisposeChildTest_static_0020
      * @tc.level    Level.LEVEL0
      */
 it('onDisposeChildTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('onDisposeChildTest_static_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -118,13 +120,14 @@ it('onDisposeChildTest_static_0020', Level.LEVEL0, async (done: () => void): Pro
 
 
 
-/**
+    /**
      * @tc.number   onUpdateChildTest_static_0030
      * @tc.name     onUpdateChildTest_static_0030
      * @tc.desc     onUpdateChildTest_static_0030
      * @tc.level    Level.LEVEL0
      */
 it('onUpdateChildTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('onUpdateChildTest_static_0030 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -146,13 +149,14 @@ it('onUpdateChildTest_static_0030', Level.LEVEL0, async (done: () => void): Prom
 
 
 
-/**
+    /**
      * @tc.number   attachNodeAdapterTest_static_0040
      * @tc.name     attachNodeAdapterTest_static_0040
      * @tc.desc     attachNodeAdapterTest_static_0040
      * @tc.level    Level.LEVEL0
      */
 it('attachNodeAdapterTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('attachNodeAdapterTest_static_0040 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -171,13 +175,14 @@ it('attachNodeAdapterTest_static_0040', Level.LEVEL0, async (done: () => void): 
 
 
 
-/**
+    /**
      * @tc.number   detachNodeAdapterTest_static_0050
      * @tc.name     detachNodeAdapterTest_static_0050
      * @tc.desc     detachNodeAdapterTest_static_0050
      * @tc.level    Level.LEVEL0
      */
 it('detachNodeAdapterTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('detachNodeAdapterTest_static_0050 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

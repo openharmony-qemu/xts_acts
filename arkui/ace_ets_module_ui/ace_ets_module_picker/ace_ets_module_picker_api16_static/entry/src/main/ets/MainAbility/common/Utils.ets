@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,  TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
@@ -35,8 +34,7 @@ export default class Utils {
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
-    // console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-    //   "windowRect Top: " + AppStorage.get<number>("winTop"));
+
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -87,6 +85,8 @@ export default class Utils {
       displayY: downY,
       windowX: downX,
       windowY: downY,
+      
+      
       type: TouchType.Down
     }
     console.info('down touch started: ' + JSON.stringify(downPoint))
@@ -104,6 +104,8 @@ export default class Utils {
         displayY: downY + (yStep * i),
         windowX: downX + (xStep * i),
         windowY: downY + (yStep * i),
+        
+        
         type: TouchType.Move,
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
@@ -125,6 +127,8 @@ export default class Utils {
       displayY: upY,
       windowX: upX,
       windowY: upY,
+      
+      
       type: TouchType.Up,
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))

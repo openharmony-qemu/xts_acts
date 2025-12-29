@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,13 @@ import UIObserverWillDrawTest from './ObserverTest/UIObserverWillDraw.test';
 import UIObserverDidLayoutTest from './ObserverTest/UIObserverDidLayout.test';
 
 export default function testsuite() {
-  // lazyForEachTest();  // SR20250717371939  8用例
-  // ApplyNormalAttributeTest(); //SDK12.9 pass1
-  // UIObserverDensityUpdateTest(); //SDK12.9 pass1
-  // UIObserverWillDrawTest(); // //SDK12.9 pass1
-  UIObserverDidLayoutTest(); // //SDK12.9 pass1
+  // ApplyNormalAttributeTest(); //11.20SDK pass
+  // UIObserverDensityUpdateTest(); // 11.20SDK pass
+  // UIObserverWillDrawTest(); // 11.20SDK pass
+  // UIObserverDidLayoutTest(); // 11.20SDK pass
+  // ApplyNormalAttributeTest(); //11.20SDK pass
+  // UIObserverDensityUpdateTest(); // 11.20SDK pass
+  // UIObserverWillDrawTest(); // 11.20SDK pass
+  // UIObserverDidLayoutTest(); // 11.20SDK pass
+  lazyForEachTest();  // SR20250717371939  8用例
 }

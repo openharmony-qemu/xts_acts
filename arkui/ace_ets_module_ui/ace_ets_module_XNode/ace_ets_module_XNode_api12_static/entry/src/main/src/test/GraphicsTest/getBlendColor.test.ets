@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,14 @@ export default function getBlendColor() {
 
 
 
-/**
+    /**
      * @tc.number   getBlendColor_static_0100
      * @tc.name     getBlendColor_static_0100
      * @tc.desc     getBlendColor_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('getBlendColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getBlendColor_0100 START');
       let strJson: string = inspector.getInspectorByKey('getBlendColor');
       let obj = JSON.parseJsonElement(strJson);

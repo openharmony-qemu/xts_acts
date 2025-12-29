@@ -40,13 +40,12 @@ function getResourceColor(baseColor: number):ColorMetrics {
 struct getNumericExample {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('++++++++++++++++++++++++++++++++')
       Button("getNumeric")
         .id("getNumeric")
         .width('80%')
         .align(Alignment.Center)
         .height(50)
-        .backgroundColor(getResourceColor(0xffff0000).color) //SDK12.9 导致页面加载失败
+        .backgroundColor(getResourceColor(0xffff0000).color)
     }
     .width('100%')
     .height('100%')

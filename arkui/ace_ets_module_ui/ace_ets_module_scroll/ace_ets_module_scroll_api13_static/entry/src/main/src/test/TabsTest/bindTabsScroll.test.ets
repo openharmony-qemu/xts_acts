@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function bindTabsScroll() {
   describe('bindTabsScroll', () => {
     beforeAll(() => {
-      await UtilsTest.loadAndSetUpUiTest();
+      // await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -76,6 +76,7 @@ export default function bindTabsScroll() {
      * @tc.level    Level.LEVEL1
      */
 it('bindTabsScroll_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('[bindTabsScroll_static_0100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);

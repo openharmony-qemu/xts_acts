@@ -58,13 +58,15 @@ export default function GetWindowWidthAndHeightTest() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   GetWindowWidthBreakpoint_static_0100
      * @tc.name     GetWindowWidthBreakpoint_static_0100
      * @tc.desc     GetWindowWidthBreakpoint_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('GetWindowWidthBreakpoint_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,13 +87,15 @@ it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   GetWindowHeightBreakpoint_static_0200
      * @tc.name     GetWindowHeightBreakpoint_static_0200
      * @tc.desc     GetWindowHeightBreakpoint_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('GetWindowHeightBreakpoint_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('GetWindowHeightBreakpoint_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

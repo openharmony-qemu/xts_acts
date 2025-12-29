@@ -58,13 +58,15 @@ export default function CanvasAttrsTabTest() {
     
 
 
-/**
+
+    /**
      * @tc.number   CanvasAttrsTabTest_static_0100
      * @tc.name     CanvasAttrsTabTest_static_0100
      * @tc.desc     CanvasAttrsTabTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('CanvasAttrsTabTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

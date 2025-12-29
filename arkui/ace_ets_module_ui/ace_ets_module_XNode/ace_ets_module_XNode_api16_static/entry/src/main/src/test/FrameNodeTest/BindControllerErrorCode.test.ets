@@ -80,13 +80,14 @@ export default function BindControllerErrorCodeTest() {
 
 
 
-/**
+    /**
      * @tc.number   BindControllerErrorCodeTest_static_0100
      * @tc.name     BindControllerErrorCodeTest_static_0100
      * @tc.desc     BindControllerErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('BindControllerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+
       console.info('BindControllerErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,13 +107,14 @@ it('BindControllerErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => v
 
 
 
-/**
+    /**
      * @tc.number   BindControllerErrorCodeTest_static_0200
      * @tc.name     BindControllerErrorCodeTest_static_0200
      * @tc.desc     BindControllerErrorCodeTest_static_0200
      * @tc.level    Level.LEVEL2
      */
 it('BindControllerErrorCodeTest_static_0200', Level.LEVEL2, async (done: () => void) => {
+
       console.info('BindControllerErrorCodeTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -57,13 +57,15 @@ export default function AttachDetachRebindTest() {
     
 
 
-/**
+
+    /**
      * @tc.number   AttachDetachRebindTest_static_0100
      * @tc.name     AttachDetachRebindTest_static_0100
      * @tc.desc     AttachDetachRebindTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('AttachDetachRebindTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('AttachDetachRebindTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -54,13 +54,13 @@ export default function ModifierTextStyleTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          // let result = await routerInstance.pushUrl(options)
-          // console.info('push ModifierTextStyleTest page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push ModifierTextStyleTest page error ' + JSON.stringify(err));
       }
     });
+    
     
     
     
@@ -71,6 +71,7 @@ export default function ModifierTextStyleTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ModifierTextStyleTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('ModifierTextStyleTest_static_0100 start');
       let strJson = inspector.getInspectorByKey('modifierDefaultTextStyle');
       console.info('[ModifierTextStyleTest_static_0100]:' + JSON.stringify(strJson));

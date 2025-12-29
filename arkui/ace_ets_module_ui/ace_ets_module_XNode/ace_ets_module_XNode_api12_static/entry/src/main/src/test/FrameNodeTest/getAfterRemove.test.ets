@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,13 +65,14 @@ export default function getAfterRemove() {
 
 
 
-/**
+    /**
      * @tc.number   getAfterRemove_static_0100
      * @tc.name     getAfterRemove_static_0100
      * @tc.desc     getAfterRemove_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('getAfterRemove_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getPosition_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -90,13 +91,14 @@ it('getAfterRemove_static_0100', Level.LEVEL0, async (done: () => void): Promise
 
 
 
-/**
+    /**
      * @tc.number   getAfterRemove_static_0200
      * @tc.name     getAfterRemove_static_0200
      * @tc.desc     getAfterRemove_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('getAfterRemove_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAfterRemove_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -115,13 +117,14 @@ it('getAfterRemove_static_0200', Level.LEVEL0, async (done: () => void): Promise
 
 
 
-/**
+    /**
      * @tc.number   getAfterRemove_static_0300
      * @tc.name     getAfterRemove_static_0300
      * @tc.desc     getAfterRemove_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('getAfterRemove_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAfterRemove_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,13 +65,14 @@ export default function getAttrsTest() {
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0100
      * @tc.name     getAttrsTest_static_0100
      * @tc.desc     getAttrsTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -90,13 +91,14 @@ it('getAttrsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0200
      * @tc.name     getAttrsTest_static_0200
      * @tc.desc     getAttrsTest_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -115,13 +117,14 @@ it('getAttrsTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0300
      * @tc.name     getAttrsTest_static_0300
      * @tc.desc     getAttrsTest_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -140,13 +143,14 @@ it('getAttrsTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0400
      * @tc.name     getAttrsTest_static_0400
      * @tc.desc     getAttrsTest_static_0400
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -165,13 +169,14 @@ it('getAttrsTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0500
      * @tc.name     getAttrsTest_static_0500
      * @tc.desc     getAttrsTest_static_0500
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -190,13 +195,14 @@ it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0600
      * @tc.name     getAttrsTest_static_0600
      * @tc.desc     getAttrsTest_static_0600
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -215,13 +221,14 @@ it('getAttrsTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0700
      * @tc.name     getAttrsTest_static_0700
      * @tc.desc     getAttrsTest_static_0700
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0700 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -240,13 +247,14 @@ it('getAttrsTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0800
      * @tc.name     getAttrsTest_static_0800
      * @tc.desc     getAttrsTest_static_0800
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0800 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -265,13 +273,14 @@ it('getAttrsTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_0900
      * @tc.name     getAttrsTest_static_0900
      * @tc.desc     getAttrsTest_static_0900
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_0900 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -290,13 +299,14 @@ it('getAttrsTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_1000
      * @tc.name     getAttrsTest_static_1000
      * @tc.desc     getAttrsTest_static_1000
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_1000 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -315,13 +325,14 @@ it('getAttrsTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<v
 
 
 
-/**
+    /**
      * @tc.number   getAttrsTest_static_1100
      * @tc.name     getAttrsTest_static_1100
      * @tc.desc     getAttrsTest_static_1100
      * @tc.level    Level.LEVEL0
      */
 it('getAttrsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAttrsTest_static_1100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

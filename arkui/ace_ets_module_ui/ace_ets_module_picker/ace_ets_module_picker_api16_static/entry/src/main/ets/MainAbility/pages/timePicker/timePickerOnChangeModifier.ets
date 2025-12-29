@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 struct TimePickerPage {
   @State isMilitaryTime: boolean = false
   private selectedTime: Date = new Date('2022-07-22T10:00:00')
-  @State hour: number = 10
-  @State minute: number = 0
+  @State hour: int = 10
+  @State minute: int = 0
   @State onChangeOff: string = 'false'
   messageManager: MessageManager = new MessageManager()
   @State enableCascade: boolean | undefined | null = true
@@ -40,10 +40,6 @@ struct TimePickerPage {
   })
   onPageShow() {
     console.info('TimePicker onPageShow')
-    // globalThis.value = {
-    //   name: 'messageManager', message: this.messageManager
-    //
-    // }
     AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager )
     // let callback: Callback = (message: Message ) => {
     //   console.error('message = ' + message.name + '--' + message.value)
@@ -54,10 +50,10 @@ struct TimePickerPage {
     //     this.selectedTime = message.value as Date
     //   }
     //   if (message.name == 'hour') {
-    //     this.hour = message.value as number
+    //     this.hour = message.value as int
     //   }
     //   if (message.name == 'minute') {
-    //     this.minute = message.value as number
+    //     this.minute = message.value as int
     //   }
     // }
     // this.messageManager.registerCallback(callback)

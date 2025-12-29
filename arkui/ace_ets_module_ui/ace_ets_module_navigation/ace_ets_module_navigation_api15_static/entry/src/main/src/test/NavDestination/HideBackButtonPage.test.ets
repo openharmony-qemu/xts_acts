@@ -78,6 +78,7 @@ export default function HideBackButtonPage() {
      * @tc.level    Level.LEVEL0
      */
 it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('HideBackButtonPage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -106,6 +107,7 @@ it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('HideBackButtonPage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -138,6 +140,7 @@ it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('HideBackButtonPage_0300 START');
 
       try {
@@ -173,6 +176,7 @@ it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('HideBackButtonPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('HideBackButtonPage_0400 START');
 
       try {

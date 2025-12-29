@@ -80,13 +80,14 @@ export default function setCrossLanguageOptionsErrorCodeTest() {
 
 
 
-/**
+    /**
      * @tc.number   setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.name     setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.desc     setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('setCrossLanguageOptionsErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+
       console.info('setCrossLanguageOptionsErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

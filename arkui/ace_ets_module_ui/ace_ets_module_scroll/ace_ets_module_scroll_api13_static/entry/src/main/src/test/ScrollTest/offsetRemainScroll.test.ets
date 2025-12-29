@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 export default function offsetRemainScroll() {
   describe('offsetRemainScroll', () => {
     beforeAll(() => {
-      await UtilsTest.loadAndSetUpUiTest();
+      // await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +74,7 @@ export default function offsetRemainScroll() {
      * @tc.level    Level.LEVEL1
      */
 it('offsetRemainScroll_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
+
       console.info('[offsetRemainScroll_static_0100] START');
       await CommonFunc.sleep(1000);
       let swiperTabs: RectValue = CommonFunc.getComponentRectOnScreen('scroll_offsetRemain');

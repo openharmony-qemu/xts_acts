@@ -78,6 +78,7 @@ export default function BarStylePage() {
      * @tc.level    Level.LEVEL0
      */
 it('BarStylePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('BarStylePage_0100 START');
       await CommonFunc.sleep(1000);
 

@@ -51,13 +51,13 @@ export default function TextPickerTextStyleTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          // let result = await routerInstance.pushUrl(options)
-          // console.info('push TextPickerTextStyle page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push TextPickerTextStyle page error ' + JSON.stringify(err));
       }
     });
+    
     
     
     
@@ -68,6 +68,7 @@ export default function TextPickerTextStyleTest() {
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0100 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -92,6 +93,7 @@ it('TextPickerTextStyleTest_static_0100', Level.LEVEL1, async (done: () => void)
     
     
     
+    
     /**
      * @tc.number   TextPickerTextStyleTest_static_0200
      * @tc.name     TextPickerTextStyleTest_static_0200
@@ -99,6 +101,7 @@ it('TextPickerTextStyleTest_static_0100', Level.LEVEL1, async (done: () => void)
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0200 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -113,13 +116,14 @@ it('TextPickerTextStyleTest_static_0200', Level.LEVEL1, async (done: () => void)
       console.info('[TextPickerTextStyleTest_static_0200 obj Normal2 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('18.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');  //
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0200] END');
       done();
     });
 
+    
     
     
     
@@ -130,6 +134,7 @@ it('TextPickerTextStyleTest_static_0200', Level.LEVEL1, async (done: () => void)
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0300 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -144,13 +149,14 @@ it('TextPickerTextStyleTest_static_0300', Level.LEVEL1, async (done: () => void)
       console.info('[TextPickerTextStyleTest_static_0300 obj Normal3 $attrs.defaultTextStyle]:' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('defaultTextStyle')));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('28.00fp');
-      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');  //
+      expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       await CommonFunc.sleep(1000);
       console.info('[TextPickerTextStyleTest_static_0300] END');
       done();
     });
 
+    
     
     
     
@@ -161,6 +167,7 @@ it('TextPickerTextStyleTest_static_0300', Level.LEVEL1, async (done: () => void)
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0400 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -185,6 +192,7 @@ it('TextPickerTextStyleTest_static_0400', Level.LEVEL1, async (done: () => void)
     
     
     
+    
     /**
      * @tc.number   TextPickerTextStyleTest_static_0500
      * @tc.name     TextPickerTextStyleTest_static_0500
@@ -192,6 +200,7 @@ it('TextPickerTextStyleTest_static_0400', Level.LEVEL1, async (done: () => void)
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0500 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -216,6 +225,7 @@ it('TextPickerTextStyleTest_static_0500', Level.LEVEL1, async (done: () => void)
     
     
     
+    
     /**
      * @tc.number   TextPickerTextStyleTest_static_0600
      * @tc.name     TextPickerTextStyleTest_static_0600
@@ -223,6 +233,7 @@ it('TextPickerTextStyleTest_static_0500', Level.LEVEL1, async (done: () => void)
      * @tc.level    Level.LEVEL1
      */
 it('TextPickerTextStyleTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextPickerTextStyleTest_static_0600 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

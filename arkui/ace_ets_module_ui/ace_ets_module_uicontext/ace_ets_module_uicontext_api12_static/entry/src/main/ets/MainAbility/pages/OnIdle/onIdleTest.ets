@@ -34,7 +34,8 @@ class IdleCallback extends FrameCallback {
     super()
   }
 
-  onIdle(idleTimeInNano: number): void {
+  onIdle(idleTimeInNano:long): void { //未执行
+    console.log('++++++++++++++onIdle')
     this.link!.set('OnIdle')
   }
 }
@@ -56,7 +57,8 @@ struct onIdleTest {
         .onClick((e:ClickEvent) => {
           this.switch_ = !this.switch_
           if (this.switch_) {
-            (this.getUIContext().postFrameCallback(this.callback))
+            console.log('++++++++++++++this.switch_',this.switch_)
+            this.getUIContext().postFrameCallback(this.callback)
           }
           this.str = storage!.get<string>('message')!
         })

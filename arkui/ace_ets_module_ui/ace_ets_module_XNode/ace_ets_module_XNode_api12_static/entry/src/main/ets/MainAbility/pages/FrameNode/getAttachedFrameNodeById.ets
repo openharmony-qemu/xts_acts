@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ struct GetAttachedFramenodeByID {
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') getUserConfigSize is ` + JSON.stringify(frame.getUserConfigSize()))
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') getMeasuredSize is ` + JSON.stringify(frame.getMeasuredSize()))
           } else {
+            this.message = 'Hello Sally'
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') is ` + frame)
           }
         })

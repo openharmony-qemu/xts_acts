@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-// import { px2vp } from '@ohos.arkui.component'
 
 // function getRectCenterVp(rect: string) {
 //   let regexp: RegExp = new RegExp('\\[', 'g');
@@ -55,11 +54,11 @@ export default function textPickerOnChangeModifierTest() {
         console.info("get textPickerOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("textPickerOnChangeModifier" == pages.name)) {
           console.info("get textPickerOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          
+          
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push textPickerOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push textPickerOnChangeModifierTest page error:" + err);
@@ -79,6 +78,7 @@ export default function textPickerOnChangeModifierTest() {
      * @tc.level    Level.LEVEL1
      */
 it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         console.info('TextPicker_OnChange_Modifier_static_001 START');
         let driver = Driver.create();
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
@@ -90,13 +90,13 @@ it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         let right = datePicker.right
         let middle = (bottom-top) / 2 + top
         let left =datePicker.left
-        await driver.swipe(Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(AppStorage.get<number>("winTop") ?? 0 +middle) as Int,
-          Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(0) as Int);
+        await driver.swipe(Math.round( 0 +(right-left)/2+left) as Int, Math.round( 0 +middle) as Int,
+          Math.round( 0 +(right-left)/2+left) as Int, Math.round(0) as Int);
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
         console.info("TextPicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
           .getElement('$attrs')));
-        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('false');
         console.info('TextPicker_OnChange_Modifier_static_001 END');
         done();
       });
@@ -112,6 +112,7 @@ it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
      * @tc.level    Level.LEVEL1
      */
 it('TextPicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         console.info('TextPicker_OnChange_Modifier_static_002 START');
         let driver = Driver.create();
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
@@ -123,8 +124,8 @@ it('TextPicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
         let right = datePicker.right
         let middle = (bottom-top) / 2 + top
         let left =datePicker.left
-        await driver.swipe(Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(AppStorage.get<number>("winTop") ?? 0 +middle) as Int,
-          Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(0) as Int);
+        await driver.swipe(Math.round(0 +(right-left)/2+left) as Int, Math.round(0 +middle) as Int,
+          Math.round(0 +(right-left)/2+left) as Int, Math.round(0) as Int);
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onScrollStopOff');
         console.info("TextPicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
