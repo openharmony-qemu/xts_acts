@@ -336,14 +336,14 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-  /**
-    * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0100
-    * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0100
-    * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
+    /**
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0100
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0100
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_COMMUNICATION_WIFI_NAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -358,13 +358,13 @@ export default function ConnectivityTest() {
         }
       })
     /**
-    * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0200
-    * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0200
-    * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0200
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0200
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_COMMUNICATION_WIFI_NAPI_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -379,13 +379,13 @@ export default function ConnectivityTest() {
         }
       })
     /**
-    * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0300
-    * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0300
-    * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0300
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0300
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_COMMUNICATION_WIFI_NAPI_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -401,13 +401,13 @@ export default function ConnectivityTest() {
       })
 
     /**
-    * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0400
-    * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0400
-    * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0400
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0400
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_COMMUNICATION_WIFI_NAPI_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -423,13 +423,13 @@ export default function ConnectivityTest() {
       })
 
     /**
-    * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0500
-    * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0500
-    * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0500
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0500
+     * @tc.desc   testing OH_Wifi_GetDeviceMacAddress interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_COMMUNICATION_WIFI_NAPI_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -444,6 +444,6 @@ export default function ConnectivityTest() {
           console.error("====>SUB_COMMUNICATION_WIFI_NAPI_0500 catch err: " + err);
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
-      }) 
+      })
   })
 }
