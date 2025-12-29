@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Copyright (c) 2021 Huawei Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,34 +21,35 @@ namespace OHOS {
 /**
  * @brief Disables the copy and move construct/assignment method.
  */
-#define DISALLOW_COPY_AND_MOVE(className)\
-    DISALLOW_COPY(className);\
-    DISALLOW_MOVE(className)
+#define DISALLOW_COPY_AND_MOVE(className) \
+    className(const className&) = delete; \
+    className& operator=(const className&) = delete; \
+    className(className&&) = delete; \
+    className& operator=(className&&) = delete
 
 /**
  * @brief Disables the copy construct/assignment method.
  */
-#define DISALLOW_COPY(className)\
-    className(const className&) = delete;\
-    className& operator= (const className&) = delete
+#define DISALLOW_COPY(className) \
+    className(const className&) = delete; \
+    className& operator=(const className&) = delete
 
 /**
  * @brief Disables the move construct/assignment method.
  */
-#define DISALLOW_MOVE(className)\
-    className(className&&) = delete;\
-    className& operator= (className&&) = delete
-
+#define DISALLOW_MOVE(className) \
+    className(className&&) = delete; \
+    className& operator=(className&&) = delete
 
 class NoCopyable {
 protected:
-    NoCopyable() {}
-    virtual ~NoCopyable() {}
+    NoCopyable() = default;
+    virtual ~NoCopyable() = default;
 
 private:
     DISALLOW_COPY_AND_MOVE(NoCopyable);
 };
 
-}
+} // namespace OHOS
 
-#endif
+#endif // UTILS_BASE_NOCOPYABLE_H

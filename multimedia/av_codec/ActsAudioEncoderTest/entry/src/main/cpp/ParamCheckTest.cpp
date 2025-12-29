@@ -453,7 +453,7 @@ int PARAM_CHECK_010()
     AudioBufferAacEncDemo* audioBufferAacEncDemo = new AudioBufferAacEncDemo();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = audioBufferAacEncDemo->SetCallback(codec);
-    bitRate = 6000;
+    bitRate = PARAM_CHECK_CONFIGURE_BIT_RATE_6K;
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -461,7 +461,7 @@ int PARAM_CHECK_010()
     format = OH_AVFormat_Create();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = audioBufferAacEncDemo->SetCallback(codec);
-    bitRate = 510000;
+    bitRate = PARAM_CHECK_CONFIGURE_BIT_RATE_510K;
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -469,7 +469,7 @@ int PARAM_CHECK_010()
     format = OH_AVFormat_Create();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = audioBufferAacEncDemo->SetCallback(codec);
-    bitRate = 5999;
+    bitRate = PARAM_CHECK_CONFIGURE_BIT_RATE_6K_LESS;
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
     ASSERT_EQ(result0, AV_ERR_OK);
@@ -477,7 +477,7 @@ int PARAM_CHECK_010()
     format = OH_AVFormat_Create();
     codec = audioBufferAacEncDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
     result0 = audioBufferAacEncDemo->SetCallback(codec);
-    bitRate = 510001;
+    bitRate = PARAM_CHECK_CONFIGURE_BIT_RATE_510K_GREATER;
     result0 = audioBufferAacEncDemo->Configure(
         codec, format, channel, sampleRate, bitRate, sampleFormat, sampleBit, complexity);
     ASSERT_EQ(result0, AV_ERR_OK);

@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include "OhosCommonTest.h"
-
 #ifndef ACTSAUDIOENCODERTEST_NULLCHECKTEST_H
 #define ACTSAUDIOENCODERTEST_NULLCHECKTEST_H
+
+#include "OhosCommonTest.h"
 
 int NULL_CHECK_001();
 int NULL_CHECK_002();

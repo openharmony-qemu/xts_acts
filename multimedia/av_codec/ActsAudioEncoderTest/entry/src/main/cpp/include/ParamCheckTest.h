@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include "OhosCommonTest.h"
-
 #ifndef ACTSAUDIOENCODERTEST_PARAMCHECKTEST_H
 #define ACTSAUDIOENCODERTEST_PARAMCHECKTEST_H
+
+#include "OhosCommonTest.h"
 
 int PARAM_CHECK_001();
 int PARAM_CHECK_002();

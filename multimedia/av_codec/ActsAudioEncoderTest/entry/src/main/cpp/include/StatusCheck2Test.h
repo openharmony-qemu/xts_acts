@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include "OhosCommonTest.h"
-#include "avcodec_codec_name.h"
-
 #ifndef ACTSAUDIOENCODERTEST_STATUSCHECK2TEST_H
 #define ACTSAUDIOENCODERTEST_STATUSCHECK2TEST_H
+
+#include "OhosCommonTest.h"
+#include "avcodec_codec_name.h"
 
 int STATUS_CHECK_041();
 int STATUS_CHECK_042();
