@@ -113,7 +113,9 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
     uint32_t size = TEST_COLOR_COUNT_2;            // colors' number
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
+    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
+                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
+                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
     // 1.The first parameter of the interface passes to nullptr.
     OH_Drawing_ShaderEffect* shaderEffect1 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
         nullptr, colors, pos, size, OH_Drawing_TileMode::CLAMP, matrix);
