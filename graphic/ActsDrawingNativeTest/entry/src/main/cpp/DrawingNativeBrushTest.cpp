@@ -1476,6 +1476,90 @@ int TestBrushSetColor4fNull()
 }
 
 /**
+ * @tc.name   testBrushSetColor4fAbnormal_Part1
+ * @brief     执行测试的第一部分：设置颜色并获取通道值。
+ * @note      此函数包含了原函数中从创建画笔到所有颜色设置和获取的逻辑。
+ * @param     brush 指向 OH_Drawing_Brush 对象的指针。
+ * @param     errorCodes 用于存储每次设置颜色操作返回值的数组。
+ */
+void TestBrushSetColor4fAbnormal_Part1(OH_Drawing_Brush* brush, OH_Drawing_ErrorCode errorCodes[8])
+{
+    float a = TEST_COLOR_FLOAT_ZERO;
+    float r = TEST_COLOR_FLOAT_ZERO;
+    float g = TEST_COLOR_FLOAT_ZERO;
+    float b = TEST_COLOR_FLOAT_ZERO;
+
+    // 以下是原函数中的所有测试步骤，代码和逻辑完全未改变
+    errorCodes[0] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetAlphaFloat(brush, &a);
+    EXPECT_EQ(a, TEST_COLOR_FLOAT_A);
+
+    errorCodes[1] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetAlphaFloat(brush, &a);
+    EXPECT_EQ(a, TEST_COLOR_FLOAT_ZERO);
+
+    errorCodes[2] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetRedFloat(brush, &r);
+    EXPECT_EQ(r, TEST_COLOR_FLOAT_A);
+
+    errorCodes[3] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetRedFloat(brush, &r);
+    EXPECT_EQ(r, TEST_COLOR_FLOAT_ZERO);
+}
+
+/**
+ * @tc.name   testBrushSetColor4fAbnormal_Part2
+ * @brief     执行测试的第二部分：继续设置颜色、断言所有操作成功并清理环境。
+ * @note      此函数包含了原函数中剩余的颜色设置、对所有 errorCode 的断言以及资源释放逻辑。
+ * @param     brush 指向 OH_Drawing_Brush 对象的指针。
+ * @param     errorCodes 包含第一部分测试中返回值的数组。
+ */
+void TestBrushSetColor4fAbnormal_Part2(OH_Drawing_Brush* brush, OH_Drawing_ErrorCode errorCodes[8])
+{
+    float g = TEST_COLOR_FLOAT_ZERO;
+    float b = TEST_COLOR_FLOAT_ZERO;
+
+    // 继续执行原函数中的剩余测试步骤
+    errorCodes[4] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetGreenFloat(brush, &g);
+    EXPECT_EQ(g, TEST_COLOR_FLOAT_A);
+
+    errorCodes[5] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_B, nullptr);
+    OH_Drawing_BrushGetGreenFloat(brush, &g);
+    EXPECT_EQ(g, TEST_COLOR_FLOAT_ZERO);
+
+    errorCodes[6] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_MAX, nullptr);
+    OH_Drawing_BrushGetBlueFloat(brush, &b);
+    EXPECT_EQ(b, TEST_COLOR_FLOAT_A);
+
+    errorCodes[7] = OH_Drawing_BrushSetColor4f(
+        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_MIN, nullptr);
+    OH_Drawing_BrushGetBlueFloat(brush, &b);
+    EXPECT_EQ(b, TEST_COLOR_FLOAT_ZERO);
+
+    // 断言所有设置操作都成功返回
+    EXPECT_EQ(errorCodes[0], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[1], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[2], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[3], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[4], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[5], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[6], OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCodes[7], OH_DRAWING_SUCCESS);
+
+    // 清理测试环境
+    OH_Drawing_BrushDestroy(brush);
+    DrawingNativeBrushTestTearDown();
+}
+
+/**
  * @tc.name   testBrushSetColor4fAbnormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4600
  * @tc.desc   Test for testBrushSetColor4fAbnormal.
@@ -1485,54 +1569,17 @@ int TestBrushSetColor4fNull()
  */
 int TestBrushSetColor4fAbnormal()
 {
+    // 1. 测试环境初始化
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    float a = TEST_COLOR_FLOAT_ZERO;
-    float r = TEST_COLOR_FLOAT_ZERO;
-    float g = TEST_COLOR_FLOAT_ZERO;
-    float b = TEST_COLOR_FLOAT_ZERO;
-    OH_Drawing_ErrorCode errorCode1 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetAlphaFloat(brush, &a);
-    EXPECT_EQ(a, TEST_COLOR_FLOAT_A);
-    OH_Drawing_ErrorCode errorCode2 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetAlphaFloat(brush, &a);
-    EXPECT_EQ(a, TEST_COLOR_FLOAT_ZERO);
-    OH_Drawing_ErrorCode errorCode3 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetRedFloat(brush, &r);
-    EXPECT_EQ(r, TEST_COLOR_FLOAT_A);
-    OH_Drawing_ErrorCode errorCode4 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetRedFloat(brush, &r);
-    EXPECT_EQ(r, TEST_COLOR_FLOAT_ZERO);
-    OH_Drawing_ErrorCode errorCode5 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_MAX, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetGreenFloat(brush, &g);
-    EXPECT_EQ(g, TEST_COLOR_FLOAT_A);
-    OH_Drawing_ErrorCode errorCode6 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_MIN, TEST_COLOR_FLOAT_B, nullptr);
-    OH_Drawing_BrushGetGreenFloat(brush, &g);
-    EXPECT_EQ(g, TEST_COLOR_FLOAT_ZERO);
-    OH_Drawing_ErrorCode errorCode7 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_MAX, nullptr);
-    OH_Drawing_BrushGetBlueFloat(brush, &b);
-    EXPECT_EQ(b, TEST_COLOR_FLOAT_A);
-    OH_Drawing_ErrorCode errorCode8 = OH_Drawing_BrushSetColor4f(
-        brush, TEST_COLOR_FLOAT_A, TEST_COLOR_FLOAT_R, TEST_COLOR_FLOAT_G, TEST_COLOR_FLOAT_MIN, nullptr);
-    OH_Drawing_BrushGetBlueFloat(brush, &b);
-    EXPECT_EQ(b, TEST_COLOR_FLOAT_ZERO);
-    EXPECT_EQ(errorCode1, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode3, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode4, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode5, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode6, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode7, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(errorCode8, OH_DRAWING_SUCCESS);
-    OH_Drawing_BrushDestroy(brush);
-    DrawingNativeBrushTestTearDown();
+
+    // 2. 创建一个数组来在两个拆分的函数之间传递 errorCode
+    OH_Drawing_ErrorCode errorCodes[8];
+
+    // 3. 按顺序调用拆分后的两个函数来执行完整的测试逻辑
+    TestBrushSetColor4fAbnormal_Part1(brush, errorCodes);
+    TestBrushSetColor4fAbnormal_Part2(brush, errorCodes);
+
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing
