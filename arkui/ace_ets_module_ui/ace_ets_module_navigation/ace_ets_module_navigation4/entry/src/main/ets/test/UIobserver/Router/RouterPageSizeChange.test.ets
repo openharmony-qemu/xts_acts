@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import CommonFunc from '../../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
 export default function RouterPageSizeChange() {

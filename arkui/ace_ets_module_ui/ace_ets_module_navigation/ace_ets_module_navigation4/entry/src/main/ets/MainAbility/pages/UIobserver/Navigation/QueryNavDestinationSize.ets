@@ -14,7 +14,7 @@ struct PageOneContent {
         })
         Button('pop').onClick(() => {
           this.stack.pop();
-        }).height('10%').id('popId')
+        }).height('10%').id('popId1')
       }
     }
     .width('100%')
@@ -54,13 +54,13 @@ struct QueryNavDestinationSize {
       Flex({direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center}){
         Button('on').onClick(() => {
           this.getUIContext().getUIObserver().onNavDestinationSizeChange(this.destSizeCallback);
-        }).height('10%').id('onId')
+        }).height('10%').id('onId1')
         Button('off').onClick(() => {
           this.getUIContext().getUIObserver().offNavDestinationSizeChange(this.destSizeCallback);
-        }).height('10%').id('offId')
+        }).height('10%').id('offId1')
         Button('push').onClick(() => {
           this.stack.pushPathByName('pageOne', '')
-        }).height('10%').id('pushId')
+        }).height('10%').id('pushId1')
       }
     }
     .width('100%')
