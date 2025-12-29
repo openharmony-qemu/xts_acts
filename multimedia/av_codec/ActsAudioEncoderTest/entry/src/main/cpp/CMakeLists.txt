@@ -17,7 +17,7 @@ NullCheckTest.cpp
 ParamCheckTest.cpp
 StatusCheck1Test.cpp
 StatusCheck2Test.cpp
-AvcodecAudioAvbufferEncoderDemo.cpp
+AvcodecAudioAvbufferEncoderDemoTest.cpp
  OhosCommonTest.cpp)
 
 target_link_libraries(audioencoder PUBLIC libace_napi.z.so
