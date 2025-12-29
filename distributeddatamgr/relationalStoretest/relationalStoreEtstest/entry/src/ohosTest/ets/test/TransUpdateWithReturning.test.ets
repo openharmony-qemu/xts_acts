@@ -109,7 +109,8 @@ export default function TransUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -142,11 +143,11 @@ export default function TransUpdateWithReturning() {
         expect(results?.resultSet.getRow().name).assertEqual("lisi");
         expect(results?.resultSet.getRow().age).assertEqual(20);
         expect(results?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturning001 end *************");
       done();
     })
@@ -178,11 +179,12 @@ export default function TransUpdateWithReturning() {
         expect(results?.resultSet.getRow().name).assertEqual("lisi");
         expect(results?.resultSet.getRow().age).assertEqual(20);
         expect(results?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
+
       console.log(TAG + "************* updateWithReturningSync001 end *************");
       done();
     })
@@ -335,11 +337,12 @@ export default function TransUpdateWithReturning() {
         let results = await trans?.updateWithReturning(valueBucket1, predicates, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
+
       console.log(TAG + "************* updateWithReturning006 end *************");
       done();
     })
@@ -379,11 +382,11 @@ export default function TransUpdateWithReturning() {
         let results = trans?.updateWithReturningSync(valueBucket1, predicates, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturningSync006 end *************");
       done();
     })
@@ -423,11 +426,11 @@ export default function TransUpdateWithReturning() {
         let result = await trans?.updateWithReturning(valueBucket1, predicates, config);
         expect(result?.changed).assertEqual(1024);
         expect(getRowCount(result?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturning007 end *************");
       done();
     })
@@ -467,11 +470,11 @@ export default function TransUpdateWithReturning() {
         let results = trans?.updateWithReturningSync(valueBucket1, predicates, config);
         expect(results?.changed).assertEqual(1024);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturningSync007 end *************");
       done();
     })
@@ -504,11 +507,11 @@ export default function TransUpdateWithReturning() {
         expect(results?.resultSet.getRow().age).assertEqual(20);
         expect(results?.resultSet.goToNextRow()).assertFalse();
         results?.resultSet.close();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturning008 end *************");
       done();
     })
@@ -542,11 +545,11 @@ export default function TransUpdateWithReturning() {
         expect(results?.resultSet.getRow().age).assertEqual(21);
         expect(results?.resultSet.goToNextRow()).assertFalse();
         results?.resultSet.close();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* updateWithReturningSync008 end *************");
       done();
     })
@@ -665,7 +668,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturningSync(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync011 failed1. code is ${e.code}, message is ${e.message}`);
@@ -680,7 +683,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturning(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync011 failed2. code is ${e.code}, message is ${e.message}`);
@@ -695,13 +698,13 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturningSync(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync011 failed3. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning011 end *************");
       done();
     })
@@ -979,6 +982,7 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
+      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning017 end *************");
       done();
     })
@@ -1064,6 +1068,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       await deferredTrans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning020 end *************");
       done();
     })
@@ -1147,6 +1152,7 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturningSync027 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800032);
       }
+      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning027 end *************");
       done();
     })
@@ -1186,6 +1192,7 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturningSync028 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
+      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning028 end *************");
       done();
     })
@@ -1356,7 +1363,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturningSync(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync032 failed1. code is ${e.code}, message is ${e.message}`);
@@ -1371,7 +1378,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturningSync(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync032 failed2. code is ${e.code}, message is ${e.message}`);
@@ -1386,7 +1393,7 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.updateWithReturningSync(valueBucket, predicates, config);
+        trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync032 failed3. code is ${e.code}, message is ${e.message}`);
@@ -1665,6 +1672,7 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturning036 failed8. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("401");
       }
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturningSync032 end *************");
       done();
     })
@@ -1692,6 +1700,7 @@ export default function TransUpdateWithReturning() {
         securityLevel: relationalStore.SecurityLevel.S1,
         persist: false
       }
+      let rdbStore: relationalStore.RdbStore | undefined = undefined;
       rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
       await rdbStore?.executeSql(CREATE_TABLE_TEST);
       let deferredTrans = await rdbStore?.createTransaction({
@@ -1719,6 +1728,7 @@ export default function TransUpdateWithReturning() {
       }
       await deferredTrans?.rollback();
       await trans?.rollback();
+      await rdbStore?.close();
       console.log(TAG + "************* updateWithReturning034 end *************");
       done();
     })
