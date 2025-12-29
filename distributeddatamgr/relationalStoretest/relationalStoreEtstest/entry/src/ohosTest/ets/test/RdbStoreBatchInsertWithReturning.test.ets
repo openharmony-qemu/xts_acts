@@ -357,7 +357,6 @@ export default function RdbStoreBatchInsertWithReturning() {
         console.error(TAG + `batchInsertWithReturning007 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-
       console.log(TAG + "************* batchInsertWithReturning007 end *************");
       done();
     })
@@ -889,29 +888,36 @@ export default function RdbStoreBatchInsertWithReturning() {
      */
     it('batchInsertWithReturning017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       console.log(TAG + "************* batchInsertWithReturning017 start *************");
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18,
         'salary': 25000.5,
       };
-      await rdbStore?.close();
+      await rdbStore1?.close();
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
       try {
-        await rdbStore?.batchInsertWithReturning("test", [valueBucket], config);
+        await rdbStore1?.batchInsertWithReturning("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `batchInsertWithReturning017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config);
+        rdbStore1?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `batchInsertWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, "rdbtest.db");
       console.log(TAG + "************* batchInsertWithReturning017 end *************");
       done();
     })
@@ -925,29 +931,36 @@ export default function RdbStoreBatchInsertWithReturning() {
      */
     it('batchInsertWithReturning018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       console.log(TAG + "************* batchInsertWithReturning018 start *************");
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18,
         'salary': 25000.5,
       };
-      await rdbStore?.close();
+      await rdbStore1?.close();
       const config: relationalStore.ReturningConfig = {
         columns: ['name?', 'age'],
       }
       try {
-        await rdbStore?.batchInsertWithReturning("test1", [valueBucket], config);
+        await rdbStore1?.batchInsertWithReturning("test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `batchInsertWithReturning018 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        rdbStore?.batchInsertWithReturningSync("test test1", [valueBucket], config);
+        rdbStore1?.batchInsertWithReturningSync("test test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `batchInsertWithReturningSync018 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, "rdbtest.db");
       console.log(TAG + "************* batchInsertWithReturning018 end *************");
       done();
     })
