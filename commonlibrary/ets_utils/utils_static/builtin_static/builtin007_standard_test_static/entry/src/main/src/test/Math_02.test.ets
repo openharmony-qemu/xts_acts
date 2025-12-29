@@ -1975,5 +1975,1367 @@ export default function math02Test() {
           expect().assertFail();
         }
       });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13004
+     * @tc.name    testMathSignbit13004
+     * @tc.desc    Verify signbit function with very small numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13004 start');
+        try {
+          expect(signbit(0.1)).assertFalse();
+          expect(signbit(-0.1)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13004 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13004: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13005
+     * @tc.name    testMathSignbit13005
+     * @tc.desc    Verify signbit function with very large numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13005 start');
+        try {
+          expect(signbit(Number.MAX_VALUE)).assertFalse();
+          expect(signbit(-Number.MAX_VALUE)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13005 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13005: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13006
+     * @tc.name    testMathSignbit13006
+     * @tc.desc    Verify signbit function with infinity values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13006 start');
+        try {
+          expect(signbit(Number.POSITIVE_INFINITY)).assertFalse();
+          expect(signbit(Number.NEGATIVE_INFINITY)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13006 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13006: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13008
+     * @tc.name    testMathSignbit13008
+     * @tc.desc    Verify signbit function with very small negative numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13008 start');
+        try {
+          expect(signbit(-0.0000001)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13008 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13008: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13009
+     * @tc.name    testMathSignbit13009
+     * @tc.desc    Verify signbit function with very small positive numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13009 start');
+        try {
+          expect(signbit(0.0000001)).assertFalse();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13009 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13009: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13010
+     * @tc.name    testMathSignbit13010
+     * @tc.desc    Verify signbit function with maximum positive number
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13010 start');
+        try {
+          expect(signbit(Number.MAX_VALUE)).assertFalse();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13010 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13010: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13011
+     * @tc.name    testMathSignbit13011
+     * @tc.desc    Verify signbit function with minimum negative number
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13011 start');
+        try {
+          expect(signbit(-Number.MAX_VALUE)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13011 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13011: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13012
+     * @tc.name    testMathSignbit13012
+     * @tc.desc    Verify signbit function with positive infinity
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13012 start');
+        try {
+          expect(signbit(Number.POSITIVE_INFINITY)).assertFalse();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13012 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13012: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13013
+     * @tc.name    testMathSignbit13013
+     * @tc.desc    Verify signbit function with negative infinity
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13013 start');
+        try {
+          expect(signbit(Number.NEGATIVE_INFINITY)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13013 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13013: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13014
+     * @tc.name    testMathSignbit13014
+     * @tc.desc    Verify signbit function with negative zero
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13014 start');
+        try {
+          expect(signbit(-0.0)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13014 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13014: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13016
+     * @tc.name    testMathSignbit13016
+     * @tc.desc    Verify signbit function with a positive integer
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13016 start');
+        try {
+          expect(signbit(10)).assertFalse();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13016 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13016: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13017
+     * @tc.name    testMathSignbit13017
+     * @tc.desc    Verify signbit function with a negative integer
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13017 start');
+        try {
+          expect(signbit(-10)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13017 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13017: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGNBIT_13018
+     * @tc.name    testMathSignbit13018
+     * @tc.desc    Verify signbit function with positive zero
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSignbit13018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSignbit13018 start');
+        try {
+          expect(signbit(0.0)).assertFalse();
+          hilog.info(domain, tag, '%{public}s', 'testMathSignbit13018 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSignbit13018: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14001
+     * @tc.name    testMathSign14001
+     * @tc.desc    Verify sign function with positive numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14001 start');
+        try {
+          expect(sign(3.2)).assertEqual(1);
+          expect(sign(5.9)).assertEqual(1);
+          expect(sign(7.0)).assertEqual(1);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14001 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14001: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14002
+     * @tc.name    testMathSign14002
+     * @tc.desc    Verify sign function with negative numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14002 start');
+        try {
+          expect(sign(-3.2)).assertEqual(-1);
+          expect(sign(-5.9)).assertEqual(-1);
+          expect(sign(-7.0)).assertEqual(-1);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14002 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14002: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14003
+     * @tc.name    testMathSign14003
+     * @tc.desc    Verify sign function with zero values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14003 start');
+        try {
+          expect(sign(0.0)).assertEqual(0);
+          expect(sign(-0.0)).assertEqual(0);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14003 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14003: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14004
+     * @tc.name    testMathSign14004
+     * @tc.desc    Verify sign function with very small numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14004 start');
+        try {
+          expect(sign(1e-14)).assertEqual(1);
+          expect(sign(-1e-14)).assertEqual(-1);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14004 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14004: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14005
+     * @tc.name    testMathSign14005
+     * @tc.desc    Verify sign function with very large numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14005 start');
+        try {
+          expect(sign(Number.MAX_VALUE)).assertEqual(1);
+          expect(sign(-Number.MAX_VALUE)).assertEqual(-1);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14005 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14005: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIGN_14006
+     * @tc.name    testMathSign14006
+     * @tc.desc    Verify sign function with infinity values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSign14006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSign14006 start');
+        try {
+          expect(sign(Number.POSITIVE_INFINITY)).assertEqual(1);
+          expect(sign(Number.NEGATIVE_INFINITY)).assertEqual(-1);
+          hilog.info(domain, tag, '%{public}s', 'testMathSign14006 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSign14006: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14007
+     * @tc.name    testMathSin14007
+     * @tc.desc    Verify sin function with positive angles
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14007 start');
+        try {
+          expect(Math.abs(sin(Math.PI / 2) - 1.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(Math.PI / 4) - Math.sqrt(2) / 2) < 1e-10).assertTrue();
+          expect(Math.abs(sin(Math.PI / 6) - 0.5) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14007 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14007: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14008
+     * @tc.name    testMathSin14008
+     * @tc.desc    Verify sin function with negative angles
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14008 start');
+        try {
+          expect(Math.abs(sin(-Math.PI / 2) + 1.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(-Math.PI / 4) + Math.sqrt(2) / 2) < 1e-10).assertTrue();
+          expect(Math.abs(sin(-Math.PI / 6) + 0.5) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14008 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14008: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14009
+     * @tc.name    testMathSin14009
+     * @tc.desc    Verify sin function with zero angle
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14009 start');
+        try {
+          expect(sin(0.0)).assertEqual(0.0);
+          expect(sin(-0.0)).assertEqual(-0.0);
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14009 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14009: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14010
+     * @tc.name    testMathSin14010
+     * @tc.desc    Verify sin function with very small angles
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14010 start');
+        try {
+          const verySmall = 1e-10;
+          expect(Math.abs(sin(verySmall) - verySmall) < 1e-20).assertTrue();
+          expect(Math.abs(sin(-verySmall) + verySmall) < 1e-20).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14010 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14010: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14012
+     * @tc.name    testMathSin14012
+     * @tc.desc    Verify sin function with multiples of PI
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14012 start');
+        try {
+          expect(Math.abs(sin(Math.PI) - 0.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(2 * Math.PI) - 0.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(-Math.PI) - 0.0) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14012 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14012: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14013
+     * @tc.name    testMathSin14013
+     * @tc.desc    Verify sin function with PI/2 multiples
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14013 start');
+        try {
+          expect(Math.abs(sin(Math.PI / 2) - 1.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(3 * Math.PI / 2) + 1.0) < 1e-10).assertTrue();
+          expect(Math.abs(sin(-Math.PI / 2) + 1.0) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14013 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14013: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14014
+     * @tc.name    testMathSin14014
+     * @tc.desc    Verify sin function with NaN
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSin14014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14014 start');
+        try {
+          expect(isNaN(sin(Number.NaN))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14014 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14014: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SIN_14015
+     * @tc.name    testMathSin14015
+     * @tc.desc    Verify sin function with infinity values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it(' testMathSin14015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSin14015 start');
+        try {
+          expect(isNaN(sin(Number.POSITIVE_INFINITY))).assertTrue();
+          expect(isNaN(sin(Number.NEGATIVE_INFINITY))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSin14015 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSin14015: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16001
+     * @tc.name    testMathSinh16001
+     * @tc.desc    Verify sinh function with positive numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16001 start');
+        try {
+          expect(Math.abs(sinh(0.0) - 0.0) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(1.0) - 1.1752011936438014) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(2.0) - 3.626860407847019) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16001 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16001: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16002
+     * @tc.name    testMathSinh16002
+     * @tc.desc    Verify sinh function with negative numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16002 start');
+        try {
+          expect(Math.abs(sinh(-0.0) - 0.0) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(-1.0) - (-1.1752011936438014)) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(-2.0) - (-3.626860407847019)) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16002 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16002: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16003
+     * @tc.name    testMathSinh16003
+     * @tc.desc    Verify sinh function with zero value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16003 start');
+        try {
+          expect(Math.abs(sinh(0.0) - 0.0) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16003 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16003: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16004
+     * @tc.name    testMathSinh16004
+     * @tc.desc    Verify sinh function with very small numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16004 start');
+        try {
+          expect(Math.abs(sinh(1e-10) - 1e-10) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(-1e-10) - (-1e-10)) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16004 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16004: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16005
+     * @tc.name    testMathSinh16005
+     * @tc.desc    Verify sinh function with very large numbers
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16005 start');
+        try {
+          expect(sinh(Number.MAX_VALUE)).assertEqual(Number.POSITIVE_INFINITY);
+          expect(sinh(-Number.MAX_VALUE)).assertEqual(Number.NEGATIVE_INFINITY);
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16005 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16005: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16006
+     * @tc.name    testMathSinh16006
+     * @tc.desc    Verify sinh function with infinity values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16006 start');
+        try {
+          expect(sinh(Number.POSITIVE_INFINITY)).assertEqual(Number.POSITIVE_INFINITY);
+          expect(sinh(Number.NEGATIVE_INFINITY)).assertEqual(Number.NEGATIVE_INFINITY);
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16006 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16006: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16007
+     * @tc.name    testMathSinh16007
+     * @tc.desc    Verify sinh function with NaN
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16007 start');
+        try {
+          expect(Number.isNaN(sinh(Number.NaN))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16007 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16007: ${error}`);
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16009
+     * @tc.name    testMathSinh16009
+     * @tc.desc    Verify sinh function with boundary values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16009 start');
+        try {
+          expect(Math.abs(sinh(Number.MIN_VALUE) - 0.0) < 1e-10).assertTrue();
+          expect(Math.abs(sinh(-Number.MIN_VALUE) - 0.0) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16009 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16009: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16014
+     * @tc.name    testMathSinh16014
+     * @tc.desc    Verify sinh function mathematical relationships
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16014 start');
+        try {
+          expect(Math.abs(sinh(-1.0) - (-sinh(1.0)))).assertEqual(0.0);
+          expect(Math.abs(sinh(-2.0) - (-sinh(2.0)))).assertEqual(0.0);
+          expect(Math.abs(sinh(-3.0) - (-sinh(3.0)))).assertEqual(0.0);
+          const x = 2.0;
+          expect(Math.abs(sinh(x) - (Math.exp(x) - Math.exp(-x)) / 2) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16014 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16014: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SINH_16015
+     * @tc.name    testMathSinh16015
+     * @tc.desc    Verify sinh function input range
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSinh16015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSinh16015 start');
+        try {
+          expect(sinh(Number.MAX_VALUE)).assertEqual(Number.POSITIVE_INFINITY);
+          expect(sinh(-Number.MAX_VALUE)).assertEqual(Number.NEGATIVE_INFINITY);
+          expect(Math.abs(sinh(1e-300) - 1e-300) < 1e-310).assertTrue();
+          expect(Math.abs(sinh(-1e-300) - (-1e-300)) < 1e-310).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSinh16015 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSinh16015: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17001
+     * @tc.name    testMathSqrt17001
+     * @tc.desc    Verify sqrt function with a negative number.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17001 start');
+        try {
+          expect(Number.isNaN(sqrt(-1.0))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17001 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17001: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17005
+     * @tc.name    testMathSqrt17005
+     * @tc.desc    Verify sqrt function with negative infinity.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17002 start');
+        try {
+          expect(Number.isNaN(sqrt(Number.NEGATIVE_INFINITY))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17002 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17002: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17006
+     * @tc.name    testMathSqrt17006
+     * @tc.desc    Verify sqrt function with NaN.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17003 start');
+        try {
+          expect(Number.isNaN(sqrt(Number.NaN))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17003 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17003: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17007
+     * @tc.name    testMathSqrt17007
+     * @tc.desc    Verify sqrt function with zero input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17004 start');
+        try {
+          expect(sqrt(0.0)).assertEqual(0.0);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17004 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17004: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17008
+     * @tc.name    testMathSqrt17008
+     * @tc.desc    Verify sqrt function with positive infinity.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17005 start');
+        try {
+          expect(sqrt(Number.POSITIVE_INFINITY)).assertEqual(Number.POSITIVE_INFINITY);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17005 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17005: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17009
+     * @tc.name    testMathSqrt17009
+     * @tc.desc    Verify sqrt function with perfect square input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17006 start');
+        try {
+          expect(sqrt(25.0)).assertEqual(5.0);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17006 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17006: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17010
+     * @tc.name    testMathSqrt170010
+     * @tc.desc    Verify sqrt function with fractional input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt170010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17007 start');
+        try {
+          expect(sqrt(0.25)).assertEqual(0.5);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17007 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17007: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17011
+     * @tc.name    testMathSqrt170011
+     * @tc.desc    Verify sqrt function with very large input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt170011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17008 start');
+        try {
+          const largeNum = 1e308;
+          expect(sqrt(largeNum)).assertEqual(1e154);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17008 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17008: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17012
+     * @tc.name    testMathSqrt17012
+     * @tc.desc    Verify sqrt function with small positive input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17009 start');
+        try {
+          const smallNum = 1e-300;
+          expect(sqrt(smallNum)).assertEqual(1e-150);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17009 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17009: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17013
+     * @tc.name    testMathSqrt17013
+     * @tc.desc    Verify sqrt function with irrational result.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17010 start');
+        try {
+          const result = sqrt(2);
+          const squared = result * result;
+          expect(Math.abs(squared - 2.0) < 1e-15).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17010 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17010: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17014
+     * @tc.name    testMathSqrt17014
+     * @tc.desc    Verify sqrt function with negative zero.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17011 start');
+        try {
+          const result = sqrt(-0.0);
+          expect(1 / result).assertEqual(Number.NEGATIVE_INFINITY);
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17011 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17011: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_SQRT_17015
+     * @tc.name    testMathSqrt17015
+     * @tc.desc    Verify sqrt function with large negative input.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathSqrt17015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathSqrt17012 start');
+        try {
+          expect(Number.isNaN(sqrt(-1e308))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathSqrt17012 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathSqrt17012: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18001_01
+     * @tc.name    testMathTan18001
+     * @tc.desc    Verify tan function with NaN.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18001 start');
+        try {
+          expect(Number.isNaN(tan(Number.NaN))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18001 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18001: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18002
+     * @tc.name    testMathTan18002
+     * @tc.desc    Verify tan function with positive infinity.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18002 start');
+        try {
+          expect(Number.isNaN(tan(Number.POSITIVE_INFINITY))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18002 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18002: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18001_02
+     * @tc.name    testMathTan18001_01
+     * @tc.desc    Verify tan function with negative infinity.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18001_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18003 start');
+        try {
+          expect(Number.isNaN(tan(Number.NEGATIVE_INFINITY))).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18003 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18003: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18004
+     * @tc.name    testMathTan18004
+     * @tc.desc    Verify tan function returns 0 for positive zero.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18004 start');
+        try {
+          expect(tan(0.0)).assertEqual(0.0);
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18004 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18004: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18005
+     * @tc.name    testMathTan18005
+     * @tc.desc    Verify tan function returns 0 for negative zero.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18005 start');
+        try {
+          expect(tan(-0.0)).assertEqual(-0.0);
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18005 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18005: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18006
+     * @tc.name    testMathTan18006
+     * @tc.desc    Verify tan function approaches +Infinity near π/2 from left.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18006 start');
+        try {
+          const epsilon = 1e-15;
+          const result = tan(Math.PI / 2 - epsilon);
+          expect(result > 0).assertTrue();
+          expect(Math.log(result) > 20).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18006 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18006: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18007
+     * @tc.name    testMathTan18007
+     * @tc.desc    Verify tan function approaches -Infinity near π/2 from right.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18007 start');
+        try {
+          const result = tan(Math.PI / 2 + 1e-10);
+          expect(result < -1e10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18007 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18007: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18011
+     * @tc.name    testMathTan18011
+     * @tc.desc    Verify tan(ε) ≈ ε for very small values.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18011 start');
+        try {
+          const epsilon = 1e-10;
+          const result = tan(epsilon);
+          const relativeError = Math.abs((result - epsilon) / epsilon);
+          expect(relativeError < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18011 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18011: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18013
+     * @tc.name    testMathTan18013
+     * @tc.desc    Verify tan(π) ≈ 0.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18013 start');
+        try {
+          const result = tan(Math.PI);
+          expect(Math.abs(result) < 1e-10).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18013 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18013: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18014
+     * @tc.name    testMathTan18014
+     * @tc.desc    Verify tan function with large value returns finite number.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18014 start');
+        try {
+          const largeValue = 1e10;
+          const result = tan(largeValue);
+          expect(Number.isFinite(result) || Number.isNaN(result)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18014 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18014: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18016
+     * @tc.name    testMathTan18016
+     * @tc.desc    Verify behavior near π/2 asymptote.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18016 start');
+        try {
+          const epsilon = 1e-6;
+          const leftResult = tan(Math.PI / 2 - epsilon);
+          expect(leftResult > 1e6).assertTrue();
+          const rightResult = tan(Math.PI / 2 + epsilon);
+          expect(rightResult < -1e6).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18016 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18016: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18017
+     * @tc.name    testMathTan18017
+     * @tc.desc    Verify tan with very small denormalized values.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18017 start');
+        try {
+          const denormal = Number.MIN_VALUE / 2;
+          const result = tan(denormal);
+          expect(Math.abs(result - denormal) < 1e-20).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18017 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18017: ${error}`);
+          expect().assertFail();
+        }
+      });
+
+    /**
+     * @tc.number  TEST_MATH_TAN_18018
+     * @tc.name    testMathTan18018
+     * @tc.desc    Verify tan with Number.MAX_VALUE.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testMathTan18018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathTan18018 start');
+        try {
+          const result = tan(Number.MAX_VALUE);
+          expect(Number.isFinite(result) || Number.isNaN(result)).assertTrue();
+          hilog.info(domain, tag, '%{public}s', 'testMathTan18018 end');
+          done();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s', `Error in testMathTan18018: ${error}`);
+          expect().assertFail();
+        }
+      });
   });
 }
