@@ -1553,5 +1553,851 @@ export default function BuiltinArrayconcatTest() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9010
+     * @tc.name    testBuiltinArrayconcat9010
+     * @tc.desc    Test concat method with two number arrays, verify the concatenated array length and last element
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9010";
+      try {
+        const arr1: number[] = [1, 2];
+        const arr2: number[] = [3, 4];
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[3]).assertEqual(4);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9011
+     * @tc.name    testBuiltinArrayconcat9011
+     * @tc.desc    Test concat method with a number array and an empty array verify original array remains unchanged
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9011";
+      try {
+        const arr1: number[] = [10, 20];
+        const emptyArr: number[] = [];
+        const result = arr1.concat(emptyArr);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(10);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9013
+     * @tc.name    testBuiltinArrayconcat9013_02
+     * @tc.desc    Test concat method with three number arrays verify concatenated array length and elements
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9013_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9013_02";
+      try {
+        const arr1: number[] = [1, 2];
+        const arr2: number[] = [3, 4];
+        const arr3: number[] = [5, 6];
+        const result = arr1.concat(arr2, arr3);
+        expect(result.length).assertEqual(6);
+        expect(result[5]).assertEqual(6);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9017
+     * @tc.name    testBuiltinArrayconcat9017
+     * @tc.desc    Test concat method with two string arrays and verify concatenated string result
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9017";
+      try {
+        const words1: string[] = ["Hello"];
+        const words2: string[] = ["World"];
+        const result = words1.concat(words2);
+        expect(result[0] + " " + result[1]).assertEqual("Hello World");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9016
+     * @tc.name    testBuiltinArrayconcat9016
+     * @tc.desc    Test that original array remains unchanged after concat operation
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9016";
+      try {
+        const original: number[] = [5, 10];
+        const toAdd: number[] = [15];
+        original.concat(toAdd);
+        expect(original.length).assertEqual(2);
+        expect(original[0]).assertEqual(5);
+        expect(original[1]).assertEqual(10);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9015
+     * @tc.name    testBuiltinArrayconcat9015
+     * @tc.desc    Test concat method with a single-element array and empty array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9015";
+      try {
+        const arr: number[] = [100];
+        const emptyArr: number[] = [];
+        const result = arr.concat(emptyArr);
+        expect(result.length).assertEqual(1);
+        expect(result[0]).assertEqual(100);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9019
+     * @tc.name    testBuiltinArrayconcat9019
+     * @tc.desc    Test concat method with large arrays (100 elements each) and verify all elements
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9019";
+      try {
+        const bigArray1: number[] = [];
+        const bigArray2: number[] = [];
+        for (let i = 0; i < 100; i++) {
+          bigArray1.push(i);
+          bigArray2.push(i + 100);
+        }
+        const result = bigArray1.concat(bigArray2);
+        expect(result.length).assertEqual(200);
+        expect(result[0]).assertEqual(0);
+        expect(result[99]).assertEqual(99);
+        expect(result[100]).assertEqual(100);
+        expect(result[199]).assertEqual(199);
+        expect(result[50]).assertEqual(50);
+        expect(result[150]).assertEqual(150);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_9022
+     * @tc.name    testBuiltinArrayconcat9022
+     * @tc.desc    Test that modifying concatenated result doesn't affect original arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat9022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBuiltinArrayconcat9022";
+      try {
+        const original: number[] = [100, 200, 300];
+        const toAdd: number[] = [400, 500];
+        const result = original.concat(toAdd);
+        result[0] = 999;
+        result[4] = 888;
+        expect(original.length).assertEqual(3);
+        expect(original[0]).assertEqual(100);
+        expect(original[1]).assertEqual(200);
+        expect(original[2]).assertEqual(300);
+        expect(toAdd.length).assertEqual(2);
+        expect(toAdd[0]).assertEqual(400);
+        expect(toAdd[1]).assertEqual(500);
+        expect(result[0]).assertEqual(999);
+        expect(result[4]).assertEqual(888);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+	
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0200_01
+     * @tc.name    testBuiltinArrayconcat0002
+     * @tc.desc    Testing concatenation with an empty array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat0002";
+      try {
+        let arr1: FixedArray<boolean> = [true, false];
+        let arr2: FixedArray<boolean> = [];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0300_01
+     * @tc.name    testBuiltinArrayconcat0003
+     * @tc.desc    Testing concatenation with multiple arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat0003";
+      try {
+        let arr1: FixedArray<boolean> = [true];
+        let arr2: FixedArray<boolean> = [false];
+        let arr3: FixedArray<boolean> = [true, true];
+        let result = concat(arr1, arr2, arr3);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+        expect(result[2]).assertEqual(true);
+        expect(result[3]).assertEqual(true);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0400_01
+     * @tc.name    testBuiltinArrayconcat0004
+     * @tc.desc    Testing concatenation with only one array (no additional arrays)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat0004";
+      try {
+        let arr1: FixedArray<boolean> = [true, false, true];
+        let result = concat(arr1);
+        expect(result.length).assertEqual(3);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+        expect(result[2]).assertEqual(true);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0100
+     * @tc.name    testBuiltinArrayconcat1001
+     * @tc.desc    Test basic concatenation of two boolean arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat1001";
+      try {
+        let arr1: FixedArray<boolean> = [true, false];
+        let arr2: FixedArray<boolean> = [false, true];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+        expect(result[2]).assertEqual(false);
+        expect(result[3]).assertEqual(true);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0200_02
+     * @tc.name    testBuiltinArrayconcat102
+     * @tc.desc    Test concatenation with one empty array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat102";
+      try {
+        let arr1: FixedArray<boolean> = [true, false];
+        let arr2: FixedArray<boolean> = [];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0300_02
+     * @tc.name    testBuiltinArrayconcat10003
+     * @tc.desc    Test concatenation with multiple arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat10003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat10003";
+      try {
+        let arr1: FixedArray<boolean> = [true];
+        let arr2: FixedArray<boolean> = [false];
+        let arr3: FixedArray<boolean> = [true, true];
+        let arr4: FixedArray<boolean> = [false, false];
+        let result = concat(arr1, arr2, arr3, arr4);
+        expect(result.length).assertEqual(6);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+        expect(result[2]).assertEqual(true);
+        expect(result[3]).assertEqual(true);
+        expect(result[4]).assertEqual(false);
+        expect(result[5]).assertEqual(false);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0400_02
+     * @tc.name    testBuiltinArrayconcat10004
+     * @tc.desc    Test concatenation of single-element arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat10004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat10004";
+      try {
+        let arr1: FixedArray<boolean> = [true];
+        let arr2: FixedArray<boolean> = [false];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(true);
+        expect(result[1]).assertEqual(false);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0500_01
+     * @tc.name    testBuiltinArrayconcat10005
+     * @tc.desc    Test concatenation with all true values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat10005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat10005";
+      try {
+        let arr1: FixedArray<boolean> = [true, true];
+        let arr2: FixedArray<boolean> = [true];
+        let arr3: FixedArray<boolean> = [true, true, true];
+        let result = concat(arr1, arr2, arr3);
+        expect(result.length).assertEqual(6);
+        for (let i = 0; i < result.length; i++) {
+          expect(result[i]).assertEqual(true);
+        }
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_CONCAT_0100_02
+     * @tc.name    testBuiltinArrayconcat20001
+     * @tc.desc    Testing basic concatenation of two byte arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat20001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat20001";
+      try {
+        let arr1: FixedArray<byte> = [1, 2, 3];
+        let arr2: FixedArray<byte> = [4, 5, 6];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(6);
+        expect(result[0]).assertEqual(1);
+        expect(result[3]).assertEqual(4);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_CONCAT_0200
+     * @tc.name    testBuiltinArrayconcat20002
+     * @tc.desc    Testing concatenation with an empty array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat20002";
+      try {
+        let arr1: FixedArray<byte> = [1, 2, 3];
+        let arr2: FixedArray<byte> = [];
+        let result = concat(arr1, arr2);
+        expect(result.length).assertEqual(3);
+        expect(result[0]).assertEqual(1);
+        expect(result[2]).assertEqual(3);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_CONCAT_0300_01
+     * @tc.name    testBuiltinArrayconcat20003
+     * @tc.desc    Testing concatenation with multiple arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat20003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat20003";
+      try {
+        let arr1: FixedArray<byte> = [1];
+        let arr2: FixedArray<byte> = [2, 3];
+        let arr3: FixedArray<byte> = [4, 5, 6];
+        let result = concat(arr1, arr2, arr3);
+        expect(result.length).assertEqual(6);
+        expect(result[0]).assertEqual(1);
+        expect(result[1]).assertEqual(2);
+        expect(result[5]).assertEqual(6);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_CONCAT_0400
+     * @tc.name    testBuiltinArrayconcat20004
+     * @tc.desc    Testing concatenation with only one array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat20004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat20004";
+      try {
+        let arr1: FixedArray<byte> = [1, 2, 3];
+        let result = concat(arr1);
+        expect(result.length).assertEqual(3);
+        expect(result[0]).assertEqual(1);
+        expect(result[2]).assertEqual(3);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_CONCAT_0500
+     * @tc.name    testBuiltinArrayconcat20005
+     * @tc.desc    Testing concatenation with single-element arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat20005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat20005";
+      try {
+        let arr1: FixedArray<byte> = [1];
+        let arr2: FixedArray<byte> = [2];
+        let arr3: FixedArray<byte> = [3];
+        let result = concat(arr1, arr2, arr3);
+        expect(result.length).assertEqual(3);
+        expect(result[0]).assertEqual(1);
+        expect(result[1]).assertEqual(2);
+        expect(result[2]).assertEqual(3);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BYTEARRAY_CONCAT_0100
+     * @tc.name    testBuiltinArrayconcat30001
+     * @tc.desc    Test concatenation of two byte arrays with predefined data.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat30001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat30001";
+      try {
+        let a: FixedArray<byte> = [0x01, 0x02] as FixedArray<byte>;
+        let b: FixedArray<byte> = [0x03, 0x04] as FixedArray<byte>;
+        let result = concat(a, b);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(0x01);
+        expect(result[3]).assertEqual(0x04);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BYTEARRAY_CONCAT_0200
+     * @tc.name    testBuiltinArrayconcat30002
+     * @tc.desc    Test concatenation with an empty predefined byte array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat30002";
+      try {
+        let a: FixedArray<byte> = [] as FixedArray<byte>;
+        let b: FixedArray<byte> = [0x01, 0x02] as FixedArray<byte>;
+        let result = concat(a, b);
+        expect(result.length).assertEqual(2);
+        expect(result[1]).assertEqual(0x02);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BYTEARRAY_CONCAT_0300
+     * @tc.name    testBuiltinArrayconcat30003
+     * @tc.desc    Test concatenation with multiple predefined byte arrays.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat30003";
+      try {
+        let a: FixedArray<byte> = [0x01] as FixedArray<byte>;
+        let b: FixedArray<byte> = [0x02] as FixedArray<byte>;
+        let c: FixedArray<byte> = [0x03] as FixedArray<byte>;
+        let result = concat(a, b, c);
+        expect(result.length).assertEqual(3);
+        expect(result[2]).assertEqual(0x03);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BYTEARRAY_CONCAT_0400
+     * @tc.name    testBuiltinArrayconcat30004
+     * @tc.desc    Verify the order of concatenated predefined byte arrays.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat30004";
+      try {
+        let a: FixedArray<byte> = [0x01] as FixedArray<byte>;
+        let b: FixedArray<byte> = [0x02] as FixedArray<byte>;
+        let result = concat(a, b);
+        expect(result[0]).assertEqual(0x01);
+        expect(result[1]).assertEqual(0x02);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BYTEARRAY_CONCAT_0500
+     * @tc.name    testBuiltinArrayconcat30005
+     * @tc.desc    Verify the length of concatenated large predefined byte arrays.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat30005";
+      try {
+        let a: FixedArray<byte> = [0x00, 0x00, 0x00, 0x00, 0x00] as FixedArray<byte>;
+        let b: FixedArray<byte> = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00] as FixedArray<byte>;
+        let result = concat(a, b);
+        expect(result.length).assertEqual(11);  5 + 6
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_ARRAY_CONCAT_0100
+     * @tc.name    testBuiltinArrayconcat40001
+     * @tc.desc    Testing basic concatenation of two FixedArray<char>
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat40001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat40001";
+      try {
+        let arr1: FixedArray<char> = [1, 2];
+        let arr2: FixedArray<char> = [3, 4];
+        let result = concat(arr1, arr2);
+        let expected: FixedArray<char> = [1,2,3,4];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0200_03
+     * @tc.name    testBuiltinArrayconcat40002
+     * @tc.desc    Testing concatenation with an empty array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat40002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat40002";
+      try {
+        let arr1: FixedArray<char> = [1, 2];
+        let emptyArr: FixedArray<char> = [];
+        let result = concat(arr1, emptyArr);
+        let expected: FixedArray<char> = [1, 2];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0300_03
+     * @tc.name    testBuiltinArrayconcat40003
+     * @tc.desc    Testing concatenation of three arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat40003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat40003";
+      try {
+        let arr1: FixedArray<char> = [1];
+        let arr2: FixedArray<char> = [2];
+        let arr3: FixedArray<char> = [3];
+        let result = concat(arr1, arr2, arr3);
+        let expected: FixedArray<char> = [1,2,3];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0400_03
+     * @tc.name    testBuiltinArrayconcat40004
+     * @tc.desc    Testing concatenation of single-element arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat40004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat40004";
+      try {
+        let arr1: FixedArray<char> = [1] as FixedArray<char>;
+        let arr2: FixedArray<char> = [2] as FixedArray<char>;
+        let result = concat(arr1, arr2);
+        let expected: FixedArray<char> = [1,2] as FixedArray<char>;
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0500_02
+     * @tc.name    testBuiltinArrayconcat40005
+     * @tc.desc    Testing concatenation when first array is empty
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat40005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat40005";
+      try {
+        let emptyArr: FixedArray<char> = [];
+        let arr2: FixedArray<char> = [1,2];
+        let result = concat(emptyArr, arr2);
+        let expected: FixedArray<char> = [1,2];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0100_01
+     * @tc.name    testBuiltinArrayconcat50001
+     * @tc.desc    Test concatenation of two FixedArray<char> arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat50001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat50001";
+      try {
+        let arr1: FixedArray<char> = [1, 2];
+        let arr2: FixedArray<char> = [3, 4];
+        let result = concat(arr1, arr2);
+        let expected: FixedArray<char> = [1,2,3,4];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0200_04
+     * @tc.name    testBuiltinArrayconcat50002
+     * @tc.desc    Test concatenation with multiple FixedArray<char> arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat50002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat50002";
+      try {
+        let arr1: FixedArray<char> = [1];
+        let arr2: FixedArray<char> = [2];
+        let arr3: FixedArray<char> = [3];
+        let arr4: FixedArray<char> = [4];
+        let result = concat(arr1, arr2, arr3, arr4);
+        let expected: FixedArray<char> = [1, 2, 3, 4];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0300_04
+     * @tc.name    testBuiltinArrayconcat50003
+     * @tc.desc    Test concatenation with empty arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat50003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat50003";
+      try {
+        let empty1: FixedArray<char> = [];
+        let empty2: FixedArray<char> = [];
+        let arr3: FixedArray<char> = [1];
+        let result = concat(empty1, empty2, arr3);
+        let expected: FixedArray<char> = [1];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0400_04
+     * @tc.name    testBuiltinArrayconcat50004
+     * @tc.desc    Test concatenation with larger arrays
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat50004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat50004";
+      try {
+        let arr1: FixedArray<char> = [1,2,3];
+        let arr2: FixedArray<char> = [4,5,6];
+        let arr3: FixedArray<char> = [7,8,9];
+        let result = concat(arr1, arr2, arr3);
+        let expected: FixedArray<char> = [1,2,3,4,5,6,7,8,9];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0500_03
+     * @tc.name    testBuiltinArrayconcat50005
+     * @tc.desc    Test concatenation with arrays of different lengths
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayconcat50005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayconcat50005";
+      try {
+        let arr1: FixedArray<char> = [1];
+        let arr2: FixedArray<char> = [2,3];
+        let arr3: FixedArray<char> = [4,5,6];
+        let result = concat(arr1, arr2, arr3);
+        let expected: FixedArray<char> = [1,2,3,4,5,6];
+        expect(String(result)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
