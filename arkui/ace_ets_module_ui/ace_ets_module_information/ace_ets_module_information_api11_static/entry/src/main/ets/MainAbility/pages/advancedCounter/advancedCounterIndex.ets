@@ -16,7 +16,7 @@
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-// import { CounterType, CounterComponent, DateData } from '@ohos.arkui.advanced.Counter';
+import { CounterType, CounterComponent, DateData,CounterOptions } from '@ohos.arkui.advanced.Counter';
 import { Entry, Component, Column, } from '@ohos.arkui.component'
 
 @Entry
@@ -24,29 +24,27 @@ import { Entry, Component, Column, } from '@ohos.arkui.component'
 struct CounterExample {
   build() {
     Column() {
-      // CounterComponent({
-      //   options: {
-      //     type: CounterType.LIST,
-      //     numberOptions: {
-      //       label: 'Number',
-      //       min: 1,
-      //       value: 10,
-      //       max: 20,
-      //       step: 1
-      //     }
-      //   } as CounterOptions
-      // } )
-      // CounterComponent({
-      //   options: { type: CounterType.COMPACT, numberOptions: { label: 'Total', min: 10, value: 50, max: 100 } }
-      // })
-      //   .onAppear(() => {
-      //     // var abilityDelegator: any
-      //     let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      //     // var abilityDelegatorArguments: any
-      //     let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-      //     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-      //     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-      //   })
+      CounterComponent({
+        options: {
+          type: CounterType.LIST,
+          numberOptions: {
+            label: 'Number',
+            min: 1,
+            value: 10,
+            max: 20,
+            step: 1
+          }
+        } as CounterOptions
+      } )
+      CounterComponent({
+        options: { type: CounterType.COMPACT, numberOptions: { label: 'Total', min: 10, value: 50, max: 100 } }
+      })
+        .onAppear(() => {
+          let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+          let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
+          hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
+          hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
+        })
     }
   }
 }

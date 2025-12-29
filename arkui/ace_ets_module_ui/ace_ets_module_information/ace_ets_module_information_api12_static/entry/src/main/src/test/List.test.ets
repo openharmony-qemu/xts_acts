@@ -26,7 +26,7 @@ export default function testsuite() {
   gauge()
   PatternLockActivateCircleStyle1()
   progress()
-  ProgressMask()//fail 1 ����JSON.stringify ����
+  ProgressMask()
   BounceSymbolEffect_APITest()
   ReplaceSymbolEffect_APITest()
   ACTION_FIRST_APITest()

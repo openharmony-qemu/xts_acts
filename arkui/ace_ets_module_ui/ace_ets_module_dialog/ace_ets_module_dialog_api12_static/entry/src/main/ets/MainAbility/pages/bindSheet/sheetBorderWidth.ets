@@ -31,14 +31,14 @@ import {
   FontWeight,
   Axis,
   Margin,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,FlexAlign,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,SheetSize,SheetType,
+  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,FlexAlign,TripleLengthDetents,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,SheetSize,SheetType,Length,$$
 } from '@ohos.arkui.component';
 import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -47,20 +47,22 @@ struct sheetBorderWidth {
   @State isShow: boolean = false
   @State isShow1: boolean = false
   @State isShow2: boolean = false
-  // @Builder
-  // myBuilder() {
-  //   Column() {
-  //     Button('close modal')
-  //       .margin(10)
-  //       .onClick((e: ClickEvent):void => {
-  //         this.isShow = false;
-  //         this.isShow1 = false;
-  //         this.isShow2 = false;
-  //       })
-  //       .id('close1_border')
-  //   }
-  //   .width('100%')
-  // }
+  @State decent: TripleLengthDetents = [SheetSize.MEDIUM, SheetSize.LARGE, '200'] as TripleLengthDetents
+  @Builder
+  myBuilder() {
+    console.log('build111')
+    Column() {
+      Button('close modal')
+        .margin(10)
+        .onClick((e: ClickEvent):void => {
+          this.isShow = false;
+          this.isShow1 = false;
+          this.isShow2 = false;
+        })
+        .id('close1_border')
+    }
+    .width('100%')
+  }
   build() {
     Column({space: 5} as ColumnOptions) {
       Button('bindSheet1')
@@ -69,31 +71,31 @@ struct sheetBorderWidth {
         .onClick((e: ClickEvent):void => {
           this.isShow = true
         })
-        // .bindSheet(this.isShow, this.myBuilder, {
-        //   detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200],
-        //   title: { title: 'title', subtitle: 'subtitle' },
-        //   radius: LengthMetrics.vp(50),
-        //   borderWidth: edgeWidths(10),
-        //   preferType:SheetType.BOTTOM
-        // })
+        .bindSheet($$(this.isShow), this.myBuilder, {
+          detents: this.decent,
+          title: { title: 'title', subtitle: 'subtitle' },
+          radius: LengthMetrics.vp(50),
+          borderWidth: 10,    //edgeWidths(10)
+          preferType:SheetType.BOTTOM
+        })
       Button('bindSheet2')
         .height('8%')
         .id('bindSheet_borderWidth1')
         .onClick((e: ClickEvent):void => {
           this.isShow1 = true
         })
-        // .bindSheet(this.isShow1, this.myBuilder, {
-        //   detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200],
-        //   title: { title: 'title', subtitle: 'subtitle' },
-        //   radius: LengthMetrics.vp(50),
-        //   borderWidth: {
-        //     top:'10px',
-        //     right:'5vp',
-        //     left:5,
-        //     bottom:0
-        //   },
-        //   preferType:SheetType.BOTTOM
-        // })
+        .bindSheet(this.isShow1, this.myBuilder, {
+          detents: this.decent,
+          title: { title: 'title', subtitle: 'subtitle' },
+          radius: LengthMetrics.vp(50),
+          borderWidth: {
+            top:'10px',
+            right:'5vp',
+            left:5,
+            bottom:0
+          },
+          preferType:SheetType.BOTTOM
+        })
 
       Button('bindSheet3')
         .height('8%')
@@ -101,13 +103,13 @@ struct sheetBorderWidth {
         .onClick((e: ClickEvent):void => {
           this.isShow2 = true
         })
-        // .bindSheet(this.isShow2, this.myBuilder, {
-        //   detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200],
-        //   title: { title: 'title', subtitle: 'subtitle' },
-        //   radius: LengthMetrics.vp(50),
-        //   borderWidth: undefined,
-        //   preferType:SheetType.BOTTOM
-        // })
+        .bindSheet(this.isShow2, this.myBuilder, {
+          detents: this.decent,
+          title: { title: 'title', subtitle: 'subtitle' },
+          radius: LengthMetrics.vp(50),
+          borderWidth: undefined,
+          preferType:SheetType.BOTTOM
+        })
     }
     .justifyContent(FlexAlign.Start)
     .width('100%')
