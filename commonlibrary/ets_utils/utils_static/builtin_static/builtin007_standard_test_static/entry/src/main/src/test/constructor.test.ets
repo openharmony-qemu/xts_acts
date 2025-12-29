@@ -1527,12 +1527,12 @@ export default function constructorTest() {
     });
 
     /**
-     * @tc.number: CORE_SHORTVALUE_003
-     * @tc.name: ShortValueConstructor0003
-     * @tc.desc: Test constructor with zero value
-     * @tc.level: LEVEL1
-     * @tc.size: MEDIUMTEST
-     * @tc.type: FUNCTION
+     * @tc.number CORE_SHORTVALUE_003
+     * @tc.name   ShortValueConstructor0003
+     * @tc.desc   Test constructor with zero value
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
      */
     it("ShortValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0003 start');

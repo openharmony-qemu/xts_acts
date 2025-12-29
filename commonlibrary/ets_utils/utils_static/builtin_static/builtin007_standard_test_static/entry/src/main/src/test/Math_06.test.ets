@@ -3225,23 +3225,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  SUB_BASIC_TEST_0096
-     * @tc.name    test_basic_test_0096
-     * @tc.desc    Basic falsy test
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_test_0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0096 start');
-        expect(false).assertFalse();
-        done();
-        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0096 end');
-      });
-
-    /**
      * @tc.number  SUB_BASIC_TEST_0097
      * @tc.name    test_basic_test_0097
      * @tc.desc    Number equality test

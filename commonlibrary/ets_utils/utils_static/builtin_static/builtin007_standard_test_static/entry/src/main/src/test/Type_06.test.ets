@@ -467,24 +467,6 @@ export default function type_06Test() {
       }
     });
 
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_TYPE_0500
-     * @tc.name    testBooleanType0005
-     * @tc.desc    Returns literal of type if exists
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testBooleanType0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBooleanType0005";
-      try {
-        const Type1 = BooleanType.VAL;
-        expect(Type1.getLiteral()).assertEqual("boolean");
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_TYPE_0500
@@ -563,7 +545,7 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_TYPE_0900
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BOOLEAN_TYPE_0900
      * @tc.name    testBooleanType0009
      * @tc.desc    Returns literal of type if exists
      * @tc.size    MediumTest
@@ -953,7 +935,7 @@ export default function type_06Test() {
       }
     });
 
-    /*
+    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETACCESSMODIFIER_0100
      * @tc.name    testFieldGetAccessModifier0001
      * @tc.desc    Get access modifier of public field
@@ -1420,7 +1402,7 @@ export default function type_06Test() {
       }
     });
 
-    /*)
+    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_ISSTATIC_0200
      * @tc.name    testFieldIsStatic0002
      * @tc.desc    Verify instance field returns false for isStatic()

@@ -312,7 +312,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_ERROR_ARGUMENTSUNDERAPPLICATION_0200
+     * @tc.number  SUB_COMMONLIBRARY_ERROR_ARGUMENTSUNDER_0200
      * @tc.name    testArgumentsUnderapplicationError0002
      * @tc.desc    Test instantiation of ArgumentsUnderapplicationError with a custom message.
      * @tc.size    MediumTest
@@ -1006,7 +1006,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETTYPEPARAMETERSNUM_0100
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_GETTYPEPARAMETERSNUM_0100
      * @tc.name    testGetTypeParametersNum0001
      * @tc.desc    Testing getTypeParametersNum with interface that has type parameters.
      * @tc.size    MediumTest
@@ -2201,7 +2201,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0200
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEOF_0200
      * @tc.name    testMake0002
      * @tc.desc    Testing make() with a class that doesn't have an empty constructor.
      * @tc.size    MediumTest

@@ -58,7 +58,7 @@ export default function type_01Test() {
     })
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_OF_0100
+     * @tc.number  SUB_COMMONLIBRARY_BASE_TYPE_OF_0100
      * @tc.name    testTypeOf0001
      * @tc.desc    Testing Type.of with null.
      * @tc.size    MediumTest
@@ -502,14 +502,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0003
-     * @tc.name    testIsPrimitive0003
+     * @tc.name    testIsIntPrimitive0003
      * @tc.desc    Testing IntType.VAL.isPrimitive() returns true.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIsPrimitive0003';
+    it('testIsIntPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIsIntPrimitive0003';
       try {
         const flag = IntType.VAL.isPrimitive();
         expect(flag).assertTrue();
@@ -598,14 +598,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0004
-     * @tc.name    testIsReference0004
+     * @tc.name    testIsTypeReference0004
      * @tc.desc    Testing IntType.VAL.isReference() returns false.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIsReference0004';
+    it('testIsTypeReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIsTypeReference0004';
       try {
         const flag = IntType.VAL.isReference();
         expect(flag).assertFalse();
@@ -635,7 +635,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0001
+     * @tc.number  SUB_COMMONLIBRARY_BASE_TYPE_EQUALS_0001
      * @tc.name    testLongEquals0001
      * @tc.desc    Testing LongType.VAL equals LongType.VAL.
      * @tc.size    MediumTest
@@ -772,7 +772,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0004
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BOOLEAN_GETLITERAL_0004
      * @tc.name    testLongGetLiteral0004
      * @tc.desc    Testing BooleanType.REF.getLiteral() returns "Boolean".
      * @tc.size    MediumTest
@@ -791,7 +791,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_TYPE_GETNAME_0001
      * @tc.name    testLongGetName0001
      * @tc.desc    Testing LongType.VAL.getName() returns empty string.
      * @tc.size    MediumTest
@@ -849,14 +849,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0004
-     * @tc.name    testIntGetName0004
+     * @tc.name    testIntTypeRefGetName0004
      * @tc.desc    Testing IntType.REF.getName() returns "Int".
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntGetName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntGetName0004';
+    it('testIntTypeRefGetName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIntTypeRefGetName0004';
       try {
         const name = IntType.REF.getName();
         expect(name).assertEqual('std.core.Int');
@@ -925,14 +925,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0004
-     * @tc.name    testIntHasName0004
+     * @tc.name    testIntTypeHasName0004
      * @tc.desc    Testing IntType.REF.hasName() returns true.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntHasName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntHasName0004';
+    it('testIntTypeHasName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIntTypeHasName0004';
       try {
         const hasName = IntType.REF.hasName();
         expect(hasName).assertTrue();
@@ -1095,7 +1095,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_TYPE_EQUALS_0001
      * @tc.name    testShortEquals0001
      * @tc.desc    Testing ShortType.VAL.equals(ShortType.VAL) returns true.
      * @tc.size    MediumTest
@@ -1251,7 +1251,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_GETNAME_0001
      * @tc.name    testShortGetName0001
      * @tc.desc    Testing ShortType.VAL.getName() returns empty string.
      * @tc.size    MediumTest
@@ -1555,7 +1555,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0001
      * @tc.name    testCharEquals0001
      * @tc.desc    Testing CharType.VAL.equals(CharType.VAL) returns true.
      * @tc.size    MediumTest
@@ -1673,7 +1673,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_CHAR_GETNAME_0001
      * @tc.name    testCharGetName0001
      * @tc.desc    Testing CharType.VAL.getName() returns empty string.
      * @tc.size    MediumTest
@@ -2040,14 +2040,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0200
-     * @tc.name    testIsPrimitive0002
+     * @tc.name    testByteType0002
      * @tc.desc    Testing isPrimitive method of ByteType (reference type).
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsPrimitive0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testIsPrimitive0002";
+    it('testByteType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testByteType0002";
       try {
         let byteType = ByteType.REF;
         let result = byteType.isPrimitive();
@@ -2128,14 +2128,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0100
-     * @tc.name    testIsReference0001
+     * @tc.name    testTypeIsReference0001
      * @tc.desc    Testing isReference method of ByteType (value type).
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsReference0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testIsReference0001";
+    it('testTypeIsReference0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testTypeIsReference0001";
       try {
         let byteType = ByteType.VAL;
         let result = byteType.isReference();

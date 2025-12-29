@@ -2380,24 +2380,6 @@ export default function getType02Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_NULLVALUE_GETTYPE_1000
-     * @tc.name    testValueGetType40010
-     * @tc.desc    Verify NullType is distinguishable from StringType
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType40010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType40010';
-      try {
-        expect(NullValue.INSTANCE.getType().toString()).not().assertEqual('string');
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_VOIDVALUE_TOLOCALESTRING_0900
      * @tc.name    testValueLocaleString00009
      * @tc.desc    Verify toLocaleString() returns consistent value across calls

@@ -1658,13 +1658,13 @@ export default function math02Test() {
      * @tc.type    FUNCTION
      * @tc.level   Level 1
      */
-    it(' testmathsign12005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testmathsign12005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testMathSign12005 start');
+        hilog.info(domain, tag, '%{public}s', 'testmathsign12005 start');
         try {
           expect(trunc(Number.MAX_VALUE)).assertEqual(Number.MAX_VALUE);
           expect(trunc(-Number.MAX_VALUE)).assertEqual(-Number.MAX_VALUE);
-          hilog.info(domain, tag, '%{public}s', 'testMathSign12005 end');
+          hilog.info(domain, tag, '%{public}s', 'testmathsign12005 end');
           done();
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', `Error in testMathSign12005: ${error}`);

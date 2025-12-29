@@ -1474,7 +1474,7 @@ export default function type_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERAL_0100
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_VALUE_0100
      * @tc.name    testIntTypeGetLiteral0001
      * @tc.desc    Verify getLiteral for IntType.VAL returns "int"
      * @tc.size    MediumTest
@@ -1512,7 +1512,7 @@ export default function type_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERAL_0300
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_0300
      * @tc.name    testIntTypeGetLiteral0003
      * @tc.desc    Verify getLiteral for primitive int returns "int"
      * @tc.size    MediumTest
