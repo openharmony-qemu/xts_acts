@@ -208,13 +208,9 @@ struct AlignSelfPage {
     } else if (this.targetView == 'Navigation') {
       Navigation(new NavPathStack()).expandSafeArea([], []).applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
-      Navigation() {
+      Row() {
         Row() {
           Image($r('app.media.icon'))
-        }
-
-        NavDestination() {
-          Text('NavDestination').fontSize(10)
         }
       }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
