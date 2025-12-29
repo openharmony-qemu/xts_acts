@@ -1841,5 +1841,196 @@ export default function Array_02Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_INT_0600
+     * @tc.name    testReduceINT_NegativeProduct
+     * @tc.desc    Test reduce with negative numbers
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceINT_NegativeProduct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceINT_NegativeProduct";
+      try {
+        const testArray: FixedArray<int> = [-2, 3, -4, 5];
+        const productCallback = (acc: int, curr: int) => acc * curr;
+        const result = reduce(testArray, productCallback);
+        expect(result).assertEqual(120); // (-2)*3*(-4)*5 = 120
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0100
+     * @tc.name    testReduceLONG_Sum
+     * @tc.desc    Test basic reduce functionality with summation
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_Sum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_Sum";
+      try {
+        const testArray: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000];
+        const sumCallback = (acc: long, curr: long) => acc + curr;
+        const result = reduce(testArray, sumCallback);
+        expect(result).assertEqual(100000000000); // 10B + 20B + 30B + 40B = 100B
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0200
+     * @tc.name    testReduceLONG_SingleElement
+     * @tc.desc    Test reduce with single-element array
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_SingleElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_SingleElement";
+      try {
+        const testArray: FixedArray<long> = [9223372036854775807]; // MAX_LONG
+        const callback = (acc: long, curr: long) => acc * 2; // Shouldn't execute
+        const result = reduce(testArray, callback);
+        expect(result).assertEqual(9223372036854775807);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0300
+     * @tc.name    testReduceLONG_Product
+     * @tc.desc    Test reduce with multiplication operation
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_Product', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_Product";
+      try {
+        const testArray: FixedArray<long> = [1000000000, 2000000000, 3];
+        const productCallback = (acc: long, curr: long) => acc * curr;
+        const result = reduce(testArray, productCallback);
+        expect(result).assertEqual(6000000000000000000); // 1B * 2B * 3 = 6e18
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0400
+     * @tc.name    testReduceLONG_BitwiseOR
+     * @tc.desc    Test reduce with bitwise OR operation
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_BitwiseOR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_BitwiseOR";
+      try {
+        const testArray: FixedArray<long> = [1, 2, 4, 8];
+        const bitwiseOrCallback = (acc: long, curr: long) => acc | curr;
+        const result = reduce(testArray, bitwiseOrCallback);
+        expect(result).assertEqual(15); // 0b0001 | 0b0010 | 0b0100 | 0b1000 = 0b1111 (15)
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0500
+     * @tc.name    testReduceLONG_NegativeSum
+     * @tc.desc    Test reduce with negative numbers
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_NegativeSum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_NegativeSum";
+      try {
+        const testArray: FixedArray<long> = [-10000000000, -20000000000, -30000000000];
+        const sumCallback = (acc: long, curr: long) => acc + curr;
+        const result = reduce(testArray, sumCallback);
+        expect(result).assertEqual(-60000000000); // -10B + -20B + -30B = -60B
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_LONG_0600
+     * @tc.name    testReduceLONG_MixedSigns
+     * @tc.desc    Test reduce with mixed positive/negative numbers
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceLONG_MixedSigns', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceLONG_MixedSigns";
+      try {
+        const testArray: FixedArray<long> = [
+          -10000000000,
+          20000000000,
+          -30000000000,
+          40000000000
+        ];
+        const sumCallback = (acc: long, curr: long) => acc + curr;
+        const result = reduce(testArray, sumCallback);
+        expect(result).assertEqual(20000000000); // -10B + 20B -30B +40B = 20B
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_SHORT_0100
+     * @tc.name    testReduceShort
+     * @tc.desc    Testing basic functionality of reduce with sum operation.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceShort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceShort";
+      try {
+        const testArray: number[] = [1, 2, 3, 4, 5];
+        const result = testArray.reduce((acc: number, curr: number) => acc + curr);
+        expect(result).assertEqual(15);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_SHORT_0200
+     * @tc.name    testReduceShort
+     * @tc.desc    Testing reduce with multiplication operation.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceShort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceShort";
+      try {
+        const testArray: number[] = [1, 2, 6];
+        const result = testArray.reduce((acc: number, curr: number) => acc * curr);
+        expect(result).assertEqual(12);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
   })
 }
