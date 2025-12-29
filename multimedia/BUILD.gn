@@ -63,6 +63,7 @@ group("multimedia") {
       "audio/audio_js_standard/audio_ndk_test:audioDemo_ndk_hap",
       "audio/audio_js_standard/audio_c_cover_test:ActsAudioCCoverTest",
       "audio/audio_js_standard/AudioSuiteEngine:ActsAudioSuiteEngineTest",
+      "audio/audio_js_standard/AudioStreamBuilderHap:ActsAudioStreamBuilderHapTest",
       "audio/audio_ohndk_test:ActsAudioNdkTest",
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
