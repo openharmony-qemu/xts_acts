@@ -424,12 +424,12 @@ export default function ReminderAgentManagerErrorCodeTest() {
                     reminderAgent.cancelReminderOnDisplay(reminderId).then(() => {
                         console.log("reminderErrorCode_1100 update reminder succeed");
                     }).catch((err) => {
-                        console.error("reminderErrorCode_1100 promise err code:" + err.code + " message:" + err.message);
+                        console.error("reminderErrorCode_1100 cancelReminderOnDisplay promise err code:" + err.code + " message:" + err.message);
+                        expect(err.code == 1700003).assertTrue();
+                        done();
                     });
                 } catch (error) {
-                    console.log("reminderErrorCode_1100 cancelReminderOnDisplay error.code:" + error.code);
-                    expect(error.code == 1700003).assertTrue();
-                    done();
+                    console.error("reminderErrorCode_1100 promise err code:" + error.code + " message:" + error.message);
                 }
             });
         })
