@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +75,7 @@ export default function PixelUnitsConversionJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('px2vp_01'));
@@ -95,6 +97,7 @@ it('PixelUnitsConversionTest_static_0100', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0200 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('vp2px_01'));
@@ -116,6 +119,7 @@ it('PixelUnitsConversionTest_static_0200', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0300 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('fp2px_01'));
@@ -137,6 +141,7 @@ it('PixelUnitsConversionTest_static_0300', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0400 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('px2fp_01'));
@@ -158,6 +163,7 @@ it('PixelUnitsConversionTest_static_0400', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0500 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('lpx2px_01'));
@@ -179,6 +185,7 @@ it('PixelUnitsConversionTest_static_0500', Level.LEVEL0, async (done: ()=>void) 
      * @tc.level    Level.LEVEL0
      */
 it('PixelUnitsConversionTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('PixelUnitsConversionTest_0600 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('px2lpx_01'));

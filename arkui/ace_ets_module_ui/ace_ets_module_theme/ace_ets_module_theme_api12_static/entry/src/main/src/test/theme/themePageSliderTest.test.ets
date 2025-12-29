@@ -58,6 +58,7 @@ export default function themePageSliderTest() {
     
     
 
+
 /**
      * @tc.number   themeInterfaceSliderIsValidTest_static_0100
      * @tc.name     themeInterfaceSliderIsValidTest_static_0100
@@ -65,6 +66,7 @@ export default function themePageSliderTest() {
      * @tc.level    Level.LEVEL0
      */
 it('themeInterfaceSliderIsValidTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('themeInterfaceSliderIsValidTest_static_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);

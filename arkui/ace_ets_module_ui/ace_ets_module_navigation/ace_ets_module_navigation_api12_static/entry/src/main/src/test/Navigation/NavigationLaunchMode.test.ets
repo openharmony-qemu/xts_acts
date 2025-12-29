@@ -74,6 +74,7 @@ export default function NavigationLaunchMode() {
      * @tc.level    Level.LEVEL0
      */
 it('NavigationLaunchMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavigationLaunchMode_static_0100 START');
       await CommonFunc.sleep(1000);
 

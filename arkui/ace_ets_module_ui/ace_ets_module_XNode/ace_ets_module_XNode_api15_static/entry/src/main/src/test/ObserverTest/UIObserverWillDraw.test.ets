@@ -62,13 +62,14 @@ export default function UIObserverWillDrawTest() {
 
 
 
-/**
+    /**
      * @tc.number   UIObserverWillDrawTest_static_0100
      * @tc.name     UIObserverWillDrawTest_static_0100
      * @tc.desc     UIObserverWillDrawTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverWillDrawTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+
       console.info('UIObserverWillDrawTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

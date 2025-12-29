@@ -58,13 +58,15 @@ export default function AttachDetachTest() {
     
 
 
-/**
+
+    /**
      * @tc.number   AttachDetachTest_static_0100
      * @tc.name     AttachDetachTest_static_0100
      * @tc.desc     AttachDetachTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('AttachDetachTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

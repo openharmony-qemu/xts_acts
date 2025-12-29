@@ -78,6 +78,7 @@ export default function MultiNavigationTest() {
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation_0100 START');
       await CommonFunc.sleep(500);
 
@@ -110,6 +111,7 @@ it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation_0200 START');
       await CommonFunc.sleep(500);
 
@@ -143,6 +145,7 @@ it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promis
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation_0300 START');
       await CommonFunc.sleep(500);
 

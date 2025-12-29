@@ -139,38 +139,38 @@ import NavigationLaunchMode from './Navigation/NavigationLaunchMode.test'
 import NavigationTitleTest1 from './Navigation/NavigationTitleTest1.test'
 import removeByNavDestinationIdTest from './Navigation/removeByNavDestinationIdTest.test'
 
-import navigation_add1_1 from './Navigation/navigation_add/navigationAdd11.test'
-import navigation_add1_2 from './Navigation/navigation_add/navigationAdd12.test'
-import navigation_add2_1 from './Navigation/navigation_add/navigationAdd21.test'
-import navigation_add2_2 from './Navigation/navigation_add/navigationAdd22.test'
-import navigation_add3_1 from './Navigation/navigation_add/navigationAdd31.test'
-import navigation_add3_2 from './Navigation/navigation_add/navigationAdd32.test'
-import navigation_add4_1 from './Navigation/navigation_add/navigationAdd41.test'
+import navigation_add1_1 from './Navigation/navigation_add/navigation_add1_1.test'
+import navigation_add1_2 from './Navigation/navigation_add/navigation_add1_2.test'
+import navigation_add2_1 from './Navigation/navigation_add/navigation_add2_1.test'
+import navigation_add2_2 from './Navigation/navigation_add/navigation_add2_2.test'
+import navigation_add3_1 from './Navigation/navigation_add/navigation_add3_1.test'
+import navigation_add3_2 from './Navigation/navigation_add/navigation_add3_2.test'
+import navigation_add4_1 from './Navigation/navigation_add/navigation_add4_1.test'
 import queryNavigationInfoTest from './Navigation/queryNavigationInfoTest.test'
 
-import Navigation_L0_1 from './Navigation/Navigation_L0/NavigationL01.test'
-import Navigation_L0_2 from './Navigation/Navigation_L0/NavigationL02.test'
-import Navigation_L0_3 from './Navigation/Navigation_L0/NavigationL03.test'
-import Navigation_L0_4 from './Navigation/Navigation_L0/NavigationL04.test'
-import Navigation_L0_5_1 from './Navigation/Navigation_L0/NavigationL051.test'
-import Navigation_L0_5_2 from './Navigation/Navigation_L0/NavigationL052.test'
-import Navigation_L0_6 from './Navigation/Navigation_L0/NavigationL06.test'
-import Navigation_L0_7 from './Navigation/Navigation_L0/NavigationL07.test'
-import Navigation_L0_8 from './Navigation/Navigation_L0/NavigationL08.test'
-import Navigation_L0_9 from './Navigation/Navigation_L0/NavigationL09.test'
-import Navigation_L0_10 from './Navigation/Navigation_L0/NavigationL010.test'
-import Navigation_L0_11 from './Navigation/Navigation_L0/NavigationL011.test'
-import Navigation_L0_12 from './Navigation/Navigation_L0/NavigationL012.test'
-import Navigation_L0_13 from './Navigation/Navigation_L0/NavigationL013.test'
-import Navigation_L0_14 from './Navigation/Navigation_L0/NavigationL014.test'
-import Navigation_L0_15 from './Navigation/Navigation_L0/NavigationL015.test'
-import Navigation_L0_16 from './Navigation/Navigation_L0/NavigationL016.test'
-import Navigation_L0_17 from './Navigation/Navigation_L0/NavigationL017.test'
-import Navigation_L0_18 from './Navigation/Navigation_L0/NavigationL018.test'
-import Navigation_L0_19 from './Navigation/Navigation_L0/NavigationL019.test'
-import Navigation_L0_20 from './Navigation/Navigation_L0/NavigationL020.test'
-import Navigation_L0_21_1 from './Navigation/Navigation_L0/NavigationL0211.test'
-import Navigation_L0_21_2 from './Navigation/Navigation_L0/NavigationL0212.test'
+import Navigation_L0_1 from './Navigation/Navigation_L0/Navigation_L0_1.test'
+import Navigation_L0_2 from './Navigation/Navigation_L0/Navigation_L0_2.test'
+import Navigation_L0_3 from './Navigation/Navigation_L0/Navigation_L0_3.test'
+import Navigation_L0_4 from './Navigation/Navigation_L0/Navigation_L0_4.test'
+import Navigation_L0_5_1 from './Navigation/Navigation_L0/Navigation_L0_5_1.test'
+import Navigation_L0_5_2 from './Navigation/Navigation_L0/Navigation_L0_5_2.test'
+import Navigation_L0_6 from './Navigation/Navigation_L0/Navigation_L0_6.test'
+import Navigation_L0_7 from './Navigation/Navigation_L0/Navigation_L0_7.test'
+import Navigation_L0_8 from './Navigation/Navigation_L0/Navigation_L0_8.test'
+import Navigation_L0_9 from './Navigation/Navigation_L0/Navigation_L0_9.test'
+import Navigation_L0_10 from './Navigation/Navigation_L0/Navigation_L0_10.test'
+import Navigation_L0_11 from './Navigation/Navigation_L0/Navigation_L0_11.test'
+import Navigation_L0_12 from './Navigation/Navigation_L0/Navigation_L0_12.test'
+import Navigation_L0_13 from './Navigation/Navigation_L0/Navigation_L0_13.test'
+import Navigation_L0_14 from './Navigation/Navigation_L0/Navigation_L0_14.test'
+import Navigation_L0_15 from './Navigation/Navigation_L0/Navigation_L0_15.test'
+import Navigation_L0_16 from './Navigation/Navigation_L0/Navigation_L0_16.test'
+import Navigation_L0_17 from './Navigation/Navigation_L0/Navigation_L0_17.test'
+import Navigation_L0_18 from './Navigation/Navigation_L0/Navigation_L0_18.test'
+import Navigation_L0_19 from './Navigation/Navigation_L0/Navigation_L0_19.test'
+import Navigation_L0_20 from './Navigation/Navigation_L0/Navigation_L0_20.test'
+import Navigation_L0_21_1 from './Navigation/Navigation_L0/Navigation_L0_21_1.test'
+import Navigation_L0_21_2 from './Navigation/Navigation_L0/Navigation_L0_21_2.test'
 
 import NavigationLevelTest1 from './Navigation/NavigationLevel/NavigationLevelTest1.test'
 import NavigationLevelTest2 from './Navigation/NavigationLevel/NavigationLevelTest2.test'
@@ -211,47 +211,39 @@ export default function testsuite() {
   NavigationOnPop();   //SDK12.2 pass1
   NavDestinationEvents();  //SDK12.2 pass1
   NavDestinationRouterMap();  // SDK12.2  pass1
-  NavigationSymbolIcon();  // SDK12.2  pass1
+  NavigationSymbolIcon();  // SDK12.2  pass1   补充log
   NavPathStack1()  // pass
   NavPathStack1_2()  // pass
   NavPathStack1_3()  // pass
   NavPathStack1_4()   // pass
   NavPathStack1_5() // pass
   NavPathStack1_6()   // pass
-
   NavPathStack2_2()  // pass
   NavPathStack2_3() // pass
-
   NavPathStack3() // pass 2个用例
   NavPathStack4() // pass 2个用例
   NavPathStack5()  // pass 2个用例
-
   NavPathStack7() // pass 1个
   NavPathStack8() // SDK12.2  pass2
   NavPathStack9() // SDK12.2  pass2
   NavPathStack10() // pass 1个
   NavPathStack11() // pass 1个
-
   NavPathStack13() // pass 3个
   NavPathStack14() // pass 1个
   NavPathStack15() // pass 1个
-
   NavPathStack17() // pass 1ge
   NavPathStack18() // pass 1个
   NavPathStack19() // pass
   NavPathStack20() // pass 1
   NavPathStack21()  // pass 1
   NavPathStack22()  //SDK12.2  pass1
-
-  NavPathStack24() // SDK12.15 0702表格135行 1
   Navigation_SingleInstanceJump1()  //SDK12.2  pass1
   Navigation_SingleInstanceJump2()  // SDK12.2  pass1
   Navigation_SingleInstanceJump3()  // SDK12.2  pass1
   Navigation_SingleInstanceJump4()  // SDK12.2  pass1
   Navigation_SingleInstanceJump5()  // SDK12.2  pass1
   Navigation_SingleInstanceJump6()  // SDK12.2  pass1
-
-  Navigation_SingleInstanceJump8()  // SDK12.2  pass1
+  Navigation_SingleInstanceJump8()  // SDK12.2  pass1  SDK12.15 补充log
   Navigation_SingleInstanceJump9()  // SDK12.2  pass1
   Navigation_SingleInstanceJump10()  // SDK12.2  pass1
   Navigation_SingleInstanceJump11()  // SDK12.2  pass1
@@ -259,7 +251,6 @@ export default function testsuite() {
   Navigation_SingleInstanceJump13()  // SDK12.2  pass1
   Navigation_SingleInstanceJump14()  // SDK12.2  pass1
   Navigation_SingleInstanceJump15()  // SDK12.2  pass1
-
   Navigation_SingleInstanceJump17()  // SDK12.2  pass1
   Navigation_SingleInstanceJump18()  // SDK12.2  pass1
   Navigation_SingleInstanceJump19()  // SDK12.2  pass1
@@ -267,7 +258,6 @@ export default function testsuite() {
   Navigation_SingleInstanceJump21()  // SDK12.2  pass1
   Navigation_SingleInstanceJump22()  // SDK12.2  pass1
   Navigation_SingleInstanceJump23()  // SDK12.2  pass1
-
   Navigation_SingleInstanceJump25()  // SDK12.2  pass1
   Navigation_SingleInstanceJump26()  // SDK12.2  pass1
   Navigation_SingleInstanceJump27()  // SDK12.2  pass1
@@ -277,14 +267,12 @@ export default function testsuite() {
   Navigation_SingleInstanceJump31()  // SDK12.2  pass1
   Navigation_SingleInstanceJump32()  // SDK12.2  pass1
   Navigation_SingleInstanceJump33()  // SDK12.2  pass1
-
   Navigation_SingleInstanceJump35()  // SDK12.2  pass1
   Navigation_SingleInstanceJump36()  // SDK12.2  pass1
   Navigation_SingleInstanceJump37()  // SDK12.2  pass1
   Navigation_SingleInstanceJump38()  // SDK12.2  pass1
   Navigation_SingleInstanceJump39()  // SDK12.2  pass1
-
-  Navigation_SingleInstanceJump42()  // SDK12.2  pass1
+  Navigation_SingleInstanceJump42()  //   SDK12.15 pass1 补充log
   ignoreLayoutSafeArea();  //  pass1
   ignoreLayoutSafeArea2();  // pass1
   NavigationApi5()  // SDK12.2  pass1
@@ -297,18 +285,15 @@ export default function testsuite() {
   navigation_add2_2()   // pass1
   navigation_add3_1()   // pass1
   navigation_add3_2()   // pass1
-  navigation_add4_1()   // pass1
   queryNavigationInfoTest()  //  pass
   Navigation_L0_1() // pass
   Navigation_L0_2() // pass
   Navigation_L0_3()  // pass
   Navigation_L0_4()  //  pass
-  Navigation_L0_5_1()   // SDK12.15 0702表格140行 1
-  Navigation_L0_5_2()    // SDK12.15 0702表格140行 1
   Navigation_L0_6()  // pass
   Navigation_L0_7()  //  SDK12.2 pass1
-  Navigation_L0_8()  //  SDK12.2 pass1
-  Navigation_L0_9()  //  SDK12.2 pass1
+  Navigation_L0_8()  //  SDK12.2 pass1   SDK12.2 补充log
+  Navigation_L0_9()  //  SDK12.2 pass1   SDK12.2 补充log
   Navigation_L0_10()  // SDK12.2 pass1
   Navigation_L0_11()  //  SDK12.2 pass1
   Navigation_L0_12()  // SDK12.2 pass1
@@ -320,8 +305,6 @@ export default function testsuite() {
   Navigation_L0_18()  // SDK12.2 pass1
   Navigation_L0_19()  // SDK12.2 pass1
   Navigation_L0_20()  // SDK12.2 pass1
-  Navigation_L0_21_1()  //SDK12.2 expect  equals 100006  (page45)pushDestination接口有问题
-  Navigation_L0_21_2() //SDK12.2 expect  equals 100005 (page46)pushDestination接口有问题
   NavigationLevelTest1();  // pass
   NavigationLevelTest2();  //  SDK12.2 pass1
   NavigationLevelTest3();  // pass
@@ -329,8 +312,7 @@ export default function testsuite() {
   NavigationLevelTest5();  // pass
   NavigationLevelTest6();  // pass
   NavigationLevelTest7();  // pass
-  NavigationLevelTest9();  //  SDK12.2 0702表格146行
-  NavigationLevelTest10();  //  SDK12.2 0702表格146行
+  NavigationLevelTest10();  //  SDK12.2 0702表格146行  SDK12.15 pass1
   NavigationLevelTest11();  // pass
   NavigationLevelTest12();  // pass
   NavigationLevelTest13();  // SDK12.2 pass1
@@ -344,61 +326,68 @@ export default function testsuite() {
   NavigationLevelTest21();  // pass
   NavigationLevelTest22();  //SDK12.2 pass1 3500ms
   NavigationLevelTest23();  // pass
-  NavPathInfoIsEntry(); //SDK12.2 0702表格151
-  PushNameRouterTest()   // SDK12.2 0702表格153
   GetStateByIndexTest()  // pass
-  MultiNavigation1()  // SDK12.2 0702表格 138行
-  MultiNavigation2()  // SDK12.2 0702表格 138行
-  MultiNavigation3()  // SDK12.2 0702表格 138行
-  MultiNavigation4()  // SDK12.2 0702表格 138行
-  MultiNavigation5()  // SDK12.2 0702表格 138行
-  MultiNavigation6()  // SDK12.2 0702表格 138行
-  MultiNavigation7()  // SDK12.2 0702表格 138行
-  MultiNavigation8()  // SDK12.2 0702表格 138行
-  MultiNavigation9()  // SDK12.2 0702表格 138行
-  MultiNavigation10()  // SDK12.2 0702表格 138行
-  MultiNavigation11()  // SDK12.2 0702表格 138行
-  MultiNavigation12()  // SDK12.2 0702表格 138行
-  MultiNavigation13()  // SDK12.2 0702表格 138行
-  MultiNavigation14()  // SDK12.2 0702表格 138行
-  MultiNavigation15()  // SDK12.2 0702表格 138行
-  MultiNavigation16()  // SDK12.2 0702表格 138行
-  MultiNavigation17()  // SDK12.2 0702表格 138行
-  MultiNavigation18()  // SDK12.2 0702表格 138行
-  MultiNavigation19()  // SDK12.2 0702表格 138行
-  MultiNavigation20()  // SDK12.2 0702表格 138行
-  MultiNavigation21()  // SDK12.2 0702表格 138行
-  MultiNavigation22()  // SDK12.2 0702表格 138行
-  MultiNavigation23()  // SDK12.2 0702表格 138行
-  MultiNavigation24()  // SDK12.2 0702表格 138行
-  MultiNavigation25()  // SDK12.2 0702表格 138行
-  MultiNavigation26()  // SDK12.2 0702表格 138行
-  MultiNavigation27()  // SDK12.2 0702表格 138行
-  MultiNavigation28()  // SDK12.2 0702表格 138行
-  MultiNavigation29()  // SDK12.2 0702表格 138行
-  MultiNavigation30()  // SDK12.2 0702表格 138行
-  MultiNavigation31()  // SDK12.2 0702表格 138行
-  MultiNavigation32()  // SDK12.2 0702表格 138行
-  NavigationApi1();  // SDK12.2 0702表格 129行
-  NavigationApi2();  //  SDK12.2 0702表格 129行
-  NavigationLevelTest8();  // SDK12.2 0702表格 144行
-  UIObserverObserver4Test()  // appDied SDK12.2 DTS2025110729059 1ge
-  UIObserverContext2Test()  // appDied  SDK12.2 DTS2025110729059 1ge
-  UIObserverContext3Test()  // appDied  SDK12.2 DTS2025110729059 1ge
-  UIObserverUpdateContextTest()  // appDied  SDK12.2 DTS2025110729059 1ge
-  RouterPageUpdateTest()  // // appDied  SDK12.2 DTS2025110729059 1ge
+  Navigation_SingleInstanceJump7()  // SDK12.2  pass1   SDK12.2 补充log
+  Navigation_SingleInstanceJump16()  // SDK12.2  pass1   SDK12.2 补充log
+  Navigation_SingleInstanceJump24()  // SDK12.2  pass1  SDK12.2 补充log
+  Navigation_SingleInstanceJump34()  // SDK12.2  pass1  SDK12.2 补充log
+  NavPathStack12()  // pass 1个  SDK12.9 补充log
+  NavPathStack16() // pass 1个  SDK12.9 补充log
 
-  Navigation_SingleInstanceJump7()  // SDK12.2  pass1  SDK12.5 appDied
-  Navigation_SingleInstanceJump16()  // SDK12.2  pass1  SDK12.5 appDied
-  Navigation_SingleInstanceJump24()  // SDK12.2  pass1  SDK12.5 appDied
-  Navigation_SingleInstanceJump34()  // SDK12.2  pass1 SDK12.5 appDied
-  Navigation_SingleInstanceJump40()  // SDK12.2  pass1 SDK12.5 appDied
-  Navigation_SingleInstanceJump41()  // SDK12.2  pass1  SDK12.5 appDied
+  MultiNavigation1()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation2()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation3()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation4()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation5()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation6()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation7()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation8()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation9()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation10()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation11()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation12()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation13()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation14()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation15()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation16()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation17()  // SDK12.2 0702表格 138行   SDK12.15 pass 已发邮件
+  MultiNavigation18()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation19()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation20()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation21()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation22()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation23()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation24()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation25()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation26()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation27()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation28()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation29()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation30()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation31()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  MultiNavigation32()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
+  UIObserverObserver4Test()  // appDied SDK12.2 2025110729059 1ge   SDK12.15 fail 1 已发邮件
+  UIObserverContext2Test()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
+  UIObserverContext3Test()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
+  UIObserverUpdateContextTest()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1 已发邮件
+  RouterPageUpdateTest()  // // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
 
-  NavPathStack2() // pass SDK12.5 appDied
-  NavPathStack2_4()   // pass SDK12.5 appDied
-  NavPathStack6() // pass 1个 SDK12.5 appDied
-  NavPathStack12()  // pass 1个 SDK12.5 appDied
-  NavPathStack16() // pass 1个 SDK12.5 appDied
-  NavPathStack23() // pass  SDK12.5 appDied
+  NavigationApi1();  // SDK12.2 0702表格 129行   SDK12.15 fail 1
+  NavigationApi2();  //  SDK12.2 0702表格 129行   SDK12.15 fail 1
+  NavigationLevelTest8();  // SDK12.2 0702表格 144行   SDK12.15 fail 1
+  NavPathStack24() // SDK12.15 0702表格135行 1 SDK12.15 fail 1
+  navigation_add4_1()   // pass1   SDK12.15 fail 1
+  Navigation_L0_5_1()   // SDK12.15 0702表格140行 1  expect  equals 100006 SDK12.15 fail 1
+  Navigation_L0_5_2()    // SDK12.15 0702表格140行 1 expect  equals 100006 SDK12.15 fail 1
+  Navigation_L0_21_1()  //SDK12.2 expect  equals 100006  (page45)pushDestination接口有问题  SDK12.15 fail 1
+  Navigation_L0_21_2() //SDK12.2 expect  equals 100005 (page46)pushDestination接口有问题   SDK12.15 fail 1
+  NavigationLevelTest9();  //  SDK12.2 0702表格146行   SDK12.15 fail 1
+  NavPathInfoIsEntry(); //SDK12.2 0702表格151  SDK12.15 fail 1
+  PushNameRouterTest()   // SDK12.2 0702表格153  SDK12.15 fail 1
+  Navigation_SingleInstanceJump40()  // SDK12.2  pass1  SDK12.15 fail 1
+  Navigation_SingleInstanceJump41()  // SDK12.2  pass1   SDK12.15 fail 1
+  NavPathStack2() // pass  SDK12.15 fail 1
+  NavPathStack2_4()   // pass SDK12.15 fail 1
+  NavPathStack6() // pass 1个 SDK12.15 fail 1
+  NavPathStack23() // pass  SDK12.15 fail 1
 }

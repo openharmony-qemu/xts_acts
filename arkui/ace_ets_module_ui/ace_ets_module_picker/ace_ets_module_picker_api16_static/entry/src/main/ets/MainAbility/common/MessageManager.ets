@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource = ''
+  value: string | int | TextCase | TextDecorationType | boolean | Resource | Date = ''
 }
 
 export type Callback = (message: Message) => void

@@ -28,8 +28,8 @@ struct APIgetFrameNodeByUniqueId {
   aboutToAppear() {
     let uniqueId: number = this.getUniqueId();
     let uiContext: UIContext = this.getUIContext();
-    if (uiContext) {  //SDK12.9 页面白屏
-      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId as int);
+    if (uiContext) {
+      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId as Int);
     }
   }
   build(){

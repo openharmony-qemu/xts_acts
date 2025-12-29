@@ -78,6 +78,7 @@ export default function Recoverable() {
      * @tc.level    Level.LEVEL0
      */
 it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('Recoverable_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -105,6 +106,7 @@ it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('Recoverable_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -137,6 +139,7 @@ it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('Recoverable_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('Recoverable_0300 START');
 
       expect(true).assertEqual(true);
@@ -155,6 +158,7 @@ it('Recoverable_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('Recoverable_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('Recoverable_0400 START');
 
       expect(false).assertEqual(false);

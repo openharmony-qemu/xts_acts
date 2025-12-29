@@ -75,6 +75,7 @@ export default function ObserverApi1() {
      * @tc.level    Level.LEVEL0
      */
 it('ObserverApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('ObserverApi1_0100 START');
       await CommonFunc.sleep(1000);
 

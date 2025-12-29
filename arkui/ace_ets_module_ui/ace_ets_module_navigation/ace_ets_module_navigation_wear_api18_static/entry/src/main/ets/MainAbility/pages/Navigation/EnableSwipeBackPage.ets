@@ -51,7 +51,7 @@ struct EnableSwipeBackPage {
 
 @Component
 struct EnableSwipeBackPageOne {
-  @Consume('pageInfos') pageInfos: NavPathStack;
+  @Consume('pageInfos') pageInfos: NavPathStack=new NavPathStack();
   @State isEnable: boolean = true;
 
   build() {
@@ -60,7 +60,7 @@ struct EnableSwipeBackPageOne {
         console.log('++++++++++++++++++enableId1')
         this.isEnable = !this.isEnable;
         console.log('++++++++++++++++++enableId2',this.isEnable)
-        this.getUIContext().enableSwipeBack(this.isEnable); //SDK11.25在这里appDied  Cannot find method 'enableSwipeBack
+        this.getUIContext().enableSwipeBack(this.isEnable); //master22 在这里appDied  Cannot find method 'enableSwipeBack
         console.log('++++++++++++++++++enableId3')
       })
       .height('10%')

@@ -47,6 +47,7 @@ class MyNodeController extends NodeController {
     let col = typeNode.createColumnNode(uiContext);
     col.initialize({ space: 5 } as ColumnOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     node.appendChild(col);
+
     let progress = typeNode.createProgressNode(uiContext);
     progress.initialize({ value: 100 }).width('100%').height('100%').margin({ top: 5 } as Margin).padding(10);
     col.appendChild(progress);

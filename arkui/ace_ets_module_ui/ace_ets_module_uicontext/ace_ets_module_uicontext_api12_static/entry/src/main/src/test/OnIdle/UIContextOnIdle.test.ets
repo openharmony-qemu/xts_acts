@@ -56,13 +56,15 @@ export default function UIContextOnIdle() {
     }); 
 
     
-    /**
+    
+/**
      * @tc.number   onIdleTest_static_0100
      * @tc.name     onIdleTest_static_0100
      * @tc.desc     onIdleTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('onIdleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('UIContextApi1_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create()

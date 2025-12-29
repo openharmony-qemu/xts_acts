@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 
 @Entry
 @Component

@@ -44,11 +44,11 @@ export default function CheckboxOnChangeModifierTest() {
         console.info("get CheckboxOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("checkboxOnChangeModifier" == pages.name)) {
           console.info("get CheckboxOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CheckboxOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push CheckboxOnChangeModifierTest page error:" + err);
@@ -73,6 +73,7 @@ export default function CheckboxOnChangeModifierTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_Checkbox_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('ArkUX_Modifier_Checkbox_OnChange_static_1001 START');
       let driver = Driver.create();
       let checkbox = await driver.findComponent(ON.id('mcheckbox1'));
@@ -97,6 +98,7 @@ it('ArkUX_Modifier_Checkbox_OnChange_static_1001', Level.LEVEL1, async (done: ()
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_Checkbox_OnChange_static_1002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('ArkUX_Modifier_Checkbox_OnChange_static_1002 START');
       let driver = Driver.create();
       let checkbox = await driver.findComponent(ON.id('mcheckbox2'));

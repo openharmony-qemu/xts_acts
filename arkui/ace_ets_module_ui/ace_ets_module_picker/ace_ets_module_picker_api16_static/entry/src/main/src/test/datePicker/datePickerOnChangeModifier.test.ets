@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,11 @@ export default function datePickerOnChangeModifierTest() {
         console.info("get datePickerOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("datePickerOnChangeModifier" == pages.name)) {
           console.info("get datePickerOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push datePickerOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push datePickerOnChangeModifierTest page error:" + err);
@@ -80,6 +80,7 @@ export default function datePickerOnChangeModifierTest() {
      * @tc.level    Level.LEVEL1
      */
 it('DatePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('DatePicker_OnChange_Modifier_static_001 START');
       let driver = Driver.create();
       let switchButton = await driver.findComponent(ON.id('LunarBtn'));
@@ -95,12 +96,10 @@ it('DatePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
       let right = datePicker.right
       let middle = (bottom-top) / 2 + top
       let left =datePicker.left
-      await driver.swipe(Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(AppStorage.get<number>("winTop") ?? 0 +middle) as Int,
-        Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(0) as Int);
+      await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int, Math.round(0) as Int);
       await Utils.sleep(5000);
       let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
-      console.info("DatePicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')));
+      console.info("DatePicker_OnChange_Modifier_static_001 component  is: " + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('DatePicker_OnChange_Modifier_static_001 END');
       done();
@@ -117,6 +116,7 @@ it('DatePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
      * @tc.level    Level.LEVEL1
      */
 it('DatePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('DatePicker_OnChange_Modifier_static_002 START');
       let driver = Driver.create();
       let switchButton = await driver.findComponent(ON.id('LunarBtn'));
@@ -129,12 +129,10 @@ it('DatePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
       let right = datePicker.right
       let middle = (bottom-top) / 2 + top
       let left =datePicker.left
-      await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int,
-        Math.round(0) as Int);
+      await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int, Math.round(0) as Int);
       await Utils.sleep(5000);
       let strJsonNew:string = inspector.getInspectorByKey('onDateChangeOff');
-      // console.info("DatePicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-      //   .getElement('$attrs')));
+      console.info("DatePicker_OnChange_Modifier_static_002 component  is: " + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('DatePicker_OnChange_Modifier_static_002 END');
       done();

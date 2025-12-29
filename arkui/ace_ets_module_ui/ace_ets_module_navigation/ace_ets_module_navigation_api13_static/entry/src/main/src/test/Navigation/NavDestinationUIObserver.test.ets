@@ -87,6 +87,7 @@ export default function NavDestinationUIObserver() {
      * @tc.level    Level.LEVEL0
      */
 it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavDestinationUIObserver_0100 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -137,6 +138,7 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
      * @tc.level    Level.LEVEL0
      */
 it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavDestinationUIObserver_0200 START');
       let driver = Driver.create();
       await Utils.sleep(1000);

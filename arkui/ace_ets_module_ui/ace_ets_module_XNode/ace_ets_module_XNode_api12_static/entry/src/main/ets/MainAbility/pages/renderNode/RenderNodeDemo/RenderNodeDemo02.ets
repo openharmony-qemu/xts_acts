@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ struct RenderNodeDemo02 {
           this.text1 = storage!.get<boolean>('RenderNodeDemo02') as boolean
         })
       Row() {
-        NodeContainer(this.myNodeController) //appDied SDK12.9 造成页面加载失败
+        NodeContainer(this.myNodeController)
       }
     }
   }

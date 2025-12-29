@@ -69,11 +69,7 @@ struct PageOne {
       Column() {
         Button('pushUrl PageOne Single')
           .onClick((e:ClickEvent) => {
-            try{
-              AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: new RouteParam('pushUrl One Single') },router.RouterMode.Single)
-            }catch(err){
-              console.log('+++++++++++++++err',err)
-            }
+            AppStorage.get<Router>("router")?.pushUrl({ url: 'MainAbility/pages/router/PageOne', params: new RouteParam('pushUrl One Single') },router.RouterMode.Single)
           })
           .id('pushUrlId')
           .height('10%')

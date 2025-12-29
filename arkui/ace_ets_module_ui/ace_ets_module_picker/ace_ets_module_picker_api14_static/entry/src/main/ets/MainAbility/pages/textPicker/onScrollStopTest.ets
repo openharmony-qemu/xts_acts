@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -65,14 +65,17 @@ struct onScrollStopTest {
             },
             onScrollStop: () => {
               this.message1 = 'stop'
+              console.log('111111111111111111onScrollStop')
             },
             onDidAppear: () => {
              this.message1 = 'stop'
+              console.log('111111111111111111onDidAppear')
             },
             onDidDisappear: () => {
               console.info('DatePickerDialog:onDidDisappear()')
             },
           } as TextPickerDialogOptions)
+          console.log('++++++++++++++++++++++1.3')
         })
     }
     .height('100%')

@@ -79,18 +79,14 @@ export default function TitleOptionsToolOptions() {
      * @tc.level    Level.LEVEL0
      */
 it('TitleOptionsToolOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('TitleOptionsToolOptions_0100 START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
   console.info('TitleOptionsToolOptions_0100 START  11');
-  try{
-    let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-  }catch(err){
-    console.log('++++++++++err',err)
-  }
-  let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+    let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));  //appDied
       await CommonFunc.sleep(1000);
   console.info('TitleOptionsToolOptions_0100 START  22');
       expect(obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getElement('backgroundBlurStyle').getString('value')).assertEqual("BlurStyle.BACKGROUND_THIN");
@@ -121,6 +117,7 @@ it('TitleOptionsToolOptions_static_0100', Level.LEVEL0, async (done: () => void)
      * @tc.level    Level.LEVEL0
      */
 it('TitleOptionsToolOptions_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('TitleOptionsToolOptions_0200 START');
       await CommonFunc.sleep(1000);
 
