@@ -561,8 +561,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -616,8 +616,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -669,8 +669,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -740,8 +740,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -810,8 +810,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -881,8 +881,8 @@ export default function VibratorJsTest_misc_9() {
           console.log(TAG + ' is not supported.');
           done();
         }
-      } catch (error) {
-        let error = error as BusinessError;
+      } catch (err) {
+        let error = err as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
