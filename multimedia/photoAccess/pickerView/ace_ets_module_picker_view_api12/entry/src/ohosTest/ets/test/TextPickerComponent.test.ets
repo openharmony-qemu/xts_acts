@@ -3163,6 +3163,7 @@ export default function TextPicker() {
       let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
       sheetPickerOptions.maxVideoSelectNumber = 5;
       sheetPickerOptions.maxPhotoSelectNumber = 7;
+      let passed = true;
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
@@ -3178,6 +3179,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info('testPicker61 finished');
+      expect(passed).assertTrue();
       done();
     });
   })

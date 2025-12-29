@@ -2,6 +2,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from '@ohos.base';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
+import { EventType } from '../common/Common';
 
 const topMargin: number = 20;
 
@@ -60,6 +61,7 @@ struct BindSheetPicker {
         .margin({ top: topMargin })
         .onClick(() => {
           let photoPicker = new photoAccessHelper.PhotoViewPicker();
+          console.log('btnSelectPhoto onclick')
           photoPicker.select(this.photoSelectOptions)
             .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
               console.info('PhotoViewPicker.select success, PhotoPickerResult uri: ' +
