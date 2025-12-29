@@ -1193,7 +1193,6 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturning034 failed2. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800029);
       }
-      await trans?.rollback();
       await rdbStore?.execute(DROP_TRIGGER1);
       await rdbStore?.execute(DROP_TABLE_TEST2);
       console.log(TAG + "************* transDeleteWithReturning034 end *************");
