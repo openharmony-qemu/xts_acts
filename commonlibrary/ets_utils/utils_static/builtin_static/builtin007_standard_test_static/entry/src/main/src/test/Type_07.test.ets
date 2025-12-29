@@ -1970,5 +1970,609 @@ export default function type_07Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_EQUALS_0400
+     * @tc.name    testDoubleTypeEquals0004
+     * @tc.desc    Verify inequality between DoubleType.VAL and FloatType.VAL
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeEquals0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeEquals0004";
+      try {
+        const doubleType = DoubleType.VAL;
+        const floatType = FloatType.VAL;
+        expect(doubleType.equals(floatType)).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_EQUALS_0500
+     * @tc.name    testDoubleTypeEquals0005
+     * @tc.desc    Verify inequality between DoubleType.REF and IntType.REF
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeEquals0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeEquals0005";
+      try {
+        const doubleType = DoubleType.REF;
+        const intType = IntType.REF;
+        expect(doubleType.equals(intType)).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_EQUALS_0600
+     * @tc.name    testDoubleTypeEquals0006
+     * @tc.desc    Verify inequality with StringType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeEquals0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeEquals0006";
+      try {
+        const doubleType = DoubleType.VAL;
+        const stringType = Type.of("test") as StringType;
+        expect(doubleType.equals(stringType)).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_EQUALS_0700
+     * @tc.name    testDoubleTypeEquals0007
+     * @tc.desc    Verify equality when getting Type from double value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeEquals0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeEquals0007";
+      try {
+        const doubleValFromTypeOf = Type.of(3.14);
+        expect(doubleValFromTypeOf.equals(DoubleType.VAL)).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_EQUALS_0800
+     * @tc.name    testDoubleTypeEquals0008
+     * @tc.desc    Verify inequality when comparing DoubleType.VAL to DoubleType.REF from Type.of
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeEquals0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeEquals0008";
+      try {
+        const doubleVal = DoubleType.VAL;
+        const doubleRefFromTypeOf = Type.of(new Double(3.14));
+        expect(doubleVal.equals(doubleRefFromTypeOf)).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_GETLITERAL_0100
+     * @tc.name    testDoubleTypeGetLiteral0001
+     * @tc.desc    Verify getLiteral for DoubleType.VAL returns "double"
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeGetLiteral0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeGetLiteral0001";
+      try {
+        const doubleType = DoubleType.VAL;
+        expect(doubleType.getLiteral()).assertEqual("double");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_GETLITERAL_0200
+     * @tc.name    testDoubleTypeGetLiteral0002
+     * @tc.desc    Verify getLiteral for DoubleType.REF returns "Double"
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeGetLiteral0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeGetLiteral0002";
+      try {
+        const doubleType = DoubleType.REF;
+        expect(doubleType.getLiteral()).assertEqual("Double");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_GETLITERAL_0300
+     * @tc.name    testDoubleTypeGetLiteral0003
+     * @tc.desc    Verify getLiteral returns correct value for primitive double
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeGetLiteral0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeGetLiteral0003";
+      try {
+        const doubleVal = Type.of(3.14);
+        expect(doubleVal.getLiteral()).assertEqual("double");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_GETNAME_0100
+     * @tc.name    testDoubleTypeGetName0001
+     * @tc.desc    Verify getName for DoubleType.VAL returns empty string
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeGetName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeGetName0001";
+      try {
+        const doubleType = DoubleType.VAL;
+        expect(doubleType.getName()).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_GETNAME_0200
+     * @tc.name    testDoubleTypeGetName0002
+     * @tc.desc    Verify getName returns empty string for primitive double
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeGetName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeGetName0002";
+      try {
+        const doubleVal = Type.of(3.14);
+        expect(doubleVal.getName()).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0100
+     * @tc.name    testDoubleTypeHasName0001
+     * @tc.desc    Verify hasName for DoubleType.VAL returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0001";
+      try {
+        const doubleType = DoubleType.VAL;
+        expect(doubleType.hasName()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0200
+     * @tc.name    testDoubleTypeHasName0002
+     * @tc.desc    Verify hasName for DoubleType.REF returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0002";
+      try {
+        const doubleType = DoubleType.REF;
+        expect(doubleType.hasName()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0300
+     * @tc.name    testDoubleTypeHasName0003
+     * @tc.desc    Verify hasName for primitive double returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0003";
+      try {
+        const doubleVal = Type.of(3.14);
+        expect(doubleVal.hasName()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0400
+     * @tc.name    testDoubleTypeHasName0004
+     * @tc.desc    Verify hasName for boxed Double returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0004";
+      try {
+        const doubleRef = Type.of(new Double(3.14));
+        expect(doubleRef.hasName()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0500
+     * @tc.name    testDoubleTypeHasName0005
+     * @tc.desc    Verify hasName returns false for other primitive types
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0005";
+      try {
+        const intType = Type.of(123);
+        expect(intType.hasName()).assertFalse();
+
+        const floatType = Type.of(3.14);
+        expect(floatType.hasName()).assertFalse();
+
+        const booleanType = Type.of(true);
+        expect(booleanType.hasName()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_HASNAME_0600
+     * @tc.name    testDoubleTypeHasName0006
+     * @tc.desc    Verify hasName returns true for VoidType.REF
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeHasName0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeHasName0006";
+      try {
+        const voidType = VoidType.REF;
+        expect(voidType.hasName()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0100
+     * @tc.name    testDoubleTypeIsPrimitive0001
+     * @tc.desc    Verify isPrimitive for DoubleType.VAL returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0001";
+      try {
+        const doubleType = DoubleType.VAL;
+        expect(doubleType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0200
+     * @tc.name    testDoubleTypeIsPrimitive0002
+     * @tc.desc    Verify isPrimitive for primitive double returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0002";
+      try {
+        const doubleVal = Type.of(3.14);
+        expect(doubleVal.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0300
+     * @tc.name    testDoubleTypeIsPrimitive0003
+     * @tc.desc    Verify isPrimitive returns true for other primitive types
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0003";
+      try {
+        const intType = Type.of(123);
+        expect(intType.isPrimitive()).assertTrue();
+
+        const booleanType = Type.of(true);
+        expect(booleanType.isPrimitive()).assertTrue();
+
+        const charType = Type.of('a');
+        expect(charType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0400
+     * @tc.name    testDoubleTypeIsPrimitive0004
+     * @tc.desc    Verify isPrimitive returns false for reference types
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0004";
+      try {
+        const stringType = Type.of("test") as StringType;
+        expect(stringType.isPrimitive()).assertTrue();
+
+        const objectType = Type.of(new Object());
+        expect(objectType.isPrimitive()).assertFalse();
+
+        const arrayType = Type.of([1, 2, 3]);
+        expect(arrayType.isPrimitive()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0500
+     * @tc.name    testDoubleTypeIsPrimitive0005
+     * @tc.desc    Verify isPrimitive returns true for VoidType.VAL
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0005";
+      try {
+        const voidType = VoidType.VAL;
+        expect(voidType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0600
+     * @tc.name    testDoubleTypeIsPrimitive0006
+     * @tc.desc    Verify isPrimitive returns false for VoidType.REF
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0006";
+      try {
+        const voidType = VoidType.REF;
+        expect(voidType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0700
+     * @tc.name    testDoubleTypeIsPrimitive0007
+     * @tc.desc    Verify isPrimitive returns false for NullType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0007";
+      try {
+        const nullType = NullType.REF;
+        expect(nullType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISPRIMITIVE_0800
+     * @tc.name    testDoubleTypeIsPrimitive0008
+     * @tc.desc    Verify isPrimitive returns false for UndefinedType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsPrimitive0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsPrimitive0008";
+      try {
+        const undefinedType = UndefinedType.REF;
+        expect(undefinedType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0100
+     * @tc.name    testDoubleTypeIsReference0001
+     * @tc.desc    Verify isReference for DoubleType.VAL returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0001";
+      try {
+        const doubleType = DoubleType.VAL;
+        expect(doubleType.isReference()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0200
+     * @tc.name    testDoubleTypeIsReference0002
+     * @tc.desc    Verify isReference for DoubleType.REF returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0002";
+      try {
+        const doubleType = DoubleType.REF;
+        expect(doubleType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0300
+     * @tc.name    testDoubleTypeIsReference0003
+     * @tc.desc    Verify isReference for primitive double returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0003";
+      try {
+        const doubleVal = Type.of(3.14);
+        expect(doubleVal.isReference()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0400
+     * @tc.name    testDoubleTypeIsReference0004
+     * @tc.desc    Verify isReference for boxed Double returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0004";
+      try {
+        const doubleRef = Type.of(new Double(3.14));
+        expect(doubleRef.isReference()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRLibrary_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0500
+     * @tc.name    testDoubleTypeIsReference0005
+     * @tc.desc    Verify isReference returns false for other primitive types
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0005";
+      try {
+        const intType = Type.of(123);
+        expect(intType.isReference()).assertFalse();
+
+        const floatType = Type.of(3.14);
+        expect(floatType.isReference()).assertFalse();
+
+        const booleanType = Type.of(true);
+        expect(booleanType.isReference()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0600
+     * @tc.name    testDoubleTypeIsReference0006
+     * @tc.desc    Verify isReference returns true for other reference types
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0006";
+      try {
+        const stringType = Type.of("test") as StringType;
+        expect(stringType.isReference()).assertTrue();
+
+        const objectType = Type.of(new Object());
+        expect(objectType.isReference()).assertTrue();
+
+        const arrayType = Type.of([1, 2, 3]);
+        expect(arrayType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
   })
 }

@@ -1973,5 +1973,1381 @@ export default function type_05Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0200
+     * @tc.name    testUndefinedTypeHasName_0002
+     * @tc.desc    Check if uninitialized variable's undefined type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeHasName_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeHasName_0002";
+      try {
+        let uninitializedVar = null;
+        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
+        const result: boolean = type.hasName();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0300
+     * @tc.name    testUndefinedTypeHasName_0003
+     * @tc.desc    Check if undefined from function return has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeHasName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeHasName_0003";
+      try {
+
+        const returnedValue = returnUndefined();
+        const type: UndefinedType = Type.of(returnedValue) as UndefinedType;
+        const result: boolean = type.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0400
+     * @tc.name    testUndefinedTypeHasName_0004
+     * @tc.desc    Check if undefined property in object has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeHasName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeHasName_0004";
+      try {
+
+        const type: UndefinedType = Type.of(TestObject.undefinedProp) as UndefinedType;
+        const result: boolean = type.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0500
+     * @tc.name    testUndefinedTypeHasName_0005
+     * @tc.desc    Check if undefined class property type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeHasName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeHasName_0005";
+      try {
+
+        const instance = new TestClass();
+        const type: UndefinedType = Type.of(instance.undefinedField) as UndefinedType;
+        const result: boolean = type.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0100
+     * @tc.name    testUndefinedTypeIsPrimitive_0001
+     * @tc.desc    Check if direct undefined value is considered primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0001";
+      try {
+        const undefinedValue = undefined;
+        const type: UndefinedType = Type.of(undefinedValue) as UndefinedType;
+        const result: boolean = type.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0200
+     * @tc.name    testUndefinedTypeIsPrimitive_0002
+     * @tc.desc    Check if uninitialized variable's undefined is considered primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0002";
+      try {
+        let uninitializedVar = null;
+        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
+        const result: boolean = type.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0300
+     * @tc.name    testUndefinedTypeIsPrimitive_0003
+     * @tc.desc    Check if function-returned undefined is considered primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0003";
+      try {
+
+        const returnedValue = returnUndefined();
+        const type: UndefinedType = Type.of(returnedValue) as UndefinedType;
+        const result: boolean = type.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0400
+     * @tc.name    testUndefinedTypeIsPrimitive_0004
+     * @tc.desc    Check if undefined property in class is considered primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0004";
+      try {
+
+        const instance = new TestClass();
+        const type: UndefinedType = Type.of(instance.undefinedField) as UndefinedType;
+        const result: boolean = type.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0500
+     * @tc.name    testUndefinedTypeIsPrimitive_0005
+     * @tc.desc    Compare undefined primitive check with number type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0005";
+      try {
+        const undefinedValue = undefined;
+        const numberValue = 42;
+        const undefinedType: UndefinedType = Type.of(undefinedValue) as UndefinedType;
+        const numberType = Type.of(numberValue);
+
+        const undefinedIsPrimitive: boolean = undefinedType.isPrimitive();
+        const numberIsPrimitive: boolean = numberType.isPrimitive();
+
+        expect(undefinedIsPrimitive).assertTrue();
+        expect(numberIsPrimitive).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0600
+     * @tc.name    testUndefinedTypeIsPrimitive_0006
+     * @tc.desc    Compare undefined primitive check with object type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsPrimitive_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsPrimitive_0006";
+      try {
+        const undefinedValue = undefined;
+        const objectValue = ['s', 1];
+        const undefinedType: UndefinedType = Type.of(undefinedValue) as UndefinedType;
+        const objectType = Type.of(objectValue);
+
+        const undefinedIsPrimitive: boolean = undefinedType.isPrimitive();
+        const objectIsPrimitive: boolean = objectType.isPrimitive();
+
+        expect(undefinedIsPrimitive).assertTrue();
+        expect(objectIsPrimitive).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0100
+     * @tc.name    testUndefinedTypeIsReference_0001
+     * @tc.desc    Check if direct undefined value is considered reference type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0001";
+      try {
+        const undefinedValue = undefined;
+        const type: UndefinedType = Type.of(undefinedValue) as UndefinedType;
+        const result: boolean = type.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0200
+     * @tc.name    testUndefinedTypeIsReference_0002
+     * @tc.desc    Check if uninitialized variable (undefined) is considered reference type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0002";
+      try {
+        let uninitializedVar = null;
+        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
+        const result: boolean = type.isReference();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0300
+     * @tc.name    testUndefinedTypeIsReference_0003
+     * @tc.desc    Check if undefined from function return is considered reference type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0003";
+      try {
+
+        const returnedValue = returnUndefined();
+        const type: UndefinedType = Type.of(returnedValue) as UndefinedType;
+        const result: boolean = type.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0400
+     * @tc.name    testUndefinedTypeIsReference_0004
+     * @tc.desc    Check if undefined object property is considered reference type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0004";
+      try {
+
+        const type: UndefinedType = Type.of(TestObject.undefinedProp) as UndefinedType;
+        const result: boolean = type.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0500
+     * @tc.name    testUndefinedTypeIsReference_0005
+     * @tc.desc    Compare undefined type with actual reference type (object)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0005";
+      try {
+        const undefinedValue = undefined;
+        const referenceObject = ['s', 6];
+
+        const undefinedType: UndefinedType = Type.of(undefinedValue) as UndefinedType;
+        const objectType = Type.of(referenceObject);
+
+        const undefinedIsRef: boolean = undefinedType.isReference();
+        const objectIsRef: boolean = objectType.isReference();
+
+        expect(undefinedIsRef).assertTrue();
+        expect(objectIsRef).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0600
+     * @tc.name    testUndefinedTypeIsReference_0006
+     * @tc.desc    Check if undefined class property is considered reference type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUndefinedTypeIsReference_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUndefinedTypeIsReference_0006";
+      try {
+        const instance = new TestClass();
+        const type: UndefinedType = Type.of(instance.undefinedField) as UndefinedType;
+        const result: boolean = type.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ASSIGNABLEFROM_0100
+     * @tc.name    testUnionTypeAssignableFrom_0001
+     * @tc.desc    Check assignableFrom() with union type created from number|string instance (number check)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeAssignableFrom_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeAssignableFrom_0001";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const numberType = Type.of(100);
+        const result: boolean = unionType.assignableFrom(numberType);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect(`${err.message}`).assertEqual('s');
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ASSIGNABLEFROM_0200
+     * @tc.name    testUnionTypeAssignableFrom_0002
+     * @tc.desc    Check assignableFrom() with union type created from number|string instance (string check)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeAssignableFrom_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeAssignableFrom_0002";
+      try {
+        const value: number | string = "text";
+        const unionType = Type.of(value);
+        const stringType = Type.of("hello");
+        const result: boolean = unionType.assignableFrom(stringType);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ASSIGNABLEFROM_0300
+     * @tc.name    testUnionTypeAssignableFrom_0003
+     * @tc.desc    Check assignableFrom() with union type created from boolean|null instance (boolean check)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeAssignableFrom_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeAssignableFrom_0003";
+      try {
+        const value: boolean | null = false;
+        const unionType = Type.of(value);
+        const booleanType = Type.of(true);
+        const result: boolean = unionType.assignableFrom(booleanType);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ASSIGNABLEFROM_0400
+     * @tc.name    testUnionTypeAssignableFrom_0004
+     * @tc.desc    Check assignableFrom() with union type created from object|array instance (array check)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeAssignableFrom_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeAssignableFrom_0004";
+      try {
+        const value: object | number[] = [1, 2, 3];
+        const unionType = Type.of(value);
+        const arrayType = Type.of([4, 5]);
+        const result: boolean = unionType.assignableFrom(arrayType);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ASSIGNABLEFROM_0500
+     * @tc.name    testUnionTypeAssignableFrom_0005
+     * @tc.desc    Check assignableFrom() with union type created from mixed instance (incompatible type)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeAssignableFrom_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeAssignableFrom_0005";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const booleanType = Type.of(false);
+        const result: boolean = unionType.assignableFrom(booleanType);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0100
+     * @tc.name    testUnionTypeEquals_0001
+     * @tc.desc    Check if number|string union type equals to another identical number|string union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0001";
+      try {
+        const value1: number | string = 42;
+        const value2: number | string = "test";
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0200
+     * @tc.name    testUnionTypeEquals_0002
+     * @tc.desc    Check if number|string union type equals to string|number union type (different order)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0002";
+      try {
+        const value1: number | string = 42;
+        const value2: string | number = "test";
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0300
+     * @tc.name    testUnionTypeEquals_0003
+     * @tc.desc    Check if number|string union type equals to number|string|boolean union type (extra member)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0003";
+      try {
+        const value1: number | string = 42;
+        const value2: number | string | boolean = true;
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0400
+     * @tc.name    testUnionTypeEquals_0004
+     * @tc.desc    Check if number|string union type equals to number|boolean union type (partial overlap)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0004";
+      try {
+        const value1: number | string = 42;
+        const value2: number | boolean = true;
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0500
+     * @tc.name    testUnionTypeEquals_0005
+     * @tc.desc    Check if union type equals to itself
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0005";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.equals(unionType);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0600
+     * @tc.name    testUnionTypeEquals_0006
+     * @tc.desc    Check if union type equals to non-union number type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0006";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const numberType = Type.of(100);
+        const result: boolean = unionType.equals(numberType);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0700
+     * @tc.name    testUnionTypeEquals_0007
+     * @tc.desc    Check if null|undefined union type equals to undefined|null union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0007";
+      try {
+        const value1: null | undefined = null;
+        const value2: undefined | null = undefined;
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0800
+     * @tc.name    testUnionTypeEquals_0008
+     * @tc.desc    Check if union type equals to null type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0008";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const nullType = Type.of(null);
+        const result: boolean = unionType.equals(nullType);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0900
+     * @tc.name    testUnionTypeEquals_0009
+     * @tc.desc    Check if complex union type equals to another complex union type with same members
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeEquals_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeEquals_0009";
+      try {
+
+        const value1: number | TestClass | (() => void) = 42;
+        const value2: TestClass | (() => void) | number = new TestClass("test");
+        const unionType1 = Type.of(value1);
+        const unionType2 = Type.of(value2);
+        const result: boolean = unionType1.equals(unionType2);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0100
+     * @tc.name    testUnionTypeGetLiteral_0001
+     * @tc.desc    Check literal for number|string union type created from number value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0001";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("int");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0200
+     * @tc.name    testUnionTypeGetLiteral_0002
+     * @tc.desc    Check literal for number|string union type created from string value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0002";
+      try {
+        const value: number | string = "test";
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("string");
+      } catch (err: Error) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect(`${err.message}`).assertEqual("sda");
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0300
+     * @tc.name    testUnionTypeGetLiteral_0003
+     * @tc.desc    Check literal for boolean|null union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0003";
+      try {
+        const value: boolean | null = null;
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("null");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0400
+     * @tc.name    testUnionTypeGetLiteral_0004
+     * @tc.desc    Check literal for object|array union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0004";
+      try {
+        const value: object | number[] = [1, 2, 3];
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("class{...}");
+      } catch (err: Error) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect(`${err.message}`).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0500
+     * @tc.name    testUnionTypeGetLiteral_0005
+     * @tc.desc    Check literal for number|undefined union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0005";
+      try {
+        const value: number | undefined = undefined;
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("undefined");
+      } catch (err: Error) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0600
+     * @tc.name    testUnionTypeGetLiteral_0006
+     * @tc.desc    Check literal for three-type union (number|string|boolean)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0006";
+      try {
+        const value: number | string | boolean = true;
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("boolean");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0700
+     * @tc.name    testUnionTypeGetLiteral_0007
+     * @tc.desc    Check literal for function|class union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetLiteral_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetLiteral_0007";
+      try {
+        const value: (() => void) | TestClass = new TestClass();
+        const unionType = Type.of(value);
+        const result: string = unionType.getLiteral();
+        expect(result).assertEqual("class{...}");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0100
+     * @tc.name    testUnionTypeGetName_0001
+     * @tc.desc    Check name for number|string union type created from number value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0001";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0200
+     * @tc.name    testUnionTypeGetName_0002
+     * @tc.desc    Check name for boolean|null union type created from null value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0002";
+      try {
+        const value: boolean | null = null;
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("null");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0300
+     * @tc.name    testUnionTypeGetName_0003
+     * @tc.desc    Check name for object|array union type created from object value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0003";
+      try {
+        const value: object | number[] = [1, 2];
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("escompat.Array");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0400
+     * @tc.name    testUnionTypeGetName_0004
+     * @tc.desc    Check name for three-type union (number|string|boolean)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0004";
+      try {
+        const value: number | string | boolean = false;
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0500
+     * @tc.name    testUnionTypeGetName_0005
+     * @tc.desc    Check name for function|undefined union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0005";
+      try {
+        const value: (() => void) | undefined = undefined;
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("undefined");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0600
+     * @tc.name    testUnionTypeGetName_0006
+     * @tc.desc    Check name for class instance|string union type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeGetName_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeGetName_0006";
+      try {
+
+        const value: TestClass | string = new TestClass("test");
+        const unionType = Type.of(value);
+        const result: string = unionType.getName();
+        expect(result).assertEqual("entry.src.main.src.test.Type_05.test.TestClass");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0100
+     * @tc.name    testUnionTypeHasName_0001
+     * @tc.desc    Check if number|string union type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0001";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0200
+     * @tc.name    testUnionTypeHasName_0002
+     * @tc.desc    Check if boolean|null union type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0002";
+      try {
+        const value: boolean | null = null;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0300
+     * @tc.name    testUnionTypeHasName_0003
+     * @tc.desc    Check if object|array union type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0003";
+      try {
+        const value: object | number[] = [1, 2];
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0400
+     * @tc.name    testUnionTypeHasName_0004
+     * @tc.desc    Check if three-type union (number|string|boolean) has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0004";
+      try {
+        const value: number | string | boolean = "test";
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0500
+     * @tc.name    testUnionTypeHasName_0005
+     * @tc.desc    Check if function|undefined union type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0005";
+      try {
+        const value: (() => number) | undefined = undefined;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_HASNAME_0600
+     * @tc.name    testUnionTypeHasName_0006
+     * @tc.desc    Check if class instance|string union type has a name
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeHasName_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeHasName_0006";
+      try {
+
+        const value: TestClass | string = new TestClass();
+        const unionType = Type.of(value);
+        const result: boolean = unionType.hasName();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0100
+     * @tc.name    testUnionTypeIsPrimitive_0001
+     * @tc.desc    Check if number|string union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0001";
+      try {
+        const value: number | string = 42;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0200
+     * @tc.name    testUnionTypeIsPrimitive_0002
+     * @tc.desc    Check if boolean|null union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0002";
+      try {
+        const value: boolean | null = true;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0300
+     * @tc.name    testUnionTypeIsPrimitive_0003
+     * @tc.desc    Check if number|object union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0003";
+      try {
+        const value: number | object = 42;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0400
+     * @tc.name    testUnionTypeIsPrimitive_0004
+     * @tc.desc    Check if string|array union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0004";
+      try {
+        const value: string | number[] = "test";
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0600
+     * @tc.name    testUnionTypeIsPrimitive_0006
+     * @tc.desc    Check if number|string|boolean union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0006";
+      try {
+        const value: number | string | boolean = false;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0700
+     * @tc.name    testUnionTypeIsPrimitive_0007
+     * @tc.desc    Check if number|string|object union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0007";
+      try {
+        const value: number | string | object = "test";
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISPRIMITIVE_0800
+     * @tc.name    testUnionTypeIsPrimitive_0008
+     * @tc.desc    Check if undefined|null union type is primitive
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsPrimitive_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsPrimitive_0008";
+      try {
+        const value: undefined | null = undefined;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0100
+     * @tc.name    testUnionTypeIsReference_0001
+     * @tc.desc    Check if union of two reference types (object|array) returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0001";
+      try {
+        const value: object | number[] = [1, 3];
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0200
+     * @tc.name    testUnionTypeIsReference_0002
+     * @tc.desc    Check if union of reference and primitive type (object|number) returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0002";
+      try {
+        const value: object | number = 42;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0300
+     * @tc.name    testUnionTypeIsReference_0003
+     * @tc.desc    Check if union of two primitive types (number|string) returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0003";
+      try {
+        const value: number | string = "text";
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0400
+     * @tc.name    testUnionTypeIsReference_0004
+     * @tc.desc    Check if union with function type (function|string) returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0004";
+      try {
+        const value: (() => void) | string = "test";
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0500
+     * @tc.name    testUnionTypeIsReference_0005
+     * @tc.desc    Check if union with null and reference type (object|null) returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0005";
+      try {
+        const value: object | null = null;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0600
+     * @tc.name    testUnionTypeIsReference_0006
+     * @tc.desc    Check if union with undefined and primitive type (number|undefined) returns false
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0006";
+      try {
+        const value: number | undefined = undefined;
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_ISREFERENCE_0800
+     * @tc.name    testUnionTypeIsReference_0008
+     * @tc.desc    Check if union of class instances (ClassA|ClassB) returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testUnionTypeIsReference_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testUnionTypeIsReference_0008";
+      try {
+
+        const value: ClassA | ClassB = new ClassB();
+        const unionType = Type.of(value);
+        const result: boolean = unionType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
   });
 }
