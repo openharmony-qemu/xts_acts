@@ -20,6 +20,8 @@ namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
+constexpr int LOOP_COUNT = 10;
+
 // Common SetUp and TearDown functions implementation
 void DrawingNativeColorSpaceTestSetUp()
 {
@@ -75,7 +77,7 @@ int TestColorSpaceDestroyNull()
 
 /**
  * @tc.name   testColorSpaceCreateSrgbMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100
  * @tc.desc   Test for creating an sRGB color space with multiple calls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -84,7 +86,7 @@ int TestColorSpaceDestroyNull()
 int TestColorSpaceCreateSrgbMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);
@@ -96,7 +98,7 @@ int TestColorSpaceCreateSrgbMultipleCalls()
 
 /**
  * @tc.name   testColorSpaceCreateSrgbLinearNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200
  * @tc.desc   Test for creating an sRGB linear color space with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -115,7 +117,7 @@ int TestColorSpaceCreateSrgbLinearNormal()
 
 /**
  * @tc.name   testColorSpaceCreateSrgbLinearMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300
  * @tc.desc   Test for creating an sRGB linear color space with multiple calls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -124,7 +126,7 @@ int TestColorSpaceCreateSrgbLinearNormal()
 int TestColorSpaceCreateSrgbLinearMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorSpace* colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);

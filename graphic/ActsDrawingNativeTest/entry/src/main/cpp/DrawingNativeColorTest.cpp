@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
+#include <random>
+
 #include "include/DrawingNativeColorTest.h"
 #include "include/OhosCommonTest.h"
 
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
+
+constexpr int LOOP_COUNT = 10;
+constexpr int COLOR_COMPONENT_MAX = 256;
 
 // Common SetUp and TearDown functions implementation
 void DrawingNativeColorTestSetUp()
@@ -37,7 +42,7 @@ void DrawingNativeColorTestTearDown()
 
 /**
  * @tc.name   testColorSetArgbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100
  * @tc.desc   test for testColorSetArgbNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -62,7 +67,7 @@ int TestColorSetArgbNormal()
 
 /**
  * @tc.name   testColorSetArgbNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200
  * @tc.desc   test for testColorSetArgbNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -94,7 +99,7 @@ int TestColorSetArgbNULL()
 
 /**
  * @tc.name   testColorSetArgbMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300
  * @tc.desc   test for testColorSetArgbMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -104,8 +109,11 @@ int TestColorSetArgbMultipleCalls()
 {
     DrawingNativeColorTestSetUp();
     // 1. Call OH_Drawing_ColorSetArgb with random numbers between 0 and 255, 10 times
-    for (int i = 0; i < 10; i++) {
-        uint32_t color = OH_Drawing_ColorSetArgb(rand() % 256, rand() % 256, rand() % 256, rand() % 256);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<uint32_t> dis(0, COLOR_COMPONENT_MAX - 1);
+    for (int i = 0; i < LOOP_COUNT; i++) {
+        uint32_t color = OH_Drawing_ColorSetArgb(dis(gen), dis(gen), dis(gen), dis(gen));
         // add assert
         EXPECT_NE(color, 0);
     }
@@ -116,7 +124,7 @@ int TestColorSetArgbMultipleCalls()
 
 /**
  * @tc.name   testColorSetArgbAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0103
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400
  * @tc.desc   test for testColorSetArgbAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -148,7 +156,7 @@ int TestColorSetArgbAbnormal()
 
 /**
  * @tc.name   testColorSetArgbMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0104
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500
  * @tc.desc   test for testColorSetArgbMaximum.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

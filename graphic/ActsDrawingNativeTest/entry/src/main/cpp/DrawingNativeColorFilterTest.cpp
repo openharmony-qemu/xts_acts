@@ -21,6 +21,9 @@ namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
+constexpr int LOOP_COUNT = 10;
+constexpr int BLEND_MODE_COUNT = 28;
+
 // Common SetUp and TearDown functions implementation
 void DrawingNativeColorFilterTestSetUp()
 {
@@ -38,7 +41,7 @@ void DrawingNativeColorFilterTestTearDown()
 
 /**
  * @tc.name   testColorFilterCreateBlendModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100
  * @tc.desc   test for testColorFilterCreateBlendModeNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -71,7 +74,7 @@ int TestColorFilterCreateBlendModeNormal()
 
 /**
  * @tc.name   testColorFilterCreateBlendModeNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200
  * @tc.desc   test for testColorFilterCreateBlendModeNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -93,7 +96,7 @@ int TestColorFilterCreateBlendModeNULL()
 
 /**
  * @tc.name   testColorFilterCreateBlendModeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300
  * @tc.desc   test for testColorFilterCreateBlendModeMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -103,12 +106,12 @@ int TestColorFilterCreateBlendModeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode, random value between 0x00000000 and 0xFFFFFFFF
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
-        uint32_t random_number = dis(gen);
-        OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        uint32_t randomNumber = dis(gen);
+        OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
@@ -124,13 +127,13 @@ int TestColorFilterCreateBlendModeMultipleCalls()
         BLEND_MODE_MULTIPLY,   BLEND_MODE_HUE,        BLEND_MODE_SATURATION,  BLEND_MODE_COLOR,
         BLEND_MODE_LUMINOSITY,
     };
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<uint32_t> dis(0, 28);
-        uint32_t random_number = dis(gen);
+        std::uniform_int_distribution<uint32_t> dis(0, BLEND_MODE_COUNT);
+        uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter* colorFilter =
-            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[randomNumber]);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
@@ -141,7 +144,7 @@ int TestColorFilterCreateBlendModeMultipleCalls()
 
 /**
  * @tc.name   testColorFilterCreateBlendModeAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0103
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400
  * @tc.desc   test for testColorFilterCreateBlendModeAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -163,7 +166,7 @@ int TestColorFilterCreateBlendModeAbnormal()
 
 /**
  * @tc.name   testColorFilterCreateBlendModeMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0104
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500
  * @tc.desc   test for testColorFilterCreateBlendModeMaximum.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -185,7 +188,7 @@ int TestColorFilterCreateBlendModeMaximum()
 
 /**
  * @tc.name   testColorFilterCreateComposeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600
  * @tc.desc   test for testColorFilterCreateComposeNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -239,7 +242,7 @@ int TestColorFilterCreateComposeNormal()
 
 /**
  * @tc.name   testColorFilterCreateComposeNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700
  * @tc.desc   test for testColorFilterCreateComposeNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -261,7 +264,7 @@ int TestColorFilterCreateComposeNULL()
 
 /**
  * @tc.name   testColorFilterCreateComposeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0202
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800
  * @tc.desc   test for testColorFilterCreateComposeMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -271,15 +274,15 @@ int TestColorFilterCreateComposeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode with a random value between 0x00000000 and 0xFFFFFFFF
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
-        uint32_t random_number = dis(gen);
-        OH_Drawing_ColorFilter* colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        uint32_t randomNumber = dis(gen);
+        OH_Drawing_ColorFilter* colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         // add assert
         EXPECT_NE(colorFilter1, nullptr);
-        OH_Drawing_ColorFilter* colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(random_number, BLEND_MODE_CLEAR);
+        OH_Drawing_ColorFilter* colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(randomNumber, BLEND_MODE_CLEAR);
         // add assert
         EXPECT_NE(colorFilter2, nullptr);
         OH_Drawing_ColorFilterCreateCompose(colorFilter1, colorFilter2);
@@ -297,17 +300,17 @@ int TestColorFilterCreateComposeMultipleCalls()
         BLEND_MODE_MULTIPLY,   BLEND_MODE_HUE,        BLEND_MODE_SATURATION,  BLEND_MODE_COLOR,
         BLEND_MODE_LUMINOSITY,
     };
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<uint32_t> dis(0, 28);
-        uint32_t random_number = dis(gen);
+        std::uniform_int_distribution<uint32_t> dis(0, BLEND_MODE_COUNT);
+        uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter* colorFilter1 =
-            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter1, nullptr);
         OH_Drawing_ColorFilter* colorFilter2 =
-            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[random_number]);
+            OH_Drawing_ColorFilterCreateBlendMode(0xff0000ff, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter2, nullptr);
         OH_Drawing_ColorFilterCreateCompose(colorFilter1, colorFilter2);
@@ -321,7 +324,7 @@ int TestColorFilterCreateComposeMultipleCalls()
 
 /**
  * @tc.name   testColorFilterCreateMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900
  * @tc.desc   test for testColorFilterCreateMatrixNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -344,7 +347,7 @@ int TestColorFilterCreateMatrixNormal()
 
 /**
  * @tc.name   testColorFilterCreateMatrixNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0301
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000
  * @tc.desc   test for testColorFilterCreateMatrixNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -369,7 +372,7 @@ int TestColorFilterCreateMatrixNULL()
 
 /**
  * @tc.name   testColorFilterCreateMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0302
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100
  * @tc.desc   test for testColorFilterCreateMatrixAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -403,7 +406,7 @@ int TestColorFilterCreateMatrixAbnormal()
 
 /**
  * @tc.name   testColorFilterCreateMatrixMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0303
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200
  * @tc.desc   test for testColorFilterCreateMatrixMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -412,7 +415,7 @@ int TestColorFilterCreateMatrixAbnormal()
 int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         const float matrix[20] = { 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0.5f, 0 };
         OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
         EXPECT_NE(colorFilter, nullptr);
@@ -425,7 +428,7 @@ int TestColorFilterCreateMatrixMultipleCalls()
 
 /**
  * @tc.name   testColorFilterCreateLinearToSrgbGammaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300
  * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -448,7 +451,7 @@ int TestColorFilterCreateLinearToSrgbGammaNormal()
 
 /**
  * @tc.name   testColorFilterCreateLinearToSrgbGammaMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0401
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400
  * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -458,7 +461,7 @@ int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1、OH_Drawing_ColorFilterCreateLinearToSrgbGamma 调用10次
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -470,7 +473,7 @@ int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
 
 /**
  * @tc.name   testColorFilterCreateSrgbGammaToLinearNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500
  * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -492,7 +495,7 @@ int TestColorFilterCreateSrgbGammaToLinearNormal()
 
 /**
  * @tc.name   testColorFilterCreateSrgbGammaToLinearMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0501
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600
  * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -502,7 +505,7 @@ int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear 10 times
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -514,7 +517,7 @@ int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
 
 /**
  * @tc.name   testColorFilterCreateLumaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0600
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700
  * @tc.desc   test for testColorFilterCreateLumaNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -535,7 +538,7 @@ int TestColorFilterCreateLumaNormal()
 
 /**
  * @tc.name   testColorFilterCreateLumaMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0601
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800
  * @tc.desc   test for testColorFilterCreateLumaMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -545,7 +548,7 @@ int TestColorFilterCreateLumaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateLuma 10 times
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateLuma();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -557,7 +560,7 @@ int TestColorFilterCreateLumaMultipleCalls()
 
 /**
  * @tc.name   testColorFilterDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0700
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900
  * @tc.desc   test for testColorFilterDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -578,7 +581,7 @@ int TestColorFilterDestroyNormal()
 
 /**
  * @tc.name   testColorFilterDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0701
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000
  * @tc.desc   test for testColorFilterDestroyNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -598,7 +601,7 @@ int TestColorFilterDestroyNULL()
 
 /**
  * @tc.name   testColorFilterCreateLightingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0800
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100
  * @tc.desc   test for testColorFilterCreateLightingNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -620,7 +623,7 @@ int TestColorFilterCreateLightingNormal()
 
 /**
  * @tc.name   testColorFilterCreateLightingNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0801
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200
  * @tc.desc   test for testColorFilterCreateLightingNULL.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -647,7 +650,7 @@ int TestColorFilterCreateLightingNULL()
 
 /**
  * @tc.name   testColorFilterCreateLightingAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0802
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300
  * @tc.desc   test for testColorFilterCreateLightingAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -674,7 +677,7 @@ int TestColorFilterCreateLightingAbnormal()
 
 /**
  * @tc.name   testColorFilterCreateLightingMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0803
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400
  * @tc.desc   test for testColorFilterCreateLightingMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -684,7 +687,7 @@ int TestColorFilterCreateLightingMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting is called multiple times.
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateLighting(0xFFFFFFFF, 0XFF0000FF);
         EXPECT_NE(colorFilter, nullptr);
         ;
