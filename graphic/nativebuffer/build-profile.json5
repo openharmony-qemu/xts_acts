@@ -16,6 +16,18 @@
 {
   "app": {
     "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/nickyhey/.ohos/config/openharmony/default_nativebuffer_pAia_DwFRWzTVNmCXkwd3GbeFf2xyMEhS9zQ2niucUY=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B22DB1EBD311E8FF6BAAB77EAB1D7FC798986D99F408DB9474CEF49A20F1989E03584D8B29F5823",
+          "profile": "C:/Users/nickyhey/.ohos/config/openharmony/default_nativebuffer_pAia_DwFRWzTVNmCXkwd3GbeFf2xyMEhS9zQ2niucUY=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/nickyhey/.ohos/config/openharmony/default_nativebuffer_pAia_DwFRWzTVNmCXkwd3GbeFf2xyMEhS9zQ2niucUY=.p12",
+          "storePassword": "0000001B17E51FA4017F4CE3D4CC29474F2822B137CF828E7C92F1A6AACECD585DCB6701C111E182C82759"
+        }
+      }
     ],
     "products": [
       {
