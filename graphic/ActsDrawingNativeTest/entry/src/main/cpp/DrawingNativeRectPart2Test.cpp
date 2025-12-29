@@ -236,8 +236,10 @@ int TestRectContainsNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains;
@@ -263,8 +265,10 @@ int TestRectContainsNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains = false;
@@ -298,8 +302,10 @@ int TestRectContainsCalls()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(CONTAINS_RECT_LEFT, CONTAINS_RECT_TOP, CONTAINS_RECT_RIGHT, CONTAINS_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(CONTAINED_RECT_LEFT, CONTAINED_RECT_TOP, CONTAINED_RECT_RIGHT, CONTAINED_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains;
@@ -326,7 +332,8 @@ int TestRectContainsCalls()
 int TestRectSetEmptyNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -346,7 +353,8 @@ int TestRectSetEmptyNormal()
 int TestRectSetEmptyNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -366,7 +374,8 @@ int TestRectSetEmptyNull()
 int TestRectSetEmptyMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
@@ -388,7 +397,8 @@ int TestRectSetEmptyMultipleCalls()
 int TestRectIsEmptyNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = true;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
@@ -414,7 +424,8 @@ int TestRectIsEmptyNormal()
 int TestRectIsEmptyNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(nullptr, &isEmpty);
@@ -439,7 +450,8 @@ int TestRectIsEmptyNull()
 int TestRectIsEmptyMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = true;
     for (int i = 0; i < LOOP_COUNT; i++) {
@@ -463,7 +475,8 @@ int TestRectIsEmptyMultipleCalls()
 int TestRectOffsetNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, OFFSET_X, OFFSET_Y);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -493,7 +506,8 @@ int TestRectOffsetNormal()
 int TestRectOffsetNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(nullptr, OFFSET_X, OFFSET_Y);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -529,7 +543,8 @@ int TestRectOffsetNull()
 int TestRectOffsetAbnormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, ABNORMAL_OFFSET_VALUE, ABNORMAL_OFFSET_VALUE);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -553,7 +568,8 @@ int TestRectOffsetAbnormal()
 int TestRectOffsetMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     for (float i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, OFFSET_STEP, OFFSET_STEP);
@@ -579,7 +595,8 @@ int TestRectOffsetMultipleCalls()
 int TestRectOffsetToNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, OFFSET_X, OFFSET_Y);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -603,7 +620,8 @@ int TestRectOffsetToNormal()
 int TestRectOffsetToNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(nullptr, OFFSET_X, OFFSET_Y);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -639,7 +657,8 @@ int TestRectOffsetToNull()
 int TestRectOffsetToAbnormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, ABNORMAL_OFFSET_VALUE, ABNORMAL_OFFSET_VALUE);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -663,7 +682,8 @@ int TestRectOffsetToAbnormal()
 int TestRectOffsetToMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, OFFSET_X, OFFSET_Y);
@@ -689,7 +709,8 @@ int TestRectOffsetToMultipleCalls()
 int TestRectSortNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -720,7 +741,8 @@ int TestRectSortNormal()
 int TestRectSortNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -744,7 +766,8 @@ int TestRectSortNull()
 int TestRectSortMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
@@ -770,9 +793,11 @@ int TestRectSortMultipleCalls()
 int TestRectUnionNormal()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -797,9 +822,11 @@ int TestRectUnionNormal()
 int TestRectUnionNull()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(nullptr, other);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -822,9 +849,11 @@ int TestRectUnionNull()
 int TestRectUnionMultipleCalls()
 {
     DrawingNativeRectPart2TestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(UNION_RECT_LEFT, UNION_RECT_TOP, UNION_RECT_RIGHT, UNION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < LOOP_COUNT; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);

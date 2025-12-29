@@ -108,7 +108,8 @@ int TestRegionEmptyNormal()
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region, rect);
@@ -140,7 +141,8 @@ int TestRegionEmptyNull()
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region, rect);
@@ -172,7 +174,8 @@ int TestRegionEmptyCalls()
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region, rect);
@@ -204,7 +207,8 @@ int TestRegionGetBoundaryNormal()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     EXPECT_NE(path, nullptr);
@@ -315,9 +319,11 @@ int TestRegionGetBoundsNormal()
     EXPECT_NE(region1, nullptr);
     OH_Drawing_Region* region2 = OH_Drawing_RegionCreate();
     EXPECT_NE(region2, nullptr);
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect1 =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect1, nullptr);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
+    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
+        REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_RegionSetRect(region1, rect1);
     OH_Drawing_RegionSetRect(region2, rect2);
@@ -361,7 +367,8 @@ int TestRegionGetBoundsNull()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBounds(nullptr, rect);
@@ -390,7 +397,8 @@ int TestRegionGetBoundsMultipleCalls()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     for (int i = 0; i < LOOP_COUNT; i++) {
@@ -425,9 +433,11 @@ int TestRegionIsComplexNormal()
     EXPECT_NE(region1, nullptr);
     OH_Drawing_Region* region2 = OH_Drawing_RegionCreate();
     EXPECT_NE(region2, nullptr);
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect1 =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect1, nullptr);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
+    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
+        REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_RegionSetRect(region1, rect1);
     OH_Drawing_RegionSetRect(region2, rect2);
@@ -466,7 +476,8 @@ int TestRegionIsComplexNull()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isComplex = false;
@@ -500,9 +511,11 @@ int TestRegionIsComplexMultipleCalls()
     EXPECT_NE(region1, nullptr);
     OH_Drawing_Region* region2 = OH_Drawing_RegionCreate();
     EXPECT_NE(region2, nullptr);
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect1 =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect1, nullptr);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
+    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
+        REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_RegionSetRect(region1, rect1);
     OH_Drawing_RegionSetRect(region2, rect2);
@@ -544,7 +557,8 @@ int TestRegionIsEmptyNormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isEmpty, true);
 
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     errorCode = OH_Drawing_RegionIsEmpty(region, &isEmpty);
@@ -600,7 +614,8 @@ int TestRegionIsEmptyMultipleCalls()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = false;
     OH_Drawing_RegionSetRect(region, rect);
@@ -633,9 +648,11 @@ int TestRegionIsRectNormal()
     EXPECT_NE(region1, nullptr);
     OH_Drawing_Region* region2 = OH_Drawing_RegionCreate();
     EXPECT_NE(region2, nullptr);
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect1 =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect1, nullptr);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
+    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(
+        REGION_RECT_UNION_LEFT, REGION_RECT_UNION_TOP, REGION_RECT_UNION_RIGHT, REGION_RECT_UNION_BOTTOM);
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_RegionSetRect(region1, rect1);
     OH_Drawing_RegionSetRect(region2, rect2);
@@ -728,14 +745,17 @@ int TestRegionQuickContainsNormal()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isContains = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, true);
-    errorCode = OH_Drawing_RegionQuickContains(region, RECT_OUTSIDE_LEFT, RECT_OUTSIDE_TOP, RECT_OUTSIDE_RIGHT, RECT_OUTSIDE_BOTTOM, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_OUTSIDE_LEFT, RECT_OUTSIDE_TOP, RECT_OUTSIDE_RIGHT, RECT_OUTSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
     OH_Drawing_RectDestroy(rect);
@@ -760,26 +780,33 @@ int TestRegionQuickContainsNull()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isContains = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(nullptr, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(
+        nullptr, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, ZERO_VALUE, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, ZERO_VALUE, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, ZERO_VALUE, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_INSIDE_LEFT, ZERO_VALUE, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, ZERO_VALUE, RECT_INSIDE_BOTTOM, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, ZERO_VALUE, RECT_INSIDE_BOTTOM, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, ZERO_VALUE, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, ZERO_VALUE, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, nullptr);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
     OH_Drawing_RectDestroy(rect);
@@ -804,14 +831,17 @@ int TestRegionQuickContainsAbnormal()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isContains = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, NEGATIVE_VALUE, REGION_RECT_TOP, REGION_RECT_LEFT, REGION_RECT_TOP, &isContains);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(
+        region, NEGATIVE_VALUE, REGION_RECT_TOP, REGION_RECT_LEFT, REGION_RECT_TOP, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
-    errorCode = OH_Drawing_RegionQuickContains(region, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, &isContains);
+    errorCode = OH_Drawing_RegionQuickContains(
+        region, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, &isContains);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isContains, false);
     OH_Drawing_RectDestroy(rect);
@@ -836,12 +866,14 @@ int TestRegionQuickContainsMultipleCalls()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        REGION_RECT_LARGE_LEFT, REGION_RECT_LARGE_TOP, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isContains = false;
     for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(
+            region, RECT_INSIDE_LEFT, RECT_INSIDE_TOP, RECT_INSIDE_RIGHT, RECT_INSIDE_BOTTOM, &isContains);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isContains, true);
     }
@@ -868,16 +900,26 @@ int TestRegionQuickRejectNormal()
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
     bool isReject = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, 0, 0, REGION_RECT_LEFT, REGION_RECT_TOP, &isReject);
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_RegionQuickReject(region, 0, 0, REGION_RECT_LEFT, REGION_RECT_TOP, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT, REGION_RECT_QUICK_REJECT_TOP, REGION_RECT_QUICK_REJECT_RIGHT, REGION_RECT_QUICK_REJECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT,
+                                                  REGION_RECT_QUICK_REJECT_TOP,
+                                                  REGION_RECT_QUICK_REJECT_RIGHT,
+                                                  REGION_RECT_QUICK_REJECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, false);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, REGION_RECT_QUICK_REJECT_TEST_RIGHT, REGION_RECT_QUICK_REJECT_TEST_BOTTOM, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(region,
+                                             REGION_RECT_LARGE_RIGHT,
+                                             REGION_RECT_LARGE_BOTTOM,
+                                             REGION_RECT_QUICK_REJECT_TEST_RIGHT,
+                                             REGION_RECT_QUICK_REJECT_TEST_BOTTOM,
+                                             &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
     OH_Drawing_RectDestroy(rect);
@@ -902,26 +944,35 @@ int TestRegionQuickRejectNull()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT, REGION_RECT_QUICK_REJECT_TOP, REGION_RECT_QUICK_REJECT_RIGHT, REGION_RECT_QUICK_REJECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT,
+                                                  REGION_RECT_QUICK_REJECT_TOP,
+                                                  REGION_RECT_QUICK_REJECT_RIGHT,
+                                                  REGION_RECT_QUICK_REJECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isReject = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(nullptr, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(
+        nullptr, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isReject, false);
-    errorCode = OH_Drawing_RegionQuickReject(region, ZERO_VALUE, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, ZERO_VALUE, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, false);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_RIGHT, ZERO_VALUE, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, REGION_RECT_RIGHT, ZERO_VALUE, REGION_RECT_LARGE_RIGHT, REGION_RECT_LARGE_BOTTOM, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, false);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, ZERO_VALUE, REGION_RECT_LARGE_BOTTOM, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, ZERO_VALUE, REGION_RECT_LARGE_BOTTOM, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, ZERO_VALUE, &isReject);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, ZERO_VALUE, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
-    errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, ZERO_VALUE, nullptr);
+    errorCode = OH_Drawing_RegionQuickReject(
+        region, REGION_RECT_RIGHT, REGION_RECT_BOTTOM, REGION_RECT_LARGE_RIGHT, ZERO_VALUE, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isReject, true);
     OH_Drawing_RectDestroy(rect);
@@ -946,14 +997,19 @@ int TestRegionQuickRejectAbnormal()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT, REGION_RECT_QUICK_REJECT_TOP, REGION_RECT_QUICK_REJECT_RIGHT, REGION_RECT_QUICK_REJECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT,
+                                                  REGION_RECT_QUICK_REJECT_TOP,
+                                                  REGION_RECT_QUICK_REJECT_RIGHT,
+                                                  REGION_RECT_QUICK_REJECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isReject = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, NEGATIVE_VALUE, NEGATIVE_VALUE, REGION_RECT_LEFT, REGION_RECT_TOP, &isReject);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(
+        region, NEGATIVE_VALUE, NEGATIVE_VALUE, REGION_RECT_LEFT, REGION_RECT_TOP, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
-    errorCode = OH_Drawing_RegionQuickReject(region, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, &isReject);
+    errorCode =
+        OH_Drawing_RegionQuickReject(region, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, ABNORMAL_VALUE, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, true);
     OH_Drawing_RectDestroy(rect);
@@ -978,12 +1034,20 @@ int TestRegionQuickRejectMultipleCalls()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT, REGION_RECT_QUICK_REJECT_TOP, REGION_RECT_QUICK_REJECT_RIGHT, REGION_RECT_QUICK_REJECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_QUICK_REJECT_LEFT,
+                                                  REGION_RECT_QUICK_REJECT_TOP,
+                                                  REGION_RECT_QUICK_REJECT_RIGHT,
+                                                  REGION_RECT_QUICK_REJECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     bool isReject = false;
     for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, REGION_RECT_QUICK_REJECT_TEST_LEFT, REGION_RECT_QUICK_REJECT_TEST_TOP, REGION_RECT_QUICK_REJECT_TEST_RIGHT, REGION_RECT_QUICK_REJECT_TEST_BOTTOM, &isReject);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region,
+                                                                      REGION_RECT_QUICK_REJECT_TEST_LEFT,
+                                                                      REGION_RECT_QUICK_REJECT_TEST_TOP,
+                                                                      REGION_RECT_QUICK_REJECT_TEST_RIGHT,
+                                                                      REGION_RECT_QUICK_REJECT_TEST_BOTTOM,
+                                                                      &isReject);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isReject, true);
     }
@@ -1009,7 +1073,8 @@ int TestRegionTranslateNormal()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionTranslate(region, TRANSLATE_X, TRANSLATE_Y);
@@ -1040,7 +1105,8 @@ int TestRegionTranslateNull()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionTranslate(nullptr, TRANSLATE_X, TRANSLATE_Y);
@@ -1071,7 +1137,8 @@ int TestRegionTranslateMultipleCalls()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
     for (int i = 0; i < LOOP_COUNT; i++) {

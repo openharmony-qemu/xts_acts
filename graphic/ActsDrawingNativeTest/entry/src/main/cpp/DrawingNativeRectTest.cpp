@@ -111,7 +111,8 @@ int TestRectIntersectNormal()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(SECOND_RECT_LEFT, SECOND_RECT_TOP, SECOND_RECT_RIGHT, SECOND_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(SECOND_RECT_LEFT, SECOND_RECT_TOP, SECOND_RECT_RIGHT, SECOND_RECT_BOTTOM);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -170,7 +171,8 @@ int TestRectIntersectNull()
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(SECOND_RECT_LEFT, SECOND_RECT_TOP, SECOND_RECT_RIGHT, SECOND_RECT_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(SECOND_RECT_LEFT, SECOND_RECT_TOP, SECOND_RECT_RIGHT, SECOND_RECT_BOTTOM);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectIntersect with the first parameter as nullptr, Returns error code
@@ -203,11 +205,13 @@ int TestRectJoinNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(INTERSECT_RECT2_LEFT, INTERSECT_RECT2_TOP, INTERSECT_RECT2_RIGHT, INTERSECT_RECT2_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(INTERSECT_RECT2_LEFT, INTERSECT_RECT2_TOP, INTERSECT_RECT2_RIGHT, INTERSECT_RECT2_BOTTOM);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -263,11 +267,13 @@ int TestRectJoinNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect* other = OH_Drawing_RectCreate(INTERSECT_RECT2_LEFT, INTERSECT_RECT2_TOP, INTERSECT_RECT2_RIGHT, INTERSECT_RECT2_BOTTOM);
+    OH_Drawing_Rect* other =
+        OH_Drawing_RectCreate(INTERSECT_RECT2_LEFT, INTERSECT_RECT2_TOP, INTERSECT_RECT2_RIGHT, INTERSECT_RECT2_BOTTOM);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectJoin with the first parameter as nullptr, Returns error code
@@ -300,7 +306,8 @@ int TestRectSetLeftNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -329,7 +336,8 @@ int TestRectSetLeftNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the first parameter as nullptr, Returns error code
@@ -356,7 +364,8 @@ int TestRectSetLeftAbnormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the second parameter as an integer or character data
@@ -384,7 +393,8 @@ int TestRectSetLeftAbnormal()
 int TestRectSetLeftMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     for (int i = 0; i < LOOP_COUNT; i++) {
@@ -409,7 +419,8 @@ int TestRectSetTopNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
@@ -438,7 +449,8 @@ int TestRectSetTopNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the first parameter as nullptr, Returns error code
@@ -465,7 +477,8 @@ int TestRectSetTopAbnormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the second parameter as an integer or character data
@@ -494,7 +507,8 @@ int TestRectSetTopMultipleCalls()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Loop to call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect 10 times (each time
@@ -537,7 +551,8 @@ int TestRectSetRightNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
@@ -566,7 +581,8 @@ int TestRectSetRightNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the first parameter as nullptr, Returns error code
@@ -593,7 +609,8 @@ int TestRectSetRightAbnormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the second parameter as an integer or character data
@@ -622,7 +639,8 @@ int TestRectSetRightMultipleCalls()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Loop to call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect 10 times (each
@@ -665,7 +683,8 @@ int TestRectSetBottomNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
@@ -694,7 +713,8 @@ int TestRectSetBottomNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the first parameter as nullptr, returns error code
@@ -721,7 +741,8 @@ int TestRectSetBottomAbnormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the second parameter as an integer or character data
@@ -748,7 +769,8 @@ int TestRectSetBottomAbnormal()
 int TestRectSetBottomMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
 
@@ -775,7 +797,8 @@ int TestRectGetLeftNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -801,7 +824,8 @@ int TestRectGetLeftNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetLeft with nullptr as the parameter
@@ -825,7 +849,8 @@ int TestRectGetTopNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
@@ -851,7 +876,8 @@ int TestRectGetTopNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetTop with nullptr as the parameter
@@ -875,7 +901,8 @@ int TestRectGetRightNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
@@ -901,7 +928,8 @@ int TestRectGetRightNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetRight with nullptr as the parameter, returns error code
@@ -926,7 +954,8 @@ int TestRectGetBottomNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
@@ -953,7 +982,8 @@ int TestRectGetBottomNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetBottom with nullptr as the parameter, returns error code
@@ -978,7 +1008,8 @@ int TestRectGetHeightNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -1011,7 +1042,8 @@ int TestRectGetHeightNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetHeight with nullptr as the parameter, returns error code
@@ -1036,7 +1068,8 @@ int TestRectGetWidthNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner
@@ -1069,7 +1102,8 @@ int TestRectGetWidthNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetWidth with nullptr as the parameter, returns error code
@@ -1129,7 +1163,8 @@ int TestRectCopyNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* src =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(src, nullptr);
     // 2. Call OH_Drawing_RectCreate to create a rectangle object dst
@@ -1197,7 +1232,8 @@ int TestRectCopyNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* src =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(src, nullptr);
     // 2. Call OH_Drawing_RectCreate to create a rectangle object dst
@@ -1232,7 +1268,8 @@ int TestRectDestroyNormal()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
@@ -1253,7 +1290,8 @@ int TestRectDestroyNull()
 {
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(DEFAULT_RECT_LEFT, DEFAULT_RECT_TOP, DEFAULT_RECT_RIGHT, DEFAULT_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectDestroy with nullptr as the parameter, returns error code

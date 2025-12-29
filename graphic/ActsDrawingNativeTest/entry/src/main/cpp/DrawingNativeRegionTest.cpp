@@ -197,7 +197,8 @@ int TestRegionContainsInRange()
 
     // 2. OH_Drawing_RegionContains takes regionObject as input, x: a value within the range, y: a value within the
     // range, the call is successful and the return value is true
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(regionObject, rect);
@@ -229,7 +230,8 @@ int TestRegionContainsXvalueNotInRange()
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region* regionObject = OH_Drawing_RegionCreate();
     EXPECT_NE(regionObject, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(regionObject, rect);
@@ -264,7 +266,8 @@ int TestRegionContainsYvalueNotInRange()
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region* regionObject = OH_Drawing_RegionCreate();
     EXPECT_NE(regionObject, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(regionObject, rect);
@@ -299,7 +302,8 @@ int TestRegionContainsAllNotInRange()
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region* regionObject = OH_Drawing_RegionCreate();
     EXPECT_NE(regionObject, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(regionObject, rect);
@@ -356,7 +360,8 @@ int TestRegionOpNormal()
     // 1. OH_Drawing_RegionCreate returns a pointer value regionObject
     OH_Drawing_Region* regionObject = OH_Drawing_RegionCreate();
     EXPECT_NE(regionObject, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(regionObject, rect);
@@ -432,13 +437,15 @@ int TestRegionOpMultipleCalls()
     // 1. OH_Drawing_RegionCreate returns a pointer value region
     OH_Drawing_Region* src = OH_Drawing_RegionCreate();
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(
+        SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect1, nullptr);
     OH_Drawing_RegionSetRect(src, rect1);
     OH_Drawing_Region* dst = OH_Drawing_RegionCreate();
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(REGION_OP_RECT2_LEFT, REGION_OP_RECT2_TOP, REGION_OP_RECT2_RIGHT, REGION_OP_RECT2_BOTTOM);
+    OH_Drawing_Rect* rect2 =
+        OH_Drawing_RectCreate(REGION_OP_RECT2_LEFT, REGION_OP_RECT2_TOP, REGION_OP_RECT2_RIGHT, REGION_OP_RECT2_BOTTOM);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_RegionSetRect(dst, rect2);
@@ -472,7 +479,8 @@ int TestRegionSetRectResultTrue()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 1. OH_Drawing_RegionSetRect takes correct region and rect object pointers as input
@@ -501,7 +509,8 @@ int TestRegionSetRectRegionNull()
 
     // 1. OH_Drawing_RegionSetRect takes a correct rect object pointer as input, region is nullptr, returns
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(REGION_RECT_LEFT, REGION_RECT_TOP, REGION_RECT_RIGHT, REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     bool ret = OH_Drawing_RegionSetRect(nullptr, rect);
@@ -554,7 +563,8 @@ int TestRegionSetRectResultFalse()
 
     OH_Drawing_Region* region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
 
@@ -591,11 +601,17 @@ int TestRegionSetPathResultTrue()
     OH_Drawing_Region* clip = OH_Drawing_RegionCreate();
     // add assert
     EXPECT_NE(clip, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(PATH_CLIP_RECT_LEFT, PATH_CLIP_RECT_TOP, PATH_CLIP_RECT_RIGHT, PATH_CLIP_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(PATH_CLIP_RECT_LEFT, PATH_CLIP_RECT_TOP, PATH_CLIP_RECT_RIGHT, PATH_CLIP_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(clip, rect);
-    OH_Drawing_PathAddRect(path, PATH_RECT_LEFT, PATH_RECT_TOP, PATH_RECT_RIGHT, PATH_RECT_BOTTOM, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path,
+                           PATH_RECT_LEFT,
+                           PATH_RECT_TOP,
+                           PATH_RECT_RIGHT,
+                           PATH_RECT_BOTTOM,
+                           OH_Drawing_PathDirection::PATH_DIRECTION_CW);
 
     // 1. OH_Drawing_RegionSetPath takes correct region, path, and clip object pointers as input
     bool ret = OH_Drawing_RegionSetPath(region, path, clip);
@@ -634,7 +650,8 @@ int TestRegionSetPathRegionNull()
     OH_Drawing_Region* clip = OH_Drawing_RegionCreate();
     // add assert
     EXPECT_NE(clip, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(PATH_CLIP_RECT_LEFT, PATH_CLIP_RECT_TOP, PATH_CLIP_RECT_RIGHT, PATH_CLIP_RECT_BOTTOM);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(PATH_CLIP_RECT_LEFT, PATH_CLIP_RECT_TOP, PATH_CLIP_RECT_RIGHT, PATH_CLIP_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(clip, rect);
@@ -683,7 +700,8 @@ int TestRegionSetPathResultFalse()
     OH_Drawing_Region* clip = OH_Drawing_RegionCreate();
     // add assert
     EXPECT_NE(clip, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(clip, rect);
@@ -720,7 +738,8 @@ int TestRegionCopyNormal()
     OH_Drawing_Region* region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect);
@@ -753,7 +772,8 @@ int TestRegionCopyNull()
     OH_Drawing_Region* region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect);
@@ -786,7 +806,8 @@ int TestRegionCopyAbnormal()
     OH_Drawing_Region* region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
     // 2. The ordinate coordinates of the upper left corner and the lower right corner are equal.
-    OH_Drawing_Rect* rect1 = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, 0.0f);
+    OH_Drawing_Rect* rect1 =
+        OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, 0.0f);
     EXPECT_NE(rect1, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect1);
@@ -794,7 +815,8 @@ int TestRegionCopyAbnormal()
     OH_Drawing_Region* region2 = OH_Drawing_RegionCopy(region1);
     EXPECT_NE(region2, nullptr);
     // 5. The horizontal coordinates of the upper left corner and the lower right corner are equal.
-    OH_Drawing_Rect* rect2 = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, 0.0f, SMALL_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect2 =
+        OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, 0.0f, SMALL_REGION_RECT_BOTTOM);
     EXPECT_NE(rect2, nullptr);
     // 6. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect2);
@@ -802,7 +824,8 @@ int TestRegionCopyAbnormal()
     region2 = OH_Drawing_RegionCopy(region1);
     EXPECT_NE(region2, nullptr);
     // 8. The coordinates of the upper left corner and the lower right corner are equal.
-    OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect3 = OH_Drawing_RectCreate(
+        EMPTY_REGION_RECT_LEFT, EMPTY_REGION_RECT_TOP, EMPTY_REGION_RECT_RIGHT, EMPTY_REGION_RECT_BOTTOM);
     EXPECT_NE(rect3, nullptr);
     // 9. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect3);
@@ -810,7 +833,8 @@ int TestRegionCopyAbnormal()
     region2 = OH_Drawing_RegionCopy(region1);
     EXPECT_NE(region2, nullptr);
     // 11. The coordinates of the upper left corner are greater than those of the lower right corner.
-    OH_Drawing_Rect* rect4 = OH_Drawing_RectCreate(ABNORMAL_RECT_LEFT, ABNORMAL_RECT_TOP, ABNORMAL_RECT_RIGHT, ABNORMAL_RECT_BOTTOM);
+    OH_Drawing_Rect* rect4 =
+        OH_Drawing_RectCreate(ABNORMAL_RECT_LEFT, ABNORMAL_RECT_TOP, ABNORMAL_RECT_RIGHT, ABNORMAL_RECT_BOTTOM);
     EXPECT_NE(rect4, nullptr);
     // 12. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect4);
@@ -846,7 +870,8 @@ int TestRegionCopyMultipleCalls()
     OH_Drawing_Region* region1 = OH_Drawing_RegionCreate();
     EXPECT_NE(region1, nullptr);
     // 2. Create a region object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(
+        SMALL_REGION_RECT_LEFT, SMALL_REGION_RECT_TOP, SMALL_REGION_RECT_RIGHT, SMALL_REGION_RECT_BOTTOM);
     EXPECT_NE(rect, nullptr);
     // 3. Set the region1 as the rectangle.
     OH_Drawing_RegionSetRect(region1, rect);
