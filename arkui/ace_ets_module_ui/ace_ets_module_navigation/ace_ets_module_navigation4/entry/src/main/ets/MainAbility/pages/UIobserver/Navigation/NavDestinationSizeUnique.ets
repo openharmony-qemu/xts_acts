@@ -1,7 +1,7 @@
 import { uiObserver } from '@kit.ArkUI';
 
 function destSizeCallback(info: uiObserver.NavDestinationInfo): void {
-  console.info(`testTag destSize changeTo ${(info && info.size) ? JSON.stringify(info.size) : "NA"}`)
+  console.info(`testTag destSize changeTo ${(info && info.size) ? JSON.stringify(info.size) : 'NA'}`)
   AppStorage.SetOrCreate('uniqueNavDestinationInfo', info);
 }
 

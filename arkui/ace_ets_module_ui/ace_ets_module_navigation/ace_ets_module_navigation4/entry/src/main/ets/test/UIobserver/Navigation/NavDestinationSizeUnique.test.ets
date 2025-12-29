@@ -176,45 +176,45 @@ export default function NavDestinationSizeUnique() {
     });
 
     /**
-     * @tc.name   NavDestinationSizeUnique_0030
-     * @tc.number NavDestinationSizeUnique_0030
+     * @tc.name   NavDestinationSizeUnique_0040
+     * @tc.number NavDestinationSizeUnique_0040
      * @tc.desc   test offNavDestinationSizeChangeByUniqueId with Null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('NavDestinationSizeUnique_0030', Level.LEVEL3, async (done: Function) => {
-      console.info('[NavDestinationSizeUnique_0030] START');
+    it('NavDestinationSizeUnique_0040', Level.LEVEL3, async (done: Function) => {
+      console.info('[NavDestinationSizeUnique_0040] START');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('pushId'));
       await btn1.click();
-      console.info('[NavDestinationSizeUnique_0030] btn1 click');
+      console.info('[NavDestinationSizeUnique_0040] btn1 click');
       await CommonFunc.sleep(1000);
 
       let offBtn: Component = await driver.findComponent(ON.id('onNullId'));
       await offBtn.click();
-      console.info('[NavDestinationSizeUnique_0030] offBtn click');
+      console.info('[NavDestinationSizeUnique_0040] offBtn click');
       await CommonFunc.sleep(1000);
 
       let changeBtn: Component = await driver.findComponent(ON.id('changeSizeId'));
       await changeBtn.click();
-      console.info('[NavDestinationSizeUnique_0030] changeBtn click');
+      console.info('[NavDestinationSizeUnique_0040] changeBtn click');
       await CommonFunc.sleep(3000);
 
       let info: NavDestinationInfo | undefined = AppStorage.get('uniqueNavDestinationInfo');
-      console.log('NavDestinationSizeUnique_0030 get info: ' + JSON.stringify(info));
+      console.log('NavDestinationSizeUnique_0040 get info: ' + JSON.stringify(info));
       expect(info == undefined).assertTrue();
       AppStorage.delete('uniqueNavDestinationInfo');
 
       await CommonFunc.sleep(1000);
       let popBtn: Component = await driver.findComponent(ON.id('popId'));
       await popBtn.click();
-      console.info('[NavDestinationSizeUnique_0030] popBtn click');
+      console.info('[NavDestinationSizeUnique_0040] popBtn click');
       await CommonFunc.sleep(1000);
-      console.info('[NavDestinationSizeUnique_0030] END');
+      console.info('[NavDestinationSizeUnique_0040] END');
       done();
     });
  })
