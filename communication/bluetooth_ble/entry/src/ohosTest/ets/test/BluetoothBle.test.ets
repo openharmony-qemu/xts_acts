@@ -1065,6 +1065,7 @@ export default function bluetoothBleTest() {
                 } else {
                     console.info('[bt_arkts]return_result is' + JSON.stringify(return_list));
                 }
+                expect(return_list = []).assertTrue();
             } catch (error) {
                 console.error(`[bt_arkts]getservices failed, code is ${error.code},message is ${error.message}`);
                 if (error.code == 801) {
