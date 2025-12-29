@@ -1967,5 +1967,234 @@ export default function valueBasicTest() {
         hilog.info(domain, tag, '%{public}s', 'test005 end');
       });
 
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_NULLELEMENTS_0600
+     * @tc.name   SUB_Data_ArrayValue_Length_NullElements_0006
+     * @tc.desc   Verify getLength returns correct length for array with null elements
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_NullElements_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test006 start');
+        let testValues: FixedArray<number | null> = [null, 2, null, 4];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(4);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test006 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_NESTEDARRAYS_0700
+     * @tc.name   SUB_Data_ArrayValue_Length_NestedArrays_0007
+     * @tc.desc   Verify getLength returns correct length for array containing nested arrays
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_NestedArrays_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test007 start');
+        let testValues: FixedArray<FixedArray<number>> = [[1, 2], [3, 4, 5], [6]];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test007 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_NONEMPTYARRAY_0800
+     * @tc.name   SUB_Data_ArrayValue_Length_NonEmptyArray_0008
+     * @tc.desc   Verify getLength returns correct length for non-empty array
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_NonEmptyArray_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test008 start');
+        let testValues: FixedArray<number> = [123, 456, 789];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test008 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_EMPTYARRAY_0900
+     * @tc.name   SUB_Data_ArrayValue_Length_EmptyArray_0009
+     * @tc.desc   Verify getLength returns correct length for empty array
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_EmptyArray_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test009 start');
+        let testValues: FixedArray<number> = [];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(0);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test009 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_MIXEDARRAY_1000
+     * @tc.name   SUB_Data_ArrayValue_Length_MixedArray_0010
+     * @tc.desc   Verify getLength returns correct length for mixed type array
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_MixedArray_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test010 start');
+        let testValues: FixedArray<number | string> = [123, "abc", 456, "def"];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(4);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test010 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_MULTIPLE_1100
+     * @tc.name   SUB_Data_ArrayValue_Length_Multiple_0011
+     * @tc.desc   Verify getLength returns correct lengths for multiple ArrayValue objects
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_Multiple_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test011 start');
+        let testValues1: FixedArray<number> = [123, 456, 789];
+        let testValues2: FixedArray<string> = ["apple", "banana", "cherry"];
+        let instance1 = ArrayValue.of(testValues1);
+        let instance2 = ArrayValue.of(testValues2);
+        let arrayValue1 = instance1 as ArrayValue;
+        let arrayValue2 = instance2 as ArrayValue;
+        expect(arrayValue1.getLength()).assertEqual(3);
+        expect(arrayValue2.getLength()).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test011 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_BOOLEANARRAY_1300
+     * @tc.name   SUB_Data_ArrayValue_Length_BooleanArray_0013
+     * @tc.desc   Verify getLength returns correct length for boolean array
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_BooleanArray_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test013 start');
+        let testValues: FixedArray<boolean> = [true, false, true, false];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(4);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test013 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_LONGARRAY_1400
+     * @tc.name   SUB_Data_ArrayValue_Length_LongArray_0014
+     * @tc.desc   Verify getLength returns correct length for long type array
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_LongArray_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test014 start');
+        let testValues: FixedArray<long> = [123456789012345, 987654321098765, 1122334455667788];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test014 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_NULLINARRAY_1500
+     * @tc.name   SUB_Data_ArrayValue_Length_NullInArray_0015
+     * @tc.desc   Verify getLength returns correct length for array containing null elements
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_NullInArray_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test015 start');
+        let testValues: FixedArray<number | null> = [null, 200, null, 400, null];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(5);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test015 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_SINGLEELEMENT_1600
+     * @tc.name   SUB_Data_ArrayValue_Length_SingleElement_0016
+     * @tc.desc   Verify getLength returns correct length for array with single element
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_SingleElement_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test016 start');
+        let testValues: FixedArray<string> = ["onlyElement"];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(1);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test016 end');
+      });
+
+    /**
+     * @tc.number SUB_DATA_ARRAYVALUE_LENGTH_DEEPERNESTEDARRAY_1700
+     * @tc.name   SUB_Data_ArrayValue_Length_DeeperNestedArray_0017
+     * @tc.desc   Verify getLength returns correct length for array with deeper nested arrays
+     * @tc.level  LEVEL1
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     */
+    it("SUB_Data_ArrayValue_Length_DeeperNestedArray_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test017 start');
+        let testValues: FixedArray<FixedArray<FixedArray<number>>> = [[[1]], [[2, 3]], [[4, 5, 6]], [[7]]];
+        let instance = ArrayValue.of(testValues);
+        let arrayValue = instance as ArrayValue;
+        expect(arrayValue.getLength()).assertEqual(4);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test017 end');
+      });
+
+    const getValidLambdaType = (): LambdaType => {
+    };
+    const getValidFunction = (): Function => {
+      return () => "test result";
+    };
   });
 }

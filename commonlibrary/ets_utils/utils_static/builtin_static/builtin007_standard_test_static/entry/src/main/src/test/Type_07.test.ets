@@ -2574,5 +2574,99 @@ export default function type_07Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0700
+     * @tc.name    testDoubleTypeIsReference0007
+     * @tc.desc    Verify isReference returns false for VoidType.VAL
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0007";
+      try {
+        const voidType = VoidType.VAL;
+        expect(voidType.isReference()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0800
+     * @tc.name    testDoubleTypeIsReference0008
+     * @tc.desc    Verify isReference returns true for VoidType.REF
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0008";
+      try {
+        const voidType = VoidType.REF;
+        expect(voidType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_0900
+     * @tc.name    testDoubleTypeIsReference0009
+     * @tc.desc    Verify isReference returns true for NullType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0009";
+      try {
+        const nullType = NullType.REF;
+        expect(nullType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_1000
+     * @tc.name    testDoubleTypeIsReference0010
+     * @tc.desc    Verify isReference returns true for UndefinedType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0010";
+      try {
+        const undefinedType = UndefinedType.REF;
+        expect(undefinedType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_DOUBLETYPE_ISREFERENCE_1100
+     * @tc.name    testDoubleTypeIsReference0011
+     * @tc.desc    Verify isReference returns false for StringType
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testDoubleTypeIsReference0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDoubleTypeIsReference0011";
+      try {
+        const stringType = StringType.REF;
+        expect(stringType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
   })
 }
