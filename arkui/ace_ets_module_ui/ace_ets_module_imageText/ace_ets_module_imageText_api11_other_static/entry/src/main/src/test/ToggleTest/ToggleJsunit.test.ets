@@ -106,8 +106,6 @@ export default function ToggleJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0100
      * @tc.name     ToggleJsunit_static_0100
@@ -142,8 +140,6 @@ it('ToggleJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0200
      * @tc.name     ToggleJsunit_static_0200
@@ -175,8 +171,6 @@ it('ToggleJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0300
      * @tc.name     ToggleJsunit_static_0300
@@ -206,8 +200,6 @@ it('ToggleJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0400
      * @tc.name     ToggleJsunit_static_0400
@@ -236,8 +228,6 @@ it('ToggleJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0500
      * @tc.name     ToggleJsunit_static_0500
@@ -278,8 +268,6 @@ it('ToggleJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   ToggleJsunit_static_0600
      * @tc.name     ToggleJsunit_static_0600

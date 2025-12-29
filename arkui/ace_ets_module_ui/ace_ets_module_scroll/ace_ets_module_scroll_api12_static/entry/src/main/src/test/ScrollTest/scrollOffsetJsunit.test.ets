@@ -77,7 +77,6 @@ export default function scrollOffsetJsunit() {
     
       
   
-
 /**
      * @tc.number   scrollOffsetJsunit_0100
      * @tc.name     scrollOffsetJsunit_0100
@@ -99,7 +98,6 @@ it('scrollOffsetJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<vo
     
       
   
-
 /**
      * @tc.number   scrollOffsetJsunit_0200
      * @tc.name     scrollOffsetJsunit_0200

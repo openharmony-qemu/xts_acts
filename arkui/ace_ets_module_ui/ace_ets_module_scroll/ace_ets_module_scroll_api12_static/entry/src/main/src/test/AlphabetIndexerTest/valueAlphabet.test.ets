@@ -68,8 +68,7 @@ export default function valueAlphabet() {
 
 
     
-    
-/**
+    /**
      * @tc.number   valueAlphabet_static_0100
      * @tc.name     valueAlphabet_static_0100
      * @tc.desc     valueAlphabet_static_0100
@@ -89,8 +88,7 @@ it('valueAlphabet_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   valueAlphabet_static_0200
      * @tc.name     valueAlphabet_static_0200
      * @tc.desc     valueAlphabet_static_0200
@@ -114,8 +112,7 @@ it('valueAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   valueAlphabet_static_0300
      * @tc.name     valueAlphabet_static_0300
      * @tc.desc     valueAlphabet_static_0300

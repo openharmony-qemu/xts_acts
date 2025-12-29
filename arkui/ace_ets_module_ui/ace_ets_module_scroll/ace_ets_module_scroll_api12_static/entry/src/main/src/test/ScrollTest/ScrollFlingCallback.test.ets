@@ -71,8 +71,7 @@ export default function ScrollFlingCallbackJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollFlingCallbackTest_0100
      * @tc.name     ScrollFlingCallbackTest_0100
      * @tc.desc     ScrollFlingCallbackTest_0100
@@ -93,8 +92,7 @@ it('ScrollFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollFlingCallbackTest_0200
      * @tc.name     ScrollFlingCallbackTest_0200
      * @tc.desc     ScrollFlingCallbackTest_0200

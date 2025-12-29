@@ -67,8 +67,7 @@ export default function listDidJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listDidJsunit_static_0100
      * @tc.name     listDidJsunit_static_0100
      * @tc.desc     listDidJsunit_static_0100

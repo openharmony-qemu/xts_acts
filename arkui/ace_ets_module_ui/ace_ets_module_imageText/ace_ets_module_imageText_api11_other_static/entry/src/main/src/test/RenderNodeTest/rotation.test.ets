@@ -106,8 +106,6 @@ export default function rotationTest() {
 
     
     
-
-
 /**
      * @tc.number   rotationTest_static_0100
      * @tc.name     rotationTest_static_0100

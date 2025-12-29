@@ -66,8 +66,7 @@ export default function gridIndexTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   gridIndexTest_static_0100
      * @tc.name     gridIndexTest_static_0100
      * @tc.desc     gridIndexTest_static_0100

@@ -75,8 +75,7 @@ export default function ScrollTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollTest_static_001
      * @tc.name     ScrollTest_static_001
      * @tc.desc     ScrollTest_static_001

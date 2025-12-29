@@ -77,8 +77,7 @@ export default function alphabetEnableJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetEnableJsunit_static_001
      * @tc.name     alphabetEnableJsunit_static_001
      * @tc.desc     alphabetEnableJsunit_static_001

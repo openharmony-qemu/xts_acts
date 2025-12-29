@@ -72,8 +72,7 @@ export default function sideBarContainerJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0002
      * @tc.name     sideBarContainerTest_static_0002
      * @tc.desc     sideBarContainerTest_static_0002
@@ -95,8 +94,7 @@ it('sideBarContainerTest_static_0002', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0003
      * @tc.name     sideBarContainerTest_static_0003
      * @tc.desc     sideBarContainerTest_static_0003
@@ -114,8 +112,7 @@ it('sideBarContainerTest_static_0003', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0004
      * @tc.name     sideBarContainerTest_static_0004
      * @tc.desc     sideBarContainerTest_static_0004
@@ -133,8 +130,7 @@ it('sideBarContainerTest_static_0004', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0005
      * @tc.name     sideBarContainerTest_static_0005
      * @tc.desc     sideBarContainerTest_static_0005
@@ -152,8 +148,7 @@ it('sideBarContainerTest_static_0005', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0006
      * @tc.name     sideBarContainerTest_static_0006
      * @tc.desc     sideBarContainerTest_static_0006
@@ -171,8 +166,7 @@ it('sideBarContainerTest_static_0006', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_0007
      * @tc.name     sideBarContainerTest_0007
      * @tc.desc     sideBarContainerTest_0007
@@ -190,8 +184,7 @@ it('sideBarContainerTest_0007', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0008
      * @tc.name     sideBarContainerTest_static_0008
      * @tc.desc     sideBarContainerTest_static_0008
@@ -213,8 +206,7 @@ it('sideBarContainerTest_static_0008', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0009
      * @tc.name     sideBarContainerTest_static_0009
      * @tc.desc     sideBarContainerTest_static_0009
@@ -232,8 +224,7 @@ it('sideBarContainerTest_static_0009', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0010
      * @tc.name     sideBarContainerTest_static_0010
      * @tc.desc     sideBarContainerTest_static_0010
@@ -251,8 +242,7 @@ it('sideBarContainerTest_static_0010', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_0011
      * @tc.name     sideBarContainerTest_0011
      * @tc.desc     sideBarContainerTest_0011
@@ -270,8 +260,7 @@ it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   sideBarContainerTest_static_0012
      * @tc.name     sideBarContainerTest_static_0012
      * @tc.desc     sideBarContainerTest_static_0012

@@ -25,14 +25,14 @@ import showDotIndicator from './IndicatorComponent/showDotIndicator.test';
 import SwiperChangeIndexTest from './SwiperTest/SwiperChangeIndex.test';
 
 export default function testsuite() {
-  // interceptSwiperTest()
+  interceptSwiperTest()
   tabBarModifier()
-  // getIndicator()
-  // swiperModeTest();
-  // tabsModeTest();
-  // swiperPageMode()
-  // tabsPageMode()
-  // // getAttributeScroll()  // typeNode没有getAttribute和bindController方法， 开发回复不支持，非问题 2
-  // showDotIndicator()
-  // SwiperChangeIndexTest();
+  getIndicator()
+  swiperModeTest();
+  tabsModeTest();
+  swiperPageMode()
+  tabsPageMode()
+  // getAttributeScroll()  // typeNode没有getAttribute和bindController方法， 开发回复不支持，非问题 2
+  showDotIndicator()
+  SwiperChangeIndexTest();
 }

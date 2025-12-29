@@ -75,8 +75,7 @@ export default function APIScrollflingSpeedLimitJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   APIScrollflingSpeedLimitJsunit_static_0100
      * @tc.name     APIScrollflingSpeedLimitJsunit_static_0100
      * @tc.desc     APIScrollflingSpeedLimitJsunit_static_0100

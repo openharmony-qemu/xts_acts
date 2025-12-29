@@ -76,7 +76,6 @@ export default function UIComponentScrollSwiperAnimated0260() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_static_0260

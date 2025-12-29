@@ -73,7 +73,6 @@ import { UtilsTest, startAbility } from '../Util.test';
 
      
     
-
 /**
      * @tc.number   selecttest_static_001
      * @tc.name     selecttest_static_001

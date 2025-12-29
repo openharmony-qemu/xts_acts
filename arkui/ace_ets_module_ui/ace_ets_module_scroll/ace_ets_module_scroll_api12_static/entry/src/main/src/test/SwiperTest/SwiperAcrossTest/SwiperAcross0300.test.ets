@@ -77,7 +77,6 @@ export default function SwiperAcross0300() {
  
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300

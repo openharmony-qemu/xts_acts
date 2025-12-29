@@ -65,7 +65,7 @@ renderNode.size = { width: 100, height: 100 };
 renderNode.position = { x: 100, y: 100 };
 renderNode.scale = { x: 1, y: 1 }
 
-renderNode.shadowColor = 0x008000;
+renderNode.shadowColor = 0x008000.toInt();
 renderNode.shadowOffset = { x: 20, y: 20 }
 
 class MyNodeController extends NodeController {

@@ -72,8 +72,7 @@ export default function gridItemJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   gridItemTest001_static_01
      * @tc.name     gridItemTest001_static_01
      * @tc.desc     gridItemTest001_static_01

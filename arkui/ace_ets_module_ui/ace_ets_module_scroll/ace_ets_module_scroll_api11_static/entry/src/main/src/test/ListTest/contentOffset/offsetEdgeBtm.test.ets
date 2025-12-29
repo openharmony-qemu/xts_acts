@@ -81,8 +81,7 @@ export default function offsetEdgeBtm() {
 
 
     
-    
-/**
+    /**
      * @tc.number   offsetEdgeBtm_static_0100
      * @tc.name     offsetEdgeBtm_static_0100
      * @tc.desc     offsetEdgeBtm_static_0100

@@ -68,7 +68,8 @@ export default function DialogOptions() {
 
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0100
      * @tc.name     DialogOptions_static_0100
      * @tc.desc     DialogOptions_static_0100
@@ -112,7 +113,8 @@ it('DialogOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0200
      * @tc.name     DialogOptions_static_0200
      * @tc.desc     DialogOptions_static_0200
@@ -182,7 +184,8 @@ it('DialogOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
     
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0300
      * @tc.name     DialogOptions_static_0300
      * @tc.desc     DialogOptions_static_0300
@@ -234,7 +237,8 @@ it('DialogOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0400
      * @tc.name     DialogOptions_static_0400
      * @tc.desc     DialogOptions_static_0400
@@ -283,7 +287,8 @@ it('DialogOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0500
      * @tc.name     DialogOptions_static_0500
      * @tc.desc     DialogOptions_static_0500
@@ -338,7 +343,8 @@ it('DialogOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0600
      * @tc.name     DialogOptions_static_0600
      * @tc.desc     DialogOptions_static_0600
@@ -374,7 +380,8 @@ it('DialogOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
 
      
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0700
      * @tc.name     DialogOptions_static_0700
      * @tc.desc     DialogOptions_static_0700
@@ -408,7 +415,8 @@ it('DialogOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0800
      * @tc.name     DialogOptions_static_0800
      * @tc.desc     DialogOptions_static_0800
@@ -444,7 +452,8 @@ it('DialogOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_0900
      * @tc.name     DialogOptions_static_0900
      * @tc.desc     DialogOptions_static_0900
@@ -479,7 +488,8 @@ it('DialogOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_1000
      * @tc.name     DialogOptions_static_1000
      * @tc.desc     DialogOptions_static_1000
@@ -514,7 +524,8 @@ it('DialogOptions_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_1100
      * @tc.name     DialogOptions_static_1100
      * @tc.desc     DialogOptions_static_1100
@@ -550,7 +561,8 @@ it('DialogOptions_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_1200
      * @tc.name     DialogOptions_static_1200
      * @tc.desc     DialogOptions_static_1200
@@ -584,7 +596,8 @@ it('DialogOptions_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /**
+    
+/**
      * @tc.number   DialogOptions_static_1300
      * @tc.name     DialogOptions_static_1300
      * @tc.desc     DialogOptions_static_1300

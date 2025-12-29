@@ -56,7 +56,8 @@ export default function buttonTypeTest() {
       }
     });
     
-    /**
+    
+/**
      * @tc.number   buttonType_static_0200
      * @tc.name     buttonType_static_0200
      * @tc.desc     buttonType_static_0200

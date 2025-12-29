@@ -77,7 +77,6 @@ export default function swiperCountJsunit() {
     
       
   
-
 /**
      * @tc.number   swiperCountJsunit_static_0100
      * @tc.name     swiperCountJsunit_static_0100

@@ -81,8 +81,7 @@ export default function focusedCardList() {
 
 
     
-    
-/**
+    /**
      * @tc.number   focusedCardList_static_0100
      * @tc.name     focusedCardList_static_0100
      * @tc.desc     focusedCardList_static_0100

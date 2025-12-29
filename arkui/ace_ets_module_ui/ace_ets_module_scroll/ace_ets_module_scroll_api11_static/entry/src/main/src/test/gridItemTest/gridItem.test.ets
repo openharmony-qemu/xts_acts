@@ -59,8 +59,7 @@ export default function gridItemOnSelectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testgridItemOnSelect0001_static_01
      * @tc.name     testgridItemOnSelect0001_static_01
      * @tc.desc     testgridItemOnSelect0001_static_01

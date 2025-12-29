@@ -71,13 +71,14 @@ export default function menuFontsizeModifierTest() {
       console.info('menuFontsizeModifier beforeEach end');
     });
 
+    
     /**
      * @tc.number   ArkUX_Modifier_Menu_FontSize_static_1001
      * @tc.name     ArkUX_Modifier_Menu_FontSize_static_1001
      * @tc.desc     ArkUX_Modifier_Menu_FontSize_static_1001
      * @tc.level    Level.LEVEL2
      */
-    it('ArkUX_Modifier_Menu_FontSize_static_1001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('ArkUX_Modifier_Menu_FontSize_static_1001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Modifier_Menu_FontSize_static_1001 START');
       let driver = Driver.create();
       let buttonOnchange = await driver.findComponent(ON.id('MenuFontSizeButtonID'));
@@ -95,13 +96,14 @@ export default function menuFontsizeModifierTest() {
       });
 
 
+    
     /**
      * @tc.number   ArkUX_Modifier_Menu_FontSize_static_1002
-   * @tc.name     ArkUX_Modifier_Menu_FontSize_static_1002
-   * @tc.desc     ArkUX_Modifier_Menu_FontSize_static_1002
-   * @tc.level    Level.LEVEL2
-   */
-    it('ArkUX_Modifier_Menu_FontSize_static_1002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     ArkUX_Modifier_Menu_FontSize_static_1002
+     * @tc.desc     ArkUX_Modifier_Menu_FontSize_static_1002
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Modifier_Menu_FontSize_static_1002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Modifier_Menu_FontSize_static_1002 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('MenuFontSizeChangeButtonID'));
@@ -122,13 +124,14 @@ export default function menuFontsizeModifierTest() {
       });
 
 
+    
     /**
      * @tc.number   ArkUX_Modifier_Menu_FontSize_static_1003
-   * @tc.name     ArkUX_Modifier_Menu_FontSize_static_1003
-   * @tc.desc     ArkUX_Modifier_Menu_FontSize_static_1003
-   * @tc.level    Level.LEVEL2
-   */
-    it('ArkUX_Modifier_Menu_FontSize_static_1003', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     ArkUX_Modifier_Menu_FontSize_static_1003
+     * @tc.desc     ArkUX_Modifier_Menu_FontSize_static_1003
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Modifier_Menu_FontSize_static_1003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Modifier_Menu_FontSize_static_1003 START');
       let driver = Driver.create();
       let buttonTwo = await driver.findComponent(ON.id('MenuFontSizeChangeButtonID'));

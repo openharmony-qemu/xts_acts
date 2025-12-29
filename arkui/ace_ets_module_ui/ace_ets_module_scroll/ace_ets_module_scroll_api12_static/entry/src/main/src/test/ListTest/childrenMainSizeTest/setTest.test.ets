@@ -70,8 +70,7 @@ export default function setTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   setTest_static_0100
      * @tc.name     setTest_static_0100
      * @tc.desc     setTest_static_0100

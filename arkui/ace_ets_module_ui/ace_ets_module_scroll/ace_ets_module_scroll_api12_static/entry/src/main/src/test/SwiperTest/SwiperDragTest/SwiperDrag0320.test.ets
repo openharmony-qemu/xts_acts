@@ -77,7 +77,6 @@ export default function SwiperDrag0320() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0320
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0320

@@ -82,8 +82,6 @@ export default function getSizeJsunit() {
 
     
     
-
-
 /**
      * @tc.number   getSizeJsunit_static_001
      * @tc.name     getSizeJsunit_static_001

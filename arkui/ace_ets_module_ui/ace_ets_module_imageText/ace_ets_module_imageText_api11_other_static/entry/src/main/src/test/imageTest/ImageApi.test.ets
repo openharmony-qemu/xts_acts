@@ -91,8 +91,6 @@ export default function ImageApi() {
 
     
     
-
-
 /**
      * @tc.number   ImageApi_static_001
      * @tc.name     ImageApi_static_001

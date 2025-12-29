@@ -78,8 +78,7 @@ export default function ScrollJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollGetInspectorByKey010_static_01
      * @tc.name     testScrollGetInspectorByKey010_static_01
      * @tc.desc     testScrollGetInspectorByKey010_static_01
@@ -105,8 +104,7 @@ it('testScrollGetInspectorByKey010_static_01', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollGetInspectorByKey020_static_02
      * @tc.name     testScrollGetInspectorByKey020_static_02
      * @tc.desc     testScrollGetInspectorByKey020_static_02
@@ -126,8 +124,7 @@ it('testScrollGetInspectorByKey020_static_02', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollGetInspectorByKey030
      * @tc.name     testScrollGetInspectorByKey030
      * @tc.desc     testScrollGetInspectorByKey030
@@ -147,8 +144,7 @@ it('testScrollGetInspectorByKey030', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollGetInspectorByKey040
      * @tc.name     testScrollGetInspectorByKey040
      * @tc.desc     testScrollGetInspectorByKey040

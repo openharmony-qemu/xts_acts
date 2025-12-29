@@ -79,8 +79,7 @@ export default function tabsApi1() {
 
 
     
-    
-/**
+    /**
      * @tc.number   tabsApi1_static_0100
      * @tc.name     tabsApi1_static_0100
      * @tc.desc     tabsApi1_static_0100

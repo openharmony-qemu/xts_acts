@@ -107,8 +107,6 @@ export default function TextTimerJsunit() {
 
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0100
      * @tc.name     TextTimerJsunit_static_0100
@@ -145,8 +143,6 @@ it('TextTimerJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0200
      * @tc.name     TextTimerJsunit_static_0200
@@ -179,8 +175,6 @@ it('TextTimerJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0300
      * @tc.name     TextTimerJsunit_static_0300
@@ -218,8 +212,6 @@ it('TextTimerJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0400
      * @tc.name     TextTimerJsunit_static_0400
@@ -268,8 +260,6 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0500
      * @tc.name     TextTimerJsunit_static_0500
@@ -314,8 +304,6 @@ it('TextTimerJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promis
     });
 
     
-
-
 /**
      * @tc.number   TextTimerJsunit_static_0600
      * @tc.name     TextTimerJsunit_static_0600

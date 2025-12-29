@@ -77,7 +77,8 @@ export default function showDialogLevelOrder() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   showDialogLevelOrder_static_0100
      * @tc.name     showDialogLevelOrder_static_0100
      * @tc.desc     showDialogLevelOrder_static_0100
@@ -104,7 +105,8 @@ it('showDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Lev
     });
 
     
-    /**
+    
+/**
      * @tc.number   showDialogLevelOrder_static_0200
      * @tc.name     showDialogLevelOrder_static_0200
      * @tc.desc     showDialogLevelOrder_static_0200
@@ -131,7 +133,8 @@ it('showDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Lev
     });
 
     
-    /**
+    
+/**
      * @tc.number   showDialogLevelOrder_static_0300
      * @tc.name     showDialogLevelOrder_static_0300
      * @tc.desc     showDialogLevelOrder_static_0300
@@ -157,7 +160,8 @@ it('showDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Lev
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   showDialogLevelOrder_static_0400
      * @tc.name     showDialogLevelOrder_static_0400
      * @tc.desc     showDialogLevelOrder_static_0400

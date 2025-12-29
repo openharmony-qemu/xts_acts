@@ -113,8 +113,6 @@ export default function ActsgetcomponentTest() {
     })
 
     
-
-
 /**
      * @tc.number   ArkUX_Get_component_static_0010
      * @tc.name     ArkUX_Get_component_static_0010

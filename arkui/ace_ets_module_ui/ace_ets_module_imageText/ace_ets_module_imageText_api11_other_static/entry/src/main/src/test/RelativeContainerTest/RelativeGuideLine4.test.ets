@@ -92,8 +92,6 @@ export default function RelativeGuideLine4() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine4_static_001
      * @tc.name     RelativeGuideLine4_static_001
@@ -110,8 +108,8 @@ it('RelativeGuideLine4_static_001', Level.LEVEL3, async (done: () => void): Prom
 
       console.info("[RelativeGuideLine4_001] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
       console.info("[RelativeGuideLine4_001] RelativeContainer left is: " + rel.left + 'button left:' + bt.left);
-      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine4_001] END');
       done();
@@ -120,8 +118,6 @@ it('RelativeGuideLine4_static_001', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine4_static_002
      * @tc.name     RelativeGuideLine4_static_002
@@ -152,8 +148,6 @@ it('RelativeGuideLine4_static_002', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine4_static_003
      * @tc.name     RelativeGuideLine4_static_003
@@ -173,7 +167,7 @@ it('RelativeGuideLine4_static_003', Level.LEVEL3, async (done: () => void): Prom
       let bt = CommonFunc.getComponentRect('RelButton4');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine4_003] RelativeContainer top is: " + rel.top + 'button top:' + bt.top);
-      expect(Math.abs(Math.round(rel.top - bt.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.top - bt.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine4_003] END');
       done();

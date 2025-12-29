@@ -78,7 +78,6 @@ export default function UIComponentScrollSwiperDisplaycount0200() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0200
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_static_0200

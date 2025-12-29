@@ -71,8 +71,7 @@ export default function PopupAlphaTest() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   PopupAlphaTest_static_0100
      * @tc.name     PopupAlphaTest_static_0100
      * @tc.desc     PopupAlphaTest_static_0100
@@ -91,8 +90,7 @@ it('PopupAlphaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   PopupAlphaTest_static_0200
      * @tc.name     PopupAlphaTest_static_0200
      * @tc.desc     PopupAlphaTest_static_0200
@@ -111,8 +109,7 @@ it('PopupAlphaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   PopupAlphaTest_static_0300
      * @tc.name     PopupAlphaTest_static_0300
      * @tc.desc     PopupAlphaTest_static_0300
@@ -131,8 +128,7 @@ it('PopupAlphaTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   PopupAlphaTest_static_0400
      * @tc.name     PopupAlphaTest_static_0400
      * @tc.desc     PopupAlphaTest_static_0400

@@ -96,13 +96,13 @@ export struct MyComponent {
   }
 }
 
-function superFancyText1(this: TextAttribute) {
+function superFancyText1(this: TextAttribute){
   this.fontSize(9);
   this.width('100%');
   return this;
 }
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.width('100%');
@@ -112,7 +112,7 @@ function superFancyText2(this: TextAttribute) {
   return this;
 }
 
-function superFancyColumn(this: ColumnAttribute) {
+function superFancyColumn(this: ColumnAttribute){
   this.backgroundColor(Color.Pink)
   this.width('100%');
   this.padding(10)

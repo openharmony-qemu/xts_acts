@@ -91,8 +91,6 @@ export default function RelativeGuideLine() {
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_001
      * @tc.name     RelativeGuideLine_static_001
@@ -108,7 +106,7 @@ it('RelativeGuideLine_static_001', Level.LEVEL3, async (done: () => void): Promi
       await CommonFunc.sleep(2000);
 
       console.info("[RelativeGuideLine_001] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_001] END');
       done();
@@ -116,8 +114,6 @@ it('RelativeGuideLine_static_001', Level.LEVEL3, async (done: () => void): Promi
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_002
      * @tc.name     RelativeGuideLine_static_002
@@ -137,7 +133,7 @@ it('RelativeGuideLine_static_002', Level.LEVEL3, async (done: () => void): Promi
       let bt = CommonFunc.getComponentRect('RelButton');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine_002] RelativeContainer left is: " + rel.left + 'buttonLeft:' + bt.left);
-      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_002] END');
       done();
@@ -145,8 +141,6 @@ it('RelativeGuideLine_static_002', Level.LEVEL3, async (done: () => void): Promi
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_003
      * @tc.name     RelativeGuideLine_static_003
@@ -167,8 +161,8 @@ it('RelativeGuideLine_static_003', Level.LEVEL3, async (done: () => void): Promi
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine_003] RelativeContainer left is: " + rel.left + 'buttonLeft:' + bt.left);
       console.info("[RelativeGuideLine_003] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
-      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_003] END');
       done();
@@ -176,8 +170,6 @@ it('RelativeGuideLine_static_003', Level.LEVEL3, async (done: () => void): Promi
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_004
      * @tc.name     RelativeGuideLine_static_004
@@ -197,7 +189,7 @@ it('RelativeGuideLine_static_004', Level.LEVEL3, async (done: () => void): Promi
       let bt = CommonFunc.getComponentRect('RelButton');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine_004] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_004] END');
       done();
@@ -205,8 +197,6 @@ it('RelativeGuideLine_static_004', Level.LEVEL3, async (done: () => void): Promi
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_005
      * @tc.name     RelativeGuideLine_static_005
@@ -234,8 +224,6 @@ it('RelativeGuideLine_static_005', Level.LEVEL3, async (done: () => void): Promi
 
     
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_006
      * @tc.name     RelativeGuideLine_static_006
@@ -255,7 +243,7 @@ it('RelativeGuideLine_static_006', Level.LEVEL3, async (done: () => void): Promi
       let bt = CommonFunc.getComponentRect('RelButton');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine_006] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.lpx2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.lpx2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_006] END');
       done();
@@ -264,8 +252,6 @@ it('RelativeGuideLine_static_006', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_007
      * @tc.name     RelativeGuideLine_static_007
@@ -295,8 +281,6 @@ it('RelativeGuideLine_static_007', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_008
      * @tc.name     RelativeGuideLine_static_008
@@ -316,7 +300,7 @@ it('RelativeGuideLine_static_008', Level.LEVEL3, async (done: () => void): Promi
       let bt = CommonFunc.getComponentRect('RelButton');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine_008] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_008] END');
       done();
@@ -325,8 +309,6 @@ it('RelativeGuideLine_static_008', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_009
      * @tc.name     RelativeGuideLine_static_009
@@ -348,7 +330,7 @@ it('RelativeGuideLine_static_009', Level.LEVEL3, async (done: () => void): Promi
       console.info("[RelativeGuideLine_009] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
       expect(Math.abs(Math.round(bt.top - rel.top)) <= 1).assertTrue();
       console.info("[RelativeGuideLine_003] RelativeContainer left is: " + rel.left + 'buttonLeft:' + bt.left);
-      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.left - rel.left) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
       console.info('[RelativeGuideLine_009] END');
       done();
     });
@@ -356,8 +338,6 @@ it('RelativeGuideLine_static_009', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_010
      * @tc.name     RelativeGuideLine_static_010
@@ -387,8 +367,6 @@ it('RelativeGuideLine_static_010', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_011
      * @tc.name     RelativeGuideLine_static_011
@@ -418,8 +396,6 @@ it('RelativeGuideLine_static_011', Level.LEVEL3, async (done: () => void): Promi
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine_static_012
      * @tc.name     RelativeGuideLine_static_012
@@ -441,7 +417,7 @@ it('RelativeGuideLine_static_012', Level.LEVEL3, async (done: () => void): Promi
       console.info("[RelativeGuideLine_012] RelativeContainer left is: " + rel.left + 'buttonLeft:' + bt.left);
       console.info("[RelativeGuideLine_012] RelativeContainerTop is: " + rel.top + 'buttonTop:' + bt.top);
       expect(Math.abs(Math.round(bt.left - rel.left)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(80))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine_012] END');
       done();

@@ -76,7 +76,6 @@ export default function SwiperMirroring0010() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010
@@ -101,7 +100,6 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010', Level.LEVEL0, asy
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310

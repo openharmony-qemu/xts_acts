@@ -72,8 +72,7 @@ export default function ScrollToIndexForGridJsunit02() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollToIndexForGridJsunit02_static_0100
      * @tc.name     ScrollToIndexForGridJsunit02_static_0100
      * @tc.desc     ScrollToIndexForGridJsunit02_static_0100
@@ -114,8 +113,7 @@ it('ScrollToIndexForGridJsunit02_static_0100', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollToIndexForGridJsunit02_static_0200
      * @tc.name     ScrollToIndexForGridJsunit02_static_0200
      * @tc.desc     ScrollToIndexForGridJsunit02_static_0200
@@ -148,8 +146,7 @@ it('ScrollToIndexForGridJsunit02_static_0200', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollToIndexForGridJsunit02_static_0300
      * @tc.name     ScrollToIndexForGridJsunit02_static_0300
      * @tc.desc     ScrollToIndexForGridJsunit02_static_0300
@@ -185,8 +182,7 @@ it('ScrollToIndexForGridJsunit02_static_0300', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollToIndexForGridJsunit02_static_0400
      * @tc.name     ScrollToIndexForGridJsunit02_static_0400
      * @tc.desc     ScrollToIndexForGridJsunit02_static_0400

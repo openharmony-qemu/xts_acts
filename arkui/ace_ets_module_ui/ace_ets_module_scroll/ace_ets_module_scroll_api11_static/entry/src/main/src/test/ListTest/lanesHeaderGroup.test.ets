@@ -81,8 +81,7 @@ export default function lanesHeaderGroup() {
 
 
     
-    
-/**
+    /**
      * @tc.number   lanesHeaderGroup_static_0100
      * @tc.name     lanesHeaderGroup_static_0100
      * @tc.desc     lanesHeaderGroup_static_0100

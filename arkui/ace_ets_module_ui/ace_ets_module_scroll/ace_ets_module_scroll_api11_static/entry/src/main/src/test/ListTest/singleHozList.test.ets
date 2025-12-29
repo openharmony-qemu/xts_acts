@@ -81,8 +81,7 @@ export default function singleHozList() {
 
 
     
-    
-/**
+    /**
      * @tc.number   singleHozList_static_0100
      * @tc.name     singleHozList_static_0100
      * @tc.desc     singleHozList_static_0100

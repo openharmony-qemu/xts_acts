@@ -69,13 +69,14 @@ export default function openPopupTest() {
       }
     });
 
+    
     /**
      * @tc.number   openPopupTest_static_0100
-   * @tc.name     openPopupTest_static_0100
-   * @tc.desc     openPopupTest_static_0100
-   * @tc.level    Level.LEVEL2
-   */
-    it('openPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     openPopupTest_static_0100
+     * @tc.desc     openPopupTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('openPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'openPopupTest_static_0100';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);

@@ -76,8 +76,6 @@ export default function Navigation1() {
 
     
     
-
-
 /**
      * @tc.number   Navigation1_static_0100
      * @tc.name     Navigation1_static_0100
@@ -101,8 +99,6 @@ it('Navigation1_static_0100', Level.LEVEL2, async (done: () => void): Promise<vo
 
     
     
-
-
 /**
      * @tc.number   Navigation1_static_0200
      * @tc.name     Navigation1_static_0200
@@ -126,8 +122,6 @@ it('Navigation1_static_0200', Level.LEVEL2, async (done: () => void): Promise<vo
 
     
     
-
-
 /**
      * @tc.number   Navigation1_static_0300
      * @tc.name     Navigation1_static_0300
