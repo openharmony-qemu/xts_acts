@@ -29,11 +29,11 @@ import builtinsArrayToSplicedTest from './array/BuiltinsArrayToSplicedTest.test'
 import builtinsArrayToStringTest from './array/BuiltinsArrayToStringTest.test';
 import builtinsArrayUnshiftTest from './array/BuiltinsArrayUnshift.test';
 import builtinsArrayValuesTest from './array/BuiltinsArrayValues.test';
-import builtinsArrayAtTest from './array/BuildinsArrayAtTest.test';
-import builtinsArrayConstructorTest from './array/BuildinsArrayConstructorTest.test';
-import builtinsArrayKeysTest from './array/BuildinsArrayKeysTest.test';
-import builtinsArrayMapTest from './array/BuildinsArrayMapTest.test';
-import builtinsArrayLastIndexOfTest from './array/BuildinsArrayLastIndexOfTest.test';
+import builtinsArrayAtTest from './array/BuiltinsArrayAtTest.test';
+import builtinsArrayConstructorTest from './array/BuiltinsArrayConstructorTest.test';
+import builtinsArrayKeysTest from './array/BuiltinsArrayKeysTest.test';
+import builtinsArrayMapTest from './array/BuiltinsArrayMapTest.test';
+import builtinsArrayLastIndexOfTest from './array/BuiltinsArrayLastIndexOfTest.test';
 import BuiltinsArrayIndexOfTest from './array/BuiltinsArrayIndexOfTest.test';
 import BuiltinsArraySliceTest from './array/BuiltinsArraySliceTest.test';
 import BuiltinsArraySomeTest from './array/BuiltinsArraySomeTest.test';
@@ -42,12 +42,12 @@ import builtinsArrayConstructor2Test from './array/BuiltinsArrayCombination2Test
 import builtinsArrayConstructorTestErr from './array/BuiltinsArrayCombinationTestErr.test';
 
 
-import builtinsArrayBufferByteLengthTest from "./ArrayBuffer/BuildinsArrayBufferByteLengthTest.test";
-import builtinsArrayBufferConstructorTest from "./ArrayBuffer/BuildinsArrayBufferConstructorTest.test";
-import builtinsArrayBufferIsViewTest from "./ArrayBuffer/BuildinsArrayBufferIsViewTest.test";
-import builtinsArrayBufferLikeTest from "./ArrayBuffer/BuildinsArrayBufferLikeTest.test";
-import builtinsArrayBufferSliceTest from "./ArrayBuffer/BuildinsArrayBufferSliceTest.test";
-import builtinsArrayBufferViewTest from "./ArrayBuffer/BuildinsArrayBufferViewTest.test";
+import builtinsArrayBufferByteLengthTest from "./ArrayBuffer/BuiltinsArrayBufferByteLengthTest.test";
+import builtinsArrayBufferConstructorTest from "./ArrayBuffer/BuiltinsArrayBufferConstructorTest.test";
+import builtinsArrayBufferIsViewTest from "./ArrayBuffer/BuiltinsArrayBufferIsViewTest.test";
+import builtinsArrayBufferLikeTest from "./ArrayBuffer/BuiltinsArrayBufferLikeTest.test";
+import builtinsArrayBufferSliceTest from "./ArrayBuffer/BuiltinsArrayBufferSliceTest.test";
+import builtinsArrayBufferViewTest from "./ArrayBuffer/BuiltinsArrayBufferViewTest.test";
 import builtinsArrayLikeIndexTest from "./ArrayBuffer/BuiltinsArrayLikeIndexTest.test";
 import builtinsArrayLikeLengthTest from "./ArrayBuffer/BuiltinsArrayLikeLengthTest.test";
 import builtinsConcatArrayIndexTest from "./ArrayBuffer/BuiltinsConcatArrayIndexTest.test";
@@ -67,9 +67,9 @@ import typeArrayUint32ArrayTest from './TypeArray/TypeArrayUint32Array.test';
 import typeArrayUint8ArrayTest from './TypeArray/TypeArrayUint8Array.test';
 import typeArrayUint8ClampedArrayTest from './TypeArray/TypeArrayUint8ClampedArray.test';
 
-import builtinsReadonlyArrayKeysTest from "./ReadonlyArray/BuildinsReadonlyArrayKeysTest.test";
-import builtinsReadonlyArrayLastIndexOfTest from "./ReadonlyArray/BuildinsReadonlyArrayLastIndexOfTest.test";
-import builtinsReadonlyArrayMapTest from "./ReadonlyArray/BuildinsReadonlyArrayMapTest.test";
+import builtinsReadonlyArrayKeysTest from "./ReadonlyArray/BuiltinsReadonlyArrayKeysTest.test";
+import builtinsReadonlyArrayLastIndexOfTest from "./ReadonlyArray/BuiltinsReadonlyArrayLastIndexOfTest.test";
+import builtinsReadonlyArrayMapTest from "./ReadonlyArray/BuiltinsReadonlyArrayMapTest.test";
 import builtinsReadonlyArrayForEachTest from "./ReadonlyArray/BuiltinsReadonlyArrayForEachTest.test";
 import builtinsReadonlyArrayIncludesTest from "./ReadonlyArray/BuiltinsReadonlyArrayIncludesTest.test";
 import builtinsReadonlyArrayIndexOfTest from "./ReadonlyArray/BuiltinsReadonlyArrayIndexOfTest.test";
