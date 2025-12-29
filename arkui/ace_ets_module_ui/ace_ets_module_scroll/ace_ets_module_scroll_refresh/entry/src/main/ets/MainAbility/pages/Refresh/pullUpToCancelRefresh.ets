@@ -3,7 +3,7 @@
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = true;
-  @State promptText: string = "Refreshing...";
+  @State promptText: string = 'Refreshing...';
   @State arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   @State changeIndex: number = 0;
   @State isCancelRefresh:(boolean | undefined | null)[] = [
@@ -12,22 +12,22 @@ struct RefreshExample {
 
   build() {
     Column() {
-      Button("true")
+      Button('true')
         .onClick(() => {
           this.changeIndex = 0;
         })
         .id('valueTrue')
-      Button("false")
+      Button('false')
         .onClick(() => {
           this.changeIndex = 1;
         })
         .id('valueFalse')
-      Button("unde")
+      Button('unde')
         .onClick(() => {
           this.changeIndex = 2;
         })
         .id('valueUnde')
-      Button("null")
+      Button('null')
         .onClick(() => {
           this.changeIndex = 3;
         })

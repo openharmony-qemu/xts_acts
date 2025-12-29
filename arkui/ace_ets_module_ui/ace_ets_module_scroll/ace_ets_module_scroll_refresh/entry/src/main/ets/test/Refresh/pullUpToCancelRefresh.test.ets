@@ -15,8 +15,8 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { Driver, ON, Component, Point} from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../testability/common/Utils';
-import CommonFunc from '../testability/common/Common';
+import Utils from '../MainAbility/common/Utils';
+import CommonFunc from '../MainAbility/common/Common';
 const SLEEP_TIME = 500;
 
 
