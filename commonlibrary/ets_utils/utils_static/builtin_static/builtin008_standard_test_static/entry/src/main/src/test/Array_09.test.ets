@@ -1678,5 +1678,1581 @@ export default function Array_09Test() {
       }
     });
 
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0900
+     * @tc.name     testToLocaleString0090
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and 'currency' option on empty byte array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0090';
+      try {
+        let arr: FixedArray<byte> = [];
+        toLocaleString(arr, 'en-US', 'currency');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0910
+     * @tc.name     testToLocaleString0091
+     * @tc.desc     Verify toLocaleString converts empty boolean array to empty string
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0091';
+      try {
+        let arr: FixedArray<boolean> = [];
+        expect(toLocaleString(arr)).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0920
+     * @tc.name     testToLocaleString0092
+     * @tc.desc     Verify toLocaleString converts boolean array [false,false,true,false,true] correctly to string "false,false,true,false,true"
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0092';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        expect(toLocaleString(arr)).assertEqual("false,false,true,false,true");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0930
+     * @tc.name     testToLocaleString0093
+     * @tc.desc     Verify toLocaleString throws error when called with empty locale parameter on empty boolean array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0093';
+      try {
+        let arr: FixedArray<boolean> = [];
+        toLocaleString(arr, '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0940
+     * @tc.name     testToLocaleString0094
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' on empty boolean array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0094';
+      try {
+        let arr: FixedArray<boolean> = [];
+        toLocaleString(arr, 'en-US');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0950
+     * @tc.name     testToLocaleString0095
+     * @tc.desc     Verify toLocaleString throws error when called with empty locale parameter on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0095';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0960
+     * @tc.name     testToLocaleString0096
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0096';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, 'en-US');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0970
+     * @tc.name     testToLocaleString0097
+     * @tc.desc     Verify toLocaleString throws error when called with empty locale and options parameters on empty boolean array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0097';
+      try {
+        let arr: FixedArray<boolean> = [];
+        toLocaleString(arr, '', '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0980
+     * @tc.name     testToLocaleString0098
+     * @tc.desc     Verify toLocaleString throws error when called with empty locale and options parameters on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0098';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, '', '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0990
+     * @tc.name     testToLocaleString0099
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and empty options on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0099';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, 'en-US', '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1000
+     * @tc.name     testToLocaleString0100
+     * @tc.desc     Verify toLocaleString throws error when called with empty locale and 'currency' option on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0100';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, '', 'currency');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1010
+     * @tc.name     testToLocaleString0101
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and 'currency' option on boolean array [false,false,true,false,true]
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0101';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, false, true];
+        toLocaleString(arr, 'en-US', 'currency');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1020
+     * @tc.name     testToLocaleString0102
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and empty options on empty boolean array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0102';
+      try {
+        let arr: FixedArray<boolean> = [];
+        toLocaleString(arr, 'en-US', '');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1030
+     * @tc.name     testToLocaleString0103
+     * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and 'currency' option on empty boolean array
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testToLocaleString0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0103';
+      try {
+        let arr: FixedArray<boolean> = [];
+        toLocaleString(arr, 'en-US', 'currency');
+        expect().assertFail();
+      } catch (err: Error) {
+        console.error(`${TAG} is fail,err is ${err.message}`);
+        expect(`${err.message}`).assertEqual('Array.toLocaleString: not implemented');
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_1450
+     * @tc.name     testSort_Subarray0145
+     * @tc.desc     Ensure that sorting an empty char array does not throw an error and returns an empty array, verifying safe handling of empty input.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray0145';
+      try {
+        let arr: FixedArray<char> = [];
+        sort_subarray(arr, 0, arr.length, (l, r) => l < r);
+        let expected: FixedArray<char> = [];
+        expect(String(arr)).assertEqual(String(expected));
+        expect(arr.length).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_1540
+     * @tc.name     testSort_Subarray0154
+     * @tc.desc     Confirm that sorting an empty char array with a custom comparator does not throw an error and returns an empty array, ensuring safe handling of empty input.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray0154';
+      try {
+        let arr: FixedArray<char> = [];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<char> = [];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_1610
+     * @tc.name     testSort_Subarray0161
+     * @tc.desc     Confirm that attempting to sort an empty char array from a specified start index does not throw an error and returns an empty array, ensuring safe handling of empty input with partial sorting.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray0161';
+      try {
+        let arr: FixedArray<char> = [];
+        sort_subarray(arr, 0, (l, r) => l < r);
+        let expected: FixedArray<char> = [];
+        expect(String(arr)).assertEqual(String(expected));
+        expect(arr.length).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_19500
+     * @tc.name     testSort_Subarray00195
+     * @tc.desc     Ensure that the entire boolean array is sorted in ascending order (false first) using a custom comparator that checks if left is less than right.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00195';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false];
+        sort_subarray(arr, 0, arr.length, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_19600
+     * @tc.name     testSort_Subarray00196
+     * @tc.desc     Validate that the entire boolean array is sorted in descending order (true first) using a custom comparator that checks if left is greater than right.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00196';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false];
+        sort_subarray(arr, 0, arr.length, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [true, true, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_19700
+     * @tc.name     testSort_Subarray00197
+     * @tc.desc     Ensure that sorting an empty boolean array does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00197';
+      try {
+        let arr: FixedArray<boolean> = [];
+        sort_subarray(arr, 0, arr.length, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [];
+        expect(String(arr)).assertEqual(String(expected));
+        expect(arr.length).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_19800
+     * @tc.name     testSort_Subarray00198
+     * @tc.desc     Confirm that sorting a single-element boolean array leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00198';
+      try {
+        let arr: FixedArray<boolean> = [true];
+        sort_subarray(arr, 0, arr.length, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_19900
+     * @tc.name     testSort_Subarray00199
+     * @tc.desc     Verify that sorting a specific subarray of a boolean array does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00199';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false, true];
+        sort_subarray(arr, 1, 4, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [true, false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20000
+     * @tc.name     testSort_Subarray00200
+     * @tc.desc     Validate that sorting a specific subarray of a boolean array in reverse order does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00200';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false, true];
+        sort_subarray(arr, 1, 3, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [true, true, false, false, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20100
+     * @tc.name     testSort_Subarray00201
+     * @tc.desc     Ensure that sorting a boolean array with all false values maintains the array unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00201';
+      try {
+        let arr: FixedArray<boolean> = [false, false, false];
+        sort_subarray(arr, 0, arr.length, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20200
+     * @tc.name     testSort_Subarray00202
+     * @tc.desc     Confirm that sorting a boolean array with all true values maintains the array unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00202';
+      try {
+        let arr: FixedArray<boolean> = [true, true, true];
+        sort_subarray(arr, 0, arr.length, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [true, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20300
+     * @tc.name     testSort_Subarray00203
+     * @tc.desc     Verify that attempting to sort a subarray with invalid indices (out of bounds) on a boolean array throws an appropriate error.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00203';
+      try {
+        let arr: FixedArray<boolean> = [true, false];
+        sort_subarray(arr, 5, 2, (l, r) => l < r);
+        expect().assertFail();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20400
+     * @tc.name     testSort_Subarray00204
+     * @tc.desc     Validate that the entire boolean array is sorted in ascending order using a custom comparator without specifying start and end indices.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00204';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20500
+     * @tc.name     testSort_Subarray00205
+     * @tc.desc     Ensure that the entire boolean array is sorted in descending order using a custom comparator without specifying start and end indices.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00205';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false];
+        sort_subarray(arr, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [true, true, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20600
+     * @tc.name     testSort_Subarray00206
+     * @tc.desc     Confirm that sorting an empty boolean array with a custom comparator does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00206';
+      try {
+        let arr: FixedArray<boolean> = [];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20700
+     * @tc.name     testSort_Subarray00207
+     * @tc.desc     Verify that sorting a single-element boolean array with a custom comparator leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00207';
+      try {
+        let arr: FixedArray<boolean> = [false];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20800
+     * @tc.name     testSort_Subarray00208
+     * @tc.desc     Ensure that sorting a boolean array with all false values using a custom comparator maintains the array unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00208';
+      try {
+        let arr: FixedArray<boolean> = [false, false, false];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20900
+     * @tc.name     testSort_Subarray00209
+     * @tc.desc     Confirm that sorting a boolean array with all true values using a reverse custom comparator maintains the array unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00209';
+      try {
+        let arr: FixedArray<boolean> = [true, true, true];
+        sort_subarray(arr, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [true, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21000
+     * @tc.name     testSort_Subarray00210
+     * @tc.desc     Verify that sorting an already sorted boolean array with a custom comparator does not change its order.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00210';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, true];
+        sort_subarray(arr, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21100
+     * @tc.name     testSort_Subarray00211
+     * @tc.desc     Validate that sorting a boolean array from a specified start index using a custom comparator correctly orders the elements from the start index to the end.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00211';
+      try {
+        let arr: FixedArray<boolean> = [true, true, false, false, true];
+        sort_subarray(arr, 1, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [true, false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21200
+     * @tc.name     testSort_Subarray00212
+     * @tc.desc     Ensure that sorting a boolean array from a specified start index in reverse order using a custom comparator correctly orders the elements from largest to smallest (true to false).
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00212';
+      try {
+        let arr: FixedArray<boolean> = [false, false, true, true, false];
+        sort_subarray(arr, 1, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [false, true, true, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21300
+     * @tc.name     testSort_Subarray00213
+     * @tc.desc     Confirm that attempting to sort an empty boolean array from a specified start index does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00213';
+      try {
+        let arr: FixedArray<boolean> = [];
+        sort_subarray(arr, 0, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [];
+        expect(String(arr)).assertEqual(String(expected));
+        expect(arr.length).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21400
+     * @tc.name     testSort_Subarray00214
+     * @tc.desc     Verify that sorting a single-element boolean array from a specified start index leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00214';
+      try {
+        let arr: FixedArray<boolean> = [true];
+        sort_subarray(arr, 0, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21500
+     * @tc.name     testSort_Subarray00215
+     * @tc.desc     Validate that sorting a specific subarray of a boolean array from a start index does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00215';
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false, true];
+        sort_subarray(arr, 1, 5, (l, r) => l < r);
+        let expected: FixedArray<boolean> = [true, false, false, true, true];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21600
+     * @tc.name     testSort_Subarray00216
+     * @tc.desc     Ensure that sorting a specific subarray of a boolean array from a start index in reverse order does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00216';
+      try {
+        let arr: FixedArray<boolean> = [false, true, false, true, false];
+        sort_subarray(arr, 1, 5, (l, r) => l > r);
+        let expected: FixedArray<boolean> = [false, true, true, false, false];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21700
+     * @tc.name     testSort_Subarray00217
+     * @tc.desc     Ensure that the entire array of NullishType is sorted in ascending order (null/undefined first) using a boolean-returning comparator.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00217';
+      try {
+
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21800
+     * @tc.name     testSort_Subarray00218
+     * @tc.desc     Validate that the entire array of NullishType is sorted in descending order (null/undefined last) using a boolean-returning comparator.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00218';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_21900
+     * @tc.name     testSort_Subarray00219
+     * @tc.desc     Ensure that sorting an empty array of NullishType does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00219';
+      try {
+        let arr: FixedArray<NullishType> = [];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [];
+        expect(String(arr)).assertEqual(String(expected));
+        expect(arr.length).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22000
+     * @tc.name     testSort_Subarray00220
+     * @tc.desc     Confirm that sorting a single-element array of NullishType leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00220';
+      try {
+        let arr: FixedArray<NullishType> = [undefined];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22100
+     * @tc.name     testSort_Subarray00221
+     * @tc.desc     Verify that sorting a specific subarray of NullishType does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00221';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, 4, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22200
+     * @tc.name     testSort_Subarray00222
+     * @tc.desc     Validate that sorting a specific subarray of NullishType in reverse order does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00222';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, 5, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22300
+     * @tc.name     testSort_Subarray00223
+     * @tc.desc     Ensure that sorting an array of NullishType with duplicate values maintains their relative order (stable sort).
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00223';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22400
+     * @tc.name     testSort_Subarray00224
+     * @tc.desc     Confirm that sorting an array of NullishType with duplicate values in reverse order maintains their relative order (stable sort).
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00224';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, 0, arr.length, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22500
+     * @tc.name     testSort_Subarray00225
+     * @tc.desc     Verify that attempting to sort a subarray with invalid indices (out of bounds) on an array of NullishType throws an appropriate error.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00225';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null];
+        sort_subarray(arr, 5, 2, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        expect().assertFail();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22600
+     * @tc.name     testSort_Subarray00226
+     * @tc.desc     Validate that the entire array of NullishType is sorted in ascending order using a boolean-returning comparator with optional parameters.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00226';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22700
+     * @tc.name     testSort_Subarray00227
+     * @tc.desc     Ensure that the entire array of NullishType is sorted in descending order using a boolean-returning comparator with optional parameters.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00227';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22800
+     * @tc.name     testSort_Subarray00228
+     * @tc.desc     Confirm that sorting an empty array of NullishType with a boolean-returning comparator does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00228';
+      try {
+        let arr: FixedArray<NullishType> = [];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_22900
+     * @tc.name     testSort_Subarray00229
+     * @tc.desc     Verify that sorting a single-element array of NullishType with a boolean-returning comparator leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00229';
+      try {
+        let arr: FixedArray<NullishType> = [null];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23000
+     * @tc.name     testSort_Subarray00230
+     * @tc.desc     Ensure that sorting an array of NullishType with duplicate values using a boolean-returning comparator maintains their relative order (stable sort).
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00230';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, undefined, null, null];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23100
+     * @tc.name     testSort_Subarray00231
+     * @tc.desc     Confirm that sorting an array of NullishType with duplicate values in reverse order using a boolean-returning comparator maintains their relative order (stable sort).
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00231';
+      try {
+        let arr: FixedArray<NullishType> = [null, null, undefined, undefined];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23200
+     * @tc.name     testSort_Subarray00232
+     * @tc.desc     Verify that sorting an already sorted array of NullishType with a boolean-returning comparator does not change its order.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00232';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, undefined, null, null];
+        sort_subarray(arr, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23300
+     * @tc.name     testSort_Subarray00233
+     * @tc.desc     Validate that sorting an array of NullishType from a specified start index using a boolean-returning comparator correctly orders the elements from the start index to the end.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00233';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23400
+     * @tc.name     testSort_Subarray00234
+     * @tc.desc     Ensure that sorting an array of NullishType from a specified start index in reverse order using a boolean-returning comparator correctly orders the elements from largest to smallest from the start index to the end.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00234';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, undefined, null, null];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23500
+     * @tc.name     testSort_Subarray00235
+     * @tc.desc     Confirm that attempting to sort an empty array of NullishType from a specified start index does not throw an error and returns an empty array.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00235';
+      try {
+        let arr: FixedArray<NullishType> = [];
+        sort_subarray(arr, 0, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23600
+     * @tc.name     testSort_Subarray00236
+     * @tc.desc     Verify that sorting a single-element array of NullishType from a specified start index leaves it unchanged.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00236';
+      try {
+        let arr: FixedArray<NullishType> = [undefined];
+        sort_subarray(arr, 0, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23700
+     * @tc.name     testSort_Subarray00237
+     * @tc.desc     Validate that sorting a specific subarray of an array of NullishType from a start index does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00237';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, 4, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return false;
+          }
+          if (r === undefined && l !== undefined) {
+            return true;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, null, null, undefined, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_23800
+     * @tc.name     testSort_Subarray00238
+     * @tc.desc     Ensure that sorting a specific subarray of an array of NullishType from a start index in reverse order does not affect elements outside the specified range.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testSort_Subarray00238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testSort_Subarray00238';
+      try {
+        let arr: FixedArray<NullishType> = [undefined, null, undefined, null, undefined];
+        sort_subarray(arr, 1, 4, (l, r) => {
+          if (l === undefined && r !== undefined) {
+            return true;
+          }
+          if (r === undefined && l !== undefined) {
+            return false;
+          }
+          if (l === undefined && r === undefined) {
+            return true;
+          }
+          if (l !== undefined && r !== undefined) {
+            return true;
+          }
+          return false;
+        });
+        let expected: FixedArray<NullishType> = [undefined, undefined, null, null, undefined];
+        expect(String(arr)).assertEqual(String(expected));
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
   })
 }
