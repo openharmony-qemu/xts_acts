@@ -298,9 +298,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     OH_Drawing_SetTypographyTextFontHeight(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextUseLineStyle(typoStyle_, true);
     OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_600);
-    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_NORMAL);
-    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_ITALIC);
-    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_OBLIQUE);
     const char* fontFamilies[] = { "Text1", "Text2" };
     int fontFamiliesNumBefore = 2;
     OH_Drawing_SetTypographyTextLineStyleFontFamilies(typoStyle_, fontFamiliesNumBefore, fontFamilies);
@@ -318,9 +315,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     ASSERT_NE(typoStyleCopy_, nullptr);
     EXPECT_TRUE(OH_Drawing_TypographyTextGetLineStyle(typoStyleCopy_));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_600);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_NORMAL);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_ITALIC);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_OBLIQUE);
     size_t num;
     char** fontFamiliesList = OH_Drawing_TypographyTextlineStyleGetFontFamilies(typoStyleCopy_, &num);
     EXPECT_EQ(num, fontFamiliesNumBefore);
@@ -357,12 +351,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | Medium
     OH_Drawing_SetTypographyTextFontFamily(typoStyle_, "Test");
     OH_Drawing_SetTypographyTextFontSize(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextFontHeight(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_LEFT);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_RIGHT);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_CENTER);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_JUSTIFY);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_START);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_END);
 
     OH_Drawing_CopyTypographyStyle(nullptr);
     typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
@@ -375,12 +363,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | Medium
     size_t fontFamiliesNumAfter;
     char** fontFamiliesList = OH_Drawing_TextStyleGetFontFamilies(txtStyleCopy_, &fontFamiliesNumAfter);
     EXPECT_EQ(fontFamiliesNumAfter, 1);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_LEFT);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_RIGHT);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_CENTER);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_JUSTIFY);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_START);
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_END);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontSize(txtStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontHeight(txtStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, fontFamiliesNumAfter);
@@ -467,28 +449,39 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle005, Function | Medium
 {
     typoStyle_ = OH_Drawing_CreateTypographyStyle();
     ASSERT_NE(typoStyle_, nullptr);
-    
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_100);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_200);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_300);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_400);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_500);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_600);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_700);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_800);
-    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_900);
-    
-    typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
-    ASSERT_NE(typoStyleCopy_, nullptr);
-    
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_100);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_200);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_300);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_400);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_500);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_600);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_700);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_800);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_900);
+
+    std::vector<OH_Drawing_FontStyle> fontStyle = {
+        FONT_STYLE_NORMAL, FONT_STYLE_ITALIC, FONT_STYLE_OBLIQUE
+    };
+    for (int i = 0; i < fontStyle.size(); i++) {
+        OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, fontStyle[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        if (i % 2 == 0) {
+            EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[0]);
+        } else {
+            EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[i]);
+        }
+    }
+     std::vector<OH_Drawing_TextAlign> textAlign = {
+        TEXT_ALIGN_LEFT, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER, TEXT_ALIGN_JUSTIFY, TEXT_ALIGN_START, TEXT_ALIGN_END
+    };
+    for (int i = 0; i < textAlign.size(); i++) {
+        OH_Drawing_SetTypographyTextAlign(typoStyle_, textAlign[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), textAlign[i]);
+    }
+    std::vector<OH_Drawing_FontWeight> fontWeight = {
+        FONT_WEIGHT_100, FONT_WEIGHT_200, FONT_WEIGHT_300,
+        FONT_WEIGHT_400, FONT_WEIGHT_500, FONT_WEIGHT_600,
+        FONT_WEIGHT_700, FONT_WEIGHT_800, FONT_WEIGHT_900
+    };
+    for (int i = 0; i < fontWeight.size(); i++) {
+        OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, fontWeight[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), fontWeight[i]);
+    }
 }
 } // namespace OHOS

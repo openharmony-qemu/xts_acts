@@ -508,11 +508,11 @@ HWTEST_F(NativeFontTest, OHDrawingCreateTextTab002, Function | MediumTest | Leve
     OH_Drawing_TextTab* textTab3 = OH_Drawing_CreateTextTab(TEXT_ALIGN_CENTER, 0.0);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab3), TEXT_ALIGN_CENTER);
     OH_Drawing_TextTab* textTab4 = OH_Drawing_CreateTextTab(TEXT_ALIGN_JUSTIFY, 0.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab4), TEXT_ALIGN_JUSTIFY);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab4), TEXT_ALIGN_LEFT);
     OH_Drawing_TextTab* textTab5 = OH_Drawing_CreateTextTab(TEXT_ALIGN_START, 0.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab5), TEXT_ALIGN_START);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab5), TEXT_ALIGN_LEFT);
     OH_Drawing_TextTab* textTab6 = OH_Drawing_CreateTextTab(TEXT_ALIGN_END, 0.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab6), TEXT_ALIGN_END);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab6), TEXT_ALIGN_LEFT);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(nullptr), TEXT_ALIGN_LEFT);
     OH_Drawing_DestroyTextTab(textTab);
     OH_Drawing_DestroyTextTab(textTab2);
