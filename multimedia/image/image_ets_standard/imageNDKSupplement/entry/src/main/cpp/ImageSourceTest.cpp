@@ -14,6 +14,7 @@
  */
 
 #include <cstdint>
+#include <hilog/log.h>
 #include <js_native_api.h>
 #include "napi/native_api.h"
 #include <multimedia/image_framework/image_source_mdk.h>
@@ -36,6 +37,7 @@
 #define CASE_INDEX_5 5
 #define CASE_INDEX_6 6
 #define LOG_PRINT_DOMAIN ArkUICapiTest::LOG_PRINT_DOMAIN
+static char* g_filesDir = nullptr;
 namespace {
     constexpr size_t SIZE_ZERO = 0;
     constexpr size_t SIZE_ONE = 1;
@@ -72,20 +74,30 @@ napi_value ImageSourceCreatTest(napi_env env, napi_callback_info info)
 
 napi_value ImageSourceCreatSuccessTest(napi_env env, napi_callback_info info)
 {
+    LOGI("OH_ImagePacker_PackToData start");
     napi_value thisVar = nullptr;
     napi_value argValue[SIZE_TWO];
     size_t argCount = SIZE_TWO;
-    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 1 ||
-        argValue[0] == nullptr) {
+    napi_status status = napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
+    if (status != napi_ok) {
         return nullptr;
     }
-    int32_t index;
-    napi_get_value_int32(env, argValue[0], &index);
-    int32_t fdNumber;
-    napi_get_value_int32(env, argValue[1], &fdNumber);
-    struct OhosImageSourceOps options = {.density = 0, .pixelFormat = 0, .size = {.width = 0, .height = 0}};
+    
+    int32_t fdNumber = 0;
+    status = napi_get_value_int32(env, argValue[0], &fdNumber);
+    if (status != napi_ok) {
+        return nullptr;
+    }
+    LOGI("cc: %{public}d", fdNumber);
+    
+    struct OhosImageSourceOps options = {
+        .density = 0,
+        .pixelFormat = 0,
+        .size = {.width = 0, .height = 0}
+    };
     napi_value imageSource = nullptr;
     int32_t code = OH_ImageSource_CreateFromFd(env, fdNumber, &options, &imageSource);
+    LOGI("OH_ImageSource_CreateFromFd 结果码: %{public}d", code);
     
     napi_value result;
     napi_create_int32(env, code, &result);
