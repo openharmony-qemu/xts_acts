@@ -107,7 +107,7 @@ export default function ReturningMultiThread() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_20100
-     * @tc.name  rdbBatchInsertWithReturningMultiThread001
+     * @tc.name  transBatchInsertWithReturningMultiThread001
      * @tc.desc  trans batchInsertWithReturning Multi threaded testing
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -143,7 +143,7 @@ export default function ReturningMultiThread() {
 
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_20200
-     * @tc.name  rdbBatchInsertWithReturningMultiThread001
+     * @tc.name  rdbStoreDeleteWithReturningMultiThread001
      * @tc.desc  rdb deleteWithReturning Multi threaded testing
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -212,7 +212,7 @@ export default function ReturningMultiThread() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_20400
-     * @tc.name  transStoreDeleteWithReturningMultiThread001
+     * @tc.name  rdbStoreUpdateWithReturningMultiThread001
      * @tc.desc  rdb UpdateWithReturning Multi threaded testing
      * @tc.size  MediumTest
      * @tc.type  Function
