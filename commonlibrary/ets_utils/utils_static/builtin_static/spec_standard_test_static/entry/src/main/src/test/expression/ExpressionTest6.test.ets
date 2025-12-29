@@ -2884,7 +2884,7 @@ export default function expressionTest6() {
     it('ExpressionTest1088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let num: number = 0;
       let maxInt: number = 2147483647;
-      let mask: number = 0x80000000;
+      let mask: number = 0x80000000.toInt();
       num |= maxInt;
       num |= mask;
       expect(num).assertEqual(-1);

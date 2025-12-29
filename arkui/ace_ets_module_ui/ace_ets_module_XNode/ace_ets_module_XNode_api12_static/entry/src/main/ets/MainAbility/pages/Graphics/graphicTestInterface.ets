@@ -34,7 +34,7 @@ mask.fillColor = 0X55FF0000;
 
 const renderNode = new RenderNode();
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.shapeMask = mask;
 
 

@@ -405,23 +405,26 @@ export default function EsBigIntTest(){
       expect(BigInt.asIntN(8, new BigInt(0xab))).assertEqual(new BigInt(-0x55));
       expect(BigInt.asIntN(8, new BigInt(0xabcd))).assertEqual(new BigInt(-0x33));
       expect(BigInt.asIntN(8, new BigInt(0xabcdef) * 256n + 1n)).assertEqual(new BigInt(0x01));
-      let bi1: BigInt = getBI(0xcdef0123, 0x456789ab, 0xcdef0123, 0xab);
+      let bi1: BigInt = getBI(0xcdef0123.toInt(), 0x456789ab, 0xcdef0123.toInt(), 0xab);
       expect(BigInt.asIntN(8, bi1)).assertEqual(new BigInt(0x23));
-      bi1 = getBI(0xcdef0183, 0x456789ab, 0xcdef0123, 0xab);
+      bi1 = getBI(0xcdef0183.toInt(), 0x456789ab, 0xcdef0123.toInt(), 0xab);
       expect(BigInt.asIntN(8, bi1)).assertEqual(new BigInt(-0x7d));
-      bi1 = getBI(0x89abcdef, 0x01234567, 0xabcdef);
-      let bi2: BigInt = getBI(0x89abcdef, 0x01234567);
+      bi1 = getBI(0x89abcdef.toInt(), 0x01234567, 0xabcdef);
+      let bi2: BigInt = getBI(0x89abcdef.toInt(), 0x01234567);
       expect(BigInt.asIntN(64, bi1)).assertEqual(bi2);
-      bi2 = getBI(0x76543211, 0xfedcba98);
+      bi2 = getBI(0x76543211, 0xfedcba98.toInt());
       expect(BigInt.asIntN(65, bi1)).assertEqual(-bi2);
-      bi1 = getBI(0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xcff);
+      bi1 = getBI(0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(),
+        0xffffffff.toInt(), 0xffffffff.toInt(), 0xcff);
       expect(BigInt.asIntN(200, bi1)).assertEqual(-1n);
-      bi2 = getBI(0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xff);
+      bi2 = getBI(0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(),
+        0xffffffff.toInt(), 0xffffffff.toInt(), 0xff);
       expect(BigInt.asIntN(201, bi1)).assertEqual(bi2);
-      bi1 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3, 0xe081df68, 0xc89);
-      bi2 = getBI(0xc52a03ac, 0xfa9af59f, 0xf1aa2069, 0xd3001599, 0x49a0124c, 0x1f7e2097, 0x76);
+      bi1 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3.toInt(), 0xe081df68.toInt(), 0xc89);
+      bi2 = getBI(0xc52a03ac.toInt(), 0xfa9af59f.toInt(), 0xf1aa2069.toInt(), 0xd3001599.toInt(),
+        0x49a0124c, 0x1f7e2097, 0x76);
       expect(BigInt.asIntN(200, bi1)).assertEqual(-bi2);
-      bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3, 0xe081df68, 0x89);
+      bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3.toInt(), 0xe081df68.toInt(), 0x89);
       expect(BigInt.asIntN(201, bi1)).assertEqual(bi2);
       console.info(`${caseName}, test end`);
     });
@@ -540,24 +543,27 @@ export default function EsBigIntTest(){
     expect(BigInt.asUintN(8, new BigInt(0xab))).assertEqual(new BigInt(0xab));
     expect(BigInt.asUintN(8, new BigInt(0xabcd))).assertEqual(new BigInt(0xcd));
     expect(BigInt.asUintN(8, new BigInt(0xabcdef) * 256n + 1n)).assertEqual(new BigInt(0x01));
-    let bi1: BigInt = getBI(0xcdef0123, 0x456789ab, 0xcdef0123, 0xab);
+    let bi1: BigInt = getBI(0xcdef0123.toInt(), 0x456789ab, 0xcdef0123.toInt(), 0xab);
     expect(BigInt.asUintN(8, bi1)).assertEqual(new BigInt(0x23));
-    bi1 = getBI(0xcdef0183, 0x456789ab, 0xcdef0123, 0xab);
+    bi1 = getBI(0xcdef0183.toInt(), 0x456789ab, 0xcdef0123.toInt(), 0xab);
     expect(BigInt.asUintN(8, bi1)).assertEqual(new BigInt(0x83));
-    bi1 = getBI(0x89abcdef, 0x01234567, 0xabcdef);
-    let bi2: BigInt = getBI(0x89abcdef, 0x01234567);
+    bi1 = getBI(0x89abcdef.toInt(), 0x01234567, 0xabcdef);
+    let bi2: BigInt = getBI(0x89abcdef.toInt(), 0x01234567);
     expect(BigInt.asUintN(64, bi1)).assertEqual(bi2);
-    bi2 = getBI(0x89abcdef, 0x01234567, 0x1);
+    bi2 = getBI(0x89abcdef.toInt(), 0x01234567, 0x1);
     expect(BigInt.asUintN(65, bi1)).assertEqual(bi2);
-    bi1 = getBI(0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xbff);
-    bi2 = getBI(0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0x0ff);
+    bi1 = getBI(0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(),
+      0xffffffff.toInt(), 0xffffffff.toInt(), 0xbff);
+    bi2 = getBI(0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(),
+      0xffffffff.toInt(), 0xffffffff.toInt(), 0x0ff);
     expect(BigInt.asUintN(200, bi1)).assertEqual(bi2);
-    bi2 = getBI(0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0x1ff);
+    bi2 = getBI(0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(), 0xffffffff.toInt(),
+      0xffffffff.toInt(), 0xffffffff.toInt(), 0x1ff);
     expect(BigInt.asUintN(201, bi1)).assertEqual(bi2);
-    bi1 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3, 0xe081df68, 0xb89);
-    bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3, 0xe081df68, 0x089);
+    bi1 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3.toInt(), 0xe081df68.toInt(), 0xb89);
+    bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3.toInt(), 0xe081df68.toInt(), 0x089);
     expect(BigInt.asUintN(200, bi1)).assertEqual(bi2);
-    bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3, 0xe081df68, 0x189);
+    bi2 = getBI(0x3ad5fc54, 0x05650a60, 0x0e55df96, 0x2cffea66, 0xb65fedb3.toInt(), 0xe081df68.toInt(), 0x189);
     expect(BigInt.asUintN(201, bi1)).assertEqual(bi2);
     console.info(`${caseName}, test end`);
 });

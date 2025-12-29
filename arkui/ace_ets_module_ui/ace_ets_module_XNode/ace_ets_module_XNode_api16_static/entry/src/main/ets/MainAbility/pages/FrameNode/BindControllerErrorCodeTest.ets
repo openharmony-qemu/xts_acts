@@ -60,7 +60,7 @@ class MyNodeController extends NodeController {
     const rootRenderNode = this.rootNode!.getRenderNode()!;
     if (rootRenderNode !== null) {
       rootRenderNode.size = { width: 200, height: 50 };
-      rootRenderNode.backgroundColor = 0xff00ff00;
+      rootRenderNode.backgroundColor = 0xff00ff00.toInt();
       rootRenderNode.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     }
     return this.rootNode;

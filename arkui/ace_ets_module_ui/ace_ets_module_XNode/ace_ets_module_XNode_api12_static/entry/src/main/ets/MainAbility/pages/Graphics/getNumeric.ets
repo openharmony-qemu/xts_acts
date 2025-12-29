@@ -30,7 +30,7 @@ function getResourceColor(baseColor: number):ColorMetrics {
     sourceColor = ColorMetrics.numeric(baseColor as int)
   } catch (error) {
     console.log("getBlendColor failed, code = " + (error as BusinessError).code + ", message = " + (error as BusinessError).message);
-    sourceColor = ColorMetrics.numeric(0xffff0000);
+    sourceColor = ColorMetrics.numeric(0xffff0000.toInt());
   }
   return sourceColor;
 }
@@ -45,7 +45,7 @@ struct getNumericExample {
         .width('80%')
         .align(Alignment.Center)
         .height(50)
-        .backgroundColor(getResourceColor(0xffff0000).color)
+        .backgroundColor(getResourceColor(0xffff0000.toInt()).color) //SDK12.9 导致页面加载失败
     }
     .width('100%')
     .height('100%')

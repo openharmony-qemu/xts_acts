@@ -311,7 +311,7 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_015] START');
       try {
         AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
-          name: 'fontStyle', value: 0x80000000 as FontStyle
+          name: 'fontStyle', value: (0x80000000.toInt()) as FontStyle
         });
         await CommonFunc.sleep(2000);
       } catch (err:Error) {

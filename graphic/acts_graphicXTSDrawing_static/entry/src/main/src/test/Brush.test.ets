@@ -1051,7 +1051,8 @@ export default function brushTest() {
     it('testBrushSetShaderEffectNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testBrushSetShaderEffectNormalStatic';
       const brush = new drawing.Brush();
-      let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+      let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300},
+        [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
       try {
         if(shaderEffect !== undefined){
           brush.setShaderEffect(shaderEffect);
@@ -1082,7 +1083,8 @@ export default function brushTest() {
     it('testBrushSetShaderEffectMultipleCallsStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testBrushSetShaderEffectMultipleCallsStatic';
       const brush = new drawing.Brush();
-      let shaderEffect:drawing.ShaderEffect | undefined= drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+      let shaderEffect:drawing.ShaderEffect | undefined= drawing.ShaderEffect.createLinearGradient({x: 100, y: 100},
+        {x: 300, y: 300}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
       if(shaderEffect !== undefined){
         for ( let i = 0 ; i < 20 ; i ++ ) {
           try {

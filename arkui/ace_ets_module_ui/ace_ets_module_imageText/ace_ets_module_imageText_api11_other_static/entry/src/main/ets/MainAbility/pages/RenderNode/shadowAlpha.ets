@@ -46,7 +46,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 const renderNode = new RenderNode();
 renderNode.size = { width: 200, height: 200 };
-renderNode.backgroundColor = 0XFF00FF00
+renderNode.backgroundColor = 0XFF00FF00.toInt()
 renderNode.shadowAlpha = 0.5;
 
 class MyNodeController extends NodeController {

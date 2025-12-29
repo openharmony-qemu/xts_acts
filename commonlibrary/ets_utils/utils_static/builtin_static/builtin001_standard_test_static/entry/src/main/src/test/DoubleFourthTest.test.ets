@@ -531,7 +531,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsDoubleFourthPrototypebTest2900';
         console.info(`${caseName}, test start`);
-        expect(Double.bitCastFromLong(0xfff0000000000000)).assertEqual(Number.NEGATIVE_INFINITY);
+        expect(Double.bitCastFromLong(-0x10000000000000)).assertEqual(Number.NEGATIVE_INFINITY);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -565,7 +565,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsDoubleFourthPrototypebTest3100';
         console.info(`${caseName}, test start`);
-        expect(Double.bitCastFromLong(0xbff0000000000000)).assertEqual(-1.0);
+        expect(Double.bitCastFromLong(-0x4010000000000000)).assertEqual(-1.0);
         console.info(`${caseName}, test end`);
         Done();
       })
