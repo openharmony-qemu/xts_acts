@@ -104,6 +104,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
     afterAll(async () => {
@@ -920,31 +921,38 @@ export default function RdbStoreUpdateWithReturning() {
      */
     it('updateWithReturning017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* updateWithReturning017 start *************");
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18,
         'salary': 25000.5,
       };
-      await rdbStore?.close();
+      await rdbStore1?.close();
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
       try {
-        await rdbStore?.updateWithReturning(valueBucket, predicates, config);
+        await rdbStore1?.updateWithReturning(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore1?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* updateWithReturning017 end *************");
       done();
     })
@@ -958,31 +966,38 @@ export default function RdbStoreUpdateWithReturning() {
      */
     it('updateWithReturning018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* updateWithReturning018 start *************");
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18,
         'salary': 25000.5,
       };
-      await rdbStore?.close();
+      await rdbStore1?.close();
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age', '*'],
       }
       try {
-        await rdbStore?.updateWithReturning(valueBucket, predicates, config);
+        await rdbStore1?.updateWithReturning(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning018 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore1?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync018 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* updateWithReturning018 end *************");
       done();
     })
@@ -1288,7 +1303,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync024 failed1. code is ${e.code}, message is ${e.message}`);
@@ -1303,7 +1318,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed2. code is ${e.code}, message is ${e.message}`);
@@ -1318,7 +1333,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturning(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturning024 failed3. code is ${e.code}, message is ${e.message}`);
