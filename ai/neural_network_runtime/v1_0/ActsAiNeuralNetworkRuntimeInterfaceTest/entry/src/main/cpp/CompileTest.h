@@ -39,7 +39,6 @@ int SUB_AI_NNRt_Func_North_Compilation_Create_0100();
  */
 int SUB_AI_NNRt_Func_North_Compilation_Create_0200();
 
-
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
  * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
@@ -89,7 +88,6 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0100();
  * @tc.level  LEVEL3
  */
 int SUB_AI_NNRt_Func_North_Compilation_SetCache_0200();
-
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0400
@@ -233,8 +231,6 @@ int SUB_AI_NNRt_Func_North_Compilation_Combine_0200();
  */
 int SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200();
 
-
-
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
  * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
@@ -274,7 +270,6 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0700();
  * @tc.level  LEVEL2
  */
 int SUB_AI_NNRt_Func_North_Compilation_SetCache_0800();
-
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
@@ -345,7 +340,6 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800();
  * @tc.level  LEVEL3
  */
 int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900();
-
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300

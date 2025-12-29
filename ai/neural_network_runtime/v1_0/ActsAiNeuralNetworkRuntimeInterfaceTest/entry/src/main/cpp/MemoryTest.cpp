@@ -18,8 +18,8 @@
 #include <neural_network_runtime/neural_network_core.h>
 #include <neural_network_runtime/neural_network_runtime.h>
 #include <neural_network_runtime/neural_network_runtime_type.h>
-#include "nnrt_utils.h"
 #include "model.h"
+#include "nnrt_utils.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -33,9 +33,9 @@ namespace OHOS {
 namespace NeuralNetworkRuntime {
 
 // 辅助函数实现
-static int CheckCreateInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, size_t length)
+static int CheckCreateInputMemory(OH_NNExecutor* executor, uint32_t inputIndex, size_t length)
 {
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateInputMemory(executor, inputIndex, length);
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateInputMemory(executor, inputIndex, length);
     if (memory == nullptr) {
         return -1;
     }
@@ -46,9 +46,9 @@ static int CheckCreateInputMemory(OH_NNExecutor *executor, uint32_t inputIndex, 
     return 0;
 }
 
-static int CheckCreateOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, size_t length)
+static int CheckCreateOutputMemory(OH_NNExecutor* executor, uint32_t outputIndex, size_t length)
 {
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateOutputMemory(executor, outputIndex, length);
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateOutputMemory(executor, outputIndex, length);
     if (memory == nullptr) {
         return -1;
     }
@@ -63,13 +63,13 @@ static int CheckCreateOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex
 int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100 start");
-    
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateInputMemory(nullptr, 0, 4);
+
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateInputMemory(nullptr, 0, 4);
     if (memory != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected memory to be nullptr");
         return -1;
     }
-    
+
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100 passed");
     return 0;
 }
@@ -77,13 +77,13 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100()
 int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200 start");
-    
-    OH_NNModel *model = OH_NNModel_Construct();
+
+    OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct model");
         return -1;
     }
-    
+
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
     OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model, graphArgs);
@@ -92,14 +92,14 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
         Free(model);
         return -1;
     }
-    
-    OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
+
+    OH_NNCompilation* compilation = OH_NNCompilation_Construct(model);
     if (compilation == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct compilation");
         Free(model);
         return -1;
     }
-    
+
     OHNNCompileParam compileParam;
     ret = (OH_NN_ReturnCode)CompileGraphMock(compilation, compileParam);
     if (ret != OH_NN_SUCCESS) {
@@ -109,21 +109,21 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
         // 返回 0：API 调用本身是成功的，只是设备不支持此模型
         return 0;
     }
-    
-    OH_NNExecutor *executor = OH_NNExecutor_Construct(compilation);
+
+    OH_NNExecutor* executor = OH_NNExecutor_Construct(compilation);
     if (executor == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct executor");
         Free(model, compilation);
         return -1;
     }
-    
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateInputMemory(executor, 2, graphArgs.operands[0].length);
+
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateInputMemory(executor, 2, graphArgs.operands[0].length);
     if (memory != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected memory to be nullptr for invalid index");
         Free(model, compilation, executor);
         return -1;
     }
-    
+
     Free(model, compilation, executor);
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200 passed");
     return 0;
@@ -132,13 +132,13 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
 int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300 start");
-    
-    OH_NNModel *model = OH_NNModel_Construct();
+
+    OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct model");
         return -1;
     }
-    
+
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
     OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model, graphArgs);
@@ -147,14 +147,14 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
         Free(model);
         return -1;
     }
-    
-    OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
+
+    OH_NNCompilation* compilation = OH_NNCompilation_Construct(model);
     if (compilation == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct compilation");
         Free(model);
         return -1;
     }
-    
+
     OHNNCompileParam compileParam;
     ret = (OH_NN_ReturnCode)CompileGraphMock(compilation, compileParam);
     if (ret != OH_NN_SUCCESS) {
@@ -164,21 +164,21 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
         // 返回 0：API 调用本身是成功的，只是设备不支持此模型
         return 0;
     }
-    
-    OH_NNExecutor *executor = OH_NNExecutor_Construct(compilation);
+
+    OH_NNExecutor* executor = OH_NNExecutor_Construct(compilation);
     if (executor == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct executor");
         Free(model, compilation);
         return -1;
     }
-    
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateInputMemory(executor, 0, 0);
+
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateInputMemory(executor, 0, 0);
     if (memory != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected memory to be nullptr for length 0");
         Free(model, compilation, executor);
         return -1;
     }
-    
+
     Free(model, compilation, executor);
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300 passed");
     return 0;
@@ -212,13 +212,13 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600()
 int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100 start");
-    
-    OH_NN_Memory *memory = OH_NNExecutor_AllocateOutputMemory(nullptr, 0, 4);
+
+    OH_NN_Memory* memory = OH_NNExecutor_AllocateOutputMemory(nullptr, 0, 4);
     if (memory != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected memory to be nullptr");
         return -1;
     }
-    
+
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100 passed");
     return 0;
 }

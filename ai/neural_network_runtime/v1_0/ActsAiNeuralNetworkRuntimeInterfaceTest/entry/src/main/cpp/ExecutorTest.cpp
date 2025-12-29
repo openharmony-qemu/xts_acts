@@ -18,8 +18,8 @@
 #include <neural_network_runtime/neural_network_core.h>
 #include <neural_network_runtime/neural_network_runtime.h>
 #include <neural_network_runtime/neural_network_runtime_type.h>
-#include "nnrt_utils.h"
 #include "model.h"
+#include "nnrt_utils.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -40,13 +40,13 @@ namespace NeuralNetworkRuntime {
 int SUB_AI_NNRt_Func_North_Executor_Create_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0100 start");
-    
-    OH_NNExecutor *executor = OH_NNExecutor_Construct(nullptr);
+
+    OH_NNExecutor* executor = OH_NNExecutor_Construct(nullptr);
     if (executor != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected executor to be nullptr");
         return -1;
     }
-    
+
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0100 passed");
     return 0;
 }
@@ -59,13 +59,13 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0100()
 int SUB_AI_NNRt_Func_North_Executor_Create_0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0200 start");
-    
-    OH_NNModel *model = OH_NNModel_Construct();
+
+    OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct model");
         return -1;
     }
-    
+
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
     OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model, graphArgs);
@@ -74,15 +74,15 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0200()
         Free(model);
         return -1;
     }
-    
-    OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
+
+    OH_NNCompilation* compilation = OH_NNCompilation_Construct(model);
     if (compilation == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct compilation");
         Free(model);
         return -1;
     }
-    
-    const size_t *devicesID = nullptr;
+
+    const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
     if (ret != OH_NN_SUCCESS) {
@@ -90,7 +90,7 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0200()
         Free(model, compilation);
         return -1;
     }
-    
+
     size_t targetDevice = devicesID[0];
     ret = OH_NNCompilation_SetDevice(compilation, targetDevice);
     if (ret != OH_NN_SUCCESS) {
@@ -98,14 +98,14 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0200()
         Free(model, compilation);
         return -1;
     }
-    
-    OH_NNExecutor *executor = OH_NNExecutor_Construct(compilation);
+
+    OH_NNExecutor* executor = OH_NNExecutor_Construct(compilation);
     if (executor != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected executor to be nullptr (compilation not built)");
         Free(model, compilation, executor);
         return -1;
     }
-    
+
     Free(model, compilation, executor);
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0200 passed");
     return 0;
@@ -119,13 +119,13 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0200()
 int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0100 start");
-    
-    OH_NNModel *model = OH_NNModel_Construct();
+
+    OH_NNModel* model = OH_NNModel_Construct();
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct model");
         return -1;
     }
-    
+
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
     OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model, graphArgs);
@@ -134,14 +134,14 @@ int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
         Free(model);
         return -1;
     }
-    
-    OH_NNCompilation *compilation = OH_NNCompilation_Construct(model);
+
+    OH_NNCompilation* compilation = OH_NNCompilation_Construct(model);
     if (compilation == nullptr) {
         OH_LOG_ERROR(LOG_APP, "Failed to construct compilation");
         Free(model);
         return -1;
     }
-    
+
     OHNNCompileParam compileParam;
     ret = (OH_NN_ReturnCode)CompileGraphMock(compilation, compileParam);
     if (ret != OH_NN_SUCCESS) {
@@ -151,20 +151,21 @@ int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
         // 返回 0：API 调用本身是成功的，只是设备不支持此模型
         return 0;
     }
-    
+
     uint32_t inputIndex = 0;
-    const OHNNOperandTest &operandTem = graphArgs.operands[0];
+    const OHNNOperandTest& operandTem = graphArgs.operands[0];
     auto quantParam = operandTem.quantParam;
-    OH_NN_Tensor operand = {operandTem.dataType, (uint32_t)operandTem.shape.size(), 
-                            operandTem.shape.data(), quantParam, operandTem.type};
-    
+    OH_NN_Tensor operand = {
+        operandTem.dataType, (uint32_t)operandTem.shape.size(), operandTem.shape.data(), quantParam, operandTem.type
+    };
+
     ret = OH_NNExecutor_SetInput(nullptr, inputIndex, &operand, operandTem.data, operandTem.length);
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         Free(model, compilation);
         return -1;
     }
-    
+
     Free(model, compilation);
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0100 passed");
     return 0;
@@ -264,13 +265,13 @@ int SUB_AI_NNRt_Func_North_Executor_SetOutput_0500()
 int SUB_AI_NNRt_Func_North_Executor_Run_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0100 start");
-    
+
     OH_NN_ReturnCode ret = OH_NNExecutor_Run(nullptr);
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-    
+
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0100 passed");
     return 0;
 }
@@ -390,14 +391,14 @@ int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800()
 int SUB_AI_NNRt_Func_North_Executor_Destroy_0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0100 start");
-    
-    OH_NNExecutor *executor = nullptr;
+
+    OH_NNExecutor* executor = nullptr;
     OH_NNExecutor_Destroy(&executor);
     if (executor != nullptr) {
         OH_LOG_ERROR(LOG_APP, "Expected executor to remain nullptr");
         return -1;
     }
-    
+
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0100 passed");
     return 0;
 }
