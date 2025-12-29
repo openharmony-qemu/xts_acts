@@ -83,7 +83,8 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -685,7 +686,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         name: 'zhangsan',
         age: 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
@@ -721,7 +722,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         'name': 'zhangsan',
         'age': 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       valueBucket.name = "lisi";
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -758,7 +759,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         'name': 'zhangsan',
         'age': 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       valueBucket.name = "lisi";
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -1071,6 +1072,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual(14800025);
       }
       await deferredTrans.commit();
+      await rdb?.close();
       console.log(TAG + "************* batchInsertWithReturning021 end *************");
       done();
     })
@@ -1678,7 +1680,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         columns: ['name', 'age'],
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync(null, [valueBucket], config);
+        rdbStore?.batchInsertWithReturningSync(null, [valueBucket], config);
         console.log(TAG + "batchInsertWithReturningSync031 success1");
         expect(true).assertFail();
       } catch (e) {
@@ -1686,7 +1688,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual("401");
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync(undefined, [valueBucket], config);
+        rdbStore?.batchInsertWithReturningSync(undefined, [valueBucket], config);
         console.log(TAG + "batchInsertWithReturningSync031 success2");
         expect(true).assertFail();
       } catch (e) {
@@ -1694,7 +1696,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual("401");
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync("test", undefined, config);
+        rdbStore?.batchInsertWithReturningSync("test", undefined, config);
         console.log(TAG + "batchInsertWithReturningSync031 success3");
         expect(true).assertFail();
       } catch (e) {
@@ -1702,7 +1704,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual("401");
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync("test", null, config);
+        rdbStore?.batchInsertWithReturningSync("test", null, config);
         console.log(TAG + "batchInsertWithReturningSync031 success4");
         expect(true).assertFail();
       } catch (e) {
@@ -1710,7 +1712,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual("401");
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync("test", [valueBucket], undefined);
+        rdbStore?.batchInsertWithReturningSync("test", [valueBucket], undefined);
         console.log(TAG + "batchInsertWithReturningSync031 success5");
         expect(true).assertFail();
       } catch (e) {
@@ -1718,7 +1720,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual("401");
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync("test", [valueBucket], null);
+        rdbStore?.batchInsertWithReturningSync("test", [valueBucket], null);
         console.log(TAG + "batchInsertWithReturningSync031 success6");
         expect(true).assertFail();
       } catch (e) {
@@ -1773,7 +1775,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         columns: ['name', 'age'],
       }
       try {
-        let results = await rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config, undefined);
+        let results = rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config, undefined);
         console.log(TAG + "results?.changed" + results?.changed);
         expect(results?.changed).assertEqual(1);
       } catch (e) {
@@ -1808,7 +1810,7 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual(14800021);
       }
       try {
-        await rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config, undefined);
+        rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config, undefined);
         console.log(TAG + "batchInsertWithReturningSync037")
         expect(true).assertFail();
       } catch (e) {
