@@ -107,8 +107,7 @@ static void StringReplace(std::string& strBig, const std::string& strsrc, const 
     }
 }
 
-static void
-    GetParamsByName(string decoderName, string inputFile, int32_t& channelCount, int32_t& sampleRate, long& bitrate)
+static void GetParamsByName(string decoderName, string inputFile, int32_t& channelCount, int32_t& sampleRate, long& bitrate)
 {
     int32_t opusNameSplitNum = 4;
     int32_t splitNum1 = 1;
@@ -713,14 +712,11 @@ uint32_t AudioBufferAacEncDemo::GetInputIndex()
     const uint32_t TIMEOUT_SEC = 5;
     const auto totalTimeout = std::chrono::seconds(TIMEOUT_SEC);
     std::unique_lock<std::mutex> lock(signal_->inMutex_);
-
     bool hasData = signal_->inCond_.wait_for(
         lock, std::chrono::milliseconds(100), [this]() { return !signal_->inQueue_.empty(); });
-
     if (!hasData) {
         return 0;
     }
-
     uint32_t index = signal_->inQueue_.front();
     signal_->inQueue_.pop();
     return index;
@@ -731,14 +727,11 @@ uint32_t AudioBufferAacEncDemo::GetOutputIndex()
     const uint32_t TIMEOUT_SEC = 5;
     const auto totalTimeout = std::chrono::seconds(TIMEOUT_SEC);
     std::unique_lock<std::mutex> lock(signal_->outMutex_);
-
     bool hasData = signal_->outCond_.wait_for(
         lock, std::chrono::milliseconds(100), [this]() { return !signal_->outQueue_.empty(); });
-
     if (!hasData) {
         return 0;
     }
-
     uint32_t index = signal_->outQueue_.front();
     signal_->outQueue_.pop();
     return index;

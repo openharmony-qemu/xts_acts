@@ -21,22 +21,22 @@ namespace OHOS {
 /**
  * @brief Disables the copy and move construct/assignment method.
  */
-#define DISALLOW_COPY_AND_MOVE(className)\
-    DISALLOW_COPY(className);\
+#define DISALLOW_COPY_AND_MOVE(className) \
+    DISALLOW_COPY(className); \
     DISALLOW_MOVE(className)
 
 /**
  * @brief Disables the copy construct/assignment method.
  */
-#define DISALLOW_COPY(className)\
-    className(const className&) = delete;\
+#define DISALLOW_COPY(className) \
+    className(const className&) = delete; \
     className& operator= (const _NoCopyableType&) = delete
 
 /**
  * @brief Disables the move construct/assignment method.
  */
-#define DISALLOW_MOVE(className)\
-    className(className&&) = delete;\
+#define DISALLOW_MOVE(className) \
+    className(className&&) = delete; \
     className& operator= (_NoCopyableType&&) = delete
 
 

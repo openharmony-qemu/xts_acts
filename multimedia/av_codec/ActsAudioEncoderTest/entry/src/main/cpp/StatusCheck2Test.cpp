@@ -19,7 +19,7 @@
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
-#define LOG_DOMAIN 0x3200 
+#define LOG_DOMAIN 0x3200
 #define LOG_TAG "MY_TAG"
 
 using namespace std;
