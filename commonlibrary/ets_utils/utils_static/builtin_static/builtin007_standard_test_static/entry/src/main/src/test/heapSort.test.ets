@@ -1980,5 +1980,141 @@ export default function HeapSortTest() {
       }
     });
 
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_0900
+     * @tc.name   TESTBUILTINARRAYCONCAT7009
+     * @tc.type   FUNCTION
+     * @tc.desc   Test concatenation with duplicate values
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7009";
+      try {
+        const arr1: FixedArray<double> = [1.1, 1.1];
+        const arr2: FixedArray<double> = [2.2, 2.2];
+        const result = concat(arr1, arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[3]).assertEqual(2.2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_1000
+     * @tc.name   TESTBUILTINARRAYCONCAT7010
+     * @tc.type   FUNCTION
+     * @tc.desc   Test chained concatenation with intermediate results
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7010";
+      try {
+        const base: FixedArray<double> = [0.5];
+        const temp1 = concat(base, [1.5]);
+        const temp2 = concat(temp1, [2.5]);
+        const result = concat(temp2, [3.5]);
+        expect(result.length).assertEqual(4);
+        expect(result[3]).assertEqual(3.5);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_1700
+     * @tc.name   TESTBUILTINARRAYCONCAT7017
+     * @tc.type   FUNCTION
+     * @tc.desc   Test concatenation with large arrays (10+ elements)
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7017";
+      try {
+        const arr1: FixedArray<double> = [1.0, 2.0, 3.0];
+        const arr2: FixedArray<double> = [4.0, 5.0, 6.0];
+        const arr3: FixedArray<double> = [7.0, 8.0, 9.0, 10.0];
+        const result = concat(arr1, arr2, arr3);
+        expect(result.length).assertEqual(10);
+        expect(result[9]).assertEqual(10.0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_1800
+     * @tc.name   TESTBUILTINARRAYCONCAT7018
+     * @tc.type   FUNCTION
+     * @tc.desc   Test concatenation with negative and positive numbers mixed
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7018";
+      try {
+        const arr1: FixedArray<double> = [-1.5];
+        const arr2: FixedArray<double> = [2.3];
+        const arr3: FixedArray<double> = [-3.7];
+        const result = concat(arr1, arr2, arr3);
+        expect(result[0]).assertEqual(-1.5);
+        expect(result[1]).assertEqual(2.3);
+        expect(result[2]).assertEqual(-3.7);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_1900
+     * @tc.name   TESTBUILTINARRAYCONCAT7019
+     * @tc.type   FUNCTION
+     * @tc.desc   Test concatenation with duplicate values
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7019";
+      try {
+        const arr1: FixedArray<double> = [1.1, 1.1];
+        const arr2: FixedArray<double> = [2.2, 2.2];
+        const result = concat(arr1, arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[3]).assertEqual(2.2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number TESTBUILTINARRAYCONCAT7_2000
+     * @tc.name   TESTBUILTINARRAYCONCAT7020
+     * @tc.type   FUNCTION
+     * @tc.desc   Test chained concatenation with intermediate results
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TESTBUILTINARRAYCONCAT7020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "TESTBUILTINARRAYCONCAT7020";
+      try {
+        const base: FixedArray<double> = [0.5];
+        const temp1 = concat(base, [1.5]);
+        const temp2 = concat(temp1, [2.5]);
+        const result = concat(temp2, [3.5]);
+        expect(result.length).assertEqual(4);
+        expect(result[3]).assertEqual(3.5);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
