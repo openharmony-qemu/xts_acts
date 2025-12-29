@@ -835,16 +835,17 @@ int TestShaderEffectCreateRadialGradientAbnormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_ShaderEffectCreateRadialGradient with radius set to negative values
-    OH_Drawing_ShaderEffect* effect2 =
-    OH_Drawing_ShaderEffectCreateRadialGradient(point,TEST_RADIUS_NEGATIVE_100, colors, pos, TEST_COLOR_COUNT_3, CLAMP);
+    OH_Drawing_ShaderEffect* effect2 = OH_Drawing_ShaderEffectCreateRadialGradient(point, TEST_RADIUS_NEGATIVE_100,
+                                                                                   colors, pos, TEST_COLOR_COUNT_3,
+                                                                                   CLAMP);
     // add assert
     EXPECT_NE(effect2, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_ShaderEffectCreateRadialGradient with colors set to negative values
     colors[0] = -TEST_SHADER_COLOR_RED;
-    OH_Drawing_ShaderEffect* effect3 =
-    OH_Drawing_ShaderEffectCreateRadialGradient(point, TEST_RADIUS_100, colors, pos, TEST_COLOR_COUNT_3, CLAMP);
+    OH_Drawing_ShaderEffect* effect3 = OH_Drawing_ShaderEffectCreateRadialGradient(point, TEST_RADIUS_100, colors,
+                                                                                   pos, TEST_COLOR_COUNT_3, CLAMP);
     // add assert
     EXPECT_NE(effect3, nullptr);
     // add assert
@@ -852,8 +853,8 @@ int TestShaderEffectCreateRadialGradientAbnormal()
     // 4. Call OH_Drawing_ShaderEffectCreateRadialGradient with pos set to negative values
     colors[0] = TEST_SHADER_COLOR_RED;
     pos[0] = TEST_POS_NEGATIVE_0_1;
-    OH_Drawing_ShaderEffect* effect4 =
-    OH_Drawing_ShaderEffectCreateRadialGradient(point, TEST_RADIUS_100, colors, pos, TEST_COLOR_COUNT_3, CLAMP);
+    OH_Drawing_ShaderEffect* effect4 = OH_Drawing_ShaderEffectCreateRadialGradient(point, TEST_RADIUS_100, colors,
+                                                                                   pos, TEST_COLOR_COUNT_3, CLAMP);
     // add assert
     EXPECT_NE(effect4, nullptr);
     // add assert
@@ -893,7 +894,8 @@ int TestShaderEffectCreateRadialGradientMaximum()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_ShaderEffectCreateRadialGradient with radius set to maximum values
     OH_Drawing_ShaderEffect* effect2 =
-        OH_Drawing_ShaderEffectCreateRadialGradient(point, SHADER_FLT_MAX_VALUE, colors, pos, TEST_COLOR_COUNT_3, CLAMP);
+        OH_Drawing_ShaderEffectCreateRadialGradient(point, SHADER_FLT_MAX_VALUE, colors, pos,
+                                                    TEST_COLOR_COUNT_3, CLAMP);
     // add assert
     EXPECT_NE(effect2, nullptr);
     // add assert
