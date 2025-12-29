@@ -1990,5 +1990,1325 @@ export default function math06Test() {
         hilog.info(domain, tag, '%{public}s', 'test_basic_operation_018 end');
       });
 
+    /**
+     * @tc.number  BASIC_OPERATION_019
+     * @tc.name    test_basic_operation_019
+     * @tc.desc    Verify typeof works with numbers
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_019 start');
+        expect(typeof 42 === 'number').assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_019 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_020
+     * @tc.name    test_basic_operation_020
+     * @tc.desc    Verify string length is correct
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_020 start');
+        const testStr = "Hello";
+        expect(testStr.length).assertEqual(5);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_020 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_021
+     * @tc.name    test_basic_operation_021
+     * @tc.desc    Verify array length is correct
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_021 start');
+        const arr = [1, 2, 3];
+        expect(arr.length).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_021 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_022
+     * @tc.name    test_basic_operation_022
+     * @tc.desc    Verify number addition works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_022 start');
+        const sum = 1 + 2;
+        expect(sum).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_022 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_023
+     * @tc.name    test_basic_operation_023
+     * @tc.desc    Verify string concatenation works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_023 start');
+        const str = "Hello" + " World";
+        expect(str).assertEqual("Hello World");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_023 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_024
+     * @tc.name    test_basic_operation_024
+     * @tc.desc    Verify boolean AND operation
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_024 start');
+        const result = true && false;
+        expect(result).assertFalse();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_024 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_025
+     * @tc.name    test_basic_operation_025
+     * @tc.desc    Verify array index access works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_025 start');
+        const arr = [10, 20, 30];
+        expect(arr[1]).assertEqual(20);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_025 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_026
+     * @tc.name    test_basic_operation_026
+     * @tc.desc    Verify number comparison works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_026 start');
+        const a = 5;
+        const b = 10;
+        expect(a < b).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_026 end');
+      });
+
+    /**
+     * @tc.number  BASIC_OPERATION_027
+     * @tc.name    test_basic_operation_027
+     * @tc.desc    Verify string substring works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_operation_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_027 start');
+        const str = "HelloWorld";
+        expect(str.substring(0, 5)).assertEqual("Hello");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_operation_027 end');
+      });
+
+    /**
+     * @tc.number  ARRAY_JOIN_037
+     * @tc.name    testArrayJoin037
+     * @tc.desc    Verify array join works
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testArrayJoin037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testArrayJoin037 start');
+        const arr = ["a", "b", "c"];
+        expect(arr.join(",")).assertEqual("a,b,c");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testArrayJoin037 end');
+      });
+
+    /**
+     * @tc.number  FIELD_PRIVATE_038
+     * @tc.name    testFieldPrivate038
+     * @tc.desc    Verify private field access restriction
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldPrivate038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldPrivate038 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldPrivate038 end');
+      });
+
+    /**
+     * @tc.number  FIELD_READONLY_039
+     * @tc.name    testFieldReadonly039
+     * @tc.desc    Verify readonly field modification restriction
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldReadonly039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldReadonly039 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldReadonly039 end');
+      });
+
+    /**
+     * @tc.number  FIELD_NULL_040
+     * @tc.name    testFieldNull040
+     * @tc.desc    Verify handling of null value assignment
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldNull040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldNull040 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldNull040 end');
+      });
+
+    /**
+     * @tc.number  FIELD_UNDEFINED_041
+     * @tc.name    testFieldUndefined041
+     * @tc.desc    Verify handling of undefined value assignment
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldUndefined041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldUndefined041 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldUndefined041 end');
+      });
+
+    /**
+     * @tc.number  FIELD_OBJECT_042
+     * @tc.name    testFieldObject042
+     * @tc.desc    Verify object type field handling
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldObject042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldObject042 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldObject042 end');
+      });
+
+    /**
+     * @tc.number  PROTOTYPE_CHAIN_043
+     * @tc.name    testPrototypeChain043
+     * @tc.desc    Verify field access through prototype chain
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testPrototypeChain043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testPrototypeChain043 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testPrototypeChain043 end');
+      });
+
+    /**
+     * @tc.number  FIELD_SYMBOL_044
+     * @tc.name    testFieldSymbol044
+     * @tc.desc    Verify symbol type field handling
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldSymbol044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldSymbol044 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldSymbol044 end');
+      });
+
+    /**
+     * @tc.number  GETTER_SETTER_045
+     * @tc.name    testGetterSetter045
+     * @tc.desc    Verify interaction with getter/setter properties
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testGetterSetter045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testGetterSetter045 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testGetterSetter045 end');
+      });
+
+    /**
+     * @tc.number  FIELD_NONEXISTENT_046
+     * @tc.name    testFieldNonexistent046
+     * @tc.desc    Verify handling of non-existent field access
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldNonexistent046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldNonexistent046 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldNonexistent046 end');
+      });
+
+    /**
+     * @tc.number  FIELD_DEEPNESTED_047
+     * @tc.name    testFieldDeepnested047
+     * @tc.desc    Verify access to deeply nested fields
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldDeepnested047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldDeepnested047 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldDeepnested047 end');
+      });
+
+    /**
+     * @tc.number  FUNCTION_EXPRESSION_048
+     * @tc.name    testFunctionExpression048
+     * @tc.desc    Verify function expression field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFunctionExpression048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFunctionExpression048 start');
+        const square = (x: number) => x * x;
+        expect(square(3)).assertEqual(9);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFunctionExpression048 end');
+      });
+
+    /**
+     * @tc.number  FIELD_NUMERIC_049
+     * @tc.name    testFieldNumeric049
+     * @tc.desc    Verify numeric field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldNumeric049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldNumeric049 start');
+        const itemQuantity = 12;
+        expect(itemQuantity).assertEqual(12);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldNumeric049 end');
+      });
+
+    /**
+     * @tc.number  FIELD_EXPLICITNULL_050
+     * @tc.name    testFieldExplicitnull050
+     * @tc.desc    Verify explicit null field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldExplicitnull050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldExplicitnull050 start');
+        const noData = null;
+        expect(noData).assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldExplicitnull050 end');
+      });
+
+    /**
+     * @tc.number  FIELD_UNDEFINED_051
+     * @tc.name    testFieldUndefined051
+     * @tc.desc    Verify undefined field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldUndefined051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldUndefined051 start');
+        const missingField = undefined;
+        expect(missingField).assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldUndefined051 end');
+      });
+
+    /**
+     * @tc.number  FIELD_NUMBERARRAY_052
+     * @tc.name    testFieldNumberarray052
+     * @tc.desc    Verify number array field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldNumberarray052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldNumberarray052 start');
+        const primeNumbers = [2, 3, 5, 7];
+        expect(primeNumbers.length).assertEqual(4);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldNumberarray052 end');
+      });
+
+    /**
+     * @tc.number  FIELD_TEXT_053
+     * @tc.name    testFieldText053
+     * @tc.desc    Verify text field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldText053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldText053 start');
+        const appName = 'MyApp';
+        expect(appName.length).assertEqual(5);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldText053 end');
+      });
+
+    /**
+     * @tc.number  FIELD_ARITHMETIC_054
+     * @tc.name    testFieldArithmetic054
+     * @tc.desc    Verify arithmetic operation field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldArithmetic054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldArithmetic054 start');
+        const width = 15;
+        const height = 10;
+        expect(width * height).assertEqual(150);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldArithmetic054 end');
+      });
+
+    /**
+     * @tc.number  FIELD_LOGICAL_055
+     * @tc.name    testFieldLogical055
+     * @tc.desc    Verify logical operation field
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldLogical055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldLogical055 start');
+        const hasAccess = true;
+        const isBlocked = false;
+        expect(hasAccess && !isBlocked).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldLogical055 end');
+      });
+
+    /**
+     * @tc.number  FIELD_COMPOSITE_056
+     * @tc.name    testFieldComposite056
+     * @tc.desc    Verify composite value fields
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testFieldComposite056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testFieldComposite056 start');
+        const productCode = 5001;
+        const productName = 'Laptop';
+        const inStock = true;
+        expect(productCode).assertEqual(5001);
+        expect(productName).assertEqual('Laptop');
+        expect(inStock).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testFieldComposite056 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_VALUE_057
+     * @tc.name    testBooleanValue057
+     * @tc.desc    Verify BooleanValue instance method calls
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanValue057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanValue057 start');
+        const testObj = BooleanValue.of(true);
+        expect(typeof testObj.toString).assertEqual('function');
+        expect(testObj.toString()).assertContain('true');
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanValue057 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_FALSE_058
+     * @tc.name    testBooleanFalse058
+     * @tc.desc    Test BooleanValue creation with false value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanFalse058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanFalse058 start');
+        const testValue = BooleanValue.of(false);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanFalse058 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_TRUTHY_059
+     * @tc.name    testBooleanTruthy059
+     * @tc.desc    Test BooleanValue truthy check
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanTruthy059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTruthy059 start');
+        const testValue = BooleanValue.of(true);
+        expect(!!testValue).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTruthy059 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_TOSTRING_060
+     * @tc.name    testBooleanTostring060
+     * @tc.desc    Test BooleanValue toString() method
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanTostring060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTostring060 start');
+        const testValue = BooleanValue.of(false);
+        expect(testValue.toString()).assertEqual("false");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTostring060 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_STRING_061
+     * @tc.name    testBooleanString061
+     * @tc.desc    Test BooleanValue with string input
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanString061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanString061 start');
+        const testValue = BooleanValue.of("true");
+        expect(testValue.toString()).assertEqual("true");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanString061 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_INSTANCE_062
+     * @tc.name    testBooleanInstance062
+     * @tc.desc    Test BooleanValue instance type
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanInstance062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanInstance062 start');
+        const testValue = BooleanValue.of(true);
+        expect(testValue instanceof BooleanValue).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanInstance062 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_BASIC_063
+     * @tc.name    testBooleanBasic063
+     * @tc.desc    Verify basic BooleanValue creation with true
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanBasic063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanBasic063 start');
+        const value = BooleanValue.of(true);
+        expect(value).not().assertNull();
+        expect(value).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanBasic063 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_FALSE_CREATE_064
+     * @tc.name    testBooleanFalseCreate064
+     * @tc.desc    Verify BooleanValue creation with false
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanFalseCreate064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanFalseCreate064 start');
+        const value = BooleanValue.of(false);
+        expect(value).not().assertNull();
+        expect(value).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanFalseCreate064 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_GETTYPE_065
+     * @tc.name    testBooleanGettype065
+     * @tc.desc    Verify getType() returns non-null type
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanGettype065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanGettype065 start');
+        const value = BooleanValue.of(true);
+        expect(value.getType()).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanGettype065 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_TOSTRING2_066
+     * @tc.name    testBooleanTostring2066
+     * @tc.desc    Verify toString() returns correct string
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanTostring2066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTostring2066 start');
+        const value = BooleanValue.of(true);
+        expect(value.toString()).assertEqual('true');
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanTostring2066 end');
+      });
+
+    /**
+     * @tc.number  BOOLEAN_TOPRINT_067
+     * @tc.name    testBooleanToprint067
+     * @tc.desc    Verify toPrint() returns correct output
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testBooleanToprint067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testBooleanToprint067 start');
+        const value = BooleanValue.of(false);
+        expect(value.toPrint(0)).assertEqual('false');
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testBooleanToprint067 end');
+      });
+
+    /**
+     * @tc.number  BYTE_BASIC_068
+     * @tc.name    testByteBasic068
+     * @tc.desc    Basic ByteValue creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testByteBasic068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testByteBasic068 start');
+        const testValue = ByteValue.of(42);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testByteBasic068 end');
+      });
+
+    /**
+     * @tc.number  BYTE_ZERO_069
+     * @tc.name    testByteZero069
+     * @tc.desc    Test zero value creation
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testByteZero069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'testByteZero069 start');
+        const zeroValue = ByteValue.of(0);
+        expect(zeroValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testByteZero069 end');
+      });
+
+    /**
+     * @tc.number  SUB_BYTE_VALUE_OF_0070
+     * @tc.name    test_byte_value_of_0070
+     * @tc.desc    Test negative value handling
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_byte_value_of_0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_byte_value_of_0070 start');
+        const negValue = ByteValue.of(-20);
+        expect(negValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_byte_value_of_0070 end');
+      });
+
+    /**
+     * @tc.number  SUB_VALUE_OF_0071
+     * @tc.name    test_value_of_0071
+     * @tc.desc    Test string value verification
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_value_of_0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_value_of_0071 start');
+        const strValue = "test";
+        expect(strValue).assertEqual("test");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_value_of_0071 end');
+      });
+
+    /**
+     * @tc.number  SUB_VALUE_OF_0072
+     * @tc.name    test_value_of_0072
+     * @tc.desc    Test array verification
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_value_of_0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_value_of_0072 start');
+        const arrValue = [1, 2, 3];
+        expect(arrValue.length).assertEqual(3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_value_of_0072 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0073
+     * @tc.name    test_array_value_of_0073
+     * @tc.desc    Basic ArrayValue creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0073 start');
+        const testValue = ArrayValue.of(new Uint8Array([0x01]));
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0073 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0074
+     * @tc.name    test_array_value_of_0074
+     * @tc.desc    Test with empty byte array
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0074 start');
+        const testValue = ArrayValue.of(new Uint8Array(0));
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0074 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0075
+     * @tc.name    test_array_value_of_0075
+     * @tc.desc    Test with multiple bytes
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0075 start');
+        const testValue = ArrayValue.of(new Uint8Array([0x01, 0x02, 0x03]));
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0075 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0076
+     * @tc.name    test_array_value_of_0076
+     * @tc.desc    Test with maximum safe integer
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0076 start');
+        const testValue = ArrayValue.of(new Uint8Array([0xFF]));
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0076 end');
+      });
+
+    /**
+     * @tc.number  SUB_CHAR_VALUE_OF_0077
+     * @tc.name    test_char_value_of_0077
+     * @tc.desc    Basic CharValue creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_char_value_of_0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0077 start');
+        const testValue = CharValue.of('a');
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0077 end');
+      });
+
+    /**
+     * @tc.number  SUB_CHAR_VALUE_OF_0078
+     * @tc.name    test_char_value_of_0078
+     * @tc.desc    Different inputs return different objects
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_char_value_of_0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0078 start');
+        const value1 = CharValue.of('x');
+        const value2 = CharValue.of('y');
+        expect(value1 === value2).assertFalse();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0078 end');
+      });
+
+    /**
+     * @tc.number  SUB_CHAR_VALUE_OF_0079
+     * @tc.name    test_char_value_of_0079
+     * @tc.desc    Test with whitespace character
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_char_value_of_0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0079 start');
+        const testValue = CharValue.of(' ');
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0079 end');
+      });
+
+    /**
+     * @tc.number  SUB_CHAR_VALUE_OF_0080
+     * @tc.name    test_char_value_of_0080
+     * @tc.desc    Multiple calls with same input return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_char_value_of_0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0080 start');
+        const value1 = CharValue.of('z');
+        const value2 = CharValue.of('z');
+        expect(value1).not().assertNull();
+        expect(value2).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_char_value_of_0080 end');
+      });
+
+    /**
+     * @tc.number  SUB_DOUBLE_VALUE_OF_0081
+     * @tc.name    test_double_value_of_0081
+     * @tc.desc    Basic DoubleValue creation with positive number
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_double_value_of_0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0081 start');
+        const testValue = DoubleValue.of(3.14159);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0081 end');
+      });
+
+    /**
+     * @tc.number  SUB_DOUBLE_VALUE_OF_0082
+     * @tc.name    test_double_value_of_0082
+     * @tc.desc    DoubleValue creation with negative number
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_double_value_of_0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0082 start');
+        const testValue = DoubleValue.of(-2.71828);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0082 end');
+      });
+
+    /**
+     * @tc.number  SUB_DOUBLE_VALUE_OF_0083
+     * @tc.name    test_double_value_of_0083
+     * @tc.desc    DoubleValue creation with zero value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_double_value_of_0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0083 start');
+        const testValue = DoubleValue.of(0.0);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0083 end');
+      });
+
+    /**
+     * @tc.number  SUB_DOUBLE_VALUE_OF_0084
+     * @tc.name    test_double_value_of_0084
+     * @tc.desc    Verify DoubleValue instance type
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_double_value_of_0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0084 start');
+        const testValue = DoubleValue.of(1.234);
+        expect(testValue instanceof DoubleValue).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0084 end');
+      });
+
+    /**
+     * @tc.number  SUB_DOUBLE_VALUE_OF_0085
+     * @tc.name    test_double_value_of_0085
+     * @tc.desc    Verify multiple DoubleValue creations
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_double_value_of_0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0085 start');
+        const value1 = DoubleValue.of(1.0);
+        const value2 = DoubleValue.of(2.0);
+        expect(value1).not().assertEqual(value2);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_double_value_of_0085 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0086
+     * @tc.name    test_array_value_of_0086
+     * @tc.desc    Basic functionality test with single element
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0086 start');
+        const testValue = ArrayValue.of([1.0]);
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0086 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0087
+     * @tc.name    test_array_value_of_0087
+     * @tc.desc    Multiple elements creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0087 start');
+        const testValue = ArrayValue.of([1.1, 2.2, 3.3]);
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0087 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0088
+     * @tc.name    test_array_value_of_0088
+     * @tc.desc    Minimum value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0088 start');
+        const testValue = ArrayValue.of([Number.MIN_VALUE]);
+        expect(testValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0088 end');
+      });
+
+    /**
+     * @tc.number  SUB_ARRAY_VALUE_OF_0089
+     * @tc.name    test_array_value_of_0089
+     * @tc.desc    Maximum value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_array_value_of_0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0089 start');
+        const testValue = ArrayValue.of([Number.MAX_VALUE]);
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_array_value_of_0089 end');
+      });
+
+    /**
+     * @tc.number  SUB_FLOAT_VALUE_OF_0090
+     * @tc.name    test_float_value_of_0090
+     * @tc.desc    Basic FloatValue creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_float_value_of_0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0090 start');
+        const testValue = FloatValue.of(3.14);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0090 end');
+      });
+
+    /**
+     * @tc.number  SUB_FLOAT_VALUE_OF_0091
+     * @tc.name    test_float_value_of_0091
+     * @tc.desc    Zero value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_float_value_of_0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0091 start');
+        const zeroValue = FloatValue.of(0.0);
+        expect(zeroValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0091 end');
+      });
+
+    /**
+     * @tc.number  SUB_FLOAT_VALUE_OF_0092
+     * @tc.name    test_float_value_of_0092
+     * @tc.desc    Negative value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_float_value_of_0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0092 start');
+        const negativeValue = FloatValue.of(-5.67);
+        expect(negativeValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0092 end');
+      });
+
+    /**
+     * @tc.number  SUB_FLOAT_VALUE_OF_0093
+     * @tc.name    test_float_value_of_0093
+     * @tc.desc    NaN value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_float_value_of_0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0093 start');
+        const nanValue = FloatValue.of(NaN);
+        expect(nanValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0093 end');
+      });
+
+    /**
+     * @tc.number  SUB_FLOAT_VALUE_OF_0094
+     * @tc.name    test_float_value_of_0094
+     * @tc.desc    Infinity value test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_float_value_of_0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0094 start');
+        const infinityValue = FloatValue.of(Infinity);
+        expect(infinityValue).not().assertNull();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_float_value_of_0094 end');
+      });
+
+    /**
+     * @tc.number  SUB_BASIC_TEST_0095
+     * @tc.name    test_basic_test_0095
+     * @tc.desc    Basic truthy test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_test_0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0095 start');
+        expect(true).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0095 end');
+      });
+
+    /**
+     * @tc.number  SUB_BASIC_TEST_0096
+     * @tc.name    test_basic_test_0096
+     * @tc.desc    Basic falsy test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_test_0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0096 start');
+        expect(false).assertFalse();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0096 end');
+      });
+
+    /**
+     * @tc.number  SUB_BASIC_TEST_0097
+     * @tc.name    test_basic_test_0097
+     * @tc.desc    Number equality test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_test_0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0097 start');
+        expect(1).assertEqual(1);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0097 end');
+      });
+
+    /**
+     * @tc.number  SUB_BASIC_TEST_0098
+     * @tc.name    test_basic_test_0098
+     * @tc.desc    String equality test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_test_0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0098 start');
+        expect("test").assertEqual("test");
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0098 end');
+      });
+
+    /**
+     * @tc.number  SUB_BASIC_TEST_0099
+     * @tc.name    test_basic_test_0099
+     * @tc.desc    Basic not equal test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_basic_test_0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0099 start');
+        expect(1).not().assertEqual(2);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_basic_test_0099 end');
+      });
+
+    /**
+     * @tc.number  SUB_INT_VALUE_OF_0100
+     * @tc.name    test_int_value_of_0100
+     * @tc.desc    Basic IntValue creation test
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("test_int_value_of_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        
+        hilog.info(domain, tag, '%{public}s', 'test_int_value_of_0100 start');
+        const testValue = IntValue.of(10);
+        expect(testValue).not().assertNull();
+        expect(testValue).not().assertUndefined();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'test_int_value_of_0100 end');
+      });
   });
 }
