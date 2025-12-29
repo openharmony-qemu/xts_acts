@@ -50,7 +50,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\b', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%08=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -71,7 +72,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\f', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%0C=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -92,7 +94,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\n', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%0A=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -113,7 +116,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\r', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%0D=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -134,7 +138,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\t', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%09=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -155,7 +160,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\v', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%0B=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -176,7 +182,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\x24', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%24=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -197,7 +204,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\\开', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%5C%E5%BC%80=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -218,7 +226,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\\😊', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%5C%F0%9F%98%8A=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -239,7 +248,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\\0', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%5C0=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -260,7 +270,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\\b', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%5Cb=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -281,7 +292,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\b');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -302,7 +314,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\f');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -323,7 +336,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -344,7 +358,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -365,7 +380,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -386,7 +402,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\v');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -407,7 +424,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\x24');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -428,7 +446,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\u5f00');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -449,7 +468,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\\😊');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -470,7 +490,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\0');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -491,7 +512,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\\b');
         expect(paramsObject.toString()).assertEqual("bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -512,7 +534,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\b', '3');
         expect(params.getAll('\b').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -533,7 +556,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\f', '3');
         expect(params.getAll('\f').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -554,7 +578,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('', '3');
         expect(params.getAll('').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -575,7 +600,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('', '3');
         expect(params.getAll('').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -596,7 +622,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('', '3');
         expect(params.getAll('').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -617,7 +644,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\v', '3');
         expect(params.getAll('\v').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -638,7 +666,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\x24', '3');
         expect(params.getAll('\x24').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -659,7 +688,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u5f00', '3');
         expect(params.getAll('\u5f00').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -680,7 +710,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u1F60A', '3');
         expect(params.getAll('\u1F60A').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -701,7 +732,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\0', '3');
         expect(params.getAll('\0').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -722,7 +754,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\\b', '3');
         expect(params.getAll('\\b').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -759,14 +792,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0002
-     * @tc.number testUrlParams9Entries9Escape0002
-     * @tc.desc   testUrlParams9Entries9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0002";
     //   try {
@@ -790,14 +815,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0003
-     * @tc.number testUrlParams9Entries9Escape0003
-     * @tc.desc   testUrlParams9Entries9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0003";
     //   try {
@@ -821,14 +838,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0004
-     * @tc.number testUrlParams9Entries9Escape0004
-     * @tc.desc   testUrlParams9Entries9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0004";
     //   try {
@@ -852,14 +861,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0005
-     * @tc.number testUrlParams9Entries9Escape0005
-     * @tc.desc   testUrlParams9Entries9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0005";
     //   try {
@@ -883,14 +884,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0006
-     * @tc.number testUrlParams9Entries9Escape0006
-     * @tc.desc   testUrlParams9Entries9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0006";
     //   try {
@@ -914,14 +907,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0007
-     * @tc.number testUrlParams9Entries9Escape0007
-     * @tc.desc   testUrlParams9Entries9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0007";
     //   try {
@@ -945,14 +930,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0008
-     * @tc.number testUrlParams9Entries9Escape0008
-     * @tc.desc   testUrlParams9Entries9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0008";
     //   try {
@@ -976,14 +953,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0009
-     * @tc.number testUrlParams9Entries9Escape0009
-     * @tc.desc   testUrlParams9Entries9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0009";
     //   try {
@@ -1007,14 +976,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0010
-     * @tc.number testUrlParams9Entries9Escape0010
-     * @tc.desc   testUrlParams9Entries9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0010";
     //   try {
@@ -1038,14 +999,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0011
-     * @tc.number testUrlParams9Entries9Escape0011
-     * @tc.desc   testUrlParams9Entries9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0011";
     //   try {
@@ -1082,7 +1035,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1109,7 +1063,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1136,7 +1091,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1163,7 +1119,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1190,7 +1147,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1217,7 +1175,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1244,7 +1203,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1271,7 +1231,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1298,7 +1259,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1325,7 +1287,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1352,7 +1315,8 @@ export default function Escape_Url() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1372,7 +1336,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\b');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\b");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1391,7 +1356,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\f');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\f");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1410,7 +1376,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\nworld');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\nworld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1429,7 +1396,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\rworld');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\rworld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1448,7 +1416,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\tworld');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\tworld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1467,7 +1436,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\vworld');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\vworld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1486,7 +1456,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\x24world');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\x24world");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1505,7 +1476,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\\开world');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\\开world");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1524,7 +1496,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\\😊world');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\\😊world");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1543,7 +1516,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\\0world');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\\0world");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1562,7 +1536,8 @@ export default function Escape_Url() {
       try {
         let paramsObject = new Url.URLParams('escape=hello\\bworld');
         expect(paramsObject.get("escape")?.toString()).assertEqual("hello\\bworld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1585,7 +1560,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1608,7 +1584,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1631,7 +1608,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1654,7 +1632,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1677,7 +1656,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1700,7 +1680,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1723,7 +1704,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1746,7 +1728,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1769,7 +1752,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1792,7 +1776,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1815,7 +1800,8 @@ export default function Escape_Url() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1837,7 +1823,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\b', 'backspace');
         expect(paramsObject.get('\b')).assertEqual('backspace');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1858,7 +1845,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\f', 'pageBreak');
         expect(paramsObject.get('\f')).assertEqual('pageBreak');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1879,7 +1867,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\n', 'newLine');
         expect(paramsObject.get('\n')).assertEqual('newLine');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1900,7 +1889,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\r', 'carriageReturn');
         expect(paramsObject.get('\r')).assertEqual('carriageReturn');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1921,7 +1911,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\t', 'tab');
         expect(paramsObject.get('\t')).assertEqual('tab');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1942,7 +1933,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\v', 'verticalTab');
         expect(paramsObject.get('\v')).assertEqual('verticalTab');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1963,7 +1955,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\x24', 'dollar');
         expect(paramsObject.get('\x24')).assertEqual('dollar');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1984,7 +1977,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\\开', 'open');
         expect(paramsObject.get('\\开')).assertEqual('open');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2005,7 +1999,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\\😊', 'emoji');
         expect(paramsObject.get('\\😊')).assertEqual('emoji');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2026,7 +2021,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\\0', 'null');
         expect(paramsObject.get('\\0')).assertEqual('null');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2047,7 +2043,8 @@ export default function Escape_Url() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\\b', '\\b');
         expect(paramsObject.get('\\b')).assertEqual('\\b');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2082,14 +2079,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0002
-     * @tc.number testUrlParams9Keys9Escape0002
-     * @tc.desc   testUrlParams9Keys9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0002";
     //   try {
@@ -2110,14 +2099,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0003
-     * @tc.number testUrlParams9Keys9Escape0003
-     * @tc.desc   testUrlParams9Keys9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0003";
     //   try {
@@ -2138,14 +2119,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0004
-     * @tc.number testUrlParams9Keys9Escape0004
-     * @tc.desc   testUrlParams9Keys9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0004";
     //   try {
@@ -2166,14 +2139,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0005
-     * @tc.number testUrlParams9Keys9Escape0005
-     * @tc.desc   testUrlParams9Keys9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0005";
     //   try {
@@ -2194,14 +2159,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0006
-     * @tc.number testUrlParams9Keys9Escape0006
-     * @tc.desc   testUrlParams9Keys9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0006";
     //   try {
@@ -2222,14 +2179,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0007
-     * @tc.number testUrlParams9Keys9Escape0007
-     * @tc.desc   testUrlParams9Keys9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0007";
     //   try {
@@ -2250,14 +2199,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0008
-     * @tc.number testUrlParams9Keys9Escape0008
-     * @tc.desc   testUrlParams9Keys9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0008";
     //   try {
@@ -2278,14 +2219,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0009
-     * @tc.number testUrlParams9Keys9Escape0009
-     * @tc.desc   testUrlParams9Keys9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0009";
     //   try {
@@ -2306,14 +2239,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0010
-     * @tc.number testUrlParams9Keys9Escape0010
-     * @tc.desc   testUrlParams9Keys9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0010";
     //   try {
@@ -2334,14 +2259,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0011
-     * @tc.number testUrlParams9Keys9Escape0011
-     * @tc.desc   testUrlParams9Keys9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0011";
     //   try {
@@ -2362,14 +2279,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0001
-     * @tc.number testUrlValues9Escape0001
-     * @tc.desc   testUrlValues9Escape0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0001";
     //   try {
@@ -2390,14 +2299,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0002
-     * @tc.number testUrlValues9Escape0002
-     * @tc.desc   testUrlValues9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0002";
     //   try {
@@ -2418,14 +2319,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0003
-     * @tc.number testUrlValues9Escape0003
-     * @tc.desc   testUrlValues9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0003";
     //   try {
@@ -2446,14 +2339,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0004
-     * @tc.number testUrlValues9Escape0004
-     * @tc.desc   testUrlValues9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0004";
     //   try {
@@ -2474,14 +2359,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0005
-     * @tc.number testUrlValues9Escape0005
-     * @tc.desc   testUrlValues9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0005";
     //   try {
@@ -2502,14 +2379,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0006
-     * @tc.number testUrlValues9Escape0006
-     * @tc.desc   testUrlValues9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0006";
     //   try {
@@ -2530,14 +2399,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0007
-     * @tc.number testUrlValues9Escape0007
-     * @tc.desc   testUrlValues9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0007";
     //   try {
@@ -2558,14 +2419,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0008
-     * @tc.number testUrlValues9Escape0008
-     * @tc.desc   testUrlValues9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0008";
     //   try {
@@ -2586,14 +2439,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0009
-     * @tc.number testUrlValues9Escape0009
-     * @tc.desc   testUrlValues9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0009";
     //   try {
@@ -2613,14 +2458,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0010
-     * @tc.number testUrlValues9Escape0010
-     * @tc.desc   testUrlValues9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0010";
     //   try {
@@ -2641,14 +2478,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0011
-     * @tc.number testUrlValues9Escape0011
-     * @tc.desc   testUrlValues9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0011";
     //   try {
@@ -2676,7 +2505,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\b');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%08');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2697,7 +2527,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\f');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%0C');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2718,7 +2549,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\n');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%0A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2739,7 +2571,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\r');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%0D');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2760,7 +2593,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\t');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%09');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2781,7 +2615,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\v');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%0B');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2802,7 +2637,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\x24');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%24');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2823,7 +2659,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\开');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%E5%BC%80');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2844,7 +2681,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\😊');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%F0%9F%98%8A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2865,7 +2703,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\0');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%00');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2886,7 +2725,8 @@ export default function Escape_Url() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('escape', '\\b');
         expect(params.toString()).assertEqual('fod=1&bard=2&escape=%5Cb');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2911,7 +2751,8 @@ export default function Escape_Url() {
         expect(url1.toString()).assertEqual('https://www.example.com/test/' + temp1);
         let temp2 = '%08/path2';
         expect(url2.toString()).assertEqual('https://www.example.com/' + temp2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2930,7 +2771,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\b/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -2956,7 +2798,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2975,7 +2818,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\f/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3001,7 +2845,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3020,7 +2865,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\n/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3046,7 +2892,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3065,7 +2912,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\r/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3091,7 +2939,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3110,7 +2959,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\t/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3135,7 +2985,8 @@ export default function Escape_Url() {
         expect(url1.toString()).assertEqual('https://www.example.com/test/' + temp1);
         let temp2 = '%0B/path2';
         expect(url2.toString()).assertEqual('https://www.example.com/' + temp2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3154,7 +3005,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\v/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3180,7 +3032,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3199,7 +3052,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\x24/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3225,7 +3079,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3244,7 +3099,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\开/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3270,7 +3126,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3289,7 +3146,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\😊/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3315,7 +3173,8 @@ export default function Escape_Url() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3334,7 +3193,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\0/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3355,12 +3215,13 @@ export default function Escape_Url() {
         let urlString2 = '/\\b/path2';
         let url1 = Url.URL.parseURL(urlString1, 'https://www.example.com/test/test1');
         let url2 = Url.URL.parseURL(urlString2, 'https://www.example.com/test/test1');
-        let temp1 = '%5Cb/path2';
+        let temp1 = '\\b/path2';
         let rstUrl1 = 'https://www.example.com/test/' + temp1;
         let rstUrl2 = 'https://b/path2';
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3379,7 +3240,8 @@ export default function Escape_Url() {
       try {
         let url3 = Url.URL.parseURL('/\\b/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3399,7 +3261,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\b');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3419,7 +3282,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\f');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3439,7 +3303,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\n');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3459,7 +3324,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\r');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3479,7 +3345,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\t');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3499,7 +3366,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\v');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3519,7 +3387,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\x24');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/$');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3539,7 +3408,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\开');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%E5%BC%80');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3559,7 +3429,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\😊');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%98%8A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3579,7 +3450,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\0');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3598,7 +3470,8 @@ export default function Escape_Url() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\\b');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory//b');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

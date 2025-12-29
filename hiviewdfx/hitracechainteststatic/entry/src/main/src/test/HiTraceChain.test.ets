@@ -13,13 +13,17 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level , beforeEach} from "../../../hypium/index";
 import hiTraceChain from "@ohos.hiTraceChain"
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 
 export default function hiTraceChainJsTest() {
   describe("hiTraceChainJsTest", (): void => {
+
+    beforeEach(() => {
+      hiTraceChain.clearId();
+    })
     /**
      * @tc.name   testHitraceApiStatic01
      * @tc.number DFX_DFT_Hitrace_JS_Static_001
@@ -318,7 +322,10 @@ export default function hiTraceChainJsTest() {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic12 start');
       try {
         let traceId = hiTraceChain.begin("hitrace12", hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        let traceIdIsvalid = hiTraceChain.isValid(traceId);
+        expect(traceIdIsvalid).assertTrue()
         let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        expect(enabledDoNotCreateSpanFlag).assertTrue()
         if(!enabledDoNotCreateSpanFlag){
           expect().assertFail();
         }
@@ -333,6 +340,25 @@ export default function hiTraceChainJsTest() {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic12 end');
       done()
     });
+
+    /**
+     * @tc.name   testHitraceApiStatic14
+     * @tc.number DFX_DFT_Hitrace_JS_Static_01400
+     * @tc.desc   接口测试-跟踪业务名为长度大于32位
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHitraceApiStatic14', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic14 start');
+      let traceId = hiTraceChain.getId()
+      let traceIdIsvalid = hiTraceChain.isValid(traceId);
+      let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+      expect(traceIdIsvalid).assertFalse()
+      expect(enabledDoNotCreateSpanFlag).assertFalse()
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic14 end');
+      done();
+    })
 
     /**
      * @tc.name   testHitraceApiStatic15

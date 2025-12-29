@@ -72,7 +72,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate1Jsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('StateDate1Jsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0100 START');
       let strJson = getInspectorByKey('date2');
@@ -92,7 +92,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0200 START');
       let driver = await UiDriver.create()
@@ -116,7 +116,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0300 START');
       let driver = await UiDriver.create()
@@ -140,7 +140,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0400 START');
       let driver = await UiDriver.create()
@@ -164,7 +164,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0500 START');
       let driver = await UiDriver.create()
@@ -188,7 +188,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0600 START');
       let driver = await UiDriver.create()
@@ -212,7 +212,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0700', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0700', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0700 START');
       let driver = await UiDriver.create()
@@ -236,7 +236,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0800', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0800', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0800 START');
       let driver = await UiDriver.create()
@@ -260,7 +260,7 @@ export default function StateDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateDate2Jsunit_0900', Level.LEVEL0, async (done: Function) => {
+    it('StateDate2Jsunit_0900', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateDate2Jsunit_0900 START');
       let driver = await UiDriver.create()

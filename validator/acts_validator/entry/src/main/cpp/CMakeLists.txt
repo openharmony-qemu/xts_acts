@@ -54,6 +54,11 @@ add_library(nativeDragEvent SHARED
     dragEvent/DataLoadingDragEventTest.cpp
     dragEvent/ContainerTest.cpp )
 
+add_library(nativeSourceType SHARED
+    sourceType/PluginManagerTest.cpp
+    sourceType/SourceTypeTest.cpp
+    NativeSourceTypeTest.cpp )
+
 
 find_library(
     # Sets the name of the path variable.
@@ -112,6 +117,8 @@ target_link_libraries(nativeNode PUBLIC
 target_link_libraries(nativegamecrontroller PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 target_link_libraries(nativeKeyEvent PUBLIC
+    ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
+target_link_libraries(nativeSourceType PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 
 target_link_libraries(nativeDragEvent PUBLIC libace_napi.z.so)

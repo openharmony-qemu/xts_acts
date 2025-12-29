@@ -17,6 +17,8 @@ group("UxOneTest") {
     deps = [
       "ace_ets_component_GeneralLayout:ActsGeneralLayoutTest",
       "ace_ets_component_PrivacySensitive:ActsAcePrivacySensitiveTest",
+      "ace_ets_component_GeneralLayout_static:ActsGeneralLayoutStaticTest",
+      "ace_ets_component_PrivacySensitive_static:ActsAcePrivacySensitiveStaticTest",
     ]
   }
 }

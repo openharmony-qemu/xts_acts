@@ -11,6 +11,10 @@
         "MainAbility/pages/Grid/gridNode",
         "MainAbility/pages/Grid/gridItemNode",
         "MainAbility/pages/Grid/nodeTypeGrid",
+        "MainAbility/pages/Grid/rowColumnMin",
+        "MainAbility/pages/Grid/cellLengthMin",
+        "MainAbility/pages/Grid/cachedGridMin",
+        "MainAbility/pages/Grid/cachedShowGridMin",
         "MainAbility/pages/Grid/cachedShowGrid",
         "MainAbility/pages/Grid/setGridEvent",
         "MainAbility/pages/LazyVGridLayout/LazyVGridLayout",
@@ -22,6 +26,9 @@
         "MainAbility/pages/Grid/gridDraggingFling",
         "MainAbility/pages/Grid/gridScrollbarColor",
         "MainAbility/pages/Grid/GridFillPolicy",
-        "MainAbility/pages/Grid/GridContentSize"
+        "MainAbility/pages/Grid/GridContentSize",
+        "MainAbility/pages/Grid/gridOffsetRes",
+        "MainAbility/pages/Grid/gridContentOffset",
+        "MainAbility/pages/Grid/GridFillPolicyModifier"
     ]
 }

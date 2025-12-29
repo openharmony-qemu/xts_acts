@@ -23,6 +23,15 @@ namespace Display {
 napi_value CaptureScreenPixelmapInvalidParamOrDeviceNotSupported(napi_env env, napi_callback_info info);
 napi_value CaptureScreenPixelmapNoPermission(napi_env env, napi_callback_info info);
 
+napi_value TestCaptureScreenPixelmapBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestCreateDisplayByIdBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterAvailableAreaChangeListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestCreateAvailableAreaBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterDisplayAddListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterDisplayRemoveListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestGetDisplaySourceModeBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestGetDisplayPositionBoundaryValue(napi_env env, napi_callback_info info);
+
 };
 
 #endif //ACTSWINDOWNDKAPI20TEST_DISPLAY_H

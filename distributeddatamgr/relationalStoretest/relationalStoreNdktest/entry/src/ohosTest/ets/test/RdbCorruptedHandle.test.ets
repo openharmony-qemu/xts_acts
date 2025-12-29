@@ -24,8 +24,9 @@ export default function reltioanlStoreCorruptedTest() {
     beforeAll(() => {
       console.info( TAG + "beforeAll" );
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       console.info( TAG + "beforeEach" );
+      await testndk.async();
     })
     afterEach(() => {
       console.info( TAG + "afterEach" );

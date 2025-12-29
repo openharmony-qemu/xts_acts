@@ -1175,6 +1175,27 @@ export default function sensorTypeNdkTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.number SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.desc   SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Sensor_NDK_Sensor_Result_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let result: number = sensor.sensor_Result_0100();
+        console.info(`====>SUB_Sensor_NDK_Sensor_Result_0100 result: ${result}`);
+        expect(result == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Sensor_NDK_Sensor_Result_0100 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    });
+
   })
 }
     

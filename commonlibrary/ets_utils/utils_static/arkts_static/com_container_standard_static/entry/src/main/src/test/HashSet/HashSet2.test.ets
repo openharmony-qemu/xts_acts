@@ -41,7 +41,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<number>();
         expect(String(hashSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -61,7 +62,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -83,7 +85,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.clear()
         expect(String(hashSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -104,7 +107,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.add(1);
         expect(String(hashSet.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -124,7 +128,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -148,7 +153,8 @@ export default function hasSetTest2() {
         hashSet.add(param);
         let result = hashSet.has(param);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -167,7 +173,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<number>();
         expect(String(hashSet.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -187,7 +194,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.isEmpty())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -208,7 +216,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.remove(1);
         expect(String(hashSet.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -229,7 +238,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.clear();
         expect(String(hashSet.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -248,7 +258,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<string>();
         expect(String(hashSet.has(""))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -262,14 +273,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetHas0002
-     * @tc.number testHashSetHas0002
-     * @tc.desc   testHashSetHas0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetHas0002';
     //   try {
@@ -289,14 +292,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetHas0003
-     * @tc.number testHashSetHas0003
-     * @tc.desc   testHashSetHas0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetHas0003';
     //   try {
@@ -321,7 +316,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<string>();
         expect(String(hashSet.has('value'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -341,7 +337,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.has(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -361,7 +358,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.has(2))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -383,7 +381,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.clear();
         expect(String(hashSet.has(1))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -404,7 +403,8 @@ export default function hasSetTest2() {
         hashSet.add("");
         let result = hashSet.length == 1 && hashSet.has("");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -425,7 +425,8 @@ export default function hasSetTest2() {
         hashSet.add("a");
         let result = hashSet.length == 1 && hashSet.has("a");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -439,14 +440,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetAdd0003
-     * @tc.number testHashSetAdd0003
-     * @tc.desc   testHashSetAdd0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetAdd0003';
     //   try {
@@ -468,14 +461,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetAdd0004
-     * @tc.number testHashSetAdd0004
-     * @tc.desc   testHashSetAdd0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetAdd0004';
     //   try {
@@ -505,7 +490,8 @@ export default function hasSetTest2() {
         hashSet.add(param);
         let result = hashSet.length == 1 && hashSet.has(param);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -530,7 +516,8 @@ export default function hasSetTest2() {
           expect(String(hashSet.has(i))).assertEqual('true')
         }
         expect(String(hashSet.length)).assertEqual('1000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -553,7 +540,8 @@ export default function hasSetTest2() {
         hashSet.clear();
         let result = hashSet.length == 1 && hashSet.has(1);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -572,7 +560,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<string>();
         expect(String(hashSet.remove(""))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -586,14 +575,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetRemove0002
-     * @tc.number testHashSetRemove0002
-     * @tc.desc   testHashSetRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetRemove0002';
     //   try {
@@ -613,14 +594,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetRemove0003
-     * @tc.number testHashSetRemove0003
-     * @tc.desc   testHashSetRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetRemove0003';
     //   try {
@@ -645,7 +618,8 @@ export default function hasSetTest2() {
       try {
         const hashSet = new HashSet<string>();
         expect(String(hashSet.remove("a"))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -665,7 +639,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.remove(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -685,7 +660,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.add(1);
         expect(String(hashSet.remove(2))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -707,7 +683,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.clear();
         expect(String(hashSet.remove(1))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -727,7 +704,8 @@ export default function hasSetTest2() {
         const hashSet = new HashSet<number>();
         hashSet.clear();
         expect(String(hashSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -748,7 +726,8 @@ export default function hasSetTest2() {
         hashSet.add(1);
         hashSet.clear();
         expect(String(hashSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -770,7 +749,8 @@ export default function hasSetTest2() {
         hashSet.clear();
         hashSet.add(1);
         expect(String(hashSet.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -791,7 +771,8 @@ export default function hasSetTest2() {
         let values = hashSet.values();
         let temp = values.next()
         expect(String(temp.done)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -822,7 +803,8 @@ export default function hasSetTest2() {
           }
           temp = values.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -843,7 +825,8 @@ export default function hasSetTest2() {
         hashSet.forEach((value?: number, key?: number) => {
           expect(String(hashSet.length)).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -870,7 +853,8 @@ export default function hasSetTest2() {
           index++;
         });
         expect(String(hashSet.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -893,7 +877,8 @@ export default function hasSetTest2() {
           hashSet.add(2);
           expect(String(hashSet.length)).assertEqual('2');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -916,20 +901,13 @@ export default function hasSetTest2() {
           hashSet.clear();
           expect(String(hashSet.length)).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
-    //  * @tc.name      : testHashSetForEach0005
-    //  * @tc.desc      : Testing HashSet has data and ArgThis
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
     /**
      * @tc.name   testHashSetForEach0005
      * @tc.number testHashSetForEach0005
@@ -938,24 +916,25 @@ export default function hasSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetForEach0005';
-    //   try {
-    //     const hashSet = new HashSet<number>();
-    //     const hashSetNew = new HashSet<number>();
-    //     hashSetNew.add(1);
-    //     hashSet.add(1);
-    //     hashSet.forEach((value?: number) => {
-    //       hashSet.clear();
-    //       expect(String(hashSet.length)).assertEqual('0');
-    //     }, hashSetNew);
-    //     expect(hashSetNew.length).assertEqual(1);
-    //     expect(hashSetNew.has(1)).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHashSetForEach0005';
+      try {
+        const hashSet = new HashSet<number>();
+        const hashSetNew = new HashSet<number>();
+        hashSetNew.add(1);
+        hashSet.add(1);
+        hashSet.forEach((value : number, hashSetNew) => {
+          hashSet.clear();
+          expect(String(hashSet.length)).assertEqual('0');
+        });
+        expect(hashSetNew.length).assertEqual(1);
+        expect(hashSetNew.has(1)).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHashSetForEach0006
@@ -974,7 +953,8 @@ export default function hasSetTest2() {
           hashSet.clear();
           expect(String(hashSet.length)).assertEqual('0');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -998,7 +978,8 @@ export default function hasSetTest2() {
           expect(String(hashSet.length)).assertEqual('0');
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1030,7 +1011,8 @@ export default function hasSetTest2() {
           temp = entries.next();
         }
         expect(String(hashSet.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1056,7 +1038,8 @@ export default function hasSetTest2() {
           expect(String(hashSet.length)).assertEqual('2');
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1082,7 +1065,8 @@ export default function hasSetTest2() {
           expect(String(hashSet.length)).assertEqual('0');
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1106,7 +1090,8 @@ export default function hasSetTest2() {
           expect(String(hashSet.length)).assertEqual('0')
           temp = iter.next()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1139,7 +1124,8 @@ export default function hasSetTest2() {
           temp = iter.next()
         }
         expect(String(hashSet.length)).assertEqual("3")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1174,10 +1160,32 @@ export default function hasSetTest2() {
         expect(String(removeResult)).assertEqual('true')
         hashSet.clear()
         expect(String(hashSet.length)).assertEqual('0')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
+
+    /**
+     * @tc.name   testHashSetLength0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_LENGTH_1700
+     * @tc.desc   Testing HashSet remove->add->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashSetLength0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const hashSet = new HashSet<number>();
+      expect(String(hashSet.length)).assertEqual('0');
+      hashSet.add(1);
+      hashSet.add(1);
+      hashSet.add(1);
+      hashSet.add(1);
+      expect(String(hashSet.length)).assertEqual('1');
+      hashSet.add(2);
+      expect(String(hashSet.length)).assertEqual('2');
+    });
+
   })
 }

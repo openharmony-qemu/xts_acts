@@ -137,6 +137,21 @@ export default function audioNDK() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_NDK_WORK_GROUP_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_NDK_WORK_GROUP_0200
+     * @tc.desc   test OH_AudioStreamBuilder_GenerateCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_NDK_WORK_GROUP_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioWorkGroup_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_WORK_GROUP_0200 AudioWorkGroup_001 builder result: ${result}`);
+      expect(result).assertEqual(0)
+      done()
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_NDK_GERNERTATE_CAPTURER_ERR_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_NDK_GERNERTATE_CAPTURER_ERR_0100
      * @tc.desc   test OH_AudioStreamBuilder is not instantiated in OH_AudioStreamBuilder_GenerateCapturer
@@ -943,6 +958,20 @@ export default function audioNDK() {
       done()
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_LATENCY_MODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_LATENCY_MODE_0200
+     * @tc.desc   test OH_AudioStreamBuilder_SetLatencyMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_LATENCY_MODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilderSetLatencyMode_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_LATENCY_MODE_0200 aSetLatencyMode: ${result}`);
+      expect(result).assertEqual(0)
+      done()
+    })
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_RENDERER_INFO_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_RENDERER_INFO_0100
      * @tc.desc   test OH_AudioStreamBuilder_SetRendererInfo
@@ -967,6 +996,20 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.audioStreamBuilderSetCapturerInfo();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0100 aSetCapturerInfo: ${result}`);
+      expect(result).assertEqual(0)
+      done()
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0200
+     * @tc.desc   test OH_AudioStreamBuilder_SetCapturerInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamBuilderSetCapturerInfo_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_STREAM_BUILDER_SET_CAPTURER_INFO_0200 aSetCapturerInfo: ${result}`);
       expect(result).assertEqual(0)
       done()
     })
@@ -4501,6 +4544,146 @@ export default function audioNDK() {
       done();
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_005();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_005 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_006();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_006 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_007();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_007 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_008();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_008 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_009();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_009 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_010();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_010 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_011();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_011 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_012();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_012 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_013();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_013 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014
+     * @tc.desc   audioSessionManagerAvailableDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioSessionManagerAvailableDevices_014();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_014 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })    
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
      * @tc.desc   BluetoothAndNearlinkPreferredRecordCategory
@@ -4514,5 +4697,19 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001
+     * @tc.number SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001
+     * @tc.desc   Audiocommon_Result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.AudioCommonResult_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })    
   })
 }

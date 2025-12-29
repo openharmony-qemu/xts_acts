@@ -47,6 +47,10 @@ import stageAnimatorTest from './StageAnimator.test';
 import RippleFields from './Particle/RippleFields.test';
 import VelocityFields from './Particle/VelocityFields.test';
 import UIContextAnimateToImmediately from './AnimatorResultTest/UIContextAnimateToImmediately.test'
+import StepsCurveComponent from './StepsCurveComponent.test';
+import CurvesSpringMotion from './CurvesSpringMotion.test';
+import AnimatorEase from './Animation/AnimatorEase.test';
+import ExcludeFromRenderGroupDemo from './ExcludeFromRenderGroupDemo.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -82,5 +86,9 @@ export default function testsuite() {
   stageAnimatorTest();
   RippleFields();
   VelocityFields();
-  UIContextAnimateToImmediately(); 
+  UIContextAnimateToImmediately();
+  StepsCurveComponent();
+  CurvesSpringMotion();
+  AnimatorEase();
+  ExcludeFromRenderGroupDemo();
 }

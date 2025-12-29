@@ -39,6 +39,34 @@ export default function curvesJsunit() {
       done()
     });
 
+
+    /**
+     * @tc.name   curvesJsunit_0010
+     * @tc.number curvesJsunit_0010
+     * @tc.desc   Test Enumerated value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('curvesJsunit_0010',  Level.LEVEL0, async (done: Function) => {
+      console.info('curvesJsunit_0010 START');
+      expect(Curve.Linear).assertEqual('linear');
+      expect(Curve.Ease).assertEqual('ease');
+      expect(Curve.EaseIn).assertEqual('ease-in');
+      expect(Curve.EaseOut).assertEqual('ease-out');
+      expect(Curve.EaseInOut).assertEqual('ease-in-out');
+      expect(Curve.FastOutSlowIn).assertEqual('fast-out-slow-in');
+      expect(Curve.LinearOutSlowIn).assertEqual('linear-out-slow-in');
+      expect(Curve.FastOutLinearIn).assertEqual('fast-out-linear-in');
+      expect(Curve.ExtremeDeceleration).assertEqual('extreme-deceleration');
+      expect(Curve.Sharp).assertEqual('sharp');
+      expect(Curve.Rhythm).assertEqual('rhythm');
+      expect(Curve.Smooth).assertEqual('smooth');
+      expect(Curve.Friction).assertEqual('friction');
+      console.log('[curvesJsunit_0010] END');
+      done();
+    });
+
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("curves after each called");

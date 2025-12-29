@@ -412,5 +412,66 @@ export default function hidebughiperfTest() {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 end");
     });
 
+    /**
+     * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300
+     * @tc.name testHidebugHiperfInterface13
+     * @tc.desc 错误码覆盖
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHidebugHiperfInterface13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 start");
+      try {
+        expect(testNapi.CHECK_HIDEBUG_TRACE_ABNORMAL() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_TRACE_ABNORMAL");
+        expect(testNapi.CHECK_HIDEBUG_NO_PERMISSION() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_NO_PERMISSION");
+        expect(testNapi.CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS");
+        expect(testNapi.CHECK_HIDEBUG_NOT_SUPPORTED() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_NOT_SUPPORTED");
+        expect(testNapi.CHECK_HIDEBUG_UNDER_SAMPLING() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_UNDER_SAMPLING");
+        expect(testNapi.CHECK_HIDEBUG_RESOURCE_UNAVAILABLE() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_RESOURCE_UNAVAILABLE");
+        expect(testNapi.CHECK_HICOLLIE_REMOTE_FAILED() == true).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HICOLLIE_REMOTE_FAILED");
+        expect(testNapi.CHECK_OH_HiDebug_CreateBacktraceObject() == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400
+     * @tc.name testHidebugHiperfInterface14
+     * @tc.desc 空指针覆盖
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('testHidebugHiperfInterface14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 start");
+      try {
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_ThreadCpuUsage");
+        expect(testNapi.CHECK_ThreadCpuUsage() == 1).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_OH_HiDebug_GetDefaultMallocDispatchTable");
+        expect(testNapi.CHECK_OH_HiDebug_GetDefaultMallocDispatchTable() == 1).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_OH_HiDebug_CreateBacktraceObject");
+        expect(testNapi.CHECK_OH_HiDebug_CreateBacktraceObject() == 1).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 end");
+        done();
+
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
   })
 }

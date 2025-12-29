@@ -64,6 +64,11 @@ struct MultiEntryUndefined {
           console.log('MultiNavigation test getParamByIndex ', index)
           AppStorage.setOrCreate('index', index)
         }).height('5%')
+        Button('getParamByIndex-1').onClick(() => {
+          let index = this.multiStack.getParamByIndex(-1);
+          console.log('MultiNavigation test getParamByIndex ', index)
+          AppStorage.setOrCreate('index', index)
+        }).height('5%')
         Button('getParamByNameEmpty').onClick(() => {
           let params = this.multiStack.getParamByName('1');
           console.log('MultiNavigation test getParamByIndex ', params.length)

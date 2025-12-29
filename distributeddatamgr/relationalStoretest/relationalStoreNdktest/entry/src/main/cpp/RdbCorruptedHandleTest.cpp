@@ -29,6 +29,10 @@
 #include "database/rdb/relational_store.h"
 #include "database/rdb/relational_store_error_code.h"
 #include "database/rdb/oh_rdb_types.h"
+#include "napi_async_call.h"
+ 
+ 
+using namespace NdkTest;
 
 const char *TAG = "testLog";
 #define DIRMODE 0770
@@ -138,6 +142,19 @@ void TransInsertData(int count, OH_Rdb_Transaction *trans, const char *table)
         int ret = OH_RdbTrans_Insert(trans, table, valueBucket2, &rowId);
         valueBucket2->destroy(valueBucket2);
     }
+}
+
+static napi_value async(napi_env env, napi_callback_info info)
+{
+    auto context = std::make_shared<ContextBase>();
+    auto exec = [context]() -> int {
+        return 10;
+    };
+    auto output = [context](napi_env env, napi_value &result) {
+        napi_create_int32(env, context->execCode_, &result);
+    };
+    context->SetAction(env, info, exec, output);
+    return AsyncCall::Async(env, context);
 }
 
 static napi_value RdbStoreCorruptHandlerTest_0100(napi_env env, napi_callback_info info)
@@ -975,6 +992,7 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
+        { "async", nullptr, async, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RdbStoreCorruptHandlerTest_0100", nullptr, RdbStoreCorruptHandlerTest_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RdbStoreCorruptHandlerTest_0200", nullptr, RdbStoreCorruptHandlerTest_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "RdbStoreCorruptHandlerTest_0300", nullptr, RdbStoreCorruptHandlerTest_0300, nullptr, nullptr, nullptr, napi_default, nullptr },

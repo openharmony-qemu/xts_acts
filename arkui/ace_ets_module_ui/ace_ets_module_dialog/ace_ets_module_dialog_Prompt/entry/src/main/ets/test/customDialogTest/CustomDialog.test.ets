@@ -20,6 +20,7 @@ import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
+import { promptAction } from '@kit.ArkUI';
 
 
 
@@ -76,7 +77,132 @@ export default function CustomDialog() {
       done();
     });
 
-
+    /**
+     * @tc.number    CommonState_0100
+     * @tc.name      CommonState_0100
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0100 START');
+      expect(promptAction.CommonState.UNINITIALIZED).assertEqual(0)
+      console.info('CommonState_0100 END');
+      done();
+    });
+    /**
+     * @tc.number    CommonState_0200
+     * @tc.name      CommonState_0200
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0200 START');
+      expect(promptAction.CommonState.INITIALIZED).assertEqual(1)
+      console.info('CommonState_0200 END');
+      done();
+    });
+    /**
+     * @tc.number    CommonState_0300
+     * @tc.name      CommonState_0300
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0300 START');
+      expect(promptAction.CommonState.APPEARING).assertEqual(2)
+      console.info('CommonState_0300 END');
+      done();
+    });
+    /**
+     * @tc.number    CommonState_0400
+     * @tc.name      CommonState_0400
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0400 START');
+      expect(promptAction.CommonState.APPEARED).assertEqual(3)
+      console.info('CommonState_0400 END');
+      done();
+    });
+    /**
+     * @tc.number    CommonState_0500
+     * @tc.name      CommonState_0500
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0500 START');
+      expect(promptAction.CommonState.DISAPPEARING).assertEqual(4)
+      console.info('CommonState_0500 END');
+      done();
+    });
+    /**
+     * @tc.number    CommonState_0600
+     * @tc.name      CommonState_0600
+     * @tc.desc      CommonState
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('CommonState_0600', Level.LEVEL2, async (done: Function) => {
+      console.info('CommonState_0600 START');
+      expect(promptAction.CommonState.DISAPPEARED).assertEqual(5)
+      console.info('CommonState_0600 END');
+      done();
+    });
+    /**
+     * @tc.number bindTips2_0300
+     * @tc.name bindTips2_0300
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0300", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0300 start');
+      expect(ArrowPointPosition.START).assertEqual('Start');
+      console.info('bindTips2_0300 end');
+      done();
+    })
+    /**
+     * @tc.number bindTips2_0400
+     * @tc.name bindTips2_0400
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0400", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0400 start');
+      expect(ArrowPointPosition.CENTER).assertEqual('Center');
+      console.info('bindTips2_0400 end');
+      done();
+    })
+    /**
+     * @tc.number bindTips2_0500
+     * @tc.name bindTips2_0500
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0500", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0500 start');
+      expect(ArrowPointPosition.END).assertEqual('End');
+      console.info('bindTips2_0500 end');
+      done();
+    })
   })
 }
 

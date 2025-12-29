@@ -77,6 +77,7 @@ public:
 
     //mediaAssetManager
     MediaLibrary_ErrorCode ManagerRequestImage(int useCaseCode);
+    MediaLibrary_ErrorCode ManagerQuickRequestImage(int useCaseCode);
     MediaLibrary_ErrorCode ManagerRequestMovingPhoto(int useCaseCode);
     MediaLibrary_ErrorCode ManagerRelease(int useCaseCode);
     OH_MediaAssetManager* GetMediaAssetManagerInstance();
@@ -122,6 +123,7 @@ private:
     MediaLibrary_RequestOptions requestOptions_; // request options for image request strategy mode
     OH_MediaLibrary_OnImageDataPrepared callback_; //request the image callback
     OH_MediaLibrary_OnMovingPhotoDataPrepared onMovingPhotoCallback_; // request the movingPhoto callback
+    OH_MediaLibrary_OnQuickImageDataPrepared OnQuickImageCallback_; // quick request the image callback
     MediaLibrary_RequestId requestId_; //request id
     MediaLibrary_ErrorCode ret_; // error code
 };

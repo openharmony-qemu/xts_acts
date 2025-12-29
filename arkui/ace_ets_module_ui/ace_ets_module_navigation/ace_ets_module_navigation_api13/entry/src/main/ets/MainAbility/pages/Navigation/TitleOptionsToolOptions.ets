@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { UIContext } from '@kit.ArkUI';
 
 let COLOR1: string = '#80004AAF';
 let COLOR2: string = '#802787D9';
@@ -64,6 +65,21 @@ struct ColorAndBlur {
             })
             .height('10%')
             .margin({top: '30%'})
+          Button('get').onClick(() => {
+            const uiContext: UIContext = this.getUIContext();
+            let inspectorStr = uiContext.getFilteredInspectorTreeById('NavIdTest', 0, ["id", "src"]);
+            console.info(`result1: ${inspectorStr}`);
+            inspectorStr = JSON.stringify(JSON.parse(inspectorStr)['$children'][0]);
+            console.info(`result2: ${inspectorStr}`);
+            inspectorStr = uiContext.getFilteredInspectorTreeById('NavIdTest', 0, ["src", "backgroundColor" , "backgroundBlurStyle"]);
+            let inspectorStr2: string = JSON.parse(inspectorStr)['$children'][0]?.$children[0]?.$attrs?.backgroundColor;
+            console.info(`result3: ${inspectorStr2}`);
+            let inspectorStr3: string = JSON.parse(inspectorStr)['$children'][0]?.$children[0]?.$attrs?.backgroundBlurStyle.value;
+            console.info(`result4: ${inspectorStr3}`);
+            AppStorage.setOrCreate('backgroundColor', inspectorStr2);
+            AppStorage.setOrCreate('backgroundBlurStyle', inspectorStr3);
+          })
+            .height('10%')
         }
         .width('100%')
         .height('100%')
@@ -72,6 +88,7 @@ struct ColorAndBlur {
     }
     .width('100%')
     .height('100%')
+    .id('NavIdTest')
     .title('Destination Title', {
       backgroundColor: this.useColor1 ? COLOR1 : COLOR2,
       backgroundBlurStyle: this.useBlur1 ? BLUR_STYLE_1 : BLUR_STYLE_2,

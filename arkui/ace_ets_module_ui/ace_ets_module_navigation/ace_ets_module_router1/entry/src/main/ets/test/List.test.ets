@@ -133,8 +133,10 @@ import stageRouterTest from './Router2/stageRouter.test'
 import routerReplaceJsunit from './Router2/routerReplaceJsunit.test';
 import systemRouterJsunit from './Router2/SystemRouterJsunit.test';
 import ohosRouterJsunit from './Router2/OhosRouterJsnuit.test';
+import RouterTest from './router/RouterTest.test';
 
 export default function testsuite() {
+  RouterTest();
   OnNewParamRouter();
   RouterReplaceUrl401();
   pageRouteTest();

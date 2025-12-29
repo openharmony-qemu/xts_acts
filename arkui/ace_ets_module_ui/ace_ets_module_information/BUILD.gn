@@ -23,5 +23,11 @@ group("ActsAceEtsModuleInformationTest") {
     "ace_ets_module_information_api22:ActsAceEtsModuleInformationApi22Test",
     "ace_ets_module_information01:ActsAceEtsModuleInformation01Test",
     "ace_ets_module_information02:ActsAceEtsModuleInformation02Test",
+    "ace_ets_module_information_api11_static:ActsAceEtsModuleInformationApi11StaticTest",
+    "ace_ets_module_information_api12_static:ActsAceEtsModuleInformationApi12StaticTest",
+    "ace_ets_module_information_api14_static:ActsAceEtsModuleInformationApi14StaticTest",
+    "ace_ets_module_information_api16_static:ActsAceEtsModuleInformationApi16StaticTest",
+    "ace_ets_module_information_api20_static:ActsAceEtsModuleInformationApi20StaticTest",
+    "ace_ets_module_information_other_api11_static:ActsAceEtsModuleInformationOtherApi11StaticTest",
   ]
 }

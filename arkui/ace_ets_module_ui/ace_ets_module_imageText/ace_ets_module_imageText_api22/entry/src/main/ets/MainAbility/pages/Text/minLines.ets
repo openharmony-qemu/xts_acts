@@ -37,11 +37,11 @@ struct textMinLinesTest {
             Button('0').onClick((event: ClickEvent) => {
               this.minLines = 0
             }).layoutWeight(1).id('Button2')
-            Button('10').onClick((event: ClickEvent) => {
-              this.minLines = 10
+            Button('2').onClick((event: ClickEvent) => {
+              this.minLines = 2
             }).layoutWeight(1).id('Button3')
-            Button('5.5').onClick((event: ClickEvent) => {
-              this.minLines = 5.5
+            Button('2.5').onClick((event: ClickEvent) => {
+              this.minLines = 2.5
             }).layoutWeight(1).id('Button4')
           }.width('90%')
 

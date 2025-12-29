@@ -17,6 +17,7 @@
         "MainAbility/pages/List/listScrollTo",
         "MainAbility/pages/List/focusedList",
         "MainAbility/pages/ListItemGroup/focusedCardList",
+        "MainAbility/pages/ListItemGroup/itemInGroupMin",
         "MainAbility/pages/ListItemGroup/ListScrollToItemInGroup",
 	    "MainAbility/pages/ListItemGroup/list_ux",
         "MainAbility/pages/ListItemGroup/conSizeGroup1",
@@ -36,6 +37,8 @@
         "MainAbility/pages/contentOffset/offsetEdgeTop",
         "MainAbility/pages/contentOffset/offsetAlignEnd",
         "MainAbility/pages/contentOffset/offsetAlignStart",
+        "MainAbility/pages/contentOffset/listContentOffset",
+        "MainAbility/pages/contentOffset/contentOffsetMin",
         "MainAbility/pages/List/ListWillScroll",
         "MainAbility/pages/List/offsetRemain",
         "MainAbility/pages/List/ListLevel1",
@@ -51,6 +54,7 @@
         "MainAbility/pages/List/listVisibleContent",
         "MainAbility/pages/List/listDid",
         "MainAbility/pages/List/ListFlingCallback",
-        "MainAbility/pages/List/ListScrollEdgeCallback"
+        "MainAbility/pages/List/ListScrollEdgeCallback",
+        "MainAbility/pages/List/listFrictionRes"
     ]
 }

@@ -14,7 +14,9 @@
  */
  
 import ActsCapabilityStartSelfUIAbilityTest from './ActsCapiNoPermissionTest.test'
+import ActsStartNoPermissionTest from './ActsStartNoPermissionTest.test'
 
 export default function testsuite() {
   ActsCapabilityStartSelfUIAbilityTest()
+  ActsStartNoPermissionTest()
 }

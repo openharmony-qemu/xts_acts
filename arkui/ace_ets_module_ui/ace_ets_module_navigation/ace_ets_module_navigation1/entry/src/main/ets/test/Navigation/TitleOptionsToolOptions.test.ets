@@ -101,25 +101,39 @@ export default function TitleOptionsToolOptions() {
 
       let push = await driver.findComponent(ON.text('push'));
       await push.click()
-      console.info('[TitleOptionsToolOptions_0100] push click');
+      await CommonFunc.sleep(2000);
+    
+      let getBtn = await driver.findComponent(ON.text('get'));
+      await getBtn.click()
+      console.info('[TitleOptionsToolOptions_0200] get click');
       await CommonFunc.sleep(2000);
 
-      let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      await CommonFunc.sleep(1000);
+      let backgroundColor: string = AppStorage.get('backgroundColor') as string;
+      let backgroundBlurStyle: string = AppStorage.get('backgroundBlurStyle') as string;
 
-      expect(obj1.$children[0].$children[1].$children[0].$children[0].$attrs.backgroundBlurStyle.value).assertEqual("BlurStyle.BACKGROUND_THIN");
-      expect(obj1.$children[0].$children[1].$children[0].$children[0].$attrs.backgroundColor).assertEqual("#80004AAF");
+      expect(backgroundBlurStyle).assertEqual("BlurStyle.BACKGROUND_THIN");
+      expect(backgroundColor).assertEqual("#80004AAF");
+
+      AppStorage.delete('backgroundColor');
+      AppStorage.delete('backgroundBlurStyle')
 
       let btn2 = await driver.findComponent(ON.text('switch'));
       await btn2.click()
       console.info('[TitleOptionsToolOptions_0200] btn2 click');
       await CommonFunc.sleep(3000);
 
-      let obj2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      await CommonFunc.sleep(1000);
+      let getBtn2 = await driver.findComponent(ON.text('get'));
+      await getBtn2.click()
+      console.info('[TitleOptionsToolOptions_0200] get2 click');
+      await CommonFunc.sleep(2000);
 
-      expect(obj2.$children[0].$children[0].$children[0].$attrs.backgroundBlurStyle.value).assertEqual("BlurStyle.BACKGROUND_THICK");
-      expect(obj2.$children[0].$children[0].$children[0].$attrs.backgroundColor).assertEqual("#802787D9");
+      let backgroundColor2: string = AppStorage.get('backgroundColor') as string;
+      let backgroundBlurStyle2: string = AppStorage.get('backgroundBlurStyle') as string;
+      expect(backgroundBlurStyle2).assertEqual("BlurStyle.BACKGROUND_THICK");
+      expect(backgroundColor2).assertEqual("#802787D9");
+
+      AppStorage.delete('backgroundColor');
+      AppStorage.delete('backgroundBlurStyle')
 
       console.info('TitleOptionsToolOptions_0200 END');
       done();

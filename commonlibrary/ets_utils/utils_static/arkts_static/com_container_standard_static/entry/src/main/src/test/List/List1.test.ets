@@ -24,15 +24,15 @@ class Temp1 {
   }
 }
 
+interface Person {
+  age: number;
+  name: string;
+}
+
 class Temp {
   age: number = 0
   name: string = ""
 }
-
-interface Person {
-          age: number;
-          name: string;
-        }
 
 export default function ArkListTest() {
   describe('arkListTest', (): void => {
@@ -55,7 +55,8 @@ export default function ArkListTest() {
           new List<number | string | Array<number | string | boolean> | boolean | bigint |
           Int32Array | undefined | null | object>();
         expect(String(list.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -72,16 +73,15 @@ export default function ArkListTest() {
     it('testListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testListAdd0001';
       try {
-
-        let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person> =
-          new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person>();
+        let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Object> =
+          new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Object>();
 
         list.add("zhang san");
         list.add(1);
-        const person: Person = {
+        let temp: Temp = {
           age: 10, name: "zhang"
         };
-        list.add(person);
+        list.add(temp);
         list.add(undefined);
         list.add(null);
         list.add(true);
@@ -93,7 +93,8 @@ export default function ArkListTest() {
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
           .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -118,7 +119,8 @@ export default function ArkListTest() {
         let jsonResult = JSON.stringify(list);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(String(list.get(0))).assertEqual(String(param));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -147,7 +149,8 @@ export default function ArkListTest() {
         let removeResult = list.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(list.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -176,7 +179,8 @@ export default function ArkListTest() {
         let removeResult = list.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(list.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -219,7 +223,8 @@ export default function ArkListTest() {
         expect(String(list.has(true))).assertEqual('true');
         expect(String(list.has(arr))).assertEqual('true');
         expect(String(list.has(param))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -255,7 +260,8 @@ export default function ArkListTest() {
         list.forEach((value, index) => {
           expect(String(list.get(index))).assertEqual(String(value));
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -281,7 +287,8 @@ export default function ArkListTest() {
         list.add(2);
         let index3 = list.getLastIndexOf(2);
         expect(String(index1 !== index2 && index2 !== index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -310,7 +317,8 @@ export default function ArkListTest() {
         let index103 = list.removeByIndex(list.getLastIndexOf(3));
         let index104 = list.removeByIndex(list.getLastIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -341,7 +349,8 @@ export default function ArkListTest() {
           list.add(param);
           expect(String(list.getLastIndexOf(param))).assertEqual(String(lastIndex));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -368,7 +377,8 @@ export default function ArkListTest() {
         list.remove(param);
         list.add(param);
         expect(String(list.getLastIndexOf(param))).assertEqual(String(list.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -394,7 +404,8 @@ export default function ArkListTest() {
         list.add(2);
         let index3 = list.getIndexOf(2);
         expect(String(index1 === index2 && index2 === index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -423,7 +434,8 @@ export default function ArkListTest() {
         let index103 = list.removeByIndex(list.getIndexOf(3));
         let index104 = list.removeByIndex(list.getIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -450,7 +462,8 @@ export default function ArkListTest() {
         list.remove(param);
         list.add(param);
         expect(String(list.getIndexOf(param))).assertEqual(String(list.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -480,7 +493,8 @@ export default function ArkListTest() {
           list.add(param);
           expect(String(list.getLastIndexOf(param))).assertEqual(String(list.length - 1));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -527,7 +541,8 @@ export default function ArkListTest() {
         })
         let index = list.getLast() as string;
         expect(index).assertContain("add last index");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -558,7 +573,8 @@ export default function ArkListTest() {
         list.add(3);
         console.log(`${TAG} list: ${JSON.stringify(list)}`);
         expect(JSON.stringify(list)).assertEqual(`{"0":1,"1":2,"2":4,"3":8,"4":10,"5":3}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -589,7 +605,8 @@ export default function ArkListTest() {
         list.add(3);
         console.log(`${TAG} list: ${JSON.stringify(list)}`);
         expect(JSON.stringify(list)).assertEqual(`{"0":10,"1":8,"2":4,"3":2,"4":1,"5":3}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -619,7 +636,8 @@ export default function ArkListTest() {
         list.sort((first, second) => first - second);
         list.getSubList(Math.floor(5) as int, Math.floor(1) as int);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001)
       }
@@ -651,7 +669,8 @@ export default function ArkListTest() {
         list.add(3);
         console.log(`${TAG} list: ${JSON.stringify(list)}`);
         expect(JSON.stringify(list)).assertEqual(`{"0":1,"1":2,"2":4,"3":8,"4":10,"5":3}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -686,7 +705,8 @@ export default function ArkListTest() {
           expect(String(list.set(Math.floor(index || 0) as int, "li si") != undefined)).assertEqual('true');
         })
         console.log(`${JSON.stringify(list)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -721,7 +741,8 @@ export default function ArkListTest() {
         let setParam = list.set(Math.floor(index) as int, "li si");
         let removeParam = list.removeByIndex(Math.floor(index) as int);
         expect(String(setParam == removeParam)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -755,7 +776,8 @@ export default function ArkListTest() {
         let index = list.getIndexOf(param);
         let setParam = list.set(Math.floor(index) as int, "li si");
         expect(String(list.has(setParam))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -791,7 +813,8 @@ export default function ArkListTest() {
         array.forEach((value) => {
           expect(String(value instanceof Temp1)).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -823,7 +846,8 @@ export default function ArkListTest() {
         let setParam = list.set(0, "li si");
         let firstParam = list.getFirst();
         expect(setParam == firstParam).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -855,7 +879,8 @@ export default function ArkListTest() {
         let setParam = list.set(list.length - 1, "li si");
         let lastParam = list.getLast();
         expect(setParam == lastParam).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -882,7 +907,8 @@ export default function ArkListTest() {
           for (let tmp of iter) {
           expect(String(list.has(tmp))).assertEqual('true');
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -913,7 +939,8 @@ export default function ArkListTest() {
           }
           tmp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -951,7 +978,8 @@ export default function ArkListTest() {
         list.forEach((value, index) => {
           expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -991,7 +1019,8 @@ export default function ArkListTest() {
           expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
           index++;
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1034,7 +1063,8 @@ export default function ArkListTest() {
           index++;
         });
         expect(listNew.convertToArray().toString()).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1073,7 +1103,8 @@ export default function ArkListTest() {
         undefined | null | Object>) => {
           expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1087,18 +1118,23 @@ export default function ArkListTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let list: List<int> = new List<int>();
-      list.add(2);
-      list.add(4);
-      list.add(5);
-      let obj: List<int> = new List<int>();
-      obj.add(2);
-      obj.add(4);
-      obj.add(5);
-      let result = list.equal(obj);
-      expect(result).assertEqual(true);
-    })
+    it('testListEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(2);
+        obj.add(4);
+        obj.add(5);
+        let result = list.equal(obj);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        err = err as BusinessError;
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUtil3_011
@@ -1108,18 +1144,41 @@ export default function ArkListTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testListEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(1);
+        obj.add(2);
+        obj.add(3);
+        let result = list.equal(obj);
+        expect(result).assertEqual(false);
+      } catch (err) {
+        err = err as BusinessError;
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testUtil3_012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_012
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUtil3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let list: List<int> = new List<int>();
+      expect(list.length).assertEqual(0);
       list.add(2);
       list.add(4);
       list.add(5);
-      let obj: List<int> = new List<int>();
-      obj.add(2);
-      obj.add(4);
-      obj.add(5);
-      obj.add(6);
-      let result = list.equal(obj);
-      expect(result).assertEqual(false);
-    })
+      expect(list.length).assertEqual(3);
+      expect(list[0]).assertEqual(2);
+      expect(list[2]).assertEqual(5);
+    });
   });
 }

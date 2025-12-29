@@ -109,5 +109,85 @@ describe('AccessibleRegisterState', function () {
         expect(true).assertTrue();
         done();
     })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100
+     * @tc.desc   onAnimationReduceStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+      console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100');
+      let callbackdata = (data) => {
+        console.info(domain, tag, 'on animationReduce state changed');
+      }
+
+      try {
+        accessibility.onAnimationReduceStateChange(callbackdata);
+        accessibility.offAnimationReduceStateChange(callbackdata);
+        accessibility.offAnimationReduceStateChange();
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100 failed. code: ${error.code}, msg: ${error.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100
+     * @tc.desc   onAudioMonoStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+      console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100');
+      let callbackdata = (data) => {
+        console.info(domain, tag, 'on AudioMono state changed');
+      }
+      try {
+        accessibility.onAudioMonoStateChange(callbackdata);
+        accessibility.offAudioMonoStateChange(callbackdata);
+        accessibility.offAudioMonoStateChange();
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100 failed. code: ${error.code}, msg: ${error.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100
+     * @tc.desc   onFlashReminderStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+      console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100');
+      let callbackdata = (data) => {
+        console.info(domain, tag, 'on flashReminder state changed');
+      }
+      try {
+        accessibility.onFlashReminderStateChange(callbackdata);
+        accessibility.offFlashReminderStateChange(callbackdata);
+        accessibility.offFlashReminderStateChange();
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100 failed. code: ${error.code}, msg: ${error.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
 })
 }

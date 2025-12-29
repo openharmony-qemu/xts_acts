@@ -20,9 +20,7 @@
                 "mkdir /data/local/tmp/opengl",
                 "tar zxvf /data/local/tmp/opengldata.tar.gz -C /data/local/tmp/opengl",
                 "chmod -R 777 /data/local/tmp/opengl/mustpass/*",
-                "cp -r /data/local/tmp/opengl/data/* /data/local/tmp/opengl",
-                "cp /data/local/tmp/libdeqp* /system/lib",
-                "cp /data/local/tmp/librosen_context* /system/lib"
+                "cp -r /data/local/tmp/opengl/data/* /data/local/tmp/opengl"
             ],
             
             "push": [
@@ -41,7 +39,17 @@
             "run-command": [
                 "remount",
                 "mkdir /data/test",
-                "cd /data/local/tmp"
+                "cd /data/local/tmp",
+                "rm -rf libdeqp_ohos_platform.z.so",
+                "rm -rf librosen_context.z.so",
+                "rm -rf libdeqp_spirv.z.so",
+                "rm -rf libdeqp_spvremapper.z.so",
+                "rm -rf libdeqp_amber.z.so",
+                "ln -s /data/local/tmp/libdeqp_ohos_platform.z.so /system/lib/libdeqp_ohos_platform.z.so",
+                "ln -s /data/local/tmp/librosen_context.z.so /system/lib/librosen_context.z.so",
+                "ln -s /data/local/tmp/libdeqp_spirv.z.so /system/lib/libdeqp_spirv.z.so",
+                "ln -s /data/local/tmp/libdeqp_spvremapper.z.so /system/lib/libdeqp_spvremapper.z.so",
+                "ln -s /data/local/tmp/libdeqp_amber.z.so /system/lib/libdeqp_amber.z.so"
             ],
             "teardown-localcommand": [
                 "python testcases/opengldata/genlocal.py"

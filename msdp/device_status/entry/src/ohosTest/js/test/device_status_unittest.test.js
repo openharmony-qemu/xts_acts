@@ -46,6 +46,8 @@ export default function DeviceStatusUnitTest() {
             try {
                 p_done = done;
                 stationary.on("still", stationary.ActivityEvent.ENTER_EXIT, reportLatencyNs, pub_callback);
+                expect(stationary.ActivityState.ENTER == 1).assertTrue();
+                expect(stationary.ActivityState.EXIT == 2).assertTrue();
             } catch (error) {
                 console.error('error Log' + error);
                 expect().assertFail();

@@ -948,7 +948,8 @@ export default function DecimalTest017() {
       try {
         test_round_001('a', 'e', 3);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

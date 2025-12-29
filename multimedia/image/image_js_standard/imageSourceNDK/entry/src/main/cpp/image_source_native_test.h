@@ -21,6 +21,7 @@
 #include "napi/native_api.h"
 #include "image_source_module_test.h"
 #include "multimedia/image_framework/image/image_packer_native.h"
+#include "multimedia/image_framework/image/image_source_native.h"
 
 namespace OHOS {
 namespace Media {
@@ -48,6 +49,22 @@ public:
     static napi_value SetQualityToTestPackingOptions(napi_env env, napi_callback_info info);
     static napi_value SetNeedsPackPropertiesToTestPackingOptions(napi_env env, napi_callback_info info);
     static napi_value CreatePackingOptions(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyShort(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyLong(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyDouble(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyArraySize(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyString(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyIntArray(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyDoubleArray(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyBlob(napi_env env, napi_callback_info info);
+    static napi_value TestGetImagePropertyError(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyShort(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyLong(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyDouble(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyIntArray(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyDoubleArray(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyBlob(napi_env env, napi_callback_info info);
+    static napi_value TestModifyImagePropertyError(napi_env env, napi_callback_info info);
 private:
 };
 } // namespace Media

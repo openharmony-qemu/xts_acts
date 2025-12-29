@@ -134,6 +134,7 @@ export default function ConnectionRegisterTest() {
         try {
           let netConn = connection.createNetConnection();
           console.info(caseName+ " register start");
+          await netConnOnEvent4(caseName, netConn);
            netConn.register(async (error) => {
             if (error) {
               console.info(caseName + " register fail: " + JSON.stringify(error));
@@ -144,7 +145,6 @@ export default function ConnectionRegisterTest() {
               console.info(caseName+ " register success");
             }
           });
-          await netConnOnEvent4(caseName, netConn);
           await sleep(500);
           console.info(caseName+ " unregister start");
           netConn.unregister(async (error) => {

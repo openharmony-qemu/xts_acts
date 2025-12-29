@@ -1379,5 +1379,75 @@ export default function ffrtTest() {
       let flag = entry.ffrtThisTaskUpdateQos();
       expect(flag).assertEqual(100);
     })
+
+    /**	
+     * @tc.name   ffrt_alloc_function_0001	
+     * @tc.number SUB_KERNEL_DISPATCH_entry_9700
+     * @tc.desc   Test ffrt_alloc_auto_managed_function_storage api	
+     * @tc.type   FUNCTION	
+     * @tc.size   MEDIUMTEST	
+     * @tc.level  LEVEL0	
+     */	
+    it('ffrt_alloc_function_0001', Level.LEVEL0, () => {	
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.	
+      let flag = entry.ffrt_alloc_function_0001();	
+      expect(flag).assertEqual(0);	
+    })
+
+    /**
+     * @tc.name   queueApiTest017
+     * @tc.number SUB_KERNEL_DISPATCH_entry_9800
+     * @tc.desc   Test ffrt_queue_submit_h_f and ffrt_queue_attr_get_thread_mode api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('queueApiTest017', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.queueApiTest017();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   sharedMutexAbnormalParamTest001
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10600
+     * @tc.desc   Test sharedMutexAbnormalParamTest api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('sharedMutexAbnormalParamTest001', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.sharedMutexAbnormalParamTest001();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   ffrtStorageSizeCheck
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10700
+     * @tc.desc   Test ffrtStorageSizeCheck api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ffrtStorageSizeCheck', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.ffrtStorageSizeCheck();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   ffrtQueueQosCheck
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10800
+     * @tc.desc   Test ffrtQueueQosCheck api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ffrtQueueQosCheck', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.ffrtQueueQosCheck();
+      expect(flag).assertEqual(0);
+    })
   })
 }

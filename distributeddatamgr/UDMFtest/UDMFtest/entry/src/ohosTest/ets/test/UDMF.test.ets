@@ -4708,7 +4708,108 @@ export default function UDMFApiTest() {
       done();
     })
 
+    /**
+     * @tc.name   DelayedDataLoadHandlerTest01
+     * @tc.number SUB_DistributedData_UDMF_SDK_DelayedDataLoadHandler_0100
+     * @tc.desc   Test DelayedDataLoadHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DelayedDataLoadHandlerTest01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      console.info('DelayedDataLoadHandlerTest01 start');
+      const stringSet = new Set<string>();
+      stringSet.add('general.plain-text');
+      let dataLoadInfo: unifiedDataChannel.DataLoadInfo = {
+        types: stringSet,
+        recordCount: 0
+      };
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      let loadHandler: unifiedDataChannel.DataLoadHandler = (acceptableInfo) => {
+        return unifiedData;
+      };
+      let loadHandlerAsync: unifiedDataChannel.DelayedDataLoadHandler = (acceptableInfo) => {
+        return new Promise((resolve, reject) => {
+          resolve(unifiedData);
+        })
+      };
+      const dataLoadParams: unifiedDataChannel.DataLoadParams = {
+        loadHandler: loadHandler,
+        dataLoadInfo: dataLoadInfo,
+        delayedDataLoadHandler: loadHandlerAsync
+      };
+      loadHandlerAsync(dataLoadInfo).then((data) => {
+        if (data == null) {
+        return
+      }
+      let records = data.getRecords();
+      let record: unifiedDataChannel.PlainText = (records[0]) as unifiedDataChannel.PlainText;
+      expect(records.length).assertEqual(1)
+      if (record.details !== undefined) {
+        expect(record.details.title).assertEqual('标题');
+        expect(record.details.content).assertEqual('内容');
+      }
+      expect(record.textContent).assertEqual('textContent');
+      expect(record.abstract).assertEqual('abstract');
+      })
+      console.info('DelayedDataLoadHandlerTest01 end');
+    })
 
-    
+    /**
+     * @tc.name   SummaryOverviewTest01
+     * @tc.number SUB_DistributedData_UDMF_SDK_SummaryOverview_0100
+     * @tc.desc   Test SummaryOverview
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SummaryOverviewTest01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info('SummaryOverviewTest01 start');
+      let summary: unifiedDataChannel.Summary = new unifiedDataChannel.Summary;
+      let result_1 = Array.isArray(summary.summary);
+      let result_2 = Array.isArray(summary.overview);
+      expect(result_1).assertEqual(true);
+      expect(result_2).assertEqual(false);
+      console.info('SummaryOverviewTest01 end');
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151
+     * @tc.desc   Test SUB_DistributedData_UDMF_SDK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151 start');
+      let unifiedRecord = new unifiedDataChannel.UnifiedRecord("general.composite-object", null);
+      let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
+      let records = unifiedData.getRecords();
+      let record: unifiedDataChannel.UnifiedRecord = (records[0]) as unifiedDataChannel.UnifiedRecord;
+      expect(records.length == 1).assertEqual(true);
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151 start');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152
+     * @tc.desc   Test SUB_DistributedData_UDMF_SDK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152 start');
+      let unifiedRecord = new unifiedDataChannel.UnifiedRecord("general.composite-object", undefined);
+      let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
+      let records = unifiedData.getRecords();
+      let record: unifiedDataChannel.UnifiedRecord = (records[0]) as unifiedDataChannel.UnifiedRecord;
+      expect(records.length == 1).assertEqual(true);
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152 start');
+      done();
+    })
+
   })
 }

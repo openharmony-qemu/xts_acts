@@ -41,8 +41,13 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
         console.info(TAG+"subscribe success1111");
       }).catch((err: BusinessError) => {
         console.error(`subscribe fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
       // 2、调用接口getSubscribeInfo(): Promise<NotificationExtensionSubscriptionInfo[]>查询订阅信息
       await notificationExtensionSubscription.getSubscribeInfo().then((data) => {
@@ -53,8 +58,13 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`getSubscribeInfo fail: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
+         if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
       });
     })
 

@@ -218,6 +218,7 @@ export default function AddContactTest() {
         done();
       } catch (error) {
         console.info("contactsApi_insert_test_100 : raw_contact insert error = " + error);
+        expect(false).assertTrue();
         done();
       }
     });

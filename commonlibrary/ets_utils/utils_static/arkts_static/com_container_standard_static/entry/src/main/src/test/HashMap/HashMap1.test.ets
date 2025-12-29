@@ -45,7 +45,8 @@ export default function HashMapTest1() {
       try {
         let hashMap = new HashMap<number, string>();
         expect(String(hashMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The HashMap's constructor cannot be directly invoked");
@@ -1037,7 +1038,8 @@ export default function HashMapTest1() {
       let hashMap = new HashMap<string, string>();
       try {
         hashMap.set("name", "jenny");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200011);
       }
     });
@@ -1055,7 +1057,8 @@ export default function HashMapTest1() {
       try {
         hashMap.set(undefined, 11);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
     });

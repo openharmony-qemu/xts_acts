@@ -523,6 +523,16 @@ static napi_value PERMISSION_DENIEDTest(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value Sensor_Result_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int32(env, (Sensor_Result::SENSOR_SUCCESS == 0 &&
+    Sensor_Result::SENSOR_PERMISSION_DENIED  == 201 &&
+    Sensor_Result::SENSOR_PARAMETER_ERROR == 401 &&
+    Sensor_Result::SENSOR_SERVICE_EXCEPTION == 14500101) ? 1 : 0, &result);
+    return result;
+}
+
 napi_property_descriptor desc[] = {
     {"ohSensorGetInfosTest", nullptr, OH_Sensor_GetInfosTest, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"sensor_TypeTest1", nullptr, Sensor_TypeTest1, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -591,7 +601,7 @@ napi_property_descriptor desc[] = {
     {"vibrator_PlayVibrationCustomTest2", nullptr, OH_Vibrator_PlayVibrationCustomTest2,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"permission_deniedTest", nullptr, PERMISSION_DENIEDTest, nullptr, nullptr, nullptr, napi_default, nullptr},
-    
+    {"sensor_Result_0100", nullptr, Sensor_Result_0100, nullptr, nullptr, nullptr, napi_default, nullptr}
 };
 
 EXTERN_C_START

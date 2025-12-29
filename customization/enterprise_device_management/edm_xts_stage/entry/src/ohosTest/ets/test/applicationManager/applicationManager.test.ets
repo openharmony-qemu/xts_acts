@@ -2672,11 +2672,11 @@ export default function applicationManagerTest() {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let emptyBundles: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
         expect(emptyBundles.length == 0).assertTrue();
-        let bundleName: Array<string> = [`${TEST_BUNDLENAME}`];
+        let bundleName: Array<string> = [`${'1265956504964495936'}`];
         applicationManager.setAllowedKioskApps(SELFWANT, bundleName);
         let bundleNames: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
         expect(bundleNames.length > 0).assertTrue();
-        let isAllowed = applicationManager.isAppKioskAllowed(TEST_BUNDLENAME);
+        let isAllowed = applicationManager.isAppKioskAllowed('1265956504964495936');
         expect(isAllowed).assertTrue();
       } catch (error) {
         expect(error.code == 9200007).assertTrue();
@@ -3365,13 +3365,10 @@ export default function applicationManagerTest() {
      */
     it("test_setAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
       try {
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, true);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200001).assertTrue();
@@ -3390,13 +3387,10 @@ export default function applicationManagerTest() {
     it("test_setAbilityDisabled_002", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, true);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200002).assertTrue();
@@ -3417,13 +3411,10 @@ export default function applicationManagerTest() {
     it("test_setAbilityDisabled_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, true);
+        applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, true);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200012).assertTrue();
@@ -3444,13 +3435,10 @@ export default function applicationManagerTest() {
     it("test_setAbilityDisabled_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.setAbilityDisabled(SELFWANT, applicationInstance, abilityName, false);
+        applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, false);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200012).assertTrue();
@@ -3471,13 +3459,10 @@ export default function applicationManagerTest() {
     it("test_setAbilityDisabled_005", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.setAbilityDisabled(null, applicationInstance, abilityName, false);
+        applicationManager.setAbilityDisabled(null, bundleName, accountId, abilityName, false);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 401).assertTrue();
@@ -3497,13 +3482,10 @@ export default function applicationManagerTest() {
      */
     it("test_isAbilityDisabled_001", Level.LEVEL2, async (done: Function) => {
       try {
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200001).assertTrue();
@@ -3522,13 +3504,10 @@ export default function applicationManagerTest() {
     it("test_isAbilityDisabled_002", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200002).assertTrue();
@@ -3549,13 +3528,10 @@ export default function applicationManagerTest() {
     it("test_isAbilityDisabled_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, applicationInstance, abilityName);
+        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
         expect(isDisabled).assertFalse();
       } catch (error) {
         expect(false).assertTrue();
@@ -3576,13 +3552,10 @@ export default function applicationManagerTest() {
     it("test_isAbilityDisabled_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        let applicationInstance: common.ApplicationInstance = {
-          appIdentifier: 'com.example.helloworld',
-          appIndex: 0,
-          accountId: 100
-        };
+        let bundleName: string = 'com.example.helloworld';
+        let accountId: number = 100;
         let abilityName: string = "EntryAbility";
-        let isDisabled = applicationManager.isAbilityDisabled(null, applicationInstance, abilityName);
+        let isDisabled = applicationManager.isAbilityDisabled(null, bundleName, accountId, abilityName);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 401).assertTrue();

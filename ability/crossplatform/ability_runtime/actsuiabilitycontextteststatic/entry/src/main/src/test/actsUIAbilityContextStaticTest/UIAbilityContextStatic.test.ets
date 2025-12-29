@@ -26,6 +26,7 @@ import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import wifiManager from '@ohos.wifiManager';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -34,16 +35,27 @@ let context: common.UIAbilityContext
 export default function UIAbilityContextStatic() {
   describe("UIAbilityContextStatic", () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.uiabilitycontexttest.static")
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      hilog.info(domain, tag, 'wifiManager end');
+      hilog.info(domain, tag, 'wifiManager start');
       wifiManager.disableWifi();
       hilog.info(domain, tag, 'wifiManager end');
+      hilog.info(domain, tag, 'close usb start');
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      hilog.info(domain, tag, 'close usb end');
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -238,6 +250,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         let options: AtomicServiceOptions = {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
@@ -272,6 +285,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         context.openAtomicService('')
           .then((result: common.AbilityResult) => {

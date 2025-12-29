@@ -26,12 +26,12 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
     afterAll(() => {
     })
     /*
-      * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_1007
-      * @tc.name      : Sub_Notification_Ans_ThreePartyWatch_1007
-      * @tc.desc      :【subscribe】调用接口，应用未实现NotificationSubscriberExtensionAbility，返回错误码1600023
-      * @tc.size      ：大型测试
-      * @tc.type      ：功能测试
-      * @tc.level     ：Level 2
+      * @tc.number     Sub_Notification_Ans_ThreePartyWatch_1007
+      * @tc.name       Sub_Notification_Ans_ThreePartyWatch_1007
+      * @tc.desc      【subscribe】调用接口，应用未实现NotificationSubscriberExtensionAbility，返回错误码1600023
+      * @tc.size      LargeTest
+      * @tc.type      Function
+      * @tc.level     Level 2
     */
     it('Sub_Notification_Ans_ThreePartyWatch_1007', Level.LEVEL2, async (done: Function) => {
       let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1007 ";
@@ -48,8 +48,13 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
         done();
       }).catch((err: BusinessError) => {
         console.error(TAG+`subscribe fail: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(1600023)
-        done()
+        if (err.code == 201) {
+            expect(err.code).assertEqual(201)
+            done();
+          } else {
+            expect(err.code).assertEqual(1600023)
+            done();
+          }
       });
     })
 

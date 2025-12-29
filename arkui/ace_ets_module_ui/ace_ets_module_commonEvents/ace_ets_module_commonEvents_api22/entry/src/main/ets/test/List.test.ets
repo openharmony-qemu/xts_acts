@@ -14,9 +14,21 @@
  */
 
 import HasAxisTest from './HasAxisTest/HasAxisTest.test';
+import responseRegionListTest from "./responseRegion/responseRegionList.test";
 import AllowableMovementTest from "./LongPress/allowableMovement.test";
+import createFromBuilderTest from "./componentSnapshotCreateFromBuilder/createFromBuilder.test";
+import createFromBuilderCallbackTest from "./componentSnapshotCreateFromBuilder/createFromBuilderCallback.test";
+import createFromComponent from "./componentSnapshotCreateFromBuilder/createFromComponent.test";
+import errorCreateFromBuilderTest from "./componentSnapshotCreateFromBuilder/errorCreateFromBuilder.test";
+import setDistanceTest from "./PanGesture/setDistance.test";
 
 export default function testsuite() {
   HasAxisTest();
+  responseRegionListTest();
   AllowableMovementTest();
+  setDistanceTest();
+  createFromBuilderCallbackTest();
+  createFromBuilderTest();
+  createFromComponent();
+  errorCreateFromBuilderTest();
 }

@@ -29,11 +29,11 @@ export default function editMeunOptionsTest() {
         router.clear();
         let pages = router.getState();
         console.info("get editMeunOptionsTest state pages:" + JSON.stringify(pages));
+        let result = await router.replaceUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
         if (!("editMeunOptions" == pages.name)) {
           console.info("get editMeunOptionsTest pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push editMeunOptionsTest page error:" + err);

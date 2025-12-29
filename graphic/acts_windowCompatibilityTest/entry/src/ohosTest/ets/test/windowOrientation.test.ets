@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UiDriver, BY, ON, PointerMatrix, Driver, Point } from '@ohos.UiTest'
 
 async function sleep(time: number) {
   let timeoutId: number = 0;
@@ -34,6 +35,18 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
     let tempWnd: window.Window | void;
     let subWin: window.Window | void;
 
+      beforeAll(async () => {
+        try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
+      });
     beforeEach(async ()=>{
       let msg = 'window_orientation_test';
       console.log(msg + ' beforeEach start!!!');

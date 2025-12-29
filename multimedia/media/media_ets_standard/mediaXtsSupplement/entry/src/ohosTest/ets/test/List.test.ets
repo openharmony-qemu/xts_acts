@@ -29,7 +29,14 @@ import MediaAVPlayerOff_trackChangeTest from './media/MediaAVPlayerOff_trackChan
 import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSetMediaResourceLoaderDelegate.Test.test';
 import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
 import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
+import CreateMediaSourceTest from './media/CreateMediaSourceTest.test';
+import AVPlayerSetSpeedTest from './media/AVPlayerSetSpeed.test';
 import RespondDataTest from './media/RespondDataTest.test';
+import AVPlayerSetPlayBackStrategySuppTest from './media/AVPlayerSetPlaybackStrategy.test';
+import AVPlayervideoSizeChangeSuppTest from './media/AVPlayervideoSizeChangeOnOFF.test';
+import AVPlayerSetDecryptionConfigSuppTest from './media/AVPlayerSetDecryptionConfig.test';
+import AVPlayerAddSubtitleFromUrlSuppTest from './media/AVPlayerAddSubtitleFromUrl.test';
+import MediaAPIEnumSupplementTest from "./media/MediaAPIEnumSupplement.test";
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -48,6 +55,13 @@ export default function testsuite() {
   MediaSourceSetMediaResourceLoaderDelegateTest();
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
+  CreateMediaSourceTest();
+  AVPlayerSetSpeedTest();
   RespondDataTest();
+  AVPlayerSetPlayBackStrategySuppTest();
+  AVPlayervideoSizeChangeSuppTest();
+  AVPlayerSetDecryptionConfigSuppTest();
+  AVPlayerAddSubtitleFromUrlSuppTest();
+  MediaAPIEnumSupplementTest();
 }
 

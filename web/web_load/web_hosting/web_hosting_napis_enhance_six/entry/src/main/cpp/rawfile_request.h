@@ -46,6 +46,7 @@ public:
     
     bool httpBodyStreamIsEof() { return httpBodyStreamIsEof_; }
     bool httpBodyStreamIsInMemory() { return httpBodyStreamIsInMemory_; }
+    bool HttpBodyStreamIsInMemoryTrue() { return httpBodyStreamIsInMemoryTrue_; }
     bool httpBodyStreamIsChunked() { return httpBodyStreamIsChunked_; }
     uint64_t httpBodyStreamGetPosition() { return httpBodyStreamGetPosition_; }
     uint64_t httpBodyStreamGetSize() { return httpBodyStreamGetSize_; }
@@ -69,6 +70,7 @@ private:
     std::mutex mutex_;
     bool httpBodyStreamIsEof_{true};
     bool httpBodyStreamIsInMemory_{true};
+    bool httpBodyStreamIsInMemoryTrue_;
     bool httpBodyStreamIsChunked_{true};
     uint64_t httpBodyStreamGetPosition_;
     uint64_t httpBodyStreamGetSize_;

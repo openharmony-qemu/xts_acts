@@ -384,5 +384,53 @@ export default function PowerManagerServiceTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testPowerManagerServiceTest_1800
+     * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0180
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPowerManagerServiceTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'testPowerManagerServiceTest_1800';
+      try {
+        power.registerShutdownCallback((isReboot) => {
+          console.info(`${TAG} isReboot:${isReboot}`);
+        });
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(4900101);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPowerManagerServiceTest_1900
+     * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0190
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPowerManagerServiceTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let TAG = 'testPowerManagerServiceTest_1900';
+      try {
+        power.unregisterShutdownCallback(() => {
+          console.info(`${TAG} unregisterShutdownCallback`);
+        });
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(4900101);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
   });
 }

@@ -42,11 +42,13 @@ ohos_moduletest_suite("ActsDrawingNativeTest") {
     "DrawingNativeGpuContextTest.cpp",
     "DrawingNativeImageFilterTest.cpp",
     "DrawingNativeImageTest.cpp",
+    "DrawingNativeLatticeTest.cpp",
     "DrawingNativeMaskFilterTest.cpp",
     "DrawingNativeMatrixTest.cpp",
     "DrawingNativeMatrixTestPart2.cpp",
     "DrawingNativeMemoryStreamTest.cpp",
     "DrawingNativePathEffectTest.cpp",
+    "DrawingNativePathIteratorTest.cpp",
     "DrawingNativePathTest.cpp",
     "DrawingNativePathTestPart2.cpp",
     "DrawingNativePathTestPart3.cpp",
@@ -65,7 +67,7 @@ ohos_moduletest_suite("ActsDrawingNativeTest") {
     "DrawingRecordCmdDestroyTest.cpp",
     "DrawingRecordCmdUtilsBeginTest.cpp",
     "DrawingRecordCmdUtilsDestroyTest.cpp",
-    "DrawingRecordCmdUtilsFinishTest.cpp",
+    "DrawingRecordCmdUtilsFinishTest.cpp"
   ]
 
   cflags = [

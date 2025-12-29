@@ -30,6 +30,9 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED"
+      },
+      {
+        "name": "ohos.permission.GET_ABILITY_INFO"
       }
     ],
     "abilities": [
@@ -49,6 +52,12 @@
             ],
             "actions": [
               "ohos.want.action.home"
+            ],
+            "uris": [
+              {
+                "host": "urigetabilityinfotest",
+                "scheme": "abcde"
+              }
             ]
           }
         ]

@@ -1185,6 +1185,10 @@ export default function ActsGzipDecompressionTest() {
                 await gzip.gzsetparams(zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION,
                     zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((errcode) => {
                         expect(errcode).assertEqual(zlib.ReturnStatus.OK);
+                        expect(-1).assertEqual(zlib.ReturnStatus.ERRNO);
+                        expect(-2).assertEqual(zlib.ReturnStatus.STREAM_ERROR);
+                        expect(-4).assertEqual(zlib.ReturnStatus.MEM_ERROR);
+                        expect(-5).assertEqual(zlib.ReturnStatus.BUF_ERROR);
                     })
                 await gzip.gzsetparams(zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
                     zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED).then((errcode) => {
@@ -3086,5 +3090,59 @@ export default function ActsGzipDecompressionTest() {
             done();
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11000 End=====");
         });
+
+        /**
+         * @tc.number      SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11100
+         * @tc.name        SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11100
+         * @tc.desc        test ReturnStatus enum
+         * @tc.size        MEDIUMTEST
+         * @tc.type        FUNCTION
+         * @tc.level       Level 3
+         */
+        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_11100 Start=====");
+            try {
+            let gzip = zlib.createGZipSync();
+            await gzip.gzopen("/data/storage/el2/base/cache/test.gz", "wb").then(() => {
+                console.log("gzopen success ");
+                let bufferWithData = new ArrayBuffer(16);
+                let uint8View = new Uint8Array(bufferWithData);
+                for (let i = 0; i < uint8View.length; i++) {
+                uint8View[i] = i;
+                }
+                gzip.gzwrite(bufferWithData, -1).then((data) => {
+                console.log("gzwrite success : " + data);
+                expect().assertFail();
+                done();
+                }).catch((err: BusinessError<void>): void => {
+                console.log("gzwrite failed code:" + JSON.stringify(err.code) + "，message ：" +
+                JSON.stringify(err.message));
+                gzip.gzerror().then((data: zlib.GzErrorOutputInfo) => {
+                    console.log("gzerror success data.status : " + data.status);
+                    console.log("gzerror success status : " + JSON.stringify(data.status));
+                    console.log("gzerror success statusMsg : " + JSON.stringify(data.statusMsg));
+                    expect(data.status).assertEqual(zlib.ReturnStatus.DATA_ERROR);
+                    done();
+                }).catch((err: BusinessError<void>): void => {
+                    console.log("gzerror failed code:" + JSON.stringify(err.code) + "，message ：" +
+                    JSON.stringify(err.message));
+                    expect().assertFail();
+                    done();
+                });
+                });
+            }).catch((err: BusinessError<void>): void => {
+                console.log("gzopen failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
+                expect().assertFail();
+                done();
+            });
+            } catch (err) {
+            let code = (err as BusinessError).code;
+            let message = (err as BusinessError).message;
+            console.log(" gzopen catch code:" + JSON.stringify(code));
+            console.log(" gzopen catch message:" + JSON.stringify(message));
+            expect().assertFail();
+            done();
+            }
+        })
     })
 }

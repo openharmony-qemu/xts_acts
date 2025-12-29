@@ -100,7 +100,7 @@ export default function windowPropertiesTest() {
         let windowStage: ohosWindow.WindowStage;
         let isAutoWindow: string = '';
         let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             context = AppStorage.get('context') as common.UIAbilityContext;
             console.log('windowTest context: ' + JSON.stringify(context))
             windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
@@ -111,7 +111,16 @@ export default function windowPropertiesTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             console.info(`beforeAll isPCStatus: `+ isPCStatus);
-
+            try {
+              let driver = Driver.create();
+              let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+              console.log('findComponent allowed: ' + JSON.stringify(allowed));
+              if(allowed){
+                await allowed.click();
+              }
+            } catch (err) {
+              console.error('findComponent allowed failed: ' + JSON.stringify(err));
+            }
 
         })
         beforeEach(() => {
@@ -251,7 +260,7 @@ export default function windowPropertiesTest() {
       it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
         let subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
-        let driver: Driver = await Driver.create();
+        let driver: Driver = Driver.create();
         await sleep(200)
         try {
           let windowLimits = subWindowClass.getWindowLimits();
@@ -309,7 +318,7 @@ export default function windowPropertiesTest() {
       it('testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow';
         let subWindowClass: window.Window | undefined;
-        let driver: Driver = await Driver.create();
+        let driver: Driver = Driver.create();
         await sleep(200)
         let config: window.Configuration = {
           name: "testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow",
@@ -7614,6 +7623,351 @@ export default function windowPropertiesTest() {
         }
       }
     })
+
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0500
+       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithUECSubWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredCallbackwithUECSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredCallbackwithUECSubWindow';
+        let driver = Driver.create();
+        await sleep(2000)
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass: window.Window | undefined;
+        try {
+          windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithUECSubWindow');
+          await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
+          await sleep(2000);
+
+          let btn = await driver.findComponent(ON.id('Button'));
+          console.log(caseName + ' btn1 : ' + btn);
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+            done()
+          } else {
+            await btn.click();
+            await sleep(1000);
+            let btn2 = await driver.findComponent(ON.id('HelloWorld'));
+            let txt = await btn2.getText();
+            console.log(caseName + ' btn2 : ' + txt);
+            expect(txt == 'true').assertTrue();
+            const callback1 = async (res: window.FrameMetrics) => {
+              console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+              expect(res.firstDrawFrame).assertEqual(false);
+              expect(res.vsyncTimestamp).assertLarger(0);
+              expect(res.inputHandlingDuration).assertLarger(0);
+              windowClass?.off('frameMetricsMeasured');
+              await windowClass?.destroyWindow()
+              done();
+            }
+            windowClass.on('frameMetricsMeasured', callback1);
+            let windowProperties = windowClass.getWindowProperties();
+            console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+            let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+            console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
+            let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+            console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
+            let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+            console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
+            let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+            console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
+            await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+            await sleep(3000)
+          }
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+
+      })
+
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredErrorcode
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0100
+       * @tc.desc   testOnFrameMetricsMeasuredErrorcode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('testOnFrameMetricsMeasuredErrorcode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredErrorcode';
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let subWindowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredErrorcode');
+        await subWindowClass.destroyWindow();
+        const callback = (res: window.FrameMetrics) => {
+          console.log(`${caseName} callback res: ${JSON.stringify(res)}`);
+        }
+        try {
+          subWindowClass.on('frameMetricsMeasured', callback)
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(1300002);
+        }
+        try {
+          subWindowClass.off('frameMetricsMeasured', callback)
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Error2. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(1300002);
+          done();
+        }
+      })
+
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredCallbackwithMainWindow
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0200
+       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithMainWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredCallbackwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredCallbackwithMainWindow';
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass = windowStage.getMainWindowSync()
+        try {
+          let callbackIndex1 = 0;
+          let callbackIndex2 = 0;
+          const callback1 = (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            callbackIndex1++;
+          }
+          const callback2 = (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback2 res: ${JSON.stringify(res)}`);
+            callbackIndex2++;
+          }
+          windowClass.on('frameMetricsMeasured', callback1);
+          let windowProperties = windowClass.getWindowProperties();
+          console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+          let driver: Driver = Driver.create();
+          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
+          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
+          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
+          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000);
+          expect(callbackIndex1).assertLarger(0)
+          callbackIndex1 = 0;
+          windowClass.on('frameMetricsMeasured', callback2);
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000);
+          expect(callbackIndex1).assertLarger(0);
+          expect(callbackIndex2).assertLarger(0);
+          windowClass.off('frameMetricsMeasured', callback1);
+          callbackIndex1 = 0;
+          callbackIndex2 = 0;
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000);
+          expect(callbackIndex1).assertEqual(0);
+          expect(callbackIndex2).assertLarger(0);
+          callbackIndex1 = 0;
+          callbackIndex2 = 0;
+          windowClass.off('frameMetricsMeasured');
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000);
+          expect(callbackIndex1).assertEqual(0);
+          expect(callbackIndex2).assertEqual(0);
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+
+      })
+
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredCallbackwithSubWindow
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0300
+       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithSubWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredCallbackwithSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredCallbackwithSubWindow';
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass: window.Window | undefined;
+        try {
+          windowClass = await windowStage.createSubWindow('testOnFrameMetricsMeasuredCallbackwithSubWindow');
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000)
+          const callback1 = async (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            expect(res.firstDrawFrame).assertEqual(false);
+            expect(res.vsyncTimestamp).assertLarger(0);
+            expect(res.inputHandlingDuration).assertLarger(0);
+            expect(res.layoutMeasureDuration).assertLarger(0);
+            windowClass?.off('frameMetricsMeasured');
+            await windowClass?.destroyWindow()
+            done();
+          }
+          windowClass.on('frameMetricsMeasured', callback1);
+          let windowProperties = windowClass.getWindowProperties();
+          console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+          let driver: Driver = Driver.create();
+          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
+          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
+          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
+          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000)
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+
+      })
+
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredwithSetBackgroundColor
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0600
+       * @tc.desc   testOnFrameMetricsMeasuredwithSetBackgroundColor
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredwithSetBackgroundColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredwithSetBackgroundColor';
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass = windowStage.getMainWindowSync()
+        try {
+          let callbackIndex = 0;
+          const callback1 = async (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            callbackIndex = callbackIndex + 1;
+            console.log(`${caseName} callback1 callbackIndex: ${JSON.stringify(callbackIndex)}`);
+            expect(res.firstDrawFrame).assertEqual(false);
+            expect(res.vsyncTimestamp).assertLarger(0);
+            expect(res.inputHandlingDuration).assertLarger(0);
+          }
+          windowClass.on('frameMetricsMeasured', callback1);
+          windowClass.setBackgroundColor("#008000");
+          await sleep(3000);
+          console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertLarger(0)
+          callbackIndex = 0;
+          windowStage.setCustomDensity(2.0);
+          await sleep(3000);
+          console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertLarger(0)
+          callbackIndex = 0;
+          windowClass?.off('frameMetricsMeasured');
+          windowClass.setBackgroundColor("#FEFEFE");
+          await sleep(1000);
+          console.log(`${caseName}  callbackIndex 3: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertEqual(0)
+          windowStage.setCustomDensity(-1.0);
+          await sleep(1000);
+          console.log(`${caseName}  callbackIndex 4: ${JSON.stringify(callbackIndex)}`);
+          expect(callbackIndex).assertEqual(0)
+          await windowClass?.destroyWindow()
+          done();
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+
+      })
+      /**
+       * @tc.name   testOnFrameMetricsMeasuredCallbackwithDialogWindow
+       * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0400
+       * @tc.desc   testOnFrameMetricsMeasuredCallbackwithDialogWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testOnFrameMetricsMeasuredCallbackwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testOnFrameMetricsMeasuredCallbackwithDialogWindow';
+        let driver: Driver = Driver.create();
+        await sleep(2000)
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        let windowClass: window.Window | undefined;
+        let config: window.Configuration = {
+          name: "testOnFrameMetricsMeasuredCallbackwithDialogWindow",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        try {
+          windowClass = await window.createWindow(config);
+          await windowClass.setUIContent('testability/pages/First/index2');
+          await windowClass.showWindow();
+          await sleep(1000)
+          const callback1 = async (res: window.FrameMetrics) => {
+            console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            expect(res.firstDrawFrame).assertEqual(false);
+            expect(res.vsyncTimestamp).assertLarger(0);
+            expect(res.inputHandlingDuration).assertLarger(0);
+            windowClass?.off('frameMetricsMeasured');
+            await windowClass?.destroyWindow()
+            done();
+          }
+          windowClass.on('frameMetricsMeasured', callback1);
+          let windowProperties = windowClass.getWindowProperties();
+          console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
+          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
+          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
+          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
+          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
+          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
+          await sleep(3000)
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          await windowClass?.destroyWindow()
+          if(!canIUseRes){
+            expect(exception.code).assertEqual(801)
+          }else {
+            expect().assertFail();
+          }
+          done();
+        }
+      })
 
 
 

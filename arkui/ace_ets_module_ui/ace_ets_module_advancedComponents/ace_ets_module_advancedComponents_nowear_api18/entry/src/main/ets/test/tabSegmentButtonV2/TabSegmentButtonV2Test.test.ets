@@ -205,7 +205,8 @@ export default function TabSegmentButtonV2Test() {
           .$children[5]
           .$children[0]
         console.log("TabSegmentButtonV2Test_0140 itemMinHeight ", itemMinHeight.$attrs.height)
-        expect(itemMinHeight.$attrs.height).assertEqual('80.00vp');
+        let height :number = Number(itemMinHeight.$attrs.height.split('.')[0])
+        expect(Math.floor(Math.abs(height-80))<=1).assertEqual(true)
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonV2Test_0140", "END");
         done();

@@ -19,13 +19,26 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-napi_value savePixelMapForPath(napi_env env, napi_callback_info info);
-napi_value creatOutPixeMapForPath(napi_env env, napi_callback_info info);
 napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectRemoveFilterSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectReplaceFilterSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectReplaceFilterByFilterSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectAddFilterByFilterSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectInsertFilterByFilterSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectRemoveFilterByIndexSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectGetFilterSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectSetInputPictureSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectSetOutputPictureSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectCreateSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectAddFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectGetFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info info);
+napi_value IRNdkErrCodeSupplement(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

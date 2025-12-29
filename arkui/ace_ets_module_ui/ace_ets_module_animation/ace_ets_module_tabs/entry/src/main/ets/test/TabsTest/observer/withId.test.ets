@@ -29,7 +29,7 @@ export default function withIdTest() {
         console.info("get withIdTest state pages:" + JSON.stringify(pages));
         if (!("withId" == pages.name)) {
           console.info("withIdTest pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl({url:"MainAbility/pages/Tabs/observer/withId"})
+          let result = await router.replaceUrl({url:"MainAbility/pages/Tabs/observer/withId"})
           await CommonFunc.sleep(2000);
           console.info("push withIdTest page result:" + JSON.stringify(result));
         }
@@ -258,6 +258,136 @@ export default function withIdTest() {
       console.info("test_tabs_uiObserverWithIdTest_004 content7: " + JSON.parse(strJson007).$attrs.content);
       expect(JSON.parse(strJson007).$attrs.content).assertEqual('1');
       console.info('test_tabs_uiObserverWithIdTest_004 END');
+      done();
+    });
+
+    /**
+     * @tc.number test_tabs_uiObserverWithIdTest_005
+     * @tc.name   test_tabs_uiObserverWithIdTest_005
+     * @tc.desc   Test vertical tabs for changes, index value will change
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('test_tabs_uiObserverWithIdTest_005', Level.LEVEL0, async (done: Function) => {
+      console.info('test_tabs_uiObserverWithIdTest_005 START');
+      let driver: Driver = Driver.create();
+      let btn01 = await driver.findComponent(ON.id('idOn2'));
+      await btn01.click();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let btn02 = await driver.findComponent(ON.id('add1'));
+      await btn02.click();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let btn03 = await driver.findComponent(ON.id('idGet'));
+      await btn03.click();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let strJsonA: string = getInspectorByKey('textIndex');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonA)));
+      expect(JSON.parse(strJsonA).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content1: " + JSON.parse(strJsonA).$attrs.content);
+      expect(JSON.parse(strJsonA).$attrs.content).assertEqual('1');
+
+      let strJsonB: string = getInspectorByKey('textTabContentId');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonB)));
+      expect(JSON.parse(strJsonB).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content2: " + JSON.parse(strJsonB).$attrs.content);
+      expect(JSON.parse(strJsonB).$attrs.content).assertEqual('""');
+
+      let strJsonC: string = getInspectorByKey('textTabContentUniqueId');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonC)));
+      expect(JSON.parse(strJsonC).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content3: " + JSON.parse(strJsonC).$attrs.content);
+      expect(JSON.parse(strJsonC).$attrs.content > 0).assertTrue();
+
+
+      let strJsonD: string = getInspectorByKey('textState');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonD)));
+      expect(JSON.parse(strJsonD).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content4: " + JSON.parse(strJsonD).$attrs.content);
+      expect(JSON.parse(strJsonD).$attrs.content).assertEqual('0');
+
+      let strJsonE: string = getInspectorByKey('textId');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonE)));
+      expect(JSON.parse(strJsonE).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content5: " + JSON.parse(strJsonE).$attrs.content);
+      expect(JSON.parse(strJsonE).$attrs.content).assertEqual('"tab2"');
+
+      let strJsonF: string = getInspectorByKey('textUniqueId');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonF)));
+      expect(JSON.parse(strJsonF).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content6: " + JSON.parse(strJsonF).$attrs.content);
+      expect(JSON.parse(strJsonF).$attrs.content > 0).assertTrue();
+
+      let strJsonG: string = getInspectorByKey('textLastIndex');
+      console.info('test_tabs_uiObserverWithIdTest_005 ' + JSON.stringify(JSON.parse(strJsonG)));
+      expect(JSON.parse(strJsonG).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_005 content7: " + JSON.parse(strJsonG).$attrs.content);
+      expect(JSON.parse(strJsonG).$attrs.content).assertEqual('0');
+      console.info('test_tabs_uiObserverWithIdTest_005 END');
+      done();
+    });
+
+
+    /**
+     * @tc.number test_tabs_uiObserverWithIdTest_006
+     * @tc.name   test_tabs_uiObserverWithIdTest_006
+     * @tc.desc   Test other tabs for changes, index value will not change
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  0
+     */
+    it('test_tabs_uiObserverWithIdTest_006', Level.LEVEL0, async (done: Function) => {
+      console.info('test_tabs_uiObserverWithIdTest_006 START');
+      let driver: Driver = Driver.create();
+      let btn04 = await driver.findComponent(ON.id('add'));
+      await btn04.click();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let btn05 = await driver.findComponent(ON.id('idGet'));
+      await btn05.click();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let strJsonA: string = getInspectorByKey('textIndex');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonA)));
+      expect(JSON.parse(strJsonA).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content1: " + JSON.parse(strJsonA).$attrs.content);
+      expect(JSON.parse(strJsonA).$attrs.content).assertEqual('1');
+
+      let strJsonB: string = getInspectorByKey('textTabContentId');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonB)));
+      expect(JSON.parse(strJsonB).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content2: " + JSON.parse(strJsonB).$attrs.content);
+      expect(JSON.parse(strJsonB).$attrs.content).assertEqual('""');
+
+      let strJsonC: string = getInspectorByKey('textTabContentUniqueId');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonC)));
+      expect(JSON.parse(strJsonC).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content3: " + JSON.parse(strJsonC).$attrs.content);
+      expect(JSON.parse(strJsonC).$attrs.content > 0).assertTrue();
+
+
+      let strJsonD: string = getInspectorByKey('textState');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonD)));
+      expect(JSON.parse(strJsonD).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content4: " + JSON.parse(strJsonD).$attrs.content);
+      expect(JSON.parse(strJsonD).$attrs.content).assertEqual('0');
+
+      let strJsonE: string = getInspectorByKey('textId');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonE)));
+      expect(JSON.parse(strJsonE).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content5: " + JSON.parse(strJsonE).$attrs.content);
+      expect(JSON.parse(strJsonE).$attrs.content).assertEqual('"tab2"');
+
+      let strJsonF: string = getInspectorByKey('textUniqueId');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonF)));
+      expect(JSON.parse(strJsonF).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content6: " + JSON.parse(strJsonF).$attrs.content);
+      expect(JSON.parse(strJsonF).$attrs.content > 0).assertTrue();
+
+      let strJsonG: string = getInspectorByKey('textLastIndex');
+      console.info('test_tabs_uiObserverWithIdTest_006 ' + JSON.stringify(JSON.parse(strJsonG)));
+      expect(JSON.parse(strJsonG).$type).assertEqual('Text');
+      console.info("test_tabs_uiObserverWithIdTest_006 content7: " + JSON.parse(strJsonG).$attrs.content);
+      expect(JSON.parse(strJsonG).$attrs.content).assertEqual('0');
+      console.info('test_tabs_uiObserverWithIdTest_006 END');
       done();
     });
   })

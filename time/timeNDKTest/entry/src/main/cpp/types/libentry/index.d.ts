@@ -16,3 +16,4 @@ export const getTimezone_0100: () => number;
 export const getTimezone_0200: () => number;
 export const getTimezone_0300: () => string;
 export const getTimezone_0400: () => string;
+export const getTimezone_0500: () => number;

@@ -19,6 +19,7 @@ import windowNdkTest from 'libentry.so';
 import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
+import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 
 function sleep(ms: number): Promise<string> {
   return new Promise((resolve) => {
@@ -59,6 +60,16 @@ export default function windowNdk() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       console.log(`${Tag}:beforeEach start... `);
@@ -1683,6 +1694,246 @@ export default function windowNdk() {
         } else {
           expect(Result).assertEqual(801);
         }
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorwithNotExistedWindowid
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0300
+     * @tc.desc   testLockCursorwithNotExistedWindowid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithNotExistedWindowid', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithNotExistedWindowid ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testLockCursorwithNotExistedWindowid(10000);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorwithDestroyedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0400
+     * @tc.desc   testLockCursorwithDestroyedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithDestroyedWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithDestroyedWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testLockCursorwithDestroyedWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.destroyWindow();
+        let Result: number = windowNdkTest.testLockCursorwithDestroyedWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorwithUnfocusableWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0500
+     * @tc.desc   testLockCursorwithUnfocusableWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithUnfocusableWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithUnfocusableWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testLockCursorwithUnfocusableWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.setFocusable(false);
+        let Result: number = windowNdkTest.testLockCursorwithUnfocusableWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorandUnLockCursor
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0600
+     * @tc.desc   testLockCursorandUnLockCursor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLockCursorandUnLockCursor', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testLockCursorandUnLockCursor ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testLockCursorandUnLockCursor');
+        await subWindowClass.setUIContent('testability/pages/subWindow');
+        await subWindowClass.showWindow();
+        await sleep(1000)
+        await subWindowClass.resize(300, 300);
+        await sleep(300);
+        await subWindowClass.moveWindowTo(100, 100);
+        await sleep(300)
+        let windowProperties = subWindowClass.getWindowProperties();
+        console.info(`${caseName} sub windowProperties: ${JSON.stringify(windowProperties)}`);
+        let windowId = windowProperties.id;
+        console.info(`${caseName} sub windowId: ${windowId}`);
+        let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
+        console.info(`${caseName} Result testLockCursorandUnLockCursor1: ${Result}`);
+        expect(Result).assertEqual(0);
+        let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
+        console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
+        expect(Result2).assertEqual(0);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnLockCursorwithNotExistedWindowid
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0300
+     * @tc.desc   testUnLockCursorwithNotExistedWindowid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithNotExistedWindowid', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithNotExistedWindowid ';
+      try {
+        console.info(`${caseName} start`);
+        let windowClass = windowStage.getMainWindowSync()
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let Result: number = windowNdkTest.testUnLockCursorwithNotExistedWindowid(10000);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnLockCursorwithDestroyedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0400
+     * @tc.desc   testUnLockCursorwithDestroyedWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithDestroyedWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithDestroyedWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithDestroyedWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.destroyWindow();
+        let Result: number = windowNdkTest.testUnLockCursorwithDestroyedWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnLockCursorwithUnfocusableWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0500
+     * @tc.desc   testUnLockCursorwithUnfocusableWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithUnfocusableWindow', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithUnfocusableWindow ';
+      let subWindowClass: window.Window | undefined
+      try {
+        console.info(`${caseName} start`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithUnfocusableWindow');
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        await subWindowClass.setFocusable(false);
+        let Result: number = windowNdkTest.testUnLockCursorwithUnfocusableWindow(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(1300002);
+        await subWindowClass.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   
+    /**
+     * @tc.name   testWindowManager_ErrorCode_enum
+     * @tc.number SUB_WindowManager_ErrorCode_0100
+     * @tc.desc   testWindowManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWindowManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testWindowManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.testWindowManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
         done()
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));

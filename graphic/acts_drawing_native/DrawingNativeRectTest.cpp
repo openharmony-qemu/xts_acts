@@ -137,13 +137,15 @@ HWTEST_F(DrawingNativeRectTest, testRectIntersectNull, Function | SmallTest | Le
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectIntersect with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectIntersect(nullptr, other);
+    bool ret = OH_Drawing_RectIntersect(nullptr, other);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_RectIntersect with the second parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectIntersect(rect, nullptr);
+    ret = OH_Drawing_RectIntersect(rect, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -197,9 +199,9 @@ HWTEST_F(DrawingNativeRectTest, testRectJoinNormal, Function | SmallTest | Level
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 8. Call OH_Drawing_RectJoin to take the union of the two rectangles
     bool ret = OH_Drawing_RectJoin(rect, other);
-    EXPECT_TRUE(ret);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
     // 9. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -224,13 +226,15 @@ HWTEST_F(DrawingNativeRectTest, testRectJoinNull, Function | SmallTest | Level3)
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectJoin with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectJoin(nullptr, other);
+    bool ret = OH_Drawing_RectJoin(nullptr, other);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_RectJoin with the second parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectJoin(rect, nullptr);
+    ret = OH_Drawing_RectJoin(rect, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -1222,30 +1226,16 @@ HWTEST_F(DrawingNativeRectTest, testRectContainsNull, Function | SmallTest | Lev
     OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
-    bool isContains;
+    bool isContains = false;
     OH_Drawing_ErrorCode code = OH_Drawing_RectContains(nullptr, other, &isContains);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
-    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
-    OH_Drawing_RectDestroy(rect);
-    OH_Drawing_RectDestroy(other);
-}
-/**
- * @tc.name   testRectContainsNull1
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1702
- * @tc.desc   Test for testRectContainsNull1
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
-HWTEST_F(DrawingNativeRectTest, testRectContainsNull1, Function | SmallTest | Level3) {
-    // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
-    EXPECT_NE(rect, nullptr);
-    EXPECT_NE(other, nullptr);
-    bool isContains;
-    OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, nullptr, &isContains);
+
+    code = OH_Drawing_RectContains(rect, nullptr, &isContains);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+
+    code = OH_Drawing_RectContains(rect, other, nullptr);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
     // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
@@ -1274,6 +1264,451 @@ HWTEST_F(DrawingNativeRectTest, testRectContainsCalls, Function | SmallTest | Le
         EXPECT_EQ(isContains, true);
     }
     // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+
+/**
+ * @tc.name   testRectSetEmptyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800
+ * @tc.desc   Test for testRectSetEmptyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSetEmptyNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectSetEmptyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801
+ * @tc.desc   Test for testRectSetEmptyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSetEmptyNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectSetEmptyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802
+ * @tc.desc   Test for testRectSetEmptyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSetEmptyMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectIsEmptyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900
+ * @tc.desc   Test for testRectIsEmptyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectIsEmptyNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    bool isEmpty = true;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isEmpty, false);
+    OH_Drawing_RectSetEmpty(rect);
+    errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isEmpty, true);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectIsEmptyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901
+ * @tc.desc   Test for testRectIsEmptyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectIsEmptyNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    bool isEmpty = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(nullptr, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isEmpty, false);
+    errorCode = OH_Drawing_RectIsEmpty(rect, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isEmpty, false);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectIsEmptyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902
+ * @tc.desc   Test for testRectIsEmptyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectIsEmptyMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    bool isEmpty = true;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isEmpty, false);
+    }
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000
+ * @tc.desc   Test for testRectOffsetNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    errorCode = OH_Drawing_RectOffset(rect, -100, -100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001
+ * @tc.desc   Test for testRectOffsetNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(nullptr, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    errorCode = OH_Drawing_RectOffset(rect, 0, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    errorCode = OH_Drawing_RectOffset(rect, 100, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002
+ * @tc.desc   Test for testRectOffsetAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetAbnormal, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 0x7F7FFFFF, 0x7F7FFFFF);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095170);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
+ * @tc.desc   Test for testRectOffsetMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    for (float i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 10, 10);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 10.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 10.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 110.0 + i * 10.0);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 110.0 + i * 10.0);
+    }
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetToNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100
+ * @tc.desc   Test for testRectOffsetToNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetToNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetToNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101
+ * @tc.desc   Test for testRectOffsetToNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetToNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(nullptr, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    errorCode = OH_Drawing_RectOffsetTo(rect, 0, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    errorCode = OH_Drawing_RectOffsetTo(rect, 100, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetToAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102
+ * @tc.desc   Test for testRectOffsetToAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetToAbnormal, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, 0x7F7FFFFF, 0x7F7FFFFF);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 2139095170);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectOffsetToMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103
+ * @tc.desc   Test for testRectOffsetToMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectOffsetToMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, 100, 100);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    }
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectSortNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200
+ * @tc.desc   Test for testRectSortNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSortNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    rect = OH_Drawing_RectCreate(100, 100, 0, 0);
+    errorCode = OH_Drawing_RectSort(rect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectSortNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201
+ * @tc.desc   Test for testRectSortNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSortNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectSortMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202
+ * @tc.desc   Test for testRectSortMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectSortMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0);
+    }
+    OH_Drawing_RectDestroy(rect);
+}
+
+/**
+ * @tc.name   testRectUnionNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300
+ * @tc.desc   Test for testRectUnionNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectUnionNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(100, 100, 200, 200);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+
+/**
+ * @tc.name   testRectUnionNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301
+ * @tc.desc   Test for testRectUnionNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectUnionNull, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(100, 100, 200, 200);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(nullptr, other);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_RectUnion(rect, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+
+/**
+ * @tc.name   testRectUnionMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302
+ * @tc.desc   Test for testRectUnionMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectUnionMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(100, 100, 200, 200);
+    EXPECT_NE(rect, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    }
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
 }

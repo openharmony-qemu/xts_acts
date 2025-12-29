@@ -61,7 +61,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0100', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -84,7 +84,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0200', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -107,7 +107,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0300', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -130,7 +130,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0400', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -153,7 +153,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0500', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -176,7 +176,7 @@ export default function ConsumeColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeColor_0600', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

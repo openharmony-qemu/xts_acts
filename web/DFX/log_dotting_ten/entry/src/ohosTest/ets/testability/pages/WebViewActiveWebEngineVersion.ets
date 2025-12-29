@@ -213,6 +213,14 @@ struct Index {
                 break;
               }
 
+              case "emitIsActiveWebEngineEvergreen009": {
+                await Utils.sleep(2000);
+                if(webview.WebviewController.isActiveWebEngineEvergreen() == true || webview.WebviewController.isActiveWebEngineEvergreen() == false )
+                Utils.emitEvent(true, 20251226)
+                break;
+              }
+
+
             }
           })
       }

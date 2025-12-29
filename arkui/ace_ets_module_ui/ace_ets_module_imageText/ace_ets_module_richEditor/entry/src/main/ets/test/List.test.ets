@@ -190,6 +190,8 @@ import RichEditorEnableAutoSpacingTest from './RichEditorApi20Test/RichEditorEna
 import RichEditorScrollBarColorTest from './RichEditorApi21Test/ScrollBarColor.test';
 import richEditorObserverTest from './RichEditorApi22Test/richEditorObserver.test';
 import richEditorSupportSvg2Test from './RichEditorApi22Test/richEditorSupportSvg2.test';
+import RichEditorEnableSelectedDataDetectorTest from './RichEditorApi22Test/RichEditorEnableSelectedDataDetector.test';
+import RichEditorOnWillAttachIMETest from './RichEditorApi22Test/RichEditorOnWillAttachIME.test';
 
 
 export default function testsuite() {
@@ -371,4 +373,6 @@ export default function testsuite() {
 
   // richEditorObserverTest()          // Api22
   richEditorSupportSvg2Test()
+  RichEditorEnableSelectedDataDetectorTest()
+  RichEditorOnWillAttachIMETest()
 }

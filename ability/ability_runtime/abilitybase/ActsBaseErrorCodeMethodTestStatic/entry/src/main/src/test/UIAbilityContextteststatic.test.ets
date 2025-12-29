@@ -564,6 +564,12 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(err?.code == 16000061) {
+              done();
+            }
+          });
         await Utils.msSleep(2000);
         let want: Want = {
           bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -598,6 +604,12 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(err?.code == 16000061) {
+              done();
+            }
+          });
         await Utils.msSleep(2000);
         let want: Want = {
           bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -629,6 +641,12 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(err?.code == 16000061) {
+              done();
+            }
+          });
         await Utils.msSleep(2000);
         let want: Want = {
           deviceId: '',

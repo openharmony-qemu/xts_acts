@@ -91,6 +91,39 @@ async function terminateAbility4(caseName: string) {
   await sleep(1000)
 }
 
+async function startAbility5(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility5',
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest5') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility5(caseName: string) {
+  let pageContext = AppStorage.get('contextTest5') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowLayoutTest() {
   describe('windowLayoutTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -206,7 +239,8 @@ export default function windowLayoutTest() {
       windowStage.createSubWindowWithOptions('testStartMoving_0200', options).then(async (data) => {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-        windowClass.resize(1000, 1200)
+        windowClass.resize(1000, 1200);
+        windowClass.moveWindowToAsync(200,300);
         await windowClass.showWindow()
         await sleep(1000)
         let driver = Driver.create();
@@ -266,7 +300,8 @@ export default function windowLayoutTest() {
         mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-          windowClass.resize(1000, 1200)
+          windowClass.resize(1000, 1200);
+          windowClass.moveWindowToAsync(200,300);
           await windowClass.showWindow()
           await sleep(1000)
           let driver = Driver.create();
@@ -4269,5 +4304,288 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done()
       }
     })
+
+    /**
+     * @tc.name   testEnumPixelUnit
+     * @tc.number testEnumPixelUnit
+     * @tc.desc   testEnumPixelUnit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumPixelUnit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumPixelUnit';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' PixelUnit: ' + JSON.stringify(window.PixelUnit))
+        expect(window.PixelUnit.PX).assertEqual(0);
+        expect(window.PixelUnit.VP).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEnumOcclusionState
+     * @tc.number testEnumOcclusionState
+     * @tc.desc   testEnumOcclusionState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumOcclusionState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumOcclusionState';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' OcclusionState: ' + JSON.stringify(window.OcclusionState))
+        expect(window.OcclusionState.NO_OCCLUSION).assertEqual(0);
+        expect(window.OcclusionState.PARTIAL_OCCLUSION).assertEqual(1);
+        expect(window.OcclusionState.FULL_OCCLUSION).assertEqual(2);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
+     * @tc.name       testGetWindowLimitsVPwithFloatWindow
+     * @tc.desc       testGetWindowLimitsVPwithFloatWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPwithFloatWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithFloatWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithFloatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/Index2');
+          await subWindowClass.showWindow();
+          let windowLimits = subWindowClass.getWindowLimits();
+          console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+          if (canIUseRes) {
+            expect(windowLimits.minWidth).assertEqual(1)
+            expect(windowLimits.minHeight).assertEqual(1)
+          }
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed in showWindow. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300002)
+          } else {
+            expect(err.code).assertEqual(801)
+          }
+          done()
+        });
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0200
+     * @tc.name       testGetWindowLimitsVPwithDialogWindow
+     * @tc.desc       testGetWindowLimitsVPwithDialogWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithDialogWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithDialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await window.createWindow(config);
+        await subWindowClass.setUIContent('testability/pages/Index2');
+        await subWindowClass.showWindow();
+        let windowLimits = subWindowClass.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        if (canIUseRes) {
+          expect(windowLimits.minWidth).assertLarger(1)
+          expect(windowLimits.minHeight).assertLarger(1)
+        }
+        await subWindowClass?.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801)
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0300
+     * @tc.name       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.desc       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testGetWindowLimitsVPwithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithDestoryedWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithDestoryedWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      subWindowClass = await window.createWindow(config);
+      await subWindowClass.setUIContent('testability/pages/Index2');
+      await subWindowClass.showWindow();
+      await subWindowClass.destroyWindow();
+      try {
+        let windowLimits = subWindowClass.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0400
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPSetWindowLimitsVP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsVP';
+      console.log(caseName + 'begin');
+      let windowClass: window.Window | undefined;
+      let windowStageStart = await startAbility5(caseName, context);
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        windowClass = windowStageStart.getMainWindowSync();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        let setWindowLimits: window.WindowLimits = {
+          minWidth: windowLimits.minWidth as number + 10,
+          minHeight: windowLimits.minHeight as number + 10,
+          maxWidth: windowLimits.maxWidth as number - 10,
+          maxHeight: windowLimits.maxHeight as number - 10,
+          pixelUnit: window.PixelUnit.VP
+        }
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
+
+        if (canIUseRes) {
+          expect(windowLimits2.minWidth).assertEqual(setWindowLimits.minWidth)
+          expect(windowLimits2.minHeight).assertEqual(setWindowLimits.minHeight)
+          expect(windowLimits2.maxWidth).assertEqual(setWindowLimits.maxWidth)
+          expect(windowLimits2.maxHeight).assertEqual(setWindowLimits.maxHeight)
+        }
+        await terminateAbility5(caseName);
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow();
+        await terminateAbility5(caseName);
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0500
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPSetWindowLimitsPX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsPX';
+      console.log(caseName + 'begin');
+      let windowClass: window.Window | undefined;
+      let windowStageStart = await startAbility5(caseName, context);
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        windowClass = windowStageStart.getMainWindowSync();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        let setWindowLimits: window.WindowLimits = {
+          minWidth: vp2px(windowLimits.minWidth as number + 10),
+          minHeight: vp2px(windowLimits.minHeight as number + 10),
+          maxWidth: vp2px(windowLimits.maxWidth as number - 10),
+          maxHeight: vp2px(windowLimits.maxHeight as number - 10),
+          pixelUnit: window.PixelUnit.PX
+        }
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
+
+        if (canIUseRes) {
+          expect(Math.abs(windowLimits2.minWidth as number -(windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minHeight as number -(windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxWidth as number -(windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxHeight as number -(windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
+        }
+        await terminateAbility5(caseName)
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow();
+        await terminateAbility5(caseName)
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
   })
 }

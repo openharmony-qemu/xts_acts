@@ -16,3 +16,4 @@
 export const StartSelfUIAbilityPermissionDenied: () => number;
 export const StartSelfUIAbilityWithStartOptionsPermissionDenied: () => number;
 export const AbilityRuntimeErrorCodePermissionDeniedCode: () => number;
+export const StartSelfUIAbilityWithPidPermissionDenied: () => number;

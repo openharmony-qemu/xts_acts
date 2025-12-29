@@ -332,7 +332,8 @@ export default function DecimalTest024() {
       try {
         test_abs_001('e', 'e');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -436,9 +437,9 @@ export default function DecimalTest024() {
      * @tc.name   Decimal_acos_Func_014_1
      * @tc.number DECIMAL_TEST_0014
      * @tc.desc   Test acos
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("Decimal_acos_Func_014_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('-0.78468834561401325', 40, 6, '2.472989536549809027410129361828086088366');
@@ -476,9 +477,9 @@ export default function DecimalTest024() {
      * @tc.name   Decimal_acos_Func_015_1
      * @tc.number DECIMAL_TEST_0015
      * @tc.desc   Test acos
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("Decimal_acos_Func_015_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acos_004('0.41923186648524998285699814886092351368793359300547574', 42, 3,
@@ -512,7 +513,8 @@ export default function DecimalTest024() {
       try {
         test_acos_004('e', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -570,9 +572,9 @@ export default function DecimalTest024() {
      * @tc.name   Decimal_acosh_Func_018_1
      * @tc.number DECIMAL_TEST_0018
      * @tc.desc   Test acosh
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("Decimal_acosh_Func_018_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_acosh_005('43999099999999099999999999999999999997999999999999999999999990993999999.999099999999999699999',
@@ -673,7 +675,8 @@ export default function DecimalTest024() {
       try {
         test_acosh_005('e11', 6, 6, '4.89014');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e11`);
@@ -801,9 +804,9 @@ export default function DecimalTest024() {
      * @tc.name   Decimal_asin_Func_027_1
      * @tc.number DECIMAL_TEST_0027
      * @tc.desc   Test asin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("Decimal_asin_Func_027_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asin_006('-0.1958', 17, 5, '-0.19707317438982823');
@@ -833,7 +836,8 @@ export default function DecimalTest024() {
       try {
         test_asin_006('e', 19, 5, '1.062001065132184521');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -937,9 +941,9 @@ export default function DecimalTest024() {
      * @tc.name   Decimal_asinh_Func_032_1
      * @tc.number DECIMAL_TEST_0032
      * @tc.desc   Test asinh
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("Decimal_asinh_Func_032_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_asinh_007('461967326081151345517140931535', 45, 1, '68.9984388572118740675493758006785202194685299');
@@ -993,7 +997,8 @@ export default function DecimalTest024() {
       try {
         test_asinh_007('e11', 14, 4, '-4.5911741056591');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e11`);

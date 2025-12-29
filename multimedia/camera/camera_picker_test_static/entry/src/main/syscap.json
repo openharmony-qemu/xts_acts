@@ -4,9 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Multimedia.Camera.Core",
-                    "SystemCapability.Multimedia.Image.Core",
-                    "SystemCapability.Multimedia.Media.Core"
+                    "SystemCapability.Multimedia.Camera.Core"
                 ]
             }
         ]

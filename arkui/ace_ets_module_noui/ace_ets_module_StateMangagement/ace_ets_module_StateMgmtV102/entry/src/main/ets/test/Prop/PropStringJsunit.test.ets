@@ -63,7 +63,7 @@ export default function PropStringJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropStringJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropStringJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('PropStringJsunit_0200 START');
       let driver = await Driver.create()
       let button = await driver.findComponent(ON.id('PropString_A'));
@@ -86,7 +86,7 @@ export default function PropStringJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropStringJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropStringJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropStringJsunit_0400 START');
       let driver = await UiDriver.create()

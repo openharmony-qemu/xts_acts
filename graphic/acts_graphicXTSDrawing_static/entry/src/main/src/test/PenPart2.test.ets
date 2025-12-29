@@ -716,8 +716,8 @@ export default function penPart2Test() {
       const msg = 'testPenSetShaderEffectNormalStatic';
       const pen = new drawing.Pen();
       let shaderEffect =
-        drawing.ShaderEffect.createLinearGradient({ x: 100, y: 100 }, { x: 300, y: 300 }, [0xFF00FF00, 0xFFFF0000],
-          drawing.TileMode.REPEAT);
+        drawing.ShaderEffect.createLinearGradient({ x: 100, y: 100 }, { x: 300, y: 300 },
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
       if (shaderEffect) {
         try {
           pen.setShaderEffect(shaderEffect);
@@ -749,8 +749,8 @@ export default function penPart2Test() {
       const msg = 'testPenSetShaderEffectMultipleCallsStatic';
       const pen = new drawing.Pen();
       let shaderEffect =
-        drawing.ShaderEffect.createLinearGradient({ x: 100, y: 100 }, { x: 300, y: 300 }, [0xFF00FF00, 0xFFFF0000],
-          drawing.TileMode.REPEAT);
+        drawing.ShaderEffect.createLinearGradient({ x: 100, y: 100 }, { x: 300, y: 300 },
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
       if (shaderEffect) {
         for (let i = 0; i < 20; i++) {
           try {

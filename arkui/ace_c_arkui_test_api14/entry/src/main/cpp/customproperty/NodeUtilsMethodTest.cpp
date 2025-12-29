@@ -24,6 +24,15 @@ static napi_value TestMethodReturnValue001(napi_env env, napi_callback_info info
     NAPI_START(column, ARKUI_NODE_COLUMN);
     ArkUI_NodeHandle pageNode = OH_ArkUI_NodeUtils_GetCurrentPageRootNode(nullptr);
     ASSERT_OBJ(pageNode, nullptr);
+    
+    ArkUI_NodeHandle parent =  OH_ArkUI_NodeUtils_GetParentInPageTree(nullptr);
+    ASSERT_OBJ(parent, nullptr);
+    
+    ArkUI_ActiveChildrenInfo* activeChildrenInfo;
+    OH_ArkUI_NodeUtils_GetActiveChildrenInfo(column, &activeChildrenInfo);
+    ArkUI_NodeHandle childNode = OH_ArkUI_ActiveChildrenInfo_GetNodeByIndex(activeChildrenInfo, 1000);
+    ASSERT_OBJ(childNode, nullptr);
+
     bool ret1 = OH_ArkUI_NodeUtils_IsCreatedByNDK(column);
     ASSERT_EQ(ret1, true);
     bool ret2 = OH_ArkUI_NodeUtils_IsCreatedByNDK(nullptr);

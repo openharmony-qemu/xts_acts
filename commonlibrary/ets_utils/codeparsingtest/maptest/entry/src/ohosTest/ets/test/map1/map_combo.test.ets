@@ -1892,7 +1892,7 @@ export default function MapComboTest() {
       const now = Date.now();
       sensorData.forEach((readings, sensor) => {
         readings.forEach((reading, id) => {
-          if (reading.timestamp! < now - 1000) {
+          if (reading.timestamp! <= now - 1000) {
             readings.delete(id);
           }
         });
@@ -3667,7 +3667,7 @@ export default function MapComboTest() {
         const twoDaysAgo = Date.now() - 2 * 86400000;
         const stagnant: string[] = [];
         languageProgress.get(language)!.forEach((skill, name) => {
-          if (skill.lastPracticed! < twoDaysAgo) {
+          if (skill.lastPracticed! <= twoDaysAgo) {
             stagnant.push(name);
           }
         });
@@ -4336,7 +4336,7 @@ export default function MapComboTest() {
         MapApiComboTest065(tool);
 
         // Check if maintenance is needed (>45 days)
-        const needsMaintenance = tool.lastMaintenance! < Date.now() - 45 * 86400000;
+        const needsMaintenance = tool.lastMaintenance! <= Date.now() - 45 * 86400000;
         if (needsMaintenance) {
           tool.lastMaintenance = Date.now(); // Simulate maintenance
         }

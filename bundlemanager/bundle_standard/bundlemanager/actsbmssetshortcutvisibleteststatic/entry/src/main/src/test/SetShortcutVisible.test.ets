@@ -40,6 +40,7 @@ export default function setShortcutVisible() {
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
         const data = await shortcutManager.getAllShortcutInfoForSelf()
         hilog.info(DOMAIN, 'getAllShortcutInfoForSelfData:', JSON.stringify(data));
+        expect(data.length>0).assertTrue();
         expect(data[0].id).assertEqual("shortcut_id");
         expect(data[0].bundleName).assertEqual("ohos.acts.bms.setshortcutvisibletest.static");
         expect(data[0].moduleName).assertEqual("entry");

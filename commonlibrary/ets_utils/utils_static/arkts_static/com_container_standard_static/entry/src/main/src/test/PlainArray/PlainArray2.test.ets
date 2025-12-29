@@ -40,7 +40,8 @@ export default function PlainArrayTest2() {
       try {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         expect(String(plainArray.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -59,7 +60,8 @@ export default function PlainArrayTest2() {
       try {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         expect(String(plainArray.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -81,7 +83,8 @@ export default function PlainArrayTest2() {
         expect(String(plainArray.isEmpty())).assertEqual('false');
         plainArray.remove(0);
         expect(String(plainArray.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -102,7 +105,8 @@ export default function PlainArrayTest2() {
         plainArray.add(0, "zhang san");
         plainArray.clear();
         expect(String(plainArray.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -123,7 +127,8 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "squirrel");
         let result = plainArray.has(1);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -144,7 +149,8 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "");
         let result = plainArray.has(1);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -215,7 +221,8 @@ export default function PlainArrayTest2() {
         let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.has(num1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -236,7 +243,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.get(1);
         expect(String(result)).assertEqual('squirrel');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -258,7 +266,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.get(1);
         expect(String(result)).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -272,14 +281,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGet0003
-     * @tc.number testPlainArrayGet0003
-     * @tc.desc   testPlainArrayGet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGet0003';
     //   try {
@@ -301,14 +302,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGet0004
-     * @tc.number testPlainArrayGet0004
-     * @tc.desc   testPlainArrayGet0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGet0004';
     //   try {
@@ -345,7 +338,8 @@ export default function PlainArrayTest2() {
         let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.get(num1))).assertEqual("li si");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -367,7 +361,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "");
         let result = plainArray.getIndexOfKey(2);
         expect(String(result)).assertEqual('1')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -389,7 +384,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, new Tmp(12));
         let result = plainArray.getIndexOfKey(2);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -403,14 +399,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetIndexOfKey0003
-     * @tc.number testPlainArrayGetIndexOfKey0003
-     * @tc.desc   testPlainArrayGetIndexOfKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetIndexOfKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGetIndexOfKey0003';
     //   try {
@@ -444,7 +432,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.getIndexOfKey(2);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -465,7 +454,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "");
         let result = plainArray.getIndexOfValue("");
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -489,7 +479,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, param2);
         let result = plainArray.getIndexOfValue(param2);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -503,14 +494,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetIndexOfValue0003
-     * @tc.number testPlainArrayGetIndexOfValue0003
-     * @tc.desc   testPlainArrayGetIndexOfValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetIndexOfValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetIndexOfValue0003';
     //   try {
@@ -544,7 +527,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.getIndexOfValue("sparrow");
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -565,8 +549,9 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
         let result = plainArray.getKeyAt(3);
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+        expect(String(result)).assertEqual('-1');
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -588,7 +573,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.getKeyAt(1);
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -602,14 +588,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetKeyAt0003
-     * @tc.number testPlainArrayGetKeyAt0003
-     * @tc.desc   testPlainArrayGetKeyAt0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetKeyAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetKeyAt0003';
     //   try {
@@ -632,14 +610,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetKeyAt0004
-     * @tc.number testPlainArrayGetKeyAt0004
-     * @tc.desc   testPlainArrayGetKeyAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetKeyAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetKeyAt0004';
     //   try {
@@ -693,7 +663,8 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
         plainArray.getValueAt(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}`);
         expect(String(err.code)).assertEqual('10200001');
       }
@@ -715,7 +686,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.getValueAt(1);
         expect(String(result)).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -729,14 +701,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetValueAt0003
-     * @tc.number testPlainArrayGetValueAt0003
-     * @tc.desc   testPlainArrayGetValueAt0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetValueAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetValueAt0003';
     //   try {
@@ -759,14 +723,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetValueAt0004
-     * @tc.number testPlainArrayGetValueAt0004
-     * @tc.desc   testPlainArrayGetValueAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetValueAt0004';
     //   try {
@@ -798,7 +754,8 @@ export default function PlainArrayTest2() {
         let result = plainArray.getValueAt(1);
         let index = plainArray.getIndexOfValue(result);
         expect(String(index)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -819,7 +776,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let newPlainArray = plainArray.clone();
         expect(String(newPlainArray.length)).assertEqual(String(plainArray.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -841,7 +799,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, 2);
         let newPlainArray = plainArray.clone();
         expect(String(newPlainArray.length)).assertEqual(String(plainArray.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -863,7 +822,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, new Tmp(12));
         let newPlainArray = plainArray.clone();
         expect(String(newPlainArray.length)).assertEqual(String(plainArray.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -886,7 +846,8 @@ export default function PlainArrayTest2() {
         let newPlainArray = plainArray.clone();
         newPlainArray.add(3, new Tmp(13));
         expect(String(plainArray.length)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -908,7 +869,8 @@ export default function PlainArrayTest2() {
         plainArray.add(1, param);
         let newPlainArray = plainArray.clone();
         expect(String(plainArray.length)).assertEqual(String(newPlainArray.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -922,14 +884,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayClone0006
-     * @tc.number testPlainArrayClone0006
-     * @tc.desc   testPlainArrayClone0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayClone0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayClone0006';
     //   try {
@@ -959,7 +913,8 @@ export default function PlainArrayTest2() {
         let param = "a".repeat(5120);
         plainArray.add(1, param);
         expect(String(plainArray.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -979,7 +934,8 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         plainArray.add(1, "squirrel");
         expect(String(plainArray.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -993,14 +949,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayAdd0003
-     * @tc.number testPlainArrayAdd0003
-     * @tc.desc   testPlainArrayAdd0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayAdd0003';
     //   try {
@@ -1030,7 +978,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.remove(2);
         expect(String(result)).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code} ${err.message}}`);
         expect(false).assertFail();
       }
@@ -1044,14 +993,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayRemove0002
-     * @tc.number testPlainArrayRemove0002
-     * @tc.desc   testPlainArrayRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayRemove0002';
     //   try {
@@ -1072,14 +1013,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayRemove0003
-     * @tc.number testPlainArrayRemove0003
-     * @tc.desc   testPlainArrayRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayRemove0003';
     //   try {
@@ -1108,7 +1041,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "zhang san1");
         let result = plainArray.remove(3);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1134,7 +1068,8 @@ export default function PlainArrayTest2() {
         let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.remove(num1))).assertEqual("li si");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1156,7 +1091,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.removeAt(1);
         expect(String(result)).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1178,7 +1114,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.removeAt(-1);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1200,7 +1137,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.removeAt(2);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1220,7 +1158,8 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         let result = plainArray.removeAt(0);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1241,7 +1180,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         plainArray.removeRangeFrom(1, 0);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -1263,7 +1203,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.removeRangeFrom(1, 3);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1285,7 +1226,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         let result = plainArray.removeRangeFrom(1, Math.floor(7.5) as int);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1305,9 +1247,10 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         let result = plainArray.removeRangeFrom(0, 0);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.code).assertEqual(10200001);
+        expect(err.code).assertEqual(10200010);
       }
     });
 
@@ -1327,7 +1270,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         plainArray.setValueAt(1, 3546);
         expect(String(plainArray.getValueAt(1))).assertEqual('3546');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1347,9 +1291,10 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string | number> = new PlainArray<string | number>();
         plainArray.setValueAt(0, 3546);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.code).assertEqual(10200001);
+        expect(err.code).assertEqual(10200010);
       }
     });
 
@@ -1373,7 +1318,8 @@ export default function PlainArrayTest2() {
         let param = "a".repeat(5120);
         plainArray.setValueAt(2, param);
         expect(String(plainArray.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1387,14 +1333,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0004
-     * @tc.number testPlainArraySetValueAt0004
-     * @tc.desc   testPlainArraySetValueAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0004';
     //   try {
@@ -1419,14 +1357,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0005
-     * @tc.number testPlainArraySetValueAt0005
-     * @tc.desc   testPlainArraySetValueAt0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0005';
     //   try {
@@ -1450,14 +1380,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0006
-     * @tc.number testPlainArraySetValueAt0006
-     * @tc.desc   testPlainArraySetValueAt0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0006';
     //   try {
@@ -1490,7 +1412,8 @@ export default function PlainArrayTest2() {
         let result = plainArray.toString();
         console.log(`${TAG} result: ${result}`);
         expect(String(result)).assertEqual('1:squirrel,2:sparrow');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1504,14 +1427,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayToString0002
-     * @tc.number testPlainArrayToString0002
-     * @tc.desc   testPlainArrayToString0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayToString0002';
     //   try {
@@ -1542,7 +1457,8 @@ export default function PlainArrayTest2() {
         let result = plainArray.toString();
         console.log(`${TAG} result: ${result}`);
         expect(result).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1566,7 +1482,8 @@ export default function PlainArrayTest2() {
         let result = plainArray.toString();
         console.log(`${TAG} result: ${result}`);
         expect(result).assertEqual('1:squirrel,2:sparrow,3:sparrow');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1590,7 +1507,8 @@ export default function PlainArrayTest2() {
         let result = plainArray.toString();
         console.log(`${TAG} result: ${result}`);
         expect(result).assertEqual('1:squirrel,2:10,3:true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1613,7 +1531,8 @@ export default function PlainArrayTest2() {
         }
         plainArray.toString();
         expect(String(plainArray.length)).assertEqual('1024');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1638,7 +1557,8 @@ export default function PlainArrayTest2() {
         plainArray.add(2, "sparrow");
         plainArray.clear();
         expect(String(plainArray.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1660,7 +1580,8 @@ export default function PlainArrayTest2() {
         plainArray.clear();
         plainArray.add(2, "sparrow");
         expect(String(plainArray.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1680,7 +1601,8 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string | number | boolean> = new PlainArray<string | number | boolean>();
         plainArray.clear();
         expect(String(plainArray.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1694,14 +1616,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayClear0004
-     * @tc.number testPlainArrayClear0004
-     * @tc.desc   testPlainArrayClear0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayClear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayClear0004';
     //   try {
@@ -1732,7 +1646,8 @@ export default function PlainArrayTest2() {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1757,7 +1672,8 @@ export default function PlainArrayTest2() {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1779,7 +1695,8 @@ export default function PlainArrayTest2() {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1793,14 +1710,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayForEach0004
-     * @tc.number testPlainArrayForEach0004
-     * @tc.desc   testPlainArrayForEach0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayForEach0004';
     //   try {
@@ -1825,14 +1734,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayForEach0005
-     * @tc.number testPlainArrayForEach0005
-     * @tc.desc   testPlainArrayForEach0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayForEach0005';
     //   try {
@@ -1864,7 +1765,8 @@ export default function PlainArrayTest2() {
         plainArray.forEach((value) => {
           expect(String(plainArray.get(0))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1886,7 +1788,8 @@ export default function PlainArrayTest2() {
         plainArray.forEach((value, index, plainArray: PlainArray<string>) => {
           expect(String(plainArray.get(0))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1915,7 +1818,8 @@ export default function PlainArrayTest2() {
           expect(String(plainArray.get(key))).assertEqual(String(value));
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1945,7 +1849,8 @@ export default function PlainArrayTest2() {
           expect(String(plainArray.get(key))).assertEqual(String(value));
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1972,7 +1877,8 @@ export default function PlainArrayTest2() {
           expect(String(plainArray.get(key))).assertEqual(String(value));
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1986,14 +1892,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySymbolIterator0004
-     * @tc.number testPlainArraySymbolIterator0004
-     * @tc.desc   testPlainArraySymbolIterator0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySymbolIterator0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySymbolIterator0004';
     //   try {
@@ -2014,5 +1912,22 @@ export default function PlainArrayTest2() {
     //     expect(false).assertFail();
     //   }
     // });
+
+    /**
+     * @tc.name      testPlainArraySymbolIterator0017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_SYMBOL_ITERATOR_1700
+     * @tc.desc      Testing PlainArray Symbol.iterator.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('testPlainArraySymbolIterator0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      expect(plainArray.length).assertEqual(0);
+      plainArray.add(1, "squirrel");
+      plainArray.add(2, "sparrow");
+      plainArray.add(3, "sparrow");
+      expect(plainArray.length).assertEqual(3);
+    });
   });
 }

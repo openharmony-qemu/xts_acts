@@ -17,12 +17,23 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Leve
 import window from '@ohos.window';
 import {GlobalContext} from './GlobalContext.test'
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function FloatingWindowTest() {
   describe('FloatingWindowTest', () => {
     let tag = 'FloatingWindowTestLog:'
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info('beforeAll function.');
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       console.info('beforeEach function.');

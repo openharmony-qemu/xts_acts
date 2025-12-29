@@ -1861,7 +1861,8 @@ export default function DecimalTest025() {
       try {
         test_toNearest_005('b1', 'b1', 100, 8);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: b1`);
@@ -2653,7 +2654,8 @@ export default function DecimalTest025() {
       try {
         test_toPrecision_012('-6', '-6.2847', 1e10, 4);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -3361,7 +3363,7 @@ export default function DecimalTest025() {
         maxE: 9e15
       });
       test_trunc_017('0', 0);
-      test_trunc_017('-0', -0);
+      test_trunc_017('-0', -0.0);
       test_trunc_016('0', '0.000');
       test_trunc_017('Infinity', Infinity);
       test_trunc_017('-Infinity', -Infinity);
@@ -3553,7 +3555,8 @@ export default function DecimalTest025() {
       try {
         test_trunc_016('e', 'e11');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e11`);
@@ -3605,7 +3608,7 @@ export default function DecimalTest025() {
       test_valueOf_018('0.0123', 0.0123);
       test_valueOf_019('111111111111111111111', '111111111111111111111');
       test_valueOf_018('0.00001', 0.00001);
-      test_valueOf_018('-0', -0);
+      test_valueOf_018('-0', -0.0);
       test_valueOf_019('-0', '-0');
       test_valueOf_018('-Infinity', -1 / 0.0);
       test_valueOf_019('-Infinity', '-Infinity');
@@ -3893,7 +3896,8 @@ export default function DecimalTest025() {
       try {
         test_sin_020('e11', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e11`);

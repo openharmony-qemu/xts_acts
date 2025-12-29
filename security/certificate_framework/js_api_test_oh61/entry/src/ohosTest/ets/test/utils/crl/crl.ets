@@ -13,15 +13,8 @@
  * limitations under the License.
  */
 import { cert } from "@kit.DeviceCertificateKit";
+import { stringToUint8Array } from "../common/common";
 
-
-function stringToUint8Array(str: string): Uint8Array {
-  let arr: Array<number> = [];
-  for (let i = 0, j = str.length; i < j; i++) {
-    arr.push(str.charCodeAt(i));
-  }
-  return new Uint8Array(arr);
-}
 
 /* 实体证书被吊销 START */
 export let certChainPem: string =

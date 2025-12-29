@@ -364,5 +364,20 @@ export default function webViewContCreatePdfAndOthersError() {
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
 
+    /**
+     * @tc.name   testSetSoftKeyboardBehaviorModeErr
+     * @tc.number SUB_ACE_WEBVIEW_SETSOFTKEYBOARDBEHAVIORMODE_API_0001
+     * @tc.desc   setSoftKeyboardBehaviorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL0
+     */
+    it('testSetSoftKeyboardBehaviorModeErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitSetSoftKeyboardBehaviorModeErr", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "17100001", 20151223, null);
+      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "Init error. The WebviewController must be associated with a Web component", 20151224, done);
+      await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
+    })
+
   })
 }

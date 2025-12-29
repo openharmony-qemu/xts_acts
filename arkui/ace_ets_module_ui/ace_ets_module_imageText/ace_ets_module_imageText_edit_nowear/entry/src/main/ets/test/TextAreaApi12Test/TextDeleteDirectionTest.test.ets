@@ -173,5 +173,31 @@ export default function TextDeleteDirectionTest() {
       console.info("[TextDeleteDirectionTest0004] end");
       done();
     });
+    
+    /**
+     * @tc.name   testTextDeleteDirection001
+     * @tc.number SUB_ACE_BASIC_ETS_API_TEXT_DELETE_DRIECTION_001
+     * @tc.desc   testTextDeleteDirection enum BACKWARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextDeleteDirection001', Level.LEVEL3, async (done: Function) => {
+      expect(TextDeleteDirection.BACKWARD).assertEqual(0)
+      done();
+    });
+
+    /**
+     * @tc.name   testTextDeleteDirection002
+     * @tc.number SUB_ACE_BASIC_ETS_API_TEXT_DELETE_DRIECTION_002
+     * @tc.desc   testTextDeleteDirection enum FORWARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextDeleteDirection002', Level.LEVEL3, async (done: Function) => {
+      expect(TextDeleteDirection.FORWARD).assertEqual(1)
+      done();
+    });
   })
 }

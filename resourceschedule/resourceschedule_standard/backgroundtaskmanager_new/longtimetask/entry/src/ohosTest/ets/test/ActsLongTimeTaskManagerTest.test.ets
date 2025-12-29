@@ -1394,6 +1394,8 @@ export default function LongTimeTaskManagerTest() {
                     expect(res[0].wantAgentBundleName == "com.acts.actslongtimetasktest").assertTrue();
                     expect(res[0].wantAgentAbilityName == "com.acts.actslongtimetasktest.TestAbility").assertTrue();
                     expect(res[0].suspendState).assertInstanceOf('Boolean');
+                    expect(res[0].bundleName == "com.acts.actslongtimetasktest").assertTrue();
+                    expect(res[0].appIndex).assertLarger(-1);
                 }).catch((error: BusinessError) => {
                     console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_XTS_039 Operation getAllContinuousTasks2 failed. code is ${error.code} message is ${error.message}`);
                 });

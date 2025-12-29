@@ -100,6 +100,12 @@ void RawfileRequest::Start() {
     // 接口覆盖
     OH_ArkWebResourceRequest_GetHttpBodyStream(resourceRequest(), &stream_);
 
+    OH_LOG_INFO(LOG_APP, "OH_ArkWebHttpBodyStream_IsInMemory %{public}d",
+        OH_ArkWebHttpBodyStream_IsInMemory(stream_));
+    if (OH_ArkWebHttpBodyStream_IsInMemory(stream_)) {
+        httpBodyStreamIsInMemoryTrue_ = OH_ArkWebHttpBodyStream_IsInMemory(stream_);
+    }
+
     if (rawfilePath_ == "xhrError") {
         DidFailWithError(ARKWEB_ERR_FILE_NOT_FOUND);
         return;
@@ -136,6 +142,7 @@ void RawfileRequest::ReadRawfileDataOnWorkerThread() {
                     {"post_data.html", "text/html"},
                     {"chunked_post_stream.html", "text/html"},
                     {"local.html", "text/html"},
+                    {"InMemory.html", "text/html"},
                     {"service_worker.html", "text/html"},
                     {"csp_script.js", "text/javascript"},
                     {"sw.js", "text/javascript"},

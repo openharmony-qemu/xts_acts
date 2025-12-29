@@ -55,7 +55,8 @@ export default function HashSetTest1() {
     it("testHashSet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let hashSet = new HashSet<number>();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The HashSet's constructor cannot be directly invoked");
@@ -644,12 +645,12 @@ export default function HashSetTest1() {
       hashSet.add(4);
       hashSet.add(5);
       let res = hashSet.entries();
-      let temp: [Double, Double] | undefined = undefined;
+      let temp: [Double, Double] | undefined = res.next().value;
       let arr = new Array<number>();
-      do {
-        temp = res.next().value!;
+      while (temp !== undefined) {
         arr.push(temp[1]);
-      } while (temp !== undefined);
+        temp = res.next().value;
+      }
       arr.sort((a, b) => {
         return (a as number) - (b as number);
       });

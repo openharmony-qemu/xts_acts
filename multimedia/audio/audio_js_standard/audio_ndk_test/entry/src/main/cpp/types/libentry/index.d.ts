@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,6 +23,7 @@ export const getFileList: (resmgr: resourceManager.ResourceManager, path: string
 export const createAudioStreamBuilder: () => number;
 export const audioCaptureGenerate: () => number;
 export const audioWorkGroup: () => number;
+export const AudioWorkGroup_001: () => number;
 export const audioCaptureGenerateErr: () => number;
 export const audioCaptureStart: () => number;
 export const audioCaptureStartErr: () => number;
@@ -79,8 +80,10 @@ export const audioStreamBuilderSetChannelCount: () => number;
 export const audioStreamBuilderSetSampleFormat: () => number;
 export const audioStreamBuilderSetEncodingType: () => number;
 export const audioStreamBuilderSetLatencyMode: () => number;
+export const AudioStreamBuilderSetLatencyMode_001: () => number;
 export const audioStreamBuilderSetRendererInfo: () => number;
 export const audioStreamBuilderSetCapturerInfo: () => number;
+export const AudioStreamBuilderSetCapturerInfo_001: () => number;
 export const audioStreamBuilderSetRendererCallback: () => number;
 export const audioStreamBuilderSetCapturerCallback: () => number;
 export const audioStreamBuilderSetFrameSizeInCallback: () => number;
@@ -305,4 +308,15 @@ export const audioSessionManagerAvailableDevices_001: () => number;
 export const audioSessionManagerAvailableDevices_002: () => number;
 export const audioSessionManagerAvailableDevices_003: () => number;
 export const audioSessionManagerAvailableDevices_004: () => number;
+export const AudioSessionManagerAvailableDevices_005: () => number;
+export const AudioSessionManagerAvailableDevices_006: () => number;
+export const AudioSessionManagerAvailableDevices_007: () => number;
+export const AudioSessionManagerAvailableDevices_008: () => number;
+export const AudioSessionManagerAvailableDevices_009: () => number;
+export const AudioSessionManagerAvailableDevices_010: () => number;
+export const AudioSessionManagerAvailableDevices_011: () => number;
+export const AudioSessionManagerAvailableDevices_012: () => number;
+export const AudioSessionManagerAvailableDevices_013: () => number;
+export const AudioSessionManagerAvailableDevices_014: () => number;
 export const bluetoothAndNearlinkPreferredRecordCategory_001: () => number;
+export const AudioCommonResult_001: () => number;

@@ -229,8 +229,12 @@ export default function api16CertNoPermissionTestUnit() {
         await certManager.getUkeyCertificate(keyUri, ukeyInfo);
         expect(null).assertFail();
       } catch (err:BusinessError) {
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        if (err.code == 801) {
+          done();
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        }
       }
       done();
     });

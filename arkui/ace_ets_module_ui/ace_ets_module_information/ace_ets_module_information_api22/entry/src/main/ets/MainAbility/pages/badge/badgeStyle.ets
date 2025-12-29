@@ -26,7 +26,7 @@ struct badgeStyle {
   build() {
     Scroll(){
       Row(){
-        Column({ space: 20 }) {
+        Column({ space: 10 }) {
           Badge({
             value: this.context,
             style: {
@@ -40,9 +40,7 @@ struct badgeStyle {
             Image($r('app.media.icon'))
               .width(80)
               .height(80)
-          }.id('badge')
-
-          Text('设置角标文本延伸显示是否避让')
+          }.id('badge').layoutWeight(1)
           Row({ space: 10 }){
             Button('true').onClick(() => {
               this.enableAutoAvoidance = true;
@@ -56,9 +54,7 @@ struct badgeStyle {
             Button('null').onClick(() => {
               this.enableAutoAvoidance = null;
             }).layoutWeight(1).id('Badge4')
-          }
-
-          Text('设置角标文本外描边颜色')
+          }.layoutWeight(1)
           Row({ space: 10 }){
             Button('Color.Black').onClick(() => {
               this.outBorderColor = Color.Black;
@@ -72,7 +68,7 @@ struct badgeStyle {
             Button('资源').onClick(() => {
               this.outBorderColor = $r('app.color.RED');
             }).layoutWeight(1).id('Badge8')
-          }
+          }.layoutWeight(1)
           Row({ space: 10 }){
             Button('空字符串').onClick(() => {
               this.outBorderColor = '';
@@ -86,9 +82,7 @@ struct badgeStyle {
             Button('null').onClick(() => {
               this.outBorderColor = null;
             }).layoutWeight(1).id('Badge12')
-          }
-
-          Text('设置角标文本外描边宽度')
+          }.layoutWeight(1)
           Row({ space: 10 }){
             Button('0').onClick(() => {
               this.outBorderWidth = LengthMetrics.vp(0);
@@ -105,7 +99,7 @@ struct badgeStyle {
             Button('20px').onClick(() => {
               this.outBorderWidth = LengthMetrics.px(20);
             }).layoutWeight(1).id('Badge17')
-          }
+          }.layoutWeight(1)
           Row({ space: 10 }){
             Button('-2vp').onClick(() => {
               this.outBorderWidth = LengthMetrics.vp(-2);
@@ -119,9 +113,8 @@ struct badgeStyle {
             Button('null').onClick(() => {
               this.outBorderWidth = null;
             }).layoutWeight(1).id('Badge21')
-          }
-
-        }.margin({ top: 20 })
+          }.layoutWeight(1)
+        }
       }.width('100%')
     }.height('100%')
   }

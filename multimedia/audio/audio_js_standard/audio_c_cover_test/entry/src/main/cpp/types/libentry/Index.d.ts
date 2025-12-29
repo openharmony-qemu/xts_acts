@@ -137,6 +137,18 @@ export const AudioRendererSetLoudnessGainInvalidParam: () => number;
 
 export const AudioRendererSetLoudnessGainSuccess: () => number;
 
+export const AudioRendererSetLoudnessGainSuccess_001: () => number;
+
+export const AudioRendererSetLoudnessGainSuccess_002: () => number;
+
+export const AudioRendererSetLoudnessGainSuccess_003: () => number;
+
+export const AudioRendererSetLoudnessGainSuccess_004: () => number;
+
+export const AudioRendererSetLoudnessGainSuccess_005: () => number;
+
+export const AudioRendererSetLoudnessGainSuccess_006: () => number;
+
 export const AudioRendererGetLoudnessGainInvalidParam: () => number;
 
 export const AudioRendererGetLoudnessGainSuccess: () => number;

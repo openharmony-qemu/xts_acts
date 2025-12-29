@@ -48,7 +48,7 @@ export default function bindContentCoverTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('bindContentCoverTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('bindContentCoverTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('bindContentCoverTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(2000);
