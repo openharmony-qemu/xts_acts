@@ -1980,5 +1980,261 @@ export default function type_01Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.name    testByteHasName0001
+     * @tc.desc    Testing ByteType.VAL.hasName() returns false.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testByteHasName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testByteHasName0001';
+      try {
+        const hasName = ByteType.VAL.hasName();
+        expect(hasName).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0002
+     * @tc.name    testByteHasName0002
+     * @tc.desc    Testing ByteType.REF.hasName() returns true.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testByteHasName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testByteHasName0002';
+      try {
+        const hasName = ByteType.REF.hasName();
+        expect(hasName).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0100
+     * @tc.name    testIsPrimitive0001
+     * @tc.desc    Testing isPrimitive method of ByteType (value type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsPrimitive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitive0001";
+      try {
+        let byteType = ByteType.VAL; // Value type
+        let result = byteType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0200
+     * @tc.name    testIsPrimitive0002
+     * @tc.desc    Testing isPrimitive method of ByteType (reference type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsPrimitive0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitive0002";
+      try {
+        let byteType = ByteType.REF;
+        let result = byteType.isPrimitive();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0300
+     * @tc.name    testIsPrimitive0003
+     * @tc.desc    Testing isPrimitive method of ByteType (value vs reference type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitive0003";
+      try {
+        let byteValueType = ByteType.VAL;
+        let byteRefType = ByteType.REF;
+        let result1 = byteValueType.isPrimitive();
+        let result2 = byteRefType.isPrimitive();
+        expect(result1).assertTrue();
+        expect(result2).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0400
+     * @tc.name    testIsPrimitive0004
+     * @tc.desc    Testing isPrimitive method of ByteType with other types.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsPrimitive0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitive0004";
+      try {
+        let byteType = ByteType.VAL;
+        let intType = IntType.VAL;
+        let result1 = byteType.isPrimitive();
+        let result2 = intType.isPrimitive();
+        expect(result1).assertTrue();
+        expect(result2).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0500
+     * @tc.name    testIsPrimitive0005
+     * @tc.desc    Testing isPrimitive method of ByteType with isReference method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsPrimitive0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitive0005";
+      try {
+        let byteType = ByteType.VAL;
+        let isPrim = byteType.isPrimitive();
+        let isRef = byteType.isReference();
+        expect(isPrim).assertTrue();
+        expect(isRef).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0100
+     * @tc.name    testIsReference0001
+     * @tc.desc    Testing isReference method of ByteType (value type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsReference0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsReference0001";
+      try {
+        let byteType = ByteType.VAL;
+        let result = byteType.isReference();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0200
+     * @tc.name    testIsReference0002
+     * @tc.desc    Testing isReference method of ByteType (reference type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsReference0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsReference0002";
+      try {
+        let byteType = ByteType.REF;
+        let result = byteType.isReference();
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0300
+     * @tc.name    testIsReference0003
+     * @tc.desc    Testing isReference method of ByteType (value vs reference type).
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsReference0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsReference0003";
+      try {
+        let byteValueType = ByteType.VAL;
+        let byteRefType = ByteType.REF;
+        let result1 = byteValueType.isReference();
+        let result2 = byteRefType.isReference();
+        expect(result1).assertFalse();
+        expect(result2).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0400
+     * @tc.name    testIsReference0004
+     * @tc.desc    Testing isReference method of ByteType with other types.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsReference0004";
+      try {
+        let byteType = ByteType.VAL;
+        let intType = IntType.VAL;
+        let stringType = StringType.REF;
+        let result1 = byteType.isReference();
+        let result2 = intType.isReference();
+        let result3 = stringType.isReference();
+        expect(result1).assertFalse();
+        expect(result2).assertFalse();
+        expect(result3).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0500
+     * @tc.name    testIsReference0005
+     * @tc.desc    Testing isReference method of ByteType with isPrimitive method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsReference0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsReference0005";
+      try {
+        let byteType = ByteType.VAL;
+        let isRef = byteType.isReference();
+        let isPrim = byteType.isPrimitive();
+        expect(isRef).assertFalse();
+        expect(isPrim).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
