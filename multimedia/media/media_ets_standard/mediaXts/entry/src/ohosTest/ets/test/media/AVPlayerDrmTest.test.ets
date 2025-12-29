@@ -98,7 +98,7 @@ export default function AVPlayerDrmTest() {
       const testName = 'getMediaKeySystemInfos_001';
       console.info(TAG, testName + ' begin.');
       let drmMediaKeySystem: drm.MediaKeySystem;
-      let url = "https://hwposter-inland.hwcloudtest.cn/rem/DTA/20240117/h264-sm4c-ts/ChinaDRMLab_Promo_210525-264-30-480P-2000K.sm4c.ts"
+      let url = "https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd"
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
       } catch (err) {
