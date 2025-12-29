@@ -78,6 +78,64 @@ static napi_value CreateResultValue(napi_env env, int result)
     return resultValue;
 }
 
+// Type definition for test function pointer
+typedef int (*TestFunction)();
+
+// Test function lookup table
+static const TestFunction g_testFunctions[] = {
+    OhAudioStreamBuilderCreate001,                          // 0
+    OhAudioStreamBuilderCreate002,                          // 1
+    OhAudioStreamBuilderDestroy001,                         // 2
+    OhAudioStreamBuilderSetParameter001,                    // 3
+    OhAudioStreamBuilderSetParameter002,                    // 4
+    OhAudioStreamBuilderSetParameter003,                    // 5
+    OhAudioStreamBuilderSetParameter004,                    // 6
+    OhAudioStreamBuilderSetParameter005,                    // 7
+    OhAudioStreamBuilderSetParameter006,                    // 8
+    OhAudioStreamBuilderSetParameter007,                    // 9
+    OhAudioStreamBuilderSetParameter008,                    // 10
+    OhAudioStreamBuilderSetParameter009,                    // 11
+    OhAudioStreamBuilderSetParameter010,                    // 12
+    OhAudioStreamBuilderSetParameter011,                    // 13
+    OhAudioStreamBuilderSetParameter012,                    // 14
+    OhAudioStreamBuilderSetParameter013,                    // 15
+    OhAudioStreamBuilderSetParameter014,                    // 16
+    OhAudioStreamBuilderSetParameter015,                    // 17
+    OhAudioStreamBuilderSetParameter016,                    // 18
+    OhAudioStreamBuilderSetParameter017,                    // 19
+    OhAudioStreamBuilderSetParameter018,                    // 20
+    OhAudioStreamBuilderSetParameter019,                    // 21
+    OhAudioStreamBuilderSetParameter020,                    // 22
+    OhAudioStreamBuilderSetRendererPrivacy001,              // 23
+    OhAudioStreamBuilderSetRendererPrivacy002,              // 24
+    OhAudioStreamBuilderSetRendererPrivacy003,              // 25
+    OhAudioStreamBuilderSetSampleFormat001,                 // 26
+    OhAudioStreamBuilderSetSampleFormat002,                 // 27
+    OhAudioStreamBuilderSetSampleFormat003,                 // 28
+    OhAudioStreamBuilderSetSampleFormat004,                 // 29
+    OhAudioStreamBuilderSetSampleFormat005,                 // 30
+    OhAudioStreamBuilderSetLatencyMode001,                  // 31
+    OhAudioStreamBuilderSetCapturerInfo001,                 // 32
+    OhAudioStreamBuilderSetCapturerInfo002,                 // 33
+    OhAudioStreamBuilderSetRendererInfo001,                 // 34
+    OhAudioStreamBuilderSetRendererInfo002,                 // 35
+    OhAudioStreamBuilderSetRendererInfo003,                 // 36
+    OhAudioStreamBuilderSetChannelLayout001,                // 37
+    OhAudioStreamBuilderSetWriteDataWithMetadataCallback001,// 38
+    OhAudioStreamBuilderSetInterruptMode001,                // 39
+    OhAudioStreamBuilderSetInterruptMode002,                // 40
+    OhAudioStreamBuilderSetInterruptMode003,                // 41
+    OhAudioStreamBuilderSetInterruptMode006,                // 42
+    OhAudioStreamBuilderSetRendererInterruptMode004,        // 43
+    OhAudioStreamBuilderSetRendererInterruptMode005,        // 44
+    OhAudioStreamBuilderSetRendererWriteDataCallback001,    // 45
+    OhAudioStreamBuilderSetRendererWriteDataCallback002,    // 46
+    OhAudioStreamBuilderSetRendererWriteDataCallback003,    // 47
+    OhAudioStreamBuilderSetRendererWriteDataCallback004     // 48
+};
+
+static const int32_t g_testFunctionCount = sizeof(g_testFunctions) / sizeof(g_testFunctions[0]);
+
 static napi_value AudioStreamBuilderTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -100,160 +158,13 @@ static napi_value AudioStreamBuilderTest(napi_env env, napi_callback_info info)
         return CreateResultValue(env, -1);
     }
 
-    int result = -1;
-    switch (caseNum) {
-        case TEST_CASE_CREATE_001:
-            result = OhAudioStreamBuilderCreate001();
-            break;
-        case TEST_CASE_CREATE_002:
-            result = OhAudioStreamBuilderCreate002();
-            break;
-        case TEST_CASE_DESTROY_001:
-            result = OhAudioStreamBuilderDestroy001();
-            break;
-        case TEST_CASE_SET_PARAMETER_001:
-            result = OhAudioStreamBuilderSetParameter001();
-            break;
-        case TEST_CASE_SET_PARAMETER_002:
-            result = OhAudioStreamBuilderSetParameter002();
-            break;
-        case TEST_CASE_SET_PARAMETER_003:
-            result = OhAudioStreamBuilderSetParameter003();
-            break;
-        case TEST_CASE_SET_PARAMETER_004:
-            result = OhAudioStreamBuilderSetParameter004();
-            break;
-        case TEST_CASE_SET_PARAMETER_005:
-            result = OhAudioStreamBuilderSetParameter005();
-            break;
-        case TEST_CASE_SET_PARAMETER_006:
-            result = OhAudioStreamBuilderSetParameter006();
-            break;
-        case TEST_CASE_SET_PARAMETER_007:
-            result = OhAudioStreamBuilderSetParameter007();
-            break;
-        case TEST_CASE_SET_PARAMETER_008:
-            result = OhAudioStreamBuilderSetParameter008();
-            break;
-        case TEST_CASE_SET_PARAMETER_009:
-            result = OhAudioStreamBuilderSetParameter009();
-            break;
-        case TEST_CASE_SET_PARAMETER_010:
-            result = OhAudioStreamBuilderSetParameter010();
-            break;
-        case TEST_CASE_SET_PARAMETER_011:
-            result = OhAudioStreamBuilderSetParameter011();
-            break;
-        case TEST_CASE_SET_PARAMETER_012:
-            result = OhAudioStreamBuilderSetParameter012();
-            break;
-        case TEST_CASE_SET_PARAMETER_013:
-            result = OhAudioStreamBuilderSetParameter013();
-            break;
-        case TEST_CASE_SET_PARAMETER_014:
-            result = OhAudioStreamBuilderSetParameter014();
-            break;
-        case TEST_CASE_SET_PARAMETER_015:
-            result = OhAudioStreamBuilderSetParameter015();
-            break;
-        case TEST_CASE_SET_PARAMETER_016:
-            result = OhAudioStreamBuilderSetParameter016();
-            break;
-        case TEST_CASE_SET_PARAMETER_017:
-            result = OhAudioStreamBuilderSetParameter017();
-            break;
-        case TEST_CASE_SET_PARAMETER_018:
-            result = OhAudioStreamBuilderSetParameter018();
-            break;
-        case TEST_CASE_SET_PARAMETER_019:
-            result = OhAudioStreamBuilderSetParameter019();
-            break;
-        case TEST_CASE_SET_PARAMETER_020:
-            result = OhAudioStreamBuilderSetParameter020();
-            break;
-        case TEST_CASE_SET_RENDERER_PRIVACY_001:
-            result = OhAudioStreamBuilderSetRendererPrivacy001();
-            break;
-        case TEST_CASE_SET_RENDERER_PRIVACY_002:
-            result = OhAudioStreamBuilderSetRendererPrivacy002();
-            break;
-        case TEST_CASE_SET_RENDERER_PRIVACY_003:
-            result = OhAudioStreamBuilderSetRendererPrivacy003();
-            break;
-        case TEST_CASE_SET_SAMPLE_FORMAT_001:
-            result = OhAudioStreamBuilderSetSampleFormat001();
-            break;
-        case TEST_CASE_SET_SAMPLE_FORMAT_002:
-            result = OhAudioStreamBuilderSetSampleFormat002();
-            break;
-        case TEST_CASE_SET_SAMPLE_FORMAT_003:
-            result = OhAudioStreamBuilderSetSampleFormat003();
-            break;
-        case TEST_CASE_SET_SAMPLE_FORMAT_004:
-            result = OhAudioStreamBuilderSetSampleFormat004();
-            break;
-        case TEST_CASE_SET_SAMPLE_FORMAT_005:
-            result = OhAudioStreamBuilderSetSampleFormat005();
-            break;
-        case TEST_CASE_SET_LATENCY_MODE_001:
-            result = OhAudioStreamBuilderSetLatencyMode001();
-            break;
-        case TEST_CASE_SET_CAPTURER_INFO_001:
-            result = OhAudioStreamBuilderSetCapturerInfo001();
-            break;
-        case TEST_CASE_SET_CAPTURER_INFO_002:
-            result = OhAudioStreamBuilderSetCapturerInfo002();
-            break;
-        case TEST_CASE_SET_RENDERER_INFO_001:
-            result = OhAudioStreamBuilderSetRendererInfo001();
-            break;
-        case TEST_CASE_SET_RENDERER_INFO_002:
-            result = OhAudioStreamBuilderSetRendererInfo002();
-            break;
-        case TEST_CASE_SET_RENDERER_INFO_003:
-            result = OhAudioStreamBuilderSetRendererInfo003();
-            break;
-        case TEST_CASE_SET_CHANNEL_LAYOUT_001:
-            result = OhAudioStreamBuilderSetChannelLayout001();
-            break;
-        case TEST_CASE_SET_WRITE_DATA_WITH_METADATA_CALLBACK_001:
-            result = OhAudioStreamBuilderSetWriteDataWithMetadataCallback001();
-            break;
-        case TEST_CASE_SET_INTERRUPT_MODE_001:
-            result = OhAudioStreamBuilderSetInterruptMode001();
-            break;
-        case TEST_CASE_SET_INTERRUPT_MODE_002:
-            result = OhAudioStreamBuilderSetInterruptMode002();
-            break;
-        case TEST_CASE_SET_INTERRUPT_MODE_003:
-            result = OhAudioStreamBuilderSetInterruptMode003();
-            break;
-        case TEST_CASE_SET_INTERRUPT_MODE_006:
-            result = OhAudioStreamBuilderSetInterruptMode006();
-            break;
-        case TEST_CASE_SET_RENDERER_INTERRUPT_MODE_004:
-            result = OhAudioStreamBuilderSetRendererInterruptMode004();
-            break;
-        case TEST_CASE_SET_RENDERER_INTERRUPT_MODE_005:
-            result = OhAudioStreamBuilderSetRendererInterruptMode005();
-            break;
-        case TEST_CASE_SET_RENDERER_WRITE_DATA_CALLBACK_001:
-            result = OhAudioStreamBuilderSetRendererWriteDataCallback001();
-            break;
-        case TEST_CASE_SET_RENDERER_WRITE_DATA_CALLBACK_002:
-            result = OhAudioStreamBuilderSetRendererWriteDataCallback002();
-            break;
-        case TEST_CASE_SET_RENDERER_WRITE_DATA_CALLBACK_003:
-            result = OhAudioStreamBuilderSetRendererWriteDataCallback003();
-            break;
-        case TEST_CASE_SET_RENDERER_WRITE_DATA_CALLBACK_004:
-            result = OhAudioStreamBuilderSetRendererWriteDataCallback004();
-            break;
-        default:
-            napi_throw_type_error(env, nullptr, "Invalid test case number");
-            return CreateResultValue(env, -1);
+    // Validate test case number and execute corresponding test function
+    if (caseNum < 0 || caseNum >= g_testFunctionCount) {
+        napi_throw_type_error(env, nullptr, "Invalid test case number");
+        return CreateResultValue(env, -1);
     }
 
+    int result = g_testFunctions[caseNum]();
     return CreateResultValue(env, result);
 }
 

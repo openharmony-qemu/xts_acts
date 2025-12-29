@@ -90,27 +90,29 @@ static int32_t AudioRendererOnWriteData(OH_AudioRenderer* capturer,
     return 0;
 }
 
+// Helper function to handle file read errors
+static void HandleFileReadError()
+{
+    g_readEnd = true;
+    if (ferror(g_file)) {
+        printf("Error reading myfile");
+    } else if (feof(g_file)) {
+        printf("EOF found");
+    }
+}
+
 static int32_t AudioRendererWriteDataWithMetadataCallback(OH_AudioRenderer *renderer,
     void *userData, void *audioData, int32_t audioDataSize, void *metadata, int32_t metadataSize)
 {
     size_t readCount = fread(audioData, audioDataSize, 1, g_file);
     if (!readCount) {
-        g_readEnd = true;
-        if (ferror(g_file)) {
-            printf("Error reading myfile");
-        } else if (feof(g_file)) {
-            printf("EOF found");
-        }
+        HandleFileReadError();
         return 0;
     }
+    
     readCount = fread(metadata, metadataSize, 1, g_file);
     if (!readCount) {
-        g_readEnd = true;
-        if (ferror(g_file)) {
-            printf("Error reading myfile");
-        } else if (feof(g_file)) {
-            printf("EOF found");
-        }
+        HandleFileReadError();
     }
     return 0;
 }
@@ -1116,6 +1118,57 @@ static void StopAndReleaseTwoRenderers(OH_AudioRenderer* renderer1, OH_AudioRend
     OH_AudioRenderer_Release(renderer1);
 }
 
+// Helper function to generate two renderers from builders
+static int GenerateTwoRenderers(OH_AudioStreamBuilder* builder1, OH_AudioStreamBuilder* builder2,
+    OH_AudioRenderer** renderer1, OH_AudioRenderer** renderer2)
+{
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder1, renderer1);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder2, renderer2);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(*renderer1);
+        return -1;
+    }
+    return 0;
+}
+
+// Helper function to start two renderers with sleep
+static int StartTwoRenderersWithSleep(OH_AudioRenderer* renderer1, OH_AudioRenderer* renderer2)
+{
+    OH_AudioStream_Result result = OH_AudioRenderer_Start(renderer1);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    sleep(SLEEP_TIME_ONE_SECOND);
+
+    result = OH_AudioRenderer_Start(renderer2);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    sleep(SLEEP_TIME_TWO_SECONDS);
+    return 0;
+}
+
+// Helper function to setup builder and set interrupt mode twice
+static int SetupBuilderAndSetInterruptModeTwice(OH_AudioStreamBuilder* builder, OH_AudioInterrupt_Mode mode)
+{
+    OH_AudioStream_Result result = SetupBuilderWithCommonParams(builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder, mode);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder, mode);
+    return result == AUDIOSTREAM_SUCCESS ? 0 : -1;
+}
+
 // Test OH_AudioStreamBuilder_SetRendererInterruptMode interface with SHARE mode
 int OhAudioStreamBuilderSetInterruptMode002()
 {
@@ -1126,33 +1179,19 @@ int OhAudioStreamBuilderSetInterruptMode002()
         return -1;
     }
 
-    result = SetupBuilderWithCommonParams(builder1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    OH_AudioInterrupt_Mode mode = AUDIOSTREAM_INTERRUPT_MODE_SHARE;
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (SetupBuilderAndSetInterruptModeTwice(builder1, AUDIOSTREAM_INTERRUPT_MODE_SHARE) != 0) {
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
     OH_AudioRenderer* audioRenderer1 = nullptr;
+    OH_AudioRenderer* audioRenderer2 = nullptr;
     result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer1);
     if (result != AUDIOSTREAM_SUCCESS) {
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
-    OH_AudioRenderer* audioRenderer2 = nullptr;
     result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer2);
     if (result != AUDIOSTREAM_SUCCESS) {
         OH_AudioRenderer_Release(audioRenderer1);
@@ -1174,6 +1213,24 @@ int OhAudioStreamBuilderSetInterruptMode002()
     return 0;
 }
 
+// Helper function to generate and start two renderers from same builder
+static int GenerateAndStartTwoRenderersFromBuilder(OH_AudioStreamBuilder* builder,
+    OH_AudioRenderer** renderer1, OH_AudioRenderer** renderer2)
+{
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, renderer1);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, renderer2);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(*renderer1);
+        return -1;
+    }
+
+    return StartTwoRenderersWithSleep(*renderer1, *renderer2);
+}
+
 // Test OH_AudioStreamBuilder_SetRendererInterruptMode interface with INDEPENDENT mode
 int OhAudioStreamBuilderSetInterruptMode003()
 {
@@ -1184,55 +1241,18 @@ int OhAudioStreamBuilderSetInterruptMode003()
         return -1;
     }
 
-    result = SetupBuilderWithCommonParams(builder1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    OH_AudioInterrupt_Mode mode = AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT;
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (SetupBuilderAndSetInterruptModeTwice(builder1, AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT) != 0) {
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
     OH_AudioRenderer* audioRenderer1 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
     OH_AudioRenderer* audioRenderer2 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioRenderer_Release(audioRenderer1);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    result = OH_AudioRenderer_Start(audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (GenerateAndStartTwoRenderersFromBuilder(builder1, &audioRenderer1, &audioRenderer2) != 0) {
         StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
-    sleep(SLEEP_TIME_ONE_SECOND);
-
-    result = OH_AudioRenderer_Start(audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-    sleep(SLEEP_TIME_TWO_SECONDS);
 
     StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
     result = OH_AudioStreamBuilder_Destroy(builder1);
@@ -1274,6 +1294,22 @@ static int CreateAndSetupTwoBuilders(OH_AudioStreamBuilder** builder1, OH_AudioS
     return 0;
 }
 
+// Helper function to set interrupt modes for two builders
+static int SetInterruptModesForTwoBuilders(OH_AudioStreamBuilder* builder1, OH_AudioStreamBuilder* builder2,
+    OH_AudioInterrupt_Mode mode1, OH_AudioInterrupt_Mode mode2)
+{
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode1);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder2, mode2);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    return 0;
+}
+
 // Test OH_AudioStreamBuilder_SetRendererInterruptMode with INDEPENDENT and SHARE modes
 int OhAudioStreamBuilderSetRendererInterruptMode004()
 {
@@ -1284,64 +1320,60 @@ int OhAudioStreamBuilderSetRendererInterruptMode004()
         return -1;
     }
 
-    OH_AudioInterrupt_Mode mode = AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT;
-    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder2);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    mode = AUDIOSTREAM_INTERRUPT_MODE_SHARE;
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder2, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (SetInterruptModesForTwoBuilders(builder1, builder2,
+        AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT, AUDIOSTREAM_INTERRUPT_MODE_SHARE) != 0) {
         OH_AudioStreamBuilder_Destroy(builder2);
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
     OH_AudioRenderer* audioRenderer1 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder2);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
     OH_AudioRenderer* audioRenderer2 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder2, &audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioRenderer_Release(audioRenderer1);
+    if (GenerateTwoRenderers(builder1, builder2, &audioRenderer1, &audioRenderer2) != 0) {
         OH_AudioStreamBuilder_Destroy(builder2);
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
-    result = OH_AudioRenderer_Start(audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (StartTwoRenderersWithSleep(audioRenderer1, audioRenderer2) != 0) {
         StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
         OH_AudioStreamBuilder_Destroy(builder2);
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
-    sleep(SLEEP_TIME_ONE_SECOND);
-
-    result = OH_AudioRenderer_Start(audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
-        OH_AudioStreamBuilder_Destroy(builder2);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-    sleep(SLEEP_TIME_TWO_SECONDS);
 
     StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
     OH_AudioStreamBuilder_Destroy(builder2);
-    result = OH_AudioStreamBuilder_Destroy(builder1);
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_Destroy(builder1);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
     return 0;
+}
+
+// Helper function to setup builder with callbacks and switch interrupt modes
+static int SetupBuilderWithCallbacksAndSwitchModes(OH_AudioStreamBuilder* builder)
+{
+    OH_AudioStream_Result result = SetupBuilderWithCommonParams(builder);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataInterrupt;
+    callbacks.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
+    result = OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, nullptr);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder, AUDIOSTREAM_INTERRUPT_MODE_SHARE);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+
+    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder, AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT);
+    return result == AUDIOSTREAM_SUCCESS ? 0 : -1;
 }
 
 // Test OH_AudioStreamBuilder_SetRendererInterruptMode switching between SHARE and INDEPENDENT
@@ -1354,65 +1386,18 @@ int OhAudioStreamBuilderSetRendererInterruptMode005()
         return -1;
     }
 
-    result = SetupBuilderWithCommonParams(builder1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    OH_AudioRenderer_Callbacks callbacks2;
-    callbacks2.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataInterrupt;
-    callbacks2.OH_AudioRenderer_OnInterruptEvent = AudioRendererInterruptEvent;
-    result = OH_AudioStreamBuilder_SetRendererCallback(builder1, callbacks2, nullptr);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    OH_AudioInterrupt_Mode mode = AUDIOSTREAM_INTERRUPT_MODE_SHARE;
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    mode = AUDIOSTREAM_INTERRUPT_MODE_INDEPENDENT;
-    result = OH_AudioStreamBuilder_SetRendererInterruptMode(builder1, mode);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (SetupBuilderWithCallbacksAndSwitchModes(builder1) != 0) {
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
 
     OH_AudioRenderer* audioRenderer1 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
     OH_AudioRenderer* audioRenderer2 = nullptr;
-    result = OH_AudioStreamBuilder_GenerateRenderer(builder1, &audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        OH_AudioRenderer_Release(audioRenderer1);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-
-    result = OH_AudioRenderer_Start(audioRenderer1);
-    if (result != AUDIOSTREAM_SUCCESS) {
+    if (GenerateAndStartTwoRenderersFromBuilder(builder1, &audioRenderer1, &audioRenderer2) != 0) {
         StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
         OH_AudioStreamBuilder_Destroy(builder1);
         return -1;
     }
-    sleep(SLEEP_TIME_ONE_SECOND);
-
-    result = OH_AudioRenderer_Start(audioRenderer2);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
-        OH_AudioStreamBuilder_Destroy(builder1);
-        return -1;
-    }
-    sleep(SLEEP_TIME_TWO_SECONDS);
 
     StopAndReleaseTwoRenderers(audioRenderer1, audioRenderer2);
     result = OH_AudioStreamBuilder_Destroy(builder1);
