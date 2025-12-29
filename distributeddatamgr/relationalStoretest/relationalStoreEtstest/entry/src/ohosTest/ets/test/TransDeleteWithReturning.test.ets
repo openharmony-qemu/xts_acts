@@ -31,7 +31,7 @@ const CREATE_TABLE_TEST1 =
 const CREATE_TABLE_TEST2 = "CREATE TABLE IF NOT EXISTS test2 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
-
+const DROP_TABLE_TEST2 = "DROP TABLE IF EXISTS test2";
 const CREATE_TRIGGER1 = "CREATE TRIGGER after_test_delete " +
   "AFTER DELETE ON test " +
   "FOR EACH ROW " +
@@ -146,7 +146,8 @@ export default function TransDeleteWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -174,11 +175,11 @@ export default function TransDeleteWithReturning() {
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan1");
         expect(results?.resultSet.getRow().age).assertEqual(19);
         expect(results?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturning001 end *************");
       done();
     })
@@ -205,11 +206,11 @@ export default function TransDeleteWithReturning() {
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan4");
         expect(results?.resultSet.getRow().age).assertEqual(22);
         expect(results?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturningSync001 end *************");
       done();
     })
@@ -313,11 +314,11 @@ export default function TransDeleteWithReturning() {
         let results = await trans?.deleteWithReturning(predicates, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturning006 end *************");
       done();
     })
@@ -352,11 +353,11 @@ export default function TransDeleteWithReturning() {
         let results = trans?.deleteWithReturningSync(predicates, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturningSync006 end *************");
       done();
     })
@@ -391,11 +392,12 @@ export default function TransDeleteWithReturning() {
         let result = await trans?.deleteWithReturning(predicates, config);
         expect(result?.changed).assertEqual(1024);
         expect(getRowCount(result?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
+
       console.log(TAG + "************* transDeleteWithReturning007 end *************");
       done();
     })
@@ -430,11 +432,11 @@ export default function TransDeleteWithReturning() {
         let results = trans?.deleteWithReturningSync(predicates, config);
         expect(results?.changed).assertEqual(1024);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturningSync007 end *************");
       done();
     })
@@ -459,11 +461,11 @@ export default function TransDeleteWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan4");
         expect(results?.resultSet.getRow().age).assertEqual(22);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturning008 end *************");
       done();
     })
@@ -488,11 +490,11 @@ export default function TransDeleteWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan5");
         expect(results?.resultSet.getRow().age).assertEqual(23);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transDeleteWithReturningSync008 end *************");
       done();
     })
@@ -603,7 +605,7 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed2. code is ${e.code}, message is ${e.message}`);
@@ -618,13 +620,13 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed3. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning011 end *************");
       done();
     })
@@ -693,6 +695,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
+      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning017 end *************");
       done();
     })
@@ -773,6 +776,7 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       await deferredTrans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning020 end *************");
       done();
     })
@@ -851,7 +855,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturning028 8 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning028 end *************");
       done();
     })
@@ -879,7 +883,7 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync029 failed1. code is ${e.code}, message is ${e.message}`);
@@ -894,7 +898,7 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync029 failed2. code is ${e.code}, message is ${e.message}`);
@@ -909,13 +913,13 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync029 failed3. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning029 end *************");
       done();
     })
@@ -1140,10 +1144,10 @@ export default function TransDeleteWithReturning() {
         await trans?.deleteWithReturning(predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
-        await trans?.rollback();
         console.error(TAG + `transDeleteWithReturning033 failed8. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("401");
       }
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturningSync032 end *************");
       done();
     })
@@ -1190,7 +1194,9 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturning034 failed2. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800029);
       }
+      await trans?.rollback();
       await rdbStore?.execute(DROP_TRIGGER1);
+      await rdbStore?.execute(DROP_TABLE_TEST2);
       console.log(TAG + "************* transDeleteWithReturning034 end *************");
       done();
     })
@@ -1229,6 +1235,8 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual(14800033)
       }
       await trans?.rollback();
+      await rdbStore?.execute(DROP_TRIGGER1);
+      await rdbStore?.execute(DROP_TABLE_TEST2);
       console.log(TAG + "************* transDeleteWithReturning035 end *************");
       done();
     })
