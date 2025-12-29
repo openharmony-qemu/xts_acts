@@ -32,6 +32,9 @@ const CREATE_TABLE_TEST2 = "CREATE TABLE IF NOT EXISTS test2 (" + "id INTEGER PR
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
 
+const DROP_TABLE_TEST1 = "DROP TABLE IF EXISTS test1";
+const DROP_TABLE_TEST2 = "DROP TABLE IF EXISTS test2";
+
 const CREATE_TRIGGER1 = "CREATE TRIGGER after_test_delete " +
   "AFTER DELETE ON test " +
   "FOR EACH ROW " +
@@ -145,7 +148,8 @@ export default function RdbStoreDeleteWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -564,7 +568,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync011 failed1. code is ${e.code}, message is ${e.message}`);
@@ -579,7 +583,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync failed2. code is ${e.code}, message is ${e.message}`);
@@ -594,7 +598,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync failed3. code is ${e.code}, message is ${e.message}`);
@@ -887,7 +891,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed1. code is ${e.code}, message is ${e.message}`);
@@ -902,7 +906,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed2. code is ${e.code}, message is ${e.message}`);
@@ -917,7 +921,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed3. code is ${e.code}, message is ${e.message}`);
@@ -1247,6 +1251,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual(14800029);
       }
       await rdbStore?.execute(DROP_TRIGGER1);
+      await rdbStore?.execute(DROP_TABLE_TEST2);
       console.log(TAG + "************* deleteWithReturning032 end *************");
       done();
     })
@@ -1283,6 +1288,8 @@ export default function RdbStoreDeleteWithReturning() {
         console.error(TAG + `deleteWithReturning033 failed1. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800033)
       }
+      await rdbStore?.execute(DROP_TRIGGER1);
+      await rdbStore?.execute(DROP_TABLE_TEST2);
       console.log(TAG + "************* deleteWithReturning033 end *************");
       done();
      })
@@ -1309,6 +1316,7 @@ export default function RdbStoreDeleteWithReturning() {
         securityLevel: relationalStore.SecurityLevel.S1,
         persist: false
       }
+      let rdbStore: relationalStore.RdbStore | undefined = undefined;
       rdbStore = await relationalStore.getRdbStore(context, STOTE_CONFIG1);
       await rdbStore?.executeSql(CREATE_TABLE_TEST);
       let deferredTrans = await rdbStore?.createTransaction({
@@ -1332,6 +1340,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual(14800025)
       }
       await deferredTrans?.rollback();
+      await rdbStore?.close();
       console.log(TAG + "************* deleteWithReturning034 end *************");
       done();
     })
