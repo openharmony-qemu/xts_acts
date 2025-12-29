@@ -2580,8 +2580,8 @@ export default function btManagerError003Test() {
             if (!closeUnsupport) {
                 try {
                     let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
-					let returu_gattservice = gattServer.getService(serviceUuid);
-					console.info('[bt_arkts]gattServer getService get return_values is ' + JSON.stringify(returu_gattservice));
+					let return_gattservice = gattServer.getService(serviceUuid);
+					console.info('[bt_arkts]gattServer getService get return_values is ' + JSON.stringify(return_gattservice));
                     expect(true).assertFalse();
                 } catch (e) {
                     console.error( `getService error, error code is: ${e.code}, error message is: ${e.message}`);
@@ -2665,6 +2665,28 @@ export default function btManagerError003Test() {
             }
             done();
         })
-
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    connection.setLocalName('1111111111111111111111');
+                    await sleep(1000);
+                    let getNewName = bluetooth.getLocalName();
+                    console.info('[bluetooth_js] LocalName_0100 NewName = '+ JSON.stringify(getNewName));
+                    expect(true).assertEqual(Btname.LETTERS_TEST == getNewName);
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
 })
 }
