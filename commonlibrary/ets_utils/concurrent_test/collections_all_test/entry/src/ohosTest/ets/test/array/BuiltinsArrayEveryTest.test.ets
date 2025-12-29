@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { DataTest } from '../../testability/pages/DataTest';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 
 export default function builtinsArrayEveryTest() {
@@ -52,7 +53,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0100'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let flg = arr.every((x) => {
         return x > 0
       })
@@ -72,7 +73,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0200'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let flg = arr.every((x) => {
         return x > 2
       })
@@ -92,7 +93,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0300'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = []
+      let arr = collections.Array.from([])
       let flg = arr.every(x => x > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
@@ -110,7 +111,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0400'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [5]
+      let arr = collections.Array.from([5])
       let flg = arr.every(x => x > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
@@ -128,7 +129,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0500'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [5]
+      let arr = collections.Array.from([5])
       let flg = arr.every(x => x > 5)
       expect(flg).assertFalse()
       console.info(`${caseName} test end`)
@@ -146,7 +147,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0600'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr = collections.Array.from([1, 2, 3, 4, 5])
       let flg = arr.every(x => x < 5)
       expect(flg).assertFalse()
       console.info(`${caseName} test end`)
@@ -164,7 +165,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0700'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, , 4, 5]
+      let arr = collections.Array.from([1, 2, , 4, 5])
       let flg = arr.every(x => Number(x) > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
@@ -182,7 +183,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0800'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, , 4, 5]
+      let arr = collections.Array.from([1, 2, , 4, 5])
       let flg = arr.every(x => Number(x) < 5)
       expect(flg).assertFalse()
       console.info(`${caseName} test end`)
@@ -200,7 +201,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest0900'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let flg = arr.every(x => {
         arr.push(4);
         return true;
@@ -221,7 +222,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest1000'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let flg = arr.every(x => {
         arr.pop();
         return true;
@@ -242,10 +243,10 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest1100'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let flg = arr.every((x) => {
         return x > 0;
-      }, { x: 1 })
+      })
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
       Done()
@@ -262,7 +263,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest1200'
       console.info(`${caseName} test start`)
-      let arr: Array<string> = ['a', 'b', 'c']
+      let arr = collections.Array.from(['a', 'b', 'c'])
       let flg = arr.every(x => x.length > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
@@ -280,7 +281,7 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest1300'
       console.info(`${caseName} test start`)
-      let arr: Array<DataTest> = [ { a: 1 }, { a: 2 }, { a: 3 } ]
+      let arr = collections.Array.from<DataTest>([ { a: 1 }, { a: 2 }, { a: 3 } ])
       let flg = arr.every(obj => obj.a! > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
@@ -318,7 +319,10 @@ export default function builtinsArrayEveryTest() {
     it('builtinsArrayEveryTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEveryTest1500'
       console.info(`${caseName} test start`)
-      let flg = [null, undefined, 3].every((element) => element !== null)
+      let arr = collections.Array.from<Object | null | undefined>([null, undefined, 3]);
+      let flg = arr.every((element: Object | null | undefined): boolean => {
+        return element !== null;
+      });
       expect(flg).assertFalse()
       console.info(`${caseName} test end`)
       Done()

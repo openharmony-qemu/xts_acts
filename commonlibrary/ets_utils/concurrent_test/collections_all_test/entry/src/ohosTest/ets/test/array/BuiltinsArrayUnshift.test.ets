@@ -53,7 +53,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [4, 1, 2, 3];
+        let exp = collections.Array.from([4, 1, 2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.unshift(4);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -84,7 +84,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0200';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [4, 5, 1, 2, 3];
+        let exp = collections.Array.from([4, 5, 1, 2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.unshift(4, 5);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -116,7 +116,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1];
+        let exp = collections.Array.from([1]);
         let array = collections.Array.from([]);
         let newValue = array.unshift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -144,7 +144,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [4, 5, 6, 1, 2, 3];
+        let exp = collections.Array.from([4, 5, 6, 1, 2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.unshift(4, 5, 6);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -177,7 +177,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1, 2, 3];
+        let exp = collections.Array.from([1, 2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.unshift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -207,7 +207,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [2, 2, 1, 2, 3];
+        let exp = collections.Array.from([2, 2, 1, 2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.unshift(2, 2);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -317,7 +317,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1000';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | null | undefined)[] = [null, undefined, 1, 2, 3];
+        let exp = collections.Array.from([null, undefined, 1, 2, 3]);
         let array = collections.Array.from<number|null|undefined>([1, 2, 3]);
         let newValue = array.unshift(null, undefined);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -369,7 +369,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1200';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | string)[] = ['a', 'b', 1, 2, 3];
+        let exp = collections.Array.from(['a', 'b', 1, 2, 3]);
         let array= collections.Array.from<number|string>([1, 2, 3]);
         let newValue = array.unshift('a', 'b');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -396,7 +396,7 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1300';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | boolean)[] = [true, false, 1, 2, 3];
+        let exp = collections.Array.from([true, false, 1, 2, 3]);
         let array = collections.Array.from<number|boolean>([1, 2, 3]);
         let newValue = array.unshift(true, false);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -423,9 +423,9 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1400';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | TestA)[] = [{
+        let exp = collections.Array.from<number|TestA>([{
           a: 1
-        }, 1, 2, 3];
+        }, 1, 2, 3]);
         let array = collections.Array.from<number|TestA>([1, 2, 3]);
         let newValue = array.unshift({
           a: 1

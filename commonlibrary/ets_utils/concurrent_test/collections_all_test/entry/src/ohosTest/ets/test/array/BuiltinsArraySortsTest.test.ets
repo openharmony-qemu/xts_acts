@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium'
 import { hilog } from '@kit.PerformanceAnalysisKit'
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 interface NumberObj {
   a: number;
@@ -55,7 +56,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArraySort0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
-      const fruits: Array<string> = ['banana', 'apple', 'cherry'];
+      const fruits = collections.Array.from(['banana', 'apple', 'cherry']);
       fruits.sort();
       console.log(fruits.toString());
       let a = fruits.toString()
@@ -72,7 +73,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number> = [10, 2, 30];
+      const numbers = collections.Array.from([10, 2, 30]);
       numbers.sort((a, b) => a - b);
       console.log(numbers.toString());
       let a = numbers.toString()
@@ -89,7 +90,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      let numbers: string[] = []
+      let numbers = collections.Array.from([])
       numbers.sort();
       console.log(numbers.toString());
       let a = numbers.toString()
@@ -106,7 +107,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number> = [5];
+      const numbers = collections.Array.from([5]);
       numbers.sort();
       console.log(numbers.toString());
       let a = numbers.toString()
@@ -142,7 +143,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number> = [3, 1, 2];
+      const numbers = collections.Array.from([3, 1, 2]);
       numbers.sort((a, b) => a > b ? 1 : -1);
       console.log(numbers.toString());
       let a = numbers.toString()
@@ -159,7 +160,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number | undefined> = [, , 3, 1, 2];
+      const numbers = collections.Array.from([, , 3, 1, 2]);
       numbers.sort();
       console.log(numbers.toString());
       let a = numbers.toString()
@@ -176,7 +177,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number | undefined> = [undefined, 3, undefined, 1];
+      const numbers = collections.Array.from([undefined, 3, undefined, 1]);
       numbers.sort();
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
@@ -194,7 +195,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Array<number> = [100000, 1, 50000];
+      const numbers = collections.Array.from([100000, 1, 50000]);
       numbers.sort((a, b) => a - b);
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
@@ -235,7 +236,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Number[][] = [[3], [1], [2]];
+      const numbers = collections.Array.from([[3], [1], [2]]);
       numbers.sort((a, b) => (a[0] as number) - (b[0] as number))
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
@@ -253,7 +254,7 @@ export default function builtinsArraySortTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySort1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers: Number[][] = [[3], [1], [2]];
+      const numbers = collections.Array.from([[3], [1], [2]]);
       numbers.sort((a, b) => (a[0] as number) - (b[0] as number))
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)

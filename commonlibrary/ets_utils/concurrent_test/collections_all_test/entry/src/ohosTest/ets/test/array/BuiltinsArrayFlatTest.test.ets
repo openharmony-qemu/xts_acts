@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { FlatObj, FlatParams } from '../../testability/pages/DataFlg';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 export default function builtinsArrayFlatTest() {
   describe('BuiltinsArrayFlatTest', () => {
@@ -48,9 +49,9 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFlatTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = [1, [2, 3], 4];
-      const result = arr.flat();
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4]));
+      const arr = collections.Array.from([1, 2, 3, 4]);
+
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 4]));
     });
 
     /**
@@ -62,9 +63,9 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
-      const result = arr.flat();
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([1, 2, 3]);
+
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -76,9 +77,9 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, [3, 4], 5], 6];
-      expect(JSON.stringify(arr.flat(1))).assertEqual(JSON.stringify([1, 2, [3, 4], 5, 6]));
-      expect(JSON.stringify(arr.flat(-1))).assertEqual(JSON.stringify([1, [2, [3, 4], 5], 6]));
+      const arr = collections.Array.from([1, [2, [3, 4], 5], 6]);
+      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 2, [3, 4], 5, 6]));
+      expect(JSON.stringify(Array.from(arr).flat(-1))).assertEqual(JSON.stringify([1, [2, [3, 4], 5], 6]));
     });
 
     /**
@@ -90,8 +91,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, [3, 4], 5], 6];
-      expect(JSON.stringify(arr.flat(2))).assertEqual(JSON.stringify([1, 2, 3, 4, 5, 6]));
+      const arr = collections.Array.from([1, [2, [3, 4], 5], 6]);
+      expect(JSON.stringify(Array.from(arr).flat(2))).assertEqual(JSON.stringify([1, 2, 3, 4, 5, 6]));
     });
 
     /**
@@ -103,8 +104,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, 3], 4];
-      expect(JSON.stringify(arr.flat(0))).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([1, [2, 3], 4]);
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -116,8 +117,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, , 3];
-      expect(JSON.stringify(arr.flat())).assertEqual(JSON.stringify([1, 3]));
+      const arr = collections.Array.from([1, , 3]);
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 3]));
     });
 
     /**
@@ -129,8 +130,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [, 3], 4];
-      expect(JSON.stringify(arr.flat(1))).assertEqual(JSON.stringify([1, 3, 4]));
+      const arr = collections.Array.from([1, [, 3], 4]);
+      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 3, 4]));
     });
 
     /**
@@ -142,8 +143,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, 3], 'hello'];
-      expect(JSON.stringify(arr.flat())).assertEqual(JSON.stringify([1, 2, 3, 'hello']));
+      const arr = collections.Array.from([1, 2, 3, 'hello']);
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 'hello']));
     });
 
     /**
@@ -155,8 +156,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, [3, 'a']], 4];
-      expect(JSON.stringify(arr.flat(2))).assertEqual(JSON.stringify([1, 2, 3, 'a', 4]));
+      const arr = collections.Array.from([1, [2, [3, 'a']], 4]);
+      expect(JSON.stringify(Array.from(arr).flat(2))).assertEqual(JSON.stringify([1, 2, 3, 'a', 4]));
     });
 
     /**
@@ -180,8 +181,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [[], [1], [2]];
-      expect(JSON.stringify(arr.flat(1))).assertEqual(JSON.stringify([1, 2]));
+      const arr = collections.Array.from([[], [1], [2]]);
+      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 2]));
     });
 
     /**
@@ -193,8 +194,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, 3], 4];
-      expect(JSON.stringify(arr.flat())).assertEqual(JSON.stringify([1, 2, 3, 4]));
+      const arr = collections.Array.from([1, 2, 3, 4]);
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 4]));
     });
 
     /**
@@ -206,8 +207,8 @@ export default function builtinsArrayFlatTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [null, [undefined, 3]];
-      expect(JSON.stringify(arr.flat())).assertEqual(JSON.stringify([null, undefined, 3]));
+      const arr = collections.Array.from([null, undefined, 3]);
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([null, undefined, 3]));
     });
 
     /**
@@ -222,8 +223,8 @@ export default function builtinsArrayFlatTest() {
       const obj: FlatObj = {
         name: 'hh', age: 10, like: [1, 2, 3, 4, 5]
       };
-      const arr = [obj];
-      expect(JSON.stringify(arr.flat(1))).assertEqual(JSON.stringify([obj]));
+      const arr = collections.Array.from([obj]);
+      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([obj]));
     });
 
     /**

@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { DataTest } from '../../testability/pages/DataTest';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 
 export default function builtinsArrayEntriesTest() {
@@ -52,7 +53,7 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest0100'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, '2']
+      let arr = collections.Array.from([1, '2'])
       let temp = arr.entries()
       expect(JSON.stringify(temp.next().value)).assertEqual('[0,1]')
       expect(JSON.stringify(temp.next().value)).assertEqual('[1,"2"]')
@@ -71,7 +72,7 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest0200'
       console.info(`${caseName} test start`)
-      let arr: Array<undefined | string | null> = [undefined, "", null]
+      let arr = collections.Array.from([undefined, "", null])
       let temp = arr.entries()
       expect(JSON.stringify(temp.next().value)).assertEqual('[0,null]')
       expect(JSON.stringify(temp.next().value)).assertEqual('[1,""]')
@@ -91,7 +92,7 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest0300'
       console.info(`${caseName} test start`)
-      let arr: Array<undefined | string | null> = ['!"#$%&\'()* +,-./:;<=>?@[\\]^_`{|}~']
+      let arr = collections.Array.from(['!"#$%&\'()* +,-./:;<=>?@[\\]^_`{|}~'])
       let temp = arr.entries()
       expect(JSON.stringify(temp.next().value)).assertEqual('[0,"!\\"#$%&\'()* +,-./:;<=>?@[\\\\]^_`{|}~"]')
       console.info(`${caseName} test end`)
@@ -291,7 +292,7 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest1200'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = []
+      let arr = collections.Array.from([])
       let temp = arr.entries()
       expect(JSON.stringify(temp.next().value)).assertEqual(undefined)
       console.info(`${caseName} test end`)
@@ -309,8 +310,8 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest1300'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      arr.length = 2
+      let arr = collections.Array.from([1, 2, 3])
+      arr.shrinkTo(2)
       let temp = arr.entries()
       expect(JSON.stringify(temp.next().value)).assertEqual('[0,1]')
       expect(JSON.stringify(temp.next().value)).assertEqual('[1,2]')
@@ -330,12 +331,14 @@ export default function builtinsArrayEntriesTest() {
     it('builtinsArrayEntriesTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayEntriesTest1400'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let temp = arr.entries()
-      arr.length = 2
+      arr.shrinkTo(2)
       expect(JSON.stringify(temp.next().value)).assertEqual('[0,1]')
       expect(JSON.stringify(temp.next().value)).assertEqual('[1,2]')
-      expect(JSON.stringify(temp.next().value)).assertEqual(undefined)
+      let last = temp.next()
+      expect(last.done).assertTrue()
+      expect(last.value).assertUndefined()
       console.info(`${caseName} test end`)
       Done()
     })

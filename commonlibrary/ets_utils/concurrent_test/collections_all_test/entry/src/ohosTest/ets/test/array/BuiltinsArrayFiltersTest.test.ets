@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
-import { taskpool } from '@kit.ArkTS';
+import { collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep } from '../../testability/pages/Utils';
 
@@ -49,11 +49,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFilterTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 2;
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result))
-      const expectedResult = [3, 4, 5];
+      const expectedResult = collections.Array.from([3, 4, 5]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -66,11 +66,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFilterTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const inputArray: number[] = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number, index: number) => index % 2 === 0;
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result))
-      const expectedResult = [1, 3, 5];
+      const expectedResult = collections.Array.from([1, 3, 5]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -83,14 +83,14 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const createCallbackFn = (value: number) => {
         return (element: number) => element > value;
       };
       const callbackFn = createCallbackFn(2);
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [3, 4, 5];
+      const expectedResult = collections.Array.from([3, 4, 5]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -103,11 +103,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, , 3];
+      const inputArray = collections.Array.from([1, , 3]);
       const callbackFn = (element: number | undefined) => element !== undefined;
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [1, 3];
+      const expectedResult = collections.Array.from([1, 3]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -120,11 +120,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [];
+      const inputArray = collections.Array.from([]);
       const callbackFn = (element: number) => element > 0;
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result)); // 输出结果
-      const expectedResult = [];
+      const expectedResult = collections.Array.from([]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -137,11 +137,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [5];
+      const inputArray = collections.Array.from([5]);
       const callbackFn = (element: number) => element > 3
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [5];
+      const expectedResult = collections.Array.from([5]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -154,11 +154,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 10
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [];
+      const expectedResult = collections.Array.from([]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -171,14 +171,14 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const indexToRemove = inputArray.indexOf(3);
       if (indexToRemove !== -1) {
         inputArray.splice(indexToRemove, 1);
       }
       const result = inputArray.filter((element) => element > 2);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [4, 5];
+      const expectedResult = collections.Array.from([4, 5]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -191,17 +191,17 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
-      const callbackFn = (element: number, index: number, arr: number[]) => {
+      const inputArray = collections.Array.from([1, 2, 3]);
+      const callbackFn = inputArray.filter((element, index, arr) => {
         if (element === 3) {
           arr.push(4);
         }
         return element < 4;
-      }
-      const result = inputArray.filter(callbackFn);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = [1, 2, 3];
-      expect(result).assertDeepEquals(expectedResult);
+      })
+
+      console.log('result:', JSON.stringify(callbackFn));
+      const expectedResult = collections.Array.from([1, 2, 3]);
+      expect(callbackFn).assertDeepEquals(expectedResult);
     });
 
     /**
@@ -213,11 +213,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = ['a', 'b', 'c'];
+      const inputArray = collections.Array.from(['a', 'b', 'c']);
       const callbackFn = (element: string) => element === 'b'
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = ['b'];
+      const expectedResult = collections.Array.from(['b']);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -233,21 +233,21 @@ export default function builtinsArrayFilterTest() {
       interface Item {
         a: number;
       }
-      const inputArray: Item[] = [{
+      const inputArray = collections.Array.from<Item>([{
         a: 1
       }, {
         a: 2
       }, {
         a: 3
-      }]
+      }])
       const callbackFn = (element: Item) => element.a > 1
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult: Item[] = [{
+      const expectedResult = collections.Array.from<Item>([{
         a: 2
       }, {
         a: 3
-      }];
+      }]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -260,11 +260,11 @@ export default function builtinsArrayFilterTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [null, undefined, 3]
+      const inputArray = collections.Array.from([null, undefined, 3])
       const callbackFn = (element: null | undefined | number) => element !== null;
       const result = inputArray.filter(callbackFn);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = [undefined, 3]
+      const expectedResult = collections.Array.from([undefined, 3])
       expect(result).assertDeepEquals(expectedResult);
     });
 

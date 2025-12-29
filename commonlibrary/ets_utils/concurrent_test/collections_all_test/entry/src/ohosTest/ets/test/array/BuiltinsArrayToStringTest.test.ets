@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium";
 import { Empty, TestA, ToStringNumber, ToStringString } from "../../testability/pages/DataFlg";
 import { sleep } from "../../testability/pages/Utils";
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayToStringTest() {
   describe('BuiltinsArrayToStringTest', () => {
@@ -97,7 +98,7 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToStringTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const sparseArr = [1, , 3];
+      const sparseArr = collections.Array.from([1, , 3]);
       expect(sparseArr.toString()).assertEqual("1,,3");
     });
 
@@ -126,7 +127,7 @@ export default function builtinsArrayToStringTest() {
       const a: TestA = {
         a: 1
       }
-      const objArr = [e, a];
+      const objArr = collections.Array.from([e, a]);
       expect(objArr.toString()).assertEqual("[object Object],[object Object]");
     });
 

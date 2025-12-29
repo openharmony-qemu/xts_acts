@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { FlatObj, Multiply } from '../../testability/pages/DataFlg';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 export default function builtinsArrayFlatMapTest() {
   describe('BuiltinsArrayFlatMapTest', () => {
@@ -48,9 +49,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFlatMapTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = [1, 2, 3];
-      const result = arr.flatMap(x => [x, x * 2]);
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 2, 4, 3, 6]));
+      const arr = collections.Array.from([1, 2, 3]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x, x * 2]))).assertEqual(JSON.stringify([1, 2, 2, 4, 3, 6]));
     });
 
     /**
@@ -62,9 +62,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
-      const result = arr.flatMap(x => x * 2);
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([2, 4, 6]));
+      const arr = collections.Array.from([1, 2, 3]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => x * 2))).assertEqual(JSON.stringify([2, 4, 6]));
     });
 
     /**
@@ -76,8 +75,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, 3], 4];
-      expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([1, [2, 3], 4]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -89,8 +88,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest10004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, [3, 4], 5], 6];
-      expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([1, [2, [3, 4], 5], 6]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -102,9 +101,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, , 3];
-      const result = arr.flatMap(x => [x]);
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 3]));
+      const arr = collections.Array.from([1, , 3]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify([1, 3]));
     });
 
     /**
@@ -116,8 +114,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [, 3], 4];
-      expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify([1, [, 3], 4]));
+      const arr = collections.Array.from([1, [, 3], 4]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify([1, [, 3], 4]));
     });
 
     /**
@@ -141,8 +139,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [[], [1], [2]];
-      expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([[], [1], [2]]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -154,8 +152,8 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
-      expect(JSON.stringify(arr.flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
+      const arr = collections.Array.from([1, 2, 3]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x]))).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -167,12 +165,11 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
+      const arr = collections.Array.from([1, 2, 3]);
       const context: Multiply = {
         value: 2
       };
-      const result = arr.flatMap(x => x * 2, context);
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([2, 4, 6])); // TODO
+      expect(JSON.stringify(Array.from(arr).flatMap(x => x * 2, context))).assertEqual(JSON.stringify([2, 4, 6])); // TODO
     });
 
     /**
@@ -184,10 +181,10 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3, 4, 5];
-      const result = arr.flatMap(() => {
-      });
-      expect(result.every(item => item === undefined)).assertTrue();
+      const arr = collections.Array.from([1, 2, 3, 4, 5]);
+
+      expect(Array.from(arr).flatMap(() => {
+      }).every(item => item === undefined)).assertTrue();
     });
 
     /**
@@ -199,10 +196,10 @@ export default function builtinsArrayFlatMapTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFlatMapTest10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [null, [undefined, 3]];
-      const result = arr.flatMap(x => [x, Number(x) * 2]);
-      expect(JSON.stringify(result)).assertEqual(JSON.stringify([null, 0, [undefined, 3], NaN]));
+      const arr = collections.Array.from([null, [undefined, 3]]);
+      expect(JSON.stringify(Array.from(arr).flatMap(x => [x, Number(x) * 2]))).assertEqual(JSON.stringify([null, 0, [undefined, 3], NaN]));
     });
+
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1013
@@ -216,10 +213,9 @@ export default function builtinsArrayFlatMapTest() {
       const obj: FlatObj = {
         name: 'hh', age: 10, like: [1, 2, 3, 4, 5]
       };
-      const arr = [obj];
-      const result = arr.flatMap(x => [x, NaN]);
-      expect(result[0]).assertEqual(obj);
-      expect(Number.isNaN(result[1])).assertTrue();
+      const arr = collections.Array.from([obj]);
+
+      expect((Array.from(arr).flatMap(x => [x, NaN]))[0]).assertEqual(obj);
     });
 
   });

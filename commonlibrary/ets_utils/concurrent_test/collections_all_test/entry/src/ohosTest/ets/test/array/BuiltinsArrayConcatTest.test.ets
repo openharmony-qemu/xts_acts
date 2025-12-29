@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { DataTest } from '../../testability/pages/DataTest';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 
 export default function builtinsArrayConcatTest() {
@@ -52,8 +53,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0100'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(4)
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4]))
 
       expect(ret.toString()).assertEqual('1,2,3,4')
       console.info(`${caseName} test end`)
@@ -71,8 +72,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0200'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat([4, 5])
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4, 5]))
 
       expect(ret.toString()).assertEqual('1,2,3,4,5')
       console.info(`${caseName} test end`)
@@ -90,8 +91,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0200'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(4, 5, 6)
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4, 5, 6]))
       expect(ret.toString()).assertEqual('1,2,3,4,5,6')
       console.info(`${caseName} test end`)
       Done()
@@ -108,8 +109,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0400'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat([4, 5], [6, 7])
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4, 5]), collections.Array.from([6, 7]))
 
       expect(ret.toString()).assertEqual('1,2,3,4,5,6,7')
       console.info(`${caseName} test end`)
@@ -127,8 +128,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0500'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(4, [6, 7])
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4]), collections.Array.from([6, 7]))
       expect(ret.toString()).assertEqual('1,2,3,4,6,7')
       console.info(`${caseName} test end`)
       Done()
@@ -145,8 +146,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0600'
       console.info(`${caseName} test start`)
-      let arr: Array<number | Array<number>> = [1, 2, 3]
-      let ret = arr.concat([4, [6, 7]])
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([4, 6, 7]))
 
       expect(ret.toString()).assertEqual('1,2,3,4,6,7')
       console.info(`${caseName} test end`)
@@ -164,8 +165,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0700'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, , 3]
-      let ret = arr.concat([4, 5])
+      let arr = collections.Array.from([1, , 3])
+      let ret = arr.concat(collections.Array.from([4, 5]))
       expect(ret.toString()).assertEqual('1,,3,4,5')
       console.info(`${caseName} test end`)
       Done()
@@ -182,7 +183,7 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0800'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, 3]
+      let arr = collections.Array.from([1, 2, 3])
       let ret = arr.concat()
       expect(ret.toString()).assertEqual('1,2,3')
       console.info(`${caseName} test end`)
@@ -200,8 +201,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0900'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, 3]
-      let ret = arr.concat([])
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([]))
       expect(ret.toString()).assertEqual('1,2,3')
       console.info(`${caseName} test end`)
       Done()
@@ -218,11 +219,11 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1000'
       console.info(`${caseName} test start`)
-      let arr: Array<number | DataTest> = [1, 2, 3]
-      let ret = arr.concat({
-        a: 4, b: 5
-      })
-      expect(JSON.stringify(ret)).assertEqual('[1,2,3,{"a":4,"b":5}]')
+      let arr = collections.Array.from<number|DataTest>([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([
+         4,  5
+      ]))
+      expect(JSON.stringify(ret)).assertEqual('1,2,3,4,5')
       console.info(`${caseName} test end`)
       Done()
     })
@@ -238,8 +239,8 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1100'
       console.info(`${caseName} test start`)
-      const arrTemp = []
-      let arr: Array<number> = [1, 2, 3]
+      const arrTemp = collections.Array.from([])
+      let arr = collections.Array.from([1, 2, 3])
       let ret = arr.concat(arrTemp)
       expect(JSON.stringify(ret)).assertEqual('[1,2,3]')
       console.info(`${caseName} test end`)
@@ -257,12 +258,10 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1200'
       console.info(`${caseName} test start`)
-      const arrTemp: DataTest[] = [{
-        aaa: 0
-      }]
-      arrTemp['aaa'] = 111
+      const arrTemp = collections.Array.from<DataTest>([{ aaa: 0 }])
+
       console.info('=====', JSON.stringify(arrTemp))
-      let arr: Array<number | DataTest> = [1, 2, 3]
+      let arr = collections.Array.from<number | DataTest>([1, 2, 3])
       let ret = arr.concat(arrTemp)
 
       expect(JSON.stringify(ret)).assertEqual('[1,2,3,{"aaa":0}]')
@@ -281,12 +280,11 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1300'
       console.info(`${caseName} test start`)
-      const arrTemp: DataTest[] = [{
+      const arrTemp = collections.Array.from<DataTest>([{
         abc: 0
-      }]
-      arrTemp['abc'] = 111
+      }])
       console.info('=====', JSON.stringify(arrTemp))
-      let arr: Array<number | DataTest> = [1, 2, 3]
+      let arr = collections.Array.from<number|DataTest>([1, 2, 3])
       let ret = arr.concat(arrTemp)
       expect(JSON.stringify(ret)).assertEqual('[1,2,3,{"abc":0}]')
 
@@ -305,8 +303,9 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1400'
       console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [1, 2, 3]
-      let ret = arr.concat(undefined)
+      let arr = collections.Array.from<number|undefined>([1, 2, 3])
+      let param = collections.Array.from<number | undefined>([undefined])
+      let ret = arr.concat(param)
 
       expect(ret.toString()).assertEqual('1,2,3,')
       console.info(`${caseName} test end`)
@@ -324,8 +323,9 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1500'
       console.info(`${caseName} test start`)
-      let arr: Array<number | null> = [1, 2, 3]
-      let ret = arr.concat(null)
+      let arr = collections.Array.from<number|null>([1, 2, 3])
+      let param = collections.Array.from<number | null>([null])
+      let ret = arr.concat(param)
 
       expect(ret.toString()).assertEqual('1,2,3,')
       console.info(`${caseName} test end`)
@@ -343,9 +343,9 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1600'
       console.info(`${caseName} test start`)
-      let arr: Array<number | object> = [1, 2, 3]
+      let arr = collections.Array.from<number | object>([1, 2, 3])
       console.info('====', Number('a'))
-      let ret = arr.concat(Number('a'))
+      let ret = arr.concat(collections.Array.from([Number('a')]))
       expect(ret.toString()).assertEqual('1,2,3,NaN')
       console.info(`${caseName} test end`)
       Done()
@@ -362,9 +362,10 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1700'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, 2, 3]
+      let arr = collections.Array.from<number | string>([1, 2, 3])
       let s = '特殊字符!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
-      let ret = arr.concat(s)
+      let param = collections.Array.from<number | string>([s])
+      let ret = arr.concat(param)
 
       expect(ret.toString()).assertEqual('1,2,3,特殊字符!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~')
       console.info(`${caseName} test end`)
@@ -382,10 +383,9 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1800'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, 2, 3]
-      let s = 'undefined'
-      let ret = arr.concat(s)
-      expect(ret.toString()).assertEqual('1,2,3,undefined')
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([5]))
+      expect(ret.toString()).assertEqual('1,2,3,5')
       console.info(`${caseName} test end`)
       Done()
     })
@@ -401,9 +401,11 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1900'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, 2, 3]
+      let arr = collections.Array.from<number|string>([1, 2, 3])
       let s = 'null'
-      let ret = arr.concat(s)
+      let param = collections.Array.from<number | string>([s])
+      let ret = arr.concat(param)
+
       expect(ret.toString()).assertEqual('1,2,3,null')
       console.info(`${caseName} test end`)
       Done()
@@ -420,9 +422,10 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2000'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, 2, 3]
+      let arr = collections.Array.from<number|string>([1, 2, 3])
       let s = ''
-      let ret = arr.concat(s)
+      let param = collections.Array.from<number | string>([s])
+      let ret = arr.concat(param)
       expect(ret.toString()).assertEqual('1,2,3,')
 
       console.info(`${caseName} test end`)
@@ -440,8 +443,11 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2100'
       console.info(`${caseName} test start`)
-      let arr: Array<number | string> = [1, 2, 3]
-      let ret = arr.concat(encodeURIComponent('\U+0021'))
+      let arr = collections.Array.from<number | string>([1, 2, 3])
+      const encodedStr = encodeURIComponent('U+0021');
+      let param = collections.Array.from<number | string>([encodedStr]);
+
+      let ret = arr.concat(param)
       expect(ret.toString()).assertEqual('1,2,3,U%2B0021')
 
       console.info(`${caseName} test end`)
@@ -459,10 +465,10 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2300'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(Math.floor(1.5))
-      ret = ret.concat(Math.floor(0))
-      ret = ret.concat(Math.floor(-0))
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from<number>([Math.floor(1.5)]))
+      ret = ret.concat(collections.Array.from<number>([Math.floor(0)]))
+      ret = ret.concat(collections.Array.from<number>([Math.floor(-0)]))
       expect(ret.toString()).assertEqual('1,2,3,1,0,0')
       console.info(`${caseName} test end`)
       Done()
@@ -479,12 +485,12 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2400'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(Number.EPSILON)
-      ret = ret.concat(Number.MIN_VALUE)
-      ret = ret.concat(Number.MAX_VALUE)
-      ret = ret.concat(-Infinity)
-      ret = ret.concat(Infinity)
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from<number>([Number.EPSILON]))
+      ret = ret.concat(collections.Array.from<number>([Number.MIN_VALUE]))
+      ret = ret.concat(collections.Array.from<number>([Number.MAX_VALUE]))
+      ret = ret.concat(collections.Array.from<number>([-Infinity]))
+      ret = ret.concat(collections.Array.from<number>([Infinity]))
       expect(ret.toString())
         .assertEqual('1,2,3,2.220446049250313e-16,5e-324,1.7976931348623157e+308,-Infinity,Infinity')
       console.info(`${caseName} test end`)
@@ -502,11 +508,12 @@ export default function builtinsArrayConcatTest() {
     it('builtinsArrayConcatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2500'
       console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3]
-      let ret = arr.concat(123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3)
+      let arr = collections.Array.from([1, 2, 3])
+      let ret = arr.concat(collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]))
       expect(ret.toString()).assertEqual('1,2,3,123.456,3405691582,258,16909060,3')
       console.info(`${caseName} test end`)
       Done()
-    })
+    });
+
   })
 }

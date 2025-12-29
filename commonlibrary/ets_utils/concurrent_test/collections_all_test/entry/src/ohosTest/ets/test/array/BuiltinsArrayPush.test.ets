@@ -53,7 +53,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1, 2, 3, 4];
+        let exp = collections.Array.from([1, 2, 3, 4]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.push(4);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -80,7 +80,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0200';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1, 2, 3, 4, 5];
+        let exp = collections.Array.from([1, 2, 3, 4, 5]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.push(4, 5);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -107,7 +107,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1];
+        let exp = collections.Array.from([1]);
         let array = collections.Array.from<number>([]);
         let newValue = array.push(1);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -134,7 +134,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [5, 6];
+        let exp = collections.Array.from([5, 6]);
         let array = collections.Array.from([5]);
         let newValue = array.push(6);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -161,7 +161,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp: (undefined | number)[] = [, 3];
+        let exp = collections.Array.from([, 3]);
         let array = collections.Array.from<undefined|number>([,]);
         let newValue = array.push(3);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -188,7 +188,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp: (null | number)[] = [1, null, 3, 4, 5];
+        let exp = collections.Array.from([1, null, 3, 4, 5]);
         let array = collections.Array.from([1, null, 3, 4]);
         let newValue = array.push(5);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -215,11 +215,11 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp: (TestA | number)[] = [1, {
+        let exp = collections.Array.from<TestA|number>([1, {
           a: 1
         }, {
           a: 1
-        }, 3, 4, 5];
+        }, 3, 4, 5]);
         let array = collections.Array.from<TestA|number>([1, {
           a: 1
         }, {
@@ -250,7 +250,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0800';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['apple', 'banana', 'cherry', 'abc'];
+        let exp = collections.Array.from(['apple', 'banana', 'cherry', 'abc']);
         let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.push('abc');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -277,7 +277,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0900';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['apple', '', 'cherry', 'abc'];
+        let exp = collections.Array.from(['apple', '', 'cherry', 'abc']);
         let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.push('abc');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -332,7 +332,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1100';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'];
+        let exp = collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -360,7 +360,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1200';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['undefined'];
+        let exp = collections.Array.from(['undefined']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('undefined');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -388,7 +388,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1300';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['null'];
+        let exp = collections.Array.from(['null']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('null');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -416,7 +416,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1400';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = [''];
+        let exp = collections.Array.from(['']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -444,7 +444,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1500';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['\u7b11'];
+        let exp = collections.Array.from(['\u7b11']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('\u7b11');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -472,7 +472,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1600';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['\uFFFD'];
+        let exp = collections.Array.from(['\uFFFD']);
         let array = collections.Array.from<string>([]);
         let newValue = array.push('\uFFFD');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -500,7 +500,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1700';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [Math.floor(1.5), 0, -0];
+        let exp = collections.Array.from([Math.floor(1.5), 0, -0]);
         let array = collections.Array.from<number>([]);
         let newValue = array.push(Math.floor(1.5), 0, -0);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -530,7 +530,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1800';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity];
+        let exp = collections.Array.from([Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity]);
         let array = collections.Array.from<number>([]);
         let newValue = array.push(Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -562,7 +562,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest1900';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3];
+        let exp = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]);
         let array = collections.Array.from<number>([]);
         let newValue = array.push(123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -594,7 +594,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest2000';
       console.info(`${caseName} test start`);
       try {
-        let exp: boolean[] = [true, false];
+        let exp = collections.Array.from([true, false]);
         let array = collections.Array.from<boolean>([]);
         let newValue = array.push(true, false);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -623,7 +623,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest2100';
       console.info(`${caseName} test start`);
       try {
-        let exp: boolean[] = [!'s'];
+        let exp = collections.Array.from([!'s']);
         let array = collections.Array.from<boolean>([]);
         let newValue = array.push(!'s');
         console.info(caseName + 'newValue is: ' + newValue);
@@ -651,7 +651,7 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest2200';
       console.info(`${caseName} test start`);
       try {
-        let exp: boolean[] = [!0];
+        let exp = collections.Array.from([!0]);
         let array = collections.Array.from<boolean>([]);
         let newValue = array.push(!0);
         console.info(caseName + 'newValue is: ' + newValue);

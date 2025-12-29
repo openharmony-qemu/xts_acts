@@ -54,7 +54,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [1, 2];
+        let exp = collections.Array.from([1, 2]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -82,7 +82,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0200';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [];
+        let exp = collections.Array.from([]);
         let array = collections.Array.from([]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -110,7 +110,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [];
+        let exp = collections.Array.from([]);
         let array = collections.Array.from([5]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -138,7 +138,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | undefined)[] = [];
+        let exp = collections.Array.from([]);
         let array = collections.Array.from([,]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -166,7 +166,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp: (null|number)[] = [1, null, 3];
+        let exp = collections.Array.from([1, null, 3]);
         let array = collections.Array.from([1, null, 3, 4]);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -194,11 +194,11 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | TestA)[] = [1, {
+        let exp = collections.Array.from<number|TestA>([1, {
           a: 1
         }, {
           a: 1
-        }, 3];
+        }, 3]);
 
         let array = collections.Array.from<number|TestA>([1, {
           a: 1
@@ -231,7 +231,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['apple', 'banana'];
+        let exp = collections.Array.from(['apple', 'banana']);
         let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -259,7 +259,7 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0800';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['apple', ''];
+        let exp = collections.Array.from(['apple', '']);
 
         let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.pop();

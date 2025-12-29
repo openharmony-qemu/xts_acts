@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { FlatObj } from '../../testability/pages/DataFlg';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 export default function builtinsArrayForEachTest() {
   describe('BuiltinsArrayForEachTest', () => {
@@ -48,8 +49,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayForEachTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = [1, 2, 3];
-      const logs: number[] = [];
+      const arr = collections.Array.from([1, 2, 3]);
+      const logs = collections.Array.from<number>([]);
       arr.forEach(x => logs.push(x));
       expect(logs).assertDeepEquals([1, 2, 3]);
     });
@@ -63,9 +64,12 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
-      const logs: Array<[number, number, number[]]> = [];
-      arr.forEach((x, i, a) => logs.push([i, x, a]));
+      const arr = collections.Array.from([1, 2, 3]);
+      const logs = collections.Array.from<Array<Object>>([]);
+      arr.forEach((x: number, i:number, a:collections.Array<number>) => {
+        const entry: Array<Object> = [i, x, a];
+        logs.push(entry);
+      });
       expect(logs).assertDeepEquals([
         [0, 1, [1, 2, 3]],
         [1, 2, [1, 2, 3]],
@@ -82,7 +86,7 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
+      const arr = collections.Array.from([1, 2, 3]);
       arr.forEach((x, i) => {
         arr[i] = x * 2;
       });
@@ -98,7 +102,7 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, 2, 3];
+      const arr = collections.Array.from([1, 2, 3]);
       arr.forEach((x, i) => {
         if (x === 2) {
           arr.splice(i, 1);
@@ -116,8 +120,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, , 3];
-      const logs: number[] = [];
+      const arr = collections.Array.from([1, , 3]);
+      const logs = collections.Array.from<number>([]);
       arr.forEach(x => logs.push(x!));
       expect(logs).assertDeepEquals([1, 3]);
     });
@@ -131,8 +135,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, [, 3], 4];
-      const logs: string[] = [];
+      const arr = collections.Array.from([1, [, 3], 4]);
+      const logs = collections.Array.from<string>([]);
       arr.forEach(x => {
         console.log('builtinsArrayForEachTest1006:', x.toString())
         logs.push(x.toString())
@@ -166,9 +170,11 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [[], [1], [2]];
+      const arr = collections.Array.from<number[]>( [[], [1], [2]] );
       const logs: number[][] = [];
-      arr.forEach(x => logs.push(x));
+      arr.forEach((x: number[]) => {
+        logs.push(x);
+      });
       expect(logs).assertDeepEquals([[], [1], [2]]);
     });
 
@@ -181,8 +187,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [null, [undefined, 3]];
-      const logs: string[] = [];
+      const arr = collections.Array.from([null, [undefined, 3]]);
+      const logs = collections.Array.from<string>([]);
       arr.forEach(x => {
         console.log(x?.toString())
         logs.push(String(x))
@@ -202,7 +208,7 @@ export default function builtinsArrayForEachTest() {
       const obj: FlatObj = {
         name: 'hh', age: 10, like: [1, 2, 3, 4, 5]
       };
-      const arr = [obj];
+      const arr = collections.Array.from([obj]);
       let receivedObj: FlatObj | undefined = obj;
       arr.forEach(x => receivedObj = x);
       expect(receivedObj).assertDeepEquals(obj);
@@ -217,8 +223,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayForEachTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = ['abc', 'bcd', 'cde'];
-      const logs: string[] = [];
+      const arr = collections.Array.from(['abc', 'bcd', 'cde']);
+      const logs = collections.Array.from<string>([]);
       arr.forEach(x => logs.push(x));
       expect(logs).assertDeepEquals(arr);
     });

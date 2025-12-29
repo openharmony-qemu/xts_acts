@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium";
 import { toSortedRes } from "../../testability/pages/JsMethodTest";
 import { sleep } from "../../testability/pages/Utils";
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayToSortedTest() {
   describe('builtinsArrayToSortedTest', () => {
@@ -60,7 +61,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const input = [3, 1, 2];
+      const input = collections.Array.from([3, 1, 2]);
       const result: number[] = toSortedRes(input, (a: number, b: number) => b - a);
       expect(result).assertDeepEquals([3, 2, 1]);
     });
@@ -74,7 +75,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const emptyArr: number[] = [];
+      const emptyArr = collections.Array.from([]);
       expect(toSortedRes(emptyArr)).assertDeepEquals([]);
     });
 
@@ -99,7 +100,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const sparseArr = [1, , 3];
+      const sparseArr = collections.Array.from([1, , 3]);
       expect(toSortedRes(sparseArr)).assertDeepEquals([1, 3, undefined]);
     });
 
@@ -112,7 +113,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [1, null, undefined, 3];
+      const arr = collections.Array.from([1, null, undefined, 3]);
       expect(toSortedRes(arr)).assertDeepEquals([1, 3, null, undefined]);
     });
 
@@ -125,7 +126,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const months = ["Mar", "Jan", "Feb", "Dec"];
+      const months = collections.Array.from(["Mar", "Jan", "Feb", "Dec"]);
       expect(toSortedRes(months)).assertDeepEquals(['Dec', 'Feb', 'Jan', 'Mar']);
     });
 
@@ -138,7 +139,7 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [[3], [1], [2]];
+      const arr = collections.Array.from([[3], [1], [2]]);
       expect(toSortedRes(arr, (a: number[], b: number[]) => a[0] - b[0]))
         .assertDeepEquals([[1], [2], [3]]);
     });
@@ -152,8 +153,8 @@ export default function builtinsArrayToSortedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToSortedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const original = [3, 1, 2];
-      const sorted: number[] = toSortedRes(original);
+      const original = collections.Array.from([3, 1, 2]);
+      const sorted= toSortedRes(original) as  collections.Array<number>;
       expect(sorted === original).assertFalse();
     });
 

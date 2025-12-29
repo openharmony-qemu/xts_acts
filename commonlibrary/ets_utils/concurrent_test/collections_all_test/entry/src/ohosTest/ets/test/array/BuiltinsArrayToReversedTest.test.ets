@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { TestA, TestB, TestC } from "../../testability/pages/DataFlg";
 import { toReversedRes } from "../../testability/pages/JsMethodTest";
 import { sleep } from "../../testability/pages/Utils";
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayToReversedTest() {
   describe('BuiltinsArrayToReversedTest', () => {
@@ -98,7 +99,7 @@ export default function builtinsArrayToReversedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const sparseArray = [1, , 3];
+      const sparseArray = collections.Array.from([1, , 3]);
       expect(toReversedRes(sparseArray)).assertDeepEquals([3, undefined, 1]);
     });
 
@@ -124,7 +125,7 @@ export default function builtinsArrayToReversedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let input = [1, 2, 3];
+      let input = collections.Array.from([1, 2, 3]);
       let res: number[] = toReversedRes(input)
       expect(res).assertDeepEquals([3, 2, 1]);
       expect(input).assertDeepEquals([1, 2, 3]);
@@ -174,7 +175,7 @@ export default function builtinsArrayToReversedTest() {
       const obj3: TestC = {
         c: 3
       };
-      const original = [obj1, obj2, obj3];
+      const original = collections.Array.from([obj1, obj2, obj3]);
       expect(toReversedRes(original)).assertDeepEquals([obj3, obj2, obj1]);
     });
 

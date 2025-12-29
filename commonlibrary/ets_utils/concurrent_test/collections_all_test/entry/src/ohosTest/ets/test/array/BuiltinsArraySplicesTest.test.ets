@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium"
 import { hilog } from "@kit.PerformanceAnalysisKit"
 import { sleep } from "../../testability/pages/Utils"
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArraySpliceTest() {
   describe('builtinsArraySpliceTest', () => {
@@ -47,7 +48,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArraySplice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
-      const num: Array<number | string> = [1, 2, 3, 4, 5];
+      const num = collections.Array.from<number|string>([1, 2, 3, 4, 5]);
       const c = num.splice(2, 2, 'a', 'b');
       console.log(num.toString());
       let a = JSON.stringify(num);
@@ -66,7 +67,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArraySplice0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (Done: Function) => {
-      const num2: Array<number | string> = [1, 2, 3, 4, 5];
+      const num2 = collections.Array.from<number|string>([1, 2, 3, 4, 5]);
       const c = num2.splice(2, -1, 'a', 'b');
       console.log(num2.toString());
       let a = JSON.stringify(num2);
@@ -85,7 +86,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num3: Array<number | string> = [2, 3, 4];
+      const num3 = collections.Array.from([2, 3, 4]);
       const c = num3.splice(0, 0, 1);
       console.log(num3.toString());
       let a = JSON.stringify(num3);
@@ -104,7 +105,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num4: Array<number | string> = [1, 2];
+      const num4 = collections.Array.from([1, 2]);
       const c = num4.splice(2, 0, 3);
       console.log(num4.toString());
       let a = JSON.stringify(num4);
@@ -123,7 +124,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      let num5: Number[] = []
+      let num5 = collections.Array.from<number>([])
       const c = num5.splice(0, 0, 1);
       console.log(num5.toString());
       let a = JSON.stringify(num5);
@@ -141,7 +142,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | undefined> = [1, , 3];
+      const num6 = collections.Array.from([1, , 3]);
       const c = num6.splice(1, 1, 2);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -160,7 +161,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | undefined> = [1, 2, 3, 4, 5];
+      const num6 = collections.Array.from([1, 2, 3, 4, 5]);
       const c = num6.splice(-2, 1);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -179,7 +180,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | undefined> = [1, 2, 3, 4, 5];
+      const num6 = collections.Array.from<number|undefined>([1, 2, 3, 4, 5]);
       const c = num6.splice(1, 0, undefined);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -198,7 +199,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | null> = [1, 2, 3, 4, 5];
+      const num6 = collections.Array.from<number|null>([1, 2, 3, 4, 5]);
       const c = num6.splice(1, 0, null);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -217,7 +218,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | null> = [1, 2, 3];
+      const num6 = collections.Array.from([1, 2, 3]);
       const c = num6.splice(0, 3);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -236,7 +237,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string>([1, 2, 3]);
       const c = num6.splice(1, 0, 'a', 'b');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -255,7 +256,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string>([1, 2, 3]);
       const c = num6.splice(1, 0, '#', '$');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -274,7 +275,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string|undefined>([1, 2, 3]);
       const c = num6.splice(1, 0, undefined, '$');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -293,7 +294,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string|undefined>([1, 2, 3]);
       const c = num6.splice(1, 0, '€', '©');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -312,7 +313,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string>([1, 2, 3]);
       const c = num6.splice(1, 0, '\udc04', '\ud83d');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -331,7 +332,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from<number|string>([1, 2, 3]);
       const c = num6.splice(1, 0, '\a', '\b');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -350,7 +351,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from([1, 2, 3]);
       const c = num6.splice(1, 0, Math.floor(1.5), NaN);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -369,7 +370,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | undefined> = [1, 2, 3];
+      const num6 = collections.Array.from([1, 2, 3]);
       const c = num6.splice(1, 0, Number.EPSILON, 0xcafebabe);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -388,7 +389,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | boolean> = [1, 2, 3];
+      const num6 = collections.Array.from<number|boolean>([1, 2, 3]);
       const c = num6.splice(1, 0, true, !'s');
       console.log(num6.toString());
       let a = JSON.stringify(num6);
@@ -407,7 +408,7 @@ export default function builtinsArraySpliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArraySplice2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const num6: Array<number | string | boolean> = [1, 2, 3];
+      const num6 = collections.Array.from<number|boolean>([1, 2, 3]);
       const c = num6.splice(Math.floor(1.5), NaN, true, !'s');
       console.log(num6.toString());
       let a = JSON.stringify(num6);

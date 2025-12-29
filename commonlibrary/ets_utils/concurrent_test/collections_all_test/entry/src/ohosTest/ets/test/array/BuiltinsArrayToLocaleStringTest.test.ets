@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { Empty } from '../../testability/pages/DataFlg';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayToLocaleStringTest() {
   describe('BuiltinsArrayToLocaleStringTest', () => {
@@ -109,9 +110,9 @@ export default function builtinsArrayToLocaleStringTest() {
      */
     it('BuiltinsArrayToLocaleStringTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: Empty = {};
-      const arr = []
-      const actual = [obj, arr, () => {
-      }].toLocaleString();
+      const arr = collections.Array.from([])
+      const actual = collections.Array.from([obj, arr, () => {
+      }]).toLocaleString();
       expect(actual).assertEqual("[object Object],,Cannot get source code of funtion");
     });
 
@@ -210,7 +211,7 @@ export default function builtinsArrayToLocaleStringTest() {
       expect(actual2[0]).assertEqual('a');
       expect(actual2[2]).assertEqual('b');
       expect(actual2[4]).assertEqual('c');
-      const arr = ['\uDFFF', '\uD800X'];
+      const arr = collections.Array.from(['\uDFFF', '\uD800X']);
       let actual3 = arr.toLocaleString();
       const parts = actual3.split(',');
       expect(parts[1].endsWith('X')).assertTrue();

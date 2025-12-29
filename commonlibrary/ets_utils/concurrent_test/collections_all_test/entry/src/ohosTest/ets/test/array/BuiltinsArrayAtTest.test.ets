@@ -222,7 +222,7 @@ export default function builtinsArrayAtTest() {
      */
     it('buildinsArrayAtTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = collections.Array.from([1, 2, 3, 4, 5])
-      expect(array.at(3)).assertEqual(3)
+      expect(array.at(3)).assertEqual(4)
       Done()
     })
 

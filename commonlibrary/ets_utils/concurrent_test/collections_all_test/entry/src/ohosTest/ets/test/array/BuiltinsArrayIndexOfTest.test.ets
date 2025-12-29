@@ -1,6 +1,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium";
 import { hilog } from "@kit.PerformanceAnalysisKit";
 import { sleep } from "../../testability/pages/Utils";
+import { collections } from '@kit.ArkTS'
 
 
 export default function BuiltinsArrayIndexOfTest() {
@@ -35,7 +36,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsArrayIndexOfTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const inputArray: Array<number> = [1, 2, 3]
+      const inputArray = collections.Array.from([1, 2, 3])
       const callbackFn = (ele: number) => {
         return inputArray.indexOf(ele)
       }
@@ -55,7 +56,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsArrayIndexOfTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const inputArray: Array<number> = [1, 2, 3]
+      const inputArray = collections.Array.from([1, 2, 3])
       const callbackFn = (ele: number) => {
         return inputArray.indexOf(ele)
       }
@@ -75,7 +76,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL0
      */
     it('BuiltinsArrayIndexOfTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const inputArray: Array<number> = [1, 2, 3, 2, 4]
+      const inputArray = collections.Array.from([1, 2, 3, 2, 4])
       const callbackFn = (ele1: number, ele2: number) => {
         return inputArray.indexOf(ele1, ele2)
       }
@@ -95,7 +96,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const inputArray: Array<number> = [1, 2, 3, 2, 4]
+      const inputArray = collections.Array.from([1, 2, 3, 2, 4])
       const callbackFn = (ele1: number, ele2: number) => {
         return inputArray.indexOf(ele1, ele2)
       }
@@ -115,7 +116,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const inputArray: Array<number> = [1, 2, 3, 2, 4]
+      const inputArray = collections.Array.from([1, 2, 3, 2, 4])
       const callbackFn = (ele1: number, ele2: number) => {
         return inputArray.indexOf(ele1, ele2)
       }
@@ -135,7 +136,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number | undefined> = [1, , 3]
+      let inputArray = collections.Array.from([1, , 3])
       const res = inputArray.indexOf(undefined)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -152,7 +153,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number | undefined> = [1, , 3]
+      let inputArray = collections.Array.from([1, , 3])
       const res = inputArray.indexOf(2)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -169,7 +170,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number | undefined> = [NaN]
+      let inputArray = collections.Array.from([NaN])
       const res = inputArray.indexOf(NaN)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -186,7 +187,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [0, -0]
+      let inputArray = collections.Array.from([0, -0])
       const res = inputArray.indexOf(0)
       console.log("res:" + res)
       expect(res).assertEqual(0)
@@ -203,7 +204,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<undefined> = [undefined]
+      let inputArray = collections.Array.from([undefined])
       const res = inputArray.indexOf(undefined)
       console.log("res:" + res)
       expect(res).assertEqual(0)
@@ -220,7 +221,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3]
+      let inputArray = collections.Array.from([1, 2, 3])
       const res = inputArray.indexOf(2, -1)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -237,7 +238,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3]
+      let inputArray = collections.Array.from([1, 2, 3])
       const res = inputArray.indexOf(3, -1)
       console.log("res:" + res)
       expect(res).assertEqual(2)
@@ -254,7 +255,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3]
+      let inputArray = collections.Array.from([1, 2, 3])
       const res = inputArray.indexOf(2, 5)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -271,7 +272,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3]
+      let inputArray = collections.Array.from([1, 2, 3])
       const res = inputArray.indexOf(2, -5)
       console.log("res:" + res)
       expect(res).assertEqual(1)
@@ -288,7 +289,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: string | undefined[] = []
+      let inputArray = collections.Array.from<string|undefined>([])
       const res = inputArray.indexOf(undefined)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -305,7 +306,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number[] | undefined> = [[], [1], [2]]
+      let inputArray = collections.Array.from([[], [1], [2]])
       const res = inputArray.indexOf([])
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -322,7 +323,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number | null> = [1, null, 3, 4]
+      let inputArray = collections.Array.from([1, null, 3, 4])
       const res = inputArray.indexOf(null)
       console.log("res:" + res)
       expect(res).assertEqual(1)
@@ -343,9 +344,9 @@ export default function BuiltinsArrayIndexOfTest() {
         a: number
       }
 
-      let inputArray: Array<number | obj> = [1, {
+      let inputArray = collections.Array.from<number|obj>([1, {
         a: 1
-      }, 3, 4]
+      }, 3, 4])
       const res = inputArray.indexOf({
         a: 1
       })
@@ -364,7 +365,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<string> = ['apple', 'banana', 'cherry']
+      let inputArray = collections.Array.from(['apple', 'banana', 'cherry'])
       const res = inputArray.indexOf('banana')
       console.log("res:" + res)
       expect(res).assertEqual(1)
@@ -381,7 +382,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<string> = ['apple', '', 'cherry']
+      let inputArray = collections.Array.from(['apple', '', 'cherry'])
       const res = inputArray.indexOf('')
       console.log("res:" + res)
       expect(res).assertEqual(1)
@@ -398,7 +399,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(Math.floor(1.5))
       console.log("res:" + res)
       expect(res).assertEqual(0)
@@ -415,7 +416,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(-0)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -432,7 +433,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(Number.EPSILON)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -449,7 +450,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(Number.MIN_VALUE)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -466,7 +467,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(Number.MAX_VALUE)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -483,7 +484,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(-Infinity)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -500,7 +501,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(Infinity)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -517,7 +518,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(123.456)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -534,7 +535,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(0xcafebabe)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -551,7 +552,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(0x0102)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -568,7 +569,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(0x01020304)
       console.log("res:" + res)
       expect(res).assertEqual(-1)
@@ -584,7 +585,7 @@ export default function BuiltinsArrayIndexOfTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArrayIndexOfTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray: Array<number> = [1, 2, 3, 4, 5, 6]
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.indexOf(0x3)
       console.log("res:" + res)
       expect(res).assertEqual(2)

@@ -56,7 +56,7 @@ export default function builtinsArrayFromTest() {
         [2, 'b'],
       ]);
       // const result = collections.Array.from(map);
-      // const expectedResult = [[1, 'a'], [2, 'b']];
+      // const expectedResult = collections.Array.from([[1, 'a'], [2, 'b']]);
       expect(map.get(1)).assertDeepEquals('a');
       expect(map.get(2)).assertDeepEquals('b');
 
@@ -71,10 +71,10 @@ export default function builtinsArrayFromTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFromTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
+      const inputArray = collections.Array.from([1, 2, 3]);
       const mapFn = (num: number) => num * 2;
       const result = collections.Array.from(inputArray, mapFn);
-      const expectedResult = [2, 4, 6];
+      const expectedResult = collections.Array.from([2, 4, 6]);
       expect(result).assertDeepEquals(collections.Array.from(expectedResult));
 
     });
@@ -88,12 +88,12 @@ export default function builtinsArrayFromTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFromTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
+      const inputArray = collections.Array.from([1, 2, 3]);
       const mapFn = (num: number) => {
         return num * 2;
       };
       const result = collections.Array.from(inputArray, mapFn);
-      const expectedResult = [2, 4, 6];
+      const expectedResult = collections.Array.from([2, 4, 6]);
       expect(result).assertDeepEquals(collections.Array.from(expectedResult));
 
     });
@@ -107,7 +107,7 @@ export default function builtinsArrayFromTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFromTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
+      const inputArray = collections.Array.from([1, 2, 3]);
       const mapFn = () => undefined;
       const result = collections.Array.from(inputArray);
       expect(result.length).assertEqual(3);
@@ -122,7 +122,7 @@ export default function builtinsArrayFromTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFromTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
+      const inputArray = collections.Array.from([1, 2, 3]);
       const mapFn = () => undefined;
       const result = collections.Array.from(inputArray, mapFn);
       expect(result).assertDeepEquals(collections.Array.from([undefined, undefined, undefined]));
@@ -157,7 +157,7 @@ export default function builtinsArrayFromTest() {
     it('builtinsArrayFromTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = collections.Array.from('undefined');
       console.log('result:', JSON.stringify(result));
-      const expectedResult = ["u", "n", "d", "e", "f", "i", "n", "e", "d"]
+      const expectedResult = collections.Array.from(["u", "n", "d", "e", "f", "i", "n", "e", "d"])
       expect(result).assertDeepEquals(collections.Array.from(expectedResult));
     });
 
@@ -172,7 +172,7 @@ export default function builtinsArrayFromTest() {
     it('builtinsArrayFromTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = collections.Array.from('null');
       console.log('result:', JSON.stringify(result));
-      const expectedResult = ["n", "u", "l", "l"]
+      const expectedResult = collections.Array.from(["n", "u", "l", "l"])
       expect(result).assertDeepEquals(collections.Array.from(expectedResult));
     });
   })

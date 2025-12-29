@@ -57,11 +57,11 @@ export default function builtinsArrayConstructorTestErr() {
 
     const d1 = new Date(seconds2020 * 1000);
     const d2 = new Date(seconds2021 * 1000);
-    const r1: Date[] = [d2, d1];
+    const r1 = collections.Array.from([d2, d1]);
     expect(r1[0].toISOString()).assertEqual("2021-01-01T00:00:00.000Z");
     expect(r1[1].toISOString()).assertEqual("2020-01-01T00:00:00.000Z");
     const typedArr = new collections.Float32Array([seconds2020, seconds2021]);
-    const r2: number[] = [typedArr[1], typedArr[0]];
+    const r2 = collections.Array.from([typedArr[1], typedArr[0]]);
     expect(r2[0]).assertEqual(seconds2021);
     expect(r2[1]).assertEqual(seconds2020);
   });
@@ -77,7 +77,7 @@ export default function builtinsArrayConstructorTestErr() {
     it('builtinsArrayConstructorTestErr242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const d1 = new Date('2020-01-01');
       const d2 = new Date('2021-01-01');
-      const r: Date[] = [d2, d1];
+      const r = collections.Array.from([d2, d1]);
       expect(r[0].toISOString()).assertEqual("2021-01-01T00:00:00.000Z");
       expect(r[1].toISOString()).assertEqual("2020-01-01T00:00:00.000Z");
     });

@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
-import { taskpool } from '@kit.ArkTS';
+import { collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep } from '../../testability/pages/Utils';
 
@@ -49,7 +49,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 2;
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result))
@@ -66,7 +66,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFindIndexTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number, index: number) => index === 2;
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result))
@@ -83,7 +83,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const createCallbackFn = (value: number) => {
         return (element: number) => element > value;
       };
@@ -103,7 +103,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, , 3];
+      const inputArray = collections.Array.from([1, , 3]);
       const callbackFn = (element: number | undefined) => element !== undefined;
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -120,7 +120,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [];
+      const inputArray = collections.Array.from([]);
       const callbackFn = (element: number) => element > 0;
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -137,7 +137,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [5];
+      const inputArray = collections.Array.from([5]);
       const callbackFn = (element: number) => element > 3
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -154,7 +154,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 10
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -171,17 +171,17 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
-      const callbackFn = (element: number, index: number, arr: number[]) => {
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
+      const callbackFn = inputArray.findIndex((element, index, arr) => {
         if (element === 3) {
           arr.splice(index, 1);
         }
         return element > 2;
-      }
-      const result = inputArray.findIndex(callbackFn,);
-      console.log('result:', JSON.stringify(result));
+      })
+
+      console.log('result:', JSON.stringify(callbackFn));
       const expectedResult = 2;
-      expect(result).assertDeepEquals(expectedResult);
+      expect(callbackFn).assertDeepEquals(expectedResult);
     });
 
     /**
@@ -193,17 +193,17 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
-      const callbackFn = (element: number, index: number, arr: number[]) => {
+      const inputArray = collections.Array.from([1, 2, 3]);
+      const callbackFn = inputArray.findIndex((element, index, arr) => {
         if (element === 3) {
           arr.push(4);
         }
         return element < 4;
-      }
-      const result = inputArray.findIndex(callbackFn,);
-      console.log('result:', JSON.stringify(result));
+      })
+
+      console.log('result:', JSON.stringify(callbackFn));
       const expectedResult = 0;
-      expect(result).assertDeepEquals(expectedResult);
+      expect(callbackFn).assertDeepEquals(expectedResult);
     });
 
     /**
@@ -215,7 +215,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = ['a', 'b', 'c'];
+      const inputArray = collections.Array.from(['a', 'b', 'c']);
       const callbackFn = (element: string) => element === 'b'
       const result = inputArray.findIndex(callbackFn,);
       console.log('result:', JSON.stringify(result));
@@ -235,13 +235,13 @@ export default function builtinsArrayFindIndexTest() {
       interface Item {
         a: number;
       }
-      const inputArray: Item[] = [{
+      const inputArray = collections.Array.from<Item>([{
         a: 1
       }, {
         a: 2
       }, {
         a: 3
-      }]
+      }])
       const callbackFn = (element: Item) => element.a > 1
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -258,7 +258,7 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [null, undefined, 3]
+      const inputArray = collections.Array.from([null, undefined, 3])
       const callbackFn = (element: null | undefined | number) => element !== null;
       const result = inputArray.findIndex(callbackFn);
       console.log('result:', JSON.stringify(result));

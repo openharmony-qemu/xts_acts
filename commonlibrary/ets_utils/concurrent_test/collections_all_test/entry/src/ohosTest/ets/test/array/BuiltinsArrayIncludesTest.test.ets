@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { TestA } from '../../testability/pages/DataFlg';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 export default function builtinsArrayIncludesTest() {
   describe('BuiltinsArrayIncludesTest', () => {
@@ -228,7 +229,7 @@ export default function builtinsArrayIncludesTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayIncludesTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = [[], [1], [2]];
+      const arr = collections.Array.from([[], [1], [2]]);
       expect(arr.includes([])).assertFalse();
       expect(arr.includes(arr[0])).assertTrue();
     });
@@ -293,7 +294,7 @@ export default function builtinsArrayIncludesTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayIncludesTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const testArray: number[] = [
+      const testArray = collections.Array.from([
         1,
         0,
         Number.EPSILON,
@@ -305,7 +306,7 @@ export default function builtinsArrayIncludesTest() {
         258,
         16909060,
         3
-      ];
+      ]);
 
       expect(testArray.includes(Math.floor(1.5))).assertTrue();
       expect(testArray.includes(-0)).assertTrue();

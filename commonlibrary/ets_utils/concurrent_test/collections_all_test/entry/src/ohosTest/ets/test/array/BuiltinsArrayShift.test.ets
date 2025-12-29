@@ -53,7 +53,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [2, 3];
+        let exp = collections.Array.from([2, 3]);
         let array = collections.Array.from([1, 2, 3]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -82,7 +82,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0200';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [];
+        let exp = collections.Array.from([]);
         let array = collections.Array.from([]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -109,7 +109,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [];
+        let exp = collections.Array.from([]);
         let array = collections.Array.from([5]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -136,7 +136,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp: number[] = [2, 3, 4, 5];
+        let exp = collections.Array.from([2, 3, 4, 5]);
         let array = collections.Array.from([1, 2, 3, 4, 5]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -167,7 +167,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp: (null | number)[] = [null, 3, 4];
+        let exp = collections.Array.from([null, 3, 4]);
         let array = collections.Array.from([1, null, 3, 4]);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -197,11 +197,11 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp: (number | TestA)[] = [{
+        let exp = collections.Array.from<number|TestA>([{
           a: 1
         }, {
           a: 1
-        }, 3, 4];
+        }, 3, 4]);
         let array = collections.Array.from<number|TestA>([1, {
           a: 1
         }, {
@@ -232,7 +232,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['banana', 'cherry'];
+        let exp = collections.Array.from(['banana', 'cherry']);
         let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
@@ -261,7 +261,7 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0800';
       console.info(`${caseName} test start`);
       try {
-        let exp: string[] = ['', 'cherry'];
+        let exp = collections.Array.from(['', 'cherry']);
         let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);

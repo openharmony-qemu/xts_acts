@@ -137,7 +137,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const array = ["", 1];
+      const array = collections.Array.from(["", 1]);
       expect(array.length).assertEqual(2)
       Done()
     })
@@ -151,7 +151,7 @@ export default function builtinsArrayConstructorTest() {
      * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const array = [undefined, "", null];
+      const array = collections.Array.from([undefined, "", null]);
       expect(array.length).assertEqual(3)
       Done()
     })
@@ -167,7 +167,7 @@ export default function builtinsArrayConstructorTest() {
      */
     it('buildinsArrayConstructorTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!\"#$%&'()* +,-./:;<=>?@[\\]^_`{|}~";
-      const array = [str];
+      const array = collections.Array.from([str]);
       expect(array.toString()).assertEqual(str)
       Done()
     })
@@ -182,7 +182,7 @@ export default function builtinsArrayConstructorTest() {
      */
     it('buildinsArrayConstructorTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-      const array = [str];
+      const array = collections.Array.from([str]);
       expect(array.toString()).assertEqual(str)
       Done()
     })
@@ -198,7 +198,7 @@ export default function builtinsArrayConstructorTest() {
      */
     it('buildinsArrayConstructorTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!!\"\"##$$%%&&''(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~";
-      const array = [str];
+      const array = collections.Array.from([str]);
       expect(array.toString()).assertEqual(str)
       Done()
     })

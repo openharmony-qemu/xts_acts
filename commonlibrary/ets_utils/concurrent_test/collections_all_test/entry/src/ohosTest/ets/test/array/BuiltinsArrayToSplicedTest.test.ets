@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { SpliceBoolean, SpliceNumber, SpliceObj, SpliceString } from "../../testability/pages/DataFlg";
 import { toSplicedRes } from "../../testability/pages/JsMethodTest";
 import { sleep } from "../../testability/pages/Utils";
+import { collections } from '@kit.ArkTS'
 
 export default function builtinsArrayToSplicedTest() {
   describe('BuiltinsArrayToSplicedTest', () => {
@@ -235,7 +236,7 @@ export default function builtinsArrayToSplicedTest() {
       ];
       testData.forEach((item, index) => {
         try {
-          const original = ['a', 'b'];
+          const original = collections.Array.from(['a', 'b']);
           expect(toSplicedRes(original, item.start, item.deleteCount, ...item.items)).assertDeepEquals(item.expected);
           expect(original).assertDeepEquals(['a', 'b']);
         } catch (e) {
@@ -328,7 +329,7 @@ export default function builtinsArrayToSplicedTest() {
       ];
       numberTestData.forEach((item, index) => {
         try {
-          const original = ['a', 'b'];
+          const original = collections.Array.from(['a', 'b']);
           const result: Object[] = toSplicedRes(original, item.start, item.deleteCount, ...item.items);
           if (item.items.includes(NaN)) {
             expect(result.length).assertEqual(item.expected.length);
@@ -399,7 +400,7 @@ export default function builtinsArrayToSplicedTest() {
       ];
       booleanTestData.forEach((item, index) => {
         try {
-          const original = ['a', 'b'];
+          const original = collections.Array.from(['a', 'b']);
           const result: Object[] = toSplicedRes(original, item.start, item.deleteCount, ...item.items);
           if (item.items.some(x => typeof x === 'number' && isNaN(x))) {
             const nanIndex = item.expected.findIndex(x => typeof x === 'number' && isNaN(x));
@@ -424,7 +425,7 @@ export default function builtinsArrayToSplicedTest() {
         description: '混合插入布尔和NaN'
       };
       try {
-        const original = ['a', 'b'];
+        const original = collections.Array.from(['a', 'b']);
         const result: Object[] =
           toSplicedRes(original, complexCase.start, complexCase.deleteCount, ...complexCase.items);
         expect(result.length).assertEqual(5);

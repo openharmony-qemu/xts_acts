@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import { PropParam } from "../../testability/pages/DataFlg";
 import { ConcatArrayTest, sleep } from "../../testability/pages/TsMethodTest";
+import { collections } from "@kit.ArkTS";
 
 export default function builtinsConcatArrayJoinTest() {
   describe('BuiltinsConcatArrayJoinTest', () => {
@@ -166,7 +167,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest([undefined, undefined]);
+      let sparseArr : collections.ConcatArray<undefined> = collections.Array.from<undefined>([undefined, undefined]);
       expect(sparseArr.join('')).assertEqual('');
     });
 

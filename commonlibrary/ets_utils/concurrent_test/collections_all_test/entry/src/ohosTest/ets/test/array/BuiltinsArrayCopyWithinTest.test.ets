@@ -12,17 +12,16 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
-import { DataTest } from '../../testability/pages/DataTest';
 import { sleep } from '../../testability/pages/Utils';
+import { collections } from '@kit.ArkTS';
 
 
 export default function builtinsArrayCopyWithinTest() {
   describe('BuiltinsArrayCopyWithinTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // Presets an action, which is performed only once before all test cases of the test suite start.-
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
@@ -50,12 +49,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayCopyWithinTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0100'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(2, 0, 3)
       expect(arr.toString()).assertEqual('1,2,1,2,3')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -68,12 +64,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayCopyWithinTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0200'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(2, 0)
       expect(arr.toString()).assertEqual('1,2,1,2,3')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -86,12 +79,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayCopyWithinTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0300'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 2)
       expect(arr.toString()).assertEqual('3,4,5,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -104,12 +94,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest2400'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 2)
       expect(arr.toString()).assertEqual('3,4,5,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -122,12 +109,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0400'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(1, 2, 4)
       expect(arr.toString()).assertEqual('1,3,4,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -140,12 +124,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0500'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 3)
       expect(arr.toString()).assertEqual('4,5,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -158,12 +139,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0600'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(-3, 0, 3)
       expect(arr.toString()).assertEqual('1,2,1,2,3')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -176,12 +154,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0700'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, -3, -1)
       expect(arr.toString()).assertEqual('3,4,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -194,12 +169,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0800'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 1, -2)
       expect(arr.toString()).assertEqual('2,3,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -212,12 +184,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest0900'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(5, 0, 3)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -230,12 +199,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1000'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 5, 6)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -248,12 +214,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1100'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 2, 6)
       expect(arr.toString()).assertEqual('3,4,5,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -266,12 +229,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1200'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(-6, 0, 3)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -284,12 +244,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1300'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, -6, -3)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -302,12 +259,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1400'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 1, -6)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -320,12 +274,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1500'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(2, 2, 4)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -338,12 +289,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1600'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(3, 2, 4)
       expect(arr.toString()).assertEqual('1,2,3,3,4')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -356,12 +304,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1700'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(0, 2, 2)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -374,12 +319,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1800'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [1, 2, 3, 4, 5]
+      let arr: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       arr.copyWithin(2.5, 0.5, 3.5)
       expect(arr.toString()).assertEqual('1,2,1,2,3')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -392,12 +334,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest1900'
-      console.info(`${caseName} test start`)
-      let arr: Array<number> = [Math.floor(1.5), 0, -0]
+      let arr: collections.Array<number> = new collections.Array<number>(Math.floor(1.5), 0, -0);
       arr.copyWithin(Math.floor(1.5), 0, -0)
       expect(arr.toString()).assertEqual('1,0,0')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -410,12 +349,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest2000'
-      console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [NaN, undefined]
+      let arr: collections.Array<number | undefined> = new collections.Array<number | undefined>(NaN, undefined);
       arr.copyWithin(0, 0)
       expect(JSON.stringify(arr)).assertEqual('[null,null]')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -428,12 +364,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest2100'
-      console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity]
+      let arr: collections.Array<number | undefined> = new collections.Array<number | undefined>(Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity);
       arr.copyWithin(0, 0, 1)
       expect(JSON.stringify(arr)).assertEqual('[2.220446049250313e-16,5e-324,1.7976931348623157e+308,null,null]')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -446,12 +379,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest2200'
-      console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]
+      let arr: collections.Array<number | undefined> = new collections.Array<number | undefined>(123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3);
       arr.copyWithin(0, 0, 1)
       expect(JSON.stringify(arr)).assertEqual('[123.456,3405691582,258,16909060,3]')
-      console.info(`${caseName} test end`)
       Done()
     })
 
@@ -464,12 +394,9 @@ export default function builtinsArrayCopyWithinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayCopyWithinTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayCopyWithinTest2300'
-      console.info(`${caseName} test start`)
-      let arr: Array<number | undefined> = []
+      let arr: collections.Array<number | undefined> = new collections.Array<number | undefined>();
       arr.copyWithin(0, 0)
       expect(JSON.stringify(arr)).assertEqual('[]')
-      console.info(`${caseName} test end`)
       Done()
     })
 

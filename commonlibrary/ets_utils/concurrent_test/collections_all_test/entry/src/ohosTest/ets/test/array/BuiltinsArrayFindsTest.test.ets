@@ -13,9 +13,10 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
-import { taskpool } from '@kit.ArkTS';
+import { collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep } from '../../testability/pages/Utils';
+import { Input } from '../../testability/pages/ThrowMethod';
 
 export default function builtinsArrayFindTest() {
   describe('BuiltinsArrayFindTest', () => {
@@ -49,7 +50,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayFindTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 2;
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result))
@@ -66,7 +67,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number, index: number) => index === 2;
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result))
@@ -83,7 +84,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const createCallbackFn = (value: number) => {
         return (element: number) => element > value;
       };
@@ -103,7 +104,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, , 3];
+      const inputArray = collections.Array.from([1, , 3]);
       const callbackFn = (element: number | undefined) => element !== undefined;
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -120,7 +121,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [];
+      const inputArray = collections.Array.from([]);
       const callbackFn = (element: number) => element > 0;
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -137,7 +138,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [5];
+      const inputArray = collections.Array.from([5]);
       const callbackFn = (element: number) => element > 3
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -154,7 +155,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const callbackFn = (element: number) => element > 10
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -171,7 +172,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3, 4, 5];
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
       const indexToRemove = inputArray.indexOf(3);
       if (indexToRemove !== -1) {
         inputArray.splice(indexToRemove, 1);
@@ -191,17 +192,17 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [1, 2, 3];
-      const callbackFn = (element: number, index: number, arr: number[]) => {
+      const inputArray = collections.Array.from([1, 2, 3]);
+      const result = inputArray.find((element, index, arr) => {
         if (element === 3) {
           arr.push(4);
         }
         return element < 4;
-      }
-      const result = inputArray.find(callbackFn);
+      });
+
       console.log('result:', JSON.stringify(result));
-      const expectedResult = 1;
-      expect(result).assertDeepEquals(expectedResult);
+
+      expect(result).assertDeepEquals(1);
     });
 
     /**
@@ -213,7 +214,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = ['a', 'b', 'c'];
+      const inputArray = collections.Array.from(['a', 'b', 'c']);
       const callbackFn = (element: string) => element === 'b'
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
@@ -233,13 +234,13 @@ export default function builtinsArrayFindTest() {
       interface Item {
         a: number;
       }
-      const inputArray: Item[] = [{
+      const inputArray = collections.Array.from<Item>([{
         a: 1
       }, {
         a: 2
       }, {
         a: 3
-      }]
+      }])
       const callbackFn = (element: Item) => element.a > 1
       const result = inputArray.find(callbackFn,);
       console.log('result:', JSON.stringify(result));
@@ -258,7 +259,7 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = [null, undefined, 3]
+      const inputArray = collections.Array.from([null, undefined, 3])
       const callbackFn = (element: null | undefined | number) => element == null;
       const result = inputArray.find(callbackFn);
       console.log('result:', JSON.stringify(result));
