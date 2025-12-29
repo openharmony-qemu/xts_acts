@@ -18,7 +18,9 @@ import { ChipGroup, 	IconOptions, IconGroupSuffix,ChipGroupItemOptions,ChipItemS
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { Entry, Component, Column, Color, $r ,Builder} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { ChipSize, SymbolGlyphModifier } from '@ohos.arkui.advanced.Chip'
+import { ChipSize } from '@ohos.arkui.advanced.Chip'
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
+
 @Entry
 @Component
 struct ChipGroupIconItemOptionsPage {
