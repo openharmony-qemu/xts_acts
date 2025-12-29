@@ -1987,5 +1987,1139 @@ export default function math05Test() {
         done();
       });
 
+    /**
+     * @tc.number  MATH_MIN2_0006
+     * @tc.name    testmathmin2006
+     * @tc.desc    Verify min with one positive and one negative number
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2006",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const result: double = min(5.5, -3.2);
+        expect(result).assertEqual(-3.2);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0007
+     * @tc.name    testmathmin2008
+     * @tc.desc    Verify min with Infinity values
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2008",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const result1: double = min(Infinity, 100);
+        expect(result1).assertEqual(100);
+        const result2: double = min(-Infinity, 0);
+        expect(result2).assertEqual(-Infinity);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0008
+     * @tc.name    testmathmin2009
+     * @tc.desc    Verify min when first parameter is smaller
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2009",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const result: double = min(2.0, 5.0);
+        expect(result).assertEqual(2.0);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0009
+     * @tc.name    testmathmin2015
+     * @tc.desc    Verify min called multiple times
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2015",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let result: double = min(10.0, 8.0);
+        expect(result).assertEqual(8.0);
+        result = min(result, 5.0);
+        expect(result).assertEqual(5.0);
+        result = min(result, 7.0);
+        expect(result).assertEqual(5.0);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0010
+     * @tc.name    testmathmin2016
+     * @tc.desc    Verify min with same absolute value but different signs
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2016",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const result: double = min(-5.0, 5.0);
+        expect(result).assertEqual(-5.0);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0011
+     * @tc.name    testmathmin2017
+     * @tc.desc    Verify min with decimal precision
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2017",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const result: double = min(0.0000000000001, 0.0000000000002);
+        expect(result).assertEqual(0.0000000000001);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_MIN2_0012
+     * @tc.name    testmathmin2018
+     * @tc.desc    Verify min used in expression chain
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmin2018",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const a: double = 15.0;
+        const b: double = 10.0;
+        const c: double = 20.0;
+        const result: double = min(a, min(b, c));
+        expect(result).assertEqual(10.0);
+        done();
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0001_01
+     * @tc.name    testmathasin0033
+     * @tc.desc    Verify asin(0.0) returns exactly 0.0
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test exact zero value started');
+        const result: number = asin(0.0);
+        expect(result).assertEqual(0.0);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test exact zero value completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0002_01
+     * @tc.name    testmathasin0034
+     * @tc.desc    Verify asin(-0.0) returns exactly -0.0
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test negative zero started');
+        const result: number = asin(-0.0);
+        expect(1 / result).assertEqual(Number.NEGATIVE_INFINITY);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test negative zero completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0003_01
+     * @tc.name    testmathasin0035
+     * @tc.desc    Verify asin(0.123) returns consistent result
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test random value (0.123) started');
+        const input: number = 0.123;
+        const result1: number = asin(input);
+        const result2: number = asin(input);
+        expect(result1).assertEqual(result2);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test random value completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0004_01
+     * @tc.name    testmathasin0036
+     * @tc.desc    Verify asin(-0.456) returns consistent result
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test random negative value (-0.456) started');
+        const input: number = -0.456;
+        const result1: number = asin(input);
+        const result2: number = asin(input);
+        expect(result1).assertEqual(result2);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test random negative value completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0005_01
+     * @tc.name    testmathasin0037
+     * @tc.desc    Verify precision of asin(0.999) against known value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test precision near upper boundary (0.999) started');
+        const input: number = 0.999;
+        const result: number = asin(input);
+        const expected: number = 1.526071;
+        expect(Math.abs(result - expected) < 1e-6).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test precision near upper boundary completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0006_01
+     * @tc.name    testmathasin0038
+     * @tc.desc    Verify precision of asin(-0.999) against known value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test precision near lower boundary (-0.999) started');
+        const input: number = -0.999;
+        const result: number = asin(input);
+        const expected: number = -1.526071;
+        expect(Math.abs(result - expected) < 1e-6).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test precision near lower boundary completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_007
+     * @tc.name    testmathasin0039
+     * @tc.desc    Verify extreme precision of asin(0.5) returns π/6
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test extreme precision (0.5) started');
+        const result: number = asin(0.5);
+        const expected: number = Math.PI / 6;
+        expect(Math.abs(result - expected) < Number.EPSILON).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test extreme precision completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0008_01
+     * @tc.name    testmathasin0040
+     * @tc.desc    Verify extreme precision of asin(-0.5) returns -π/6
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test extreme precision (-0.5) started');
+        const result: number = asin(-0.5);
+        const expected: number = -Math.PI / 6;
+        expect(Math.abs(result - expected) < Number.EPSILON).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test extreme precision completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0001_01
+     * @tc.name    testmathacosh0026
+     * @tc.desc    Verify acosh(Math.E) returns expected value (Euler's number)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0026",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0026 started');
+        const input: double = Math.E;
+        const expected: double = 1.657454454153077;
+        const result: double = acosh(input);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0026 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0002_1
+     * @tc.name    testmathacosh0028
+     * @tc.desc    Verify acosh(2*0.5) returns expected value (square root of 2)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0028",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0028 started');
+        const input: double = Math.SQRT2;
+        const expected: double = 0.881373587019543;
+        const result: double = acosh(input);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0028 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0003_01
+     * @tc.name    testmathacosh0029
+     * @tc.desc    Verify acosh(0.5 * Number.MAX_VALUE) returns finite value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0029",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0029 started');
+        const input: double = 0.5 * Number.MAX_VALUE;
+        const result: double = acosh(input);
+        expect(Number.isFinite(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0029 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0004_01
+     * @tc.name    testmathacosh0030
+     * @tc.desc    Verify acosh(1.0 + 1e-15) returns small positive value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0030",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0030 started');
+        const input: double = 1.0 + 1e-15;
+        const result: double = acosh(input);
+        expect(result > 0).assertTrue();
+        expect(result < 1e-7).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0030 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0001_01
+     * @tc.name    testmathabs0035
+     * @tc.desc    Verify abs combined with other math functions
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0035",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0035 start');
+        const input: double = -10.5;
+        const result: double = Math.sqrt(abs(input));
+        expect(result).assertEqual(Math.sqrt(10.5));
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0035 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_002
+     * @tc.name    testmathabs0036
+     * @tc.desc    Verify abs used in logical expression
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0036",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0036 start');
+        const a: double = -5.0;
+        const b: double = 3.0;
+        const result: boolean = abs(a) > b;
+        expect(result).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0036 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0003_01
+     * @tc.name    testmathabs0037
+     * @tc.desc    Verify abs with random numbers
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0037",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0037 start');
+        for (let i = 0; i < 10; i++) {
+          const randomValue: double = Math.random() * 100 - 50;
+          const result: double = abs(randomValue);
+          expect(result >= 0).assertTrue();
+          expect(result).assertEqual(Math.abs(randomValue));
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0037 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0004_01
+     * @tc.name    testmathabs0038
+     * @tc.desc    Verify abs with date values
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0038",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0038 start');
+        const date1: Date = new Date(2023, 0, 1);
+        const date2: Date = new Date(2023, 6, 1);
+        const timeDiff: double = date1.getTime() - date2.getTime();
+        const absDiff: double = abs(timeDiff);
+        expect(absDiff).assertEqual(Math.abs(timeDiff));
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0038 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0005_01
+     * @tc.name    testmathabs0039
+     * @tc.desc    Verify abs in array processing
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0039",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0039 start');
+        const values: double[] = [-1.5, 2.3, -3.7, 4.2, -5.9];
+        const absValues: double[] = values.map(v => abs(v));
+        for (let i = 0; i < values.length; i++) {
+          expect(absValues[i]).assertEqual(Math.abs(values[i]));
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0039 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0007_01
+     * @tc.name    testmathabs0007
+     * @tc.desc    Verify abs used in logical expression
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0007",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0007 start');
+        const a: double = -5.0;
+        const b: double = 3.0;
+        const result: boolean = abs(a) > b;
+        expect(result).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0007 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_008
+     * @tc.name    testmathabs0037_01
+     * @tc.desc    Verify abs with random numbers
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0037_01",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0037_01 start');
+        for (let i = 0; i < 10; i++) {
+          const randomValue: double = Math.random() * 100 - 50;
+          const result: double = abs(randomValue);
+          expect(result >= 0).assertTrue();
+          expect(result).assertEqual(Math.abs(randomValue));
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0037_01 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0009_01
+     * @tc.name    testmathabs038
+     * @tc.desc    Verify abs with date values
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs038",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs038 start');
+        const date1: Date = new Date(2023, 0, 1);
+        const date2: Date = new Date(2023, 6, 1);
+        const timeDiff: double = date1.getTime() - date2.getTime();
+        const absDiff: double = abs(timeDiff);
+        expect(absDiff).assertEqual(Math.abs(timeDiff));
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs038 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0010_01
+     * @tc.name    testmathabs0039_01
+     * @tc.desc    Verify abs in array processing
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0039_01",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0039_01 start');
+        const values: double[] = [-1.5, 2.3, -3.7, 4.2, -5.9];
+        const absValues: double[] = values.map(v => abs(v));
+        for (let i = 0; i < values.length; i++) {
+          expect(absValues[i]).assertEqual(Math.abs(values[i]));
+        }
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0039_01 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0005_01
+     * @tc.name    testmathacosh0031
+     * @tc.desc    Verify acosh(1.0 - 1e-15) returns NaN
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0031",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0031 started');
+        const input: double = 1.0 - 1e-15;
+        const result: double = acosh(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0031 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0006_01
+     * @tc.name    testmathacosh0032
+     * @tc.desc    Verify acosh(Number.MIN_SAFE_INTEGER + 1) returns NaN
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0032",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0032 started');
+        const input: double = Number.MIN_SAFE_INTEGER + 1;
+        const result: double = acosh(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0032 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0007_01
+     * @tc.name    testmathacosh0033
+     * @tc.desc    Verify acosh(1e-324) returns NaN (smallest possible positive number)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0033",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0033 started');
+        const input: double = Number.MIN_VALUE;
+        const result: double = acosh(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0033 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOSH_0008_01
+     * @tc.name    testmathacosh0034
+     * @tc.desc    Verify acosh(1.7976931348623157e308) returns finite value (MAX_VALUE)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacosh0034",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0034 started');
+        const input: double = Number.MAX_VALUE;
+        const result: double = acosh(input);
+        expect(Number.isFinite(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacosh0034 completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_00010
+     * @tc.name    testmathasin0041
+     * @tc.desc    Verify asin(100.0) returns NaN (value > 1.0)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test large positive value (100.0) started');
+        const result: number = asin(100.0);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test large positive value completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0011_01
+     * @tc.name    testmathasin0042
+     * @tc.desc    Verify asin(-100.0) returns NaN (value < -1.0)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test large negative value (-100.0) started');
+        const result: number = asin(-100.0);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test large negative value completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0012_01
+     * @tc.name    testmathasin0043
+     * @tc.desc    Verify asin(sin(0.3)) ≈ 0.3
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(x)) identity started');
+        const x: number = 0.3;
+        const result: number = asin(Math.sin(x));
+        expect(Math.abs(result - x) < 1e-15).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(x)) identity completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0013_01
+     * @tc.name    testmathasin0044
+     * @tc.desc    Verify asin(sin(-0.7)) ≈ -0.7
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity started');
+        const x: number = 0.7;
+        const result: number = asin(Math.sin(-x));
+        expect(Math.abs(result - (-x)) < 1e-15).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_014
+     * @tc.name    testmathasin0047
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test result consistency started');
+        const input: number = 0.25;
+        const result1: number = asin(input);
+        const result2: number = asin(input);
+        const result3: number = asin(input);
+        expect(result1).assertEqual(result2);
+        expect(result2).assertEqual(result3);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test result consistency completed');
+      });
+
+    /**
+     * @tc.number  MATH_ASIN_0015_01
+     * @tc.name    testmathasin0048
+     * @tc.desc    Verify identity: asin(x) + acos(x) = π/2 for x=0.4
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathasin0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'Test asin(x) + acos(x) = π/2 identity started');
+        const x: number = 0.4;
+        const result: number = asin(x) + Math.acos(x);
+        const expected: number = Math.PI / 2;
+        expect(Math.abs(result - expected) < 1e-15).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'Test identity completed');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0001
+     * @tc.name    testmathacos0001
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0001",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0001 start');
+        const input: number = Number.NaN;
+        const result: number = acos(input);
+
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0001 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0002
+     * @tc.name    testmathacos0002
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0002",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0002 start');
+        const input: number = Number.POSITIVE_INFINITY;
+        const result: number = acos(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0002 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0003
+     * @tc.name    testmathacos0003
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0003",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0003 start');
+        const input: number = Number.NEGATIVE_INFINITY;
+        const result: number = acos(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0003 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0004
+     * @tc.name    testmathacos0004
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0004",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0004 start');
+        const input: number = 1.0;
+        const result: number = acos(input);
+
+        expect(Math.abs(result - 0) < Number.EPSILON).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0004 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0005
+     * @tc.name    testmathacos0005
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0005",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0005 start');
+        const input: number = -1.0;
+        const result: number = acos(input);
+        const expected: number = Math.PI;
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0005 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0006
+     * @tc.name    testmathacos0006
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0006",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0006 start');
+        const input: number = 0.5;
+        const result: number = acos(input);
+        const expected: number = Math.PI / 3;
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0006 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0007
+     * @tc.name    testmathacos0007
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0007",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0007 start');
+        const input: number = 0;
+        const result: number = acos(input);
+        const expected: number = Math.PI / 2;
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0007 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0001
+     * @tc.name    testmathabs0001
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0001",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0001 start');
+        const input: double = 5.0;
+        const expected: double = 5.0;
+        const result: double = abs(input);
+        expect(result).assertEqual(expected);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0001 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0002
+     * @tc.name    testmathabs0002
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0002",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0002 start');
+        const input: double = -7.5;
+        const expected: double = 7.5;
+        const result: double = abs(input);
+        expect(result).assertEqual(expected);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0002 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0003
+     * @tc.name    testmathabs0003
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0003",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0003 start');
+        const input: double = 0.0;
+        const expected: double = 0.0;
+        const result: double = abs(input);
+        expect(result).assertEqual(expected);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0003 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0004_02
+     * @tc.name    testmathabs0004
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0004",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0004 start');
+        const input: double = NaN;
+        const result: double = abs(input);
+
+        expect(isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0004 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0005
+     * @tc.name    testmathabs0005
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0005",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0005 start');
+        const input: double = Infinity;
+        const expected: double = Infinity;
+        const result: double = abs(input);
+        expect(result).assertEqual(expected);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0005 end');
+      });
+
+    /**
+     * @tc.number  MATH_ABS_0006
+     * @tc.name    testmathabs0006
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathabs0006",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0006 start');
+        const input: double = -Infinity;
+        const expected: double = Infinity;
+        const result: double = abs(input);
+        expect(result).assertEqual(expected);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathabs0006 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0008
+     * @tc.name    testmathacos0008
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0008",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0008 start');
+        const input: number = 0.999;
+        const result: number = acos(input);
+        const expected: number = Math.acos(0.999);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0008 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0009
+     * @tc.name    testmathacos0009
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0009",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0009 start');
+        const input: number = -0.999;
+        const result: number = acos(input);
+        const expected: number = Math.acos(-0.999);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0009 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0010
+     * @tc.name    estmathacos0010
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("estmathacos0010",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0010 start');
+        const input: number = 1.0001;
+        const result: number = acos(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0010 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0011
+     * @tc.name    testmathacos0011
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0011",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0011 start');
+        const input: number = -1.0001;
+        const result: number = acos(input);
+        expect(Number.isNaN(result)).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0011 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0012
+     * @tc.name    testmathacos0012
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0012",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0012 start');
+        const input: number = Math.SQRT2 / 2;
+        const result: number = acos(input);
+        const expected: number = Math.PI / 4;
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0012 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0013
+     * @tc.name    testmathacos0013
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0013",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0013 start');
+        const input: number = 0.123;
+        const result: number = acos(input);
+        const expected: number = Math.acos(0.123);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0013 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0014
+     * @tc.name    testmathacos0014_01
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0014_01",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0014_01 start');
+        const input: number = -0.456;
+        const result: number = acos(input);
+        const expected: number = Math.acos(-0.456);
+        expect(Math.abs(result - expected) < 1e-10).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0014_01 end');
+      });
+
+    /**
+     * @tc.number  MATH_ACOS_0015
+     * @tc.name    testmathacos0015
+     * @tc.desc    Verify multiple calls to asin(0.25) return consistent results
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathacos0015",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0015 start');
+        const input: number = 1 - Number.EPSILON;
+        const result: number = acos(input);
+        const expected: number = Math.acos(1 - Number.EPSILON);
+        expect(result > 0 && result < 0.001).assertTrue();
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathacos0015 end');
+      });
   });
 }

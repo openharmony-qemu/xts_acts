@@ -1979,5 +1979,388 @@ export default function math03Test() {
         }
       });
 
+    /**
+     * @tc.number TEST_MATH_ATAN_24017
+     * @tc.name    testMathAtan24017
+     * @tc.desc    Verify atan2 with finite y and positive infinity x
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathAtan24017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathAtan24017 start');
+        const y: number = 1;
+        const x: number = Number.POSITIVE_INFINITY;
+        const expected: number = 0;
+        try {
+          const result: number = Math.atan2(y, x);
+          expect(result).assertEqual(expected);
+        } catch (error) {
+          hilog.error(domain, tag, 'testMathAtan24017 failed: %{public}s', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathAtan24017 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATAN_24018
+     * @tc.name    testMathAtan24018
+     * @tc.desc    Verify atan2 with finite y and negative infinity x
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathAtan24018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathAtan24018 start');
+        const y: number = 1;
+        const x: number = Number.NEGATIVE_INFINITY;
+        const expected: number = Math.PI;
+        try {
+          const result: number = Math.atan2(y, x);
+          expect(result).assertEqual(expected);
+        } catch (error) {
+          hilog.error(domain, tag, 'testMathAtan24018 failed: %{public}s', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathAtan24018 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATAN_24019
+     * @tc.name    testMathAtan24019
+     * @tc.desc    Verify atan2 with zero and positive zero
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathAtan24019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathAtan24019 start');
+        const y: number = 0;
+        const x: number = 0;
+        const expected: number = 0;
+        try {
+          const result: number = Math.atan2(y, x);
+          expect(result).assertEqual(expected);
+        } catch (error) {
+          hilog.error(domain, tag, 'testMathAtan24019 failed: %{public}s', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathAtan24019 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATAN_24021
+     * @tc.name    testMathAtan24021
+     * @tc.desc    Verify atan2 with exact π/4 value
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathAtan24021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathAtan24021 start');
+        const y: number = 1;
+        const x: number = 1;
+        const expected: number = Math.PI / 4;
+        try {
+          const result: number = Math.atan2(y, x);
+          expect(result).assertEqual(expected);
+        } catch (error) {
+          hilog.error(domain, tag, 'testMathAtan24021 failed: %{public}s', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathAtan24021 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATAN_24022
+     * @tc.name    testMathAtan24022
+     * @tc.desc    Verify atan2 with large difference in magnitude
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathAtan24022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathAtan24022 start');
+        const y: number = 1e-300;
+        const x: number = 1e300;
+        const expected: number = 0;
+        try {
+          const result: number = Math.atan2(y, x);
+          expect(result).assertEqual(expected);
+        } catch (error) {
+          hilog.error(domain, tag, 'testMathAtan24022 failed: %{public}s', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathAtan24022 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25001
+     * @tc.name    testMathatanh25001
+     * @tc.desc    Check atanh with NaN input
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25001 start');
+        try {
+          const result: number = atanh(NaN);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25001 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25001 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25002
+     * @tc.name    testMathatanh25002
+     * @tc.desc    Check atanh with positive infinity
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25002 start');
+        try {
+          const result: number = atanh(Infinity);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25002 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25002 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25003
+     * @tc.name    testMathatanh25003
+     * @tc.desc    Check atanh with negative infinity
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25003 start');
+        try {
+          const result: number = atanh(-Infinity);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25003 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25003 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25004
+     * @tc.name    testMathatanh25004
+     * @tc.desc    Check atanh with zero input
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25004 start');
+        try {
+          const result: number = atanh(0.0);
+          expect(result).assertEqual(0.0);
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25004 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25004 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25007
+     * @tc.name    testMathatanh25007
+     * @tc.desc    Check atanh with input > 1
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25007 start');
+        try {
+          const result: number = atanh(1.1);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25007 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25007 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25008
+     * @tc.name    testMathatanh25008
+     * @tc.desc    Check atanh with input < -1
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25008 start');
+        try {
+          const result: number = atanh(-1.1);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25008 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25008 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25009
+     * @tc.name    testMathatanh25009
+     * @tc.desc    Check atanh with input exactly 1.0
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25009 start');
+        try {
+          const result: number = atanh(1.0);
+          expect(result).assertEqual(Infinity);
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25009 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25009 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25010
+     * @tc.name    testMathatanh25010
+     * @tc.desc    Check atanh with input exactly -1.0
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25010 start');
+        try {
+          const result: number = atanh(-1.0);
+          expect(result).assertEqual(-Infinity);
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25010 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25010 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25019
+     * @tc.name    testMathatanh25019
+     * @tc.desc    Check atanh with very large positive value (should be NaN)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25019 start');
+        try {
+          const result: number = atanh(Number.MAX_VALUE);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25019 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25019 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25020
+     * @tc.name    testMathatanh25020
+     * @tc.desc    Check atanh with very large negative value (should be NaN)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25020 start');
+        try {
+          const result: number = atanh(-Number.MAX_VALUE);
+          expect(isNaN(result)).assertTrue();
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25020 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25020 end');
+        }
+      });
+
+    /**
+     * @tc.number TEST_MATH_ATANH_25021
+     * @tc.name    testMathatanh25031_01
+     * @tc.desc    Check atanh with input exactly 0.0 (edge case)
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testMathatanh25031_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testMathatanh25021 start');
+        try {
+          const result: number = atanh(0.0);
+          expect(result).assertEqual(0.0);
+          expect(1 / result).assertEqual(Infinity);
+        } catch (error) {
+          hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testMathatanh25021 failed:', error);
+          expect().assertFail();
+        } finally {
+          done();
+          hilog.info(domain, tag, '%{public}s', 'testMathatanh25031_01 end');
+        }
+      });
   });
 }
