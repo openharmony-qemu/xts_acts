@@ -463,7 +463,7 @@ export default function DeviceInfoTest() {
       let majorVersionInfo = deviceinfo.majorVersion;
       console.info('the value of the majorVersion is :' + majorVersionInfo);
 
-      expect(majorVersionInfo).assertInstanceOf('Number');
+      expect(majorVersionInfo).assertInstanceOf('int');
       expect(majorVersionInfo >= 1 && majorVersionInfo <= 99).assertTrue();
       done();
 
