@@ -77,7 +77,7 @@ struct WebAttributeTest {
             switch (this.str) {
               case "emitInitialScale001": {
                 try {
-                  this.initialScale = 500
+                  this.initialScale = 300
 
                   setTimeout(() => {
                     Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 70001)
