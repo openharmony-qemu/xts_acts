@@ -657,8 +657,18 @@ export default function audioCapturerChange() {
             let Id = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].id;
             let dType = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceType;
             let dRole = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceRole;
-            let sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
-            let cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            let sRate: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates.length === 0) {
+              console.info("sampleRates is empty");
+            } else {
+              sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
+            }
+            let cCount: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts.length === 0) {
+              console.info("channelCounts is empty");
+            } else {
+              cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            }
             let cMask = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelMasks;
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
@@ -935,8 +945,18 @@ export default function audioCapturerChange() {
             let Id = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].id;
             let dType = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceType;
             let dRole = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceRole;
-            let sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
-            let cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            let sRate: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates.length === 0) {
+              console.info("sampleRates is empty");
+            } else {
+              sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
+            }
+            let cCount: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts.length === 0) {
+              console.info("channelCounts is empty");
+            } else {
+              cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            }
             let cMask = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelMasks;
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
