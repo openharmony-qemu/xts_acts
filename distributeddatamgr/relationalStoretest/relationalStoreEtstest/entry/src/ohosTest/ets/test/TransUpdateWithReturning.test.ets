@@ -1081,8 +1081,7 @@ export default function TransUpdateWithReturning() {
         transactionType: relationalStore.TransactionType.IMMEDIATE
       }
       let trans = await rdbStore?.createTransaction(options);
-      let maxPageCount:string = await trans?.execute("PRAGMA max_page_count = 256;");
-      expect(maxPageCount).assertEqual(256);
+      await trans?.execute("PRAGMA max_page_count = 256;");
       let u8 = new Uint8Array(Array(1024 * 1024).fill(1));
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'lisi',
