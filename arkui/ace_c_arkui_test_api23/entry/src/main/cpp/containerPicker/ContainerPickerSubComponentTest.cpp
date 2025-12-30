@@ -30,7 +30,7 @@ static napi_value TestContainerPickerSubComponent001(napi_env env, napi_callback
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
     auto ret = nodeAPI->addChild(containerPicker, text);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent002(napi_env env, napi_callback_info info)
@@ -40,7 +40,7 @@ static napi_value TestContainerPickerSubComponent002(napi_env env, napi_callback
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto image = nodeAPI->createNode(ARKUI_NODE_IMAGE);
     auto ret = nodeAPI->addChild(containerPicker, image);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent003(napi_env env, napi_callback_info info)
@@ -54,7 +54,7 @@ static napi_value TestContainerPickerSubComponent003(napi_env env, napi_callback
     nodeAPI->addChild(row, text);
     nodeAPI->addChild(row, image);
     auto ret = nodeAPI->addChild(containerPicker, row);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
 static napi_value TestContainerPickerSubComponent004(napi_env env, napi_callback_info info)
@@ -63,7 +63,7 @@ static napi_value TestContainerPickerSubComponent004(napi_env env, napi_callback
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     auto containerPicker = nodeAPI->createNode(ARKUI_NODE_PICKER);
     auto ret = nodeAPI->addChild(containerPicker, nullptr);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 } // namespace ArkUICapiTest
