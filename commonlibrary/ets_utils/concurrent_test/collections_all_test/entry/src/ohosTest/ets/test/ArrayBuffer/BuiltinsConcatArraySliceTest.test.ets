@@ -15,6 +15,21 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import { Except, TestA, TestB, TestC } from "../../testability/pages/DataFlg";
 import { ConcatArrayTest, sleep } from "../../testability/pages/TsMethodTest";
+import { collections } from "@kit.ArkTS";
+
+interface ConcatTestA {
+  a: number;
+}
+
+interface ConcatTestB {
+  b: number;
+}
+
+interface ConcatTestC {
+  c: number;
+}
+
+type ConcatTestUnion = ConcatTestA | ConcatTestB | ConcatTestC;
 
 export default function builtinsConcatArraySliceTest() {
   describe('BuiltinsConcatArraySliceTest', () => {
@@ -48,8 +63,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsConcatArraySliceTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
-      expect(arr.slice(1, 3)).assertDeepEquals([2, 3]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+      expect(Array.from(arr.slice(1, 3))).assertDeepEquals([2, 3]);
     });
 
     /**
@@ -61,8 +76,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
-      expect(arr.slice(2)).assertDeepEquals([3, 4, 5]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+      expect(Array.from(arr.slice(2))).assertDeepEquals([3, 4, 5]);
     });
 
     /**
@@ -74,8 +89,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
-      expect(arr.slice(-3, -1)).assertDeepEquals([3, 4]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+      expect(Array.from(arr.slice(-3, -1))).assertDeepEquals([3, 4]);
     });
 
     /**
@@ -87,8 +102,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3])
-      const result: number[] = sparseArr.slice(0, 2);
+      let sparseArr: collections.ConcatArray<number | undefined> = new collections.Array<number | undefined>(...[1, , 3]);
+      const result: number[] = sparseArr.slice(0, 2) as number[];
       expect(result.length).assertEqual(2);
       expect(result[0]?.toString()).assertEqual('1');
       expect(result[1] === undefined).assertTrue();
@@ -103,8 +118,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3])
-      expect(arr.slice(5, 10)).assertDeepEquals([]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
+      expect(Array.from(arr.slice(5, 10))).assertDeepEquals([]);
     });
 
     /**
@@ -116,8 +131,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3])
-      expect(arr.slice(2, 2)).assertDeepEquals([]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
+      expect(Array.from(arr.slice(2, 2))).assertDeepEquals([]);
     });
 
     /**
@@ -129,11 +144,11 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
-      expect(arr.slice(3, 1)).assertDeepEquals([]);
-      expect(arr.slice(undefined)).assertDeepEquals([1, 2, 3, 4, 5]);
-      expect(arr.slice(1, undefined)).assertDeepEquals([2, 3, 4, 5]);
-      expect(arr.slice(NaN)).assertDeepEquals([1, 2, 3, 4, 5]);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+      expect(Array.from(arr.slice(3, 1))).assertDeepEquals([]);
+      expect(Array.from(arr.slice(undefined))).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(Array.from(arr.slice(1, undefined))).assertDeepEquals([2, 3, 4, 5]);
+      expect(Array.from(arr.slice(NaN))).assertDeepEquals([1, 2, 3, 4, 5]);
     });
 
     /**
@@ -145,8 +160,8 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<string>(['a', 'b', 'c', 'd']);
-      expect(arr.slice(2)).assertDeepEquals(['c', 'd']);
+      const arr: collections.ConcatArray<string> = new collections.Array<string>('a', 'b', 'c', 'd');
+      expect(Array.from(arr.slice(2))).assertDeepEquals(['c', 'd']);
     });
 
     /**
@@ -158,20 +173,24 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let objArr = new ConcatArrayTest<TestA | TestB | TestC>([{
-        a: 1
-      }, {
-        b: 2
-      }, {
-        c: 3
-      }]);
-      const sliced: number[] = objArr.slice(0, 2);
-      expect(sliced.length).assertEqual(2);
-      expect(JSON.stringify(sliced)).assertEqual(JSON.stringify([{
-        a: 1
-      }, {
-        b: 2
-      }]));
+      const rawObjA: ConcatTestA = { a: 1 };
+      const rawObjB: ConcatTestB = { b: 2 };
+      const rawObjC: ConcatTestC = { c: 3 };
+
+      let objArr: collections.ConcatArray<string> = new collections.Array<string>(
+        JSON.stringify(rawObjA),
+        JSON.stringify(rawObjB),
+        JSON.stringify(rawObjC)
+      );
+
+      const sliced = objArr.slice(0, 2);
+
+      const convertedSliced = Array.from(sliced, (jsonStr): ConcatTestUnion => {
+        return JSON.parse(jsonStr) as ConcatTestUnion;
+      });
+
+      expect(convertedSliced.length).assertEqual(2);
+      expect(JSON.stringify(convertedSliced)).assertEqual(JSON.stringify([{ "a": 1 }, { "b": 2 }]));
     });
 
     /**
@@ -183,11 +202,17 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let nestedArr = new ConcatArrayTest<number[]>([[1, 2], [3, 4], [5, 6]])
-      expect(nestedArr.slice(1, 3)).assertDeepEquals([[3, 4], [5, 6]]);
+      let nestedArr: collections.ConcatArray<collections.Array<number>> = new collections.Array<collections.Array<number>>(
+        new collections.Array<number>(1, 2),
+        new collections.Array<number>(3, 4),
+        new collections.Array<number>(5, 6)
+      );
+      const sliceResult = nestedArr.slice(1, 3);
+      const convertedResult = Array.from(sliceResult, (innerCol) => Array.from(innerCol));
+      expect(convertedResult).assertDeepEquals([[3, 4], [5, 6]]);
     });
 
-    /**
+    /**z
      * @tc.name   builtinsConcatArraySliceTest1011
      * @tc.number SUB_CONCAT_ARRAY_SLICE_TEST_1100
      * @tc.desc   Test special number parameters
@@ -196,7 +221,7 @@ export default function builtinsConcatArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArraySliceTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5])
+      const arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
       const testCases: Except[] = [
         {
           param: Math.floor(1.5), expected: [2, 3, 4, 5]
@@ -235,7 +260,7 @@ export default function builtinsConcatArraySliceTest() {
       ];
 
       testCases.forEach((item) => {
-        expect(arr.slice(item.param)).assertDeepEquals(item.expected);
+        expect(Array.from(arr.slice(item.param))).assertDeepEquals(item.expected);
       });
     });
   });

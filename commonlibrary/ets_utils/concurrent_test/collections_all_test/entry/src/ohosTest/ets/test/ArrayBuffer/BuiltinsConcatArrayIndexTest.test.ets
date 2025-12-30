@@ -13,7 +13,8 @@
 * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
-import { ConcatArrayTest, sleep } from "../../testability/pages/TsMethodTest";
+import { sleep } from "../../testability/pages/TsMethodTest";
+import { collections } from "@kit.ArkTS";
 
 export default function builtinsConcatArrayIndexTest() {
   describe('BuiltinsConcatArrayIndexTest', () => {
@@ -39,8 +40,9 @@ export default function builtinsConcatArrayIndexTest() {
     })
 
     // 测试数组定义
-    const arr = new ConcatArrayTest<number>([1, 2, 3, 4, 5]);
-    const emptyArr = new ConcatArrayTest([]);
+    let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+    let str : collections.ConcatArray<string | undefined | null> = new collections.Array<string | undefined | null>();
+    let emptyArr: collections.ConcatArray<number> = new collections.Array<number>();
 
     /**
      * @tc.name   builtinsConcatArrayIndexTest1001
@@ -51,7 +53,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayIndexTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      expect(arr.index(0)).assertEqual(1);
+      expect(arr[0]).assertEqual(1);
     });
 
     /**
@@ -63,7 +65,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayIndexTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      expect(arr.index(1)).assertEqual(2);
+      expect(arr[1]).assertEqual(2);
     });
 
     /**
@@ -75,7 +77,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(-1)).assertUndefined();
+      expect(arr[-1]).assertUndefined();
     });
 
     /**
@@ -87,7 +89,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(5)).assertUndefined();
+      expect(arr[5]).assertUndefined();
     });
 
     /**
@@ -99,7 +101,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0.5)).assertUndefined();
+      expect(arr[0.5]).assertUndefined();
     });
 
     /**
@@ -111,7 +113,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(emptyArr.index(0)).assertUndefined();
+      expect(emptyArr[0]).assertUndefined();
     });
 
     /**
@@ -123,7 +125,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0)).assertEqual(1);
+      expect(arr[0]).assertEqual(1);
     });
 
     /**
@@ -135,7 +137,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(-0)).assertEqual(1);
+      expect(arr[-0]).assertEqual(1);
     });
 
     /**
@@ -147,7 +149,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(NaN)).assertUndefined();
+      expect(arr[NaN]).assertUndefined();
     });
 
     /**
@@ -159,7 +161,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(Infinity)).assertUndefined();
+      expect(arr[Infinity]).assertUndefined();
     });
 
     /**
@@ -171,7 +173,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(-Infinity)).assertUndefined();
+      expect(arr[-Infinity]).assertUndefined();
     });
 
     /**
@@ -183,7 +185,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(Math.floor(1.5))).assertEqual(2);
+      expect(arr[Math.floor(1.5)]).assertEqual(2);
     });
 
     /**
@@ -195,7 +197,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(Number.MAX_VALUE)).assertUndefined();
+      expect(arr[Number.MAX_VALUE]).assertUndefined();
     });
 
     /**
@@ -207,7 +209,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(Number.MIN_VALUE)).assertUndefined();
+      expect(arr[Number.MIN_VALUE]).assertUndefined();
     });
 
     /**
@@ -219,7 +221,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(Number.EPSILON)).assertUndefined();
+      expect(arr[Number.EPSILON]).assertUndefined();
     });
 
     /**
@@ -231,7 +233,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(123.456)).assertUndefined();
+      expect(arr[123.456]).assertUndefined();
     });
 
     /**
@@ -243,7 +245,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0xcafebabe)).assertUndefined();
+      expect(arr[0xcafebabe]).assertUndefined();
     });
 
     /**
@@ -255,7 +257,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0x0102)).assertUndefined();
+      expect(arr[0x0102]).assertUndefined();
     });
 
     /**
@@ -267,7 +269,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0x01020304)).assertUndefined();
+      expect(arr[0x01020304]).assertUndefined();
     });
 
     /**
@@ -279,7 +281,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(0x3)).assertEqual(4);
+      expect(arr[0x3]).assertEqual(4);
     });
 
     /**
@@ -292,7 +294,7 @@ export default function builtinsConcatArrayIndexTest() {
      */
     it('builtinsConcatArrayIndexTest1021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const index = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
-      expect(arr.index(index)).assertUndefined();
+      expect((str as Array<string>).indexOf(index)).assertEqual(-1);
     });
 
     /**
@@ -304,7 +306,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(undefined)).assertUndefined();
+      expect(str[1]).assertUndefined();
     });
 
     /**
@@ -316,7 +318,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index(null)).assertUndefined();
+      expect(str[2]).assertUndefined();
     });
 
     /**
@@ -328,8 +330,8 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index("0")).assertEqual(1);
-      expect(arr.index("NaN")).assertUndefined();
+      expect((str as Array<string>).indexOf("0")).assertEqual(-1);
+      expect((str as Array<string>).indexOf("NaN")).assertEqual(-1);
     });
 
     /**
@@ -341,7 +343,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index("")).assertUndefined();
+      expect((str as Array<string>).indexOf("")).assertEqual(-1);
     });
 
     /**
@@ -353,7 +355,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index("\uD83D\uDC46")).assertUndefined();
+        expect((str as Array<string>).indexOf("\uD83D\uDC46")).assertEqual(-1);
     });
 
     /**
@@ -365,7 +367,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index("\uDC04")).assertUndefined();
+        expect((str as Array<string>).indexOf("\uDC04")).assertEqual(-1);
     });
 
     /**
@@ -377,7 +379,7 @@ export default function builtinsConcatArrayIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayIndexTest1028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(arr.index("\a")).assertUndefined();
+        expect((str as Array<string>).indexOf("\a")).assertEqual(-1);
     });
   });
 }

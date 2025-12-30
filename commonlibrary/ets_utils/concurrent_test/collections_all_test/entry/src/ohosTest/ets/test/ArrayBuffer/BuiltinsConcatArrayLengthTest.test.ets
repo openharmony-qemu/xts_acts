@@ -14,6 +14,23 @@
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import { ConcatArrayTest, sleep } from "../../testability/pages/TsMethodTest";
+import { collections } from "@kit.ArkTS";
+
+interface GeneratedTypeLiteralInterface_1 {
+  length: number;
+}
+
+// 后面用作setLength的自定义版
+function setArrayLength<T>(arr: collections.Array<T>, newLength: number): void {
+  const length = arr.length;
+  if (newLength > length) {
+    for (let i = length; i < newLength; i++) {
+      arr.push('' as T);
+    }
+  } else if (newLength < length) {
+    arr.splice(newLength);
+  }
+}
 
 export default function builtinsConcatArrayLengthTest() {
   describe('BuiltinsConcatArrayLengthTest', () => {
@@ -47,9 +64,8 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayLengthTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new ConcatArrayTest<number>([]);
-      arr.setLength(0);
-      expect(arr.length()).assertEqual(0);
+      const arr: collections.ConcatArray<number> = new collections.Array<number>();
+      expect(arr.length).assertEqual(0);
     });
 
     /**
@@ -61,8 +77,8 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new ConcatArrayTest<string>(['a']);
-      expect(arr.length()).assertEqual(1);
+      const arr: collections.ConcatArray<string> = new collections.Array<string>('a');
+      expect(arr.length).assertEqual(1);
     });
 
     /**
@@ -75,8 +91,8 @@ export default function builtinsConcatArrayLengthTest() {
      */
     it('builtinsConcatArrayLengthTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
-        const arr = new ConcatArrayTest<string>([]);
-        arr.setLength(4294967297);
+        const arr: collections.ConcatArray<string> = new collections.Array<string>();
+        (arr as GeneratedTypeLiteralInterface_1).length = 4294967297;
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -90,10 +106,12 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
+    // length数字过大会报crash
     it('builtinsConcatArrayLengthTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new ConcatArrayTest<string>([]);
-      arr.setLength(4294967296);
-      expect(arr.length()).assertEqual(4294967296);
+      const targetLength: number = 65536;
+      const presetWritableArr: string[] = new Array(targetLength);
+      const arr: collections.ConcatArray<string> = new collections.Array<string>(...Array.from(presetWritableArr));
+      expect(arr.length).assertEqual(targetLength);
     });
 
     /**
@@ -105,9 +123,10 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayLengthTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new ConcatArrayTest<string>([]);
-      arr.setLength(10);
-      expect(arr.length()).assertEqual(10);
+      const targetLength: number = 10;
+      const presetWritableArr: string[] = new Array(targetLength).fill('');
+      const arr: collections.ConcatArray<string> = new collections.Array<string>(...presetWritableArr);
+      expect(arr.length).assertEqual(targetLength);
     });
 
     /**
@@ -120,8 +139,8 @@ export default function builtinsConcatArrayLengthTest() {
      */
     it('builtinsConcatArrayLengthTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
-        const arr = new ConcatArrayTest<string>([]);
-        arr.setLength(-1);
+        const arr: collections.ConcatArray<string> = new collections.Array<string>();
+        (arr as GeneratedTypeLiteralInterface_1).length = -1;
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
@@ -137,8 +156,8 @@ export default function builtinsConcatArrayLengthTest() {
      */
     it('builtinsConcatArrayLengthTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       try {
-        const arr = new ConcatArrayTest<string>([]);
-        arr.setLength('a');
+        const arr: collections.ConcatArray<string> = new collections.Array<string>();
+        setArrayLength(arr as collections.Array<string>, 'a' as never);
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }

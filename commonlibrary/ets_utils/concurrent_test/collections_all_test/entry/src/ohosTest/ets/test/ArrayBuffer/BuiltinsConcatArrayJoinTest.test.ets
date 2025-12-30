@@ -49,7 +49,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsConcatArrayJoinTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3]);
+      let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       expect(arr.join('')).assertEqual('123');
     });
 
@@ -62,7 +62,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3]);
+      let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       expect(arr.join('-')).assertEqual('1-2-3');
     });
 
@@ -75,7 +75,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3]);
+      let sparseArr: collections.ConcatArray<number | undefined> = new collections.Array<number | undefined>(...[1, , 3]);
       expect(sparseArr.join('')).assertEqual('13');
     });
 
@@ -88,7 +88,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number | undefined>([1, , 3]);
+      let sparseArr: collections.ConcatArray<number | undefined> = new collections.Array<number | undefined>(...[1, , 3]);
       expect(sparseArr.join('-')).assertEqual('1--3');
     });
 
@@ -101,7 +101,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<string | undefined | null>([null, undefined, 'a']);
+      let sparseArr: collections.ConcatArray<string | undefined | null> = new collections.Array<string | undefined | null>(...[null, undefined, 'a']);
       expect(sparseArr.join('')).assertEqual('a');
     });
 
@@ -114,7 +114,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number>([NaN]);
+      let sparseArr: collections.ConcatArray<number> = new collections.Array<number>(NaN);
       expect(sparseArr.join('')).assertEqual('NaN');
     });
 
@@ -127,7 +127,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
+      let sparseArr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       expect(sparseArr.join(undefined)).assertEqual('1,2,3');
       expect(sparseArr.join()).assertEqual('1,2,3');
     });
@@ -141,7 +141,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
+      let sparseArr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       expect(sparseArr.join('')).assertEqual('123');
     });
 
@@ -154,7 +154,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest([]);
+      let sparseArr: collections.ConcatArray<number> = new collections.Array<number>();
       expect(sparseArr.join('')).assertEqual('');
     });
 
@@ -180,7 +180,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let sparseArr = new ConcatArrayTest<number>([1, 2, 3]);
+      let sparseArr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       expect(sparseArr.join(',')).assertEqual('1,2,3');
     });
 
@@ -196,7 +196,8 @@ export default function builtinsConcatArrayJoinTest() {
       const prop: PropParam = {
         prop: "value"
       };
-      let arr = new ConcatArrayTest<string | number | boolean | PropParam>(["apple", 123, true, prop]);
+      const initItems = ["apple", 123, true, String(prop)];
+      let arr: collections.ConcatArray<string | number | boolean> = new collections.Array<string | number | boolean>(...initItems);
       expect(arr.join(',')).assertEqual('apple,123,true,[object Object]');
     });
 
@@ -209,7 +210,7 @@ export default function builtinsConcatArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsConcatArrayJoinTest1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let arr = new ConcatArrayTest<number>([1, 2, 3]);
+      let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3);
       const sep1 = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
       expect(arr.join(sep1)).assertEqual(`1${sep1}2${sep1}3`);
       let arr1 = new ConcatArrayTest<number>([1, 2, 3]);
