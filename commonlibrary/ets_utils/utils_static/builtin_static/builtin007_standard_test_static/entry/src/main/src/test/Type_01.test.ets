@@ -1461,14 +1461,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0004
-     * @tc.name    testIntIsPrimitive0004
+     * @tc.name    testIntIsPrimitivet0004
      * @tc.desc    Testing IntType.REF.isPrimitive() returns false.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntIsPrimitive0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntIsPrimitive0004';
+    it('testIntIsPrimitivet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIntIsPrimitivet0004';
       try {
         const isPrimitive = IntType.REF.isPrimitive();
         expect(isPrimitive).assertTrue();
@@ -2020,14 +2020,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0100
-     * @tc.name    testIsPrimitive0001
+     * @tc.name    testIsPrimitivet0001
      * @tc.desc    Testing isPrimitive method of ByteType (value type).
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsPrimitive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testIsPrimitive0001";
+    it('testIsPrimitivet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsPrimitivet0001";
       try {
         let byteType = ByteType.VAL; // Value type
         let result = byteType.isPrimitive();

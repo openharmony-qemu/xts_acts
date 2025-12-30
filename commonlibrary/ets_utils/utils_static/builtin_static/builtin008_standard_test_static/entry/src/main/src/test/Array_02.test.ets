@@ -2015,14 +2015,14 @@ export default function Array_02Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_SHORT_0200
-     * @tc.name    testReduceShort
+     * @tc.name    testReduceShort01
      * @tc.desc    Testing reduce with multiplication operation.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testReduceShort', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testReduceShort";
+    it('testReduceShort01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testReduceShort01";
       try {
         const testArray: number[] = [1, 2, 6];
         const result = testArray.reduce((acc: number, curr: number) => acc * curr);

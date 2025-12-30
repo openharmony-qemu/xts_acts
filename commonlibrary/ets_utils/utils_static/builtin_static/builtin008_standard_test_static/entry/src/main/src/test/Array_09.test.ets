@@ -575,15 +575,15 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_2700
-     * @tc.name     testToLocaleString0027
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_2700_01
+     * @tc.name     testToLocaleString0027_01
      * @tc.desc     Verify that toLocaleString throws error when called with empty locale on empty int array
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
      */
-    it('testToLocaleString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testToLocaleString0027';
+    it('testToLocaleString0027_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testToLocaleString0027_01';
       try {
         let arr: FixedArray<int> = [];
         toLocaleString(arr, '');
@@ -1679,7 +1679,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0900
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0900_01
      * @tc.name     testToLocaleString0090
      * @tc.desc     Verify toLocaleString throws error when called with locale 'en-US' and 'currency' option on empty byte array
      * @tc.size     MediumTest

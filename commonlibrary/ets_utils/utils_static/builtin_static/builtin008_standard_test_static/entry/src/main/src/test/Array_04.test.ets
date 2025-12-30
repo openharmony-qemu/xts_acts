@@ -1713,7 +1713,7 @@ export default function Array_04Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_8400
-     * @tc.name    testLastIndexOf84
+     * @tc.name    testLastIndexOf0084
      * @tc.desc    Testing lastIndexOf with negative fromIndex
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -3553,7 +3553,7 @@ export default function Array_04Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_1020
-     * @tc.name    testLowerBoundSearch1020
+     * @tc.name    testLowerBoundSearch0102
      * @tc.desc    Testing invalid interval parameter.
      * @tc.size    MediumTest
      * @tc.type    Function
