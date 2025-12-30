@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, UiWindow } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -52,10 +52,10 @@ export default function uitestDriverTest() {
   describe('uitestDriverTest', (): void => {
     let driver: Driver;
     beforeAll(async () : Promise<void> => {
-      hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!")
+      hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!");
       driver = Driver.create();
-      await Utils.msSleep(2000)
-      hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!")
+      await Utils.msSleep(1000);
+      hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!");
     })
     beforeEach(async () => {
       await stopApplication('com.uitestScene.acts');
@@ -1034,6 +1034,7 @@ export default function uitestDriverTest() {
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
+        let observer = driver.createUIEventObserver();
         let callback = (uiElementInfo : UIElementInfo): void => {
           try {
             hilog.info(domain, tag, `testMonitor1_static UIElementInfo, ${ JSON.stringify(uiElementInfo) }`);
@@ -1119,10 +1120,13 @@ export default function uitestDriverTest() {
      * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "test_penSwipe_function_static start !!!!")
+      hilog.info(domain, tag, "test_penSwipe_function_static start !!!!");
       try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+        await driver.delayMs(waitUiReadyMs);
+        await maxUiWindow(driver, window);
         // 垂直滑动
         let scroll = await driver.findComponent(ON.type('Scroll'));
         expect(scroll != null).assertTrue();
@@ -1162,10 +1166,13 @@ export default function uitestDriverTest() {
      * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_pressure_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "test_penSwipe_function_pressure_static start !!!!")
+      hilog.info(domain, tag, "test_penSwipe_function_pressure_static start !!!!");
       try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+        await driver.delayMs(waitUiReadyMs);
+        await maxUiWindow(driver, window);
         // 垂直滑动
         let scroll = await driver.findComponent(ON.type('Scroll'));
         expect(scroll != null).assertTrue();
@@ -1196,10 +1203,13 @@ export default function uitestDriverTest() {
      * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "test_penSwipe_function_speed_static start !!!!")
+      hilog.info(domain, tag, "test_penSwipe_function_speed_static start !!!!");
       try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver.delayMs(waitUiReadyMs)
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+        await driver.delayMs(waitUiReadyMs);
+        await maxUiWindow(driver, window);
         // 垂直滑动
         let scroll = await driver.findComponent(ON.type('Scroll'));
         expect(scroll != null).assertTrue();

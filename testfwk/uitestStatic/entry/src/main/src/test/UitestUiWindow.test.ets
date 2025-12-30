@@ -25,7 +25,8 @@ import {
   UiDirection,
   PointerMatrix,
   DisplayRotation,
-  ResizeDirection
+  ResizeDirection,
+  UiWindow
 } from '@kit.TestKit'
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
@@ -128,7 +129,6 @@ export default function uitestUiWindowTest() {
       try {
         let disPlay = display.getDefaultDisplaySync();
         hilog.info(domain, tag, `testFindWindowWithId_static id, ${JSON.stringify(disPlay)}`);
-        let driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disPlay.id.toInt() });
@@ -160,17 +160,36 @@ export default function uitestUiWindowTest() {
      */
     it('testSplit_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      const driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
       expect(window1 != null).assertTrue();
       try {
         if (window1 != null) {
           await window1.split();
+          await driver.delayMs(waitUiReadyMs * 2)
         }
-        await driver.delayMs(waitUiReadyMs);
-        let bar = await driver.findComponent(ON.type('DecorBar'));
-        expect(bar == null).assertTrue();
+        let testLabel = await driver.findComponent(ON.text('test label'));
+        hilog.info(domain, tag, `testSplit_static testLabel, ${JSON.stringify(testLabel)}`);
+        if (testLabel == null) {
+          let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
+          expect(scbCom != null).assertTrue();
+        } else {
+          await testLabel.click();
+          await driver.delayMs(waitUiReadyMs);
+          let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
+          await driver.delayMs(waitUiReadyMs);
+          expect(window2 != null).assertTrue();
+          if (window2 != null) {
+            let window2Mode = await window2.getWindowMode();
+            expect(window2Mode == WindowMode.PRIMARY).assertTrue();
+          }
+          let testWindow = await driver.findWindow({bundleName:'com.uitest.acts.static'});
+          expect(testWindow != null).assertTrue();
+          if (testWindow != null) {
+            let testWindowMode = await testWindow.getWindowMode();
+            expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+          }
+        }
       } catch (err: BusinessError) {
         if (err.message == 'this device can not support this action') {
           expect(window1 != null).assertTrue();
