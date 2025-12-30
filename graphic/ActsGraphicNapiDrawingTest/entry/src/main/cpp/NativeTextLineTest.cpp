@@ -462,7 +462,7 @@ int TextLineTest013()
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_7);
-
+    
     double ascent = LEADING_VALUE;
     double descent = LEADING_VALUE;
     double leading = LEADING_VALUE;
@@ -480,8 +480,8 @@ int TextLineTest013()
             EXPECT_NEAR(ascent, ASCENT_VALUE_ALT, FLOAT_DATA_EPSILON);
             EXPECT_NEAR(descent, DESCENT_VALUE_ALT, FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_NEAR(ascent, -27.84, FLOAT_DATA_EPSILON);
-            EXPECT_NEAR(descent, 7.32, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(ascent, ASCENT_VALUE, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(descent, DESCENT_VALUE, FLOAT_DATA_EPSILON);
         }
         EXPECT_NEAR(width, widthArr[index], FLOAT_DATA_EPSILON);
     }
@@ -513,8 +513,8 @@ int TextLineTest014()
         EXPECT_TRUE(textLine != nullptr);
 
         double width = OH_Drawing_TextLineGetTypographicBounds(textLine, &ascent, &descent, &leading);
-        EXPECT_NEAR(ascent, -27.84, FLOAT_DATA_EPSILON);
-        EXPECT_NEAR(descent, 7.32, FLOAT_DATA_EPSILON);
+        EXPECT_NEAR(ascent, ASCENT_VALUE, FLOAT_DATA_EPSILON);
+        EXPECT_NEAR(descent, DESCENT_VALUE, FLOAT_DATA_EPSILON);
         EXPECT_EQ(leading, 0);
         EXPECT_EQ(width, 0);
     }
@@ -601,7 +601,7 @@ int TextLineTest016()
  */
 int TextLineTest017()
 {
-    const float EXPECTED_WIDTH_SMALL = 8.099976;
+    const float expectedWidthSmall = 8.099976;
     NativeTextLineTestContext ctx;
     ctx.PrepareCreateTextLine(
         "Hello \t 中国 测 World \n !@#$%^&*~(){}[] 123 4567890 - = ,. < >、/ Drawing testlp 试 "
@@ -618,7 +618,7 @@ int TextLineTest017()
 
         double width = OH_Drawing_TextLineGetTrailingSpaceWidth(textLine);
         if (index < NUM_3) {
-            EXPECT_NEAR(width, EXPECTED_WIDTH_SMALL, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(width, expectedWidthSmall, FLOAT_DATA_EPSILON);
         } else {
             EXPECT_EQ(width, LEADING_VALUE);
         }
@@ -672,7 +672,7 @@ int TextLineTest019()
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_3);
-    const float EXPECTED_OFFSET_INDEX_10 = 161.939835;
+    const float expectedOffsetIndex10 = 161.939835;
     const int maxCharacterNum = 88;
     std::vector<float> offSetArr = { 206.639786, 490.139404, 459.509460 };
     for (size_t index = 0; index < size; index++) {
@@ -683,7 +683,7 @@ int TextLineTest019()
         EXPECT_EQ(offset, LEADING_VALUE);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NUM_10);
         if (index == 0) {
-            EXPECT_NEAR(offset, EXPECTED_OFFSET_INDEX_10, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(offset, expectedOffsetIndex10, FLOAT_DATA_EPSILON);
         } else {
             EXPECT_EQ(offset, LEADING_VALUE);
         }

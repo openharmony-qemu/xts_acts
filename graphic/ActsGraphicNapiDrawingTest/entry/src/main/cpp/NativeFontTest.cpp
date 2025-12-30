@@ -275,14 +275,14 @@ void VerifyTypographyProperties026(OH_Drawing_Typography* typography)
     OH_Drawing_RectHeightStyle heightStyle = RECT_HEIGHT_STYLE_TIGHT;
     OH_Drawing_RectWidthStyle widthStyle = RECT_WIDTH_STYLE_TIGHT;
     EXPECT_EQ(OH_Drawing_TypographyGetRectsForRange(
-                  typography, TYPOGRAPHY_RANGE_START, TYPOGRAPHY_RANGE_END, heightStyle, widthStyle) != nullptr,
+              typography, TYPOGRAPHY_RANGE_START, TYPOGRAPHY_RANGE_END, heightStyle, widthStyle) != nullptr,
               true);
     EXPECT_EQ(OH_Drawing_TypographyGetRectsForPlaceholders(typography) != nullptr, true);
     EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinate(
-                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
+              typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
               true);
     EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinateWithCluster(
-                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
+              typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
               true);
     EXPECT_EQ(OH_Drawing_TypographyGetWordBoundary(typography, TYPOGRAPHY_RANGE_START) != nullptr, true);
     EXPECT_EQ(OH_Drawing_TypographyGetLineTextRange(typography, TYPOGRAPHY_RANGE_START, true) != nullptr, true);
@@ -455,8 +455,9 @@ int OHDrawingTypographyLargeValueTest042()
     OH_Drawing_DestroyTextShadows(nullptr);
     OH_Drawing_TextStyleAddShadow(txtStyle, nullptr);
     OH_Drawing_TextStyleAddShadow(txtStyle, OH_Drawing_CreateTextShadow());
+    const int textStyleGetShadowWithIndexMax = 10000000;
     EXPECT_EQ(OH_Drawing_TextStyleGetShadowWithIndex(txtStyle, 0) != nullptr, true);
-    EXPECT_EQ(OH_Drawing_TextStyleGetShadowWithIndex(txtStyle, 10000000) == nullptr, true);
+    EXPECT_EQ(OH_Drawing_TextStyleGetShadowWithIndex(txtStyle, textStyleGetShadowWithIndexMax) == nullptr, true);
     EXPECT_EQ(OH_Drawing_TextStyleGetShadowWithIndex(nullptr, 0) == nullptr, true);
     EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(txtStyle), 1);
     EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(nullptr), 0);
@@ -498,7 +499,7 @@ int OHDrawingTypographyLargeValueTestWithIndent()
     OH_Drawing_TypographyHandlerPopTextStyle(handler);
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     const float indents[] = { 1.2, 3.4 };
-    OH_Drawing_TypographySetIndents(typography, 2, indents);
+    OH_Drawing_TypographySetIndents(typography, INDENT_COUNT, indents);
     float indent = 3.4;
     EXPECT_EQ(indent, OH_Drawing_TypographyGetIndentsWithIndex(typography, 1));
     double maxWidth = DEFAULT_MAX_WIDTH;

@@ -330,7 +330,8 @@ int RunTest007()
         OH_Drawing_Point* pos = OH_Drawing_GetRunPositionsByIndex(positions, posIndex);
         EXPECT_TRUE(pos != nullptr);
     }
-    EXPECT_EQ(positionSize, 2);
+    const int positionSizeExpect = 2;
+    EXPECT_EQ(positionSize, positionSizeExpect);
 
     // branchCoverage
     OH_Drawing_GetRunPositionsByIndex(positions, positionSize);
