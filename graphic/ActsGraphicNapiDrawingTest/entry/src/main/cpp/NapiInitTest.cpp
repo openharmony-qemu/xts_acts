@@ -30,6 +30,7 @@ static constexpr int DEFAULT_ARG = -1;
 static constexpr int RESULT_ERROR = -1;
 static constexpr size_t FONT_MGR_MATCH_FAMILY_STYLE_HANDLER_COUNT = 34;
 static constexpr size_t TEXT_LINE_TEXT_HANDLER_COUNT = 25;
+static constexpr size_t EXECUTE_RUN_TEST_HANDLER_COUNT = 9;
 
 using CaseFn = int (*)();
 
@@ -541,44 +542,23 @@ static napi_value TextLineTest(napi_env env, napi_callback_info info)
     });
 }
 
+// RunTest helper functions
+static int ExecuteRunTestCase(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, EXECUTE_RUN_TEST_HANDLER_COUNT> handlers = {
+        OHOS::Rosen::Drawing::RunTest001, OHOS::Rosen::Drawing::RunTest002, OHOS::Rosen::Drawing::RunTest003,
+        OHOS::Rosen::Drawing::RunTest004, OHOS::Rosen::Drawing::RunTest005, OHOS::Rosen::Drawing::RunTest006,
+        OHOS::Rosen::Drawing::RunTest007, OHOS::Rosen::Drawing::RunTest008, OHOS::Rosen::Drawing::RunTest009,
+    };
+    return DispatchByCaseNum(caseNum, handlers);
+}
+
 // RunTest functions
 static napi_value RunTest(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = OHOS::Rosen::Drawing::RunTest001();
-                break;
-            case CASE_NUM_1:
-                result = OHOS::Rosen::Drawing::RunTest002();
-                break;
-            case CASE_NUM_2:
-                result = OHOS::Rosen::Drawing::RunTest003();
-                break;
-            case CASE_NUM_3:
-                result = OHOS::Rosen::Drawing::RunTest004();
-                break;
-            case CASE_NUM_4:
-                result = OHOS::Rosen::Drawing::RunTest005();
-                break;
-            case CASE_NUM_5:
-                result = OHOS::Rosen::Drawing::RunTest006();
-                break;
-            case CASE_NUM_6:
-                result = OHOS::Rosen::Drawing::RunTest007();
-                break;
-            case CASE_NUM_7:
-                result = OHOS::Rosen::Drawing::RunTest008();
-                break;
-            case CASE_NUM_8:
-                result = OHOS::Rosen::Drawing::RunTest009();
-                break;
-            default:
-                result = RESULT_ERROR;
-                break;
-        }
+        int result = ExecuteRunTestCase(caseNum);
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
         return resultValue;

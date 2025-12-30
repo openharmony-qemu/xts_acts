@@ -78,4 +78,3 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style2();
 } // namespace OHOS
 
 #endif // ACTSGRAPHICNAPIDRAWINGTEST_NATIVEDRAWINGFONTMGRTEST_H
-

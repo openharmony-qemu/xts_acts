@@ -40,96 +40,101 @@ constexpr int TEXT_RUN_LOCATION_8 = 8;
 constexpr int TEXT_RUN_LOCATION_9 = 9;
 constexpr int TEXT_RUN_LOCATION_14 = 14;
 constexpr int TEXT_RUN_LOCATION_19 = 19;
+constexpr float TEXT_RUN_POS_X_0 = 0.0f;
+constexpr float TEXT_RUN_POS_X_29 = 29.999969f;
+constexpr double TEXT_RUN_EXPECTED_OFFSET = 161.939835;
+constexpr float TEXT_RUN_EXPECTED_WIDTH = 8.099976f;
 
 struct NativeTextRunTestContext {
-    OH_Drawing_TypographyStyle* typeStyle_ = nullptr;
-    OH_Drawing_TextStyle* txtStyle_ = nullptr;
-    OH_Drawing_FontCollection* fontCollection_ = nullptr;
-    OH_Drawing_TypographyCreate* handler_ = nullptr;
-    OH_Drawing_Typography* typography_ = nullptr;
-    OH_Drawing_Array* runs_ = nullptr;
-    OH_Drawing_Array* textLines_ = nullptr;
-    std::string text_;
+    OH_Drawing_TypographyStyle* typeStyle = nullptr;
+    OH_Drawing_TextStyle* txtStyle = nullptr;
+    OH_Drawing_FontCollection* fontCollection = nullptr;
+    OH_Drawing_TypographyCreate* handler = nullptr;
+    OH_Drawing_Typography* typography = nullptr;
+    OH_Drawing_Array* runs = nullptr;
+    OH_Drawing_Array* textLines = nullptr;
+    std::string text;
 
     NativeTextRunTestContext() {}
 
     ~NativeTextRunTestContext()
     {
-        OH_Drawing_DestroyTypography(typography_);
-        typography_ = nullptr;
-        OH_Drawing_DestroyTypographyHandler(handler_);
-        handler_ = nullptr;
-        OH_Drawing_DestroyFontCollection(fontCollection_);
-        fontCollection_ = nullptr;
-        OH_Drawing_DestroyTextStyle(txtStyle_);
-        txtStyle_ = nullptr;
-        OH_Drawing_DestroyTypographyStyle(typeStyle_);
-        typeStyle_ = nullptr;
-        text_ = "";
-        if (textLines_ != nullptr) {
-            OH_Drawing_DestroyTextLines(textLines_);
-            textLines_ = nullptr;
+        OH_Drawing_DestroyTypography(typography);
+        typography = nullptr;
+        OH_Drawing_DestroyTypographyHandler(handler);
+        handler = nullptr;
+        OH_Drawing_DestroyFontCollection(fontCollection);
+        fontCollection = nullptr;
+        OH_Drawing_DestroyTextStyle(txtStyle);
+        txtStyle = nullptr;
+        OH_Drawing_DestroyTypographyStyle(typeStyle);
+        typeStyle = nullptr;
+        text = "";
+        if (textLines != nullptr) {
+            OH_Drawing_DestroyTextLines(textLines);
+            textLines = nullptr;
         }
-        if (runs_ != nullptr) {
-            OH_Drawing_DestroyRuns(runs_);
-            runs_ = nullptr;
+        if (runs != nullptr) {
+            OH_Drawing_DestroyRuns(runs);
+            runs = nullptr;
         }
     }
 
     void PrepareCreateTextLine()
     {
         double maxWidth = TEXT_RUN_MAX_WIDTH;
-        typeStyle_ = OH_Drawing_CreateTypographyStyle();
-        EXPECT_TRUE(typeStyle_ != nullptr);
-        txtStyle_ = OH_Drawing_CreateTextStyle();
-        EXPECT_TRUE(txtStyle_ != nullptr);
-        fontCollection_ = OH_Drawing_CreateFontCollection();
-        EXPECT_TRUE(fontCollection_ != nullptr);
-        handler_ = OH_Drawing_CreateTypographyHandler(typeStyle_, fontCollection_);
-        EXPECT_TRUE(handler_ != nullptr);
-        OH_Drawing_SetTextStyleColor(txtStyle_, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+        typeStyle = OH_Drawing_CreateTypographyStyle();
+        EXPECT_TRUE(typeStyle != nullptr);
+        txtStyle = OH_Drawing_CreateTextStyle();
+        EXPECT_TRUE(txtStyle != nullptr);
+        fontCollection = OH_Drawing_CreateFontCollection();
+        EXPECT_TRUE(fontCollection != nullptr);
+        handler = OH_Drawing_CreateTypographyHandler(typeStyle, fontCollection);
+        EXPECT_TRUE(handler != nullptr);
+        OH_Drawing_SetTextStyleColor(
+            txtStyle, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
         double fontSize = TEXT_RUN_FONT_SIZE;
-        OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
-        OH_Drawing_SetTextStyleFontWeight(txtStyle_, FONT_WEIGHT_400);
+        OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
+        OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
         bool halfLeading = true;
-        OH_Drawing_SetTextStyleHalfLeading(txtStyle_, halfLeading);
+        OH_Drawing_SetTextStyleHalfLeading(txtStyle, halfLeading);
         const char* fontFamilies[] = { "Roboto" };
-        OH_Drawing_SetTextStyleFontFamilies(txtStyle_, TEXT_RUN_FONT_FAMILIES_COUNT, fontFamilies);
-        OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
-        OH_Drawing_TypographyHandlerAddText(handler_, text_.c_str());
-        OH_Drawing_TypographyHandlerPopTextStyle(handler_);
-        typography_ = OH_Drawing_CreateTypography(handler_);
-        EXPECT_TRUE(typography_ != nullptr);
-        OH_Drawing_TypographyLayout(typography_, maxWidth);
+        OH_Drawing_SetTextStyleFontFamilies(txtStyle, TEXT_RUN_FONT_FAMILIES_COUNT, fontFamilies);
+        OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
+        OH_Drawing_TypographyHandlerAddText(handler, text.c_str());
+        OH_Drawing_TypographyHandlerPopTextStyle(handler);
+        typography = OH_Drawing_CreateTypography(handler);
+        EXPECT_TRUE(typography != nullptr);
+        OH_Drawing_TypographyLayout(typography, maxWidth);
     }
 
     void PrepareCreateTextLineForGlyphDrawing()
     {
         double maxWidth = TEXT_RUN_MAX_WIDTH_GLYPH;
-        typeStyle_ = OH_Drawing_CreateTypographyStyle();
-        EXPECT_NE(typeStyle_, nullptr);
-        txtStyle_ = OH_Drawing_CreateTextStyle();
-        EXPECT_NE(txtStyle_, nullptr);
-        fontCollection_ = OH_Drawing_CreateFontCollection();
-        EXPECT_NE(fontCollection_, nullptr);
-        handler_ = OH_Drawing_CreateTypographyHandler(typeStyle_, fontCollection_);
-        EXPECT_NE(handler_, nullptr);
+        typeStyle = OH_Drawing_CreateTypographyStyle();
+        EXPECT_NE(typeStyle, nullptr);
+        txtStyle = OH_Drawing_CreateTextStyle();
+        EXPECT_NE(txtStyle, nullptr);
+        fontCollection = OH_Drawing_CreateFontCollection();
+        EXPECT_NE(fontCollection, nullptr);
+        handler = OH_Drawing_CreateTypographyHandler(typeStyle, fontCollection);
+        EXPECT_NE(handler, nullptr);
         double fontSize = TEXT_RUN_FONT_SIZE_GLYPH;
-        OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
-        OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
-        OH_Drawing_TypographyHandlerAddText(handler_, text_.c_str());
-        typography_ = OH_Drawing_CreateTypography(handler_);
-        EXPECT_NE(typography_, nullptr);
-        OH_Drawing_TypographyLayout(typography_, maxWidth);
-        textLines_ = OH_Drawing_TypographyGetTextLines(typography_);
-        EXPECT_NE(textLines_, nullptr);
-        size_t size = OH_Drawing_GetDrawingArraySize(textLines_);
+        OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
+        OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
+        OH_Drawing_TypographyHandlerAddText(handler, text.c_str());
+        typography = OH_Drawing_CreateTypography(handler);
+        EXPECT_NE(typography, nullptr);
+        OH_Drawing_TypographyLayout(typography, maxWidth);
+        textLines = OH_Drawing_TypographyGetTextLines(typography);
+        EXPECT_NE(textLines, nullptr);
+        size_t size = OH_Drawing_GetDrawingArraySize(textLines);
         EXPECT_TRUE(size != 0);
-        OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines_, 0);
+        OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, 0);
         EXPECT_NE(textLine, nullptr);
-        runs_ = OH_Drawing_TextLineGetGlyphRuns(textLine);
-        EXPECT_NE(runs_, nullptr);
-        size_t runsSize = OH_Drawing_GetDrawingArraySize(runs_);
+        runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
+        EXPECT_NE(runs, nullptr);
+        size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
         EXPECT_TRUE(runsSize != 0);
     }
 };

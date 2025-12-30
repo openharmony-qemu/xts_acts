@@ -281,20 +281,15 @@ int OHDrawingCopyTextShadow001()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int OHDrawingCopyTypographyStyle001()
+namespace {
+void SetupTypographyStyleForCopy(OH_Drawing_TypographyStyle* typoStyle, int& fontFamiliesNumBefore)
 {
-    NativeCopyStyleTestContext ctx;
-    auto& typoStyle = ctx.typoStyle;
-    auto& typoStyleCopy = ctx.typoStyleCopy;
-    typoStyle = OH_Drawing_CreateTypographyStyle();
-    ASSERT_NE(typoStyle, nullptr);
-
     OH_Drawing_SetTypographyTextFontHeight(typoStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextUseLineStyle(typoStyle, true);
     OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle, FONT_WEIGHT_600);
     OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle, FONT_STYLE_ITALIC);
     const char* fontFamilies[] = { "Text1", "Text2" };
-    int fontFamiliesNumBefore = FONT_FAMILIES_COUNT_TWO;
+    fontFamiliesNumBefore = FONT_FAMILIES_COUNT_TWO;
     OH_Drawing_SetTypographyTextLineStyleFontFamilies(typoStyle, fontFamiliesNumBefore, fontFamilies);
     OH_Drawing_SetTypographyTextLineStyleFontSize(typoStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextLineStyleFontHeight(typoStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
@@ -307,8 +302,10 @@ int OHDrawingCopyTypographyStyle001()
     OH_Drawing_SetTypographyTextEllipsis(typoStyle, "...");
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle, TEXT_HEIGHT_DISABLE_LAST_ASCENT);
     OH_Drawing_TypographyStyleSetHintsEnabled(typoStyle, true);
-    typoStyleCopy = OH_Drawing_CopyTypographyStyle(typoStyle);
-    ASSERT_NE(typoStyleCopy, nullptr);
+}
+
+void VerifyTypographyStyleCopy(OH_Drawing_TypographyStyle* typoStyleCopy, int fontFamiliesNumBefore)
+{
     EXPECT_TRUE(OH_Drawing_TypographyTextGetLineStyle(typoStyleCopy));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy), FONT_WEIGHT_600);
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy), FONT_STYLE_ITALIC);
@@ -330,6 +327,22 @@ int OHDrawingCopyTypographyStyle001()
     EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyleCopy), TEXT_HEIGHT_DISABLE_LAST_ASCENT);
     EXPECT_TRUE(OH_Drawing_TypographyStyleIsHintEnabled(typoStyleCopy));
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, num);
+}
+} // namespace
+
+int OHDrawingCopyTypographyStyle001()
+{
+    NativeCopyStyleTestContext ctx;
+    auto& typoStyle = ctx.typoStyle;
+    auto& typoStyleCopy = ctx.typoStyleCopy;
+    typoStyle = OH_Drawing_CreateTypographyStyle();
+    ASSERT_NE(typoStyle, nullptr);
+
+    int fontFamiliesNumBefore = 0;
+    SetupTypographyStyleForCopy(typoStyle, fontFamiliesNumBefore);
+    typoStyleCopy = OH_Drawing_CopyTypographyStyle(typoStyle);
+    ASSERT_NE(typoStyleCopy, nullptr);
+    VerifyTypographyStyleCopy(typoStyleCopy, fontFamiliesNumBefore);
     return TEST_SUCCESS_CODE;
 }
 

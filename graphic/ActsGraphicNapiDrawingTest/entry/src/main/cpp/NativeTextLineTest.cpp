@@ -268,7 +268,7 @@ int TextLineTest007()
 
     size_t end = 0;
     OH_Drawing_TextLineGetTextRange(textLine, nullptr, &end);
-        EXPECT_EQ(end, TEXT_RANGE_END_INIT);
+    EXPECT_EQ(end, TEXT_RANGE_END_INIT);
 
     OH_Drawing_TextLineGetTextRange(textLine, nullptr, nullptr);
     OH_Drawing_DestroyTextLines(textLines);
@@ -326,7 +326,8 @@ int TextLineTest009()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_7);
 
-    std::vector<int32_t> sizeArr = { RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_1, RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_3, RUN_SIZE_ARRAY_4, RUN_SIZE_ARRAY_5, RUN_SIZE_ARRAY_1 };
+    std::vector<int32_t> sizeArr = { RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_1, RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_3,
+                                     RUN_SIZE_ARRAY_4, RUN_SIZE_ARRAY_5, RUN_SIZE_ARRAY_1 };
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
@@ -424,9 +425,9 @@ int TextLineTest012()
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_3);
-    double ascent = 0.0;
-    double descent = 0.0;
-    double leading = 0.0;
+    double ascent = LEADING_VALUE;
+    double descent = LEADING_VALUE;
+    double leading = LEADING_VALUE;
     std::vector<float> widthArr = { 206.639786, 490.139404, 459.509460 };
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
@@ -462,9 +463,9 @@ int TextLineTest013()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_7);
 
-    double ascent = 0.0;
-    double descent = 0.0;
-    double leading = 0.0;
+    double ascent = LEADING_VALUE;
+    double descent = LEADING_VALUE;
+    double leading = LEADING_VALUE;
     std::vector<float> widthArr = { 290.939697, 498.239380, 458.309509, 0.0, 497.952301, 409.497314, 51.300049 };
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
@@ -504,9 +505,9 @@ int TextLineTest014()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_5);
 
-    double ascent = 0.0;
-    double descent = 0.0;
-    double leading = 0.0;
+    double ascent = LEADING_VALUE;
+    double descent = LEADING_VALUE;
+    double leading = LEADING_VALUE;
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
@@ -600,6 +601,7 @@ int TextLineTest016()
  */
 int TextLineTest017()
 {
+    const float EXPECTED_WIDTH_SMALL = 8.099976;
     NativeTextLineTestContext ctx;
     ctx.PrepareCreateTextLine(
         "Hello \t 中国 测 World \n !@#$%^&*~(){}[] 123 4567890 - = ,. < >、/ Drawing testlp 试 "
@@ -616,9 +618,9 @@ int TextLineTest017()
 
         double width = OH_Drawing_TextLineGetTrailingSpaceWidth(textLine);
         if (index < NUM_3) {
-            EXPECT_NEAR(width, 8.099976, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(width, EXPECTED_WIDTH_SMALL, FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_EQ(width, 0.0);
+            EXPECT_EQ(width, LEADING_VALUE);
         }
     }
     OH_Drawing_DestroyTextLines(textLines);
@@ -670,7 +672,7 @@ int TextLineTest019()
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_3);
-
+    const float EXPECTED_OFFSET_INDEX_10 = 161.939835;
     const int maxCharacterNum = 88;
     std::vector<float> offSetArr = { 206.639786, 490.139404, 459.509460 };
     for (size_t index = 0; index < size; index++) {
@@ -678,18 +680,18 @@ int TextLineTest019()
         EXPECT_TRUE(textLine != nullptr);
 
         double offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, 0);
-        EXPECT_EQ(offset, 0.0);
+        EXPECT_EQ(offset, LEADING_VALUE);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NUM_10);
         if (index == 0) {
-            EXPECT_NEAR(offset, 161.939835, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(offset, EXPECTED_OFFSET_INDEX_10, FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_EQ(offset, 0.0);
+            EXPECT_EQ(offset, LEADING_VALUE);
         }
         EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, maxCharacterNum);
         EXPECT_NEAR(offset, offSetArr[index], FLOAT_DATA_EPSILON);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NEGATIVE_INDEX);
-        EXPECT_EQ(offset, 0.0);
+        EXPECT_EQ(offset, LEADING_VALUE);
     }
     OH_Drawing_DestroyTextLines(textLines);
     return TEST_SUCCESS_CODE;
@@ -722,23 +724,23 @@ int TextLineTest020()
         EXPECT_TRUE(textLine != nullptr);
 
         double offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, 0);
-        EXPECT_EQ(offset, 0.0);
+        EXPECT_EQ(offset, LEADING_VALUE);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NUM_10);
         if (index == 0) {
             EXPECT_NEAR(offset, EXPECTED_OFFSET_FIRST_LINE, FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_EQ(offset, 0.0);
+            EXPECT_EQ(offset, LEADING_VALUE);
         }
         EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, maxCharacterNum);
         if (index <= NUM_2) {
             EXPECT_NEAR(offset, offSetArr[index], FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_EQ(offset, 0.0);
+            EXPECT_EQ(offset, LEADING_VALUE);
         }
         EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NEGATIVE_INDEX);
-        EXPECT_EQ(offset, 0.0);
+        EXPECT_EQ(offset, LEADING_VALUE);
     }
     OH_Drawing_DestroyTextLines(textLines);
     return TEST_SUCCESS_CODE;
@@ -811,7 +813,7 @@ int TextLineTest022()
 
         OH_Drawing_TextLineEnumerateCaretOffsets(textLine, [](double offset, int32_t index, bool leadingEdge) {
             EXPECT_GE(index, 0);
-            EXPECT_EQ(offset, 0.0);
+            EXPECT_EQ(offset, LEADING_VALUE);
             EXPECT_TRUE(leadingEdge);
             return true;
         });
@@ -883,7 +885,7 @@ int TextLineTest024()
         if (index == NUM_3) {
             EXPECT_EQ(offset, EXPECTED_ALIGNMENT_OFFSET_TWO);
         } else {
-            EXPECT_EQ(offset, 0.0);
+            EXPECT_EQ(offset, LEADING_VALUE);
         }
     }
     OH_Drawing_DestroyTextLines(textLines);

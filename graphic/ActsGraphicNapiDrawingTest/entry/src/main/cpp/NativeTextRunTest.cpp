@@ -35,7 +35,8 @@ namespace {
 constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
 constexpr int TEXT_RANGE_START_INIT = 0;
 constexpr int TEXT_RANGE_END_INIT = 0;
-}
+constexpr float LEADING_VALUE = 0.0;
+} // namespace
 
 /**
  * @tc.name   RunTest001
@@ -48,9 +49,9 @@ constexpr int TEXT_RANGE_END_INIT = 0;
 int RunTest001()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World";
+    ctx.text = "Hello 你好 World";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -91,9 +92,9 @@ int RunTest001()
 int RunTest002()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -102,7 +103,8 @@ int RunTest002()
     OH_Drawing_Array* runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
     size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
     ASSERT_GT(runsSize, 0);
-    std::vector<int32_t> countArr = { TEXT_RUN_GLYPH_COUNT, TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
+    std::vector<int32_t> countArr = { TEXT_RUN_GLYPH_COUNT,   TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1,
+                                      TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
     for (int i = 0; i < runsSize; i++) {
         OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, i);
         uint32_t count = OH_Drawing_GetRunGlyphCount(run);
@@ -127,9 +129,9 @@ int RunTest002()
 int RunTest003()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -168,9 +170,9 @@ int RunTest003()
 int RunTest004()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -180,8 +182,10 @@ int RunTest004()
     size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
     ASSERT_GT(runsSize, 0);
 
-    std::vector<int32_t> locationArr = { TEXT_RUN_LOCATION_0, TEXT_RUN_LOCATION_6, TEXT_RUN_LOCATION_8, TEXT_RUN_LOCATION_9, TEXT_RUN_LOCATION_14, TEXT_RUN_LOCATION_19 };
-    std::vector<int32_t> lengthArr = { TEXT_RUN_GLYPH_COUNT, TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
+    std::vector<int32_t> locationArr = { TEXT_RUN_LOCATION_0, TEXT_RUN_LOCATION_6,  TEXT_RUN_LOCATION_8,
+                                         TEXT_RUN_LOCATION_9, TEXT_RUN_LOCATION_14, TEXT_RUN_LOCATION_19 };
+    std::vector<int32_t> lengthArr = { TEXT_RUN_GLYPH_COUNT,   TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1,
+                                       TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
     for (int i = 0; i < runsSize; i++) {
         OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, i);
         uint64_t location = TEXT_RANGE_START_INIT;
@@ -209,9 +213,9 @@ int RunTest004()
 int RunTest005()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -226,9 +230,9 @@ int RunTest005()
     std::vector<float> descentArr = { 7.320000, 7.320000, 7.320000, 7.320000, 7.431193, 9.690001 };
     for (int i = 0; i < runsSize; i++) {
         OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, i);
-        float ascent = 0.0;
-        float descent = 0.0;
-        float leading = 0.0;
+        float ascent = LEADING_VALUE;
+        float descent = LEADING_VALUE;
+        float leading = LEADING_VALUE;
         float width = OH_Drawing_GetRunTypographicBounds(run, &ascent, &descent, &leading);
         EXPECT_EQ(leading, 0);
         EXPECT_NEAR(ascent, ascentArr[i], FLOAT_DATA_EPSILON);
@@ -255,9 +259,9 @@ int RunTest005()
 int RunTest006()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -302,9 +306,9 @@ int RunTest006()
 int RunTest007()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
+    ctx.text = "Hello 你好 World⌚😀👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     ASSERT_GT(size, 0);
@@ -314,8 +318,9 @@ int RunTest007()
     size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
     ASSERT_GT(runsSize, 0);
 
-    std::vector<int32_t> positionSizeArr = { 6, 2, 1, 5, 5, 5 };
-    std::vector<float> posXArr = { 0, 29.999969 };
+    std::vector<int32_t> positionSizeArr = { TEXT_RUN_GLYPH_COUNT,   TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1,
+                                             TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
+    std::vector<float> posXArr = { TEXT_RUN_POS_X_0, TEXT_RUN_POS_X_29 };
     OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, 1);
     uint32_t count = OH_Drawing_GetRunGlyphCount(run);
     OH_Drawing_Array* positions = OH_Drawing_GetRunPositions(run, 0, count);
@@ -347,11 +352,11 @@ int RunTest007()
 int RunTest008()
 {
     NativeTextRunTestContext ctx;
-    ctx.text_ =
+    ctx.text =
         "Hello\t中国 World \n !@#%^&*){}[] 123456789 -= ,."
         "< >、/ Draclp11⌚😀😁🤣👨‍🔬👩‍👩‍👧‍👦👭مرحبا中国 测文本\n 123";
     ctx.PrepareCreateTextLine();
-    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
+    OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     EXPECT_TRUE(textLines != nullptr);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     for (size_t index = 0; index < size; index++) {
@@ -417,14 +422,14 @@ int RunTest009()
     EXPECT_TRUE(OH_Drawing_GetRunPositions(nullptr, 0, 0) == nullptr);
     EXPECT_TRUE(OH_Drawing_GetRunImageBounds(nullptr) == nullptr);
     OH_Drawing_RunPaint(nullptr, nullptr, 0, 0);
-    float ascent = 0.0;
-    float descent = 0.0;
-    float leading = 0.0;
+    float ascent = LEADING_VALUE;
+    float descent = LEADING_VALUE;
+    float leading = LEADING_VALUE;
     float width = OH_Drawing_GetRunTypographicBounds(nullptr, &ascent, &descent, &leading);
-    EXPECT_EQ(ascent, 0.0);
-    EXPECT_EQ(descent, 0.0);
-    EXPECT_EQ(leading, 0.0);
-    EXPECT_EQ(width, 0.0);
+    EXPECT_EQ(ascent, LEADING_VALUE);
+    EXPECT_EQ(descent, LEADING_VALUE);
+    EXPECT_EQ(leading, LEADING_VALUE);
+    EXPECT_EQ(width, LEADING_VALUE);
     return TEST_SUCCESS_CODE;
 }
 } // namespace Drawing

@@ -75,6 +75,34 @@ struct AllCloseFloatOptions {
     float aTol;
     bool isQuant;
 };
+
+const char* InitSystemDefaultFont()
+{
+    const char* systemFont = nullptr;
+
+    OH_Drawing_FontConfigInfoErrorCode err;
+    OH_Drawing_FontConfigInfo* info = OH_Drawing_GetSystemFontConfigInfo(&err);
+    if (err != SUCCESS_FONT_CONFIG_INFO || info == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, "DrawingLog", "获取系统信息失败，错误代码为： %{public}d", err);
+        return "";
+    }
+    auto& genericInfo = info->fontGenericInfoSet[DEFAULT_FONT_INDEX];
+    systemFont = genericInfo.familyName;
+    if (systemFont == nullptr) {
+        return "";
+    }
+    size_t len = std::strlen(systemFont) + 1;
+    char* buf = new char[len];
+    SafeMemcpy(buf, len, systemFont, len);
+
+    for (char* p = buf; *p; ++p) {
+        if (*p == ' ') {
+            *p = '-';
+        }
+    }
+
+    return buf; // intentionally leaked (process lifetime)
+}
 } // namespace
 
 void ConvertToPublic(const char* fmt, char* out, size_t outSize)
@@ -178,44 +206,10 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     return SUCCESS_CODE;
 }
 
-// 获取系统默认字体，比如xxx Sans，原字符串是xxx-Sans，所以这里做一个替换逻辑
 const char* GetSystemDefaultFont()
 {
-    // 缓存指针，只初始化一次
     static const char* cachedFont = nullptr;
     static std::once_flag initFlag;
-    std::call_once(initFlag, []() {
-        const char* systemFont = nullptr;
-        OH_Drawing_FontConfigInfoErrorCode fontConfigInfoErrorCode;
-        OH_Drawing_FontConfigInfo* fontConfigInfo = OH_Drawing_GetSystemFontConfigInfo(&fontConfigInfoErrorCode);
-        if (fontConfigInfoErrorCode != SUCCESS_FONT_CONFIG_INFO) {
-            OH_LOG_Print(LOG_APP,
-                         LOG_ERROR,
-                         LOG_DOMAIN,
-                         "DrawingLog",
-                         "获取系统信息失败，错误代码为： %{public}d",
-                         fontConfigInfoErrorCode);
-        }
-        if (fontConfigInfo != nullptr) {
-            // 获取默认字体名
-            OH_Drawing_FontGenericInfo& genericInfo = fontConfigInfo->fontGenericInfoSet[DEFAULT_FONT_INDEX];
-            systemFont = genericInfo.familyName;
-        }
-        if (systemFont != nullptr) {
-            size_t len = std::strlen(systemFont) + 1;
-            char* buf = new char[len];
-            SafeMemcpy(buf, len, systemFont, len);
-            for (char* p = buf; *p; ++p) {
-                if (*p == ' ') {
-                    *p = '-';
-                }
-            }
-            cachedFont = buf;
-        } else {
-            // 兜底，避免返回 nullptr
-            cachedFont = "";
-        }
-    });
-
+    std::call_once(initFlag, []() { cachedFont = InitSystemDefaultFont(); });
     return cachedFont;
 }

@@ -40,8 +40,7 @@ using std::to_string;
 using std::vector;
 
 constexpr int TEST_SUCCESS_CODE = 0;
-constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
-constexpr static char* DEFAULT_PLATFORM_FONT_FAMILY_NAME = "HarmonyOS-Sans";
+constexpr float FLOAT_DATA_EPSILON = 1e-6f;
 
 // Common numeric constants
 constexpr int ZERO = 0;

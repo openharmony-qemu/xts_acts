@@ -239,6 +239,55 @@ void VerifyTypographyProperties(OH_Drawing_Typography* typography)
     EXPECT_EQ(OH_Drawing_TypographyGetAlphabeticBaseline(typography) != 0.0, true);
     EXPECT_EQ(OH_Drawing_TypographyGetIdeographicBaseline(typography) != 0.0, true);
 }
+
+void SetupTextStyleForTypography026(OH_Drawing_TextStyle* txtStyle)
+{
+    OH_Drawing_SetTextStyleColor(
+        txtStyle, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+    double fontSize = DEFAULT_FONT_SIZE;
+    OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
+    OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
+    bool halfLeading = true;
+    OH_Drawing_SetTextStyleHalfLeading(txtStyle, halfLeading);
+    const char* fontFamilies[] = { "Roboto" };
+    OH_Drawing_SetTextStyleFontFamilies(txtStyle, ONE, fontFamilies);
+}
+
+void SetupTypographyWithPlaceholder(OH_Drawing_TypographyCreate* handler, OH_Drawing_Typography** typography)
+{
+    const char* text = "OpenHarmony\n";
+    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_PlaceholderSpan placeholderSpan = { PLACEHOLDER_WIDTH,
+                                                   PLACEHOLDER_HEIGHT,
+                                                   ALIGNMENT_OFFSET_AT_BASELINE,
+                                                   TEXT_BASELINE_ALPHABETIC,
+                                                   PLACEHOLDER_BASELINE_OFFSET };
+    OH_Drawing_TypographyHandlerAddPlaceholder(handler, &placeholderSpan);
+    OH_Drawing_TypographyHandlerPopTextStyle(handler);
+    *typography = OH_Drawing_CreateTypography(handler);
+    double maxWidth = DEFAULT_MAX_WIDTH;
+    OH_Drawing_TypographyLayout(*typography, maxWidth);
+}
+
+void VerifyTypographyProperties026(OH_Drawing_Typography* typography)
+{
+    EXPECT_EQ(OH_Drawing_TypographyDidExceedMaxLines(typography) != true, true);
+    OH_Drawing_RectHeightStyle heightStyle = RECT_HEIGHT_STYLE_TIGHT;
+    OH_Drawing_RectWidthStyle widthStyle = RECT_WIDTH_STYLE_TIGHT;
+    EXPECT_EQ(OH_Drawing_TypographyGetRectsForRange(
+                  typography, TYPOGRAPHY_RANGE_START, TYPOGRAPHY_RANGE_END, heightStyle, widthStyle) != nullptr,
+              true);
+    EXPECT_EQ(OH_Drawing_TypographyGetRectsForPlaceholders(typography) != nullptr, true);
+    EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinate(
+                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
+              true);
+    EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinateWithCluster(
+                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
+              true);
+    EXPECT_EQ(OH_Drawing_TypographyGetWordBoundary(typography, TYPOGRAPHY_RANGE_START) != nullptr, true);
+    EXPECT_EQ(OH_Drawing_TypographyGetLineTextRange(typography, TYPOGRAPHY_RANGE_START, true) != nullptr, true);
+    EXPECT_EQ(OH_Drawing_TypographyGetLineCount(typography) != 0, true);
+}
 } // namespace
 
 int OHDrawingTypographyLargeValueTest016()
@@ -287,55 +336,18 @@ int OHDrawingTypographyLargeValueTest026()
     OH_Drawing_TypographyCreate* handler =
         OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateFontCollection());
     EXPECT_TRUE(handler != nullptr);
-    OH_Drawing_SetTextStyleColor(
-        txtStyle, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
-    double fontSize = DEFAULT_FONT_SIZE;
-    OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
-    OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
-    bool halfLeading = true;
-    OH_Drawing_SetTextStyleHalfLeading(txtStyle, halfLeading);
-    const char* fontFamilies[] = { "Roboto" };
-    OH_Drawing_SetTextStyleFontFamilies(txtStyle, ONE, fontFamilies);
+
+    SetupTextStyleForTypography026(txtStyle);
     OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
-    const char* text = "OpenHarmony\n";
-    OH_Drawing_TypographyHandlerAddText(handler, text);
-    OH_Drawing_PlaceholderSpan placeholderSpan = { PLACEHOLDER_WIDTH,
-                                                   PLACEHOLDER_HEIGHT,
-                                                   ALIGNMENT_OFFSET_AT_BASELINE,
-                                                   TEXT_BASELINE_ALPHABETIC,
-                                                   PLACEHOLDER_BASELINE_OFFSET };
-    OH_Drawing_TypographyHandlerAddPlaceholder(handler, &placeholderSpan);
-    OH_Drawing_TypographyHandlerPopTextStyle(handler);
-    OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
-    double maxWidth = DEFAULT_MAX_WIDTH;
-    OH_Drawing_TypographyLayout(typography, maxWidth);
-    double position[2] = { TEST_POSITION_X, TEST_POSITION_Y };
-    OH_Drawing_Bitmap* cBitmap = OH_Drawing_BitmapCreate();
-    OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };
-    uint32_t width = TEST_BITMAP_WIDTH;
-    uint32_t height = TEST_BITMAP_HEIGHT;
-    OH_Drawing_BitmapBuild(cBitmap, width, height, &cFormat);
-    OH_Drawing_Canvas* cCanvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_CanvasBind(cCanvas, cBitmap);
-    OH_Drawing_CanvasClear(
-        cCanvas, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_WHITE, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
-    EXPECT_EQ(OH_Drawing_TypographyDidExceedMaxLines(typography) != true, true);
-    OH_Drawing_RectHeightStyle heightStyle = RECT_HEIGHT_STYLE_TIGHT;
-    OH_Drawing_RectWidthStyle widthStyle = RECT_WIDTH_STYLE_TIGHT;
-    EXPECT_EQ(OH_Drawing_TypographyGetRectsForRange(
-                  typography, TYPOGRAPHY_RANGE_START, TYPOGRAPHY_RANGE_END, heightStyle, widthStyle) != nullptr,
-              true);
-    EXPECT_EQ(OH_Drawing_TypographyGetRectsForPlaceholders(typography) != nullptr, true);
-    EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinate(
-                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
-              true);
-    EXPECT_EQ(OH_Drawing_TypographyGetGlyphPositionAtCoordinateWithCluster(
-                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y) != nullptr,
-              true);
-    EXPECT_EQ(OH_Drawing_TypographyGetWordBoundary(typography, TYPOGRAPHY_RANGE_START) != nullptr, true);
-    EXPECT_EQ(OH_Drawing_TypographyGetLineTextRange(typography, TYPOGRAPHY_RANGE_START, true) != nullptr, true);
-    EXPECT_EQ(OH_Drawing_TypographyGetLineCount(typography) != 0, true);
-    OH_Drawing_TypographyPaint(typography, cCanvas, position[0], position[1]);
+
+    OH_Drawing_Typography* typography = nullptr;
+    SetupTypographyWithPlaceholder(handler, &typography);
+
+    OH_Drawing_Bitmap* cBitmap = nullptr;
+    OH_Drawing_Canvas* cCanvas = CreateTestCanvas(&cBitmap);
+    VerifyTypographyProperties026(typography);
+    double position[TWO] = { TEST_POSITION_X, TEST_POSITION_Y };
+    OH_Drawing_TypographyPaint(typography, cCanvas, position[ZERO], position[ONE]);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_DestroyTypographyHandler(handler);
     return TEST_SUCCESS_CODE;

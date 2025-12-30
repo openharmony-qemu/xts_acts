@@ -83,4 +83,3 @@ int FontGetTextPath005();
 } // namespace OHOS
 
 #endif // ACTSGRAPHICNAPIDRAWINGTEST_NATIVEFONTTEST_H
-

@@ -21,6 +21,10 @@
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
 
+// Undefined glyph display test constants
+constexpr double UNDEFINED_GLYPH_MAX_WIDTH = 500.0;
+constexpr double UNDEFINED_GLYPH_FONT_SIZE = 30.0;
+
 namespace OHOS {
 namespace Rosen {
 struct NativeUndefinedGlyphDisplayTestContext {
@@ -29,14 +33,14 @@ struct NativeUndefinedGlyphDisplayTestContext {
         "testlp\uffff试\uffff Drawing\uffff";
     static constexpr const char* noGlyphText = "\uffff";
     static constexpr float defaultResult[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
-                                                   { 1.0, 5.0, 388.10962, 37.0 },
-                                                   { 0, 8.0, 319.4397, 42.0 } };
+                                                  { 1.0, 5.0, 388.10962, 37.0 },
+                                                  { 0, 8.0, 319.4397, 42.0 } };
     static constexpr float tofuResult[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
-                                                { 1.0, 5.0, 388.10962, 37.0 },
-                                                { 8.0, 8.0, 341.4397, 42.0 } };
+                                               { 1.0, 5.0, 388.10962, 37.0 },
+                                               { 8.0, 8.0, 341.4397, 42.0 } };
     static constexpr float notoResult[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
-                                                { 2.0, 5.0, 388.43961, 33.0 },
-                                                { 8.0, 8.0, 347.76962, 42.0 } };
+                                               { 2.0, 5.0, 388.43961, 33.0 },
+                                               { 8.0, 8.0, 347.76962, 42.0 } };
     static constexpr float noGlyphTofuResult[][4] = { { 8.0, 0, 22.0, 22.0 } };
     static constexpr float noGlyphDefaultResult[][4] = { { 0, 0, 0, 0 } };
     static constexpr float noGlyphNotoResult[][4] = { { 0, 0, 0, 0 } };
@@ -46,7 +50,7 @@ struct NativeUndefinedGlyphDisplayTestContext {
     OH_Drawing_Typography*
         PrepareCreateTypography(const std::string& text, const char** fontFamilies = nullptr, int fontCount = 0)
     {
-        double maxWidth = 500.0;
+        double maxWidth = UNDEFINED_GLYPH_MAX_WIDTH;
         OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
         EXPECT_NE(typoStyle, nullptr);
         OH_Drawing_TextStyle* txtStyle = OH_Drawing_CreateTextStyle();
@@ -56,8 +60,9 @@ struct NativeUndefinedGlyphDisplayTestContext {
         EXPECT_NE(fontCollection, nullptr);
         OH_Drawing_TypographyCreate* handler = OH_Drawing_CreateTypographyHandler(typoStyle, fontCollection);
         EXPECT_NE(handler, nullptr);
-        OH_Drawing_SetTextStyleColor(txtStyle, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-        double fontSize = 30;
+        OH_Drawing_SetTextStyleColor(
+            txtStyle, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+        double fontSize = UNDEFINED_GLYPH_FONT_SIZE;
         OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
         OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
         OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
