@@ -15,11 +15,24 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from "libimageEffect.so";
-
+import common from '@ohos.app.ability.common';
+import fs from '@ohos.file.fs';
 
 const TAG = 'ImageSourceSuppXts';
 const IMAGE_RESULT_BAD_PARAMETER = -1;
 const IMAGE_RESULT_SUCCESS = 0;
+let testContext: common.UIAbilityContext;
+
+export async function getFd(pathName: string) {
+  console.info(TAG, 'case come in getFd');
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  pathName = testContext.filesDir + "/" + pathName;
+  console.log(TAG, 'pathName =' + pathName);
+  let file = await fs.open(pathName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let fdNumber = file.fd;
+  console.info(TAG, 'case getFd number is: ' + fdNumber);
+  return fdNumber;
+}
 
 export default function ImageSourceSuppTest() {
   describe('ImageSourceSuppTest', () => {
@@ -55,9 +68,14 @@ export default function ImageSourceSuppTest() {
      * @tc.type     Function
      * @tc.level    Level 1
      */
-    it('SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001', Level.LEVEL0, () => {
+    it('SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001', Level.LEVEL0, async () => {
       console.info(TAG,'Start',);
-      let result: number = testNapi.ImageSourceCreatSuccessTest(0);
+      const fd = await getFd("test.jpg");
+      if (fd <= 0) {
+        console.error(TAG, 'fd 无效: ' + fd);
+        return;
+      };
+      let result: number = testNapi.ImageSourceCreatSuccessTest(fd);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_RESULT_SUCCESS);
     });
