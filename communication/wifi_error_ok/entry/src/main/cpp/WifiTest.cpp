@@ -203,7 +203,79 @@ static napi_value GetBluetoothSwitchState0107(napi_env env, napi_callback_info i
         return res;
     }
 }
-
+static napi_value GetDeviceMacAddress0100(napi_env env, napi_callback_info info)
+{
+    char macAddress[32] = {0};
+    unsigned int macAddressLen = sizeof(macAddress);
+    int32_t result = OH_Wifi_GetDeviceMacAddress(macAddress, &macAddressLen);
+    int32_t confirmResult;
+    if (result == WIFI_SUCCESS) {
+        confirmResult = 0;
+    } else {
+        confirmResult = 1;
+    };
+    napi_value retValue;
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0200(napi_env env, napi_callback_info info)
+{
+    char macAddress[32] = {0};
+    unsigned int macAddressLen = sizeof(macAddress);
+    int32_t result = OH_Wifi_GetDeviceMacAddress(nullptr, &macAddressLen);
+    int32_t confirmResult;
+    if (result == WIFI_INVALID_PARAM) {
+        confirmResult = 0;
+    } else {
+        confirmResult = 1;
+    };
+    napi_value retValue;
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0300(napi_env env, napi_callback_info info)
+{
+    char macAddress[32] = {0};
+    unsigned int macAddressLen = sizeof(macAddress);
+    int32_t result = OH_Wifi_GetDeviceMacAddress(macAddress, nullptr);
+    int32_t confirmResult;
+    if (result == WIFI_INVALID_PARAM) {
+        confirmResult = 0;
+    } else {
+        confirmResult = 1;
+    };
+    napi_value retValue;
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0400(napi_env env, napi_callback_info info)
+{
+    int32_t result = OH_Wifi_GetDeviceMacAddress(nullptr, nullptr);
+    int32_t confirmResult;
+    if (result == WIFI_INVALID_PARAM) {
+        confirmResult = 0;
+    } else {
+        confirmResult = 1;
+    };
+    napi_value retValue;
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0500(napi_env env, napi_callback_info info)
+{
+    char macAddress[32] = {0};
+    unsigned int macAddressLen = sizeof(macAddress);
+    int32_t result = OH_Wifi_GetDeviceMacAddress(macAddress, &macAddressLen);
+    int32_t confirmResult;
+    if (result == WIFI_STA_DISABLED) {
+        confirmResult = 0;
+    } else {
+        confirmResult = 1;
+    };
+    napi_value retValue;
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -212,6 +284,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetWifiStatus0101", nullptr, GetWifiStatus0101, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetWifiStatus0102", nullptr, GetWifiStatus0102, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetWifiStatus0103", nullptr, GetWifiStatus0103, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0100", nullptr, GetDeviceMacAddress0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0200", nullptr, GetDeviceMacAddress0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0300", nullptr, GetDeviceMacAddress0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0400", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0500", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetBluetoothSwitchState0100", nullptr, GetBluetoothSwitchState0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"GetBluetoothSwitchState0101", nullptr, GetBluetoothSwitchState0101, nullptr, nullptr, nullptr, napi_default,
