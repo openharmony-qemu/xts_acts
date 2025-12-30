@@ -799,7 +799,7 @@ export default function RdbStoreDeleteWithReturning() {
         console.error(TAG + `deleteWithReturningSync016 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.commit();
+      await deferredTrans?.rollback();
       console.log(TAG + "************* deleteWithReturning016 end *************");
       done();
     })
