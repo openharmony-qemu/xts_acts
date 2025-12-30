@@ -425,13 +425,13 @@ export default function ArrayCopyWithinTest() {
 
     /**
      * @tc.number  SUB_COMMONLIBORARY_UTIL_ARRAY_COPY_WITHIN_0076
-     * @tc.name    test_copy_within_0076
+     * @tc.name    testCopyWithin0076
      * @tc.desc    Test backward copy with truncation when exceeding array bounds
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' test_copy_within_0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it(' testCopyWithin0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0076";
         try {
             let self: FixedArray<boolean> = [true, false, true, false, true] as FixedArray<boolean>;
@@ -518,13 +518,13 @@ export default function ArrayCopyWithinTest() {
 
     /**
      * @tc.number  SUB_COMMONLIBORARY_UTIL_ARRAY_COPY_WITHIN_0080
-     * @tc.name    test_copy_within_0080
+     * @tc.name    testCopyWithin0080
      * @tc.desc    Test copyWithin with an array of two elements
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it('test_copy_within_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testCopyWithin0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0080";
         try {
             let self: FixedArray<boolean> = [true, false] as FixedArray<boolean>;
@@ -673,13 +673,13 @@ export default function ArrayCopyWithinTest() {
 
     /**
      * @tc.number  SUB_COMMONLIBORARY_UTIL_ARRAY_COPY_WITHIN_0087
-     * @tc.name    test_copy_within_0087
+     * @tc.name    testCopyWithin0087
      * @tc.desc    Test copyWithin with start after end (no copy occurs)
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it('test_copy_within_0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testCopyWithin0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0087";
         try {
             let self: FixedArray<boolean> = [true, false, true] as FixedArray<boolean>;
@@ -785,13 +785,13 @@ export default function ArrayCopyWithinTest() {
 
     /**
      * @tc.number  SUB_COMMONLIBORARY_UTIL_ARRAY_COPY_WITHIN_0092
-     * @tc.name    test_copy_within_0092
+     * @tc.name    testCopyWithin0092
      * @tc.desc    Test copyWithin with default start and end values (0 and array length)
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it('test_copy_within_0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testCopyWithin0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0092";
         try {
             let self: FixedArray<byte> = [1, 2, 3, 4] as FixedArray<byte>;
