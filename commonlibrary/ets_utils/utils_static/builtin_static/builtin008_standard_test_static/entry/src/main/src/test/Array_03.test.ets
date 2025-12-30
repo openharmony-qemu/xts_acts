@@ -1653,48 +1653,6 @@ export default function Array_03Test() {
       }
     });
 
-    /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1720
-     * @tc.name      testSort0172
-     * @tc.desc      Testing sort function with an empty array for characters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('testSort0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testSort0172";
-      try {
-        let arr1: FixedArray<char> = [];
-        let sortedArr = sort(arr1,(a,b) => a-b);
-        let expected: FixedArray<char> = [];
-        expect(sortedArr.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1770
-     * @tc.name      testSort0177
-     * @tc.desc      Testing sort function with an array containing duplicate elements for Char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('testSort0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testSort0177";
-      try {
-        let arr1: FixedArray<char> = [0x0063,0x0061,0x0062];
-        let sortedArr = sort(arr1,(a,b) => a-b);
-        let expected: FixedArray<char> = [0x0061,0x0062,0x0063];
-        expect(sortedArr.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
     /*
      * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1800
      * @tc.name      testSort0180

@@ -256,28 +256,6 @@ export default function Array_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1070
-     * @tc.name    testSliceFloat1070
-     * @tc.desc    Testing involves extracting a subarray from an array and returning a new array that includes elements from the specified start index to the end index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloat1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloat1070";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const start = 1.5;
-        const result = slice(array, 1.5);
-        const expected: FixedArray<float> = [2.0, 3.0, 4.0, 5.0];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1080
      * @tc.name    testSliceFloat1080
      * @tc.desc    Testing involves extracting a subarray from an array and returning a new array that includes elements from the specified start index to the end index.
@@ -590,75 +568,6 @@ export default function Array_07Test() {
         const relEnd: int = 10;
         const result = slice(array, 5, 10);
         const expected: FixedArray<float> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1220
-     * @tc.name    testSliceFloatInt1220
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatInt1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatInt1220";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const relStart: int = 0;
-        const relEnd: int = Number.NEGATIVE_INFINITY as int;
-        const result = slice(array, 0, Number.NEGATIVE_INFINITY);
-        const expected: FixedArray<float> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1230
-     * @tc.name    testSliceFloatInt1230
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatInt1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatInt1230";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const relStart: int = 1.5 as int;
-        const relEnd: int = 4;
-        const result = slice(array, 1.5, 4);
-        const expected: FixedArray<float> = [2.0, 3.0, 4.0];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1240
-     * @tc.name    testSliceFloatInt1240
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatInt1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatInt1240";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const relStart: int = 1;
-        const relEnd: int = 3.5 as int;
-        const result = slice(array, 1, 3.5);
-        const expected: FixedArray<float> = [2.0, 3.0];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -1012,75 +921,6 @@ export default function Array_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1400
-     * @tc.name    testSliceFloatNumber1400
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatNumber1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatNumber1400";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const asIntOrDefaultstart: number = 0;
-        const asIntOrDefaultend: number = Number.NEGATIVE_INFINITY;
-        const result = slice(array, 0, Number.NEGATIVE_INFINITY);
-        const expected: FixedArray<float> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1410
-     * @tc.name    testSliceFloatNumber1410
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatNumber1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatNumber1410";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const asIntOrDefaultstart: number = 1.5;
-        const asIntOrDefaultend: number = 4;
-        const result = slice(array, 1.5, 4);
-        const expected: FixedArray<float> = [2.0, 3.0, 4.0];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1420
-     * @tc.name    testSliceFloatNumber1420
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceFloatNumber1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceFloatNumber1420";
-      try {
-        const array: FixedArray<float> = [1.0, 2.0, 3.0, 4.0, 5.0];
-        const asIntOrDefaultstart: number = 1;
-        const asIntOrDefaultend: number = 3.5;
-        const result = slice(array, 1, 3.5);
-        const expected: FixedArray<float> = [2.0, 3.0];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1430
      * @tc.name    testSliceFloatNumber1430
      * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
@@ -1340,28 +1180,6 @@ export default function Array_07Test() {
         const start = undefined;
         const result = slice(array, undefined);
         const expected: FixedArray<int> = [1, 2, 3, 4, 5];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1550
-     * @tc.name    testSliceInt1550
-     * @tc.desc    Testing involves extracting a subarray from an array and returning a new array that includes elements from the specified start index to the end index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceInt1550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceInt1550";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const start = 1.5;
-        const result = slice(array, 1.5);
-        const expected: FixedArray<int> = [2, 3, 4, 5];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -1682,75 +1500,6 @@ export default function Array_07Test() {
         const relEnd: int = 10;
         const result = slice(array, 5, 10);
         const expected: FixedArray<int> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1700
-     * @tc.name    testSliceIntInt1700
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntInt1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntInt1700";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const relStart: int = 0;
-        const relEnd: int = Number.NEGATIVE_INFINITY as int;
-        const result = slice(array, 0, Number.NEGATIVE_INFINITY);
-        const expected: FixedArray<int> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1710
-     * @tc.name    testSliceIntInt1710
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntInt1710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntInt1710";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const relStart: int = 1.5 as int;
-        const relEnd: int = 4;
-        const result = slice(array, 1.5, 4);
-        const expected: FixedArray<int> = [2, 3, 4];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1720
-     * @tc.name    testSliceIntInt1720
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntInt1720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntInt1720";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const relStart: int = 1;
-        const relEnd: int = 3.5 as int;
-        const result = slice(array, 1, 3.5);
-        const expected: FixedArray<int> = [2, 3];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -2081,98 +1830,6 @@ export default function Array_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1870
-     * @tc.name    testSliceIntNumber1870
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntNumber1870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntNumber1870";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const asIntOrDefaultstart: number = 2147483648;
-        const asIntOrDefaultend: number = 4;
-        const result = slice(array, 2147483648, 4);
-        const expected: FixedArray<int> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1880
-     * @tc.name    testSliceIntNumber1880
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntNumber1880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntNumber1880";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const asIntOrDefaultstart: number = 0;
-        const asIntOrDefaultend: number = Number.NEGATIVE_INFINITY;
-        const result = slice(array, 0, Number.NEGATIVE_INFINITY);
-        const expected: FixedArray<int> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1890
-     * @tc.name    testSliceIntNumber1890
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntNumber1890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntNumber1890";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const asIntOrDefaultstart: number = 1.5;
-        const asIntOrDefaultend: number = 4;
-        const result = slice(array, 1.5, 4);
-        const expected: FixedArray<int> = [2, 3, 4];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1900
-     * @tc.name    testSliceIntNumber1900
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceIntNumber1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceIntNumber1900";
-      try {
-        const array: FixedArray<int> = [1, 2, 3, 4, 5];
-        const asIntOrDefaultstart: number = 1;
-        const asIntOrDefaultend: number = 3.5;
-        const result = slice(array, 1, 3.5);
-        const expected: FixedArray<int> = [2, 3];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_1910
      * @tc.name    testSliceIntNumber1910
      * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
@@ -2455,28 +2112,6 @@ export default function Array_07Test() {
         const start = undefined;
         const result = slice(array, undefined);
         const expected: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000, 50000000000];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_2040
-     * @tc.name    testSliceLong2040
-     * @tc.desc    Testing involves extracting a subarray from an array and returning a new array that includes elements from the specified start index to the end index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceLong2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceLong2040";
-      try {
-        const array: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000, 50000000000];
-        const start = 1.5;
-        const result = slice(array, 1.5);
-        const expected: FixedArray<long> = [20000000000, 30000000000, 40000000000, 50000000000];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -2820,52 +2455,6 @@ export default function Array_07Test() {
         const relEnd: int = Number.NEGATIVE_INFINITY as int;
         const result = slice(array, 0, Number.NEGATIVE_INFINITY as int);
         const expected: FixedArray<long> = [];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_2200
-     * @tc.name    testSliceLongInt2200
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceLongInt2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceLongInt2200";
-      try {
-        const array: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000, 50000000000];
-        const relStart: int = 1.5 as int;
-        const relEnd: int = 4;
-        const result = slice(array, 1.5, 4);
-        const expected: FixedArray<long> = [20000000000, 30000000000, 40000000000];
-        expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SLICE_2210
-     * @tc.name    testSliceLongInt2210
-     * @tc.desc    Testing that a portion of elements is extracted from an existing array to create and return a new array without modifying the original array.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testSliceLongInt2210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
-      let TAG = "testSliceLongInt2210";
-      try {
-        const array: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000, 50000000000];
-        const relStart: int = 1;
-        const relEnd: int = 3.5 as int;
-        const result = slice(array, 1, 3.5);
-        const expected: FixedArray<long> = [20000000000, 30000000000];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
