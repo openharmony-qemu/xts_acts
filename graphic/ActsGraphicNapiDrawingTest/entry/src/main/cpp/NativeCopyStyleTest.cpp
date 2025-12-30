@@ -46,13 +46,14 @@ int OHDrawingCopyTextStyle001()
     txtStyle = OH_Drawing_CreateTextStyle();
     ASSERT_NE(txtStyle, nullptr);
 
-    OH_Drawing_SetTextStyleColor(txtStyle, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0xFF, 0xFF));
+    OH_Drawing_SetTextStyleColor(
+        txtStyle, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
     OH_Drawing_SetTextStyleDecorationStyle(txtStyle, TEXT_DECORATION_STYLE_DOTTED);
     OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_900);
     OH_Drawing_SetTextStyleFontStyle(txtStyle, FONT_STYLE_ITALIC);
     OH_Drawing_SetTextStyleBaseLine(txtStyle, TEXT_BASELINE_IDEOGRAPHIC);
     const char* fontFamilies[] = { "Text", "Text2" };
-    int fontFamiliesNumBefore = 2;
+    int fontFamiliesNumBefore = FONT_FAMILIES_COUNT_TWO;
     OH_Drawing_SetTextStyleFontFamilies(txtStyle, fontFamiliesNumBefore, fontFamilies);
     OH_Drawing_SetTextStyleFontSize(txtStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTextStyleLetterSpacing(txtStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
@@ -65,7 +66,7 @@ int OHDrawingCopyTextStyle001()
     txtStyleCopy = OH_Drawing_CopyTextStyle(txtStyle);
     ASSERT_NE(txtStyleCopy, nullptr);
 
-    EXPECT_EQ(OH_Drawing_TextStyleGetColor(txtStyleCopy), 0xFF00FFFF);
+    EXPECT_EQ(OH_Drawing_TextStyleGetColor(txtStyleCopy), COLOR_CYAN_ARGB);
     EXPECT_EQ(OH_Drawing_TextStyleGetDecorationStyle(txtStyleCopy), TEXT_DECORATION_STYLE_DOTTED);
     EXPECT_EQ(OH_Drawing_TextStyleGetFontWeight(txtStyleCopy), FONT_WEIGHT_900);
     EXPECT_EQ(OH_Drawing_TextStyleGetFontStyle(txtStyleCopy), FONT_STYLE_ITALIC);
@@ -118,7 +119,7 @@ int OHDrawingCopyTextStyle002()
     EXPECT_EQ(OH_Drawing_TextStyleGetFontStyleStruct(txtStyleCopy).weight, FONT_WEIGHT_600);
     EXPECT_EQ(OH_Drawing_TextStyleGetFontStyleStruct(txtStyleCopy).slant, FONT_STYLE_ITALIC);
     EXPECT_EQ(OH_Drawing_TextStyleGetFontStyleStruct(txtStyleCopy).width, FONT_WIDTH_EXTRA_EXPANDED);
-    EXPECT_EQ(OH_Drawing_TextStyleGetFontFeatureSize(txtStyleCopy), 2); // Set 2 font features
+    EXPECT_EQ(OH_Drawing_TextStyleGetFontFeatureSize(txtStyleCopy), FONT_FEATURE_COUNT); // Set 2 font features
     return TEST_SUCCESS_CODE;
 }
 
@@ -143,8 +144,11 @@ int OHDrawingCopyTextStyle003()
     OH_Drawing_Brush* foregroundBrush = OH_Drawing_BrushCreate();
     ASSERT_NE(backgroundBrush, nullptr);
     ASSERT_NE(foregroundBrush, nullptr);
-    OH_Drawing_BrushSetColor(backgroundBrush, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0xFF, 0xFF));
-    OH_Drawing_BrushSetColor(foregroundBrush, OH_Drawing_ColorSetArgb(0xFF, 0x01, 0xFF, 0xFF));
+    OH_Drawing_BrushSetColor(
+        backgroundBrush,
+        OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
+    OH_Drawing_BrushSetColor(
+        foregroundBrush, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_01, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
     OH_Drawing_SetTextStyleBackgroundBrush(txtStyle, backgroundBrush);
     OH_Drawing_SetTextStyleForegroundBrush(txtStyle, foregroundBrush);
 
@@ -157,13 +161,15 @@ int OHDrawingCopyTextStyle003()
     ASSERT_NE(foregroundBrushCopy, nullptr);
     OH_Drawing_TextStyleGetBackgroundBrush(txtStyleCopy, backgroundBrushCopy);
     OH_Drawing_TextStyleGetForegroundBrush(txtStyleCopy, foregroundBrushCopy);
-    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrushCopy), 0xFF00FFFF);
-    EXPECT_EQ(OH_Drawing_BrushGetColor(foregroundBrushCopy), 0xFF01FFFF);
+    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrushCopy), COLOR_CYAN_ARGB);
+    EXPECT_EQ(OH_Drawing_BrushGetColor(foregroundBrushCopy), COLOR_CYAN_VARIANT_1);
 
     // 修改复制之后的brush的color不会影响copy前brush的颜色
-    OH_Drawing_BrushSetColor(backgroundBrushCopy, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrushCopy), 0xFF000000);
-    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrush), 0xFF00FFFF);
+    OH_Drawing_BrushSetColor(
+        backgroundBrushCopy,
+        OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrushCopy), COLOR_BLACK_ARGB);
+    EXPECT_EQ(OH_Drawing_BrushGetColor(backgroundBrush), COLOR_CYAN_ARGB);
     OH_Drawing_BrushDestroy(backgroundBrush);
     OH_Drawing_BrushDestroy(foregroundBrush);
     OH_Drawing_BrushDestroy(backgroundBrushCopy);
@@ -192,8 +198,10 @@ int OHDrawingCopyTextStyle004()
     OH_Drawing_Pen* foregroundPen = OH_Drawing_PenCreate();
     ASSERT_NE(backgroundPen, nullptr);
     ASSERT_NE(foregroundPen, nullptr);
-    OH_Drawing_PenSetColor(backgroundPen, OH_Drawing_ColorSetArgb(0xFF, 0x02, 0xFF, 0xFF));
-    OH_Drawing_PenSetColor(foregroundPen, OH_Drawing_ColorSetArgb(0xFF, 0x03, 0xFF, 0xFF));
+    OH_Drawing_PenSetColor(backgroundPen,
+                           OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_02, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
+    OH_Drawing_PenSetColor(foregroundPen,
+                           OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_03, COLOR_RGB_WHITE, COLOR_RGB_WHITE));
     OH_Drawing_SetTextStyleBackgroundPen(txtStyle, backgroundPen);
     OH_Drawing_SetTextStyleForegroundPen(txtStyle, foregroundPen);
 
@@ -207,13 +215,15 @@ int OHDrawingCopyTextStyle004()
     ASSERT_NE(foregroundPenCopy, nullptr);
     OH_Drawing_TextStyleGetBackgroundPen(txtStyleCopy, backgroundPenCopy);
     OH_Drawing_TextStyleGetForegroundPen(txtStyleCopy, foregroundPenCopy);
-    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPenCopy), 0xFF02FFFF);
-    EXPECT_EQ(OH_Drawing_PenGetColor(foregroundPenCopy), 0xFF03FFFF);
+    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPenCopy), COLOR_CYAN_VARIANT_2);
+    EXPECT_EQ(OH_Drawing_PenGetColor(foregroundPenCopy), COLOR_CYAN_VARIANT_3);
 
     // 修改复制之后的pen的color不会影响copy前pen的颜色
-    OH_Drawing_PenSetColor(backgroundPenCopy, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPenCopy), 0xFF000000);
-    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPen), 0xFF02FFFF);
+    OH_Drawing_PenSetColor(
+        backgroundPenCopy,
+        OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPenCopy), COLOR_BLACK_ARGB);
+    EXPECT_EQ(OH_Drawing_PenGetColor(backgroundPen), COLOR_CYAN_VARIANT_2);
     OH_Drawing_PenDestroy(backgroundPen);
     OH_Drawing_PenDestroy(foregroundPen);
     OH_Drawing_PenDestroy(backgroundPenCopy);
@@ -240,7 +250,11 @@ int OHDrawingCopyTextShadow001()
     OH_Drawing_Point* offset = OH_Drawing_PointCreate(FLOAT_TEST_SIZE_NOT_DEFAULT, FLOAT_TEST_SIZE_NOT_DEFAULT);
     ASSERT_NE(offset, nullptr);
     double blurRadius = DOUBLE_TEST_SIZE_NOT_DEFAULT;
-    OH_Drawing_SetTextShadow(shadow, OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0x00, 0x00), offset, blurRadius);
+    OH_Drawing_SetTextShadow(
+        shadow,
+        OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_WHITE, COLOR_RGB_BLACK, COLOR_RGB_BLACK),
+        offset,
+        blurRadius);
     OH_Drawing_TextShadow* shadowCopy = OH_Drawing_CopyTextShadow(shadow);
     OH_Drawing_CopyTextShadow(nullptr);
     txtStyle = OH_Drawing_CreateTextStyle();
@@ -280,7 +294,7 @@ int OHDrawingCopyTypographyStyle001()
     OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle, FONT_WEIGHT_600);
     OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle, FONT_STYLE_ITALIC);
     const char* fontFamilies[] = { "Text1", "Text2" };
-    int fontFamiliesNumBefore = 2;
+    int fontFamiliesNumBefore = FONT_FAMILIES_COUNT_TWO;
     OH_Drawing_SetTypographyTextLineStyleFontFamilies(typoStyle, fontFamiliesNumBefore, fontFamilies);
     OH_Drawing_SetTypographyTextLineStyleFontSize(typoStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextLineStyleFontHeight(typoStyle, DOUBLE_TEST_SIZE_NOT_DEFAULT);
@@ -353,7 +367,7 @@ int OHDrawingCopyTypographyStyle002()
     EXPECT_EQ(OH_Drawing_TextStyleGetFontStyle(txtStyleCopy), FONT_STYLE_ITALIC);
     size_t fontFamiliesNumAfter;
     char** fontFamiliesList = OH_Drawing_TextStyleGetFontFamilies(txtStyleCopy, &fontFamiliesNumAfter);
-    EXPECT_EQ(fontFamiliesNumAfter, 1);
+    EXPECT_EQ(fontFamiliesNumAfter, FONT_FAMILIES_COUNT_ONE);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontSize(txtStyleCopy), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontHeight(txtStyleCopy), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, fontFamiliesNumAfter);
@@ -411,7 +425,11 @@ int OHDrawingCopyTypographyStyle004()
     OH_Drawing_Point* offset = OH_Drawing_PointCreate(FLOAT_TEST_SIZE_NOT_DEFAULT, FLOAT_TEST_SIZE_NOT_DEFAULT);
     ASSERT_NE(offset, nullptr);
     double blurRadius = DOUBLE_TEST_SIZE_NOT_DEFAULT;
-    OH_Drawing_SetTextShadow(shadow, OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0x00, 0x00), offset, blurRadius);
+    OH_Drawing_SetTextShadow(
+        shadow,
+        OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_WHITE, COLOR_RGB_BLACK, COLOR_RGB_BLACK),
+        offset,
+        blurRadius);
     OH_Drawing_TextShadow* shadowCopy = OH_Drawing_CopyTextShadow(shadow);
     txtStyle = OH_Drawing_CreateTextStyle();
     ASSERT_NE(txtStyle, nullptr);
@@ -432,8 +450,9 @@ int OHDrawingCopyTypographyStyle004()
     OH_Drawing_TextShadow* shadowsCopy = OH_Drawing_TextStyleGetShadows(txtStyleCopy);
     ASSERT_NE(shadowsCopy, nullptr);
     EXPECT_NE(OH_Drawing_TextStyleGetShadowCount(txtStyleCopy), OH_Drawing_TextStyleGetShadowCount(txtStyle));
-    EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(txtStyleCopy), 0);
-    EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(txtStyle), 3); // 3是因为OH_Drawing_TextStyleAddShadow加了三个shadow。
+    EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(txtStyleCopy), ZERO);
+    EXPECT_EQ(OH_Drawing_TextStyleGetShadowCount(txtStyle),
+              SHADOW_COUNT_THREE); // 3是因为OH_Drawing_TextStyleAddShadow加了三个shadow。
     OH_Drawing_PointDestroy(offset);
     OH_Drawing_DestroyTextShadow(shadow);
     OH_Drawing_DestroyTextShadow(shadowCopy);

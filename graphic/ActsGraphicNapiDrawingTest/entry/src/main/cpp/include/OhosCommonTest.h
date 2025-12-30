@@ -54,6 +54,9 @@ constexpr uint32_t FONT_BUFFER_SIZE = 128;
 constexpr uint32_t COLOR_ALPHA_OPAQUE = 0xFF;
 constexpr uint32_t COLOR_RGB_BLACK = 0x00;
 constexpr uint32_t COLOR_RGB_WHITE = 0xFF;
+constexpr uint32_t COLOR_RGB_01 = 0x01;
+constexpr uint32_t COLOR_RGB_02 = 0x02;
+constexpr uint32_t COLOR_RGB_03 = 0x03;
 
 namespace ActsNNCoreOpsConstants {
 extern const std::string DEFAULT_TAG;
@@ -63,6 +66,7 @@ void OHPrintf(const char* fmt, ...);
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
+const char* GetSystemDefaultFont();
 
 // 自定义断言，如果失败，直接throw runtime_error，最小化逻辑变动
 #ifndef CUSTOM_ASSERT

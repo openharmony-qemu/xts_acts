@@ -59,7 +59,7 @@ int OHDrawingFontMgrTest002()
     int count = OH_Drawing_FontMgrGetFamilyCount(mgr);
     EXPECT_TRUE(count > 0);
 
-    char* familyName = OH_Drawing_FontMgrGetFamilyName(mgr, 0);
+    char* familyName = OH_Drawing_FontMgrGetFamilyName(mgr, FONT_INDEX_ZERO);
     OH_Drawing_FontMgrDestroyFamilyName(familyName);
 
     OH_Drawing_FontMgrDestroy(mgr);
@@ -79,7 +79,7 @@ int OHDrawingFontMgrTest003()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, 0);
+    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, FONT_INDEX_ZERO);
     EXPECT_NE(fontStyleSet, nullptr);
     OH_Drawing_FontMgrDestroyFontStyleSet(fontStyleSet);
 
@@ -99,7 +99,7 @@ int OHDrawingFontMgrTest004()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrMatchFamily(mgr, matchFamilyName);
     EXPECT_NE(fontStyleSet, nullptr);
     OH_Drawing_FontMgrDestroyFontStyleSet(fontStyleSet);
@@ -120,7 +120,7 @@ int OHDrawingFontMgrTest005()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
@@ -145,15 +145,15 @@ int OHDrawingFontMgrTest006()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -194,7 +194,7 @@ int OHDrawingFontMgrTest008()
 {
     OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(nullptr, 0);
     EXPECT_TRUE(fontStyleSet == nullptr);
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     fontStyleSet = OH_Drawing_FontMgrMatchFamily(nullptr, matchFamilyName);
     EXPECT_TRUE(fontStyleSet == nullptr);
 
@@ -217,7 +217,7 @@ int OHDrawingFontMgrTest008()
  */
 int OHDrawingFontMgrTest009()
 {
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
@@ -241,8 +241,8 @@ int OHDrawingFontMgrTest009()
 int OHDrawingFontMgrTest010()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
-    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, 0);
-    OH_Drawing_Typeface* typeface = OH_Drawing_FontStyleSetCreateTypeface(fontStyleSet, 0);
+    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, FONT_INDEX_ZERO);
+    OH_Drawing_Typeface* typeface = OH_Drawing_FontStyleSetCreateTypeface(fontStyleSet, FONT_INDEX_ZERO);
     EXPECT_NE(typeface, nullptr);
     typeface = OH_Drawing_FontStyleSetCreateTypeface(nullptr, 0);
     EXPECT_TRUE(typeface == nullptr);
@@ -263,10 +263,10 @@ int OHDrawingFontMgrTest010()
 int OHDrawingFontMgrTest011()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
-    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, 0);
+    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, FONT_INDEX_ZERO);
     OH_Drawing_FontStyleStruct normalStyle;
     char** styleName = nullptr;
-    normalStyle = OH_Drawing_FontStyleSetGetStyle(fontStyleSet, 0, styleName);
+    normalStyle = OH_Drawing_FontStyleSetGetStyle(fontStyleSet, FONT_INDEX_ZERO, styleName);
     EXPECT_TRUE(normalStyle.weight == FONT_WEIGHT_400);
     OH_Drawing_FontStyleSetFreeStyleName(styleName);
     OH_Drawing_FontMgrDestroyFontStyleSet(fontStyleSet);
@@ -285,7 +285,7 @@ int OHDrawingFontMgrTest011()
 int OHDrawingFontMgrTest012()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
-    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, 0);
+    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, FONT_INDEX_ZERO);
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
@@ -312,7 +312,7 @@ int OHDrawingFontMgrTest012()
 int OHDrawingFontMgrTest013()
 {
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
-    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, 0);
+    OH_Drawing_FontStyleSet* fontStyleSet = OH_Drawing_FontMgrCreateFontStyleSet(mgr, FONT_INDEX_ZERO);
     int count = OH_Drawing_FontStyleSetCount(fontStyleSet);
     EXPECT_TRUE(count > 0);
 
@@ -336,14 +336,14 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterNormalBcp47Null()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
-    OH_Drawing_Typeface* typeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, nullptr, 0, ' ');
+    OH_Drawing_Typeface* typeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, nullptr, FONT_INDEX_ZERO, FONT_MATCH_CHARACTER);
     EXPECT_NE(typeface, nullptr);
     OH_Drawing_TypefaceDestroy(typeface);
 
@@ -364,15 +364,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterEmptyBcp47()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = {};
-    OH_Drawing_Typeface* typeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 0, ' ');
+    OH_Drawing_Typeface* typeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, FONT_INDEX_ZERO, FONT_MATCH_CHARACTER);
 
     EXPECT_NE(typeface, nullptr);
     OH_Drawing_TypefaceDestroy(typeface);
@@ -393,15 +393,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight900()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_900;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -422,15 +422,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight100()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -451,15 +451,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth1()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -480,15 +480,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth9()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_EXPANDED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -509,15 +509,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterStyleOblique()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_EXPANDED;
     normalStyle.slant = FONT_STYLE_OBLIQUE;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -545,8 +545,8 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyNameNull()
     normalStyle.slant = FONT_STYLE_OBLIQUE;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -556,7 +556,7 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyNameNull()
 
 /**
  * @tc.name   TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue
- * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0900
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_WEIGHT_0100
  * @tc.desc   Test for matching font typeface with familyName null.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -569,7 +569,7 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue()
 
     const char* matchFamilyName = nullptr;
     OH_Drawing_FontStyleStruct abnormalStyle;
-    abnormalStyle.weight = OH_Drawing_FontWeight(99); // exceeding the defined max value
+    abnormalStyle.weight = OH_Drawing_FontWeight(FONT_WEIGHT_EXCEED_MAX); // exceeding the defined max value
     abnormalStyle.width = FONT_WIDTH_ULTRA_EXPANDED;
     abnormalStyle.slant = FONT_STYLE_OBLIQUE;
 
@@ -599,7 +599,7 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWidthExceedMaxValue()
     const char* matchFamilyName = nullptr;
     OH_Drawing_FontStyleStruct abnormalStyle;
     abnormalStyle.weight = FONT_WEIGHT_100; // exceeding the defined max value
-    abnormalStyle.width = OH_Drawing_FontWidth(99);
+    abnormalStyle.width = OH_Drawing_FontWidth(FONT_WIDTH_EXCEED_MAX);
     abnormalStyle.slant = FONT_STYLE_OBLIQUE;
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
     OH_Drawing_Typeface* CharTypeface =
@@ -623,15 +623,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_200;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -652,15 +652,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight300()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_300;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -681,15 +681,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight400()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_400;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -710,15 +710,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight500()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_500;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -739,15 +739,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight600()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_600;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -768,15 +768,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight700()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_700;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -797,15 +797,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight800()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_800;
     normalStyle.width = FONT_WIDTH_NORMAL;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -826,15 +826,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width1()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_200;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -855,15 +855,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth2()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_EXTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -884,15 +884,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth3()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -913,15 +913,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth4()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_SEMI_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -942,15 +942,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth6()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_SEMI_EXPANDED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -971,15 +971,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth7()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_EXPANDED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1000,15 +1000,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWidth8()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_EXTRA_EXPANDED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1029,15 +1029,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width9()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_200;
     normalStyle.width = FONT_WIDTH_ULTRA_EXPANDED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1058,15 +1058,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterStyle0()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1087,15 +1087,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterStyle1()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_ITALIC;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1116,15 +1116,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterStyle2()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_100;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_OBLIQUE;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1145,15 +1145,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style0()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_200;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1174,15 +1174,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style1()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_200;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_ITALIC;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1203,15 +1203,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style2()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_300;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_OBLIQUE;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1232,15 +1232,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style0()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_300;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_NORMAL;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1261,15 +1261,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style1()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_300;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_ITALIC;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
 
@@ -1290,15 +1290,15 @@ int TestOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style2()
     OH_Drawing_FontMgr* mgr = OH_Drawing_FontMgrCreate();
     EXPECT_NE(mgr, nullptr);
 
-    const char* matchFamilyName = DEFAULT_PLATFORM_FONT_FAMILY_NAME;
+    const char* matchFamilyName = GetSystemDefaultFont();
     OH_Drawing_FontStyleStruct normalStyle;
     normalStyle.weight = FONT_WEIGHT_300;
     normalStyle.width = FONT_WIDTH_ULTRA_CONDENSED;
     normalStyle.slant = FONT_STYLE_OBLIQUE;
 
     const char* bcp47[] = { "zh-Hans", "zh-CN" };
-    OH_Drawing_Typeface* CharTypeface =
-        OH_Drawing_FontMgrMatchFamilyStyleCharacter(mgr, matchFamilyName, normalStyle, bcp47, 1, ' ');
+    OH_Drawing_Typeface* CharTypeface = OH_Drawing_FontMgrMatchFamilyStyleCharacter(
+        mgr, matchFamilyName, normalStyle, bcp47, BCP47_ARRAY_SIZE, FONT_MATCH_CHARACTER);
     EXPECT_NE(CharTypeface, nullptr);
     OH_Drawing_TypefaceDestroy(CharTypeface);
     OH_Drawing_FontMgrDestroy(mgr);

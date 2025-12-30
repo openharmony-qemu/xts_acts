@@ -21,6 +21,26 @@
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
 
+// Text run test constants
+constexpr double TEXT_RUN_MAX_WIDTH = 500.0;
+constexpr double TEXT_RUN_MAX_WIDTH_GLYPH = 1200.0;
+constexpr double TEXT_RUN_FONT_SIZE = 30.0;
+constexpr double TEXT_RUN_FONT_SIZE_GLYPH = 100.0;
+constexpr int TEXT_RUN_FONT_FAMILIES_COUNT = 1;
+constexpr int TEXT_RUN_GLYPH_COUNT = 6;
+constexpr int TEXT_RUN_NEGATIVE_INDEX = -1;
+constexpr int TEXT_RUN_GLYPH_COUNT_2 = 2;
+constexpr int TEXT_RUN_GLYPH_COUNT_1 = 1;
+constexpr int TEXT_RUN_GLYPH_COUNT_5 = 5;
+constexpr int TEXT_RUN_STRING_INDEX_6 = 6;
+constexpr int TEXT_RUN_STRING_INDEX_7 = 7;
+constexpr int TEXT_RUN_LOCATION_0 = 0;
+constexpr int TEXT_RUN_LOCATION_6 = 6;
+constexpr int TEXT_RUN_LOCATION_8 = 8;
+constexpr int TEXT_RUN_LOCATION_9 = 9;
+constexpr int TEXT_RUN_LOCATION_14 = 14;
+constexpr int TEXT_RUN_LOCATION_19 = 19;
+
 struct NativeTextRunTestContext {
     OH_Drawing_TypographyStyle* typeStyle_ = nullptr;
     OH_Drawing_TextStyle* txtStyle_ = nullptr;
@@ -58,7 +78,7 @@ struct NativeTextRunTestContext {
 
     void PrepareCreateTextLine()
     {
-        double maxWidth = 500.0;
+        double maxWidth = TEXT_RUN_MAX_WIDTH;
         typeStyle_ = OH_Drawing_CreateTypographyStyle();
         EXPECT_TRUE(typeStyle_ != nullptr);
         txtStyle_ = OH_Drawing_CreateTextStyle();
@@ -67,14 +87,14 @@ struct NativeTextRunTestContext {
         EXPECT_TRUE(fontCollection_ != nullptr);
         handler_ = OH_Drawing_CreateTypographyHandler(typeStyle_, fontCollection_);
         EXPECT_TRUE(handler_ != nullptr);
-        OH_Drawing_SetTextStyleColor(txtStyle_, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-        double fontSize = 30;
+        OH_Drawing_SetTextStyleColor(txtStyle_, OH_Drawing_ColorSetArgb(COLOR_ALPHA_OPAQUE, COLOR_RGB_BLACK, COLOR_RGB_BLACK, COLOR_RGB_BLACK));
+        double fontSize = TEXT_RUN_FONT_SIZE;
         OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
         OH_Drawing_SetTextStyleFontWeight(txtStyle_, FONT_WEIGHT_400);
         bool halfLeading = true;
         OH_Drawing_SetTextStyleHalfLeading(txtStyle_, halfLeading);
         const char* fontFamilies[] = { "Roboto" };
-        OH_Drawing_SetTextStyleFontFamilies(txtStyle_, 1, fontFamilies);
+        OH_Drawing_SetTextStyleFontFamilies(txtStyle_, TEXT_RUN_FONT_FAMILIES_COUNT, fontFamilies);
         OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
         OH_Drawing_TypographyHandlerAddText(handler_, text_.c_str());
         OH_Drawing_TypographyHandlerPopTextStyle(handler_);
@@ -85,7 +105,7 @@ struct NativeTextRunTestContext {
 
     void PrepareCreateTextLineForGlyphDrawing()
     {
-        double maxWidth = 1200.0;
+        double maxWidth = TEXT_RUN_MAX_WIDTH_GLYPH;
         typeStyle_ = OH_Drawing_CreateTypographyStyle();
         EXPECT_NE(typeStyle_, nullptr);
         txtStyle_ = OH_Drawing_CreateTextStyle();
@@ -94,7 +114,7 @@ struct NativeTextRunTestContext {
         EXPECT_NE(fontCollection_, nullptr);
         handler_ = OH_Drawing_CreateTypographyHandler(typeStyle_, fontCollection_);
         EXPECT_NE(handler_, nullptr);
-        double fontSize = 100;
+        double fontSize = TEXT_RUN_FONT_SIZE_GLYPH;
         OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
         OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
         OH_Drawing_TypographyHandlerAddText(handler_, text_.c_str());

@@ -52,17 +52,17 @@ int TextLineTest001()
     EXPECT_EQ(size, NUM_3);
 
     OH_Drawing_TextLine* textLine0 = OH_Drawing_GetTextLineByIndex(textLines, 0);
-    double data0 = 13;
+    double data0 = GLYPH_COUNT_LINE_0;
     double count0 = OH_Drawing_TextLineGetGlyphCount(textLine0);
     EXPECT_EQ(count0, data0);
 
     OH_Drawing_TextLine* textLine1 = OH_Drawing_GetTextLineByIndex(textLines, NUM_1);
-    double data1 = 34;
+    double data1 = GLYPH_COUNT_LINE_1;
     double count1 = OH_Drawing_TextLineGetGlyphCount(textLine1);
     EXPECT_EQ(count1, data1);
 
     OH_Drawing_TextLine* textLine2 = OH_Drawing_GetTextLineByIndex(textLines, NUM_2);
-    double data2 = 29;
+    double data2 = GLYPH_COUNT_LINE_2;
     double count2 = OH_Drawing_TextLineGetGlyphCount(textLine2);
     EXPECT_EQ(count2, data2);
 
@@ -95,7 +95,7 @@ int TextLineTest002()
 
         double count = OH_Drawing_TextLineGetGlyphCount(textLine);
         if (index == NUM_3) {
-            EXPECT_EQ(count, 0);
+            EXPECT_EQ(count, ZERO);
         } else if (index == NUM_6) {
             EXPECT_EQ(count, NUM_3);
         } else {
@@ -150,20 +150,20 @@ int TextLineTest004()
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_3);
-    size_t start = 0;
-    size_t end = 0;
-    size_t data1 = 16;
-    size_t data2 = 17;
-    size_t data3 = 51;
-    size_t data4 = 52;
-    size_t data5 = 87;
+    size_t start = TEXT_RANGE_START_INIT;
+    size_t end = TEXT_RANGE_END_INIT;
+    size_t data1 = TEXT_RANGE_DATA_1;
+    size_t data2 = TEXT_RANGE_DATA_2;
+    size_t data3 = TEXT_RANGE_DATA_3;
+    size_t data4 = TEXT_RANGE_DATA_4;
+    size_t data5 = TEXT_RANGE_DATA_5;
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
 
         OH_Drawing_TextLineGetTextRange(textLine, &start, &end);
         if (index == 0) {
-            EXPECT_EQ(start, 0);
+            EXPECT_EQ(start, TEXT_RANGE_START_INIT);
             EXPECT_EQ(end, data1);
         } else if (index == NUM_1) {
             EXPECT_EQ(start, data2);
@@ -197,8 +197,8 @@ int TextLineTest005()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_7);
 
-    size_t start = 0;
-    size_t end = 0;
+    size_t start = TEXT_RANGE_START_INIT;
+    size_t end = TEXT_RANGE_END_INIT;
     std::vector<int32_t> startArr = { 0, 26, 62, 98, 99, 176, 219 };
     std::vector<int32_t> endArr = { 25, 61, 97, 98, 176, 218, 222 };
     for (size_t index = 0; index < size; index++) {
@@ -229,14 +229,14 @@ int TextLineTest006()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_2);
 
-    size_t start = 0;
-    size_t end = 0;
+    size_t start = TEXT_RANGE_START_INIT;
+    size_t end = TEXT_RANGE_END_INIT;
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
 
         OH_Drawing_TextLineGetTextRange(textLine, &start, &end);
-        EXPECT_EQ(start, 0);
+        EXPECT_EQ(start, TEXT_RANGE_START_INIT);
         EXPECT_EQ(end, NUM_1);
     }
     OH_Drawing_DestroyTextLines(textLines);
@@ -268,7 +268,7 @@ int TextLineTest007()
 
     size_t end = 0;
     OH_Drawing_TextLineGetTextRange(textLine, nullptr, &end);
-    EXPECT_EQ(end, 0);
+        EXPECT_EQ(end, TEXT_RANGE_END_INIT);
 
     OH_Drawing_TextLineGetTextRange(textLine, nullptr, nullptr);
     OH_Drawing_DestroyTextLines(textLines);
@@ -291,7 +291,7 @@ int TextLineTest008()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_3);
 
-    std::vector<int32_t> sizeArr = { 4, 1, 6 };
+    std::vector<int32_t> sizeArr = { RUN_SIZE_ARRAY_0, RUN_SIZE_ARRAY_1, RUN_SIZE_ARRAY_2 };
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
@@ -326,7 +326,7 @@ int TextLineTest009()
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
     EXPECT_EQ(size, NUM_7);
 
-    std::vector<int32_t> sizeArr = { 6, 1, 6, 0, 7, 8, 1 };
+    std::vector<int32_t> sizeArr = { RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_1, RUN_SIZE_ARRAY_2, RUN_SIZE_ARRAY_3, RUN_SIZE_ARRAY_4, RUN_SIZE_ARRAY_5, RUN_SIZE_ARRAY_1 };
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
@@ -335,7 +335,7 @@ int TextLineTest009()
         size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
         if (index == NUM_3) {
             EXPECT_TRUE(runs == nullptr);
-            EXPECT_EQ(runsSize, 0);
+            EXPECT_EQ(runsSize, ZERO);
         } else if (index == NUM_1 || index == NUM_6) {
             EXPECT_TRUE(runs != nullptr);
             EXPECT_EQ(runsSize, NUM_1);
@@ -433,9 +433,9 @@ int TextLineTest012()
         EXPECT_TRUE(textLine != nullptr);
 
         double width = OH_Drawing_TextLineGetTypographicBounds(textLine, &ascent, &descent, &leading);
-        EXPECT_NEAR(ascent, -27.84, FLOAT_DATA_EPSILON);
-        EXPECT_NEAR(descent, 7.32, FLOAT_DATA_EPSILON);
-        EXPECT_NEAR(leading, 0.0, FLOAT_DATA_EPSILON);
+        EXPECT_NEAR(ascent, ASCENT_VALUE, FLOAT_DATA_EPSILON);
+        EXPECT_NEAR(descent, DESCENT_VALUE, FLOAT_DATA_EPSILON);
+        EXPECT_NEAR(leading, LEADING_VALUE, FLOAT_DATA_EPSILON);
         EXPECT_NEAR(width, widthArr[index], FLOAT_DATA_EPSILON);
     }
     OH_Drawing_DestroyTextLines(textLines);
@@ -473,11 +473,11 @@ int TextLineTest013()
         double width = OH_Drawing_TextLineGetTypographicBounds(textLine, &ascent, &descent, &leading);
         EXPECT_EQ(leading, 0);
         if (index == NUM_4) {
-            EXPECT_NEAR(ascent, -27.84, FLOAT_DATA_EPSILON);
-            EXPECT_NEAR(descent, 7.431193, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(ascent, ASCENT_VALUE, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(descent, DESCENT_VALUE_ALT_2, FLOAT_DATA_EPSILON);
         } else if (index == NUM_5) {
-            EXPECT_NEAR(ascent, -35.369999, FLOAT_DATA_EPSILON);
-            EXPECT_NEAR(descent, 9.690001, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(ascent, ASCENT_VALUE_ALT, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(descent, DESCENT_VALUE_ALT, FLOAT_DATA_EPSILON);
         } else {
             EXPECT_NEAR(ascent, -27.84, FLOAT_DATA_EPSILON);
             EXPECT_NEAR(descent, 7.32, FLOAT_DATA_EPSILON);
@@ -685,10 +685,10 @@ int TextLineTest019()
         } else {
             EXPECT_EQ(offset, 0.0);
         }
-        EXPECT_LE(offset, 500.0);
+        EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, maxCharacterNum);
         EXPECT_NEAR(offset, offSetArr[index], FLOAT_DATA_EPSILON);
-        offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, -2);
+        offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NEGATIVE_INDEX);
         EXPECT_EQ(offset, 0.0);
     }
     OH_Drawing_DestroyTextLines(textLines);
@@ -725,19 +725,19 @@ int TextLineTest020()
         EXPECT_EQ(offset, 0.0);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NUM_10);
         if (index == 0) {
-            EXPECT_NEAR(offset, 155.129852, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(offset, EXPECTED_OFFSET_FIRST_LINE, FLOAT_DATA_EPSILON);
         } else {
             EXPECT_EQ(offset, 0.0);
         }
-        EXPECT_LE(offset, 500.0);
+        EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, maxCharacterNum);
         if (index <= NUM_2) {
             EXPECT_NEAR(offset, offSetArr[index], FLOAT_DATA_EPSILON);
         } else {
             EXPECT_EQ(offset, 0.0);
         }
-        EXPECT_LE(offset, 500.0);
-        offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, -2);
+        EXPECT_LE(offset, MAX_OFFSET_LIMIT);
+        offset = OH_Drawing_TextLineGetOffsetForStringIndex(textLine, NEGATIVE_INDEX);
         EXPECT_EQ(offset, 0.0);
     }
     OH_Drawing_DestroyTextLines(textLines);
@@ -762,16 +762,16 @@ int TextLineTest021()
     OH_Drawing_TextLine* textLine1 = OH_Drawing_GetTextLineByIndex(textLines, 0);
     OH_Drawing_TextLineEnumerateCaretOffsets(textLine1, [](double offset, int32_t index, bool leadingEdge) {
         static int offsetNum = 0;
-        int32_t data1 = 51;
-        int32_t data2 = 50;
+        int32_t data1 = TEXT_LINE_TEST_DATA_1;
+        int32_t data2 = TEXT_LINE_TEST_DATA_2;
         if (index == 0 && leadingEdge) {
             EXPECT_NEAR(offset, 0.0, FLOAT_DATA_EPSILON);
         } else if (index == NUM_1 && leadingEdge) {
-            EXPECT_NEAR(offset, 22.349976, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(offset, EXPECTED_OFFSET_INDEX_1, FLOAT_DATA_EPSILON);
         } else if (index == NUM_2 && leadingEdge) {
-            EXPECT_NEAR(offset, 52.349945, FLOAT_DATA_EPSILON);
+            EXPECT_NEAR(offset, EXPECTED_OFFSET_INDEX_2, FLOAT_DATA_EPSILON);
         } else {
-            EXPECT_LE(offset, 500.0);
+            EXPECT_LE(offset, MAX_OFFSET_LIMIT);
         }
         if (offsetNum++ % NUM_2 == 0) {
             EXPECT_TRUE(leadingEdge);
@@ -873,15 +873,15 @@ int TextLineTest024()
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
 
-        double offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 0.0, NUM_600);
-        EXPECT_EQ(offset, 0.0);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 0.5, NUM_700);
+        double offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_ZERO, NUM_600);
+        EXPECT_EQ(offset, ALIGNMENT_OFFSET_ZERO);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_HALF, NUM_700);
         EXPECT_NEAR(offset, offSetArr[index], FLOAT_DATA_EPSILON);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, -1.0, NUM_700);
-        EXPECT_EQ(offset, 0.0);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 2.0, NUM_20);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_NEGATIVE, NUM_700);
+        EXPECT_EQ(offset, ALIGNMENT_OFFSET_ZERO);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_TWO, NUM_20);
         if (index == NUM_3) {
-            EXPECT_EQ(offset, 20.0);
+            EXPECT_EQ(offset, EXPECTED_ALIGNMENT_OFFSET_TWO);
         } else {
             EXPECT_EQ(offset, 0.0);
         }
@@ -910,19 +910,19 @@ int TextLineTest025()
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         EXPECT_TRUE(textLine != nullptr);
 
-        double offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 0.0, NUM_600);
-        EXPECT_EQ(offset, 0.0);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 0.5, NUM_700);
-        EXPECT_EQ(offset, 350.0);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, -1.0, -700);
-        EXPECT_EQ(offset, 0.0);
-        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, 2.0, NUM_20);
-        EXPECT_EQ(offset, 20.0);
+        double offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_ZERO, NUM_600);
+        EXPECT_EQ(offset, ALIGNMENT_OFFSET_ZERO);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_HALF, NUM_700);
+        EXPECT_EQ(offset, EXPECTED_ALIGNMENT_OFFSET_HALF);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_NEGATIVE, NEGATIVE_WIDTH);
+        EXPECT_EQ(offset, ALIGNMENT_OFFSET_ZERO);
+        offset = OH_Drawing_TextLineGetAlignmentOffset(textLine, ALIGNMENT_OFFSET_TWO, NUM_20);
+        EXPECT_EQ(offset, EXPECTED_ALIGNMENT_OFFSET_TWO);
     }
     OH_Drawing_DestroyTextLines(textLines);
 
-    double offset = OH_Drawing_TextLineGetAlignmentOffset(nullptr, 0.0, 0.0);
-    EXPECT_EQ(offset, 0.0);
+    double offset = OH_Drawing_TextLineGetAlignmentOffset(nullptr, ALIGNMENT_OFFSET_ZERO, ALIGNMENT_OFFSET_ZERO);
+    EXPECT_EQ(offset, ALIGNMENT_OFFSET_ZERO);
     return TEST_SUCCESS_CODE;
 }
 } // namespace Drawing

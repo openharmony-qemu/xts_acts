@@ -16,6 +16,13 @@
 #ifndef ACTSGRAPHICNAPIDRAWINGTEST_NATIVEDRAWINGFONTMGRTEST_H
 #define ACTSGRAPHICNAPIDRAWINGTEST_NATIVEDRAWINGFONTMGRTEST_H
 
+// Font manager test constants
+constexpr int FONT_WEIGHT_EXCEED_MAX = 99;
+constexpr int FONT_WIDTH_EXCEED_MAX = 99;
+constexpr int FONT_INDEX_ZERO = 0;
+constexpr int BCP47_ARRAY_SIZE = 1;
+constexpr char FONT_MATCH_CHARACTER = ' ';
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {

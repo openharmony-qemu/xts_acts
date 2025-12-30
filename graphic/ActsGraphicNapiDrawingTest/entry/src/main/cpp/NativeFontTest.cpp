@@ -513,9 +513,9 @@ int OHDrawingTypographyLargeValueTestWithIndent()
  */
 int OHDrawingCreateTextTab001()
 {
-    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, TEXT_TAB_LOCATION_DEFAULT);
     EXPECT_NE(textTab, nullptr);
-    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_END, -1.0);
+    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_END, TEXT_TAB_LOCATION_NEGATIVE_ONE);
     EXPECT_NE(textTab2, nullptr);
     OH_Drawing_DestroyTextTab(textTab);
     OH_Drawing_DestroyTextTab(textTab2);
@@ -532,7 +532,7 @@ int OHDrawingCreateTextTab001()
  */
 int OHDrawingCreateTextTab002()
 {
-    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, TEXT_TAB_LOCATION_DEFAULT);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
     OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_JUSTIFY, 0.0);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
@@ -552,12 +552,12 @@ int OHDrawingCreateTextTab002()
  */
 int OHDrawingCreateTextTab003()
 {
-    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, 0.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab), 0.0);
+    OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, TEXT_TAB_LOCATION_DEFAULT);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab), TEXT_TAB_LOCATION_DEFAULT);
     OH_Drawing_DestroyTextTab(textTab);
-    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, -100.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab2), -100.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabLocation(nullptr), 0.0);
+    OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, TEXT_TAB_LOCATION_NEGATIVE);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(textTab2), TEXT_TAB_LOCATION_NEGATIVE);
+    EXPECT_EQ(OH_Drawing_GetTextTabLocation(nullptr), TEXT_TAB_LOCATION_DEFAULT);
     OH_Drawing_DestroyTextTab(textTab2);
     return TEST_SUCCESS_CODE;
 }
@@ -593,7 +593,7 @@ int TypographyTest001()
     OH_Drawing_TypographyLayout(typography, NUM_1200);
 
     double width = OH_Drawing_TypographyGetLongestLine(typography);
-    EXPECT_NEAR(width, 522.772095, FLOAT_DATA_EPSILON);
+    EXPECT_NEAR(width, EXPECTED_WIDTH_LEFT_ALIGN, FLOAT_DATA_EPSILON);
 
     // branch coverage
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
@@ -637,7 +637,7 @@ int TypographyTest002()
     OH_Drawing_TypographyLayout(typography, NUM_1200);
 
     double width = OH_Drawing_TypographyGetLongestLine(typography);
-    EXPECT_NEAR(width, 386.828308, FLOAT_DATA_EPSILON);
+    EXPECT_NEAR(width, EXPECTED_WIDTH_RIGHT_ALIGN, FLOAT_DATA_EPSILON);
 
     // branch coverage
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
@@ -681,7 +681,7 @@ int TypographyTest003()
     OH_Drawing_TypographyLayout(typography, NUM_1200);
 
     double width = OH_Drawing_TypographyGetLongestLine(typography);
-    EXPECT_NEAR(width, 393.414185, FLOAT_DATA_EPSILON);
+    EXPECT_NEAR(width, EXPECTED_WIDTH_CENTER_ALIGN, FLOAT_DATA_EPSILON);
 
     // branch coverage
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
@@ -726,7 +726,7 @@ int TypographyTest004()
     OH_Drawing_TypographyLayout(typography, NUM_1200);
 
     double width = OH_Drawing_TypographyGetLongestLine(typography);
-    EXPECT_NEAR(width, 414.388336, FLOAT_DATA_EPSILON);
+    EXPECT_NEAR(width, EXPECTED_WIDTH_CENTER_WITH_DIR, FLOAT_DATA_EPSILON);
 
     // branch coverage
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
@@ -772,7 +772,7 @@ int TypographyTest005()
     OH_Drawing_TypographyLayout(typography, NUM_1200);
 
     double width = OH_Drawing_TypographyGetLongestLine(typography);
-    EXPECT_NEAR(width, 414.388336, FLOAT_DATA_EPSILON);
+    EXPECT_NEAR(width, EXPECTED_WIDTH_CENTER_WITH_DIR, FLOAT_DATA_EPSILON);
 
     // branch coverage
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
@@ -799,8 +799,8 @@ int FontGetTextPath001()
     EXPECT_NE(font, nullptr);
     const char* str = "Hello 中文";
     size_t length = std::char_traits<char>::length(str);
-    float x = 12.0f;
-    float y = 150.0f;
+    float x = TEXT_PATH_COORDINATE_X;
+    float y = TEXT_PATH_COORDINATE_Y;
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     ASSERT_NE(path, nullptr);
     EXPECT_EQ(OH_Drawing_FontGetTextPath(font, str, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
@@ -827,8 +827,8 @@ int FontGetTextPath002()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
 
-    float x = 12.0f;
-    float y = 150.0f;
+    float x = TEXT_PATH_COORDINATE_X;
+    float y = TEXT_PATH_COORDINATE_Y;
     const char16_t* u16str = u"Hello 中文";
     size_t u16strLen = std::char_traits<char16_t>::length(u16str);
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
@@ -866,8 +866,8 @@ int FontGetTextPath003()
     EXPECT_NE(font, nullptr);
     const char* space = " ";
     size_t length = std::char_traits<char>::length(space);
-    float x = 12.0f;
-    float y = 150.0f;
+    float x = TEXT_PATH_COORDINATE_X;
+    float y = TEXT_PATH_COORDINATE_Y;
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     ASSERT_NE(path, nullptr);
     EXPECT_EQ(OH_Drawing_FontGetTextPath(font, space, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
@@ -896,8 +896,8 @@ int FontGetTextPath004()
     EXPECT_NE(font, nullptr);
     const char* str = "Hello 中文";
     size_t length = std::char_traits<char>::length(str);
-    float x = -1.0f;
-    float y = -1.0f;
+    float x = TEXT_PATH_NEGATIVE_COORD;
+    float y = TEXT_PATH_NEGATIVE_COORD;
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     ASSERT_NE(path, nullptr);
     EXPECT_EQ(OH_Drawing_FontGetTextPath(font, str, sizeof(char) * length, TEXT_ENCODING_UTF8, x, y, path),
@@ -930,8 +930,8 @@ int FontGetTextPath005()
     uint16_t glyphs[count];
     OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
 
-    float x = 12.0f;
-    float y = 150.0f;
+    float x = TEXT_PATH_COORDINATE_X;
+    float y = TEXT_PATH_COORDINATE_Y;
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     ASSERT_NE(path, nullptr);
     EXPECT_EQ(OH_Drawing_FontGetTextPath(font, glyphs, sizeof(glyphs), TEXT_ENCODING_GLYPH_ID, x, y, path),

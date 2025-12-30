@@ -311,7 +311,7 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue
-     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0900
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_WEIGHT_0100
      * @tc.desc   Test for matching font typeface with familyName null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

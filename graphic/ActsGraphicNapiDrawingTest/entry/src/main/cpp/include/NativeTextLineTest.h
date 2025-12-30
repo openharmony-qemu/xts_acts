@@ -31,6 +31,45 @@
 #define NUM_600 600
 #define NUM_700 700
 
+// TextLine test constants
+constexpr int MAX_CHARACTER_NUM = 88;
+constexpr double MAX_OFFSET_LIMIT = 500.0;
+constexpr int NEGATIVE_INDEX = -2;
+constexpr double EXPECTED_OFFSET_FIRST_LINE = 155.129852;
+constexpr double EXPECTED_OFFSET_INDEX_1 = 22.349976;
+constexpr double EXPECTED_OFFSET_INDEX_2 = 52.349945;
+constexpr double ALIGNMENT_OFFSET_ZERO = 0.0;
+constexpr double ALIGNMENT_OFFSET_HALF = 0.5;
+constexpr double ALIGNMENT_OFFSET_NEGATIVE = -1.0;
+constexpr double ALIGNMENT_OFFSET_TWO = 2.0;
+constexpr double EXPECTED_ALIGNMENT_OFFSET_HALF = 350.0;
+constexpr double EXPECTED_ALIGNMENT_OFFSET_TWO = 20.0;
+constexpr int NEGATIVE_WIDTH = -700;
+constexpr int TEXT_LINE_TEST_DATA_1 = 51;
+constexpr int TEXT_LINE_TEST_DATA_2 = 50;
+constexpr int GLYPH_COUNT_LINE_0 = 13;
+constexpr int GLYPH_COUNT_LINE_1 = 34;
+constexpr int GLYPH_COUNT_LINE_2 = 29;
+constexpr int TEXT_RANGE_DATA_1 = 16;
+constexpr int TEXT_RANGE_DATA_2 = 17;
+constexpr int TEXT_RANGE_DATA_3 = 51;
+constexpr int TEXT_RANGE_DATA_4 = 52;
+constexpr int TEXT_RANGE_DATA_5 = 87;
+constexpr int TEXT_RANGE_START_INIT = 0;
+constexpr int TEXT_RANGE_END_INIT = 0;
+constexpr int RUN_SIZE_ARRAY_0 = 4;
+constexpr int RUN_SIZE_ARRAY_1 = 1;
+constexpr int RUN_SIZE_ARRAY_2 = 6;
+constexpr int RUN_SIZE_ARRAY_3 = 0;
+constexpr int RUN_SIZE_ARRAY_4 = 7;
+constexpr int RUN_SIZE_ARRAY_5 = 8;
+constexpr double ASCENT_VALUE = -27.84;
+constexpr double DESCENT_VALUE = 7.32;
+constexpr double ASCENT_VALUE_ALT = -35.369999;
+constexpr double DESCENT_VALUE_ALT = 9.690001;
+constexpr double DESCENT_VALUE_ALT_2 = 7.431193;
+constexpr double LEADING_VALUE = 0.0;
+
 struct NativeTextLineTestContext {
     OH_Drawing_TypographyStyle* typoStyle;
     OH_Drawing_TextStyle* txtStyle;

@@ -20,7 +20,11 @@
 #include <cstring>
 #include <ctime>
 #include <hilog/log.h>
+#include <native_drawing/drawing_font_collection.h>
+#include <native_drawing/drawing_register_font.h>
+#include <native_drawing/drawing_text_typography.h>
 #include <string>
+#include "NativeTypographyAutoSpaceTest.h"
 
 namespace ActsNNCoreOpsConstants {
 const std::string DEFAULT_TAG = "ActsNNCoreOpsTest";
@@ -52,6 +56,7 @@ constexpr int ERROR_CODE_NEGATIVE_THREE = -3;
 constexpr int SUCCESS_CODE = 0;
 constexpr int STRING_OFFSET_ONE = 1;
 constexpr int FILE_SEEK_START = 0;
+constexpr int DEFAULT_FONT_INDEX = 0;
 
 struct AllCloseInt8Options {
     uint8_t* a;
@@ -171,4 +176,46 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
         }
     }
     return SUCCESS_CODE;
+}
+
+// 获取系统默认字体，比如xxx Sans，原字符串是xxx-Sans，所以这里做一个替换逻辑
+const char* GetSystemDefaultFont()
+{
+    // 缓存指针，只初始化一次
+    static const char* cachedFont = nullptr;
+    static std::once_flag initFlag;
+    std::call_once(initFlag, []() {
+        const char* systemFont = nullptr;
+        OH_Drawing_FontConfigInfoErrorCode fontConfigInfoErrorCode;
+        OH_Drawing_FontConfigInfo* fontConfigInfo = OH_Drawing_GetSystemFontConfigInfo(&fontConfigInfoErrorCode);
+        if (fontConfigInfoErrorCode != SUCCESS_FONT_CONFIG_INFO) {
+            OH_LOG_Print(LOG_APP,
+                         LOG_ERROR,
+                         LOG_DOMAIN,
+                         "DrawingLog",
+                         "获取系统信息失败，错误代码为： %{public}d",
+                         fontConfigInfoErrorCode);
+        }
+        if (fontConfigInfo != nullptr) {
+            // 获取默认字体名
+            OH_Drawing_FontGenericInfo& genericInfo = fontConfigInfo->fontGenericInfoSet[DEFAULT_FONT_INDEX];
+            systemFont = genericInfo.familyName;
+        }
+        if (systemFont != nullptr) {
+            size_t len = std::strlen(systemFont) + 1;
+            char* buf = new char[len];
+            SafeMemcpy(buf, len, systemFont, len);
+            for (char* p = buf; *p; ++p) {
+                if (*p == ' ') {
+                    *p = '-';
+                }
+            }
+            cachedFont = buf;
+        } else {
+            // 兜底，避免返回 nullptr
+            cachedFont = "";
+        }
+    });
+
+    return cachedFont;
 }

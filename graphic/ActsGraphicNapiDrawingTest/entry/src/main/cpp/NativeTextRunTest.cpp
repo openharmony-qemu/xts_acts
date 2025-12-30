@@ -33,6 +33,8 @@ namespace Rosen {
 namespace Drawing {
 namespace {
 constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
+constexpr int TEXT_RANGE_START_INIT = 0;
+constexpr int TEXT_RANGE_END_INIT = 0;
 }
 
 /**
@@ -60,12 +62,12 @@ int RunTest001()
 
     OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(nullptr, 0);
     EXPECT_EQ(run, nullptr);
-    run = OH_Drawing_GetRunByIndex(runs, -1);
+    run = OH_Drawing_GetRunByIndex(runs, TEXT_RUN_NEGATIVE_INDEX);
     EXPECT_EQ(run, nullptr);
     run = OH_Drawing_GetRunByIndex(runs, runsSize);
     EXPECT_EQ(run, nullptr);
     run = OH_Drawing_GetRunByIndex(runs, 0);
-    uint32_t countData = 6;
+    uint32_t countData = TEXT_RUN_GLYPH_COUNT;
     uint32_t count = OH_Drawing_GetRunGlyphCount(run);
     EXPECT_EQ(count, countData);
 
@@ -100,7 +102,7 @@ int RunTest002()
     OH_Drawing_Array* runs = OH_Drawing_TextLineGetGlyphRuns(textLine);
     size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
     ASSERT_GT(runsSize, 0);
-    std::vector<int32_t> countArr = { 6, 2, 1, 5, 5, 5 };
+    std::vector<int32_t> countArr = { TEXT_RUN_GLYPH_COUNT, TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
     for (int i = 0; i < runsSize; i++) {
         OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, i);
         uint32_t count = OH_Drawing_GetRunGlyphCount(run);
@@ -140,13 +142,13 @@ int RunTest003()
     uint32_t count = OH_Drawing_GetRunGlyphCount(run1);
     auto glyphIndexArr = OH_Drawing_GetRunStringIndices(run1, 0, count);
     auto glyphIndexArrSize = OH_Drawing_GetDrawingArraySize(glyphIndexArr);
-    std::vector<int32_t> indexndexArr = { 6, 7 };
+    std::vector<int32_t> indexndexArr = { TEXT_RUN_STRING_INDEX_6, TEXT_RUN_STRING_INDEX_7 };
     for (int j = 0; j < glyphIndexArrSize; j++) {
         auto glyphIndex = OH_Drawing_GetRunStringIndicesByIndex(glyphIndexArr, j);
         EXPECT_EQ(glyphIndex, indexndexArr[j]);
     }
     // branchCoverage
-    OH_Drawing_GetRunStringIndices(nullptr, -1, -1);
+    OH_Drawing_GetRunStringIndices(nullptr, TEXT_RUN_NEGATIVE_INDEX, TEXT_RUN_NEGATIVE_INDEX);
     OH_Drawing_GetRunStringIndicesByIndex(glyphIndexArr, glyphIndexArrSize);
     OH_Drawing_DestroyRunStringIndices(glyphIndexArr);
     OH_Drawing_GetRunGlyphCount(nullptr);
@@ -178,12 +180,12 @@ int RunTest004()
     size_t runsSize = OH_Drawing_GetDrawingArraySize(runs);
     ASSERT_GT(runsSize, 0);
 
-    std::vector<int32_t> locationArr = { 0, 6, 8, 9, 14, 19 };
-    std::vector<int32_t> lengthArr = { 6, 2, 1, 5, 5, 5 };
+    std::vector<int32_t> locationArr = { TEXT_RUN_LOCATION_0, TEXT_RUN_LOCATION_6, TEXT_RUN_LOCATION_8, TEXT_RUN_LOCATION_9, TEXT_RUN_LOCATION_14, TEXT_RUN_LOCATION_19 };
+    std::vector<int32_t> lengthArr = { TEXT_RUN_GLYPH_COUNT, TEXT_RUN_GLYPH_COUNT_2, TEXT_RUN_GLYPH_COUNT_1, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5, TEXT_RUN_GLYPH_COUNT_5 };
     for (int i = 0; i < runsSize; i++) {
         OH_Drawing_Run* run = OH_Drawing_GetRunByIndex(runs, i);
-        uint64_t location = 0;
-        uint64_t length = 0;
+        uint64_t location = TEXT_RANGE_START_INIT;
+        uint64_t length = TEXT_RANGE_END_INIT;
         OH_Drawing_GetRunStringRange(run, &location, &length);
         EXPECT_EQ(location, locationArr[i]);
         EXPECT_EQ(length, lengthArr[i]);

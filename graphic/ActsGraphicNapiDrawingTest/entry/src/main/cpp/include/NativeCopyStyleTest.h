@@ -19,6 +19,18 @@
 #include <native_drawing/drawing_font_collection.h>
 #include <native_drawing/drawing_text_typography.h>
 
+// Copy style test constants
+constexpr int FONT_FEATURE_COUNT = 2;
+constexpr int FONT_FAMILIES_COUNT_TWO = 2;
+constexpr int FONT_FAMILIES_COUNT_ONE = 1;
+constexpr int SHADOW_COUNT_THREE = 3;
+constexpr uint32_t COLOR_CYAN_ARGB = 0xFF00FFFF;
+constexpr uint32_t COLOR_CYAN_VARIANT_1 = 0xFF01FFFF;
+constexpr uint32_t COLOR_CYAN_VARIANT_2 = 0xFF02FFFF;
+constexpr uint32_t COLOR_CYAN_VARIANT_3 = 0xFF03FFFF;
+constexpr uint32_t COLOR_BLACK_ARGB = 0xFF000000;
+constexpr uint32_t COLOR_RED_ARGB = 0xFFFF0000;
+
 struct NativeCopyStyleTestContext {
     OH_Drawing_FontCollection* fontCollection;
     OH_Drawing_TextStyle* txtStyle;

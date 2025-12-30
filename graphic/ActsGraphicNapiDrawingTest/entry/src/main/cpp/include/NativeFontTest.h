@@ -37,6 +37,16 @@ constexpr int TYPOGRAPHY_RANGE_START = 1;
 constexpr int TYPOGRAPHY_RANGE_END = 2;
 constexpr int TYPOGRAPHY_COORDINATE_X = 1;
 constexpr int TYPOGRAPHY_COORDINATE_Y = 0;
+constexpr double EXPECTED_WIDTH_LEFT_ALIGN = 522.772095;
+constexpr double EXPECTED_WIDTH_RIGHT_ALIGN = 386.828308;
+constexpr double EXPECTED_WIDTH_CENTER_ALIGN = 393.414185;
+constexpr double EXPECTED_WIDTH_CENTER_WITH_DIR = 414.388336;
+constexpr float TEXT_PATH_COORDINATE_X = 12.0f;
+constexpr float TEXT_PATH_COORDINATE_Y = 150.0f;
+constexpr double TEXT_TAB_LOCATION_DEFAULT = 0.0;
+constexpr double TEXT_TAB_LOCATION_NEGATIVE = -100.0;
+constexpr double TEXT_TAB_LOCATION_NEGATIVE_ONE = -1.0;
+constexpr float TEXT_PATH_NEGATIVE_COORD = -1.0f;
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
