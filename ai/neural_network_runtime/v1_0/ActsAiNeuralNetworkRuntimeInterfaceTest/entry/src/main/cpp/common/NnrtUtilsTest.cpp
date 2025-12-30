@@ -15,8 +15,8 @@
 #include "NnrtUtilsTest.h"
 #include <cstring>
 #include <fstream>
-#include <stdexcept>
 #include <hilog/log.h>
+#include <stdexcept>
 #include "const.h"
 
 // 日志宏定义
@@ -44,8 +44,8 @@ inline void AssertEqImpl(const T1& v1, const T2& v2, const char* exp1, const cha
 {
     if (v1 != v2) {
         LOGE("Assertion failed: %s == %s, file: %s, line: %d", exp1, exp2, loc.file, loc.line);
-        throw std::runtime_error(std::string("Assertion failed: ") + exp1 + " == " + exp2 + 
-                                 ", file: " + loc.file + ", line: " + std::to_string(loc.line));
+        throw std::runtime_error(std::string("Assertion failed: ") + exp1 + " == " + exp2 + ", file: " + loc.file +
+                                 ", line: " + std::to_string(loc.line));
     }
 }
 
@@ -335,10 +335,8 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            int retCopy = SafeMemcpy(inputMemory->data,
-                                      operandTem.length,
-                                      static_cast<void*>(operandTem.data),
-                                      operandTem.length);
+            int retCopy = SafeMemcpy(
+                inputMemory->data, operandTem.length, static_cast<void*>(operandTem.data), operandTem.length);
             if (retCopy != SUCCESS_CODE) {
                 LOGE("[NNRtTest] SafeMemcpy failed! ret=%d\n", retCopy);
                 return retCopy;
