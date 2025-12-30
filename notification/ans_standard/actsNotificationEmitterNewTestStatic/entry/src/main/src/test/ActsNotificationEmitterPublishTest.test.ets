@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import emitter from '@ohos.events.emitter';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -185,11 +185,17 @@ export default function ActsNotificationEmitterPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_0800'
+      const TEST_CASE_NAME = 'Sub_Notification_Emitter_Publish_Emit_Static_0800'
       let eventId04: string = '4';
       let num : int = 0
-      let callback04 = (): void => {
+      let myDate: Record<String, RecordData> = {
+        "id": "event4",
+      }
+      let data: emitter.EventData = { data: myDate }
+      let callback04: Callback<emitter.EventData> = (eventData: emitter.EventData): void=> {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback04 success');
+        hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success is %{public}s '+JSON.stringify(eventData));
+        expect(JSON.stringify(eventData)).assertContain('"id":"event4"');
         num++;
       }
       try{
@@ -211,7 +217,7 @@ export default function ActsNotificationEmitterPublishTest() {
         done();
       }
       try {
-        emitter.emit(eventId04);
+        emitter.emit(eventId04,data);
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit event success');
         await Utils.msSleep(1000);
         expect(num == 1).assertTrue()
