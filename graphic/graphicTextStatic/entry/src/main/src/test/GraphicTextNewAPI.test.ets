@@ -627,6 +627,10 @@ export default function GraphicTextNewAPI() {
     it('testTextReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg  = "====testTextReturnValue_0400====";
+      let fontCollection = text.FontCollection.getGlobalInstance();
+      fontCollection.unloadFontSync('myFamilyName');
+      fontCollection.unloadFontSync('myFamilyName0');
+      fontCollection.unloadFontSync('test');
       let fontType:text.SystemFontType = text.SystemFontType.GENERIC;
       let fontTypeNums = await text.getSystemFontFullNamesByType(fontType);
       console.info(msg + fontTypeNums);
