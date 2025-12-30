@@ -119,7 +119,7 @@ static TestFunction g_testFunctions[] = {
 };
 
 // 自动计算测试用例总数
-static const int g_testFunctionCount = static_cast<int>(sizeof(g_testFunctions) / sizeof(g_testFunctions[0]));
+static const int G_TEST_FUNCTION_COUNT = static_cast<int>(sizeof(g_testFunctions) / sizeof(g_testFunctions[0]));
 // 异步执行函数（在工作线程中执行）
 static void ExecuteAsyncWork(napi_env env, void* data)
 {
