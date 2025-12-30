@@ -52,7 +52,7 @@ export default function reflectionTest() {
     it("SUB_Reflection_LambdaValue_GetType_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000)
-        hilog.info(domain, tag, '%{public}s', 'test003 start');
+        console.log(domain, tag, '%{public}s', 'test003 start');
         let negativeZero: double = -0.0;
         let instance = DoubleValue.of(negativeZero);
         let doubleValue = instance as DoubleValue;
@@ -60,7 +60,7 @@ export default function reflectionTest() {
         expect(1 / doubleValue.getValueData()).assertEqual(Number.NEGATIVE_INFINITY);
         expect(-1 / doubleValue.getValueData()).assertEqual(Number.POSITIVE_INFINITY);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test003 end');
+        console.log(domain, tag, '%{public}s', 'test003 end');
       });
 
     /**
@@ -72,12 +72,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_GetType_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetType_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetType_0002');
       const testType = getValidLambdaType();
       const validFunction = getValidFunction();
       const lambdaValue = new LambdaValue(testType, validFunction);
       expect(lambdaValue.getType() === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetType_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetType_0002');
     });
 
     /**
@@ -89,13 +89,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_GetData_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_0003');
       const testType = getValidLambdaType();
       const testFunction = getValidFunction();
       const lambdaValue = new LambdaValue(testType, testFunction);
       const result = lambdaValue.getData();
       expect(result === testFunction).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_0003');
     });
 
     /**
@@ -107,7 +107,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_EdgeCase_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_EdgeCase_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_EdgeCase_0004');
       const emptyFunction = () => {};
       const emptyLambda = new LambdaValue(getValidLambdaType(), emptyFunction);
       expect(emptyLambda.getData() === emptyFunction).assertTrue();
@@ -117,7 +117,7 @@ export default function reflectionTest() {
       const paramFunction = (a: number, b: string) => a + b;
       const paramLambda = new LambdaValue(getValidLambdaType(), paramFunction);
       expect(paramLambda.getData() === paramFunction).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_EdgeCase_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_EdgeCase_0004');
     });
 
     /**
@@ -129,11 +129,11 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_GetTypeMethod_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetTypeMethod_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetTypeMethod_0005');
       const testType = getValidLambdaType();
       const lambdaValue = new LambdaValue(testType, {});
       expect(lambdaValue.getType() === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetTypeMethod_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetTypeMethod_0005');
     });
 
     /**
@@ -145,7 +145,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_InvokeMethod_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InvokeMethod_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InvokeMethod_0006');
       const lambdaValue = new LambdaValue(getValidLambdaType(), {});
       let errorThrown = false;
       let errorMessage = "";
@@ -159,7 +159,7 @@ export default function reflectionTest() {
       }
       expect(errorThrown).assertTrue();
       expect(errorMessage).assertEqual("Not implemented");
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InvokeMethod_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InvokeMethod_0006');
     });
 
     /**
@@ -171,7 +171,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LambdaValue_InvokeWithArgs_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InvokeWithArgs_0007');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InvokeWithArgs_0007');
       const lambdaValue = new LambdaValue(getValidLambdaType(), {});
       const testArgs: Object[] = [1, "test", {}];
       let errorThrown = false;
@@ -182,7 +182,7 @@ export default function reflectionTest() {
         expect(e instanceof Error).assertTrue();
       }
       expect(errorThrown).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InvokeWithArgs_0007');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InvokeWithArgs_0007');
     });
 
     /**
@@ -194,10 +194,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_getData_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_getData_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_getData_0002');
       const result = VoidValue.INSTANCE.getData();
       expect(result === Void.void_instance).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_getData_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_getData_0002');
     });
 
     /**
@@ -209,10 +209,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_TypeCheck_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_TypeCheck_0003');
       const instance = VoidValue.INSTANCE;
       expect(instance instanceof VoidValue).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_TypeCheck_0003');
     });
 
     /**
@@ -224,10 +224,10 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_VoidValue_MethodSignature_0004", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_MethodSignature_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_MethodSignature_0004');
       const result = VoidValue.INSTANCE.getData();
       expect(typeof result === 'object' || result === null).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_MethodSignature_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_MethodSignature_0004');
     });
 
     /**
@@ -239,10 +239,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_Override_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_Override_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_Override_0006');
       const method = VoidValue.INSTANCE.getData;
       expect(method !== undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_Override_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_Override_0006');
     });
 
     /**
@@ -254,10 +254,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_InstanceOf_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_InstanceOf_0007');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_InstanceOf_0007');
       const instance = VoidValue.INSTANCE;
       expect(instance instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_InstanceOf_0007');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_InstanceOf_0007');
     });
 
     /**
@@ -269,9 +269,9 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_DataAccess_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_DataAccess_0008');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_DataAccess_0008');
       expect(Void.void_instance !== undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_DataAccess_0008');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_DataAccess_0008');
     });
 
     /**
@@ -283,11 +283,11 @@ export default function reflectionTest() {
     * @tc.type   RELIABILITY
     */
     it("SUB_Reflection_VoidValue_Singleton_0009", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_Singleton_0009');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_Singleton_0009');
       const instance1 = VoidValue.INSTANCE;
       const instance2 = VoidValue.INSTANCE;
       expect(instance1 === instance2).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_Singleton_0009');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_Singleton_0009');
     });
 
     /**
@@ -299,10 +299,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_TypeCheck_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_TypeCheck_0011');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_TypeCheck_0011');
       const instance = VoidValue.INSTANCE;
       expect(typeof instance === 'object').assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_TypeCheck_0011');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_TypeCheck_0011');
     });
 
     /**
@@ -314,10 +314,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_VoidValue_ToString_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_ToString_0013');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_VoidValue_ToString_0013');
       const instance = VoidValue.INSTANCE;
       expect(typeof instance.toString === 'function').assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_ToString_0013');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_VoidValue_ToString_0013');
     });
 
     /**
@@ -329,11 +329,11 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_Singleton_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Singleton_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Singleton_0001');
       const firstRef = UndefinedValue.INSTANCE;
       const secondRef = UndefinedValue.INSTANCE;
       expect(firstRef === secondRef).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Singleton_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Singleton_0001');
     });
 
     /**
@@ -345,10 +345,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_getData_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_getData_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_getData_0002');
       const result = UndefinedValue.INSTANCE.getData();
       expect(result === undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_getData_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_getData_0002');
     });
 
     /**
@@ -360,10 +360,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_TypeCheck_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_TypeCheck_0003');
       const instance = UndefinedValue.INSTANCE;
       expect(instance instanceof UndefinedValue).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_TypeCheck_0003');
     });
 
     /**
@@ -375,10 +375,10 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_UndefinedValue_MethodSignature_0004", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_MethodSignature_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_MethodSignature_0004');
       const result = UndefinedValue.INSTANCE.getData();
       expect(typeof result === 'undefined').assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_MethodSignature_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_MethodSignature_0004');
     });
 
     /**
@@ -390,10 +390,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_Override_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Override_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Override_0006');
       const method = UndefinedValue.INSTANCE.getData;
       expect(method !== undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Override_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Override_0006');
     });
 
     /**
@@ -405,10 +405,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_InstanceOf_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_InstanceOf_0007');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_InstanceOf_0007');
       const instance = UndefinedValue.INSTANCE;
       expect(instance instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_InstanceOf_0007');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_InstanceOf_0007');
     });
 
     /**
@@ -420,12 +420,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_UndefinedValue_Comparison_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Comparison_0008');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_UndefinedValue_Comparison_0008');
       const undefinedValue = UndefinedValue.INSTANCE;
       const voidValue = VoidValue.INSTANCE;
       expect(undefinedValue !== voidValue).assertTrue();
       expect(undefinedValue.getData() !== voidValue.getData()).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Comparison_0008');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_UndefinedValue_Comparison_0008');
     });
 
    const shortDomain: number = 0xFF01;
@@ -441,13 +441,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_InstanceCreate_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_InstanceCreate_0001');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_InstanceCreate_0001');
       const testType = getValidShortType();
       const testData: short = 100;
       const shortValue = new ShortValue(testType, testData);
       expect(shortValue !== null).assertTrue();
       expect(shortValue instanceof ShortValue).assertTrue();
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_InstanceCreate_0001');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_InstanceCreate_0001');
     });
 
     /**
@@ -459,13 +459,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_Positive_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Positive_0002');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Positive_0002');
       const testType = getValidShortType();
       const expectedData: short = 1234;
       const shortValue = new ShortValue(testType, expectedData);
       const actualData = shortValue.getData() as Short;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Positive_0002');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Positive_0002');
     });
 
     /**
@@ -477,13 +477,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_Negative_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Negative_0003');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Negative_0003');
       const testType = getValidShortType();
       const expectedData: short = -4321;
       const shortValue = new ShortValue(testType, expectedData);
       const actualData = shortValue.getData() as Short;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Negative_0003');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Negative_0003');
     });
 
     /**
@@ -495,7 +495,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_Boundary_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Boundary_0004');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Boundary_0004');
       const testType = getValidShortType();
       const maxShort: short = 32767;
       const minShort: short = -32768;
@@ -503,7 +503,7 @@ export default function reflectionTest() {
       expect(maxValue.getData() as Short).assertEqual(maxShort);
       const minValue = new ShortValue(testType, minShort);
       expect(minValue.getData() as Short).assertEqual(minShort);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Boundary_0004');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Boundary_0004');
     });
 
     /**
@@ -515,12 +515,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_TypeCheck_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeCheck_0005');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeCheck_0005');
       const testType = getValidShortType();
       const shortValue = new ShortValue(testType, 0);
       expect(shortValue instanceof ShortValue).assertTrue();
       expect(shortValue instanceof reflect.Value).assertTrue();
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeCheck_0005');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeCheck_0005');
     });
 
     /**
@@ -532,12 +532,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_TypeProperty_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeProperty_0006');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeProperty_0006');
       const testType = getValidShortType();
       const shortValue = new ShortValue(testType, 0);
       const actualType = shortValue.getType();
       expect(actualType === testType).assertTrue();
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeProperty_0006');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeProperty_0006');
     });
 
     /**
@@ -549,12 +549,12 @@ export default function reflectionTest() {
     * @tc.type   FUNCTION
     */
     it("SUB_Reflection_ShortValue_GetData_Positive_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Positive_0007');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Positive_0007');
       const testType = getValidShortType();
       const testValue: short = 12345;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Positive_0007');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Positive_0007');
     });
 
     /**
@@ -566,12 +566,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_Negative_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Negative_0008');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Negative_0008');
       const testType = getValidShortType();
       const testValue: short = -9876;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Negative_0008');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Negative_0008');
     });
 
     /**
@@ -583,12 +583,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_Zero_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Zero_0009');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_Zero_0009');
       const testType = getValidShortType();
       const testValue: short = 0;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Zero_0009');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_Zero_0009');
     });
 
     /**
@@ -600,13 +600,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_InstanceConsistency_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_InstanceConsistency_0010');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_InstanceConsistency_0010');
       const testType = getValidShortType();
       const testValue: short = 4567;
       const instance1 = new ShortValue(testType, testValue);
       const instance2 = new ShortValue(testType, testValue);
       expect(instance1.getData() as Short).assertEqual(instance2.getData() as Short);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_InstanceConsistency_0010');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_InstanceConsistency_0010');
     });
 
     /**
@@ -618,12 +618,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_TypeEquality_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeEquality_0011');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeEquality_0011');
       const testType = getValidShortType();
       const instance1 = new ShortValue(testType, 1);
       const instance2 = new ShortValue(testType, 2);
       expect(instance1.getType()).assertEqual(instance2.getType());
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeEquality_0011');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeEquality_0011');
     });
 
     /**
@@ -635,12 +635,12 @@ export default function reflectionTest() {
     * @tc.type   FUNCTION
     */
     it("SUB_Reflection_ShortValue_GetData_NearMax_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_NearMax_0012');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_NearMax_0012');
       const testType = getValidShortType();
       const testValue: short = 32760;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_NearMax_0012');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_NearMax_0012');
     });
 
     /**
@@ -652,12 +652,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_GetData_NearMin_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_NearMin_0013');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_GetData_NearMin_0013');
       const testType = getValidShortType();
       const testValue: short = -32760;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_NearMin_0013');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_GetData_NearMin_0013');
     });
 
     /**
@@ -669,12 +669,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_TypeInstanceCheck_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeInstanceCheck_0014');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeInstanceCheck_0014');
       const testType = getValidShortType();
       const shortValue = new ShortValue(testType, 100);
       const actualType = shortValue.getType();
       expect(actualType instanceof ShortType).assertTrue();
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeInstanceCheck_0014');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeInstanceCheck_0014');
     });
 
     /**
@@ -686,7 +686,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_MultipleInstances_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_MultipleInstances_0015');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_MultipleInstances_0015');
       const testType = getValidShortType();
       const value1: short = 5000;
       const value2: short = -5000;
@@ -694,7 +694,7 @@ export default function reflectionTest() {
       const instance2 = new ShortValue(testType, value2);
       expect(instance1.getData() as Short).assertEqual(value1);
       expect(instance2.getData() as Short).assertEqual(value2);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_MultipleInstances_0015');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_MultipleInstances_0015');
     });
 
     /**
@@ -706,12 +706,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_TypeConsistency_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeConsistency_0016');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_TypeConsistency_0016');
       const testType = getValidShortType();
       const instanceA = new ShortValue(testType, 123);
       const instanceB = new ShortValue(testType, -456);
       expect(instanceA.getType()).assertEqual(instanceB.getType());
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeConsistency_0016');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_TypeConsistency_0016');
     });
 
     /**
@@ -723,12 +723,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_SmallPositive_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_SmallPositive_0017');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_SmallPositive_0017');
       const testType = getValidShortType();
       const testValue: short = 42;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_SmallPositive_0017');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_SmallPositive_0017');
     });
 
     /**
@@ -740,12 +740,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_ShortValue_SmallNegative_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_SmallNegative_0018');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test start: SUB_Reflection_ShortValue_SmallNegative_0018');
       const testType = getValidShortType();
       const testValue: short = -42;
       const shortValue = new ShortValue(testType, testValue);
       expect(shortValue.getData() as Short).assertEqual(testValue);
-      hilog.info(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_SmallNegative_0018');
+      console.log(shortDomain, shortTag, '%{public}s', 'Test end: SUB_Reflection_ShortValue_SmallNegative_0018');
     });
 
     const tag: string = "NullValueTest";
@@ -759,11 +759,11 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_Singleton_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0001');
       const firstInstance = NullValue.INSTANCE;
       const secondInstance = NullValue.INSTANCE;
       expect(firstInstance === secondInstance).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0001');
     });
 
     /**
@@ -775,10 +775,10 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_GetData_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_0002');
       const result = NullValue.INSTANCE.getData();
       expect(result === null).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_0002');
     });
 
     /**
@@ -790,11 +790,11 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_TypeCheck_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_TypeCheck_0003');
       const instance = NullValue.INSTANCE;
       expect(instance instanceof NullValue).assertTrue();
       expect(instance instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_TypeCheck_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_TypeCheck_0003');
     });
 
     /**
@@ -806,10 +806,10 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_GetData_Type_0005", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Type_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Type_0005');
       const result = NullValue.INSTANCE.getData();
       expect(result === null || result === undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Type_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Type_0005');
     });
 
     /**
@@ -821,11 +821,11 @@ export default function reflectionTest() {
     * @tc.type   RELIABILITY
     */
     it("SUB_Reflection_NullValue_Singleton_0006", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_Singleton_0006');
       const instance1 = NullValue.INSTANCE;
       const instance2 = NullValue.INSTANCE;
       expect(instance1 === instance2).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_Singleton_0006');
     });
 
     /**
@@ -837,11 +837,11 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_NullValue_GetType_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetType_0007');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetType_0007');
       const instance = NullValue.INSTANCE;
       const type = instance.getType();
       expect(type instanceof NullType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetType_0007');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetType_0007');
     });
 
     /**
@@ -853,12 +853,12 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_GetData_Consistency_0008", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Consistency_0008');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_GetData_Consistency_0008');
       const instance = NullValue.INSTANCE;
       const result1 = instance.getData();
       const result2 = instance.getData();
       expect(result1 === null && result2 === null).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Consistency_0008');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_GetData_Consistency_0008');
     });
 
     /**
@@ -870,10 +870,10 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_NullValue_CompareWithUndefined_0010", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_CompareWithUndefined_0010');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_NullValue_CompareWithUndefined_0010');
       const result = NullValue.INSTANCE.getData();
       expect(result !== undefined).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_NullValue_CompareWithUndefined_0010');
     });
 
     const getValidLongType = (): LongType => {
@@ -888,13 +888,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_InstanceCreate_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_InstanceCreate_0001');
       const testType = getValidLongType();
       const testData: long = 123456789;
       const longValue = new LongValue(testType, testData);
       expect(longValue !== null).assertTrue();
       expect(longValue instanceof LongValue).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_InstanceCreate_0001');
     });
 
     /**
@@ -906,13 +906,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_Positive_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Positive_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Positive_0002');
       const testType = getValidLongType();
       const expectedData: long = 9876543210;
       const longValue = new LongValue(testType, expectedData);
       const actualData = longValue.getData() as Long;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Positive_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Positive_0002');
     });
 
     /**
@@ -924,13 +924,13 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_Negative_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Negative_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Negative_0003');
       const testType = getValidLongType();
       const expectedData: long = -1234567890123;
       const longValue = new LongValue(testType, expectedData);
       const actualData = longValue.getData() as Long;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Negative_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Negative_0003');
     });
 
     /**
@@ -942,7 +942,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_Boundary_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Boundary_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Boundary_0004');
       const testType = getValidLongType();
       const maxLong: long = 9223372036854775807;
       const minLong: long = -9223372036854775808;
@@ -950,7 +950,7 @@ export default function reflectionTest() {
       expect(maxValue.getData() as Long).assertEqual(maxLong);
       const minValue = new LongValue(testType, minLong);
       expect(minValue.getData() as Long).assertEqual(minLong);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Boundary_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Boundary_0004');
     });
 
     /**
@@ -962,12 +962,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeCheck_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeCheck_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeCheck_0005');
       const testType = getValidLongType();
       const longValue = new LongValue(testType, 0);
       expect(longValue instanceof LongValue).assertTrue();
       expect(longValue instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeCheck_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeCheck_0005');
     });
 
     /**
@@ -979,12 +979,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeProperty_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeProperty_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeProperty_0006');
       const testType = getValidLongType();
       const longValue = new LongValue(testType, 123);
       const actualType = longValue.getType();
       expect(actualType === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeProperty_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeProperty_0006');
     });
 
    /**
@@ -996,12 +996,12 @@ export default function reflectionTest() {
     * @tc.type   FUNCTION
     */
     it("SUB_Reflection_LongValue_GetData_Positive_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Positive_0007');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Positive_0007');
       const testType = getValidLongType();
       const testValue: long = 123456789012345;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Positive_0007');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Positive_0007');
     });
 
     /**
@@ -1013,12 +1013,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_Negative_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Negative_0008');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Negative_0008');
       const testType = getValidLongType();
       const testValue: long = -987654321098765;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Negative_0008');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Negative_0008');
     });
 
     /**
@@ -1030,12 +1030,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_Zero_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Zero_0009');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_Zero_0009');
       const testType = getValidLongType();
       const testValue: long = 0;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Zero_0009');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_Zero_0009');
     });
 
     /**
@@ -1047,12 +1047,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_NearMax_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_NearMax_0010');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_NearMax_0010');
       const testType = getValidLongType();
       const testValue: long = 9223372036854775800;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_NearMax_0010');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_NearMax_0010');
     });
 
     /**
@@ -1064,12 +1064,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_GetData_NearMin_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_NearMin_0011');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_NearMin_0011');
       const testType = getValidLongType();
       const testValue: long = -9223372036854775800;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_NearMin_0011');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_NearMin_0011');
     });
 
     /**
@@ -1081,12 +1081,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeCheck_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeCheck_0012');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeCheck_0012');
       const testType = getValidLongType();
       const longValue = new LongValue(testType, 12345);
       expect(longValue instanceof LongValue).assertTrue();
       expect(longValue instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeCheck_0012');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeCheck_0012');
     });
 
     /**
@@ -1098,12 +1098,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeProperty_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeProperty_0013');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeProperty_0013');
       const testType = getValidLongType();
       const longValue = new LongValue(testType, 67890);
       const actualType = longValue.getType();
       expect(actualType === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeProperty_0013');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeProperty_0013');
     });
 
     /**
@@ -1115,7 +1115,7 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_MultipleInstances_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_MultipleInstances_0014');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_MultipleInstances_0014');
       const testType = getValidLongType();
       const value1: long = 1000000000000;
       const value2: long = -2000000000000;
@@ -1123,7 +1123,7 @@ export default function reflectionTest() {
       const instance2 = new LongValue(testType, value2);
       expect(instance1.getData() as Long).assertEqual(value1);
       expect(instance2.getData() as Long).assertEqual(value2);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_MultipleInstances_0014');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_MultipleInstances_0014');
     });
 
     /**
@@ -1135,12 +1135,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeInstanceCheck_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeInstanceCheck_0015');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeInstanceCheck_0015');
       const testType = getValidLongType();
       const longValue = new LongValue(testType, 987654321);
       const actualType = longValue.getType();
       expect(actualType instanceof LongType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeInstanceCheck_0015');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeInstanceCheck_0015');
     });
 
     /**
@@ -1152,12 +1152,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_SmallPositive_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_SmallPositive_0016');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_SmallPositive_0016');
       const testType = getValidLongType();
       const testValue: long = 42;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_SmallPositive_0016');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_SmallPositive_0016');
     });
 
     /**
@@ -1169,12 +1169,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_SmallNegative_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_SmallNegative_0017');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_SmallNegative_0017');
       const testType = getValidLongType();
       const testValue: long = -42;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_SmallNegative_0017');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_SmallNegative_0017');
     });
 
     /**
@@ -1186,12 +1186,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_LargePositive_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_LargePositive_0018');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_LargePositive_0018');
       const testType = getValidLongType();
       const testValue: long = 5000000000000000000;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_LargePositive_0018');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_LargePositive_0018');
     });
 
     /**
@@ -1203,12 +1203,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_LargeNegative_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_LargeNegative_0019');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_LargeNegative_0019');
       const testType = getValidLongType();
       const testValue: long = -5000000000000000000;
       const longValue = new LongValue(testType, testValue);
       expect(longValue.getData() as Long).assertEqual(testValue);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_LargeNegative_0019');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_LargeNegative_0019');
     });
 
     /**
@@ -1220,12 +1220,12 @@ export default function reflectionTest() {
      * @tc.type   FUNCTION
      */
     it("SUB_Reflection_LongValue_TypeConsistency_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeConsistency_0020');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_TypeConsistency_0020');
       const testType = getValidLongType();
       const instanceA = new LongValue(testType, 123456);
       const instanceB = new LongValue(testType, -789012);
       expect(instanceA.getType()).assertEqual(instanceB.getType());
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeConsistency_0020');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_TypeConsistency_0020');
     });
 
     /**
@@ -1237,14 +1237,14 @@ export default function reflectionTest() {
      * @tc.type   RELIABILITY
      */
     it("SUB_Reflection_LongValue_GetData_MultipleCalls_0021", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_MultipleCalls_0021');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LongValue_GetData_MultipleCalls_0021');
       const testType = getValidLongType();
       const testValue: long = 112233445566;
       const longValue = new LongValue(testType, testValue);
       const result1 = longValue.getData() as Long;
       const result2 = longValue.getData() as Long;
       expect(result1).assertEqual(result2);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_MultipleCalls_0021');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LongValue_GetData_MultipleCalls_0021');
     });
 	
     /**
@@ -1256,13 +1256,13 @@ export default function reflectionTest() {
      * @tc.type     FUNCTION
      */
     it("SUB_Reflection_LambdaValue_InstanceCreate_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_InstanceCreate_0001');
       const testType = getValidLambdaType();
       const testData: Object = {};
       const lambdaValue = new LambdaValue(testType, testData);
       expect(lambdaValue !== null).assertTrue();
       expect(lambdaValue instanceof LambdaValue).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_InstanceCreate_0001');
     });
 
     /**
@@ -1274,13 +1274,13 @@ export default function reflectionTest() {
      * @tc.type     FUNCTION
      */
     it("SUB_Reflection_LambdaValue_GetData_Basic_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_Basic_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_Basic_0002');
       const testType = getValidLambdaType();
       const expectedData: Object = {};
       const lambdaValue = new LambdaValue(testType, expectedData);
       const actualData = lambdaValue.getData() as Object;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_Basic_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_Basic_0002');
     });
 
     /**
@@ -1292,13 +1292,13 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_LambdaValue_GetData_Function_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_Function_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_GetData_Function_0003');
       const testType = getValidLambdaType();
       const expectedData: Object = () => {};
       const lambdaValue = new LambdaValue(testType, expectedData);
       const actualData = lambdaValue.getData() as Object;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_Function_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_GetData_Function_0003');
     });
 
     /**
@@ -1310,12 +1310,12 @@ export default function reflectionTest() {
      * @tc.type     FUNCTION
      */
     it("SUB_Reflection_LambdaValue_TypeCheck_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_TypeCheck_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_TypeCheck_0004');
       const testType = getValidLambdaType();
       const lambdaValue = new LambdaValue(testType, {});
       expect(lambdaValue instanceof LambdaValue).assertTrue();
       expect(lambdaValue instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_TypeCheck_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_TypeCheck_0004');
     });
 
     /**
@@ -1327,12 +1327,12 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_LambdaValue_TypeProperty_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_TypeProperty_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_TypeProperty_0005');
       const testType = getValidLambdaType();
       const lambdaValue = new LambdaValue(testType, {});
       const actualType = lambdaValue.getType() as LambdaType;
       expect(actualType === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_TypeProperty_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_TypeProperty_0005');
     });
 
     /**
@@ -1345,7 +1345,7 @@ export default function reflectionTest() {
      */
     it("SUB_Reflection_LambdaValue_ConstructorParams_0006", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1,
       (): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_ConstructorParams_0006');
+        console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_LambdaValue_ConstructorParams_0006');
         let errorThrown = false;
         const invalidType: Object = {};
         const testData: Object = {};
@@ -1356,7 +1356,7 @@ export default function reflectionTest() {
           expect(e instanceof Error).assertTrue();
         }
         expect(errorThrown).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_ConstructorParams_0006');
+        console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_LambdaValue_ConstructorParams_0006');
       });
 
     /**
@@ -1368,13 +1368,13 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_InstanceCreate_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_InstanceCreate_0001');
       const testType = getValidIntType();
       const testData: int = 123;
       const intValue = new IntValue(testType, testData);
       expect(intValue !== null).assertTrue();
       expect(intValue instanceof IntValue).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_InstanceCreate_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_InstanceCreate_0001');
     });
 
     /**
@@ -1386,13 +1386,13 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_GetData_Positive_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Positive_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Positive_0002');
       const testType = getValidIntType();
       const expectedData: int = 45678;
       const intValue = new IntValue(testType, expectedData);
       const actualData = intValue.getData() as Int;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Positive_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Positive_0002');
     });
 
     /**
@@ -1404,13 +1404,13 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_GetData_Negative_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Negative_0003');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Negative_0003');
       const testType = getValidIntType();
       const expectedData: int = -9876;
       const intValue = new IntValue(testType, expectedData);
       const actualData = intValue.getData() as Int;
       expect(actualData).assertEqual(expectedData);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Negative_0003');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Negative_0003');
     });
 
     /**
@@ -1422,7 +1422,7 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_GetData_Boundary_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Boundary_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_GetData_Boundary_0004');
       const testType = getValidIntType();
       const maxInt: int = 2147483647;
       const minInt: int = -2147483648;
@@ -1430,7 +1430,7 @@ export default function reflectionTest() {
       expect(maxValue.getData() as Int).assertEqual(maxInt);
       const minValue = new IntValue(testType, minInt);
       expect(minValue.getData() as Int).assertEqual(minInt);
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Boundary_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_GetData_Boundary_0004');
     });
 
     /**
@@ -1442,12 +1442,12 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_TypeCheck_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_TypeCheck_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_TypeCheck_0005');
       const testType = getValidIntType();
       const intValue = new IntValue(testType, 0);
       expect(intValue instanceof IntValue).assertTrue();
       expect(intValue instanceof reflect.Value).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_TypeCheck_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_TypeCheck_0005');
     });
 
     /**
@@ -1459,12 +1459,12 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_IntValue_TypeProperty_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_TypeProperty_0006');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_IntValue_TypeProperty_0006');
       const testType = getValidIntType();
       const intValue = new IntValue(testType, 999);
       const actualType = intValue.getType() as IntType;
       expect(actualType === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_TypeProperty_0006');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_IntValue_TypeProperty_0006');
     });
 
     const getValidFloatType = (): FloatType => {
@@ -1479,12 +1479,12 @@ export default function reflectionTest() {
    * @tc.type    FUNCTION
    */
   it("SUB_Reflection_FloatValue_TypeProperty_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_FloatValue_TypeProperty_0002');
+    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_FloatValue_TypeProperty_0002');
     const testType = getValidFloatType();
     const floatValue = new FloatValue(testType, 999.0);
     const actualType = floatValue.getType() as FloatType;
     expect(actualType === testType).assertTrue();
-    hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_FloatValue_TypeProperty_0002');
+    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_FloatValue_TypeProperty_0002');
   });
 
     const getValidClassType = (): ClassType => {
@@ -1499,13 +1499,13 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_ClassValue_ValidConstructor_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_ValidConstructor_0001');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_ValidConstructor_0001');
       const testType = getValidClassType();
       const testData: Object = {};
       const classValue = new ClassValue(testType, testData);
       expect(classValue.getType() === testType).assertTrue();
       expect(classValue.getData() === testData).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_ValidConstructor_0001');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_ValidConstructor_0001');
     });
 
     /**
@@ -1517,12 +1517,12 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_ClassValue_TypeProperty_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_TypeProperty_0002');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_TypeProperty_0002');
       const testType = getValidClassType();
       const classValue = new ClassValue(testType, {});
       const actualType = classValue.getType() as ClassType;
       expect(actualType === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_TypeProperty_0002');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_TypeProperty_0002');
     });
 
     /**
@@ -1534,7 +1534,7 @@ export default function reflectionTest() {
      * @tc.type      RELIABILITY
      */
     it("SUB_Reflection_ClassValue_InvalidData_0004", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_InvalidData_0004');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_InvalidData_0004');
       let errorThrown = false;
       const testType = getValidClassType();
       const invalidData: float = 100.0;
@@ -1545,7 +1545,7 @@ export default function reflectionTest() {
         expect(e instanceof TypeError).assertTrue();
       }
       expect(errorThrown).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_InvalidData_0004');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_InvalidData_0004');
     });
 
     /**
@@ -1557,11 +1557,11 @@ export default function reflectionTest() {
      * @tc.type      FUNCTION
      */
     it("SUB_Reflection_ClassValue_GetTypeMethod_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_GetTypeMethod_0005');
+      console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ClassValue_GetTypeMethod_0005');
       const testType = getValidClassType();
       const classValue = new ClassValue(testType, {});
       expect(classValue.getType() === testType).assertTrue();
-      hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_GetTypeMethod_0005');
+      console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ClassValue_GetTypeMethod_0005');
     });
 
      const getValidCharType = (): CharType => {
@@ -1576,7 +1576,7 @@ export default function reflectionTest() {
    * @tc.type       RELIABILITY
    */
   it("SUB_Reflection_CharValue_InvalidData_0001", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_CharValue_InvalidData_0001');
+    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_CharValue_InvalidData_0001');
     let errorThrown = false;
     const testType = getValidCharType();
     const invalidData: int = 65;
@@ -1587,7 +1587,7 @@ export default function reflectionTest() {
       expect(e instanceof TypeError).assertTrue();
     }
     expect(errorThrown).assertTrue();
-    hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_CharValue_InvalidData_0001');
+    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_CharValue_InvalidData_0001');
   });
 
   /**
@@ -1599,7 +1599,7 @@ export default function reflectionTest() {
    * @tc.type       RELIABILITY
   */
   it("SUB_Reflection_CharValue_InvalidData_0002", TestType.RELIABILITY | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_CharValue_InvalidData_0002');
+    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_CharValue_InvalidData_0002');
     let errorThrown = false;
     const testType = getValidCharType();
     const invalidData: int = 65;
@@ -1610,7 +1610,7 @@ export default function reflectionTest() {
       expect(e instanceof TypeError).assertTrue();
     }
     expect(errorThrown).assertTrue();
-    hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_CharValue_InvalidData_0002');
+    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_CharValue_InvalidData_0002');
   });
 
   const getValidByteType = (): ByteType => {
@@ -1626,11 +1626,11 @@ export default function reflectionTest() {
    * @tc.type    FUNCTION
    */
   it("SUB_Reflection_ByteValue_OfMethod_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0003');
+    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0003');
     const testValue: byte = 100;
     const byteValue = ByteValue.of(testValue);
     expect(byteValue instanceof ByteValue).assertTrue();
-    hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0003');
+    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0003');
   });
 
   /**
@@ -1642,12 +1642,12 @@ export default function reflectionTest() {
    * @tc.type    FUNCTION
    */
   it("SUB_Reflection_ByteValue_OfMethod_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    hilog.info(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0004');
+    console.log(domain, tag, '%{public}s', 'Test start: SUB_Reflection_ByteValue_OfMethod_0004');
     const maxValue: byte = 127;
     const minValue: byte = -128;
     expect(ByteValue.of(maxValue) instanceof ByteValue).assertTrue();
     expect(ByteValue.of(minValue) instanceof ByteValue).assertTrue();
-    hilog.info(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0004');
+    console.log(domain, tag, '%{public}s', 'Test end: SUB_Reflection_ByteValue_OfMethod_0004');
   });
 	
   });

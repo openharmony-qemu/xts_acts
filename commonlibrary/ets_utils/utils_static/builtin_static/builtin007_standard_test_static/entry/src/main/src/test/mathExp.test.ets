@@ -51,12 +51,12 @@ export default function mathExpTest() {
      */
     it("SUB_Value_ArrayValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toPrint test start');
       let testArray: number[] = [1, 2, 3];
       let result: string = testArray.toString();
       expect(result).assertEqual("[1, 2, 3]");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toPrint test end');
     });
 
     /**
@@ -69,12 +69,12 @@ export default function mathExpTest() {
      */
     it("SUB_Value_DoubleValue_ToLocaleString_0100_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toLocaleString test start');
       let testDouble: number = 3.141592653589793;
       let result: string = testDouble.toString();
       expect(result).assertEqual("3.141592653589793");
       done()
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toLocaleString test end');
     });
 
     /**
@@ -87,12 +87,12 @@ export default function mathExpTest() {
      */
     it("SUB_Value_DoubleValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toPrint test start');
       let testDouble: number = 3.141592653589793;
       let result: string = testDouble.toString();
       expect(result).assertEqual("3.141592653589793");
       done()
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toPrint test end');
     });
 
 
@@ -106,11 +106,11 @@ export default function mathExpTest() {
      */
     it("SUB_Value_UndefinedValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'UndefinedValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'UndefinedValue toPrint test start');
       let result: string = "undefined";
       expect(result).assertEqual("undefined");
       done()
-      hilog.info(domain, tag, '%{public}s', 'UndefinedValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'UndefinedValue toPrint test end');
     });
 
     /**
@@ -123,12 +123,12 @@ export default function mathExpTest() {
      */
     it("SUB_Value_StringValue_ToPrint_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Test Case 2";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Test Case 2"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -142,12 +142,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0100_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 start');
         let result: number = exp(1.0);
         let expected: number = Math.E;
         expect(Math.abs(result - expected)).assertLess(1e-12);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 end');
       });
 
     /**
@@ -161,12 +161,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0200_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_01 start');
         let result: number = exp(0.0);
         let expected: number = 1.0;
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_01 end');
       });
 
     /**
@@ -180,12 +180,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300 start');
         let result: number = exp(-1.0);
         let expected: number = 1.0 / Math.E;
         expect(Math.abs(result - expected)).assertLess(1e-12);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300 end');
       });
 
     /**
@@ -199,12 +199,12 @@ export default function mathExpTest() {
     it("Math_Exp_Static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0400 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0400 start');
         let result: number = exp(0.6931471805599453);
         let expected: number = 2.0;
         expect(Math.abs(result - expected)).assertLess(1e-12);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0400 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0400 end');
       });
 
     /**
@@ -218,12 +218,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0500_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 start');
         let result: number = exp(20.0);
         let expected: number = 485165195.4097903;
         expect(Math.abs(result - expected)).assertLess(1e-6);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 end');
       });
 
     /**
@@ -237,12 +237,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0600_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0600_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0600_01 start');
         let result: number = exp(-20.0);
         let expected: number = 2.061153622438558e-9;
         expect(Math.abs(result - expected)).assertLess(1e-15);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0600_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0600_01 end');
       });
 
     /**
@@ -256,11 +256,11 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_700 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_700 start');
         let result: number = exp(Number.POSITIVE_INFINITY);
         expect(result).assertEqual(Number.POSITIVE_INFINITY);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_700 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_700 end');
       });
 
     /**
@@ -274,11 +274,11 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0800_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_02 start');
         let result: number = exp(Number.NEGATIVE_INFINITY);
         expect(result).assertEqual(0.0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_02 end');
       });
 
     /**
@@ -292,11 +292,11 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090 start');
         let result: number = exp(Number.NaN);
         expect(isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090 end');
       });
 
     /**
@@ -310,12 +310,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1000_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_01 start');
         let result: number = exp(1e-10);
         let expected: number = 1.00000000010000000005;
         expect(Math.abs(result - expected)).assertLess(1e-18);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_01 end');
       });
 
     /**
@@ -329,12 +329,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1100_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_01 start');
         let result: number = exp(-1e-12);
         let expected: number = 0.999999999999;
         expect(Math.abs(result - expected)).assertLess(1e-15);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_01 end');
       });
 
     /**
@@ -348,12 +348,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0100_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 start');
         let result: number = exp(1.0);
         let expected: number = 2.718281828459045;
         expect(result).assertClose(expected, 1e-15);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 end');
       });
 
     /**
@@ -367,12 +367,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0200_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_02 start');
         let result: number = exp(0.0);
         let expected: number = 1.0;
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200_02 end');
       });
 
     /**
@@ -386,12 +386,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0300_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_01 start');
         let result: number = exp(-1.0);
         let expected: number = 0.36787944117144233;
         expect(result).assertClose(expected, 1e-15);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_01 end');
       });
 
     /**
@@ -405,11 +405,11 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0500_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_02 start');
         let result: number = exp(-Infinity);
         expect(result).assertEqual(0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_02 end');
       });
 
     /**
@@ -423,12 +423,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_06001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 start');
         let result: number = exp(10.0);
         let expected: number = 22026.465794806718;
         expect(result).assertClose(expected, 1e-10);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 end');
       });
 
     /**
@@ -442,12 +442,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0700 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0700 start');
         let result: number = exp(-10.0);
         let expected: number = 4.5399929762484854e-5;
         expect(result).assertClose(expected, 1e-15);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0700 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0700 end');
       });
 
     /**
@@ -461,12 +461,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 start');
         let result: number = exp(100.0);
         let expected: number = 2.6881171418161356e+43;
         expect(result).assertClose(expected, 1e+30);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 end');
       });
 
     /**
@@ -480,12 +480,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_090_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090_01 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090_01 start');
         let result: number = exp(-100.0);
         let expected: number = 3.720075976020836e-44;
         expect(result).assertClose(expected, 1e-50);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090_01 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_090_01 end');
       });
 
     /**
@@ -499,11 +499,11 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1000_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_02 start');
         let result: number = exp(NaN);
         expect(isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_02 end');
       });
 
     /**
@@ -517,12 +517,12 @@ export default function mathExpTest() {
     it("SUB_Math_Exp_Static_1100_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_02 start');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_02 start');
         let result: number = exp(0.0001);
         let expected: number = 1.0001000050001667;
         expect(result).assertClose(expected, 1e-10);
         done();
-        hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_02 end');
+        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100_02 end');
       });
 
     /**
@@ -535,12 +535,12 @@ export default function mathExpTest() {
      */
     it("SUB_Math_Exp_Static_0100_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_03 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_03 start');
       let a:number = Math.exp(0);
       let b:number = 1;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_03 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_03 end');
     });
 
    /**
@@ -553,12 +553,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200 start');
       let a:number = Math.exp(1);
       let b:number = Math.E;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0200 end');
     });
 
    /**
@@ -571,12 +571,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_0300_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_02 start');
       let a:number = Math.exp(-1);
       let b:number = 1/Math.E;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0300_02 end');
     });
 
    /**
@@ -589,12 +589,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_0500_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_03 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_03 start');
       let a:number = Math.exp(-0.5);
       let b:number = 0.6065306597126334;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_03 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_03 end');
     });
 
    /**
@@ -607,12 +607,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_06002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06002 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06002 start');
       let a:number = Math.exp(2);
       let b:number = 7.38905609893065;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06002 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06002 end');
     });
 
    /**
@@ -625,12 +625,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_7001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_7001 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_7001 start');
       let a:number = Math.exp(-2);
       let b:number = 0.1353352832366127;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_7001 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_7001 end');
     });
 
    /**
@@ -643,12 +643,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_0800_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_01 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_01 start');
       let a:number = Math.exp(1.5);
       let b:number = 4.4816890703380645;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_01 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0800_01 end');
     });
 
    /**
@@ -661,12 +661,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_0900_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0900_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0900_02 start');
       let a:number = Math.exp(-1.5);
       let b:number = 0.22313016014842982;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0900_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0900_02 end');
     });
 
    /**
@@ -679,12 +679,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1000_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_03 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_03 start');
       let a:number = Math.exp(3);
       let b:number = 20.085536923187668;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_03 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1000_03 end');
     });
 
    /**
@@ -697,12 +697,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100 start');
       let a:number = Math.exp(-3);
       let b:number = 0.049787068367863944;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1100 end');
     });
 
    /**
@@ -715,12 +715,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1200 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1200 start');
       let a:number = Math.exp(0.1);
       let b:number = 1.1051709180756477;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1200 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1200 end');
     });
 
    /**
@@ -733,12 +733,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1300 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1300 start');
       let a:number = Math.exp(-0.1);
       let b:number = 0.9048374180359595;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1300 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1300 end');
     });
 
    /**
@@ -751,12 +751,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1400 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1400 start');
       let a:number = Math.exp(2.5);
       let b:number = 12.182493960703473;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1400 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1400 end');
     });
 
    /**
@@ -769,12 +769,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1600 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1600 start');
       let a:number = Math.exp(4);
       let b:number = 54.598150033144236;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1600 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1600 end');
     });
 
    /**
@@ -787,12 +787,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1700 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1700 start');
       let a:number = Math.exp(-4);
       let b:number = 0.018315638888734179;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1700 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1700 end');
     });
 
    /**
@@ -805,12 +805,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1800_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1800_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1800_02 start');
       let a:number = Math.exp(0.25);
       let b:number = 1.2840254166877414;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1800_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1800_02 end');
     });
 
    /**
@@ -823,12 +823,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1900 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1900 start');
       let a:number = Math.exp(-0.25);
       let b:number = 0.7788007830714049;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1900 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_1900 end');
     });
 
    /**
@@ -841,12 +841,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2000_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2000_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2000_02 start');
       let a:number = Math.exp(5);
       let b:number = 148.4131591025766;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2000_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2000_02 end');
     });
 
    /**
@@ -859,12 +859,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2100_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2100_02 start');
       let a:number = Math.exp(-5);
       let b:number = 0.006737946999085467;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2100_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2100_02 end');
     });
 
    /**
@@ -877,12 +877,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2200_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2200_02 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2200_02 start');
       let a:number = Math.exp(0.75);
       let b:number = 2.117000016612675;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2200_02 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2200_02 end');
     });
 
    /**
@@ -895,12 +895,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2300 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2300 start');
       let a:number = Math.exp(-0.75);
       let b:number = 0.4723665527410147;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2300 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2300 end');
     });
 
    /**
@@ -913,12 +913,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2600 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2600 start');
       let a:number = Math.exp(6);
       let b:number = 403.4287934927351;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2600 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2600 end');
     });
 
    /**
@@ -931,12 +931,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_2700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2700 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2700 start');
       let a:number = Math.exp(-6);
       let b:number = 0.0024787521766663585;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2700 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_2700 end');
     });
 
    /**
@@ -949,12 +949,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3000 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3000 start');
       let a:number = Math.exp(1.25);
       let b:number = 3.4903429574618414;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3000 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3000 end');
     });
 
    /**
@@ -967,12 +967,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3100 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3100 start');
       let a:number = Math.exp(-1.25);
       let b:number = 0.2865047968601901;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3100 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3100 end');
     });
 
    /**
@@ -985,12 +985,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3200 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3200 start');
       let a:number = Math.exp(7);
       let b:number = 1096.6331584284585;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3200 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3200 end');
     });
 
    /**
@@ -1003,12 +1003,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3300 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3300 start');
       let a:number = Math.exp(-7);
       let b:number = 0.0009118819655545162;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3300 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3300 end');
     });
 
    /**
@@ -1021,12 +1021,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3400 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3400 start');
       let a:number = Math.exp(0.2);
       let b:number = 1.2214027581601699;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3400 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3400 end');
     });
 
    /**
@@ -1039,12 +1039,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3600 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3600 start');
       let a:number = Math.exp(4.5);
       let b:number = 90.01713130052181;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3600 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3600 end');
     });
 
    /**
@@ -1057,12 +1057,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3700 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3700 start');
       let a:number = Math.exp(-4.5);
       let b:number = 0.011108996538242306;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3700 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3700 end');
     });
 
    /**
@@ -1075,12 +1075,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3800 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3800 start');
       let a:number = Math.exp(8);
       let b:number = 2980.9579870417282;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3800 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3800 end');
     });
 
    /**
@@ -1093,12 +1093,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_3900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3900 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3900 start');
       let a:number = Math.exp(-8);
       let b:number = 0.00033546262790251185;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3900 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_3900 end');
     });
 
    /**
@@ -1111,12 +1111,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4400 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4400 start');
       let a:number = Math.exp(9);
       let b:number = 8103.083927575384;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4400 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4400 end');
     });
 
    /**
@@ -1129,12 +1129,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4500 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4500 start');
       let a:number = Math.exp(-9);
       let b:number = 0.00012340980408667956;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4500 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4500 end');
     });
 
    /**
@@ -1147,12 +1147,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4600 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4600 start');
       let a:number = Math.exp(0.125);
       let b:number = 1.1331484530668263;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4600 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4600 end');
     });
 
    /**
@@ -1165,12 +1165,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4700 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4700 start');
       let a:number = Math.exp(-0.125);
       let b:number = 0.8824969025845955;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4700 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4700 end');
     });
 
    /**
@@ -1183,12 +1183,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4800 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4800 start');
       let a:number = Math.exp(5.5);
       let b:number = 244.69193226422038;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4800 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4800 end');
     });
 
    /**
@@ -1201,12 +1201,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_4900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4900 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4900 start');
       let a:number = Math.exp(-5.5);
       let b:number = 0.004086771438464067;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4900 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_4900 end');
     });
 
    /**
@@ -1219,12 +1219,12 @@ export default function mathExpTest() {
     */
     it("SUB_Math_Exp_Static_5000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_5000 start');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_5000 start');
       let a:number = Math.exp(10);
       let b:number = 22026.465794806718;
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_5000 end');
+      console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_5000 end');
     });
     })
 }
