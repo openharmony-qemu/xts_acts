@@ -15,6 +15,7 @@
 
 #include <cassert>
 #include <cstdio>
+#include <string>
 #include "CompileTest.h"
 #include "DeviceTest.h"
 #include "ExecutorTest.h"
@@ -202,9 +203,8 @@ static bool ValidateAndGetCaseNumber(napi_env env, napi_callback_info info, int3
 
     // 4. 验证范围
     if (*caseNum < 0 || *caseNum >= g_testFunctionCount) {
-        char errorMsg[64];
-        snprintf(errorMsg, sizeof(errorMsg), "The range of case must be 0 to %d", g_testFunctionCount - 1);
-        napi_throw_type_error(env, nullptr, errorMsg);
+        std::string errorMsg = "The range of case must be 0 to " + std::to_string(g_testFunctionCount - 1);
+        napi_throw_type_error(env, nullptr, errorMsg.c_str());
         return false;
     }
 

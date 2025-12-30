@@ -21,15 +21,7 @@ add_library(ai_nnrt_interface_test SHARED
     MemoryTest.cpp
     ModelTest.cpp
     NnrtInterfaceNapiTest.cpp 
-    common/nnrt_utils.cpp
-    CompileTest.h
-    DeviceTest.h
-    ExecutorTest.h
-    MemoryTest.h
-    ModelTest.h
-    common/nnrt_utils.h
-    common/model.h
-    common/const.h)
+    common/NnrtUtilsTest.cpp)
 
 # 链接必要的库
 target_link_libraries(ai_nnrt_interface_test PUBLIC 

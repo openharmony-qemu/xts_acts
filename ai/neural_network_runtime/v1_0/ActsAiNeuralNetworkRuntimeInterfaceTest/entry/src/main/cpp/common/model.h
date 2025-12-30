@@ -28,7 +28,6 @@ struct AddModel {
     int8_t activationValue = OH_NN_FUSED_NONE;
     float outputValue[4] = { 0 };
     float expectValue[4] = { 0, 2, 4, 6 };
-
     OHNNOperandTest input0 = { OH_NN_FLOAT32, OH_NN_TENSOR, TENSOR_SHAPE, inputValue0, ADD_DATA_LENGTH };
     OHNNOperandTest input1 = { OH_NN_FLOAT32, OH_NN_TENSOR, TENSOR_SHAPE, inputValue1, ADD_DATA_LENGTH };
     OHNNOperandTest activation = { OH_NN_INT8, OH_NN_ADD_ACTIVATIONTYPE, {}, &activationValue, sizeof(int8_t) };
@@ -49,23 +48,19 @@ struct AvgPoolDynamicModel {
     int8_t activationValue = OH_NN_FUSED_NONE;
     float outputValue[4] = { 0 };
     float expectValue[4] = { 2, 3, 5, 6 };
-
     OHNNOperandTest dynamicInput = { OH_NN_FLOAT32, OH_NN_TENSOR, { -1, -1, -1, -1 }, inputValue, AVG_INPUT_LENGTH };
     OHNNOperandTest kernel = { OH_NN_INT64, OH_NN_AVG_POOL_KERNEL_SIZE, { 2 }, kernelValue, sizeof(kernelValue) };
     OHNNOperandTest strides = { OH_NN_INT64, OH_NN_AVG_POOL_STRIDE, { 2 }, strideValue, sizeof(strideValue) };
     OHNNOperandTest padMode = { OH_NN_INT8, OH_NN_AVG_POOL_PAD_MODE, {}, &padValue, sizeof(padValue) };
     OHNNOperandTest activation = { OH_NN_INT8, OH_NN_AVG_POOL_ACTIVATION_TYPE, {}, &activationValue, sizeof(int8_t) };
     OHNNOperandTest output = { OH_NN_FLOAT32, OH_NN_TENSOR, { -1, -1, -1, -1 }, outputValue, sizeof(outputValue) };
-
     OHNNGraphArgs graphArgs = { .operationType = OH_NN_OPS_AVG_POOL,
                                 .operands = { dynamicInput, kernel, strides, padMode, activation, output },
                                 .paramIndices = { 1, 2, 3, 4 },
                                 .inputIndices = { 0 },
                                 .outputIndices = { 5 } };
 };
-
 struct TopKModel {
-
     float valueX[6] = { 0, 1, 2, 3, 4, 5 };
     int8_t valueK = 2;
     bool valueSorted = true;

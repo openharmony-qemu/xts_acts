@@ -26,8 +26,8 @@
 #define LOGE(...) OH_LOG_ERROR(LOG_APP, __VA_ARGS__)
 #define LOGI(...) OH_LOG_INFO(LOG_APP, __VA_ARGS__)
 
-template<typename T>
-inline void ASSERT_EQ(T expected, T actual) {
+template <typename T> inline void ASSERT_EQ(T expected, T actual)
+{
     if (expected != actual) {
         LOGE("Assertion failed: expected != actual");
     }
