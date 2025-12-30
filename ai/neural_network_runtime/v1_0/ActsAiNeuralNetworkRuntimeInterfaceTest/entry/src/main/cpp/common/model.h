@@ -71,22 +71,18 @@ struct TopKModel {
     bool valueSorted = true;
     float valueOutput1[2];
     int32_t valueOutput2[2];
-
     OHNNOperandTest x = { OH_NN_FLOAT32, OH_NN_TENSOR, { 1, 6 }, valueX, 6 * sizeof(float) };
     OHNNOperandTest k = { OH_NN_INT8, OH_NN_TENSOR, {}, &valueK, sizeof(int8_t) };
     OHNNOperandTest sorted = { OH_NN_BOOL, OH_NN_TOP_K_SORTED, {}, &valueSorted, sizeof(bool) };
     OHNNOperandTest output1 = { OH_NN_FLOAT32, OH_NN_TENSOR, { 1, 2 }, valueOutput1, 2 * sizeof(float) };
     OHNNOperandTest output2 = { OH_NN_INT32, OH_NN_TENSOR, { 1, 2 }, valueOutput2, 2 * sizeof(int32_t) };
-
     OHNNGraphArgs graphArgs = { .operationType = OH_NN_OPS_TOP_K,
                                 .operands = { x, k, sorted, output1, output2 },
                                 .paramIndices = { 2 },
                                 .inputIndices = { 0, 1 },
                                 .outputIndices = { 3, 4 } };
 };
-
 class AddTopKModel {
-
 private:
     AddModel addModel;
     TopKModel topKModel;
@@ -103,9 +99,7 @@ public:
         .graphOutput = { 6, 7 }
     };
 };
-
 } // namespace Test
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS
-
 #endif // MODEL_H

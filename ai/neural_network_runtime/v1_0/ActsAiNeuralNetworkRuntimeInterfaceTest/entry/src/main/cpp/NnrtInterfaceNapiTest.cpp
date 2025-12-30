@@ -168,12 +168,13 @@ static napi_value createResultValue(napi_env env, bool success)
 }
 
 /**
-| * 统一的NNRT接口测试函数（异步版本）
+| * 辅助函数：验证参数并获取测试用例编号
 | * @param env NAPI环境
 | * @param info 回调信息
-| * @return napi_value Promise对象，成功返回0，失败返回-1
+| * @param caseNum 输出参数，存储获取到的测试用例编号
+| * @return bool 验证成功返回true，失败返回false（并抛出异常）
 | */
-static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
+static bool ValidateAndGetCaseNumber(napi_env env, napi_callback_info info, int32_t* caseNum)
 {
     // 1. 获取参数
     size_t argc = 1;
@@ -181,7 +182,7 @@ static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "NAPI call failed");
-        return nullptr;
+        return false;
     }
 
     // 2. 验证参数类型
@@ -189,57 +190,90 @@ static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
+        return false;
     }
 
     // 3. 获取测试用例编号
-    int32_t caseNum = -1;
-    status = napi_get_value_int32(env, args[0], &caseNum);
+    status = napi_get_value_int32(env, args[0], caseNum);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to get case number");
-        return nullptr;
+        return false;
     }
 
     // 4. 验证范围
-    if (caseNum < 0 || caseNum >= g_testFunctionCount) {
+    if (*caseNum < 0 || *caseNum >= g_testFunctionCount) {
         char errorMsg[64];
-        snprintf(errorMsg, sizeof(errorMsg) - 1, "The range of case must be 0 to %d", g_testFunctionCount - 1);
+        snprintf(errorMsg, sizeof(errorMsg), "The range of case must be 0 to %d", g_testFunctionCount - 1);
         napi_throw_type_error(env, nullptr, errorMsg);
-        return nullptr;
+        return false;
     }
 
-    // 5. 创建 Promise
-    napi_value promise;
-    napi_deferred deferred;
-    status = napi_create_promise(env, &deferred, &promise);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to create promise");
-        return nullptr;
-    }
+    return true;
+}
 
-    // 6. 创建异步工作数据
+/**
+| * 辅助函数：创建并加入异步工作队列
+| * @param env NAPI环境
+| * @param deferred Promise的deferred对象
+| * @param caseNum 测试用例编号
+| * @return bool 创建成功返回true，失败返回false（并抛出异常）
+| */
+static bool CreateAsyncWorkForTest(napi_env env, napi_deferred deferred, int32_t caseNum)
+{
+    // 1. 创建异步工作数据
     AsyncWorkData* workData = new AsyncWorkData();
     workData->deferred = deferred;
     workData->testCaseIndex = caseNum;
 
-    // 7. 创建异步工作
+    // 2. 创建异步工作
     napi_value resourceName;
     napi_create_string_utf8(env, "NNRtInterfaceTest", NAPI_AUTO_LENGTH, &resourceName);
 
-    status = napi_create_async_work(
+    napi_status status = napi_create_async_work(
         env, nullptr, resourceName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork);
     if (status != napi_ok) {
         delete workData;
         napi_throw_error(env, nullptr, "Failed to create async work");
-        return nullptr;
+        return false;
     }
 
-    // 8. 加入异步队列
+    // 3. 加入异步队列
     status = napi_queue_async_work(env, workData->asyncWork);
     if (status != napi_ok) {
         napi_delete_async_work(env, workData->asyncWork);
         delete workData;
         napi_throw_error(env, nullptr, "Failed to queue async work");
+        return false;
+    }
+
+    return true;
+}
+
+/**
+| * 统一的NNRT接口测试函数（异步版本）
+| * @param env NAPI环境
+| * @param info 回调信息
+| * @return napi_value Promise对象，成功返回0，失败返回-1
+| */
+static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
+{
+    // 1. 验证参数并获取测试用例编号
+    int32_t caseNum = -1;
+    if (!ValidateAndGetCaseNumber(env, info, &caseNum)) {
+        return nullptr;
+    }
+
+    // 2. 创建 Promise
+    napi_value promise;
+    napi_deferred deferred;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create promise");
+        return nullptr;
+    }
+
+    // 3. 创建并加入异步工作队列
+    if (!CreateAsyncWorkForTest(env, deferred, caseNum)) {
         return nullptr;
     }
 

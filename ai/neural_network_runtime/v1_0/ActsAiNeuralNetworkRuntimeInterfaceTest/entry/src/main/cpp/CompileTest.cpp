@@ -689,6 +689,39 @@ static void CompileModel(OH_NNCompilation* compilation, const OHNNCompileParam& 
 }
 
 /**
+ * 辅助函数：创建并构建模型
+ */
+static OH_NNModel* CreateAndBuildModelForCombine(const OHNNGraphArgs& graphArgs)
+{
+    OH_NNModel* model = OH_NNModel_Construct();
+    if (model == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Failed to construct model");
+        return nullptr;
+    }
+
+    OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model, graphArgs);
+    if (ret != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "BuildSingleOpGraph failed");
+        Free(model);
+        return nullptr;
+    }
+
+    return model;
+}
+
+/**
+ * 辅助函数：从模型创建编译对象
+ */
+static OH_NNCompilation* CreateCompilationForCombine(OH_NNModel* model)
+{
+    OH_NNCompilation* compilation = OH_NNCompilation_Construct(model);
+    if (compilation == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "Failed to construct compilation");
+    }
+    return compilation;
+}
+
+/**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0400
  * @tc.number SUB_AI_NNRt_Func_North_Compilation_Build_0400
  * @tc.desc   [C- SOFTWARE -0200]
@@ -756,54 +789,41 @@ int SubAiNnrFuncNorthCompilationCombine0100()
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
 
-    OH_NNModel* model1 = OH_NNModel_Construct();
+    // 创建并构建两个模型
+    OH_NNModel* model1 = CreateAndBuildModelForCombine(graphArgs);
     if (model1 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "Failed to construct model1");
-        return -1;
-    }
-    OH_NN_ReturnCode ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model1, graphArgs);
-    if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "BuildSingleOpGraph for model1 failed");
-        Free(model1);
         return -1;
     }
 
-    OH_NNModel* model2 = OH_NNModel_Construct();
+    OH_NNModel* model2 = CreateAndBuildModelForCombine(graphArgs);
     if (model2 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "Failed to construct model2");
         Free(model1);
-        return -1;
-    }
-    ret = (OH_NN_ReturnCode)BuildSingleOpGraph(model2, graphArgs);
-    if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "BuildSingleOpGraph for model2 failed");
-        Free(model1);
-        Free(model2);
         return -1;
     }
 
-    OH_NNCompilation* compilation1 = OH_NNCompilation_Construct(model1);
+    // 创建两个编译对象
+    OH_NNCompilation* compilation1 = CreateCompilationForCombine(model1);
     if (compilation1 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "Failed to construct compilation1");
         Free(model1);
         Free(model2);
         return -1;
     }
 
-    OH_NNCompilation* compilation2 = OH_NNCompilation_Construct(model2);
+    OH_NNCompilation* compilation2 = CreateCompilationForCombine(model2);
     if (compilation2 == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "Failed to construct compilation2");
         Free(model1, compilation1);
         Free(model2);
         return -1;
     }
 
+    // 并行编译两个模型
     OHNNCompileParam compileParam;
     std::thread th1(CompileModel, compilation1, compileParam);
     std::thread th2(CompileModel, compilation2, compileParam);
     th1.join();
     th2.join();
 
+    // 清理资源
     Free(model1, compilation1);
     Free(model2, compilation2);
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNR_Func_North_Compilation_Combine_0100 passed");

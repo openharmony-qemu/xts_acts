@@ -26,13 +26,12 @@
 #define LOGE(...) OH_LOG_ERROR(LOG_APP, __VA_ARGS__)
 #define LOGI(...) OH_LOG_INFO(LOG_APP, __VA_ARGS__)
 
-#define ASSERT_EQ(expected, actual)                                 \
-    do {                                                            \
-        if ((expected) != (actual)) {                               \
-            LOGE("Assertion failed: %s == %s", #expected, #actual); \
-            return;                                                 \
-        }                                                           \
-    } while (0)
+template<typename T>
+inline void ASSERT_EQ(T expected, T actual) {
+    if (expected != actual) {
+        LOGE("Assertion failed: expected != actual");
+    }
+}
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
@@ -293,7 +292,10 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            std::memcpy(inputMemory->data, static_cast<void*>(operandTem.data), std::min(operandTem.length, inputMemory->size));
+            std::memcpy_s(inputMemory->data,
+                          inputMemory->size,
+                          static_cast<void*>(operandTem.data),
+                          std::min(operandTem.length inputMemory->size));
             OHNNMemory[inputIndex] = inputMemory;
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(), graphArgs.outputIndices.end(), i) !=
