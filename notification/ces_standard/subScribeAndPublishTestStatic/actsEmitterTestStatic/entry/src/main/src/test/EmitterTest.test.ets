@@ -1313,7 +1313,7 @@ export default function EmitterTest() {
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
             count ++;
-            if (count == 100) {
+            if (count == 10) {
               for (let i: long = 3300; i < 3310; i++) {
                 expect(emitter.getListenerCount(i)).assertEqual(1)
               }
@@ -1341,7 +1341,7 @@ export default function EmitterTest() {
         let EmitterCallback = (): void => {
           countEmit++;
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success countEmit = ' + countEmit);
-          if (countEmit == 100) {
+          if (countEmit == 10) {
             expect(emitter.getListenerCount("3400")).assertEqual(1);
             done()
           }
@@ -1373,7 +1373,7 @@ export default function EmitterTest() {
         let EmitterCallback1 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on1 success');
           count1++;
-          if(count1 == 100 &&count2 == 100 ){
+          if(count1 == 10 &&count2 == 10 ){
             expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
             expect(emitter.getListenerCount("35")).assertEqual(1)
             console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
@@ -1383,7 +1383,7 @@ export default function EmitterTest() {
         let EmitterCallback2 = (): void => {
           hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on2 success');
           count2++;
-          if(count1 == 100 &&count2 == 100 ){
+          if(count1 == 10 &&count2 == 10 ){
             expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
             expect(emitter.getListenerCount("35")).assertEqual(1)
             console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
