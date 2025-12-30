@@ -30,7 +30,7 @@ import common from "@ohos.app.ability.common";
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const ERRCODE = 801;
@@ -120,7 +120,7 @@ export default function relationalStoreDistributedTest() {
   describe('relationalStoreDistributedTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
     })
@@ -413,20 +413,23 @@ export default function relationalStoreDistributedTest() {
     it('testRdbStoreDistributed0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* testRdbStoreDistributed0011 start *************");
-        let predicates: data_Rdb.RdbPredicates = new data_Rdb.RdbPredicates("employee")
+        let predicates: data_Rdb.RdbPredicates = new data_Rdb.RdbPredicates("employee");
         let pr = predicates.inDevices(["12345678abcd"]);
-        await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PUSH, predicates).then(() => {
-          console.info(TAG + "sync push success");
-        }).catch((err: Error) => {
-          console.info(TAG + "err.code:" + err.code + "err.msg:" + err.message)
-          expect(err.code).assertEqual(14800000)
+        await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PUSH, predicates).then((res)=>{
+          console.info(TAG + "testRdbStoreDistributed0011-111 err.code:");
+          expect(true).assertFail();
+        }).catch((err:Error)=>{
+          console.info(TAG + "testRdbStoreDistributed0011-2222 err.code:" + err.code + " err.msg:" + err.message);
+          expect(err.code).assertEqual(14800000);
         });
-        await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates).then(() => {
-          console.info(TAG + "sync pull success");
-        }).catch((err: Error) => {
-          console.info(TAG + "err.code:" + err.code + "err.msg:" + err.message)
-          expect(err.code).assertEqual(14800000)
-        });
+
+        try {
+          await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
+          expect(true).assertFail();
+        } catch(err:BusinessError) {
+          console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
+          expect(err.code).assertEqual(14800000);
+        }
         done();
         console.info(TAG + "************* testRdbStoreDistributed0011 end *************");
       })
@@ -442,25 +445,25 @@ export default function relationalStoreDistributedTest() {
     it('testRdbStoreDistributedCallback0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(TAG + "************* testRdbStoreDistributedCallback0011 start *************");
-        let predicates: data_Rdb.RdbPredicates = new data_Rdb.RdbPredicates("employee")
+        let predicates: data_Rdb.RdbPredicates = new data_Rdb.RdbPredicates("employee");
         predicates = predicates.inDevices(["12345678abcd"]);
         rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PUSH, predicates,
-          async (err: BusinessError, ret: Array<[String, Int]>): Promise<void> => {
-            if (err) {
-              console.info(TAG + "err.code:" + err.code + "err.msg:" + err.message)
+          async (err: BusinessError|undefined, ret: Array<[String, Int]>|undefined): Promise<void> => {
+            if (err != undefined) {
+              console.info(TAG + "testRdbStoreDistributedCallback0011-1 err.code:" + err.code + "err.msg:" + err.message)
               expect(err.code).assertEqual(14800000)
             }
             console.info(TAG + "sync push success");
             rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates,
-              async (err: BusinessError, ret: Array<[String, Int]>) => {
-                if (err) {
-                  console.info(TAG + "err.code:" + err.code + "err.msg:" + err.message)
+              async (err: BusinessError|undefined, ret: Array<[String, Int]>|undefined) => {
+                if (err != undefined) {
+                  console.info(TAG + "testRdbStoreDistributedCallback0011-2 err.code:" + err.code + "err.msg:" + err.message)
                   expect(err.code).assertEqual(14800000)
                 }
                 console.info(TAG + "sync push success");
+                done();
               });
           });
-        done();
         console.info(TAG + "************* testRdbStoreDistributedCallback0011 end *************");
       })
 
@@ -568,7 +571,7 @@ export default function relationalStoreDistributedTest() {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (done: () => void): void => {
-        let predicates = new data_Rdb.RdbPredicates("employee")
+        let predicates = new data_Rdb.RdbPredicates("employee");
         predicates = predicates.inDevices(["12345678abcd"]);
         console.info(TAG + `SYNC_MODE_TIME_FIRST = ` + data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST);
         expect(data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST).assertEqual(2);
@@ -578,17 +581,12 @@ export default function relationalStoreDistributedTest() {
         expect(data_Rdb.ChangeType.ASSET_CHANGE).assertEqual(1);
         try {
           rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST, predicates,
-            async (err: BusinessError, result: Array<[String, Int]>) => {
-              if (err) {
-                console.error(TAG + `Sync failed, code is ${err.code},message is ${err.message}`);
-                expect(err === null).assertFail();
-              }
-              console.info(TAG + `Sync done.` + result);
-              expect(result !== null).assertFail();
+            (err, result) => {
+              expect(true).assertFail();
             })
         } catch (error: BusinessError) {
           console.error(TAG + `failed, code is ${error.code},message is ${error.message}`);
-          expect(error.code).assertEqual('401');
+          expect(error.code).assertEqual(401);
         }
         done();
       })
@@ -609,14 +607,11 @@ export default function relationalStoreDistributedTest() {
         expect(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST).assertEqual(3);
         try {
           rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST, predicates, (err, result) => {
-            if (err) {
-              console.error(TAG + `Sync failed, code is ${err.code},message is ${err.message}`);
-            }
-            console.info(TAG + `Sync done.` + result);
+            expect(true).assertFail();
           })
         } catch (error: BusinessError) {
           console.error(TAG + `failed, code is ${error.code},message is ${error.message}`);
-          expect(error.code).assertEqual('401');
+          expect(error.code).assertEqual(401);
         }
         done();
       })
@@ -637,14 +632,11 @@ export default function relationalStoreDistributedTest() {
         expect(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST).assertEqual(4);
         try {
           rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (err, result) => {
-            if (err) {
-              console.error(TAG + `Sync failed, code is ${err.code},message is ${err.message}`);
-            }
-            console.info(TAG + `Sync done.` + result);
+            expect(true).assertFail();
           })
         } catch (error: BusinessError) {
           console.error(TAG + `failed, code is ${error.code},message is ${error.message}`);
-          expect(error.code).assertEqual('401');
+          expect(error.code).assertEqual(401);
         }
         done();
       })
@@ -864,8 +856,6 @@ export default function relationalStoreDistributedTest() {
         done();
 
       })
-
-
     console.info(TAG + "*************Unit Test End*************");
   })
 }
