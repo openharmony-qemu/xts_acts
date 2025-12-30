@@ -148,7 +148,6 @@ export default function RdbStoreDeleteWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
@@ -785,8 +784,8 @@ export default function RdbStoreDeleteWithReturning() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
+      await deferredTrans?.insert("test", valueBucket);
       try {
-        await deferredTrans?.insert("test", valueBucket);
         await rdbStore?.deleteWithReturning(predicates, config);
         expect(true).assertFail();
       } catch (e) {
@@ -794,7 +793,6 @@ export default function RdbStoreDeleteWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       try {
-        await deferredTrans?.insert("test", valueBucket);
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
