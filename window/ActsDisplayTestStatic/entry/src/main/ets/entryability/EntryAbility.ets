@@ -38,6 +38,8 @@ class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
 
       try{
+        AppStorage.setOrCreate('context', this.context);
+    hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+JSON.stringify(windowStage) + '  mainWindow'+JSON.stringify(mainWindow));
         AppStorage.setOrCreate<window.WindowStage>('windowStage',windowStage);
           let mainWindow = windowStage.getMainWindowSync();
 

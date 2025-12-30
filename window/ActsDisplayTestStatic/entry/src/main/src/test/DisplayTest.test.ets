@@ -39,6 +39,30 @@ function isPositiveInteger(value:int) {
   //判断是否为正整数
   return Number.isInteger(value) && value > 0;
 }
+async function getPermision(): Promise<void> {
+    let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    let context : common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+    let permissions: Array<Permissions> =
+        ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+    try {
+        let data: PermissionRequestResult = await atManager.requestPermissionsFromUser(context, permissions);
+        console.error('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    } catch (err: BusinessError) {
+        console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }
+}
+
+async function clickButtonDriver(){
+    console.error(`come in permissionClick`);
+    let driver: Driver = Driver.create();
+    console.error(`come in Driver create`);
+    let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+    console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
+    if(buttonOne){
+        buttonOne.click();
+    }
+
+}
 export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
@@ -54,40 +78,14 @@ export default function DisplayTest() {
         let rotation:string[];
         let orientation:string[];
         let code:number = 0;
-        let displayFoldStatus:number;
+        let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext;
         beforeAll(async (): Promise<void> => {
-            try{
-                let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-                context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-                let permissions: Array<Permissions> =
-                    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
-                atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError<void>|null,data:PermissionRequestResult|undefined):void=>{
-                    let errCode = err!.code;
-                    if(errCode){
-                        hilog.error(domain, tag,'capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
-                    }else {
-                        hilog.info(domain, tag,'capture requestPermissionsFromUser success: ' + JSON.stringify(data));
-                    }
-                })
-                hilog.info(domain, tag,`come in permissionClick`);
-                let driver = Driver.create();
-                hilog.info(domain, tag,`come in Driver create`);
-                let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
-                hilog.info(domain, tag,`buttonOne is ${JSON.stringify(permissionButton)}`);
-                if (permissionButton != null) {
-                    await permissionButton.click();
-                    hilog.info(domain, tag, 'clickRequestPermission end');
-                }
-            }catch(err) {
-                err = err as BusinessError;
-                hilog.info(domain, tag, 'RequestPermission failed '+err);
-            }
             displayFoldStatus = display.getFoldStatus();
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
             windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
             win = AppStorage.get<window.Window>('mainWindow') as window.Window;
-            // context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+            context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             // let win = windowStage.getMainWindowSync();
             try{
                 let data:string = displayClass.getDisplayCapability();
@@ -116,6 +114,10 @@ export default function DisplayTest() {
                     hilog.info(domain, tag, 'jsUnittest getDisplayCapability failed');
                 }
             }
+            await getPermision();
+            await Utils.msSleep(500);
+            await clickButtonDriver();
+
         })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
