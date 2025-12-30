@@ -29,7 +29,7 @@
         },
         {
             "test-file-name": [
-                "ActsPerfTestTestStatic.hap",
+                "ActsPerfTestTestStaticTest.hap",
                 "ActsPerfTestScene.hap"
             ],
             "type": "AppInstallKit",

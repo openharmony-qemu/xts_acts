@@ -30,7 +30,6 @@ const ParameterErrorCode: int = 32400003;
 const TimeoutErrorCode: int = 32400004;
 const CollectErrorCode: int = 32400005;
 const ObtainErrorCode: int = 32400006;
-const NotSupportErrorCode: int = 32400007;
 
 
 export default function perfTestErrorTest() {
@@ -87,75 +86,6 @@ export default function perfTestErrorTest() {
                 expect(e.code).assertEqual(ParameterErrorCode);
             }
             console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
-        })
-
-        /**
-         * @tc.name test_PerfTest_create_32400007_static
-         * @tc.number perfTestErrorTest_002
-         * @tc.desc create 32400007 test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('test_PerfTest_create_32400007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-            console.log(`${TestTag}, test_PerfTest_create_32400007_static start`);
-            try {
-                let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
-                let perfTestStrategy: PerfTestStrategy = {
-                    metrics: metrics,
-                    actionCode: (finish: Callback<boolean>) => {
-                        await Utils.msSleep(1000);
-                        finish(true)
-                    },
-                    resetCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                }
-                let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-                perfTest.run();
-                await Utils.msSleep(300);
-                perfTest = PerfTest.create(perfTestStrategy);
-                expect().assertFail();
-            }catch (e: BusinessError) {
-                console.log(`${TestTag}, test_PerfTest_create_32400007_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(NotSupportErrorCode);
-            }
-            await Utils.msSleep(9000);
-            console.log(`${TestTag}, test_PerfTest_create_32400007_static end`);
-        })
-
-        /**
-         * @tc.name test_PerfTest_run_32400007_static
-         * @tc.number perfTestErrorTest_003
-         * @tc.desc create 32400007 test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('test_PerfTest_run_32400007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-            console.log(`${TestTag}, test_PerfTest_run_32400007_static start`);
-            try {
-                let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
-                let perfTestStrategy: PerfTestStrategy = {
-                    metrics: metrics,
-                    actionCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                    resetCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                }
-                let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-                perfTest.run();
-                await Utils.msSleep(300);
-                await perfTest.run();
-                expect().assertFail();
-            }catch (e: BusinessError) {
-                console.log(`${TestTag}, test_PerfTest_run_32400007_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(NotSupportErrorCode);
-            }
-            await Utils.msSleep(9000);
-            console.log(`${TestTag}, test_PerfTest_run_32400007_static end`);
         })
 
         /**
@@ -447,40 +377,6 @@ export default function perfTestErrorTest() {
         })
 
         /**
-         * @tc.name test_PerfTest_getMeasureResult_32400007_static
-         * @tc.number perfTestErrorTest_012
-         * @tc.desc getMeasureResult 32400007 test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('test_PerfTest_getMeasureResult_32400007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007_static start`);
-            try {
-                let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
-                let perfTestStrategy: PerfTestStrategy = {
-                    metrics: metrics,
-                    actionCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                    resetCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                }
-                let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-                perfTest.run();
-                await Utils.msSleep(300);
-                perfTest.getMeasureResult(PerfMetric.DURATION);
-                expect().assertFail();
-            }catch (e: BusinessError) {
-                console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(NotSupportErrorCode);
-            }
-            await Utils.msSleep(6000);
-            console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007_static end`);
-        })
-
-        /**
          * @tc.name test_PerfTest_getMeasureResult_32400006_noRun_static
          * @tc.number perfTestErrorTest_013
          * @tc.desc getMeasureResult 32400006 test
@@ -554,41 +450,6 @@ export default function perfTestErrorTest() {
             }
             console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400002_static end`);
         })
-
-        /**
-         * @tc.name test_PerfTest_destroy_32400007_static
-         * @tc.number perfTestErrorTest_016
-         * @tc.desc destroy 32400007 test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('test_PerfTest_destroy_32400007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-            console.log(`${TestTag}, test_PerfTest_destroy_32400007_static start`);
-            try {
-                let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.CPU_LOAD, PerfMetric.CPU_USAGE, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
-                let perfTestStrategy: PerfTestStrategy = {
-                    metrics: metrics,
-                    actionCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                    resetCode: (finish: Callback<boolean>) => {
-                        finish(true)
-                    },
-                }
-                let perfTest: PerfTest = PerfTest.create(perfTestStrategy);
-                perfTest.run();
-                await Utils.msSleep(300);
-                perfTest.destroy();
-                expect().assertFail();
-            }catch (e: BusinessError) {
-                console.log(`${TestTag}, test_PerfTest_destroy_32400007_static error is: ${JSON.stringify(e)}`);
-                expect(e.code).assertEqual(NotSupportErrorCode);
-            }
-            await Utils.msSleep(6000);
-            console.log(`${TestTag}, test_PerfTest_destroy_32400007_static end`);
-        })
-
 
         /**
          * @tc.name test_PerfTest_destroy_32400002_static

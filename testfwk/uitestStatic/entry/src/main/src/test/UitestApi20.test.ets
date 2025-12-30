@@ -18,7 +18,7 @@ import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 
-import { Utils, startAbility, stopApplication } from './Util.test';
+import { Utils, startAbility, stopApplication, getInputMethodPermission } from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -38,9 +38,12 @@ export default function uitestEnumTest() {
     let driver: Driver;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestEnumTest loadup start!!!!!");
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       driver = Driver.create();
       await Utils.msSleep(1000);
-      hilog.info(domain, tag, "uitestEnumTest loadup over!!!!!")
+      await getInputMethodPermission(driver);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, "uitestEnumTest loadup over!!!!!");
     })
 
     beforeEach(async () => {

@@ -56,6 +56,10 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -104,6 +108,11 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.text,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -151,6 +160,11 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -236,6 +250,11 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -283,6 +302,11 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -330,6 +354,11 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -413,6 +442,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -463,6 +498,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -514,6 +555,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -603,6 +650,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -654,6 +707,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -705,6 +764,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
@@ -797,6 +862,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -852,6 +923,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -908,6 +985,12 @@ export default function uitestDriverTestApi22() {
       let isCallBack = false;
       let callback = async (elementInfo : UIElementInfo): void => {
         hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
         isCallBack = true;
         try {
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
@@ -1010,6 +1093,12 @@ export default function uitestDriverTestApi22() {
       let callback = (elementInfo : UIElementInfo): void => {
         try {
           hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.bundleName,${elementInfo.bundleName}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.text,${elementInfo.text}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.type,${elementInfo.type}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.componentId,${elementInfo.componentId}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTimeOutClickMonitor_static elementInfo.componentRect,${elementInfo.componentRect}`);
           isCallback = true;
           expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
           expect(elementInfo.text == 'toast').assertTrue()
@@ -1387,8 +1476,24 @@ export default function uitestDriverTestApi22() {
      */
     it('tesKnuckleKnockS_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, tesKnuckleKnockS_static start`);
+      let window = await driver.findWindow({ bundleName: 'com.uitest.acts.static' });
+      console.log(`${TestTag}, tesKnuckleKnockS_static window,${JSON.stringify(window)}`);
+      if (window != null) {
+        try {
+          let windowMode = await window.getWindowMode();
+          if (windowMode != WindowMode.FLOATING) {
+            await window.resume();
+            await driver.delayMs(3000);
+          }
+          await window.maximize();
+        } catch (error) {
+          console.log(`${TestTag}, tesKnuckleKnockS maximize error,${JSON.stringify(error)}`);
+        }
+      }
+      await driver.delayMs(3000);
       try {
         let play = display.getDefaultDisplaySync();
+        console.log(`${TestTag}, tesKnuckleKnockS_static play, ${JSON.stringify(play)}`);	
         let centerX = (play.width / 2).toInt();
         let centY = (play.height / 2).toInt();
         let fivePoint: Point = {x: centerX - 40, y: centY - 80};
@@ -1444,6 +1549,7 @@ export default function uitestDriverTestApi22() {
       console.log(`${TestTag}, tesKnuckleKnockRect_static start`);
       try {
         let play = display.getDefaultDisplaySync();
+        console.log(`${TestTag}, tesKnuckleKnockRect_static play, ${JSON.stringify(play)}`);
         let centerX = (play.width / 2).toInt();
         let centY = (play.height / 2).toInt();
         let onePoint: Point = {x: centerX - 100, y: centY - 100};

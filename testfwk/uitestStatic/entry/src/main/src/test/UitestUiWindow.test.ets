@@ -52,11 +52,53 @@ function sleep(numberMillis: int) {
   return
 }
 
+async function initSpite(driver: Driver, window: UiWindow | null) {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode != WindowMode.FLOATING) {
+        await window.resume();
+      }
+      await window.maximize();
+    } catch (error) {
+      console.log(`${tag}, initSpite error,${JSON.stringify(error)}`);
+    }
+  } else {
+    console.log(`${tag}, initSpite null`);
+  }
+  await driver.delayMs(3000);
+}
+
+async function maxUiWindow(driver: Driver, window: UiWindow | null) {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode != WindowMode.FLOATING) {
+        await window.resume();
+      }
+      await window.maximize();
+    } catch (error) {
+      console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+    }
+  } else {
+    console.log(`${tag}, maxUiWindow null`);
+  }
+  await driver.delayMs(3000);
+}
+
 export default function uitestUiWindowTest() {
   describe('uitestUiWindowTest', (): void => {
+    let driver: Driver;
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, "uitestUiWindowTest loadup start!!!!!")
-      await Utils.msSleep(2000)
+      driver = Driver.create();
+      await Utils.msSleep(1000);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver.delayMs(waitUiReadyMs);
+      await initSpite(driver, window);
+      await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, "uitestUiWindowTest loadup over!!!!!")
     })
     beforeEach(async () => {
@@ -67,13 +109,8 @@ export default function uitestUiWindowTest() {
       const driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-      if (window != null) {
-        try {
-          await window.maximize();
-        } catch (error: BusinessError) {
-          hilog.info(domain, tag, `afterAll maximize error, ${JSON.stringify(error)}`);
-        }
-      }
+      await driver.delayMs(waitUiReadyMs);
+      await maxUiWindow(driver, window);
       await driver.delayMs(waitUiReadyMs);
       await stopApplication('com.uitestScene.acts');
     })
