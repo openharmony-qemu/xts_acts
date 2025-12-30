@@ -24,10 +24,10 @@ namespace Test {
 
 const uint32_t ADD_DATA_LENGTH = 4 * sizeof(float);
 const uint32_t AVG_INPUT_LENGTH = 9 * sizeof(float);
-const std::vector<int32_t> TENSOR_SHAPE = {1, 2, 2, 1};
-const std::vector<int32_t> PARAM_INDEX = {2};
-const std::vector<int32_t> INPUT_INDEX = {0, 1};
-const std::vector<int32_t> OUTPUT_INDEX = {3};
+const std::vector<int32_t> TENSOR_SHAPE = { 1, 2, 2, 1 };
+const std::vector<int32_t> PARAM_INDEX = { 2 };
+const std::vector<int32_t> INPUT_INDEX = { 0, 1 };
+const std::vector<int32_t> OUTPUT_INDEX = { 3 };
 const int32_t ELEMENT_COUNT = 4;
 
 const std::string CACHE_DIR = "/data/local/tmp/";
@@ -36,6 +36,7 @@ const std::string CACHE_INFO_FILE = "/cache_info.nncache";
 const uint32_t NO_DEVICE_COUNT = 0;
 const int STRESS_COUNT = 100000;
 const int PRINT_FREQ = 500;
+const size_t INVALID_DEVICE_ID = 100000;
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime

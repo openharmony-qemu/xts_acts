@@ -27,7 +27,7 @@ namespace NeuralNetworkRuntime {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0100();
+int SubAiNnRtFuncNorthDeviceDeviceId0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0200
@@ -37,7 +37,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0200();
+int SubAiNnRtFuncNorthDeviceDeviceId0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0300
@@ -47,7 +47,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0300();
+int SubAiNnRtFuncNorthDeviceDeviceId0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceID_0400
@@ -57,7 +57,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0400();
+int SubAiNnRtFuncNorthDeviceDeviceId0400();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0100
@@ -67,7 +67,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0100();
+int SubAiNnRtFuncNorthDeviceDeviceName0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0200
@@ -77,7 +77,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0200();
+int SubAiNnRtFuncNorthDeviceDeviceName0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0300
@@ -87,7 +87,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0300();
+int SubAiNnRtFuncNorthDeviceDeviceName0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceName_0400
@@ -97,7 +97,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0400();
+int SubAiNnRtFuncNorthDeviceDeviceName0400();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0100
@@ -107,7 +107,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0100();
+int SubAiNnRtFuncNorthDeviceDeviceType0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0200
@@ -117,7 +117,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceType_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0200();
+int SubAiNnRtFuncNorthDeviceDeviceType0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Device_DeviceType_0300
@@ -127,7 +127,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceType_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0300();
+int SubAiNnRtFuncNorthDeviceDeviceType0300();
 
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS

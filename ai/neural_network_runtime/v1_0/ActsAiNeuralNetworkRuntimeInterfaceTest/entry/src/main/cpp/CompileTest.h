@@ -27,7 +27,7 @@ namespace NeuralNetworkRuntime {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_Create_0100();
+int SubAiNnRtFuncNorthCompilationCreate0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Create_0200
@@ -37,7 +37,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Create_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_Create_0200();
+int SubAiNnRtFuncNorthCompilationCreate0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100
@@ -47,7 +47,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Create_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100();
+int SubAiNnRtFuncNorthCompilationSetDevice0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200
@@ -57,7 +57,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200();
+int SubAiNnRtFuncNorthCompilationSetDevice0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300
@@ -67,7 +67,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300();
+int SubAiNnRtFuncNorthCompilationSetDevice0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0100
@@ -77,7 +77,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetDevice_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0100();
+int SubAiNnRtFuncNorthCompilationSetCache0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0200
@@ -87,7 +87,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0200();
+int SubAiNnRtFuncNorthCompilationSetCache0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0400
@@ -97,7 +97,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0400();
+int SubAiNnRtFuncNorthCompilationSetCache0400();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100
@@ -107,7 +107,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100
@@ -117,7 +117,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100();
+int SubAiNnRtFuncNorthCompilationSetPriority0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100
@@ -127,7 +127,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100();
+int SubAiNnRtFuncNorthCompilationEnableFloat160100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0100
@@ -137,7 +137,7 @@ int SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_Build_0100();
+int SubAiNnRtFuncNorthCompilationBuild0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0200
@@ -147,7 +147,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Build_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_Build_0200();
+int SubAiNnRtFuncNorthCompilationBuild0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Build_0300
@@ -157,7 +157,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Build_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-int SUB_AI_NNRt_Func_North_Compilation_Build_0300();
+int SubAiNnRtFuncNorthCompilationBuild0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0100
@@ -167,7 +167,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Build_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_Destroy_0100();
+int SubAiNnRtFuncNorthCompilationDestroy0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0200
@@ -177,7 +177,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Destroy_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_Destroy_0200();
+int SubAiNnRtFuncNorthCompilationDestroy0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Destroy_0300
@@ -187,7 +187,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Destroy_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL0
  */
-int SUB_AI_NNRt_Func_North_Compilation_Destroy_0300();
+int SubAiNnRtFuncNorthCompilationDestroy0300();
 
 // ========== 补充测试用例 ==========
 
@@ -199,7 +199,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Destroy_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_Build_0400();
+int SubAiNnRtFuncNorthCompilationBuild0400();
 
 /**
  * @tc.name   SUB_AI_NNR_Func_North_Compilation_Combine_0100
@@ -209,7 +209,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Build_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNR_Func_North_Compilation_Combine_0100();
+int SubAiNnrFuncNorthCompilationCombine0100();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_Combine_0200
@@ -219,7 +219,7 @@ int SUB_AI_NNR_Func_North_Compilation_Combine_0100();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_Combine_0200();
+int SubAiNnRtFuncNorthCompilationCombine0200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200
@@ -229,7 +229,7 @@ int SUB_AI_NNRt_Func_North_Compilation_Combine_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200();
+int SubAiNnRtFuncNorthCompilationEnableFloat160200();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
@@ -239,7 +239,7 @@ int SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0500();
+int SubAiNnRtFuncNorthCompilationSetCache0500();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
@@ -249,7 +249,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0500();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0600();
+int SubAiNnRtFuncNorthCompilationSetCache0600();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
@@ -259,7 +259,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0600();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0700();
+int SubAiNnRtFuncNorthCompilationSetCache0700();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
@@ -269,7 +269,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0700();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetCache_0800();
+int SubAiNnRtFuncNorthCompilationSetCache0800();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
@@ -279,7 +279,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetCache_0800();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
@@ -289,7 +289,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0400();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
@@ -299,7 +299,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0500();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
@@ -309,7 +309,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0600();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
@@ -319,7 +319,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0700();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
@@ -329,7 +329,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0800();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
@@ -339,7 +339,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900();
+int SubAiNnRtFuncNorthCompilationSetPerformanceMode0900();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
@@ -349,7 +349,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300();
+int SubAiNnRtFuncNorthCompilationSetPriority0300();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
@@ -359,7 +359,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400();
+int SubAiNnRtFuncNorthCompilationSetPriority0400();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
@@ -369,7 +369,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500();
+int SubAiNnRtFuncNorthCompilationSetPriority0500();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
@@ -379,7 +379,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600();
+int SubAiNnRtFuncNorthCompilationSetPriority0600();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
@@ -389,7 +389,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700();
+int SubAiNnRtFuncNorthCompilationSetPriority0700();
 
 /**
  * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
@@ -399,7 +399,7 @@ int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700();
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-int SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800();
+int SubAiNnRtFuncNorthCompilationSetPriority0800();
 
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS

@@ -12,27 +12,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef NNRT_UTILS_H
-#define NNRT_UTILS_H
+#ifndef NNRT_UTILS_TEST_H
+#define NNRT_UTILS_TEST_H
 
 #include <dirent.h>
 #include <sys/stat.h>
 #include "neural_network_runtime/neural_network_runtime.h"
-//#include "log.h"
-// #include "mock_idevice.h"  // HDI 层，应用层不需要
+
 #include "const.h"
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
 namespace Test {
-// namespace V1_0 = OHOS::HDI::Nnrt::V1_0;  // HDI 层命名空间
 struct OHNNOperandTest {
     OH_NN_DataType dataType;
     OH_NN_TensorType type;
     std::vector<int32_t> shape;
-    void *data{nullptr};
-    int32_t length{0};
-    const OH_NN_QuantParam *quantParam = nullptr;
+    void* data{ nullptr };
+    int32_t length{ 0 };
+    const OH_NN_QuantParam* quantParam = nullptr;
 };
 
 struct OHNNGraphArgs {
@@ -65,33 +63,35 @@ struct OHNNCompileParam {
     bool enableFp16 = false;
 };
 
-int BuildSingleOpGraph(OH_NNModel *model, const OHNNGraphArgs &graphArgs);
+int BuildSingleOpGraph(OH_NNModel* model, const OHNNGraphArgs& graphArgs);
 
-int ExecutorWithMemory(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, OH_NN_Memory *OHNNMemory[],
-    float* expect);
+int ExecutorWithMemory(OH_NNExecutor* executor,
+                       const OHNNGraphArgs& graphArgs,
+                       OH_NN_Memory* OHNNMemory[],
+                       float* expect);
 
-void Free(OH_NNModel *model = nullptr, OH_NNCompilation *compilation = nullptr, OH_NNExecutor *executor = nullptr);
+void Free(OH_NNModel* model = nullptr, OH_NNCompilation* compilation = nullptr, OH_NNExecutor* executor = nullptr);
 
-int CompileGraphMock(OH_NNCompilation *compilation, const OHNNCompileParam &compileParam);
+int CompileGraphMock(OH_NNCompilation* compilation, const OHNNCompileParam& compileParam);
 
-int ExecuteGraphMock(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, float* expect);
+int ExecuteGraphMock(OH_NNExecutor* executor, const OHNNGraphArgs& graphArgs, float* expect);
 
-OH_NN_ReturnCode SetDevice(OH_NNCompilation *compilation);
-int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs);
+OH_NN_ReturnCode SetDevice(OH_NNCompilation* compilation);
+int BuildMultiOpGraph(OH_NNModel* model, const OHNNGraphArgsMulti& graphArgs);
 OH_NN_UInt32Array GetUInt32Array(std::vector<uint32_t> indices);
 
 bool CheckOutput(const float* output, const float* expect);
 
 enum class PathType { FILE, DIR, UNKNOWN, NOT_FOUND };
-PathType CheckPath(const std::string &path);
-bool DeleteFile(const std::string &path);
-void CopyFile(const std::string &srcPath, const std::string &dstPath);
-std::string ConcatPath(const std::string &str1, const std::string &str2);
-void DeleteFolder(const std::string &path);
-bool CreateFolder(const std::string &path);
+PathType CheckPath(const std::string& path);
+bool DeleteFile(const std::string& path);
+void CopyFile(const std::string& srcPath, const std::string& dstPath);
+std::string ConcatPath(const std::string& str1, const std::string& str2);
+void DeleteFolder(const std::string& path);
+bool CreateFolder(const std::string& path);
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime
 } // namespace OHOS
 
-#endif // NNRT_UTILS_H
+#endif // NNRT_UTILS_TEST_H

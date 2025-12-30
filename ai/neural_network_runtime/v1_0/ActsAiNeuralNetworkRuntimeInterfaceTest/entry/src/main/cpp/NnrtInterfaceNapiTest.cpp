@@ -35,193 +35,85 @@ struct AsyncWorkData {
 
 // 测试函数注册表（静态数组）
 static TestFunction g_testFunctions[] = {
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Create_0100,             // 索引 0
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Create_0200,             // 索引 1
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetDevice_0100,          // 索引 2
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetDevice_0200,          // 索引 3
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0100,           // 索引 4
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0200,           // 索引 5
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0100, // 索引 6
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0100,        // 索引 7
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0100,      // 索引 8
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Build_0100,              // 索引 9
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Build_0200,              // 索引 10
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Destroy_0100,            // 索引 11
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_Destroy_0200,            // 索引 12
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationCreate0100,             // 索引 0
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationCreate0200,             // 索引 1
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetDevice0100,          // 索引 2
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetDevice0200,          // 索引 3
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0100,           // 索引 4
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0200,           // 索引 5
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0100, // 索引 6
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0100,        // 索引 7
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationEnableFloat160100,      // 索引 8
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationBuild0100,              // 索引 9
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationBuild0200,              // 索引 10
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationDestroy0100,            // 索引 11
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationDestroy0200,            // 索引 12
     // Device 测试系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceID_0100,   // 索引 13
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceID_0200,   // 索引 15
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceID_0300,   // 索引 16
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceID_0400,   // 索引 17
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceName_0100, // 索引 18
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceName_0200, // 索引 19
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceName_0300, // 索引 20
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceName_0400, // 索引 21
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceType_0100, // 索引 22
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceType_0200, // 索引 23
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Device_DeviceType_0300, // 索引 24
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceId0100,   // 索引 13
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceId0200,   // 索引 14
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceId0300,   // 索引 15
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceId0400,   // 索引 16
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceName0100, // 索引 17
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceName0200, // 索引 18
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceName0300, // 索引 19
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceName0400, // 索引 20
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceType0100, // 索引 21
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceType0200, // 索引 22
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthDeviceDeviceType0300, // 索引 23
     // Executor 测试系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Create_0100,              // 索引 25
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Create_0200,              // 索引 26
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0100,            // 索引 27
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0200,            // 索引 28
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0300,            // 索引 29
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0400,            // 索引 30
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0500,            // 索引 31
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0600,            // 索引 32
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetInput_0700,            // 索引 33
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetOutput_0100,           // 索引 34
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetOutput_0200,           // 索引 35
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetOutput_0300,           // 索引 36
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetOutput_0400,           // 索引 37
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_SetOutput_0500,           // 索引 38
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0100,                 // 索引 39
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0200,                 // 索引 40
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0300,                 // 索引 41
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0400,                 // 索引 42
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0500,                 // 索引 43
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0600,                 // 索引 44
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Run_0700,                 // 索引 45
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100, // 索引 46
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200, // 索引 47
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300, // 索引 48
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400, // 索引 49
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500, // 索引 50
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600, // 索引 51
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700, // 索引 52
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800, // 索引 53
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Destroy_0100,             // 索引 54
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Destroy_0200,             // 索引 55
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNR_Func_North_Executor_Combine_0100,              // 索引 56
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Combine_0200,             // 索引 57
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Combine_0300,             // 索引 58
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Combine_0400,             // 索引 59
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Combine_0500,             // 索引 60
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorCreate0100,   // 索引 24
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorCreate0200,   // 索引 25
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorSetInput0100, // 索引 26
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorRun0100,      // 索引 27
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorDestroy0100,  // 索引 28
     // Memory 测试系列
     // CreateInputMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100, // 索引 61
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200, // 索引 62
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300, // 索引 63
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400, // 索引 64
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500, // 索引 65
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600, // 索引 66
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0100, // 索引 29
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0200, // 索引 30
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0300, // 索引 31
     // CreateOutputMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100, // 索引 67
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200, // 索引 68
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300, // 索引 69
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400, // 索引 70
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500, // 索引 71
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600, // 索引 72
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthExecutorMemoryCreateOutputMemory0100, // 索引 32
     // DestroyInputMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100, // 索引 73
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200, // 索引 74
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300, // 索引 75
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400, // 索引 76
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500, // 索引 77
     // DestroyOutputMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100, // 索引 78
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200, // 索引 79
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300, // 索引 80
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400, // 索引 81
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500, // 索引 82
     // SetInputFromMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100, // 索引 83
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200, // 索引 84
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300, // 索引 85
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400, // 索引 86
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500, // 索引 87
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600, // 索引 88
     // SetOutputFromMemory 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100, // 索引 89
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200, // 索引 90
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300, // 索引 91
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400, // 索引 92
     // Run 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100, // 索引 93
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200, // 索引 94
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300, // 索引 95
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400, // 索引 96
     // Model 测试系列
     // CreateModel 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_CreateModel_0100, // 索引 97
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_CreateModel_0200, // 索引 98
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthModelCreateModel0100, // 索引 33
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthModelCreateModel0200, // 索引 34
     // AddOperand 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperand_0100, // 索引 99
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperand_0200, // 索引 100
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperand_0300, // 索引 101
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperand_0400, // 索引 102
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthModelAddOperand0100, // 索引 35
     // SetOperandValue 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SetOperandValue_0100, // 索引 103
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SetOperandValue_0200, // 索引 104
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SetOperandValue_0300, // 索引 105
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SetOperandValue_0400, // 索引 106
     // AddOperation 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0100, // 索引 107
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0200, // 索引 108
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0300, // 索引 109
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0400, // 索引 110
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0500, // 索引 111
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0600, // 索引 112
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0700, // 索引 113
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0800, // 索引 114
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_0900, // 索引 115
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_1000, // 索引 116
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_1100, // 索引 117
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_1200, // 索引 118
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_AddOperation_1300, // 索引 119
     // SpecifyInputsAndOutputs 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0100, // 索引 120
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0200, // 索引 121
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0300, // 索引 122
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0400, // 索引 123
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0500, // 索引 124
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0600, // 索引 125
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0700, // 索引 126
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0800, // 索引 127
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0900, // 索引 128
     // Finish 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Finish_0100, // 索引 129
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Finish_0200, // 索引 130
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Finish_0300, // 索引 131
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Finish_0400, // 索引 132
     // Destroy 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Destroy_0100, // 索引 133
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_Destroy_0200, // 索引 134
     // GetSupportedOperation 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0100, // 索引 135
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0200, // 索引 136
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0300, // 索引 137
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0400, // 索引 138
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0500, // 索引 139
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0600, // 索引 140
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0700, // 索引 141
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0800, // 索引 142
     // Combine 系列
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNR_Func_North_Model_Combine_0100, // 索引 143
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNR_Func_North_Model_Combine_0200, // 索引 144
     // ========== 新增 Compilation 测试（补充） ==========
     // EnableFloat16 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200, // 索引 143
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200, // 索引 36
     // SetCache 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, // 索引 144
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, // 索引 145
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, // 索引 146
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, // 索引 147
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, // 索引 37
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, // 索引 38
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, // 索引 39
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, // 索引 40
     // SetPerformanceMode 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300, // 索引 148
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400, // 索引 149
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500, // 索引 150
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600, // 索引 151
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700, // 索引 152
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800, // 索引 153
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900, // 索引 154
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300, // 索引 41
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400, // 索引 42
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500, // 索引 43
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600, // 索引 44
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700, // 索引 45
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800, // 索引 46
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900, // 索引 47
     // SetPriority 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300, // 索引 155
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400, // 索引 156
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500, // 索引 157
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600, // 索引 158
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700, // 索引 159
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800, // 索引 160
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300, // 索引 48
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400, // 索引 49
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500, // 索引 50
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600, // 索引 51
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700, // 索引 52
+    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800, // 索引 53
     // 后续添加新测试函数在此处追加即可
 };
 

@@ -18,8 +18,8 @@
 #include <neural_network_runtime/neural_network_core.h>
 #include <neural_network_runtime/neural_network_runtime.h>
 #include <neural_network_runtime/neural_network_runtime_type.h>
+#include "NnrtUtilsTest.h"
 #include "model.h"
-#include "nnrt_utils.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -27,7 +27,6 @@
 #define LOG_TAG "ExecutorTest"
 
 using namespace OHOS::NeuralNetworkRuntime::Test;
-// using namespace OHOS::HDI::Nnrt::V1_0;  // HDI 层，应用层不需要
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
@@ -37,7 +36,7 @@ namespace NeuralNetworkRuntime {
  * @tc.number SUB_AI_NNRt_Func_North_Executor_Create_0100
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Executor_Create_0100()
+int SubAiNnRtFuncNorthExecutorCreate0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0100 start");
 
@@ -56,7 +55,7 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0100()
  * @tc.number SUB_AI_NNRt_Func_North_Executor_Create_0200
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Executor_Create_0200()
+int SubAiNnRtFuncNorthExecutorCreate0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Create_0200 start");
 
@@ -116,7 +115,7 @@ int SUB_AI_NNRt_Func_North_Executor_Create_0200()
  * @tc.number SUB_AI_NNRt_Func_North_Executor_SetInput_0100
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
+int SubAiNnRtFuncNorthExecutorSetInput0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0100 start");
 
@@ -148,7 +147,6 @@ int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
         OH_LOG_WARN(LOG_APP, "Model compile failed (ret=%{public}d), device may not support this operation type", ret);
         OH_LOG_INFO(LOG_APP, "API test passed: APIs called successfully, skipping executor test");
         Free(model, compilation);
-        // 返回 0：API 调用本身是成功的，只是设备不支持此模型
         return 0;
     }
 
@@ -171,98 +169,7 @@ int SUB_AI_NNRt_Func_North_Executor_SetInput_0100()
     return 0;
 }
 
-// NOTE: 以下函数为简化实现框架，需要根据源代码完善具体测试逻辑
-// 可参考上面的完整实现和源文件 neural_network_runtime/v1_0/interface/src/ExecutorTest.cpp
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0200 start");
-    // TODO: 实现测试逻辑 - 测试无效的inputIndex
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0300 start");
-    // TODO: 实现测试逻辑 - 测试错误的tensor type
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0400 start");
-    // TODO: 实现测试逻辑 - 测试错误的dimensions
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0500 start");
-    // TODO: 实现测试逻辑 - 测试data为nullptr
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0600 start");
-    // TODO: 实现测试逻辑 - 测试length为0
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0600 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetInput_0700()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0700 start");
-    // TODO: 实现测试逻辑 - 测试重复SetInput
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetInput_0700 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetOutput_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0100 start");
-    // TODO: 实现测试逻辑 - 测试executor为nullptr
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetOutput_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0200 start");
-    // TODO: 实现测试逻辑 - 测试无效的outputIndex
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetOutput_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0300 start");
-    // TODO: 实现测试逻辑 - 测试data为nullptr
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetOutput_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0400 start");
-    // TODO: 实现测试逻辑 - 测试length为0
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_SetOutput_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0500 start");
-    // TODO: 实现测试逻辑 - 测试重复SetOutput
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_SetOutput_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0100()
+int SubAiNnRtFuncNorthExecutorRun0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0100 start");
 
@@ -276,119 +183,7 @@ int SUB_AI_NNRt_Func_North_Executor_Run_0100()
     return 0;
 }
 
-int SUB_AI_NNRt_Func_North_Executor_Run_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0200 start");
-    // TODO: 实现测试逻辑 - 测试未设置Input就Run
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0300 start");
-    // TODO: 实现测试逻辑 - 测试未设置Output就Run
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0600 start");
-    // TODO: 实现测试逻辑 - 完整的Run测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0600 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Run_0700()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0700 start");
-    // TODO: 实现测试逻辑 - 完整的Run测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Run_0700 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0600 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0700 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_GetOutputDimensions_0800 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Destroy_0100()
+int SubAiNnRtFuncNorthExecutorDestroy0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0100 start");
 
@@ -400,54 +195,6 @@ int SUB_AI_NNRt_Func_North_Executor_Destroy_0100()
     }
 
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Destroy_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0200 start");
-    // TODO: 实现测试逻辑 - 测试正常Destroy
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Destroy_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNR_Func_North_Executor_Combine_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNR_Func_North_Executor_Combine_0100 start");
-    // TODO: 实现测试逻辑 - 多线程测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNR_Func_North_Executor_Combine_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Combine_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Combine_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Combine_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Combine_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Combine_0500 passed");
     return 0;
 }
 

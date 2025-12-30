@@ -12,28 +12,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "nnrt_utils.h"
-#include "const.h"
-#include <fstream>
+#include "NnrtUtilsTest.h"
 #include <cstring>
+#include <fstream>
 #include <hilog/log.h>
+#include "const.h"
 
 // 日志宏定义
 #undef LOG_DOMAIN
 #undef LOG_TAG
 #define LOG_DOMAIN 0x0000
-#define LOG_TAG "NnrtUtils"
+#define LOG_TAG "NnrtUtilsTest"
 #define LOGE(...) OH_LOG_ERROR(LOG_APP, __VA_ARGS__)
 #define LOGI(...) OH_LOG_INFO(LOG_APP, __VA_ARGS__)
 
-// 测试断言宏（简化版，不使用 gtest）
-#define ASSERT_EQ(expected, actual) \
-    do { \
-        if ((expected) != (actual)) { \
+#define ASSERT_EQ(expected, actual)                                 \
+    do {                                                            \
+        if ((expected) != (actual)) {                               \
             LOGE("Assertion failed: %s == %s", #expected, #actual); \
-            return; \
-        } \
-    } while(0)
+            return;                                                 \
+        }                                                           \
+    } while (0)
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
@@ -42,19 +41,22 @@ namespace Test {
 OH_NN_UInt32Array TransformUInt32Array(const std::vector<uint32_t>& vector)
 {
     uint32_t* data = (vector.empty()) ? nullptr : const_cast<uint32_t*>(vector.data());
-    return {data, static_cast<uint32_t>(vector.size())};
+    return { data, static_cast<uint32_t>(vector.size()) };
 }
 
-int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
+int BuildMultiOpGraph(OH_NNModel* model, const OHNNGraphArgsMulti& graphArgs)
 {
     int ret = 0;
     int opCnt = 0;
     for (int j = 0; j < graphArgs.operationTypes.size(); j++) {
         for (int i = 0; i < graphArgs.operands[j].size(); i++) {
-            const OHNNOperandTest &operandTem = graphArgs.operands[j][i];
+            const OHNNOperandTest& operandTem = graphArgs.operands[j][i];
             auto quantParam = operandTem.quantParam;
-            OH_NN_Tensor operand = {operandTem.dataType, (uint32_t) operandTem.shape.size(),
-                operandTem.shape.data(), quantParam, operandTem.type};
+            OH_NN_Tensor operand = { operandTem.dataType,
+                                     (uint32_t)operandTem.shape.size(),
+                                     operandTem.shape.data(),
+                                     quantParam,
+                                     operandTem.type };
             ret = OH_NNModel_AddTensor(model, &operand);
             if (ret != OH_NN_SUCCESS) {
                 LOGE("[NNRtTest] OH_NNModel_AddTensor failed! ret=%d\n", ret);
@@ -74,8 +76,7 @@ int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
         auto inputIndices = TransformUInt32Array(graphArgs.inputIndices[j]);
         auto outputIndices = TransformUInt32Array(graphArgs.outputIndices[j]);
 
-        ret = OH_NNModel_AddOperation(model, graphArgs.operationTypes[j], &paramIndices, &inputIndices,
-        &outputIndices);
+        ret = OH_NNModel_AddOperation(model, graphArgs.operationTypes[j], &paramIndices, &inputIndices, &outputIndices);
         if (ret != OH_NN_SUCCESS) {
             LOGE("[NNRtTest] OH_NNModel_AddOperation failed! ret=%d\n", ret);
             return ret;
@@ -96,14 +97,15 @@ int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
     return ret;
 }
 
-int BuildSingleOpGraph(OH_NNModel *model, const OHNNGraphArgs &graphArgs)
+int BuildSingleOpGraph(OH_NNModel* model, const OHNNGraphArgs& graphArgs)
 {
     int ret = 0;
     for (int i = 0; i < graphArgs.operands.size(); i++) {
-        const OHNNOperandTest &operandTem = graphArgs.operands[i];
+        const OHNNOperandTest& operandTem = graphArgs.operands[i];
         auto quantParam = operandTem.quantParam;
-        OH_NN_Tensor operand = {operandTem.dataType, (uint32_t) operandTem.shape.size(),
-            operandTem.shape.data(), quantParam, operandTem.type};
+        OH_NN_Tensor operand = {
+            operandTem.dataType, (uint32_t)operandTem.shape.size(), operandTem.shape.data(), quantParam, operandTem.type
+        };
         ret = OH_NNModel_AddTensor(model, &operand);
         if (ret != OH_NN_SUCCESS) {
             LOGE("[NNRtTest] OH_NNModel_AddTensor failed! ret=%d\n", ret);
@@ -123,8 +125,7 @@ int BuildSingleOpGraph(OH_NNModel *model, const OHNNGraphArgs &graphArgs)
     auto inputIndices = TransformUInt32Array(graphArgs.inputIndices);
     auto outputIndices = TransformUInt32Array(graphArgs.outputIndices);
     if (graphArgs.addOperation) {
-        ret = OH_NNModel_AddOperation(model, graphArgs.operationType, &paramIndices, &inputIndices,
-                                      &outputIndices);
+        ret = OH_NNModel_AddOperation(model, graphArgs.operationType, &paramIndices, &inputIndices, &outputIndices);
         if (ret != OH_NN_SUCCESS) {
             LOGE("[NNRtTest] OH_NNModel_AddOperation failed! ret=%d\n", ret);
             return ret;
@@ -147,11 +148,11 @@ int BuildSingleOpGraph(OH_NNModel *model, const OHNNGraphArgs &graphArgs)
     return ret;
 }
 
-OH_NN_ReturnCode SetDevice(OH_NNCompilation *compilation)
+OH_NN_ReturnCode SetDevice(OH_NNCompilation* compilation)
 {
     OH_NN_ReturnCode ret = OH_NN_FAILED;
-    const size_t *devicesID{nullptr};
-    uint32_t devicesCount{0};
+    const size_t* devicesID{ nullptr };
+    uint32_t devicesCount{ 0 };
     ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
     if (ret != OH_NN_SUCCESS) {
         LOGE("[NNRtTest] OH_NNDevice_GetAllDevicesID failed! ret=%d\n", ret);
@@ -163,7 +164,7 @@ OH_NN_ReturnCode SetDevice(OH_NNCompilation *compilation)
     }
 
     // 打印所有可用设备，并使用第一个可用设备
-    const char *name = nullptr;
+    const char* name = nullptr;
     LOGE("[NNRtTest] Found %d device(s):\n", devicesCount);
     for (uint32_t i = 0; i < devicesCount; i++) {
         name = nullptr;
@@ -180,18 +181,18 @@ OH_NN_ReturnCode SetDevice(OH_NNCompilation *compilation)
             LOGE("[NNRtTest] OH_NNCompilation_SetDevice failed! ret=%d\n", ret);
             return ret;
         }
-        
+
         // 获取并打印使用的设备名称
-        const char *usedDeviceName = nullptr;
+        const char* usedDeviceName = nullptr;
         OH_NNDevice_GetName(devicesID[0], &usedDeviceName);
         LOGE("[NNRtTest] Using device: %s\n", usedDeviceName ? usedDeviceName : "Unknown");
         return OH_NN_SUCCESS;
     }
-    
+
     return OH_NN_FAILED;
 }
 
-int CompileGraphMock(OH_NNCompilation *compilation, const OHNNCompileParam &compileParam)
+int CompileGraphMock(OH_NNCompilation* compilation, const OHNNCompileParam& compileParam)
 {
     int ret = 0;
     ret = SetDevice(compilation);
@@ -201,8 +202,7 @@ int CompileGraphMock(OH_NNCompilation *compilation, const OHNNCompileParam &comp
     }
     // set cache
     if (!compileParam.cacheDir.empty()) {
-        ret = OH_NNCompilation_SetCache(compilation, compileParam.cacheDir.c_str(),
-        compileParam.cacheVersion);
+        ret = OH_NNCompilation_SetCache(compilation, compileParam.cacheDir.c_str(), compileParam.cacheVersion);
         if (ret != OH_NN_SUCCESS) {
             LOGE("[NNRtTest] OH_NNCompilation_SetCache failed! ret=%d\n", ret);
             return ret;
@@ -237,24 +237,21 @@ int CompileGraphMock(OH_NNCompilation *compilation, const OHNNCompileParam &comp
     return ret;
 }
 
-
-int ExecuteGraphMock(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs,
-    float* expect)
+int ExecuteGraphMock(OH_NNExecutor* executor, const OHNNGraphArgs& graphArgs, float* expect)
 {
     // OHOS::sptr<V1_0::MockIDevice> device = V1_0::MockIDevice::GetInstance();  // HDI 层，已禁用
     int ret = 0;
     uint32_t inputIndex = 0;
     uint32_t outputIndex = 0;
     for (auto i = 0; i < graphArgs.operands.size(); i++) {
-        const OHNNOperandTest &operandTem = graphArgs.operands[i];
+        const OHNNOperandTest& operandTem = graphArgs.operands[i];
         auto quantParam = operandTem.quantParam;
-        OH_NN_Tensor operand = {operandTem.dataType, (uint32_t) operandTem.shape.size(),
-            operandTem.shape.data(),
-            quantParam, operandTem.type};
+        OH_NN_Tensor operand = {
+            operandTem.dataType, (uint32_t)operandTem.shape.size(), operandTem.shape.data(), quantParam, operandTem.type
+        };
         if (std::find(graphArgs.inputIndices.begin(), graphArgs.inputIndices.end(), i) !=
             graphArgs.inputIndices.end()) {
-            ret = OH_NNExecutor_SetInput(executor, inputIndex, &operand, operandTem.data,
-            operandTem.length);
+            ret = OH_NNExecutor_SetInput(executor, inputIndex, &operand, operandTem.data, operandTem.length);
             if (ret != OH_NN_SUCCESS) {
                 LOGE("[NNRtTest] OH_NNExecutor_SetInput failed! ret=%d\n", ret);
                 return ret;
@@ -267,13 +264,6 @@ int ExecuteGraphMock(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs,
                 LOGE("[NNRtTest] OH_NNExecutor_SetOutput failed! ret=%d\n", ret);
                 return ret;
             }
-            // if(expect!=nullptr){
-            //     ret = device->MemoryCopy(expect, operandTem.length);  // HDI 层，已禁用
-            // }
-            // if (ret != OH_NN_SUCCESS) {
-            //     LOGE("[NNRtTest] device set expect output failed! ret=%d\n", ret);
-            //     return ret;
-            // }
             outputIndex += 1;
         }
     }
@@ -281,23 +271,23 @@ int ExecuteGraphMock(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs,
     return ret;
 }
 
-int ExecutorWithMemory(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, OH_NN_Memory *OHNNMemory[],
-    float* expect)
+int ExecutorWithMemory(OH_NNExecutor* executor,
+                       const OHNNGraphArgs& graphArgs,
+                       OH_NN_Memory* OHNNMemory[],
+                       float* expect)
 {
-    // OHOS::sptr<V1_0::MockIDevice> device = V1_0::MockIDevice::GetInstance();  // HDI 层，已禁用
     int ret = 0;
     uint32_t inputIndex = 0;
     uint32_t outputIndex = 0;
     for (auto i = 0; i < graphArgs.operands.size(); i++) {
-        const OHNNOperandTest &operandTem = graphArgs.operands[i];
+        const OHNNOperandTest& operandTem = graphArgs.operands[i];
         auto quantParam = operandTem.quantParam;
-        OH_NN_Tensor operand = {operandTem.dataType, (uint32_t) operandTem.shape.size(),
-            operandTem.shape.data(),
-            quantParam, operandTem.type};
+        OH_NN_Tensor operand = {
+            operandTem.dataType, (uint32_t)operandTem.shape.size(), operandTem.shape.data(), quantParam, operandTem.type
+        };
         if (std::find(graphArgs.inputIndices.begin(), graphArgs.inputIndices.end(), i) !=
             graphArgs.inputIndices.end()) {
-            OH_NN_Memory *inputMemory = OH_NNExecutor_AllocateInputMemory(executor, inputIndex,
-            operandTem.length);
+            OH_NN_Memory* inputMemory = OH_NNExecutor_AllocateInputMemory(executor, inputIndex, operandTem.length);
             ret = OH_NNExecutor_SetInputWithMemory(executor, inputIndex, &operand, inputMemory);
             if (ret != OH_NN_SUCCESS) {
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
@@ -308,8 +298,7 @@ int ExecutorWithMemory(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, 
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(), graphArgs.outputIndices.end(), i) !=
                    graphArgs.outputIndices.end()) {
-            OH_NN_Memory *outputMemory = OH_NNExecutor_AllocateOutputMemory(executor, outputIndex,
-            operandTem.length);
+            OH_NN_Memory* outputMemory = OH_NNExecutor_AllocateOutputMemory(executor, outputIndex, operandTem.length);
             ret = OH_NNExecutor_SetOutputWithMemory(executor, outputIndex, outputMemory);
             if (ret != OH_NN_SUCCESS) {
                 LOGE("[NNRtTest] OH_NNExecutor_SetOutputWithMemory failed! ret=%d\n", ret);
@@ -328,8 +317,7 @@ int ExecutorWithMemory(OH_NNExecutor *executor, const OHNNGraphArgs &graphArgs, 
     return ret;
 }
 
-
-void Free(OH_NNModel *model, OH_NNCompilation *compilation, OH_NNExecutor *executor)
+void Free(OH_NNModel* model, OH_NNCompilation* compilation, OH_NNExecutor* executor)
 {
     if (model != nullptr) {
         OH_NNModel_Destroy(&model);
@@ -345,7 +333,7 @@ void Free(OH_NNModel *model, OH_NNCompilation *compilation, OH_NNExecutor *execu
     }
 }
 
-PathType CheckPath(const std::string &path)
+PathType CheckPath(const std::string& path)
 {
     if (path.empty()) {
         LOGI("CheckPath: path is null");
@@ -365,7 +353,7 @@ PathType CheckPath(const std::string &path)
     return PathType::NOT_FOUND;
 }
 
-bool DeleteFile(const std::string &path)
+bool DeleteFile(const std::string& path)
 {
     if (path.empty()) {
         LOGI("DeleteFile: path is null");
@@ -383,7 +371,7 @@ bool DeleteFile(const std::string &path)
     return false;
 }
 
-void CopyFile(const std::string &srcPath, const std::string &dstPath)
+void CopyFile(const std::string& srcPath, const std::string& dstPath)
 {
     std::ifstream src(srcPath, std::ios::binary);
     std::ofstream dst(dstPath, std::ios::binary);
@@ -391,7 +379,7 @@ void CopyFile(const std::string &srcPath, const std::string &dstPath)
     dst << src.rdbuf();
 }
 
-std::string ConcatPath(const std::string &str1, const std::string &str2)
+std::string ConcatPath(const std::string& str1, const std::string& str2)
 {
     // boundary
     if (str2.empty()) {
@@ -409,30 +397,30 @@ std::string ConcatPath(const std::string &str1, const std::string &str2)
     }
 }
 
-void DeleteFolder(const std::string &path)
+void DeleteFolder(const std::string& path)
 {
     if (path.empty()) {
         LOGI("DeletePath: path is null");
         return;
     }
 
-    DIR *dir = opendir(path.c_str());
-    // check is dir ?
+    DIR* dir = opendir(path.c_str());
+
     if (dir == nullptr) {
         LOGE("[NNRtTest] Can not open dir. Check path or permission! path: %s", path.c_str());
         return;
     }
-    struct dirent *file;
-    // read all the files in dir
-    std::vector <std::string> pathList;
+    struct dirent* file;
+
+    std::vector<std::string> pathList;
     while ((file = readdir(dir)) != nullptr) {
-        // skip "." and ".."
+
         if (strcmp(file->d_name, ".") == 0 || strcmp(file->d_name, "..") == 0) {
             continue;
         }
         if (file->d_type == DT_DIR) {
             std::string filePath = path + "/" + file->d_name;
-            DeleteFolder(filePath); // 递归执行
+            DeleteFolder(filePath);
         } else {
             pathList.emplace_back(ConcatPath(path, file->d_name));
         }
@@ -440,12 +428,12 @@ void DeleteFolder(const std::string &path)
     closedir(dir);
     pathList.emplace_back(path);
     LOGI("[Common] Delete folder %s", path.c_str());
-    for (auto &i : pathList) {
+    for (auto& i : pathList) {
         DeleteFile(i);
     }
 }
 
-bool CreateFolder(const std::string &path)
+bool CreateFolder(const std::string& path)
 {
     if (path.empty()) {
         LOGI("CreateFolder: path is empty");

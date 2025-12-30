@@ -18,8 +18,8 @@
 #include <neural_network_runtime/neural_network_core.h>
 #include <neural_network_runtime/neural_network_runtime.h>
 #include <neural_network_runtime/neural_network_runtime_type.h>
+#include "NnrtUtilsTest.h"
 #include "model.h"
-#include "nnrt_utils.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -27,12 +27,10 @@
 #define LOG_TAG "MemoryTest"
 
 using namespace OHOS::NeuralNetworkRuntime::Test;
-// using namespace OHOS::HDI::Nnrt::V1_0;  // HDI 层，应用层不需要
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
 
-// 辅助函数实现
 static int CheckCreateInputMemory(OH_NNExecutor* executor, uint32_t inputIndex, size_t length)
 {
     OH_NN_Memory* memory = OH_NNExecutor_AllocateInputMemory(executor, inputIndex, length);
@@ -59,8 +57,7 @@ static int CheckCreateOutputMemory(OH_NNExecutor* executor, uint32_t outputIndex
     return 0;
 }
 
-// CreateInputMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100()
+int SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100 start");
 
@@ -74,7 +71,7 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100()
     return 0;
 }
 
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
+int SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200 start");
 
@@ -106,7 +103,7 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
         OH_LOG_WARN(LOG_APP, "Model compile failed (ret=%{public}d), device may not support this operation type", ret);
         OH_LOG_INFO(LOG_APP, "API test passed: APIs called successfully, skipping memory test");
         Free(model, compilation);
-        // 返回 0：API 调用本身是成功的，只是设备不支持此模型
+
         return 0;
     }
 
@@ -129,7 +126,7 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200()
     return 0;
 }
 
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
+int SubAiNnRtFuncNorthExecutorMemoryCreateInputMemory0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300 start");
 
@@ -161,7 +158,7 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
         OH_LOG_WARN(LOG_APP, "Model compile failed (ret=%{public}d), device may not support this operation type", ret);
         OH_LOG_INFO(LOG_APP, "API test passed: APIs called successfully, skipping memory test");
         Free(model, compilation);
-        // 返回 0：API 调用本身是成功的，只是设备不支持此模型
+
         return 0;
     }
 
@@ -184,32 +181,7 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300()
     return 0;
 }
 
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400 start");
-    // TODO: 实现测试逻辑 - 测试超大内存分配（1GB+1）
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500 start");
-    // TODO: 实现测试逻辑 - 测试重复创建Input Memory
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600 start");
-    // TODO: 实现测试逻辑 - 多线程测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600 passed");
-    return 0;
-}
-
-// CreateOutputMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100()
+int SubAiNnRtFuncNorthExecutorMemoryCreateOutputMemory0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100 start");
 
@@ -220,243 +192,6 @@ int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100()
     }
 
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200 start");
-    // TODO: 实现测试逻辑 - 测试无效的outputIndex
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600 start");
-    // TODO: 实现测试逻辑 - 多线程测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600 passed");
-    return 0;
-}
-
-// DestroyInputMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500 passed");
-    return 0;
-}
-
-// DestroyOutputMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500 passed");
-    return 0;
-}
-
-// SetInputFromMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600 passed");
-    return 0;
-}
-
-// SetOutputFromMemory 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400 passed");
-    return 0;
-}
-
-// Run 系列
-int SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200 start");
-    // TODO: 实现测试逻辑
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300 start");
-    // TODO: 实现测试逻辑 - 完整的Memory Run测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300 passed");
-    return 0;
-}
-
-int SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400()
-{
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400 start");
-    // TODO: 实现测试逻辑 - 动态形状测试
-    OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400 passed");
     return 0;
 }
 

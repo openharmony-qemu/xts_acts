@@ -19,7 +19,7 @@
 #include <neural_network_runtime/neural_network_runtime.h>
 #include <neural_network_runtime/neural_network_runtime_type.h>
 #include <string>
-#include "nnrt_utils.h"
+#include "NnrtUtilsTest.h"
 
 #undef LOG_DOMAIN
 #undef LOG_TAG
@@ -34,7 +34,7 @@ namespace NeuralNetworkRuntime {
  * @tc.number SUB_AI_NNRtt_Func_North_Device_DeviceID_0100
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0100()
+int SubAiNnRtFuncNorthDeviceDeviceId0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0100 start");
 
@@ -55,7 +55,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0100()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0200
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0200()
+int SubAiNnRtFuncNorthDeviceDeviceId0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0200 start");
 
@@ -79,7 +79,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0200()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0300
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0300()
+int SubAiNnRtFuncNorthDeviceDeviceId0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0300 start");
 
@@ -100,7 +100,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0300()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceID_0400
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceID_0400()
+int SubAiNnRtFuncNorthDeviceDeviceId0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0400 start");
 
@@ -128,7 +128,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceID_0400()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0100
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0100()
+int SubAiNnRtFuncNorthDeviceDeviceName0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0100 start");
 
@@ -151,7 +151,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0100()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0200
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0200()
+int SubAiNnRtFuncNorthDeviceDeviceName0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0200 start");
 
@@ -180,7 +180,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0200()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0300
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0300()
+int SubAiNnRtFuncNorthDeviceDeviceName0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0300 start");
 
@@ -211,7 +211,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0300()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceName_0400
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceName_0400()
+int SubAiNnRtFuncNorthDeviceDeviceName0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0400 start");
 
@@ -229,7 +229,6 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0400()
         return -1;
     }
 
-    // 适配真实设备：打印所有设备名称，并验证至少有一个设备
     const char* name = nullptr;
     OH_LOG_INFO(LOG_APP, "Found %{public}u device(s):", devicesCount);
 
@@ -245,7 +244,6 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0400()
         }
     }
 
-    // 真实设备环境：只要有设备就通过测试
     if (devicesCount > 0 && name != nullptr) {
         OH_LOG_INFO(LOG_APP, "Device name test passed (found %{public}u device(s))", devicesCount);
     } else {
@@ -262,7 +260,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceName_0400()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0100
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0100()
+int SubAiNnRtFuncNorthDeviceDeviceType0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0100 start");
 
@@ -291,7 +289,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceType_0100()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0200
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0200()
+int SubAiNnRtFuncNorthDeviceDeviceType0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0200 start");
 
@@ -314,7 +312,7 @@ int SUB_AI_NNRt_Func_North_Device_DeviceType_0200()
  * @tc.number SUB_AI_NNRt_Func_North_Device_DeviceType_0300
  * @tc.desc   [C- SOFTWARE -0200]
  */
-int SUB_AI_NNRt_Func_North_Device_DeviceType_0300()
+int SubAiNnRtFuncNorthDeviceDeviceType0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0300 start");
 
