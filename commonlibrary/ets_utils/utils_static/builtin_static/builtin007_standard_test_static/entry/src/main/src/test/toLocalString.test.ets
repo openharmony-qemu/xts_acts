@@ -52,12 +52,12 @@ export default function toLocalStringTest() {
     it("Value_StringValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
       
-      hilog.info(domain, tag, '%{public}s', 'StringValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toLocaleString test start');
       let testString: string = "Hello World";
       let result: string = testString;
       expect(result).assertEqual("Hello World");
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toLocaleString test end');
     });
 
     /**
@@ -70,12 +70,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Quality Assurance";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Quality Assurance"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -88,12 +88,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Integration Test";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Integration Test"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -106,12 +106,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "System Validation";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"System Validation"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -124,12 +124,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Regression Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Regression Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -142,12 +142,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Automated Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Automated Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -160,12 +160,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Manual Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Manual Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -178,12 +178,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Load Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Load Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -196,12 +196,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Stress Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Stress Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -214,12 +214,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Security Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Security Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -232,12 +232,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Usability Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Usability Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -250,12 +250,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Compatibility Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Compatibility Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -268,12 +268,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Localization Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Localization Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -286,12 +286,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_2900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Database Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Database Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -304,12 +304,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "API Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"API Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -322,12 +322,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Mobile Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Mobile Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -340,12 +340,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Web Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Web Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -358,12 +358,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Cloud Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Cloud Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -376,12 +376,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "DevOps Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"DevOps Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -394,12 +394,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3500_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Continuous Testing";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Continuous Testing"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -412,12 +412,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_3500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toLocaleString test start');
       let testString: string = "Hello World";
       let result: string = testString;
       expect(result).assertEqual("Hello World");
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toLocaleString test end');
     });
 
     /**
@@ -430,12 +430,12 @@ export default function toLocalStringTest() {
      */
     it("Value_StringValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test start');
       let testString: string = "Hello World";
       let result: string = `"${testString}"`;
       expect(result).assertEqual('"Hello World"');
       done()
-      hilog.info(domain, tag, '%{public}s', 'StringValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'StringValue toPrint test end');
     });
 
     /**
@@ -448,12 +448,12 @@ export default function toLocalStringTest() {
      */
     it("Value_ShortValue_ToLocaleString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let testShort: number = 32767;
       let result: string = testShort.toString();
       expect(result).assertEqual("32767");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -466,12 +466,12 @@ export default function toLocalStringTest() {
      */
     it("Value_ShortValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toPrint test start');
       let testShort: number = 32767;
       let result: string = testShort.toString();
       expect(result).assertEqual("32767");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toPrint test end');
     });
 
     /**
@@ -484,12 +484,12 @@ export default function toLocalStringTest() {
      */
     it("Value_NullValue_ToLocaleString_010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'NullValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'NullValue toLocaleString test start');
       let testNull = null;
       let result: string = "null";
       expect(result).assertEqual("null");
       done()
-      hilog.info(domain, tag, '%{public}s', 'NullValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'NullValue toLocaleString test end');
     });
 
     /**
@@ -502,12 +502,12 @@ export default function toLocalStringTest() {
      */
     it("Value_NullValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'NullValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'NullValue toPrint test start');
       let testNull = null;
       let result: string = "null";
       expect(result).assertEqual("null");
       done()
-      hilog.info(domain, tag, '%{public}s', 'NullValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'NullValue toPrint test end');
     });
 
     /**
@@ -520,12 +520,12 @@ export default function toLocalStringTest() {
      */
     it("Value_LambdaValue_ToLocaleString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'LambdaValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'LambdaValue toLocaleString test start');
       let a: string = "function";
       let b: string = "function";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'LambdaValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'LambdaValue toLocaleString test end');
     });
 
     /**
@@ -538,12 +538,12 @@ export default function toLocalStringTest() {
      */
     it("Value_BooleanValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let a: string = "true";
       let b: string = "true";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -556,12 +556,12 @@ export default function toLocalStringTest() {
      */
     it("Value_CharValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'CharValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test start');
       let a: string = "\"A\"";
       let b: string = "\"A\"";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'CharValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test end');
     });
 
     /**
@@ -574,12 +574,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "127";
       let b: string = "127";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -592,12 +592,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-128";
       let b: string = "-128";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -610,12 +610,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "0";
       let b: string = "0";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -628,12 +628,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "100";
       let b: string = "100";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -646,12 +646,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-100";
       let b: string = "-100";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -664,12 +664,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "50";
       let b: string = "50";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -682,12 +682,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-50";
       let b: string = "-50";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -700,12 +700,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "1";
       let b: string = "1";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -718,12 +718,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-1";
       let b: string = "-1";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -736,12 +736,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "126";
       let b: string = "126";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -754,12 +754,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-127";
       let b: string = "-127";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -772,12 +772,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "10";
       let b: string = "10";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -790,12 +790,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-10";
       let b: string = "-10";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -808,12 +808,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "25";
       let b: string = "25";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -826,12 +826,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-25";
       let b: string = "-25";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -844,12 +844,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "75";
       let b: string = "75";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -862,12 +862,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-75";
       let b: string = "-75";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -880,12 +880,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "99";
       let b: string = "99";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -898,12 +898,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-99";
       let b: string = "-99";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -916,12 +916,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "5";
       let b: string = "5";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -934,12 +934,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_2100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let a: string = "-5";
       let b: string = "-5";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -952,12 +952,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "32767";
       let b: string = "32767";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -970,12 +970,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-32768";
       let b: string = "-32768";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -988,12 +988,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "0";
       let b: string = "0";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1006,12 +1006,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "1";
       let b: string = "1";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1024,12 +1024,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-1";
       let b: string = "-1";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1042,12 +1042,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "100";
       let b: string = "100";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1060,12 +1060,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-100";
       let b: string = "-100";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1078,12 +1078,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "1000";
       let b: string = "1000";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1096,12 +1096,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-1000";
       let b: string = "-1000";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1114,12 +1114,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "10000";
       let b: string = "10000";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1132,12 +1132,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-10000";
       let b: string = "-10000";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1150,12 +1150,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "123";
       let b: string = "123";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1168,12 +1168,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-123";
       let b: string = "-123";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1186,12 +1186,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "456";
       let b: string = "456";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1204,12 +1204,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-456";
       let b: string = "-456";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1222,12 +1222,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "789";
       let b: string = "789";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1240,12 +1240,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-789";
       let b: string = "-789";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1258,12 +1258,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "2048";
       let b: string = "2048";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1276,12 +1276,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-2048";
       let b: string = "-2048";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1294,12 +1294,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "4096";
       let b: string = "4096";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1312,12 +1312,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-4096";
       let b: string = "-4096";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1330,12 +1330,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "8192";
       let b: string = "8192";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1348,12 +1348,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-8192";
       let b: string = "-8192";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1366,12 +1366,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "16384";
       let b: string = "16384";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1384,12 +1384,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-16384";
       let b: string = "-16384";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1402,12 +1402,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "255";
       let b: string = "255";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1420,12 +1420,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-255";
       let b: string = "-255";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1438,12 +1438,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "512";
       let b: string = "512";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1456,12 +1456,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_2900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-512";
       let b: string = "-512";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1474,12 +1474,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "1024";
       let b: string = "1024";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1492,12 +1492,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-1024";
       let b: string = "-1024";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1510,12 +1510,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "999";
       let b: string = "999";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1528,12 +1528,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-999";
       let b: string = "-999";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1546,12 +1546,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "777";
       let b: string = "777";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1564,12 +1564,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-777";
       let b: string = "-777";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1582,12 +1582,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "888";
       let b: string = "888";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1600,12 +1600,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ShortValue_ToLocaleString_3700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test start');
       let a: string = "-888";
       let b: string = "-888";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ShortValue toLocaleString test end');
     });
 
     /**
@@ -1618,12 +1618,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_FloatValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'FloatValue toLocaleString test start');
       let a: string = "3.14";
       let b: string = "3.14";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'FloatValue toLocaleString test end');
     });
 
     /**
@@ -1636,12 +1636,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_DoubleValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toLocaleString test start');
       let a: string = "3.141592653589793";
       let b: string = "3.141592653589793";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'DoubleValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'DoubleValue toLocaleString test end');
     });
 
     /**
@@ -1654,12 +1654,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let a: string = "[1, 2, 3]";
       let b: string = "[1, 2, 3]";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -1672,12 +1672,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToLocaleString_0100_01", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toLocaleString test start');
       let a: string = "object";
       let b: string = "object";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toLocaleString test end');
     });
 
     /**
@@ -1690,12 +1690,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_NullValue_ToLocaleString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'NullValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'NullValue toLocaleString test start');
       let a: string = "null";
       let b: string = "null";
       expect(a).assertEqual(b);
       done()
-      hilog.info(domain, tag, '%{public}s', 'NullValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'NullValue toLocaleString test end');
     });
 
     /**
@@ -1708,12 +1708,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_LambdaValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'LambdaValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'LambdaValue toPrint test start');
       let testLambda = () => { return 42; };
       let result: string = "function";
       expect(result).assertEqual("function");
       done()
-      hilog.info(domain, tag, '%{public}s', 'LambdaValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'LambdaValue toPrint test end');
     });
 
     /**
@@ -1726,12 +1726,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_IntValue_ToLocaleString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'IntValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'IntValue toLocaleString test start');
       let testInt: number = 42;
       let result: string = testInt.toString();
       expect(result).assertEqual("42");
       done()
-      hilog.info(domain, tag, '%{public}s', 'IntValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'IntValue toLocaleString test end');
     });
 
     /**
@@ -1744,12 +1744,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_IntValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'IntValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'IntValue toPrint test start');
       let testInt: number = 42;
       let result: string = testInt.toString();
       expect(result).assertEqual("42");
       done()
-      hilog.info(domain, tag, '%{public}s', 'IntValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'IntValue toPrint test end');
     });
 
     /**
@@ -1762,12 +1762,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_FloatValue_ToLocaleString_0100_03", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'FloatValue toLocaleString test start');
       let testFloat: number = 3.14;
       let result: string = testFloat.toString();
       expect(result).assertEqual("3.14");
       done()
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'FloatValue toLocaleString test end');
     });
 
     /**
@@ -1780,12 +1780,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_FloatValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'FloatValue toPrint test start');
       let testFloat: number = 3.14;
       let result: string = testFloat.toString();
       expect(result).assertEqual("3.14");
       done()
-      hilog.info(domain, tag, '%{public}s', 'FloatValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'FloatValue toPrint test end');
     });
 
     /**
@@ -1798,11 +1798,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToLocaleString_01001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toLocaleString test start');
       let result: string = "TestClass";
       expect(result).assertEqual("TestClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toLocaleString test end');
     });
 
     /**
@@ -1815,11 +1815,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "TestClass";
       expect(result).assertEqual("TestClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1832,11 +1832,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "UserClass";
       expect(result).assertEqual("UserClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1849,11 +1849,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "DataModel";
       expect(result).assertEqual("DataModel");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1866,11 +1866,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ServiceClass";
       expect(result).assertEqual("ServiceClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1883,11 +1883,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ControllerClass";
       expect(result).assertEqual("ControllerClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1900,11 +1900,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ViewClass";
       expect(result).assertEqual("ViewClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1917,11 +1917,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "HelperClass";
       expect(result).assertEqual("HelperClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1934,11 +1934,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "UtilityClass";
       expect(result).assertEqual("UtilityClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1951,11 +1951,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ManagerClass";
       expect(result).assertEqual("ManagerClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1968,11 +1968,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "HandlerClass";
       expect(result).assertEqual("HandlerClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -1985,11 +1985,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ProcessorClass";
       expect(result).assertEqual("ProcessorClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2002,11 +2002,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "BuilderClass";
       expect(result).assertEqual("BuilderClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2019,11 +2019,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "FactoryClass";
       expect(result).assertEqual("FactoryClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2036,11 +2036,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "AdapterClass";
       expect(result).assertEqual("AdapterClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2053,11 +2053,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ObserverClass";
       expect(result).assertEqual("ObserverClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2070,11 +2070,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "StrategyClass";
       expect(result).assertEqual("StrategyClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2087,11 +2087,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "CommandClass";
       expect(result).assertEqual("CommandClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2104,11 +2104,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "DecoratorClass";
       expect(result).assertEqual("DecoratorClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2121,11 +2121,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "SingletonClass";
       expect(result).assertEqual("SingletonClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2138,11 +2138,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "ProxyClass";
       expect(result).assertEqual("ProxyClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2155,11 +2155,11 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ClassValue_ToPrint_2100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test start');
       let result: string = "TemplateClass";
       expect(result).assertEqual("TemplateClass");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ClassValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ClassValue toPrint test end');
     });
 
     /**
@@ -2172,12 +2172,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_CharValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'CharValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test start');
       let testChar: string = c'A';
       let result: string = testChar;
       expect(result).assertEqual("A");
       done()
-      hilog.info(domain, tag, '%{public}s', 'CharValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test end');
     });
 
     /**
@@ -2190,12 +2190,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_CharValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'CharValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'CharValue toPrint test start');
       let testChar: string = c'A';
       let result: string = testChar;
       expect(result).assertEqual("A");
       done()
-      hilog.info(domain, tag, '%{public}s', 'CharValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'CharValue toPrint test end');
     });
 
     /**
@@ -2208,12 +2208,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test start');
       let testByte: number = 255;
       let result: string = testByte.toString();
       expect(result).assertEqual("255");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toLocaleString test end');
     });
 
     /**
@@ -2226,12 +2226,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ByteValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'ByteValue toPrint test start');
       let testByte: number = 255;
       let result: string = testByte.toString();
       expect(result).assertEqual("255");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ByteValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'ByteValue toPrint test end');
     });
 
     /**
@@ -2244,12 +2244,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2262,12 +2262,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = false;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2280,12 +2280,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2298,12 +2298,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = false;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2316,12 +2316,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2334,12 +2334,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = false;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2352,12 +2352,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2370,12 +2370,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = false;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2388,12 +2388,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2406,12 +2406,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = false;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2424,12 +2424,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToLocaleString_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toLocaleString test end');
     });
 
     /**
@@ -2442,12 +2442,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_BooleanValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toPrint test start');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toPrint test start');
       let testBoolean: boolean = true;
       let result: string = testBoolean.toString();
       expect(result).assertEqual("true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'BooleanValue toPrint test end');
+      console.log(domain, tag, '%{public}s', 'BooleanValue toPrint test end');
     });
 
     /**
@@ -2460,12 +2460,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [1, 2, 3];
       let result: string = "1,2,3";
       expect(result).assertEqual("1,2,3");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2478,12 +2478,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["a", "b", "c"];
       let result: string = "a,b,c";
       expect(result).assertEqual("a,b,c");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2496,12 +2496,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [10, 20, 30];
       let result: string = "10,20,30";
       expect(result).assertEqual("10,20,30");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2514,12 +2514,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, false, true];
       let result: string = "true,false,true";
       expect(result).assertEqual("true,false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2532,12 +2532,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [100, 200];
       let result: string = "100,200";
       expect(result).assertEqual("100,200");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2550,12 +2550,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["hello", "world"];
       let result: string = "hello,world";
       expect(result).assertEqual("hello,world");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2568,12 +2568,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [5, 10, 15, 20];
       let result: string = "5,10,15,20";
       expect(result).assertEqual("5,10,15,20");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2586,12 +2586,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["test", "array", "value"];
       let result: string = "test,array,value";
       expect(result).assertEqual("test,array,value");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2604,12 +2604,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_0900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [0, 1, 2, 3, 4];
       let result: string = "0,1,2,3,4";
       expect(result).assertEqual("0,1,2,3,4");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2622,12 +2622,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [false, true];
       let result: string = "false,true";
       expect(result).assertEqual("false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2640,12 +2640,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["final", "test"];
       let result: string = "final,test";
       expect(result).assertEqual("final,test");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2658,12 +2658,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [1, 2, 3];
       let result: string = "1,2,3";
       expect(result).assertEqual("1,2,3");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2676,12 +2676,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["a", "b", "c"];
       let result: string = "a,b,c";
       expect(result).assertEqual("a,b,c");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2694,12 +2694,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [10, 20, 30];
       let result: string = "10,20,30";
       expect(result).assertEqual("10,20,30");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2712,12 +2712,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, false, true];
       let result: string = "true,false,true";
       expect(result).assertEqual("true,false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2730,12 +2730,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [100, 200];
       let result: string = "100,200";
       expect(result).assertEqual("100,200");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2748,12 +2748,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["hello", "world"];
       let result: string = "hello,world";
       expect(result).assertEqual("hello,world");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2766,12 +2766,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [5, 10, 15, 20];
       let result: string = "5,10,15,20";
       expect(result).assertEqual("5,10,15,20");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2784,12 +2784,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["test", "array", "value"];
       let result: string = "test,array,value";
       expect(result).assertEqual("test,array,value");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2802,12 +2802,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [0, 1, 2, 3, 4];
       let result: string = "0,1,2,3,4";
       expect(result).assertEqual("0,1,2,3,4");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2820,12 +2820,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [false, true];
       let result: string = "false,true";
       expect(result).assertEqual("false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2838,12 +2838,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["final", "test"];
       let result: string = "final,test";
       expect(result).assertEqual("final,test");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2856,12 +2856,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [7, 8, 9];
       let result: string = "7,8,9";
       expect(result).assertEqual("7,8,9");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2874,12 +2874,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["x", "y", "z"];
       let result: string = "x,y,z";
       expect(result).assertEqual("x,y,z");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2892,12 +2892,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [50, 60, 70];
       let result: string = "50,60,70";
       expect(result).assertEqual("50,60,70");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2910,12 +2910,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, true, false];
       let result: string = "true,true,false";
       expect(result).assertEqual("true,true,false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2928,12 +2928,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["apple", "banana"];
       let result: string = "apple,banana";
       expect(result).assertEqual("apple,banana");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2946,12 +2946,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [11, 22, 33, 44];
       let result: string = "11,22,33,44";
       expect(result).assertEqual("11,22,33,44");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2964,12 +2964,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_2900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["red", "green", "blue"];
       let result: string = "red,green,blue";
       expect(result).assertEqual("red,green,blue");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -2982,12 +2982,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [99, 88, 77];
       let result: string = "99,88,77";
       expect(result).assertEqual("99,88,77");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3000,12 +3000,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [false, false, true];
       let result: string = "false,false,true";
       expect(result).assertEqual("false,false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3018,12 +3018,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["cat", "dog", "bird"];
       let result: string = "cat,dog,bird";
       expect(result).assertEqual("cat,dog,bird");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3036,12 +3036,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [101, 102, 103];
       let result: string = "101,102,103";
       expect(result).assertEqual("101,102,103");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3054,12 +3054,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["one", "two", "three", "four"];
       let result: string = "one,two,three,four";
       expect(result).assertEqual("one,two,three,four");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3072,12 +3072,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [200, 300, 400];
       let result: string = "200,300,400";
       expect(result).assertEqual("200,300,400");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3090,12 +3090,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, false, true, false];
       let result: string = "true,false,true,false";
       expect(result).assertEqual("true,false,true,false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3108,12 +3108,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["sun", "moon", "star"];
       let result: string = "sun,moon,star";
       expect(result).assertEqual("sun,moon,star");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3126,12 +3126,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [555, 666, 777, 888];
       let result: string = "555,666,777,888";
       expect(result).assertEqual("555,666,777,888");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3144,12 +3144,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_3900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["winter", "spring", "summer", "autumn"];
       let result: string = "winter,spring,summer,autumn";
       expect(result).assertEqual("winter,spring,summer,autumn");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3162,12 +3162,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [1000, 2000, 3000];
       let result: string = "1000,2000,3000";
       expect(result).assertEqual("1000,2000,3000");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3180,12 +3180,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, true, true];
       let result: string = "true,true,true";
       expect(result).assertEqual("true,true,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3198,12 +3198,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["north", "south", "east", "west"];
       let result: string = "north,south,east,west";
       expect(result).assertEqual("north,south,east,west");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3216,12 +3216,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [123, 456, 789];
       let result: string = "123,456,789";
       expect(result).assertEqual("123,456,789");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3234,12 +3234,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["monday", "tuesday", "wednesday"];
       let result: string = "monday,tuesday,wednesday";
       expect(result).assertEqual("monday,tuesday,wednesday");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3252,12 +3252,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [111, 222, 333, 444, 555];
       let result: string = "111,222,333,444,555";
       expect(result).assertEqual("111,222,333,444,555");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3270,12 +3270,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [false, false, false];
       let result: string = "false,false,false";
       expect(result).assertEqual("false,false,false");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3288,12 +3288,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["car", "bus", "train", "plane"];
       let result: string = "car,bus,train,plane";
       expect(result).assertEqual("car,bus,train,plane");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3306,12 +3306,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4800", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [9, 8, 7, 6, 5];
       let result: string = "9,8,7,6,5";
       expect(result).assertEqual("9,8,7,6,5");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3324,12 +3324,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_4900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["book", "pen", "paper"];
       let result: string = "book,pen,paper";
       expect(result).assertEqual("book,pen,paper");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3342,12 +3342,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_5000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [10, 20, 30, 40, 50];
       let result: string = "10,20,30,40,50";
       expect(result).assertEqual("10,20,30,40,50");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3360,12 +3360,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_5100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: boolean[] = [true, false, false, true];
       let result: string = "true,false,false,true";
       expect(result).assertEqual("true,false,false,true");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3378,12 +3378,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_5200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: string[] = ["alpha", "beta", "gamma", "delta"];
       let result: string = "alpha,beta,gamma,delta";
       expect(result).assertEqual("alpha,beta,gamma,delta");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
 
     /**
@@ -3396,12 +3396,12 @@ export default function toLocalStringTest() {
      */
     it("SUB_Value_ArrayValue_ToLocaleString_5250", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000)
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test start');
       let testArray: number[] = [999, 888, 777, 666, 555, 444];
       let result: string = "999,888,777,666,555,444";
       expect(result).assertEqual("999,888,777,666,555,444");
       done()
-      hilog.info(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
+      console.log(domain, tag, '%{public}s', 'ArrayValue toLocaleString test end');
     });
    })
 }

@@ -1458,14 +1458,14 @@ export default function valueBasicTest() {
     it("SUB_Data_LongValue_Special_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testLong017 start');
+        console.log(domain, tag, '%{public}s', 'testLong017 start');
         const tinyNegValue: long = -456 as long;
         const instance = LongValue.of(tinyNegValue);
         expect(instance instanceof LongValue).assertTrue();
         const longValue = instance as LongValue;
         expect(longValue.getValueData()).assertEqual(tinyNegValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testLong017 end');
+        console.log(domain, tag, '%{public}s', 'testLong017 end');
       });
 
     /**
@@ -1479,14 +1479,14 @@ export default function valueBasicTest() {
     it("SUB_Data_LongValue_Special_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testLong018 start');
+        console.log(domain, tag, '%{public}s', 'testLong018 start');
         const pow10Value: long = 1000000000000000000 as long;
         const instance = LongValue.of(pow10Value);
         expect(instance instanceof LongValue).assertTrue();
         const longValue = instance as LongValue;
         expect(longValue.getValueData()).assertEqual(pow10Value);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testLong018 end');
+        console.log(domain, tag, '%{public}s', 'testLong018 end');
       });
 
     /**
@@ -1500,14 +1500,14 @@ export default function valueBasicTest() {
     it("SUB_Data_LongValue_Special_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testLong019 start');
+        console.log(domain, tag, '%{public}s', 'testLong019 start');
         const negPow10Value: long = -1000000000000000 as long;
         const instance = LongValue.of(negPow10Value);
         expect(instance instanceof LongValue).assertTrue();
         const longValue = instance as LongValue;
         expect(longValue.getValueData()).assertEqual(negPow10Value);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testLong019 end');
+        console.log(domain, tag, '%{public}s', 'testLong019 end');
       });
 
     /**
@@ -1521,14 +1521,14 @@ export default function valueBasicTest() {
     it("SUB_Data_LongValue_Basic_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testLong020 start');
+        console.log(domain, tag, '%{public}s', 'testLong020 start');
         const midOddValue: long = 7654321987654321 as long;
         const instance = LongValue.of(midOddValue);
         expect(instance instanceof LongValue).assertTrue();
         const longValue = instance as LongValue;
         expect(longValue.getValueData()).assertEqual(midOddValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testLong020 end');
+        console.log(domain, tag, '%{public}s', 'testLong020 end');
       });
 
     /**
@@ -1542,14 +1542,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort001 start');
+        console.log(domain, tag, '%{public}s', 'testShort001 start');
         const testData: short = 12345 as short;
         const instance = ShortValue.of(testData);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(testData);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort001 end');
+        console.log(domain, tag, '%{public}s', 'testShort001 end');
       });
 
     /**
@@ -1563,14 +1563,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort002 start');
+        console.log(domain, tag, '%{public}s', 'testShort002 start');
         const testData: short = -9876 as short;
         const instance = ShortValue.of(testData);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(testData);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort002 end');
+        console.log(domain, tag, '%{public}s', 'testShort002 end');
       });
 
     /**
@@ -1584,14 +1584,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Boundary_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort003 start');
+        console.log(domain, tag, '%{public}s', 'testShort003 start');
         const maxValue: short = 32767 as short;
         const instance = ShortValue.of(maxValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(maxValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort003 end');
+        console.log(domain, tag, '%{public}s', 'testShort003 end');
       });
 
     /**
@@ -1605,14 +1605,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Boundary_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort004 start');
+        console.log(domain, tag, '%{public}s', 'testShort004 start');
         const minValue: short = -32768 as short;
         const instance = ShortValue.of(minValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(minValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort004 end');
+        console.log(domain, tag, '%{public}s', 'testShort004 end');
       });
 
     /**
@@ -1626,14 +1626,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort005 start');
+        console.log(domain, tag, '%{public}s', 'testShort005 start');
         const zeroValue: short = 0 as short;
         const instance = ShortValue.of(zeroValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(zeroValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort005 end');
+        console.log(domain, tag, '%{public}s', 'testShort005 end');
       });
 
     /**
@@ -1647,14 +1647,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort006 start');
+        console.log(domain, tag, '%{public}s', 'testShort006 start');
         const oneValue: short = 1 as short;
         const instance = ShortValue.of(oneValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(oneValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort006 end');
+        console.log(domain, tag, '%{public}s', 'testShort006 end');
       });
 
     /**
@@ -1668,14 +1668,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Boundary_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort008 start');
+        console.log(domain, tag, '%{public}s', 'testShort008 start');
         const nearMaxValue: short = 32766 as short;
         const instance = ShortValue.of(nearMaxValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(nearMaxValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort008 end');
+        console.log(domain, tag, '%{public}s', 'testShort008 end');
       });
 
     /**
@@ -1689,14 +1689,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Boundary_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort009 start');
+        console.log(domain, tag, '%{public}s', 'testShort009 start');
         const nearMinValue: short = -32767 as short;
         const instance = ShortValue.of(nearMinValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(nearMinValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort009 end');
+        console.log(domain, tag, '%{public}s', 'testShort009 end');
       });
 
     /**
@@ -1710,14 +1710,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort012 start');
+        console.log(domain, tag, '%{public}s', 'testShort012 start');
         const mediumPosValue: short = 1234 as short;
         const instance = ShortValue.of(mediumPosValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(mediumPosValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort012 end');
+        console.log(domain, tag, '%{public}s', 'testShort012 end');
       });
 
     /**
@@ -1731,14 +1731,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort013 start');
+        console.log(domain, tag, '%{public}s', 'testShort013 start');
         const mediumNegValue: short = -5678 as short;
         const instance = ShortValue.of(mediumNegValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(mediumNegValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort013 end');
+        console.log(domain, tag, '%{public}s', 'testShort013 end');
       });
 
     /**
@@ -1752,14 +1752,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort015 start');
+        console.log(domain, tag, '%{public}s', 'testShort015 start');
         const pow2Value: short = 1024 as short;
         const instance = ShortValue.of(pow2Value);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(pow2Value);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort015 end');
+        console.log(domain, tag, '%{public}s', 'testShort015 end');
       });
 
     /**
@@ -1773,14 +1773,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort016 start');
+        console.log(domain, tag, '%{public}s', 'testShort016 start');
         const smallPosValue: short = 100 as short;
         const instance = ShortValue.of(smallPosValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(smallPosValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort016 end');
+        console.log(domain, tag, '%{public}s', 'testShort016 end');
       });
 
     /**
@@ -1794,14 +1794,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort017 start');
+        console.log(domain, tag, '%{public}s', 'testShort017 start');
         const smallNegValue: short = -200 as short;
         const instance = ShortValue.of(smallNegValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(smallNegValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort017 end');
+        console.log(domain, tag, '%{public}s', 'testShort017 end');
       });
 
     /**
@@ -1815,14 +1815,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Special_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort018 start');
+        console.log(domain, tag, '%{public}s', 'testShort018 start');
         const pow10Value: short = 1000 as short;
         const instance = ShortValue.of(pow10Value);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(pow10Value);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort018 end');
+        console.log(domain, tag, '%{public}s', 'testShort018 end');
       });
 
     /**
@@ -1836,14 +1836,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort019 start');
+        console.log(domain, tag, '%{public}s', 'testShort019 start');
         const oddPosValue: short = 12345 as short;
         const instance = ShortValue.of(oddPosValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(oddPosValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort019 end');
+        console.log(domain, tag, '%{public}s', 'testShort019 end');
       });
 
     /**
@@ -1857,14 +1857,14 @@ export default function valueBasicTest() {
     it("SUB_Data_ShortValue_Basic_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'testShort020 start');
+        console.log(domain, tag, '%{public}s', 'testShort020 start');
         const evenNegValue: short = -9876 as short;
         const instance = ShortValue.of(evenNegValue);
         expect(instance instanceof ShortValue).assertTrue();
         const shortValue = instance as ShortValue;
         expect(shortValue.getValueData()).assertEqual(evenNegValue);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testShort020 end');
+        console.log(domain, tag, '%{public}s', 'testShort020 end');
       });
 
   /**
@@ -1878,13 +1878,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_SingleElement_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test001 start');
+        console.log(domain, tag, '%{public}s', 'test001 start');
         let testValues: FixedArray<number> = [42];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(1);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test001 end');
+        console.log(domain, tag, '%{public}s', 'test001 end');
       });
 
     /**
@@ -1898,13 +1898,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_BooleanArray_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test002 start');
+        console.log(domain, tag, '%{public}s', 'test002 start');
         let testValues: FixedArray<boolean> = [true, false, true];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test002 end');
+        console.log(domain, tag, '%{public}s', 'test002 end');
       });
 
     /**
@@ -1918,13 +1918,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_StringArray_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test003 start');
+        console.log(domain, tag, '%{public}s', 'test003 start');
         let testValues: FixedArray<string> = ["hello", "world", "test", "array"];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test003 end');
+        console.log(domain, tag, '%{public}s', 'test003 end');
       });
 
     /**
@@ -1938,13 +1938,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_LongArray_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test004 start');
+        console.log(domain, tag, '%{public}s', 'test004 start');
         let testValues: FixedArray<long> = [123456789012345, 987654321098765];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(2);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test004 end');
+        console.log(domain, tag, '%{public}s', 'test004 end');
       });
 
     /**
@@ -1958,13 +1958,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_LargeArray_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test005 start');
+        console.log(domain, tag, '%{public}s', 'test005 start');
         let testValues: FixedArray<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(10);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test005 end');
+        console.log(domain, tag, '%{public}s', 'test005 end');
       });
 
     /**
@@ -1978,13 +1978,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_NullElements_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test006 start');
+        console.log(domain, tag, '%{public}s', 'test006 start');
         let testValues: FixedArray<number | null> = [null, 2, null, 4];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test006 end');
+        console.log(domain, tag, '%{public}s', 'test006 end');
       });
 
     /**
@@ -1998,13 +1998,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_NestedArrays_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test007 start');
+        console.log(domain, tag, '%{public}s', 'test007 start');
         let testValues: FixedArray<FixedArray<number>> = [[1, 2], [3, 4, 5], [6]];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test007 end');
+        console.log(domain, tag, '%{public}s', 'test007 end');
       });
 
     /**
@@ -2018,13 +2018,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_NonEmptyArray_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test008 start');
+        console.log(domain, tag, '%{public}s', 'test008 start');
         let testValues: FixedArray<number> = [123, 456, 789];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test008 end');
+        console.log(domain, tag, '%{public}s', 'test008 end');
       });
 
     /**
@@ -2038,13 +2038,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_EmptyArray_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test009 start');
+        console.log(domain, tag, '%{public}s', 'test009 start');
         let testValues: FixedArray<number> = [];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test009 end');
+        console.log(domain, tag, '%{public}s', 'test009 end');
       });
 
     /**
@@ -2058,13 +2058,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_MixedArray_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test010 start');
+        console.log(domain, tag, '%{public}s', 'test010 start');
         let testValues: FixedArray<number | string> = [123, "abc", 456, "def"];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test010 end');
+        console.log(domain, tag, '%{public}s', 'test010 end');
       });
 
     /**
@@ -2078,7 +2078,7 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_Multiple_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test011 start');
+        console.log(domain, tag, '%{public}s', 'test011 start');
         let testValues1: FixedArray<number> = [123, 456, 789];
         let testValues2: FixedArray<string> = ["apple", "banana", "cherry"];
         let instance1 = ArrayValue.of(testValues1);
@@ -2088,7 +2088,7 @@ export default function valueBasicTest() {
         expect(arrayValue1.getLength()).assertEqual(3);
         expect(arrayValue2.getLength()).assertEqual(3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test011 end');
+        console.log(domain, tag, '%{public}s', 'test011 end');
       });
 
     /**
@@ -2102,13 +2102,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_BooleanArray_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test013 start');
+        console.log(domain, tag, '%{public}s', 'test013 start');
         let testValues: FixedArray<boolean> = [true, false, true, false];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test013 end');
+        console.log(domain, tag, '%{public}s', 'test013 end');
       });
 
     /**
@@ -2122,13 +2122,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_LongArray_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test014 start');
+        console.log(domain, tag, '%{public}s', 'test014 start');
         let testValues: FixedArray<long> = [123456789012345, 987654321098765, 1122334455667788];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test014 end');
+        console.log(domain, tag, '%{public}s', 'test014 end');
       });
 
     /**
@@ -2142,13 +2142,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_NullInArray_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test015 start');
+        console.log(domain, tag, '%{public}s', 'test015 start');
         let testValues: FixedArray<number | null> = [null, 200, null, 400, null];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(5);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test015 end');
+        console.log(domain, tag, '%{public}s', 'test015 end');
       });
 
     /**
@@ -2162,13 +2162,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_SingleElement_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test016 start');
+        console.log(domain, tag, '%{public}s', 'test016 start');
         let testValues: FixedArray<string> = ["onlyElement"];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(1);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test016 end');
+        console.log(domain, tag, '%{public}s', 'test016 end');
       });
 
     /**
@@ -2182,13 +2182,13 @@ export default function valueBasicTest() {
     it("SUB_Data_ArrayValue_Length_DeeperNestedArray_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         
-        hilog.info(domain, tag, '%{public}s', 'test017 start');
+        console.log(domain, tag, '%{public}s', 'test017 start');
         let testValues: FixedArray<FixedArray<FixedArray<number>>> = [[[1]], [[2, 3]], [[4, 5, 6]], [[7]]];
         let instance = ArrayValue.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'test017 end');
+        console.log(domain, tag, '%{public}s', 'test017 end');
       });
 
     const getValidLambdaType = (): LambdaType => {

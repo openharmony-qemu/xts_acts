@@ -462,8 +462,6 @@ export default function type_05Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
-
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0500
      * @tc.name    testFunctionTypeGetParametersNum_0005
