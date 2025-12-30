@@ -157,7 +157,7 @@ public:
     OHNNGraphArgsMulti graphArgs = {
         .operationTypes = { OH_NN_OPS_ADD, OH_NN_OPS_TOP_K },
         .operands = { { addModel.input0, addModel.input1, addModel.activation, addModel.output },
-                      { topKModel.k,
+                       { topKModel.k,
                         topKModel.sorted,
                         topKModel.output1,
                         topKModel.output2 } },
