@@ -42,8 +42,6 @@ export default function CopyWithTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
-
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_EVERY_5800
      * @tc.name    testBuiltinArrayEvery0808

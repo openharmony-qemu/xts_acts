@@ -42,8 +42,6 @@ export default function EveryModulusTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
-
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_211
      * @tc.name    test_type_of_211

@@ -41,7 +41,6 @@ export default function math01Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
      * @tc.number  TES_TMA_THMIN_10001
@@ -52,7 +51,7 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10001 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10001 start');
       let a: number = 5.0;
       let b: number = 10.0;
       let expected: number = 5.0;
@@ -60,11 +59,11 @@ export default function math01Test() {
         let result: number = Math.min(a, b);
         expect(result).assertEqual(expected);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10001 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10001 end');
       }
     });
 
@@ -77,7 +76,7 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10002 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10002 start');
       let a: number = -5.0;
       let b: number = -10.0;
       let expected: number = -10.0;
@@ -85,11 +84,11 @@ export default function math01Test() {
         let result: number = Math.min(a, b);
         expect(result).assertEqual(expected);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10002 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10002 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10002 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10002 end');
       }
     });
 
@@ -102,7 +101,7 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10003 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10003 start');
       let a: number = 5.0;
       let b: number = -10.0;
       let expected: number = -10.0;
@@ -110,11 +109,11 @@ export default function math01Test() {
         let result: number = Math.min(a, b);
         expect(result).assertEqual(expected);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10003 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10003 end');
       }
     });
 
@@ -127,7 +126,7 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10004 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10004 start');
       let a: number = 5.0;
       let b: number = 5.0;
       let expected: number = 5.0;
@@ -135,11 +134,11 @@ export default function math01Test() {
         let result: number = Math.min(a, b);
         expect(result).assertEqual(expected);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin10004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10004 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10004 end');
       }
     });
 
@@ -152,13 +151,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10005 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10005 start');
       try {
         expect(Math.min(0, 10)).assertEqual(0);
         expect(Math.min(3.14, 0)).assertEqual(0);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10005 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10005 end');
       }
     });
 
@@ -171,13 +170,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10006 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10006 start');
       try {
         expect(Math.min(0, -5)).assertEqual(-5);
         expect(Math.min(-2.5, 0)).assertEqual(-2.5);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10006 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10006 end');
       }
     });
 
@@ -190,13 +189,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10007 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10007 start');
       try {
         expect(Math.min(Number.MAX_VALUE, Number.MAX_VALUE - 1)).assertEqual(Number.MAX_VALUE - 1);
         expect(Math.min(-Number.MAX_VALUE, -Number.MAX_VALUE + 1)).assertEqual(-Number.MAX_VALUE);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10007 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10007 end');
       }
     });
 
@@ -209,13 +208,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10008 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10008 start');
       try {
         expect(Math.min(3.14159, 3.14)).assertEqual(3.14);
         expect(Math.min(-0.0001, -0.00001)).assertEqual(-0.0001);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10008 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10008 end');
       }
     });
 
@@ -228,13 +227,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10009 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10009 start');
       try {
         expect(Math.min(Infinity, 100)).assertEqual(100);
         expect(Math.min(-Infinity, -100)).assertEqual(-Infinity);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10009 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10009 end');
       }
     });
 
@@ -247,13 +246,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10010 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10010 start');
       try {
         expect(isNaN(Math.min(NaN, 5))).assertTrue();
         expect(isNaN(Math.min(10, NaN))).assertTrue();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10010 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10010 end');
       }
     });
 
@@ -266,13 +265,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10011 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10011 start');
       try {
         expect(Math.min(10, 5, 8, 2, 15)).assertEqual(2);
         expect(Math.min(-10, -5, 0, -20)).assertEqual(-20);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10011 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10011 end');
       }
     });
 
@@ -285,13 +284,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10014 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10014 start');
       try {
         expect(Math.min(0.0000000001, 0.0000000002)).assertEqual(0.0000000001);
         expect(Math.min(1e-15, 2e-15)).assertEqual(1e-15);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10014 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10014 end');
       }
     });
 
@@ -304,13 +303,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10015 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10015 start');
       try {
         expect(Math.min(5, 5.0)).assertEqual(5);
         expect(Math.min(3, 2.999)).assertEqual(2.999);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10015 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10015 end');
       }
     });
 
@@ -323,13 +322,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10016 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10016 start');
       try {
         expect(Math.min(15, 8, 20, 3, 25)).assertEqual(3);
         expect(Math.min(-5, -10, 0, -15, 10)).assertEqual(-15);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10016 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10016 end');
       }
     });
 
@@ -342,13 +341,13 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin1017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin1017 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin1017 start');
       try {
         expect(isNaN(Math.min(Infinity, NaN))).assertTrue();
         expect(Math.min(-Infinity, Number.MIN_VALUE)).assertEqual(-Infinity);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin1017 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin1017 end');
       }
     });
 
@@ -361,7 +360,7 @@ export default function math01Test() {
      * @tc.type    FUNCTION
     */
     it("testmathmin10018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin10018 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin10018 start');
       try {
         expect(Math.min(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER - 1))
           .assertEqual(Number.MAX_SAFE_INTEGER - 1);
@@ -369,7 +368,7 @@ export default function math01Test() {
           .assertEqual(Number.MIN_SAFE_INTEGER);
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin10018 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin10018 end');
       }
     });
 
@@ -382,16 +381,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20001 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20001 start');
       try {
         const result = mod(10.0, 3.0);
         expect(result).assertEqual(1.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20001 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20001 end');
       }
     });
 
@@ -404,16 +403,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20002 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20002 start');
       try {
         const result = mod(-10.0, 3.0);
         expect(result).assertEqual(-1.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20002 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20002 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20002 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20002 end');
       }
     });
 
@@ -426,16 +425,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20003 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20003 start');
       try {
         const result = mod(10.0, -3.0);
         expect(result).assertEqual(1.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20003 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20003 end');
       }
     });
 
@@ -448,16 +447,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20004 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20004 start');
       try {
         const result = mod(-10.0, -3.0);
         expect(result).assertEqual(-1.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20004 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20004 end');
       }
     });
 
@@ -470,16 +469,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20005 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20005 start');
       try {
         const result = mod(5.0, 0.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20005 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20005 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20005 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20005 end');
       }
     });
 
@@ -492,16 +491,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20006 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20006 start');
       try {
         const result = mod(Infinity, 3.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20006 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20006 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20006 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20006 end');
       }
     });
 
@@ -514,16 +513,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20007 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20007 start');
       try {
         const result = mod(5.0, -Infinity);
         expect(result).assertEqual(5.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20007 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20007 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20007 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20007 end');
       }
     });
 
@@ -536,16 +535,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20008 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20008 start');
       try {
         const result = mod(NaN, NaN);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20008 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20008 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20008 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20008 end');
       }
     });
 
@@ -558,16 +557,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20009 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20009 start');
       try {
         const result = mod(1e20, 3.0);
         expect(result).assertEqual(1.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20009 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20009 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20009 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20009 end');
       }
     });
 
@@ -580,16 +579,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20010 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20010 start');
       try {
         const result = mod(0.0, 5.0);
         expect(result).assertEqual(0.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20010 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20010 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20010 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20010 end');
       }
     });
 
@@ -602,16 +601,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20011 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20011 start');
       try {
         const result = mod(Infinity, Infinity);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20011 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20011 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20011 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20011 end');
       }
     });
 
@@ -624,16 +623,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20012 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20012 start');
       try {
         const result = mod(-Infinity, -Infinity);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20012 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20012 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20012 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20012 end');
       }
     });
 
@@ -646,18 +645,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20013 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20013 start');
       try {
         const result1 = mod(Infinity, -Infinity);
         const result2 = mod(-Infinity, Infinity);
         expect(isNaN(result1)).assertTrue();
         expect(isNaN(result2)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20013 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20013 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20013 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20013 end');
       }
     });
 
@@ -670,16 +669,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20014 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20014 start');
       try {
         const result = mod(0.0, 0.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20014 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20014 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20014 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20014 end');
       }
     });
 
@@ -692,18 +691,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20015 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20015 start');
       try {
         const result1 = mod(0.0, Infinity);
         const result2 = mod(0.0, -Infinity);
         expect(result1).assertEqual(0.0);
         expect(result2).assertEqual(0.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20015 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20015 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20015 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20015 end');
       }
     });
 
@@ -716,16 +715,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20016 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20016 start');
       try {
         const result = mod(NaN, 5.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20016 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20016 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20016 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20016 end');
       }
     });
 
@@ -738,16 +737,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20017 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20017 start');
       try {
         const result = mod(10.0, NaN);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20017 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20017 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20017 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20017 end');
       }
     });
 
@@ -760,18 +759,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20018 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20018 start');
       try {
         const result1 = mod(15.0, Infinity);
         const result2 = mod(-15.0, Infinity);
         expect(result1).assertEqual(15.0);
         expect(result2).assertEqual(-15.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20018 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20018 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20018 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20018 end');
       }
     });
 
@@ -784,18 +783,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20019 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20019 start');
       try {
         const result1 = mod(15.0, -Infinity);
         const result2 = mod(-15.0, -Infinity);
         expect(result1).assertEqual(15.0);
         expect(result2).assertEqual(-15.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20019 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20019 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20019 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20019 end');
       }
     });
 
@@ -808,18 +807,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20020 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20020 start');
       try {
         const result1 = mod(7.0, 7.0);
         const result2 = mod(-7.0, -7.0);
         expect(result1).assertEqual(0.0);
         expect(result2).assertEqual(-0.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20020 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20020 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20020 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20020 end');
       }
     });
 
@@ -832,16 +831,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20021 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20021 start');
       try {
         const result = mod(0.0, 5.0);
         expect(result).assertEqual(0.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20021 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20021 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20021 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20021 end');
       }
     });
 
@@ -854,16 +853,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("TEST_MATH_MIN_20023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20023 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20023 start');
       try {
         const result = mod(Number.MIN_VALUE, 2.0);
         expect(result).assertEqual(Number.MIN_VALUE);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20023 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20023 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20023 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20023 end');
       }
     });
 
@@ -876,17 +875,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20024 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20024 start');
       try {
         const divisor = Number.MAX_VALUE / 2;
         const result = mod(Number.MAX_VALUE, divisor);
         expect(Math.abs(result) < 1e-10).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20024 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20024 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20024 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20024 end');
       }
     });
 
@@ -899,17 +898,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20025 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20025 start');
       try {
         const result = mod(3.000000000000001, 3.0);
         const expected = 0.000000000000001;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20025 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20025 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20025 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20025 end');
       }
     });
 
@@ -922,16 +921,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20026 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20026 start');
       try {
         const result = mod(0.1 + 0.2, 0.1);
         expect(Math.abs(result) < 1e-15).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20026 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20026 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20026 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20026 end');
       }
     });
 
@@ -944,16 +943,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20027 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20027 start');
       try {
         const result = mod(7.5, 7.5);
         expect(result).assertEqual(0.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20027 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20027 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20027 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20027 end');
       }
     });
 
@@ -966,17 +965,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20029 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20029 start');
       try {
         const subnormal = Number.MIN_VALUE / 2.0;
         const result = mod(subnormal, 2.0);
         expect(result).assertEqual(subnormal);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20029 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20029 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20029 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20029 end');
       }
     });
 
@@ -989,16 +988,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20030 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20030 start');
       try {
         const result = mod(5.0, -0.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20030 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20030 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20030 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20030 end');
       }
     });
 
@@ -1011,16 +1010,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20031 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20031 start');
       try {
         const result = mod(-Infinity, 3.0);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20031 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20031 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20031 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20031 end');
       }
     });
 
@@ -1033,16 +1032,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20032 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20032 start');
       try {
         const result = mod(-Infinity, -Infinity);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20032 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20032 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20032 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20032 end');
       }
     });
 
@@ -1055,16 +1054,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20033 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20033 start');
       try {
         const result = mod(-10.5, 3.0);
         expect(result).assertEqual(-1.5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20033 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20033 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20033 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20033 end');
       }
     });
 
@@ -1077,16 +1076,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20034 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20034 start');
       try {
         const result = mod(10.5, -3.0);
         expect(result).assertEqual(1.5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20034 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20034 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20034 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20034 end');
       }
     });
 
@@ -1099,16 +1098,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20035 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20035 start');
       try {
         const result = mod(NaN, NaN);
         expect(isNaN(result)).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20035 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20035 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20035 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20035 end');
       }
     });
 
@@ -1121,18 +1120,18 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20036 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20036 start');
       try {
         const value = 1.0000000000000002;
         const result = mod(value, 1.0);
         const expected = 0.0000000000000002;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20036 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20036 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20036 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20036 end');
       }
     });
 
@@ -1145,16 +1144,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20037 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20037 start');
       try {
         const result = mod(15.0, Infinity);
         expect(result).assertEqual(15.0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20037 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20037 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20037 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20037 end');
       }
     });
 
@@ -1167,16 +1166,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20038 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20038 start');
       try {
         const result = mod(Number.MAX_VALUE, 1.0);
         expect(Math.abs(result) < 1e-10).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20038 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20038 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20038 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20038 end');
       }
     });
 
@@ -1189,16 +1188,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20039 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20039 start');
       try {
         const result = mod(Number.MIN_VALUE, 1.0);
         expect(result).assertEqual(Number.MIN_VALUE);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20039 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20039 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20039 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20039 end');
       }
     });
 
@@ -1211,17 +1210,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin20040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin20040 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin20040 start');
       try {
         const result = mod(-7.3, 3.2);
         const expected = -0.9;
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20040 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin20040 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin20040 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin20040 end');
       }
     });
 
@@ -1234,15 +1233,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30001 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30001 start');
       try {
         expect(min(5, 10)).assertEqual(5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30001 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30001 end');
       }
     });
 
@@ -1255,15 +1254,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30002 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30002 start');
       try {
         expect(min(15, 8)).assertEqual(8);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30002 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30002 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30002 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30002 end');
       }
     });
 
@@ -1276,15 +1275,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30003 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30003 start');
       try {
         expect(min(-10, -5)).assertEqual(-10);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30003 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30003 end');
       }
     });
 
@@ -1297,15 +1296,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30004 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30004 start');
       try {
         expect(min(-3, -8)).assertEqual(-8);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30004 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30004 end');
       }
     });
 
@@ -1318,15 +1317,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30005 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30005 start');
       try {
         expect(min(7, -3)).assertEqual(-3);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30005 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30005 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30005 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30005 end');
       }
     });
 
@@ -1339,15 +1338,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30006 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30006 start');
       try {
         expect(min(100, 100)).assertEqual(100);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30006 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30006 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30006 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30006 end');
       }
     });
 
@@ -1360,15 +1359,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30007 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30007 start');
       try {
         expect(min(0, 5)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30007 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30007 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30007 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30007 end');
       }
     });
 
@@ -1381,15 +1380,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30008 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30008 start');
       try {
         expect(min(0, -5)).assertEqual(-5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30008 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30008 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30008 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30008 end');
       }
     });
 
@@ -1402,17 +1401,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30009 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30009 start');
       try {
         const maxInt = Number.MAX_SAFE_INTEGER;
         const minInt = Number.MIN_SAFE_INTEGER;
         expect(min(maxInt, minInt)).assertEqual(minInt);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30009 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30009 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30009 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30009 end');
       }
     });
 
@@ -1425,15 +1424,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30010 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30010 start');
       try {
         expect(min(1000000, 999999)).assertEqual(999999);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30010 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30010 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30010 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30010 end');
       }
     });
 
@@ -1446,15 +1445,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30011 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30011 start');
       try {
         expect(isNaN(mod(0, 0))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30011 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30011 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30011 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30011 end');
       }
     });
 
@@ -1467,15 +1466,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30012 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30012 start');
       try {
         expect(isNaN(mod(Number.NEGATIVE_INFINITY, 3))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30012 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30012 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30012 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30012 end');
       }
     });
 
@@ -1488,15 +1487,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30013 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30013 start');
       try {
         expect(isNaN(mod(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30013 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30013 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30013 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30013 end');
       }
     });
 
@@ -1509,15 +1508,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30014 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30014 start');
       try {
         expect(isNaN(mod(5, Number.NaN))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30014 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30014 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30014 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30014 end');
       }
     });
 
@@ -1530,15 +1529,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30022 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30022 start');
       try {
         expect(isNaN(mod(Number.NaN, 3))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30015 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30015 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30015 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30015 end');
       }
     });
 
@@ -1551,15 +1550,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30016 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30016 start');
       try {
         expect(isNaN(mod(Number.NaN, Number.NaN))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30016 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30016 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30016 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30016 end');
       }
     });
 
@@ -1572,15 +1571,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30017 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30017 start');
       try {
         expect(min(2, 5)).assertEqual(2);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30017 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30017 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30017 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30017 end');
       }
     });
 
@@ -1593,15 +1592,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30019 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30019 start');
       try {
         expect(min(0, 0)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30019 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30019 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30019 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30019 end');
       }
     });
 
@@ -1614,15 +1613,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30018 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30018 start');
       try {
         expect(min(-10, -1)).assertEqual(-10);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30018 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30018 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30018 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30018 end');
       }
     });
 
@@ -1635,15 +1634,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30020 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30020 start');
       try {
         expect(min(Number.MIN_SAFE_INTEGER, 0)).assertEqual(Number.MIN_SAFE_INTEGER);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30020 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30020 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30020 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30020 end');
       }
     });
 
@@ -1656,15 +1655,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30021 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30021 start');
       try {
         expect(min(Number.MAX_SAFE_INTEGER, 0)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30021 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30021 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30021 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30021 end');
       }
     });
 
@@ -1677,15 +1676,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30022 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30022 start');
       try {
         expect(min(Number.MIN_SAFE_INTEGER, -1)).assertEqual(Number.MIN_SAFE_INTEGER);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30022 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30022 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30022 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30022 end');
       }
     });
 
@@ -1698,15 +1697,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin3023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin3023 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin3023 start');
       try {
         expect(min(Number.MAX_SAFE_INTEGER, 1)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin3023 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin3023 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin3023 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin3023 end');
       }
     });
 
@@ -1719,15 +1718,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30024 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30024 start');
       try {
         expect(min(-3, 7)).assertEqual(-3);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30024 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30024 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30024 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30024 end');
       }
     });
 
@@ -1740,15 +1739,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin30025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin30025 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin30025 start');
       try {
         expect(min(-5, -5)).assertEqual(-5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30025 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin30025 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin30025 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin30025 end');
       }
     });
 
@@ -1761,15 +1760,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40001 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40001 start');
       try {
         expect(min(5, 10)).assertEqual(5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40001 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40001 end');
       }
     });
 
@@ -1782,15 +1781,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40002 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40002 start');
       try {
         expect(min(100, 50)).assertEqual(50);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40002 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40002 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40002 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40002 end');
       }
     });
 
@@ -1803,15 +1802,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40003 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40003 start');
       try {
         expect(min(-10, -5)).assertEqual(-10);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40003 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40003 end');
       }
     });
 
@@ -1824,15 +1823,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40004 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40004 start');
       try {
         expect(min(-3, -8)).assertEqual(-8);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40004 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40004 end');
       }
     });
 
@@ -1845,15 +1844,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40005 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40005 start');
       try {
         expect(min(15, -20)).assertEqual(-20);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40005 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40005 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40005 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40005 end');
       }
     });
 
@@ -1866,15 +1865,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40006 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40006 start');
       try {
         expect(min(0, 100)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40006 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40006 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40006 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40006 end');
       }
     });
 
@@ -1887,15 +1886,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40007 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40007 start');
       try {
         expect(min(-50, 0)).assertEqual(-50);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40007 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40007 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40007 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40007 end');
       }
     });
 
@@ -1908,15 +1907,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40008 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40008 start');
       try {
         expect(min(0, 0)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40008 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40008 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40008 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40008 end');
       }
     });
 
@@ -1929,15 +1928,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40009 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40009 start');
       try {
         expect(min(-999999, -1000000)).assertEqual(-1000000);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40009 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40009 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40009 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40009 end');
       }
     });
 
@@ -1950,15 +1949,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40010 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40010 start');
       try {
         expect(min(123456, 123456)).assertEqual(123456);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40010 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40010 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40010 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40010 end');
       }
     });
 
@@ -1971,15 +1970,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40011 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40011 start');
       try {
         expect(min(-7, -7)).assertEqual(-7);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40011 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40011 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40011 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40011 end');
       }
     });
 
@@ -1992,16 +1991,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40012 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40012 start');
       try {
         const maxSafe = Number.MAX_SAFE_INTEGER;
         expect(min(maxSafe, maxSafe - 1)).assertEqual(maxSafe - 1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40012 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40012 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40012 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40012 end');
       }
     });
 
@@ -2014,16 +2013,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40013 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40013 start');
       try {
         const minSafe = Number.MIN_SAFE_INTEGER;
         expect(min(minSafe, minSafe + 1)).assertEqual(minSafe);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40013 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40013 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40013 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40013 end');
       }
     });
 
@@ -2036,15 +2035,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40014 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40014 start');
       try {
         expect(min(3.14, 5.67)).assertEqual(3.14);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40014 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40014 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40014 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40014 end');
       }
     });
 
@@ -2057,15 +2056,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40015 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40015 start');
       try {
         expect(min(0.1 + 0.2, 0.3)).assertEqual(0.3);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40015 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40015 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40015 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40015 end');
       }
     });
 
@@ -2078,15 +2077,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40016 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40016 start');
       try {
         expect(min(Infinity, 100)).assertEqual(100);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40016 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40016 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40016 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40016 end');
       }
     });
 
@@ -2099,15 +2098,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40017 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40017 start');
       try {
         expect(min(-Infinity, -1000)).assertEqual(-Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40017 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40017 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40017 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40017 end');
       }
     });
 
@@ -2120,15 +2119,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40018 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40018 start');
       try {
         expect(Number.isNaN(min(NaN, 5))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40018 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40018 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40018 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40018 end');
       }
     });
 
@@ -2141,16 +2140,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40019 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40019 start');
       try {
         expect(min(0.000000000000001, 0.000000000000002))
           .assertEqual(0.000000000000001);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40019 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40019 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40019 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40019 end');
       }
     });
 
@@ -2163,15 +2162,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40020 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40020 start');
       try {
         expect(min(1e100, 2e100)).assertEqual(1e100);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40020 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40020 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40020 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40020 end');
       }
     });
 
@@ -2184,15 +2183,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40021 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40021 start');
       try {
         expect(min(-1e100, -2e100)).assertEqual(-2e100);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40021 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40021 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40021 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40021 end');
       }
     });
 
@@ -2205,16 +2204,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40022 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40022 start');
       try {
         const result = min(0, -0);
         expect(result === 0 && 1/result === -Infinity).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40022 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40022 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40022 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40022 end');
       }
     });
 
@@ -2227,16 +2226,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40023 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40023 start');
       try {
         const result = min(-0, 5);
         expect(result === 0 && 1/result === -Infinity).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40023 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40023 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40023 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40023 end');
       }
     });
 
@@ -2249,15 +2248,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40025 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40025 start');
       try {
         expect(min(Number.MAX_VALUE, Number.MAX_VALUE/2)).assertEqual(Number.MAX_VALUE/2);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40025 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40025 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40025 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40025 end');
       }
     });
 
@@ -2270,15 +2269,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40026 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40026 start');
       try {
         expect(min(Infinity, -Infinity)).assertEqual(-Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40026 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40026 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40026 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40026 end');
       }
     });
 
@@ -2291,15 +2290,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40027 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40027 start');
       try {
         expect(Number.isNaN(min(NaN, NaN))).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40027 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40027 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40027 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40027 end');
       }
     });
 
@@ -2312,15 +2311,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40028 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40028 start');
       try {
         expect(min(3, 4.5)).assertEqual(3);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40028 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40028 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40028 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40028 end');
       }
     });
 
@@ -2333,15 +2332,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40029 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40029 start');
       try {
         expect(min(7.2, 5)).assertEqual(5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40029 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40029 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40029 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40029 end');
       }
     });
 
@@ -2354,15 +2353,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40030 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40030 start');
       try {
         expect(min(Number.EPSILON, Number.EPSILON * 2)).assertEqual(Number.EPSILON);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40030 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40030 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40030 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40030 end');
       }
     });
 
@@ -2375,16 +2374,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin40031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin40031 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin40031 start');
       try {
         const subnormal = Number.MIN_VALUE / 2;
         expect(min(subnormal, 0)).assertEqual(subnormal);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40031 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40031 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin40031 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin40031 end');
       }
     });
 
@@ -2397,15 +2396,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50001 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50001 start');
       try {
         expect(min(5, 10)).assertEqual(5);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50001 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50001 end');
       }
     });
 
@@ -2418,15 +2417,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50003 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50003 start');
       try {
         expect(min(-20, -10)).assertEqual(-20);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50003 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50003 end');
       }
     });
 
@@ -2439,15 +2438,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50004 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50004 start');
       try {
         expect(min(-5, -15)).assertEqual(-15);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50004 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50004 end');
       }
     });
 
@@ -2460,15 +2459,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50005 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50005 start');
       try {
         expect(min(30, -30)).assertEqual(-30);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50005 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50005 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50005 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50005 end');
       }
     });
 
@@ -2481,15 +2480,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50006 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50006 start');
       try {
         expect(min(0, 200)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50006 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50006 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50006 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50006 end');
       }
     });
 
@@ -2502,15 +2501,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50007 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50007 start');
       try {
         expect(min(-100, 0)).assertEqual(-100);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50007 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50007 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50007 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50007 end');
       }
     });
 
@@ -2523,15 +2522,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50008 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50008 start');
       try {
         expect(min(123, 123)).assertEqual(123);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50008 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50008 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50008 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50008 end');
       }
     });
 
@@ -2544,15 +2543,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50009 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50009 start');
       try {
         expect(min(-45, -45)).assertEqual(-45);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50009 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50009 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50009 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50009 end');
       }
     });
 
@@ -2565,15 +2564,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50010 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50010 start');
       try {
         expect(min(-32768, 32767)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50010 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50010 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50010 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50010 end');
       }
     });
 
@@ -2586,15 +2585,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50011 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50011 start');
       try {
         expect(min(32767, -32768)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50011 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50011 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50011 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50011 end');
       }
     });
 
@@ -2607,15 +2606,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50012 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50012 start');
       try {
         expect(min(0, 0)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50012 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50012 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50012 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50012 end');
       }
     });
 
@@ -2628,15 +2627,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50014 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50014 start');
       try {
         expect(min(32767, 1)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50014 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50014 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50014 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50014 end');
       }
     });
 
@@ -2649,15 +2648,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50015 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50015 start');
       try {
         expect(min(-32768, -1)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50015 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50015 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50015 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50015 end');
       }
     });
 
@@ -2670,16 +2669,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50016 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50016 start');
       try {
         const largeVal = Number.MAX_SAFE_INTEGER;
         expect(min(largeVal, 10)).assertEqual(10);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50016 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50016 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50016 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50016 end');
       }
     });
 
@@ -2692,16 +2691,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50017 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50017 start');
       try {
         const smallVal = Number.MIN_SAFE_INTEGER;
         expect(min(smallVal, -10)).assertEqual(smallVal > -32768 ? -10 : smallVal);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50017 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50017 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50017 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50017 end');
       }
     });
 
@@ -2714,15 +2713,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50018 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50018 start');
       try {
         expect(min(32766, 32767)).assertEqual(32766);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50018 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50018 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50018 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50018 end');
       }
     });
 
@@ -2735,15 +2734,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50019 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50019 start');
       try {
         expect(min(-32768, -32767)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50019 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50019 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50019 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50019 end');
       }
     });
 
@@ -2756,15 +2755,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50020 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50020 start');
       try {
         expect(min(10000, 10)).assertEqual(10);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50020 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50020 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50020 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50020 end');
       }
     });
 
@@ -2777,15 +2776,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50021 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50021 start');
       try {
         expect(min(32767, 32767)).assertEqual(32767);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50021 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50021 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50021 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50021 end');
       }
     });
 
@@ -2798,15 +2797,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50022 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50022 start');
       try {
         expect(min(-32768, -32768)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50022 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50022 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50022 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50022 end');
       }
     });
 
@@ -2819,15 +2818,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50023 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50023 start');
       try {
         expect(min(-32768, 1)).assertEqual(-32768);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50023 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50023 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50023 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50023 end');
       }
     });
 
@@ -2840,15 +2839,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50024 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50024 start');
       try {
         expect(min(32767, -1)).assertEqual(-1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50024 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50024 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50024 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50024 end');
       }
     });
 
@@ -2861,15 +2860,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50026 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50026 start');
       try {
         expect(min(-1, -2)).assertEqual(-2);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50026 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50026 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50026 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50026 end');
       }
     });
 
@@ -2882,15 +2881,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50027 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50027 start');
       try {
         expect(min(1, -1)).assertEqual(-1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50027 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50027 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50027 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50027 end');
       }
     });
 
@@ -2903,15 +2902,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50028 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50028 start');
       try {
         expect(min(32766, -32767)).assertEqual(-32767);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50028 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50028 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50028 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50028 end');
       }
     });
 
@@ -2924,15 +2923,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50029 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50029 start');
       try {
         expect(min(-32767, 0)).assertEqual(-32767);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50029 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50029 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50029 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50029 end');
       }
     });
 
@@ -2945,15 +2944,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50030 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50030 start');
       try {
         expect(min(32766, 0)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50030 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50030 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50030 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50030 end');
       }
     });
 
@@ -2966,15 +2965,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50031 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50031 start');
       try {
         expect(min(32766, 32765)).assertEqual(32765);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50031 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50031 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50031 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50031 end');
       }
     });
 
@@ -2987,15 +2986,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50032 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50032 start');
       try {
         expect(min(-32767, -32766)).assertEqual(-32767);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50032 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50032 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50032 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50032 end');
       }
     });
 
@@ -3008,15 +3007,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathmin50035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathmin50035 start');
+      console.log(domain, tag, '%{public}s', 'testmathmin50035 start');
       try {
         expect(min(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER)).assertEqual(Number.MIN_SAFE_INTEGER);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50035 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin50035 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmin50035 end');
+        console.log(domain, tag, '%{public}s', 'testmathmin50035 end');
       }
     });
 
@@ -3029,15 +3028,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60001 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60001 start');
       try {
         expect(power(2, 3)).assertEqual(8);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60001 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60001 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60001 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60001 end');
       }
     });
 
@@ -3050,15 +3049,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60002 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60002 start');
       try {
         expect(power(-2, 3)).assertEqual(-8);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60002 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60002 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60002 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60002 end');
       }
     });
 
@@ -3071,15 +3070,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60003 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60003 start');
       try {
         expect(power(5, 0)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60003 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60003 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60003 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60003 end');
       }
     });
 
@@ -3092,15 +3091,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60004 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60004 start');
       try {
         expect(power(0, 5)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60004 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60004 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60004 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60004 end');
       }
     });
 
@@ -3113,16 +3112,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60005 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60005 start');
       try {
         const result = power(NaN, Infinity);
         expect(result !== result).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60005 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60005 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60005 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60005 end');
       }
     });
 
@@ -3135,15 +3134,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60006 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60006 start');
       try {
         expect(power(Infinity, Infinity)).assertEqual(Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60006 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60006 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60006 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60006 end');
       }
     });
 
@@ -3156,15 +3155,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60007 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60007 start');
       try {
         expect(power(Infinity, -Infinity)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60007 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60007 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60007 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60007 end');
       }
     });
 
@@ -3177,15 +3176,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60008 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60008 start');
       try {
         expect(power(-Infinity, 3)).assertEqual(-Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60008 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60008 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60008 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60008 end');
       }
     });
 
@@ -3198,15 +3197,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60009 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60009 start');
       try {
         expect(power(-Infinity, 2)).assertEqual(Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60009 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60009 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60009 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60009 end');
       }
     });
 
@@ -3219,16 +3218,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60010 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60010 start');
       try {
         const result = power(2, NaN);
         expect(result !== result).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60010 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60010 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60010 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60010 end');
       }
     });
 
@@ -3241,15 +3240,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60011 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60011 start');
       try {
         expect(power(0, 0)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60011 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60011 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60011 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60011 end');
       }
     });
 
@@ -3262,15 +3261,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60012 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60012 start');
       try {
         expect(power(2, -3)).assertEqual(0.125);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60012 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60012 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60012 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60012 end');
       }
     });
 
@@ -3283,15 +3282,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60013 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60013 start');
       try {
         expect(power(4, 0.5)).assertEqual(2);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60013 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60013 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60013 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60013 end');
       }
     });
 
@@ -3304,16 +3303,16 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60014 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60014 start');
       try {
         const result = power(-4, 0.5);
         expect(result !== result).assertTrue();
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60014 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60014 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60014 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60014 end');
       }
     });
 
@@ -3326,15 +3325,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60015 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60015 start');
       try {
         expect(power(Infinity, -2)).assertEqual(0);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60015 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60015 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60015 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60015 end');
       }
     });
 
@@ -3347,15 +3346,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60016 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60016 start');
       try {
         expect(1/power(-Infinity, -3)).assertEqual(-Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60016 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60016 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60016 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60016 end');
       }
     });
 
@@ -3368,15 +3367,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60017 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60017 start');
       try {
         expect(power(NaN, 0)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60017 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60017 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60017 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60017 end');
       }
     });
 
@@ -3389,15 +3388,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60018 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60018 start');
       try {
         expect(power(-3, 4)).assertEqual(81);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60018 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60018 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60018 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60018 end');
       }
     });
 
@@ -3410,17 +3409,17 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60023 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60023 start');
       try {
         const result = power(Math.E, Math.PI);
         expect(result).assertLarger(23.1);
         expect(result).assertLess(23.15);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60023 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60023 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60023 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60023 end');
       }
     });
 
@@ -3433,15 +3432,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60024 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60024 start');
       try {
         expect(power(0, -5)).assertEqual(Infinity);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60024 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60024 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60024 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60024 end');
       }
     });
 
@@ -3454,15 +3453,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60026 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60026 start');
       try {
         expect(power(2, Number.MIN_VALUE)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60026 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60026 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60026 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60026 end');
       }
     });
 
@@ -3475,15 +3474,15 @@ export default function math01Test() {
      * @tc.type    FUNCTION
      */
     it("testmathpower60027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'testmathpower60027 start');
+      console.log(domain, tag, '%{public}s', 'testmathpower60027 start');
       try {
         expect(power(1, Infinity)).assertEqual(1);
       } catch (error) {
-        hilog.error(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60027 failed:', error);
+        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathpower60027 failed:', error);
         expect().assertFail();
       } finally {
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathpower60027 end');
+        console.log(domain, tag, '%{public}s', 'testmathpower60027 end');
       }
     });
     });
