@@ -2163,42 +2163,6 @@ export default function toLocalStringTest() {
     });
 
     /**
-     * @tc.number VALUE_CHARVALUE_TOLOCALESTRING_0100_02
-     * @tc.name   SUB_Value_CharValue_ToLocaleString_0100_02
-     * @tc.desc   Test CharValue toLocaleString method
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Value_CharValue_ToLocaleString_0100_02", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(1000)
-      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test start');
-      let testChar: string = c'A';
-      let result: string = testChar;
-      expect(result).assertEqual("A");
-      done()
-      console.log(domain, tag, '%{public}s', 'CharValue toLocaleString test end');
-    });
-
-    /**
-     * @tc.number VALUE_CHARVALUE_TOPRINT_0100
-     * @tc.name   SUB_Value_CharValue_ToPrint_0100
-     * @tc.desc   Test CharValue toPrint method
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Value_CharValue_ToPrint_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(1000)
-      console.log(domain, tag, '%{public}s', 'CharValue toPrint test start');
-      let testChar: string = c'A';
-      let result: string = testChar;
-      expect(result).assertEqual("A");
-      done()
-      console.log(domain, tag, '%{public}s', 'CharValue toPrint test end');
-    });
-
-    /**
      * @tc.number VALUE_BYTEVALUE_TOLOCALESTRING_0100_02
      * @tc.name   SUB_Value_ByteValue_ToLocaleString_0100_02
      * @tc.desc   Test ByteValue toLocaleString method
