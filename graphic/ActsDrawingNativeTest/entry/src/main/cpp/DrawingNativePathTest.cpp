@@ -20,38 +20,31 @@
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-
 namespace {
-constexpr float COORD_ZERO = 0.0f;
-constexpr float COORD_100 = 100.0f;
-constexpr float COORD_200 = 200.0f;
-constexpr float COORD_300 = 300.0f;
-constexpr float ARC_RADIUS_X = 10.0f;
-constexpr float ARC_RADIUS_Y = 10.0f;
-constexpr float ARC_START_ANGLE = 0.0f;
-constexpr float ARC_SWEEP_ANGLE = 90.0f;
-constexpr float RECT_LEFT = 0.0f;
-constexpr float RECT_TOP = 0.0f;
-constexpr float RECT_RIGHT = 100.0f;
-constexpr float RECT_BOTTOM = 100.0f;
-constexpr float MATRIX_SCALE_X = 5.0f;
-constexpr float MATRIX_SKEW_X = 4.0f;
-constexpr float MATRIX_SKEW_Y = 0.0f;
-constexpr float MATRIX_SCALE_Y = -1.0f;
-constexpr float MATRIX_TRANS_X = 0.0f;
-constexpr float MATRIX_TRANS_Y = 0.0f;
-constexpr float MATRIX_PERSP_0 = 0.0f;
-constexpr float MATRIX_PERSP_1 = 0.0f;
-constexpr float MATRIX_PERSP_2 = 1.0f;
-constexpr int LOOP_COUNT_10 = 10;
-constexpr int LOOP_COUNT_2 = 2;
-constexpr float OFFSET_VALUE = 10.0f;
-constexpr float DISTANCE_VALUE = 50.0f;
-constexpr float POINT_COORD = 10.0f;
-constexpr int INT_VALUE_1 = 1;
-constexpr int INT_VALUE_2 = 2;
-constexpr int INT_VALUE_30 = 30;
-}
+// Constants for test values
+constexpr float COORDINATE_ORIGIN = 0.0f;
+constexpr float TEST_STEP_100 = 100.0f;
+constexpr float TEST_STEP_200 = 200.0f;
+constexpr float TEST_STEP_300 = 300.0f;
+constexpr float TEST_POINT_50 = 50.0f;
+constexpr float ZERO_FLOAT = 0.00f;
+constexpr float ONE_FLOAT = 1.0f;
+constexpr int DRAWING_SUCCESS = OH_DRAWING_SUCCESS;
+constexpr OH_Drawing_ErrorCode INVALID_PARAM_ERROR = OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER;
+constexpr float PATH_LENGTH_NOT_ZERO = 0.0f;
+constexpr float FLT_MAX_PLUS_1 = static_cast<float>(FLT_MAX) + 1.0f;
+constexpr float CONIC_WEIGHT_5 = 5.0f;
+constexpr OH_Drawing_PathDirection PATH_DIR_CW = OH_Drawing_PathDirection::PATH_DIRECTION_CW;
+constexpr OH_Drawing_PathDirection PATH_DIR_CCW = OH_Drawing_PathDirection::PATH_DIRECTION_CCW;
+constexpr int INT32_MAX_VAL = INT32_MAX;
+constexpr unsigned int UINT32_MAX_VAL = UINT32_MAX;
+constexpr unsigned long long UINT32_MAX_PLUS_1 = static_cast<unsigned long long>(UINT32_MAX) + 1;
+constexpr float ROUND_RECT_RADIUS_20 = 20.0f;
+constexpr float INIT_CORNER_0 = 0.0f;
+constexpr float INIT_CORNER_5_FLOAT = 5.0f;
+constexpr int INIT_POINT_10 = 10;
+constexpr int INIT_POINT_0 = 0;
+} // namespace
 
 // Common SetUp and TearDown functions implementation
 void DrawingNativePathTestSetUp()
@@ -67,6 +60,7 @@ void DrawingNativePathTestTearDown()
     OH_Drawing_ErrorCodeReset();
     std::cout << "DrawingNativePathTest errorCodeReset after each test case." << std::endl;
 }
+
 /**
  * @tc.name   testPathCreateNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_0100
@@ -84,7 +78,7 @@ int TestPathCreateNormal()
     // 2. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -102,21 +96,19 @@ int TestPathCopyNormal()
     OH_Drawing_Path* path1 = OH_Drawing_PathCreate();
     EXPECT_NE(path1, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path1, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path1, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_100, COORD_100);
-    // 4. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_200, COORD_200);
-    // 5. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_300, COORD_300);
+    OH_Drawing_PathLineTo(path1, TEST_STEP_100, TEST_STEP_100);
+    // 4. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path1, TEST_STEP_200, TEST_STEP_200);
+    // 5. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path1, TEST_STEP_300, TEST_STEP_300);
     // 6. Close the path by calling OH_Drawing_PathClose
     OH_Drawing_PathClose(path1);
     // 7. Copy path 1 to path 2 by calling OH_Drawing_PathCopy
     OH_Drawing_Path* path2 = OH_Drawing_PathCopy(path1);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // add assert
     EXPECT_NE(path2, nullptr);
     // 8. Get the length of path 2 by calling OH_Drawing_PathGetLength
@@ -125,7 +117,7 @@ int TestPathCopyNormal()
     // 9. Free memory
     OH_Drawing_PathDestroy(path1);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -145,12 +137,12 @@ int TestPathCopyNull()
     EXPECT_NE(path, nullptr);
     // 2. Copy a path with nullptr as the parameter
     OH_Drawing_Path* path2 = OH_Drawing_PathCopy(nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(path2);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -168,15 +160,13 @@ int TestPathCopyInputDestroyed()
     OH_Drawing_Path* path1 = OH_Drawing_PathCreate();
     EXPECT_NE(path1, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path1, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path1, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_100, COORD_100);
-    // 4. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_200, COORD_200);
-    // 5. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path1, COORD_300, COORD_300);
+    OH_Drawing_PathLineTo(path1, TEST_STEP_100, TEST_STEP_100);
+    // 4. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path1, TEST_STEP_200, TEST_STEP_200);
+    // 5. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path1, TEST_STEP_300, TEST_STEP_300);
     // 6. Close the path by calling OH_Drawing_PathClose
     OH_Drawing_PathClose(path1);
     // 7. Copy path 1 to path 2 by calling OH_Drawing_PathCopy
@@ -185,13 +175,12 @@ int TestPathCopyInputDestroyed()
     EXPECT_NE(path2, nullptr);
     // 8. Destroy path 1 by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path1);
-    // 9. Get the length of path 2 by calling OH_Drawing_PathGetLength, if the return value is not 0, it means
-    // destroying path 1 does not affect path 2
-    EXPECT_NE(OH_Drawing_PathGetLength(path2, false), 0);
+    // 9. Get the length of path 2 by calling OH_Drawing_PathGetLength, if the return value is not 0, it means destroying path 1 does not affect path 2
+    EXPECT_NE(OH_Drawing_PathGetLength(path2, false), PATH_LENGTH_NOT_ZERO);
     // 10. Free memory
     OH_Drawing_PathDestroy(path2);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -212,7 +201,7 @@ int TestPathDestroyNormal()
     // 2. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -229,7 +218,7 @@ int TestPathDestroyNull()
     OH_Drawing_PathDestroy(nullptr);
     EXPECT_TRUE(true);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -248,13 +237,13 @@ int TestPathMoveToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 3. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -272,18 +261,17 @@ int TestPathMoveToNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathMoveTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathMoveTo(nullptr, 1, 1);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathMoveTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathMoveTo(nullptr, ONE_FLOAT, ONE_FLOAT);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathMoveTo with 0.00 as the second parameter
-    OH_Drawing_PathMoveTo(path, 0.00, 1);
+    OH_Drawing_PathMoveTo(path, ZERO_FLOAT, ONE_FLOAT);
     // 4. Call OH_Drawing_PathMoveTo with 0.00 as the third parameter
-    OH_Drawing_PathMoveTo(path, 1, 0.00);
+    OH_Drawing_PathMoveTo(path, ONE_FLOAT, ZERO_FLOAT);
     // 5. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -297,20 +285,22 @@ int TestPathMoveToNull()
 int TestPathMoveToAbnormal()
 {
     DrawingNativePathTestSetUp();
+    // 局部常量：测试用整数参数值
+    const int TEST_INT_VALUE_2 = 2;
+    const float TEST_FLOAT_VALUE_1 = 1.0f;
+    
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo with an integer or character type as the
-    // second parameter
-    OH_Drawing_PathMoveTo(path, 2, 1.0f);
-    // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo with an integer or character type as the
-    // third parameter
-    OH_Drawing_PathMoveTo(path, 1.0f, 2);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo with an integer or character type as the second parameter
+    OH_Drawing_PathMoveTo(path, TEST_INT_VALUE_2, TEST_FLOAT_VALUE_1);
+    // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo with an integer or character type as the third parameter
+    OH_Drawing_PathMoveTo(path, TEST_FLOAT_VALUE_1, TEST_INT_VALUE_2);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -323,21 +313,22 @@ int TestPathMoveToAbnormal()
  */
 int TestPathMoveToMaximal()
 {
+    // 局部常量：浮点最大值+1（用于边界测试）
+    const float FLOAT_MAX_PLUS_1 = FLT_MAX + 1;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo with the second parameter as the maximum
-    // value of FLT_MAX + 1, no crash
-    OH_Drawing_PathMoveTo(path, FLT_MAX + 1, 1.0);
-    // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo with the third parameter as the maximum
-    // value of FLT_MAX + 1, no crash
-    OH_Drawing_PathMoveTo(path, 1.0, FLT_MAX + 1);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathMoveTo(path, FLOAT_MAX_PLUS_1, ONE_FLOAT);
+    // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathMoveTo(path, ONE_FLOAT, FLOAT_MAX_PLUS_1);
     // 4. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -356,15 +347,15 @@ int TestPathLineToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -382,18 +373,17 @@ int TestPathLineToNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathLineTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathLineTo(nullptr, INT_VALUE_1, INT_VALUE_1);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathLineTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathLineTo(nullptr, ONE_FLOAT, ONE_FLOAT);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathLineTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathLineTo(path, COORD_ZERO, INT_VALUE_1);
+    OH_Drawing_PathLineTo(path, ZERO_FLOAT, ONE_FLOAT);
     // 4. Call OH_Drawing_PathLineTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathLineTo(path, INT_VALUE_1, COORD_ZERO);
+    OH_Drawing_PathLineTo(path, ONE_FLOAT, ZERO_FLOAT);
     // 5. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -406,23 +396,25 @@ int TestPathLineToNull()
  */
 int TestPathLineToAbnormal()
 {
+    // 局部常量：测试用整数/浮点参数值
+    const int TEST_INT_VALUE_2 = 2;
+    const float TEST_FLOAT_VALUE_1 = 1.0f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
-    // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    // with an integer or character type as the second parameter
-    OH_Drawing_PathLineTo(path, 2, 1.0f);
-    // 4. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    // with an integer or character type as the third parameter
-    OH_Drawing_PathLineTo(path, 1.0f, 2);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
+    // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo with an integer or character type as the second parameter
+    OH_Drawing_PathLineTo(path, TEST_INT_VALUE_2, TEST_FLOAT_VALUE_1);
+    // 4. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo with an integer or character type as the third parameter
+    OH_Drawing_PathLineTo(path, TEST_FLOAT_VALUE_1, TEST_INT_VALUE_2);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -435,23 +427,24 @@ int TestPathLineToAbnormal()
  */
 int TestPathLineToMaximal()
 {
+    // 局部常量：浮点最大值+1（用于边界测试）
+    const float FLOAT_MAX_PLUS_1 = FLT_MAX + 1;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
-    // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    // with the second parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathLineTo(path, FLT_MAX + 1, 1.0);
-    // 4. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    // with the third parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathLineTo(path, 1.0, FLT_MAX + 1);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
+    // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathLineTo(path, FLOAT_MAX_PLUS_1, ONE_FLOAT);
+    // 4. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathLineTo(path, ONE_FLOAT, FLOAT_MAX_PLUS_1);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -464,31 +457,36 @@ int TestPathLineToMaximal()
  */
 int TestPathArcToNormal()
 {
+    // 局部常量：圆弧测试参数
+    const float ARC_CENTER_X = 10.0f;    // 圆弧中心X坐标
+    const float ARC_CENTER_Y = 10.0f;    // 圆弧中心Y坐标
+    const float ARC_RADIUS = 20.0f;      // 圆弧半径
+    const float ARC_START_ANGLE = 0.0f;  // 圆弧起始角度
+    const float ARC_SWEEP_ANGLE = 90.0f; // 圆弧扫掠角度
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
-    // 4. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_200, COORD_200);
-    // 5. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 300, 300);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
+    // 4. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_200, TEST_STEP_200);
+    // 5. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_300, TEST_STEP_300);
     // 6. Close the path by calling OH_Drawing_PathClose
     OH_Drawing_PathClose(path);
     // 7. Add an arc to the path by calling OH_Drawing_PathArcTo
-    OH_Drawing_PathArcTo(path, 10, 10, 20, 0, 0, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 8. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -501,31 +499,37 @@ int TestPathArcToNormal()
  */
 int TestPathArcToNull()
 {
+    // 局部常量：圆弧测试参数
+    const float ARC_CENTER_X = 10.0f;    // 圆弧中心X坐标
+    const float ARC_CENTER_Y = 10.0f;    // 圆弧中心Y坐标
+    const float ARC_RADIUS = 20.0f;      // 圆弧半径
+    const float ARC_START_ANGLE = 0.0f;  // 圆弧起始角度
+    const float ARC_SWEEP_ANGLE = 90.0f; // 圆弧扫掠角度
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathArcTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathArcTo(nullptr, 10, 10, 20, 0, 0, 90);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathArcTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathArcTo(nullptr, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathArcTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathArcTo(path, 0.00, 10, 20, 0, 0, 90);
+    OH_Drawing_PathArcTo(path, ZERO_FLOAT, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // 4. Call OH_Drawing_PathArcTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathArcTo(path, 10, 0.00, 20, 0, 0, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ZERO_FLOAT, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // 5. Call OH_Drawing_PathArcTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathArcTo(path, 10, 10, 0.00, 0, 0, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ZERO_FLOAT, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // 6. Call OH_Drawing_PathArcTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathArcTo(path, 10, 10, 20, 0.00, 0, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, ZERO_FLOAT, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // 7. Call OH_Drawing_PathArcTo with 0.00 as the sixth parameter, no crash
-    OH_Drawing_PathArcTo(path, 10, 10, 20, 0, 0.00, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ZERO_FLOAT, ARC_SWEEP_ANGLE);
     // 8. Call OH_Drawing_PathArcTo with 0.00 as the seventh parameter, no crash
-    OH_Drawing_PathArcTo(path, 10, 10, 20, 0, 0, 0.00);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ZERO_FLOAT);
     // 9. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -538,29 +542,34 @@ int TestPathArcToNull()
  */
 int TestPathArcToAbnormal()
 {
+    // 局部常量：圆弧测试参数
+    const float ARC_CENTER_X = 10.0f;    // 圆弧中心X坐标
+    const float ARC_CENTER_Y = 10.0f;    // 圆弧中心Y坐标
+    const float ARC_RADIUS = 20.0f;      // 圆弧半径
+    const float ARC_START_ANGLE = 20.0f; // 圆弧起始角度
+    const float ARC_SWEEP_ANGLE = 90.0f; // 圆弧扫掠角度
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
-    // 4. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 200, 200);
-    // 5. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 300, 300);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
+    // 4. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_200, TEST_STEP_200);
+    // 5. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_300, TEST_STEP_300);
     // 6. Close the path by calling OH_Drawing_PathClose
     OH_Drawing_PathClose(path);
     // 7. Add an arc to the path by calling OH_Drawing_PathArcTo with integer parameters
-    OH_Drawing_PathArcTo(path, 10, 10, 20, 20, 20, 90);
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, ARC_START_ANGLE, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
     // 8. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -573,45 +582,45 @@ int TestPathArcToAbnormal()
  */
 int TestPathArcToMaximal()
 {
+    // 局部常量
+    const float FLOAT_MAX_PLUS_1 = FLT_MAX + 1;  // 浮点最大值+1
+    const float ARC_CENTER_X = 10.0f;            // 圆弧中心X坐标
+    const float ARC_CENTER_Y = 10.0f;            // 圆弧中心Y坐标
+    const float ARC_RADIUS = 20.0f;              // 圆弧半径
+    const float ARC_START_ANGLE = 0.0f;          // 圆弧起始角度
+    const float ARC_SWEEP_ANGLE = 90.0f;         // 圆弧扫掠角度
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point to the target point to the path by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
-    // 4. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_200, COORD_200);
-    // 5. Add a line segment from the last point of the path to the target point to the path by calling
-    // OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_300, COORD_300);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
+    // 4. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_200, TEST_STEP_200);
+    // 5. Add a line segment from the last point of the path to the target point to the path by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_STEP_300, TEST_STEP_300);
     // 6. Close the path by calling OH_Drawing_PathClose
     OH_Drawing_PathClose(path);
-    // 7. Add an arc to the path by calling OH_Drawing_PathArcTo with the second parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, FLT_MAX + 1, ARC_RADIUS_Y, INT_VALUE_30, ARC_START_ANGLE, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
-    // 8. Add an arc to the path by calling OH_Drawing_PathArcTo with the third parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, ARC_RADIUS_X, FLT_MAX + 1, INT_VALUE_30, ARC_START_ANGLE, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
-    // 9. Add an arc to the path by calling OH_Drawing_PathArcTo with the fourth parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, ARC_RADIUS_X, ARC_RADIUS_Y, FLT_MAX + 1, ARC_START_ANGLE, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
-    // 10. Add an arc to the path by calling OH_Drawing_PathArcTo with the fifth parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, ARC_RADIUS_X, ARC_RADIUS_Y, INT_VALUE_30, FLT_MAX + 1, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
-    // 11. Add an arc to the path by calling OH_Drawing_PathArcTo with the sixth parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, ARC_RADIUS_X, ARC_RADIUS_Y, INT_VALUE_30, ARC_START_ANGLE, FLT_MAX + 1, ARC_SWEEP_ANGLE);
-    // 12. Add an arc to the path by calling OH_Drawing_PathArcTo with the seventh parameter as the maximum value of
-    // FLT_MAX + 1, no crash
-    OH_Drawing_PathArcTo(path, ARC_RADIUS_X, ARC_RADIUS_Y, INT_VALUE_30, ARC_START_ANGLE, ARC_START_ANGLE, FLT_MAX + 1);
+    // 7. Add an arc to the path by calling OH_Drawing_PathArcTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, FLOAT_MAX_PLUS_1, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
+    // 8. Add an arc to the path by calling OH_Drawing_PathArcTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, FLOAT_MAX_PLUS_1, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
+    // 9. Add an arc to the path by calling OH_Drawing_PathArcTo with the fourth parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, FLOAT_MAX_PLUS_1, COORDINATE_ORIGIN, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
+    // 10. Add an arc to the path by calling OH_Drawing_PathArcTo with the fifth parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, FLOAT_MAX_PLUS_1, ARC_START_ANGLE, ARC_SWEEP_ANGLE);
+    // 11. Add an arc to the path by calling OH_Drawing_PathArcTo with the sixth parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, FLOAT_MAX_PLUS_1, ARC_SWEEP_ANGLE);
+    // 12. Add an arc to the path by calling OH_Drawing_PathArcTo with the seventh parameter as the maximum value of FLT_MAX + 1, no crash
+    OH_Drawing_PathArcTo(path, ARC_CENTER_X, ARC_CENTER_Y, ARC_RADIUS, COORDINATE_ORIGIN, ARC_START_ANGLE, FLOAT_MAX_PLUS_1);
     // 13. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -630,18 +639,17 @@ int TestPathQuadToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    // 3. Add a quadratic Bezier curve from the last point of the path to the target point by calling
-    // OH_Drawing_PathQuadTo
-    OH_Drawing_PathQuadTo(path, 100, 100, 200, 200);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
+    // 3. Add a quadratic Bezier curve from the last point of the path to the target point by calling OH_Drawing_PathQuadTo
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -659,22 +667,21 @@ int TestPathQuadToNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathQuadTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathQuadTo(nullptr, 100, 100, 200, 200);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathQuadTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathQuadTo(nullptr, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathQuadTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathQuadTo(path, 0.00, 100, 200, 200);
+    OH_Drawing_PathQuadTo(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // 4. Call OH_Drawing_PathQuadTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathQuadTo(path, 100, 0.00, 200, 200);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_200);
     // 5. Call OH_Drawing_PathQuadTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathQuadTo(path, 100, 100, 0.00, 200);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200);
     // 6. Call OH_Drawing_PathQuadTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathQuadTo(path, 100, 100, 200, 0.00);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, ZERO_FLOAT);
     // 7. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -687,25 +694,31 @@ int TestPathQuadToNull()
  */
 int TestPathQuadToAbnormal()
 {
+    // 局部常量：测试用整数/浮点参数值
+    const int TEST_INT_VALUE_100 = 100;
+    const int TEST_INT_VALUE_200 = 200;
+    const float TEST_FLOAT_VALUE_100 = 100.0f;
+    const float TEST_FLOAT_VALUE_200 = 200.0f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a quadratic Bezier curve to the path with the second parameter as an integer
-    OH_Drawing_PathQuadTo(path, 100, 100.0f, 200.0f, 200.0f);
+    OH_Drawing_PathQuadTo(path, TEST_INT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200);
     // 4. Add a quadratic Bezier curve to the path with the third parameter as an integer
-    OH_Drawing_PathQuadTo(path, 100.0f, 100, 200.0f, 200.0f);
+    OH_Drawing_PathQuadTo(path, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200);
     // 5. Add a quadratic Bezier curve to the path with the fourth parameter as an integer
-    OH_Drawing_PathQuadTo(path, 100.0f, 100.0f, 200, 200.0f);
+    OH_Drawing_PathQuadTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_200, TEST_FLOAT_VALUE_200);
     // 6. Add a quadratic Bezier curve to the path with the fifth parameter as an integer
-    OH_Drawing_PathQuadTo(path, 100.0f, 100.0f, 200.0f, 200);
+    OH_Drawing_PathQuadTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_INT_VALUE_200);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -718,25 +731,28 @@ int TestPathQuadToAbnormal()
  */
 int TestPathQuadToMaximal()
 {
+    // 局部常量：浮点最大值+1（用于边界测试）
+    const float FLOAT_MAX_PLUS_1 = FLT_MAX + 1;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Call OH_Drawing_PathQuadTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathQuadTo(path, FLT_MAX + 1, 100, 200, 200);
+    OH_Drawing_PathQuadTo(path, FLOAT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // 4. Call OH_Drawing_PathQuadTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathQuadTo(path, 100, FLT_MAX + 1, 200, 200);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, FLOAT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_200);
     // 5. Call OH_Drawing_PathQuadTo with the fourth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathQuadTo(path, 100, 100, FLT_MAX + 1, 200);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, TEST_STEP_100, FLOAT_MAX_PLUS_1, TEST_STEP_200);
     // 6. Call OH_Drawing_PathQuadTo with the fifth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathQuadTo(path, 100, 100, 200, FLT_MAX + 1);
+    OH_Drawing_PathQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, FLOAT_MAX_PLUS_1);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -749,23 +765,26 @@ int TestPathQuadToMaximal()
  */
 int TestPathConicToNormal()
 {
+    // 局部常量：圆锥曲线权重
+    const float CONIC_WEIGHT = 0.5f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Add a quadratic Bezier curve to the path by calling OH_Drawing_PathConicTo
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, COORD_100, COORD_100, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -778,29 +797,31 @@ int TestPathConicToNormal()
  */
 int TestPathConicToNull()
 {
+    // 局部常量：圆锥曲线权重
+    const float CONIC_WEIGHT = 0.5f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathConicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathConicTo(nullptr, 50, 50, 100, 100, 0.5);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathConicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathConicTo(nullptr, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathConicTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathConicTo(path, 0.00, 50, 100, 100, 0.5);
+    OH_Drawing_PathConicTo(path, ZERO_FLOAT, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
     // 4. Call OH_Drawing_PathConicTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathConicTo(path, 50, 0.00, 100, 100, 0.5);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
     // 5. Call OH_Drawing_PathConicTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathConicTo(path, 50, 50, 0.00, 100, 0.5);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, ZERO_FLOAT, TEST_STEP_100, CONIC_WEIGHT);
     // 6. Call OH_Drawing_PathConicTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathConicTo(path, 50, 50, 100, 0.00, 0.5);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, ZERO_FLOAT, CONIC_WEIGHT);
     // 7. Call OH_Drawing_PathConicTo with 0.00 as the sixth parameter, no crash
-    OH_Drawing_PathConicTo(path, 50, 50, 100, 100, 0.00);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT);
     // 8. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -813,29 +834,37 @@ int TestPathConicToNull()
  */
 int TestPathConicToAbnormal()
 {
+    // 局部常量：测试用参数值
+    const int TEST_INT_VALUE_50 = 50;
+    const int TEST_INT_VALUE_100 = 100;
+    const int TEST_INT_VALUE_1 = 1;
+    const float TEST_FLOAT_VALUE_50 = 50.0f;
+    const float TEST_FLOAT_VALUE_100 = 100.0f;
+    const float CONIC_WEIGHT = 0.5f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100);
     // 4. Add a conic curve to the path with the second parameter as an integer or character type
-    OH_Drawing_PathConicTo(path, 50, 50.0f, 100.0f, 100.0f, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_INT_VALUE_50, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, CONIC_WEIGHT);
     // 5. Add a conic curve to the path with the third parameter as an integer or character type
-    OH_Drawing_PathConicTo(path, 50.0f, 50, 100.0f, 100.0f, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_FLOAT_VALUE_50, TEST_INT_VALUE_50, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, CONIC_WEIGHT);
     // 6. Add a conic curve to the path with the fourth parameter as an integer or character type
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, 100, 100.0f, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_50, TEST_INT_VALUE_100, TEST_FLOAT_VALUE_100, CONIC_WEIGHT);
     // 7. Add a conic curve to the path with the fifth parameter as an integer or character type
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, 100.0f, 100, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_100, CONIC_WEIGHT);
     // 8. Add a conic curve to the path with the sixth parameter as an integer or character type
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, 100.0f, 100.0f, 1);
+    OH_Drawing_PathConicTo(path, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_50, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_1);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -848,29 +877,33 @@ int TestPathConicToAbnormal()
  */
 int TestPathConicToMaximal()
 {
+    // 局部常量
+    const float FLOAT_MAX_PLUS_1 = FLT_MAX + 1;  // 浮点最大值+1
+    const float CONIC_WEIGHT = 0.5f;             // 圆锥曲线权重
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Call OH_Drawing_PathConicTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathConicTo(path, FLT_MAX + 1, 50.0f, COORD_100, COORD_100, 0.5f);
+    OH_Drawing_PathConicTo(path, FLOAT_MAX_PLUS_1, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
     // 5. Call OH_Drawing_PathConicTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathConicTo(path, 50.0f, FLT_MAX + 1, COORD_100, COORD_100, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, FLOAT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_100, CONIC_WEIGHT);
     // 6. Call OH_Drawing_PathConicTo with the fourth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, FLT_MAX + 1, COORD_100, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, FLOAT_MAX_PLUS_1, TEST_STEP_100, CONIC_WEIGHT);
     // 7. Call OH_Drawing_PathConicTo with the fifth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, COORD_100, FLT_MAX + 1, 0.5f);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, FLOAT_MAX_PLUS_1, CONIC_WEIGHT);
     // 8. Call OH_Drawing_PathConicTo with the sixth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathConicTo(path, 50.0f, 50.0f, COORD_100, COORD_100, FLT_MAX + 1);
+    OH_Drawing_PathConicTo(path, TEST_POINT_50, TEST_POINT_50, TEST_STEP_100, TEST_STEP_100, FLOAT_MAX_PLUS_1);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -889,15 +922,15 @@ int TestPathCubicToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a cubic Bezier curve from the last point of the path to the target point by calling OH_Drawing_PathCubicTo
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), DRAWING_SUCCESS);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -915,26 +948,25 @@ int TestPathCubicToNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Call OH_Drawing_PathCubicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
-    // error code
-    OH_Drawing_PathCubicTo(nullptr, 100, 100, 200, 200, 300, 300);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. Call OH_Drawing_PathCubicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error code
+    OH_Drawing_PathCubicTo(nullptr, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathCubicTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathCubicTo(path, 0.00, 100, 200, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 4. Call OH_Drawing_PathCubicTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathCubicTo(path, 100, 0.00, 200, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 5. Call OH_Drawing_PathCubicTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 0.00, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 6. Call OH_Drawing_PathCubicTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 0.00, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, ZERO_FLOAT, TEST_STEP_300, TEST_STEP_300);
     // 7. Call OH_Drawing_PathCubicTo with 0.00 as the sixth parameter, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 200, 0.00, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, ZERO_FLOAT, TEST_STEP_300);
     // 8. Call OH_Drawing_PathCubicTo with 0.00 as the seventh parameter, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 200, 300, 0.00);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, ZERO_FLOAT);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -947,29 +979,37 @@ int TestPathCubicToNull()
  */
 int TestPathCubicToAbnormal()
 {
+    // 局部常量：测试用整数/浮点参数值
+    const int TEST_INT_VALUE_100 = 100;
+    const int TEST_INT_VALUE_200 = 200;
+    const int TEST_INT_VALUE_300 = 300;
+    const float TEST_FLOAT_VALUE_100 = 100.0f;
+    const float TEST_FLOAT_VALUE_200 = 200.0f;
+    const float TEST_FLOAT_VALUE_300 = 300.0f;
+    
     DrawingNativePathTestSetUp();
     // 1. Create a path object by calling OH_Drawing_PathCreate
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a cubic Bezier curve to the path with the second parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_INT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_300, TEST_FLOAT_VALUE_300);
     // 4. Add a cubic Bezier curve to the path with the third parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_300, TEST_FLOAT_VALUE_300);
     // 5. Add a cubic Bezier curve to the path with the fourth parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_INT_VALUE_200, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_300, TEST_FLOAT_VALUE_300);
     // 6. Add a cubic Bezier curve to the path with the fifth parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_INT_VALUE_200, TEST_FLOAT_VALUE_300, TEST_FLOAT_VALUE_300);
     // 7. Add a cubic Bezier curve to the path with the sixth parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200, TEST_INT_VALUE_300, TEST_FLOAT_VALUE_300);
     // 8. Add a cubic Bezier curve to the path with the seventh parameter as an integer
-    OH_Drawing_PathCubicTo(path, COORD_100, COORD_100, COORD_200, COORD_200, COORD_300, COORD_300);
+    OH_Drawing_PathCubicTo(path, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_100, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_200, TEST_FLOAT_VALUE_300, TEST_INT_VALUE_300);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -988,23 +1028,23 @@ int TestPathCubicToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Call OH_Drawing_PathCubicTo with the second parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, FLT_MAX + 1, 100, 200, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 4. Call OH_Drawing_PathCubicTo with the third parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, 100, FLT_MAX + 1, 200, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 5. Call OH_Drawing_PathCubicTo with the fourth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, FLT_MAX + 1, 200, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 6. Call OH_Drawing_PathCubicTo with the fifth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, FLT_MAX + 1, 300, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, FLT_MAX_PLUS_1, TEST_STEP_300, TEST_STEP_300);
     // 7. Call OH_Drawing_PathCubicTo with the sixth parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 200, FLT_MAX + 1, 300);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, FLT_MAX_PLUS_1, TEST_STEP_300);
     // 8. Call OH_Drawing_PathCubicTo with the seventh parameter as the maximum value of FLT_MAX + 1, no crash
-    OH_Drawing_PathCubicTo(path, 100, 100, 200, 200, 300, FLT_MAX + 1);
+    OH_Drawing_PathCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, FLT_MAX_PLUS_1);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1023,21 +1063,21 @@ int TestPathRMoveToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1057,17 +1097,17 @@ int TestPathRMoveToNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathRMoveTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code
-    OH_Drawing_PathRMoveTo(nullptr, 100, 100);
+    OH_Drawing_PathRMoveTo(nullptr, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathRMoveTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathRMoveTo(path, 0.00, 100);
+    OH_Drawing_PathRMoveTo(path, ZERO_FLOAT, TEST_STEP_100);
     // 4. Call OH_Drawing_PathRMoveTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathRMoveTo(path, 100, 0.00);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, ZERO_FLOAT);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1086,17 +1126,17 @@ int TestPathRMoveToAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, COORD_ZERO, COORD_ZERO);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, COORD_100, COORD_100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1115,17 +1155,17 @@ int TestPathRMoveToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, FLT_MAX + 1, 100);
+    OH_Drawing_PathRMoveTo(path, FLT_MAX_PLUS_1, TEST_STEP_100);
     // 5. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, FLT_MAX + 1);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, FLT_MAX_PLUS_1);
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1144,26 +1184,26 @@ int TestPathRLineToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Add a relative line to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRLineTo
-    OH_Drawing_PathRLineTo(path, 100, 100);
+    OH_Drawing_PathRLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1183,16 +1223,16 @@ int TestPathRLineToNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathRLineTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code
-    OH_Drawing_PathRLineTo(nullptr, 100, 100);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathRLineTo(nullptr, TEST_STEP_100, TEST_STEP_100);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathRLineTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathRLineTo(path, 0.00, 100);
+    OH_Drawing_PathRLineTo(path, ZERO_FLOAT, TEST_STEP_100);
     // 4. Call OH_Drawing_PathRLineTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathRLineTo(path, 100, 0.00);
+    OH_Drawing_PathRLineTo(path, TEST_STEP_100, ZERO_FLOAT);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1211,21 +1251,21 @@ int TestPathRLineToAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Add a relative line to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRLineTo
-    OH_Drawing_PathRLineTo(path, 100.0f, 100);
+    OH_Drawing_PathRLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 6. Add a relative line to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRLineTo
-    OH_Drawing_PathRLineTo(path, 100, 100.0f);
+    OH_Drawing_PathRLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1244,21 +1284,21 @@ int TestPathRLineToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Add a relative line to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRLineTo
-    OH_Drawing_PathRLineTo(path, FLT_MAX + 1, 100);
+    OH_Drawing_PathRLineTo(path, FLT_MAX_PLUS_1, TEST_STEP_100);
     // 6. Add a relative line to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRLineTo
-    OH_Drawing_PathRLineTo(path, 100, FLT_MAX + 1);
+    OH_Drawing_PathRLineTo(path, TEST_STEP_100, FLT_MAX_PLUS_1);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1277,26 +1317,26 @@ int TestPathRQuadToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Add a relative quadratic Bezier curve to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRQuadTo
-    OH_Drawing_PathRQuadTo(path, 100, 100, 200, 200);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1316,20 +1356,20 @@ int TestPathRQuadToNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathRQuadTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code
-    OH_Drawing_PathRQuadTo(nullptr, 0, 0, 0, 0);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathRQuadTo(nullptr, COORDINATE_ORIGIN, COORDINATE_ORIGIN, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathRQuadTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathRQuadTo(path, 0.00, 100, 100, 300);
+    OH_Drawing_PathRQuadTo(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 4. Call OH_Drawing_PathRQuadTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathRQuadTo(path, 100, 0.00, 100, 300);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_300);
     // 5. Call OH_Drawing_PathRQuadTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathRQuadTo(path, 100, 100, 0.00, 300);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRQuadTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathRQuadTo(path, 100, 100, 100, 0.00);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1348,23 +1388,23 @@ int TestPathRQuadToAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRQuadTo with an integer or character type as the second parameter
-    OH_Drawing_PathRQuadTo(path, 100, 100.0f, 100.0f, 300.0f);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRQuadTo with an integer or character type as the third parameter
-    OH_Drawing_PathRQuadTo(path, 100.0f, 100, 100.0f, 300.0f);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 7. Call OH_Drawing_PathRQuadTo with an integer or character type as the fourth parameter
-    OH_Drawing_PathRQuadTo(path, 100.0f, 100.0f, 100, 300.0f);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 8. Call OH_Drawing_PathRQuadTo with an integer or character type as the fifth parameter
-    OH_Drawing_PathRQuadTo(path, 100.0f, 100.0f, 100.0f, 300);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 9. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1383,23 +1423,23 @@ int TestPathRQuadToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRQuadTo with a second parameter of FLT_MAX + 1
-    OH_Drawing_PathRQuadTo(path, FLT_MAX + 1, 100, 100, 300);
+    OH_Drawing_PathRQuadTo(path, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRQuadTo with a third parameter of FLT_MAX + 1
-    OH_Drawing_PathRQuadTo(path, 100, FLT_MAX + 1, 100, 300);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_300);
     // 7. Call OH_Drawing_PathRQuadTo with a fourth parameter of FLT_MAX + 1
-    OH_Drawing_PathRQuadTo(path, 100, 100, FLT_MAX + 1, 300);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_300);
     // 8. Call OH_Drawing_PathRQuadTo with a fifth parameter of FLT_MAX + 1
-    OH_Drawing_PathRQuadTo(path, 100, 100, 100, FLT_MAX + 1);
+    OH_Drawing_PathRQuadTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1418,26 +1458,26 @@ int TestPathRConicToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Add a relative conic curve to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRConicTo
-    OH_Drawing_PathRConicTo(path, 100, 100, 100, 300, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1457,22 +1497,22 @@ int TestPathRConicToNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathRConicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code
-    OH_Drawing_PathRConicTo(nullptr, 100, 100, 100, 300, 5);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathRConicTo(nullptr, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathRConicTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathRConicTo(path, 0.00, 100, 100, 300, 5);
+    OH_Drawing_PathRConicTo(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 4. Call OH_Drawing_PathRConicTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathRConicTo(path, 100, 0.00, 100, 300, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 5. Call OH_Drawing_PathRConicTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, 0.00, 300, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_300, CONIC_WEIGHT_5);
     // 6. Call OH_Drawing_PathRConicTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, 100, 0.00, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, CONIC_WEIGHT_5);
     // 7. Call OH_Drawing_PathRConicTo with 0.00 as the sixth parameter, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, 100, 300, 0.00);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, ZERO_FLOAT);
     // 8. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1491,25 +1531,25 @@ int TestPathRConicToAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRConicTo with an integer as the second parameter
-    OH_Drawing_PathRConicTo(path, 100, 100.0f, 100.0f, 300.0f, 5.0f);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 6. Call OH_Drawing_PathRConicTo with an integer as the third parameter
-    OH_Drawing_PathRConicTo(path, 100.0f, 100, 100.0f, 300.0f, 5.0f);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 7. Call OH_Drawing_PathRConicTo with an integer as the fourth parameter
-    OH_Drawing_PathRConicTo(path, 100.0f, 100.0f, 100, 300.0f, 5.0f);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 8. Call OH_Drawing_PathRConicTo with an integer as the fifth parameter
-    OH_Drawing_PathRConicTo(path, 100.0f, 100.0f, 100.0f, 300, 5.0f);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 9. Call OH_Drawing_PathRConicTo with an integer as the sixth parameter
-    OH_Drawing_PathRConicTo(path, 100.0f, 100.0f, 100.0f, 300.0f, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 10. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1528,25 +1568,25 @@ int TestPathRConicToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRConicTo with a second parameter of FLT_MAX + 1, no crash
-    OH_Drawing_PathRConicTo(path, FLT_MAX + 1, 100, 100, 300, 5);
+    OH_Drawing_PathRConicTo(path, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 6. Call OH_Drawing_PathRConicTo with a third parameter of FLT_MAX + 1, no crash
-    OH_Drawing_PathRConicTo(path, 100, FLT_MAX + 1, 100, 300, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_300, CONIC_WEIGHT_5);
     // 7. Call OH_Drawing_PathRConicTo with a fourth parameter of FLT_MAX + 1, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, FLT_MAX + 1, 300, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_300, CONIC_WEIGHT_5);
     // 8. Call OH_Drawing_PathRConicTo with a fifth parameter of FLT_MAX + 1, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, 100, FLT_MAX + 1, 5);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, CONIC_WEIGHT_5);
     // 9. Call OH_Drawing_PathRConicTo with a sixth parameter of FLT_MAX + 1, no crash
-    OH_Drawing_PathRConicTo(path, 100, 100, 100, 300, FLT_MAX + 1);
+    OH_Drawing_PathRConicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_100, TEST_STEP_300, FLT_MAX_PLUS_1);
     // 10. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1565,26 +1605,26 @@ int TestPathRCubicToNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Add a relative cubic Bezier curve to the path from the current endpoint to the target point by calling
     // OH_Drawing_PathRCubicTo
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 6. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1604,25 +1644,25 @@ int TestPathRCubicToNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathRCubicTo with nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code
-    OH_Drawing_PathRCubicTo(nullptr, 100, 100, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(nullptr, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathRCubicTo with 0.00 as the second parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 0.00, 100, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 4. Call OH_Drawing_PathRCubicTo with 0.00 as the third parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 0.00, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 5. Call OH_Drawing_PathRCubicTo with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 0.00, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRCubicTo with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 0.00, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, ZERO_FLOAT, TEST_STEP_300, TEST_STEP_300);
     // 7. Call OH_Drawing_PathRCubicTo with 0.00 as the sixth parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 200, 0.00, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, ZERO_FLOAT, TEST_STEP_300);
     // 8. Call OH_Drawing_PathRCubicTo with 0.00 as the seventh parameter, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 200, 300, 0.00);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, ZERO_FLOAT);
     // 9. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1641,27 +1681,27 @@ int TestPathRCubicToAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRCubicTo with an integer as the second parameter
-    OH_Drawing_PathRCubicTo(path, 100, 100.0f, 200.0f, 200.0f, 300.0f, 300.0f);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRCubicTo with an integer as the third parameter
-    OH_Drawing_PathRCubicTo(path, 100.0f, 100, 200.0f, 200.0f, 300.0f, 300.0f);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 7. Call OH_Drawing_PathRCubicTo with an integer as the fourth parameter
-    OH_Drawing_PathRCubicTo(path, 100.0f, 100.0f, 200, 200.0f, 300.0f, 300.0f);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 8. Call OH_Drawing_PathRCubicTo with an integer as the fifth parameter
-    OH_Drawing_PathRCubicTo(path, 100.0f, 100.0f, 200.0f, 200, 300.0f, 300.0f);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 9. Call OH_Drawing_PathRCubicTo with an integer as the sixth parameter
-    OH_Drawing_PathRCubicTo(path, 100.0f, 100.0f, 200.0f, 200.0f, 300, 300.0f);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 10. Call OH_Drawing_PathRCubicTo with an integer as the seventh parameter
-    OH_Drawing_PathRCubicTo(path, 100.0f, 100.0f, 200.0f, 200.0f, 300.0f, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 11. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1680,27 +1720,27 @@ int TestPathRCubicToMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Set a relative move to the path starting from the current endpoint by calling OH_Drawing_PathRMoveTo
-    OH_Drawing_PathRMoveTo(path, 100, 100);
+    OH_Drawing_PathRMoveTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathRCubicTo with the second parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, FLT_MAX + 1, 100, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 6. Call OH_Drawing_PathRCubicTo with the third parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, 100, FLT_MAX + 1, 200, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 7. Call OH_Drawing_PathRCubicTo with the fourth parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, FLT_MAX + 1, 200, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_300, TEST_STEP_300);
     // 8. Call OH_Drawing_PathRCubicTo with the fifth parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, FLT_MAX + 1, 300, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, FLT_MAX_PLUS_1, TEST_STEP_300, TEST_STEP_300);
     // 9. Call OH_Drawing_PathRCubicTo with the sixth parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 200, FLT_MAX + 1, 300);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, FLT_MAX_PLUS_1, TEST_STEP_300);
     // 10. Call OH_Drawing_PathRCubicTo with the seventh parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathRCubicTo(path, 100, 100, 200, 200, 300, FLT_MAX + 1);
+    OH_Drawing_PathRCubicTo(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, TEST_STEP_300, FLT_MAX_PLUS_1);
     // 11. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1719,18 +1759,18 @@ int TestPathAddRectNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Add a rectangle outline to the path with the specified direction by calling OH_Drawing_PathAddRect. Iterate
     // through the enum to call this interface.
-    OH_Drawing_PathAddRect(path, 100, 100, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 5. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1749,20 +1789,20 @@ int TestPathAddRectNull()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathAddRect with the first parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddRect(nullptr, 100, 100, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddRect(nullptr, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 3. Call OH_Drawing_PathAddRect with 0.00 as the second parameter, no crash
-    OH_Drawing_PathAddRect(path, 0.00, 100, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, ZERO_FLOAT, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 4. Call OH_Drawing_PathAddRect with 0.00 as the third parameter, no crash
-    OH_Drawing_PathAddRect(path, 100, 0.00, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 5. Call OH_Drawing_PathAddRect with 0.00 as the fourth parameter, no crash
-    OH_Drawing_PathAddRect(path, 100, 100, 0.00, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, ZERO_FLOAT, TEST_STEP_200, PATH_DIR_CW);
     // 6. Call OH_Drawing_PathAddRect with 0.00 as the fifth parameter, no crash
-    OH_Drawing_PathAddRect(path, 100, 100, 200, 0.00, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, ZERO_FLOAT, PATH_DIR_CW);
     // 7. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1781,21 +1821,21 @@ int TestPathAddRectAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Call OH_Drawing_PathAddRect with an integer as the second parameter
-    OH_Drawing_PathAddRect(path, 100, 100.0f, 200.0f, 200.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 5. Call OH_Drawing_PathAddRect with an integer as the third parameter
-    OH_Drawing_PathAddRect(path, 100.0f, 100, 200.0f, 200.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 6. Call OH_Drawing_PathAddRect with an integer as the fourth parameter
-    OH_Drawing_PathAddRect(path, 100.0f, 100.0f, 200, 200.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 7. Call OH_Drawing_PathAddRect with an integer as the fifth parameter
-    OH_Drawing_PathAddRect(path, 100.0f, 100.0f, 200.0f, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 8. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1814,21 +1854,21 @@ int TestPathAddRectMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 3. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 4. Call OH_Drawing_PathAddRect with the second parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathAddRect(path, FLT_MAX + 1, 100, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, FLT_MAX_PLUS_1, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 5. Call OH_Drawing_PathAddRect with the third parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathAddRect(path, 100, FLT_MAX + 1, 200, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, TEST_STEP_200, PATH_DIR_CW);
     // 6. Call OH_Drawing_PathAddRect with the fourth parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathAddRect(path, 100, 100, FLT_MAX + 1, 200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, FLT_MAX_PLUS_1, TEST_STEP_200, PATH_DIR_CW);
     // 7. Call OH_Drawing_PathAddRect with the fifth parameter as the maximum value FLT_MAX+1, no crash
-    OH_Drawing_PathAddRect(path, 100, 100, 200, FLT_MAX + 1, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(path, TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, FLT_MAX_PLUS_1, PATH_DIR_CW);
     // 8. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1847,23 +1887,23 @@ int TestPathAddRectWithInitialCornerNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Add a rectangle outline to the path with the specified direction by calling
     // OH_Drawing_PathAddRectWithInitialCorner. Iterate through the enum to call this interface.
-    OH_Drawing_PathAddRectWithInitialCorner(path, rect, OH_Drawing_PathDirection::PATH_DIRECTION_CW, 0);
+    OH_Drawing_PathAddRectWithInitialCorner(path, rect, PATH_DIR_CW, INIT_CORNER_0);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1882,25 +1922,25 @@ int TestPathAddRectWithInitialCornerNull()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Call OH_Drawing_PathAddRectWithInitialCorner with the first parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddRectWithInitialCorner(nullptr, rect, OH_Drawing_PathDirection::PATH_DIRECTION_CW, 0);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddRectWithInitialCorner(nullptr, rect, PATH_DIR_CW, INIT_CORNER_0);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddRectWithInitialCorner with the second parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddRectWithInitialCorner(path, nullptr, OH_Drawing_PathDirection::PATH_DIRECTION_CW, 0);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddRectWithInitialCorner(path, nullptr, PATH_DIR_CW, INIT_CORNER_0);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 5. Call OH_Drawing_PathAddRectWithInitialCorner with the fourth parameter as 0
-    OH_Drawing_PathAddRectWithInitialCorner(path, rect, OH_Drawing_PathDirection::PATH_DIRECTION_CW, 0);
+    OH_Drawing_PathAddRectWithInitialCorner(path, rect, PATH_DIR_CW, INIT_CORNER_0);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1919,20 +1959,20 @@ int TestPathAddRectWithInitialCornerAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathAddRectWithInitialCorner with the fourth parameter as a float or a character
-    OH_Drawing_PathAddRectWithInitialCorner(path, rect, OH_Drawing_PathDirection::PATH_DIRECTION_CW, 5.0f);
+    OH_Drawing_PathAddRectWithInitialCorner(path, rect, PATH_DIR_CW, INIT_CORNER_5_FLOAT);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1951,20 +1991,20 @@ int TestPathAddRectWithInitialCornerMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathAddRectWithInitialCorner with the fourth parameter as the maximum value INT32_MAX, no
     // crash
-    OH_Drawing_PathAddRectWithInitialCorner(path, rect, OH_Drawing_PathDirection::PATH_DIRECTION_CW, INT32_MAX);
+    OH_Drawing_PathAddRectWithInitialCorner(path, rect, PATH_DIR_CW, INT32_MAX_VAL);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -1983,34 +2023,34 @@ int TestPathAddRoundRectNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rounded rectangle object by calling OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect* roundRect = OH_Drawing_RoundRectCreate(rect, 20, 20);
+    OH_Drawing_RoundRect* roundRect = OH_Drawing_RoundRectCreate(rect, ROUND_RECT_RADIUS_20, ROUND_RECT_RADIUS_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Add the rounded rectangle outline to the path with the specified direction by calling
     // OH_Drawing_PathAddRoundRect. Iterate through the enum to call this interface.
     OH_Drawing_PathDirection directions[] = {
-        PATH_DIRECTION_CW,
-        PATH_DIRECTION_CCW,
+        PATH_DIR_CW,
+        PATH_DIR_CCW,
     };
     for (int i = 0; i < sizeof(directions) / sizeof(directions[0]); i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddRoundRect(path, roundRect, directions[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     }
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -2029,27 +2069,27 @@ int TestPathAddRoundRectNull()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rounded rectangle object by calling OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect* roundRect = OH_Drawing_RoundRectCreate(rect, 20, 20);
+    OH_Drawing_RoundRect* roundRect = OH_Drawing_RoundRectCreate(rect, ROUND_RECT_RADIUS_20, ROUND_RECT_RADIUS_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 3. Call OH_Drawing_PathAddRoundRect with the first parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddRoundRect(nullptr, roundRect, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddRoundRect(nullptr, roundRect, PATH_DIR_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddRoundRect with the second parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddRoundRect(path, nullptr, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddRoundRect(path, nullptr, PATH_DIR_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 5. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -2068,30 +2108,30 @@ int TestPathAddOvalWithInitialPointNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Add an oval to the path, where the rectangle object is the bounding rectangle of the oval. Iterate through the
     // enum to call this interface.
     OH_Drawing_PathDirection directions[] = {
-        PATH_DIRECTION_CW,
-        PATH_DIRECTION_CCW,
+        PATH_DIR_CW,
+        PATH_DIR_CCW,
     };
     for (int i = 0; i < sizeof(directions) / sizeof(directions[0]); i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_PathAddOvalWithInitialPoint(path, rect, 10, directions[i]);
+        OH_Drawing_PathAddOvalWithInitialPoint(path, rect, INIT_POINT_10, directions[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), static_cast<OH_Drawing_ErrorCode>(DRAWING_SUCCESS));
     }
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -2110,25 +2150,25 @@ int TestPathAddOvalWithInitialPointNull()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Call OH_Drawing_PathAddOvalWithInitialPoint with the first parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddOvalWithInitialPoint(nullptr, rect, 10, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddOvalWithInitialPoint(nullptr, rect, INIT_POINT_10, PATH_DIR_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddOvalWithInitialPoint with the second parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathAddOvalWithInitialPoint(path, nullptr, 10, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathAddOvalWithInitialPoint(path, nullptr, INIT_POINT_10, PATH_DIR_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), INVALID_PARAM_ERROR);
     // 5. Call OH_Drawing_PathAddOvalWithInitialPoint with the third parameter as 0, no crash
-    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, 0, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, INIT_POINT_0, PATH_DIR_CW);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -2147,20 +2187,20 @@ int TestPathAddOvalWithInitialPointAbnormal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathAddOvalWithInitialPoint with the third parameter as a float or a character
-    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, 5.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, INIT_CORNER_5_FLOAT, PATH_DIR_CW);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 /**
@@ -2179,21 +2219,21 @@ int TestPathAddOvalWithInitialPointMaximal()
     // add assert
     EXPECT_NE(path, nullptr);
     // 2. Create a rectangle object by calling OH_Drawing_RectCreate
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(100, 100, 200, 200);
+    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(TEST_STEP_100, TEST_STEP_100, TEST_STEP_200, TEST_STEP_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. Set the starting point of the path by calling OH_Drawing_PathMoveTo
-    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathMoveTo(path, COORDINATE_ORIGIN, COORDINATE_ORIGIN);
     // 4. Add a line segment from the starting point of the path to the target point by calling OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, 100, 100);
+    OH_Drawing_PathLineTo(path, TEST_STEP_100, TEST_STEP_100);
     // 5. Call OH_Drawing_PathAddOvalWithInitialPoint with the third parameter as the maximum value UINT32_MAX + 1, no
     // crash
-    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, UINT32_MAX + 1, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddOvalWithInitialPoint(path, rect, UINT32_MAX_PLUS_1, PATH_DIR_CW);
     // 6. Free memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
     DrawingNativePathTestTearDown();
-    return OH_DRAWING_SUCCESS;
+    return DRAWING_SUCCESS;
 }
 
 } // namespace Drawing
