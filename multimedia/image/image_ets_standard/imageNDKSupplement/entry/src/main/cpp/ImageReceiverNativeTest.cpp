@@ -236,36 +236,34 @@ napi_value CreatePixelmapUsingAllocatorTest(napi_env env, napi_callback_info inf
 }
 napi_value PixelmapNativeSetMemoryNameTest(napi_env env, napi_callback_info info)
 {
-    LOGI("OH_PixelmapNative_SetMemoryName start");
-    napi_value thisVar = nullptr;
-    napi_value argValue[2] = {0};
-    size_t argCount = 2;
-    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 1 ||
-        argValue[0] == nullptr) {
-        LOGI("OH_PixelmapNative_SetMemoryName error1");
-        return nullptr;
-    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
-    napi_get_value_int32(env, argValue[0], &index);
-    LOGI("get argValue %{public}d", index);
-    OH_PixelmapNative *pixelmap = nullptr;
-    size_t dataSize = PARAM_960000;
-    uint8_t data[dataSize];
+    napi_get_value_int32(env, args[0], &index);
+    uint8_t data[96];
+    size_t dataSize = 96;
     for (int i = 0; i < dataSize; i++) {
         data[i] = i + 1;
     }
-    OH_Pixelmap_InitializationOptions *options = nullptr;
-    OH_PixelmapInitializationOptions_Create(&options);
-    OH_PixelmapInitializationOptions_SetWidth(options, PARAM_200);
-    OH_PixelmapInitializationOptions_SetHeight(options, PARAM_300);
-    OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
-    OH_PixelmapInitializationOptions_SetAlphaType(options, PIXELMAP_ALPHA_TYPE_UNKNOWN);
-    OH_PixelmapNative_CreatePixelmap(data, dataSize, options, &pixelmap);
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, 4);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, 6);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    OH_PixelmapNative *pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA ,&pixelmap);
     char name[] = "testName";
     size_t len = strlen(name);
-    Image_ErrorCode returnValue = OH_PixelmapNative_SetMemoryName(pixelmap, name, &len);
+    Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
+        returnValue = OH_PixelmapNative_SetMemoryName(pixelmap, name, &len);
+        LOGI("OH_PixelmapNative_SetMemoryName %{public}d", returnValue);
+        break;
+    case CASE_INDEX_2:
+        OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelmap);
         returnValue = OH_PixelmapNative_SetMemoryName(pixelmap, name, &len);
         LOGI("OH_PixelmapNative_SetMemoryName %{public}d", returnValue);
         break;
