@@ -502,7 +502,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCloneNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeClone_2500
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeClone_2600
      * @tc.desc   1.testNativeCloneNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreateCroppedAndScaledPixelMap
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2600
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2700
      * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -544,7 +544,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreateCroppedAndScaledPixelMapInvalidRegion
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2700
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2800
      * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMapInvalidRegion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -565,7 +565,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreateCroppedAndScaledPixelMapNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2800
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2900
      * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMapNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromNativeBuffer
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_2900
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3000
      * @tc.desc   1.testNativeCreatePixelMapFromNativeBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -607,7 +607,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromNativeBufferNotDMA
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_2900
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3100
      * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNotDMA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -628,7 +628,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromNativeBufferNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3000
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3200
      * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -649,7 +649,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromSurface
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3100
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3300
      * @tc.desc   1.testNativeCreatePixelMapFromSurface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromSurfaceInvalidId
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3200
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3400
      * @tc.desc   1.testNativeCreatePixelMapFromSurfaceInvalidId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -683,7 +683,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeCreatePixelMapFromSurfaceNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3300
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3500
      * @tc.desc   1.testNativeCreatePixelMapFromSurfaceNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -700,7 +700,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeGetUniqueId
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3400
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3600
      * @tc.desc   1.testNativeGetUniqueId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -721,7 +721,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeGetUniqueIdNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3500
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3700
      * @tc.desc   1.testNativeGetUniqueIdNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -742,28 +742,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeIsReleased
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
-     * @tc.desc   1.testNativeIsReleased
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testNativeIsReleased',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      const options: image.InitializationOptions = {
-        size: { width: 10, height: 10 }
-      };
-      const pixelMap = image.createPixelMapSync(options);
-      let result: number = ndkTest.testNativeIsReleased(pixelMap, false, false);
-      let msg = 'testNativeIsReleased result: '
-      console.info(msg + result);
-      expect(result).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   testNativeIsReleased
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3800
      * @tc.desc   1.testNativeIsReleased
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -784,7 +763,7 @@ export default function imageNdkTest() {
     
     /**
      * @tc.name   testNativeIsReleasedAfterRelease
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3700
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3900
      * @tc.desc   1.testNativeIsReleasedAfterRelease
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -805,7 +784,7 @@ export default function imageNdkTest() {
 
     /**
      * @tc.name   testNativeIsReleasedNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_4000
      * @tc.desc   1.testNativeIsReleasedNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
