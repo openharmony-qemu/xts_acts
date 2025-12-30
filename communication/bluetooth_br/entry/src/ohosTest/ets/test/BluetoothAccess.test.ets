@@ -651,6 +651,7 @@ export default function btAccessTest() {
                 let uuid = null;
                 let converuuid = bluetooth.convertUuid(uuid);
                 console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){
