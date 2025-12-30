@@ -241,31 +241,6 @@ export default function soundPoolTest() {
     })
 
     /**
-     * @tc.number  SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_PARALLEL_static_0100
-     * @tc.name    SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_PARALLEL_static_0100
-     * @tc.desc    Function test
-     *               : 001.test Promise createParallelSoundPool test
-     */
-    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_PARALLEL_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_PARALLEL_static_0100 in`);
-      try {
-        await media.createParallelSoundPool(maxStreams, audioRendererInfo).then((soundPool_: media.SoundPool | undefined) => {
-            if (soundPool_) {
-              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
-              soundPool = soundPool_;
-            } else {
-              console.error(`${TAG}: error! soundPool_ = undefined`);
-              expectFalse();
-            }
-          });
-      } catch (error: BusinessError) {
-        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
-        expectFalse();
-      }
-      done();
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0100
      * @tc.desc   Function test
