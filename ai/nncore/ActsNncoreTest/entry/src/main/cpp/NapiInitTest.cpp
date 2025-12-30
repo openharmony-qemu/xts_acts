@@ -95,7 +95,8 @@ static napi_value createAsyncTest(napi_env env, const char* testName, int (*test
 }
 
 // 内联函数：生成异步测试的 NAPI 包装函数
-static inline napi_value generateAsyncTestFunction(napi_env env, napi_callback_info info, const char* testName, int (*testFunc)())
+static inline napi_value generateAsyncTestFunction(napi_env env, napi_callback_info info,
+                                                   const char* testName, int (*testFunc)())
 {
     return createAsyncTest(env, testName, testFunc);
 }
