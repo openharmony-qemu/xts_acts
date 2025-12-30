@@ -22,7 +22,7 @@
 #define TEST_FONT_SIZE 50.255f
 // 文本编码相关计数值宏定义
 #define UTF8_CHAR_COUNT 11    // UTF-8编码字符计数
-#define UTF16_CHAR_COUNT -1   // UTF-16编码字符计数
+#define UTF16_CHAR_COUNT (-1)   // UTF-16编码字符计数
 #define UTF32_CHAR_COUNT 2    // UTF-32编码字符计数
 #define GLYPH_ID_CHAR_COUNT 5 // 字形ID编码字符计数
 #define FONT_SIZE_TWELVE 12.0f
@@ -42,7 +42,7 @@
 #define VALUE_ELEVEN 11
 #define VALUE_FIFTY 50
 #define VALUE_HUNDRED 100
-#define NEGATIVE_ONE -1
+#define NEGATIVE_ONE (-1)
 #define EVEN_DIVISOR 2
 #define FONT_SIZE_ZERO 0.0f
 #define FONT_SIZE_ELEVEN 11.0f
@@ -51,8 +51,7 @@
 #define FLOAT_TWO 2.0f
 #define FLOAT_TEN 10.0f
 #define FLOAT_FIFTY 50.0f
-#define IS_EVEN(i) ((i) % EVEN_DIVISOR == ZERO_VALUE)
-#define STRING_LENGTH(str) strlen(str)
+#define strlen(str) strlen(str)
 #define GLYPHS_ARRAY_SIZE 50
 #define SKEW_X_TEST_VALUE 0.55f
 #define SCALE_X_TEST_VALUE 0.55f
@@ -99,9 +98,9 @@ int TestFontGetWidthsAbnormal()
     const char* str = "Hello World";
     uint16_t glyphs[GLYPHS_ARRAY_SIZE] = { ZERO_VALUE };
     float widths[GLYPHS_ARRAY_SIZE] = { FLOAT_ZERO };
-    int count = OH_Drawing_FontCountText(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8);
+    int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount =
-        OH_Drawing_FontTextToGlyphs(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8, glyphs, count);
+        OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
     // 2. Set byteLength parameter to -1 for OH_Drawing_FontGetWidths interface
     // There is no byteLength parameter
     // 3. Set count parameter to -1 for OH_Drawing_FontGetWidths interface and check the error code using
@@ -138,9 +137,9 @@ int TestFontGetWidthsMaximum()
     const char* str = "Hello World";
     uint16_t glyphs[GLYPHS_ARRAY_SIZE] = { ZERO_VALUE };
     float widths[GLYPHS_ARRAY_SIZE] = { FLOAT_ZERO };
-    int count = OH_Drawing_FontCountText(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8);
+    int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
     int glyphsCount =
-        OH_Drawing_FontTextToGlyphs(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8, glyphs, count);
+        OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
     // 2. Call OH_Drawing_FontGetWidths interface with maximum value for glyphs parameter
     uint16_t glyphs2[GLYPHS_ARRAY_SIZE] = { UINT16_MAX };
     OH_Drawing_FontGetWidths(font, glyphs2, glyphsCount, widths);
@@ -240,11 +239,11 @@ int TestFontSetLinearTextMultipleCalls()
     // glyphs are scaled linearly
     for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetLinearText(font, IS_EVEN(i));
+        OH_Drawing_FontSetLinearText(font, ((i) % EVEN_DIVISOR == ZERO_VALUE));
         bool isLinearText = OH_Drawing_FontIsLinearText(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isLinearText, IS_EVEN(i));
+        EXPECT_EQ(isLinearText, ((i) % EVEN_DIVISOR == ZERO_VALUE));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
@@ -541,11 +540,11 @@ int TestFontSetFakeBoldTextMultipleCalls()
     // check if the stroke width is increased to approximate bold text
     for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetFakeBoldText(font, IS_EVEN(i));
+        OH_Drawing_FontSetFakeBoldText(font, ((i) % EVEN_DIVISOR == ZERO_VALUE));
         bool isFakeBoldText = OH_Drawing_FontIsFakeBoldText(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isFakeBoldText, IS_EVEN(i));
+        EXPECT_EQ(isFakeBoldText, ((i) % EVEN_DIVISOR == ZERO_VALUE));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
@@ -974,13 +973,13 @@ int TestFontSetEmbeddedBitmapsMultipleCalls()
     // to check if the glyph is converted to a bitmap
     for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetEmbeddedBitmaps(font, IS_EVEN(i));
+        OH_Drawing_FontSetEmbeddedBitmaps(font, ((i) % EVEN_DIVISOR == ZERO_VALUE));
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         bool isEmbeddedBitmaps = OH_Drawing_FontIsEmbeddedBitmaps(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isEmbeddedBitmaps, IS_EVEN(i));
+        EXPECT_EQ(isEmbeddedBitmaps, ((i) % EVEN_DIVISOR == ZERO_VALUE));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
