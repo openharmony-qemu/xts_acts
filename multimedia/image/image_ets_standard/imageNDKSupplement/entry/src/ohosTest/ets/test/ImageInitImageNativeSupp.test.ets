@@ -16,6 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import testNapi from 'libimageEffect.so'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { JSON } from '@kit.ArkTS';
+import { common } from '@kit.AbilityKit';
+
 const IMAGE_SUCCESS = 0;
 const IMAGE_BAD_PARAMETER =401
 const IMAGE_INVALID_PARAMETER = 7600206;
@@ -150,8 +152,11 @@ export default function ImageInitImageNativeSuppTest() {
      */
     it('SUB_PICTURE_NATIVE_GET_METADATA_SUPP_001', Level.LEVEL1, () => {
       const testName ='SUB_PICTURE_NATIVE_GET_METADATA_SUPP_001'
+      let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let basePath = context.filesDir;
+      let filePath = basePath + '/' + 'test_exif_v3.jpg';
       console.info(TAG,'Start',);
-      let result:number = testNapi.OHPictureNativeGetMetadataSupp(CASE_INDEX_1)
+      let result:number = testNapi.OHPictureNativeGetMetadataSupp(CASE_INDEX_1,filePath)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_UNSUPPORTED_METADATA)
     })
@@ -165,8 +170,11 @@ export default function ImageInitImageNativeSuppTest() {
      */
     it('SUB_PICTURE_NATIVE_SET_METADATA_SUPP_001', Level.LEVEL1, () => {
       const testName ='SUB_PICTURE_NATIVE_SET_METADATA_SUPP_001'
+      let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let basePath = context.filesDir;
+      let filePath = basePath + '/' + 'test_exif_v3.jpg';
       console.info(TAG,'Start',);
-      let result:number = testNapi.OHPictureNativeSetMetadataSupp(CASE_INDEX_1)
+      let result:number = testNapi.OHPictureNativeSetMetadataSupp(CASE_INDEX_1,filePath)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_UNSUPPORTED_METADATA)
     })
