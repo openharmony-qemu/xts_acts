@@ -443,6 +443,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId1");
       done();
     })
+
     /**
      * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0200
      * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0200
@@ -528,6 +529,7 @@ export default function ActsEmitterandComEventTest() {
       expect(onConsume_number).assertEqual(1)
       done();
     })
+
     /**
      * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0400
      * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0400
@@ -588,6 +590,8 @@ export default function ActsEmitterandComEventTest() {
         let storage: Sample = eventData.data! as Sample;
         storage.printCount();
         console.info(Tag +' on GenericEventData' + result);
+        console.info(Tag +' on GenericEventData' + JSON.stringify(eventData));
+        expect(JSON.stringify(eventData)).assertContain('"count":100');
         result += 1
       }
       emitter.onGenericEventData<Sample>("eventId111", callback1);
@@ -610,7 +614,7 @@ export default function ActsEmitterandComEventTest() {
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Sendable_Static_0001` + result);
           emitter.off("eventId111");
           break;
-        } 
+        }
       }
       console.info(Tag+ ' emitterOff success');
       //继续发事件
@@ -667,6 +671,8 @@ export default function ActsEmitterandComEventTest() {
         let storage: Sample = eventData.data! as Sample;
         storage.printCount();
         onConsume_number += 1
+        console.info(Tag +' on GenericEventData' + JSON.stringify(eventData));
+        expect(JSON.stringify(eventData)).assertContain('"count":100');
       }
       emitter.onceGenericEventData<Sample>("eventId333", callback);
       await Utils.msSleep(100)
