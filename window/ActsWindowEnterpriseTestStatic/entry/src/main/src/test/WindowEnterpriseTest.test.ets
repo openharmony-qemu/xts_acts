@@ -130,15 +130,21 @@ export default function WindowEnterpriseTest() {
                             isExit = true;
                             let info = infos[i];
                             hilog.info(domain, tag,caseName + 'info: ' + JSON.stringify(info));
+                            hilog.info(domain, tag,caseName + `info.windowStatusType: ${info.windowStatusType}`);
+                            hilog.info(domain, tag,caseName + `info.bundleName: ${info.bundleName}`);
+                            hilog.info(domain, tag,caseName + `info.abilityName: ${info.abilityName}`);
+                            hilog.info(domain, tag,caseName + `info.globalDisplayRect: ${info.globalDisplayRect}`);
+                            hilog.info(domain, tag,caseName + `info.isFocused: ${info.isFocused}`);
+
+                            hilog.info(domain, tag,caseName + `res.windowRect.left: ${res.windowRect.left}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.top: ${res.windowRect.top}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.width: ${res.windowRect.width}`);
+                            hilog.info(domain, tag,caseName + `res.windowRect.height: ${res.windowRect.height}`);
                             expect(info.rect.left).assertEqual(res.windowRect.left);
                             expect(info.rect.top).assertEqual(res.windowRect.top);
                             expect(info.rect.width).assertEqual(res.windowRect.width);
                             expect(info.rect.height).assertEqual(res.windowRect.height);
                             expect(info.isFocused).assertEqual(true);
-                            hilog.info(domain, tag,caseName + `info.windowStatusType: ${info.windowStatusType}`);
-                            hilog.info(domain, tag,caseName + `info.bundleName: ${info.bundleName}`);
-                            hilog.info(domain, tag,caseName + `info.abilityName: ${info.abilityName}`);
-                            hilog.info(domain, tag,caseName + `info.globalDisplayRect: ${info.globalDisplayRect}`);
                             break;
                         }
                     }
