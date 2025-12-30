@@ -1493,7 +1493,7 @@ export default function type_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERAL_0200
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERALREF_0200
      * @tc.name    testIntTypeGetLiteral0002
      * @tc.desc    Verify getLiteral for IntType.REF returns "Int"
      * @tc.size    MediumTest
@@ -1531,7 +1531,7 @@ export default function type_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERAL_0500
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERALA_0500
      * @tc.name    testIntTypeGetLiteral0005
      * @tc.desc    Verify consistent return value for IntType.VAL
      * @tc.size    MediumTest
@@ -1654,7 +1654,7 @@ export default function type_07Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERAL_0500
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_INTTYPE_GETLITERALB_0500
      * @tc.name    testGetLiteral0005
      * @tc.desc    Verify not null/undefined
      * @tc.size    MediumTest

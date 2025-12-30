@@ -2552,7 +2552,7 @@ export default function math02Test() {
      * @tc.type    FUNCTION
      * @tc.level   Level 1
      */
-    it(' testMathSin14015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testMathSin14015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testMathSin14015 start');
         try {

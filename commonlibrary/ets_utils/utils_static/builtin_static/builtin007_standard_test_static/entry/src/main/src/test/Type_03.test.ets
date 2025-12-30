@@ -292,15 +292,15 @@ export default function type_03Test() {
     })
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_ERROR_ARGUMENTSUNDERAPPLICATION_0100
-     * @tc.name    testArgumentsUnderapplicationError0001
+     * @tc.number  SUB_COMMONLIBRARY_BASE_ERROR_ARGUMENTSUNDERAPPLICATION_0100
+     * @tc.name    testTypeArgumentsUnderapplicationError0001
      * @tc.desc    Test instantiation of ArgumentsUnderapplicationError with default parameters.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testArgumentsUnderapplicationError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testArgumentsUnderapplicationError0001";
+    it('testTypeArgumentsUnderapplicationError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testTypeArgumentsUnderapplicationError0001";
       try {
         const error = new ArgumentsUnderapplicationError();
         expect(error.name).assertEqual("ArgumentsUnderapplicationError");
@@ -333,15 +333,15 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_ERROR_ARGUMENTSUNDERAPPLICATION_0300
-     * @tc.name    testArgumentsUnderapplicationError0003
+     * @tc.number  SUB_COMMONLIBRARY_BASE_ERROR_ARGUMENTSUNDERAPPLICATION_0300
+     * @tc.name    testBaseArgumentsUnderapplicationError0003
      * @tc.desc    Test instantiation of ArgumentsUnderapplicationError with ErrorOptions including cause.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testArgumentsUnderapplicationError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testArgumentsUnderapplicationError0003";
+    it('testBaseArgumentsUnderapplicationError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBaseArgumentsUnderapplicationError0003";
       try {
         const cause = new Error("Root cause");
         const error = new ArgumentsUnderapplicationError("Custom message", { cause });
@@ -2078,7 +2078,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0100
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSMAKE_0100
      * @tc.name    testMake0001
      * @tc.desc    Testing make() with a class that has an empty constructor.
      * @tc.size    MediumTest
@@ -2117,7 +2117,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0300
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEA_0300
      * @tc.name    testMake0003
      * @tc.desc    Testing make() with a class that inherits from another class.
      * @tc.size    MediumTest
@@ -2180,7 +2180,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0300
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEB_0300
      * @tc.name    testMakeWithArgs0003
      * @tc.desc    Testing make(args) with no matching constructor.
      * @tc.size    MediumTest
@@ -2240,7 +2240,7 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0200
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALSOF_0200
      * @tc.name    testClassTypeEquals0002
      * @tc.desc    Testing equals() with different class types.
      * @tc.size    MediumTest

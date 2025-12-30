@@ -962,7 +962,7 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETACCESSMODIFIER_0300
+     * @tc.number  SUB_COMMONLIBRARY_BASE_FIELD_GETACCESSMODIFIER_0300
      * @tc.name    testFieldGetAccessModifier0003
      * @tc.desc    Get access modifier of protected field
      * @tc.size    MediumTest
@@ -988,7 +988,7 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETACCESSMODIFIER_0200
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_FIELD_GETACCESSMODIFIER_0200
      * @tc.name    testFieldGetAccessModifier0002
      * @tc.desc    Get access modifier of private field
      * @tc.size    MediumTest
@@ -1014,15 +1014,15 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETACCESSMODIFIER_0300
-     * @tc.name    testFieldGetAccessModifier0003
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_FIELD_GETACCESSMODIFIER_0300
+     * @tc.name    testBaseFieldGetAccessModifier0003
      * @tc.desc    Get access modifier of protected field
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testFieldGetAccessModifier0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldGetAccessModifier0003";
+    it('testBaseFieldGetAccessModifier0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBaseFieldGetAccessModifier0003";
       try {
 
         const testInstance = new TestClass9();

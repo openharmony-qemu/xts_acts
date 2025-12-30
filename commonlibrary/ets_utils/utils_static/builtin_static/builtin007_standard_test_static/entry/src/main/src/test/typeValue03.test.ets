@@ -604,7 +604,7 @@ export default function TypeValue03Test() {
       });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TYPE_OF_0100
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_TYPE_OF_0100
      * @tc.name     testTypeOf0001
      * @tc.desc     Testing Type.of with null.
      * @tc.level    LEVEL1

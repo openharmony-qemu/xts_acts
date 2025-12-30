@@ -1855,40 +1855,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  BASIC_LITERAL_011
-     * @tc.name    test_basic_literal_011
-     * @tc.desc    Verify boolean literal works
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_literal_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_011 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_011 end');
-      });
-
-    /**
-     * @tc.number  BASIC_LITERAL_012
-     * @tc.name    test_basic_literal_012
-     * @tc.desc    Verify string literal works
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_literal_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_012 start');
-        expect("hello").assertEqual("hello");
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_012 end');
-      });
-
-    /**
      * @tc.number  BASIC_OPERATION_013
      * @tc.name    test_basic_operation_013
      * @tc.desc    Verify basic addition works
@@ -2168,176 +2134,6 @@ export default function math06Test() {
         expect(arr.join(",")).assertEqual("a,b,c");
         done();
         console.log(domain, tag, '%{public}s', 'testArrayJoin037 end');
-      });
-
-    /**
-     * @tc.number  FIELD_PRIVATE_038
-     * @tc.name    testFieldPrivate038
-     * @tc.desc    Verify private field access restriction
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldPrivate038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldPrivate038 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldPrivate038 end');
-      });
-
-    /**
-     * @tc.number  FIELD_READONLY_039
-     * @tc.name    testFieldReadonly039
-     * @tc.desc    Verify readonly field modification restriction
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldReadonly039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldReadonly039 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldReadonly039 end');
-      });
-
-    /**
-     * @tc.number  FIELD_NULL_040
-     * @tc.name    testFieldNull040
-     * @tc.desc    Verify handling of null value assignment
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldNull040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldNull040 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldNull040 end');
-      });
-
-    /**
-     * @tc.number  FIELD_UNDEFINED_041
-     * @tc.name    testFieldUndefined041
-     * @tc.desc    Verify handling of undefined value assignment
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldUndefined041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldUndefined041 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldUndefined041 end');
-      });
-
-    /**
-     * @tc.number  FIELD_OBJECT_042
-     * @tc.name    testFieldObject042
-     * @tc.desc    Verify object type field handling
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldObject042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldObject042 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldObject042 end');
-      });
-
-    /**
-     * @tc.number  PROTOTYPE_CHAIN_043
-     * @tc.name    testPrototypeChain043
-     * @tc.desc    Verify field access through prototype chain
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testPrototypeChain043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testPrototypeChain043 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testPrototypeChain043 end');
-      });
-
-    /**
-     * @tc.number  FIELD_SYMBOL_044
-     * @tc.name    testFieldSymbol044
-     * @tc.desc    Verify symbol type field handling
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldSymbol044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldSymbol044 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldSymbol044 end');
-      });
-
-    /**
-     * @tc.number  GETTER_SETTER_045
-     * @tc.name    testGetterSetter045
-     * @tc.desc    Verify interaction with getter/setter properties
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testGetterSetter045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testGetterSetter045 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testGetterSetter045 end');
-      });
-
-    /**
-     * @tc.number  FIELD_NONEXISTENT_046
-     * @tc.name    testFieldNonexistent046
-     * @tc.desc    Verify handling of non-existent field access
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldNonexistent046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldNonexistent046 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldNonexistent046 end');
-      });
-
-    /**
-     * @tc.number  FIELD_DEEPNESTED_047
-     * @tc.name    testFieldDeepnested047
-     * @tc.desc    Verify access to deeply nested fields
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testFieldDeepnested047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'testFieldDeepnested047 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testFieldDeepnested047 end');
       });
 
     /**
@@ -3208,23 +3004,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  SUB_BASIC_TEST_0095
-     * @tc.name    test_basic_test_0095
-     * @tc.desc    Basic truthy test
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_test_0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0095 start');
-        expect(true).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0095 end');
-      });
-
-    /**
      * @tc.number  SUB_BASIC_TEST_0097
      * @tc.name    test_basic_test_0097
      * @tc.desc    Number equality test
@@ -3256,23 +3035,6 @@ export default function math06Test() {
         expect("test").assertEqual("test");
         done();
         console.log(domain, tag, '%{public}s', 'test_basic_test_0098 end');
-      });
-
-    /**
-     * @tc.number  SUB_BASIC_TEST_0099
-     * @tc.name    test_basic_test_0099
-     * @tc.desc    Basic not equal test
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_test_0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0099 start');
-        expect(1).not().assertEqual(2);
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0099 end');
       });
 
     /**
