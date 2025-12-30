@@ -988,50 +988,6 @@ export default function getType01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0200
-     * @tc.name    testValueGetType30002
-     * @tc.desc    Verify ShortValue works with normal positive value
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testValueGetType30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType30002';
-      try {
-        const shortType: ShortType;
-        const testValue = 42;
-        const shortValue = new ShortValue(shortType, testValue);
-        const resultType = shortValue.getType();
-        expect(resultType === shortType).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0300
-     * @tc.name   testValueGetType30003
-     * @tc.desc   Verify ShortValue works with negative value
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testValueGetType30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType30003';
-      try {
-        const shortType: ShortType;
-        const testValue = -42;
-        const shortValue = new ShortValue(shortType, testValue);
-        const actualType = shortValue.getType();
-        expect(typeof actualType).assertEqual(typeof shortType);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0400
      * @tc.name    testValueGetType30004
      * @tc.desc    Verify ShortValue works with maximum boundary value

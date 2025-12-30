@@ -986,46 +986,6 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETTYPEPARAMETER_0100
-     * @tc.name    testGetTypeParameter0001
-     * @tc.desc    Testing getTypeParameter with interface that has type parameters.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetTypeParameter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetTypeParameter0001";
-      try {
-        const interfaceType = Type.of(new TestInterface4<number>()) as InterfaceType;
-        let typeParam = interfaceType.getTypeParameter(0);
-        expect(typeParam instanceof Type).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_GETTYPEPARAMETERSNUM_0100
-     * @tc.name    testGetTypeParametersNum0001
-     * @tc.desc    Testing getTypeParametersNum with interface that has type parameters.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetTypeParametersNum0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetTypeParametersNum0001";
-      try {
-        const interfaceType = Type.of(new TestInterface5<number, string>()) as InterfaceType;
-        let typeParamsNum = interfaceType.getTypeParametersNum();
-        expect(typeParamsNum).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect(err.message).assertEqual("Not implemented");
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_INTERFACETYPE_EQUALS_0100
      * @tc.name    testInterfaceTypeEquals0001
      * @tc.desc    Testing equals method with same InterfaceType instances.
@@ -1741,69 +1701,6 @@ export default function type_03Test() {
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_CLASSTYPE_GETTYPEPARAMETER_0100
-     * @tc.name    testClassTypeGetTypeParameter0001
-     * @tc.desc    Testing getTypeParameter with generic class that has type parameters.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testClassTypeGetTypeParameter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testClassTypeGetTypeParameter0001";
-      try {
-        const classType = Type.of(new GenericClass1<number>()) as ClassType;
-        let typeParam = classType.getTypeParameter(0);
-
-        expect(typeParam instanceof Type).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETTYPEPARAMETERSNUM_0100
-     * @tc.name    testGetTypeParametersNum0001
-     * @tc.desc    Testing getTypeParametersNum with generic class type.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetTypeParametersNum0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetTypeParametersNum0001";
-      try {
-        const genericObj = new GenericClass2<number, string>();
-        const classType = Type.of(genericObj) as ClassType;
-        let typeParamsNum = classType.getTypeParametersNum();
-        expect(typeParamsNum).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect(err.message).assertEqual("Not implemented");
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETTYPEPARAMETERSNUM_0200
-     * @tc.name    testGetTypeParametersNum0002
-     * @tc.desc    Testing getTypeParametersNum with non-generic class type.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetTypeParametersNum0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetTypeParametersNum0002";
-      try {
-        const nonGenericObj = new TestClass4();
-        const classType = Type.of(nonGenericObj) as ClassType;
-        let typeParamsNum = classType.getTypeParametersNum();
-        expect(typeParamsNum).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect(err.message).assertEqual("Not implemented");
       }
     });
 

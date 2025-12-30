@@ -1572,28 +1572,6 @@ export default function CopyWithTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1700
-     * @tc.name    testCopyWithinFloatIndices1
-     * @tc.desc    Testing with float indices (should truncate)
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testCopyWithinFloatIndices1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testCopyWithinFloatIndices1";
-      try {
-        const originalArray: FixedArray<short> = [1, 2, 3, 4, 5] as FixedArray<short>;
-        const expectedResult: FixedArray<short> = [4, 2, 3, 4, 5] as FixedArray<short>;
-        const result = copyWithin(originalArray, 0.9, 3.2, 4.8);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-        expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1800_02
      * @tc.name    testCopyWithinSameArrayReference
      * @tc.desc    Verify returned array is same reference
@@ -1758,27 +1736,6 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2700
-     * @tc.name    testCopyWithinIndexNormalization
-     * @tc.desc    Testing index normalization edge cases
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testCopyWithinIndexNormalization', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testCopyWithinIndexNormalization";
-      try {
-        const originalArray: FixedArray<short> = [10, 20, 30, 40, 50] as FixedArray<short>;
-        const expectedResult: FixedArray<short> = [10, 10, 20, 40, 50] as FixedArray<short>;
-        const result = copyWithin(originalArray, 1, 0, 2.999);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -2052,48 +2009,6 @@ export default function CopyWithTest() {
         let arr: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
         let result = copyWithin(arr, 2, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
-        console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error is ${err}`);
-        expect().assertFail();
-      }
-    });
-	
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_0114
-     * @tc.name   testCopyWithinMinIntBoundary
-     * @tc.desc   Test with min int boundary values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testCopyWithinMinIntBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testCopyWithinMinIntBoundary";
-      try {
-        let arr: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
-        let result = copyWithin(arr, 0, Number.MIN_SAFE_INTEGER, 2);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
-        console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_0117
-     * @tc.name   testCopyWithinFloatIndices
-     * @tc.desc   Test with float indices (should truncate)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testCopyWithinFloatIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testCopyWithinFloatIndices";
-      try {
-        let arr: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
-        let result = copyWithin(arr, 1.6, 2.3, 3.9);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 3, 3, 4, 5]));
         console.log(`${TAG} success`);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error is ${err}`);

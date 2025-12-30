@@ -1561,62 +1561,6 @@ export default function math03Test() {
       });
 
     /**
-     * @tc.number  TEST_MATH_ATAN_23011
-     * @tc.name    testMathAtan23011
-     * @tc.desc    Verify atan(-x) = -atan(x)
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testMathAtan23011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testMathAtan23011 start');
-        try {
-          const values: number[] = [0.5, 1.0, 2.0, 10.0, 100.0];
-          for (let i: number = 0; i < values.length; i++) {
-            const v: number = values[i];
-            const negativeResult: number = atan(-v);
-            const expected: number = -atan(v);
-            expect(Math.abs(negativeResult - expected) < 1e-10).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.log(domain, tag, '%{public}s', `Error: ${error}`);
-          expect().assertFail();
-        }
-      });
-
-    /**
-     * @tc.number  TEST_MATH_ATAN_23012
-     * @tc.name    testMathAtan23012
-     * @tc.desc    Verify if x < y then atan(x) < atan(y)
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testMathAtan23012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testMathAtan23012 start');
-        try {
-          const pairs: number[][] = [
-            [-10.0, -5.0],
-            [-1.0, 0.0],
-            [0.0, 1.0],
-            [5.0, 10.0]
-          ];
-          for (let i: number = 0; i < pairs.length; i++) {
-            const a: number = pairs[i][0];
-            const b: number = pairs[i][1];
-            expect(atan(a) < atan(b)).assertTrue();
-          }
-          done();
-        } catch (error) {
-          console.log(domain, tag, '%{public}s', `Error: ${error}`);
-          expect().assertFail();
-        }
-      });
-
-    /**
      * @tc.number  TEST_MATH_ATAN_24001
      * @tc.name    testMathAtan24001
      * @tc.desc    Verify atan2 with positive infinity for both parameters

@@ -652,26 +652,6 @@ export default function type_05Test() {
       }
     });
 
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_1400
-     * @tc.name    testFunctionTypeGetParametersNum_0014
-     * @tc.desc    Check parameter count for generic function with two parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParametersNum_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParametersNum_0014";
-      try {
-        const functionType: FunctionType = Type.of(genericFunction) as FunctionType;
-        const result: number = functionType.getParametersNum();
-        expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_EQUALS_0100

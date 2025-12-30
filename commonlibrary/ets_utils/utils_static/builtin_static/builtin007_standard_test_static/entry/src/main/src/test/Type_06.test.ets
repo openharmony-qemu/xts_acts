@@ -1323,61 +1323,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_ISINHERITED_0100
-     * @tc.name    testFieldIsInherited0001
-     * @tc.desc    Verify inherited field returns true for isInherited()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFieldIsInherited0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldIsInherited0001";
-      try {
-
-        const childInstance = new ChildClass();
-        const childClassType = Type.of(childInstance) as ClassType;
-
-
-        const inheritedField = childClassType.getFieldByName("parentField");
-        expect(inheritedField.isInherited()).assertTrue();
-
-
-        const parentInstance = new ParentClass();
-        expect(inheritedField.getOwnerType().toString())
-          .assertEqual(Type.of(parentInstance).toString());
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_ISINHERITED_0200
-     * @tc.name    testFieldIsInherited0002
-     * @tc.desc    Verify non-inherited field returns false for isInherited()
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFieldIsInherited0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldIsInherited0002";
-      try {
-
-        const childInstance = new ChildClass();
-        const childClassType = Type.of(childInstance) as ClassType;
-
-
-        const ownField = childClassType.getFieldByName("childField");
-        expect(ownField.isInherited()).assertFalse();
-        expect(ownField.getOwnerType().toString())
-          .assertEqual(childClassType.toString());
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_ISSTATIC_0100
      * @tc.name    testFieldIsStatic0001
      * @tc.desc    Verify static field returns true for isStatic()

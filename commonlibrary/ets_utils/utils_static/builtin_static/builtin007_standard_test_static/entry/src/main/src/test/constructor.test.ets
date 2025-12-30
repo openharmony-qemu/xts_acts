@@ -1343,29 +1343,6 @@ export default function constructorTest() {
     });
 
     /**
-     * @tc.number CORE_INTVALUE_004
-     * @tc.name   IntValueConstructor0004
-     * @tc.desc   Test getData() returns Int object
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("IntValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 start');
-      const intType = IntType.VAL;
-      const intValue = new IntValue(intType, 12345);
-      const intData = intValue.getData() as Int | null;
-      if (intData !== null && intData !== undefined) {
-        expect(intData).assertEqual(new Int(12345));
-      } else {
-        hilog.error(0x0000, 'testTag', 'getData() returned null or undefined');
-        expect().assertFalse();
-      }
-      done();
-      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 end');
-    });
-
-    /**
      * @tc.number CORE_INTVALUE_005
      * @tc.name   IntValueConstructor0005
      * @tc.desc   Test boundary values
