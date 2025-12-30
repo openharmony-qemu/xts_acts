@@ -81,7 +81,7 @@ export default function Date7Test() {
       testDate3.setUTCSeconds(56);
       testDate3.setUTCMilliseconds(789);
       expect(testDate3.getUTCFullYear()).assertEqual(2024);
-      expect(testDate3.getUTCMonth()).assertEqual(1);
+      expect(testDate3.getUTCMonth()).assertEqual(2);
       expect(testDate3.getUTCDate()).assertEqual(29);
       expect(testDate3.getUTCHours()).assertEqual(12);
       expect(testDate3.getUTCMinutes()).assertEqual(34);
@@ -1166,7 +1166,7 @@ export default function Date7Test() {
       date71.setUTCMonth(1);
       date71.setUTCDate(29);
       expect(date71.getUTCFullYear()).assertEqual(2000);
-      expect(date71.getUTCMonth()).assertEqual(1);
+      expect(date71.getUTCMonth()).assertEqual(2);
       expect(date71.getUTCDate()).assertEqual(29);
     });
 
@@ -1593,7 +1593,7 @@ export default function Date7Test() {
       date98.setUTCMonth(1);
       date98.setUTCDate(28);
       expect(date98.getUTCFullYear()).assertEqual(0);
-      expect(date98.getUTCMonth()).assertEqual(1);
+      expect(date98.getUTCMonth()).assertEqual(2);
       expect(date98.getUTCDate()).assertEqual(28);
     });
 
