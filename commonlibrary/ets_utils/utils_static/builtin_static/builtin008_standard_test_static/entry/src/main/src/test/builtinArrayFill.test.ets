@@ -42,7 +42,7 @@ export default function BuiltinArrayFillTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
+    console.log(domain, tag, '%{public}s', 'describe start');
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_1470
