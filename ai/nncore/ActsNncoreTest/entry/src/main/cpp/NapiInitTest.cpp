@@ -228,41 +228,41 @@ static napi_value TestCompilationImportCacheFromBuffer0300(napi_env env, napi_ca
 }
 
 // 快速测试（同步）- 返回码检查
-static napi_value TestCompilationReturnCodeCheck001(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0100(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck001);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0100);
 }
-static napi_value TestCompilationReturnCodeCheck002(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0200(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck002);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0200);
 }
-static napi_value TestCompilationReturnCodeCheck003(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0300(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck003);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0300);
 }
-static napi_value TestCompilationReturnCodeCheck004(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0400(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck004);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0400);
 }
-static napi_value TestCompilationReturnCodeCheck005(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0500(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck005);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0500);
 }
-static napi_value TestCompilationReturnCodeCheck006(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0600(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck006);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0600);
 }
-static napi_value TestCompilationReturnCodeCheck007(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0700(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck007);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0700);
 }
-static napi_value TestCompilationReturnCodeCheck008(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0800(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck008);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0800);
 }
-static napi_value TestCompilationReturnCodeCheck009(napi_env env, napi_callback_info info)
+static napi_value TestCompilationReturnCodeCheck0900(napi_env env, napi_callback_info info)
 {
-    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck009);
+    return generateSyncTestFunction(env, info, OHOS::NeuralNetworkCore::TestCompilationReturnCodeCheck0900);
 }
 
 // ==================== Executor Tests ====================
@@ -826,15 +826,15 @@ static void RegisterCompilationBasicTests(std::vector<napi_property_descriptor>&
 
 static void RegisterCompilationReturnCodeTests(std::vector<napi_property_descriptor>& descriptors)
 {
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck001", TestCompilationReturnCodeCheck001);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck002", TestCompilationReturnCodeCheck002);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck003", TestCompilationReturnCodeCheck003);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck004", TestCompilationReturnCodeCheck004);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck005", TestCompilationReturnCodeCheck005);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck006", TestCompilationReturnCodeCheck006);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck007", TestCompilationReturnCodeCheck007);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck008", TestCompilationReturnCodeCheck008);
-    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck009", TestCompilationReturnCodeCheck009);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0100", TestCompilationReturnCodeCheck0100);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0200", TestCompilationReturnCodeCheck0200);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0300", TestCompilationReturnCodeCheck0300);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0400", TestCompilationReturnCodeCheck0400);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0500", TestCompilationReturnCodeCheck0500);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0600", TestCompilationReturnCodeCheck0600);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0700", TestCompilationReturnCodeCheck0700);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0800", TestCompilationReturnCodeCheck0800);
+    addTestDescriptor(descriptors, "TestCompilationReturnCodeCheck0900", TestCompilationReturnCodeCheck0900);
 }
 
 static void RegisterExecutorBasicTests(std::vector<napi_property_descriptor>& descriptors)

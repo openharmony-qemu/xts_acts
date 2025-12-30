@@ -36,15 +36,15 @@ int TestCompilationExportCacheToBuffer0200();
 int TestCompilationImportCacheFromBuffer0100();
 int TestCompilationImportCacheFromBuffer0200();
 int TestCompilationImportCacheFromBuffer0300();
-int TestCompilationReturnCodeCheck001();
-int TestCompilationReturnCodeCheck002();
-int TestCompilationReturnCodeCheck003();
-int TestCompilationReturnCodeCheck004();
-int TestCompilationReturnCodeCheck005();
-int TestCompilationReturnCodeCheck006();
-int TestCompilationReturnCodeCheck007();
-int TestCompilationReturnCodeCheck008();
-int TestCompilationReturnCodeCheck009();
+int TestCompilationReturnCodeCheck0100();
+int TestCompilationReturnCodeCheck0200();
+int TestCompilationReturnCodeCheck0300();
+int TestCompilationReturnCodeCheck0400();
+int TestCompilationReturnCodeCheck0500();
+int TestCompilationReturnCodeCheck0600();
+int TestCompilationReturnCodeCheck0700();
+int TestCompilationReturnCodeCheck0800();
+int TestCompilationReturnCodeCheck0900();
 
 } // namespace NeuralNetworkCore
 } // namespace OHOS

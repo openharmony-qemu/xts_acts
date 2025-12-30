@@ -228,119 +228,119 @@ export default function CompilationTest() {
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck001
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck001
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0100
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0100
      * @tc.desc   错误码断言测试 OH_NN_MEMORY_ERROR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck001', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck001();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0100', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0100();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck002
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck002
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0200
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0200
      * @tc.desc   错误码断言测试 OH_NN_NULL_PTR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck002', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck002();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0200', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0200();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck003
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck003
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0300
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0300
      * @tc.desc   错误码断言测试 OH_NN_INVALID_FILE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck003', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck003();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0300', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0300();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck004
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck004
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0400
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0400
      * @tc.desc   错误码断言测试 OH_NN_UNAVALIDABLE_DEVICE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck004', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck004();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0400', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0400();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck005
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck005
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0500
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0500
      * @tc.desc   错误码断言测试 OH_NN_INVALID_PATH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck005', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck005();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0500', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0500();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck006
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck006
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0600
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0600
      * @tc.desc   错误码断言测试 OH_NN_TIMEOUT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck006', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck006();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0600', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0600();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck007
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck007
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0700
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0700
      * @tc.desc   错误码断言测试 OH_NN_CONNECTION_EXCEPTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck007', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck007();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0700', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0700();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck008
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck008
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0800
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0800
      * @tc.desc   错误码断言测试 OH_NN_SAVE_CACHE_EXCEPTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck008', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck008();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0800', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0800();
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck009
-     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck009
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0900
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0900
      * @tc.desc   错误码断言测试 OH_NN_UNAVAILABLE_DEVICE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck009', Level.LEVEL1, () => {
-      const result = testNapi.TestCompilationReturnCodeCheck009();
+    it('SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0900', Level.LEVEL1, () => {
+      const result = testNapi.TestCompilationReturnCodeCheck0900();
       expect(result).assertEqual(0);
     });
   });

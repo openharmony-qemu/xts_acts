@@ -31,15 +31,15 @@ export const TestCompilationImportCacheFromBuffer0200: () => Promise<number>;
 export const TestCompilationImportCacheFromBuffer0300: () => Promise<number>;
 
 // Compilation Tests - 快速测试（同步）
-export const TestCompilationReturnCodeCheck001: () => number;
-export const TestCompilationReturnCodeCheck002: () => number;
-export const TestCompilationReturnCodeCheck003: () => number;
-export const TestCompilationReturnCodeCheck004: () => number;
-export const TestCompilationReturnCodeCheck005: () => number;
-export const TestCompilationReturnCodeCheck006: () => number;
-export const TestCompilationReturnCodeCheck007: () => number;
-export const TestCompilationReturnCodeCheck008: () => number;
-export const TestCompilationReturnCodeCheck009: () => number;
+export const TestCompilationReturnCodeCheck0100: () => number;
+export const TestCompilationReturnCodeCheck0200: () => number;
+export const TestCompilationReturnCodeCheck0300: () => number;
+export const TestCompilationReturnCodeCheck0400: () => number;
+export const TestCompilationReturnCodeCheck0500: () => number;
+export const TestCompilationReturnCodeCheck0600: () => number;
+export const TestCompilationReturnCodeCheck0700: () => number;
+export const TestCompilationReturnCodeCheck0800: () => number;
+export const TestCompilationReturnCodeCheck0900: () => number;
 
 // Executor Tests - 耗时测试（异步）
 export const TestExecutorConstruct0100: () => Promise<number>;

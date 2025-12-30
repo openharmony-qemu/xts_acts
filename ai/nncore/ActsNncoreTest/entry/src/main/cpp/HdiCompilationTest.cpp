@@ -123,8 +123,8 @@ static int ConfigureCompilation(OH_NNCompilation *compilation, OH_NNModel *model
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructForCache_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructForCache_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructForCache0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructForCache0100
  * @tc.desc   创建compilation，检查返回值为空，设置正确的cache路径，build成功，推理成功
  */
 int TestCompilationConstructForCache0100()
@@ -181,8 +181,8 @@ int TestCompilationConstructForCache0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructForCache_0200
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructForCache_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructForCache0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructForCache0200
  * @tc.desc   创建compilation，检查返回值非空，不设置cache，build失败
  */
 int TestCompilationConstructForCache0200()
@@ -208,8 +208,8 @@ int TestCompilationConstructForCache0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0100
  * @tc.desc   创建compilation，增加config，传入compilation为空，返回错误
  */
 int TestCompilationAddExtensionConfig0100()
@@ -228,8 +228,8 @@ int TestCompilationAddExtensionConfig0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200
- * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0200
  * @tc.desc   创建compilation，增加config，传入configNames为空指针，返回错误
  */
 int TestCompilationAddExtensionConfig0200()
@@ -255,8 +255,8 @@ int TestCompilationAddExtensionConfig0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0300
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0300
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0300
  * @tc.desc   创建compilation，增加config，传入configNames为空字符串，报错
  */
 int TestCompilationAddExtensionConfig0300()
@@ -283,8 +283,8 @@ int TestCompilationAddExtensionConfig0300()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0400
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0400
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0400
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0400
  * @tc.desc   创建compilation，增加config，传入configValues为空，报错
  */
 int TestCompilationAddExtensionConfig0400()
@@ -309,8 +309,8 @@ int TestCompilationAddExtensionConfig0400()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0500
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig_0500
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0500
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_AddExtensionConfig0500
  * @tc.desc   创建compilation，增加config，传入configValueSize为0
  */
 int TestCompilationAddExtensionConfig0500()
@@ -336,8 +336,8 @@ int TestCompilationAddExtensionConfig0500()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile0100
  * @tc.desc   传入filepath为空指针，返回不支持
  */
 int TestCompilationConstructWithOfflineModelFile0100()
@@ -356,8 +356,8 @@ int TestCompilationConstructWithOfflineModelFile0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile_0200
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelFile0200
  * @tc.desc   传入合法文件，返回不支持
  */
 int TestCompilationConstructWithOfflineModelFile0200()
@@ -400,8 +400,8 @@ int TestCompilationConstructWithOfflineModelFile0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer0100
  * @tc.desc   传入modelData为空指针，返回错误
  */
 int TestCompilationConstructWithOfflineModelBuffer0100()
@@ -423,8 +423,8 @@ int TestCompilationConstructWithOfflineModelBuffer0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer_0200
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ConstructWithOfflineModelBuffer0200
  * @tc.desc   传入modelData为合法离线模型buffer，返回不支持
  */
 int TestCompilationConstructWithOfflineModelBuffer0200()
@@ -459,8 +459,8 @@ int TestCompilationConstructWithOfflineModelBuffer0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer0100
  * @tc.desc   传入空指针返回失败
  */
 int TestCompilationExportCacheToBuffer0100()
@@ -482,8 +482,8 @@ int TestCompilationExportCacheToBuffer0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer_0200
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ExportCacheToBuffer0200
  * @tc.desc   参数正确，nnrt模型返回不支持
  */
 int TestCompilationExportCacheToBuffer0200()
@@ -529,8 +529,8 @@ int TestCompilationExportCacheToBuffer0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0100
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0100
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0100
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0100
  * @tc.desc   buffer为空，返回错误
  */
 int TestCompilationImportCacheFromBuffer0100()
@@ -555,8 +555,8 @@ int TestCompilationImportCacheFromBuffer0100()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0200
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0200
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0200
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0200
  * @tc.desc   modelSize为0，返回错误
  */
 int TestCompilationImportCacheFromBuffer0200()
@@ -585,8 +585,8 @@ int TestCompilationImportCacheFromBuffer0200()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0300
- * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer_0300
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0300
+ * @tc.number SUB_AI_NNRt_Func_North_Compilation_ImportCacheFromBuffer0300
  * @tc.desc   参数正确，返回不支持
  */
 int TestCompilationImportCacheFromBuffer0300()
@@ -627,10 +627,10 @@ int TestCompilationImportCacheFromBuffer0300()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_001
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0100
  * @tc.desc   错误码断言测试 OH_NN_MEMORY_ERROR
  */
-int TestCompilationReturnCodeCheck001()
+int TestCompilationReturnCodeCheck0100()
 {
     OH_NN_ReturnCode focusMode = OH_NN_MEMORY_ERROR;
     if (focusMode != OH_NN_MEMORY_ERROR) {
@@ -640,10 +640,10 @@ int TestCompilationReturnCodeCheck001()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_002
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0200
  * @tc.desc   错误码断言测试 OH_NN_NULL_PTR
  */
-int TestCompilationReturnCodeCheck002()
+int TestCompilationReturnCodeCheck0200()
 {
     OH_NN_ReturnCode focusMode = OH_NN_NULL_PTR;
     if (focusMode != OH_NN_NULL_PTR) {
@@ -653,10 +653,10 @@ int TestCompilationReturnCodeCheck002()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_003
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0300
  * @tc.desc   错误码断言测试 OH_NN_INVALID_FILE
  */
-int TestCompilationReturnCodeCheck003()
+int TestCompilationReturnCodeCheck0300()
 {
     OH_NN_ReturnCode focusMode = OH_NN_INVALID_FILE;
     if (focusMode != OH_NN_INVALID_FILE) {
@@ -666,10 +666,10 @@ int TestCompilationReturnCodeCheck003()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_004
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0400
  * @tc.desc   错误码断言测试 OH_NN_UNAVALIDABLE_DEVICE
  */
-int TestCompilationReturnCodeCheck004()
+int TestCompilationReturnCodeCheck0400()
 {
     OH_NN_ReturnCode focusMode = OH_NN_UNAVALIDABLE_DEVICE;
     if (focusMode != OH_NN_UNAVALIDABLE_DEVICE) {
@@ -679,10 +679,10 @@ int TestCompilationReturnCodeCheck004()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_005
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0500
  * @tc.desc   错误码断言测试 OH_NN_INVALID_PATH
  */
-int TestCompilationReturnCodeCheck005()
+int TestCompilationReturnCodeCheck0500()
 {
     OH_NN_ReturnCode focusMode = OH_NN_INVALID_PATH;
     if (focusMode != OH_NN_INVALID_PATH) {
@@ -692,10 +692,10 @@ int TestCompilationReturnCodeCheck005()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_006
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0600
  * @tc.desc   错误码断言测试 OH_NN_TIMEOUT
  */
-int TestCompilationReturnCodeCheck006()
+int TestCompilationReturnCodeCheck0600()
 {
     OH_NN_ReturnCode focusMode = OH_NN_TIMEOUT;
     if (focusMode != OH_NN_TIMEOUT) {
@@ -705,10 +705,10 @@ int TestCompilationReturnCodeCheck006()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_007
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0700
  * @tc.desc   错误码断言测试 OH_NN_CONNECTION_EXCEPTION
  */
-int TestCompilationReturnCodeCheck007()
+int TestCompilationReturnCodeCheck0700()
 {
     OH_NN_ReturnCode focusMode = OH_NN_CONNECTION_EXCEPTION;
     if (focusMode != OH_NN_CONNECTION_EXCEPTION) {
@@ -718,10 +718,10 @@ int TestCompilationReturnCodeCheck007()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_008
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0800
  * @tc.desc   错误码断言测试 OH_NN_SAVE_CACHE_EXCEPTION
  */
-int TestCompilationReturnCodeCheck008()
+int TestCompilationReturnCodeCheck0800()
 {
     OH_NN_ReturnCode focusMode = OH_NN_SAVE_CACHE_EXCEPTION;
     if (focusMode != OH_NN_SAVE_CACHE_EXCEPTION) {
@@ -731,10 +731,10 @@ int TestCompilationReturnCodeCheck008()
 }
 
 /**
- * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck_009
+ * @tc.name   SUB_AI_NNRt_Func_North_Compilation_ReturnCodeCheck0900
  * @tc.desc   错误码断言测试 OH_NN_UNAVAILABLE_DEVICE
  */
-int TestCompilationReturnCodeCheck009()
+int TestCompilationReturnCodeCheck0900()
 {
     OH_NN_ReturnCode focusMode = OH_NN_UNAVAILABLE_DEVICE;
     if (focusMode != OH_NN_UNAVAILABLE_DEVICE) {
@@ -766,15 +766,15 @@ static std::vector<CompilationTestCase> g_compilationTests = {
     {"TestCompilationImportCacheFromBuffer0100", TestCompilationImportCacheFromBuffer0100},
     {"TestCompilationImportCacheFromBuffer0200", TestCompilationImportCacheFromBuffer0200},
     {"TestCompilationImportCacheFromBuffer0300", TestCompilationImportCacheFromBuffer0300},
-    {"TestCompilationReturnCodeCheck001", TestCompilationReturnCodeCheck001},
-    {"TestCompilationReturnCodeCheck002", TestCompilationReturnCodeCheck002},
-    {"TestCompilationReturnCodeCheck003", TestCompilationReturnCodeCheck003},
-    {"TestCompilationReturnCodeCheck004", TestCompilationReturnCodeCheck004},
-    {"TestCompilationReturnCodeCheck005", TestCompilationReturnCodeCheck005},
-    {"TestCompilationReturnCodeCheck006", TestCompilationReturnCodeCheck006},
-    {"TestCompilationReturnCodeCheck007", TestCompilationReturnCodeCheck007},
-    {"TestCompilationReturnCodeCheck008", TestCompilationReturnCodeCheck008},
-    {"TestCompilationReturnCodeCheck009", TestCompilationReturnCodeCheck009},
+    {"TestCompilationReturnCodeCheck0100", TestCompilationReturnCodeCheck0100},
+    {"TestCompilationReturnCodeCheck0200", TestCompilationReturnCodeCheck0200},
+    {"TestCompilationReturnCodeCheck0300", TestCompilationReturnCodeCheck0300},
+    {"TestCompilationReturnCodeCheck0400", TestCompilationReturnCodeCheck0400},
+    {"TestCompilationReturnCodeCheck0500", TestCompilationReturnCodeCheck0500},
+    {"TestCompilationReturnCodeCheck0600", TestCompilationReturnCodeCheck0600},
+    {"TestCompilationReturnCodeCheck0700", TestCompilationReturnCodeCheck0700},
+    {"TestCompilationReturnCodeCheck0800", TestCompilationReturnCodeCheck0800},
+    {"TestCompilationReturnCodeCheck0900", TestCompilationReturnCodeCheck0900},
 };
 
 // 运行所有Compilation测试
