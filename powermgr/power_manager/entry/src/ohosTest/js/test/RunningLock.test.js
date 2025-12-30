@@ -1335,5 +1335,59 @@ export default function RunningLockTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0480
+     * @tc.name testRunningLockTest_4800
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_4800';
+      try {
+        let backgroundUserIdle = runningLock.RunningLockType.BACKGROUND_USER_IDLE;
+        console.info(`${TAG} backgroundUserIdle: ${backgroundUserIdle}`);
+        expect(backgroundUserIdle).assertEqual(129);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0490
+     * @tc.name testRunningLockTest_4900
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_4900';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+          console.info(`${TAG} lock: ${lock instanceof runningLock.RunningLock}`);
+          let isRunningLock = lock instanceof runningLock.RunningLock;
+          expect(isRunningLock).assertTrue();
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
   })
 } 
