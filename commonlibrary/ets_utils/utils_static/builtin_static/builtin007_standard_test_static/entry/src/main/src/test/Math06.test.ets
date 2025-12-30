@@ -3004,23 +3004,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  SUB_BASIC_TEST_0097
-     * @tc.name    test_basic_test_0097
-     * @tc.desc    Number equality test
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_test_0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0097 start');
-        expect(1).assertEqual(1);
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_test_0097 end');
-      });
-
-    /**
      * @tc.number  SUB_INT_VALUE_OF_0100
      * @tc.name    test_int_value_of_0100
      * @tc.desc    Basic IntValue creation test
