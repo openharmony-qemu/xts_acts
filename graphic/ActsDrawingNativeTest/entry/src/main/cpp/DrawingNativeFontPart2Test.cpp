@@ -63,7 +63,7 @@
 #define NUMBER_NINE_HUNDRED 900
 #define NUMBER_ONE_THOUSAND 1000
 #define NUMBER_ONE_MILLION 1000000
-
+#define FONT_BOUNDS_2_1 (2)
 // 字体大小相关宏
 #define FONT_SIZE_ZERO 0.0f
 #define FONT_SIZE_SCALEX 0.5f
@@ -699,23 +699,27 @@ int TestFontMeasureTextWithBrushOrPenNormal1()
     OH_Drawing_Rect* bounds =
         OH_Drawing_RectCreate(RECT_LEFT_ZERO, RECT_TOP_ZERO, RECT_RIGHT_TWO_HUNDRED, RECT_BOTTOM_TWO_HUNDRED);
     OH_Drawing_Font* font2 = OH_Drawing_FontCreate();
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font2, text, strlen(text), 
-        TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth),OH_DRAWING_SUCCESS);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+        font2, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
     OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateDefault();
     OH_Drawing_FontSetTypeface(font, typeface);
     OH_Drawing_FontSetFakeBoldText(font, true);
     OH_Drawing_FontSetScaleX(font, FONT_SIZE_SCALEX);
     OH_Drawing_FontSetHinting(font, FONT_HINTING_SLIGHT);
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, strlen(text), TEXT_ENCODING_UTF8, 
-            brush, nullptr, bounds, &textWidth),OH_DRAWING_SUCCESS);
-    OH_Drawing_TextEncoding encodes[] = {TEXT_ENCODING_UTF8,TEXT_ENCODING_UTF16,
-        TEXT_ENCODING_UTF32,TEXT_ENCODING_GLYPH_ID,};
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+    font, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_TextEncoding encodes[] = {TEXT_ENCODING_UTF8, TEXT_ENCODING_UTF16, 
+        TEXT_ENCODING_UTF32, TEXT_ENCODING_GLYPH_ID};
     for (OH_Drawing_TextEncoding encode : encodes) {
-        OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+         errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
             font, text, strlen(text), encode, brush, nullptr, bounds, &textWidth);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+     errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
         font, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(static_cast<int>(textWidth), EXPECTED_WIDTH_HUNDRED);
@@ -759,27 +763,32 @@ int TestFontMeasureTextWithBrushOrPenNormal2()
     OH_Drawing_Rect* bounds =
         OH_Drawing_RectCreate(RECT_LEFT_ZERO, RECT_TOP_ZERO, RECT_RIGHT_TWO_HUNDRED, RECT_BOTTOM_TWO_HUNDRED);
     // Both brush and pen pass to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, nullptr, bounds, &textWidth),
-                OH_DRAWING_SUCCESS);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+        font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    
     // Pass in the styled brush
     OH_Drawing_BrushSetColor(brush, COLOR_CYAN_TRANSPARENT);
     OH_Drawing_BrushSetAlpha(brush, BRUSH_ALPHA_HUNDRED);
     OH_Drawing_BrushSetAntiAlias(brush, true);
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth),
-                OH_DRAWING_SUCCESS);
+
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
     // Pass in the styled pen
     OH_Drawing_PenSetWidth(pen, PEN_WIDTH_TEN);
     OH_Drawing_PenSetColor(pen, COLOR_CYAN_TRANSPARENT);
     OH_Drawing_PenSetAlpha(pen, PEN_ALPHA_HUNDRED);
     OH_Drawing_PenSetAntiAlias(pen, true);
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth),
-                OH_DRAWING_SUCCESS);
+
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // Verify the bounds
     const char* text1 = "hello world";
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
         font, text1, strlen(text1), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(static_cast<int>(OH_Drawing_RectGetLeft(bounds)), NUMBER_THREE);
@@ -814,34 +823,39 @@ int TestFontMeasureTextWithBrushOrPenNull()
     OH_Drawing_Rect* bounds =
         OH_Drawing_RectCreate(RECT_LEFT_ZERO, RECT_TOP_ZERO, RECT_RIGHT_TWO_HUNDRED, RECT_BOTTOM_TWO_HUNDRED);
     // font passes to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                nullptr, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth),
-                OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_ErrorCode  errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                nullptr, text, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+
     // text passes to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, nullptr, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth),
-                OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, nullptr, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+
     // text passes to empty
     const char* text2 = "";
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text2, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth),
-                OH_DRAWING_SUCCESS);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text2, strlen(text), TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
     // text's length mismatch
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, NUMBER_ZERO, TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth),
-                OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, NUMBER_ZERO, TEXT_ENCODING_UTF8, brush, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // Both brush and pen pass to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, nullptr, bounds, &textWidth),
-                OH_DRAWING_SUCCESS);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, nullptr, bounds, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+
     // textWidth passes to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen, bounds, nullptr),
-                OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen, bounds, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // bounds passes to nullptr
-    EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen, nullptr, &textWidth),
-                OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
+                font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen, nullptr, &textWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+
     OH_Drawing_RectDestroy(bounds);
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_PenDestroy(pen);
@@ -968,7 +982,7 @@ int TestFontGetWidthsBoundsNormal1()
     return OH_DRAWING_SUCCESS;
 }
 
-void InitializeFontAndBrush(OH_Drawing_Font* font, OH_Drawing_Brush* brush,OH_Drawing_Pen pen)
+void InitializeFontAndBrush(OH_Drawing_Font* font, OH_Drawing_Brush* brush, OH_Drawing_Pen*  pen)
 {
     const char* text = "你好世界";
     uint32_t count = OH_Drawing_FontCountText(font, text, strlen(text), TEXT_ENCODING_UTF8);
@@ -998,8 +1012,8 @@ void InitializeFontAndBrush(OH_Drawing_Font* font, OH_Drawing_Brush* brush,OH_Dr
         EXPECT_EQ((int)OH_Drawing_RectGetTop(iter), arr[i][NUMBER_ONE]);
         EXPECT_EQ((int)OH_Drawing_RectGetRight(iter), arr[i][NUMBER_TWO]);
         EXPECT_EQ((int)OH_Drawing_RectGetBottom(iter), arr[i][NUMBER_THREE]);
-        EXPECT_EQ(OH_Drawing_RectGetBottom(iter)-OH_Drawing_RectGetTop(iter),OH_Drawing_RectGetHeight(iter));
-        EXPECT_EQ(OH_Drawing_RectGetRight(iter)-OH_Drawing_RectGetLeft(iter),OH_Drawing_RectGetWidth(iter));
+        EXPECT_EQ(OH_Drawing_RectGetBottom(iter) - OH_Drawing_RectGetTop(iter),OH_Drawing_RectGetHeight(iter));
+        EXPECT_EQ(OH_Drawing_RectGetRight(iter) - OH_Drawing_RectGetLeft(iter),OH_Drawing_RectGetWidth(iter));
     }
     OH_Drawing_BrushSetColor(brush, COLOR_CYAN_TRANSPARENT);
     OH_Drawing_BrushSetAlpha(brush, BRUSH_ALPHA_HUNDRED);
@@ -1029,7 +1043,7 @@ int TestFontGetWidthsBoundsNormal2()
     OH_Drawing_FontSetTextSize(font, FONT_SIZE_FIFTY);
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_Pen* pen = OH_Drawing_PenCreate();
-    InitializeFontAndBrush(font, brush,pen);
+    InitializeFontAndBrush(font, brush, pen);
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_PenDestroy(pen);
     OH_Drawing_FontDestroy(font);
@@ -1233,7 +1247,6 @@ int TestFontGePosNormal()
     DrawingNativeFontPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-
 /**
  * @tc.name   testFontGetPosNormal1
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6500
@@ -1246,41 +1259,54 @@ int TestFontGetPosNormal1()
 {
     DrawingNativeFontPart2TestSetUp();
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
-    OH_Drawing_FontSetTextSize(font, FONT_SIZE_FIFTY);
+    OH_Drawing_FontSetTextSize(font, FONT_METRIC_AVG_CHAR_WIDTH);
     const char* text = "1234";
-    uint32_t count1 = OH_Drawing_FontCountText(font, text, strlen(text), TEXT_ENCODING_UTF8);
+    uint32_t count1 = 0;
+    count1 = OH_Drawing_FontCountText(font, text, strlen(text), TEXT_ENCODING_UTF8);
     if (count1 <= NUMBER_ZERO || count1 > strlen(text)) {
         return OH_DRAWING_ERROR_INVALID_PARAMETER;
     }
     OH_Drawing_Point* point1 = OH_Drawing_PointCreate(COORD_X_HUNDRED, COORD_Y_ZERO);
-    std::vector<std::array<int, NUMBER_TWO>> testPoints1 = { { NUMBER_ONE_HUNDRED, NUMBER_ZERO },
-        { NUMBER_ONE_HUNDRED_TWENTY_NINE, NUMBER_ZERO },{ NUMBER_ONE_HUNDRED_FIFTY_EIGHT, NUMBER_ZERO },
-        { NUMBER_ONE_HUNDRED_EIGHTY_SEVEN, NUMBER_ZERO } };
+    std::vector<std::array<int, FONT_BOUNDS_2_1>> testPoints1 = { { NUMBER_ONE_HUNDRED, NUMBER_ZERO },
+                                                                  { NUMBER_ONE_HUNDRED_TWENTY_NINE, NUMBER_ZERO },
+                                                                  { NUMBER_ONE_HUNDRED_FIFTY_EIGHT, NUMBER_ZERO },
+                                                                  { NUMBER_ONE_HUNDRED_EIGHTY_SEVEN, NUMBER_ZERO } };
     uint16_t glyphs1[count1];
-    int glyphsCount1 = OH_Drawing_FontTextToGlyphs(
+    int glyphsCount1 = 0;
+    glyphsCount1 = OH_Drawing_FontTextToGlyphs(
         font, text, strlen(text), OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, glyphs1, count1);
+    // Check the validity of count1 before memory allocation
+    if (count1 <= 0) {
+        EXPECT_EQ(count1, OH_DRAWING_SUCCESS);
+    }
     OH_Drawing_Point2D* points1 = new OH_Drawing_Point2D[count1];
     OH_Drawing_ErrorCode errorCode1 = OH_Drawing_FontGetPos(font, glyphs1, glyphsCount1, point1, points1);
     EXPECT_EQ(errorCode1, OH_DRAWING_SUCCESS);
-    for (int i = NUMBER_ZERO; i < count1; i++) {
-        EXPECT_EQ((int)points1[i].x, testPoints1[i][NUMBER_ZERO]);
-        EXPECT_EQ((int)points1[i].y, testPoints1[i][NUMBER_ONE]);
+    for (int i = 0; i < count1; i++) {
+        EXPECT_EQ((int)points1[i].x, testPoints1[i][0]);
+        EXPECT_EQ((int)points1[i].y, testPoints1[i][1]);
     }
-    uint32_t count2 = OH_Drawing_FontCountText(font, text, strlen(text), TEXT_ENCODING_UTF8);
-    if (count2 <= NUMBER_ZERO || count2 > strlen(text)) { return OH_DRAWING_ERROR_INVALID_PARAMETER;}
+    uint32_t count2 = 0;
+    count2 = OH_Drawing_FontCountText(font, text, strlen(text), TEXT_ENCODING_UTF8);
+     if (count2 <= NUMBER_ZERO || count2 > strlen(text)) {
+        return OH_DRAWING_ERROR_INVALID_PARAMETER;
+    }
     OH_Drawing_Point* point2 = OH_Drawing_PointCreate(COORD_X_ZERO, COORD_Y_HUNDRED);
-    std::vector<std::array<int, NUMBER_TWO>> testPoints2 = { { NUMBER_ZERO, NUMBER_ONE_HUNDRED },
-        { NUMBER_TWENTY_NINE, NUMBER_ONE_HUNDRED },{ NUMBER_FIFTY_EIGHT, NUMBER_ONE_HUNDRED },
-        { NUMBER_EIGHTY_SEVEN, NUMBER_ONE_HUNDRED } };
+    std::vector<std::array<int, FONT_BOUNDS_2_1>> testPoints2 = { { NUMBER_ZERO, NUMBER_ONE_HUNDRED },
+                                                    { NUMBER_TWENTY_NINE, NUMBER_ONE_HUNDRED },
+                                                    { NUMBER_FIFTY_EIGHT, NUMBER_ONE_HUNDRED },
+                                                    { NUMBER_EIGHTY_SEVEN, NUMBER_ONE_HUNDRED } };
     uint16_t glyphs2[count2];
-    int glyphsCount2 = OH_Drawing_FontTextToGlyphs(
+    int glyphsCount2 = 0;
+    glyphsCount2 = OH_Drawing_FontTextToGlyphs(
         font, text, strlen(text), OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, glyphs2, count2);
+    // Check the validity of count2 before memory allocation
     OH_Drawing_Point2D* points2 = new OH_Drawing_Point2D[count2];
     OH_Drawing_ErrorCode errorCode2 = OH_Drawing_FontGetPos(font, glyphs2, glyphsCount2, point2, points2);
     EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
-    for (int i = NUMBER_ZERO; i < count2; i++) {
-        EXPECT_EQ((int)points2[i].x, testPoints2[i][NUMBER_ZERO]);
-        EXPECT_EQ((int)points2[i].y, testPoints2[i][NUMBER_ONE]);
+    for (int i = 0; i < count2; i++) {
+        EXPECT_EQ((int)points2[i].x, testPoints2[i][0]);
+        EXPECT_EQ((int)points2[i].y, testPoints2[i][1]);
     }
     OH_Drawing_PointDestroy(point1);
     OH_Drawing_PointDestroy(point2);
@@ -1329,7 +1355,8 @@ int TestFontGePosNormal2()
     if (count2 <= NUMBER_ZERO || count2 > strlen(text)) { return OH_DRAWING_ERROR_INVALID_PARAMETER;}
     OH_Drawing_Point* point2 = OH_Drawing_PointCreate(COORD_X_NEG_HUNDRED, COORD_Y_NEG_HUNDRED);
     std::vector<std::array<int, NUMBER_TWO>> testPoints2 = { { -NUMBER_ONE_HUNDRED, -NUMBER_ONE_HUNDRED },
-         { -NUMBER_SEVENTY_ONE, -NUMBER_ONE_HUNDRED },{ -NUMBER_FORTY_TWO, -NUMBER_ONE_HUNDRED },
+         { -NUMBER_SEVENTY_ONE, -NUMBER_ONE_HUNDRED } , 
+         { -NUMBER_FORTY_TWO, -NUMBER_ONE_HUNDRED },
          { -NUMBER_THIRTEEN, -NUMBER_ONE_HUNDRED } };
     uint16_t glyphs2[count2];
     int glyphsCount2 = OH_Drawing_FontTextToGlyphs(
