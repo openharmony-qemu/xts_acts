@@ -144,8 +144,8 @@ export default function SecurityHuksGroupAPI23Test() {
         SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
           huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
           await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
           expect(null).assertFail();
         } catch (err) {
@@ -171,8 +171,8 @@ export default function SecurityHuksGroupAPI23Test() {
         SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
           huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
           await huksCallbackUtils.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
           expect(null).assertFail();
         } catch (err) {
@@ -198,11 +198,11 @@ export default function SecurityHuksGroupAPI23Test() {
         let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
         SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
+        await huks.generateKeyItem(testNumber, genKeyOptions);
+        await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
+        let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
+        agreeInitOptions.inData = res.outData;
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
           await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
           expect(null).assertFail();
         } catch (err) {
@@ -228,13 +228,13 @@ export default function SecurityHuksGroupAPI23Test() {
         let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
         SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
+        await huksCallbackUtils.generateKeyItem(testNumber, genKeyOptions);
+        await huksCallbackUtils.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
+        let res = await huksCallbackUtils.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
+        agreeInitOptions.inData = res.outData;
+        let handle: number = (await huksCallbackUtils.initSession(testNumber, agreeInitOptions)).handle;
+        await huksCallbackUtils.updateSession(handle, agreeInitOptions);
         try {
-          await huksCallbackUtils.generateKeyItem(testNumber, genKeyOptions);
-          await huksCallbackUtils.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huksCallbackUtils.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          let handle: number = (await huksCallbackUtils.initSession(testNumber, agreeInitOptions)).handle;
-          await huksCallbackUtils.updateSession(handle, agreeInitOptions);
           await huksCallbackUtils.finishSession(handle, agreeFinishOptions);
           expect(null).assertFail();
         } catch (err) {
@@ -260,8 +260,8 @@ export default function SecurityHuksGroupAPI23Test() {
         let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
         SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
+        await huks.generateKeyItem(testNumber, genKeyOptions);
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
           await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
           expect(null).assertFail();
         } catch (err) {
@@ -376,53 +376,11 @@ export default function SecurityHuksGroupAPI23Test() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7610";
-        let genKeyOptions = GetAesGenerateOptions(128);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let cipherData = BuildCipherData([16]);
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
         try {
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
-          let encryptResult: CipherData = {
-            updateDataArr: null,
-            finishData: null
-          };
-          let handle = (await huksCallbackUtils.initSession(testNumber, cipherOptions)).handle;
-          if (cipherData.updateDataArr != null) {
-            encryptResult.updateDataArr = new Array();
-            for (let i = 0; i < cipherData.updateDataArr.length; i++) {
-              cipherOptions.inData = cipherData.updateDataArr[i];
-              let updateRes = await huksCallbackUtils.updateSession(handle, cipherOptions);
-              if (updateRes && updateRes.outData) {
-                encryptResult.updateDataArr.push(updateRes.outData);
-              } else {
-                encryptResult.updateDataArr.push(new Uint8Array());
-              }
-            }
-          }
-          cipherOptions.inData = cipherData.finishData as Uint8Array;
-          encryptResult.finishData = (await huksCallbackUtils.finishSession(handle, cipherOptions)).outData as Uint8Array;
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
-          let decryptResult: CipherData = {
-            updateDataArr: null,
-            finishData: null
-          };
-          let handle1 = (await huksCallbackUtils.initSession(testNumber, cipherOptions)).handle;
-          if (cipherData.updateDataArr != null) {
-            decryptResult.updateDataArr = new Array();
-            for (let i = 0; i < cipherData.updateDataArr.length; i++) {
-              cipherOptions.inData = cipherData.updateDataArr[i];
-              let updateRes = await huksCallbackUtils.updateSession(handle1, cipherOptions);
-              if (updateRes && updateRes.outData) {
-                decryptResult.updateDataArr.push(updateRes.outData);
-              } else {
-                decryptResult.updateDataArr.push(new Uint8Array());
-              }
-            }
-          }
-          cipherOptions.inData = cipherData.finishData as Uint8Array;
-          decryptResult.finishData = (await huksCallbackUtils.finishSession(handle1, cipherOptions)).outData as Uint8Array;
-          Uint8ArrayToString(MergeCipherData(cipherData)) == Uint8ArrayToString(MergeCipherData(decryptResult))
+          await huksCallbackUtils.initSession(testNumber, cipherOptions)
           expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
