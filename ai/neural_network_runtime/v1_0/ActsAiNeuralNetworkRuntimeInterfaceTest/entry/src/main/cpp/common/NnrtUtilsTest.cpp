@@ -293,7 +293,7 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            memcpy(inputMemory->data, static_cast<void*>(operandTem.data), operandTem.length);
+            std::memcpy(inputMemory->data, static_cast<void*>(operandTem.data), std::min(operandTem.length, inputMemory->size));
             OHNNMemory[inputIndex] = inputMemory;
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(), graphArgs.outputIndices.end(), i) !=
@@ -409,7 +409,6 @@ void DeleteFolder(const std::string& path)
 
     std::vector<std::string> pathList;
     while ((file = readdir(dir)) != nullptr) {
-
         if (strcmp(file->d_name, ".") == 0 || strcmp(file->d_name, "..") == 0) {
             continue;
         }

@@ -37,15 +37,12 @@ namespace NeuralNetworkRuntime {
 int SubAiNnRtFuncNorthDeviceDeviceId0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0100 start");
-
     uint32_t count = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(nullptr, &count);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0100 passed");
     return 0;
 }
@@ -58,18 +55,14 @@ int SubAiNnRtFuncNorthDeviceDeviceId0100()
 int SubAiNnRtFuncNorthDeviceDeviceId0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0200 start");
-
     const size_t allDeviceIds = 0;
     const size_t* pAllDeviceIds = &allDeviceIds;
     uint32_t count = 0;
-
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&pAllDeviceIds, &count);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0200 passed");
     return 0;
 }
@@ -82,15 +75,12 @@ int SubAiNnRtFuncNorthDeviceDeviceId0200()
 int SubAiNnRtFuncNorthDeviceDeviceId0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0300 start");
-
     const size_t* allDeviceIds = nullptr;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&allDeviceIds, nullptr);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0300 passed");
     return 0;
 }
@@ -106,19 +96,16 @@ int SubAiNnRtFuncNorthDeviceDeviceId0400()
 
     const size_t* allDeviceIds = nullptr;
     uint32_t count = 0;
-
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&allDeviceIds, &count);
     if (ret != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed, ret=%{public}d", ret);
         return -1;
     }
-
     uint32_t expectCount = 1;
     if (count < expectCount) {
         OH_LOG_ERROR(LOG_APP, "Device count less than expected, count=%{public}u", count);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceID_0400 passed");
     return 0;
 }
@@ -131,17 +118,13 @@ int SubAiNnRtFuncNorthDeviceDeviceId0400()
 int SubAiNnRtFuncNorthDeviceDeviceName0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0100 start");
-
     const size_t deviceID = 100000;
     const char* name = nullptr;
-
     OH_NN_ReturnCode ret = OH_NNDevice_GetName(deviceID, &name);
-
     if (ret != OH_NN_FAILED) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_FAILED, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0100 passed");
     return 0;
 }
@@ -154,7 +137,6 @@ int SubAiNnRtFuncNorthDeviceDeviceName0100()
 int SubAiNnRtFuncNorthDeviceDeviceName0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0200 start");
-
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
@@ -162,15 +144,12 @@ int SubAiNnRtFuncNorthDeviceDeviceName0200()
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed");
         return -1;
     }
-
     size_t targetDevice = devicesID[0];
     ret = OH_NNDevice_GetName(targetDevice, nullptr);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0200 passed");
     return 0;
 }
@@ -183,7 +162,6 @@ int SubAiNnRtFuncNorthDeviceDeviceName0200()
 int SubAiNnRtFuncNorthDeviceDeviceName0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0300 start");
-
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
@@ -191,17 +169,13 @@ int SubAiNnRtFuncNorthDeviceDeviceName0300()
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed");
         return -1;
     }
-
     size_t targetDevice = devicesID[0];
     const char* name = "name";
-
     ret = OH_NNDevice_GetName(targetDevice, &name);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0300 passed");
     return 0;
 }
@@ -214,7 +188,6 @@ int SubAiNnRtFuncNorthDeviceDeviceName0300()
 int SubAiNnRtFuncNorthDeviceDeviceName0400()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0400 start");
-
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
@@ -222,16 +195,13 @@ int SubAiNnRtFuncNorthDeviceDeviceName0400()
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed");
         return -1;
     }
-
     uint32_t number = 1;
     if (devicesCount < number) {
         OH_LOG_ERROR(LOG_APP, "Device count less than expected");
         return -1;
     }
-
     const char* name = nullptr;
     OH_LOG_INFO(LOG_APP, "Found %{public}u device(s):", devicesCount);
-
     for (uint32_t i = 0; i < devicesCount; i++) {
         name = nullptr;
         ret = OH_NNDevice_GetName(devicesID[i], &name);
@@ -250,7 +220,6 @@ int SubAiNnRtFuncNorthDeviceDeviceName0400()
         OH_LOG_ERROR(LOG_APP, "No valid device found");
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceName_0400 passed");
     return 0;
 }
@@ -263,7 +232,6 @@ int SubAiNnRtFuncNorthDeviceDeviceName0400()
 int SubAiNnRtFuncNorthDeviceDeviceType0100()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0100 start");
-
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
@@ -271,15 +239,12 @@ int SubAiNnRtFuncNorthDeviceDeviceType0100()
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed");
         return -1;
     }
-
     size_t targetDevice = devicesID[0];
     ret = OH_NNDevice_GetType(targetDevice, nullptr);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0100 passed");
     return 0;
 }
@@ -292,17 +257,13 @@ int SubAiNnRtFuncNorthDeviceDeviceType0100()
 int SubAiNnRtFuncNorthDeviceDeviceType0200()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0200 start");
-
     const size_t deviceID = 100000;
     OH_NN_DeviceType type = OH_NN_OTHERS;
-
     OH_NN_ReturnCode ret = OH_NNDevice_GetType(deviceID, &type);
-
     if (ret != OH_NN_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected OH_NN_INVALID_PARAMETER, got %{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0200 passed");
     return 0;
 }
@@ -315,7 +276,6 @@ int SubAiNnRtFuncNorthDeviceDeviceType0200()
 int SubAiNnRtFuncNorthDeviceDeviceType0300()
 {
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0300 start");
-
     const size_t* devicesID = nullptr;
     uint32_t devicesCount = 0;
     OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&devicesID, &devicesCount);
@@ -323,16 +283,13 @@ int SubAiNnRtFuncNorthDeviceDeviceType0300()
         OH_LOG_ERROR(LOG_APP, "GetAllDevicesID failed");
         return -1;
     }
-
     size_t targetDevice = devicesID[0];
     OH_NN_DeviceType type = OH_NN_OTHERS;
-
     ret = OH_NNDevice_GetType(targetDevice, &type);
     if (ret != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "GetType failed, ret=%{public}d", ret);
         return -1;
     }
-
     OH_LOG_INFO(LOG_APP, "SUB_AI_NNRt_Func_North_Device_DeviceType_0300 passed");
     return 0;
 }
