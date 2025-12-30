@@ -362,7 +362,7 @@ napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
     const std::string keyString = "aaa";
     Image_ErrorCode errCode ;
     OH_ImageSourceNative *tempImageSource = nullptr;
-    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &te          mpImageSource);
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
     LOGI("OH_ImageSourceNative_CreateFromUri:%{public}d", errCode);
     OH_DecodingOptions *ops = nullptr;
     errCode = OH_DecodingOptions_Create(&ops);
