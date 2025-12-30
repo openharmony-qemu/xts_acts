@@ -19,12 +19,37 @@
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-int NativeFontTest_FontMeasureText015();
-int NativeFontTest_FontMeasureText016();
-int NativeFontTest_FontMeasureText017();
+// Font test constants
+constexpr double DEFAULT_FONT_SIZE = 30.0;
+constexpr double DEFAULT_MAX_WIDTH = 2160.0;
+constexpr float INDENT_FIRST = 1.2f;
+constexpr float INDENT_SECOND = 3.4f;
+constexpr int INDENT_COUNT = 2;
+constexpr int INDENT_INDEX = 1;
+constexpr int TEST_BITMAP_WIDTH = 20;
+constexpr int TEST_BITMAP_HEIGHT = 40;
+constexpr double TEST_POSITION_X = 10.0;
+constexpr double TEST_POSITION_Y = 15.0;
+constexpr int PLACEHOLDER_WIDTH = 20;
+constexpr int PLACEHOLDER_HEIGHT = 40;
+constexpr int PLACEHOLDER_BASELINE_OFFSET = 10;
+constexpr int TYPOGRAPHY_RANGE_START = 1;
+constexpr int TYPOGRAPHY_RANGE_END = 2;
+constexpr int TYPOGRAPHY_COORDINATE_X = 1;
+constexpr int TYPOGRAPHY_COORDINATE_Y = 0;
+} // namespace Drawing
+} // namespace Rosen
+} // namespace OHOS
+
+namespace OHOS {
+namespace Rosen {
+namespace Drawing {
+int NativeFontTestFontMeasureText015();
+int NativeFontTestFontMeasureText016();
+int NativeFontTestFontMeasureText017();
 int NativeDrawingRegisterFontTest001();
 int NativeDrawingRegisterFontTest002();
-int OH_Drawing_FontCollectionTest001();
+int OHDrawingFontCollectionTest001();
 int OHDrawingTypographyLargeValueTest016();
 int OHDrawingTypographyLargeValueTest026();
 int OHDrawingTypographyLargeValueTest027();

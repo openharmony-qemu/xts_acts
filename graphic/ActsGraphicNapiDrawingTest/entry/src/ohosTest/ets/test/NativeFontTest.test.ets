@@ -38,8 +38,8 @@ export default function NativeFontTest() {
     })
     /**
      * @tc.name   NativeFontTest_FontMeasureText015
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_015
-     * @tc.desc   NativeFontTest_FontMeasureText015
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MEASURE_TEXT_1500
+     * @tc.desc   test for the textbox.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -51,8 +51,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   NativeFontTest_FontMeasureText016
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_016
-     * @tc.desc   NativeFontTest_FontMeasureText016
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MEASURE_TEXT_1600
+     * @tc.desc   test for the textshadow.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -64,8 +64,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   NativeFontTest_FontMeasureText017
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontMeasureText_017
-     * @tc.desc   NativeFontTest_FontMeasureText017
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MEASURE_TEXT_1700
+     * @tc.desc   test for the fontVariation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -77,8 +77,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   NativeDrawingRegisterFontTest001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_001
-     * @tc.desc   NativeDrawingRegisterFontTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_REGISTER_FONT_TEST_0100
+     * @tc.desc   test for register font
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -90,8 +90,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   NativeDrawingRegisterFontTest002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NativeDrawingRegisterFontTest_002
-     * @tc.desc   NativeDrawingRegisterFontTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_REGISTER_FONT_TEST_0200
+     * @tc.desc   test for register font
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -103,8 +103,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OH_Drawing_FontCollectionTest001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontCollectionTest_001
-     * @tc.desc   OH_Drawing_FontCollectionTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_COLLECTION_TEST_0100
+     * @tc.desc   test for creating fontCollection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -116,8 +116,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingTypographyLargeValueTest016
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_016
-     * @tc.desc   OHDrawingTypographyLargeValueTest016
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_LARGE_VALUE_TEST_1600
+     * @tc.desc   test for typography
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -129,8 +129,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingTypographyLargeValueTest026
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_026
-     * @tc.desc   OHDrawingTypographyLargeValueTest026
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_LARGE_VALUE_TEST_2600
+     * @tc.desc   test for typography and txtStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -142,8 +142,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingTypographyLargeValueTest027
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_027
-     * @tc.desc   OHDrawingTypographyLargeValueTest027
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_LARGE_VALUE_TEST_2700
+     * @tc.desc   test for getting line info for text typography
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -155,8 +155,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingTypographyLargeValueTest042
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTest_042
-     * @tc.desc   OHDrawingTypographyLargeValueTest042
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_LARGE_VALUE_TEST_4200
+     * @tc.desc   test for text shadow for textstyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -168,8 +168,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingTypographyLargeValueTestWithIndent
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyLargeValueTestWithIndent
-     * @tc.desc   OHDrawingTypographyLargeValueTestWithIndent
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_LARGE_VALUE_TEST_WITH_INDENT_0100
+     * @tc.desc   test for typography
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -181,8 +181,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingCreateTextTab001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_001
-     * @tc.desc   OHDrawingCreateTextTab001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_CREATE_TEXT_TAB_0100
+     * @tc.desc   test for the text tab create and destroy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -194,8 +194,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingCreateTextTab002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_002
-     * @tc.desc   OHDrawingCreateTextTab002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_CREATE_TEXT_TAB_0200
+     * @tc.desc   test for get alignment of the text tab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -207,8 +207,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   OHDrawingCreateTextTab003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CreateTextTab_003
-     * @tc.desc   OHDrawingCreateTextTab003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_CREATE_TEXT_TAB_0300
+     * @tc.desc   test for get location of the text tab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -220,8 +220,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   TypographyTest001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_001
-     * @tc.desc   TypographyTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_TEST_0100
+     * @tc.desc   test for text tab with left alignment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -233,8 +233,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   TypographyTest002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_002
-     * @tc.desc   TypographyTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_TEST_0200
+     * @tc.desc   test for text tab with left alignment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -246,8 +246,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   TypographyTest003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_003
-     * @tc.desc   TypographyTest003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_TEST_0300
+     * @tc.desc   test for text tab with center alignment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -259,8 +259,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   TypographyTest004
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_004
-     * @tc.desc   TypographyTest004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_TEST_0400
+     * @tc.desc   test for setting both the texttab and text layout direction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -272,8 +272,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   TypographyTest005
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyTest_005
-     * @tc.desc   TypographyTest005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TYPOGRAPHY_TEST_0500
+     * @tc.desc   test for setting both the texttab and ellipsis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -285,8 +285,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   FontGetTextPath001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_001
-     * @tc.desc   FontGetTextPath001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_GET_TEXT_PATH_0100
+     * @tc.desc   test for common character of textpath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -298,8 +298,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   FontGetTextPath002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_002
-     * @tc.desc   FontGetTextPath002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_GET_TEXT_PATH_0200
+     * @tc.desc   test for UTF16 and UTF32 character of textpath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -311,8 +311,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   FontGetTextPath003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_003
-     * @tc.desc   FontGetTextPath003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_GET_TEXT_PATH_0300
+     * @tc.desc   test for space character of textpath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -324,8 +324,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   FontGetTextPath004
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_004
-     * @tc.desc   FontGetTextPath004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_GET_TEXT_PATH_0400
+     * @tc.desc   test for negative coordinates of textpath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -337,8 +337,8 @@ export default function NativeFontTest() {
 
     /**
      * @tc.name   FontGetTextPath005
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_FontGetTextPath_005
-     * @tc.desc   FontGetTextPath005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_GET_TEXT_PATH_0500
+     * @tc.desc   test for conversion of glyphsID to path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

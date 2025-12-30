@@ -40,6 +40,20 @@ using std::to_string;
 using std::vector;
 
 constexpr int TEST_SUCCESS_CODE = 0;
+constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
+constexpr static char* DEFAULT_PLATFORM_FONT_FAMILY_NAME = "HarmonyOS-Sans";
+
+// Common numeric constants
+constexpr int ZERO = 0;
+constexpr int ONE = 1;
+constexpr int TWO = 2;
+constexpr int THREE = 3;
+constexpr int SIX = 6;
+constexpr int TEN = 10;
+constexpr uint32_t FONT_BUFFER_SIZE = 128;
+constexpr uint32_t COLOR_ALPHA_OPAQUE = 0xFF;
+constexpr uint32_t COLOR_RGB_BLACK = 0x00;
+constexpr uint32_t COLOR_RGB_WHITE = 0xFF;
 
 namespace ActsNNCoreOpsConstants {
 extern const std::string DEFAULT_TAG;
@@ -78,16 +92,10 @@ inline void AssertEqImpl(const T1& v1, const T2& v2, const char* exp1, const cha
 }
 
 template <typename T1, typename T2, typename T3>
-inline void AssertNearImpl(const T1& v1,
-                           const T2& v2,
-                           const T3& absError,
-                           const char* exp1,
-                           const char* exp2,
-                           const char* exp3,
-                           const AssertLocation& loc)
+inline void AssertNearImpl(const T1& v1, const T2& v2, const T3& absError, const char* exp3, const AssertLocation& loc)
 {
     if (std::fabs(static_cast<double>(v1 - v2)) > static_cast<double>(absError)) {
-        throw std::runtime_error(std::string("Assertion failed: |") + exp1 + " - " + exp2 + "| <= " + exp3 +
+        throw std::runtime_error(std::string("Assertion failed: | diff limit is ") + exp3 +
                                  ", actual diff: " + std::to_string(static_cast<double>(v1 - v2)) +
                                  ", file: " + loc.file + ", line: " + std::to_string(loc.line));
     }
@@ -136,21 +144,13 @@ inline void AssertGtImpl(const T1& v1, const T2& v2, const char* exp1, const cha
     }
 }
 
-inline void AssertFloatEqImpl(float v1, float v2,
-                              const char* expr1,
-                              const char* expr2,
-                              float epsilon,
-                              const AssertLocation& loc)
+inline void AssertFloatEqImpl(float v1, float v2, const char* expr1, const char* expr2, const AssertLocation& loc)
 {
-    if (std::fabs(v1 - v2) > epsilon) {
-        throw std::runtime_error(
-            std::string("Assertion failed: ") +
-            expr1 + " ~= " + expr2 +
-            " (lhs=" + std::to_string(v1) +
-            ", rhs=" + std::to_string(v2) +
-            ", eps=" + std::to_string(epsilon) + ")" +
-            ", file: " + loc.file +
-            ", line: " + std::to_string(loc.line));
+    if (std::fabs(v1 - v2) > FLOAT_DATA_EPSILON) {
+        throw std::runtime_error(std::string("Assertion failed: ") + expr1 + " ~= " + expr2 +
+                                 " (lhs=" + std::to_string(v1) + ", rhs=" + std::to_string(v2) +
+                                 ", eps=" + std::to_string(FLOAT_DATA_EPSILON) + ")" + ", file: " + loc.file +
+                                 ", line: " + std::to_string(loc.line));
     }
 }
 
@@ -167,7 +167,7 @@ inline void AssertFloatEqImpl(float v1, float v2,
     AssertEqImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 #define EXPECT_NEAR(v1, v2, abs_error) /* NOLINT(G.PRE.02-CPP) */ \
-    AssertNearImpl((v1), (v2), (abs_error), #v1, #v2, #abs_error, AssertLocation({ __FILE__, __LINE__ }))
+    AssertNearImpl((v1), (v2), (abs_error), #abs_error, AssertLocation({ __FILE__, __LINE__ }))
 
 #define EXPECT_TRUE(expr) /* NOLINT(G.PRE.02-CPP) */ \
     AssertTrueImpl(static_cast<bool>(expr), #expr, AssertLocation({ __FILE__, __LINE__ }))
@@ -196,7 +196,7 @@ inline void AssertFloatEqImpl(float v1, float v2,
 #define EXPECT_GT(v1, v2) /* NOLINT(G.PRE.02-CPP) */ \
     AssertGtImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
-#define EXPECT_NO_FATAL_FAILURE(stmt)                                                                \
+#define EXPECT_NO_FATAL_FAILURE(stmt) /* NOLINT(G.PRE.02-CPP) */                                     \
     do {                                                                                             \
         try {                                                                                        \
             stmt;                                                                                    \
@@ -207,12 +207,7 @@ inline void AssertFloatEqImpl(float v1, float v2,
     } while (0)
 
 #define EXPECT_FLOAT_EQ(v1, v2) /* NOLINT(G.PRE.02-CPP) */ \
-    AssertFloatEqImpl(                                     \
-        static_cast<float>(v1),                            \
-        static_cast<float>(v2),                            \
-        #v1, #v2,                                          \
-        FLOAT_DATA_EPSILON,                                 \
-        AssertLocation({ __FILE__, __LINE__ }))
+    AssertFloatEqImpl(static_cast<float>(v1), static_cast<float>(v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 #endif // CUSTOM_ASSERT
 

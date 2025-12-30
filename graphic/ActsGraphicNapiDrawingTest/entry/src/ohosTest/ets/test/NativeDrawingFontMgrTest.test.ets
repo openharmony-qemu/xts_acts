@@ -38,8 +38,8 @@ export default function NativeDrawingFontMgrTest() {
     })
     /**
      * @tc.name   OH_Drawing_FontMgrTest001
-     * @tc.number OH_Drawing_FontMgrTest001
-     * @tc.desc   OH_Drawing_FontMgrTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0100
+     * @tc.desc   test for creating and destroying font manager.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -51,8 +51,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest002
-     * @tc.number OH_Drawing_FontMgrTest002
-     * @tc.desc   OH_Drawing_FontMgrTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0200
+     * @tc.desc   test for getting family name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -64,8 +64,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest003
-     * @tc.number OH_Drawing_FontMgrTest003
-     * @tc.desc   OH_Drawing_FontMgrTest003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0300
+     * @tc.desc   test for creating and destroying font style set by font mannager.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -77,8 +77,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest004
-     * @tc.number OH_Drawing_FontMgrTest004
-     * @tc.desc   OH_Drawing_FontMgrTest004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0400
+     * @tc.desc   test for matching font family by family name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -90,8 +90,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest005
-     * @tc.number OH_Drawing_FontMgrTest005
-     * @tc.desc   OH_Drawing_FontMgrTest005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0500
+     * @tc.desc   test for matching font typeface by family name and font style.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -103,8 +103,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest006
-     * @tc.number OH_Drawing_FontMgrTest006
-     * @tc.desc   OH_Drawing_FontMgrTest006
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0600
+     * @tc.desc   test for matching font typeface by family name, font style and specific character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -116,8 +116,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest007
-     * @tc.number OH_Drawing_FontMgrTest007
-     * @tc.desc   OH_Drawing_FontMgrTest007
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0700
+     * @tc.desc   test for getting family name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -129,8 +129,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest008
-     * @tc.number OH_Drawing_FontMgrTest008
-     * @tc.desc   OH_Drawing_FontMgrTest008
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0800
+     * @tc.desc   test for matching family style.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -142,8 +142,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest009
-     * @tc.number OH_Drawing_FontMgrTest009
-     * @tc.desc   OH_Drawing_FontMgrTest009
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_0900
+     * @tc.desc   test for matching family style character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -155,8 +155,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest010
-     * @tc.number OH_Drawing_FontMgrTest010
-     * @tc.desc   OH_Drawing_FontMgrTest010
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_1000
+     * @tc.desc   test for create a typeface for the given index.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -168,8 +168,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest011
-     * @tc.number OH_Drawing_FontMgrTest011
-     * @tc.desc   OH_Drawing_FontMgrTest011
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_1100
+     * @tc.desc   test for get font style struct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -181,8 +181,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest012
-     * @tc.number OH_Drawing_FontMgrTest012
-     * @tc.desc   OH_Drawing_FontMgrTest012
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_1200
+     * @tc.desc   test for get typeface by match style.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -194,8 +194,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   OH_Drawing_FontMgrTest013
-     * @tc.number OH_Drawing_FontMgrTest013
-     * @tc.desc   OH_Drawing_FontMgrTest013
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_TEST_1300
+     * @tc.desc   test for get font style set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -207,8 +207,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterNormalBcp47Null
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0100
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterNormalBcp47Null
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0100
+     * @tc.desc   test for matching font is not a null pointer, but points to the default font, when bcp47 is a null pointer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -220,8 +220,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterEmptyBcp47
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0200
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterEmptyBcp47
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0200
+     * @tc.desc   Test for matching font typeface with empty bcp47 array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -233,8 +233,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight900
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0300
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight900
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0300
+     * @tc.desc   Test for matching font typeface with weight 900.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -246,8 +246,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight100
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0400
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight100
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0400
+     * @tc.desc   Test for matching font typeface with weight 100.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -259,8 +259,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth1
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0500
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth1
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0500
+     * @tc.desc   Test for matching font typeface with width 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -272,8 +272,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth9
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0600
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth9
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0600
+     * @tc.desc   Test for matching font typeface with width 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -285,8 +285,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterStyleOblique
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0700
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterStyleOblique
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0700
+     * @tc.desc   Test for matching font typeface with style oblique.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -298,8 +298,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyNameNull
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0800
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyNameNull
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0800
+     * @tc.desc   Test for matching font typeface with familyName null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -311,8 +311,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0900
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWeightExceedMaxValue
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0900
+     * @tc.desc   Test for matching font typeface with familyName null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -324,8 +324,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWidthExceedMaxValue
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_0900
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterFamilyWidthExceedMaxValue
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_0900
+     * @tc.desc   Test for matching font typeface with familyName null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -337,8 +337,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1000
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1000
+     * @tc.desc   Test for matching font typeface with weight 200.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -350,8 +350,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1100
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1100
+     * @tc.desc   Test for matching font typeface with weight 300.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -363,8 +363,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight400
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1200
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight400
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1200
+     * @tc.desc   Test for matching font typeface with weight 400.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -376,8 +376,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight500
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1300
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight500
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1300
+     * @tc.desc   Test for matching font typeface with weight 500.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -389,8 +389,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight600
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1400
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight600
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1400
+     * @tc.desc   Test for matching font typeface with weight 600.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -402,8 +402,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight700
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1500
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight700
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1500
+     * @tc.desc   Test for matching font typeface with weight 700.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -415,8 +415,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight800
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1600
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight800
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1600
+     * @tc.desc   Test for matching font typeface with weight 800.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -428,8 +428,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width1
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1700
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width1
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1700
+     * @tc.desc   Test for matching font typeface with width 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -441,8 +441,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth2
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1800
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth2
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1800
+     * @tc.desc   Test for matching font typeface with width 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -454,8 +454,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth3
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_1900
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth3
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_1900
+     * @tc.desc   Test for matching font typeface with width 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -467,8 +467,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth4
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2000
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth4
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2000
+     * @tc.desc   Test for matching font typeface with width 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -480,8 +480,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth6
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2100
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth6
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2100
+     * @tc.desc   Test for matching font typeface with width 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -493,8 +493,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth7
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2200
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth7
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2200
+     * @tc.desc   Test for matching font typeface with width 7.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -506,8 +506,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth8
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2300
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWidth8
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2300
+     * @tc.desc   Test for matching font typeface with width 8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -519,8 +519,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width9
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2400
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Width9
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2400
+     * @tc.desc   Test for matching font typeface with width 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -532,8 +532,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle0
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2500
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle0
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2500
+     * @tc.desc   Test for matching font typeface with style 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -545,8 +545,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle1
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2600
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle1
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2600
+     * @tc.desc   Test for matching font typeface with style 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -558,8 +558,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle2
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2700
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterStyle2
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2700
+     * @tc.desc   Test for matching font typeface with style 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -571,8 +571,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style0
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2800
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style0
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2800
+     * @tc.desc   Test for matching font typeface with weight 200 and style 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -584,8 +584,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style1
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2900
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style1
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_CHARACTER_WEIGHT_200_STYLE_0100
+     * @tc.desc   Test for matching font typeface with weight 200 and style 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -597,8 +597,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style2
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_3000
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight200Style2
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_CHARACTER_WEIGHT_200_STYLE_0200
+     * @tc.desc   Test for matching font typeface with weight 200 and style 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -610,8 +610,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style0
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_3100
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style0
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_3100
+     * @tc.desc   Test for matching font typeface with weight 300 and style 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -623,8 +623,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style1
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_2900
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style1
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_2900
+     * @tc.desc   Test for matching font typeface with weight 300 and style 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -636,8 +636,8 @@ export default function NativeDrawingFontMgrTest() {
 
     /**
      * @tc.name   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style2
-     * @tc.number SUB_GRAPHIC_NAPI_OH_Drawing_FontMgrMatchFamilyStyleCharacter_3000
-     * @tc.desc   testOHDrawingFontMgrMatchFamilyStyleCharacterWeight300Style2
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_FONT_MGR_MATCH_FAMILY_STYLE_CHARACTER_3000
+     * @tc.desc   Test for matching font typeface with weight 300 and style 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

@@ -38,8 +38,8 @@ export default function NativeCopyStyleTest() {
     })
     /**
      * @tc.name   OHDrawingCopyTextStyle001
-     * @tc.number OHDrawingCopyTextStyle001
-     * @tc.desc   OHDrawingCopyTextStyle001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TEXT_STYLE_0100
+     * @tc.desc   test for copy text style：base
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -51,8 +51,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTextStyle002
-     * @tc.number OHDrawingCopyTextStyle002
-     * @tc.desc   OHDrawingCopyTextStyle002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TEXT_STYLE_0200
+     * @tc.desc   test for copy text style: FontStyleStruct、AddFontFeature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -64,8 +64,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTextStyle003
-     * @tc.number OHDrawingCopyTextStyle003
-     * @tc.desc   OHDrawingCopyTextStyle003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TEXT_STYLE_0300
+     * @tc.desc   test for copy text style: brush
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -77,8 +77,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTextStyle004
-     * @tc.number OHDrawingCopyTextStyle004
-     * @tc.desc   OHDrawingCopyTextStyle004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TEXT_STYLE_0400
+     * @tc.desc   test for copy text style: pen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -90,8 +90,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTextShadow001
-     * @tc.number OHDrawingCopyTextShadow001
-     * @tc.desc   OHDrawingCopyTextShadow001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TEXT_SHADOW_0100
+     * @tc.desc   test for copy text shadow and copy textstyle with shadow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -103,8 +103,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTypographyStyle001
-     * @tc.number OHDrawingCopyTypographyStyle001
-     * @tc.desc   OHDrawingCopyTypographyStyle001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TYPOGRAPHY_STYLE_0100
+     * @tc.desc   test for copy typography style
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -116,8 +116,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTypographyStyle002
-     * @tc.number OHDrawingCopyTypographyStyle002
-     * @tc.desc   OHDrawingCopyTypographyStyle002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TYPOGRAPHY_STYLE_0200
+     * @tc.desc   test for copy typography style：FontWeight、FontStyle、FontFamily、FontSize、FontHeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,8 +129,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTypographyStyle003
-     * @tc.number OHDrawingCopyTypographyStyle003
-     * @tc.desc   OHDrawingCopyTypographyStyle003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TYPOGRAPHY_STYLE_0300
+     * @tc.desc   test for copy typography style: FontStyleStruct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -142,8 +142,8 @@ export default function NativeCopyStyleTest() {
 
     /**
      * @tc.name   OHDrawingCopyTypographyStyle004
-     * @tc.number OHDrawingCopyTypographyStyle004
-     * @tc.desc   OHDrawingCopyTypographyStyle004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TYPOGRAPHY_STYLE_0400
+     * @tc.desc   test for copy text shadow: typographystyle->textstyle->shadow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

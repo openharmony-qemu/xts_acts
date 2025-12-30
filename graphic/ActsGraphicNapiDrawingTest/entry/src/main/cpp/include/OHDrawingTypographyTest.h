@@ -1,16 +1,24 @@
-//
-// Created on 2025/12/28.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
-
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #ifndef ACTSGRAPHICNAPIDRAWINGTEST_OHDRAWINGTYPOGRAPHYTEST_H
 #define ACTSGRAPHICNAPIDRAWINGTEST_OHDRAWINGTYPOGRAPHYTEST_H
 
+#include <native_drawing/drawing_bitmap.h>
 #include <native_drawing/drawing_font_collection.h>
 #include <native_drawing/drawing_rect.h>
 #include <native_drawing/drawing_text_line.h>
-#include <native_drawing/drawing_bitmap.h>
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
 
@@ -24,16 +32,12 @@ struct OHDrawingTypographyTest {
     OH_Drawing_Typography* typography_{ nullptr };
     OH_Drawing_Bitmap* cBitmap_{ nullptr };
     OH_Drawing_Canvas* canvas_{ nullptr };
-    
 
-    OHDrawingTypographyTest()
-    {
-      
-    }
+    OHDrawingTypographyTest() {}
 
     ~OHDrawingTypographyTest()
     {
-       if (canvas_ != nullptr) {
+        if (canvas_ != nullptr) {
             OH_Drawing_CanvasDestroy(canvas_);
             canvas_ = nullptr;
         }
@@ -62,152 +66,151 @@ struct OHDrawingTypographyTest {
             fontCollection_ = nullptr;
         }
     }
-    
-    
-void PrepareCreateTextLine(const std::string& text)
-{
-    double maxWidth = 500.0;
-    uint32_t height = 40;
-    typoStyle_ = OH_Drawing_CreateTypographyStyle();
-    EXPECT_TRUE(typoStyle_ != nullptr);
-    txtStyle_ = OH_Drawing_CreateTextStyle();
-    EXPECT_TRUE(txtStyle_ != nullptr);
-    fontCollection_ = OH_Drawing_CreateFontCollection();
-    EXPECT_TRUE(fontCollection_ != nullptr);
-    handler_ = OH_Drawing_CreateTypographyHandler(typoStyle_, fontCollection_);
-    EXPECT_TRUE(handler_ != nullptr);
-    OH_Drawing_SetTextStyleColor(txtStyle_, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-    double fontSize = 30;
-    OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
-    OH_Drawing_SetTextStyleFontWeight(txtStyle_, FONT_WEIGHT_400);
-    bool halfLeading = true;
-    OH_Drawing_SetTextStyleHalfLeading(txtStyle_, halfLeading);
-    const char* fontFamilies[] = {"Roboto"};
-    OH_Drawing_SetTextStyleFontFamilies(txtStyle_, 1, fontFamilies);
-    OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
-    OH_Drawing_TypographyHandlerAddText(handler_, text.c_str());
-    OH_Drawing_TypographyHandlerPopTextStyle(handler_);
-    typography_ = OH_Drawing_CreateTypography(handler_);
-    EXPECT_TRUE(typography_ != nullptr);
-    OH_Drawing_TypographyLayout(typography_, maxWidth);
-    double position[2] = {10.0, 15.0};
-    cBitmap_ = OH_Drawing_BitmapCreate();
-    EXPECT_TRUE(cBitmap_ != nullptr);
-    OH_Drawing_BitmapFormat cFormat {COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = 20;
-    OH_Drawing_BitmapBuild(cBitmap_, width, height, &cFormat);
-    canvas_ = OH_Drawing_CanvasCreate();
-    EXPECT_TRUE(canvas_ != nullptr);
-    OH_Drawing_CanvasBind(canvas_, cBitmap_);
-    OH_Drawing_CanvasClear(canvas_, OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF));
-    OH_Drawing_TypographyPaint(typography_, canvas_, position[0], position[1]);
-}
+
+    void PrepareCreateTextLine(const std::string& text)
+    {
+        double maxWidth = 500.0;
+        uint32_t height = 40;
+        typoStyle_ = OH_Drawing_CreateTypographyStyle();
+        EXPECT_TRUE(typoStyle_ != nullptr);
+        txtStyle_ = OH_Drawing_CreateTextStyle();
+        EXPECT_TRUE(txtStyle_ != nullptr);
+        fontCollection_ = OH_Drawing_CreateFontCollection();
+        EXPECT_TRUE(fontCollection_ != nullptr);
+        handler_ = OH_Drawing_CreateTypographyHandler(typoStyle_, fontCollection_);
+        EXPECT_TRUE(handler_ != nullptr);
+        OH_Drawing_SetTextStyleColor(txtStyle_, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
+        double fontSize = 30;
+        OH_Drawing_SetTextStyleFontSize(txtStyle_, fontSize);
+        OH_Drawing_SetTextStyleFontWeight(txtStyle_, FONT_WEIGHT_400);
+        bool halfLeading = true;
+        OH_Drawing_SetTextStyleHalfLeading(txtStyle_, halfLeading);
+        const char* fontFamilies[] = { "Roboto" };
+        OH_Drawing_SetTextStyleFontFamilies(txtStyle_, 1, fontFamilies);
+        OH_Drawing_TypographyHandlerPushTextStyle(handler_, txtStyle_);
+        OH_Drawing_TypographyHandlerAddText(handler_, text.c_str());
+        OH_Drawing_TypographyHandlerPopTextStyle(handler_);
+        typography_ = OH_Drawing_CreateTypography(handler_);
+        EXPECT_TRUE(typography_ != nullptr);
+        OH_Drawing_TypographyLayout(typography_, maxWidth);
+        double position[2] = { 10.0, 15.0 };
+        cBitmap_ = OH_Drawing_BitmapCreate();
+        EXPECT_TRUE(cBitmap_ != nullptr);
+        OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };
+        uint32_t width = 20;
+        OH_Drawing_BitmapBuild(cBitmap_, width, height, &cFormat);
+        canvas_ = OH_Drawing_CanvasCreate();
+        EXPECT_TRUE(canvas_ != nullptr);
+        OH_Drawing_CanvasBind(canvas_, cBitmap_);
+        OH_Drawing_CanvasClear(canvas_, OH_Drawing_ColorSetArgb(0xFF, 0xFF, 0xFF, 0xFF));
+        OH_Drawing_TypographyPaint(typography_, canvas_, position[0], position[1]);
+    }
 };
 
 namespace Rosen {
 namespace Drawing {
 // OH_Drawing_TypographyTest functions (001-086, 102-105, WithIndent)
-int OH_Drawing_TypographyTest001();
-int OH_Drawing_TypographyTest002();
-int OH_Drawing_TypographyTest003();
-int OH_Drawing_TypographyTest004();
-int OH_Drawing_TypographyTest005();
-int OH_Drawing_TypographyTest006();
-int OH_Drawing_TypographyTest007();
-int OH_Drawing_TypographyTest008();
-int OH_Drawing_TypographyTest009();
-int OH_Drawing_TypographyTest010();
-int OH_Drawing_TypographyTest011();
-int OH_Drawing_TypographyTest012();
-int OH_Drawing_TypographyTest013();
-int OH_Drawing_TypographyTest014();
-int OH_Drawing_TypographyTest015();
-int OH_Drawing_TypographyTest016();
-int OH_Drawing_TypographyTest017();
-int OH_Drawing_TypographyTest018();
-int OH_Drawing_TypographyTest019();
-int OH_Drawing_TypographyTest020();
-int OH_Drawing_TypographyTest021();
-int OH_Drawing_TypographyTest022();
-int OH_Drawing_TypographyTest023();
-int OH_Drawing_TypographyTest024();
-int OH_Drawing_TypographyTest025();
-int OH_Drawing_TypographyTest026();
-int OH_Drawing_TypographyTest027();
-int OH_Drawing_TypographyTest028();
-int OH_Drawing_TypographyTest029();
-int OH_Drawing_TypographyTest030();
-int OH_Drawing_TypographyTest031();
-int OH_Drawing_TypographyTest032();
-int OH_Drawing_TypographyTest033();
-int OH_Drawing_TypographyTest034();
-int OH_Drawing_TypographyTest035();
-int OH_Drawing_TypographyTest036();
-int OH_Drawing_TypographyTest037();
-int OH_Drawing_TypographyTest038();
-int OH_Drawing_TypographyTest039();
-int OH_Drawing_TypographyTest040();
-int OH_Drawing_TypographyTest041();
-int OH_Drawing_TypographyTest042();
-int OH_Drawing_TypographyTest043();
-int OH_Drawing_TypographyTest044();
-int OH_Drawing_TypographyTest045();
-int OH_Drawing_TypographyTest046();
-int OH_Drawing_TypographyTest047();
-int OH_Drawing_TypographyTest048();
-int OH_Drawing_TypographyTest049();
-int OH_Drawing_TypographyTest050();
-int OH_Drawing_TypographyTest051();
-int OH_Drawing_TypographyTest052();
-int OH_Drawing_TypographyTest053();
-int OH_Drawing_TypographyTest054();
-int OH_Drawing_TypographyTest055();
-int OH_Drawing_TypographyTest056();
-int OH_Drawing_TypographyTest057();
-int OH_Drawing_TypographyTest058();
-int OH_Drawing_TypographyTest059();
-int OH_Drawing_TypographyTest060();
-int OH_Drawing_TypographyTest061();
-int OH_Drawing_TypographyTest062();
-int OH_Drawing_TypographyTest063();
-int OH_Drawing_TypographyTest064();
-int OH_Drawing_TypographyTest065();
-int OH_Drawing_TypographyTest066();
-int OH_Drawing_TypographyTest067();
-int OH_Drawing_TypographyTest068();
-int OH_Drawing_TypographyTest069();
-int OH_Drawing_TypographyTest070();
-int OH_Drawing_TypographyTest071();
-int OH_Drawing_TypographyTest072();
-int OH_Drawing_TypographyTest073();
-int OH_Drawing_TypographyTest074();
-int OH_Drawing_TypographyTest075();
-int OH_Drawing_TypographyTest076();
-int OH_Drawing_TypographyTest077();
-int OH_Drawing_TypographyTest078();
-int OH_Drawing_TypographyTest079();
-int OH_Drawing_TypographyTest080();
-int OH_Drawing_TypographyTest081();
-int OH_Drawing_TypographyTest082();
-int OH_Drawing_TypographyTest083();
-int OH_Drawing_TypographyTest084();
-int OH_Drawing_TypographyTest085();
-int OH_Drawing_TypographyTest086();
-int OH_Drawing_TypographyTest102();
-int OH_Drawing_TypographyTest103();
-int OH_Drawing_TypographyTest104();
-int OH_Drawing_TypographyTest105();
-int OH_Drawing_TypographyTestWithIndent();
+int OHDrawingTypographyTest001();
+int OHDrawingTypographyTest002();
+int OHDrawingTypographyTest003();
+int OHDrawingTypographyTest004();
+int OHDrawingTypographyTest005();
+int OHDrawingTypographyTest006();
+int OHDrawingTypographyTest007();
+int OHDrawingTypographyTest008();
+int OHDrawingTypographyTest009();
+int OHDrawingTypographyTest010();
+int OHDrawingTypographyTest011();
+int OHDrawingTypographyTest012();
+int OHDrawingTypographyTest013();
+int OHDrawingTypographyTest014();
+int OHDrawingTypographyTest015();
+int OHDrawingTypographyTest016();
+int OHDrawingTypographyTest017();
+int OHDrawingTypographyTest018();
+int OHDrawingTypographyTest019();
+int OHDrawingTypographyTest020();
+int OHDrawingTypographyTest021();
+int OHDrawingTypographyTest022();
+int OHDrawingTypographyTest023();
+int OHDrawingTypographyTest024();
+int OHDrawingTypographyTest025();
+int OHDrawingTypographyTest026();
+int OHDrawingTypographyTest027();
+int OHDrawingTypographyTest028();
+int OHDrawingTypographyTest029();
+int OHDrawingTypographyTest030();
+int OHDrawingTypographyTest031();
+int OHDrawingTypographyTest032();
+int OHDrawingTypographyTest033();
+int OHDrawingTypographyTest034();
+int OHDrawingTypographyTest035();
+int OHDrawingTypographyTest036();
+int OHDrawingTypographyTest037();
+int OHDrawingTypographyTest038();
+int OHDrawingTypographyTest039();
+int OHDrawingTypographyTest040();
+int OHDrawingTypographyTest041();
+int OHDrawingTypographyTest042();
+int OHDrawingTypographyTest043();
+int OHDrawingTypographyTest044();
+int OHDrawingTypographyTest045();
+int OHDrawingTypographyTest046();
+int OHDrawingTypographyTest047();
+int OHDrawingTypographyTest048();
+int OHDrawingTypographyTest049();
+int OHDrawingTypographyTest050();
+int OHDrawingTypographyTest051();
+int OHDrawingTypographyTest052();
+int OHDrawingTypographyTest053();
+int OHDrawingTypographyTest054();
+int OHDrawingTypographyTest055();
+int OHDrawingTypographyTest056();
+int OHDrawingTypographyTest057();
+int OHDrawingTypographyTest058();
+int OHDrawingTypographyTest059();
+int OHDrawingTypographyTest060();
+int OHDrawingTypographyTest061();
+int OHDrawingTypographyTest062();
+int OHDrawingTypographyTest063();
+int OHDrawingTypographyTest064();
+int OHDrawingTypographyTest065();
+int OHDrawingTypographyTest066();
+int OHDrawingTypographyTest067();
+int OHDrawingTypographyTest068();
+int OHDrawingTypographyTest069();
+int OHDrawingTypographyTest070();
+int OHDrawingTypographyTest071();
+int OHDrawingTypographyTest072();
+int OHDrawingTypographyTest073();
+int OHDrawingTypographyTest074();
+int OHDrawingTypographyTest075();
+int OHDrawingTypographyTest076();
+int OHDrawingTypographyTest077();
+int OHDrawingTypographyTest078();
+int OHDrawingTypographyTest079();
+int OHDrawingTypographyTest080();
+int OHDrawingTypographyTest081();
+int OHDrawingTypographyTest082();
+int OHDrawingTypographyTest083();
+int OHDrawingTypographyTest084();
+int OHDrawingTypographyTest085();
+int OHDrawingTypographyTest086();
+int OHDrawingTypographyTest102();
+int OHDrawingTypographyTest103();
+int OHDrawingTypographyTest104();
+int OHDrawingTypographyTest105();
+int OHDrawingTypographyTestWithIndent();
 // Other functions
 int OHDrawingAddTextStyleDecoration001();
 int OHDrawingSetTypographyTextTab001();
 int OHDrawingTextLineEnumerateCaretOffsets001();
 int OHDrawingSetTextHighContrast001();
 int OHDrawingSetTextHighContrast002();
-int testOHDrawingUnregisterFont001();
-int testOHDrawingUnregisterFont002();
+int TestOHDrawingUnregisterFont001();
+int TestOHDrawingUnregisterFont002();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
 
-#endif //ACTSGRAPHICNAPIDRAWINGTEST_OHDRAWINGTYPOGRAPHYTEST_H
+#endif // ACTSGRAPHICNAPIDRAWINGTEST_OHDRAWINGTYPOGRAPHYTEST_H

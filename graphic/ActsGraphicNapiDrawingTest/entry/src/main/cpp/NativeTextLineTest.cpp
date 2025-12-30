@@ -37,7 +37,7 @@ constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
 
 /**
  * @tc.name   TextLineTest001
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_001
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0100
  * @tc.desc   test for the textLine GetGlyphCount
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -72,7 +72,7 @@ int TextLineTest001()
 
 /**
  * @tc.name   TextLineTest002
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_002
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0200
  * @tc.desc   test for the textLine GetGlyphCount
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ int TextLineTest002()
 
 /**
  * @tc.name   TextLineTest003
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_003
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0300
  * @tc.desc   test for the textLine GetGlyphCount
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ int TextLineTest003()
 
 /**
  * @tc.name   TextLineTest004
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_004
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0400
  * @tc.desc   test for the textLine GetTextRange
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -179,7 +179,7 @@ int TextLineTest004()
 
 /**
  * @tc.name   TextLineTest005
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_005
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0500
  * @tc.desc   test for the textLine GetTextRange
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -215,7 +215,7 @@ int TextLineTest005()
 
 /**
  * @tc.name   TextLineTest006
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_006
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0600
  * @tc.desc   test for the textLine GetTextRange
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -245,7 +245,7 @@ int TextLineTest006()
 
 /**
  * @tc.name   TextLineTest007
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_007
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0700
  * @tc.desc   test for the textLine GetTextRange
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -277,7 +277,7 @@ int TextLineTest007()
 
 /**
  * @tc.name   TextLineTest008
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_008
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0800
  * @tc.desc   test for the textLine GetGlyphRuns
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -308,7 +308,7 @@ int TextLineTest008()
 
 /**
  * @tc.name   TextLineTest009
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_009
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0900
  * @tc.desc   test for the textLine GetGlyphRuns
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -352,7 +352,7 @@ int TextLineTest009()
 
 /**
  * @tc.name   TextLineTest010
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_010
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1000
  * @tc.desc   test for the textLine GetGlyphRuns
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -382,7 +382,7 @@ int TextLineTest010()
 
 /**
  * @tc.name   TextLineTest011
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_011
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1100
  * @tc.desc   test for the textLine GetGlyphRuns
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -411,7 +411,7 @@ int TextLineTest011()
 
 /**
  * @tc.name   TextLineTest012
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_012
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1200
  * @tc.desc   test for the textLine GetTypographicBounds
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -444,7 +444,7 @@ int TextLineTest012()
 
 /**
  * @tc.name   TextLineTest013
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_013
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1300
  * @tc.desc   test for the textLine GetTypographicBounds
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ int TextLineTest013()
 
 /**
  * @tc.name   TextLineTest014
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_014
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1400
  * @tc.desc   test for the textLine GetTypographicBounds
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ int TextLineTest014()
 
 /**
  * @tc.name   TextLineTest015
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_015
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1500
  * @tc.desc   test for the textLine GetTypographicBounds
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -564,7 +564,7 @@ int TextLineTest015()
 
 /**
  * @tc.name   TextLineTest016
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_016
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1600
  * @tc.desc   test for the textLine GetTrailingSpaceWidth
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -592,7 +592,7 @@ int TextLineTest016()
 
 /**
  * @tc.name   TextLineTest017
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_017
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1700
  * @tc.desc   test for the textLine GetTrailingSpaceWidth
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -627,7 +627,7 @@ int TextLineTest017()
 
 /**
  * @tc.name   TextLineTest018
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_018
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1800
  * @tc.desc   test for the textLine GetTrailingSpaceWidth
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -657,7 +657,7 @@ int TextLineTest018()
 
 /**
  * @tc.name   TextLineTest019
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_019
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1900
  * @tc.desc   test for the textLine GetOffsetForStringIndex
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -697,7 +697,7 @@ int TextLineTest019()
 
 /**
  * @tc.name   TextLineTest020
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_020
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2000
  * @tc.desc   test for the textLine GetOffsetForStringIndex
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -746,7 +746,7 @@ int TextLineTest020()
 
 /**
  * @tc.name   TextLineTest021
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_021
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2100
  * @tc.desc   test for the textLine EnumerateCaretOffsets
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -787,7 +787,7 @@ int TextLineTest021()
 
 /**
  * @tc.name   TextLineTest022
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_022
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2200
  * @tc.desc   test for the textLine EnumerateCaretOffsets
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -822,7 +822,7 @@ int TextLineTest022()
 
 /**
  * @tc.name   TextLineTest023
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_023
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2300
  * @tc.desc   test for the textLine EnumerateCaretOffsets
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -848,7 +848,7 @@ int TextLineTest023()
 
 /**
  * @tc.name   TextLineTest024
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_024
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2400
  * @tc.desc   test for the textLine GetAlignmentOffset
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -892,7 +892,7 @@ int TextLineTest024()
 
 /**
  * @tc.name   TextLineTest025
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_025
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2500
  * @tc.desc   test for the textLine GetAlignmentOffset
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -925,6 +925,6 @@ int TextLineTest025()
     EXPECT_EQ(offset, 0.0);
     return TEST_SUCCESS_CODE;
 }
-} //namespace Drawing
-} //namespace Rosen
-} //namespace OHOS
+} // namespace Drawing
+} // namespace Rosen
+} // namespace OHOS

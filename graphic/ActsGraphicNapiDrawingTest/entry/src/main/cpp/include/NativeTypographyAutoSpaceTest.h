@@ -1,8 +1,17 @@
-//
-// Created on 2025/12/27.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 #ifndef ACTSGRAPHICNAPIDRAWINGTEST_NATIVETYPOGRAPHYTESTAUTOSPACETEST_H
 #define ACTSGRAPHICNAPIDRAWINGTEST_NATIVETYPOGRAPHYTESTAUTOSPACETEST_H
@@ -11,11 +20,19 @@
 #include <native_drawing/drawing_text_line.h>
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
-namespace OHOS {
-constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
-const double DEFAULT_FONT_SIZE = 40;
-const double DEFAULT_LAYOUT_WIDTH = 1000;
-} // namespace OHOS
+
+constexpr double DEFAULT_FONT_SIZE = 40;
+constexpr double DEFAULT_LAYOUT_WIDTH = 1000;
+constexpr double BOUNDARY_LAYOUT_WIDTH_SINGLE_RUN = 388.319641;
+constexpr double BOUNDARY_LAYOUT_WIDTH_MULTI_LINE = 956.159546;
+constexpr int LINE_INDEX_0 = 0;
+constexpr int LINE_INDEX_1 = 1;
+constexpr int LINE_INDEX_2 = 2;
+constexpr int LINE_INDEX_3 = 3;
+constexpr int AUTO_SPACE_DIVISOR = 8;
+constexpr int AUTO_SPACE_MULTIPLIER_2 = 2;
+constexpr int AUTO_SPACE_MULTIPLIER_3 = 3;
+constexpr int LINE_COUNT_OFFSET = 1;
 
 struct NativeTypographyAutoSpaceTestContext {
     OH_Drawing_FontCollection* fontCollection_{ nullptr };
@@ -81,7 +98,7 @@ struct NativeTypographyAutoSpaceTestContext {
         ASSERT_NE(txtStyle_, nullptr);
         fontCollection_ = OH_Drawing_CreateSharedFontCollection();
         ASSERT_NE(fontCollection_, nullptr);
-        OH_Drawing_SetTextStyleFontSize(txtStyle_, OHOS::DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTextStyleFontSize(txtStyle_, DEFAULT_FONT_SIZE);
     }
 };
 

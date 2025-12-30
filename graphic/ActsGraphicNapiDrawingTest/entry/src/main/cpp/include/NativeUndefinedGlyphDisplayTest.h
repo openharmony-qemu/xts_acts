@@ -1,9 +1,17 @@
-//
-// Created on 2025/12/28.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
-
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #ifndef ACTSGRAPHICNAPIDRAWINGTEST_NATIVEUNDEFINEDGLYPHDISPLAYTEST_H
 #define ACTSGRAPHICNAPIDRAWINGTEST_NATIVEUNDEFINEDGLYPHDISPLAYTEST_H
 
@@ -13,29 +21,25 @@
 #include <native_drawing/drawing_text_typography.h>
 #include "include/OhosCommonTest.h"
 
-namespace {
-constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
-} // namespace
-
 namespace OHOS {
 namespace Rosen {
 struct NativeUndefinedGlyphDisplayTestContext {
-    static constexpr const char* text_ =
+    static constexpr const char* text =
         "Hello 测 World \uffff\n!@#$%^&*~(){\uffff\uffff}[]90 - = ,.\n\uffff"
         "testlp\uffff试\uffff Drawing\uffff";
-    static constexpr const char* noGlyphText_ = "\uffff";
-    static constexpr float defaultResult_[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
+    static constexpr const char* noGlyphText = "\uffff";
+    static constexpr float defaultResult[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
                                                    { 1.0, 5.0, 388.10962, 37.0 },
                                                    { 0, 8.0, 319.4397, 42.0 } };
-    static constexpr float tofuResult_[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
+    static constexpr float tofuResult[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
                                                 { 1.0, 5.0, 388.10962, 37.0 },
                                                 { 8.0, 8.0, 341.4397, 42.0 } };
-    static constexpr float notoResult_[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
+    static constexpr float notoResult[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
                                                 { 2.0, 5.0, 388.43961, 33.0 },
                                                 { 8.0, 8.0, 347.76962, 42.0 } };
-    static constexpr float noGlyphTofuResult_[][4] = { { 8.0, 0, 22.0, 22.0 } };
-    static constexpr float noGlyphDefaultResult_[][4] = { { 0, 0, 0, 0 } };
-    static constexpr float noGlyphNotoResult_[][4] = { { 0, 0, 0, 0 } };
+    static constexpr float noGlyphTofuResult[][4] = { { 8.0, 0, 22.0, 22.0 } };
+    static constexpr float noGlyphDefaultResult[][4] = { { 0, 0, 0, 0 } };
+    static constexpr float noGlyphNotoResult[][4] = { { 0, 0, 0, 0 } };
 
     NativeUndefinedGlyphDisplayTestContext() {}
 
