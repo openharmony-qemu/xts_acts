@@ -766,7 +766,6 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       try {
-        await deferredTrans?.insert("test", valueBucket);
         trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
