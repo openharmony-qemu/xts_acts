@@ -301,6 +301,18 @@ function getSupportedCameraOutputCapability() {
   return true;
 }
 
+function getSupportedCameraFullOutputCapability() {
+  let cameraOutputCapability = cameraObj.getSupportedFullOutputCapability();
+  console.info(TAG + 'cameraOutputCapability[0] = ' + cameraOutputCapability.previewProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[1] = ' + cameraOutputCapability.photoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[2] = ' + cameraOutputCapability.videoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[3] = ' + cameraOutputCapability.metadataProfilesSize);
+  return true;
+}
+function adjustHeifIdx(idx: number) {
+  return cameraObj.adjustHeifIdx(idx);
+}
+
 function setSessionMode() {
   let ret = cameraObj.oHCaptureSessionSetSessionMode(Parameter_Setting.ALL_PARAMETER_OK);
   if (ret != 0) {
@@ -425,6 +437,19 @@ function captureSessionstart() {
   sessionFlow();
 }
 
+function heifCaptureSessionstart(i: number) {
+  getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+  setSessionMode();
+  createHeifPreviewOutput();
+  createCameraInput();
+  sessionFlow();
+  let ret = createHeifPhotoOutput(i);
+  addPhotoOutput();
+  sessionCommitConfig();
+  return ret;
+}
+
 function nativeBufferColorSpace() {
   let ret = cameraObj.oHNativeBufferColorSpace();
   console.info(TAG + "oHNativeBufferColorSpace.colorSpaceSupportSize: " + ret.colorSpaceSupportSize);
@@ -457,12 +482,38 @@ function createPreviewOutput() {
   }
 }
 
+function createHeifPreviewOutput() {
+  let previewProfiles = cameraObj.getPreviewProfiles();
+  console.info("previewProfiles is "+ JSON.stringify(previewProfiles));
+  let previewProfileIndex = 0;
+  let previewProfileHeigth = 1080;
+  let previewProfileWidth = 1920;
+  //View the previewprofile with an aspect ratio of 4:3
+  for (let i = 0; i < previewProfiles.length; i++) {
+    if (Math.abs((previewProfiles[i].width / previewProfiles[i].height) - (4 / 3)) < 0.1) {
+      previewProfileWidth = previewProfiles[i].width;
+      previewProfileHeigth = previewProfiles[i].height;
+      previewProfileIndex = i;
+      break;
+    }
+  }
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+    console.info(TAG + "createPreviewOutput FAILED");
+    expect().assertFail();
+  }
+}
+
 function createPhotoOutput() {
   let mPhotoOutput = cameraObj.createPhotoOutput(mPhotoSurface);
   if (mPhotoOutput != 0) {
     console.info(TAG + "mPhotoOutput FAILED");
     expect().assertFail();
   }
+}
+
+function createHeifPhotoOutput(i: number) {
+  let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
+  return mPhotoOutput;
 }
 
 let getPermissions1 = () => {
@@ -2642,6 +2693,34 @@ export default function PhotoTest() {
         }
       } else {
         console.info(TAG+"ColorSpace not supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHHeifPhotoOutput0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHHeifPhotoOutput0100', Level.LEVEL0, () => {
+      let i = 0;
+      while(i != -1){
+        getCameraManagerInstance();
+        createCaptureSession();
+        getSupportedCamerasInstance();
+        getSupportedCameraFullOutputCapability();
+        i = adjustHeifIdx(i);
+        if(i != -1){
+          let ret = heifCaptureSessionstart(i);
+          if (ret != 0) {
+            expect().assertFail();
+          }
+          i++;
+          i = adjustHeifIdx(i);
+        }       
+        if(i == -1) break;
+        releaseCamera();
       }
     })
   })
