@@ -1838,23 +1838,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  BASIC_LITERAL_010
-     * @tc.name    test_basic_literal_010
-     * @tc.desc    Verify number literal works
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_literal_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_010 start');
-        expect(42).assertEqual(42);
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_literal_010 end');
-      });
-
-    /**
      * @tc.number  BASIC_OPERATION_013
      * @tc.name    test_basic_operation_013
      * @tc.desc    Verify basic addition works

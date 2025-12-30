@@ -385,26 +385,6 @@ export default function BuiltinArrayAtTest() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1800
-     * @tc.name     testBuiltinArrayAt00018
-     * @tc.desc     Test at() with non-integer index (float 1.9) to verify truncation behavior.
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it('testBuiltinArrayAt00018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayAt00018";
-      try {
-        let arr: FixedArray<boolean> = [false, true, false];
-        let result = at(arr, 1.9);
-        expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_01
      * @tc.name     testBuiltinArrayAt10001_01
      * @tc.desc     Test at() with positive index

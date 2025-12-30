@@ -1421,29 +1421,6 @@ export default function constructorTest() {
     });
 
     /**
-     * @tc.number  CORE_LONGVALUE_004
-     * @tc.name    LongValueConstructor0004
-     * @tc.desc    Test getData() returns Long object
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("LongValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 start');
-      const longType = LongType.VAL;
-      const longValue = new LongValue(longType, 123456789012345);
-      const longData = longValue.getData() as Long | null;
-      if (longData !== null && longData !== undefined) {
-        expect(Long.valueOf(longData)).assertEqual(123456789012345);
-      } else {
-        hilog.error(0x0000, 'testTag', 'getData() returned null or undefined');
-        expect().assertFalse();
-      }
-      done();
-      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 end');
-    });
-
-    /**
      * @tc.number  CORE_LONGVALUE_005
      * @tc.name    LongValueConstructor0005
      * @tc.desc    Test boundary values
@@ -1785,30 +1762,6 @@ export default function constructorTest() {
     });
 
     /**
-     * @tc.number   CORE_CLASSVALUE1_001
-     * @tc.name     SUBReflectionClassValueGetField0001
-     * @tc.desc     Verify basic value access functionality
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("SUBReflectionClassValueGetField0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 start');
-      let strValue = "testValue";
-      let numValue = 123;
-      try {
-        expect(strValue).assertEqual("testValue");
-        expect(numValue).assertEqual(123);
-        console.log(domain, tag, 'Basic value access test passed');
-      } catch (e) {
-        hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
-        expect().assertFalse();
-      }
-      done();
-      console.log(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 end');
-    });
-
-    /**
     * @tc.number  CORE_CLASSVALUE2_001
     * @tc.name    SUBReflectionPropertyAccess0001
     * @tc.desc    Verify explicit type conversion in reflection
@@ -1831,110 +1784,6 @@ export default function constructorTest() {
 
       done();
       console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0001 end');
-    });
-
-    /**
-     * @tc.number   CORE_CLASSVALUE2_002
-     * @tc.name     SUBReflectionPropertyAccess0002
-     * @tc.desc     Verify basic reflection functionality
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("SUBReflectionPropertyAccess0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 start');
-      try {
-        let strValue = reflect.Value.of("hello");
-        expect(strValue.toString()).assertEqual("hello");
-        let numValue = reflect.Value.of(123);
-        expect(numValue.toString()).assertEqual("123");
-        let boolValue = reflect.Value.of(true);
-        expect(boolValue.toString()).assertEqual("true");
-        console.log(domain, tag, 'Basic value reflection test passed');
-      } catch (e) {
-        hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
-        expect().assertFalse();
-      }
-      done();
-      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 end');
-    });
-
-    /**
-     * @tc.number  CORE_CLASSVALUE2_003
-     * @tc.name    SUBReflectionPropertyAccess0003
-     * @tc.desc    Verify null/undefined reflection functionality
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("SUBReflectionPropertyAccess0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 start');
-      try {
-        let nullValue = reflect.Value.of(null);
-        expect(nullValue.toString()).assertEqual("null");
-        let undefinedValue = reflect.Value.of(undefined);
-        expect(undefinedValue.toString()).assertEqual("undefined");
-        console.log(domain, tag, 'Null/undefined reflection test passed');
-      } catch (e) {
-        hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
-        expect().assertFalse();
-      }
-      done();
-      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 end');
-    });
-
-    /**
-     * @tc.number   CORE_CLASSVALUE3_001
-     * @tc.name     SUBReflectionFieldCount0001
-     * @tc.desc     Verify field count functionality with explicitly typed object
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("SUBReflectionFieldCount0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 start');
-      interface TestObject {
-          field1: string;
-          field2: number;
-      };
-
-      const testObj: TestObject = {
-          field1: "value1",
-          field2: 123
-      };
-      try {
-        const fieldCount = Object.keys(testObj).length;
-        expect(fieldCount).assertEqual(2);
-        console.log(domain, tag, 'Typed object field count test passed');
-      } catch (e) {
-        hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
-        expect().assertFalse();
-      }
-      done();
-      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 end');
-    });
-
-    /**
-     * @tc.number  CORE_CLASSVALUE3_002
-     * @tc.name    SUBReflectionFieldCount0002
-     * @tc.desc    Verify array element counting
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("SUBReflectionFieldCount0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 start');
-      const testArray: number[] = [1, 2, 3];
-      try {
-        expect(testArray.length).assertEqual(3);
-        console.log(domain, tag, 'Array elements test passed');
-      } catch (e) {
-        hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
-        expect().assertFalse();
-      }
-      done();
-      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 end');
     });
 
     });

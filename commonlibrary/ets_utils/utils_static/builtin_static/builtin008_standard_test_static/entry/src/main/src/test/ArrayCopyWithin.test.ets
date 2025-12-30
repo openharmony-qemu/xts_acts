@@ -341,8 +341,8 @@ export default function ArrayCopyWithinTest() {
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' test_copy_within_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        let TAG = "testCopyWithin0072";
+    it('test_copy_within_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        let TAG = "test_copy_within_0072";
         try {
             let self: FixedArray<boolean> = [true, false, true, false, true] as FixedArray<boolean>;
             let result = copyWithin(self, -2, -4, -1);
@@ -365,7 +365,7 @@ export default function ArrayCopyWithinTest() {
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' testCopyWithin0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testCopyWithin0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0073";
         try {
             let self: FixedArray<boolean> = [true, false, true] as FixedArray<boolean>;
@@ -431,7 +431,7 @@ export default function ArrayCopyWithinTest() {
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' testCopyWithin0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testCopyWithin0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0076";
         try {
             let self: FixedArray<boolean> = [true, false, true, false, true] as FixedArray<boolean>;
@@ -636,8 +636,8 @@ export default function ArrayCopyWithinTest() {
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' test_copy_within_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        let TAG = "testCopyWithin0085";
+    it('test_copy_within_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        let TAG = "test_copy_within_0085";
         try {
             let self: FixedArray<boolean> = [true, false] as FixedArray<boolean>;
             let original = [...self];
