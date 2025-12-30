@@ -94,27 +94,27 @@ static TestFunction g_testFunctions[] = {
     // Combine 系列
     // ========== 新增 Compilation 测试（补充） ==========
     // EnableFloat16 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0200, // 索引 36
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationEnableFloat160200, // 索引 36
     // SetCache 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0500, // 索引 37
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0600, // 索引 38
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0700, // 索引 39
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetCache_0800, // 索引 40
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0500, // 索引 37
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0600, // 索引 38
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0700, // 索引 39
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetCache0800, // 索引 40
     // SetPerformanceMode 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300, // 索引 41
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400, // 索引 42
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500, // 索引 43
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600, // 索引 44
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700, // 索引 45
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800, // 索引 46
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900, // 索引 47
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0300, // 索引 41
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0400, // 索引 42
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0500, // 索引 43
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0600, // 索引 44
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0700, // 索引 45
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0800, // 索引 46
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPerformanceMode0900, // 索引 47
     // SetPriority 补充测试
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300, // 索引 48
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400, // 索引 49
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500, // 索引 50
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600, // 索引 51
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700, // 索引 52
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800, // 索引 53
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0300, // 索引 48
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0400, // 索引 49
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0500, // 索引 50
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0600, // 索引 51
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0700, // 索引 52
+    OHOS::NeuralNetworkRuntime::SubAiNnRtFuncNorthCompilationSetPriority0800, // 索引 53
     // 后续添加新测试函数在此处追加即可
 };
 
