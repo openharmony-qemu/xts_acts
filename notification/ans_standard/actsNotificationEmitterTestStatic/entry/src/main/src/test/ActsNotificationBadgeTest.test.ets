@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
-import { BusinessError, RecordData } from '@ohos.base'
+import { BusinessError, RecordData, Callback } from '@ohos.base'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -748,7 +748,6 @@ export default function ActsNotificationEmitterTest() {
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000';
-        let j: number = 0
         let eventId80: string = 'eventId80'
         let innerEvent80: emitter.InnerEvent = {
           eventId: 80
@@ -761,13 +760,15 @@ export default function ActsNotificationEmitterTest() {
           "id": "event7800",
         }
         let data180: emitter.EventData = { data: myDate }
-        let onCallback180 = (): void => {
+        let onCallback180 : Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success');
-          j++;
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success is %{public}s '+JSON.stringify(eventData));
+          expect(JSON.stringify(eventData)).assertContain('"id":"event7800"');
         }
-        let onCallback280 = (): void => {
+        let onCallback280 : Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success');
-          j++;
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success is %{public}s '+JSON.stringify(eventData));
+          expect(JSON.stringify(eventData)).assertContain('"id":"event7800"');
         }
         try {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
@@ -793,7 +794,6 @@ export default function ActsNotificationEmitterTest() {
         }
         await Utils.msSleep(1000)
         setTimeout(() => {
-          expect(j).assertEqual(2);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' onCallback1 success');
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
