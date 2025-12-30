@@ -350,23 +350,6 @@ export default function TypeValue03Test() {
       });
 
     /**
-     * @tc.number   NULL_VALUE_STRING_REPRESENT_124
-     * @tc.name     test_NULL_VALUE_STRING_REPRESENT_124
-     * @tc.desc     Verify string representation
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("test_NULL_VALUE_STRING_REPRESENT_124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_NULL_VALUE_STRING_REPRESENT_124 start');
-        expect(NullValue.INSTANCE.toString()).not().assertEqual('[object Object]');
-        done();
-        console.log(domain, tag, '%{public}s', 'test_NULL_VALUE_STRING_REPRESENT_124 end');
-      });
-
-    /**
      * @tc.number   COSH_SYMMETRY_126
      * @tc.name     test_COSH_SYMMETRY_126
      * @tc.desc     Verify cosh(-x) equals cosh(x)

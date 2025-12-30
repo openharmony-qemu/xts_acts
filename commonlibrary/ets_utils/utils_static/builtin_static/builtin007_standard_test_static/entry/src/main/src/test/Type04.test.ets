@@ -465,7 +465,7 @@ export default function type_04Test() {
 
     console.log(domain, tag, '%{public}s', 'describe start');
     /**
-     * @tc.number  SUB_COMMONLIBRARY_BASE_TYPE_OF_0100
+     * @tc.number  SUB_COMMONLIBRARY_UTL_BASE_TYPE_OF_0100
      * @tc.name    testTypeOf0001
      * @tc.desc    Testing Type.of with null value.
      * @tc.size    MediumTest

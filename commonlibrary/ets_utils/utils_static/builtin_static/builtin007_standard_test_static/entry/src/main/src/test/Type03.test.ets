@@ -313,14 +313,14 @@ export default function type_03Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_ERROR_ARGUMENTSUNDER_0200
-     * @tc.name    testArgumentsUnderapplicationError0002
+     * @tc.name    testDataArgumentsUnderapplicationError0002
      * @tc.desc    Test instantiation of ArgumentsUnderapplicationError with a custom message.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testArgumentsUnderapplicationError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testArgumentsUnderapplicationError0002";
+    it('testDataArgumentsUnderapplicationError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testDataArgumentsUnderapplicationError0002";
       try {
         const customMessage = "Insufficient arguments";
         const error = new ArgumentsUnderapplicationError(customMessage);
@@ -595,7 +595,7 @@ export default function type_03Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_ERROR_ARRAYINDEX_0400
-     * @tc.name    testArrayIndexOutOfBoundsError0002
+     * @tc.name    testArrayIndexOutOfBoundsError0004
      * @tc.desc    Test instantiation of ArrayIndexOutOfBoundsError with a custom message.
      * @tc.size    MediumTest
      * @tc.type    Function

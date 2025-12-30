@@ -58,7 +58,7 @@ export default function type_01Test() {
     })
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_BASE_TYPE_OF_0100
+     * @tc.number  SUB_COMMONLIBRARY_BASEDATA_TYPE_OF_0100
      * @tc.name    testTypeOf0001
      * @tc.desc    Testing Type.of with null.
      * @tc.size    MediumTest
@@ -368,7 +368,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_AHASNAME_0001
      * @tc.name    testHasName0001
      * @tc.desc    Testing NullType.hasName() returns true.
      * @tc.size    MediumTest
@@ -425,7 +425,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0004
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASEA_TYPE_HASNAME_0004
      * @tc.name    testHasName0004
      * @tc.desc    Testing IntType.REF.hasName() returns true.
      * @tc.size    MediumTest
@@ -463,7 +463,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVEA_0001
      * @tc.name    testIsPrimitive0001
      * @tc.desc    Testing NullType.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -482,7 +482,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISAPRIMITIVE_0002
      * @tc.name    testIsPrimitive0002
      * @tc.desc    Testing VoidType.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -540,7 +540,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_AISREFERENCE_0001
      * @tc.name    testIsReference0001
      * @tc.desc    Testing NullType.isReference() returns true.
      * @tc.size    MediumTest
@@ -617,14 +617,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0005
-     * @tc.name    testIsReference0005
+     * @tc.name    testBaseDataIsReference0005
      * @tc.desc    Testing IntType.REF.isReference() returns true.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIsReference0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIsReference0005';
+    it('testBaseDataIsReference0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testBaseDataIsReference0005';
       try {
         const flag = IntType.REF.isReference();
         expect(flag).assertTrue();
@@ -675,7 +675,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0003
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_AEQUALS_0003
      * @tc.name    testLongEquals0003
      * @tc.desc    Testing LongType.REF equals LongType.REF.
      * @tc.size    MediumTest
@@ -715,7 +715,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPEA_GETLITERAL_0001
      * @tc.name    testLongGetLiteral0001
      * @tc.desc    Testing LongType.VAL.getLiteral() returns "long".
      * @tc.size    MediumTest
@@ -734,7 +734,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERALA_0002
      * @tc.name    testLongGetLiteral0002
      * @tc.desc    Testing LongType.REF.getLiteral() returns "Long".
      * @tc.size    MediumTest
@@ -810,7 +810,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAMEA_0002
      * @tc.name    testLongGetName0002
      * @tc.desc    Testing LongType.REF.getName() returns "Long".
      * @tc.size    MediumTest
@@ -830,14 +830,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_GETNAME_0003
-     * @tc.name    testIntGetName0003
+     * @tc.name    testValIntGetName0003
      * @tc.desc    Testing IntType.VAL.getName() returns empty string.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntGetName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntGetName0003';
+    it('testValIntGetName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValIntGetName0003';
       try {
         const name = IntType.VAL.getName();
         expect(name).assertEqual('');
@@ -867,7 +867,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_BHASNAME_0001
      * @tc.name    testLongHasName0001
      * @tc.desc    Testing LongType.VAL.hasName() returns false.
      * @tc.size    MediumTest
@@ -906,14 +906,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAMEB_0003
-     * @tc.name    testIntHasName0003
+     * @tc.name    testAIntHasName0003
      * @tc.desc    Testing IntType.VAL.hasName() returns false.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntHasName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntHasName0003';
+    it('testAIntHasName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testAIntHasName0003';
       try {
         const hasName = IntType.VAL.hasName();
         expect(hasName).assertFalse();
@@ -924,7 +924,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0004
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASEB_TYPE_HASNAME_0004
      * @tc.name    testIntTypeHasName0004
      * @tc.desc    Testing IntType.REF.hasName() returns true.
      * @tc.size    MediumTest
@@ -943,7 +943,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVEB_0001
      * @tc.name    testLongIsPrimitive0001
      * @tc.desc    Testing LongType.VAL.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -962,7 +962,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISBPRIMITIVE_0002
      * @tc.name    testLongIsPrimitive0002
      * @tc.desc    Testing LongType.REF.isPrimitive() returns false.
      * @tc.size    MediumTest
@@ -982,14 +982,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_TYPE_ISPRIMITIVE_0003
-     * @tc.name    testIntIsPrimitive0003
+     * @tc.name    testIntTypeValIsPrimitive0003
      * @tc.desc    Testing IntType.VAL.isPrimitive() returns true.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntIsPrimitive0003';
+    it('testIntTypeValIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIntTypeValIsPrimitive0003';
       try {
         const isPrimitive = IntType.VAL.isPrimitive();
         expect(isPrimitive).assertTrue();
@@ -1019,7 +1019,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_BISREFERENCE_0001
      * @tc.name    testLongIsReference0001
      * @tc.desc    Testing LongType.VAL.isReference() returns false.
      * @tc.size    MediumTest
@@ -1058,14 +1058,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_TYPE_ISREFERENCE_0003
-     * @tc.name    testIntIsReference0003
+     * @tc.name    testIntIsReferenceVal0003
      * @tc.desc    Testing IntType.VAL.isReference() returns false.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntIsReference0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntIsReference0003';
+    it('testIntIsReferenceVal0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testIntIsReferenceVal0003';
       try {
         const isReference = IntType.VAL.isReference();
         expect(isReference).assertFalse();
@@ -1077,14 +1077,14 @@ export default function type_01Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_TYPE_ISREFERENCE_0004
-     * @tc.name    testIntIsReference0004
+     * @tc.name    testAIntIsReference0004
      * @tc.desc    Testing IntType.REF.isReference() returns true.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testIntIsReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIntIsReference0004';
+    it('testAIntIsReference0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testAIntIsReference0004';
       try {
         const isReference = IntType.REF.isReference();
         expect(isReference).assertTrue();
@@ -1135,7 +1135,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0003
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_BEQUALS_0003
      * @tc.name    testShortEquals0003
      * @tc.desc    Testing ShortType.REF.equals(ShortType.REF) returns true.
      * @tc.size    MediumTest
@@ -1175,7 +1175,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPEB_GETLITERAL_0001
      * @tc.name    testShortGetLiteral0001
      * @tc.desc    Testing ShortType.VAL.getLiteral() returns "short".
      * @tc.size    MediumTest
@@ -1194,7 +1194,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERALB_0002
      * @tc.name    testShortGetLiteral0002
      * @tc.desc    Testing ShortType.REF.getLiteral() returns "Short".
      * @tc.size    MediumTest
@@ -1270,7 +1270,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAMEB_0002
      * @tc.name    testShortGetName0002
      * @tc.desc    Testing ShortType.REF.getName() returns "Short".
      * @tc.size    MediumTest
@@ -1327,7 +1327,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CHASNAME_0001
      * @tc.name    testShortHasName0001
      * @tc.desc    Testing ShortType.VAL.hasName() returns false.
      * @tc.size    MediumTest
@@ -1384,7 +1384,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0004
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASEC_TYPE_HASNAME_0004
      * @tc.name    testIntHasName0004
      * @tc.desc    Testing IntType.REF.hasName() returns true.
      * @tc.size    MediumTest
@@ -1403,7 +1403,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVEC_0001
      * @tc.name    testShortIsPrimitive0001
      * @tc.desc    Testing ShortType.VAL.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -1422,7 +1422,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISCPRIMITIVE_0002
      * @tc.name    testShortIsPrimitive0002
      * @tc.desc    Testing ShortType.REF.isPrimitive() returns false.
      * @tc.size    MediumTest
@@ -1479,7 +1479,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CISREFERENCE_0001
      * @tc.name    testShortIsReference0001
      * @tc.desc    Testing ShortType.VAL.isReference() returns false.
      * @tc.size    MediumTest
@@ -1595,7 +1595,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0003
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CEQUALS_0003
      * @tc.name    testCharEquals0003
      * @tc.desc    Testing CharType.REF.equals(CharType.REF) returns true.
      * @tc.size    MediumTest
@@ -1635,7 +1635,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPEC_GETLITERAL_0001
      * @tc.name    testCharGetLiteral0001
      * @tc.desc    Testing CharType.VAL.getLiteral() returns "char".
      * @tc.size    MediumTest
@@ -1654,7 +1654,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERALC_0002
      * @tc.name    testCharGetLiteral0002
      * @tc.desc    Testing CharType.REF.getLiteral() returns "Char".
      * @tc.size    MediumTest
@@ -1692,7 +1692,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAMEC_0002
      * @tc.name    testCharGetName0002
      * @tc.desc    Testing CharType.REF.getName() returns "Char".
      * @tc.size    MediumTest
@@ -1711,7 +1711,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_DHASNAME_0001
      * @tc.name    testCharHasName0001
      * @tc.desc    Testing CharType.VAL.hasName() returns false.
      * @tc.size    MediumTest
@@ -1749,7 +1749,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVED_0001
      * @tc.name    testCharIsPrimitive0001
      * @tc.desc    Testing CharType.VAL.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -1768,7 +1768,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVE_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISDPRIMITIVE_0002
      * @tc.name    testCharIsPrimitive0002
      * @tc.desc    Testing CharType.REF.isPrimitive() returns true.
      * @tc.size    MediumTest
@@ -1787,7 +1787,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISREFERENCE_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_DISREFERENCE_0001
      * @tc.name    testCharIsReference0001
      * @tc.desc    Testing CharType.VAL.isReference() returns false.
      * @tc.size    MediumTest
@@ -1865,7 +1865,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0003
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_DEQUALS_0003
      * @tc.name    testByteEquals0003
      * @tc.desc    Testing ByteType.REF.equals(ByteType.REF) returns true.
      * @tc.size    MediumTest
@@ -1905,7 +1905,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPED_GETLITERAL_0001
      * @tc.name    testByteGetLiteral0001
      * @tc.desc    Testing ByteType.VAL.getLiteral() returns "byte".
      * @tc.size    MediumTest
@@ -1924,7 +1924,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERALD_0002
      * @tc.name    testByteGetLiteral0002
      * @tc.desc    Testing ByteType.REF.getLiteral() returns "Byte".
      * @tc.size    MediumTest
@@ -1962,7 +1962,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAME_0002
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETNAMED_0002
      * @tc.name    testByteGetName0002
      * @tc.desc    Testing ByteType.REF.getName() returns "Byte".
      * @tc.size    MediumTest
@@ -1981,7 +1981,7 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASNAME_0001
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EHASNAME_0001
      * @tc.name    testByteHasName0001
      * @tc.desc    Testing ByteType.VAL.hasName() returns false.
      * @tc.size    MediumTest

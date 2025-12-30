@@ -546,14 +546,14 @@ export default function type_06Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BOOLEAN_TYPE_0900
-     * @tc.name    testBooleanType0009
+     * @tc.name    testRefBooleanType0009
      * @tc.desc    Returns literal of type if exists
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testBooleanType0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBooleanType0009";
+    it('testRefBooleanType0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testRefBooleanType0009";
       try {
         const Type1 = BooleanType.REF;
         expect(Type1.isPrimitive()).assertEqual(true);
@@ -936,7 +936,7 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETACCESSMODIFIER_0100
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_AGETACCESSMODIFIER_0100
      * @tc.name    testFieldGetAccessModifier0001
      * @tc.desc    Get access modifier of public field
      * @tc.size    MediumTest
@@ -1380,7 +1380,7 @@ export default function type_06Test() {
       }
     });
 
-    /*
+    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_ISREADONLY_0100
      * @tc.name    testFieldIsReadonly0001
      * @tc.desc    Test isReadonly method on a non-readonly field

@@ -1680,7 +1680,7 @@ export default function math02Test() {
      * @tc.type    FUNCTION
      * @tc.level   Level 1
      */
-    it(' testmathsign12006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testmathsign12006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testMathSign12006 start');
         try {
