@@ -838,7 +838,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0400
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0400_01
      * @tc.name     testToLocaleString0040
      * @tc.desc     Verify that toLocaleString throws an error when called with empty locale parameter on empty float-type array
      * @tc.size     MediumTest
@@ -1038,7 +1038,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0500
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0500_01
      * @tc.name     testToLocaleString0050
      * @tc.desc     Verify that toLocaleString throws an error when called with locale 'en-US' and 'currency' option on empty float-type array
      * @tc.size     MediumTest
@@ -1070,31 +1070,6 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<double> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0520
-     * @tc.name     testToLocaleString0052 ----无效用例
-     * @tc.desc     Verify that toLocaleString correctly converts double-type arrays with smallest positive, largest positive, and largest negative double values
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it('testToLocaleString0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testToLocaleString0052';
-      try {
-        let arr: FixedArray<double> = [
-          4.9406564584124654e-324 as double,
-          1.7976931348623157e+308 as double,
-          -1.7976931348623157e+308 as double
-        ];
-        let expected =
-          "0,179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,-179,769,313,486,231,570,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000";
-        expect(toLocaleString(arr)).assertEqual(expected);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -1242,7 +1217,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0600
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0600_01
      * @tc.name     testToLocaleString0060
      * @tc.desc     Verify that toLocaleString throws an error when called with empty locale and 'currency' option on double-type array with one smallest positive element
      * @tc.size     MediumTest
@@ -1479,7 +1454,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0800
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0800_01
      * @tc.name     testToLocaleString0080
      * @tc.desc     Verify toLocaleString throws error when called with empty locale parameter on empty byte array
      * @tc.size     MediumTest
@@ -1877,7 +1852,7 @@ export default function Array_09Test() {
     });
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1000
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1000_01
      * @tc.name     testToLocaleString0100
      * @tc.desc     Verify toLocaleString throws error when called with empty locale and 'currency' option on boolean array [false,false,true,false,true]
      * @tc.size     MediumTest

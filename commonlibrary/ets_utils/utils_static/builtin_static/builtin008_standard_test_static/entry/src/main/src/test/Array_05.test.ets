@@ -353,7 +353,7 @@ export default function Array_05Test() {
 
     /**
      * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_1400
-     * @tc.name    testSliceFunctionWithBooleanArray0014
+     * @tc.name    testSliceFunctionWithByteArray0014
      * @tc.desc    Testing slice function on an empty FixedArray<byte>.
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -604,7 +604,7 @@ export default function Array_05Test() {
 
     /**
      * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_2500
-     * @tc.name    testSliceFunctionWithByteArray0025
+     * @tc.name    testSliceFunctionWithBooleanArray0025
      * @tc.desc    Testing slice function on FixedArray<byte> with valid start index.
      * @tc.size    MediumTest
      * @tc.type    Function

@@ -245,7 +245,7 @@ export default function Array_04Test() {
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testJoin000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('testJoin0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let TAG = "testJoin0010";
       try {
         let self: FixedArray<short> = [];
@@ -652,15 +652,15 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1900
-     * @tc.name    testLastIndexOf0019
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1900_01
+     * @tc.name    testLastIndexOf0019_01
      * @tc.desc    Testing lastIndexOf with fromIndex out of bounds
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testLastIndexOf0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testLastIndexOf0019";
+    it('testLastIndexOf0019_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testLastIndexOf0019_01";
       try {
         const arr: FixedArray<number> = [100, 110, 120, 111, 101];
         const result = lastIndexOf(arr, 100, 10);
@@ -3412,7 +3412,7 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_1000
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_1000_01
      * @tc.name    testLowerBoundSearch0100
      * @tc.desc    Testing Type.of with null.(repeat)
      * @tc.size    MediumTest
@@ -3479,8 +3479,8 @@ export default function Array_04Test() {
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('testLowerBoundSearch0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLowerBoundSearch0103";
+    it('testLowerBoundSearch1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testLowerBoundSearch1030";
       try {
         let arr: FixedArray<long> = [30, 10, 20];
         let index = lowerBoundSearch(arr, 15 as long);
