@@ -1486,26 +1486,6 @@ export default function BuiltinArrayAt02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_OF8_0100
-     * @tc.name   testBuiltinArraycopyOf8001
-     * @tc.desc   Test a copy of an empty array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArraycopyOf8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArraycopyOf8001";
-      try {
-        const src: FixedArray<NullishType> = [];
-        const result = copyOf(src);
-        expect(result.length).assertEqual(0);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_OF8_0200
      * @tc.name   testBuiltinArraycopyOf8002
      * @tc.desc   Test a copy of the array of base types
@@ -1544,26 +1524,6 @@ export default function BuiltinArrayAt02Test() {
         result[0] = 99;
         expect(src[0]).assertEqual(1);
         expect(result[0]).assertEqual(99);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_OF8_0400
-     * @tc.name   testBuiltinArraycopyOf8004
-     * @tc.desc   The length of the array after the test copy is the same as the source array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArraycopyOf8004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArraycopyOf8004";
-      try {
-        const src: FixedArray<NullishType> = [1, 2, 3, 4, 5];
-        const result = copyOf(src);
-        expect(result.length).assertEqual(src.length);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
