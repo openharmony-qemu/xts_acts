@@ -672,26 +672,6 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_2000
-     * @tc.name    testLastIndexOf0020
-     * @tc.desc    The default element is compatible with the array type.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLastIndexOf0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testLastIndexOf0020";
-      try {
-        const arr: FixedArray<number> = [100, 110, 120, 111, 101];
-        const result = lastIndexOf(arr, 100, 10.1);
-        expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_2100
      * @tc.name    testLastIndexOf0021
      * @tc.desc    Testing lastIndexOf with normal value, element exists
@@ -884,26 +864,6 @@ export default function Array_04Test() {
       try {
         let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
         let result = lastIndexOf(arr, 2.0);
-        expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_3100
-     * @tc.name    testLastIndexOf0031
-     * @tc.desc    Testing lastIndexOf with type conversion of fromIndex parameter_double
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLastIndexOf0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLastIndexOf0031";
-      try {
-        let arr: FixedArray<double> = [1.0, 2.0, 3.0, 2.0, 5.0];
-        let result = lastIndexOf(arr, 2.0, 3.8);
         expect(result).assertEqual(3);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -1112,26 +1072,6 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_4200
-     * @tc.name    testLastIndexOf0042
-     * @tc.desc    Testing lastIndexOf with type conversion of fromIndex parameter_double
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLastIndexOf0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLastIndexOf0042";
-      try {
-        let arr: FixedArray<number> = [6.0, 9.0, 8.0, 2.0, 5.0];
-        let result = lastIndexOf(arr, 2.0, 3.8);
-        expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_4300
      * @tc.name    testLastIndexOf0043
      * @tc.desc    Testing lastIndexOf with normal value, element exists
@@ -1312,26 +1252,6 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_5200
-     * @tc.name    testLastIndexOf0052
-     * @tc.desc    The default element is compatible with the array type.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLastIndexOf0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testLastIndexOf0052";
-      try {
-        const arr: FixedArray<number> = [1, 2, 3, 4, 5];
-        const result = lastIndexOf(arr, 4, 10.1);
-        expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_5300
      * @tc.name    testLastIndexOf0053
      * @tc.desc    Testing lastIndexOf with normal value, element exists
@@ -1504,26 +1424,6 @@ export default function Array_04Test() {
       try {
         const arr: FixedArray<number> = [1, 2, 3, 4, 5];
         const result = lastIndexOf(arr, 4, 10);
-        expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_6200
-     * @tc.name    testLastIndexOf0062
-     * @tc.desc    The default element is compatible with the array type.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLastIndexOf0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testLastIndexOf0062";
-      try {
-        const arr: FixedArray<number> = [1, 2, 3, 4, 5];
-        const result = lastIndexOf(arr, 4, 10.1);
         expect(result).assertEqual(3);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);

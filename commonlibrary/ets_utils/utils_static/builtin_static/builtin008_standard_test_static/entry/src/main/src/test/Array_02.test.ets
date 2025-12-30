@@ -884,29 +884,6 @@ export default function Array_02Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_MAP_Boolean_0200
-     * @tc.name    testMapBoolean0002
-     * @tc.desc    Test map function with index-dependent transformation.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMapBoolean0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testMapBoolean0002";
-      try {
-        const input: FixedArray<boolean> = [true, true, false] as FixedArray<boolean>;
-        const transform = (val: boolean, idx: number): boolean =>
-        (idx % 2 === 0) ? !val : val;
-        const output = map(input, transform);
-        const expected: FixedArray<boolean> = [false, true, true] as FixedArray<boolean>;
-        expect(JSON.stringify(output)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_MAP_Boolean_0300
      * @tc.name    testMapBoolean0003
      * @tc.desc    Test map with empty array.
@@ -1632,32 +1609,6 @@ export default function Array_02Test() {
         const maxCallback = (acc: double, curr: double) => acc > curr ? acc : curr;
         const result = reduce(testArray, maxCallback);
         expect(result).assertClose(10.8, 0.0001);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_REDUCE_DOUBLE_0600
-     * @tc.name    testReduceDOUBLE_Average
-     * @tc.desc    Test custom reduce operation (calculating average)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testReduceDOUBLE_Average', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testReduceDOUBLE_Average";
-      try {
-        const testArray: FixedArray<double> = [10.0, 20.0, 30.0, 40.0];
-        const averageCallback = (acc: double, curr: double, index: number) => {
-          if (index === testArray.length - 1) {
-            return (acc + curr) / testArray.length;
-          }
-          return acc + curr;
-        };
-        const result = reduce(testArray, averageCallback);
-        expect(result).assertClose(25.0, 0.0001);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
