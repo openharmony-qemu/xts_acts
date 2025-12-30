@@ -26,6 +26,7 @@
 #include <multimedia/image_framework/image/picture_native.h>
 #include <multimedia/image_framework/image/image_common.h>
 #include <multimedia/image_framework/image/pixelmap_native.h>
+#include <native_color_space_manager/native_color_space_manager.h>
 #include "OHPixelMapSupplementTest.h"
 
 #define LOG_DOMAIN 0x0000
@@ -344,24 +345,31 @@ napi_value OHPixelmapNativeSetColorSpaceNativeSuppTest(napi_env env, napi_callba
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    
+
     OH_PixelmapNative *pixelmap = nullptr;
-    OH_NativeColorSpaceManager *setColorSpaceNative = nullptr;
+
     Image_ErrorCode returnValue;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    returnValue = OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, 100);
+    OH_PixelmapInitializationOptions_SetHeight(options, 100);
+    OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+    returnValue = OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+    uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100 * 4]();
+    returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100 * 4, options, &pixelmap);
+    OH_NativeColorSpaceManager *srcColorspace = OH_NativeColorSpaceManager_CreateFromName(BT709);
     switch (index) {
     case CASE_INDEX_1:
-        returnValue = OH_PixelmapNative_SetColorSpaceNative(pixelmap, setColorSpaceNative);
+        returnValue = OH_PixelmapNative_SetColorSpaceNative(pixelmap, srcColorspace);
         break;
     default:
         break;
     }
+
     OH_PixelmapNative_Release(pixelmap);
-    int code = -1;
-    if (returnValue == IMAGE_BAD_PARAMETER) {
-        code = 0;
-    }
+
     napi_value result = nullptr;
-    napi_create_int32(env, code, &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 napi_value OHPixelmapNativeGetColorSpaceNativeSuppTest(napi_env env, napi_callback_info info)
@@ -455,10 +463,8 @@ napi_value OHPixelmapNativeCreateAlphaPixelmapSuppTest(napi_env env, napi_callba
         napi_create_int32(env, IMAGE_BAD_PARAMETER, &ret);
         return ret;
     }
-    napi_value ret;
     OH_PixelmapNative *srcPixelmap = nullptr;
     OH_PixelmapNative *dstPixelmap = nullptr;
-    Image_ErrorCode returnValue = IMAGE_UNKNOWN_ERROR;
 
     auto CreateValidPixelmap = [](OH_PixelmapNative **pixelmap) -> Image_ErrorCode {
         OH_Pixelmap_InitializationOptions *options = nullptr;
@@ -542,9 +548,9 @@ napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info 
             break;
         }
         returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, IMAGE_DATA_LENGTH_BIG, options, &pixelmap);
-        if (returnValue == IMAGE_SUCCESS) {
-            returnValue = OH_PixelmapNative_GetUniqueId(pixelmap, pUniqueId);
-        }
+        LOGI("OH_PixelmapNative_CreatePixelmap %{public}d");
+        returnValue = OH_PixelmapNative_GetUniqueId(pixelmap, pUniqueId);
+        LOGI("OH_PixelmapNative_GetUniqueId %{public}d");
         delete[] dummyData;
         OH_PixelmapInitializationOptions_Release(options);
     } break;
@@ -595,9 +601,9 @@ napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info i
             break;
         }
         returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, IMAGE_DATA_LENGTH_SMALL, options, &pixelmap);
-        if (returnValue == IMAGE_SUCCESS) {
-            returnValue = OH_PixelmapNative_IsReleased(pixelmap, pReleased);
-        }
+        LOGI("OH_PixelmapNative_CreatePixelmap %{public}d");
+        returnValue = OH_PixelmapNative_IsReleased(pixelmap, pReleased);
+        LOGI("OH_PixelmapNative_IsReleased %{public}d");
         delete[] dummyData;
         OH_PixelmapInitializationOptions_Release(options);
     } break;
@@ -656,7 +662,13 @@ napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callbac
     } break;
     case CASE_INDEX_2: {
         pixelmap = nullptr;
-        area = {0, 0, 50, 50};
+        area = {
+            pixels : buffer,
+            pixelsSize : bufferSize,
+            offset : 0,
+            stride : 160,
+            region : region,
+        };
         outBufferSize = IMAGE_OUT_BUFFER_SIZE;
         outBuffer = new (std::nothrow) uint8_t[outBufferSize];
         if (outBuffer != nullptr) {
