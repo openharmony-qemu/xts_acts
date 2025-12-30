@@ -136,9 +136,9 @@ napi_value DrawingPointCreate(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<DrawingNativeFn, POINT_CREATE_HANDLER_COUNT> handlers = {
-            OHOS::Rosen::Drawing::TestPointCreateNormal,       
+            OHOS::Rosen::Drawing::TestPointCreateNormal,
             OHOS::Rosen::Drawing::TestPointCreateNull,
-            OHOS::Rosen::Drawing::TestPointCreateAbnormal,      
+            OHOS::Rosen::Drawing::TestPointCreateAbnormal,
             OHOS::Rosen::Drawing::TestPointCreateMaximum,
             OHOS::Rosen::Drawing::TestPointCreateMultipleCalls,
         };
@@ -171,13 +171,13 @@ napi_value DrawingPointGetSet(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<DrawingNativeFn, POINT_GET_SET_HANDLER_COUNT> handlers = {
-            OHOS::Rosen::Drawing::TestPointGetXNormal,       
+            OHOS::Rosen::Drawing::TestPointGetXNormal,
             OHOS::Rosen::Drawing::TestPointGetXNull,
-            OHOS::Rosen::Drawing::TestPointGetXMultipleCalls, 
+            OHOS::Rosen::Drawing::TestPointGetXMultipleCalls,
             OHOS::Rosen::Drawing::TestPointGetYNormal,
-            OHOS::Rosen::Drawing::TestPointGetYNull,          
+            OHOS::Rosen::Drawing::TestPointGetYNull,
             OHOS::Rosen::Drawing::TestPointGetYMultipleCalls,
-            OHOS::Rosen::Drawing::TestPointSetNormal,         
+            OHOS::Rosen::Drawing::TestPointSetNormal,
             OHOS::Rosen::Drawing::TestPointSetNull,
             OHOS::Rosen::Drawing::TestPointSetMultipleCalls,
         };
@@ -289,11 +289,11 @@ napi_value DrawingPathBasic(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPathMoveToNull,
             OHOS::Rosen::Drawing::TestPathMoveToAbnormal,
             OHOS::Rosen::Drawing::TestPathMoveToMaximal,
-            OHOS::Rosen::Drawing::TestPathLineToNormal,  
+            OHOS::Rosen::Drawing::TestPathLineToNormal,
             OHOS::Rosen::Drawing::TestPathLineToNull,
             OHOS::Rosen::Drawing::TestPathLineToAbnormal,
             OHOS::Rosen::Drawing::TestPathLineToMaximal,
-            OHOS::Rosen::Drawing::TestPathArcToNormal,  
+            OHOS::Rosen::Drawing::TestPathArcToNormal,
             OHOS::Rosen::Drawing::TestPathArcToNull,
             OHOS::Rosen::Drawing::TestPathArcToAbnormal,
             OHOS::Rosen::Drawing::TestPathArcToMaximal,

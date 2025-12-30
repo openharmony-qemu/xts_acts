@@ -73,7 +73,7 @@ using std::stringstream;
 using std::to_string;
 using std::vector;
 
-constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
+constexpr float FLOAT_DATA_EPSILON = 1e-6f;
 constexpr int RESULT_ERROR = -1;
 
 void OHPrintf(const char* fmt, ...);
@@ -147,17 +147,12 @@ inline void AssertGEImpl(const T1& v1, const T2& v2, const char* exp1, const cha
     }
 }
 
-inline void AssertFloatEqImpl(float v1,
-                              float v2,
-                              const char* expr1,
-                              const char* expr2,
-                              float epsilon,
-                              const AssertLocation& loc)
+inline void AssertFloatEqImpl(float v1, float v2, const char* expr1, const char* expr2, const AssertLocation& loc)
 {
-    if (std::fabs(v1 - v2) > epsilon) {
+    if (std::fabs(v1 - v2) > FLOAT_DATA_EPSILON) {
         throw std::runtime_error(std::string("Assertion failed: ") + expr1 + " ~= " + expr2 +
                                  " (lhs=" + std::to_string(v1) + ", rhs=" + std::to_string(v2) +
-                                 ", eps=" + std::to_string(epsilon) + ")" + ", file: " + loc.file +
+                                 ", eps=" + std::to_string(FLOAT_DATA_EPSILON) + ")" + ", file: " + loc.file +
                                  ", line: " + std::to_string(loc.line));
     }
 }
@@ -181,12 +176,7 @@ inline void AssertFloatEqImpl(float v1,
     AssertGEImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 #define EXPECT_FLOAT_EQ(v1, v2) /* NOLINT(G.PRE.02-CPP) */ \
-    AssertFloatEqImpl(static_cast<float>(v1),              \
-                      static_cast<float>(v2),              \
-                      #v1,                                 \
-                      #v2,                                 \
-                      FLOAT_DATA_EPSILON,                  \
-                      AssertLocation({ __FILE__, __LINE__ }))
+    AssertFloatEqImpl(static_cast<float>(v1), static_cast<float>(v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 #endif // CUSTOM_ASSERT
 
