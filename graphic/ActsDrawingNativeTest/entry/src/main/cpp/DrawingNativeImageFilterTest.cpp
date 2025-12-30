@@ -97,20 +97,23 @@ int TestImageFilterCreateBlurNormal()
         OH_Drawing_ImageFilterDestroy(filter);
     }
     // 2. Pass decimal values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
-    OH_Drawing_ImageFilter* filter =
-        OH_Drawing_ImageFilterCreateBlur(TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
+    OH_Drawing_ImageFilter* filter = OH_Drawing_ImageFilterCreateBlur(
+        TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 3. Pass integer values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(TEST_NUMBER_1, TEST_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter =
+        OH_Drawing_ImageFilterCreateBlur(TEST_NUMBER_1, TEST_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 4. Pass NULL for input parameter in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter = OH_Drawing_ImageFilterCreateBlur(
+        TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 5. Pass non-NULL for input parameter in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, filter);
+    filter = OH_Drawing_ImageFilterCreateBlur(
+        TEST_SIGMA_SMALL, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, filter);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 6. Destroy the filter object
@@ -131,12 +134,13 @@ int TestImageFilterCreateBlurNULL()
 {
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur with the first parameter being null
-    OH_Drawing_ImageFilter* filter =
-        OH_Drawing_ImageFilterCreateBlur(TEST_NUMBER_0, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
+    OH_Drawing_ImageFilter* filter = OH_Drawing_ImageFilterCreateBlur(
+        TEST_NUMBER_0, TEST_SIGMA_SMALL, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 2. OH_Drawing_ImageFilterCreateBlur with the second parameter being null
-    filter = OH_Drawing_ImageFilterCreateBlur(TEST_SIGMA_SMALL, TEST_NUMBER_0, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter = OH_Drawing_ImageFilterCreateBlur(
+        TEST_SIGMA_SMALL, TEST_NUMBER_0, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 3. Destroy the filter object
@@ -164,7 +168,8 @@ int TestImageFilterCreateBlurMultipleCalls()
         std::uniform_real_distribution<float> dis(TEST_NUMBER_0, TEST_NUMBER_10);
         std::uniform_int_distribution<int> enum_dis(TEST_NUMBER_0, TEST_NUMBER_3);
         OH_Drawing_TileMode tileMode = static_cast<OH_Drawing_TileMode>(enum_dis(gen));
-        OH_Drawing_ImageFilter* filter = OH_Drawing_ImageFilterCreateBlur(dis(gen), dis(gen), tileMode, nullptr);
+        OH_Drawing_ImageFilter* filter =
+            OH_Drawing_ImageFilterCreateBlur(dis(gen), dis(gen), tileMode, nullptr);
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);
     }
@@ -205,7 +210,8 @@ int TestImageFilterCreateBlurAbnormal()
 int TestImageFilterCreateBlurMaximum()
 {
     DrawingNativeImageFilterTestSetUp();
-    // 1. Create a blur image filter with maximum values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
+    // 1. Create a blur image filter with maximum values for sigmaX and sigmaY in
+    // OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_ImageFilter* filter =
         OH_Drawing_ImageFilterCreateBlur(FLT_MAX, FLT_MAX, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
@@ -271,8 +277,8 @@ int TestImageFilterCreateFromColorFilterNULL()
         OH_Drawing_ImageFilterCreateBlur(TEST_NUMBER_1, TEST_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
-    // 1. OH_Drawing_ImageFilterCreateFromColorFilter with the first parameter being null, check the error code using
-    // OH_Drawing_ErrorCodeGet
+    // 1. OH_Drawing_ImageFilterCreateFromColorFilter with the first parameter being null, check the error
+    // code using OH_Drawing_ErrorCodeGet
     OH_Drawing_ImageFilterCreateFromColorFilter(nullptr, filter);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. Free memory
@@ -374,8 +380,10 @@ int TestImageFilterDestroyMultipleCalls()
     }
     // 3. Call OH_Drawing_ImageFilterCreateBlur and OH_Drawing_ImageFilterDestroy alternately 10 times
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
-        OH_Drawing_ImageFilter* filter = OH_Drawing_ImageFilterCreateBlur(
-            static_cast<float>(TEST_NUMBER_1), static_cast<float>(TEST_NUMBER_1), OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilter* filter = OH_Drawing_ImageFilterCreateBlur(static_cast<float>(TEST_NUMBER_1),
+                                                                          static_cast<float>(TEST_NUMBER_1),
+                                                                          OH_Drawing_TileMode::MIRROR,
+                                                                          nullptr);
         // add assert
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);

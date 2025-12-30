@@ -461,8 +461,7 @@ int TestPointSetNormal()
     EXPECT_EQ(OH_Drawing_PointSet(point, TEST_POINT_X_NEW, TEST_POINT_Y_NEW), OH_DRAWING_SUCCESS);
     // 2. Pass floating-point values to OH_Drawing_PointSet interface
     //  add assert
-    EXPECT_EQ(OH_Drawing_PointSet(point, 
-        TEST_POINT_X_NEW_FLOAT, TEST_POINT_Y_NEW_FLOAT), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_PointSet(point, TEST_POINT_X_NEW_FLOAT, TEST_POINT_Y_NEW_FLOAT), OH_DRAWING_SUCCESS);
     // 3. free memory
     OH_Drawing_PointDestroy(point);
 
@@ -487,8 +486,8 @@ int TestPointSetNull()
     OH_Drawing_Point* point = OH_Drawing_PointCreate(TEST_POINT_X_DEFAULT, TEST_POINT_Y_DEFAULT);
     // add assert
     EXPECT_NE(point, nullptr);
-    EXPECT_EQ(OH_Drawing_PointSet(nullptr, 
-        TEST_POINT_X_NEW, TEST_POINT_Y_NEW), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_ErrorCode code = OH_Drawing_PointSet(nullptr, TEST_POINT_X_NEW, TEST_POINT_Y_NEW);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. OH_Drawing_PointSet with the second parameter as 0
     EXPECT_EQ(OH_Drawing_PointSet(point, TEST_NUMBER_0, TEST_POINT_Y_NEW), OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_PointSet with the third parameter as 0

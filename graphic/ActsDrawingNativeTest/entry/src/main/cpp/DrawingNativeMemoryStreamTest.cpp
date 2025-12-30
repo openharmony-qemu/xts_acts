@@ -108,9 +108,8 @@ int TestMemoryStreamCreateNull()
     char data[TEST_MEMORY_STREAM_DATA_SIZE_10] = { TEST_NUMBER_0 };
     // 1. OH_Drawing_MemoryStreamCreate with the first parameter set to nullptr, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MemoryStream* stream =
-        OH_Drawing_MemoryStreamCreate(nullptr,
-            TEST_MEMORY_STREAM_DATA_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
+    OH_Drawing_MemoryStream* stream = OH_Drawing_MemoryStreamCreate(
+        nullptr, TEST_MEMORY_STREAM_DATA_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_MemoryStreamCreate with the second parameter set to 0, check the error code using
@@ -138,9 +137,8 @@ int TestMemoryStreamCreateAbnormal()
     DrawingNativeMemoryStreamTestSetUp();
 
     // 1. OH_Drawing_MemoryStreamCreate with a negative value as the second parameter
-    OH_Drawing_MemoryStream* stream =
-        OH_Drawing_MemoryStreamCreate(nullptr, 
-            TEST_MEMORY_STREAM_NEGATIVE_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
+    OH_Drawing_MemoryStream* stream = OH_Drawing_MemoryStreamCreate(
+        nullptr, TEST_MEMORY_STREAM_NEGATIVE_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
     // add assert  ---待验证
     EXPECT_EQ(stream, nullptr);
     // add assert
@@ -168,9 +166,8 @@ int TestMemoryStreamCreateMultipleCalls()
     // 1. Call OH_Drawing_MemoryStreamCreate 10 times, passing different data segments
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         char data[TEST_MEMORY_STREAM_DATA_SIZE_10] = { static_cast<char>(i) };
-        OH_Drawing_MemoryStream* stream =
-            OH_Drawing_MemoryStreamCreate(data, 
-                 TEST_MEMORY_STREAM_DATA_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
+        OH_Drawing_MemoryStream* stream = OH_Drawing_MemoryStreamCreate(
+            data, TEST_MEMORY_STREAM_DATA_SIZE_10, TEST_MEMORY_STREAM_COPY_DATA_TRUE);
         // add assert
         EXPECT_NE(stream, nullptr);
         OH_Drawing_MemoryStreamDestroy(stream);

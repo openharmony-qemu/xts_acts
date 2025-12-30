@@ -16,6 +16,7 @@
 #include "include/DrawingNativeImageTest.h"
 #include <cstdlib>
 #include <ctime>
+#include <random>
 #include "include/OhosCommonTest.h"
 
 namespace OHOS {
@@ -188,12 +189,14 @@ int TestImageBuildFromBitmapNULL()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
-    // 3. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
+    // 3. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with
+    // OH_Drawing_ErrorCodeGet
     bool ret = OH_Drawing_ImageBuildFromBitmap(nullptr, bitmap);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
-    // 4. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
+    // 4. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with
+    // OH_Drawing_ErrorCodeGet
     ret = OH_Drawing_ImageBuildFromBitmap(image, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
@@ -215,7 +218,7 @@ int TestImageBuildFromBitmapNULL()
 int TestImageBuildFromBitmapMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_Image* image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -246,7 +249,7 @@ int TestImageBuildFromBitmapMultipleCalls()
 int TestImageBuildFromBitmapMultipleCallsBoundary()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_Image* image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -289,11 +292,11 @@ int TestImageGetWidthHeightNormal()
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageBuildFromBitmap(image, bitmap);
     // 2. OH_Drawing_ImageGetWidth
-    int32_t width_ = OH_Drawing_ImageGetWidth(image);
-    EXPECT_EQ(width_, TEST_RECT_SIZE_200);
+    int32_t width1 = OH_Drawing_ImageGetWidth(image);
+    EXPECT_EQ(width1, TEST_RECT_SIZE_200);
     // 3. OH_Drawing_ImageGetHeight
-    int32_t height_ = OH_Drawing_ImageGetHeight(image);
-    EXPECT_EQ(height_, TEST_RECT_SIZE_200);
+    int32_t height1 = OH_Drawing_ImageGetHeight(image);
+    EXPECT_EQ(height1, TEST_RECT_SIZE_200);
     // 4. Free memory
     OH_Drawing_ImageDestroy(image);
     OH_Drawing_BitmapDestroy(bitmap);
@@ -359,10 +362,10 @@ int TestImageGetWidthHeightMultipleCalls()
         uint32_t height = TEST_RECT_SIZE_200 + i * TEST_NUMBER_10;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
-        int32_t width_ = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width_, TEST_RECT_SIZE_200 + i * TEST_NUMBER_10);
-        int32_t height_ = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height_, TEST_RECT_SIZE_200 + i * TEST_NUMBER_10);
+        int32_t width1 = OH_Drawing_ImageGetWidth(image);
+        EXPECT_EQ(width1, TEST_RECT_SIZE_200 + i * TEST_NUMBER_10);
+        int32_t height1 = OH_Drawing_ImageGetHeight(image);
+        EXPECT_EQ(height1, TEST_RECT_SIZE_200 + i * TEST_NUMBER_10);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -395,10 +398,10 @@ int TestImageGetWidthHeightMultipleCallsBoundary()
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         EXPECT_NE(image, nullptr);
-        int32_t width_ = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width_, TEST_RECT_SIZE_4096);
-        int32_t height_ = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height_, TEST_RECT_SIZE_2160);
+        int32_t width1 = OH_Drawing_ImageGetWidth(image);
+        EXPECT_EQ(width1, TEST_RECT_SIZE_4096);
+        int32_t height1 = OH_Drawing_ImageGetHeight(image);
+        EXPECT_EQ(height1, TEST_RECT_SIZE_2160);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -477,7 +480,8 @@ int TestImageGetImageInfoNULL()
     OH_Drawing_Image_Info imageInfo;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageGetImageInfo(image, &imageInfo);
-    // 3. OH_Drawing_ImageGetImageInfo with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
+    // 3. OH_Drawing_ImageGetImageInfo with a null parameter, check the error code with
+    // OH_Drawing_ErrorCodeGet
     OH_Drawing_ImageGetImageInfo(nullptr, &imageInfo);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. Free memory
@@ -515,11 +519,17 @@ int TestImageGetImageInfoMultipleCalls()
         OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
         // add assert
         EXPECT_NE(bitmap, nullptr);
-        srand(static_cast<unsigned int>(time(0)));
-        OH_Drawing_BitmapFormat cFormat{ cf[rand() % TEST_NUMBER_5 + TEST_NUMBER_1],
-                                         af[rand() % TEST_NUMBER_3 + TEST_NUMBER_1] };
-        uint32_t width = rand() % TEST_COUNT_100 + TEST_NUMBER_1;
-        uint32_t height = rand() % TEST_COUNT_100 + TEST_NUMBER_1;
+        time_t now = time(nullptr);
+        if (now != static_cast<time_t>(-1)) {
+            srand(static_cast<unsigned int>(now));
+        } else {
+            // 兜底处理，避免未初始化随机种子
+            srand(1U);
+        }
+        OH_Drawing_BitmapFormat cFormat{ cf[std::random_device{}() % TEST_NUMBER_5 + TEST_NUMBER_1],
+                                         af[std::random_device{}() % TEST_NUMBER_3 + TEST_NUMBER_1] };
+        uint32_t width = std::random_device{}() % TEST_COUNT_100 + TEST_NUMBER_1;
+        uint32_t height = std::random_device{}() % TEST_COUNT_100 + TEST_NUMBER_1;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_Image_Info imageInfo;
         OH_Drawing_ImageGetImageInfo(image, &imageInfo);
@@ -580,7 +590,8 @@ int TestImageGetImageInfoMaximum()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
-    // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=maximum value and height=maximum value
+    // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=maximum value and
+    // height=maximum value
     OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };
     uint32_t width = UINT32_MAX;
     uint32_t height = UINT32_MAX;
@@ -612,7 +623,8 @@ int TestImageGetImageInfoBoundary()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
-    // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=maximum value and height=maximum value
+    // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=maximum value and
+    // height=maximum value
     OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };
     uint32_t width = TEST_RECT_SIZE_4096;
     uint32_t height = TEST_RECT_SIZE_2160;

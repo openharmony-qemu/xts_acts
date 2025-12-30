@@ -130,13 +130,13 @@ int TestCreateDashPathEffectNull()
     float intervals[] = { TEST_DASH_INTERVAL_1, TEST_DASH_INTERVAL_1 };
     // 1. OH_Drawing_CreateDashPathEffect with nullptr as the first parameter, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_PathEffect* pathEffect1 = 
+    OH_Drawing_PathEffect* pathEffect1 =
         OH_Drawing_CreateDashPathEffect(nullptr, TEST_DASH_COUNT_2, TEST_DASH_PHASE_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_CreateDashPathEffect with 0 as the second parameter, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_PathEffect* pathEffect2 = 
+    OH_Drawing_PathEffect* pathEffect2 =
         OH_Drawing_CreateDashPathEffect(intervals, TEST_NUMBER_0, TEST_DASH_PHASE_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. OH_Drawing_CreateDashPathEffect with 0.0 as the third parameter
@@ -344,8 +344,7 @@ int TestCreateCornerPathEffectAbnormal()
     // add assert
     EXPECT_NE(pathEffect2, nullptr);
     // 3. OH_Drawing_CreateCornerPathEffect with -0.1 as the parameter
-    OH_Drawing_PathEffect* pathEffect3 = 
-        OH_Drawing_CreateCornerPathEffect(TEST_CORNER_RADIUS_NEGATIVE_SMALL);
+    OH_Drawing_PathEffect* pathEffect3 = OH_Drawing_CreateCornerPathEffect(TEST_CORNER_RADIUS_NEGATIVE_SMALL);
     // add assert
     EXPECT_EQ(pathEffect3, nullptr);
     // 4. OH_Drawing_CreateCornerPathEffect with -1 as the parameter
@@ -499,7 +498,7 @@ int TestCreateComposePathEffectNormal()
     EXPECT_NE(discretePathEffect, nullptr);
 
     // 3. OH_Drawing_CreateComposePathEffect with normal parameters
-    OH_Drawing_PathEffect* composePathEffect = 
+    OH_Drawing_PathEffect* composePathEffect =
         OH_Drawing_CreateComposePathEffect(cornerPathEffect, discretePathEffect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_NE(composePathEffect, nullptr);
@@ -538,7 +537,8 @@ int TestCreateComposePathEffectNull()
     EXPECT_NE(discretePathEffect, nullptr);
 
     // 3. OH_Drawing_CreateComposePathEffect with first parameter as nullptr
-    OH_Drawing_PathEffect* composePathEffect1 = OH_Drawing_CreateComposePathEffect(nullptr, discretePathEffect);
+    OH_Drawing_PathEffect* composePathEffect1 =
+        OH_Drawing_CreateComposePathEffect(nullptr, discretePathEffect);
     EXPECT_EQ(composePathEffect1, nullptr);
 
     // 4. OH_Drawing_CreateComposePathEffect with second parameter as nullptr
