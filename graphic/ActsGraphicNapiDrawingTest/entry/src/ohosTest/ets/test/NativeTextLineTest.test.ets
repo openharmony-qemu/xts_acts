@@ -38,8 +38,8 @@ export default function NativeTextLineTest() {
     })
     /**
      * @tc.name   TextLineTest001
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_001
-     * @tc.desc   TextLineTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0100
+     * @tc.desc   test for the textLine GetGlyphCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -51,8 +51,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest002
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_002
-     * @tc.desc   TextLineTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0200
+     * @tc.desc   test for the textLine GetGlyphCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -64,8 +64,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest003
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_003
-     * @tc.desc   TextLineTest003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0300
+     * @tc.desc   test for the textLine GetGlyphCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -77,8 +77,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest004
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_004
-     * @tc.desc   TextLineTest004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0400
+     * @tc.desc   test for the textLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -90,8 +90,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest005
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_005
-     * @tc.desc   TextLineTest005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0500
+     * @tc.desc   test for the textLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -103,8 +103,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest006
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_006
-     * @tc.desc   TextLineTest006
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0600
+     * @tc.desc   test for the textLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -116,8 +116,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest007
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_007
-     * @tc.desc   TextLineTest007
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0700
+     * @tc.desc   test for the textLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,8 +129,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest008
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_008
-     * @tc.desc   TextLineTest008
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0800
+     * @tc.desc   test for the textLine GetGlyphRuns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -142,8 +142,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest009
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_009
-     * @tc.desc   TextLineTest009
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_0900
+     * @tc.desc   test for the textLine GetGlyphRuns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -155,8 +155,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest010
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_010
-     * @tc.desc   TextLineTest010
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1000
+     * @tc.desc   test for the textLine GetGlyphRuns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -168,8 +168,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest011
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_011
-     * @tc.desc   TextLineTest011
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1100
+     * @tc.desc   test for the textLine GetGlyphRuns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -181,8 +181,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest012
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_012
-     * @tc.desc   TextLineTest012
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1200
+     * @tc.desc   test for the textLine GetTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -194,8 +194,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest013
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_013
-     * @tc.desc   TextLineTest013
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1300
+     * @tc.desc   test for the textLine GetTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -207,8 +207,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest014
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_014
-     * @tc.desc   TextLineTest014
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1400
+     * @tc.desc   test for the textLine GetTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -220,8 +220,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest015
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_015
-     * @tc.desc   TextLineTest015
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1500
+     * @tc.desc   test for the textLine GetTypographicBounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -233,8 +233,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest016
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_016
-     * @tc.desc   TextLineTest016
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1600
+     * @tc.desc   test for the textLine GetTrailingSpaceWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -246,8 +246,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest017
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_017
-     * @tc.desc   TextLineTest017
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1700
+     * @tc.desc   test for the textLine GetTrailingSpaceWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -259,8 +259,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest018
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_018
-     * @tc.desc   TextLineTest018
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1800
+     * @tc.desc   test for the textLine GetTrailingSpaceWidth
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -272,8 +272,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest019
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_019
-     * @tc.desc   TextLineTest019
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_1900
+     * @tc.desc   test for the textLine GetOffsetForStringIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -285,8 +285,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest020
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_020
-     * @tc.desc   TextLineTest020
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2000
+     * @tc.desc   test for the textLine GetOffsetForStringIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -298,8 +298,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest021
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_021
-     * @tc.desc   TextLineTest021
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2100
+     * @tc.desc   test for the textLine EnumerateCaretOffsets
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -311,8 +311,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest022
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_022
-     * @tc.desc   TextLineTest022
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2200
+     * @tc.desc   test for the textLine EnumerateCaretOffsets
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -324,8 +324,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest023
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_023
-     * @tc.desc   TextLineTest023
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2300
+     * @tc.desc   test for the textLine EnumerateCaretOffsets
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -337,8 +337,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest024
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_024
-     * @tc.desc   TextLineTest024
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2400
+     * @tc.desc   test for the textLine GetAlignmentOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -350,8 +350,8 @@ export default function NativeTextLineTest() {
 
     /**
      * @tc.name   TextLineTest025
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TextLineTest_025
-     * @tc.desc   TextLineTest025
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_TEXT_LINE_TEST_2500
+     * @tc.desc   test for the textLine GetAlignmentOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

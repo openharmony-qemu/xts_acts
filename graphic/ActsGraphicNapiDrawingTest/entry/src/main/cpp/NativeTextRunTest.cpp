@@ -27,9 +27,6 @@
 #include <native_drawing/drawing_text_typography.h>
 #include "include/NativeCopyStyleTest.h"
 #include "include/OhosCommonTest.h"
-#ifdef RS_ENABLE_VK
-#include "platform/ohos/backend/rs_vulkan_context.h"
-#endif
 
 namespace OHOS {
 namespace Rosen {
@@ -40,7 +37,7 @@ constexpr static float FLOAT_DATA_EPSILON = 1e-6f;
 
 /**
  * @tc.name   RunTest001
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_001
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0100
  * @tc.desc   Test for get run by index
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -83,7 +80,7 @@ int RunTest001()
 
 /**
  * @tc.name   RunTest002
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_002
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0200
  * @tc.desc   Test for get run glyph count
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -119,7 +116,7 @@ int RunTest002()
 
 /**
  * @tc.name   RunTest003
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_003
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0300
  * @tc.desc   Test for get glyph index in paragraph
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -160,7 +157,7 @@ int RunTest003()
 
 /**
  * @tc.name   RunTest004
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_004
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0400
  * @tc.desc   Test for get run string range
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -201,7 +198,7 @@ int RunTest004()
 
 /**
  * @tc.name   RunTest005
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_005
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0500
  * @tc.desc   Test for get run typographic bounds
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -247,7 +244,7 @@ int RunTest005()
 
 /**
  * @tc.name   RunTest006
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_006
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0600
  * @tc.desc   Test for get run glyphs
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -294,7 +291,7 @@ int RunTest006()
 
 /**
  * @tc.name   RunTest007
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_007
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0700
  * @tc.desc   Test for get run positions
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -339,7 +336,7 @@ int RunTest007()
 
 /**
  * @tc.name   RunTest008
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_008
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0800
  * @tc.desc   Test for special value input parameters testing
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -396,7 +393,7 @@ int RunTest008()
 
 /**
  * @tc.name   RunTest009
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_RunTest_009
+ * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0900
  * @tc.desc   Test for the run of nullptr pointer testing
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST

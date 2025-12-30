@@ -38,8 +38,8 @@ export default function NativeTextRunTest() {
     })
     /**
      * @tc.name   RunTest001
-     * @tc.number RunTest001
-     * @tc.desc   RunTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0100
+     * @tc.desc   Test for get run by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -51,8 +51,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest002
-     * @tc.number RunTest002
-     * @tc.desc   RunTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0200
+     * @tc.desc   Test for get run glyph count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -64,8 +64,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest003
-     * @tc.number RunTest003
-     * @tc.desc   RunTest003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0300
+     * @tc.desc   Test for get glyph index in paragraph
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -77,8 +77,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest004
-     * @tc.number RunTest004
-     * @tc.desc   RunTest004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0400
+     * @tc.desc   Test for get run string range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -90,8 +90,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest005
-     * @tc.number RunTest005
-     * @tc.desc   RunTest005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0500
+     * @tc.desc   Test for get run typographic bounds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -103,8 +103,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest006
-     * @tc.number RunTest006
-     * @tc.desc   RunTest006
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0600
+     * @tc.desc   Test for get run glyphs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -116,8 +116,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest007
-     * @tc.number RunTest007
-     * @tc.desc   RunTest007
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0700
+     * @tc.desc   Test for get run positions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,8 +129,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest008
-     * @tc.number RunTest008
-     * @tc.desc   RunTest008
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0800
+     * @tc.desc   Test for special value input parameters testing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -142,8 +142,8 @@ export default function NativeTextRunTest() {
 
     /**
      * @tc.name   RunTest009
-     * @tc.number RunTest009
-     * @tc.desc   RunTest009
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_RUN_TEST_0900
+     * @tc.desc   Test for the run of nullptr pointer testing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

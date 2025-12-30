@@ -38,8 +38,8 @@ export default function NativeTypographyAutoSpaceTest() {
     })
     /**
      * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest001
-     * @tc.number OHDrawingSetTypographyTextAutoSpaceTest001
-     * @tc.desc   OHDrawingSetTypographyTextAutoSpaceTest001
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_SET_TYPOGRAPHY_TEXT_AUTO_SPACE_TEST_0100
+     * @tc.desc   test for set auto space when paragraph with single run
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -51,8 +51,8 @@ export default function NativeTypographyAutoSpaceTest() {
 
     /**
      * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest002
-     * @tc.number OHDrawingSetTypographyTextAutoSpaceTest002
-     * @tc.desc   OHDrawingSetTypographyTextAutoSpaceTest002
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_SET_TYPOGRAPHY_TEXT_AUTO_SPACE_TEST_0200
+     * @tc.desc   test for set auto space when paragraph with single run and the layout width is at the boundary value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -64,8 +64,8 @@ export default function NativeTypographyAutoSpaceTest() {
 
     /**
      * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest003
-     * @tc.number OHDrawingSetTypographyTextAutoSpaceTest003
-     * @tc.desc   OHDrawingSetTypographyTextAutoSpaceTest003
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_SET_TYPOGRAPHY_TEXT_AUTO_SPACE_TEST_0300
+     * @tc.desc   test for set auto space when paragraph with many lines
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -77,8 +77,8 @@ export default function NativeTypographyAutoSpaceTest() {
 
     /**
      * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest004
-     * @tc.number OHDrawingSetTypographyTextAutoSpaceTest004
-     * @tc.desc   OHDrawingSetTypographyTextAutoSpaceTest004
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_SET_TYPOGRAPHY_TEXT_AUTO_SPACE_TEST_0400
+     * @tc.desc   test for set auto space when paragraph is many lines and the layout width is at the boundary value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
