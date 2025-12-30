@@ -273,5 +273,70 @@ export default function RunningLockPermissionTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   RunningLockPermissionTest_0900
+     * @tc.number RunningLockPermissionTest_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RunningLockPermissionTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'RunningLockPermissionTest_0900';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+          expect().assertFail();
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(201);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   RunningLockPermissionTest_1000
+     * @tc.number RunningLockPermissionTest_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RunningLockPermissionTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'RunningLockPermissionTest_1000';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+            (error: BusinessError, lock: runningLock.RunningLock) => {
+              if (error) {
+                console.error(`${TAG} error: ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(201);
+              } else {
+                console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+                expect().assertFail();
+              }
+            });
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(201);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
   })
 }
