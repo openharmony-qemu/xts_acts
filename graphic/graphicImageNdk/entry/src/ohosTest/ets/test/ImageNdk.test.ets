@@ -359,7 +359,7 @@ export default function imageNdkTest() {
       };
       const pixels = new ArrayBuffer(5 * 5 * 4);
       const view = new Uint8Array(pixels);
-      view.fill(255);
+      view.fill(0xFF);
       const pixelMap = image.createPixelMapSync(options);
       let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, pixels, false);
       let msg = 'testNativeWritePixelsToArea result: '
@@ -585,114 +585,114 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromNativeBuffer
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3000
-     * @tc.desc   1.testNativeCreatePixelMapFromNativeBuffer
+     * @tc.name   testNativeCreatePixelmapFromNativeBuffer
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromNativeBuffer_3000
+     * @tc.desc   1.testNativeCreatePixelmapFromNativeBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromNativeBuffer',
+    it('testNativeCreatePixelmapFromNativeBuffer',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
         size: { width: 10, height: 10 }
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
-      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, false);
-      let msg = 'testNativeCreatePixelMapFromNativeBuffer result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, false);
+      let msg = 'testNativeCreatePixelmapFromNativeBuffer result: '
       console.info(msg + result);
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromNativeBufferNotDMA
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3100
-     * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNotDMA
+     * @tc.name   testNativeCreatePixelmapFromNativeBufferNotDMA
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromNativeBuffer_3100
+     * @tc.desc   1.testNativeCreatePixelmapFromNativeBufferNotDMA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromNativeBufferNotDMA',
+    it('testNativeCreatePixelmapFromNativeBufferNotDMA',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
         size: { width: 10, height: 10 }
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.SHARE_MEMORY);
-      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, false);
-      let msg = 'testNativeCreatePixelMapFromNativeBufferNotDMA result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, false);
+      let msg = 'testNativeCreatePixelmapFromNativeBufferNotDMA result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
       done();
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromNativeBufferNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3200
-     * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNull
+     * @tc.name   testNativeCreatePixelmapFromNativeBufferNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromNativeBuffer_3200
+     * @tc.desc   1.testNativeCreatePixelmapFromNativeBufferNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromNativeBufferNull',
+    it('testNativeCreatePixelmapFromNativeBufferNull',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
         size: { width: 10, height: 10 }
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
-      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, true);
-      let msg = 'testNativeCreatePixelMapFromNativeBufferNull result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, true);
+      let msg = 'testNativeCreatePixelmapFromNativeBufferNull result: '
       console.info(msg + result);
       expect(result).assertEqual(0);
       done();
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromSurface
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3300
-     * @tc.desc   1.testNativeCreatePixelMapFromSurface
+     * @tc.name   testNativeCreatePixelmapFromSurface
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromSurface_3300
+     * @tc.desc   1.testNativeCreatePixelmapFromSurface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromSurface',
+    it('testNativeCreatePixelmapFromSurface',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('123', false);
-      let msg = 'testNativeCreatePixelMapFromSurface result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromSurface('123', false);
+      let msg = 'testNativeCreatePixelmapFromSurface result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
       done();
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromSurfaceInvalidId
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3400
-     * @tc.desc   1.testNativeCreatePixelMapFromSurfaceInvalidId
+     * @tc.name   testNativeCreatePixelmapFromSurfaceInvalidId
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromSurface_3400
+     * @tc.desc   1.testNativeCreatePixelmapFromSurfaceInvalidId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromSurfaceInvalidId',
+    it('testNativeCreatePixelmapFromSurfaceInvalidId',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('ABC', false);
-      let msg = 'testNativeCreatePixelMapFromSurfaceInvalidId result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromSurface('ABC', false);
+      let msg = 'testNativeCreatePixelmapFromSurfaceInvalidId result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
       done();
     })
 
     /**
-     * @tc.name   testNativeCreatePixelMapFromSurfaceNull
-     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3500
-     * @tc.desc   1.testNativeCreatePixelMapFromSurfaceNull
+     * @tc.name   testNativeCreatePixelmapFromSurfaceNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelmapFromSurface_3500
+     * @tc.desc   1.testNativeCreatePixelmapFromSurfaceNull
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeCreatePixelMapFromSurfaceNull',
+    it('testNativeCreatePixelmapFromSurfaceNull',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('123', true);
-      let msg = 'testNativeCreatePixelMapFromSurfaceNull result: '
+      let result: number = ndkTest.testNativeCreatePixelmapFromSurface('123', true);
+      let msg = 'testNativeCreatePixelmapFromSurfaceNull result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
       done();

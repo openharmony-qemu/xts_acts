@@ -41,7 +41,7 @@ namespace {
     const uint32_t NUM_7 = 7;
     const uint32_t NUM_8 = 8;
     const uint32_t NUM_9 = 9;
-    const uint32_t CHANNEL_8BIT_MAX = 255;
+    const uint32_t CHANNEL_8BIT_MAX = 0xFF;
     const uint32_t MAX_BUFFER_SIZE = 512;
     const uint32_t MAX_COLOR_SIZE = 96;
     const uint32_t MAX_QUALITY_SIZE = 98;
@@ -330,7 +330,7 @@ static napi_value TestNativeReadPixelsFromArea(napi_env env, napi_callback_info 
     Image_Region region = {static_cast<uint32_t>(x), static_cast<uint32_t>(y),
         static_cast<uint32_t>(width), static_cast<uint32_t>(height)};
     size_t dataSize = width * height * 4;
-    unique_ptr<uint8_t[]> data = make_unique<uint8_t[]>(dataSize);
+    std::unique_ptr<uint8_t[]> data = std::make_unique<uint8_t[]>(dataSize);
 
     Image_PositionArea positionArea = {
         data.get(),
@@ -532,7 +532,7 @@ static napi_value TestNativeCreateCroppedAndScaledPixelMap(napi_env env, napi_ca
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
-static napi_value TestNativeCreatePixelMapFromNativeBuffer(napi_env env, napi_callback_info info)
+static napi_value TestNativeCreatePixelmapFromNativeBuffer(napi_env env, napi_callback_info info)
 {
     size_t argc = NUM_2;
     napi_value argv[NUM_2] = {nullptr};
@@ -570,13 +570,13 @@ static napi_value TestNativeCreatePixelMapFromNativeBuffer(napi_env env, napi_ca
         return getJsResult(env, -1);
     }
 
-    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelMapFromNativeBuffer success.");
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelmapFromNativeBuffer success.");
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
-static string ParseStringArg(napi_env env, napi_value value)
+static std::string ParseStringArg(napi_env env, napi_value value)
 {
-    string strValue = "";
+    std::string strValue = "";
     size_t bufLength = 0;
     napi_status status = napi_get_value_string_utf8(env, value, nullptr, 0, &bufLength);
     if (status == napi_ok && bufLength > 0 && bufLength < PATH_MAX) {
@@ -596,7 +596,7 @@ static string ParseStringArg(napi_env env, napi_value value)
     return strValue;
 }
 
-static napi_value TestNativeCreatePixelMapFromSurface(napi_env env, napi_callback_info info)
+static napi_value TestNativeCreatePixelmapFromSurface(napi_env env, napi_callback_info info)
 {
     size_t argc = NUM_2;
     napi_value argv[NUM_2] = {nullptr};
@@ -610,18 +610,18 @@ static napi_value TestNativeCreatePixelMapFromSurface(napi_env env, napi_callbac
     napi_get_value_bool(env, argv[NUM_1], &useNull);
 
     OH_PixelmapNative* dstPixelmap = nullptr;
-    errCode = useNull ? OH_PixelmapNative_CreatePixelMapFromSurface(nullptr, 0, nullptr) :
-        OH_PixelmapNative_CreatePixelMapFromSurface(surfaceId.c_str(), surfaceId.length(), &dstPixelmap);
+    Image_ErrorCode errCode = useNull ? OH_PixelmapNative_CreatePixelmapFromSurface(nullptr, 0, nullptr) :
+        OH_PixelmapNative_CreatePixelmapFromSurface(surfaceId.c_str(), surfaceId.length(), &dstPixelmap);
     if (errCode != IMAGE_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelMapFromSurface failed, errCode: %{public}d.", errCode);
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelmapFromSurface failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
     }
     if (dstPixelmap == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelMapFromSurface did not work as expected.");
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelmapFromSurface did not work as expected.");
         return getJsResult(env, -1);
     }
 
-    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelMapFromSurface success.");
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelmapFromSurface success.");
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
@@ -746,9 +746,9 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"testNativeCreateCroppedAndScaledPixelMap", nullptr, TestNativeCreateCroppedAndScaledPixelMap, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-        {"testNativeCreatePixelMapFromNativeBuffer", nullptr, TestNativeCreatePixelMapFromNativeBuffer, nullptr,
+        {"testNativeCreatePixelmapFromNativeBuffer", nullptr, TestNativeCreatePixelmapFromNativeBuffer, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-        {"testNativeCreatePixelMapFromSurface", nullptr, TestNativeCreatePixelMapFromSurface, nullptr, nullptr,
+        {"testNativeCreatePixelmapFromSurface", nullptr, TestNativeCreatePixelmapFromSurface, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testNativeGetUniqueId", nullptr, TestNativeGetUniqueId, nullptr, nullptr,
          nullptr, napi_default, nullptr},

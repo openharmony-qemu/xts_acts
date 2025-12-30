@@ -37,7 +37,7 @@ export const testNativeCreateAlphaPixelmap: (pixelMap: image.PixelMap, useNull: 
 export const testNativeClone: (pixelMap: image.PixelMap, useNull: boolean) => number;
 export const testNativeCreateCroppedAndScaledPixelMap: (pixelMap: image.PixelMap, x: number, y: number, width: number,
   height: number, scaleX: number, scaleY: number, level: number, useNull: boolean) => number;
-export const testNativeCreatePixelMapFromNativeBuffer: (pixelMap: image.PixelMap, useNull: boolean) => number;
-export const testNativeCreatePixelMapFromSurface: (surfaceId: string, useNull: boolean) => number;
-export const testNativeGetUniqueId: (pixelMap: image.PixelMa, useNull: boolean) => number;
+export const testNativeCreatePixelmapFromNativeBuffer: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeCreatePixelmapFromSurface: (surfaceId: string, useNull: boolean) => number;
+export const testNativeGetUniqueId: (pixelMap: image.PixelMap, useNull: boolean) => number;
 export const testNativeIsReleased: (pixelMap: image.PixelMap, callAfterRelease: boolean, useNull: boolean) => number;
