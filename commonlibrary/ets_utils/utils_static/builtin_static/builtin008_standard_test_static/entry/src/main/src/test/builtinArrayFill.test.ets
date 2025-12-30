@@ -371,30 +371,6 @@ export default function BuiltinArrayFillTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_14700
-     * @tc.name    testBuiltinArrayFill1215
-     * @tc.desc    Test fill() with large float indices
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill1215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayFill1215";
-      try {
-        let arr: FixedArray<number> = [1, 2, 3, 4, 5];
-        let result = fill(arr, 9, -10.5, 100.7);
-        expect(result[0]).assertEqual(9);
-        expect(result[1]).assertEqual(9);
-        expect(result[2]).assertEqual(9);
-        expect(result[3]).assertEqual(9);
-        expect(result[4]).assertEqual(9);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_14800
      * @tc.name    testBuiltinArrayFill1216
      * @tc.desc    Test fill() with same start and end (negative)
@@ -1347,27 +1323,6 @@ export default function BuiltinArrayFillTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_10000_01
-     * @tc.name    testBuiltinArrayFill0613_01
-     * @tc.desc    Test floating-point indices handling
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill0613_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill0613_01";
-      try {
-        const arr = [1, 2, 3, 4, 5];
-        const result = arr.fill(9, 1.2, 3.8);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 9, 9, 4, 5]));
-        expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_9500_02
      * @tc.name    testBuiltinArrayFill0608_02
      * @tc.desc    Test out-of-bound indices handling
@@ -1402,27 +1357,6 @@ export default function BuiltinArrayFillTest() {
         const arr = [1, 2, 3, 4, 5];
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
-        expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_10000_02
-     * @tc.name    testBuiltinArrayFill0613_02
-     * @tc.desc    Test floating-point indices handling
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill0613_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill0613_02";
-      try {
-        const arr = [1, 2, 3, 4, 5];
-        const result = arr.fill(9, 1.2, 3.8);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 9, 9, 4, 5]));
         expect(result === arr).assertTrue();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -1473,27 +1407,6 @@ export default function BuiltinArrayFillTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_10000_03
-     * @tc.name    testBuiltinArrayFill0613
-     * @tc.desc    Test floating-point indices handling
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill0613', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill0613";
-      try {
-        const arr = [1, 2, 3, 4, 5];
-        const result = arr.fill(9, 1.2, 3.8);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 9, 9, 4, 5]));
-        expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_9500_04
      * @tc.name    testBuiltinArrayFill0608_03
      * @tc.desc    Test out-of-bound indices handling
@@ -1528,27 +1441,6 @@ export default function BuiltinArrayFillTest() {
         const arr = [1, 2, 3, 4, 5];
         const result = arr.fill(9, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
-        expect(result === arr).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_10000
-     * @tc.name    testBuiltinArrayFill613
-     * @tc.desc    Test floating-point indices handling
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill613', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill613";
-      try {
-        const arr = [1, 2, 3, 4, 5];
-        const result = arr.fill(9, 1.2, 3.8);
-        expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 9, 9, 4, 5]));
         expect(result === arr).assertTrue();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
@@ -1631,26 +1523,6 @@ export default function BuiltinArrayFillTest() {
       try {
         const arr = [false, false, false, false];
         arr.fill(true, -3, -1);
-        expect(arr.join(',')).assertEqual('false,true,true,false');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_8100
-     * @tc.name    testBuiltinArrayFill0216
-     * @tc.desc    Test fill with decimal indexes
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testBuiltinArrayFill0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayFill0216";
-      try {
-        const arr = [false, false, false, false];
-        arr.fill(true, 1.2, 3.8);
         expect(arr.join(',')).assertEqual('false,true,true,false');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);

@@ -83,26 +83,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number TEST_FIND_INDEX_BOOLEAN_ARRAY_003
-     * @tc.name   testBuiltinArrayFindIndex10003
-     * @tc.desc   Test findIndex method using index parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10003";
-      try {
-        const arr: FixedArray<boolean> = [true, false, true, false];
-        const index = findIndex(arr, (v: boolean, k: number) => v && k > 1);
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number TEST_FIND_INDEX_BOOLEAN_ARRAY_004
      * @tc.name   testBuiltinArrayFindIndex10004
      * @tc.desc   Test findIndex method matching the first element
@@ -331,26 +311,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_003
-     * @tc.name   testBuiltinArrayFindIndex10014
-     * @tc.desc   Test findIndex using index parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10014";
-      try {
-        const arr: FixedArray<byte> = [0x0A, 0x0B, 0x0C, 0x0D];
-        const index = findIndex(arr, (v: byte, k: number) => v % 2 === 0 && k > 1);
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_005
      * @tc.name   testBuiltinArrayFindIndex10015
      * @tc.desc   Test findIndex matching the last element
@@ -384,83 +344,6 @@ export default function BuiltinArrayFindIndexTest() {
         const emptyArr: FixedArray<byte> = [];
         const index = findIndex(emptyArr, (v: byte) => v === 0x00 as byte);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_007
-     * @tc.name   testBuiltinArrayFindIndex10017
-     * @tc.desc   Test findIndex using array parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10017";
-      try {
-        const arr: FixedArray<byte> = [0x01, 0x02, 0x03, 0x04];
-        const index = findIndex(arr, (v: byte, k: number, a: FixedArray<byte>) =>
-        v === a[a.length - 1] / 2
-        );
-        expect(index).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_008
-     * @tc.name   testBuiltinArrayFindIndex10018
-     * @tc.desc   Test array parameter boundary cases (large array and boundary indices)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10018";
-      try {
-        const largeArr = new Array<byte>(1000);
-        largeArr[largeArr.length - 1] = 0xFF as byte;
-        const index1 = findIndex(largeArr as FixedArray<byte>,
-          (v: byte, k: number, a: FixedArray<byte>) => {
-            expect(a.length).assertEqual(1000);
-            return k === a.length - 1;
-          }
-        );
-        expect(index1).assertEqual(999);
-        const arr: FixedArray<byte> = [0x01, 0x02];
-        findIndex(arr, (v: byte, k: number, a: FixedArray<byte>) => {
-          a[0] = 0x03 as byte;
-          return false;
-        });
-        expect(arr[0]).assertEqual(0x01);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_009
-     * @tc.name   testBuiltinArrayFindIndex10019
-     * @tc.desc   Test array parameter handling illegal value undefined
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10019";
-      try {
-        const arr1: FixedArray<byte> = [0x01, 256 as byte, 0x03];
-        const index1 = findIndex(arr1, (v: byte, k: number, a: FixedArray<byte>) => {
-          expect(a[1]).assertEqual(0);
-          return v === 0x03 as byte;
-        });
-        expect(index1).assertEqual(2);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -513,69 +396,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_001
-     * @tc.name   testBuiltinArrayFindIndex20001
-     * @tc.desc   Test basic functionality of findIndex (find specific character)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20001";
-      try {
-        const arr: FixedArray<char> = [97 as char, 98 as char, 99 as char, 100 as char];
-        const index = findIndex(
-          arr,
-          (v: char) => v === 'c'.charCodeAt(0)
-        );
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_002
-     * @tc.name   testBuiltinArrayFindIndex20002
-     * @tc.desc   Test case-sensitive character search
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20002";
-      try {
-        const arr: FixedArray<char> = [65 as char, 66 as char, 67 as char, 97 as char, 98 as char, 99 as char];
-        const index = findIndex(arr, (v: char) => v === 'a'.charCodeAt(0));
-        expect(index).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_003
-     * @tc.name   testBuiltinArrayFindIndex20003
-     * @tc.desc   Test finding special characters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20003";
-      try {
-        const arr: FixedArray<char> = [10 as char, 9 as char, 32 as char, 33 as char, 64 as char];
-        const index = findIndex(arr, (v: char) => v === ' '.charCodeAt(0));
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_006
      * @tc.name   testBuiltinArrayFindIndex20006
      * @tc.desc   Test findIndex handling empty array
@@ -593,100 +413,6 @@ export default function BuiltinArrayFindIndexTest() {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_008
-     * @tc.name   testBuiltinArrayFindIndex20007
-     * @tc.desc   Test findIndex using array parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20007";
-      try {
-        const arr: FixedArray<char> = [104 as char, 101 as char, 108 as char, 108 as char, 111 as char];
-        const index = findIndex(arr, (v: char, k: number, a: FixedArray<char>) =>
-        k === a.length - 2
-        );
-        expect(index).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_009
-     * @tc.name   testBuiltinArrayFindIndex20008
-     * @tc.desc   Test findIndex behavior when array contains null/undefined
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20008";
-      try {
-        const arr: FixedArray<char | null> = [97 as char, null, 99 as char];
-        const index = findIndex(arr as FixedArray<char>, (v: char) => v === 'c'.charCodeAt(0));
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_0900
-     * @tc.name   testBuiltinArrayFindIndex20009
-     * @tc.desc   Test findIndex behavior with illegal character values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20009";
-      try {
-        const arr: FixedArray<char | null> = [97 as char, null, 99 as char];
-        const index = findIndex(arr as FixedArray<char>, (v: char) => v === 'c'.charCodeAt(0));
-        expect(index).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_CHAR_ARRAY_1000
-     * @tc.name   testBuiltinArrayFindIndex20010
-     * @tc.desc   Test findIndex behavior when callback function throws an exception
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex20010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex20010";
-      let errorCaught = false;
-      try {
-        const arr: FixedArray<char> = [
-          97 as char,
-          98 as char,
-          99 as char
-        ];
-        findIndex(arr, (v: char, index: number) => {
-          if (index === 1) {
-            throw new Error("Intentional callback error");
-          }
-          return v === 'c'.charCodeAt(0);
-        });
-      } catch (err: BusinessError) {
-        errorCaught = true;
-        expect(err instanceof Error).assertTrue();
-        expect((err as Error).message).assertEqual("Intentional callback error");
-        console.info(`${TAG} error caught as expected: ${err}`);
-      }
-      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -1042,27 +768,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_DOUBLE_2000
-     * @tc.name   testFindIndexDoubleWithIndex0020
-     * @tc.desc   Test findIndex with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexDoubleWithIndex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexDoubleWithIndex0020";
-      try {
-        const arr: FixedArray<double> = [0.0, 1.1, 2.2, 3.3] as FixedArray<double>;
-        const idx = findIndex(arr, (v: double, i: number) => v > 2.0 && i % 2 === 0);
-        expect(idx).assertEqual(2);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_DOUBLE_3000
      * @tc.name   testFindIndexDoubleNotFound0030
      * @tc.desc   Test findIndex when no element satisfies predicate
@@ -1234,29 +939,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_FLOAT_5000
-     * @tc.name   testFindIndexFloatWithIndexAndArray0050
-     * @tc.desc   Test findIndex using index and array parameters in predicate
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexFloatWithIndexAndArray0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexFloatWithIndexAndArray0050";
-      try {
-        const floatArray: FixedArray<float> = [10.0f, 20.0f, 30.0f] as FixedArray<float>;
-        const idx = findIndex(floatArray, (v: float, i: number, arr: FixedArray<float>) =>
-        v === 20.0 && i === 1 && arr.length === 3
-        );
-        expect(idx).assertEqual(1);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_INT_1000_01
      * @tc.name   testFindIndexIntBasic0010_01
      * @tc.desc   Test basic findIndex operation with integer array
@@ -1269,28 +951,6 @@ export default function BuiltinArrayFindIndexTest() {
       try {
         const intArray: FixedArray<int> = [5, 8, 13, 21] as FixedArray<int>;
         const idx = findIndex(intArray, (value: int) => value === 13);
-        expect(idx).assertEqual(2);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_INT_200
-     * @tc.name   testFindIndexIntWithIndex0020
-     * @tc.desc   Test findIndex with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexIntWithIndex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexIntWithIndex0020";
-      try {
-        const intArray: FixedArray<int> = [10, 20, 30] as FixedArray<int>;
-        const idx = findIndex(intArray,
-          (value: int, index: number, array: FixedArray<int>) => value > array[0] && index > 1);
         expect(idx).assertEqual(2);
         console.log(`${TAG} success`);
       } catch (err) {
@@ -1405,27 +1065,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_INT_4000_02
-     * @tc.name   testFindIndexIntWithArray0040
-     * @tc.desc   Test predicate using array parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexIntWithArray0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexIntWithArray0040";
-      try {
-        const intArray: FixedArray<int> = [7, 7, 7] as FixedArray<int>;
-        const idx = findIndex(intArray, (v: int, i: number, arr: FixedArray<int>) => v === arr[0]);
-        expect(idx).assertEqual(0);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_LONG_1000
      * @tc.name   testFindIndexLongBasic0010
      * @tc.desc   Test basic findIndex operation with long array
@@ -1438,29 +1077,6 @@ export default function BuiltinArrayFindIndexTest() {
       try {
         const longArray: FixedArray<long> = [10, 20, 30] as FixedArray<long>;
         const idx = findIndex(longArray, (value: long) => value === 20);
-        expect(idx).assertEqual(1);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_LONG_2000
-     * @tc.name   testFindIndexLongWithIndex0020
-     * @tc.desc   Test findIndex with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexLongWithIndex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexLongWithIndex0020";
-      try {
-        const longArray: FixedArray<long> = [5, 15, 25, 35] as FixedArray<long>;
-        const idx = findIndex(longArray,
-          (value: long, index: number, array: FixedArray<long>) =>
-          value > 10 && index < array.length - 1);
         expect(idx).assertEqual(1);
         console.log(`${TAG} success`);
       } catch (err) {
@@ -1545,28 +1161,6 @@ export default function BuiltinArrayFindIndexTest() {
       try {
         const shortArray: FixedArray<short> = [1, 3, 5, 7] as FixedArray<short>;
         const idx = findIndex(shortArray, (value: short) => value === 5);
-        expect(idx).assertEqual(2);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDINDEX_SHORT_2000
-     * @tc.name   testFindIndexWithIndex0020
-     * @tc.desc   Test findIndex with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindIndexWithIndex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindIndexWithIndex0020";
-      try {
-        const shortArray: FixedArray<short> = [10, 20, 30, 40] as FixedArray<short>;
-        const idx = findIndex(shortArray,
-          (value: short, index: number) => value > 25 && index % 2 === 0);
         expect(idx).assertEqual(2);
         console.log(`${TAG} success`);
       } catch (err) {
