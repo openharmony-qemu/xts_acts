@@ -49,7 +49,7 @@ void DrawingNativeSamplingOptionsTestTearDown()
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0100
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -84,7 +84,7 @@ int TestSamplingOptionsCreateDestroyDestroyNormal()
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0200
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -103,7 +103,7 @@ int TestSamplingOptionsCreateDestroyDestroyNull()
 
 /**
  * @tc.name   testSamplingOptionsCreateDestroyDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0300
  * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -143,7 +143,7 @@ int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
 
 /**
  * @tc.name   testSamplingOptionsCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0400
  * @tc.desc   test for testSamplingOptionsCopyNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -165,7 +165,7 @@ int TestSamplingOptionsCopyNormal()
 
 /**
  * @tc.name   testSamplingOptionsCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0500
  * @tc.desc   test for testSamplingOptionsCopyNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -185,7 +185,7 @@ int TestSamplingOptionsCopyNull()
 
 /**
  * @tc.name   testSamplingOptionsCopyMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SAMPLING_OPTIONS_0600
  * @tc.desc   test for testSamplingOptionsCopyMultiCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
