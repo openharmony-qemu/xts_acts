@@ -104,7 +104,6 @@ export default function RdbStoreUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
     afterAll(async () => {
@@ -1062,8 +1061,8 @@ export default function RdbStoreUpdateWithReturning() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      try {
-        await deferredTrans?.insert("test", valueBucket);
+      await deferredTrans?.insert("test", valueBucket);
+      try {       
         await rdbStore?.updateWithReturning(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
@@ -1071,14 +1070,13 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       try {
-        await deferredTrans?.insert("test", valueBucket);
         rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync020 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.commit();
+      await deferredTrans?.rollback();
       console.log(TAG + "************* updateWithReturning020 end *************");
       done();
     })
