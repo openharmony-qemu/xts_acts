@@ -25,7 +25,7 @@ group("testfwk") {
   } else {
     deps = [
       "perftest:ActsPerfTestTest",
-      "perftestStatic:ActsPerfTestTestStatic",
+      "perftestStatic:ActsPerfTestTestStatic",  
       "perftestScene:ActsPerfTestScene",
       "uitest:ActsUiTest",
       "uitestScene:ActsUiTestScene",
