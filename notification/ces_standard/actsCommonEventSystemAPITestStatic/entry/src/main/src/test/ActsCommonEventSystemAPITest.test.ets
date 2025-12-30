@@ -393,8 +393,47 @@ export default function ActsCommonEventSystemAPITest() {
         let error : BusinessError = err as BusinessError
         console.info(`${TAG} cancel5 Promise error: ${error.code}, errMes: ${error.message}`)
         expect(error?.code).assertEqual(1600007)
-        done()
       })
+
+      let index1: number = 0;
+        let publishCallback = (err: BusinessError|null) => {
+          index1 += 1
+          console.info(`index1:` + index1)
+          if (index1 == 11) {
+            console.info(`${Tag} fail in publishing notification:` + err?.code)
+            expect(err?.code).assertEqual(1600009);
+            done()
+          } else {
+            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
+            expect(err).assertEqual(null);
+          }
+        }
+
+        for (let index: int = 0; index <= 10; index++) {
+          let notificationRequest: notificationManager.NotificationRequest = {
+            id: index,
+            content: {
+              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+              normal: {
+                title: 'text_title',
+                text: 'text_text',
+                additionalText: 'test_Publish'
+              } as notificationManager.NotificationBasicContent,
+            } as notificationManager.NotificationContent,
+            creatorBundleName: "123",
+            creatorUid: 123,
+            creatorPid: 123,
+            creatorUserId: 123,
+            hashCode: "123",
+            source: 0,
+            deviceId: undefined,
+            notificationFlags: undefined,
+            agentBundle: undefined,
+            appInstanceKey: undefined,
+          }
+          notificationManager.publish(notificationRequest, publishCallback)
+          await Utils.msSleep(60)
+        }
 
     })
     
@@ -441,45 +480,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
         console.info(`${Tag} button is success`)
 
-        let index1: number = 0;
-        let publishCallback = (err: BusinessError|null) => {
-          index1 += 1
-          console.info(`index1:` + index1)
-          if (index1 == 11) {
-            console.info(`${Tag} fail in publishing notification:` + err?.code)
-            expect(err?.code).assertEqual(1600009);
-            done()
-          } else {
-            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
-            expect(err).assertEqual(null);
-          }
-        }
-
-        for (let index: int = 0; index <= 10; index++) {
-          let notificationRequest: notificationManager.NotificationRequest = {
-            id: index,
-            content: {
-              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-              normal: {
-                title: 'text_title',
-                text: 'text_text',
-                additionalText: 'test_Publish'
-              } as notificationManager.NotificationBasicContent,
-            } as notificationManager.NotificationContent,
-            creatorBundleName: "123",
-            creatorUid: 123,
-            creatorPid: 123,
-            creatorUserId: 123,
-            hashCode: "123",
-            source: 0,
-            deviceId: undefined,
-            notificationFlags: undefined,
-            agentBundle: undefined,
-            appInstanceKey: undefined,
-          }
-          notificationManager.publish(notificationRequest, publishCallback)
-          await Utils.msSleep(60)
-        }
+        
 
         for (let index = 0; index <= 10; index++) {
           count = 0;
