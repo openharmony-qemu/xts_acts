@@ -166,8 +166,7 @@ public:
     };
 };
 
-NN_TensorDesc*
-    createTensorDesc(const int32_t* shape, size_t shapeNum, OH_NN_DataType dataType, OH_NN_Format format);
+NN_TensorDesc* createTensorDesc(const int32_t* shape, size_t shapeNum, OH_NN_DataType dataType, OH_NN_Format format);
 int SingleModelBuildEndStep(OH_NNModel* model, const OHNNGraphArgs& graphArgs);
 int BuildSingleOpGraph(OH_NNModel* model, const OHNNGraphArgs& graphArgs);
 int BuildSingleOpGraphWithQuantParams(OH_NNModel* model, const OHNNGraphArgs& graphArgs);
