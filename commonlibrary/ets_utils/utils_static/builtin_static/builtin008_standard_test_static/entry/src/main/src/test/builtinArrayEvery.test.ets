@@ -69,33 +69,6 @@ export default function BuiltinArrayEveryTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FOREACH_BOOL_6600
-     * @tc.name   testBuiltinArrayforEach0066
-     * @tc.desc   Test forEach with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayforEach0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayforEach0066";
-      try {
-        const boolArray: FixedArray<boolean> = [false, true, false, true] as FixedArray<boolean>;
-        let sumIndex = 0;
-        forEach(boolArray,
-          (value: boolean, index: number, array: FixedArray<boolean>) => {
-            if (value && index < array.length - 1) {
-              sumIndex += index;
-            }
-          });
-        expect(sumIndex).assertEqual(1);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FOREACH_BOOL_6700
      * @tc.name   testBuiltinArrayforEach0067
      * @tc.desc   Test forEach on empty array

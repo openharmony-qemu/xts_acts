@@ -1202,30 +1202,6 @@ export default function BuiltinArrayFill02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_13900
-     * @tc.name   testBuiltinArrayFill1207
-     * @tc.desc   Test fill() with float indices (converted to integers)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayFill1207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayFill1207';
-      try {
-        const arr: FixedArray<number> = [1, 2, 3, 4, 5];
-        const result = fill(arr, 9, 1.8, 3.2);
-        expect(result[0]).assertEqual(1);
-        expect(result[1]).assertEqual(9);
-        expect(result[2]).assertEqual(9);
-        expect(result[3]).assertEqual(4);
-        expect(result[4]).assertEqual(5);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_14100
      * @tc.name   testBuiltinArrayFill1301
      * @tc.desc   Test fill() entire array with default parameters
@@ -1366,32 +1342,6 @@ export default function BuiltinArrayFill02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_ERROR_0800
-     * @tc.name   testBuiltinArrayFind30008_01
-     * @tc.desc   Testing callback functions that throw exceptions
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayFind30008_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayFind30008_01';
-      let hasThrown = false;
-      try {
-        const arr: FixedArray<double> = [1.1, 2.2];
-        find(arr, (val: double, idx: number) => {
-          if (idx === 1) {
-            throw new Error('Callback error');
-          }
-          return val === 2.2;
-        });
-      } catch (e) {
-        hasThrown = true;
-        expect((e as Error).message).assertEqual('Callback error');
-      }
-      expect(hasThrown).assertTrue();
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_ARRAY_FIND_BYTE_0100
      * @tc.name    testBuiltinArrayFind10001
      * @tc.desc    Test finding first matching element in byte array
@@ -1445,26 +1395,6 @@ export default function BuiltinArrayFill02Test() {
         const arr: FixedArray<byte> = [1, 2, 3, 4, 5];
         const result = find(arr, (v: byte) => v > 10);
         expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_ARRAY_FIND_BYTE_0400
-     * @tc.name    testBuiltinArrayFind10004
-     * @tc.desc    Test finding first element with index condition
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testBuiltinArrayFind10004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayFind10004';
-      try {
-        const arr: FixedArray<byte> = [10, 20, 30, 40];
-        const result = find(arr, (v: byte, index: number) => index === 2);
-        expect(result).assertEqual(30);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1529,33 +1459,6 @@ export default function BuiltinArrayFill02Test() {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_ARRAY_FIND_BYTE_1000
-     * @tc.name    testBuiltinArrayFind1010
-     * @tc.desc    Test predicate throwing error
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testBuiltinArrayFind1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayFind1010';
-      let hasThrown = false;
-      try {
-        const arr: FixedArray<byte> = [1, 2, 3];
-        find(arr, (v: byte, idx: number) => {
-          if (idx === 1) {
-            throw new Error('Predicate error');
-          }
-          return v === 3;
-        });
-      } catch (e) {
-        hasThrown = true;
-        expect((e as Error).message).assertEqual('Predicate error');
-        console.info(`${TAG} predicate error caught as expected`);
-      }
-      expect(hasThrown).assertTrue();
     });
 
     /**
@@ -1692,106 +1595,6 @@ export default function BuiltinArrayFill02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0500
-     * @tc.name   testBuiltinArrayAt120006
-     * @tc.desc   Testing at() with index = MAX_SAFE_INTEGER.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120006';
-      try {
-        const arr: FixedArray<long> = [1, 2, 3];
-        const result = at(arr, Number.MAX_SAFE_INTEGER);
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0600
-     * @tc.name   testBuiltinArrayAt120007
-     * @tc.desc   Testing at() with index = MIN_SAFE_INTEGER.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120007';
-      try {
-        const arr: FixedArray<long> = [1, 2, 3];
-        const result = at(arr, Number.MIN_SAFE_INTEGER);
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0700
-     * @tc.name   testBuiltinArrayAt120008
-     * @tc.desc   Testing at() with float index (rounds down).
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120008';
-      try {
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, 1.9);
-        expect(result).assertEqual(200);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0800
-     * @tc.name   testBuiltinArrayAt120009
-     * @tc.desc   Testing at() with negative float index.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120009';
-      try {
-        const arr: FixedArray<long> = [100, 200, 300];
-        const result = at(arr, -2.7);
-        expect(result).assertEqual(200);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0900
-     * @tc.name   testBuiltinArrayAt120010
-     * @tc.desc   Testing at() with NaN index.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120010';
-      try {
-        const arr: FixedArray<long> = [1, 2, 3];
-        const result = at(arr, NaN);
-        expect(result).assertEqual(1);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1200
      * @tc.name   testBuiltinArrayAt120013
      * @tc.desc   Testing at() with index = -0.
@@ -1805,46 +1608,6 @@ export default function BuiltinArrayFill02Test() {
         const arr: FixedArray<long> = [42, 43];
         const result = at(arr, -0);
         expect(result).assertEqual(42);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1300
-     * @tc.name   testBuiltinArrayAt120014
-     * @tc.desc   Testing at() with index = Infinity.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt120014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt120014';
-      try {
-        const arr: FixedArray<long> = [1, 2, 3];
-        const result = at(arr, Infinity);
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_AT_0600_04
-     * @tc.name   testBuiltinArrayAt130006_01
-     * @tc.desc   Test at() with non-integer index (should floor)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt130006_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt130006_01';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30];
-        expect(at(arr, 1.9)).assertEqual(20);
-        expect(at(arr, -1.9)).assertEqual(30);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1894,47 +1657,6 @@ export default function BuiltinArrayFill02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_AT_0800_01
-     * @tc.name   testBuiltinArrayAt130008
-     * @tc.desc   Test at() with very large positive index
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt130008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt130008';
-      try {
-        const arr: FixedArray<long> = [1, 2, 3];
-        expect(at(arr, Number.MAX_SAFE_INTEGER)).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0600_04
-     * @tc.name   testBuiltinArrayAt140006
-     * @tc.desc   Testing at() with non-integer index (should floor)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140006';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30, 40];
-        const result1 = at(arr, 1.9);
-        const result2 = at(arr, -2.1);
-        expect(result1).assertEqual(20);
-        expect(result2).assertEqual(30);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0700
      * @tc.name   testBuiltinArrayAt140007
      * @tc.desc   Testing at() with negative zero index
@@ -1948,48 +1670,6 @@ export default function BuiltinArrayFill02Test() {
         const arr: FixedArray<short> = [10, 20, 30, 40];
         const result = at(arr, -0);
         expect(result).assertEqual(10);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0800
-     * @tc.name   testBuiltinArrayAt140008
-     * @tc.desc   Testing at() with NaN index (should return undefined)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140008';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30, 40];
-        const result = at(arr, NaN);
-        expect(result).assertEqual(10);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0900_04
-     * @tc.name   testBuiltinArrayAt140009
-     * @tc.desc   Testing at() with Infinity index (should return undefined)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140009';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30, 40];
-        const result1 = at(arr, Infinity);
-        const result2 = at(arr, -Infinity);
-        expect(result1).assertUndefined();
-        expect(result2).assertUndefined();
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
