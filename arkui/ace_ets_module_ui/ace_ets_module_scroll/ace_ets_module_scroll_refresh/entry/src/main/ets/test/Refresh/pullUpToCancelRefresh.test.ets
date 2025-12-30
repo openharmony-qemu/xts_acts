@@ -15,25 +15,25 @@
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { Driver, ON, Component, Point} from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../MainAbility/common/Utils';
-import CommonFunc from '../MainAbility/common/Common';
+import Utils from '../../MainAbility/common/Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 const SLEEP_TIME = 500;
 
 
-export default function showDefaultSelectedIconTest() {
-  describe('showDefaultSelectedIcon', () => {
+export default function pullUpToCancelRefreshTest() {
+  describe('pullUpToCancelRefresh', () => {
     beforeEach(async (done: Function) => {
-      console.info("showDefaultSelectedIcon beforeEach start");
+      console.info("pullUpToCancelRefresh beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/select/showDefaultSelectedIcon',
+        url: 'MainAbility/pages/Refresh/pullUpToCancelRefresh',
       }
       router.clear();
       let pages = router.getState();
-      console.info("get showDefaultSelectedIconTest state pages: " + JSON.stringify(pages));
-      if (!("showDefaultSelectedIcon" == pages.name)) {
-        console.info("get showDefaultSelectedIconTest state pages.name: " + JSON.stringify(pages.name));
+      console.info("get pullUpToCancelRefreshTest state pages: " + JSON.stringify(pages));
+      if (!("pullUpToCancelRefresh" == pages.name)) {
+        console.info("get pullUpToCancelRefreshTest state pages.name: " + JSON.stringify(pages.name));
         let result = await router.push(options);
-        console.info("push showDefaultSelectedIconTest success: " + JSON.stringify(result));
+        console.info("push pullUpToCancelRefreshTest success: " + JSON.stringify(result));
       }
       done();
     });
