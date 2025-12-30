@@ -37,6 +37,9 @@ const uint32_t NO_DEVICE_COUNT = 0;
 const int STRESS_COUNT = 100000;
 const int PRINT_FREQ = 500;
 const size_t INVALID_DEVICE_ID = 100000;
+const int ERROR_CODE_NEGATIVE_ONE = -1;
+const int ERROR_CODE_NEGATIVE_TWO = -2;
+const int SUCCESS_CODE = 0;
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime

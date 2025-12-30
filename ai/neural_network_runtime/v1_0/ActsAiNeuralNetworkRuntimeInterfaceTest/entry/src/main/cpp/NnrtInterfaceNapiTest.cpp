@@ -126,7 +126,7 @@ static void ExecuteAsyncWork(napi_env env, void* data)
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
 
     // 验证测试用例索引有效性
-    if (workData->testCaseIndex >= 0 && workData->testCaseIndex < g_testFunctionCount) {
+    if (workData->testCaseIndex >= 0 && workData->testCaseIndex < G_TEST_FUNCTION_COUNT) {
         // 在工作线程中执行测试函数
         workData->result = g_testFunctions[workData->testCaseIndex]();
     } else {
@@ -202,8 +202,8 @@ static bool ValidateAndGetCaseNumber(napi_env env, napi_callback_info info, int3
     }
 
     // 4. 验证范围
-    if (*caseNum < 0 || *caseNum >= g_testFunctionCount) {
-        std::string errorMsg = "The range of case must be 0 to " + std::to_string(g_testFunctionCount - 1);
+    if (*caseNum < 0 || *caseNum >= G_TEST_FUNCTION_COUNT) {
+        std::string errorMsg = "The range of case must be 0 to " + std::to_string(G_TEST_FUNCTION_COUNT - 1);
         napi_throw_type_error(env, nullptr, errorMsg.c_str());
         return false;
     }

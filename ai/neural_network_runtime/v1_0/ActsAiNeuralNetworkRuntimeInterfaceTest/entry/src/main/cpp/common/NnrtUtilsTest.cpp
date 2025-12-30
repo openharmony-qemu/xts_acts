@@ -38,6 +38,38 @@ namespace OHOS {
 namespace NeuralNetworkRuntime {
 namespace Test {
 
+int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
+{
+    if (!dst || !src) {
+        return ERROR_CODE_NEGATIVE_ONE;
+    }
+    if (len == 0) {
+        return SUCCESS_CODE; // 空操作直接返回成功
+    }
+    if (len > dstSize) {
+        return ERROR_CODE_NEGATIVE_TWO;
+    }
+    // 处理重叠情况的安全复制
+    unsigned char* dstPtr = (unsigned char*)dst;
+    const unsigned char* srcPtr = static_cast<const unsigned char*>(src);
+    if (dstPtr == srcPtr) {
+        return SUCCESS_CODE; // 源和目标相同，无需复制
+    }
+    // 判断是否有重叠以及重叠类型
+    if (dstPtr < srcPtr) {
+        // 正向复制：目标在源前面，或者不重叠
+        for (size_t i = 0; i < len; ++i) {
+            dstPtr[i] = srcPtr[i];
+        }
+    } else if (dstPtr > srcPtr) {
+        // 反向复制：目标在源后面，有重叠
+        for (size_t i = len; i > 0; --i) {
+            dstPtr[i - 1] = srcPtr[i - 1];
+        }
+    }
+    return SUCCESS_CODE;
+}
+
 OH_NN_UInt32Array TransformUInt32Array(const std::vector<uint32_t>& vector)
 {
     uint32_t* data = (vector.empty()) ? nullptr : const_cast<uint32_t*>(vector.data());
@@ -239,7 +271,6 @@ int CompileGraphMock(OH_NNCompilation* compilation, const OHNNCompileParam& comp
 
 int ExecuteGraphMock(OH_NNExecutor* executor, const OHNNGraphArgs& graphArgs, float* expect)
 {
-    // OHOS::sptr<V1_0::MockIDevice> device = V1_0::MockIDevice::GetInstance();  // HDI 层，已禁用
     int ret = 0;
     uint32_t inputIndex = 0;
     uint32_t outputIndex = 0;
@@ -293,10 +324,14 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            std::memcpy_s(inputMemory->data,
-                          inputMemory->size,
-                          static_cast<void*>(operandTem.data),
-                          std::min(operandTem.length inputMemory->size));
+            int ret_copy = SafeMemcpy(inputMemory->data,
+                                      operandTem.length,
+                                      static_cast<void*>(operandTem.data),
+                                      operandTem.length);
+            if (ret_copy != SUCCESS_CODE) {
+                LOGE("[NNRtTest] SafeMemcpy failed! ret=%d\n", ret_copy);
+                return ret_copy;
+            }
             OHNNMemory[inputIndex] = inputMemory;
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(), graphArgs.outputIndices.end(), i) !=
