@@ -51,7 +51,6 @@
 #define FLOAT_TWO 2.0f
 #define FLOAT_TEN 10.0f
 #define FLOAT_FIFTY 50.0f
-#define strlen(str) strlen(str)
 #define GLYPHS_ARRAY_SIZE 50
 #define SKEW_X_TEST_VALUE 0.55f
 #define SCALE_X_TEST_VALUE 0.55f
