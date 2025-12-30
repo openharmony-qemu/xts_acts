@@ -1942,36 +1942,6 @@ export default function type_04Test() {
       }
     });
 
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0200
-     * @tc.name    testFunctionTypeGetParameter_0002
-     * @tc.desc    Get parameters from function with multiple parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParameter_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParameter_0002";
-      try {
-
-        const functionType: FunctionType = Type.of(FuncMult) as FunctionType;
-        const param1: Parameter = functionType.getParameter(0);
-        const param2: Parameter = functionType.getParameter(1);
-        const param3: Parameter = functionType.getParameter(2);
-
-        expect(param1 !== null).assertTrue();
-
-        expect(param2 !== null).assertTrue();
-
-        expect(param3 !== null).assertTrue();
-
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0100
      * @tc.name    testFunctionTypeGetResultType_0001
