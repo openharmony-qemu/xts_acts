@@ -83,7 +83,6 @@ export default function RdbStoreBatchInsertWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
@@ -1025,8 +1024,8 @@ export default function RdbStoreBatchInsertWithReturning() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      try {
-        await deferredTrans?.insert("test", valueBucket);
+      await deferredTrans?.insert("test", valueBucket);
+      try {       
         await rdbStore?.batchInsertWithReturning("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
@@ -1034,14 +1033,13 @@ export default function RdbStoreBatchInsertWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       try {
-        await deferredTrans?.insert("test", valueBucket);
         rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `batchInsertWithReturningSync020 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.commit();
+      await deferredTrans?.rollback();
       console.log(TAG + "************* batchInsertWithReturning020 end *************");
       done();
     })
