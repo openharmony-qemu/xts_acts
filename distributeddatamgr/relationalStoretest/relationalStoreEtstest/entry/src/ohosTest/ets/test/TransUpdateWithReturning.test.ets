@@ -109,7 +109,6 @@ export default function TransUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
@@ -1047,10 +1046,10 @@ export default function TransUpdateWithReturning() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      await deferredTrans?.insert("test", valueBucket);
       let trans =  await rdbStore?.createTransaction({
         transactionType: relationalStore.TransactionType.DEFERRED
       });
+      await deferredTrans?.insert("test", valueBucket);
       try {
         await trans?.updateWithReturning(valueBucket, predicates, config);
         expect(true).assertFail();
@@ -1059,14 +1058,13 @@ export default function TransUpdateWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       try {
-        await deferredTrans?.insert("test", valueBucket);
         trans?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync020 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.commit();
+      await deferredTrans?.rollback();
       await trans?.rollback();
       console.log(TAG + "************* updateWithReturning020 end *************");
       done();
