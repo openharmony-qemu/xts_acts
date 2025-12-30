@@ -1445,7 +1445,7 @@ export default function Array_02Test() {
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_REDUCE_BOOLEAN_0100
-     * @tc.name    testReduceBOOLEAN
+     * @tc.name    testReduceBOOLEAN0001
      * @tc.desc    Test the basic functionality of the reduce function (for multi-element arrays)
      * @tc.size    MediumTest
      * @tc.type    Function

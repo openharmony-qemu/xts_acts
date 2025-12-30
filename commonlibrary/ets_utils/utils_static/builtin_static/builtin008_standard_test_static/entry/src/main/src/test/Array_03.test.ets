@@ -687,7 +687,7 @@ export default function Array_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1000
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1000_01
      * @tc.name    testSort0100
      * @tc.desc    Sort entire arr from 0 to length.
      * @tc.size    MediumTest
@@ -918,7 +918,7 @@ export default function Array_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1200
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1200_01
      * @tc.name    testSort0120
      * @tc.desc    Testing sort with negative startIndex.
      * @tc.size    MediumTest
@@ -1149,7 +1149,7 @@ export default function Array_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1400
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_SORT_1400_01
      * @tc.name    testSort0140
      * @tc.desc    Testing StartIndex and EndIndex values are the same.
      * @tc.size    MediumTest
@@ -1360,7 +1360,7 @@ export default function Array_03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1500_01
      * @tc.name      testSort0150
      * @tc.desc      Testing sort function with a single element boolean arrays.
      * @tc.size      MediumTest
@@ -1486,7 +1486,7 @@ export default function Array_03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1600_01
      * @tc.name      testSort0160
      * @tc.desc      Testing sort function with an empty array for bytes.
      * @tc.size      MediumTest
@@ -1653,7 +1653,7 @@ export default function Array_03Test() {
       }
     });
 
-    /*
+    /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_BASE_SORT_1800
      * @tc.name      testSort0180
      * @tc.desc      Testing sort function with double array and comparator.

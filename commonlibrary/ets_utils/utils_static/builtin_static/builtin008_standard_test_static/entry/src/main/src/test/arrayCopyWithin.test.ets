@@ -359,13 +359,13 @@ export default function ArrayCopyWithinTest() {
 
     /**
      * @tc.number  SUB_COMMONLIBORARY_UTIL_ARRAY_COPY_WITHIN_0073
-     * @tc.name    test_copy_within_0073
+     * @tc.name    testCopyWithin0073
      * @tc.desc    Test copyWithin truncates copy length when exceeding array bounds
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      */
-    it(' test_copy_within_0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it(' testCopyWithin0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "testCopyWithin0073";
         try {
             let self: FixedArray<boolean> = [true, false, true] as FixedArray<boolean>;
