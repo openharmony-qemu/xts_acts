@@ -274,18 +274,14 @@ void VerifyTypographyProperties026(OH_Drawing_Typography* typography)
     EXPECT_EQ(OH_Drawing_TypographyDidExceedMaxLines(typography) != true, true);
     OH_Drawing_RectHeightStyle heightStyle = RECT_HEIGHT_STYLE_TIGHT;
     OH_Drawing_RectWidthStyle widthStyle = RECT_WIDTH_STYLE_TIGHT;
-    EXPECT_NE(OH_Drawing_TypographyGetRectsForRange(
-                  typography, TYPOGRAPHY_RANGE_START, TYPOGRAPHY_RANGE_END, heightStyle, widthStyle),
+    EXPECT_NE(OH_Drawing_TypographyGetRectsForRange(typography, RANGE_START, RANGE_END, heightStyle, widthStyle),
               nullptr);
     EXPECT_NE(OH_Drawing_TypographyGetRectsForPlaceholders(typography), nullptr);
-    EXPECT_NE(
-        OH_Drawing_TypographyGetGlyphPositionAtCoordinate(typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y),
-        nullptr);
-    EXPECT_NE(OH_Drawing_TypographyGetGlyphPositionAtCoordinateWithCluster(
-                  typography, TYPOGRAPHY_COORDINATE_X, TYPOGRAPHY_COORDINATE_Y),
+    EXPECT_NE(OH_Drawing_TypographyGetGlyphPositionAtCoordinate(typography, COORDINATE_X, COORDINATE_Y), nullptr);
+    EXPECT_NE(OH_Drawing_TypographyGetGlyphPositionAtCoordinateWithCluster(typography, COORDINATE_X, COORDINATE_Y),
               nullptr);
-    EXPECT_NE(OH_Drawing_TypographyGetWordBoundary(typography, TYPOGRAPHY_RANGE_START), nullptr);
-    EXPECT_NE(OH_Drawing_TypographyGetLineTextRange(typography, TYPOGRAPHY_RANGE_START, true), nullptr);
+    EXPECT_NE(OH_Drawing_TypographyGetWordBoundary(typography, RANGE_START), nullptr);
+    EXPECT_NE(OH_Drawing_TypographyGetLineTextRange(typography, RANGE_START, true), nullptr);
     EXPECT_NE(OH_Drawing_TypographyGetLineCount(typography), 0);
 }
 } // namespace
