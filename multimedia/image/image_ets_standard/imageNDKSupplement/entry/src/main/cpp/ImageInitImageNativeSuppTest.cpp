@@ -164,15 +164,11 @@ napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info) {
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_PackingOptions *options;
     Image_ErrorCode res;
     switch (index) {
     case CASE_INDEX_1:
         res = OH_PackingOptions_Create(&options);
-        break;
-    case CASE_INDEX_2:
-        res = OH_PackingOptions_Create(nullptr);
         break;
     default:
         break;
@@ -199,19 +195,15 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelMap = nullptr;
-    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
-    LOGI("OH_PixelmapNative_CreatePixelmap %{public}d", errCode);
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA ,&pixelMap);
     OH_Pixelmap_HdrMetadataValue *pvalue = new OH_Pixelmap_HdrMetadataValue;
     pvalue->type = HDR_METADATA_TYPE_BASE;
     errCode = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
-    LOGI("OH_PixelmapNative_SetMetadata %{public}d", errCode);
-
-    OH_Pixelmap_HdrMetadataValue *value = nullptr;
+    OH_Pixelmap_HdrMetadataValue *value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
         returnValue = OH_PixelmapNative_GetMetadata(pixelMap, HDR_METADATA_TYPE, &value);
-        LOGI("OH_PixelmapNative_GetMetadata %{public}d", returnValue);
         break;
     case CASE_INDEX_2:
         returnValue = OH_PixelmapNative_GetMetadata(nullptr, HDR_METADATA_TYPE, &value);
@@ -242,15 +234,25 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelMap = nullptr;
-    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
-    OH_Pixelmap_HdrMetadataValue *value = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA ,&pixelMap);
+    OH_Pixelmap_HdrMetadataValue *pvalue = new OH_Pixelmap_HdrMetadataValue;
+    pvalue->type = HDR_METADATA_TYPE_BASE;
     Image_ErrorCode returnValue;
+    OH_NativeBuffer *buffer = nullptr;
     switch (index) {
     case CASE_INDEX_1:
-        returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, value);
+        returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
         break;
     case CASE_INDEX_2:
-        returnValue = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, value);
+        returnValue = OH_PixelmapNative_SetMetadata(nullptr, HDR_METADATA_TYPE, pvalue);
+        break;
+    case CASE_INDEX_3:
+        errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
+        returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
+        break;
+    case CASE_INDEX_4:
+        errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
+        returnValue = OH_PixelmapNative_GetNativeBuffer(pixelMap, &buffer);
         break;
     default:
         break;
@@ -360,7 +362,7 @@ napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
     const std::string keyString = "aaa";
     Image_ErrorCode errCode ;
     OH_ImageSourceNative *tempImageSource = nullptr;
-    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &te          mpImageSource);
     LOGI("OH_ImageSourceNative_CreateFromUri:%{public}d", errCode);
     OH_DecodingOptions *ops = nullptr;
     errCode = OH_DecodingOptions_Create(&ops);

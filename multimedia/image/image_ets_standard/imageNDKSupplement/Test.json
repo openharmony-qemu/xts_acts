@@ -38,7 +38,9 @@
             "pre-push": [],
             "push": [
                 "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/4K-2160x3840.avif ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files"
+                "./resource/image/4K-2160x3840.avif ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
+                "./resource/image/4test_exif_v3.jpg ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files"
+
             ]
         }
     ]
