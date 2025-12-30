@@ -832,6 +832,15 @@ static napi_value OHIPCUserErrorCodeMAX(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHIPCErrorCode(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int32(env, 1901003 == OH_IPC_MEM_ALLOCATOR_ERROR ? 0 : -1, &result);
+    napi_create_int32(env, 1901005 == OH_IPC_DEAD_REMOTE_OBJECT ? 0 : -1, &result);
+    napi_create_int32(env, 1901007 == OH_IPC_INNER_ERROR ? 0 : -1, &result);
+    return result;
+}
+
 napi_property_descriptor desc[] = {
     {"OHIPCParcelRewindReadPositionParamError", nullptr, OHIPCParcelRewindReadPositionParamError, nullptr, nullptr,
      nullptr, napi_default, nullptr},
@@ -945,6 +954,7 @@ napi_property_descriptor desc[] = {
     {"OHIPCErrorCodeMAX", nullptr, OHIPCErrorCodeMAX, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OHIPCUserErrorCodeMIN", nullptr, OHIPCUserErrorCodeMIN, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OHIPCUserErrorCodeMAX", nullptr, OHIPCUserErrorCodeMAX, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"OHIPCErrorCode", nullptr, OHIPCErrorCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
 EXTERN_C_START
