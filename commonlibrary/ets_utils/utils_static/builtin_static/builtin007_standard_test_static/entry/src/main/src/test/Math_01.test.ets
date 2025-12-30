@@ -19,7 +19,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 export default function math01Test() {
 
-  describe("math01Test", (): void => {
+  describe("math01Test", () => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
