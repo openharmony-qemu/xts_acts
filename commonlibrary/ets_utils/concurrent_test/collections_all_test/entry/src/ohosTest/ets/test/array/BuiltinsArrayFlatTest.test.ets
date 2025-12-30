@@ -64,8 +64,9 @@ export default function builtinsArrayFlatTest() {
      */
     it('builtinsArrayFlatTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, 2, 3]);
+      const flattened: number[] = Array.from(arr).flat();
 
-      expect(JSON.stringify(arr)).assertEqual(JSON.stringify(arr));
+      expect(JSON.stringify(flattened)).assertEqual(JSON.stringify(arr));
     });
 
     /**
@@ -105,7 +106,9 @@ export default function builtinsArrayFlatTest() {
      */
     it('builtinsArrayFlatTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, [2, 3], 4]);
-      expect(JSON.stringify(arr)).assertEqual(JSON.stringify(arr));
+      const flattened: number[] = Array.from(arr).flat();
+
+      expect(JSON.stringify(flattened)).assertEqual(JSON.stringify(arr));
     });
 
     /**

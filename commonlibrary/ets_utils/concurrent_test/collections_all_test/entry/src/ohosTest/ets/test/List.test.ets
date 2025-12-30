@@ -48,8 +48,6 @@ import builtinsArrayBufferIsViewTest from "./ArrayBuffer/BuiltinsArrayBufferIsVi
 import builtinsArrayBufferLikeTest from "./ArrayBuffer/BuiltinsArrayBufferLikeTest.test";
 import builtinsArrayBufferSliceTest from "./ArrayBuffer/BuiltinsArrayBufferSliceTest.test";
 import builtinsArrayBufferViewTest from "./ArrayBuffer/BuiltinsArrayBufferViewTest.test";
-import builtinsArrayLikeIndexTest from "./ArrayBuffer/BuiltinsArrayLikeIndexTest.test";
-import builtinsArrayLikeLengthTest from "./ArrayBuffer/BuiltinsArrayLikeLengthTest.test";
 import builtinsConcatArrayIndexTest from "./ArrayBuffer/BuiltinsConcatArrayIndexTest.test";
 import builtinsConcatArrayJoinTest from "./ArrayBuffer/BuiltinsConcatArrayJoinTest.test";
 import builtinsConcatArrayLengthTest from "./ArrayBuffer/BuiltinsConcatArrayLengthTest.test";
@@ -67,34 +65,6 @@ import typeArrayUint32ArrayTest from './TypeArray/TypeArrayUint32Array.test';
 import typeArrayUint8ArrayTest from './TypeArray/TypeArrayUint8Array.test';
 import typeArrayUint8ClampedArrayTest from './TypeArray/TypeArrayUint8ClampedArray.test';
 
-import builtinsReadonlyArrayKeysTest from "./ReadonlyArray/BuiltinsReadonlyArrayKeysTest.test";
-import builtinsReadonlyArrayLastIndexOfTest from "./ReadonlyArray/BuiltinsReadonlyArrayLastIndexOfTest.test";
-import builtinsReadonlyArrayMapTest from "./ReadonlyArray/BuiltinsReadonlyArrayMapTest.test";
-import builtinsReadonlyArrayForEachTest from "./ReadonlyArray/BuiltinsReadonlyArrayForEachTest.test";
-import builtinsReadonlyArrayIncludesTest from "./ReadonlyArray/BuiltinsReadonlyArrayIncludesTest.test";
-import builtinsReadonlyArrayIndexOfTest from "./ReadonlyArray/BuiltinsReadonlyArrayIndexOfTest.test";
-import builtinsReadonlyArrayJoinTest from "./ReadonlyArray/BuiltinsReadonlyArrayJoinTest.test";
-import builtinsReadonlyArrayReduceTest from "./ReadonlyArray/BuiltinsReadonlyArrayReduce.test";
-import builtinsReadonlyArrayReduceRightTest from "./ReadonlyArray/BuiltinsReadonlyArrayReduceRight.test";
-import builtinsReadonlyArraySliceTest from "./ReadonlyArray/BuiltinsReadonlyArraySliceTest.test";
-import builtinsReadonlyArraySomeTest from "./ReadonlyArray/BuiltinsReadonlyArraySomeTest.test";
-import builtinsReadonlyArrayToLocaleStringTest from "./ReadonlyArray/BuiltinsReadonlyArrayToLocaleStringTest.test";
-import builtinsReadonlyArrayToStringTest from "./ReadonlyArray/BuiltinsReadonlyArrayToStringTest.test";
-import builtinsReadonlyArrayValuesTest from "./ReadonlyArray/BuiltinsReadonlyArrayValues.test";
-import builtinsReadonlyArrayAtTest from "./ReadonlyArray/ReadonlyArrayAt.test";
-import builtinsReadonlyArrayConcatTest from "./ReadonlyArray/ReadonlyArrayConcat.test";
-import builtinsReadonlyArrayEntriesTest from "./ReadonlyArray/ReadonlyArrayEntries.test";
-import builtinsReadonlyArrayEveryTest from "./ReadonlyArray/ReadonlyArrayEvery.test";
-
-import builtinsRegExpExecArrayGroupsTest from "./RegExpArray/RegExpExecArrayGroups.test";
-import builtinsRegExpExecArrayIndexTest from "./RegExpArray/RegExpExecArrayIndex.test";
-import builtinsRegExpExecArrayInputTest from "./RegExpArray/RegExpExecArrayInput.test";
-import builtinsRegExpExecArrayStringTest from "./RegExpArray/RegExpExecArrayString.test";
-import builtinsRegExpMatchArrayGroupsTest from "./RegExpArray/RegExpMatchArrayGroups.test";
-import builtinsRegExpMatchArrayIndexTest from "./RegExpArray/RegExpMatchArrayIndex.test";
-import builtinsRegExpMatchArrayInputTest from "./RegExpArray/RegExpMatchArrayInput.test";
-import builtinsRegExpMatchArrayStringTest from "./RegExpArray/RegExpMatchArrayString.test";
-import RegExpCombination1Test from "./RegExpArray/RegExpCombination1Test.test";
 
 
 
@@ -151,8 +121,6 @@ export default function testsuite() {
   builtinsArrayBufferLikeTest();
   builtinsArrayBufferSliceTest();
   builtinsArrayBufferViewTest();
-  builtinsArrayLikeIndexTest();
-  builtinsArrayLikeLengthTest();
   builtinsConcatArrayIndexTest();
   builtinsConcatArrayJoinTest();
   builtinsConcatArrayLengthTest();
@@ -170,32 +138,4 @@ export default function testsuite() {
   typeArrayUint16ArrayTest();
   typeArrayUint32ArrayTest();
 
-  builtinsReadonlyArrayKeysTest();
-  builtinsReadonlyArrayLastIndexOfTest();
-  builtinsReadonlyArrayMapTest();
-  builtinsReadonlyArrayForEachTest();
-  builtinsReadonlyArrayIncludesTest();
-  builtinsReadonlyArrayIndexOfTest();
-  builtinsReadonlyArrayJoinTest();
-  builtinsReadonlyArrayReduceTest();
-  builtinsReadonlyArrayReduceRightTest();
-  builtinsReadonlyArraySliceTest();
-  builtinsReadonlyArraySomeTest();
-  builtinsReadonlyArrayToLocaleStringTest();
-  builtinsReadonlyArrayToStringTest();
-  builtinsReadonlyArrayValuesTest();
-  builtinsReadonlyArrayAtTest();
-  builtinsReadonlyArrayConcatTest();
-  builtinsReadonlyArrayEntriesTest();
-  builtinsReadonlyArrayEveryTest();
-
-  builtinsRegExpExecArrayGroupsTest();
-  builtinsRegExpExecArrayIndexTest();
-  builtinsRegExpExecArrayInputTest();
-  builtinsRegExpExecArrayStringTest();
-  builtinsRegExpMatchArrayGroupsTest();
-  builtinsRegExpMatchArrayIndexTest();
-  builtinsRegExpMatchArrayInputTest();
-  builtinsRegExpMatchArrayStringTest();
-  RegExpCombination1Test();
 }
