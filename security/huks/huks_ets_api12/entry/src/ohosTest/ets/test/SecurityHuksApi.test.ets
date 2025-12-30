@@ -287,6 +287,7 @@ export default function SecurityHuksApiTest() {
     it('SUB_Security_HUKS_Api_API20_Interface_0900', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_X25519_AES_256_GCM_NOPADDING).assertEqual(1);
       expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING).assertEqual(2);
+      expect(huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING).assertEqual(5);
     })
 
     /**
