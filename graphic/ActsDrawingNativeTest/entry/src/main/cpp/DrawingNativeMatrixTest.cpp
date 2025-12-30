@@ -1343,14 +1343,14 @@ int TestMatrixSetRectToRectMultipleCalls()
     // 2. Call OH_Drawing_MatrixSetRectToRect 10 times with random enum values and different rect sizes
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, 100.0);
+    std::uniform_real_distribution<float> dis(0.0, MATRIX_COORD_100);
     OH_Drawing_ScaleToFit fitList[] = {
         SCALE_TO_FIT_FILL,
         SCALE_TO_FIT_START,
         SCALE_TO_FIT_CENTER,
         SCALE_TO_FIT_END,
     };
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < MATRIX_LOOP_COUNT_10; i++) {
         OH_Drawing_Rect* rectSrc = OH_Drawing_RectCreate(dis(gen), dis(gen), dis(gen) + MATRIX_RECT_INT_100,
                                                          dis(gen) + MATRIX_RECT_INT_100);
         OH_Drawing_Rect* rectDst = OH_Drawing_RectCreate(dis(gen), dis(gen), dis(gen) + MATRIX_RECT_INT_200,

@@ -1138,7 +1138,7 @@ int TestMatrixIsEqualMultipleCalls()
     EXPECT_NE(matrix2, nullptr);
     // 2. Call OH_Drawing_MatrixIsEqual 10 times with alternating different or same matrices
     for (int i = 0; i < MATRIX_LOOP_COUNT_10; i++) {
-        if (i % 2 == 0) {
+        if (i % MATRIX_INT_2 == 0) {
             OH_Drawing_MatrixSetMatrix(matrix, MATRIX_INT_1, MATRIX_INT_2, MATRIX_INT_3, MATRIX_INT_4,
                                        MATRIX_INT_5, MATRIX_INT_6, MATRIX_INT_7, MATRIX_INT_8, MATRIX_INT_9);
             OH_Drawing_MatrixSetMatrix(matrix2, MATRIX_INT_1, MATRIX_INT_2, MATRIX_INT_3, MATRIX_INT_4,
@@ -1230,7 +1230,7 @@ int TestMatrixIsIdentityMultipleCalls()
     DrawingNativeMatrixPart2TestSetUp();
     // Call OH_Drawing_MatrixIsIdentity 10 times with alternating identity or non-identity matrices
     for (int i = 0; i < MATRIX_LOOP_COUNT_10; i++) {
-        if (i % 2 == 0) {
+        if (i % MATRIX_INT_2 == 0) {
             OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
             // add assert
             EXPECT_NE(matrix, nullptr);
@@ -1271,15 +1271,15 @@ int TestMatrixCopyNormal()
     // 3. Using the function OH_Drawing_MatrixCopy copy another matrix.
     OH_Drawing_Matrix* matrix2 = OH_Drawing_MatrixCopy(matrix1);
     EXPECT_NE(matrix2, nullptr);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 0), MATRIX_INT_1);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 1), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 2), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 3), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 4), MATRIX_INT_1);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 5), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 6), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 7), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 8), MATRIX_INT_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_0), MATRIX_INT_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_1), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_2), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_3), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_4), MATRIX_INT_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_5), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_6), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_7), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, MATRIX_MATRIX_INDEX_8), MATRIX_INT_1);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix1);
     OH_Drawing_MatrixDestroy(matrix2);
