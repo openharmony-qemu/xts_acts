@@ -15,6 +15,7 @@
 #include "NnrtUtilsTest.h"
 #include <cstring>
 #include <fstream>
+#include <stdexcept>
 #include <hilog/log.h>
 #include "const.h"
 
@@ -26,17 +27,27 @@
 #define LOGE(...) OH_LOG_ERROR(LOG_APP, __VA_ARGS__)
 #define LOGI(...) OH_LOG_INFO(LOG_APP, __VA_ARGS__)
 
-#define ASSERT_EQ(expected, actual) /* NOLINT(G.PRE.02-CPP) */      \
-    do {                                                            \
-        if ((expected) != (actual)) {                               \
-            LOGE("Assertion failed: %s == %s", #expected, #actual); \
-            return;                                                 \
-        }                                                           \
-    } while (0)
+#define ASSERT_EQ(v1, v2) /* NOLINT(G.PRE.02-CPP) */ \
+    AssertEqImpl((v1), (v2), #v1, #v2, AssertLocation({ __FILE__, __LINE__ }))
 
 namespace OHOS {
 namespace NeuralNetworkRuntime {
 namespace Test {
+
+struct AssertLocation {
+    const char* file;
+    int line;
+};
+
+template <typename T1, typename T2>
+inline void AssertEqImpl(const T1& v1, const T2& v2, const char* exp1, const char* exp2, const AssertLocation& loc)
+{
+    if (v1 != v2) {
+        LOGE("Assertion failed: %s == %s, file: %s, line: %d", exp1, exp2, loc.file, loc.line);
+        throw std::runtime_error(std::string("Assertion failed: ") + exp1 + " == " + exp2 + 
+                                 ", file: " + loc.file + ", line: " + std::to_string(loc.line));
+    }
+}
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 {
@@ -324,13 +335,13 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            int ret_copy = SafeMemcpy(inputMemory->data,
+            int retCopy = SafeMemcpy(inputMemory->data,
                                       operandTem.length,
                                       static_cast<void*>(operandTem.data),
                                       operandTem.length);
-            if (ret_copy != SUCCESS_CODE) {
-                LOGE("[NNRtTest] SafeMemcpy failed! ret=%d\n", ret_copy);
-                return ret_copy;
+            if (retCopy != SUCCESS_CODE) {
+                LOGE("[NNRtTest] SafeMemcpy failed! ret=%d\n", retCopy);
+                return retCopy;
             }
             OHNNMemory[inputIndex] = inputMemory;
             inputIndex += 1;
@@ -352,17 +363,21 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
 
 void Free(OH_NNModel* model, OH_NNCompilation* compilation, OH_NNExecutor* executor)
 {
-    if (model != nullptr) {
-        OH_NNModel_Destroy(&model);
-        ASSERT_EQ(nullptr, model);
-    }
-    if (compilation != nullptr) {
-        OH_NNCompilation_Destroy(&compilation);
-        ASSERT_EQ(nullptr, compilation);
-    }
-    if (executor != nullptr) {
-        OH_NNExecutor_Destroy(&executor);
-        ASSERT_EQ(nullptr, executor);
+    try {
+        if (model != nullptr) {
+            OH_NNModel_Destroy(&model);
+            ASSERT_EQ(nullptr, model);
+        }
+        if (compilation != nullptr) {
+            OH_NNCompilation_Destroy(&compilation);
+            ASSERT_EQ(nullptr, compilation);
+        }
+        if (executor != nullptr) {
+            OH_NNExecutor_Destroy(&executor);
+            ASSERT_EQ(nullptr, executor);
+        }
+    } catch (const std::exception& e) {
+        LOGE("Free function assertion failed: %s", e.what());
     }
 }
 
