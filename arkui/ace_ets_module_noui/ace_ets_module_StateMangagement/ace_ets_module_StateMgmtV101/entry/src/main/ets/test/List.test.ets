@@ -32,6 +32,7 @@ import SubAbstractPropertyLinkTest from './AppStorage/SubAbstractPropertyLinkTes
 
 import PersistentTest0040 from './persistentStorage/PersistentTest0040.test';
 import PersistentStorageReturnValue from './persistentStorage/PersistentStorageReturnValue.test';
+import PersistentStorageGlobalConnect from './persistentStorage/PersistentStorageGlobalConnect.test';
 
 
 import LocalStorageReturnValue from './localStorage/LocalStorageReturnValue.test';
@@ -70,6 +71,7 @@ export default function testsuite() {
     SubAbstractPropertyLinkTest();
     PersistentTest0040();
     PersistentStorageReturnValue();
+    PersistentStorageGlobalConnect();
     LocalStorageReturnValue();
     localStorageRefJsunit();
     LocalStoageLinkOneJsunit();
