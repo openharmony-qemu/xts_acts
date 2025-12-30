@@ -13,11 +13,54 @@
  * limitations under the License.
  */
 
-#include "include/DrawingNativeFontTest.h"
 #include <cfloat>
 #include <random>
+#include "include/DrawingNativeFontTest.h"
 #include "include/DrawingNativeScalarCommonTest.h"
 #include "include/OhosCommonTest.h"
+
+#define TEST_FONT_SIZE 50.255f
+// 文本编码相关计数值宏定义
+#define UTF8_CHAR_COUNT 11    // UTF-8编码字符计数
+#define UTF16_CHAR_COUNT -1   // UTF-16编码字符计数
+#define UTF32_CHAR_COUNT 2    // UTF-32编码字符计数
+#define GLYPH_ID_CHAR_COUNT 5 // 字形ID编码字符计数
+#define FONT_SIZE_TWELVE 12.0f
+// 字符串长度宏定义
+#define CHINESE_CHAR_COUNT_FOUR 4
+#define MIXED_CHAR_COUNT_EIGHT 8
+#define MIXED_CHAR_COUNT_TEN 10
+// 其他数字宏定义
+#define ZERO_VALUE 0
+#define VALUE_ONE 1
+#define VALUE_TWO 2
+#define VALUE_THREE 3
+#define VALUE_FOUR 4
+#define VALUE_FIVE 5
+#define VALUE_EIGHT 8
+#define VALUE_TEN 10
+#define VALUE_ELEVEN 11
+#define VALUE_FIFTY 50
+#define VALUE_HUNDRED 100
+#define NEGATIVE_ONE -1
+#define EVEN_DIVISOR 2
+#define FONT_SIZE_ZERO 0.0f
+#define FONT_SIZE_ELEVEN 11.0f
+#define FLOAT_ZERO 0.0f
+#define FLOAT_ONE 1.0f
+#define FLOAT_TWO 2.0f
+#define FLOAT_TEN 10.0f
+#define FLOAT_FIFTY 50.0f
+#define IS_EVEN(i) ((i) % EVEN_DIVISOR == ZERO_VALUE)
+#define STRING_LENGTH(str) strlen(str)
+#define GLYPHS_ARRAY_SIZE 50
+#define SKEW_X_TEST_VALUE 0.55f
+#define SCALE_X_TEST_VALUE 0.55f
+#define SKEW_X_RANDOM_MAX 30.0f
+#define HINTING_ENUM_COUNT 4
+#define EDGING_ENUM_COUNT 3
+#define RECT_SIZE_HUNDRED 100
+#define MEASURE_TEXT_LENGTH 3
 
 namespace OHOS {
 namespace Rosen {
@@ -54,21 +97,22 @@ int TestFontGetWidthsAbnormal()
     // add assert
     EXPECT_NE(font, nullptr);
     const char* str = "Hello World";
-    uint16_t glyphs[50] = { 0 }; // 50 means glyphs array number
-    float widths[50] = { 0.f };
-    int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
-    int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
+    uint16_t glyphs[GLYPHS_ARRAY_SIZE] = { ZERO_VALUE };
+    float widths[GLYPHS_ARRAY_SIZE] = { FLOAT_ZERO };
+    int count = OH_Drawing_FontCountText(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8);
+    int glyphsCount =
+        OH_Drawing_FontTextToGlyphs(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8, glyphs, count);
     // 2. Set byteLength parameter to -1 for OH_Drawing_FontGetWidths interface
     // There is no byteLength parameter
     // 3. Set count parameter to -1 for OH_Drawing_FontGetWidths interface and check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_FontGetWidths(font, glyphs, -1, widths);
+    OH_Drawing_FontGetWidths(font, glyphs, NEGATIVE_ONE, widths);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. Set widths parameter to -1 for OH_Drawing_FontGetWidths interface
-    float widths2[50] = { -1 };
+    float widths2[GLYPHS_ARRAY_SIZE] = { NEGATIVE_ONE };
     OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widths2);
     // 5. Set count parameter to a floating-point value greater than 0 for OH_Drawing_FontGetWidths interface
-    OH_Drawing_FontGetWidths(font, glyphs, 2.0f, widths);
+    OH_Drawing_FontGetWidths(font, glyphs, FLOAT_TWO, widths);
     // 6. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -92,19 +136,20 @@ int TestFontGetWidthsMaximum()
     // add assert
     EXPECT_NE(font, nullptr);
     const char* str = "Hello World";
-    uint16_t glyphs[50] = { 0 }; // 50 means glyphs array number
-    float widths[50] = { 0.f };
-    int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
-    int glyphsCount = OH_Drawing_FontTextToGlyphs(font, str, strlen(str), TEXT_ENCODING_UTF8, glyphs, count);
+    uint16_t glyphs[GLYPHS_ARRAY_SIZE] = { ZERO_VALUE };
+    float widths[GLYPHS_ARRAY_SIZE] = { FLOAT_ZERO };
+    int count = OH_Drawing_FontCountText(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8);
+    int glyphsCount =
+        OH_Drawing_FontTextToGlyphs(font, str, STRING_LENGTH(str), TEXT_ENCODING_UTF8, glyphs, count);
     // 2. Call OH_Drawing_FontGetWidths interface with maximum value for glyphs parameter
-    uint16_t glyphs2[50] = { UINT16_MAX };
+    uint16_t glyphs2[GLYPHS_ARRAY_SIZE] = { UINT16_MAX };
     OH_Drawing_FontGetWidths(font, glyphs2, glyphsCount, widths);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_FontGetWidths interface with maximum value for count parameter
     // Ignore, no need to test the case with maximum count parameter
     // 4. Call OH_Drawing_FontGetWidths interface with maximum value for widths parameter
-    float widths2[50] = { FLT_MAX };
+    float widths2[GLYPHS_ARRAY_SIZE] = { FLT_MAX };
     OH_Drawing_FontGetWidths(font, glyphs, glyphsCount, widths2);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -191,15 +236,15 @@ int TestFontSetLinearTextMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetLinearText 10 times, and call OH_Drawing_FontIsLinearText to check if the glyphs are
-    // scaled linearly
-    for (int i = 0; i < 10; i++) {
+    // 2. Call OH_Drawing_FontSetLinearText 10 times, and call OH_Drawing_FontIsLinearText to check if the
+    // glyphs are scaled linearly
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetLinearText(font, i % 2 == 0);
+        OH_Drawing_FontSetLinearText(font, IS_EVEN(i));
         bool isLinearText = OH_Drawing_FontIsLinearText(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isLinearText, i % 2 == 0);
+        EXPECT_EQ(isLinearText, IS_EVEN(i));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
@@ -250,18 +295,18 @@ int TestFontSetTextSkewXNormal()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetTextSkewX interface with skewX parameter set to 10, and then call
     // OH_Drawing_FontGetTextSkewX to get the text skew on the x-axis
-    OH_Drawing_FontSetTextSkewX(font, 10);
+    OH_Drawing_FontSetTextSkewX(font, VALUE_TEN);
     float skewX = OH_Drawing_FontGetTextSkewX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(skewX, 10);
+    EXPECT_EQ(skewX, VALUE_TEN);
     // 3. Call OH_Drawing_FontSetTextSkewX interface with skewX parameter set to 0.55, and then call
     // OH_Drawing_FontGetTextSkewX to get the text skew on the x-axis
-    OH_Drawing_FontSetTextSkewX(font, 0.55);
+    OH_Drawing_FontSetTextSkewX(font, SKEW_X_TEST_VALUE);
     skewX = OH_Drawing_FontGetTextSkewX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(IsScalarAlmostEqual(skewX, 0.55), true);
+    EXPECT_EQ(IsScalarAlmostEqual(skewX, SKEW_X_TEST_VALUE), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -286,11 +331,11 @@ int TestFontSetTextSkewXNULL()
     EXPECT_NE(font, nullptr);
     // 2. Pass nullptr as the first parameter to OH_Drawing_FontSetTextSkewX and check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_FontSetTextSkewX(nullptr, 10);
+    OH_Drawing_FontSetTextSkewX(nullptr, VALUE_TEN);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. Pass 0 as the second parameter to OH_Drawing_FontSetTextSkewX
-    OH_Drawing_FontSetTextSkewX(font, 0);
+    OH_Drawing_FontSetTextSkewX(font, ZERO_VALUE);
     // 4. Pass nullptr as the parameter to OH_Drawing_FontGetTextSkewX and check the error code using
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_FontGetTextSkewX(nullptr);
@@ -317,12 +362,12 @@ int TestFontSetTextSkewXMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetTextSkewX 10 times (with random skewX values), and call OH_Drawing_FontGetTextSkewX to
-    // get the text skew on the x-axis each time
+    // 2. Call OH_Drawing_FontSetTextSkewX 10 times (with random skewX values), and call
+    // OH_Drawing_FontGetTextSkewX to get the text skew on the x-axis each time
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 30);
-    for (int i = 0; i < 10; i++) {
+    std::uniform_real_distribution<float> dis(FLOAT_ZERO, SKEW_X_RANDOM_MAX);
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
         float val = dis(gen);
         OH_Drawing_FontSetTextSkewX(font, val);
@@ -357,7 +402,7 @@ int TestFontGetTextSkewXWhenNoSet()
     float skewX = OH_Drawing_FontGetTextSkewX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(skewX, 0);
+    EXPECT_EQ(skewX, ZERO_VALUE);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -382,9 +427,9 @@ int TestFontSetTextSkewXAbnormal()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetTextSkewX interface with skewX parameter set to -1, and then call
     // OH_Drawing_FontGetTextSkewX to get the text skew on the x-axis
-    OH_Drawing_FontSetTextSkewX(font, -1);
+    OH_Drawing_FontSetTextSkewX(font, NEGATIVE_ONE);
     float skewX = OH_Drawing_FontGetTextSkewX(font);
-    EXPECT_EQ(skewX, -1);
+    EXPECT_EQ(skewX, NEGATIVE_ONE);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -431,15 +476,15 @@ int TestFontSetFakeBoldTextNormal()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetFakeBoldText interface with isFakeBoldText parameter set to false, and then call
-    // OH_Drawing_FontIsFakeBoldText to check if the stroke width is increased to approximate bold text
+    // 2. Call OH_Drawing_FontSetFakeBoldText interface with isFakeBoldText parameter set to false, and then
+    // call OH_Drawing_FontIsFakeBoldText to check if the stroke width is increased to approximate bold text
     OH_Drawing_FontSetFakeBoldText(font, false);
     bool isFakeBoldText = OH_Drawing_FontIsFakeBoldText(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(isFakeBoldText, false);
-    // 3. Call OH_Drawing_FontSetFakeBoldText interface with isFakeBoldText parameter set to true, and then call
-    // OH_Drawing_FontIsFakeBoldText to check if the stroke width is increased to approximate bold text
+    // 3. Call OH_Drawing_FontSetFakeBoldText interface with isFakeBoldText parameter set to true, and then
+    // call OH_Drawing_FontIsFakeBoldText to check if the stroke width is increased to approximate bold text
     OH_Drawing_FontSetFakeBoldText(font, true);
     isFakeBoldText = OH_Drawing_FontIsFakeBoldText(font);
     // add assert
@@ -492,15 +537,15 @@ int TestFontSetFakeBoldTextMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetFakeBoldText 10 times, and call OH_Drawing_FontIsFakeBoldText each time to check if the
-    // stroke width is increased to approximate bold text
-    for (int i = 0; i < 10; i++) {
+    // 2. Call OH_Drawing_FontSetFakeBoldText 10 times, and call OH_Drawing_FontIsFakeBoldText each time to
+    // check if the stroke width is increased to approximate bold text
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetFakeBoldText(font, i % 2 == 0);
+        OH_Drawing_FontSetFakeBoldText(font, IS_EVEN(i));
         bool isFakeBoldText = OH_Drawing_FontIsFakeBoldText(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isFakeBoldText, i % 2 == 0);
+        EXPECT_EQ(isFakeBoldText, IS_EVEN(i));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
@@ -551,22 +596,22 @@ int TestFontSetScaleXNormal()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to 10, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
-    OH_Drawing_FontSetScaleX(font, 10);
+    OH_Drawing_FontSetScaleX(font, VALUE_TEN);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     float scaleX = OH_Drawing_FontGetScaleX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(scaleX, 10);
+    EXPECT_EQ(scaleX, VALUE_TEN);
     // 3. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to 0.55, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
-    OH_Drawing_FontSetScaleX(font, 0.55);
+    OH_Drawing_FontSetScaleX(font, SCALE_X_TEST_VALUE);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     scaleX = OH_Drawing_FontGetScaleX(font);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(IsScalarAlmostEqual(scaleX, 0.55), true);
+    EXPECT_EQ(IsScalarAlmostEqual(scaleX, SCALE_X_TEST_VALUE), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -591,11 +636,11 @@ int TestFontSetScaleXNULL()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetScaleX with nullptr as the first parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_FontSetScaleX(nullptr, 10);
+    OH_Drawing_FontSetScaleX(nullptr, VALUE_TEN);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_FontSetScaleX with 0 as the second parameter
-    OH_Drawing_FontSetScaleX(font, 0);
+    OH_Drawing_FontSetScaleX(font, ZERO_VALUE);
     // 4. Call OH_Drawing_FontGetScaleX with nullptr as the parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_FontGetScaleX(nullptr);
@@ -626,8 +671,8 @@ int TestFontSetScaleXMultipleCalls()
     // OH_Drawing_FontGetScaleX each time to get the text scale on the x-axis
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 30);
-    for (int i = 0; i < 10; i++) {
+    std::uniform_real_distribution<float> dis(FLOAT_ZERO, SKEW_X_RANDOM_MAX);
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
         float val = dis(gen);
         OH_Drawing_FontSetScaleX(font, val);
@@ -662,7 +707,7 @@ int TestFontGetScaleXWhenNoSet()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontGetScaleX to get the text scale on the x-axis
     float scaleX = OH_Drawing_FontGetScaleX(font);
-    EXPECT_EQ(scaleX, 1);
+    EXPECT_EQ(scaleX, FLOAT_ONE);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -687,9 +732,9 @@ int TestFontSetScaleXAbnormal()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to -1, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
-    OH_Drawing_FontSetScaleX(font, -1);
+    OH_Drawing_FontSetScaleX(font, NEGATIVE_ONE);
     float scaleX = OH_Drawing_FontGetScaleX(font);
-    EXPECT_EQ(scaleX, -1);
+    EXPECT_EQ(scaleX, NEGATIVE_ONE);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 
@@ -802,12 +847,12 @@ int TestFontSetHintingMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetHinting 10 times (with random enum values), and call OH_Drawing_FontGetHinting each
-    // time to get the font outline effect enum type
+    // 2. Call OH_Drawing_FontSetHinting 10 times (with random enum values), and call
+    // OH_Drawing_FontGetHinting each time to get the font outline effect enum type
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dis(0, 3);
-    for (int i = 0; i < 10; i++) {
+    std::uniform_int_distribution<int> dis(ZERO_VALUE, HINTING_ENUM_COUNT - VALUE_ONE);
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_FontHinting hinting = static_cast<OH_Drawing_FontHinting>(dis(gen));
         OH_Drawing_FontSetHinting(font, hinting);
         OH_Drawing_FontHinting hinting2 = OH_Drawing_FontGetHinting(font);
@@ -896,8 +941,8 @@ int TestFontSetEmbeddedBitmapsNormal()
 int TestFontSetEmbeddedBitmapsNULL()
 {
     DrawingNativeFontPart3TestSetUp();
-    // 1. Call OH_Drawing_FontSetEmbeddedBitmaps with nullptr as the first parameter and check the error code using
-    // OH_Drawing_ErrorCodeGet
+    // 1. Call OH_Drawing_FontSetEmbeddedBitmaps with nullptr as the first parameter and check the error code
+    // using OH_Drawing_ErrorCodeGet
     OH_Drawing_FontSetEmbeddedBitmaps(nullptr, false);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
@@ -925,17 +970,17 @@ int TestFontSetEmbeddedBitmapsMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetEmbeddedBitmaps 10 times, and call OH_Drawing_FontIsEmbeddedBitmaps each time to check
-    // if the glyph is converted to a bitmap
-    for (int i = 0; i < 10; i++) {
+    // 2. Call OH_Drawing_FontSetEmbeddedBitmaps 10 times, and call OH_Drawing_FontIsEmbeddedBitmaps each time
+    // to check if the glyph is converted to a bitmap
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_FontSetEmbeddedBitmaps(font, i % 2 == 0);
+        OH_Drawing_FontSetEmbeddedBitmaps(font, IS_EVEN(i));
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         bool isEmbeddedBitmaps = OH_Drawing_FontIsEmbeddedBitmaps(font);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-        EXPECT_EQ(isEmbeddedBitmaps, i % 2 == 0);
+        EXPECT_EQ(isEmbeddedBitmaps, IS_EVEN(i));
     }
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
@@ -984,8 +1029,8 @@ int TestFontSetEdgingNormal()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. OH_Drawing_FontSetEdging enum value OH_Drawing_FontEdging coverage verification, call OH_Drawing_FontGetEdging
-    // to get the font edge effect enum type
+    // 2. OH_Drawing_FontSetEdging enum value OH_Drawing_FontEdging coverage verification, call
+    // OH_Drawing_FontGetEdging to get the font edge effect enum type
     OH_Drawing_FontEdging edging[] = {
         FONT_EDGING_ALIAS,
         FONT_EDGING_ANTI_ALIAS,
@@ -1046,12 +1091,12 @@ int TestFontSetEdgingMultipleCalls()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. Call OH_Drawing_FontSetEdging 10 times (with random enum values), and call OH_Drawing_FontGetEdging each time
-    // to get the font edge effect enum type
+    // 2. Call OH_Drawing_FontSetEdging 10 times (with random enum values), and call OH_Drawing_FontGetEdging
+    // each time to get the font edge effect enum type
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dis(0, 2);
-    for (int i = 0; i < 10; i++) {
+    std::uniform_int_distribution<int> dis(ZERO_VALUE, EDGING_ENUM_COUNT - VALUE_ONE);
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_FontEdging edging = static_cast<OH_Drawing_FontEdging>(dis(gen));
         OH_Drawing_FontSetEdging(font, edging);
@@ -1109,14 +1154,16 @@ int TestFontMeasureSingleCharacterNormal()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    // 2. All OH_Drawing_FontMeasureSingleCharacter parameters are entered normally, including str single character,
+    // 2. All OH_Drawing_FontMeasureSingleCharacter parameters are entered normally, including str single
+    // character,
     //  UTF8 encoded Chinese/English characters
-    float textWidth = 0.f;
+    float textWidth = FLOAT_ZERO;
     const char* strOne = "a";
     OH_Drawing_FontMeasureSingleCharacter(font, strOne, &textWidth);
     strOne = "我";
     OH_Drawing_FontMeasureSingleCharacter(font, strOne, &textWidth);
-    // 3. All OH_Drawing_FontMeasureSingleCharacter parameters are entered normally, including str multi-character,
+    // 3. All OH_Drawing_FontMeasureSingleCharacter parameters are entered normally, including str
+    // multi-character,
     //  UTF8 encoded Chinese/English characters
     const char* strTwo = "你好";
     OH_Drawing_FontMeasureSingleCharacter(font, strTwo, &textWidth);
@@ -1145,7 +1192,7 @@ int TestFontMeasureSingleCharacterNull()
     // add assert
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_FontMeasureSingleCharacter with the parameter font as null
-    float textWidth = 0.f;
+    float textWidth = FLOAT_ZERO;
     const char* strOne = "a";
     OH_Drawing_FontMeasureSingleCharacter(nullptr, strOne, &textWidth);
     // 3. OH_Drawing_FontMeasureSingleCharacter with the parameter str as null
@@ -1176,8 +1223,8 @@ int TestFontMeasureSingleCharacterMultipleCalls()
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_FontMeasureSingleCharacter API is called 10 times as a normal input parameter
     const char* str[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
-    float textWidth = 0.f;
-    for (int i = 0; i < 10; i++) {
+    float textWidth = FLOAT_ZERO;
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_FontMeasureSingleCharacter(font, str[i], &textWidth);
     }
     // 3. free memory
@@ -1202,23 +1249,25 @@ int TestFontMeasuretextNormal()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* bounds = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* bounds =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(bounds, nullptr);
     // 2. OH_Drawing_FontMeasureText enumeration traversal
     const void* text = "abc";
-    const size_t byteLength = 3;
-    float textWidth = 0.f;
+    const size_t byteLength = MEASURE_TEXT_LENGTH;
+    float textWidth = FLOAT_ZERO;
     OH_Drawing_TextEncoding encodes[] = {
         TEXT_ENCODING_UTF8,
         TEXT_ENCODING_UTF16,
         TEXT_ENCODING_UTF32,
         TEXT_ENCODING_GLYPH_ID,
     };
-    for (int i = 0; i < 4; i++) {
+    for (int i = ZERO_VALUE; i < VALUE_FOUR; i++) {
         OH_Drawing_FontMeasureText(font, text, byteLength, encodes[i], bounds, &textWidth);
     }
     // 3. OH_Drawing_FontMeasureText with the fifth parameter as null(normally)
@@ -1247,17 +1296,19 @@ int TestFontMeasuretextNull()
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* bounds = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* bounds =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(bounds, nullptr);
     // 2. Call OH_Drawing_FontMeasureText with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
     const void* text = "abc";
-    const size_t byteLength = 3;
-    float textWidth = 0.f;
+    const size_t byteLength = MEASURE_TEXT_LENGTH;
+    float textWidth = FLOAT_ZERO;
     EXPECT_EQ(OH_Drawing_FontMeasureText(nullptr, text, byteLength, TEXT_ENCODING_UTF8, bounds, &textWidth),
               OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_FontMeasureText with nullptr as the second parameter, check the error code using
@@ -1266,7 +1317,7 @@ int TestFontMeasuretextNull()
               OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. Call OH_Drawing_FontMeasureText with nullptr or 0 as the third parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    EXPECT_EQ(OH_Drawing_FontMeasureText(font, text, 0, TEXT_ENCODING_UTF8, bounds, &textWidth),
+    EXPECT_EQ(OH_Drawing_FontMeasureText(font, text, ZERO_VALUE, TEXT_ENCODING_UTF8, bounds, &textWidth),
               OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_FontMeasureText with nullptr as the sixth parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
@@ -1293,27 +1344,29 @@ int TestFontMeasuretextMultipleCalls()
 {
     DrawingNativeFontPart3TestSetUp();
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* fonts[10];
-    for (int i = 0; i < 10; i++) {
+    OH_Drawing_Font* fonts[VALUE_TEN];
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         fonts[i] = OH_Drawing_FontCreate();
         // add assert
         EXPECT_NE(fonts[i], nullptr);
     }
-    OH_Drawing_Rect* rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* rect =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect* bounds = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_Rect* bounds =
+        OH_Drawing_RectCreate(ZERO_VALUE, ZERO_VALUE, RECT_SIZE_HUNDRED, RECT_SIZE_HUNDRED);
     // add assert
     EXPECT_NE(bounds, nullptr);
     // 2. Call OH_Drawing_FontMeasureText 10 times
     const void* text = "abc";
-    const size_t byteLength = 3;
-    float textWidth = 0.f;
-    for (int i = 0; i < 10; i++) {
+    const size_t byteLength = MEASURE_TEXT_LENGTH;
+    float textWidth = FLOAT_ZERO;
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_FontMeasureText(fonts[i], text, byteLength, TEXT_ENCODING_UTF8, bounds, &textWidth);
     }
     // 3. free memory
-    for (int i = 0; i < 10; i++) {
+    for (int i = ZERO_VALUE; i < VALUE_TEN; i++) {
         OH_Drawing_FontDestroy(fonts[i]);
     }
     OH_Drawing_RectDestroy(rect);
@@ -1336,30 +1389,30 @@ int TestFontMeasureSingleCharacter()
     DrawingNativeFontPart3TestSetUp();
     OH_Drawing_Font* font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
-    OH_Drawing_FontSetTextSize(font, 50); // 50 means font text size
+    OH_Drawing_FontSetTextSize(font, FLOAT_FIFTY); // 50 means font text size
     const char* strOne = "a";
     const char* strTwo = "你好";
-    float textWidth = 0.f;
+    float textWidth = FLOAT_ZERO;
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(nullptr, strOne, &textWidth);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    EXPECT_EQ(textWidth, 0.f);
+    EXPECT_EQ(textWidth, FLOAT_ZERO);
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(font, nullptr, &textWidth);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    EXPECT_EQ(textWidth, 0.f);
+    EXPECT_EQ(textWidth, FLOAT_ZERO);
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(font, strOne, nullptr);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    EXPECT_EQ(textWidth, 0.f);
+    EXPECT_EQ(textWidth, FLOAT_ZERO);
     const char* strThree = "";
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(font, strThree, &textWidth);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    EXPECT_EQ(textWidth, 0.f);
+    EXPECT_EQ(textWidth, FLOAT_ZERO);
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(font, strOne, &textWidth);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-    EXPECT_TRUE(textWidth > 0);
+    EXPECT_TRUE(textWidth > FLOAT_ZERO);
     drawingErrorCode = OH_Drawing_FontMeasureSingleCharacter(font, strTwo, &textWidth);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-    EXPECT_TRUE(textWidth > 0);
+    EXPECT_TRUE(textWidth > FLOAT_ZERO);
     OH_Drawing_FontDestroy(font);
 
     DrawingNativeFontPart3TestTearDown();
