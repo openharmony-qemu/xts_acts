@@ -253,28 +253,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_BYTE_2000
-     * @tc.name   testFindLastByteWithIndex0020
-     * @tc.desc   Test findLast with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testFindLastByteWithIndex0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFindLastByteWithIndex0020";
-      try {
-        const byteArray: FixedArray<byte> = [10, 20, 30, 20, 10] as FixedArray<byte>;
-        const result: Byte | undefined = findLast(byteArray,
-          (v: byte, idx: number, arr: FixedArray<byte>) => v === 20 && idx === arr.length - 2);
-        expect(result).assertEqual(20);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_BYTE_3000
      * @tc.name   testFindLastByteEmpty0030
      * @tc.desc   Test findLast on empty array
@@ -591,28 +569,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_FLOAT_0200
-     * @tc.name   testBuiltinArrayfindLast0002
-     * @tc.desc   Test findLast with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLast0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testBuiltinArrayfindLast0002';
-      try {
-        const floatArray: FixedArray<float> = [10.0f, 20.0f, 30.0f, 40.0f] as FixedArray<float>;
-        const result = findLast(floatArray,
-          (v: float, idx: number, arr: FixedArray<float>) => v > 25.0 && idx < arr.length - 1);
-        expect(result).assertEqual(30.0);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_FLOAT_0600
      * @tc.name   testBuiltinArrayfindLast0006_3
      * @tc.desc   Test findLast on empty array
@@ -712,28 +668,6 @@ export default function BuiltinArrayFindLastTest() {
       try {
         const boolArray: FixedArray<boolean> = [true, false, true] as FixedArray<boolean>;
         const result = findLast(boolArray, (v: boolean) => v);
-        expect(result).assertEqual(true);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_BOOL_1100
-     * @tc.name   testBuiltinArrayfindLast0011
-     * @tc.desc   Test findLast with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLast0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLast0011";
-      try {
-        const boolArray: FixedArray<boolean> = [false, true, false, true] as FixedArray<boolean>;
-        const result = findLast(boolArray, (v: boolean, idx: number, arr: FixedArray<boolean>) =>
-        v && idx === arr.length - 1);
         expect(result).assertEqual(true);
         console.log(`${TAG} success`);
       } catch (err) {
@@ -867,28 +801,6 @@ export default function BuiltinArrayFindLastTest() {
         const longArray: FixedArray<long> = [10, 20, 30] as FixedArray<long>;
         const result = findLast(longArray, (val: long) => val < 25);
         expect(result).assertEqual(20);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_LONG_1800
-     * @tc.name   testBuiltinArrayfindLast0018
-     * @tc.desc   Test findLast with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLast0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLast0018";
-      try {
-        const longArray: FixedArray<long> = [5, 15, 25, 35] as FixedArray<long>;
-        const result =
-          findLast(longArray, (val: long, idx: number, arr: FixedArray<long>) => val > 20 && idx === arr.length - 2);
-        expect(result).assertEqual(25);
         console.log(`${TAG} success`);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1065,29 +977,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_SHORT_2700
-     * @tc.name   testBuiltinArrayfindLast0027
-     * @tc.desc   Test findLast with callback using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLast0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLast0027";
-      try {
-        const shortArray: FixedArray<short> = [1, 3, 5, 7, 9] as FixedArray<short>;
-        const result = findLast(shortArray, (val: short, idx: number, arr: FixedArray<short>) =>
-        val % 2 === 1 && idx === arr.length - 2
-        );
-        expect(result).assertEqual(7);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLAST_SHORT_2800
      * @tc.name   testBuiltinArrayfindLast0028
      * @tc.desc   Test findLast on empty array
@@ -1172,29 +1061,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_3200
-     * @tc.name   testBuiltinArrayfindLastIndex0032
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0032";
-      try {
-        const boolArray: FixedArray<boolean> = [true, false, true, false] as FixedArray<boolean>;
-        const result = findLastIndex(boolArray,
-          (elem: boolean, index: number) => !elem && index > 1
-        );
-        expect(result).assertEqual(3);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_3300
      * @tc.name   testBuiltinArrayfindLastIndex0033
      * @tc.desc   Test findLastIndex returns -1 when no elements satisfy predicate
@@ -1264,31 +1130,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_CHAR_3600
-     * @tc.name   testBuiltinArrayfindLastIndex0036
-     * @tc.desc   Test basic findLastIndex operation with char array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0036";
-      try {
-        const arr: FixedArray<char> = [
-          63,
-          64,
-          65
-        ] as FixedArray<char>;
-        const index = findLastIndex(arr,
-          (element: char, _: number, __: FixedArray<char>) => element === 65);
-        expect(index).assertEqual(2);
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_3700
      * @tc.name   testBuiltinArrayfindLastIndex0037
      * @tc.desc   Test basic findLastIndex operation with byte array
@@ -1302,29 +1143,6 @@ export default function BuiltinArrayFindLastTest() {
         const byteArray: FixedArray<byte> = [10, 20, 30, 20, 40] as FixedArray<byte>;
         const result = findLastIndex(byteArray, (elem: byte) => elem === 20);
         expect(result).assertEqual(3);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_3800
-     * @tc.name   testBuiltinArrayfindLastIndex0038
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0038";
-      try {
-        const byteArray: FixedArray<byte> = [5, 15, 25, 35, 45] as FixedArray<byte>;
-        const result = findLastIndex(byteArray,
-          (elem: byte, index: number) => elem > 30 && index > 2
-        );
-        expect(result).assertEqual(4);
         console.log(`${TAG} success`);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1423,29 +1241,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_4300
-     * @tc.name   testBuiltinArrayfindLastIndex0043
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0043";
-      try {
-        const doubleArray: FixedArray<double> = [1.1, 2.2, 3.3, 4.4] as FixedArray<double>;
-        const result = findLastIndex(doubleArray,
-          (elem: double, index: number, array: FixedArray<double>) => elem > 2.0 && index < array.length - 1
-        );
-        expect(result).assertEqual(2);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_4400
      * @tc.name   testBuiltinArrayfindLastIndex0044
      * @tc.desc   Test findLastIndex returns -1 when no elements satisfy predicate
@@ -1515,29 +1310,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_4700
-     * @tc.name   testBuiltinArrayfindLastIndex0047
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0047";
-      try {
-        const floatArray: FixedArray<float> = [1.1f, 2.2f, 3.3f, 4.4f] as FixedArray<float>;
-        const result = findLastIndex(floatArray,
-          (elem: float, index: number) => elem > 3.0 && index >= 2
-        );
-        expect(result).assertEqual(3);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_4800
      * @tc.name   testBuiltinArrayfindLastIndex0048
      * @tc.desc   Test findLastIndex returns -1 when no elements satisfy predicate
@@ -1572,28 +1344,6 @@ export default function BuiltinArrayFindLastTest() {
         const floatArray: FixedArray<float> = [1.1f, 2.2f, 3.3f, 2.2f] as FixedArray<float>;
         const index = findLastIndex(floatArray, (el: float) => el > 2.0);
         expect(index).assertEqual(3);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_FLOAT_5000
-     * @tc.name   testBuiltinArrayfindLastIndex0050
-     * @tc.desc   Test findLastIndex with callback using index parameter
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0050";
-      try {
-        const floatArray: FixedArray<float> = [10.5f, 20.5f, 30.5f, 40.5f] as FixedArray<float>;
-        const index = findLastIndex(floatArray,
-          (el: float, idx: number) => el > 15 && idx < 3);
-        expect(index).assertEqual(2);
         console.log(`${TAG} success`);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1688,29 +1438,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_INT_5500
-     * @tc.name   testBuiltinArrayfindLastIndex0055
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0055";
-      try {
-        const intArray: FixedArray<int> = [10, 20, 30, 40] as FixedArray<int>;
-        const result = findLastIndex(intArray,
-          (elem: int, index: number, array: FixedArray<int>) => elem > 15 && index < array.length - 1
-        );
-        expect(result).assertEqual(2);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_INT_5600
      * @tc.name   testBuiltinArrayfindLastIndex0056
      * @tc.desc   Test findLastIndex returns -1 when no elements satisfy predicate
@@ -1780,27 +1507,6 @@ export default function BuiltinArrayFindLastTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_LONG_5900
-     * @tc.name   testBuiltinArrayfindLastIndex0059
-     * @tc.desc   Test finding the last index of a specific long value
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayfindLastIndex0059";
-      try {
-        const arr: FixedArray<long> = [1, 2, 3, 2, 4] as FixedArray<long>;
-        const index = findLastIndex(arr,
-          (element: long, _: number, __: FixedArray<long>) => element === 2);
-        expect(index).assertEqual(3);
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_SHORT_6000
      * @tc.name  testBuiltinArrayfindLastIndex0060
      * @tc.desc  Test basic findLastIndex operation with short array
@@ -1814,29 +1520,6 @@ export default function BuiltinArrayFindLastTest() {
         const shortArray: FixedArray<short> = [1, 2, 3, 2, 5] as FixedArray<short>;
         const result = findLastIndex(shortArray, (elem: short) => elem === 2);
         expect(result).assertEqual(3);
-        console.log(`${TAG} success`);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_FINDLASTINDEX_SHORT_6100
-     * @tc.name   testBuiltinArrayfindLastIndex0061
-     * @tc.desc   Test findLastIndex with predicate using index and array parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayfindLastIndex0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayfindLastIndex0061";
-      try {
-        const shortArray: FixedArray<short> = [10, 20, 30, 40] as FixedArray<short>;
-        const result = findLastIndex(shortArray,
-          (elem: short, index: number, array: FixedArray<short>) => elem > 15 && index < array.length - 1
-        );
-        expect(result).assertEqual(2);
         console.log(`${TAG} success`);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
