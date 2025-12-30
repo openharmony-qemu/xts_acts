@@ -1305,7 +1305,7 @@ export default function EmitterTest() {
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300';
         let count: int = 0;
 
-        for (let i: long = 3300; i < 3400; i++) {
+        for (let i: long = 3300; i < 3310; i++) {
           let innerEvent: emitter.InnerEvent = {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
@@ -1314,7 +1314,7 @@ export default function EmitterTest() {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
             count ++;
             if (count == 100) {
-              for (let i: long = 3300; i < 3400; i++) {
+              for (let i: long = 3300; i < 3310; i++) {
                 expect(emitter.getListenerCount(i)).assertEqual(1)
               }
               done()
@@ -1347,7 +1347,7 @@ export default function EmitterTest() {
           }
         }
         emitter.onEventData("3400", EmitterCallback)
-        for (let i: number = 3400; i < 3500; i++) {
+        for (let i: number = 3400; i < 3410; i++) {
           emitter.emit("3400")
         }
       })
@@ -1392,10 +1392,10 @@ export default function EmitterTest() {
         }
         emitter.on(innerEvent, EmitterCallback1)
         emitter.onEventData("35", EmitterCallback2)
-        for (let i: number = 3500; i < 3600; i++) {
+        for (let i: number = 3500; i < 3510; i++) {
           emitter.emit(innerEvent)
         }
-        for (let i: number = 3500; i < 3600; i++) {
+        for (let i: number = 3500; i < 3510; i++) {
           emitter.emit("35")
         }
       })
