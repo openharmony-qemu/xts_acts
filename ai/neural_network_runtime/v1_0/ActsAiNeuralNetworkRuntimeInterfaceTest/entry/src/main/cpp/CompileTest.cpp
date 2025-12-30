@@ -664,16 +664,20 @@ static void DestroyCache(const std::string& cachePath)
     int cacheSize = ifs.tellg();
     ifs.seekg(0, std::ios::beg);
 
-    char* ptr = new char[cacheSize];
-    ifs.read(ptr, cacheSize);
-    ifs.close();
+    if (cacheSize > 0) { // 增加了对 cacheSize 的合法性校验
+        char* ptr = new char[cacheSize];
+        ifs.read(ptr, cacheSize);
+        ifs.close();
 
-    int invalidCacheSize = static_cast<int>(cacheSize * 0.9);
-    std::ofstream ofs(cacheFile.c_str(), std::ios::out | std::ios::binary);
-    ofs.write(ptr, invalidCacheSize);
-    ofs.close();
+        int invalidCacheSize = static_cast<int>(cacheSize * 0.9);
+        std::ofstream ofs(cacheFile.c_str(), std::ios::out | std::ios::binary);
+        ofs.write(ptr, invalidCacheSize);
+        ofs.close();
 
-    delete[] ptr;
+        delete[] ptr;
+    } else {
+        OH_LOG_ERROR(LOG_APP, "DestroyCache: Invalid cache size");
+    }
 }
 
 static void CompileModel(OH_NNCompilation* compilation, const OHNNCompileParam& compileParam)

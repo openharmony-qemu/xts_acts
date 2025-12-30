@@ -304,11 +304,6 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 LOGE("[NNRtTest] OH_NNExecutor_SetOutputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            // ret = device->MemoryCopy(expect, operandTem.length);  // HDI 层，已禁用
-            // if (ret != OH_NN_SUCCESS) {
-            //     LOGE("[NNRtTest] device set expect output failed! ret=%d\n", ret);
-            //     return ret;
-            // }
             OHNNMemory[inputIndex + outputIndex] = outputMemory;
             outputIndex += 1;
         }
