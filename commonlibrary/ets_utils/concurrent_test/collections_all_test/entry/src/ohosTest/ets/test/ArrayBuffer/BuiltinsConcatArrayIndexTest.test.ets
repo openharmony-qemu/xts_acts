@@ -39,7 +39,6 @@ export default function builtinsConcatArrayIndexTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    // 测试数组定义
     let arr: collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
     let str : collections.ConcatArray<string | undefined | null> = new collections.Array<string | undefined | null>();
     let emptyArr: collections.ConcatArray<number> = new collections.Array<number>();

@@ -20,7 +20,6 @@ interface GeneratedTypeLiteralInterface_1 {
   length: number;
 }
 
-// 后面用作setLength的自定义版
 function setArrayLength<T>(arr: collections.Array<T>, newLength: number): void {
   const length = arr.length;
   if (newLength > length) {
@@ -106,7 +105,6 @@ export default function builtinsConcatArrayLengthTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    // length数字过大会报crash
     it('builtinsConcatArrayLengthTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const targetLength: number = 65536;
       const presetWritableArr: string[] = new Array(targetLength);
