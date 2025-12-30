@@ -854,13 +854,13 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("BooleanValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 start');
       let booleanType: BooleanType;
       let booleanValue = new BooleanValue(booleanType, true);
       expect(booleanValue.getValueData()).assertTrue();
       expect(booleanValue.getType()).assertEqual(booleanType);
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 end');
     });
 
     /**
@@ -872,13 +872,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("BooleanValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 start');
       let booleanType: BooleanType;
       let booleanValue = new BooleanValue(booleanType, false);
       expect(booleanValue.getValueData()).assertFalse();
       expect(booleanValue.getType()).assertEqual(booleanType);
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 end');
     });
 
     /**
@@ -890,14 +890,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("BooleanValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 start');
       let booleanType: BooleanType;
       let value1 = new BooleanValue(booleanType, true);
       let value2 = new BooleanValue(booleanType, false);
       expect(value1.getType()).assertEqual(value2.getType());
       expect(value1.getValueData() === value2.getValueData()).assertFalse();
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 end');
     });
 
     /**
@@ -909,14 +909,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("BooleanValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 start');
       let booleanType: BooleanType;
       let trueValue = new BooleanValue(booleanType, true);
       let falseValue = new BooleanValue(booleanType, false);
       expect(trueValue.toString()).assertEqual("true");
       expect(falseValue.toString()).assertEqual("false");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 end');
     });
 
     /**
@@ -928,13 +928,13 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 start');
       let byteType : ByteType;
       let byteValue = new ByteValue(byteType, -128);
       expect(byteValue.getValueData()).assertEqual(-128);
       expect(byteValue.toString()).assertEqual("-128");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 end');
     });
 
     /**
@@ -946,13 +946,13 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 start');
       let byteType : ByteType;
       let byteValue = new ByteValue(byteType, 127);
       expect(byteValue.getValueData()).assertEqual(127);
       expect(byteValue.toString()).assertEqual("127");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 end');
     });
 
     /**
@@ -964,13 +964,13 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 start');
       let byteType : ByteType;
       let byteValue = new ByteValue(byteType, 0);
       expect(byteValue.getValueData()).assertEqual(0);
       expect(byteValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 end');
     });
 
     /**
@@ -982,14 +982,14 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 start');
       let byteType : ByteType;
       let value1 = new ByteValue(byteType, 10);
       let value2 = new ByteValue(byteType, 20);
       expect(value1.getType()).assertEqual(value2.getType());
       expect(value1.getValueData() === value2.getValueData()).assertFalse();
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 end');
     });
 
     /**
@@ -1001,13 +1001,13 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 start');
       let byteType : ByteType;
       let byteValue = new ByteValue(byteType, 64);
       expect(byteValue.getValueData()).assertEqual(64);
       expect(byteValue.toLocaleString()).assertEqual("64");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 end');
     });
 
     /**
@@ -1019,7 +1019,7 @@ export default function constructorTest() {
      * @tc.level   LEVEL1
      */
     it("ByteValueConstructor0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 start');
       let byteType : ByteType;
       let values: byte[] = [-128, 0, 127] as byte[];
       for (let i = 0; i < values.length; i++) {
@@ -1030,7 +1030,7 @@ export default function constructorTest() {
         expect(byteValue.getValueData() >= -128).assertTrue();
       }
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 end');
     });
 
     /**
@@ -1042,14 +1042,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 start');
       let charType : CharType;
       let charData: char = 'A'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
       expect(charValue.toString()).assertEqual('"A"');
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 end');
     });
 
     /**
@@ -1061,14 +1061,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 start');
       let charType : CharType;
       let charData: char = '\n'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
       expect(charValue.toString()).assertEqual('"\n"');
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 end');
     });
 
     /**
@@ -1080,13 +1080,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 start');
       let charType : CharType;
       let charValue1 = new CharValue(charType, 'X'.charAt(0) as char);
       let charValue2 = new CharValue(charType, 'Y'.charAt(0) as char);
       expect(charValue1.getType()).assertEqual(charValue2.getType());
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 end');
     });
 
     /**
@@ -1098,7 +1098,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 start');
       let charType : CharType;
       let testChars = [
         '\u0000'.charAt(0) as char,
@@ -1110,7 +1110,7 @@ export default function constructorTest() {
         expect(charValue.getValueData()).assertEqual(ch);
       }
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 end');
     });
 
     /**
@@ -1122,13 +1122,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 start');
       let doubleType : DoubleType;
       let doubleValue = new DoubleValue(doubleType, 3.1415926);
       expect(doubleValue.getValueData()).assertEqual(3.1415926);
       expect(doubleValue.toString()).assertEqual("3.1415926");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 end');
     });
 
     /**
@@ -1140,13 +1140,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 start');
       let doubleType : DoubleType;
       let doubleValue = new DoubleValue(doubleType, -2.71828);
       expect(doubleValue.getValueData()).assertEqual(-2.71828);
       expect(doubleValue.toPrint(0)).assertEqual("-2.71828");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 end');
     });
 
     /**
@@ -1158,13 +1158,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 start');
       let doubleType : DoubleType;
       let doubleValue = new DoubleValue(doubleType, 0.0);
       expect(doubleValue.getValueData()).assertEqual(0.0);
       expect(doubleValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 end');
     });
 
     /**
@@ -1176,13 +1176,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 start');
       let doubleType : DoubleType;
       let value1 = new DoubleValue(doubleType, 1.0);
       let value2 = new DoubleValue(doubleType, 2.0);
       expect(value1.getType()).assertEqual(value2.getType());
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 end');
     });
 
     /**
@@ -1194,7 +1194,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("CharValueConstructor005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 start');
       let doubleType : DoubleType;
       let testValues = [Number.MIN_VALUE, Number.MAX_VALUE, Number.POSITIVE_INFINITY] as double[];
       for (let i = 0; i < testValues.length; i++) {
@@ -1203,7 +1203,7 @@ export default function constructorTest() {
         expect(doubleValue.getValueData()).assertEqual(value);
       }
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 end');
     });
 
     /**
@@ -1215,14 +1215,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("FloatValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0001 start');
       let floatValueObj = reflect.Value.of(3.14 as float);
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(Math.abs(floatValue.getValueData() - 3.14) < 0.00001).assertTrue();
       expect(floatValue.toString().substring(0, 4)).assertEqual("3.14");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0001 end');
     });
 
     /**
@@ -1234,14 +1234,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("FloatValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0002 start');
       let floatValueObj = reflect.Value.of(-2.718 as float);
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(Math.abs(floatValue.getValueData() - (-2.718)) < 0.00001).assertTrue();
       expect(floatValue.toPrint(0).substring(0, 6)).assertEqual("-2.718");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0002 end');
     });
 
     /**
@@ -1253,14 +1253,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("FloatValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0003 start');
       let floatValueObj = reflect.Value.of(0.0 as float);
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(floatValue.getValueData()).assertEqual(0.0);
       expect(floatValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0003 end');
     });
 
     /**
@@ -1272,7 +1272,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("FloatValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0004 start');
       const testValues = [
         Number.MIN_VALUE as float,
         Number.MAX_VALUE as float,
@@ -1285,7 +1285,7 @@ export default function constructorTest() {
         expect(floatValue.getValueData()).assertEqual(value);
       });
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0004 end');
     });
 
     /**
@@ -1297,13 +1297,13 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("IntValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 start');
       let intType : IntType;
       let intValue = new IntValue(intType, 42);
       expect(intValue.getValueData()).assertEqual(42);
       expect(intValue.toString()).assertEqual("42");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 end');
     });
 
     /**
@@ -1315,13 +1315,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("IntValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 start');
       let intType : IntType;
       let intValue = new IntValue(intType, -100);
       expect(intValue.getValueData()).assertEqual(-100);
       expect(intValue.toPrint(0)).assertEqual("-100");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 end');
     });
 
     /**
@@ -1333,13 +1333,13 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("IntValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 start');
       let intType : IntType;
       let intValue = new IntValue(intType, 0);
       expect(intValue.getValueData()).assertEqual(0);
       expect(intValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 end');
     });
 
     /**
@@ -1351,7 +1351,7 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("IntValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 start');
       const intType = IntType.VAL;
       const intValue = new IntValue(intType, 12345);
       const intData = intValue.getData() as Int | null;
@@ -1362,7 +1362,7 @@ export default function constructorTest() {
         expect().assertFalse();
       }
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0004 end');
     });
 
     /**
@@ -1374,7 +1374,7 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("IntValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0005 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0005 start');
       const intType = IntType.VAL;
       const testValues: int[] = [
         -2147483648,
@@ -1386,7 +1386,7 @@ export default function constructorTest() {
         expect(intValue.getValueData()).assertEqual(value);
       });
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0005 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0005 end');
     });
 
     /**
@@ -1398,13 +1398,13 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("LongValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0001 start');
       const longType = LongType.VAL;
       const longValue = new LongValue(longType, 9223372036854775807);
       expect(longValue.getValueData()).assertEqual(9223372036854775807);
       expect(longValue.toString()).assertEqual("9223372036854775807");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0001 end');
     });
 
     /**
@@ -1416,13 +1416,13 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("LongValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0002 start');
       const longType = LongType.VAL;
       const longValue = new LongValue(longType, -9223372036854775808);
       expect(longValue.getValueData()).assertEqual(-9223372036854775808);
       expect(longValue.toPrint(0)).assertEqual("-9223372036854775808");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0002 end');
     });
 
     /**
@@ -1434,13 +1434,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("LongValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0003 start');
       const longType = LongType.VAL;
       const longValue = new LongValue(longType, 0);
       expect(longValue.getValueData()).assertEqual(0);
       expect(longValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0003 end');
     });
 
     /**
@@ -1452,7 +1452,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("LongValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 start');
       const longType = LongType.VAL;
       const longValue = new LongValue(longType, 123456789012345);
       const longData = longValue.getData() as Long | null;
@@ -1463,7 +1463,7 @@ export default function constructorTest() {
         expect().assertFalse();
       }
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0004 end');
     });
 
     /**
@@ -1475,7 +1475,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("LongValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0005 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0005 start');
       const longType = LongType.VAL;
       const testValues: long[] = [
         -9223372036854775808,
@@ -1487,7 +1487,7 @@ export default function constructorTest() {
         expect(longValue.getValueData()).assertEqual(value);
       });
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0005 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'LongValueConstructor0005 end');
     });
 
     /**
@@ -1499,13 +1499,13 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("ShortValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0001 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0001 start');
       let shortType = ShortType.VAL;
       let shortValue = new ShortValue(shortType, 32767);
       expect(shortValue.getValueData()).assertEqual(32767);
       expect(shortValue.toString()).assertEqual("32767");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0001 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0001 end');
     });
 
     /**
@@ -1517,13 +1517,13 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("ShortValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0002 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0002 start');
       let shortType = ShortType.VAL;
       let shortValue = new ShortValue(shortType, -32768);
       expect(shortValue.getValueData()).assertEqual(-32768);
       expect(shortValue.toPrint(0)).assertEqual("-32768");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0002 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0002 end');
     });
 
     /**
@@ -1535,13 +1535,13 @@ export default function constructorTest() {
      * @tc.type   FUNCTION
      */
     it("ShortValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0003 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0003 start');
       let shortType = ShortType.VAL;
       let shortValue = new ShortValue(shortType, 0);
       expect(shortValue.getValueData()).assertEqual(0);
       expect(shortValue.toLocaleString()).assertEqual("0");
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0003 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0003 end');
     });
 
     /**
@@ -1553,7 +1553,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("ShortValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0004 start');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0004 start');
       let shortType = ShortType.VAL;
       let testValues = [-32768, 0, 32767] as short[];
       testValues.forEach((value: short) => {
@@ -1561,7 +1561,7 @@ export default function constructorTest() {
         expect(shortValue.getValueData()).assertEqual(value);
       });
       done();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0004 end');
+      console.log(0x0000, 'testTag', '%{public}s', 'ShortValueConstructor0004 end');
     });
 
     /**
@@ -1573,14 +1573,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 start');
       let charType : CharType;
       const testString = "A";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
       expect(charValue.toString()).assertEqual('"A"');
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 end');
     });
 
     /**
@@ -1592,14 +1592,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 start');
       let charType : CharType;
       const testString = "你";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
       expect(charValue.toString()).assertEqual('"你"');
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 end');
     });
 
     /**
@@ -1611,14 +1611,14 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 start');
       let charType : CharType;
       const testString = "\n";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
       expect(charValue.toString()).assertEqual('"\n"');
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 end');
     });
 
     /**
@@ -1630,7 +1630,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 start');
       let charType : CharType;
       const testString = "";
       try {
@@ -1641,7 +1641,7 @@ export default function constructorTest() {
         expect(e instanceof Error).assertTrue();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 end');
     });
 
     /**
@@ -1653,14 +1653,14 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 start');
       let charType : CharType;
       const testString = "7";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
       expect(charValue.toString()).assertEqual('"7"');
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 end');
     });
 
     /**
@@ -1672,7 +1672,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionCharValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 start');
       let charType : CharType;
       const testString = "AB";
       try {
@@ -1683,7 +1683,7 @@ export default function constructorTest() {
         expect(e instanceof Error).assertTrue();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 end');
     });
 
     /**
@@ -1695,7 +1695,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 start');
       let byteType : ByteType;
       const testValue: byte = -128;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1703,7 +1703,7 @@ export default function constructorTest() {
       expect(result).assertEqual(testValue);
       expect(byteValue.toString()).assertEqual("-128");
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 end');
     });
 
     /**
@@ -1715,7 +1715,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 start');
       let byteType : ByteType;
       const testValue: byte = 127;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1723,7 +1723,7 @@ export default function constructorTest() {
       expect(result).assertEqual(testValue);
       expect(byteValue.toString()).assertEqual("127");
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 end');
     });
 
     /**
@@ -1735,7 +1735,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 start');
       let byteType : ByteType;
       const testValue: byte = 0;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1743,7 +1743,7 @@ export default function constructorTest() {
       expect(result).assertEqual(testValue);
       expect(byteValue.toString()).assertEqual("0");
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 end');
     });
 
     /**
@@ -1755,7 +1755,7 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 start');
       let byteType : ByteType;
       const testValue: byte = 42;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1763,7 +1763,7 @@ export default function constructorTest() {
       expect(result).assertEqual(testValue);
       expect(byteValue.toString()).assertEqual("42");
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 end');
     });
 
     /**
@@ -1775,7 +1775,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 start');
       let byteType : ByteType;
       const testValue: byte = -42;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1783,7 +1783,7 @@ export default function constructorTest() {
       expect(result).assertEqual(testValue);
       expect(byteValue.toString()).assertEqual("-42");
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 end');
     });
 
     /**
@@ -1795,7 +1795,7 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionByteValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 start');
       let byteType : ByteType;
       const testValue: byte = 100;
       const byteValue = new ByteValue(byteType, testValue);
@@ -1804,7 +1804,7 @@ export default function constructorTest() {
       expect(valueData.toString()).assertEqual(stringRep);
       expect(Number(stringRep)).assertEqual(testValue);
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 end');
     });
 
     /**
@@ -1816,19 +1816,19 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("SUBReflectionClassValueGetField0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 start');
       let strValue = "testValue";
       let numValue = 123;
       try {
         expect(strValue).assertEqual("testValue");
         expect(numValue).assertEqual(123);
-        hilog.info(domain, tag, 'Basic value access test passed');
+        console.log(domain, tag, 'Basic value access test passed');
       } catch (e) {
         hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
         expect().assertFalse();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionClassValueGetField0001 end');
     });
 
     /**
@@ -1840,7 +1840,7 @@ export default function constructorTest() {
     * @tc.type    FUNCTION
     */
     it("SUBReflectionPropertyAccess0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0001 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0001 start');
       let boolVal: boolean = true;
       let numVal: number = 123;
       let strVal: string = "test";
@@ -1850,10 +1850,10 @@ export default function constructorTest() {
       expect(numReflect.toString()).assertEqual("123");
       let strReflect = reflect.Value.of(strVal as string);
       expect(strReflect.toString()).assertEqual("test");
-      hilog.info(domain, tag, 'Explicit type conversion test passed');
+      console.log(domain, tag, 'Explicit type conversion test passed');
 
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0001 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0001 end');
     });
 
     /**
@@ -1865,7 +1865,7 @@ export default function constructorTest() {
      * @tc.type     FUNCTION
      */
     it("SUBReflectionPropertyAccess0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 start');
       try {
         let strValue = reflect.Value.of("hello");
         expect(strValue.toString()).assertEqual("hello");
@@ -1873,13 +1873,13 @@ export default function constructorTest() {
         expect(numValue.toString()).assertEqual("123");
         let boolValue = reflect.Value.of(true);
         expect(boolValue.toString()).assertEqual("true");
-        hilog.info(domain, tag, 'Basic value reflection test passed');
+        console.log(domain, tag, 'Basic value reflection test passed');
       } catch (e) {
         hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
         expect().assertFalse();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0002 end');
     });
 
     /**
@@ -1891,19 +1891,19 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionPropertyAccess0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 start');
       try {
         let nullValue = reflect.Value.of(null);
         expect(nullValue.toString()).assertEqual("null");
         let undefinedValue = reflect.Value.of(undefined);
         expect(undefinedValue.toString()).assertEqual("undefined");
-        hilog.info(domain, tag, 'Null/undefined reflection test passed');
+        console.log(domain, tag, 'Null/undefined reflection test passed');
       } catch (e) {
         hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
         expect().assertFalse();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionPropertyAccess0003 end');
     });
 
     /**
@@ -1916,7 +1916,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionFieldCount0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 start');
       interface TestObject {
           field1: string;
           field2: number;
@@ -1929,13 +1929,13 @@ export default function constructorTest() {
       try {
         const fieldCount = Object.keys(testObj).length;
         expect(fieldCount).assertEqual(2);
-        hilog.info(domain, tag, 'Typed object field count test passed');
+        console.log(domain, tag, 'Typed object field count test passed');
       } catch (e) {
         hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
         expect().assertFalse();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0001 end');
     });
 
     /**
@@ -1947,17 +1947,17 @@ export default function constructorTest() {
      * @tc.type    FUNCTION
      */
     it("SUBReflectionFieldCount0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 start');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 start');
       const testArray: number[] = [1, 2, 3];
       try {
         expect(testArray.length).assertEqual(3);
-        hilog.info(domain, tag, 'Array elements test passed');
+        console.log(domain, tag, 'Array elements test passed');
       } catch (e) {
         hilog.error(domain, tag, 'Test failed: %{public}s', e.toString());
         expect().assertFalse();
       }
       done();
-      hilog.info(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 end');
+      console.log(domain, tag, '%{public}s', 'SUBReflectionFieldCount0002 end');
     });
 
     });

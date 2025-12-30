@@ -43,8 +43,6 @@ export default function math04Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
-
     /**
      * @tc.number  SUB_MATH_CLZ32_STATIC_2500
      * @tc.name    testClz32Static2500

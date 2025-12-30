@@ -43,8 +43,6 @@ export default function math05Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    hilog.info(domain, tag, '%{public}s', 'describe start');
-
     /**
      * @tc.number  MATH_MAX3_0100
      * @tc.name    testmathmax3001
@@ -56,11 +54,11 @@ export default function math05Test() {
     it("testmathmax3001",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3001 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3001 started');
         const result: number = max(5.2, 3.8);
         expect(result).assertEqual(5.2);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3001 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3001 completed');
       });
 
     /**
@@ -74,11 +72,11 @@ export default function math05Test() {
     it("testmathmax3002",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3002 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3002 started');
         const result: number = max(-5.5, 2.3);
         expect(result).assertEqual(2.3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3002 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3002 completed');
       });
 
     /**
@@ -92,11 +90,11 @@ export default function math05Test() {
     it("testmathmax3003",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3003 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3003 started');
         const result: number = max(-7.1, -3.4);
         expect(result).assertEqual(-3.4);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3003 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3003 completed');
       });
 
     /**
@@ -110,12 +108,12 @@ export default function math05Test() {
     it("testmathmax3004",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3004 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3004 started');
         const value: number = 10.0;
         const result: number = max(value, value);
         expect(result).assertEqual(value);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3004 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3004 completed');
       });
 
     /**
@@ -129,10 +127,10 @@ export default function math05Test() {
     it("testmathmax2006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2006 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2006 started');
         const result: number = max(Number.MAX_VALUE, Number.MAX_VALUE / 2);
         expect(result).assertEqual(Number.MAX_VALUE);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${Number.MAX_VALUE} > ${Number.MAX_VALUE / 2}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${Number.MAX_VALUE} > ${Number.MAX_VALUE / 2}`);
         done();
       });
 
@@ -147,10 +145,10 @@ export default function math05Test() {
     it("testmathmax2007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2007 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2007 started');
         const result: number = max(Number.MIN_VALUE, -Number.MIN_VALUE);
         expect(result).assertEqual(Number.MIN_VALUE);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${Number.MIN_VALUE} > ${-Number.MIN_VALUE}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${Number.MIN_VALUE} > ${-Number.MIN_VALUE}`);
         done();
       });
 
@@ -165,10 +163,10 @@ export default function math05Test() {
     it("testmathmax2008",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2008 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2008 started');
         const result: number = max(0, 42);
         expect(result).assertEqual(42);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 42 > 0');
+        console.log(domain, tag, '%{public}s', 'Assertion: 42 > 0');
         done();
       });
 
@@ -183,10 +181,10 @@ export default function math05Test() {
     it("testmathmax2009",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2009 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2009 started');
         const result: number = max(0, -99);
         expect(result).assertEqual(0);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 0 > -99');
+        console.log(domain, tag, '%{public}s', 'Assertion: 0 > -99');
         done();
       });
 
@@ -201,10 +199,10 @@ export default function math05Test() {
     it("testmathmax2010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2010 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2010 started');
         const result: number = max(Infinity, -Infinity);
         expect(result).assertEqual(Infinity);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: Infinity > -Infinity');
+        console.log(domain, tag, '%{public}s', 'Assertion: Infinity > -Infinity');
         done();
       });
 
@@ -219,11 +217,11 @@ export default function math05Test() {
     it("testmathmax3006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3006 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3006 started');
         const result: number = max(0, 8.5);
         expect(result).assertEqual(8.5);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3006 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3006 completed');
       });
 
     /**
@@ -237,11 +235,11 @@ export default function math05Test() {
     it("testmathmax3007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3007 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3007 started');
         const result: number = max(-3.7, 0);
         expect(result).assertEqual(0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3007 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3007 completed');
       });
 
     /**
@@ -255,13 +253,13 @@ export default function math05Test() {
     it("testmathmax3008",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3008 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3008 started');
         const large1: number = Number.MAX_VALUE;
         const large2: number = Number.MAX_VALUE / 2;
         const result: number = max(large1, large2);
         expect(result).assertEqual(large1);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3008 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3008 completed');
       });
 
     /**
@@ -275,13 +273,13 @@ export default function math05Test() {
     it("testmathmax3010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3010 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3010 started');
         const result1: number = max(Infinity, 100);
         expect(result1).assertEqual(Infinity);
         const result2: number = max(-Infinity, 0);
         expect(result2).assertEqual(0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3010 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3010 completed');
       });
 
     /**
@@ -295,10 +293,10 @@ export default function math05Test() {
     it("testmathmax2011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2011 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2011 started');
         const result: number = max(0.30000000000000004, 0.3);
         expect(result).assertEqual(0.30000000000000004);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 0.30000000000000004 > 0.3');
+        console.log(domain, tag, '%{public}s', 'Assertion: 0.30000000000000004 > 0.3');
         done();
       });
 
@@ -313,10 +311,10 @@ export default function math05Test() {
     it("testmathmax2012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2012 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2012 started');
         const result: number = max(1e-10, 1e10);
         expect(result).assertEqual(1e10);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 1e10 > 1e-10');
+        console.log(domain, tag, '%{public}s', 'Assertion: 1e10 > 1e-10');
         done();
       });
 
@@ -331,10 +329,10 @@ export default function math05Test() {
     it("testmathmax2014",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2014 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2014 started');
         const result: number = max(NaN, NaN);
         expect(isNaN(result)).assertTrue();
-        hilog.info(domain, tag, '%{public}s', 'Assertion: max(NaN, NaN) is NaN');
+        console.log(domain, tag, '%{public}s', 'Assertion: max(NaN, NaN) is NaN');
         done();
       });
 
@@ -349,11 +347,11 @@ export default function math05Test() {
     it("testmathmax3013",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3013 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3013 started');
         const result: number = max(NaN, NaN);
         expect(isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3013 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3013 completed');
       });
 
     /**
@@ -367,11 +365,11 @@ export default function math05Test() {
     it("testmathmax3014",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3014 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3014 started');
         const result: number = max(Infinity, -Infinity);
         expect(result).assertEqual(Infinity);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3014 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3014 completed');
       });
 
     /**
@@ -385,13 +383,13 @@ export default function math05Test() {
     it("testmathmax3015",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3015 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3015 started');
         const maxInt = Number.MAX_SAFE_INTEGER;
         const minInt = Number.MIN_SAFE_INTEGER;
         expect(max(maxInt, maxInt - 1)).assertEqual(maxInt);
         expect(max(minInt, minInt + 1)).assertEqual(minInt + 1);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3015 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3015 completed');
       });
 
     /**
@@ -405,11 +403,11 @@ export default function math05Test() {
     it("testmathmax3017",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3017 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3017 started');
         expect(max(5, 5.5)).assertEqual(5.5);
         expect(max(1e3, 1000.1)).assertEqual(1000.1);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3017 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3017 completed');
       });
 
     /**
@@ -423,12 +421,12 @@ export default function math05Test() {
     it("testmathmax3018",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3018 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3018 started');
         const a: number = 123.456;
         const b: number = 789.012;
         expect(max(a, b)).assertEqual(max(b, a));
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3018 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3018 completed');
       });
 
     /**
@@ -442,10 +440,10 @@ export default function math05Test() {
     it("testmathmax2016",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2016 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2016 started');
         const result: number = max(-0, +0);
         expect(result).assertEqual(0);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: max(-0, +0) === 0');
+        console.log(domain, tag, '%{public}s', 'Assertion: max(-0, +0) === 0');
         done();
       });
 
@@ -460,10 +458,10 @@ export default function math05Test() {
     it("testmathmax2017",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2017 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2017 started');
         const result: number = max(-0, 0.1);
         expect(result).assertEqual(0.1);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 0.1 > -0');
+        console.log(domain, tag, '%{public}s', 'Assertion: 0.1 > -0');
         done();
       });
 
@@ -478,11 +476,11 @@ export default function math05Test() {
     it("testmathmax2018",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2018 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2018 started');
         const largeNum: number = 1e308;
         const result: number = max(largeNum, -largeNum);
         expect(result).assertEqual(largeNum);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${largeNum} > ${-largeNum}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${largeNum} > ${-largeNum}`);
         done();
       });
 
@@ -497,10 +495,10 @@ export default function math05Test() {
     it("testmathmax2019",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2019 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2019 started');
         const result: number = max(0.123456789, 0.123456788);
         expect(result).assertEqual(0.123456789);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 0.123456789 > 0.123456788');
+        console.log(domain, tag, '%{public}s', 'Assertion: 0.123456789 > 0.123456788');
         done();
       });
 
@@ -515,10 +513,10 @@ export default function math05Test() {
     it("testmathmax2020",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2020 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2020 started');
         const result: number = max(2e-50, 3e-50);
         expect(result).assertEqual(3e-50);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: 3e-50 > 2e-50');
+        console.log(domain, tag, '%{public}s', 'Assertion: 3e-50 > 2e-50');
         done();
       });
 
@@ -533,11 +531,11 @@ export default function math05Test() {
     it("testmathmax3019",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3019 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3019 started');
         expect(max(Infinity, Number.MAX_VALUE)).assertEqual(Infinity);
         expect(max(Infinity, -Infinity)).assertEqual(Infinity);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3019 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3019 completed');
       });
 
     /**
@@ -551,11 +549,11 @@ export default function math05Test() {
     it("testmathmax3020",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3020 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3020 started');
         expect(max(-Infinity, Number.MIN_SAFE_INTEGER)).assertEqual(Number.MIN_SAFE_INTEGER);
         expect(max(-Infinity, 0)).assertEqual(0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3020 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3020 completed');
       });
 
     /**
@@ -569,12 +567,12 @@ export default function math05Test() {
     it("testmathmax3021",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3021 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3021 started');
         const maxSafe = Number.MAX_SAFE_INTEGER;
         expect(max(maxSafe, maxSafe - 1)).assertEqual(maxSafe);
         expect(max(maxSafe, maxSafe)).assertEqual(maxSafe);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3021 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3021 completed');
       });
 
     /**
@@ -588,12 +586,12 @@ export default function math05Test() {
     it("testmathmax3022",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3022 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3022 started');
         const minSafe = Number.MIN_SAFE_INTEGER;
         expect(max(minSafe, minSafe + 1)).assertEqual(minSafe + 1);
         expect(max(minSafe, minSafe)).assertEqual(minSafe);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3022 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3022 completed');
       });
 
     /**
@@ -607,12 +605,12 @@ export default function math05Test() {
     it("testmathmax3023",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3023 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3023 started');
         expect(max(1e5, 99999)).assertEqual(100000);
         expect(max(2.5e-10, 3.0e-10)).assertEqual(3.0e-10);
         expect(max(0.0001, 1e-4)).assertEqual(0.0001);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3023 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3023 completed');
       });
 
     /**
@@ -626,13 +624,13 @@ export default function math05Test() {
     it("testmathmax3025",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3025 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3025 started');
         expect(max(10, 10.0001)).assertEqual(10.0001);
         expect(max(-5, 5)).assertEqual(5);
         expect(max(0, -0.0001)).assertEqual(0);
         expect(max(Number.MAX_VALUE, Number.MIN_VALUE)).assertEqual(Number.MAX_VALUE);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3025 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3025 completed');
       });
 
     /**
@@ -646,7 +644,7 @@ export default function math05Test() {
     it("testmathmax3026",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3026 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3026 started');
         const startTime = new Date().getTime();
         for (let i = 0; i < 10000; i++) {
           const a = Math.random() * 1000;
@@ -655,10 +653,10 @@ export default function math05Test() {
         }
         const endTime = new Date().getTime();
         const duration = endTime - startTime;
-        hilog.info(domain, tag, 'Performance: %{public}d ms', duration);
+        console.log(domain, tag, 'Performance: %{public}d ms', duration);
         expect(duration).assertLess(100);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3026 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3026 completed');
       });
 
     /**
@@ -672,11 +670,11 @@ export default function math05Test() {
     it("testmathmax2021",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2021 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2021 started');
         const maxSafe = Number.MAX_SAFE_INTEGER;
         const result: number = max(maxSafe, maxSafe - 1);
         expect(result).assertEqual(maxSafe);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${maxSafe} > ${maxSafe - 1}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${maxSafe} > ${maxSafe - 1}`);
         done();
       });
 
@@ -691,11 +689,11 @@ export default function math05Test() {
     it("testmathmax2022",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2022 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2022 started');
         const minSafe = Number.MIN_SAFE_INTEGER;
         const result: number = max(minSafe, minSafe + 1);
         expect(result).assertEqual(minSafe + 1);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${minSafe + 1} > ${minSafe}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${minSafe + 1} > ${minSafe}`);
         done();
       });
 
@@ -710,12 +708,12 @@ export default function math05Test() {
     it("testmathmax2023",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2023 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2023 started');
         const a: number = 0.1 + 0.2;
         const b: number = 0.3;
         const result: number = max(a, b);
         expect(result).assertEqual(a);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${a} > ${b}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${a} > ${b}`);
         done();
       });
 
@@ -730,12 +728,12 @@ export default function math05Test() {
     it("testmathmax2024",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2024 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2024 started');
         const small: number = 1e-300;
         const large: number = 1e+300;
         const result: number = max(small, large);
         expect(result).assertEqual(large);
-        hilog.info(domain, tag, '%{public}s', `Assertion: ${large} > ${small}`);
+        console.log(domain, tag, '%{public}s', `Assertion: ${large} > ${small}`);
         done();
       });
 
@@ -750,10 +748,10 @@ export default function math05Test() {
     it("testmathmax2025",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax2025 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax2025 started');
         const result: number = max(Infinity, Number.MAX_VALUE);
         expect(result).assertEqual(Infinity);
-        hilog.info(domain, tag, '%{public}s', 'Assertion: Infinity > Number.MAX_VALUE');
+        console.log(domain, tag, '%{public}s', 'Assertion: Infinity > Number.MAX_VALUE');
         done();
       });
 
@@ -768,12 +766,12 @@ export default function math05Test() {
     it("testmathmax3027",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3027 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax3027 started');
         expect(max(-0, 0)).assertEqual(0);
         expect(max(-0, 5)).assertEqual(5);
         expect(max(-0, -5)).assertEqual(-0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathmax3027 completed');
+        console.log(domain, tag, '%{public}s', 'testmathmax3027 completed');
       });
 
     /**
@@ -786,11 +784,11 @@ export default function math05Test() {
      */
     it("testmathmax4001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4001 started');
+        console.log(domain, tag, 'testmathmax4001 started');
         const result: int = max(5, 3);
         expect(result).assertEqual(5);
         done();
-        hilog.info(domain, tag, 'testmathmax4001 ended');
+        console.log(domain, tag, 'testmathmax4001 ended');
       });
 
     /**
@@ -803,11 +801,11 @@ export default function math05Test() {
      */
     it("testmathmax4002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4002 started');
+        console.log(domain, tag, 'testmathmax4002 started');
         const result: int = max(-7, -10);
         expect(result).assertEqual(-7);
         done();
-        hilog.info(domain, tag, 'testmathmax4002 ended');
+        console.log(domain, tag, 'testmathmax4002 ended');
       });
 
     /**
@@ -820,11 +818,11 @@ export default function math05Test() {
      */
     it("testmathmax4003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4003 started');
+        console.log(domain, tag, 'testmathmax4003 started');
         const result: int = max(0, -5);
         expect(result).assertEqual(0);
         done();
-        hilog.info(domain, tag, 'testmathmax4003 ended');
+        console.log(domain, tag, 'testmathmax4003 ended');
       });
 
     /**
@@ -837,11 +835,11 @@ export default function math05Test() {
      */
     it("testmathmax4004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4004 started');
+        console.log(domain, tag, 'testmathmax4004 started');
         const result: int = max(100, 100);
         expect(result).assertEqual(100);
         done();
-        hilog.info(domain, tag, 'testmathmax4004 ended');
+        console.log(domain, tag, 'testmathmax4004 ended');
       });
 
     /**
@@ -854,7 +852,7 @@ export default function math05Test() {
      */
     it("testmathmax5001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5001 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5001 started');
         const result: long = max(15, 10);
         expect(result).assertEqual(15);
         done();
@@ -870,7 +868,7 @@ export default function math05Test() {
      */
     it("testmathmax5002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5002 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5002 started');
         const result: long = max(-5, 10);
         expect(result).assertEqual(10);
         done();
@@ -886,7 +884,7 @@ export default function math05Test() {
      */
     it("testmathmax5003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5003 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5003 started');
         const result: long = max(100, 100);
         expect(result).assertEqual(100);
         done();
@@ -902,7 +900,7 @@ export default function math05Test() {
      */
     it("testmathmax5004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5004 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5004 started');
         const result: long = max(-8, -15);
         expect(result).assertEqual(-8);
         done();
@@ -918,7 +916,7 @@ export default function math05Test() {
      */
     it("testmathmax5005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5005 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5005 started');
         const result: long = max(0, -100);
         expect(result).assertEqual(0);
         done();
@@ -934,11 +932,11 @@ export default function math05Test() {
      */
     it("testmathmax4006_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4006_01 started');
+        console.log(domain, tag, 'testmathmax4006_01 started');
         const result: int = max(10, -5);
         expect(result).assertEqual(10);
         done();
-        hilog.info(domain, tag, 'testmathmax4006_01 ended');
+        console.log(domain, tag, 'testmathmax4006_01 ended');
       });
 
     /**
@@ -951,11 +949,11 @@ export default function math05Test() {
      */
     it("testmathmax4007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4007 started');
+        console.log(domain, tag, 'testmathmax4007 started');
         const result: int = max(0, 8);
         expect(result).assertEqual(8);
         done();
-        hilog.info(domain, tag, 'testmathmax4007 ended');
+        console.log(domain, tag, 'testmathmax4007 ended');
       });
 
     /**
@@ -968,13 +966,13 @@ export default function math05Test() {
      */
     it("testmathmax4008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4008 started');
+        console.log(domain, tag, 'testmathmax4008 started');
         const result1: int = max(15, 20);
         const result2: int = max(20, 15);
         expect(result1).assertEqual(20);
         expect(result2).assertEqual(20);
         done();
-        hilog.info(domain, tag, 'testmathmax4008 ended');
+        console.log(domain, tag, 'testmathmax4008 ended');
       });
 
     /**
@@ -987,7 +985,7 @@ export default function math05Test() {
      */
     it("testmathmax5006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5006 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5006 started');
         const result: long = max(999, 1000);
         expect(result).assertEqual(1000);
         done();
@@ -1003,7 +1001,7 @@ export default function math05Test() {
      */
     it("testmathmax5007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5007 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5007 started');
         const result: long = max(-100, -99);
         expect(result).assertEqual(-99);
         done();
@@ -1019,7 +1017,7 @@ export default function math05Test() {
      */
     it("testmathmax5008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5008 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5008 started');
         const a: long = 2147483647;
         const b: long = 2147483646;
         expect(max(a, b)).assertEqual(2147483647);
@@ -1036,7 +1034,7 @@ export default function math05Test() {
      */
     it("testmathmax5009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5009 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5009 started');
         const a: long = -2147483648;
         const b: long = -2147483647;
         expect(max(a, b)).assertEqual(-2147483647);
@@ -1053,7 +1051,7 @@ export default function math05Test() {
      */
     it("testmathmax5010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5010 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5010 started');
         const largePositive: long = 9223372036854775807;
         const largeNegative: long = -9223372036854775808;
         expect(max(largePositive, largeNegative)).assertEqual(largePositive);
@@ -1070,11 +1068,11 @@ export default function math05Test() {
      */
     it("testmathmax4011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4011 started');
+        console.log(domain, tag, 'testmathmax4011 started');
         const result: int = max(-15, -15);
         expect(result).assertEqual(-15);
         done();
-        hilog.info(domain, tag, 'testmathmax4011 ended');
+        console.log(domain, tag, 'testmathmax4011 ended');
       });
 
     /**
@@ -1087,11 +1085,11 @@ export default function math05Test() {
      */
     it("testmathmax4012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4012 started');
+        console.log(domain, tag, 'testmathmax4012 started');
         const result: int = max(25, 0);
         expect(result).assertEqual(25);
         done();
-        hilog.info(domain, tag, 'testmathmax4012 ended');
+        console.log(domain, tag, 'testmathmax4012 ended');
       });
 
     /**
@@ -1104,13 +1102,13 @@ export default function math05Test() {
      */
     it("testmathmax4013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4013 started');
+        console.log(domain, tag, 'testmathmax4013 started');
         for (let i = -10; i < 10; i++) {
           const result: int = max(i, i + 1);
           expect(result).assertEqual(i + 1);
         }
         done();
-        hilog.info(domain, tag, 'testmathmax4013 ended');
+        console.log(domain, tag, 'testmathmax4013 ended');
       });
 
     /**
@@ -1123,7 +1121,7 @@ export default function math05Test() {
      */
     it("testmathmax4014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4014 started');
+        console.log(domain, tag, 'testmathmax4014 started');
         const values: int[] = [-1, 0, 1];
         const expected: int[] = [0, 1, 1];
         for (let i = 0; i < values.length; i++) {
@@ -1131,7 +1129,7 @@ export default function math05Test() {
           expect(result).assertEqual(expected[i]);
         }
         done();
-        hilog.info(domain, tag, 'testmathmax4014 ended');
+        console.log(domain, tag, 'testmathmax4014 ended');
       });
 
 
@@ -1145,7 +1143,7 @@ export default function math05Test() {
      */
     it("testmathmax5011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5011 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5011 started');
         const result: long = max(0, 0);
         expect(result).assertEqual(0);
         done();
@@ -1161,7 +1159,7 @@ export default function math05Test() {
      */
     it("testmathmax5012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5012 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5012 started');
         const a: long = 10.5 as long;
         const b: long = 11.2 as long;
         expect(max(a, b)).assertEqual(11);
@@ -1178,7 +1176,7 @@ export default function math05Test() {
      */
     it("testmathmax5013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5013 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5013 started');
         const result: long = max(1000000001, 1000000000);
         expect(result).assertEqual(1000000001);
         done();
@@ -1194,7 +1192,7 @@ export default function math05Test() {
      */
     it("testmathmax5014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5014 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5014 started');
         const result1: long = max(5, 10);
         const result2: long = max(10, 5);
         expect(result1).assertEqual(10);
@@ -1212,7 +1210,7 @@ export default function math05Test() {
      */
     it("testmathmax5015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5015 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5015 started');
         const minLong: long = -9223372036854775808;
         const normal: long = 0;
         expect(max(minLong, normal)).assertEqual(0);
@@ -1229,14 +1227,14 @@ export default function math05Test() {
      */
     it("testmathmax4017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4017 started');
+        console.log(domain, tag, 'testmathmax4017 started');
         const maxInt = Number.MAX_SAFE_INTEGER;
         expect(max(maxInt, 0)).assertEqual(maxInt);
         expect(max(maxInt, -1)).assertEqual(maxInt);
         expect(max(maxInt, maxInt - 1)).assertEqual(maxInt);
         expect(max(maxInt, maxInt)).assertEqual(maxInt);
         done();
-        hilog.info(domain, tag, 'testmathmax4017 ended');
+        console.log(domain, tag, 'testmathmax4017 ended');
       });
 
     /**
@@ -1249,14 +1247,14 @@ export default function math05Test() {
      */
     it("testmathmax4018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, 'testmathmax4018 started');
+        console.log(domain, tag, 'testmathmax4018 started');
         const minInt = Number.MIN_SAFE_INTEGER;
         expect(max(minInt, 0)).assertEqual(0);
         expect(max(minInt, -1)).assertEqual(-1);
         expect(max(minInt, minInt + 1)).assertEqual(minInt + 1);
         expect(max(minInt, minInt)).assertEqual(minInt);
         done();
-        hilog.info(domain, tag, 'testmathmax4018 ended');
+        console.log(domain, tag, 'testmathmax4018 ended');
       });
 
     /**
@@ -1269,7 +1267,7 @@ export default function math05Test() {
      */
     it("testmathmax5016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5016 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5016 started');
         const minLong: long = -9223372036854775808;
         expect(max(minLong, minLong)).assertEqual(minLong);
         done();
@@ -1285,7 +1283,7 @@ export default function math05Test() {
      */
     it("testmathmax5017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5017 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5017 started');
         const nanValue: long = Number.NaN as long;
         expect(max(nanValue, 5)).assertEqual(5);
         expect(max(10, nanValue)).assertEqual(10);
@@ -1302,7 +1300,7 @@ export default function math05Test() {
      */
     it("testmathmax5018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5018 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5018 started');
         const maxLong: long = 9223372036854775807;
         const almostMax: long = maxLong - 1;
         expect(max(maxLong, almostMax)).assertEqual(maxLong);
@@ -1319,7 +1317,7 @@ export default function math05Test() {
      */
     it("testmathmax5021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5021 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5021 started');
         const infValue: long = Number.POSITIVE_INFINITY as long;
         const normal: long = 100;
         expect(max(infValue, normal)).assertEqual(infValue);
@@ -1336,7 +1334,7 @@ export default function math05Test() {
      */
     it("testmathmax5022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5022 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5022 started');
         const small: long = -9999999999;
         const large: long = 9999999999;
         expect(max(small, large)).assertEqual(large);
@@ -1353,7 +1351,7 @@ export default function math05Test() {
      */
     it("testmathmax5023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5023 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5023 started');
         expect(max(0, 5)).assertEqual(5);
         expect(max(10, 0)).assertEqual(10);
         done();
@@ -1369,7 +1367,7 @@ export default function math05Test() {
      */
     it("testmathmax5024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5024 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5024 started');
         expect(max(0, -5)).assertEqual(0);
         expect(max(-10, 0)).assertEqual(0);
         done();
@@ -1385,7 +1383,7 @@ export default function math05Test() {
      */
     it("testmathmax5025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmax5025 started');
+        console.log(domain, tag, '%{public}s', 'testmathmax5025 started');
         const value1: long = max(5, 10);
         const value2: long = max(value1, 15);
         const value3: long = max(value2, 8);
@@ -1404,12 +1402,12 @@ export default function math05Test() {
     it("testmathmax6001",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6001: + Max Number Start');
+        console.log(domain, tag, 'testmathmax6001: + Max Number Start');
         const value1: short = 15;
         const value2: short = 27;
         const result: short = max(value1, value2);
         expect(result).assertEqual(27);
-        hilog.info(domain, tag, 'testmathmax6001: + Max Number End');
+        console.log(domain, tag, 'testmathmax6001: + Max Number End');
         done();
       });
 
@@ -1424,12 +1422,12 @@ export default function math05Test() {
     it("testmathmax6002",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6002: - Max Number Start');
+        console.log(domain, tag, 'testmathmax6002: - Max Number Start');
         const value1: short = -45;
         const value2: short = -32;
         const result: short = max(value1, value2);
         expect(result).assertEqual(-32);
-        hilog.info(domain, tag, 'testmathmax6002: - Max Number End');
+        console.log(domain, tag, 'testmathmax6002: - Max Number End');
         done();
       });
 
@@ -1444,12 +1442,12 @@ export default function math05Test() {
     it("testmathmax6003",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6003: +- Max Number Start');
+        console.log(domain, tag, 'testmathmax6003: +- Max Number Start');
         const positive: short = 100;
         const negative: short = -50;
         const result: short = max(positive, negative);
         expect(result).assertEqual(100);
-        hilog.info(domain, tag, 'testmathmax6003: +- Max Number End');
+        console.log(domain, tag, 'testmathmax6003: +- Max Number End');
         done();
       });
 
@@ -1464,11 +1462,11 @@ export default function math05Test() {
     it("testmathmax6004",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6004');
+        console.log(domain, tag, 'testmathmax6004');
         const value: short = 99;
         const result: short = max(value, value);
         expect(result).assertEqual(99);
-        hilog.info(domain, tag, 'testmathmax6004');
+        console.log(domain, tag, 'testmathmax6004');
         done();
       });
 
@@ -1483,14 +1481,14 @@ export default function math05Test() {
     it("testmathmax6005",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6005');
+        console.log(domain, tag, 'testmathmax6005');
         const minShort: short = -32768;
         const maxShort: short = 32767;
         const result1: short = max(maxShort, minShort);
         const result2: short = max(minShort, maxShort);
         expect(result1).assertEqual(maxShort);
         expect(result2).assertEqual(maxShort);
-        hilog.info(domain, tag, 'testmathmax6005');
+        console.log(domain, tag, 'testmathmax6005');
         done();
       });
 
@@ -1504,7 +1502,7 @@ export default function math05Test() {
      */
     it("testmathmin0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0001 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0001 started');
         const result: number = min(5, 10);
         expect(result).assertEqual(5);
         done();
@@ -1520,7 +1518,7 @@ export default function math05Test() {
      */
     it("testmathmin0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0002 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0002 started');
         const result: number = min(15, 10);
         expect(result).assertEqual(10);
         done();
@@ -1536,7 +1534,7 @@ export default function math05Test() {
      */
     it("testmathmin0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0003 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0003 started');
         const result: number = min(100, 100);
         expect(result).assertEqual(100);
         done();
@@ -1552,7 +1550,7 @@ export default function math05Test() {
      */
     it("testmathmin0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0004 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0004 started');
         const result: number = min(-5, -2);
         expect(result).assertEqual(-5);
         done();
@@ -1568,7 +1566,7 @@ export default function math05Test() {
      */
     it("testmathmin0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0006 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0006 started');
         expect(min(0, 5)).assertEqual(0);
         expect(min(10, 0)).assertEqual(0);
         expect(min(0, 0)).assertEqual(0);
@@ -1585,7 +1583,7 @@ export default function math05Test() {
      */
     it("testmathmin0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0007 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0007 started');
         expect(min(-5, 5)).assertEqual(-5);
         expect(min(10, -10)).assertEqual(-10);
         done();
@@ -1601,7 +1599,7 @@ export default function math05Test() {
      */
     it("testmathmin0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0009 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0009 started');
         const value1: number = min(15, 10);
         const value2: number = min(value1, 5);
         const value3: number = min(value2, 8);
@@ -1620,7 +1618,7 @@ export default function math05Test() {
     it("testmathmax6006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6006');
+        console.log(domain, tag, 'testmathmax6006');
         const zero: short = 0;
         const positive: short = 15;
         const negative: short = -15;
@@ -1630,7 +1628,7 @@ export default function math05Test() {
         expect(result1).assertEqual(15);
         expect(result2).assertEqual(0);
         expect(result3).assertEqual(0);
-        hilog.info(domain, tag, 'testmathmax6006');
+        console.log(domain, tag, 'testmathmax6006');
         done();
       });
 
@@ -1645,12 +1643,12 @@ export default function math05Test() {
     it("testmathmax6008",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6008');
+        console.log(domain, tag, 'testmathmax6008');
         const large1: short = 30000;
         const large2: short = 32000;
         const result: short = max(large1, large2);
         expect(result).assertEqual(32000);
-        hilog.info(domain, tag, 'testmathmax6008');
+        console.log(domain, tag, 'testmathmax6008');
         done();
       });
 
@@ -1665,14 +1663,14 @@ export default function math05Test() {
     it("testmathmax6009",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6009');
+        console.log(domain, tag, 'testmathmax6009');
         const value1: short = 42;
         const value2: short = 24;
         const result1: short = max(value1, value2);
         const result2: short = max(value2, value1);
         expect(result1).assertEqual(42);
         expect(result2).assertEqual(42);
-        hilog.info(domain, tag, 'testmathmax6009');
+        console.log(domain, tag, 'testmathmax6009');
         done();
       });
 
@@ -1687,14 +1685,14 @@ export default function math05Test() {
     it("testmathmax6010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6010');
+        console.log(domain, tag, 'testmathmax6010');
         const values: short[] = [10, 20, 30, 25, 35];
         let currentMax: short = values[0];
         for (let i = 1; i < values.length; i++) {
           currentMax = max(currentMax, values[i]);
         }
         expect(currentMax).assertEqual(35);
-        hilog.info(domain, tag, 'testmathmax6010');
+        console.log(domain, tag, 'testmathmax6010');
         done();
       });
 
@@ -1708,7 +1706,7 @@ export default function math05Test() {
      */
     it("testmathmin0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0014 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0014 started');
         expect(min(-100, -120)).assertEqual(-120);
         expect(min(-128, -100)).assertEqual(-128);
         done();
@@ -1725,11 +1723,11 @@ export default function math05Test() {
     it("testmathmax6011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6011');
+        console.log(domain, tag, 'testmathmax6011');
         const value: short = -100;
         const result: short = max(value, value);
         expect(result).assertEqual(-100);
-        hilog.info(domain, tag, 'testmathmax6011');
+        console.log(domain, tag, 'testmathmax6011');
         done();
       });
 
@@ -1744,12 +1742,12 @@ export default function math05Test() {
     it("testmathmax6012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6012');
+        console.log(domain, tag, 'testmathmax6012');
         const positive: short = 50;
         const zero: short = 0;
         const result: short = max(positive, zero);
         expect(result).assertEqual(50);
-        hilog.info(domain, tag, 'testmathmax6012');
+        console.log(domain, tag, 'testmathmax6012');
         done();
       });
 
@@ -1764,12 +1762,12 @@ export default function math05Test() {
     it("testmathmax6013",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6013');
+        console.log(domain, tag, 'testmathmax6013');
         const negative: short = -30;
         const zero: short = 0;
         const result: short = max(negative, zero);
         expect(result).assertEqual(0);
-        hilog.info(domain, tag, 'testmathmax6013');
+        console.log(domain, tag, 'testmathmax6013');
         done();
       });
 
@@ -1784,12 +1782,12 @@ export default function math05Test() {
     it("testmathmax6014",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6014');
+        console.log(domain, tag, 'testmathmax6014');
         const large1: short = 32000;
         const large2: short = 31000;
         const result: short = max(large1, large2);
         expect(result).assertEqual(32000);
-        hilog.info(domain, tag, 'testmathmax6014');
+        console.log(domain, tag, 'testmathmax6014');
         done();
       });
 
@@ -1804,12 +1802,12 @@ export default function math05Test() {
     it("testmathmax6015_01",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6015_01');
+        console.log(domain, tag, 'testmathmax6015_01');
         const small1: short = -32000;
         const small2: short = -31000;
         const result: short = max(small1, small2);
         expect(result).assertEqual(-31000);
-        hilog.info(domain, tag, 'testmathmax6015_01');
+        console.log(domain, tag, 'testmathmax6015_01');
         done();
       });
 
@@ -1824,12 +1822,12 @@ export default function math05Test() {
     it("testmathmax6015_02",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, 'testmathmax6015_02');
+        console.log(domain, tag, 'testmathmax6015_02');
         const small1: short = -32000;
         const small2: short = -31000;
         const result: short = max(small1, small2);
         expect(result).assertEqual(-31000);
-        hilog.info(domain, tag, 'testmathmax6015_02');
+        console.log(domain, tag, 'testmathmax6015_02');
         done();
       });
 
@@ -1843,7 +1841,7 @@ export default function math05Test() {
      */
     it("testmathmin0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0015 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0015 started');
         expect(min(1, -1)).assertEqual(-1);
         expect(min(-1, 1)).assertEqual(-1);
         expect(min(0.1, -0.1)).assertEqual(-0.1);
@@ -1860,7 +1858,7 @@ export default function math05Test() {
      */
     it("testmathmin0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0016 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0016 started');
         expect(min(50, -50)).assertEqual(-50);
         expect(min(0, 50)).assertEqual(0);
         expect(min(-50, 0)).assertEqual(-50);
@@ -1877,7 +1875,7 @@ export default function math05Test() {
      */
     it("testmathmin0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathmin0017 started');
+        console.log(domain, tag, '%{public}s', 'testmathmin0017 started');
         const a: number = 10;
         const b: number = 20;
         const c: number = 5;
@@ -1898,13 +1896,13 @@ export default function math05Test() {
     it("abilityStaticTest_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'Test case 0100 started');
+        console.log(domain, tag, '%{public}s', 'Test case 0100 started');
         
         const expected: number = 1;
         const actual: number = 1;
         expect(expected).assertEqual(actual);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test case 0100 completed');
+        console.log(domain, tag, '%{public}s', 'Test case 0100 completed');
       });
 
     /**
@@ -2118,11 +2116,11 @@ export default function math05Test() {
      */
     it("testmathasin0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test exact zero value started');
+        console.log(domain, tag, '%{public}s', 'Test exact zero value started');
         const result: number = asin(0.0);
         expect(result).assertEqual(0.0);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test exact zero value completed');
+        console.log(domain, tag, '%{public}s', 'Test exact zero value completed');
       });
 
     /**
@@ -2135,11 +2133,11 @@ export default function math05Test() {
      */
     it("testmathasin0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test negative zero started');
+        console.log(domain, tag, '%{public}s', 'Test negative zero started');
         const result: number = asin(-0.0);
         expect(1 / result).assertEqual(Number.NEGATIVE_INFINITY);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test negative zero completed');
+        console.log(domain, tag, '%{public}s', 'Test negative zero completed');
       });
 
     /**
@@ -2152,13 +2150,13 @@ export default function math05Test() {
      */
     it("testmathasin0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test random value (0.123) started');
+        console.log(domain, tag, '%{public}s', 'Test random value (0.123) started');
         const input: number = 0.123;
         const result1: number = asin(input);
         const result2: number = asin(input);
         expect(result1).assertEqual(result2);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test random value completed');
+        console.log(domain, tag, '%{public}s', 'Test random value completed');
       });
 
     /**
@@ -2171,13 +2169,13 @@ export default function math05Test() {
      */
     it("testmathasin0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test random negative value (-0.456) started');
+        console.log(domain, tag, '%{public}s', 'Test random negative value (-0.456) started');
         const input: number = -0.456;
         const result1: number = asin(input);
         const result2: number = asin(input);
         expect(result1).assertEqual(result2);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test random negative value completed');
+        console.log(domain, tag, '%{public}s', 'Test random negative value completed');
       });
 
     /**
@@ -2190,13 +2188,13 @@ export default function math05Test() {
      */
     it("testmathasin0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test precision near upper boundary (0.999) started');
+        console.log(domain, tag, '%{public}s', 'Test precision near upper boundary (0.999) started');
         const input: number = 0.999;
         const result: number = asin(input);
         const expected: number = 1.526071;
         expect(Math.abs(result - expected) < 1e-6).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test precision near upper boundary completed');
+        console.log(domain, tag, '%{public}s', 'Test precision near upper boundary completed');
       });
 
     /**
@@ -2209,13 +2207,13 @@ export default function math05Test() {
      */
     it("testmathasin0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test precision near lower boundary (-0.999) started');
+        console.log(domain, tag, '%{public}s', 'Test precision near lower boundary (-0.999) started');
         const input: number = -0.999;
         const result: number = asin(input);
         const expected: number = -1.526071;
         expect(Math.abs(result - expected) < 1e-6).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test precision near lower boundary completed');
+        console.log(domain, tag, '%{public}s', 'Test precision near lower boundary completed');
       });
 
     /**
@@ -2228,12 +2226,12 @@ export default function math05Test() {
      */
     it("testmathasin0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test extreme precision (0.5) started');
+        console.log(domain, tag, '%{public}s', 'Test extreme precision (0.5) started');
         const result: number = asin(0.5);
         const expected: number = Math.PI / 6;
         expect(Math.abs(result - expected) < Number.EPSILON).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test extreme precision completed');
+        console.log(domain, tag, '%{public}s', 'Test extreme precision completed');
       });
 
     /**
@@ -2246,12 +2244,12 @@ export default function math05Test() {
      */
     it("testmathasin0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test extreme precision (-0.5) started');
+        console.log(domain, tag, '%{public}s', 'Test extreme precision (-0.5) started');
         const result: number = asin(-0.5);
         const expected: number = -Math.PI / 6;
         expect(Math.abs(result - expected) < Number.EPSILON).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test extreme precision completed');
+        console.log(domain, tag, '%{public}s', 'Test extreme precision completed');
       });
 
     /**
@@ -2265,13 +2263,13 @@ export default function math05Test() {
     it("testmathacosh0026",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0026 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0026 started');
         const input: double = Math.E;
         const expected: double = 1.657454454153077;
         const result: double = acosh(input);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0026 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0026 completed');
       });
 
     /**
@@ -2285,13 +2283,13 @@ export default function math05Test() {
     it("testmathacosh0028",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0028 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0028 started');
         const input: double = Math.SQRT2;
         const expected: double = 0.881373587019543;
         const result: double = acosh(input);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0028 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0028 completed');
       });
 
     /**
@@ -2305,12 +2303,12 @@ export default function math05Test() {
     it("testmathacosh0029",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0029 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0029 started');
         const input: double = 0.5 * Number.MAX_VALUE;
         const result: double = acosh(input);
         expect(Number.isFinite(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0029 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0029 completed');
       });
 
     /**
@@ -2324,13 +2322,13 @@ export default function math05Test() {
     it("testmathacosh0030",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0030 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0030 started');
         const input: double = 1.0 + 1e-15;
         const result: double = acosh(input);
         expect(result > 0).assertTrue();
         expect(result < 1e-7).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0030 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0030 completed');
       });
 
     /**
@@ -2344,12 +2342,12 @@ export default function math05Test() {
     it("testmathabs0035",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0035 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0035 start');
         const input: double = -10.5;
         const result: double = Math.sqrt(abs(input));
         expect(result).assertEqual(Math.sqrt(10.5));
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0035 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0035 end');
       });
 
     /**
@@ -2363,13 +2361,13 @@ export default function math05Test() {
     it("testmathabs0036",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0036 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0036 start');
         const a: double = -5.0;
         const b: double = 3.0;
         const result: boolean = abs(a) > b;
         expect(result).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0036 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0036 end');
       });
 
     /**
@@ -2383,7 +2381,7 @@ export default function math05Test() {
     it("testmathabs0037",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0037 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0037 start');
         for (let i = 0; i < 10; i++) {
           const randomValue: double = Math.random() * 100 - 50;
           const result: double = abs(randomValue);
@@ -2391,7 +2389,7 @@ export default function math05Test() {
           expect(result).assertEqual(Math.abs(randomValue));
         }
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0037 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0037 end');
       });
 
     /**
@@ -2405,14 +2403,14 @@ export default function math05Test() {
     it("testmathabs0038",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0038 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0038 start');
         const date1: Date = new Date(2023, 0, 1);
         const date2: Date = new Date(2023, 6, 1);
         const timeDiff: double = date1.getTime() - date2.getTime();
         const absDiff: double = abs(timeDiff);
         expect(absDiff).assertEqual(Math.abs(timeDiff));
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0038 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0038 end');
       });
 
     /**
@@ -2426,14 +2424,14 @@ export default function math05Test() {
     it("testmathabs0039",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0039 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0039 start');
         const values: double[] = [-1.5, 2.3, -3.7, 4.2, -5.9];
         const absValues: double[] = values.map(v => abs(v));
         for (let i = 0; i < values.length; i++) {
           expect(absValues[i]).assertEqual(Math.abs(values[i]));
         }
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0039 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0039 end');
       });
 
     /**
@@ -2447,13 +2445,13 @@ export default function math05Test() {
     it("testmathabs0007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0007 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0007 start');
         const a: double = -5.0;
         const b: double = 3.0;
         const result: boolean = abs(a) > b;
         expect(result).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0007 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0007 end');
       });
 
     /**
@@ -2467,7 +2465,7 @@ export default function math05Test() {
     it("testmathabs0037_01",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0037_01 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0037_01 start');
         for (let i = 0; i < 10; i++) {
           const randomValue: double = Math.random() * 100 - 50;
           const result: double = abs(randomValue);
@@ -2475,7 +2473,7 @@ export default function math05Test() {
           expect(result).assertEqual(Math.abs(randomValue));
         }
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0037_01 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0037_01 end');
       });
 
     /**
@@ -2489,14 +2487,14 @@ export default function math05Test() {
     it("testmathabs038",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs038 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs038 start');
         const date1: Date = new Date(2023, 0, 1);
         const date2: Date = new Date(2023, 6, 1);
         const timeDiff: double = date1.getTime() - date2.getTime();
         const absDiff: double = abs(timeDiff);
         expect(absDiff).assertEqual(Math.abs(timeDiff));
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs038 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs038 end');
       });
 
     /**
@@ -2510,14 +2508,14 @@ export default function math05Test() {
     it("testmathabs0039_01",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0039_01 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0039_01 start');
         const values: double[] = [-1.5, 2.3, -3.7, 4.2, -5.9];
         const absValues: double[] = values.map(v => abs(v));
         for (let i = 0; i < values.length; i++) {
           expect(absValues[i]).assertEqual(Math.abs(values[i]));
         }
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0039_01 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0039_01 end');
       });
 
     /**
@@ -2531,12 +2529,12 @@ export default function math05Test() {
     it("testmathacosh0031",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0031 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0031 started');
         const input: double = 1.0 - 1e-15;
         const result: double = acosh(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0031 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0031 completed');
       });
 
     /**
@@ -2550,12 +2548,12 @@ export default function math05Test() {
     it("testmathacosh0032",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0032 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0032 started');
         const input: double = Number.MIN_SAFE_INTEGER + 1;
         const result: double = acosh(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0032 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0032 completed');
       });
 
     /**
@@ -2569,12 +2567,12 @@ export default function math05Test() {
     it("testmathacosh0033",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0033 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0033 started');
         const input: double = Number.MIN_VALUE;
         const result: double = acosh(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0033 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0033 completed');
       });
 
     /**
@@ -2588,12 +2586,12 @@ export default function math05Test() {
     it("testmathacosh0034",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0034 started');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0034 started');
         const input: double = Number.MAX_VALUE;
         const result: double = acosh(input);
         expect(Number.isFinite(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacosh0034 completed');
+        console.log(domain, tag, '%{public}s', 'testmathacosh0034 completed');
       });
 
     /**
@@ -2606,11 +2604,11 @@ export default function math05Test() {
      */
     it("testmathasin0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test large positive value (100.0) started');
+        console.log(domain, tag, '%{public}s', 'Test large positive value (100.0) started');
         const result: number = asin(100.0);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test large positive value completed');
+        console.log(domain, tag, '%{public}s', 'Test large positive value completed');
       });
 
     /**
@@ -2623,11 +2621,11 @@ export default function math05Test() {
      */
     it("testmathasin0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test large negative value (-100.0) started');
+        console.log(domain, tag, '%{public}s', 'Test large negative value (-100.0) started');
         const result: number = asin(-100.0);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test large negative value completed');
+        console.log(domain, tag, '%{public}s', 'Test large negative value completed');
       });
 
     /**
@@ -2640,12 +2638,12 @@ export default function math05Test() {
      */
     it("testmathasin0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(x)) identity started');
+        console.log(domain, tag, '%{public}s', 'Test asin(sin(x)) identity started');
         const x: number = 0.3;
         const result: number = asin(Math.sin(x));
         expect(Math.abs(result - x) < 1e-15).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(x)) identity completed');
+        console.log(domain, tag, '%{public}s', 'Test asin(sin(x)) identity completed');
       });
 
     /**
@@ -2658,12 +2656,12 @@ export default function math05Test() {
      */
     it("testmathasin0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity started');
+        console.log(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity started');
         const x: number = 0.7;
         const result: number = asin(Math.sin(-x));
         expect(Math.abs(result - (-x)) < 1e-15).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity completed');
+        console.log(domain, tag, '%{public}s', 'Test asin(sin(-x)) identity completed');
       });
 
     /**
@@ -2676,7 +2674,7 @@ export default function math05Test() {
      */
     it("testmathasin0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test result consistency started');
+        console.log(domain, tag, '%{public}s', 'Test result consistency started');
         const input: number = 0.25;
         const result1: number = asin(input);
         const result2: number = asin(input);
@@ -2684,7 +2682,7 @@ export default function math05Test() {
         expect(result1).assertEqual(result2);
         expect(result2).assertEqual(result3);
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test result consistency completed');
+        console.log(domain, tag, '%{public}s', 'Test result consistency completed');
       });
 
     /**
@@ -2697,13 +2695,13 @@ export default function math05Test() {
      */
     it("testmathasin0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'Test asin(x) + acos(x) = π/2 identity started');
+        console.log(domain, tag, '%{public}s', 'Test asin(x) + acos(x) = π/2 identity started');
         const x: number = 0.4;
         const result: number = asin(x) + Math.acos(x);
         const expected: number = Math.PI / 2;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'Test identity completed');
+        console.log(domain, tag, '%{public}s', 'Test identity completed');
       });
 
     /**
@@ -2717,13 +2715,13 @@ export default function math05Test() {
     it("testmathacos0001",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0001 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0001 start');
         const input: number = Number.NaN;
         const result: number = acos(input);
 
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0001 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0001 end');
       });
 
     /**
@@ -2737,12 +2735,12 @@ export default function math05Test() {
     it("testmathacos0002",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0002 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0002 start');
         const input: number = Number.POSITIVE_INFINITY;
         const result: number = acos(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0002 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0002 end');
       });
 
     /**
@@ -2756,12 +2754,12 @@ export default function math05Test() {
     it("testmathacos0003",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0003 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0003 start');
         const input: number = Number.NEGATIVE_INFINITY;
         const result: number = acos(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0003 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0003 end');
       });
 
     /**
@@ -2775,13 +2773,13 @@ export default function math05Test() {
     it("testmathacos0004",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0004 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0004 start');
         const input: number = 1.0;
         const result: number = acos(input);
 
         expect(Math.abs(result - 0) < Number.EPSILON).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0004 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0004 end');
       });
 
     /**
@@ -2795,13 +2793,13 @@ export default function math05Test() {
     it("testmathacos0005",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0005 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0005 start');
         const input: number = -1.0;
         const result: number = acos(input);
         const expected: number = Math.PI;
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0005 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0005 end');
       });
 
     /**
@@ -2815,13 +2813,13 @@ export default function math05Test() {
     it("testmathacos0006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0006 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0006 start');
         const input: number = 0.5;
         const result: number = acos(input);
         const expected: number = Math.PI / 3;
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0006 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0006 end');
       });
 
     /**
@@ -2835,13 +2833,13 @@ export default function math05Test() {
     it("testmathacos0007",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0007 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0007 start');
         const input: number = 0;
         const result: number = acos(input);
         const expected: number = Math.PI / 2;
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0007 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0007 end');
       });
 
     /**
@@ -2855,13 +2853,13 @@ export default function math05Test() {
     it("testmathabs0001",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0001 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0001 start');
         const input: double = 5.0;
         const expected: double = 5.0;
         const result: double = abs(input);
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0001 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0001 end');
       });
 
     /**
@@ -2875,13 +2873,13 @@ export default function math05Test() {
     it("testmathabs0002",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0002 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0002 start');
         const input: double = -7.5;
         const expected: double = 7.5;
         const result: double = abs(input);
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0002 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0002 end');
       });
 
     /**
@@ -2895,13 +2893,13 @@ export default function math05Test() {
     it("testmathabs0003",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0003 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0003 start');
         const input: double = 0.0;
         const expected: double = 0.0;
         const result: double = abs(input);
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0003 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0003 end');
       });
 
     /**
@@ -2915,13 +2913,13 @@ export default function math05Test() {
     it("testmathabs0004",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0004 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0004 start');
         const input: double = NaN;
         const result: double = abs(input);
 
         expect(isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0004 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0004 end');
       });
 
     /**
@@ -2935,13 +2933,13 @@ export default function math05Test() {
     it("testmathabs0005",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0005 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0005 start');
         const input: double = Infinity;
         const expected: double = Infinity;
         const result: double = abs(input);
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0005 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0005 end');
       });
 
     /**
@@ -2955,13 +2953,13 @@ export default function math05Test() {
     it("testmathabs0006",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0006 start');
+        console.log(domain, tag, '%{public}s', 'testmathabs0006 start');
         const input: double = -Infinity;
         const expected: double = Infinity;
         const result: double = abs(input);
         expect(result).assertEqual(expected);
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathabs0006 end');
+        console.log(domain, tag, '%{public}s', 'testmathabs0006 end');
       });
 
     /**
@@ -2975,13 +2973,13 @@ export default function math05Test() {
     it("testmathacos0008",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0008 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0008 start');
         const input: number = 0.999;
         const result: number = acos(input);
         const expected: number = Math.acos(0.999);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0008 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0008 end');
       });
 
     /**
@@ -2995,13 +2993,13 @@ export default function math05Test() {
     it("testmathacos0009",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0009 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0009 start');
         const input: number = -0.999;
         const result: number = acos(input);
         const expected: number = Math.acos(-0.999);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0009 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0009 end');
       });
 
     /**
@@ -3015,12 +3013,12 @@ export default function math05Test() {
     it("estmathacos0010",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0010 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0010 start');
         const input: number = 1.0001;
         const result: number = acos(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0010 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0010 end');
       });
 
     /**
@@ -3034,12 +3032,12 @@ export default function math05Test() {
     it("testmathacos0011",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0011 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0011 start');
         const input: number = -1.0001;
         const result: number = acos(input);
         expect(Number.isNaN(result)).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0011 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0011 end');
       });
 
     /**
@@ -3053,13 +3051,13 @@ export default function math05Test() {
     it("testmathacos0012",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0012 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0012 start');
         const input: number = Math.SQRT2 / 2;
         const result: number = acos(input);
         const expected: number = Math.PI / 4;
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0012 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0012 end');
       });
 
     /**
@@ -3073,13 +3071,13 @@ export default function math05Test() {
     it("testmathacos0013",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0013 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0013 start');
         const input: number = 0.123;
         const result: number = acos(input);
         const expected: number = Math.acos(0.123);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0013 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0013 end');
       });
 
     /**
@@ -3093,13 +3091,13 @@ export default function math05Test() {
     it("testmathacos0014_01",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0014_01 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0014_01 start');
         const input: number = -0.456;
         const result: number = acos(input);
         const expected: number = Math.acos(-0.456);
         expect(Math.abs(result - expected) < 1e-10).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0014_01 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0014_01 end');
       });
 
     /**
@@ -3113,13 +3111,13 @@ export default function math05Test() {
     it("testmathacos0015",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: () => void): void => {
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0015 start');
+        console.log(domain, tag, '%{public}s', 'testmathacos0015 start');
         const input: number = 1 - Number.EPSILON;
         const result: number = acos(input);
         const expected: number = Math.acos(1 - Number.EPSILON);
         expect(result > 0 && result < 0.001).assertTrue();
         done();
-        hilog.info(domain, tag, '%{public}s', 'testmathacos0015 end');
+        console.log(domain, tag, '%{public}s', 'testmathacos0015 end');
       });
   });
 }
