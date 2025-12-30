@@ -146,7 +146,6 @@ export default function TransDeleteWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
@@ -755,10 +754,10 @@ export default function TransDeleteWithReturning() {
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      await deferredTrans?.insert("test", valueBucket);
       let trans = await rdbStore?.createTransaction({
         transactionType: relationalStore.TransactionType.DEFERRED
       });
+      await deferredTrans?.insert("test", valueBucket);
       try {
         await trans?.deleteWithReturning(predicates, config);
         expect(true).assertFail();
@@ -774,7 +773,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.commit();
+      await deferredTrans?.rollback();
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning020 end *************");
       done();
