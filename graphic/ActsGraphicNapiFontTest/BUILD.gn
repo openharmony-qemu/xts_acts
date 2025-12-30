@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsGraphicNapiDrawingMainTest") {
+ohos_app_assist_suite("ActsGraphicNapiFontMainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsGraphicNapiDrawingMainTest"
+  hap_name = "ActsGraphicNapiFontMainTest"
   subsystem_name = "graphic"
   part_name = "graphic_2d"
 }
 
-ohos_js_app_suite("ActsGraphicNapiDrawingHapTest") {
+ohos_js_app_suite("ActsGraphicNapiFontHapTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsGraphicNapiDrawingHapTest"
+  hap_name = "ActsGraphicNapiFontHapTest"
   subsystem_name = "graphic"
   part_name = "graphic_2d"
-  deps = [ ":ActsGraphicNapiDrawingMainTest" ]
+  deps = [ ":ActsGraphicNapiFontMainTest" ]
 }

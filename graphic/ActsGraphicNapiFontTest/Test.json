@@ -4,14 +4,14 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "shell-timeout": "600000",
-        "bundle-name": "com.example.actsgraphicnapidrawingtest",
+        "bundle-name": "com.example.actsgraphicnapifonttest",
         "module-name": "entry_test"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsGraphicNapiDrawingMainTest.hap",
-                "ActsGraphicNapiDrawingHapTest.hap"
+                "ActsGraphicNapiFontMainTest.hap",
+                "ActsGraphicNapiFontHapTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
