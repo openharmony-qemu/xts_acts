@@ -707,8 +707,9 @@ int TestFontMeasureTextWithBrushOrPenNormal1()
     OH_Drawing_Rect* bounds =
         OH_Drawing_RectCreate(RECT_LEFT_ZERO, RECT_TOP_ZERO, RECT_RIGHT_TWO_HUNDRED, RECT_BOTTOM_TWO_HUNDRED);
     OH_Drawing_Font* font2 = OH_Drawing_FontCreate();
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
-        font2, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(font2,
+                                                                              text, strlen(text), TEXT_ENCODING_UTF8,
+                                                                              nullptr, pen, bounds, &textWidth);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateDefault();
     OH_Drawing_FontSetTypeface(font, typeface);
@@ -743,7 +744,7 @@ int TestFontMeasureTextWithBrushOrPenNormal1()
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_FontDestroy(font2);
     OH_Drawing_TypefaceDestroy(typeface);
-    return TestFontMeasureTextWithBrushOrPenNormal1_1(font,text,pen);
+    return TestFontMeasureTextWithBrushOrPenNormal1_1(font,text, pen);
 }
 
 /**
@@ -780,8 +781,8 @@ int TestFontMeasureTextWithBrushOrPenNormal2()
     OH_Drawing_PenSetColor(pen, COLOR_CYAN_TRANSPARENT);
     OH_Drawing_PenSetAlpha(pen, PEN_ALPHA_HUNDRED);
     OH_Drawing_PenSetAntiAlias(pen, true);
-    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(
-                font, text, strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+    errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, strlen(text),
+                                                         TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // Verify the bounds
     const char* text1 = "hello world";
@@ -876,7 +877,7 @@ int TestFontMeasureTextWithBrushOrPenAbnormal()
                                                        bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // brush and pen are not empty
     EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen,
-              bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
+                                                       bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_RectDestroy(bounds);
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_PenDestroy(pen);
@@ -908,7 +909,8 @@ int TestFontMeasureTextWithBrushOrPenMultiCalls()
     // OH_Drawing_FontMeasureTextWithBrushOrPen is called 20 times.
     for (int i = NUMBER_ZERO; i < NUMBER_TWENTY; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPen(font, text,
-                                                                                  strlen(text), TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+                                                                                  strlen(text), TEXT_ENCODING_UTF8,
+                                                                                  nullptr, pen, bounds, &textWidth);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_RectDestroy(bounds);
