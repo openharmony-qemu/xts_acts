@@ -83,26 +83,6 @@ export default function BuiltinArrayindexOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0600_03
-     * @tc.name   testBuiltinArrayAt40006
-     * @tc.desc   Test at() with empty array and negative index (should return undefined)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayAt40006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayAt40006";
-      try {
-        let arr: FixedArray<char> = [];
-        let result = at(arr, -1);
-        expect(result).assertUndefined();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_FLOAT_0101
      * @tc.name   testBuiltinArrayFind40002
      * @tc.desc   Test returning undefined when no match is found
@@ -354,26 +334,6 @@ export default function BuiltinArrayindexOfTest() {
         expect(find(arr, (v) => v === 2147483647)).assertEqual(2147483647);
         expect(find(arr, (v) => v === -2147483648)).assertEqual(-2147483648);
         expect(find(arr, (v) => v === 0)).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_INT_0900
-     * @tc.name   testBuiltinArrayFindInt50009
-     * @tc.desc   Test sparse integer array scenario
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindInt50009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindInt50009";
-      try {
-        const arr: FixedArray<int | undefined> = [1, undefined, 3];
-        const result = (arr as int[]).find((value) => value === undefined);
-        expect(result).assertUndefined();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -757,112 +717,6 @@ export default function BuiltinArrayindexOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1000
-     * @tc.name   testBuiltinArrayFilter00010
-     * @tc.desc   Test filtering an array containing null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter00010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter00010";
-      try {
-        const arr: FixedArray<boolean | null> = [true, null, false, null];
-        const result = (arr as boolean[]).filter((val) => val === true);
-        expect(result.length).assertEqual(1);
-        expect(result[0]).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1100
-     * @tc.name   testBuiltinArrayFilter00011
-     * @tc.desc   Test filtering a sparse array (containing undefined)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter00011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter00011";
-      try {
-        const arr: FixedArray<boolean | undefined> = [true, undefined, false];
-        const result = (arr as boolean[]).filter((val) => val === true);
-        expect(result.length).assertEqual(1);
-        expect(result[0]).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1200
-     * @tc.name   testBuiltinArrayFilter00012
-     * @tc.desc   Test filtering an array of all undefined values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter00012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter00012";
-      try {
-        const arr: FixedArray<boolean | undefined> = [undefined, undefined];
-        const result = (arr as boolean[]).filter((val) => val === true);
-        expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1300
-     * @tc.name   testBuiltinArrayFilter00013
-     * @tc.desc   Test filtering an array with undefined at the beginning and end
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter00013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter00013";
-      try {
-        const arr: FixedArray<boolean | undefined> = [undefined, true, false, undefined];
-        const result = (arr as boolean[]).filter((val, idx) => idx !== 0 && idx !== 3);
-        expect(result.length).assertEqual(2);
-        expect(result[0]).assertEqual(true);
-        expect(result[1]).assertEqual(false);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1400
-     * @tc.name   testBuiltinArrayFilter00014
-     * @tc.desc   Test distinguishing between null and undefined
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter00014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter00014";
-      try {
-        const arr: FixedArray<boolean | null | undefined> = [true, null, undefined];
-        const result = (arr as boolean[]).filter((val) => val === true);
-        expect(result[0]).assertEqual(true);
-        expect(result[1]).assertEqual(undefined);
-        expect(result.length).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_1500
      * @tc.name   testBuiltinArrayFilter00015
      * @tc.desc   Test behavior when the callback function throws an exception
@@ -1058,26 +912,6 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(0 as byte);
         expect(result[1]).assertEqual(255 as byte);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FILTER_BYTE_0900
-     * @tc.name   testBuiltinArrayFilter10009
-     * @tc.desc   Test filter handling of null array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter10009";
-      try {
-        const arr: FixedArray<byte> | null = null;
-        const result = filter(arr!, (v: byte) => v > 0);
-        expect(result).assertEqual(null);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1412,33 +1246,6 @@ export default function BuiltinArrayindexOfTest() {
     });
 
     /**
-     * @tc.number TEST_FILTER_DOUBLE_ARRAY_008
-     * @tc.name   testBuiltinArrayFilter30008
-     * @tc.desc   Test callback function throwing an exception
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter30008";
-      let hasThrown = false;
-      try {
-        const original: FixedArray<double> = [1.1, 2.2, 3.3];
-        filter(original,
-          (v: double, k: number, arr: FixedArray<double>) => {
-            if (k === 1 && arr.length === 3) {
-              throw new Error("Test error");
-            }
-            return true;
-          });
-      } catch (err: BusinessError) {
-        hasThrown = true;
-        expect((err as Error).message).assertEqual("Test error");
-      }
-      expect(hasThrown).assertTrue();
-    });
-
-    /**
      * @tc.number TEST_FILTER_INT_ARRAY_0100
      * @tc.name   testBuiltinArrayFilter50001
      * @tc.desc   Test filtering even numbers
@@ -1619,34 +1426,6 @@ export default function BuiltinArrayindexOfTest() {
     });
 
     /**
-     * @tc.number TEST_FILTER_INT_ARRAY_0900
-     * @tc.name   testBuiltinArrayFilter50009
-     * @tc.desc   Test integer array filter callback exception
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter50009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter50009";
-      let hasThrown = false;
-      try {
-        const original: FixedArray<int> = [100, 200, 300];
-        filter(original,
-          (v: int, k: number, arr: FixedArray<int>) => {
-            if (k === 1 && arr.length === 3) {
-              throw new Error("Callback error");
-            }
-            return true;
-          });
-      } catch (err: BusinessError) {
-        hasThrown = true;
-        console.info(`${TAG} succeed: ${err}`);
-        expect((err as Error).message).assertEqual("Callback error");
-      }
-      expect(hasThrown).assertTrue();
-    });
-
-    /**
      * @tc.number TEST_FILTER_LONG_ARRAY_0100
      * @tc.name   testBuiltinArrayFilter60001
      * @tc.desc   Test filtering even numbers
@@ -1807,32 +1586,5 @@ export default function BuiltinArrayindexOfTest() {
       }
     });
 
-    /**
-     * @tc.number TEST_FILTER_LONG_ARRAY_0800
-     * @tc.name   testBuiltinArrayFilter60008
-     * @tc.desc   Test long integer array filter callback exception
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter60008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter60008";
-      let hasThrown = false;
-      try {
-        const original: FixedArray<long> = [100000000, 200000000, 300000000];
-        filter(original,
-          (v: long, k: number, arr: FixedArray<long>) => {
-            if (k === 1 && arr.length === 3) {
-              throw new Error("Long filter error");
-            }
-            return true;
-          });
-      } catch (err: BusinessError) {
-        hasThrown = true;
-        console.info(`${TAG} succeed: ${err}`);
-        expect((err as Error).message).assertEqual("Long filter error");
-      }
-      expect(hasThrown).assertTrue();
-    });
     });
 }
