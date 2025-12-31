@@ -744,7 +744,7 @@ int TestFontMeasureTextWithBrushOrPenNormal1()
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_FontDestroy(font2);
     OH_Drawing_TypefaceDestroy(typeface);
-    return TestFontMeasureTextWithBrushOrPenNormal1_1(font,text, pen);
+    return TestFontMeasureTextWithBrushOrPenNormal1_1(font, text, pen);
 }
 
 /**
@@ -877,7 +877,7 @@ int TestFontMeasureTextWithBrushOrPenAbnormal()
                                                        bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // brush and pen are not empty
     EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen,
-                                                       bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
+        bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_RectDestroy(bounds);
     OH_Drawing_BrushDestroy(brush);
     OH_Drawing_PenDestroy(pen);
