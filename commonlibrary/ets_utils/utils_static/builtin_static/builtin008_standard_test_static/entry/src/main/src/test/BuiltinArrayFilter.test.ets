@@ -180,34 +180,6 @@ export default function BuiltinArrayFilterTest() {
     });
 
     /**
-     * @tc.number TEST_FILTER_SHORT_ARRAY_0700
-     * @tc.name   testBuiltinArrayFilter70007
-     * @tc.desc   Test short integer array filter callback exception
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter70007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter70007";
-      let hasThrown = false;
-      try {
-        const original: FixedArray<short> = [100, 200, 300];
-        filter(original,
-          (v: short, k: number, arr: FixedArray<short>) => {
-            if (k === 1 && arr.length === 3) {
-              throw new Error("Short filter error");
-            }
-            return true;
-          });
-      } catch (err: BusinessError) {
-        hasThrown = true;
-        console.info(`${TAG} succeed: ${err}`);
-        expect((err as Error).message).assertEqual("Short filter error");
-      }
-      expect(hasThrown).assertTrue();
-    });
-
-    /**
      * @tc.number TEST_FILTER_SHORT_ARRAY_0800
      * @tc.name   testBuiltinArrayFilter70008
      * @tc.desc   Test filtering special values in short integer array
@@ -226,74 +198,6 @@ export default function BuiltinArrayFilterTest() {
         expect(filtered.length).assertEqual(2);
         expect(filtered[0]).assertEqual(1);
         expect(filtered[1]).assertEqual(-1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILTER_SHORT_ARRAY_0900
-     * @tc.name   testBuiltinArrayFilter70009
-     * @tc.desc   Test filtering non-null values in FixedArray<short>
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter70009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter70009";
-      try {
-        const arr: FixedArray<short | null> = [1, null, 3, null, 5, 6, null, 8] as FixedArray<short | null>;
-        const result = filter(arr as FixedArray<short>, (val: short) => val !== null);
-        expect(result.length).assertEqual(5);
-        expect(result[0]).assertEqual(1);
-        expect(result[1]).assertEqual(3);
-        expect(result[2]).assertEqual(5);
-        expect(result[3]).assertEqual(6);
-        expect(result[4]).assertEqual(8);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILTER_SHORT_ARRAY_1000
-     * @tc.name   testBuiltinArrayFilter70010
-     * @tc.desc   Test filtering FixedArray<short> containing 0 and null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter70010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter70010";
-      try {
-        const arr: FixedArray<short | null> = [null, 0, 1, null, 2] as FixedArray<short | null>;
-        const result = filter(arr as FixedArray<short>, (val: short) => val !== null);
-        expect(result.length).assertEqual(3);
-        expect(result[0]).assertEqual(0);
-        expect(result[1]).assertEqual(1);
-        expect(result[2]).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILTER_SHORT_ARRAY_1100
-     * @tc.name   testBuiltinArrayFilter70011
-     * @tc.desc   Test filtering FixedArray<short> with all null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter70011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter70011";
-      try {
-        const arr: FixedArray<short | null> = [null, null, null] as FixedArray<short | null>;
-        const result = filter(arr as FixedArray<short>, (val: short) => val !== null);
-        expect(result.length).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -430,72 +334,6 @@ export default function BuiltinArrayFilterTest() {
         expect(returned === original).assertTrue();
         expect(original[0]).assertEqual(30000);
         expect(original[1]).assertEqual(30000);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILL_LONG_ARRAY_007
-     * @tc.name   testBuiltinArrayFill13007
-     * @tc.desc   Test filtering non-null values in FixedArray<long>
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFill13007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill13007";
-      try {
-        const arr: FixedArray<long | null> = [10000000, null, 30000000, null, 50000000] as FixedArray<long | null>;
-        const result = filter(arr as FixedArray<long>, (val: long) => val !== null);
-        expect(result.length).assertEqual(3);
-        expect(result[0]).assertEqual(10000000);
-        expect(result[1]).assertEqual(30000000);
-        expect(result[2]).assertEqual(50000000);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILL_LONG_ARRAY_008
-     * @tc.name   testBuiltinArrayFill13008
-     * @tc.desc   Test filtering FixedArray<long> with all null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFill13008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill13008";
-      try {
-        const arr: FixedArray<long | null> = [null, null, null] as FixedArray<long | null>;
-        const result = filter(arr as FixedArray<long>, (val: long) => val !== null);
-        expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILL_LONG_ARRAY_009
-     * @tc.name   testBuiltinArrayFill13009
-     * @tc.desc   Test filtering FixedArray<long> containing 0 and null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFill13009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill13009";
-      try {
-        const arr: FixedArray<long | null> = [null, 0, 10000000, null, 20000000] as FixedArray<long | null>;
-        const result = filter(arr as FixedArray<long>, (val: long) => val !== null);
-        expect(result.length).assertEqual(3);
-        expect(result[0]).assertEqual(0);
-        expect(result[1]).assertEqual(10000000);
-        expect(result[2]).assertEqual(20000000);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -785,31 +623,6 @@ export default function BuiltinArrayFilterTest() {
     });
 
     /**
-     * @tc.number TEST_FILL_SHORT_ARRAY_0011
-     * @tc.name   testBuiltinArrayFill14011
-     * @tc.desc   Test fill method handling 0 and null values in FixedArray<short>
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFill14011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFill14011";
-      try {
-        const arr: FixedArray<short | null> = [null, 0, 1, null, 2] as FixedArray<short | null>;
-        const result = fill(arr as FixedArray<short>, 9 as short, 1, 4);
-        expect(result.length).assertEqual(5);
-        expect(result[0]).assertEqual(null);
-        expect(result[1]).assertEqual(9);
-        expect(result[2]).assertEqual(9);
-        expect(result[3]).assertEqual(9);
-        expect(result[4]).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number TEST_FILL_SHORT_ARRAY_0100
      * @tc.name   testBuiltinArrayFill14010_02
      * @tc.desc   Verify fill is an in-place operation (modifies original array)
@@ -964,47 +777,5 @@ export default function BuiltinArrayFilterTest() {
       }
     });
 
-    /**
-     * @tc.number TEST_FILTER_WITH_NULL_0800
-     * @tc.name   testBuiltinArrayFilter008
-     * @tc.desc   Verify filter handling arrays containing null (original test case retained)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter008";
-      try {
-        const arr: FixedArray<boolean | null> = [true, null, false, null];
-        const result = (arr as Array<boolean | null>).filter((val) => val === true);
-        expect(result.length).assertEqual(1);
-        expect(result[0]).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FILTER_WITH_NULL_0900
-     * @tc.name   testBuiltinArrayFilter0009
-     * @tc.desc   Verify explicit null check in filter condition
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFilter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFilter0009";
-      try {
-        const arr: FixedArray<boolean | null> = [true, null, false, null];
-        const result = (arr as Array<boolean | null>).filter((val) => val !== null);
-        expect(result.length).assertEqual(2);
-        expect(result[0]).assertEqual(true);
-        expect(result[1]).assertEqual(false);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
   });
 }

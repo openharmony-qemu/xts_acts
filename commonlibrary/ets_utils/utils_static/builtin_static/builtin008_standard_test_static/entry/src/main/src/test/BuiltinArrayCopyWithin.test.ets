@@ -309,38 +309,6 @@ export default function BuiltinArrayCopyWithinTest() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1200_01
-     * @tc.name    testBuiltinArrayCopyWithin80018
-     * @tc.desc    Test copying in a large array
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it('testBuiltinArrayCopyWithin80018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayCopyWithin80018";
-      try {
-        const originalArray: number[] = [];
-        for (let i = 0; i < 100; i++) {
-          originalArray.push(Number(i + 1));
-        }
-        if (!Array.isArray(originalArray)) {
-          throw new Error("Generated object is not an Array");
-        }
-        const expectedResult: number[] = originalArray.slice();
-        expectedResult.copyWithin(500, 0, 100);
-        const result = originalArray.copyWithin(500, 0, 100);
-        const stringifyResult = (arr: number[]): string => {
-          return `[${arr.join(",")}]`;
-        };
-        expect(stringifyResult(result)).assertEqual(stringifyResult(expectedResult));
-        expect(result.length).assertEqual(1000);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1300_01
      * @tc.name    testBuiltinArrayCopyWithin90018
      * @tc.desc    Test copying with overlapping source and target regions

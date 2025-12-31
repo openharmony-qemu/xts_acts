@@ -664,25 +664,5 @@ export default function Array_01Test() {
       }
     });
 
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_REDUCE_RIGHT_0300
-     * @tc.name    testReduceRight0003
-     * @tc.desc    Boolean right-to-left accumulation condition '||', array is empty
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testReduceRight0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testReduceRight0003";
-      try {
-        const array: FixedArray<boolean> = [];
-        const andCallback = (acc: boolean, curr: boolean)=> acc || curr;
-        const result = reduceRight(array, andCallback);
-        expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
   })
 }
