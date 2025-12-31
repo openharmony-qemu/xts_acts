@@ -2907,5 +2907,227 @@ export default function RelationStoreRdbStoreTest() {
       done();
       hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 end *************');
     })
+    /**
+     * @tc.name       testRdbStoreWithReturning001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9800
+     * @tc.desc       normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRdbStoreWithReturning001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testrdbStoreWithReturning001 start *************');
+      const config: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results = await rdbStore.batchInsertWithReturning("test", [valueBucket0], config, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "batchInsertWithReturning" + results.changed);
+        expect(results.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `batchInsertWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      const valueBucket: data_relationalStore.ValuesBucket = {
+        'data1': 'lisi',
+        "data2": 10 as long,
+        "data3": 1.0,
+      };
+      let predicates = new data_relationalStore.RdbPredicates("test");
+      predicates.equalTo('data1', 'hello');
+      const config1: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results1 = await rdbStore.updateWithReturning(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "updateWithReturning" + results1.changed);
+        expect(results1.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      let predicates1 = new data_relationalStore.RdbPredicates("test");
+      predicates1.equalTo('data2', 10 as long);
+      const config2: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results2 = await rdbStore.deleteWithReturning(predicates1, config2);
+        console.log(tag + "deleteWithReturning" + results2.changed);
+        expect(results2.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `deleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testrdbStoreWithReturning001 end *************');
+    })
+    /**
+     * @tc.name       testRdbStoreWithReturningSync001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9900
+     * @tc.desc       normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRdbStoreWithReturningSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testRdbStoreWithReturningSync001 start *************');
+      const config: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results = rdbStore.batchInsertWithReturningSync("test", [valueBucket0], config, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "batchInsertWithReturninSync" + results.changed);
+        expect(results.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `batchInsertWithReturninSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      const valueBucket: data_relationalStore.ValuesBucket = {
+        'data1': 'lisi',
+        "data2": 10 as long,
+        "data3": 1.0,
+      };
+      let predicates = new data_relationalStore.RdbPredicates("test");
+      predicates.equalTo('data1', 'hello');
+      const config1: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results1 = rdbStore.updateWithReturningSync(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "updateWithReturningSync" + results1.changed);
+        expect(results1.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      let predicates1 = new data_relationalStore.RdbPredicates("test");
+      predicates1.equalTo('data2', 10 as long);
+      const config2: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results2 = rdbStore.deleteWithReturningSync(predicates1, config2);
+        console.log(tag + "deleteWithReturningSync" + results2.changed);
+        expect(results2.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `deleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testRdbStoreWithReturningSync001 end *************');
+    })
+    /**
+     * @tc.name       testTransWithReturning001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_10000
+     * @tc.desc       normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testTransWithReturning001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testTransWithReturning001 start *************');
+      let trans = await rdbStore.createTransaction(options);
+      const config: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results = await trans.batchInsertWithReturning("test", [valueBucket0], config, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "trans batchInsertWithReturning" + results.changed);
+        expect(results?.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans batchInsertWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      const valueBucket: data_relationalStore.ValuesBucket = {
+        'data1': 'lisi',
+        "data2": 10 as long,
+        "data3": 1.0,
+      };
+      let predicates = new data_relationalStore.RdbPredicates("test");
+      predicates.equalTo('data1', 'hello');
+      const config1: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results1 = await trans.updateWithReturning(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + " trans updateWithReturning" + results1.changed);
+        expect(results1.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      let predicates1 = new data_relationalStore.RdbPredicates("test");
+      predicates1.equalTo('data2', 10 as long);
+      const config2: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results2 = await trans.deleteWithReturning(predicates1, config2);
+        console.log(tag + "trans deleteWithReturning" + results2.changed);
+        expect(results2.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans deleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testTransWithReturning001 end *************');
+    })
+    /**
+     * @tc.name       testTransWithReturningSync001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_10100
+     * @tc.desc       normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testTransWithReturningSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testTransWithReturningSync001 start *************');
+      let trans = await rdbStore.createTransaction(options);
+      const config: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results = trans.batchInsertWithReturningSync("test", [valueBucket0], config, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + "trans batchInsertWithReturningSync" + results.changed);
+        expect(results?.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans batchInsertWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      const valueBucket: data_relationalStore.ValuesBucket = {
+        'data1': 'lisi',
+        "data2": 10 as long,
+        "data3": 1.0,
+      };
+      let predicates = new data_relationalStore.RdbPredicates("test");
+      predicates.equalTo('data1', 'hello');
+      const config1: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results1 = trans.updateWithReturningSync(valueBucket, predicates, config1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        console.log(tag + " trans updateWithReturningSync" + results1.changed);
+        expect(results1.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      let predicates1 = new data_relationalStore.RdbPredicates("test");
+      predicates1.equalTo('data2', 10 as long);
+      const config2: data_relationalStore.ReturningConfig = {
+        columns: ['data1', 'data2'],
+      }
+      try {
+        let results2 = trans.deleteWithReturningSync(predicates1, config2);
+        console.log(tag + "trans deleteWithReturningSync" + results2.changed);
+        expect(results2.changed).assertEqual(1);
+      } catch (e) {
+        console.error(tag + `trans deleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testTransWithReturningSync001 end *************');
+    })
   })
 }
