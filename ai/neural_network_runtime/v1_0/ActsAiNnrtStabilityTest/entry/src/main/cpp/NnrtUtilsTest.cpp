@@ -236,8 +236,8 @@ OH_NN_ReturnCode SetDevice(OH_NNCompilation* compilation)
     }
 
     const char* name = nullptr;
-    std::string m_deviceName{ "Device-CPU_TestVendor_v1_0" };
-    OHPrintf("[NNRtTest] Preferred device: %s\n", m_deviceName.c_str());
+    std::string mDeviceName{ "Device-CPU_TestVendor_v1_0" };
+    OHPrintf("[NNRtTest] Preferred device: %s\n", mDeviceName.c_str());
 
     // 首先尝试查找首选设备
     for (uint32_t i = 0; i < devicesCount; i++) {
@@ -251,7 +251,7 @@ OH_NN_ReturnCode SetDevice(OH_NNCompilation* compilation)
         std::string sName(name);
         OHPrintf("[NNRtTest] Device %d: %s\n", i, sName.c_str());
 
-        if (m_deviceName == sName) {
+        if (mDeviceName == sName) {
             OHPrintf("[NNRtTest] Found preferred device: %s\n", sName.c_str());
             ret = OH_NNCompilation_SetDevice(compilation, devicesID[i]);
             if (ret != OH_NN_SUCCESS) {
@@ -327,7 +327,6 @@ int CompileGraphMock(OH_NNCompilation* compilation, const OHNNCompileParam& comp
 
 int ExecuteGraphMock(OH_NNExecutor* executor, const OHNNGraphArgs& graphArgs, float* expect)
 {
-    // OHOS::sptr<V1_0::MockIDevice> device = V1_0::MockIDevice::GetInstance();
     int ret = 0;
     uint32_t inputIndex = 0;
     uint32_t outputIndex = 0;
@@ -352,15 +351,6 @@ int ExecuteGraphMock(OH_NNExecutor* executor, const OHNNGraphArgs& graphArgs, fl
                 OHPrintf("[NNRtTest] OH_NNExecutor_SetOutput failed! ret=%d\n", ret);
                 return ret;
             }
-            if (expect != nullptr) {
-                // ret = device->MemoryCopy(expect, operandTem.length);
-                // Mock device memory copy - skip in actual implementation
-            }
-            // Skip device error check for mock
-            /*if (ret != OH_NN_SUCCESS) {
-                OHPrintf("[NNRtTest] device set expect output failed! ret=%d\n", ret);
-                return ret;
-            }*/
             outputIndex += 1;
         }
     }
@@ -391,7 +381,7 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 OHPrintf("[NNRtTest] OH_NNExecutor_SetInputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            memcpy(inputMemory->data, static_cast<void*>(operandTem.data), operandTem.length);
+            SafeMemcpy(inputMemory->data, operandTem.length, static_cast<void*>(operandTem.data), operandTem.length);
             OHNNMemory[inputIndex] = inputMemory;
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(), graphArgs.outputIndices.end(), i) !=
@@ -402,12 +392,6 @@ int ExecutorWithMemory(OH_NNExecutor* executor,
                 OHPrintf("[NNRtTest] OH_NNExecutor_SetOutputWithMemory failed! ret=%d\n", ret);
                 return ret;
             }
-            // ret = device->MemoryCopy(expect, operandTem.length);
-            // Mock device memory copy - skip in actual implementation
-            /*if (ret != OH_NN_SUCCESS) {
-                OHPrintf("[NNRtTest] device set expect output failed! ret=%d\n", ret);
-                return ret;
-            }*/
             OHNNMemory[inputIndex + outputIndex] = outputMemory;
             outputIndex += 1;
         }

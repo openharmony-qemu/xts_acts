@@ -14,7 +14,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(ai_nnrt_stability_test SHARED 
     StabilityTest.cpp
-    StabilityTestNapi.cpp
+    StabilityTestNapiTest.cpp
     NnrtUtilsTest.cpp)
 
 target_link_libraries(ai_nnrt_stability_test PUBLIC 

@@ -33,7 +33,7 @@ namespace NeuralNetworkRuntime {
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNR_Reliability_North_Stress_0100()
+int SubAiNnrReliabilityNorthStress0100()
 {
     OHNNCompileParam compileParam;
     AddModel addModel;
@@ -63,7 +63,7 @@ int SUB_AI_NNR_Reliability_North_Stress_0100()
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-int SUB_AI_NNR_Reliability_North_Stress_0200()
+int SubAiNnrReliabilityNorthStress0200()
 {
     OHNNCompileParam compileParam;
     AddModel addModel;

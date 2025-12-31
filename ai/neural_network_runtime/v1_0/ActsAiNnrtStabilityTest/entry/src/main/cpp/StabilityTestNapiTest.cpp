@@ -15,6 +15,7 @@
 
 #include <cstdio>
 #include "StabilityTest.h"
+#include "include/NnrtUtilsTest.h"
 #include "napi/native_api.h"
 
 // 测试函数统一类型：返回 int，无参数
@@ -30,17 +31,17 @@ struct AsyncWorkData {
 
 // 测试函数注册表（静态数组）
 static TestFunction g_testFunctions[] = {
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNR_Reliability_North_Stress_0100,
-    OHOS::NeuralNetworkRuntime::SUB_AI_NNR_Reliability_North_Stress_0200,
+    OHOS::NeuralNetworkRuntime::SubAiNnrReliabilityNorthStress0100,
+    OHOS::NeuralNetworkRuntime::SubAiNnrReliabilityNorthStress0200,
 };
 
-static const int g_testFunctionCount = sizeof(g_testFunctions) / sizeof(g_testFunctions[0]);
+static const int TEST_FUNCTION_COUNT = sizeof(g_testFunctions) / sizeof(g_testFunctions[0]);
 
 static void ExecuteAsyncWork(napi_env env, void* data)
 {
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
 
-    if (workData->testCaseIndex >= 0 && workData->testCaseIndex < g_testFunctionCount) {
+    if (workData->testCaseIndex >= 0 && workData->testCaseIndex < TEST_FUNCTION_COUNT) {
         workData->result = g_testFunctions[workData->testCaseIndex]();
     } else {
         workData->result = -1;
@@ -89,9 +90,9 @@ static napi_value stabilityTest(napi_env env, napi_callback_info info)
         napi_throw_error(env, nullptr, "Failed to get case number");
         return nullptr;
     }
-    if (caseNum < 0 || caseNum >= g_testFunctionCount) {
+    if (caseNum < 0 || caseNum >= TEST_FUNCTION_COUNT) {
         char errorMsg[64];
-        snprintf(errorMsg, sizeof(errorMsg), "The range of case must be 0 to %d", g_testFunctionCount - 1);
+        OHPrintf("The range of case must be 0 to %d", TEST_FUNCTION_COUNT - 1);
         napi_throw_type_error(env, nullptr, errorMsg);
         return nullptr;
     }
