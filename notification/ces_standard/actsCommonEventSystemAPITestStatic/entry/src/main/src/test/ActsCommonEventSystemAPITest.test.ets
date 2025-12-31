@@ -393,6 +393,7 @@ export default function ActsCommonEventSystemAPITest() {
         let error : BusinessError = err as BusinessError
         console.info(`${TAG} cancel5 Promise error: ${error.code}, errMes: ${error.message}`)
         expect(error?.code).assertEqual(1600007)
+        done()
       })
 
     })
@@ -520,13 +521,10 @@ export default function ActsCommonEventSystemAPITest() {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code == 801).assertTrue();
-            done();
           } else if(err.code == 1011){
             expect(err?.code).assertEqual(1011);
-            done();
           } else {
             expect(err?.code).assertEqual(1600018)
-            done()
           }
         });
         await Utils.msSleep(2000)
