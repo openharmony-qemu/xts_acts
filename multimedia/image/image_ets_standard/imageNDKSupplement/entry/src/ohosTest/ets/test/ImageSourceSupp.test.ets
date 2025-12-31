@@ -128,7 +128,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_CREATE_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_CREATE_SUPP_0001
-     * @tc.desc     OHImageSourceInitNativeSuppTest-nullptr
+     * @tc.desc     OHImageSourceCreate-IMAGE_RESULT_SUCCESS
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
