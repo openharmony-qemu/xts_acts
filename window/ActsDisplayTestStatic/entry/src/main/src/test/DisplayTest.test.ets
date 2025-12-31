@@ -67,6 +67,8 @@ export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         // let session:UIExtensionContentSession;
@@ -81,12 +83,18 @@ export default function DisplayTest() {
         let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext;
         beforeAll(async (): Promise<void> => {
+            hilog.info(domain, tag, 'beforeAll start');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            await Utils.msSleep(2000);
             displayFoldStatus = display.getFoldStatus();
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
             windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+            hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
             win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+            hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-            // let win = windowStage.getMainWindowSync();
+            hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
             try{
                 let data:string = displayClass.getDisplayCapability();
                 // let capabilityData = JSON.parse(data);
@@ -132,7 +140,21 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
              display.getAllDisplays().then((data:Array<display.Display>) => {
-                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data: ' + JSON.stringify(data));
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data.length: ' + data.length);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].id: ' + data[0].id);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].refreshRate: ' + data[0].refreshRate);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].width: ' + data[0].width);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].height: ' + data[0].height);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].rotation: ' + data[0].rotation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].orientation: ' + data[0].orientation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityDPI: ' + data[0].densityDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].name: ' + data[0].name);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].alive: ' + data[0].alive);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].state: ' + data[0].state);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityPixels: ' + data[0].densityPixels);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].scaledDensity: ' + data[0].scaledDensity);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].xDPI: ' + data[0].xDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].yDPI: ' + data[0].yDPI);
                 expect(data[0].id != null).assertTrue();
                 expect(data[0].refreshRate != null).assertTrue();
                 expect(data[0].width != null).assertTrue();

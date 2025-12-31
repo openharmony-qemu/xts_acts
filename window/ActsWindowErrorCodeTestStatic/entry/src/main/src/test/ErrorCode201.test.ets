@@ -30,6 +30,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
 import display from '@ohos.display';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
@@ -76,16 +77,25 @@ export default function ErrorCode201() {
 
     describe("ErrorCode201", (): void => {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         let context: common.UIAbilityContext;
         let isPCStatus: string = '';
         beforeAll(() => {
-            
+            hilog.info(domain, tag, 'beforeAll start');
+            let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
                 isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
                 //isPCStatus == '' 非PC设备
                 //isPCStatus == '1' PC设备状态栏dock未融合

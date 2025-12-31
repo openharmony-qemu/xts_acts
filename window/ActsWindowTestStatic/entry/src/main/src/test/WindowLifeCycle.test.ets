@@ -85,9 +85,11 @@ export default function WindowLifeCycleTest() {
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-
+                hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
