@@ -45,15 +45,15 @@ let netConnOnEvent6 = async (caseName: string,netConn: connection.NetConnection)
         ListenTimes+=10;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netCapabilitiesChange " + JSON.stringify(value));
     });
-    netConn.on('netLost', (value) => {
+    netConn.on('netLost', (value: connection.NetHandle) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
     });
-    netConn.on('netUnavailable', (value) => {
+    netConn.on('netUnavailable', () => {
         ListenTimes+=1000;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netUnavailable " + JSON.stringify(value));
     });
-    netConn.on('netBlockStatusChange', (value) => {
+    netConn.on('netBlockStatusChange', (value: connection.NetBlockStatusInfo) => {
         ListenTimes+=10000;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netBlockStatusChange " + JSON.stringify(value));
     });
@@ -69,7 +69,7 @@ let netConnOnEvent4 =async (caseName: string,netConn: connection.NetConnection) 
         ListenTimes+=10;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netCapabilitiesChange " + JSON.stringify(value));
     });
-    netConn.on('netLost', (value) => {
+    netConn.on('netLost', (value: connection.NetHandle) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
     });
@@ -86,7 +86,7 @@ let netConnOnEvent3 =async (caseName: string,netConn: connection.NetConnection) 
         ListenTimes+=10;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netConnectionPropertiesChange" + JSON.stringify(value));
     });
-    netConn.on('netLost', (value) => {
+    netConn.on('netLost', (value: NetHandle) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
     });
