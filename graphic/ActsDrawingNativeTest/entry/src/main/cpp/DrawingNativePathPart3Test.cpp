@@ -1566,26 +1566,18 @@ int TestPathApproximateNull()
         EXPECT_EQ(count, OH_DRAWING_SUCCESS);
     }
     float* vals = new float[count];
-    // 2. Verify the empty path.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    // 3. The first parameter of the verification interface is passed as a null pointer.
     errorCode = OH_Drawing_PathApproximate(nullptr, acceptableError, vals, &count);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 4. The second parameter of the verification interface is passed as 0.
     errorCode = OH_Drawing_PathApproximate(path, PATH_Z, vals, &count);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    // 5. The third parameter of the verification interface is passed as a null pointer.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    // 6. The third parameter and the forth parameter of the verification interface are passed as null
-    // pointer.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, nullptr);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 7. The forth parameter of the verification interface is passed as a null pointer.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, nullptr);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 8. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
     return OH_DRAWING_SUCCESS;
