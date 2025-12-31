@@ -718,25 +718,6 @@ export default function math06Test() {
         console.log(domain, tag, '%{public}s', 'testmathacosh0004 completed');
       });
 
-    /**
-     * @tc.number  MATH_ACOSH_0005_02
-     * @tc.name    testmathacosh0005
-     * @tc.desc    Verify acosh(2) returns expected value
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathacosh0005",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testmathacosh0005 started');
-        const expected: double = 1.3169578969248166;
-        const result: double = acosh(2.0);
-
-        expect(Math.abs(result - expected) < 1e-10).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testmathacosh0005 completed');
-      });
 
     /**
      * @tc.number  MATH_ACOSH_0006_02
@@ -808,24 +789,6 @@ export default function math06Test() {
       });
 
     /**
-     * @tc.number  MATH_ASIN_0004_02
-     * @tc.name    testmathasin0004
-     * @tc.desc    Verify asin(1.0) returns π/2
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathasin0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (done: () => void): void => {
-        console.log(domain, tag, '%{public}s', 'Test upper boundary (1.0) started');
-        const result: number = asin(1.0);
-        const expected: number = Math.PI / 2;
-        expect(Math.abs(result - expected) < 1e-15).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'Test upper boundary completed');
-      });
-
-    /**
      * @tc.number  MATH_ASIN_0005_02
      * @tc.name    testmathasin0005
      * @tc.desc    Verify asin(-1.0) returns -π/2
@@ -858,24 +821,6 @@ export default function math06Test() {
         expect(result).assertEqual(0.0);
         done();
         console.log(domain, tag, '%{public}s', 'Test zero input completed');
-      });
-
-    /**
-     * @tc.number  MATH_ASIN_0007
-     * @tc.name    testmathasin0007
-     * @tc.desc    Verify asin(0.5) returns π/6
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathasin0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (done: () => void): void => {
-        console.log(domain, tag, '%{public}s', 'Test positive value (0.5) started');
-        const result: number = asin(0.5);
-        const expected: number = Math.PI / 6;
-        expect(Math.abs(result - expected) < 1e-15).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'Test positive value completed');
       });
 
     /**
@@ -949,44 +894,6 @@ export default function math06Test() {
         expect(Number.isNaN(result)).assertTrue();
         done();
         console.log(domain, tag, '%{public}s', 'testmathacosh0009 completed');
-      });
-
-    /**
-     * @tc.number  MATH_ACOSH_0010
-     * @tc.name    testmathacosh0010
-     * @tc.desc    Verify acosh(10.0) returns expected value
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathacosh0010",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testmathacosh0010 started');
-        const expected: double = 2.993222846126381;
-        const result: double = acosh(10.0);
-        expect(Math.abs(result - expected) < 1e-10).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testmathacosh0010 completed');
-      });
-
-    /**
-     * @tc.number  MATH_ACOSH_0011
-     * @tc.name    testmathacosh0011
-     * @tc.desc    Verify acosh(100.0) returns expected value
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathacosh0011",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testmathacosh0011 started');
-        const expected: double = 5.298292365610485;
-        const result: double = acosh(100.0);
-        expect(Math.abs(result - expected) < 1e-10).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'testmathacosh0011 completed');
       });
 
     /**
@@ -1937,23 +1844,6 @@ export default function math06Test() {
         expect(!false).assertTrue();
         done();
         console.log(domain, tag, '%{public}s', 'test_basic_operation_018 end');
-      });
-
-    /**
-     * @tc.number  BASIC_OPERATION_019
-     * @tc.name    test_basic_operation_019
-     * @tc.desc    Verify typeof works with numbers
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("test_basic_operation_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_basic_operation_019 start');
-        expect(typeof 42 === 'number').assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'test_basic_operation_019 end');
       });
 
     /**

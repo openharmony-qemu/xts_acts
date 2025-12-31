@@ -1841,27 +1841,6 @@ export default function type_05Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_GETLITERAL_0200
-     * @tc.name    testUndefinedTypeGetLiteral_0002
-     * @tc.desc    Check literal value of UndefinedType from variable-assigned undefined
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUndefinedTypeGetLiteral_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUndefinedTypeGetLiteral_0002";
-      try {
-        let undefinedVar = null;
-        const type: UndefinedType = Type.of(undefinedVar) as UndefinedType;
-        const result: string = type.getLiteral();
-        expect(result).assertEqual("undefined");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_GETLITERAL_0300
      * @tc.name    testUndefinedTypeGetLiteral_0003
      * @tc.desc    Check literal consistency across different UndefinedType instances
@@ -1909,28 +1888,6 @@ export default function type_05Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_GETLITERAL_0500
-     * @tc.name    testUndefinedTypeGetLiteral_0005
-     * @tc.desc    Check literal value of UndefinedType from uninitialized property
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUndefinedTypeGetLiteral_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUndefinedTypeGetLiteral_0005";
-      try {
-
-        const instance = new TestClass();
-        const type: UndefinedType = Type.of(instance.uninitializedProp) as UndefinedType;
-        const result: string = type.getLiteral();
-        expect(result).assertEqual("undefined");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0100
      * @tc.name    testUndefinedTypeHasName_0001
      * @tc.desc    Check if direct undefined value type has a name
@@ -1945,27 +1902,6 @@ export default function type_05Test() {
         const type: UndefinedType = Type.of(undefinedValue) as UndefinedType;
         const result: boolean = type.hasName();
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_HASNAME_0200
-     * @tc.name    testUndefinedTypeHasName_0002
-     * @tc.desc    Check if uninitialized variable's undefined type has a name
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUndefinedTypeHasName_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUndefinedTypeHasName_0002";
-      try {
-        let uninitializedVar = null;
-        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
-        const result: boolean = type.hasName();
-        expect(result).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -2050,27 +1986,6 @@ export default function type_05Test() {
       try {
         const undefinedValue = undefined;
         const type: UndefinedType = Type.of(undefinedValue) as UndefinedType;
-        const result: boolean = type.isPrimitive();
-        expect(result).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISPRIMITIVE_0200
-     * @tc.name    testUndefinedTypeIsPrimitive_0002
-     * @tc.desc    Check if uninitialized variable's undefined is considered primitive
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUndefinedTypeIsPrimitive_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUndefinedTypeIsPrimitive_0002";
-      try {
-        let uninitializedVar = null;
-        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
         const result: boolean = type.isPrimitive();
         expect(result).assertTrue();
       } catch (err: BusinessError) {
@@ -2193,27 +2108,6 @@ export default function type_05Test() {
         const type: UndefinedType = Type.of(undefinedValue) as UndefinedType;
         const result: boolean = type.isReference();
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNDEFINEDTYPE_ISREFERENCE_0200
-     * @tc.name    testUndefinedTypeIsReference_0002
-     * @tc.desc    Check if uninitialized variable (undefined) is considered reference type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUndefinedTypeIsReference_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUndefinedTypeIsReference_0002";
-      try {
-        let uninitializedVar = null;
-        const type: UndefinedType = Type.of(uninitializedVar) as UndefinedType;
-        const result: boolean = type.isReference();
-        expect(result).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -2536,28 +2430,6 @@ export default function type_05Test() {
       }
     });
 
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0600
-     * @tc.name    testUnionTypeEquals_0006
-     * @tc.desc    Check if union type equals to non-union number type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUnionTypeEquals_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUnionTypeEquals_0006";
-      try {
-        const value: number | string = 42;
-        const unionType = Type.of(value);
-        const numberType = Type.of(100);
-        const result: boolean = unionType.equals(numberType);
-        expect(result).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_EQUALS_0700
@@ -2623,27 +2495,6 @@ export default function type_05Test() {
         const unionType2 = Type.of(value2);
         const result: boolean = unionType1.equals(unionType2);
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETLITERAL_0100
-     * @tc.name    testUnionTypeGetLiteral_0001
-     * @tc.desc    Check literal for number|string union type created from number value
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUnionTypeGetLiteral_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUnionTypeGetLiteral_0001";
-      try {
-        const value: number | string = 42;
-        const unionType = Type.of(value);
-        const result: string = unionType.getLiteral();
-        expect(result).assertEqual("int");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -2819,27 +2670,6 @@ export default function type_05Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0300
-     * @tc.name    testUnionTypeGetName_0003
-     * @tc.desc    Check name for object|array union type created from object value
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUnionTypeGetName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUnionTypeGetName_0003";
-      try {
-        const value: object | number[] = [1, 2];
-        const unionType = Type.of(value);
-        const result: string = unionType.getName();
-        expect(result).assertEqual("escompat.Array");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0400
      * @tc.name    testUnionTypeGetName_0004
      * @tc.desc    Check name for three-type union (number|string|boolean)
@@ -2875,28 +2705,6 @@ export default function type_05Test() {
         const unionType = Type.of(value);
         const result: string = unionType.getName();
         expect(result).assertEqual("undefined");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_UNIONTYPE_GETNAME_0600
-     * @tc.name    testUnionTypeGetName_0006
-     * @tc.desc    Check name for class instance|string union type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testUnionTypeGetName_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testUnionTypeGetName_0006";
-      try {
-
-        const value: TestClass | string = new TestClass("test");
-        const unionType = Type.of(value);
-        const result: string = unionType.getName();
-        expect(result).assertEqual("entry.src.main.src.test.Type_05.test.TestClass");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();

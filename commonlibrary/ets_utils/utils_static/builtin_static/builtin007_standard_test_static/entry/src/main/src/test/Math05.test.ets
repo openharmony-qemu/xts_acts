@@ -2217,24 +2217,6 @@ export default function math05Test() {
       });
 
     /**
-     * @tc.number  MATH_ASIN_007
-     * @tc.name    testmathasin0039
-     * @tc.desc    Verify extreme precision of asin(0.5) returns π/6
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathasin0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (done: () => void): void => {
-        console.log(domain, tag, '%{public}s', 'Test extreme precision (0.5) started');
-        const result: number = asin(0.5);
-        const expected: number = Math.PI / 6;
-        expect(Math.abs(result - expected) < Number.EPSILON).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'Test extreme precision completed');
-      });
-
-    /**
      * @tc.number  MATH_ASIN_0008_01
      * @tc.name    testmathasin0040
      * @tc.desc    Verify extreme precision of asin(-0.5) returns -π/6

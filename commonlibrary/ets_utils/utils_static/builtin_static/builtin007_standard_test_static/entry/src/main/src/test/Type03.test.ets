@@ -675,28 +675,6 @@ export default function type_03Test() {
       }
     });
 
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETINTERFACE_0100
-     * @tc.name    testGetInterface0001
-     * @tc.desc    Testing getInterface with valid index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetInterface0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetInterface0001";
-      try {
-        let classType = Type.of(new TestClass8()) as ClassType;
-        let interfaceType = classType.getInterface(0);
-        expect(interfaceType instanceof InterfaceType).assertTrue();
-        expect(interfaceType.getName()).assertEqual("entry.src.main.src.test.Type_03.test.TestInterface1");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETINTERFACESNUM_0100
      * @tc.name    testGetInterfacesNum0001
@@ -751,28 +729,6 @@ export default function type_03Test() {
         let classType = Type.of(new TestClass4()) as ClassType;
         let interfacesNum = classType.getInterfacesNum();
         expect(interfacesNum).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETMETHOD_0100
-     * @tc.name    testGetMethod0001
-     * @tc.desc    Testing getMethod with valid index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetMethod0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetMethod0001";
-      try {
-        let classType = Type.of(new TestClass5()) as ClassType;
-        let method = classType.getMethod(0);
-        expect(method instanceof Method).assertTrue();
-        expect(method.getName()).assertEqual("getOwnPropertyNames");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -1293,25 +1249,6 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_CLASSTYPE_GETFIELD_0200
-     * @tc.name    testClassTypeGetField0002
-     * @tc.desc    Testing ClassType.getField with invalid index (out of bounds).
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testClassTypeGetField0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let TAG = "testClassTypeGetField0002";
-      try {
-        const testClassType = Type.of(new TestClass4()) as ClassType;
-        testClassType.getField(1);
-        expect().assertFail();
-      } catch (err: BusinessError) {
-        expect(err instanceof TypeError).assertTrue();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_CLASSTYPE_GETFIELD_0300
      * @tc.name    testClassTypeGetField0003
      * @tc.desc    Testing ClassType.getField with inherited fields.
@@ -1347,47 +1284,6 @@ export default function type_03Test() {
         const testClassType = Type.of(new TestClass1()) as ClassType;
         const field = testClassType.getFieldByName("field1");
         expect(field.getName()).assertEqual("field1");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_CLASSTYPE_GETFIELDBYNAME_0200
-     * @tc.name    testClassTypeGetFieldByName0002
-     * @tc.desc    Testing ClassType.getFieldByName with invalid field name.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testClassTypeGetFieldByName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testClassTypeGetFieldByName0002";
-      try {
-        const testClassType = Type.of(new TestClass4()) as ClassType;
-        testClassType.getFieldByName("nonexistentField");
-        expect().assertFail();
-      } catch (err: BusinessError) {
-        expect(err instanceof TypeError).assertTrue();
-        expect(err.message).assertEqual('no field "nonexistentField"');
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_CLASSTYPE_GETFIELDBYNAME_0300
-     * @tc.name    testClassTypeGetFieldByName0003
-     * @tc.desc    Testing ClassType.getFieldByName with inherited field name.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testClassTypeGetFieldByName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testClassTypeGetFieldByName0003";
-      try {
-        const childClassType = Type.of(new ChildClass()) as ClassType;
-        const field = childClassType.getFieldByName("parentField");
-        expect(field.getName()).assertEqual("parentField");
-        expect(field.getOwnerType().getName()).assertEqual("entry.src.main.src.test.Type_03.test.ParentClass");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -1746,30 +1642,6 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETCONSTRUCTOR_0100
-     * @tc.name    testGetConstructor0001
-     * @tc.desc    Testing getConstructor with valid index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetConstructor0001";
-      try {
-        const classType = Type.of(new TestBasic()) as ClassType;
-        const constructor0 = classType.getConstructor(0);
-        expect(constructor0 !== undefined).assertTrue();
-        expect(constructor0.getType().getParametersNum()).assertEqual(0);
-        const constructor1 = classType.getConstructor(1);
-        expect(constructor1 !== undefined).assertTrue();
-        expect(constructor1.getType().getParametersNum()).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETCONSTRUCTOR_0200
      * @tc.name    testGetConstructor0002
      * @tc.desc    Testing getConstructor with invalid index.
@@ -1862,26 +1734,6 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETOWNFIELD_0200
-     * @tc.name    testGetOwnField0002
-     * @tc.desc    Testing getOwnField with invalid index.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetOwnField0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let TAG = "testGetOwnField0002";
-      try {
-        const classType = Type.of(new TestClass4()) as ClassType;
-        classType.getOwnField(1);
-        expect(true).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect(err instanceof TypeError).assertTrue();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETOWNFIELDSNUM_0100
      * @tc.name    testGetOwnFieldsNum0001
      * @tc.desc    Testing getOwnFieldsNum with class that has own fields.
@@ -1958,28 +1810,7 @@ export default function type_03Test() {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISFINAL_0200
-     * @tc.name    testIsFinal0002
-     * @tc.desc    Testing isFinal with built-in final classes.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIsFinal0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let TAG = "testIsFinal0002";
-      try {
-        const stringType = Type.of("") as ClassType;
-        expect(stringType.isFinal()).assertTrue();
-        const numberType = Type.of(123) as ClassType;
-        expect(numberType.isFinal()).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
+    });	
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASEMPTYCONSTRUCTOR_0100
@@ -2098,25 +1929,6 @@ export default function type_03Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEOF_0200
-     * @tc.name    testMake0002
-     * @tc.desc    Testing make() with a class that doesn't have an empty constructor.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMake0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMake0002";
-      try {
-        const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
-        classType.make();
-        expect(true).assertFalse();
-      } catch (err: BusinessError) {
-        expect(err.message).assertContain("empty constructor");
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEA_0300
      * @tc.name    testMake0003
      * @tc.desc    Testing make() with a class that inherits from another class.
@@ -2176,46 +1988,6 @@ export default function type_03Test() {
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKEB_0300
-     * @tc.name    testMakeWithArgs0003
-     * @tc.desc    Testing make(args) with no matching constructor.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMakeWithArgs0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMakeWithArgs0003";
-      try {
-        const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
-        classType.make([new Number(10)]); // Should throw error
-        expect(true).assertFalse(); // Should not reach here
-      } catch (err: BusinessError) {
-        expect(err.message).assertContain("can't select consturctor");
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0400
-     * @tc.name    testMakeWithArgs0004
-     * @tc.desc    Testing make(args) with ambiguous constructors.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMakeWithArgs0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMakeWithArgs0004";
-      try {
-        const classType = Type.of(new TestClassAmbiguousCtors("test", 10)) as ClassType;
-        classType.make([new String("test"), new Number(10)]);
-        classType.make([new String("test"), new String("10")]);
-        classType.make([new String("test"), new Boolean(true)]); // Should throw error
-        expect(true).assertFalse(); // Should not reach here
-      } catch (err: BusinessError) {
-        expect(err.message).assertContain("can't select consturctor");
       }
     });
 

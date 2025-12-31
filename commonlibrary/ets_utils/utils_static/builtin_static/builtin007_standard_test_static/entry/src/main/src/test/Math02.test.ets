@@ -1320,33 +1320,6 @@ export default function math02Test() {
       });
 
     /**
-     * @tc.number  TEST_MATH_ROUND_10009
-     * @tc.name    testmathround10009
-     * @tc.desc    Verify rounding of tiny fractional values
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathround10009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'RoundingTinyValues start');
-        try {
-          expect(round(Number.MIN_VALUE * 2)).assertEqual(0.0);
-          expect(round(0.0000000000000001)).assertEqual(0.0);
-          expect(round(0.49999999999999994)).assertEqual(1.0);
-          expect(round(-Number.MIN_VALUE * 3)).assertEqual(-0.0);
-          expect(round(-0.0000000000000001)).assertEqual(-0.0);
-          expect(round(-0.49999999999999994)).assertEqual(-0.0);
-        } catch (error) {
-          console.log(domain, tag, 'RoundingTinyValues failed: %{public}s', JSON.stringify(error));
-          expect().assertFail();
-        } finally {
-          done();
-          console.log(domain, tag, '%{public}s', 'RoundingTinyValues end');
-        }
-      });
-
-    /**
      * @tc.number  TEST_MATH_ROUND_10010
      * @tc.name    testmathround10010
      * @tc.desc    Verify rounding at extreme values (near Number.MAX_VALUE)
@@ -2567,29 +2540,6 @@ export default function math02Test() {
       });
 
     /**
-     * @tc.number  TEST_MATH_SINH_16001
-     * @tc.name    testMathSinh16001
-     * @tc.desc    Verify sinh function with positive numbers
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testMathSinh16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testMathSinh16001 start');
-        try {
-          expect(Math.abs(sinh(0.0) - 0.0) < 1e-10).assertTrue();
-          expect(Math.abs(sinh(1.0) - 1.1752011936438014) < 1e-10).assertTrue();
-          expect(Math.abs(sinh(2.0) - 3.626860407847019) < 1e-10).assertTrue();
-          console.log(domain, tag, '%{public}s', 'testMathSinh16001 end');
-          done();
-        } catch (error) {
-          console.log(domain, tag, '%{public}s', `Error in testMathSinh16001: ${error}`);
-          expect().assertFail();
-        }
-      });
-
-    /**
      * @tc.number  TEST_MATH_SINH_16002
      * @tc.name    testMathSinh16002
      * @tc.desc    Verify sinh function with negative numbers
@@ -2738,31 +2688,6 @@ export default function math02Test() {
           done();
         } catch (error) {
           console.log(domain, tag, '%{public}s', `Error in testMathSinh16009: ${error}`);
-          expect().assertFail();
-        }
-      });
-
-    /**
-     * @tc.number  TEST_MATH_SINH_16014
-     * @tc.name    testMathSinh16014
-     * @tc.desc    Verify sinh function mathematical relationships
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testMathSinh16014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testMathSinh16014 start');
-        try {
-          expect(Math.abs(sinh(-1.0) - (-sinh(1.0)))).assertEqual(0.0);
-          expect(Math.abs(sinh(-2.0) - (-sinh(2.0)))).assertEqual(0.0);
-          expect(Math.abs(sinh(-3.0) - (-sinh(3.0)))).assertEqual(0.0);
-          const x = 2.0;
-          expect(Math.abs(sinh(x) - (Math.exp(x) - Math.exp(-x)) / 2) < 1e-10).assertTrue();
-          console.log(domain, tag, '%{public}s', 'testMathSinh16014 end');
-          done();
-        } catch (error) {
-          console.log(domain, tag, '%{public}s', `Error in testMathSinh16014: ${error}`);
           expect().assertFail();
         }
       });

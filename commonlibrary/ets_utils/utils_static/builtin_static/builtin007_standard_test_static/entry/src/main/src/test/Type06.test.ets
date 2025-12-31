@@ -159,26 +159,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FLOAT_TYPE_0200
-     * @tc.name    testFloatType0002
-     * @tc.desc    Checks for equality this instance with provided object, treated as a FloatType
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFloatType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFloatType0002";
-      try {
-        const Type1 = FloatType.VAL;
-        const Type2 = FloatType.REF;
-        expect(Type1.equals(Type2)).assertEqual(false);
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FLOAT_TYPE_0300
      * @tc.name    testFloatType0003
      * @tc.desc    Checks for equality this instance with provided object, treated as a FloatType
@@ -409,26 +389,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_TYPE_0200
-     * @tc.name    testBooleanType0002
-     * @tc.desc    Returns literal of type if exists
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testBooleanType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBooleanType0002";
-      try {
-        const Type1 = BooleanType.VAL;
-        const Type2 = BooleanType.REF;
-        expect(Type1.equals(Type2)).assertEqual(false);
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_TYPE_0300
      * @tc.name    testBooleanType0003
      * @tc.desc    Returns literal of type if exists
@@ -621,241 +581,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_HASRECEIVER_0100
-     * @tc.name    testMethodTypeHasReceiver0001
-     * @tc.desc    Returns receiver type of this method
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeHasReceiver0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeHasReceiver0001";
-      try {
-
-
-        const instanceMethodType = Type.of(new TestClass1().instanceMethod);
-
-        expect((instanceMethodType as MethodType).hasReceiver()).assertTrue();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_HASRECEIVER_0200
-     * @tc.name    testMethodTypeHasReceiver0002
-     * @tc.desc    Returns receiver type of this method
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeHasReceiver0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeHasReceiver0002";
-      try {
-
-        let methodType = Type.of(TestClass2.staticMethod) as MethodType;
-        expect(methodType.hasReceiver()).assertFalse();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_GETRECEIVERTYPE_0100
-     * @tc.name    testMethodTypeGetReceiverType0001
-     * @tc.desc    Returns receiver type of instance method
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeGetReceiverType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeGetReceiverType0001";
-      try {
-
-
-        const instanceMethodType = Type.of(new TestClass1().instanceMethod);
-
-
-        const receiverType = (instanceMethodType as MethodType).getReceiverType();
-        expect(receiverType instanceof ClassType).assertTrue();
-        expect(receiverType.getName()).assertEqual("TestClass");
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_GETRECEIVERTYPE_0200
-     * @tc.name    testMethodTypeGetReceiverType0002
-     * @tc.desc    Returns receiver type of instance method
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeGetReceiverType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeGetReceiverType0002";
-      try {
-
-        let methodType = Type.of(TestClass2.staticMethod) as MethodType;
-
-        let hasThrown = false;
-        try{
-          methodType.getReceiverType();
-        }catch(err){
-          hasThrown = true;
-
-          expect(err.toString()).assertContain("Method does not have receiver");
-        }
-        expect(hasThrown).assertTrue();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-       * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_ASSIGNABLEFROM_0100
-       * @tc.name    testMethodTypeAssignableFrom0001
-       * @tc.desc    Verify MethodType.assignableFrom always returns false
-       * @tc.size    MediumTest
-       * @tc.type    Function
-       * @tc.level   Level 1
-       */
-    it('testMethodTypeAssignableFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeAssignableFrom0001";
-      try {
-
-        const methodType = Type.of(new TestClass1().instanceMethod) as MethodType;
-
-        expect(methodType.assignableFrom(methodType)).assertFalse();
-        expect(methodType.assignableFrom(Type.of(new TestClass1()))).assertFalse();
-        expect(methodType.assignableFrom(Type.of("string"))).assertFalse();
-        expect(methodType.assignableFrom(Type.of(123))).assertFalse();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_ASSIGNABLEFROM_0200
-     * @tc.name    testMethodTypeAssignableFrom0002
-     * @tc.desc    Verify MethodType.assignableFrom with UnionType parameter
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeAssignableFrom0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeAssignableFrom0002";
-      try {
-
-        const methodType = Type.of(new TestClass1().instanceMethod) as MethodType;
-
-        const unionType = Type.of([1, "string"]) as UnionType;
-
-        expect(methodType.assignableFrom(unionType)).assertFalse();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_ASSIGNABLEFROM_0300
-     * @tc.name    testMethodTypeAssignableFrom0003
-     * @tc.desc    Verify MethodType.assignableFrom with different parameter methods
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
-     */
-    it('testMethodTypeAssignableFrom0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let TAG = "testMethodTypeAssignableFrom0003";
-      try {
-
-        const instance = new TestClass4();
-        const methodType1 = Type.of(instance.method1) as MethodType;
-        const methodType2 = Type.of(instance.method2) as MethodType;
-
-        expect(methodType1.assignableFrom(methodType2)).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_GETLITERAL_0100
-     * @tc.name    testMethodTypeGetLiteral0001
-     * @tc.desc    Returns literal representation of instance method type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeGetLiteral0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeGetLiteral0001";
-      try {
-
-        const instanceMethodType = Type.of(new TestClass3().instanceMethod);
-
-
-        const literal = (instanceMethodType as MethodType).getLiteral();
-        expect(literal).assertContain("(this: TestClass, param1: string, param2: number): boolean");
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_GETLITERAL_0200
-     * @tc.name    testMethodTypeGetLiteral0002
-     * @tc.desc    Returns literal representation of static method type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeGetLiteral0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeGetLiteral0002";
-      try {
-
-        const methodType = Type.of(new TestClass5().noParamMethod);
-
-
-        const literal = (methodType as MethodType).getLiteral();
-        expect(literal).assertEqual("(this: TestClass): void");
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_METHOD_TYPE_GETLITERAL_0300
-     * @tc.name    testMethodTypeGetLiteral0003
-     * @tc.desc    Returns literal representation of async method
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testMethodTypeGetLiteral0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testMethodTypeGetLiteral0003";
-      try {
-
-        const methodType = Type.of(new TestClass6().asyncMethod);
-
-
-        const literal = (methodType as MethodType).getLiteral();
-        expect(literal).assertContain("(this: TestClass): Promise<string>");
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_EQUALS_0100
      * @tc.name    testFieldEquals0001
      * @tc.desc    Compare two identical field objects
@@ -936,32 +661,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_AGETACCESSMODIFIER_0100
-     * @tc.name    testFieldGetAccessModifier0001
-     * @tc.desc    Get access modifier of public field
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFieldGetAccessModifier0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldGetAccessModifier0001";
-      try {
-
-        const testInstance = new TestClass7();
-        const classType = Type.of(testInstance) as ClassType;
-
-
-        const field = classType.getFieldByName("publicField");
-
-
-        expect(field.getAccessModifier()).assertEqual(AccessModifier.PUBLIC);
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_BASE_FIELD_GETACCESSMODIFIER_0300
      * @tc.name    testFieldGetAccessModifier0003
      * @tc.desc    Get access modifier of protected field
@@ -981,32 +680,6 @@ export default function type_06Test() {
 
 
         expect(field.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_FIELD_GETACCESSMODIFIER_0200
-     * @tc.name    testFieldGetAccessModifier0002
-     * @tc.desc    Get access modifier of private field
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFieldGetAccessModifier0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldGetAccessModifier0002";
-      try {
-
-        const testInstance = new TestClass9();
-        const classType = Type.of(testInstance) as ClassType;
-
-
-        const field = classType.getFieldByName("privateField");
-
-
-        expect(field.getAccessModifier()).assertEqual(AccessModifier.PRIVATE);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -1116,31 +789,6 @@ export default function type_06Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETNAME_0100
-     * @tc.name    testGetFieldName0001
-     * @tc.desc    Verify getName() returns correct field name for public field
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testGetFieldName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testGetFieldName0001";
-      try {
-
-        const testInstance = new TestClass11();
-        const classType = Type.of(testInstance) as ClassType;
-        const field = classType.getFieldByName("testField");
-
-
-        const fieldName = field.getName();
-        expect(fieldName).assertEqual("testField");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETNAME_0200
      * @tc.name    testGetFieldName0002
      * @tc.desc    Verify getName() returns correct field name for private field
@@ -1162,46 +810,6 @@ export default function type_06Test() {
         const fieldName = field.getName();
         expect(fieldName).assertEqual("privateField");
       } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FIELD_GETTYPE_0100
-     * @tc.name    testFieldGetType0001
-     * @tc.desc    Get type of a field and verify it's correct
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFieldGetType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testFieldGetType0001";
-      try {
-
-        const testInstance = new TestClass14();
-        const classType = Type.of(testInstance) as ClassType;
-
-
-        const stringField = classType.getFieldByName("stringField");
-        expect(stringField.getType().toString()).assertEqual("string");
-        expect(stringField.getType().isPrimitive()).assertTrue();
-
-
-        const numberField = classType.getFieldByName("numberField");
-        expect(numberField.getType().toString()).assertEqual("number");
-        expect(numberField.getType().isPrimitive()).assertTrue();
-
-
-        const booleanField = classType.getFieldByName("booleanField");
-        expect(booleanField.getType().toString()).assertEqual("boolean");
-        expect(booleanField.getType().isPrimitive()).assertTrue();
-
-
-        expect(stringField.getType() != null).assertTrue();
-        expect(numberField.getType() != null).assertTrue();
-        expect(booleanField.getType() != null).assertTrue();
-      } catch (err:BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }

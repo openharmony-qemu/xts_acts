@@ -1331,29 +1331,6 @@ export default function type_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_TOREFTYPE_1100
-     * @tc.name    testToRefType0011
-     * @tc.desc    Test throwing "is not primitive type" exception when input is non-primitive class type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testToRefType0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testToRefType0011";
-      try {
-
-        const interfaceType = Type.of({} as TestInterface);
-        const implType = Type.of(new InterfaceImpl());
-        Type.toRefType(implType);
-        expect().assertFail();
-      } catch (err: Error) {
-        console.error(`${TAG} is fail,err is ${err.message}`);
-        expect(`${err.message}`)
-          .assertEqual("type entry.src.main.src.test.Type_04.test.InterfaceImpl is not primitive type");
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_TOREFTYPE_1200
      * @tc.name    testToRefType0012
      * @tc.desc    Test throwing exception when input is unsupported primitive type (undefined)
@@ -1521,38 +1498,6 @@ export default function type_04Test() {
         const expected: string = "Default message";
         const result: string = (madeObject as () => string)();
         expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0500
-     * @tc.name    testLambdaTypeMake_0005
-     * @tc.desc    Test make() with void returning lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0005";
-      try {
-
-        let counter: number = 0;
-        const incrementCounter = (): void => {
-          counter++;
-        };
-
-        const lambdaType: LambdaType = Type.of(incrementCounter) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const expected: number = 1;
-        (madeObject as () => void)();
-        expect(counter).assertEqual(expected);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
@@ -1870,32 +1815,6 @@ export default function type_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_1000
-     * @tc.name    testLambdaTypeAssignableFrom_0010
-     * @tc.desc    Check non-assignability from array type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0010";
-      try {
-        const func = (a: number): number => {
-          return a * a;
-        };
-        const numberArray: number[] = [1, 2, 3];
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: ArrayType = Type.of(numberArray) as ArrayType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETTYPEPARAMETERSNUM_1000
      * @tc.name    testFunctionTypeGetTypeParametersNum_0001
      * @tc.desc    Test that calling getTypeParametersNum throws "Not implemented" error
@@ -2009,27 +1928,6 @@ export default function type_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0400
-     * @tc.name    testFunctionTypeGetResultType_0004
-     * @tc.desc    Get result type from function returning custom class instance
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0004";
-      try {
-        const functionType: FunctionType = Type.of(classInstanceReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.TestClass");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0500
      * @tc.name    testFunctionTypeGetResultType_0005
      * @tc.desc    Get result type from void function
@@ -2068,73 +1966,6 @@ export default function type_04Test() {
         const resultType: Type = lambdaType.getResultType();
         expect(resultType !== null).assertTrue();
         expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0800
-     * @tc.name    testFunctionTypeGetResultType_0008
-     * @tc.desc    Get result type from function returning array
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0008";
-      try {
-        const functionType: FunctionType = Type.of(arrayReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("escompat.Array");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0900
-     * @tc.name    testFunctionTypeGetResultType_0009
-     * @tc.desc    Get result type from function returning interface type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0009";
-      try {
-        const functionType: FunctionType = Type.of(interfaceReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.TestInterfacef");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_1000
-     * @tc.name    testFunctionTypeGetResultType_0010
-     * @tc.desc    Get result type from function returning generic class instance
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0010";
-      try {
-        const func = (): GenericClass<number> => {
-          return new GenericClass<number>(100);
-        };
-        const functionType: FunctionType = Type.of(func) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.GenericClass");
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();

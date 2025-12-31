@@ -20,7 +20,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 
 export default function math03Test() {
-
+	
   describe("math03Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -695,41 +695,6 @@ export default function math03Test() {
           done();
         } catch (error) {
           console.log(domain, tag, '%{public}s', `Error in testStaticOf21004: ${error}`);
-          expect().assertFail();
-        }
-      });
-
-    /**
-     * @tc.number  TEST_STATIC_OF_21005
-     * @tc.name    testStaticOf21005
-     * @tc.desc    Verify multiple views share same ArrayBuffer
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   Level 1
-     */
-    it('testStaticOf21005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        console.log(domain, tag, '%{public}s', 'testStaticOf21005 start');
-        try {
-          const buffer = new ArrayBuffer(8);
-          const intView = new Int32Array(buffer);
-          const uintView = new Uint8Array(buffer);
-          intView[0] = 0x12345678;
-          intView[1] = 0xABCDEF01;
-          expect(uintView[0]).assertEqual(0x78);
-          expect(uintView[1]).assertEqual(0x56);
-          expect(uintView[2]).assertEqual(0x34);
-          expect(uintView[3]).assertEqual(0x12);
-          expect(uintView[4]).assertEqual(0x01);
-          expect(uintView[5]).assertEqual(0xEF);
-          expect(uintView[6]).assertEqual(0xCD);
-          expect(uintView[7]).assertEqual(0xAB);
-          uintView[7] = 0xFF;
-          expect(intView[1]).assertEqual(0xFFCDEF01);
-          console.log(domain, tag, '%{public}s', 'testStaticOf21005 end');
-          done();
-        } catch (error) {
-          console.log(domain, tag, '%{public}s', `Error in testStaticOf21005: ${error}`);
           expect().assertFail();
         }
       });

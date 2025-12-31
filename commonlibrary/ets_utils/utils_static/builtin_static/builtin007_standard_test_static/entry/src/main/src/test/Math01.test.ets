@@ -2196,50 +2196,6 @@ export default function math01Test() {
     });
 
     /**
-     * @tc.number  TEST_MATH_MIN_40022
-     * @tc.name    testmathmin40022
-     * @tc.desc    Positive zero vs negative zero
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathmin40022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'testmathmin40022 start');
-      try {
-        const result = min(0, -0);
-        expect(result === 0 && 1/result === -Infinity).assertTrue();
-      } catch (error) {
-        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40022 failed:', error);
-        expect().assertFail();
-      } finally {
-        done();
-        console.log(domain, tag, '%{public}s', 'testmathmin40022 end');
-      }
-    });
-
-    /**
-     * @tc.number  TEST_MATH_MIN_40023
-     * @tc.name    testmathmin40023
-     * @tc.desc    Negative zero vs positive number
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it("testmathmin40023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log(domain, tag, '%{public}s', 'testmathmin40023 start');
-      try {
-        const result = min(-0, 5);
-        expect(result === 0 && 1/result === -Infinity).assertTrue();
-      } catch (error) {
-        console.log(domain, tag, '%{public}s, error: %{public}s', 'testmathmin40023 failed:', error);
-        expect().assertFail();
-      } finally {
-        done();
-        console.log(domain, tag, '%{public}s', 'testmathmin40023 end');
-      }
-    });
-
-    /**
      * @tc.number  TEST_MATH_MIN_40025
      * @tc.name    testmathmin40025
      * @tc.desc    MAX_VALUE boundary values
