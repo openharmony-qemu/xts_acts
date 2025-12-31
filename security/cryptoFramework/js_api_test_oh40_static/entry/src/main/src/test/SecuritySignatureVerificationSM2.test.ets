@@ -467,12 +467,12 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let globalSignBlob: cryptoFramework.DataBlob;
-        let globalText: string;
+        let globalText: string = "";
 
         try {
           let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
           for (let i = 0; i < 350; i++) {
-            globalText += t.charAt(Math.floor(Math.random() * t.length).toInt());
+            globalText += t.charAt((Math.floor(Math.random() * t.length)).toInt());
           }
           let input: cryptoFramework.DataBlob = {
             data: stringTouInt8Array(globalText)
