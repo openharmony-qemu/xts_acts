@@ -468,557 +468,557 @@ export default function BuiltinArrayAtTest() {
       }
     });
 
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_800
-   * @tc.name     testBuiltinArrayAt30008
-   * @tc.desc     Test at() with +0 and -0 indices
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt30008";
-    try {
-      let arr: FixedArray<byte> = [10, 50, 100];
-      expect(at(arr, +0)).assertEqual(10);
-      expect(at(arr, -0)).assertEqual(10);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1300_02
-   * @tc.name     testBuiltinArrayAt30013
-   * @tc.desc     Test at() with concurrent-like read (read-only stability)
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt30013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt30013";
-    try {
-      let arr: FixedArray<byte> = [1, 2, 3, 4, 5];
-      for (let i = 0; i < 10; i++) {
-        expect(at(arr, -2)).assertEqual(4);
-      }
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_03
-   * @tc.name     testBuiltinArrayAt50001
-   * @tc.desc     Testing at() with positive index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt50001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt50001";
-    try {
-      let arr: FixedArray<number> = [1, 2, 3];
-      let result = at(arr, 1);
-      expect(result).assertEqual(2);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_02
-   * @tc.name     testBuiltinArrayAt50002
-   * @tc.desc     Testing at() with negative index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt50002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt50002";
-    try {
-      let arr: FixedArray<number> = [1, 2, 3];
-      let result = at(arr, -1);
-      expect(result).assertEqual(3);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_04
-   * @tc.name     testBuiltinArrayAt60001
-   * @tc.desc     Testing at() with valid positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt60001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt60001";
-    try {
-      let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-      let result = at(arr, 2);
-      expect(result).assertEqual(3.3);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_03
-   * @tc.name     testBuiltinArrayAt60002
-   * @tc.desc     Testing at() with valid negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt60002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt60002";
-    try {
-      let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-      let result = at(arr, -1);
-      expect(result).assertEqual(4.4);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_FIXEDARRAY_AT_0100
-   * @tc.name     testBuiltinArrayAt70001
-   * @tc.desc     Testing at() with positive index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt70001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt70001";
-    try {
-      let arr: FixedArray<double> = [1.1, 2.2, 3.3];
-      let result = at(arr, 1);
-      expect(result).assertEqual(2.2);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_FIXEDARRAY_AT_0200
-   * @tc.name     testBuiltinArrayAt70002
-   * @tc.desc     Testing at() with negative index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt70002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt70002";
-    try {
-      let arr: FixedArray<double> = [1.1, 2.2, 3.3];
-      let result = at(arr, -1);
-      expect(result).assertEqual(3.3);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_02
-   * @tc.name     testBuiltinArrayAt80001
-   * @tc.desc     Test at() with positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt80001";
-    try {
-      let arr: FixedArray<float> = [1.1f, 2.2f, 3.3f, 4.4f, 5.5f];
-      let result = at(arr, 4);
-      expect(result).assertEqual(5.5);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_02
-   * @tc.name     testBuiltinArrayAt80002
-   * @tc.desc     Test at() with negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt80002";
-    try {
-      let arr: FixedArray<float> = [1.1f, 2.2f, 3.3f, 4.4f, 5.5f];
-      let result = at(arr, -1);
-      expect(result).assertEqual(5.5);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_03
-   * @tc.name     testBuiltinArrayAt90001
-   * @tc.desc     Test at() with positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt90001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt90001";
-    try {
-      let arr: FixedArray<float> = [5.1f, 5.2f, 5.0f, 5.4f, 5.5f];
-      let result = at(arr, 2);
-      expect(result).assertEqual(5.0f);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_03
-   * @tc.name     testBuiltinArrayAt90002
-   * @tc.desc     Test at() with negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt90002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt90002";
-    try {
-      let arr: FixedArray<float> = [5.1f, 5.2f, 5.3f, 5.4f, 5.5f];
-      let result = at(arr, -1);
-      expect(result).assertEqual(5.5f);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_04
-   * @tc.name     testBuiltinArrayAt10001
-   * @tc.desc     Test at() with valid positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt10001";
-    try {
-      let arr: FixedArray<int> = [10, 20, 30, 40];
-      let result = at(arr, 1);
-      expect(result).assertEqual(20);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_04
-   * @tc.name     testBuiltinArrayAt10002
-   * @tc.desc     Test at() with valid negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt10002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt10002";
-    try {
-      let arr: FixedArray<int> = [10, 20, 30, 40];
-      let result = at(arr, -1);
-      expect(result).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0500
-   * @tc.name     testBuiltinArrayAt10005
-   * @tc.desc     Test at() with zero index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt10005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt10005";
-    try {
-      let arr: FixedArray<int> = [10, 20, 30, 40];
-      let result = at(arr, 0);
-      expect(result).assertEqual(10);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_05
-   * @tc.name     testBuiltinArrayAt110001
-   * @tc.desc     Test `at()` with a valid positive index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt110001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt110001";
-    try {
-      let arr: FixedArray<int> = [10, 20, 30, 40];
-      let result = at(arr, 1);
-      expect(result).assertEqual(20);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail, err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_04
-   * @tc.name     testBuiltinArrayAt110002
-   * @tc.desc     Test `at()` with a valid negative index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt110002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt110002";
-    try {
-      let arr: FixedArray<int> = [10, 20, 30, 40];
-      let result = at(arr, -1);
-      expect(result).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail, err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0100
-   * @tc.name     testBuiltinArrayAt120001
-   * @tc.desc     Testing at() with positive index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt120001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt120001";
-    try {
-      let arr: FixedArray<long> = [10, 20, 30, 40];
-      let result = at(arr, 1);
-      expect(result).assertEqual(20);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0200
-   * @tc.name     testBuiltinArrayAt120002
-   * @tc.desc     Testing at() with negative index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt120002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt120002";
-    try {
-      let arr: FixedArray<long> = [10, 20, 30, 40];
-      let result = at(arr, -1);
-      expect(result).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_05
-   * @tc.name     testBuiltinArrayAt130001
-   * @tc.desc     Test at() with positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt130001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt130001";
-    try {
-      let arr: FixedArray<long> = [100, 200, 300];
-      let result = at(arr, 1);
-      expect(result).assertEqual(200);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_05
-   * @tc.name     testBuiltinArrayAt130002
-   * @tc.desc     Test at() with negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt130002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt130002";
-    try {
-      let arr: FixedArray<long> = [100, 200, 300];
-      let result = at(arr, -1);
-      expect(result).assertEqual(300);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_06
-   * @tc.name     testBuiltinArrayAt140001
-   * @tc.desc     Testing at() with positive index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt140001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt140001";
-    try {
-      let arr: FixedArray<short> = [10, 20, 30, 40];
-      let result = at(arr, 1);
-      expect(result).assertEqual(20);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_05
-   * @tc.name     testBuiltinArrayAt140002
-   * @tc.desc     Testing at() with negative index.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt140002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt140002";
-    try {
-      let arr: FixedArray<short> = [10, 20, 30, 40];
-      let result = at(arr, -1);
-      expect(result).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0400_07
-   * @tc.name     testBuiltinArrayAt140004
-   * @tc.desc     Testing at() with boundary index values.
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt140004";
-    try {
-      let arr: FixedArray<short> = [10, 20, 30, 40];
-      let first = at(arr, 0);
-      let last = at(arr, -1);
-      let justBeforeFirst = at(arr, -4);
-      let justAfterLast = at(arr, 3);
-      expect(first).assertEqual(10);
-      expect(last).assertEqual(40);
-      expect(justBeforeFirst).assertEqual(10);
-      expect(justAfterLast).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_07
-   * @tc.name     testBuiltinArrayAt150001
-   * @tc.desc     Testing at() with valid positive index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt150001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt150001";
-    try {
-      let arr: FixedArray<short> = [10, 20, 30, 40, 50];
-      let result = at(arr, 2);
-      expect(result).assertEqual(30);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-  /**
-   * @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200
-   * @tc.name     testBuiltinArrayAt150002
-   * @tc.desc     Testing at() with valid negative index
-   * @tc.level    LEVEL1
-   * @tc.size     MEDIUMTEST
-   * @tc.type     FUNCTION
-   */
-  it('testBuiltinArrayAt150002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    let TAG = "testBuiltinArrayAt150002";
-    try {
-      let arr: FixedArray<short> = [10, 20, 30, 40, 50];
-      let result = at(arr, -2);
-      expect(result).assertEqual(40);
-    } catch (err: BusinessError) {
-      console.error(`${TAG} is fail,err is ${err}`);
-      expect().assertFail();
-    }
-  });
-
-      /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0100_-2
-     * @tc.name    testBuiltinArrayconcat0001
-     * @tc.desc    Testing basic concatenation of two boolean arrays
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-     it('testBuiltinArrayconcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-       let TAG = "testBuiltinArrayconcat0001";
-       try {
-         let arr1: FixedArray<boolean> = [true, false];
-         let arr2: FixedArray<boolean> = [false, true];
-         let result = concat(arr1, arr2);
-         expect(result.length).assertEqual(4);
-         expect(result[0]).assertEqual(true);
-         expect(result[1]).assertEqual(false);
-         expect(result[2]).assertEqual(false);
-         expect(result[3]).assertEqual(true);
-       } catch (err: BusinessError) {
-         console.error(`${TAG} is fail,err is ${err}`);
-         expect().assertFail();
-       }
-     });
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_800
+	* @tc.name     testBuiltinArrayAt30008
+	* @tc.desc     Test at() with +0 and -0 indices
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt30008";
+		try {
+		let arr: FixedArray<byte> = [10, 50, 100];
+		expect(at(arr, +0)).assertEqual(10);
+		expect(at(arr, -0)).assertEqual(10);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1300_02
+	* @tc.name     testBuiltinArrayAt30013
+	* @tc.desc     Test at() with concurrent-like read (read-only stability)
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt30013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt30013";
+		try {
+		let arr: FixedArray<byte> = [1, 2, 3, 4, 5];
+		for (let i = 0; i < 10; i++) {
+			expect(at(arr, -2)).assertEqual(4);
+		}
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_03
+	* @tc.name     testBuiltinArrayAt50001
+	* @tc.desc     Testing at() with positive index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt50001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt50001";
+		try {
+		let arr: FixedArray<number> = [1, 2, 3];
+		let result = at(arr, 1);
+		expect(result).assertEqual(2);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_02
+	* @tc.name     testBuiltinArrayAt50002
+	* @tc.desc     Testing at() with negative index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt50002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt50002";
+		try {
+		let arr: FixedArray<number> = [1, 2, 3];
+		let result = at(arr, -1);
+		expect(result).assertEqual(3);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_04
+	* @tc.name     testBuiltinArrayAt60001
+	* @tc.desc     Testing at() with valid positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt60001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt60001";
+		try {
+		let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
+		let result = at(arr, 2);
+		expect(result).assertEqual(3.3);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_03
+	* @tc.name     testBuiltinArrayAt60002
+	* @tc.desc     Testing at() with valid negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt60002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt60002";
+		try {
+		let arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
+		let result = at(arr, -1);
+		expect(result).assertEqual(4.4);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_FIXEDARRAY_AT_0100
+	* @tc.name     testBuiltinArrayAt70001
+	* @tc.desc     Testing at() with positive index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt70001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt70001";
+		try {
+		let arr: FixedArray<double> = [1.1, 2.2, 3.3];
+		let result = at(arr, 1);
+		expect(result).assertEqual(2.2);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_FIXEDARRAY_AT_0200
+	* @tc.name     testBuiltinArrayAt70002
+	* @tc.desc     Testing at() with negative index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt70002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt70002";
+		try {
+		let arr: FixedArray<double> = [1.1, 2.2, 3.3];
+		let result = at(arr, -1);
+		expect(result).assertEqual(3.3);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_02
+	* @tc.name     testBuiltinArrayAt80001
+	* @tc.desc     Test at() with positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt80001";
+		try {
+		let arr: FixedArray<float> = [1.1f, 2.2f, 3.3f, 4.4f, 5.5f];
+		let result = at(arr, 4);
+		expect(result).assertEqual(5.5);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_02
+	* @tc.name     testBuiltinArrayAt80002
+	* @tc.desc     Test at() with negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt80002";
+		try {
+		let arr: FixedArray<float> = [1.1f, 2.2f, 3.3f, 4.4f, 5.5f];
+		let result = at(arr, -1);
+		expect(result).assertEqual(5.5);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_03
+	* @tc.name     testBuiltinArrayAt90001
+	* @tc.desc     Test at() with positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt90001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt90001";
+		try {
+		let arr: FixedArray<float> = [5.1f, 5.2f, 5.0f, 5.4f, 5.5f];
+		let result = at(arr, 2);
+		expect(result).assertEqual(5.0f);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_03
+	* @tc.name     testBuiltinArrayAt90002
+	* @tc.desc     Test at() with negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt90002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt90002";
+		try {
+		let arr: FixedArray<float> = [5.1f, 5.2f, 5.3f, 5.4f, 5.5f];
+		let result = at(arr, -1);
+		expect(result).assertEqual(5.5f);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_04
+	* @tc.name     testBuiltinArrayAt10001
+	* @tc.desc     Test at() with valid positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt10001";
+		try {
+		let arr: FixedArray<int> = [10, 20, 30, 40];
+		let result = at(arr, 1);
+		expect(result).assertEqual(20);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_04
+	* @tc.name     testBuiltinArrayAt10002
+	* @tc.desc     Test at() with valid negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt10002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt10002";
+		try {
+		let arr: FixedArray<int> = [10, 20, 30, 40];
+		let result = at(arr, -1);
+		expect(result).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0500
+	* @tc.name     testBuiltinArrayAt10005
+	* @tc.desc     Test at() with zero index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt10005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt10005";
+		try {
+		let arr: FixedArray<int> = [10, 20, 30, 40];
+		let result = at(arr, 0);
+		expect(result).assertEqual(10);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_05
+	* @tc.name     testBuiltinArrayAt110001
+	* @tc.desc     Test `at()` with a valid positive index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt110001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt110001";
+		try {
+		let arr: FixedArray<int> = [10, 20, 30, 40];
+		let result = at(arr, 1);
+		expect(result).assertEqual(20);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail, err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_04
+	* @tc.name     testBuiltinArrayAt110002
+	* @tc.desc     Test `at()` with a valid negative index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt110002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt110002";
+		try {
+		let arr: FixedArray<int> = [10, 20, 30, 40];
+		let result = at(arr, -1);
+		expect(result).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail, err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0100
+	* @tc.name     testBuiltinArrayAt120001
+	* @tc.desc     Testing at() with positive index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt120001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt120001";
+		try {
+		let arr: FixedArray<long> = [10, 20, 30, 40];
+		let result = at(arr, 1);
+		expect(result).assertEqual(20);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_ARRAY_AT_0200
+	* @tc.name     testBuiltinArrayAt120002
+	* @tc.desc     Testing at() with negative index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt120002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt120002";
+		try {
+		let arr: FixedArray<long> = [10, 20, 30, 40];
+		let result = at(arr, -1);
+		expect(result).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0100_05
+	* @tc.name     testBuiltinArrayAt130001
+	* @tc.desc     Test at() with positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt130001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt130001";
+		try {
+		let arr: FixedArray<long> = [100, 200, 300];
+		let result = at(arr, 1);
+		expect(result).assertEqual(200);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_ARRAY_AT_0200_05
+	* @tc.name     testBuiltinArrayAt130002
+	* @tc.desc     Test at() with negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt130002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt130002";
+		try {
+		let arr: FixedArray<long> = [100, 200, 300];
+		let result = at(arr, -1);
+		expect(result).assertEqual(300);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_06
+	* @tc.name     testBuiltinArrayAt140001
+	* @tc.desc     Testing at() with positive index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt140001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt140001";
+		try {
+		let arr: FixedArray<short> = [10, 20, 30, 40];
+		let result = at(arr, 1);
+		expect(result).assertEqual(20);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200_05
+	* @tc.name     testBuiltinArrayAt140002
+	* @tc.desc     Testing at() with negative index.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt140002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt140002";
+		try {
+		let arr: FixedArray<short> = [10, 20, 30, 40];
+		let result = at(arr, -1);
+		expect(result).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0400_07
+	* @tc.name     testBuiltinArrayAt140004
+	* @tc.desc     Testing at() with boundary index values.
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt140004";
+		try {
+		let arr: FixedArray<short> = [10, 20, 30, 40];
+		let first = at(arr, 0);
+		let last = at(arr, -1);
+		let justBeforeFirst = at(arr, -4);
+		let justAfterLast = at(arr, 3);
+		expect(first).assertEqual(10);
+		expect(last).assertEqual(40);
+		expect(justBeforeFirst).assertEqual(10);
+		expect(justAfterLast).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0100_07
+	* @tc.name     testBuiltinArrayAt150001
+	* @tc.desc     Testing at() with valid positive index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt150001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt150001";
+		try {
+		let arr: FixedArray<short> = [10, 20, 30, 40, 50];
+		let result = at(arr, 2);
+		expect(result).assertEqual(30);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+	/**
+	* @tc.number   SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_0200
+	* @tc.name     testBuiltinArrayAt150002
+	* @tc.desc     Testing at() with valid negative index
+	* @tc.level    LEVEL1
+	* @tc.size     MEDIUMTEST
+	* @tc.type     FUNCTION
+	*/
+	it('testBuiltinArrayAt150002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayAt150002";
+		try {
+		let arr: FixedArray<short> = [10, 20, 30, 40, 50];
+		let result = at(arr, -2);
+		expect(result).assertEqual(40);
+		} catch (err: BusinessError) {
+		console.error(`${TAG} is fail,err is ${err}`);
+		expect().assertFail();
+		}
+	});
+	
+		/**
+		* @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0100_-2
+		* @tc.name    testBuiltinArrayconcat0001
+		* @tc.desc    Testing basic concatenation of two boolean arrays
+		* @tc.level   LEVEL1
+		* @tc.size    MEDIUMTEST
+		* @tc.type    FUNCTION
+		*/
+		it('testBuiltinArrayconcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+		let TAG = "testBuiltinArrayconcat0001";
+		try {
+			let arr1: FixedArray<boolean> = [true, false];
+			let arr2: FixedArray<boolean> = [false, true];
+			let result = concat(arr1, arr2);
+			expect(result.length).assertEqual(4);
+			expect(result[0]).assertEqual(true);
+			expect(result[1]).assertEqual(false);
+			expect(result[2]).assertEqual(false);
+			expect(result[3]).assertEqual(true);
+		} catch (err: BusinessError) {
+			console.error(`${TAG} is fail,err is ${err}`);
+			expect().assertFail();
+		}
+		});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_14500
