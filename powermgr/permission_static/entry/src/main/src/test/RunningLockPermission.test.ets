@@ -40,20 +40,21 @@ export default function RunningLockPermissionTest() {
         let TAG: string = 'testRunningLockPermissionTest_static_0100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL)
-            .then((lock: runningLock.RunningLock) => {
-              hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
-              expect().assertFail();
-              done();
-            })
-            .catch((error: BusinessError): void => {
-              hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
-              expect(error.code).assertEqual(201);
-              done();
-            })
-        } catch (e : BusinessError) {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            let lock: runningLock.RunningLock =
+              await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND);
+            hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(201);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
           done();
         }
       })
@@ -71,21 +72,97 @@ export default function RunningLockPermissionTest() {
         let TAG: string = 'testRunningLockPermissionTest_static_0200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL,
-            (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
-              hilog.info(domain, tag, `${TAG} lock:${lock}`);
-              if (lock === undefined) {
-                hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
-                expect(error?.code).assertEqual(201);
-                done();
-              } else {
-                expect().assertFail();
-                done();
-              }
-            })
-        } catch (e : BusinessError) {
-          hilog.error(domain, tag, `${TAG} e in catch: ${JSON.stringify(e)}`);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            runningLock.create(TAG, runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL,
+              (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+                if (lock !== null && lock !== undefined) {
+                  hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                  expect().assertFail();
+                } else {
+                  hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                  expect(error?.code).assertEqual(201);
+                }
+              });
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(201);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockPermissionTest_static_0300
+     * @tc.number RunningLockPermissionETSTest_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockPermissionTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockPermissionTest_static_0300';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            let lock: runningLock.RunningLock =
+              await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+            hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+            expect().assertFail();
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(201);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockPermissionTest_static_0400
+     * @tc.number RunningLockPermissionETSTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockPermissionTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockPermissionTest_static_0400';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+              (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+                if (lock !== null && lock !== undefined) {
+                  hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                  expect().assertFail();
+                } else {
+                  hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                  expect(error?.code).assertEqual(201);
+                }
+              });
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect(e.code).assertEqual(201);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
           done();
         }
       })
