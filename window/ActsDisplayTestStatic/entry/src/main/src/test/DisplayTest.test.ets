@@ -141,7 +141,21 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
              display.getAllDisplays().then((data:Array<display.Display>) => {
-                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data: ' + JSON.stringify(data));
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data.length: ' + data.length);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].id: ' + data[0].id);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].refreshRate: ' + data[0].refreshRate);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].width: ' + data[0].width);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].height: ' + data[0].height);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].rotation: ' + data[0].rotation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].orientation: ' + data[0].orientation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityDPI: ' + data[0].densityDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].name: ' + data[0].name);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].alive: ' + data[0].alive);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].state: ' + data[0].state);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityPixels: ' + data[0].densityPixels);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].scaledDensity: ' + data[0].scaledDensity);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].xDPI: ' + data[0].xDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].yDPI: ' + data[0].yDPI);
                 expect(data[0].id != null).assertTrue();
                 expect(data[0].refreshRate != null).assertTrue();
                 expect(data[0].width != null).assertTrue();
