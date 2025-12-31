@@ -17,7 +17,7 @@
 #include "NapiInitPart1Test.cpp"
 #include "NapiInitPart2Test.cpp"
 #include "NapiInitPart3Test.cpp"
-//#include "NapiInitPart4Test.cpp"
+
 
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
