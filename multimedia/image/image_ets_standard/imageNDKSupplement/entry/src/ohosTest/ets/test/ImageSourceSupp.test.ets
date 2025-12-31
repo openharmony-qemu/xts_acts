@@ -48,7 +48,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_CREAT_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_CREAT_SUPP_0001
-     * @tc.desc     OHImageSourceCreate-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.desc     OH_ImageSource_Create-IMAGE_RESULT_BAD_PARAMETER
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -63,7 +63,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_CREAT_SUCCESS_SUPP_0001
-     * @tc.desc     OHImageSourceCreate-IMAGE_RESULT_SUCCESS
+     * @tc.desc     OH_ImageSource_Create-IMAGE_RESULT_SUCCESS
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -83,7 +83,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_GET_SUPPORTED_FORMATS_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_GET_SUPPORTED_FORMATS_SUPP_0001
-     * @tc.desc     OHImageSourceGetSupportedFormats-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.desc     OH_ImageSource_GetSupportedFormats-IMAGE_RESULT_BAD_PARAMETER
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -98,7 +98,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_CREAT_INCREMENTAL_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_CREAT_INCREMENTAL_SUPP_0001
-     * @tc.desc     OHImageSourceCreateIncrementalTest-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.desc     OH_ImageSource_CreateIncremental-IMAGE_RESULT_BAD_PARAMETER
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -113,7 +113,7 @@ export default function ImageSourceSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_SOURCE_INIT_NATIVE_SUPP_0001
      * @tc.name     SUB_IMAGE_SOURCE_INIT_NATIVE_SUPP_0001
-     * @tc.desc     OHImageSourceInitNativeSuppTest-nullptr
+     * @tc.desc     OH_ImageSource_InitNative-nullptr
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
