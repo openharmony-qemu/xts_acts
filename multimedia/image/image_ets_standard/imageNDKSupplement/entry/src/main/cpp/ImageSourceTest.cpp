@@ -154,3 +154,40 @@ napi_value ImageSourceInitNativeSuppTest(napi_env env, napi_callback_info info)
     }
     return ret;
 }
+
+napi_value ImageSourceCreate(napi_env env, napi_callback_info info) {
+    
+    int32_t fd;
+    
+    if (env == nullptr) {
+        LOGE("NAPI 环境无效");
+        return nullptr;
+    }
+    
+    size_t argc = 2;
+    napi_value args[2] = {nullptr,nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    napi_get_value_int32(env, args[0], &fd);
+    char surfaceId[256];
+    size_t uuidLen = 0;
+    napi_get_value_string_utf8(env, args[1], surfaceId, sizeof(surfaceId), &uuidLen);
+    
+    OhosImageSource src = {surfaceId, 0, fd, nullptr, 0};
+    
+    OhosImageSourceOps ops = {72, 3, {1080, 720}};
+    
+    napi_value res = nullptr;
+    
+    int32_t createRet = OH_ImageSource_Create(env, &src, &ops, &res);
+    if (createRet == 0) {
+        LOGI("OH_ImageSource_Create 调用成功，返回值：%{public}d", createRet);
+    } else {
+        LOGE("OH_ImageSource_Create 失败，错误码：%{public}d", createRet);
+        return nullptr;
+    }
+    
+    napi_value ret;
+    napi_create_int32(env, createRet, &ret);
+    return ret;
+}

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import { image } from '@kit.ImageKit';
+import { resourceManager } from '@kit.LocalizationKit';
+
 interface PackingOption_format {
   format: string;
 }
@@ -197,3 +199,4 @@ export const OH_PixelmapNative_GetImageInfoTest:(a: number) => number;
 export const OH_PixelmapNative_ConvertAlphaFormatTest:(a: number) => number;
 export const ImageSourceCreatSuccessTest:(a: number) => number;
 export const PixelmapNativeGetNativeBufferNotExist:(a: number) => number;
+export const ImageSourceCreate:(a: number, b:string) => number;

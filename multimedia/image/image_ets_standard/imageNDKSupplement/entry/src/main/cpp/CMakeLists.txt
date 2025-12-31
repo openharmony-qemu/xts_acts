@@ -81,7 +81,6 @@ target_link_libraries(imageEffect PUBLIC
     libimage_processing.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
-    libace_napi.z.so
     libhilog_ndk.z.so
     libimage_effect.so
     libpixelmap.so
@@ -101,4 +100,6 @@ target_link_libraries(imageEffect PUBLIC
     libmedia_asset_manager.so
     libohcamera.so
     libohimage.so
+    librawfile.z.so
+    libace_napi.z.so
 )
