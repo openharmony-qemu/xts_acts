@@ -3211,6 +3211,7 @@ export default function TextPicker() {
           console.error('testPicker62 showAssetsCreationDialogEx error =', JSON.stringify(error));
           expect(false).assertTrue();
         });
+      await CommonFunc.sleep(2000);
       console.info('testPicker62 showAssetsCreationDialogEx success');
       photoAccessHelper
         .getPhotoAccessHelper(context)
@@ -3219,8 +3220,9 @@ export default function TextPicker() {
           console.error('testPicker62 showSingleAssetCreationDialogEx error =', JSON.stringify(error));
           expect(false).assertTrue();
         });
-      console.info('testPicker62 showSingleAssetCreationDialogEx success');
       await CommonFunc.sleep(2000);
+      console.info('testPicker62 showSingleAssetCreationDialogEx success');
+      console.info('testPicker62 success');
       expect(true).assertTrue();
       done();
     });
