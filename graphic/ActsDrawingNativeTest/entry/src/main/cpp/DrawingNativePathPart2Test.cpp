@@ -489,7 +489,8 @@ int TestPathAddPathWithOffsetAndModeNormal()
     OH_Drawing_PathAddMode modes[] = { PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND };
     for (int i = 0; i < PATH_L2; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10_F, modes[i]);
+        OH_Drawing_PathAddPathWithOffsetAndMode(
+            path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10_F, modes[i]);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
@@ -573,10 +574,12 @@ int TestPathAddPathWithOffsetAndModeAbnormal()
     OH_Drawing_PathLineTo(src, TEST_RECT_SIZE, TEST_RECT_SIZE);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with an integer as the third parameter, expecting
     // successful call.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(
+        path, src, TEST_OFFSET_VALUE_10, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     // 6. Call OH_Drawing_PathAddPathWithOffsetAndMode with an integer as the fourth parameter, expecting
     // successful call.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(
+        path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10, PATH_ADD_MODE_APPEND);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -1026,14 +1029,20 @@ int TestPathAddCircleAbnormal()
     OH_Drawing_PathLineTo(path, TEST_RECT_SIZE, TEST_RECT_SIZE);
     // 4. Add a circle to the path with the second parameter as an integer, which will
     // succeed.
-    OH_Drawing_PathAddCircle(
-        path, TEST_CIRCLE_CENTER, 50.0f, TEST_OFFSET_VALUE_10_F, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+    OH_Drawing_PathAddCircle(path,
+                             TEST_CIRCLE_CENTER,
+                             50.0f,
+                             TEST_OFFSET_VALUE_10_F,
+                             OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 5. Add a circle to the path with the third parameter as an integer, which will
     // succeed.
-    OH_Drawing_PathAddCircle(
-        path, 50.0f, TEST_CIRCLE_CENTER, TEST_OFFSET_VALUE_10_F, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+    OH_Drawing_PathAddCircle(path,
+                             50.0f,
+                             TEST_CIRCLE_CENTER,
+                             TEST_OFFSET_VALUE_10_F,
+                             OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 6. Add a circle to the path with the fourth parameter as an integer, which will

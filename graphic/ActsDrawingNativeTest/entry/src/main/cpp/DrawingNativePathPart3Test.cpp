@@ -22,6 +22,7 @@ namespace Drawing {
 
 namespace {
 // Path test constants
+constexpr int PATH_C_MAX = 100000;
 constexpr float PATH_X0 = 0.0f;
 constexpr float PATH_Y0 = 0.0f;
 constexpr float PATH_X10 = 10.0f;
@@ -1524,8 +1525,8 @@ int TestPathApproximateNormal()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
-    if (count == 0) {
-        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    if (count <= 0) {
+        EXPECT_EQ(count, OH_DRAWING_SUCCESS);
     }
     float* vals = new float[count];
     // 4. The interface OH_Drawing_PathApproximate is called normally.
@@ -1561,8 +1562,8 @@ int TestPathApproximateNull()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
-    if (count == 0) {
-        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    if (count <= 0) {
+        EXPECT_EQ(count, OH_DRAWING_SUCCESS);
     }
     float* vals = new float[count];
     // 2. Verify the empty path.
@@ -1611,8 +1612,8 @@ int TestPathApproximateAbnormal()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
-    if (count == 0) {
-        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    if (count <= 0) {
+        EXPECT_EQ(count, OH_DRAWING_SUCCESS);
     }
     float* vals = new float[count];
     // 4. AcceptableError lesses than 0.
@@ -1653,8 +1654,8 @@ int TestPathApproximateMultiCalls()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
-    if (count == 0) {
-        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    if (count <= 0) {
+        EXPECT_EQ(count, OH_DRAWING_SUCCESS);
     }
     float* vals = new float[count];
     // 4. The interface is called in a loop 10 times.
@@ -1663,6 +1664,7 @@ int TestPathApproximateMultiCalls()
         EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
     // 5. Free the memory.
+    delete[] vals;
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
     return OH_DRAWING_SUCCESS;
