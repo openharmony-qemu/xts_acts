@@ -70,7 +70,7 @@ async function getPixelMap(): Promise<image.PixelMap | undefined> {
   }
 }
 
-export default function abilityTest() {
+export default function FloatingBallTest() {
   describe('FloatingBallTest', (): void => {
     hilog.info(domain, tag, 'FloatingBallTest start');
     let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
