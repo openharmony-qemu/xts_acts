@@ -70,6 +70,6 @@ export class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegator.executeShellCommand(cmd,
       (err:BusinessError|null, d: ShellCmdResult|undefined) : void => {
       })
-    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
+    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner executeShellCommand end');
   }
 }
