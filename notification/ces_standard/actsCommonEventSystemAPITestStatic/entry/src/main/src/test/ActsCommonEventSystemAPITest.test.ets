@@ -400,11 +400,11 @@ export default function ActsCommonEventSystemAPITest() {
           index1 += 1
           console.info(`index1:` + index1)
           if (index1 == 11) {
-            console.info(`${Tag} fail in publishing notification:` + err?.code)
+            console.info(`${TAG} fail in publishing notification:` + err?.code)
             expect(err?.code).assertEqual(1600009);
             done()
           } else {
-            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
+            console.info(`${TAG} publishing notification:` + JSON.stringify(err))
             expect(err).assertEqual(null);
           }
         }
