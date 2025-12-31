@@ -85,6 +85,7 @@ struct webViewSetHttpDns {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
+                console.log("title of this page: " + this.controller.getTitle())
                 Utils.emitEvent(this.title, 340010)
               })
               break;
@@ -164,6 +165,18 @@ struct webViewSetHttpDns {
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
           this.isPageEnd = 1;
+        })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          if (event) {
+            console.log('onSslErrorEvent url: ' + event.url);
+            console.log('onSslErrorEvent error: ' + event.error);
+            console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+            console.log('onSslErrorEvent referrer: ' + event.referrer);
+            console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+            console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+            console.log('onSslErrorEvent handler: ' + event.handler);
+            event.handler.handleConfirm();
+          }
         })
     }
   }

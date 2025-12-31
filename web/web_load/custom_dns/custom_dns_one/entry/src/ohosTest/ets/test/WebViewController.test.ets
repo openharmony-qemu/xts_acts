@@ -71,7 +71,7 @@ export default function webViewController() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
       Utils.registerEvent("testSecureDnsModeOFF001", "Example Domain", 330010, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "testSecureDnsModeOFF001", emitKey);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerButton", emitKey);
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
       done();
     })
@@ -89,7 +89,7 @@ export default function webViewController() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
       Utils.registerEvent("testSecureDnsModeAUTO001", "Example Domain", 330020, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "testSecureDnsModeAUTO001", emitKey);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerButton", emitKey);
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
       done();
     })
@@ -107,7 +107,7 @@ export default function webViewController() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
       Utils.registerEvent("testSecureDnsModeSECURE_ONLY001", "Example Domain", 330030, () => { isReturn = true });
-      await Utils.waitAndClickComponent(driver, "testSecureDnsModeSECURE_ONLY001", emitKey);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerButton", emitKey);
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
       done();
     })
