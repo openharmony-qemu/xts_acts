@@ -73,53 +73,39 @@ static napi_value stabilityTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1];
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "NAPI call failed");
-        return nullptr;
-    }
     napi_valuetype valuetype;
-    napi_typeof(env, args[0], &valuetype);
-    if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
-    }
     int32_t caseNum = -1;
-    status = napi_get_value_int32(env, args[0], &caseNum);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to get case number");
+    napi_value promise, resourceName;
+    napi_deferred deferred;
+    napi_status status;
+
+    if ((status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr)) != napi_ok ||
+        napi_typeof(env, args[0], &valuetype) != napi_ok || valuetype != napi_number ||
+        (status = napi_get_value_int32(env, args[0], &caseNum)) != napi_ok) {
+        napi_throw_error(env, nullptr, "Invalid argument");
         return nullptr;
     }
     if (caseNum < 0 || caseNum >= TEST_FUNCTION_COUNT) {
-        char errorMsg[64];
         OHPrintf("The range of case must be 0 to %d", TEST_FUNCTION_COUNT - 1);
-        napi_throw_type_error(env, nullptr, errorMsg);
+        napi_throw_type_error(env, nullptr, "Case number out of range");
         return nullptr;
     }
-    napi_value promise;
-    napi_deferred deferred;
-    status = napi_create_promise(env, &deferred, &promise);
-    if (status != napi_ok) {
+    if ((status = napi_create_promise(env, &deferred, &promise)) != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to create promise");
         return nullptr;
     }
     AsyncWorkData* workData = new AsyncWorkData();
     workData->deferred = deferred;
     workData->testCaseIndex = caseNum;
-    napi_value resourceName;
     napi_create_string_utf8(env, "NNRtStabilityTest", NAPI_AUTO_LENGTH, &resourceName);
-    status = napi_create_async_work(
-        env, nullptr, resourceName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork);
-    if (status != napi_ok) {
+    if ((status = napi_create_async_work(
+             env, nullptr, resourceName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork)) !=
+            napi_ok ||
+        (status = napi_queue_async_work(env, workData->asyncWork)) != napi_ok) {
+        if (workData->asyncWork)
+            napi_delete_async_work(env, workData->asyncWork);
         delete workData;
-        napi_throw_error(env, nullptr, "Failed to create async work");
-        return nullptr;
-    }
-    status = napi_queue_async_work(env, workData->asyncWork);
-    if (status != napi_ok) {
-        napi_delete_async_work(env, workData->asyncWork);
-        delete workData;
-        napi_throw_error(env, nullptr, "Failed to queue async work");
+        napi_throw_error(env, nullptr, "Failed to create/queue async work");
         return nullptr;
     }
     return promise;

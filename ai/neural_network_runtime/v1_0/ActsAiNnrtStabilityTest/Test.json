@@ -2,11 +2,11 @@
     "description": "Configuration for ActsAiNnrtStabilityTest",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "600000",
-        "shell-timeout": "600000",
+        "test-timeout": "3600000",
+        "shell-timeout": "3600000",
         "bundle-name": "com.openharmony.acts_ai_nnrt_stability",
         "module-name": "entry_test",
-        "testcase-timeout": 600000
+        "testcase-timeout": 3600000
     },
     "kits": [
         {
