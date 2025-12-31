@@ -56,15 +56,6 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: afterAll: Test suite-level cleanup condition`);
     })
 
-    let closeFileDescriptor = async () => {
-      console.log(`${TagFrmwkRender}:case closeFile for fileNumber: ${fdRead}`);
-      await fileIo.close(fdRead).then(() => {
-        console.log(`${TagFrmwkRender}:case closeFile success for file`);
-      }).catch((error: Error) => {
-        console.log(`${TagFrmwkRender}:case closeFile err: ${error}`);
-      });
-    }
-
     let getFdRead = async (pathName: string, done: ()=>void) => {
       let context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
       console.info(`context: ${JSON.stringify(context)}`);
@@ -2288,7 +2279,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2322,7 +2312,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
     /**
@@ -2355,7 +2344,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2389,7 +2377,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2423,7 +2410,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2457,7 +2443,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2491,7 +2476,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
     /**
@@ -2524,7 +2508,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2558,7 +2541,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2592,7 +2574,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2626,7 +2607,6 @@ export default function audioRendererTest() {
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2929,7 +2909,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -2966,7 +2945,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4471,7 +4449,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4508,7 +4485,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4545,7 +4521,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4582,7 +4557,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4618,7 +4592,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4654,7 +4627,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4690,7 +4662,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4725,7 +4696,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4761,7 +4731,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4797,7 +4766,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100)
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4834,7 +4802,6 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
 
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4871,7 +4838,6 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
 
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4907,7 +4873,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4943,7 +4908,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -4979,7 +4943,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5015,7 +4978,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5051,7 +5013,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(100);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5097,7 +5058,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -5144,7 +5104,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5190,7 +5149,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5236,7 +5194,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -5283,7 +5240,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5329,7 +5285,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5375,7 +5330,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5421,7 +5375,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5467,7 +5420,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -5514,7 +5466,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5560,7 +5511,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5606,7 +5556,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5652,7 +5601,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5698,7 +5646,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5744,7 +5691,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5790,7 +5736,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5836,7 +5781,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5882,7 +5826,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -5928,7 +5871,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -5975,7 +5917,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -6022,7 +5963,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -6069,7 +6009,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -6116,7 +6055,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -6162,7 +6100,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -8666,7 +8603,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(500);
 
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -9355,7 +9291,6 @@ export default function audioRendererTest() {
         await Utils.msSleep(100);
         console.info('AudioFrameworkRenderLog: resultFlag : ' + resultFlag);
         expect(resultFlag).assertTrue();
-        await closeFileDescriptor();
       } catch (error) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_8800 : error = " + error);
         expect(false).assertTrue();
@@ -9569,7 +9504,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -9616,7 +9550,6 @@ export default function audioRendererTest() {
       await Utils.msSleep(9000);
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
-      await closeFileDescriptor();
       done();
 
     })
@@ -10500,7 +10433,6 @@ export default function audioRendererTest() {
       await playbackPromise_92(AudioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -10534,7 +10466,6 @@ export default function audioRendererTest() {
       await playWithVideoStream(AudioRendererOptions, filePath, done);
       await Utils.msSleep(2000);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -11091,7 +11022,6 @@ export default function audioRendererTest() {
       await playbackWriteDataCallback_001(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -11125,7 +11055,6 @@ export default function audioRendererTest() {
       await playbackWriteDataCallback_002(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
       expect(true).assertTrue();
-      await closeFileDescriptor();
       done();
     })
 
@@ -11159,7 +11088,6 @@ export default function audioRendererTest() {
         await getFdRead(readPath, done);
         await playbackWriteDataCallback_003(audioRendererOptions, filePath, done);
         await Utils.msSleep(100);
-        await closeFileDescriptor();
       } catch (err: BusinessError) {
         console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300 : FAILED`);
         expect(false).assertTrue();
