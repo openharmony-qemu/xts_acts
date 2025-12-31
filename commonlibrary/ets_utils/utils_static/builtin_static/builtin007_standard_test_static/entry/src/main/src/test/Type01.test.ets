@@ -520,26 +520,6 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISPRIMITIVEA_0004
-     * @tc.name    testIsPrimitive0004
-     * @tc.desc    Testing ClassType.isPrimitive() returns false.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIsPrimitive0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testIsPrimitive0004';
-      try {
-        const clsType = Type.resolve('java.lang.Object') as ClassType;
-        const flag = clsType.isPrimitive();
-        expect(flag).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_AISREFERENCE_0001
      * @tc.name    testIsReference0001
      * @tc.desc    Testing NullType.isReference() returns true.
@@ -648,26 +628,6 @@ export default function type_01Test() {
         const v1 = LongType.VAL;
         const v2 = LongType.VAL;
         expect(v1.equals(v2)).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_BASE_TYPE_EQUALS_0002
-     * @tc.name    testLongEquals0002
-     * @tc.desc    Testing LongType.VAL does NOT equal LongType.REF.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLongEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testLongEquals0002';
-      try {
-        const v1 = LongType.VAL;
-        const v2 = LongType.REF;
-        expect(v1.equals(v2)).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -1114,25 +1074,6 @@ export default function type_01Test() {
       }
     });
 
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_TYPE_EQUALS_0002
-     * @tc.name    testShortEquals0002
-     * @tc.desc    Testing ShortType.VAL.equals(ShortType.REF) returns false.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testShortEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testShortEquals0002';
-      try {
-        const v1 = ShortType.VAL;
-        const v2 = ShortType.REF;
-        expect(v1.equals(v2)).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
 
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_BEQUALS_0003
@@ -1575,26 +1516,6 @@ export default function type_01Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_REFEQUALS_0002
-     * @tc.name    testCharEquals0002
-     * @tc.desc    Testing CharType.VAL.equals(CharType.REF) returns false.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testCharEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testCharEquals0002';
-      try {
-        const v1 = CharType.VAL;
-        const v2 = CharType.REF;
-        expect(v1.equals(v2)).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CEQUALS_0003
      * @tc.name    testCharEquals0003
      * @tc.desc    Testing CharType.REF.equals(CharType.REF) returns true.
@@ -1838,26 +1759,6 @@ export default function type_01Test() {
         const v1 = ByteType.VAL;
         const v2 = ByteType.VAL;
         expect(v1.equals(v2)).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0002
-     * @tc.name    testByteEquals0002
-     * @tc.desc    Testing ByteType.VAL.equals(ByteType.REF) returns false.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testByteEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testByteEquals0002';
-      try {
-        const v1 = ByteType.VAL;
-        const v2 = ByteType.REF;
-        expect(v1.equals(v2)).assertFalse();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();

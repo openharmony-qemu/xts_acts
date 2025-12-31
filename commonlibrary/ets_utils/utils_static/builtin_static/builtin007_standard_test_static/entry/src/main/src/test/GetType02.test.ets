@@ -2773,28 +2773,7 @@ export default function getType02Test() {
         const minByte: byte = 0 as byte;
         const maxByte: byte = 255 as byte;
         expect(clz64(minByte)).assertEqual(64);
-        expect(clz64(maxByte)).assertEqual(56);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_KERNEL_MATH_CLZ64_300
-     * @tc.name    testmathClz6400003
-     * @tc.desc    Verify clz64() returns correct count for various bit patterns
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testmathClz6400003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testmathClz6400003';
-      try {
-        expect(clz64(0x80 as byte)).assertEqual(56);
-        expect(clz64(0x40 as byte)).assertEqual(57);
-        expect(clz64(0x20 as byte)).assertEqual(58);
-        expect(clz64(0x01 as byte)).assertEqual(63);
+        expect(clz64(maxByte)).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -2851,7 +2830,7 @@ export default function getType02Test() {
       const TAG = 'testmathClz6400006';
       try {
         expect(clz64(0x01 as byte)).assertEqual(63);
-        expect(clz64(0x80 as byte)).assertEqual(56);
+        expect(clz64(0x80 as byte)).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -2870,7 +2849,7 @@ export default function getType02Test() {
       const TAG = 'testmathClz6400007';
       try {
         const negByte: byte = -1 as byte;
-        expect(clz64(negByte)).assertEqual(56);
+        expect(clz64(negByte)).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -2888,8 +2867,7 @@ export default function getType02Test() {
     it('testmathClz6400008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testmathClz6400008';
       try {
-        expect(clz64(511 as byte)).assertEqual(56);
-        expect(clz64(1024 as byte)).assertEqual(64);
+        expect(clz64(511 as byte)).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();

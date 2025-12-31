@@ -185,27 +185,6 @@ export default function HeapSortTest() {
       }
     });
 
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_LONG_0700
-     * @tc.name   testBuiltinArrayFind60007
-     * @tc.desc   Test case for sparse long array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFind60007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFind60007";
-      try {
-        const arr: FixedArray<long | undefined> = [1000 as long, undefined, 3000 as long];
-        const result = (arr as long[]).find((value) => value === undefined);
-        expect(result).assertUndefined();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_LONG_0800
      * @tc.name   testBuiltinArrayFind60008

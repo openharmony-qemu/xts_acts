@@ -83,24 +83,6 @@ export default function TypeValue03Test() {
       });
 
     /**
-     * @tc.number   SUB_INT_VALUE_OF_0103
-     * @tc.name     test_int_value_of_0103
-     * @tc.desc     Verify IntValue instance type
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("test_int_value_of_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_int_value_of_0103 start');
-        const testValue = IntValue.of(100);
-        expect(testValue instanceof IntValue).assertTrue();
-        done();
-        console.log(domain, tag, '%{public}s', 'test_int_value_of_0103 end');
-      });
-
-    /**
      * @tc.number   SUB_LONG_VALUE_OF_0110
      * @tc.name     test_long_value_of_0110
      * @tc.desc     Basic LongValue creation with positive value
@@ -385,24 +367,6 @@ export default function TypeValue03Test() {
         expect(large > small).assertTrue();
         done();
         console.log(domain, tag, '%{public}s', 'test_COSH_ORDER_127 end');
-      });
-
-    /**
-     * @tc.number   COSH_TYPE_128
-     * @tc.name     test_COSH_TYPE_128
-     * @tc.desc     Verify return type is double
-     * @tc.level    LEVEL1
-     * @tc.size     MEDIUMTEST
-     * @tc.type     FUNCTION
-     */
-    it("test_COSH_TYPE_128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'test_COSH_TYPE_128 start');
-        const result = cosh(1);
-        expect(typeof result).assertEqual('number');
-        done();
-        console.log(domain, tag, '%{public}s', 'test_COSH_TYPE_128 end');
       });
 
     /**

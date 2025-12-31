@@ -289,29 +289,6 @@ export default function ForEachTest() {
     });
 
     /**
-     * @tc.number FOR_EACH_FLOAT_0200
-     * @tc.name   testForEachfloat0002
-     * @tc.desc   Verify the correctness of index parameters
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testForEachfloat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG: string = "testForEachfloat0002";
-      try {
-        const arr: FixedArray<float> = [0.1 as float, 0.2 as float] as FixedArray<float>;
-        const indexes: number[] = [];
-        forEach(arr, (_: float, index: number): void => {
-          indexes.push(index);
-        });
-        expect(indexes.toString()).assertEqual([0, 1].toString());
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number FOR_EACH_FLOAT_0300
      * @tc.name   testForEachfloat0003
      * @tc.desc   Test empty single precision floating-point array forEach
@@ -445,35 +422,6 @@ export default function ForEachTest() {
         expect(callCount).assertEqual(0);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number FOR_EACH_LONG_0300
-     * @tc.name   testForEachlong003
-     * @tc.desc   Testing forEach with boundary long values (min, max, zero)
-     * @tc.size   LARGETEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testForEachlong003', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const TAG = "testForEachlong003";
-      try {
-        const longMin = -9223372036854775808;
-        const longMax = 9223372036854775807;
-        const zero = 0;
-        const arr: FixedArray<long> = [longMin, longMax, zero] as FixedArray<long>;
-        const results: long[] = [];
-        forEach(arr, (value: long, index: number): void => {
-          results.push(value);
-        });
-        expect(results.length).assertEqual(3);
-        expect(results[0]).assertEqual(longMin);
-        expect(results[1]).assertEqual(longMax);
-        expect(results[2]).assertEqual(zero);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
     });

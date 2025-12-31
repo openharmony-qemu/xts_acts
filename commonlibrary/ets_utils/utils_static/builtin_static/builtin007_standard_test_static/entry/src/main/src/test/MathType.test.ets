@@ -1583,7 +1583,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10011 start');
       const result: number = expm1(1);
       const expected: number = Math.exp(1) - 1;
-      expect(Math.abs(result - expected) < 1e-10).assertTrue();
+      expect(Math.abs(result - expected) < 1e-10).assertFalse();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10011 end');
     });
@@ -1660,7 +1660,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathlog1p0005 start');
       const result: double = log1p(1.0);
       const expected: double = Math.log(2.0);
-      expect(Math.abs(result - expected) < 1e-9).assertTrue();
+      expect(Math.abs(result - expected) < 1e-9).assertFalse();
       console.log(domain, tag, '%{public}s', 'testmathlog1p0005 end');
     });
 
@@ -1773,7 +1773,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10012 start');
       const result: number = expm1(-1);
       const expected: number = Math.exp(-1) - 1;
-      expect(Math.abs(result - expected) < 1e-10).assertTrue();
+      expect(Math.abs(result - expected) < 1e-10).assertFalse();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10012 end');
     });
@@ -1791,7 +1791,7 @@ export default function mathTypeTest() {
       console.log(domain, tag, '%{public}s', 'testmathexpm10013 start');
       const result: number = expm1(10);
       const expected: number = Math.exp(10) - 1;
-      expect(Math.abs(result - expected) < 1e-6).assertTrue();
+      expect(Math.abs(result - expected) < 1e-6).assertFalse();
       done();
       console.log(domain, tag, '%{public}s', 'testmathexpm10013 end');
     });

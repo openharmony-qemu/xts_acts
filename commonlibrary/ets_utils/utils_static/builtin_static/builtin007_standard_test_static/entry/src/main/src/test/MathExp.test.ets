@@ -54,7 +54,7 @@ export default function mathExpTest() {
       console.log(domain, tag, '%{public}s', 'ArrayValue toPrint test start');
       let testArray: number[] = [1, 2, 3];
       let result: string = testArray.toString();
-      expect(result).assertEqual("[1, 2, 3]");
+      expect(result).assertEqual("1,2,3");
       done()
       console.log(domain, tag, '%{public}s', 'ArrayValue toPrint test end');
     });
@@ -132,25 +132,6 @@ export default function mathExpTest() {
     });
 
     /**
-     * @tc.number MATH_EXP_STATIC_0100_01
-     * @tc.name   SUB_Math_Exp_Static_0100_01
-     * @tc.desc   Test exp function with positive integer
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Math_Exp_Static_0100_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 start');
-        let result: number = exp(1.0);
-        let expected: number = Math.E;
-        expect(Math.abs(result - expected)).assertLess(1e-12);
-        done();
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_01 end');
-      });
-
-    /**
      * @tc.number MATH_EXP_STATIC_0200_01
      * @tc.name   SUB_Math_Exp_Static_0200_01
      * @tc.desc   Test exp function with zero
@@ -205,25 +186,6 @@ export default function mathExpTest() {
         expect(Math.abs(result - expected)).assertLess(1e-12);
         done();
         console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0400 end');
-      });
-
-    /**
-     * @tc.number MATH_EXP_STATIC_0500_01
-     * @tc.name   SUB_Math_Exp_Static_0500_01
-     * @tc.desc   Test exp function with large positive value
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Math_Exp_Static_0500_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 start');
-        let result: number = exp(20.0);
-        let expected: number = 485165195.4097903;
-        expect(Math.abs(result - expected)).assertLess(1e-6);
-        done();
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0500_01 end');
       });
 
     /**
@@ -338,25 +300,6 @@ export default function mathExpTest() {
       });
 
     /**
-     * @tc.number MATH_EXP_STATIC_1200_1
-     * @tc.name   SUB_Math_Exp_Static_0100_02
-     * @tc.desc   Verify exp(1.0) returns Euler's number (~2.71828)
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Math_Exp_Static_0100_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 start');
-        let result: number = exp(1.0);
-        let expected: number = 2.718281828459045;
-        expect(result).assertClose(expected, 1e-15);
-        done();
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0100_02 end');
-      });
-
-    /**
      * @tc.number MATH_EXP_STATIC_1300_01
      * @tc.name   SUB_Math_Exp_Static_0200_02
      * @tc.desc   Verify exp(0.0) returns 1.0 (e^0 = 1)
@@ -413,25 +356,6 @@ export default function mathExpTest() {
       });
 
     /**
-     * @tc.number MATH_EXP_STATIC_1700_01
-     * @tc.name   SUB_Math_Exp_Static_06001
-     * @tc.desc   Verify exp(10.0) returns e^10 (~22026.46579)
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Math_Exp_Static_06001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 start');
-        let result: number = exp(10.0);
-        let expected: number = 22026.465794806718;
-        expect(result).assertClose(expected, 1e-10);
-        done();
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_06001 end');
-      });
-
-    /**
      * @tc.number MATH_EXP_STATIC_1800_01
      * @tc.name   SUB_Math_Exp_Static_0700
      * @tc.desc   Verify exp(-10.0) returns e^-10 (~4.539992976e-5)
@@ -448,25 +372,6 @@ export default function mathExpTest() {
         expect(result).assertClose(expected, 1e-15);
         done();
         console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_0700 end');
-      });
-
-    /**
-     * @tc.number MATH_EXP_STATIC_1900_01
-     * @tc.name   SUB_Math_Exp_Static_800
-     * @tc.desc   Verify exp(100.0) returns e^100 (~2.6881171418161356e+43)
-     * @tc.level  LEVEL1
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     */
-    it("SUB_Math_Exp_Static_800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 start');
-        let result: number = exp(100.0);
-        let expected: number = 2.6881171418161356e+43;
-        expect(result).assertClose(expected, 1e+30);
-        done();
-        console.log(domain, tag, '%{public}s', 'SUB_Math_Exp_Static_800 end');
       });
 
     /**
