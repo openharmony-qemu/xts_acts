@@ -74,6 +74,9 @@ export default function formProviderTest() {
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG:string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      if (formInfo.FormParam.EDIT_FORM_KEY) {
+        expect("ohos.extra.param.key.edit_form_id").assertEqual(formInfo.FormParam.EDIT_FORM_KEY);
+      }
       formProvider.getPublishedFormInfos().then((data: formInfo.FormInfo[]) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
         `${TAG} formProvider getPublishedFormInfos success, data: ${JSON.stringify(data)}`);
