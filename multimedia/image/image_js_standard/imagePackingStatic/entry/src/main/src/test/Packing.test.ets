@@ -144,8 +144,8 @@ export default function imagePacking() {
         let delayTimes = await imgSource.getDelayTimeList();
         let disposalTypes = await imgSource.getDisposalTypeList();
         let loopcount = await imgSource.getImageProperties([image.PropertyKey.GIF_LOOP_COUNT]);
-        expect(loopcount[image.PropertyKey.GIF_LOOP_COUNT] != null).assertTrue();
-        let GIFloopCount = loopcount[image.PropertyKey.GIF_LOOP_COUNT] as string;
+        expect(loopcount['GIFLoopCount'] != null).assertTrue();
+        let GIFloopCount = loopcount['GIFLoopCount'] as string;
         let imageInfo = imgSource.getImageInfoSync();
         if (imageInfo == undefined) {
           expect(false).assertTrue();

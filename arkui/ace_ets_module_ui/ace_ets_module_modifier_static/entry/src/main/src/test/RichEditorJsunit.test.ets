@@ -68,7 +68,7 @@ it('richEditorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<
       console.info('richEditorTest_static_002 START');
       let strJsonNew = inspector.getInspectorByKey('richEditor');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("richEditorTest_static_002 component  is: " + JSON.stringify(objNew.getElement('$attrs').getString('copyOptions')));
+      console.info("richEditorTest_static_002 component  is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs')));
       expect(objNew.getElement('$attrs').getString('copyOption')).assertEqual("CopyOptions.InApp");
       console.info('richEditorTest_static_002 END');
       done();

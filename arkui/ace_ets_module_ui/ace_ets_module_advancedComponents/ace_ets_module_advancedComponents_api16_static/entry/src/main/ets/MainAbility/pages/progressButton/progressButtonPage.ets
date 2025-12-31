@@ -52,12 +52,12 @@ struct Index {
       Scroll() {
         Column({ space: 20 } as ColumnOptions) {
           ProgressButton({
-            // colorOptions: {
-            //   progressColor: Color.Orange,
-            //   borderColor: Color.Black,
-            //   textColor: Color.Blue,
-            //   backgroundColor: Color.Pink
-            // },
+            colorOptions: {
+              progressColor: Color.Orange,
+              borderColor: Color.Black,
+              textColor: Color.Blue,
+              backgroundColor: Color.Pink
+            },
             progress: this.progressIndex,
             progressButtonWidth: this.buttonWidth,
             content: this.textState,

@@ -71,13 +71,14 @@ export default function subwindowDialog() {
     });
 
 
+    
     /**
      * @tc.number   subwindowDialog_static_0100
      * @tc.name     subwindowDialog_static_0100
      * @tc.desc     subwindowDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('subwindowDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('subwindowDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('subwindowDialog_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -107,7 +108,7 @@ export default function subwindowDialog() {
       expect(propertiesSecond.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(Number(AppStorage.get<number>("winLeft")) + UIContext.getFocusedUIContext()!.vp2px(100)) as int,Math.round(Number(AppStorage.get<number>('winTop')) + UIContext.getFocusedUIContext()!.vp2px(100)) as int);
+      await driver.click(Math.round(Number(AppStorage.get<number>("winLeft")) + UIContext.resolveUIContext()!.vp2px(100)) as int,Math.round(Number(AppStorage.get<number>('winTop')) + UIContext.resolveUIContext()!.vp2px(100)) as int);
       await CommonFunc.sleep(1000);
       let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
       if (buttonCloseDialog) {
@@ -119,13 +120,14 @@ export default function subwindowDialog() {
     });
 
 
+    
     /**
      * @tc.number   subwindowDialog_static_0200
      * @tc.name     subwindowDialog_static_0200
      * @tc.desc     subwindowDialog_static_0200
      * @tc.level    Level.LEVEL2
      */
-    it('subwindowDialog_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('subwindowDialog_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('subwindowDialog_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -17,5 +17,5 @@
 import GetWindowWidthAndHeightTest from './window/GetWindowWidthAndHeight.test';
 
 export default function testsuite() {
-  GetWindowWidthAndHeightTest(); // SDK 12.9 表格87行 2
+  GetWindowWidthAndHeightTest(); // SDK 12.1 pass2
 }

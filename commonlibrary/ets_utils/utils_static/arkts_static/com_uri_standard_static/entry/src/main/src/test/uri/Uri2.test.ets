@@ -3996,8 +3996,8 @@ export default function uriTest2() {
       let uriInstance1 = new uri.URI('https://www.zyy.ss?sa%3D=po%7E');
       let result2 = uriInstance1.getQueryValue('sa=');
       let result3 = uriInstance1.getQueryValue('abc');
-      expect(result1).assertEqual("param1");
-      expect(result2).assertEqual('sa=');
+      expect(result1).assertEqual("value1");
+      expect(result2).assertEqual('po~');
       expect(result3).assertEqual(null);
     });
 

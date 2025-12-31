@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,17 +66,16 @@ struct UIContextComponentSnapshot {
       Row() {
         Column({ space: 5 } as ColumnOptions) {
           Button('新增Callback')
-            .onClick((e:ClickEvent) => { // 这里
-              console.log('++++++++++++++++++++++++++1')
-            this.getUIContext().getComponentSnapshot() // 执行后appDied
-              .get('snapshot_4', (err: BusinessError<void>|null, pixmap: image.PixelMap|undefined):void => {
-                if (err) {
-                  hilog.error(0x0000, 'testTag', 'getComponentSnapshot pixmap_text_1 error %{public}s', JSON.stringify(err) ?? '');
-                  return;
-                }
+            .onClick((e:ClickEvent) => {
+              console.log('wj+++++++++++++++++++++++++++')
+            this.getUIContext().getComponentSnapshot()
+              .get('snapshot_4', (err: BusinessError<void>|null|undefined, pixmap: image.PixelMap|undefined):void => {
+                // if (err) {
+                //   hilog.error(0x0000, 'testTag', 'getComponentSnapshot pixmap_text_1 error %{public}s', JSON.stringify(err) ?? '');
+                //   return;
+                // }
                 this.pixmap_2 = pixmap!
-                console.info('UIContextComponentSnapshot pixmap_text_1 start')
-                this.pixmap_text_1 = 'snapshot'   //这里没执行
+                this.pixmap_text_1 = 'snapshot'
               }, {
                 scale: 1, waitUntilRenderFinished: true,
                 region: {
@@ -85,7 +85,6 @@ struct UIContextComponentSnapshot {
                   bottom: 200
                 }
               })
-              console.log('+++++++++++++++++2')
           })
             .width('90%')
             .margin(10)
@@ -93,8 +92,8 @@ struct UIContextComponentSnapshot {
             .height('5%')
 
 
-          Button('新增Promise').onClick((e:ClickEvent) => { // 这里
-            this.uiContext!.getComponentSnapshot()!  //导致白屏
+          Button('新增Promise').onClick((e:ClickEvent) => {
+            this.uiContext!.getComponentSnapshot()!
               .get('snapshot_4',{
                 scale: 1, waitUntilRenderFinished: true,
                 region: {

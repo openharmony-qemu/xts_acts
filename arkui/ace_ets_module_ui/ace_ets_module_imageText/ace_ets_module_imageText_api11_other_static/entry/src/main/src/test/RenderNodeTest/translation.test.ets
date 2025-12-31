@@ -106,8 +106,6 @@ export default function translationTest() {
 
     
     
-
-
 /**
      * @tc.number   translationTest_static_0100
      * @tc.name     translationTest_static_0100

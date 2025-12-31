@@ -65,13 +65,14 @@ export default function MaxwidthTest() {
       console.info('MaxwidthTest beforeEach end');
     });
 
+    
     /**
      * @tc.number   popup_maxWidth_static_0101
      * @tc.name     popup_maxWidth_static_0101
      * @tc.desc     popup_maxWidth_static_0101
      * @tc.level    Level.LEVEL2
      */
-    it('popup_maxWidth_static_0101', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('popup_maxWidth_static_0101', Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('popup_maxWidth_static_0101 START');
         await CommonFunc.sleep(1000);
         inspector.sendEventByKey('PopupApi1_btn1',10,"")
@@ -85,20 +86,21 @@ export default function MaxwidthTest() {
       });
 
 
+    
     /**
      * @tc.number   popup_maxWidth_static_0102
-   * @tc.name     popup_maxWidth_static_0102
-   * @tc.desc     popup_maxWidth_static_0102
-   * @tc.level    Level.LEVEL2
-   */
-    it('popup_maxWidth_static_0102', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     popup_maxWidth_static_0102
+     * @tc.desc     popup_maxWidth_static_0102
+     * @tc.level    Level.LEVEL2
+     */
+it('popup_maxWidth_static_0102', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('popup_maxWidth_static_0102 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       console.info("popup_maxWidth_static_0102 driver success");
       let size = await driver.getDisplaySize();
       console.info("popup_maxWidth_static_0102 size state:" + JSON.stringify(size.x));
-      let displayWidth = UIContext.getFocusedUIContext()!.vp2px(size.x);
+      let displayWidth = UIContext.resolveUIContext()!.vp2px(size.x);
       console.info("popup_maxWidth_static_0102 displayWidth state:" + JSON.stringify(displayWidth));
       inspector.sendEventByKey('PopupApi1_btn2', 10, "");
       await CommonFunc.sleep(1000);
@@ -118,20 +120,21 @@ export default function MaxwidthTest() {
     });
 
 
+    
     /**
      * @tc.number   popup_maxWidth_static_0103
-   * @tc.name     popup_maxWidth_static_0103
-   * @tc.desc     popup_maxWidth_static_0103
-   * @tc.level    Level.LEVEL2
-   */
-    it('popup_maxWidth_static_0103', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     popup_maxWidth_static_0103
+     * @tc.desc     popup_maxWidth_static_0103
+     * @tc.level    Level.LEVEL2
+     */
+it('popup_maxWidth_static_0103', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('popup_maxWidth_static_0103 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       console.info("popup_maxWidth_static_0103 driver success");
       let size = await driver.getDisplaySize();
       console.info("popup_maxWidth_static_0103 size state:" + JSON.stringify(size.x));
-      let displayWidth = UIContext.getFocusedUIContext()!.vp2px(size.x);
+      let displayWidth = UIContext.resolveUIContext()!.vp2px(size.x);
       console.info("popup_maxWidth_static_0103 displayWidth state:" + JSON.stringify(displayWidth));
       inspector.sendEventByKey('PopupApi1_btn3', 10, "");
       await CommonFunc.sleep(1000);

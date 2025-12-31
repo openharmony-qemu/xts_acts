@@ -504,7 +504,7 @@ export class MultiNavPathStack extends NavPathStack {
           this.clearTrashStack(i + 1,result,animated);
           break;
         } else if (index > removeIndex - 1 && index < removeIndex + secondaryStackSize[i]) {
-          this.subStackList[i].secondaryStack.popToIndex(index - removeIndex);
+          this.subStackList[i].secondaryStack.popToIndex((index - removeIndex) as int);
           this.subStackList[i].secondaryStack.policyInfoList.splice(index - removeIndex + 1);
           this.totalStack.splice(index + 1);
           this.clearTrashStack(i + 1,result,animated);
@@ -522,7 +522,7 @@ export class MultiNavPathStack extends NavPathStack {
     }
     this.handleRefreshPlaceHolderIfNeeded();
     this.checkAndNotifyHomeChange();
-    return index;
+    return index as int;
   }
 
   // popToIndex(index: int, animated?: boolean): void;
@@ -541,8 +541,8 @@ export class MultiNavPathStack extends NavPathStack {
     }
     let currentPath = this.totalStack[totalSize - 1].navInfo;
     let secondaryStackSize: number[] = new Array<number>();
-    this.subStackList.forEach((subStack: SubNavigationStack, index: int,p3: Array<SubNavigationStack>) => {
-      let num: number = this.subStackList[index as int].secondaryStack.size()
+    this.subStackList.forEach((subStack: SubNavigationStack, index: int,p3: Array<SubNavigationStack>):void => {
+      let num: number = (this.subStackList[index as int].secondaryStack.size()) as number
       secondaryStackSize.push(num );
     });
     let removeIndex = 0;
@@ -598,10 +598,10 @@ export class MultiNavPathStack extends NavPathStack {
       return value.navInfo?.name === name;
     });
     if (index !== -1) {
-      this.moveIndexToTop(index, animated);
+      this.moveIndexToTop(index as int, animated);
     }
 
-    return index;
+    return index as int;
   }
 
   moveIndexToTop(index: int, animated?: boolean): void {

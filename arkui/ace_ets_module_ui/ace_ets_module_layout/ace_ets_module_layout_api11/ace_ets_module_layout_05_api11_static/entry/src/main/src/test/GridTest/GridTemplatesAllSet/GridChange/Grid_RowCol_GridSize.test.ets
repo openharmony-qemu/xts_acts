@@ -105,15 +105,23 @@ it('testGridRowColGridSize01_static_01', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_01.bottom) <= 1).assertTrue();
 
 
-      expect(Math.abs(Grid_RowCol_GridSize_011.right - Grid_RowCol_GridSize_011.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_012.right - Grid_RowCol_GridSize_012.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_013.right - Grid_RowCol_GridSize_013.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_014.right - Grid_RowCol_GridSize_014.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_011.right - Grid_RowCol_GridSize_011.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_012.right - Grid_RowCol_GridSize_012.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_013.right - Grid_RowCol_GridSize_013.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_014.right - Grid_RowCol_GridSize_014.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_GridSize_011.bottom - Grid_RowCol_GridSize_011.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_012.bottom - Grid_RowCol_GridSize_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_013.bottom - Grid_RowCol_GridSize_013.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_014.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_011.bottom - Grid_RowCol_GridSize_011.top -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_012.bottom - Grid_RowCol_GridSize_012.top -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_013.bottom - Grid_RowCol_GridSize_013.top -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_014.top -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
       console.info('[testGridRowColGridSize01_static_01] END');
       done();
     });
@@ -130,7 +138,7 @@ it('testGridRowColGridSize01_static_01', Level.LEVEL0, async (done: () => void):
 it('testGridRowColGridSize02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridSize02_static_02] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'changeHeight', value: 300
+        name: 'changeHeight', value: 300.0
       });
       await CommonFunc.sleep(3000);
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_GridSize_01');
@@ -159,15 +167,23 @@ it('testGridRowColGridSize02_static_02', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_01.bottom) <= 1).assertTrue();
 
 
-      expect(Math.abs(Grid_RowCol_GridSize_011.right - Grid_RowCol_GridSize_011.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_012.right - Grid_RowCol_GridSize_012.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_013.right - Grid_RowCol_GridSize_013.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_014.right - Grid_RowCol_GridSize_014.left - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_011.right - Grid_RowCol_GridSize_011.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_012.right - Grid_RowCol_GridSize_012.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_013.right - Grid_RowCol_GridSize_013.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_014.right - Grid_RowCol_GridSize_014.left -
+      UIContext.resolveUIContext()!.vp2px(100)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_GridSize_011.bottom - Grid_RowCol_GridSize_011.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_012.bottom - Grid_RowCol_GridSize_012.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_013.bottom - Grid_RowCol_GridSize_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_014.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_011.bottom - Grid_RowCol_GridSize_011.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_012.bottom - Grid_RowCol_GridSize_012.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_013.bottom - Grid_RowCol_GridSize_013.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_GridSize_014.bottom - Grid_RowCol_GridSize_014.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColGridSize02_static_02] END');
       done();
     });

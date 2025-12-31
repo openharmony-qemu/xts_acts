@@ -18,7 +18,7 @@ ohos_js_app_static_suite("AbilityStageContextStaticTest") {
 #   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "AbilityStageContextStaticTest"
+  hap_name = "ActsAbilityStageContextStaticTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
 }

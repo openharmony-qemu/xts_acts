@@ -43,11 +43,11 @@ export default function themePageTest() {
         console.info("get themePageTest state pages:" + JSON.stringify(pages));
         if (!("themePageTest" == pages.name)) {
           console.info("get themePageTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push themePageTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push themePageTest page error:" + err);
@@ -58,6 +58,7 @@ export default function themePageTest() {
     
     
 
+
 /**
      * @tc.number   themeInterfaceTest_static_0100
      * @tc.name     themeInterfaceTest_static_0100
@@ -65,12 +66,13 @@ export default function themePageTest() {
      * @tc.level    Level.LEVEL0
      */
 it('themeInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('frameNodeGetInterfaceTest_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
       // click to change the skin
       let button = await driver.findComponent(ON.id('themeClick'));
-      await Utils.sleep(1000);
+  await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       // test the color whether change

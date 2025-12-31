@@ -44,11 +44,11 @@ export default function toggleNodeTest() {
         console.info("get toggleNodeTest state pages:" + JSON.stringify(pages));
         if (!("toggleNode" == pages.name)) {
           console.info("get toggleNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push toggleNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push toggleNodeTest page error:" + err);
@@ -73,6 +73,7 @@ export default function toggleNodeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('toggleNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
 
       let tagName = 'toggleNode_static_0100';
       console.info('[' + tagName + '] START============================');

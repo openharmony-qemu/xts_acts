@@ -101,7 +101,7 @@ ani_boolean GetClsByClassCallingName(ani_env *env, const char *class_descriptor,
 }
 
 ani_ref g_doubleCls {};
-ani_method unboxed {};
+ani_method doubleunbox {};
 
 ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
 {
@@ -116,12 +116,12 @@ ani_status unboxDouble(ani_env *env, ani_object obj, ani_double *result)
         if (status != ANI_OK) {
             return ANI_ERROR;
         }
-        status = env->Class_FindMethod(cls, "unboxed", ":d", &unboxed);
+        status = env->Class_FindMethod(cls, "toDouble", ":d", &doubleunbox);
         if (status != ANI_OK) {
             return ANI_ERROR;
         }
     }
-    return env->Object_CallMethod_Double(obj, unboxed, result);
+    return env->Object_CallMethod_Double(obj, doubleunbox, result);
 }
 
 ani_boolean GetStdString(ani_env *env, ani_string str, std::string &result)

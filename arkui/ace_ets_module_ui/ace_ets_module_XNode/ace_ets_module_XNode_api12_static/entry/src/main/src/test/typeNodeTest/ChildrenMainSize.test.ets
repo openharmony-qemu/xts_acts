@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function typeNodechildrenMainSizeTest() {
 
 
 
-/**
+    /**
      * @tc.number   childrenMainSizeTest_static_0100
      * @tc.name     childrenMainSizeTest_static_0100
      * @tc.desc     childrenMainSizeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('childrenMainSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('childrenMainSizeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -86,13 +87,14 @@ it('childrenMainSizeTest_static_0100', Level.LEVEL0, async (done: () => void): P
 
 
 
-/**
+    /**
      * @tc.number   childrenMainSizeTest_static_0200
      * @tc.name     childrenMainSizeTest_static_0200
      * @tc.desc     childrenMainSizeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('childrenMainSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('childrenMainSizeTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

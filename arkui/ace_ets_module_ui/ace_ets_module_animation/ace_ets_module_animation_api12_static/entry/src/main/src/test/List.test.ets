@@ -30,17 +30,17 @@ import ParticlePage from './Particle.test'
 
 
 export default function testsuite() {
-  AnimatorResultTest() // 2 pass 2 1117sdk App died
-  setExpectedFrameRateRangeTest() // 1 pass 1
-  setPolyToPoly(); // 1 pass 1
-  SymbolGlyphTest(); // 4 pass 4
-  ParticleTest(); // 4 pass 4
-  ParticleAnimatorTest(); // 1 Particle
-  animateToTest(); // 1 pass 1
-  ParticleAttributeTest(); // 1 Particle
-  SimpleAnimatorOptionsPage(); // 4 pass 4
-  Blur(); // 1 pass 1
+  SimpleAnimatorOptionsPage();
+  AnimatorResultTest()
+  setExpectedFrameRateRangeTest()
+  setPolyToPoly();
+  SymbolGlyphTest();
+  ParticleTest();
+  ParticleAnimatorTest();
+  animateToTest();
+  ParticleAttributeTest();
+  Blur();
   APIParticleEmitter(); // 1 Particle
-  ParticlePage(); // 1 Particle
-  CurvePage(); // 4 pass 4
+  ParticlePage();
+  CurvePage();
 }

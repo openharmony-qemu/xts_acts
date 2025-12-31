@@ -61,8 +61,7 @@ export default function scrollbarJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar010_static_01
      * @tc.name     testScrollbar010_static_01
      * @tc.desc     testScrollbar010_static_01
@@ -82,8 +81,7 @@ it('testScrollbar010_static_01', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar020_static_02
      * @tc.name     testScrollbar020_static_02
      * @tc.desc     testScrollbar020_static_02
@@ -103,8 +101,7 @@ it('testScrollbar020_static_02', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar030_static_03
      * @tc.name     testScrollbar030_static_03
      * @tc.desc     testScrollbar030_static_03
@@ -124,8 +121,7 @@ it('testScrollbar030_static_03', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar040_static_04
      * @tc.name     testScrollbar040_static_04
      * @tc.desc     testScrollbar040_static_04
@@ -145,8 +141,7 @@ it('testScrollbar040_static_04', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar050_static_05
      * @tc.name     testScrollbar050_static_05
      * @tc.desc     testScrollbar050_static_05
@@ -166,8 +161,7 @@ it('testScrollbar050_static_05', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testScrollbar060_static_06
      * @tc.name     testScrollbar060_static_06
      * @tc.desc     testScrollbar060_static_06

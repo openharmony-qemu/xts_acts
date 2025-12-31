@@ -118,7 +118,7 @@ it('testSwiperSetMargin_static', Level.LEVEL0, async (done: () => void): Promise
       let driver = Driver.create();
       // await CommonFunc.sleep(500);
       // //  await driver.swipe(250, 230, 200, 230);
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperMargin')
       await driver.swipe(

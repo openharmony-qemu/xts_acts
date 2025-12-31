@@ -106,15 +106,7 @@ struct Index {
   @State enableOutsideInteractive: boolean = false;
   @State enableOutsideInteractive1: boolean = true;
 
-  aboutToAppear() {
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
-    let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-  }
+
 
   @Builder
   myBuilder() {

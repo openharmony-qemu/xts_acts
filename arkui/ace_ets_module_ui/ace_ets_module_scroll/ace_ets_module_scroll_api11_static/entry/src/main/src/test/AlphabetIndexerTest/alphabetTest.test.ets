@@ -76,8 +76,7 @@ export default function alphabetTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetTest_static_0100
      * @tc.name     alphabetTest_static_0100
      * @tc.desc     alphabetTest_static_0100

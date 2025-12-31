@@ -92,8 +92,6 @@ export default function RelativeGuideLine7() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine7_static_001
      * @tc.name     RelativeGuideLine7_static_001
@@ -118,8 +116,6 @@ it('RelativeGuideLine7_static_001', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine7_static_002
      * @tc.name     RelativeGuideLine7_static_002

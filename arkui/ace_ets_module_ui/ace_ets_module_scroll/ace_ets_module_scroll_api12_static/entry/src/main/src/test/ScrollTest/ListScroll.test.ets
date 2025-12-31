@@ -78,7 +78,6 @@ export default function ListScrollTest1() {
     
       
   
-
 /**
      * @tc.number   ListScrollTest1_0100
      * @tc.name     ListScrollTest1_0100

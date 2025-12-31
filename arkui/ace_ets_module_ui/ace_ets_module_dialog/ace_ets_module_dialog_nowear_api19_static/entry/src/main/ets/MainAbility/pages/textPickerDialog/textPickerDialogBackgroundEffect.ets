@@ -47,18 +47,18 @@ struct textPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
-            // backgroundEffect: {
-            //   radius: 40,
-            //   saturation: 25,
-            //   brightness: 2,
-            //   color: Color.Pink,
-            //   adaptiveColor: AdaptiveColor.DEFAULT,
-            //   policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
-            //   inactiveColor:Color.Blue,
-            //   blurOptions: {
-            //     grayscale: [20,20]
-            //   }
-            // } as BackgroundEffectOptions
+            backgroundEffect: {
+              radius: 40,
+              saturation: 25,
+              brightness: 2,
+              color: Color.Pink,
+              adaptiveColor: AdaptiveColor.DEFAULT,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
+              blurOptions: {
+                grayscale: [20,20]
+              }
+            } as BackgroundEffectOptions
           } as TextPickerDialogOptions)
         })
       Button('TextPickerDialog_Effect002')
@@ -79,7 +79,7 @@ struct textPickerDialog2 {
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
             // backgroundEffect: {
-            //   // radius: undefined,
+            //   radius: undefined,
             //   saturation: undefined,
             //   brightness: undefined,
             //   color: undefined,

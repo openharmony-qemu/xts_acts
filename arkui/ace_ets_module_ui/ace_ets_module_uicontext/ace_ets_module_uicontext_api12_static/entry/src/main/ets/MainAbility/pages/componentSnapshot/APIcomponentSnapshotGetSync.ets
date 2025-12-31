@@ -36,22 +36,11 @@ struct APIcomponentSnapshotGetSync {
           Column(){
             Image(this.pixmap)
           }
-          .width(10)
-          .height(10)
-          .border({ color: Color.Black, width: 2 })
-          .margin(5)
-          Image($r('app.media.icon')) //SDK 12.9 白屏
-            .autoResize(true)
-            .width('100px')
-            .height('100px')
-            .margin(5)
-            .id("APIcomponentSnapshotGetSync_root")
+          .width(10).height(10).border({ color: Color.Black, width: 2 }).margin(5)
+          Image($r('app.media.icon')).autoResize(true).width('100px').height('100px').margin(5).id("APIcomponentSnapshotGetSync_root")
         }
-        Text(this.text)
-          .fontSize(26)
-          .id('APIcomponentSnapshotGetSync_text')
-        Button("click to generate UI snapshot")
-          .id('APIcomponentSnapshotGetSync_button')
+        Text(this.text).fontSize(26).id('APIcomponentSnapshotGetSync_text')
+        Button("click to generate UI snapshot").id('APIcomponentSnapshotGetSync_button')
           .onClick((e:ClickEvent) => {
             try {
               let pixelmap = componentSnapshot.getSync("APIcomponentSnapshotGetSync_root", {scale : 2, waitUntilRenderFinished : true})

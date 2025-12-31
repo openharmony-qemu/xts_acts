@@ -108,8 +108,6 @@ export default function loadingProgressJsunit() {
 
 
     
-
-
 /**
      * @tc.number   loadingProgressJsunit_static_0100
      * @tc.name     loadingProgressJsunit_static_0100
@@ -128,8 +126,6 @@ it('loadingProgressJsunit_static_0100', Level.LEVEL2, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   loadingProgressJsunit_static_0200
      * @tc.name     loadingProgressJsunit_static_0200
@@ -151,8 +147,6 @@ it('loadingProgressJsunit_static_0200', Level.LEVEL2, async (done: () => void): 
     });
 
     
-
-
 /**
      * @tc.number   loadingProgressJsunit_static_0300
      * @tc.name     loadingProgressJsunit_static_0300

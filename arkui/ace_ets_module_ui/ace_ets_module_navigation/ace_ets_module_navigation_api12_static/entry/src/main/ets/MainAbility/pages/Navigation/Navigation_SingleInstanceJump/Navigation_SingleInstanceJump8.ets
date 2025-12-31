@@ -28,70 +28,71 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Navigation_SingleInstanceJump8{
-  pathInfos:NavPathStack  = new NavPathStack()
-  @State count:number = 1
-  @State text:string = ''
+  // pathInfos:NavPathStack  = new NavPathStack()
+  // @State count:int = 1
+  // @State text:string = ''
 
 
-  update():void{
-    let name:string[] = this.pathInfos.getAllPathName()
-    for (let i = 0; i < name.length; i++) {
-      if (!this.pathInfos.getParamByIndex(i)) {
-        this.text += ` ${name[i]},Param:undefined`
-      }else{
-        this.text += `${name[i]},Param:${JSON.stringify(this.pathInfos.getParamByIndex(i))} `
-      }
-    }
-  }
+  // update():void{
+  //   let name:string[] = this.pathInfos.getAllPathName()
+  //   for (let i = 0; i < name.length; i++) {
+  //     if (!this.pathInfos.getParamByIndex(i)) {
+  //       this.text += ` ${name[i]},Param:undefined`
+  //     }else{
+  //       this.text += `${name[i]},Param:${JSON.stringify(this.pathInfos.getParamByIndex(i))} `
+  //     }
+  //   }
+  // }
 
-
-  @Builder Page1(){
-    NavDestination(){
-      Column(){
-        Text('page1')
-      }
-    }
-    .title('page1')
-
-  }
-  @Builder Page2(){
-    NavDestination(){
-      Column(){
-        Text('page1')
-      }
-    }.title('page1')
-  }
-
-  @Builder PageMap(name:string){
-    if (name == 'page1'){
-      this.Page1()
-    }else if (name == 'page2'){
-      this.Page2()
-    }
-  }
+  //
+  // @Builder Page1(){
+  //   NavDestination(){
+  //     Column(){
+  //       Text('page1')
+  //     }
+  //   }
+  //   .title('page1')
+  // }
+  //
+  // @Builder Page2(){
+  //   NavDestination(){
+  //     Column(){
+  //       Text('page1')
+  //     }
+  //   }.title('page1')
+  // }
+  //
+  // @Builder PageMap(name:string){
+  //   if (name == 'page1'){
+  //     this.Page1()
+  //   }else if (name == 'page2'){
+  //     this.Page2()
+  //   }
+  // }
   build() {
     Column(){
-      Navigation(this.pathInfos){
+      Text('1111111111111111111111111111111')
+      // Navigation(this.pathInfos){
+      //
+      //
+      // }
+      // .title('navigation',{
+      //   barStyle:BarStyle.STACK
+      // })
+      // .height(300)
+      // .navDestination(this.PageMap)
 
-
-      }
-      .title('navigation',{
-        barStyle:BarStyle.STACK
-      })
-      .height(300)
-      .navDestination(this.PageMap)
-
-      Button('push page1').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD,animated:true})
-      }).id('Navigation_SingleInstanceJump8_btn1')
-      Button('push page2').onClick((event: ClickEvent) => {
-        this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD,animated:true})
-      }).id('Navigation_SingleInstanceJump8_btn2')
-      Text(this.text).id('Navigation_SingleInstanceJump8_text1')
-      Button('getAll').onClick((e: ClickEvent) => {
-        this.text = ''
-        this.update()
-      }).id('Navigation_SingleInstanceJump8_btn3')
+      // Button('push page1').onClick((event: ClickEvent) => {
+      //   this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD,animated:true})
+      // }).id('Navigation_SingleInstanceJump8_btn1')
+      // Button('push page2').onClick((event: ClickEvent) => {
+      //   this.pathInfos.pushPath(new NavPathInfo('page1',this.count++),{launchMode:LaunchMode.STANDARD,animated:true})
+      // }).id('Navigation_SingleInstanceJump8_btn2')
+      // Text(this.text).id('Navigation_SingleInstanceJump8_text1')
+      // Button('getAll').onClick((e: ClickEvent) => {
+      //   this.text = ''
+      //   this.update()
+      // }).id('Navigation_SingleInstanceJump8_btn3')
 
     }
   }

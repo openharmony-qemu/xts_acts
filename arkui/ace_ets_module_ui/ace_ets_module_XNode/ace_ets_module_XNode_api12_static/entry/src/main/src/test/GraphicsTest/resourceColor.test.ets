@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,14 @@ export default function resourceColor() {
 
 
 
-/**
+    /**
      * @tc.number   resourceColor_static_0100
      * @tc.name     resourceColor_static_0100
      * @tc.desc     resourceColor_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('resourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('resourceColor_0100 START');
       let strJson: string = inspector.getInspectorByKey('resourceColor');
       let obj = JSON.parseJsonElement(strJson);

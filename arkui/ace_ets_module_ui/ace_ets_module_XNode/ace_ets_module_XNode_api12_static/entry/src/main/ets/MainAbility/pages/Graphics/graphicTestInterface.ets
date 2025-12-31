@@ -77,20 +77,11 @@ struct overflowShape{
       Button('click')
         .id("setOvalShape")
         .onClick((e:ClickEvent) => {
-          try{
-            let json = this.myNodeController.getInspectorInfo();
-            console.log('+++++++++++++++++json',json)
-            let obj = JSON.stringify(json);
-            console.log('+++++++++++++++++obj',obj)
-            this.text1 = JSON.parseJsonElement(obj).getElement('$attrs').getString('width') //
-            console.log('+++++++++++++this.text1',this.text1)
-            this.text2 = JSON.parseJsonElement(obj).getElement('$attrs').getString('height')
-            console.log('+++++++++++++this.text2',this.text2)
-          }catch(err){
-            console.log('+++++++++++++++++++++++',err) //Error: This value's ValueKind is not Object.
-          }
+           let json = this.myNodeController.getInspectorInfo();
+           let obj = JSON.stringify(json);
+           this.text1 = JSON.parseJsonElement(obj).getElement('$attrs').getString('width')
+           this.text2 = JSON.parseJsonElement(obj).getElement('$attrs').getString('height')
         })
     }
   }
 }
-

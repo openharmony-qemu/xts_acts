@@ -122,7 +122,7 @@ class MyNodeAdapter extends NodeAdapter {
   }
 
   onAttachToNode(target: FrameNode): void {
-    console.log('UINodeAdapter onAttachToNode id:' + target.getUniqueId());
+    console.log('UINodeAdapter onAttachToNode id:' + target.getUniqueId()); //master22 执行后appDied
     this.hostNode = target;
   }
 
@@ -134,7 +134,7 @@ class MyNodeAdapter extends NodeAdapter {
     console.log('UINodeAdapter onGetChildId:' + index);
     return index;
   }
-  
+
   onCreateChild(index: number): FrameNode {
     storage.set('onCreateChild', 'onCreateChild succ');
     console.log('UINodeAdapter onCreateChild:' + index);

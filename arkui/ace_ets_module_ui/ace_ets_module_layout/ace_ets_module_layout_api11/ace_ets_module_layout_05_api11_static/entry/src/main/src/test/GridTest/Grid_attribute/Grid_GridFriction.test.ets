@@ -79,11 +79,14 @@ it('testGridFriction_static_01', Level.LEVEL0, async (done: () => void): Promise
       })
       await CommonFunc.sleep(2000);
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_GridFriction');
-     expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-     console.info('[testGridFriction] gridContainerStrJson friction: ' + JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction'));
+      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
+      console.info('[testGridFriction] gridContainerStrJson friction: ' +
+      JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction'));
       let gridDefJson = inspector.getInspectorByKey('grid_friction_default');
-     console.info('[testGridFriction] gridDefJson friction: ' + JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
-     expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction')).assertEqual(JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
+      console.info('[testGridFriction] gridDefJson friction: ' +
+      JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
+      expect(JSON.parseJsonElement(gridContainerStrJson).getElement('$attrs').getDouble('friction'))
+        .assertEqual(JSON.parseJsonElement(gridDefJson).getElement('$attrs').getDouble('friction'));
       console.info('[testGridFriction_static_01] END');
       done();
     });

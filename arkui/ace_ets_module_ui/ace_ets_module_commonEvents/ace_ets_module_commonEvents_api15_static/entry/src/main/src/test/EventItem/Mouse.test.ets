@@ -52,9 +52,7 @@ export default function mouseEventTest() {
         if (!('Mouse' == pages.name)) {
           console.info('get mouseEvent state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          // console.info('push mouseEvent success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push mouseEvent page error: ' + err);

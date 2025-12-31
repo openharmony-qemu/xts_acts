@@ -88,8 +88,6 @@ export default function RenderNodeInvalidateJsSuit() {
 
     
     
-
-
 /**
      * @tc.number   RenderNodeInvalidateJsSuit_static_0100
      * @tc.name     RenderNodeInvalidateJsSuit_static_0100

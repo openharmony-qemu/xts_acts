@@ -78,8 +78,7 @@ export default function listUxTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0100
      * @tc.name     ArkUX_Stage_List_Style_static_0100
      * @tc.desc     ArkUX_Stage_List_Style_static_0100
@@ -126,8 +125,7 @@ it('ArkUX_Stage_List_Style_static_0100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0200
      * @tc.name     ArkUX_Stage_List_Style_static_0200
      * @tc.desc     ArkUX_Stage_List_Style_static_0200
@@ -167,8 +165,7 @@ it('ArkUX_Stage_List_Style_static_0200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0300
      * @tc.name     ArkUX_Stage_List_Style_static_0300
      * @tc.desc     ArkUX_Stage_List_Style_static_0300
@@ -206,8 +203,7 @@ it('ArkUX_Stage_List_Style_static_0300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0400
      * @tc.name     ArkUX_Stage_List_Style_static_0400
      * @tc.desc     ArkUX_Stage_List_Style_static_0400
@@ -245,8 +241,7 @@ it('ArkUX_Stage_List_Style_static_0400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0500
      * @tc.name     ArkUX_Stage_List_Style_static_0500
      * @tc.desc     ArkUX_Stage_List_Style_static_0500
@@ -284,8 +279,7 @@ it('ArkUX_Stage_List_Style_static_0500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0600
      * @tc.name     ArkUX_Stage_List_Style_static_0600
      * @tc.desc     ArkUX_Stage_List_Style_static_0600
@@ -323,8 +317,7 @@ it('ArkUX_Stage_List_Style_static_0600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0700
      * @tc.name     ArkUX_Stage_List_Style_static_0700
      * @tc.desc     ArkUX_Stage_List_Style_static_0700
@@ -362,8 +355,7 @@ it('ArkUX_Stage_List_Style_static_0700', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0800
      * @tc.name     ArkUX_Stage_List_Style_static_0800
      * @tc.desc     ArkUX_Stage_List_Style_static_0800
@@ -388,8 +380,7 @@ it('ArkUX_Stage_List_Style_static_0800', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_static_0900
      * @tc.name     ArkUX_Stage_List_Style_static_0900
      * @tc.desc     ArkUX_Stage_List_Style_static_0900
@@ -414,8 +405,7 @@ it('ArkUX_Stage_List_Style_static_0900', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_1000
      * @tc.name     ArkUX_Stage_List_Style_1000
      * @tc.desc     ArkUX_Stage_List_Style_1000
@@ -441,8 +431,7 @@ it('ArkUX_Stage_List_Style_1000', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_1100
      * @tc.name     ArkUX_Stage_List_Style_1100
      * @tc.desc     ArkUX_Stage_List_Style_1100
@@ -468,8 +457,7 @@ it('ArkUX_Stage_List_Style_1100', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_Style_1200
      * @tc.name     ArkUX_Stage_List_Style_1200
      * @tc.desc     ArkUX_Stage_List_Style_1200
@@ -494,8 +482,7 @@ it('ArkUX_Stage_List_Style_1200', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_RollBack_0100
      * @tc.name     ArkUX_Stage_List_RollBack_0100
      * @tc.desc     ArkUX_Stage_List_RollBack_0100
@@ -517,8 +504,7 @@ it('ArkUX_Stage_List_RollBack_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0100
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0100
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0100
@@ -542,8 +528,7 @@ it('ArkUX_Stage_List_LimitAnimation_0100', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0200
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0200
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0200
@@ -567,8 +552,7 @@ it('ArkUX_Stage_List_LimitAnimation_0200', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0300
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0300
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0300
@@ -592,8 +576,7 @@ it('ArkUX_Stage_List_LimitAnimation_0300', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0400
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0400
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0400
@@ -617,8 +600,7 @@ it('ArkUX_Stage_List_LimitAnimation_0400', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0500
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0500
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0500
@@ -642,8 +624,7 @@ it('ArkUX_Stage_List_LimitAnimation_0500', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0600
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0600
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0600
@@ -667,8 +648,7 @@ it('ArkUX_Stage_List_LimitAnimation_0600', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0700
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0700
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0700
@@ -692,8 +672,7 @@ it('ArkUX_Stage_List_LimitAnimation_0700', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0800
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0800
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0800
@@ -717,8 +696,7 @@ it('ArkUX_Stage_List_LimitAnimation_0800', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_0900
      * @tc.name     ArkUX_Stage_List_LimitAnimation_0900
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_0900
@@ -742,8 +720,7 @@ it('ArkUX_Stage_List_LimitAnimation_0900', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1000
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1000
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1000
@@ -767,8 +744,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1000', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1100
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1100
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1100
@@ -792,8 +768,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1100', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1200
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1200
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1200
@@ -817,8 +792,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1200', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1300
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1300
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1300
@@ -842,8 +816,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1300', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1400
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1400
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1400
@@ -867,8 +840,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1400', Level.LEVEL0, async (done: () 
 
 
     
-    // 
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1500
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1500
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1500
@@ -892,8 +864,7 @@ it('ArkUX_Stage_List_LimitAnimation_static_1400', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Stage_List_LimitAnimation_static_1600
      * @tc.name     ArkUX_Stage_List_LimitAnimation_static_1600
      * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1600

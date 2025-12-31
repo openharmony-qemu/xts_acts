@@ -1,5 +1,5 @@
 'use static';
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
-const SYNTAX_ERROR_CODE: int = 1002;
+const SYNTAX_ERROR_CODE: Int = 1002;
 
 export class MyCallback {
   static myCallback(callback: Callback<string>): void {
@@ -44,7 +43,7 @@ export class MyCallback {
     MyCallback.myCallback((data: string) => {
       hilog.info(0x0000, 'testTag', 'MyCallback' + data);
     })
-    MyCallback.myAsyncCallback((error: BusinessError<string> | null, result: string | undefined) => {
+    MyCallback.myAsyncCallback((error: BusinessError<string>|null, result: string|undefined) => {
       hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error?.message}, result:${result}`);
     })
     MyCallback.myErrorCallback((error: BusinessError<string> | null) => {

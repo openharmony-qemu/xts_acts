@@ -501,7 +501,7 @@ export default function sceneResourcesTest() {
           }
           expect(material?.colorShader != null).assertTrue();
           console.info(msg + " Succeed in material.colorShader ")
-          if (material && material.colorShader && envImage1) {
+          if (material && material!.colorShader && envImage1) {
             subMeshes[0].material = material!;
             material!.colorShader!.inputs["BASE_COLOR_Image"] = envImage1!;
             mesh!.materialOverride = undefined;

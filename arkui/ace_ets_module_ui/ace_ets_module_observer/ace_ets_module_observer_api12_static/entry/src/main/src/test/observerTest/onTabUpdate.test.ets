@@ -69,6 +69,7 @@ export default function onTabUpdate() {
      * @tc.level    Level.LEVEL0
      */
 it('onTabUpdate_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[onTabUpdate_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -81,8 +81,6 @@ export default function SetSizeJsunit() {
 
     
     
-
-
 /**
      * @tc.number   SetSizeJsunit_static_001
      * @tc.name     SetSizeJsunit_static_001

@@ -91,19 +91,19 @@ it('SUB_ACE_Grid_Col_Order_Default_TEST_static_0100', Level.LEVEL0, async (done:
       let Grid_Col_Order_Default_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Default_07');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Order_Default_01.top - Grid_Col_Order_Default_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_01.top - Grid_Col_Order_Default_00.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_02.top - Grid_Col_Order_Default_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_02.top - Grid_Col_Order_Default_01.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_03.top - Grid_Col_Order_Default_02.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_03.top - Grid_Col_Order_Default_02.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_04.top - Grid_Col_Order_Default_03.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_04.top - Grid_Col_Order_Default_03.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_05.top - Grid_Col_Order_Default_04.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_05.top - Grid_Col_Order_Default_04.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_06.top - Grid_Col_Order_Default_05.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_06.top - Grid_Col_Order_Default_05.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Order_Default_07.top - Grid_Col_Order_Default_06.bottom) - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1)
+      expect(Math.abs((Grid_Col_Order_Default_07.top - Grid_Col_Order_Default_06.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Order_Default_TEST_static_0100] END');

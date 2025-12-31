@@ -80,13 +80,14 @@ export default function componentContentDisposeTest() {
 
 
 
-/**
+    /**
      * @tc.number   componentContentDisposeTest_static_0100
      * @tc.name     componentContentDisposeTest_static_0100
      * @tc.desc     componentContentDisposeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('componentContentDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+
       console.info('componentContentDisposeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

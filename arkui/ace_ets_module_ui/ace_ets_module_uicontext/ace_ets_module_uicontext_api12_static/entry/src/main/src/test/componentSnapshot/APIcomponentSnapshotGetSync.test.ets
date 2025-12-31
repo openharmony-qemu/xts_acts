@@ -60,13 +60,15 @@ export default function APIcomponentSnapshotGetSync() {
       console.info("APIcomponentSnapshotGetSync after each called");
     });
     
-    /**
+    
+/**
      * @tc.number   APIcomponentSnapshotGetSync_static_0100
      * @tc.name     APIcomponentSnapshotGetSync_static_0100
      * @tc.desc     APIcomponentSnapshotGetSync_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('APIcomponentSnapshotGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[APIcomponentSnapshotGetSync_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

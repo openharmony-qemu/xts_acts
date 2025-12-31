@@ -163,8 +163,8 @@ export default function imagePackToFileGif() {
       let delayTimes = await imageSource.getDelayTimeList();
       let disposalTypes = await imageSource.getDisposalTypeList();
       let loopCount = await imageSource.getImageProperties([image.PropertyKey.GIF_LOOP_COUNT]);
-      expect(loopCount[image.PropertyKey.GIF_LOOP_COUNT] != null).assertTrue();
-      let GIFloopCount = loopCount[image.PropertyKey.GIF_LOOP_COUNT] as string;
+      expect(loopCount['GIFLoopCount'] != null).assertTrue();
+      let GIFloopCount = loopCount['GIFLoopCount'] as string;
       let imageInfo: image.ImageInfo | undefined = imageSource.getImageInfoSync();
       if (imageInfo == undefined) {
         console.log(`getImageInfoSync failed.`);
@@ -305,7 +305,7 @@ export default function imagePackToFileGif() {
         let delayTimes: Array<int> = await imageSource.getDelayTimeList();
         let disposalTypes: Array<int> = await imageSource.getDisposalTypeList();
         let loopCount = await imageSource.getImageProperties([image.PropertyKey.GIF_LOOP_COUNT]);
-        let GIFLoopCount = loopCount[image.PropertyKey.GIF_LOOP_COUNT];
+        let GIFLoopCount = loopCount['GIFLoopCount'];
         let imageInfo = imageSource.getImageInfoSync();
         if (imageInfo == undefined) {
           console.log(`getImageInfoSync failed.`);

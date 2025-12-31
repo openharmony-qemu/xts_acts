@@ -59,7 +59,7 @@ export default function CustomPopupOptions() {
     beforeEach(async (): Promise<void> => {
       console.info("SpanTextShadowTest beforeEach start");
       let options: router.RouterOptions = {
-        url:'MainAbility/pages/text/SpanTextShadowTest',
+        url:'MainAbility/pages/popupControl/CustomPopupOptions',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

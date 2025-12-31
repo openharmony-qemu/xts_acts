@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsSetMissionWindowIconTestStatic.hap"
+            "ActsSetMissionWindowIconStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

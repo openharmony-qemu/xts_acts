@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { CounterComponent, CounterType } from '@ohos.arkui.advanced.Counter';
+import { CounterComponent, CounterType } from '@ohos.arkui.advanced.Counter';
 import { Button, Color, Column, Component, Direction, Entry, Row,ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -36,34 +36,34 @@ struct CounterDirection {
         }).backgroundColor(this.currentDirection == Direction.Ltr ? Color.Red : Color.Blue)
       }
 
-      // // 列表型Counter
-      // CounterComponent({
-      //   options: {
-      //     direction: this.currentDirection,
-      //     type: CounterType.LIST,
-      //     numberOptions: {
-      //       label: '价格',
-      //       min: 0,
-      //       value: 5,
-      //       max: 10,
-      //     }
-      //   }
-      // })
-      //
-      // // 列表型Counter
-      // CounterComponent({
-      //   options: {
-      //     direction: this.currentDirection,
-      //     type: CounterType.COMPACT,
-      //     numberOptions: {
-      //       label: '数量',
-      //       value: 10,
-      //       min: 0,
-      //       max: 100,
-      //       step: 10
-      //     }
-      //   }
-      // })
+      // 列表型Counter
+      CounterComponent({
+        options: {
+          direction: this.currentDirection,
+          type: CounterType.LIST,
+          numberOptions: {
+            label: '价格',
+            min: 0,
+            value: 5,
+            max: 10,
+          }
+        }
+      })
+
+      // 列表型Counter
+      CounterComponent({
+        options: {
+          direction: this.currentDirection,
+          type: CounterType.COMPACT,
+          numberOptions: {
+            label: '数量',
+            value: 10,
+            min: 0,
+            max: 100,
+            step: 10
+          }
+        }
+      })
 
 
     }

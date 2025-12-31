@@ -73,7 +73,6 @@ export default function TabsAp1() {
     
       
   
-
 /**
      * @tc.number   TabsAp1_static_0100
      * @tc.name     TabsAp1_static_0100

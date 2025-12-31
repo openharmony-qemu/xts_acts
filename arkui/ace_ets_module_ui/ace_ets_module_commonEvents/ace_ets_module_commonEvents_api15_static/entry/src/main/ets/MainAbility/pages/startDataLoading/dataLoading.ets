@@ -134,9 +134,7 @@ struct ImageExample {
         .onDrop((event?: DragEvent, extraParams?: string): void => {
           console.log("enter onDrop")
           // 准备 options
-          // let context = common.BaseContext; //Error line
           let context = this.getUIContext().getHostContext()
-          //   'com.open.harmony.acetestcommenventapi15.static', 'entry');
           let pathDir: string = context!.distributedFilesDir;
 
           let destUri = fileUri.getUriFromPath(pathDir);

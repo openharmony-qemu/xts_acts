@@ -39,8 +39,7 @@ class UtilsTest{
       if (!UtilsTest.isStartedAbility) {
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-         UtilsTest.isStartedAbility = true;
-        await UtilsTest.msSleep(4000);
+        UtilsTest.isStartedAbility = true;
       }
       return true;
     } catch(error) {

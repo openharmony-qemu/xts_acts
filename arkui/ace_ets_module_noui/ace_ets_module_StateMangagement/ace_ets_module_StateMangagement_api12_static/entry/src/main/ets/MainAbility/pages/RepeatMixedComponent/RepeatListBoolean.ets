@@ -82,6 +82,7 @@ struct RepeatListBoolean {
         Button('next2 page').id('Button2_LB')
           .onClick(():void => {
             this.scroller1.scrollToIndex(15);
+            this.tmp2 = 100
           })
       }
 
@@ -108,7 +109,7 @@ struct RepeatListBoolean {
           })
           .template('number', (r) => {
             ListItem() {
-              Text('has vs ' + r.item + ' index:' + r.index.toString() + ':' + (this.tmp2 = 100).toString())
+              Text('has vs ' + r.item + ' index:' + r.index.toString() + ':' + this.tmp2.toString())
                 .id('Text2_LB' + r.index.toString())
                 .fontSize(20)
                 .height('14%')

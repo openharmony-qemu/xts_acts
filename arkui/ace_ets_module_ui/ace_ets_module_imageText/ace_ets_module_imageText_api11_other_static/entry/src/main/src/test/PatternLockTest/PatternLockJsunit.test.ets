@@ -87,8 +87,6 @@ export default function PatternLockJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0100
      * @tc.name     PatternLockJsunit_0100
@@ -116,8 +114,6 @@ it('PatternLockJsunit_0100', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0200
      * @tc.name     PatternLockJsunit_0200
@@ -135,8 +131,6 @@ it('PatternLockJsunit_0200', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0300
      * @tc.name     PatternLockJsunit_0300
@@ -161,8 +155,6 @@ it('PatternLockJsunit_0300', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0400
      * @tc.name     PatternLockJsunit_0400
@@ -186,8 +178,6 @@ it('PatternLockJsunit_0400', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0500
      * @tc.name     PatternLockJsunit_0500
@@ -210,8 +200,6 @@ it('PatternLockJsunit_0500', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0600
      * @tc.name     PatternLockJsunit_0600
@@ -234,8 +222,6 @@ it('PatternLockJsunit_0600', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0700
      * @tc.name     PatternLockJsunit_0700
@@ -258,8 +244,6 @@ it('PatternLockJsunit_0700', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0800
      * @tc.name     PatternLockJsunit_0800
@@ -282,8 +266,6 @@ it('PatternLockJsunit_0800', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_0900
      * @tc.name     PatternLockJsunit_0900
@@ -306,8 +288,6 @@ it('PatternLockJsunit_0900', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_1000
      * @tc.name     PatternLockJsunit_1000
@@ -330,8 +310,6 @@ it('PatternLockJsunit_1000', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_1100
      * @tc.name     PatternLockJsunit_1100
@@ -355,8 +333,6 @@ it('PatternLockJsunit_1100', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_1200
      * @tc.name     PatternLockJsunit_1200
@@ -380,8 +356,6 @@ it('PatternLockJsunit_1200', Level.LEVEL2, async (done: () => void): Promise<voi
     });
 
     
-
-
 /**
      * @tc.number   PatternLockJsunit_1300
      * @tc.name     PatternLockJsunit_1300

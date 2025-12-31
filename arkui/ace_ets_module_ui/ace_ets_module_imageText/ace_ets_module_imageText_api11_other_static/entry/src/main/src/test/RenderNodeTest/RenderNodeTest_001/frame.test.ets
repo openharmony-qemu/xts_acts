@@ -76,8 +76,6 @@ export default function frame() {
     });
     
     
-
-
 /**
      * @tc.number   frame_static_0100
      * @tc.name     frame_static_0100
@@ -101,8 +99,6 @@ it('frame_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
     });
     
     
-
-
 /**
      * @tc.number   frame_static_0200
      * @tc.name     frame_static_0200

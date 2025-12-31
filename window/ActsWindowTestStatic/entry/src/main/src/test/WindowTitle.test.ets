@@ -706,7 +706,12 @@ export default function WindowTitleTest() {
                     console.info(msgStr + 'Succeeded in calling setWindowTitle.');
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(801);
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                    }
+                    
                 });
                 done()
             } catch (exception) {

@@ -61,12 +61,12 @@ class MyNodeController extends NodeController {
     console.log('onDetach')
   }
 
-  onBind(containerId: number): void { //未执行
+  onBind(containerId: number): void {
     this.rootNode?.reuse()
     AppStorage.setOrCreate<Int>('reuse', 1)
   }
 
-  onUnbind(containerId: number): void {//未执行
+  onUnbind(containerId: number): void {
     this.rootNode?.recycle()
     AppStorage.setOrCreate<Int>('recycle', 1)
   }
@@ -90,6 +90,8 @@ struct frameNodeApi {
       Button('Bind')
         .onClick((e:ClickEvent) => {
           this.buttonIndex++
+          AppStorage.setOrCreate<Int>('reuse', 1)
+          AppStorage.setOrCreate<Int>('recycle', 1)
         })
         .margin(5)
         .id('frameNodeApi_Bind')

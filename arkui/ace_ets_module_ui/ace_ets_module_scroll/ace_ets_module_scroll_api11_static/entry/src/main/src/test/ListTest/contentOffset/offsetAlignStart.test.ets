@@ -80,8 +80,7 @@ export default function offsetAlignStart() {
 
 
     
-    
-/**
+    /**
      * @tc.number   offsetAlignStart_static_0100
      * @tc.name     offsetAlignStart_static_0100
      * @tc.desc     offsetAlignStart_static_0100

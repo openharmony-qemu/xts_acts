@@ -33,7 +33,7 @@ static napi_value TestContainerPickerEnableHapticFeedback001(napi_env env, napi_
     ArkUI_AttributeItem enableHapticFeedbackItem = { enableHapticFeedbackValue,
         sizeof(enableHapticFeedbackValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK, &enableHapticFeedbackItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK)
               ->value[PARAM_0].i32, enableHapticFeedback);
     NAPI_END;
@@ -48,7 +48,7 @@ static napi_value TestContainerPickerEnableHapticFeedback002(napi_env env, napi_
     ArkUI_AttributeItem enableHapticFeedbackItem = { enableHapticFeedbackValue,
         sizeof(enableHapticFeedbackValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK, &enableHapticFeedbackItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK)
               ->value[PARAM_0].i32, enableHapticFeedback);
     NAPI_END;
@@ -63,7 +63,7 @@ static napi_value TestContainerPickerEnableHapticFeedback003(napi_env env, napi_
     ArkUI_AttributeItem enableHapticFeedbackItem = { enableHapticFeedbackValue,
         sizeof(enableHapticFeedbackValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK, &enableHapticFeedbackItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK) != nullptr) {
         ASSERT_NE(nodeAPI->getAttribute(containerPicker, NODE_PICKER_ENABLE_HAPTIC_FEEDBACK)
                   ->value[PARAM_0].i32, enableHapticFeedback);

@@ -51,14 +51,14 @@ export default function TextPickerTextStyleAnimationTest() {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
           await UtilsTest.msSleep(2000)
-          // let result = await routerInstance.pushUrl(options)
-          // console.info('push TextStyleAnimation page success ' + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error('push TextStyleAnimation page error ' + JSON.stringify(err));
       }
     });
 
+    
     
     
     
@@ -69,6 +69,7 @@ export default function TextPickerTextStyleAnimationTest() {
      * @tc.level    Level.LEVEL1
      */
 it('TextStyleAnimationTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextStyleAnimationTest_static_0100 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -91,6 +92,7 @@ it('TextStyleAnimationTest_static_0100', Level.LEVEL1, async (done: () => void):
     
     
     
+    
     /**
      * @tc.number   TextStyleAnimationTest_static_0200
      * @tc.name     TextStyleAnimationTest_static_0200
@@ -98,6 +100,7 @@ it('TextStyleAnimationTest_static_0100', Level.LEVEL1, async (done: () => void):
      * @tc.level    Level.LEVEL1
      */
 it('TextStyleAnimationTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextStyleAnimationTest_static_0200 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -120,6 +123,7 @@ it('TextStyleAnimationTest_static_0200', Level.LEVEL1, async (done: () => void):
     
     
     
+    
     /**
      * @tc.number   TextStyleAnimationTest_static_0300
      * @tc.name     TextStyleAnimationTest_static_0300
@@ -127,6 +131,7 @@ it('TextStyleAnimationTest_static_0200', Level.LEVEL1, async (done: () => void):
      * @tc.level    Level.LEVEL1
      */
 it('TextStyleAnimationTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextStyleAnimationTest_static_0300 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -149,6 +154,7 @@ it('TextStyleAnimationTest_static_0300', Level.LEVEL1, async (done: () => void):
     
     
     
+    
     /**
      * @tc.number   TextStyleAnimationTest_static_0400
      * @tc.name     TextStyleAnimationTest_static_0400
@@ -156,6 +162,7 @@ it('TextStyleAnimationTest_static_0300', Level.LEVEL1, async (done: () => void):
      * @tc.level    Level.LEVEL1
      */
 it('TextStyleAnimationTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('TextStyleAnimationTest_static_0400 start');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

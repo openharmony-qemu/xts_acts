@@ -105,8 +105,6 @@ export default function TextClockJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   TextClock_static_0100
      * @tc.name     TextClock_static_0100
@@ -136,8 +134,6 @@ it('TextClock_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
     });
 
     
-
-
 /**
      * @tc.number   TextClock_static_0200
      * @tc.name     TextClock_static_0200
@@ -163,8 +159,6 @@ it('TextClock_static_0200', Level.LEVEL2, async (done: () => void): Promise<void
     });
 
     
-
-
 /**
      * @tc.number   TextClock_static_0300
      * @tc.name     TextClock_static_0300

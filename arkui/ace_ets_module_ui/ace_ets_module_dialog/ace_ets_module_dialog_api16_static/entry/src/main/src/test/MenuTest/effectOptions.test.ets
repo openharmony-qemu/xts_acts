@@ -73,13 +73,14 @@ export default function effectOptions() {
     });
 
 
+    
     /**
      * @tc.number   EffectOptionsTest_static_0101
      * @tc.name     EffectOptionsTest_static_0101
      * @tc.desc     EffectOptionsTest_static_0101
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('EffectOptionsTest_static_0101 START');
       const SLEEP_TIME = 1000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -118,13 +119,14 @@ export default function effectOptions() {
     });
 
 
+    
     /**
      * @tc.number   EffectOptionsTest_static_0102
      * @tc.name     EffectOptionsTest_static_0102
      * @tc.desc     EffectOptionsTest_static_0102
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('EffectOptionsTest_static_0102 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -149,13 +151,14 @@ export default function effectOptions() {
     });
 
 
+    
     /**
      * @tc.number   EffectOptionsTest_static_0103
      * @tc.name     EffectOptionsTest_static_0103
      * @tc.desc     EffectOptionsTest_static_0103
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('EffectOptionsTest_static_0103 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);

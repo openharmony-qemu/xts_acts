@@ -194,7 +194,7 @@ export default function setEventParamTest() {
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
                 hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_KILLED, hiAppEvent.event.APP_HICOLLIE,
-                hiAppEvent.event.AUDIO_JANK_FRAME]}
+                hiAppEvent.event.AUDIO_JANK_FRAME, hiAppEvent.event.SCROLL_ARKWEB_FLING_JANK]}
           ],
           onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect(holder != null).assertTrue();

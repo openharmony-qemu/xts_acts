@@ -95,19 +95,19 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0100', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_04.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_04.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_05.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_05.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_06.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_06.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
 
@@ -145,28 +145,28 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0200', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
-        .assertTrue();
-
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_04.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_05.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_04.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
+        .assertTrue();
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_05.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
 
@@ -202,20 +202,20 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0300', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_06: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_06');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Columns_TEST_static_0300] END');
@@ -251,26 +251,26 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0400', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.left - Grid_Row_Columns_05.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.left - Grid_Row_Columns_05.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_03.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Columns_TEST_static_0400] END');
@@ -306,24 +306,24 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0500', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.left - Grid_Row_Columns_05.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.left - Grid_Row_Columns_05.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Columns_TEST_static_0500] END');
@@ -359,22 +359,22 @@ it('SUB_ACE_Grid_Row_Columns_TEST_static_0600', Level.LEVEL0, async (done: () =>
       let Grid_Row_Columns_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Columns_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_01.left - Grid_Row_Columns_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_02.left - Grid_Row_Columns_01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_03.left - Grid_Row_Columns_02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_04.left - Grid_Row_Columns_03.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_05.left - Grid_Row_Columns_04.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.left - Grid_Row_Columns_06.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_06.top - Grid_Row_Columns_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Columns_07.top - Grid_Row_Columns_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Columns_TEST_static_0600] END');

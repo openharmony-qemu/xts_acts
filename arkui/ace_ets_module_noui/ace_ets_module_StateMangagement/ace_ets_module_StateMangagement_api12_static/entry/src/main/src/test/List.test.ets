@@ -185,35 +185,36 @@ import RepeatTest0010 from './RepeatTest/RepeatTest0010.test';
 import RepeatTest0400 from './RepeatTest/RepeatTest0400.test';
 
 export default function testsuite() {
-  ExtendTrackTest(); //全pass 注释
-  Extend0010TestJsunit(); //pass
+  FreezeV2Child();
+  ArrayTrackTest();
+  ExtendTrackTest(); 
+  Extend0010TestJsunit(); 
 
   Foreach1();
   FreezeV2Test();
-  FreezeV2Child();
 
-  LazyForEachAdd();  //pass //12.9 LazyForEach 未加载组件，fail
-  LazyForEachDelete();  //pass //12.9 LazyForEach 未加载组件，fail
-  LazyForEachMove();  //pass //12.9 LazyForEach 未加载组件，fail
-  LazyForEachCacheEnhance(); //12.9 LazyForEach 自定义组件 aboutToReuse 未调用
-  LazyForEachVisibleAreaChange(); //expect 221 equals 2 //12.9 LazyForEach 未加载组件，fail
-  LazyForEachSingleBoolean();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
-  LazyForEachSingleNumber();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
-  LazyForEachSingleString();  //pass 注释 //12.9 LazyForEach 未加载组件，fail
 
-  NestTrackTest(); //全pass 注释
-  StaticTrackTest(); //全pass 注释
-  getSharedLocalStorageTest(); //pass
-  useSharedStorageTest(); //pass
+  LazyForEachAdd(); 
+  LazyForEachDelete(); 
+  LazyForEachMove();   
+  LazyForEachCacheEnhance();
+  LazyForEachVisibleAreaChange();
+  LazyForEachSingleBoolean(); 
+  LazyForEachSingleNumber(); 
+  LazyForEachSingleString();  
 
-  //全pass 注释
+  NestTrackTest(); 
+  StaticTrackTest(); 
+  getSharedLocalStorageTest(); 
+  useSharedStorageTest(); 
+
+  
   ObjectArrayTest();
   OnlyObserveTest();
   TrackDateTest();
   TrackMapTest();
   TrackSetTest();
   TwoNestTrackTest();
-  ArrayTrackTest();
   Monitor1Test();
   Monitor2Test();
   Monitor3Test();
@@ -221,79 +222,75 @@ export default function testsuite() {
   Monitor5Test();
   Monitor6Test();
 
-  RepeatEachJsunit(); //断言失败 已上报 // 12.9sdk报错相同
-  RepeatForeachNumberBool(); //断言失败 已上报 // 12.9sdk报错相同
-  RepeatForeachString(); //断言失败 已上报 // 12.9sdk报错相同
-  RepeatLazyForEachBooleanSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
-  RepeatLazyForEachNumberSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
-  RepeatLazyForEachStringSource(); //pass 注释 //12.9 LazyForEach 未加载组件，fail
+
+  RepeatEachJsunit();
+  RepeatForeachNumberBool();
+  RepeatForeachString();
+  RepeatLazyForEachBooleanSource(); 
+  RepeatLazyForEachNumberSource();  
+  RepeatLazyForEachStringSource();
 
 
-  //全pass 注释
-  RepeatIfElseObject(); // pass
-  RepeatIfElseBoolean(); // pass
-  RepeatGridBoolean(); // 12.9 fail 1 //在Grid容器组件中使用Repeat， 滚动操作 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
-  RepeatGridNumber(); // 12.9 fail 1 //在Grid容器组件中使用Repeat， 滚动操作 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
-  RepeatListBoolean(); // 12.9 fail 1 //在List容器组件中使用Repeat， 滚动操作 scroller.scrollToIndex(15)调用两次， app died
-  RepeatListNumber(); // 12.9 fail 1 //在List容器组件中使用Repeat， 滚动操作 scroller.scrollToIndex(15)调用两次， app died
+
+  RepeatIfElseObject(); 
+  RepeatIfElseBoolean(); 
+  RepeatGridBoolean(); 
+  RepeatGridNumber();  
+  RepeatListBoolean();  
+  RepeatListNumber();  
   RepeatNestObject();
   RepeatObservedV2Nest();
-  RepeatSwiperBoolean(); // 12.9 fail 1 //在Swiper容器组件中使用Repeat， showNext翻至下一页 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
-  RepeatSwiperNumber(); // 12.9 fail 1 //在Swiper容器组件中使用Repeat， showNext翻至下一页 Repeat未能正确根据容器组件可视区域渲染子组件,子组件显示内容不更新
+  RepeatSwiperBoolean(); 
+  RepeatSwiperNumber(); 
   RepeatV1Boolean();
   RepeatV1Object();
 
-  persistStorageATest();  // pass
-  appStorageRefJsunit();   //pass 注释
-  localStorageRefJsunit(); //pass
+  persistStorageATest();  
+  appStorageRefJsunit();
+  localStorageRefJsunit(); 
 
-
-  IMonitorTest();  //全pass 注释
-  Local1Jsunit();  //全pass 注释
-  Local2Jsunit();  //全pass 注释
-  Param1Jsunit(); //全pass 注释
-  Param2Jsunit(); //全pass 注释
-  Param3Jsunit(); //全pass 注释
-  Param4Jsunit(); //全pass 注释
-  Monitor1Jsunit(); //全pass 注释
-  // Monitor2Jsunit(); // app died sr
-  Monitor3Jsunit(); // pass
-  Monitor4Jsunit(); //全pass 注释
-  repeatCountJsunit();  //全pass 注释
-  repeatNoTemplateIdJsunit(); //全pass 注释
-  repeatKeyJsunit(); //全pass 注释
-  repeatVirtualScrollJsunit(); // 12.9 sdk fail 4 已上报
-  LocalTestJsunit();  //全pass 注释
-  ComponentV2TestJsunit(); //全pass 注释
-  ParamTestJsunit();  //全pass 注释
-  ParamTestJsunit1(); //全pass 注释
-  Provider1Test();  //全pass 注释
-  Provider2Test();  //全pass 注释
-  Provider3Test();  //全pass 注释
-  Provider4Test();  //全pass 注释
-  Provider5Test();  //全pass 注释
-  Provider14Test();  //全pass 注释
-  Provider15Test();  //全pass 注释
-  Provider18Test();  //全pass 注释
-  getTarget1Test(); // pass
-  getTarget2Test();  //全pass 注释
-  getTarget3Test(); //全pass 注释
-  getTarget4Test(); //全pass 注释
-  getTarget5Test();  //全pass 注释
-  getTarget6Test(); //全pass 注释
-  ComputedTest(); //全pass 注释
-  makeObservedTest(); //全pass 注释
-  // makeObserved0020Test();  //collections.Array 导入不了，外领域
-  makeObserved0030Test();  //pass 注释
-  // makeObserved0040Test();  //collections.Set  导入不了，外领域
-  makeObserved0050Test();  // 删除用例
-  makeObserved0060Test();  //pass 注释
-  // makeObserved0070Test();  //@Concurrent装饰器 无法导入，外领域
-  makeObserved0080Test(); //pass 注释 // 12.9  @Local count: number = 0 getColor(): Color {this.count++ } backgroundColor(this.getColor())修改@local装饰的变量，报错：  白屏
-  makeObserved0110Test(); //pass
-  makeObserved0120Test();  //pass
-  makeObserved0150Test(); //pass 注释
-  twoWayBindTest();//pass 注释
+  IMonitorTest();  
+  Local1Jsunit();  
+  Local2Jsunit();  
+  Param1Jsunit(); 
+  Param2Jsunit(); 
+  Param3Jsunit(); 
+  Param4Jsunit(); 
+  Monitor1Jsunit(); 
+  Monitor2Jsunit();
+  Monitor3Jsunit(); 
+  Monitor4Jsunit(); 
+  repeatCountJsunit();  
+  repeatNoTemplateIdJsunit(); 
+  repeatKeyJsunit(); 
+  repeatVirtualScrollJsunit();
+  LocalTestJsunit();  
+  ComponentV2TestJsunit(); 
+  ParamTestJsunit1()
+  ParamTestJsunit();  
+  Provider1Test();  
+  Provider2Test();  
+  Provider3Test();  
+  Provider4Test();  
+  Provider5Test();  
+  Provider14Test();  
+  Provider15Test();  
+  Provider18Test();  
+  getTarget1Test(); 
+  getTarget2Test();  
+  getTarget3Test(); 
+  getTarget4Test(); 
+  getTarget5Test();  
+  getTarget6Test(); 
+  ComputedTest(); 
+  makeObservedTest(); 
+  makeObserved0030Test(); 
+  makeObserved0060Test();   
+  makeObserved0080Test(); 
+  makeObserved0110Test(); 
+  makeObserved0120Test();  
+  makeObserved0150Test();  
+  twoWayBindTest(); 
 
   IfElse001Test();
   IfElse002Test();
@@ -301,27 +298,27 @@ export default function testsuite() {
   IfElse004Test();
   IfElse005Test();
 
-  LifeCycle0050TestJsunit();  //pass
+
+  LifeCycle0050TestJsunit();  
   WrapBuilder0010TestJsunit();
   ProvideConsume0020TestJsunit();
   ProvideConsume0030TestJsunit();
-  ProvideConsume0040TestJsunit(); //全pass 注释
-  ProvideConsume0050TestJsunit(); // pass
-  ProvideConsume0080TestJsunit();  //全pass 注释
-  ProvideConsume0360TestJsunit(); //全pass 注释
-  Link0100TestJsunit(); //全pass 注释
-  StateMap0010TestJsunit(); //全pass 注释
-  StateSet0010TestJsunit(); //全pass 注释
-  stateArr();  // pass
-  Observed0060TestJsunit(); //全pass 注释
-  LocalStorageLink0310TestJsunit(); // fail1 json.stringify [1, true, { 'propB': 48 } as PropObject] 报错
-  LocalStorageProp0320TestJsunit(); // pass
-  LocalStorageAbsTestJsunit(); //pass
-  ComputedLocalTest(); // pass
-  ComputedMonitorTest(); // pass
-  ComputedTraceTest(); //pass
+  ProvideConsume0040TestJsunit(); 
+  ProvideConsume0050TestJsunit(); 
+  ProvideConsume0080TestJsunit();  
+  ProvideConsume0360TestJsunit(); 
+  Link0100TestJsunit(); 
+  StateMap0010TestJsunit(); 
+  StateSet0010TestJsunit(); 
+  stateArr();  
+  Observed0060TestJsunit(); 
+  LocalStorageLink0310TestJsunit(); 
+  LocalStorageProp0320TestJsunit(); 
+  LocalStorageAbsTestJsunit(); 
+  ComputedLocalTest(); 
+  ComputedMonitorTest(); 
+  ComputedTraceTest(); 
 
-  //全pass 注释
   ParamAndOnceTest();
   ParamChangeTest();
   EventTest();
@@ -330,46 +327,47 @@ export default function testsuite() {
   Provider0300Test();
   Monitor0260Test();
 
-  Monitor0280Test(); //全pass 注释
-  Monitor0290Test(); //全pass 注释
-  Monitor0300Test(); //全pass 注释
-  LinkTest0090(); //全pass 注释
-  RepeatTest0040(); //全pass 注释
-  MakeObservedTest0090(); //pass
-  V1ToV2();  //全pass 注释
-  V2ToV1(); //@BuilderParam注释导致1用例failed // 12.15sdk all pass 10
-  Prefetcher1();  // 页面编译不通过  IDataSourcePrefetching sr 页面注释 1用例
-  Prefetcher2(); // 页面编译不通过 IDataSourcePrefetching sr 页面注释 1用例
-  appStorageV2(); // 页面编译不通过  appStorageV2 下掉，7.0上暂无 sr 页面注释 2用例
-  persistenceV2(); // pass
-  StateTest0040();  //全pass 注释
-  StateTest0080();  //全pass 注释
-  WrapBuilder0020Test(); //全pass 注释
-  StateTest0070(); //pass
-  StateTest0090(); // pass
-  LazyForEachTest0470(); //全pass 注释
-  IfElseTest0100(); //全pass 注释
-  RepeatTest0200(); //全pass 注释
-  MakeObservedTest0300(); // pass
-  WatchLinkTest0050(); //全pass 注释
-  ProvideConsumeTest0010(); //全pass 注释
-  ProviderTest0270(); //全pass 注释
-  StateUndefinedTest0010(); // pass
-  AbstractPropertyRefTest();  //pass
-  SubAbstractPropertyLinkTest(); //pass
-  EnvironmentTest0040();  // 1217 sdk master pass
-  LocalStorageDeleteTest0120(); //全pass 注释
-  LazyForEachInterface(); //@Reusable生命周期函数未调用 fail 2
-  RepeatTest0010(); //全pass 注释  //12.9 sdk Repeat ListItem.onDetach 内修改 @Local 装饰的变量，app died
-  RepeatTest0020(); //全pass 注释 //12.9 sdk Repeat GridItem.onDetach 内修改 @Local 装饰的变量，app died
-  RepeatTest0400(); //全pass 注释 //12.9  Swiper Stack  Repeat 内修改 @Local 装饰的变量，app died
+  FreezeV2Test03(); 
+  Monitor0280Test(); 
+  Monitor0290Test(); 
+  Monitor0300Test(); 
+  LinkTest0090(); 
+  RepeatTest0040(); 
+  MakeObservedTest0090(); 
+  V1ToV2();  
+  V2ToV1(); 
+  Prefetcher1(); 
+  Prefetcher2(); 
+  // appStorageV2(); 
+  persistenceV2(); 
+  StateTest0040();  
+  StateTest0080();  
+  WrapBuilder0020Test(); 
+  StateTest0070(); 
+  StateTest0090(); 
+  LazyForEachTest0470(); 
+  IfElseTest0100(); 
+  RepeatTest0200(); 
+  MakeObservedTest0300(); 
+  WatchLinkTest0050(); 
+  ProvideConsumeTest0010(); 
+  ProviderTest0270(); 
+  StateUndefinedTest0010(); 
+  AbstractPropertyRefTest();  
+  SubAbstractPropertyLinkTest(); 
+  EnvironmentTest0040();  
+  LocalStorageDeleteTest0120(); 
+  LazyForEachInterface(); 
+  RepeatTest0010(); 
+  RepeatTest0020(); 
+  RepeatTest0400(); 
 
 
-  FreezeV2Test03(); // pass
-  makeObserved0100Test(); //pass 注释
-  DataOperationTypeTest();  // pass
-  lazyChangeJsunit();  //pass
-  lazyReloadJsunit(); // pass
-  LazyForEachTest0120();  // pass
-  LazyForEachChangeTest0020();  //pass
+  makeObserved0100Test(); 
+  DataOperationTypeTest();  
+  lazyChangeJsunit();  
+  lazyReloadJsunit(); 
+  LazyForEachTest0120();  
+  LazyForEachChangeTest0020();  
 }
+

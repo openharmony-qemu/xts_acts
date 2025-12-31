@@ -73,7 +73,6 @@ export default function tabsAnimationMode() {
     
       
   
-
 /**
      * @tc.number   tabsAnimationMode_static_0100
      * @tc.name     tabsAnimationMode_static_0100

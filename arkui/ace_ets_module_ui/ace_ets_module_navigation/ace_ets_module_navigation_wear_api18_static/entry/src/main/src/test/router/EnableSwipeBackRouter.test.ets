@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -73,13 +73,15 @@ export default function EnableSwipeBackRouter() {
 
     
     
-/**
+
+    /**
      * @tc.number   EnableSwipeBackRouter_static_00100
      * @tc.name     EnableSwipeBackRouter_static_00100
      * @tc.desc     EnableSwipeBackRouter_static_00100
      * @tc.level    Level.LEVEL0
      */
 it('EnableSwipeBackRouter_static_00100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableSwipeBackRouter_0100 START');
 
       // try {
@@ -111,13 +113,15 @@ it('EnableSwipeBackRouter_static_00100', Level.LEVEL0, async (done: () => void):
 
     
     
-/**
+
+    /**
      * @tc.number   EnableSwipeBackRouter_static_0200
      * @tc.name     EnableSwipeBackRouter_static_0200
      * @tc.desc     EnableSwipeBackRouter_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('EnableSwipeBackRouter_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableSwipeBackRouter_0200 START');
 
       // try {

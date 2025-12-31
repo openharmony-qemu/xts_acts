@@ -81,8 +81,7 @@ export default function listScrollTo() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listScrollTo_static_0100
      * @tc.name     listScrollTo_static_0100
      * @tc.desc     listScrollTo_static_0100

@@ -1345,7 +1345,30 @@ export default function iPCCCApi20Test() {
           console.error("====>SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500 catch err: " + err);
           expect().assertFail();
         }
-      });
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCErrorCode_6600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCErrorCode_6600
+     * @tc.desc   test OHIPCErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_OHIPCErrorCode_6600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_DSoftbus_IPC_OHIPCErrorCode_6600 start====");
+          let result: number = iPCCApi.OHIPCErrorCode();
+          expect(result).assertEqual(Success);
+          console.info("====>SUB_DSoftbus_IPC_OHIPCErrorCode_6600 result: " + result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DSoftbus_IPC_OHIPCErrorCode_6600 catch err: " + err);
+          expect().assertFail();
+        }
+    });
 
   })
 }

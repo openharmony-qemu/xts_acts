@@ -92,8 +92,7 @@ struct themePageList {
         top: '50vp'
       } as Margin)
 
-      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) {
-        // WithTheme作用域
+      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) { // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
           Text(`使用WithTheme`).key('themeText')
           List({ space: 20, initialIndex: 0 }) {

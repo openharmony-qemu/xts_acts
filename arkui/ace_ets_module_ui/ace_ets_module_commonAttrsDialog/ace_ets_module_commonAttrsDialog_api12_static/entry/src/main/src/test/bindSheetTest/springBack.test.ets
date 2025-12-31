@@ -81,8 +81,8 @@ it('springBack_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.log("bindSheetButton-X " + point.x + " bindSheetButton-Y " + point.y)
       let x1 = Math.round(point.x) as int
       let y1 = Math.round(point.y) as int
-      let y2 = Math.round(point.y + UIContext.getFocusedUIContext()!.vp2px(150)) as int
-      let stepLen = Math.round(UIContext.getFocusedUIContext()!.vp2px(30)) as int
+      let y2 = Math.round(point.y + UIContext.resolveUIContext()!.vp2px(150)) as int
+      let stepLen = Math.round(UIContext.resolveUIContext()!.vp2px(30)) as int
       await (driver.fling({x: x1, y: y1},{x: x1, y: y2}, stepLen, 3000) as Promise<void>);
       await CommonFunc.sleep(2000);
 

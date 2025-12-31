@@ -45,7 +45,7 @@ import promptAction from '@ohos.promptAction';
 let promptAction = new PromptAction()
 let router1 =new Router()
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.margin(3)

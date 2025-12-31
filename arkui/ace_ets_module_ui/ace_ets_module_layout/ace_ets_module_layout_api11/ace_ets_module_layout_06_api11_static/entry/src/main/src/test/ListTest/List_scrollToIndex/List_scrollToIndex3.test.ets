@@ -93,8 +93,8 @@ it('List_scrollToIndex3_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let ListItemGroup: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItemGroup');
       expect(Math.abs(ListItemGroup.top - List.top) <= 1).assertTrue();
       console.log('------' + Math.round(ListItemGroup.bottom))
-      console.log('------' + Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40)))
-      expect(Math.abs(Math.round(ListItemGroup.bottom) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      console.log('------' + Math.round(List.top + UIContext.resolveUIContext()!.vp2px(40)))
+      expect(Math.abs(Math.round(ListItemGroup.bottom) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0100] END');
       done();
     });
@@ -120,28 +120,28 @@ it('List_scrollToIndex3_static_0200', Level.LEVEL0, async (done: () => void): Pr
 
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_List');
       let ListItem1: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItem1');
-      expect(Math.abs(Math.round(ListItem1.top) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem1.top) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0200] START0 END');
 
       let btn2 = await driver.findComponent(ON.id('List_scrollToIndex3_CENTER0'));
       await btn2!.click();
       await CommonFunc.sleep(500);
       let ListItem2: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItem1');
-      expect(Math.abs(Math.round(ListItem2.top) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem2.top) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0200] CENTER0 END');
 
       let btn3 = await driver.findComponent(ON.id('List_scrollToIndex3_END0'));
       await btn3!.click();
       await CommonFunc.sleep(500);
       let ListItem3: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItem1');
-      expect(Math.abs(Math.round(ListItem3.top) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem3.top) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0200] END0 END');
 
       let btn4 = await driver.findComponent(ON.id('List_scrollToIndex3_AUTO0'));
       await btn4!.click();
       await CommonFunc.sleep(500);
       let ListItem4: RectValue = CommonFunc.getComponentRect('List_scrollToIndex3_ListItem1');
-      expect(Math.abs(Math.round(ListItem4.top) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem4.top) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[List_scrollToIndex3_0200] AUTO0 END');
 
       let btnVisibility = await driver.findComponent(ON.id('List_scrollToIndex3_visibility'));

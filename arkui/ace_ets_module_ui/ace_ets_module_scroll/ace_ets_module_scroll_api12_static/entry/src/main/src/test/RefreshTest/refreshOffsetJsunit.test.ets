@@ -74,8 +74,7 @@ export default function refreshOffsetJsunit() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   refreshOffsetJsunit_static_0100
      * @tc.name     refreshOffsetJsunit_static_0100
      * @tc.desc     refreshOffsetJsunit_static_0100
@@ -101,7 +100,6 @@ it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
     
       
   
-
 /**
      * @tc.number   refreshOffsetJsunit_static_0200
      * @tc.name     refreshOffsetJsunit_static_0200

@@ -53,9 +53,9 @@ export default function showDialogFalse() {
     beforeAll(() => {
       console.info("showDialogFalse beforeAll start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("showDialogFalse beforeEach start");

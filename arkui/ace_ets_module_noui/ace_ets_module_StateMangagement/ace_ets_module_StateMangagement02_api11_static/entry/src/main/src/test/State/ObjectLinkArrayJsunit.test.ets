@@ -104,7 +104,7 @@ it('ObjectLinkArrayJsunit_static_0100', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":5,"id":0},{"num":6,"id":1}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":5,"id":0},{"num":6,"id":1}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0100] END');
       done();
     });
@@ -127,7 +127,7 @@ it('ObjectLinkArrayJsunit_static_0200', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":8,"id":2},{"num":6,"id":1}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":8,"id":2},{"num":6,"id":1}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0200] END');
       done();
     });
@@ -150,7 +150,7 @@ it('ObjectLinkArrayJsunit_static_0300', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0300] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":5,"id":0},{"num":6,"id":1},{"num":7,"id":2}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":5,"id":0},{"num":6,"id":1},{"num":7,"id":2}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0300] END');
       done();
     });
@@ -173,7 +173,7 @@ it('ObjectLinkArrayJsunit_static_0400', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0400] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":6,"id":1}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":6,"id":1}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0400] END');
       done();
     });
@@ -196,7 +196,7 @@ it('ObjectLinkArrayJsunit_static_0500', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0500] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0500] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":5,"id":0}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":5,"id":0}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0500] END');
       done();
     });
@@ -219,7 +219,7 @@ it('ObjectLinkArrayJsunit_static_0600', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkArrayJsunit_static_0600] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkArrayJsunit_static_0600] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: [{"num":5,"id":2},{"num":6,"id":3}]');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('hello: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"num":5,"id":2},{"num":6,"id":3}],"isAPI_":false}');
       console.info('[ObjectLinkArrayJsunit_static_0600] END');
       done();
     });

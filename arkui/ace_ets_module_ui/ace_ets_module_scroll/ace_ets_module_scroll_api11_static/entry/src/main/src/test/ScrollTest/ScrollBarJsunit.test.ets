@@ -79,8 +79,7 @@ export default function ScrollBarJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0100
      * @tc.name     ScrollBarJsunit_static_0100
      * @tc.desc     ScrollBarJsunit_static_0100
@@ -102,8 +101,7 @@ it('ScrollBarJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0200
      * @tc.name     ScrollBarJsunit_static_0200
      * @tc.desc     ScrollBarJsunit_static_0200
@@ -128,8 +126,7 @@ it('ScrollBarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0300
      * @tc.name     ScrollBarJsunit_static_0300
      * @tc.desc     ScrollBarJsunit_static_0300
@@ -151,8 +148,7 @@ it('ScrollBarJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0400
      * @tc.name     ScrollBarJsunit_static_0400
      * @tc.desc     ScrollBarJsunit_static_0400
@@ -174,8 +170,7 @@ it('ScrollBarJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0500
      * @tc.name     ScrollBarJsunit_static_0500
      * @tc.desc     ScrollBarJsunit_static_0500
@@ -203,8 +198,7 @@ it('ScrollBarJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ScrollBarJsunit_static_0600
      * @tc.name     ScrollBarJsunit_static_0600
      * @tc.desc     ScrollBarJsunit_static_0600

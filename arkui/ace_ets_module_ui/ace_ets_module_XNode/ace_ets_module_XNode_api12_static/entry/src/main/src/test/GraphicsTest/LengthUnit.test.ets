@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,13 +62,14 @@ export default function LengthUnitTest() {
 
 
 
-/**
+    /**
      * @tc.number   LengthUnitTest_static_001
      * @tc.name     LengthUnitTest_static_001
      * @tc.desc     LengthUnitTest_static_001
      * @tc.level    Level.LEVEL0
      */
 it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[LengthUnitTest_001] START');
       await CommonFunc.sleep(1000);
       let span_px = inspector.getInspectorByKey('span_px');
@@ -83,13 +84,14 @@ it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<
 
 
 
-/**
+    /**
      * @tc.number   LengthUnitTest_static_002
      * @tc.name     LengthUnitTest_static_002
      * @tc.desc     LengthUnitTest_static_002
      * @tc.level    Level.LEVEL0
      */
 it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[LengthUnitTest_002] START');
       await CommonFunc.sleep(1000);
       let span_fp = inspector.getInspectorByKey('span_fp');
@@ -104,13 +106,14 @@ it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<
 
 
 
-/**
+    /**
      * @tc.number   LengthUnitTest_static_003
      * @tc.name     LengthUnitTest_static_003
      * @tc.desc     LengthUnitTest_static_003
      * @tc.level    Level.LEVEL0
      */
 it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[LengthUnitTest_003] START');
       await CommonFunc.sleep(1000);
       let span_percent = inspector.getInspectorByKey('span_percent');
@@ -126,13 +129,14 @@ it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<
 
 
 
-/**
+    /**
      * @tc.number   LengthUnitTest_static_004
      * @tc.name     LengthUnitTest_static_004
      * @tc.desc     LengthUnitTest_static_004
      * @tc.level    Level.LEVEL0
      */
 it('LengthUnitTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[LengthUnitTest_004] START');
       await CommonFunc.sleep(1000);
       let span_lpx = inspector.getInspectorByKey('span_lpx');

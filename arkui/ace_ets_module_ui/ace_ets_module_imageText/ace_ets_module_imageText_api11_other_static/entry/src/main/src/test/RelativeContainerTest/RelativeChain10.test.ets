@@ -91,8 +91,6 @@ export default function RelativeChain10() {
 
     
     
-
-
 /**
      * @tc.number   RelativeChain10_static_001
      * @tc.name     RelativeChain10_static_001
@@ -114,8 +112,8 @@ it('RelativeChain10_static_001', Level.LEVEL3, async (done: () => void): Promise
 
       expect(Math.abs(Math.round(row3.left - row2.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(row2.left - row1.right)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(rel.left - row1.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(15))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row3.right - rel.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(35))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.left - row1.left) - Math.round(UIContext.resolveUIContext()!.vp2px(15))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row3.right - rel.right) - Math.round(UIContext.resolveUIContext()!.vp2px(35))) <= 1).assertTrue();
 
       console.info('[RelativeChain10_001] END');
       done();
@@ -124,8 +122,6 @@ it('RelativeChain10_static_001', Level.LEVEL3, async (done: () => void): Promise
     
 
     
-
-
 /**
      * @tc.number   RelativeChain10_static_002
      * @tc.name     RelativeChain10_static_002
@@ -156,8 +152,6 @@ it('RelativeChain10_static_002', Level.LEVEL3, async (done: () => void): Promise
     
 
     
-
-
 /**
      * @tc.number   RelativeChain10_static_003
      * @tc.name     RelativeChain10_static_003

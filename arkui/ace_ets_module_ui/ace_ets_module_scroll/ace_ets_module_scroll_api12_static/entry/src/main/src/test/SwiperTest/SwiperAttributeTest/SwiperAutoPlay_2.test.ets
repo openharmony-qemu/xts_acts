@@ -80,7 +80,6 @@ export default function SwiperAutoPlay_2() {
     
       
   
-
 /**
      * @tc.number   SwiperAutoPlay_1130
      * @tc.name     SwiperAutoPlay_1130

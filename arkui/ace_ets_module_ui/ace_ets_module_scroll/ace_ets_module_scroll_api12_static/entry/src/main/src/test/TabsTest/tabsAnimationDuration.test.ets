@@ -73,7 +73,6 @@ export default function tabsAnimationDuration() {
     
       
   
-
 /**
      * @tc.number   tabsAnimationDuration_static_0100
      * @tc.name     tabsAnimationDuration_static_0100

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -55,7 +55,7 @@ export default function EnableSwipeBackPage() {
         if (!('MainAbility/pages/Navigation/EnableSwipeBackPage' == pages.name)) {
           console.info('get EnableSwipeBackPage pages.name:' + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info('push EnableSwipeBackPage page result:' + JSON.stringify(result));
         }
@@ -73,13 +73,15 @@ export default function EnableSwipeBackPage() {
 
     
     
-/**
+
+    /**
      * @tc.number   EnableSwipeBackPage_static_00100
      * @tc.name     EnableSwipeBackPage_static_00100
      * @tc.desc     EnableSwipeBackPage_static_00100
      * @tc.level    Level.LEVEL0
      */
 it('EnableSwipeBackPage_static_00100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableSwipeBackPage_0100 START');
 
       // try {
@@ -116,13 +118,15 @@ it('EnableSwipeBackPage_static_00100', Level.LEVEL0, async (done: () => void): P
 
     
     
-/**
+
+    /**
      * @tc.number   EnableSwipeBackPage_static_00200
      * @tc.name     EnableSwipeBackPage_static_00200
      * @tc.desc     EnableSwipeBackPage_static_00200
      * @tc.level    Level.LEVEL0
      */
 it('EnableSwipeBackPage_static_00200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableSwipeBackPage_0200 START');
 
       // try {

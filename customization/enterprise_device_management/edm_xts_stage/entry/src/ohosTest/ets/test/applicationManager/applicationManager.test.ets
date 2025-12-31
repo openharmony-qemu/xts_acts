@@ -3439,9 +3439,10 @@ export default function applicationManagerTest() {
         let accountId: number = 100;
         let abilityName: string = "EntryAbility";
         applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, false);
-        expect(false).assertTrue();
+        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
+        expect(isDisabled).assertFalse();
       } catch (error) {
-        expect(error.code == 9200012).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3457,6 +3458,31 @@ export default function applicationManagerTest() {
      * @tc.level  LEVEL2
      */
     it("test_setAbilityDisabled_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let bundleName: string = 'com.example.extensionzerotest';
+        let accountId: number = 100;
+        let abilityName: string = "com.example.extensionzerotest.MainAbility";
+        applicationManager.setAbilityDisabled(SELFWANT, bundleName, accountId, abilityName, true);
+        let isDisabled = applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
+        expect(isDisabled).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setAbilityDisabled_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_SET_ABILITY_DISABLED_006
+     * @tc.desc   test setAbilityDisabled method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setAbilityDisabled_006", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = 'com.example.helloworld';

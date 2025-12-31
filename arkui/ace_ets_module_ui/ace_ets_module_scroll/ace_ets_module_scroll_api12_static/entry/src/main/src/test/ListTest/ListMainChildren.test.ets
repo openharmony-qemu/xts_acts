@@ -66,8 +66,7 @@ export default function ListMainChildrenTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ListMainChildrenTest_static_0100
      * @tc.name     ListMainChildrenTest_static_0100
      * @tc.desc     ListMainChildrenTest_static_0100
@@ -90,8 +89,7 @@ it('ListMainChildrenTest_static_0100', Level.LEVEL1, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   ListMainChildrenTest_static_0200
      * @tc.name     ListMainChildrenTest_static_0200
      * @tc.desc     ListMainChildrenTest_static_0200

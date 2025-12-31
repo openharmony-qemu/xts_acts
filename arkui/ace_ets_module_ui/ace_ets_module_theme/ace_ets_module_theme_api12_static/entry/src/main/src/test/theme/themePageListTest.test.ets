@@ -43,11 +43,11 @@ export default function themePageListTest() {
         console.info("get themePageListTest state pages:" + JSON.stringify(pages));
         if (!("themePageListTest" == pages.name)) {
           console.info("get themePageListTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push themePageListTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push themePageListTest page error:" + err);
@@ -58,6 +58,7 @@ export default function themePageListTest() {
     
     
 
+
 /**
      * @tc.number   themeListInterfaceTest_static_0100
      * @tc.name     themeListInterfaceTest_static_0100
@@ -65,10 +66,11 @@ export default function themePageListTest() {
      * @tc.level    Level.LEVEL0
      */
 it('themeListInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('frameNodeGetInterfaceTest_static_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      // click to change the skin
+      
       let button = await driver.findComponent(ON.id('themeClick'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);

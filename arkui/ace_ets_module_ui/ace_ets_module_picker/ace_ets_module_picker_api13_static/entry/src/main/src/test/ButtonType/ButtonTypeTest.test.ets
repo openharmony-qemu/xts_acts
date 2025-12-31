@@ -51,9 +51,9 @@ export default function ButtonTypeTest() {
         if (!("List_SpaceChange" == pages.name)) {
           console.info("get ButtonTypeTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
           await CommonFunc.sleep(2000);
-          // console.info("push ButtonTypeTest page result:" + JSON.stringify(result));
+
         }
       } catch (err) {
         console.error("push ButtonTypeTest page error:" + err);
@@ -67,6 +67,7 @@ export default function ButtonTypeTest() {
     
     
     
+    
     /**
      * @tc.number   testButton_static_0100
      * @tc.name     testButton_static_0100
@@ -74,11 +75,10 @@ export default function ButtonTypeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('testButton_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
       console.info('testButton_static_0100 START');
       await CommonFunc.sleep(1000);
       let btn = inspector.getInspectorByKey('btn');
-      await CommonFunc.sleep(1000);
-      console.log('[wll]',btn)
       console.info("testButton_static_0100 component obj is: " + JSON.stringify(btn));
       console.info("[testButton_static_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));
       expect(JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type'))).assertEqual('"ButtonType.ROUNDED_RECTANGLE"');

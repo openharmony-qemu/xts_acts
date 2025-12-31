@@ -68,13 +68,14 @@ export default function lazyForEachTest() {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0100
      * @tc.name     lazyForEachTest_static_0100
      * @tc.desc     lazyForEachTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -107,13 +108,14 @@ it('lazyForEachTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0200
      * @tc.name     lazyForEachTest_static_0200
      * @tc.desc     lazyForEachTest_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -140,13 +142,14 @@ it('lazyForEachTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0300
      * @tc.name     lazyForEachTest_static_0300
      * @tc.desc     lazyForEachTest_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -173,13 +176,14 @@ it('lazyForEachTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0400
      * @tc.name     lazyForEachTest_static_0400
      * @tc.desc     lazyForEachTest_static_0400
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -206,13 +210,14 @@ it('lazyForEachTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0500
      * @tc.name     lazyForEachTest_static_0500
      * @tc.desc     lazyForEachTest_static_0500
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -239,13 +244,14 @@ it('lazyForEachTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0600
      * @tc.name     lazyForEachTest_static_0600
      * @tc.desc     lazyForEachTest_static_0600
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -272,13 +278,14 @@ it('lazyForEachTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0700
      * @tc.name     lazyForEachTest_static_0700
      * @tc.desc     lazyForEachTest_static_0700
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0700 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -305,13 +312,14 @@ it('lazyForEachTest_static_0700', Level.LEVEL0, async (done: ()=>void) => {
 
 
 
-/**
+    /**
      * @tc.number   lazyForEachTest_static_0800
      * @tc.name     lazyForEachTest_static_0800
      * @tc.desc     lazyForEachTest_static_0800
      * @tc.level    Level.LEVEL0
      */
 it('lazyForEachTest_static_0800', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('lazyForEachTest_0800 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

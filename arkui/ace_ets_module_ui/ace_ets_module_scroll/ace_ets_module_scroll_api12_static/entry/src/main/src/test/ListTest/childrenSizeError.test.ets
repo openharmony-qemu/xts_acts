@@ -62,8 +62,7 @@ export default function childrenSizeError() {
 
 
     
-    
-/**
+    /**
      * @tc.number   childrenSizeError_static_0100
      * @tc.name     childrenSizeError_static_0100
      * @tc.desc     childrenSizeError_static_0100
@@ -87,8 +86,7 @@ it('childrenSizeError_static_0100', Level.LEVEL0, async (done: () => void): Prom
 
 
     
-    
-/**
+    /**
      * @tc.number   childrenSizeError_static_0200
      * @tc.name     childrenSizeError_static_0200
      * @tc.desc     childrenSizeError_static_0200
@@ -112,8 +110,7 @@ it('childrenSizeError_static_0200', Level.LEVEL0, async (done: () => void): Prom
 
 
     
-    
-/**
+    /**
      * @tc.number   childrenSizeError_static_0300
      * @tc.name     childrenSizeError_static_0300
      * @tc.desc     childrenSizeError_static_0300

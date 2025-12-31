@@ -50,8 +50,7 @@ export default function ActsGridTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0200
      * @tc.name     ArkUX_Grid_List_Swiper_static_0200
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0200
@@ -88,8 +87,7 @@ it('ArkUX_Grid_List_Swiper_static_0200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0210
      * @tc.name     ArkUX_Grid_List_Swiper_static_0210
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0210
@@ -118,8 +116,7 @@ it('ArkUX_Grid_List_Swiper_static_0210', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0220
      * @tc.name     ArkUX_Grid_List_Swiper_static_0220
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0220
@@ -145,8 +142,7 @@ it('ArkUX_Grid_List_Swiper_static_0220', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0230
      * @tc.name     ArkUX_Grid_List_Swiper_static_0230
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0230
@@ -174,8 +170,7 @@ it('ArkUX_Grid_List_Swiper_static_0230', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0240
      * @tc.name     ArkUX_Grid_List_Swiper_static_0240
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0240
@@ -203,8 +198,7 @@ it('ArkUX_Grid_List_Swiper_static_0240', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_0350
      * @tc.name     ArkUX_Grid_List_Swiper_0350
      * @tc.desc     ArkUX_Grid_List_Swiper_0350
@@ -232,8 +226,7 @@ it('ArkUX_Grid_List_Swiper_0350', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_0360
      * @tc.name     ArkUX_Grid_List_Swiper_0360
      * @tc.desc     ArkUX_Grid_List_Swiper_0360

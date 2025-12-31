@@ -40,7 +40,6 @@ function getResourceColor(baseColor: number):ColorMetrics {
 struct getNumericExample {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('++++++++++++++++++++++++++++++++')
       Button("getNumeric")
         .id("getNumeric")
         .width('80%')

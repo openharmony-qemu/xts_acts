@@ -63,9 +63,9 @@ export default function SelectStatusTest() {
   describe('SelectStatus', () => {
     beforeAll(() => {
       console.info("SelectStatus beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("SelectStatus  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -97,9 +97,9 @@ export default function SelectStatusTest() {
      * @tc.number   SelectStatusTest_static_0100
      * @tc.name     SelectStatusTest_static_0100
      * @tc.desc     SelectStatusTest_static_0100
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     * @tc.level    Level.LEVEL2
      */
-it('SelectStatusTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SelectStatusTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
         let tagName = 'SelectStatusTest_static_0100';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();
@@ -127,9 +127,9 @@ it('SelectStatusTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
      * @tc.number   SelectStatusTest_static_0200
      * @tc.name     SelectStatusTest_static_0200
      * @tc.desc     SelectStatusTest_static_0200
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     * @tc.level    Level.LEVEL2
      */
-it('SelectStatusTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SelectStatusTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
         let tagName = 'SelectStatusTest_static_0200';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();

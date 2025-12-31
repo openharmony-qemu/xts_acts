@@ -81,66 +81,66 @@ import parallelGestureJsunit from './TapGestureTest/ParallelGestureJsunit.test.e
 import motionPathJsunit from './MotionPathJsunit.test.ets';
 
 export default function testsuite() {
-  // dragAdaptationTest() // pass 1
-  // SwipeGesture1() // pass 3
-  // SwipeGesture2() // pass 2
-  // SwipeGesture3() // pass 2
-  // TapGesture1() // 2 pass 2
-  // TapGesture2() // 2 pass 2
-  // TapGesture3() // 2 pass 2
-  // OnTouch1() // pass 2
-  // OnTouch2() // pass 2
-  // OnTouch3() // pass 2
-  // GestureClick() // pass 1
-  // GestureContiune() // pass 1
-  // GestureDrag() // pass 1
-  // GesturePinchGesture() // pass 1
-  // GestureReject() // pass 1
-  // GestureRotationGesture() // pass 1
-  // GestureSwipeGesture() // pass 1
-  GestureTap() // pass 1 // expect Gesture is  equals Gesture is tap1
-  // GestureTapGesture() // pass 1
-  // PanGesture1() // pass 2
-  // PanGesture2() // pass 2
-  // PanGesture3() // pass 2
-  // LongPressGesture1() // 2 pass 2
-  // LongPressGesture2() // pass 2
-  // LongPressGesture3() // pass 2
-  // GestureLongPressGesture() // pass 2
-  // dragEventJsunit() // pass 5
-  // enumsLineCapStyleJsunit() // pass 1 //The key 'strokeLineCap' was not found in the JSON object.
-  // enmusItemAlignJsunit() // pass 1
-  // GestureModeJsunit() // pass 1
-  // PanDirectionJsunit() // pass 1
-  // subscribedAbstractPropertyJsunit() // pass 1
-  // gestureParallelJsunit() // pass 1
-  // gestureSetDirectionJsunit() // pass 3
-  // lazyForEachOnDataAddJsunit() // pass 4
-  // PanGestureEventJsunit() // pass 3
-  // gestureEnabledJsunit() // pass 4
-  //
-  // PanGesture3Jsunit() // pass 2
-  // tapGestureTest() // 1 pass
-  // longPressGestureJsUnit() // 2 pass 2
-  // priorityGestureJsunit() // 1 pass
-  // parallelGestureJsunit() // 1 pass
-  // motionPathJsunit() // 3 pass
-  // touchJsunit() // 1 pass
-  // areaChangeJsunit() // 1 pass
-  // ShortcutKeyTest() // 7 pass 7
-  // aboutToAppearTest() // 2 pass 2 //The key 'backgroundColor' was not found in the JSON object
-  // onGestureTest() // pass 1
-  // touchPoint() // 2 pass // expect {"mode":{"value":1,"#ordinal":0}} equals {"mode":1}
-  // previewOptions() // 1 pass 1 //expect {"mode":{"value":2,"#ordinal":1}} equals {"mode":2}
-  // DragActionJsunit() // pass 1
-  // dragPreviewJsSuit() // pass 1
-  // GestureTagJsSuit() // pass 1
-  // freezeInactive() // pass 1
-  // GesturePanGesture() // pass 1
-  // OnClick1() // pass 2
-  // OnClick2() // pass 2
-  // OnClick3() // pass 2
-  // GestureIsSystemGesture() // 1 pass
-  // dragPreviewOptionsJsSuit() // 1 pass
-  // appearJsunit() // 1 pass 1 联跑报错
+  dragAdaptationTest()
+  SwipeGesture1()
+  SwipeGesture2()
+  SwipeGesture3()
+  TapGesture1()
+  TapGesture2()
+  TapGesture3()
+  OnTouch1() 
+  OnTouch2() 
+  OnTouch3()
+  GestureClick()
+  GestureContiune()
+  GestureDrag()
+  GesturePinchGesture()
+  GestureReject()
+  GestureRotationGesture()
+  GestureSwipeGesture()
+  GestureTap()
+  GestureTapGesture()
+  PanGesture1()
+  PanGesture2()
+  PanGesture3()
+  LongPressGesture1()
+  LongPressGesture2()
+  LongPressGesture3()
+  GestureLongPressGesture()
+  dragEventJsunit()
+  enumsLineCapStyleJsunit()
+  enmusItemAlignJsunit()
+  GestureModeJsunit()
+  PanDirectionJsunit()
+  subscribedAbstractPropertyJsunit()
+  gestureParallelJsunit()
+  gestureSetDirectionJsunit()
+  lazyForEachOnDataAddJsunit()
+  PanGestureEventJsunit()
+  gestureEnabledJsunit()
+
+  PanGesture3Jsunit()
+  tapGestureTest()
+  longPressGestureJsUnit()
+  priorityGestureJsunit()
+  parallelGestureJsunit()
+  motionPathJsunit()
+  touchJsunit()
+  areaChangeJsunit()
+  ShortcutKeyTest()
+  aboutToAppearTest()
+  onGestureTest()
+  touchPoint()
+  previewOptions()
+  DragActionJsunit()
+  dragPreviewJsSuit()
+  GestureTagJsSuit()
+  freezeInactive()
+  GesturePanGesture()
+  OnClick1()
+  OnClick2()
+  OnClick3()
+  GestureIsSystemGesture()
+  dragPreviewOptionsJsSuit()
+  appearJsunit()
 }

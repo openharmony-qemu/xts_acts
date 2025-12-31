@@ -94,8 +94,6 @@ export default function RelativeChain12() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain12_static_001
      * @tc.name     RelativeChain12_static_001
@@ -133,8 +131,6 @@ it('RelativeChain12_static_001', Level.LEVEL3, async (done: () => void): Promise
     
 
     
-
-
 /**
      * @tc.number   RelativeChain12_static_002
      * @tc.name     RelativeChain12_static_002
@@ -147,7 +143,7 @@ it('RelativeChain12_static_002', Level.LEVEL3, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain122');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + UIContext.getFocusedUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.getFocusedUIContext()!.vp2px(80)).toInt() },
+      await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt() },
         MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChain12Text');

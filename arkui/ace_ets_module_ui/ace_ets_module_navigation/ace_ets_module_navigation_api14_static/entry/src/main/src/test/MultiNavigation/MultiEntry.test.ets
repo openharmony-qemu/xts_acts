@@ -77,6 +77,7 @@ export default function MultiEntry() {
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0100 START');
       await CommonFunc.sleep(500);
 
@@ -113,6 +114,7 @@ it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0200 START');
       await CommonFunc.sleep(500);
 
@@ -145,6 +147,7 @@ it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0300 START');
       await CommonFunc.sleep(500);
 
@@ -182,6 +185,7 @@ it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0400 START');
       await CommonFunc.sleep(500);
 
@@ -216,6 +220,7 @@ it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0500 START');
       await CommonFunc.sleep(500);
 
@@ -250,6 +255,7 @@ it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0600 START');
       await CommonFunc.sleep(500);
 
@@ -284,6 +290,7 @@ it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiEntry_0700 START');
       await CommonFunc.sleep(500);
 

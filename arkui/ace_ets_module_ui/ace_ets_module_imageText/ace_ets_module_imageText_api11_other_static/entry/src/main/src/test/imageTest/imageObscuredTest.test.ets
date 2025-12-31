@@ -99,8 +99,6 @@ export default function imageObscuredTest() {
     })
 
     
-
-
 /**
      * @tc.number   ArkUX_Redacted_Image_static_0150
      * @tc.name     ArkUX_Redacted_Image_static_0150
@@ -132,8 +130,6 @@ it('ArkUX_Redacted_Image_static_0150', Level.LEVEL1, async (done: () => void): P
     });
 
     
-
-
 /**
      * @tc.number   ArkUX_Redacted_Image_static_0160
      * @tc.name     ArkUX_Redacted_Image_static_0160
@@ -160,8 +156,6 @@ it('ArkUX_Redacted_Image_static_0160', Level.LEVEL1, async (done: () => void): P
     });
 
     
-
-
 /**
      * @tc.number   ArkUX_Redacted_Image_static_0170
      * @tc.name     ArkUX_Redacted_Image_static_0170
@@ -190,8 +184,6 @@ it('ArkUX_Redacted_Image_static_0170', Level.LEVEL1, async (done: () => void): P
     });
 
     
-
-
 /**
      * @tc.number   ArkUX_Redacted_Image_static_0180
      * @tc.name     ArkUX_Redacted_Image_static_0180
@@ -218,8 +210,6 @@ it('ArkUX_Redacted_Image_static_0180', Level.LEVEL1, async (done: () => void): P
     });
 
     
-
-
 /**
      * @tc.number   ArkUX_Redacted_Image_static_0190
      * @tc.name     ArkUX_Redacted_Image_static_0190

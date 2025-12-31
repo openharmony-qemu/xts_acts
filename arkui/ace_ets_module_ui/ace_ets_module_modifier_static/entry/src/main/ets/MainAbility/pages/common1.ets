@@ -21,7 +21,7 @@ import { Entry,Builder,Component,Scroller,GridRow,Scroll,ButtonType,CommonAttrib
   CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,Alignment,AlignRuleOption,RenderFit,
   Direction,OutlineStyle,ShadowOptions,Position,Rect,ClickEffectLevel,DragPreviewMode,VerticalAlign,HorizontalAlign,
   AdaptiveColor, HoverEffect, ThemeColorMode, SafeAreaType,SafeAreaEdge,GradientDirection,EdgeOutlineStyles,
-  EdgeOutlineWidths,EdgeColors,EdgeOutlineWidths,ObscuredReasons,
+  EdgeOutlineWidths,EdgeColors,EdgeOutlineWidths,ObscuredReasons,ProgressMask,
   BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
@@ -100,26 +100,27 @@ struct Common1Example {
     .hueRotate(1)
     .sepia(1)
 
-  //
-  // @State customModifier2: CommonModifier = new CustomModifier()
-  //   // .mask(new Rect({ height: '280px' }).fill(Color.Gray)) Cannot find type 'Rect'.
-  //   .overlay(
-  //     "Winter",
-  //     {
-  //       align: Alignment.Bottom,
-  //       offset: { x: 15, y: 15 }
-  //     }
-  //   )
-  //   .draggable(true)
-  //   .enabled(false)
-  //   .backgroundEffect({
-  //     radius: 0,
-  //     saturation: 20,
-  //     brightness: 200,
-  //     color: "#FF008000",
-  //     adaptiveColor: AdaptiveColor.DEFAULT,
-  //     blurOptions: { grayscale: [1, 1] }
-  //   })
+
+  @State customModifier2: CommonModifier = new CustomModifier()
+    // .mask(new Rect({ height: '280px' }).fill(Color.Gray))
+    .mask(new ProgressMask(0, 1, '#80ffffff'))
+    .overlay(
+      "Winter",
+      {
+        align: Alignment.Bottom,
+        offset: { x: 15, y: 15 }
+      }
+    )
+    .draggable(true)
+    .enabled(false)
+    .backgroundEffect({
+      radius: 0,
+      saturation: 20,
+      brightness: 200,
+      color: "#FF008000",
+      adaptiveColor: AdaptiveColor.DEFAULT,
+      blurOptions: { grayscale: [1, 1] }
+    })
 
 
   @State customModifier3: CustomModifier = new CustomModifier()
@@ -164,9 +165,9 @@ struct Common1Example {
         .attributeModifier(this.customModifier1 as CustomModifier)
         .key("common2")
 
-      // Image($r('app.media.icon'))
-      //   .attributeModifier(this.customModifier2 as CustomModifier)
-      //   .key("common3")
+      Image($r('app.media.icon'))
+        .attributeModifier(this.customModifier2 as CustomModifier)
+        .key("common3")
 
       Button('testid', { type: this.buttonTypeValue, stateEffect: true })
         .attributeModifier(this.customModifier3 as CustomModifier)

@@ -94,8 +94,6 @@ export default function shapeClippingJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   testShapeClipping_static_001
      * @tc.name     testShapeClipping_static_001
@@ -117,8 +115,6 @@ it('testShapeClipping_static_001', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-
-
 /**
      * @tc.number   testShapeClipping_static_002
      * @tc.name     testShapeClipping_static_002
@@ -139,8 +135,6 @@ it('testShapeClipping_static_002', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-
-
 /**
      * @tc.number   testShapeClipping_static_003
      * @tc.name     testShapeClipping_static_003
@@ -176,8 +170,6 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-
-
 /**
      * @tc.number   testShapeClipping_static_004
      * @tc.name     testShapeClipping_static_004

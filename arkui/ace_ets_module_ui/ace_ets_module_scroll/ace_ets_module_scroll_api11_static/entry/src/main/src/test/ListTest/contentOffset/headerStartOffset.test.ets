@@ -81,8 +81,7 @@ export default function headerStartOffset() {
 
 
     
-    
-/**
+    /**
      * @tc.number   headerStartOffset_static_0100
      * @tc.name     headerStartOffset_static_0100
      * @tc.desc     headerStartOffset_static_0100

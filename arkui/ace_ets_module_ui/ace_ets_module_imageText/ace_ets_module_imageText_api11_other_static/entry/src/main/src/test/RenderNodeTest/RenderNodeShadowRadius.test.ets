@@ -111,8 +111,6 @@ export default function RenderNodeShadowRadiusJsSuit() {
     
 
     
-
-
 /**
      * @tc.number   RenderNodeShadowRadiusJsSuit_static_0100
      * @tc.name     RenderNodeShadowRadiusJsSuit_static_0100

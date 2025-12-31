@@ -76,7 +76,6 @@ export default function SwiperAdd0510() {
 
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510

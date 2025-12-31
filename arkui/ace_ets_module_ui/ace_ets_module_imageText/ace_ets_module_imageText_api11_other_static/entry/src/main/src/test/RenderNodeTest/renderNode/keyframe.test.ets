@@ -77,8 +77,6 @@ export default function keyframeTest() {
 
     
     
-
-
 /**
      * @tc.number   keyframeTest_static_0100
      * @tc.name     keyframeTest_static_0100

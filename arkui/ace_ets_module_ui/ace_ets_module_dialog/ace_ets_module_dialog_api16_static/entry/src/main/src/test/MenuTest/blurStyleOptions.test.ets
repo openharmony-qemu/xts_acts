@@ -73,13 +73,14 @@ export default function blurStyleOptions() {
     });
 
 
+    
     /**
      * @tc.number   MenuStyleOptionsTest_static_0101
      * @tc.name     MenuStyleOptionsTest_static_0101
      * @tc.desc     MenuStyleOptionsTest_static_0101
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('MenuStyleOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('MenuStyleOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('MenuStyleOptionsTest_static_0101 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -121,13 +122,14 @@ export default function blurStyleOptions() {
     });
 
 
+    
     /**
      * @tc.number   MenuStyleOptionsTest_static_0102
      * @tc.name     MenuStyleOptionsTest_static_0102
      * @tc.desc     MenuStyleOptionsTest_static_0102
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-    it('MenuStyleOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('MenuStyleOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('MenuStyleOptionsTest_static_0102 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -152,13 +154,14 @@ export default function blurStyleOptions() {
     });
 
 
+    
     /**
      * @tc.number   MenuStyleOptionsTest_static_0103
      * @tc.name     MenuStyleOptionsTest_static_0103
      * @tc.desc     MenuStyleOptionsTest_static_0103
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('MenuStyleOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('MenuStyleOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MenuStyleOptionsTest_static_0103 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);

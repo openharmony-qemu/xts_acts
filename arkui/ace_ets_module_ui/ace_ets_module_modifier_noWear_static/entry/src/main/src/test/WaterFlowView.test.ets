@@ -74,8 +74,7 @@ export default function waterFlowView() {
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0200
      * @tc.name     waterFlowViewJsunit_static_0200
      * @tc.desc     waterFlowViewJsunit_static_0200
@@ -93,8 +92,7 @@ it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0300
      * @tc.name     waterFlowViewJsunit_static_0300
      * @tc.desc     waterFlowViewJsunit_static_0300
@@ -112,8 +110,7 @@ it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0400
      * @tc.name     waterFlowViewJsunit_static_0400
      * @tc.desc     waterFlowViewJsunit_static_0400
@@ -131,8 +128,7 @@ it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0500
      * @tc.name     waterFlowViewJsunit_static_0500
      * @tc.desc     waterFlowViewJsunit_static_0500
@@ -151,8 +147,7 @@ it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0600
      * @tc.name     waterFlowViewJsunit_static_0600
      * @tc.desc     waterFlowViewJsunit_static_0600
@@ -170,8 +165,7 @@ it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0700
      * @tc.name     waterFlowViewJsunit_static_0700
      * @tc.desc     waterFlowViewJsunit_static_0700
@@ -189,8 +183,7 @@ it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0800
      * @tc.name     waterFlowViewJsunit_static_0800
      * @tc.desc     waterFlowViewJsunit_static_0800
@@ -208,8 +201,7 @@ it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_0900
      * @tc.name     waterFlowViewJsunit_static_0900
      * @tc.desc     waterFlowViewJsunit_static_0900
@@ -228,8 +220,7 @@ it('waterFlowViewJsunit_static_0900', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowViewJsunit_static_1000
      * @tc.name     waterFlowViewJsunit_static_1000
      * @tc.desc     waterFlowViewJsunit_static_1000

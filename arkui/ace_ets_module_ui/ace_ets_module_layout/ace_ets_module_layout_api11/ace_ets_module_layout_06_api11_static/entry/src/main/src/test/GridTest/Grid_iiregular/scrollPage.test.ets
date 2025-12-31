@@ -51,7 +51,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get scrollPageJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollPage" == pages.name)) {

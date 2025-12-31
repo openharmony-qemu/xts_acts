@@ -44,11 +44,11 @@ export default function toggleOnChangeModifierTest() {
         console.info("get toggleOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("toggleOnChangeModifier" == pages.name)) {
           console.info("get toggleOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push toggleOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push toggleOnChangeModifierTest page error:" + err);
@@ -73,6 +73,7 @@ export default function toggleOnChangeModifierTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_Toggle_OnChange_static1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         console.info('ArkUX_Modifier_Toggle_OnChange_static1001 START');
         let driver = Driver.create();
         let button = await driver.findComponent(ON.id('ToggleOne'));
@@ -98,6 +99,7 @@ it('ArkUX_Modifier_Toggle_OnChange_static1001', Level.LEVEL1, async (done: () =>
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_Toggle_OnChange_static1002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         console.info('ArkUX_Modifier_Toggle_OnChange_static1002 START');
         let driver = Driver.create();
         let button = await driver.findComponent(ON.id('ToggleTwo'));
@@ -123,6 +125,7 @@ it('ArkUX_Modifier_Toggle_OnChange_static1002', Level.LEVEL1, async (done: () =>
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_Toggle_OnChange_static1003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         console.info('ArkUX_Modifier_Toggle_OnChange_static1003 START');
         let driver = Driver.create();
         let button = await driver.findComponent(ON.id('ToggleThree'));

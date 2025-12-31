@@ -87,13 +87,8 @@ export default function SwiperChangeIndexTest() {
 
 
     
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
-     */
-it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {    
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
@@ -112,13 +107,8 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100', TestType.FUNCT
 
 
     
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
-     */
-it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
@@ -137,13 +127,8 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200', TestType.FUNCT
 
 
     
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
-     */
-it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
@@ -162,13 +147,8 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300', TestType.FUNCT
 
 
     
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
-     */
-it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
@@ -187,13 +167,8 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400', TestType.FUNCT
 
 
     
-    /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
-     */
-it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500 START");
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();

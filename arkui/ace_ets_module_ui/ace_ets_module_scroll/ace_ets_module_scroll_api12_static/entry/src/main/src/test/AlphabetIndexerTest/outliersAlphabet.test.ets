@@ -98,8 +98,7 @@ export default function outliersAlphabet() {
 
 
     
-    
-/**
+    /**
      * @tc.number   outliersAlphabet_static_0100
      * @tc.name     outliersAlphabet_static_0100
      * @tc.desc     outliersAlphabet_static_0100
@@ -127,8 +126,7 @@ it('outliersAlphabet_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
-/**
+    /**
      * @tc.number   outliersAlphabet_static_0200
      * @tc.name     outliersAlphabet_static_0200
      * @tc.desc     outliersAlphabet_static_0200
@@ -161,8 +159,7 @@ it('outliersAlphabet_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
-/**
+    /**
      * @tc.number   outliersAlphabet_static_0300
      * @tc.name     outliersAlphabet_static_0300
      * @tc.desc     outliersAlphabet_static_0300
@@ -197,8 +194,7 @@ it('outliersAlphabet_static_0300', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
-/**
+    /**
      * @tc.number   outliersAlphabet_static_0400
      * @tc.name     outliersAlphabet_static_0400
      * @tc.desc     outliersAlphabet_static_0400
@@ -221,8 +217,7 @@ it('outliersAlphabet_static_0400', Level.LEVEL0, async (done: () => void): Promi
 
 
     
-    
-/**
+    /**
      * @tc.number   outliersAlphabet_static_0500
      * @tc.name     outliersAlphabet_static_0500
      * @tc.desc     outliersAlphabet_static_0500

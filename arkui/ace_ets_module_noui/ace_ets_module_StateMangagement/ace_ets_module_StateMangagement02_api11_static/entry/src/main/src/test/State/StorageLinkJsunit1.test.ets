@@ -307,7 +307,7 @@ it('StorageLinkJsunit1_static_1000', Level.LEVEL0, async (done: () => void): Pro
       let obj10 = JSON.parseJsonElement(strJson10);
       console.info("[StorageLinkJsunit1_static_1000] son10 obj10 is: " + JSON.stringify(obj10));
       await CommonFunc.sleep(1000);
-      expect(obj10.getElement('$attrs').getString('label')).assertEqual('classArray: [{"value":"hello world"},{"value":"hello C"}]');
+      expect(obj10.getElement('$attrs').getString('label')).assertEqual('classArray: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":"hello world"},{"value":"hello C"}],"isAPI_":false}');
       console.info('[StorageLinkJsunit1_static_1000] END');
       done();
     });
@@ -330,7 +330,7 @@ it('StorageLinkJsunit1_static_1100', Level.LEVEL0, async (done: () => void): Pro
       let obj11 = JSON.parseJsonElement(strJson11);
       console.info("[StorageLinkJsunit1_static_1100] son11 obj11 is: " + JSON.stringify(obj11));
       await CommonFunc.sleep(1000);
-      expect(obj11.getElement('$attrs').getString('label')).assertEqual('objArray: [{"name":"ls"},{"name":"zs"}]');
+      expect(obj11.getElement('$attrs').getString('label')).assertEqual('objArray: {"buffer":[null,null,null,null],"actualLength":0,"store_":[{"name":"ls"},{"name":"zs"}],"isAPI_":false}');
       console.info('[StorageLinkJsunit1_static_1100] END');
       done();
     });

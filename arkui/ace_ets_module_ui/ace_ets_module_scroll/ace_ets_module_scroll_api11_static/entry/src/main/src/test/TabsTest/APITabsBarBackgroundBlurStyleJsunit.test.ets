@@ -73,8 +73,7 @@ export default function APITabsBarBackgroundBlurStyleJsunit() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   APITabsBarBackgroundBlurStyleJsunit_static_0100
      * @tc.name     APITabsBarBackgroundBlurStyleJsunit_static_0100
      * @tc.desc     APITabsBarBackgroundBlurStyleJsunit_static_0100

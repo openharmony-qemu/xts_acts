@@ -96,8 +96,6 @@ export default function stageAnimatorTest() {
     })
     //pass过 全注释
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0001
      * @tc.name     testanimatorstage_static_0001
@@ -124,8 +122,6 @@ it('testanimatorstage_static_0001', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0002
      * @tc.name     testanimatorstage_static_0002
@@ -156,8 +152,6 @@ it('testanimatorstage_static_0002', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0003
      * @tc.name     testanimatorstage_static_0003
@@ -188,8 +182,6 @@ it('testanimatorstage_static_0003', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0004
      * @tc.name     testanimatorstage_static_0004
@@ -210,8 +202,6 @@ it('testanimatorstage_static_0004', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0005
      * @tc.name     testanimatorstage_static_0005
@@ -241,8 +231,6 @@ it('testanimatorstage_static_0005', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   testanimatorstage_static_0006
      * @tc.name     testanimatorstage_static_0006

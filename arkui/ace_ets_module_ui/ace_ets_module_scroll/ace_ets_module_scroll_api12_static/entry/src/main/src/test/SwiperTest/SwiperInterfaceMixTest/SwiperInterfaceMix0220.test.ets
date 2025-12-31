@@ -77,7 +77,6 @@ export default function SwiperInterfaceMix0220() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220

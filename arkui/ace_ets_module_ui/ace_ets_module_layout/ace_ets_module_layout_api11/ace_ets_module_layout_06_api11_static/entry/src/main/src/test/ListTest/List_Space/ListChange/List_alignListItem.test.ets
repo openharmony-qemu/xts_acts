@@ -99,22 +99,22 @@ it('testListAlignListItemStart_static', Level.LEVEL0, async (done: () => void): 
       expect(Math.abs(List_alignListItem_011.top - List_alignListItem_01.top) <= 1).assertTrue();
 
       console.info('testListAlignListItemStart_1: ');
-	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemStart_2: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('testListAlignListItemStart_3: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -124,7 +124,7 @@ it('testListAlignListItemStart_static', Level.LEVEL0, async (done: () => void): 
         (Math.round(List_alignListItem_012.bottom)).toInt());
       await CommonFunc.sleep(1000);
       let List_alignListItem_024: RectValue = CommonFunc.getComponentRect('List_alignListItem_014');
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemStart END');
       done();
@@ -167,22 +167,22 @@ it('testListAlignListItemCenter_static', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(List_alignListItem_011.top - List_alignListItem_01.top) <= 1).assertTrue();
 
       console.info('testListAlignListItemCenter_1: ');
-	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemCenter_2: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('testListAlignListItemCenter_3: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -192,7 +192,7 @@ it('testListAlignListItemCenter_static', Level.LEVEL0, async (done: () => void):
         (Math.round(List_alignListItem_012.bottom)).toInt());
       await CommonFunc.sleep(1000);
       let List_alignListItem_024: RectValue = CommonFunc.getComponentRect('List_alignListItem_014');
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemCenter END');
       done();
@@ -230,22 +230,22 @@ it('testListAlignListItemEnd_static', Level.LEVEL0, async (done: () => void): Pr
       expect(Math.abs(List_alignListItem_011.top - List_alignListItem_01.top) <= 1).assertTrue();
 
       console.info('testListAlignListItemEnd_1: ');
-	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.top - List_alignListItem_011.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.top - List_alignListItem_012.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.top - List_alignListItem_013.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_014.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemEnd_2: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.right - List_alignListItem_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.right - List_alignListItem_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.right - List_alignListItem_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.right - List_alignListItem_014.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('testListAlignListItemEnd_3: ');
-	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_011.bottom - List_alignListItem_011.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_012.bottom - List_alignListItem_012.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_013.bottom - List_alignListItem_013.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(
@@ -255,7 +255,7 @@ it('testListAlignListItemEnd_static', Level.LEVEL0, async (done: () => void): Pr
         (Math.round(List_alignListItem_012.bottom)).toInt());
       await CommonFunc.sleep(1000);
       let List_alignListItem_024: RectValue = CommonFunc.getComponentRect('List_alignListItem_014');
-	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(60))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(60))) <= 1).assertTrue();
       console.info('testListAlignListItemEnd END');
       done();
     });

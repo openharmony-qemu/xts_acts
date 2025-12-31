@@ -63,13 +63,14 @@ export default function UIObserverDensityUpdateTest() {
 
 
 
-/**
+    /**
      * @tc.number   UIObserverDensityUpdateTest_static_0100
      * @tc.name     UIObserverDensityUpdateTest_static_0100
      * @tc.desc     UIObserverDensityUpdateTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverDensityUpdateTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+
       console.info('UIObserverDensityUpdateTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -70,7 +70,6 @@ export default function customDialogKeyboardAvoidDistance() {
     
     
 
-
 /**
      * @tc.number   CustomDialogKeyboardAvoidDistance_static_0100
      * @tc.name     CustomDialogKeyboardAvoidDistance_static_0100
@@ -104,7 +103,7 @@ it('CustomDialogKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MED
       console.info('[CustomDialog_001_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str = UIContext.getFocusedUIContext()!.vp2px(20);
+      let str = UIContext.resolveUIContext()!.vp2px(20);
       let str1 = Math.ceil(str)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);
@@ -116,7 +115,6 @@ it('CustomDialogKeyboardAvoidDistance_static_0100', TestType.FUNCTION | Size.MED
 
     
      
-
 
 /**
      * @tc.number   CustomDialogKeyboardAvoidDistance_static_0200
@@ -151,7 +149,7 @@ it('CustomDialogKeyboardAvoidDistance_static_0200', TestType.FUNCTION | Size.MED
       console.info('[CustomDialog_004_keyboard] left: ' + rect1.left + ', top: ' + rect1.top +
         ', right:' + rect1.right + ', bottom:' + rect1.bottom );
       let keyboardAvoidDistance = top1 - bottom;
-      let str = UIContext.getFocusedUIContext()!.vp2px(16);
+      let str = UIContext.resolveUIContext()!.vp2px(16);
       let str1 = Math.ceil(str)
       let cancelButton1: Component = ( await driver.findComponent(ON.text('取消')) ) as Component;
        CommonFunc.sleep(300);

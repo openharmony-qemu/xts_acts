@@ -16,7 +16,7 @@
 import { CustomTheme, CustomColors, ThemeControl } from '@ohos.arkui.theme';
 import {
   Entry, Component,
-  Column, ColumnOptions,
+  Column, ColumnOptions, 
   Flex, FlexDirection, ItemAlign, FlexAlign,
   Text, Button, FontWeight, ClickEvent, Margin, Color, WithTheme, Divider,
 } from '@ohos.arkui.component'

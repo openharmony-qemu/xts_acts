@@ -62,9 +62,9 @@ export default function openCustomDialog() {
   describe('openCustomDialog', () => {
     beforeAll(() => {
       console.info("openCustomDialog beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("openCustomDialog beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -82,7 +82,7 @@ export default function openCustomDialog() {
         if (!("openCustomDialog" == pages.name)) {
           console.info("get openCustomDialog state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push openCustomDialog success: " + JSON.stringify(result));
         }
@@ -108,8 +108,9 @@ it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('CustomDialog'));
       await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('openCustomDialog');
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[openCustomDialog_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[openCustomDialog_static_0100] title: " +

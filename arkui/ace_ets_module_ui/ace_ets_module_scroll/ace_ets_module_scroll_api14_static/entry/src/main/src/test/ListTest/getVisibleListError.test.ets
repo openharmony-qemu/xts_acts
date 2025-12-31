@@ -66,14 +66,14 @@ export default function getVisibleListError() {
 
 
     
-    // /**
-    // * @tc.number   getVisibleListError_static_0100
-    // * @tc.name     getVisibleListError_static_0100
-    // * @tc.desc     getVisibleListError_static_0100
-    // * @tc.level    Level.LEVEL0
-    // */
+    /**
+     * @tc.number   getVisibleListError_static_0100
+     * @tc.name     getVisibleListError_static_0100
+     * @tc.desc     getVisibleListError_static_0100
+     * @tc.level    Level.LEVEL0
+     */
 //it('getVisibleListError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   异常参数
+    //   // 异常参数
     //   console.info('[getVisibleListError_static_0100] START');
     //   let driver = Driver.create()
     //   let btn1: Component = await driver.findComponent(ON.id('getVisibleList_401')) as Component;

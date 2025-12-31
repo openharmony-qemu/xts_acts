@@ -69,7 +69,6 @@ export default function presentCustomDialogMode() {
     
     
 
-
 /**
      * @tc.number   presentCustomDialogMode_static_0100
      * @tc.name     presentCustomDialogMode_static_0100
@@ -123,7 +122,6 @@ it('presentCustomDialogMode_static_0100', Level.LEVEL1, async (done: () => void)
     
     
 
-
 /**
      * @tc.number   presentCustomDialogMode_static_0200
      * @tc.name     presentCustomDialogMode_static_0200
@@ -176,7 +174,6 @@ it('presentCustomDialogMode_static_0200', Level.LEVEL1, async (done: () => void)
     
     
 
-
 /**
      * @tc.number   presentCustomDialogMode_static_0300
      * @tc.name     presentCustomDialogMode_static_0300
@@ -228,7 +225,6 @@ it('presentCustomDialogMode_static_0300', Level.LEVEL1, async (done: () => void)
 
     
     
-
 
 /**
      * @tc.number   presentCustomDialogMode_static_0400
@@ -283,7 +279,6 @@ it('presentCustomDialogMode_static_0400', Level.LEVEL1, async (done: () => void)
      
     
 
-
 /**
      * @tc.number   presentCustomDialogMode_static_0500
      * @tc.name     presentCustomDialogMode_static_0500
@@ -326,7 +321,6 @@ it('presentCustomDialogMode_static_0500', Level.LEVEL1, async (done: () => void)
      
     
 
-
 /**
      * @tc.number   presentCustomDialogMode_static_0600
      * @tc.name     presentCustomDialogMode_static_0600
@@ -367,7 +361,6 @@ it('presentCustomDialogMode_static_0600', Level.LEVEL1, async (done: () => void)
 
     
     
-
 
 /**
      * @tc.number   presentCustomDialogMode_static_0700
@@ -421,7 +414,6 @@ it('presentCustomDialogMode_static_0700', Level.LEVEL1, async (done: () => void)
 
     
     
-
 
 /**
      * @tc.number   presentCustomDialogMode_static_0800

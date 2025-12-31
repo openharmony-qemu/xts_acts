@@ -70,6 +70,7 @@ export default function UIObserverObserver4Test() {
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverObserver4Test_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('UIObserverObserver4Test_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

@@ -1304,5 +1304,906 @@ export default function bitectorest() {
       let res2 = bitVector.getLastIndexOf(1, 0, 64);
       expect(res2).assertEqual(63);
     });
+        /**
+     * @tc.name   BitVector_flipBitsByRange_Func_006
+     * @tc.number BITVECTOR_TEST_069
+     * @tc.desc   Flips a range of bit values in a bit vector.(Flip 0 to 1, flip 1 to 0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('BitVector_flipBitsByRange_Func_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            if (i >= 32) {
+              let res0 = bitVector.push(1);
+              expect(res0).assertEqual(true);
+            } else {
+              let res0 = bitVector.push(0);
+              expect(res0).assertEqual(true);
+            }
+          }
+          expect(bitVector.length).assertEqual(64);
+          bitVector.flipBitsByRange(0, 32);
+          for (let i = 0; i < bitVectorLength; i++) {
+            expect(bitVector[i]).assertEqual(1);
+          }
+      });
+      /**
+       * @tc.name   BitVector_flipBitsByRange_Func_007
+       * @tc.number BITVECTOR_TEST_070
+       * @tc.desc   Flips a range of bit values in a bit vector.(Flip 0 to 1, flip 1 to 0).
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_flipBitsByRange_Func_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(10);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            if (i >= 32) {
+              let res0 = bitVector.push(1);
+              expect(res0).assertEqual(true);
+            } else {
+              let res0 = bitVector.push(0);
+              expect(res0).assertEqual(true);
+            }
+          }
+          expect(bitVector.length).assertEqual(bitVectorLength + 10);
+          bitVector.flipBitsByRange(10, 74);
+          for (let i = 10; i < bitVectorLength + 10; i++) {
+            if (i >= 42) {
+              expect(bitVector[i]).assertEqual(0);
+            } else {
+              expect(bitVector[i]).assertEqual(1);
+            }
+          }
+      });
+      /**
+       * @tc.name   BitVector_Values_Func_001
+       * @tc.number BITVECTOR_TEST_071
+       * @tc.desc   returns an iterator.Each item of the iterator is a Javascript Object.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_Values_Func_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          bitVector.push(1);
+          bitVector.push(0);
+          let vec: number[] = [];
+          let a: number[] = [1, 1, 0, 1, 0];
+          let itr = bitVector.values();
+          let tmp: IteratorResult<number> = itr.next();
+          while (!tmp.done) {
+            vec.push(tmp.value);
+            tmp = itr.next();
+          }
+          expect(vec.length).assertEqual(a.length);
+          for (let i = 0; i < a.length; i++) {
+            expect(vec[i]).assertEqual(a[i]);
+          }
+      });
+      /**
+       * @tc.name   BitVector_Values_Func_002
+       * @tc.number BITVECTOR_TEST_072
+       * @tc.desc   returns an iterator.Each item of the iterator is a Javascript Object.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_Values_Func_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            let res0 = bitVector.push(0);
+            expect(res0).assertEqual(true);
+          }
+          expect(bitVector.length).assertEqual(64);
+          let vec: number[] = [];
+          let itr = bitVector.values();
+          let tmp: IteratorResult<number> = itr.next();
+          while (!tmp.done) {
+            vec.push(tmp.value);
+            tmp = itr.next();
+          }
+          expect(vec.length).assertEqual(bitVectorLength);
+          for (let i = 0; i < bitVectorLength; i++) {
+            expect(vec[i]).assertEqual(0);
+          }
+      });
+      /**
+       * @tc.name   BitVector_Values_Func_003
+       * @tc.number BITVECTOR_TEST_073
+       * @tc.desc   returns an iterator.Each item of the iterator is a Javascript Object.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_Values_Func_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(10);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            let res0 = bitVector.push(0);
+            expect(res0).assertEqual(true);
+          }
+          expect(bitVector.length).assertEqual(bitVectorLength + 10);
+          let vec: number[] = [];
+          let itr = bitVector.values();
+          let tmp: IteratorResult<number> = itr.next();
+          while (!tmp.done) {
+            vec.push(tmp.value);
+            tmp = itr.next();
+          }
+          expect(vec.length).assertEqual(bitVectorLength + 10);
+          for (let i = 10; i < bitVectorLength + 10; i++) {
+            expect(vec[i]).assertEqual(0);
+          }
+      });
+      /**
+       * @tc.name   BitVector_setAllBits_Func_001
+       * @tc.number BITVECTOR_TEST_074
+       * @tc.desc   Sets all of bits in a bit vector to a particular element.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_setAllBits_Func_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          bitVector.push(1);
+          bitVector.push(1);
+          bitVector.push(1);
+          bitVector.push(1);
+          bitVector.push(1);
+          bitVector.setAllBits(0);
+          expect(bitVector[0]).assertEqual(0);
+          expect(bitVector[1]).assertEqual(0);
+      });
+      /**
+       * @tc.name   BitVector_setAllBits_Func_002
+       * @tc.number BITVECTOR_TEST_075
+       * @tc.desc   Sets all of bits in a bit vector to a particular element.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_setAllBits_Func_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            let res0 = bitVector.push(0);
+            expect(res0).assertEqual(true);
+          }
+          expect(bitVector.length).assertEqual(64);
+          bitVector.setAllBits(1);
+          for (let i = 0; i < bitVectorLength; i++) {
+            expect(bitVector[i]).assertEqual(1);
+          }
+          bitVector.setAllBits(0);
+          for (let i = 0; i < bitVectorLength; i++) {
+            expect(bitVector[i]).assertEqual(0);
+          }
+      });
+      /**
+       * @tc.name   BitVector_setAllBits_Func_003
+       * @tc.number BITVECTOR_TEST_076
+       * @tc.desc   Sets all of bits in a bit vector to a particular element.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_setAllBits_Func_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(10);
+          let bitVectorLength = 64;
+          for (let i = 0; i < bitVectorLength; i++) {
+            let res0 = bitVector.push(0);
+            expect(res0).assertEqual(true);
+          }
+          expect(bitVector.length).assertEqual(bitVectorLength + 10);
+          bitVector.setAllBits(1);
+          for (let i = 10; i < bitVectorLength + 10; i++) {
+            expect(bitVector[i]).assertEqual(1);
+          }
+          bitVector.setAllBits(0);
+          for (let i = 10; i < bitVectorLength + 10; i++) {
+            expect(bitVector[i]).assertEqual(0);
+          }
+      });
+      /**
+       * @tc.name   BitVector_has_Func_008
+       * @tc.number BITVECTOR_TEST_077
+       * @tc.desc   Check if bit vector contains a particular bit element.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_has_Func_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          let bitVectorLength = 20;
+          for (let i = 0; i < bitVectorLength; i++) {
+            if (i >= 10) {
+              let res0 = bitVector.push(1);
+              expect(res0).assertEqual(true);
+            } else {
+              let res0 = bitVector.push(0);
+              expect(res0).assertEqual(true);
+            }
+          }
+          expect(bitVector.length).assertEqual(20);
+          let res0 = bitVector.has(1, 0, 10);
+          expect(res0).assertEqual(true);
+          let res1 = bitVector.has(1, 0, 9);
+          expect(res1).assertEqual(false);
+          let res2 = bitVector.has(0, 10, 19);
+          expect(res2).assertEqual(false);
+          let res3 = bitVector.has(0, 0, 19);
+          expect(res3).assertEqual(true);
+      });
+      /**
+       * @tc.name   BitVector_constructor_Func_002
+       * @tc.number BITVECTOR_TEST_078
+       * @tc.desc   A constructor used to create a BitVector object.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_constructor_Func_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let tmp:string = 'a';
+          let a:number = JSON.parse(JSON.stringify(tmp)) as number;
+          try {
+            let bitVector = new collections.BitVector(a);
+            expect(true).assertEqual(false);
+          } catch (err) {
+            expect(err.name).assertEqual(`BusinessError`);
+            expect(err.code).assertEqual(401);
+            expect(err.message)
+              .assertEqual(`The type of "length" must be integer. Received value is: a`);
+          }
+      });
+      /**
+       * @tc.name   BitVector_push_Func_004
+       * @tc.number BITVECTOR_TEST_079
+       * @tc.desc   Check if the push is non-zero
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_push_Func_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          bitVector.push(NaN);
+          bitVector.push(Infinity);
+          bitVector.push(-2);
+          bitVector.push(-4);
+          bitVector.push(5);
+          bitVector.push(0);
+          expect(bitVector[0]).assertEqual(1);
+          expect(bitVector[1]).assertEqual(1);
+          expect(bitVector[2]).assertEqual(1);
+          expect(bitVector[3]).assertEqual(1);
+          expect(bitVector[4]).assertEqual(1);
+          expect(bitVector[5]).assertEqual(0);
+      });
+      /**
+       * @tc.name   BitVector_has_Func_009
+       * @tc.number BITVECTOR_TEST_080
+       * @tc.desc   Check the situation where element is set to non-0 and non-1
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_has_Func_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          let bitVector = new collections.BitVector(0);
+          bitVector.push(0);
+          bitVector.push(0);
+          bitVector.push(0);
+          bitVector.push(1);
+          bitVector.push(1);
+          bitVector.push(1);
+          expect(bitVector.length).assertEqual(6);
+          let res0 = bitVector.has(0, 0, 2);
+          expect(res0).assertEqual(true);
+          let res1 = bitVector.has(1, 0, 2);
+          expect(res1).assertEqual(false);
+          let res2 = bitVector.has(0, 3, 5);
+          expect(res2).assertEqual(false);
+          let res3 = bitVector.has(1, 3, 5);
+          expect(res3).assertEqual(true);
+          let res4 = bitVector.has(-3, 3, 5);
+          expect(res4).assertEqual(true);
+          let res5 = bitVector.has(7, 3, 5);
+          expect(res5).assertEqual(true);
+          let res6 = bitVector.has(NaN, 3, 5);
+          expect(res6).assertEqual(true);
+      });
+      /**
+       * @tc.name   BitVector_setBitsByRange_Func_008
+       * @tc.number BITVECTOR_TEST_081
+       * @tc.desc   Check for abnormal input parameters.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('BitVector_setBitsByRange_Func_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+          try {
+            let bitVector = new collections.BitVector(0);
+            let tmp:string = 'test';
+            let a:number = JSON.parse(JSON.stringify(tmp)) as number;
+            bitVector.push(0);
+            bitVector.push(0);
+            bitVector.push(0);
+            bitVector.push(0);
+            bitVector.push(0);
+            bitVector.setBitsByRange(1, a, 4);
+            expect(true).assertEqual(false);
+          } catch (err) {
+            expect(err.name).assertEqual(`BusinessError`);
+            expect(err.code).assertEqual(401);
+            expect(err.message)
+              .assertEqual(`The type of "fromIndex" must be integer. Received value is: test`);
+          }
+      });
+      /**
+     * @tc.name   CollectionsConcurrentModifyTest0100
+     * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0100
+     * @tc.desc   ConcatArray pop 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CollectionsConcurrentModifyTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0100';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.pop()
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0200
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0200
+   * @tc.desc   ConcatArray push 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0100';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.push(1)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0300
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0300
+   * @tc.desc   ConcatArray join 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0300';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.join('-')
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0400
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0400
+   * @tc.desc   ConcatArray shift 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0400';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.shift()
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0500
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0500
+   * @tc.desc   ConcatArray unshift 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0500';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.unshift(1)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0600
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0600
+   * @tc.desc   ConcatArray slice 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0600';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.slice(0, 4)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0700
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0700
+   * @tc.desc   ConcatArray sort 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0700';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.sort((a: number, b: number) => a - b)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0800
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0800
+   * @tc.desc   ConcatArray indexOf 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0800';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.indexOf(1)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest0900
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_0900
+   * @tc.desc   ConcatArray forEach 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest0900';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.forEach((value) => {
+            const sum = value + Math.random(); // 无害操作
+          })
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1000
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1000
+   * @tc.desc   ConcatArray map 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1000';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.map(value => value)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1100
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1100
+   * @tc.desc   ConcatArray filter 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1100';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.filter((value: number) => value % 2 === 0)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1200
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1200
+   * @tc.desc   ConcatArray reduce1 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1200';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.reduce((accumulator, value) => accumulator + value)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1300
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1300
+   * @tc.desc   ConcatArray reduce2 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1300';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.reduce<number>((accumulator: number, value: number) => accumulator + value, 0)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1400
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1400
+   * @tc.desc   ConcatArray at 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1400';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.at(2)
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1500
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1500
+   * @tc.desc   ConcatArray entries 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1500';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.entries()
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
+  /**
+   * @tc.name   CollectionsConcurrentModifyTest1600
+   * @tc.number SUB_COLLECTION_CONCURRENT_MODIFY_1600
+   * @tc.desc   ConcatArray keys 10200201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('CollectionsConcurrentModifyTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+      const caseName = 'CollectionsConcurrentModifyTest1600';
+      console.info(`${caseName} test start`);
+      let count = 0;
+      let arr = new collections.Array(1, 2, 3, 4, 5, 6, 7, 8);
+      try {
+        for (let i = 0; i < 100; i++) {
+          taskpool.execute(testModifyArray, i, arr).then(() => {
+            count++
+          }).catch((e: BusinessError) => {
+            console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+          })
+        }
+        for (let i = 0; i < 100; i++) {
+          arr.keys()
+        }
+      } catch (e) {
+        console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+        expect(e.code).assertEqual(10200201)
+      }
+      while (count < 100) {
+        await asyncSleep(100)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    })
   });
 }

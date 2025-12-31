@@ -62,9 +62,9 @@ export default function openCustomDialogNew() {
   describe('openCustomDialogNew', () => {
     beforeAll(() => {
       console.info("openCustomDialogNew beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("openCustomDialogNew beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

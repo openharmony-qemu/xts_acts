@@ -81,8 +81,7 @@ export default function ListReboundTest() {
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Rebound_static_0100
      * @tc.name     ArkUI_Rebound_static_0100
      * @tc.desc     ArkUI_Rebound_static_0100
@@ -114,8 +113,7 @@ it('ArkUI_Rebound_static_0100', Level.LEVEL1, async (done: () => void): Promise<
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Rebound_static_0200
      * @tc.name     ArkUI_Rebound_static_0200
      * @tc.desc     ArkUI_Rebound_static_0200
@@ -148,8 +146,7 @@ it('ArkUI_Rebound_static_0200', Level.LEVEL1, async (done: () => void): Promise<
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Rebound_static_0300
      * @tc.name     ArkUI_Rebound_static_0300
      * @tc.desc     ArkUI_Rebound_static_0300

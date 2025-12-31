@@ -627,7 +627,132 @@ export default function btSocketTest() {
             }
             done();
         })
-
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1700
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen('', SppOption, serverSocket);
+                console.info('[bluetooth_js]:sppListen 1700 success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen 1700 error, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(801);
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1800
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1800
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            try {
+                let str = "a".repeat(256);
+                await bluetooth.sppListen(str, SppOption, serverSocket);
+                console.info('[bluetooth_js]:sppListen 1800 success');
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen error 1800, code is ${error.code},message is ${error.message}`);
+                console.info('[bluetooth_js]setLocalName is not support');
+                expect(Number(error.code)).assertEqual(801);
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1900
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1900
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            try {
+                let str = "a".repeat(257);
+                await bluetooth.sppListen(str, SppOption, serverSocket);
+                console.info('[bluetooth_js]:sppListen 1900 success');
+                // expect().assertFail(); //李志辉 00504379，这个限制是协议栈的限制，超了的话会截断所以不报错
+            } catch (error) {
+                if (error.code == 801) {
+                    console.info('[bluetooth_js]sppListen 1900 is not support');
+                    expect(Number(error.code)).assertEqual(801);
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_2000
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_2000
+         * @tc.desc   Test  SppListen api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            const SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            try {
+                await bluetooth.sppListen(null, SppOption, serverSocket);
+                console.info('[bluetooth_js]:sppListen 2000 success');
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]SPPListen 2000 error, code is ${error.code},message is ${error.message}`);
+                if (error.code == 801) {
+                    console.info('[bluetooth_js]sppListen 2000 is not support');
+                    expect(Number(error.code)).assertEqual(801);
+                } else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_0100

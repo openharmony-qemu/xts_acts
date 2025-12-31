@@ -56,9 +56,7 @@ export default function onKeyEventDispatchTest3() {
         if (!("onkeyEventDispatch03" == pages.name)) {
           console.info("get onkeyEventDispatchTest03 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push onkeyEventDispatchTest03 success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onkeyEventDispatchTest03 page error: " + err);

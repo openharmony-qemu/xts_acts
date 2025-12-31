@@ -65,8 +65,7 @@ export default function listVisibleJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listVisibleJsunit_static_0100
      * @tc.name     listVisibleJsunit_static_0100
      * @tc.desc     listVisibleJsunit_static_0100
