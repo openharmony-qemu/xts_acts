@@ -67,6 +67,8 @@ export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         // let session:UIExtensionContentSession;
@@ -81,12 +83,19 @@ export default function DisplayTest() {
         let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext;
         beforeAll(async (): Promise<void> => {
+            hilog.info(domain, tag, 'beforeAll start');
+            let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            await Utils.msSleep(2000);
             displayFoldStatus = display.getFoldStatus();
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
             windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+            hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
             win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+            hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-            // let win = windowStage.getMainWindowSync();
+            hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
             try{
                 let data:string = displayClass.getDisplayCapability();
                 // let capabilityData = JSON.parse(data);
