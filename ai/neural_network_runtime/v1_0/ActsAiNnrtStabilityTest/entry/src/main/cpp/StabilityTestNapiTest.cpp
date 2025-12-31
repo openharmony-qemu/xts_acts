@@ -99,11 +99,17 @@ static napi_value stabilityTest(napi_env env, napi_callback_info info)
     workData->testCaseIndex = caseNum;
     napi_create_string_utf8(env, "NNRtStabilityTest", NAPI_AUTO_LENGTH, &resourceName);
     if ((status = napi_create_async_work(
-             env, nullptr, resourceName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork)) !=
-            napi_ok ||
+        env,
+        nullptr,
+        resourceName,
+        ExecuteAsyncWork,
+        CompleteAsyncWork,
+        workData,
+        &workData->asyncWork)) != napi_ok ||
         (status = napi_queue_async_work(env, workData->asyncWork)) != napi_ok) {
-        if (workData->asyncWork)
+        if (workData->asyncWork) {
             napi_delete_async_work(env, workData->asyncWork);
+        }
         delete workData;
         napi_throw_error(env, nullptr, "Failed to create/queue async work");
         return nullptr;
