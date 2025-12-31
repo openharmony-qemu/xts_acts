@@ -12,6 +12,9 @@
         {
             "type": "ShellKit",
             "run-command": [
+                "uitest screenCap -p /data/local/tmp/testActsRecorderFormatJsTest.png",
+                "param set persist.usb.setting.gadget_conn_prompt false",
+                "param set persist.skip_scb_charging 1",
                 "param set persist.ace.testmode.enabled 1",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
@@ -19,6 +22,7 @@
                 "power-shell setmode 602"
             ],
             "teardown-command": [
+                "param set persist.usb.settings.gadget_conn_prompt true",
                 "power-shell setmode 600",
                 "sleep 5",
                 "rm -rf /data/app/el2/100/database/com.ohos.medialibrary.medialibrarydata/*",
