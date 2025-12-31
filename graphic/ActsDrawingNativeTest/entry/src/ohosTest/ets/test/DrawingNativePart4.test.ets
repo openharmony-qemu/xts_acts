@@ -43,7 +43,7 @@ export default function ActsNewDrawingNativeTestPart4() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15300', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawImageRect(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15300', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawImageRect(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15400', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15500', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15500', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawImageRect(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15500', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawImageRect(3);
       expect(result).assertEqual(0);
     })
@@ -96,7 +96,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawVertices(0);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21400', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawVertices(1);
       expect(result).assertEqual(0);
     })
@@ -122,7 +122,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21500', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawVertices(2);
       expect(result).assertEqual(0);
     })
@@ -135,7 +135,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawVertices(3);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21700', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21800', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21800', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(0);
       expect(result).assertEqual(0);
     })
@@ -162,7 +162,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21800', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(1);
       expect(result).assertEqual(0);
     })
@@ -175,7 +175,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21900', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(2);
       expect(result).assertEqual(0);
     })
@@ -188,7 +188,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22000', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22100', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22100', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(3);
       expect(result).assertEqual(0);
     })
@@ -201,7 +201,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22100', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(4);
       expect(result).assertEqual(0);
     })
@@ -214,7 +214,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22200', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22300', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasReadPixels(5);
       expect(result).assertEqual(0);
     })
@@ -228,7 +228,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22300', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasReadPixelsToBitmap(0);
       expect(result).assertEqual(0);
     })
@@ -241,7 +241,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22400', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixelsToBitmap(1);
       expect(result).assertEqual(0);
     })
@@ -254,7 +254,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22500', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixelsToBitmap(2);
       expect(result).assertEqual(0);
     })
@@ -267,7 +267,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasReadPixelsToBitmap(3);
       expect(result).assertEqual(0);
     })
@@ -281,7 +281,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22700', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22800', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22800', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasDrawSingleCharacter(0);
       expect(result).assertEqual(0);
     })
@@ -294,7 +294,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22800', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22900', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22900', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawSingleCharacter(1);
       expect(result).assertEqual(0);
     })
@@ -307,7 +307,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22900', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawSingleCharacter(2);
       expect(result).assertEqual(0);
     })
@@ -321,7 +321,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23000', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawPoint(0);
       expect(result).assertEqual(0);
     })
@@ -334,7 +334,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23100', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPoint(1);
       expect(result).assertEqual(0);
     })
@@ -347,7 +347,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23200', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPoint(2);
       expect(result).assertEqual(0);
     })
@@ -361,7 +361,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23300', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasDrawColor(0);
       expect(result).assertEqual(0);
     })
@@ -374,7 +374,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23400', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawColor(1);
       expect(result).assertEqual(0);
     })
@@ -387,7 +387,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23500', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawColor(2);
       expect(result).assertEqual(0);
     })
@@ -400,7 +400,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawColor(3);
       expect(result).assertEqual(0);
     })
@@ -414,7 +414,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23700', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23800', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23800', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasIsClipEmpty(0);
       expect(result).assertEqual(0);
     })
@@ -427,7 +427,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23800', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasIsClipEmpty(1);
       expect(result).assertEqual(0);
     })
@@ -440,7 +440,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23900', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasIsClipEmpty(2);
       expect(result).assertEqual(0);
     })
@@ -454,7 +454,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24000', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasGetImageInfo(0);
       expect(result).assertEqual(0);
     })
@@ -467,7 +467,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24100', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasGetImageInfo(1);
       expect(result).assertEqual(0);
     })
@@ -480,7 +480,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24200', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasGetImageInfo(2);
       expect(result).assertEqual(0);
     })
@@ -494,7 +494,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24300', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingCanvasClipRegion(0);
       expect(result).assertEqual(0);
     })
@@ -507,7 +507,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24400', Level.LEVEL0, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasClipRegion(1);
       expect(result).assertEqual(0);
     })
@@ -520,7 +520,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24500', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasClipRegion(2);
       expect(result).assertEqual(0);
     })
@@ -534,7 +534,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectPath(0);
       expect(result).assertEqual(0);
     })
@@ -547,7 +547,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15700', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15800', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15800', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectPath(1);
       expect(result).assertEqual(0);
     })
@@ -560,7 +560,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15800', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15900', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15900', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectPath(2);
       expect(result).assertEqual(0);
     })
@@ -574,7 +574,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15900', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectRect(0);
       expect(result).assertEqual(0);
     })
@@ -587,7 +587,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16000', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16100', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16100', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectRect(1);
       expect(result).assertEqual(0);
     })
@@ -600,7 +600,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16100', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16200', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16200', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasQuickRejectRect(2);
       expect(result).assertEqual(0);
     })
@@ -614,7 +614,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16200', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawArcWithCenter(0);
       expect(result).assertEqual(0);
     })
@@ -627,7 +627,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16300', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16400', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16400', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasDrawArcWithCenter(1);
       expect(result).assertEqual(0);
     })
@@ -640,7 +640,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16400', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16500', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16500', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasDrawArcWithCenter(2);
       expect(result).assertEqual(0);
     })
@@ -654,7 +654,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16500', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawNestedRoundRect(0);
       expect(result).assertEqual(0);
     })
@@ -667,7 +667,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16700', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16700', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasDrawNestedRoundRect(1);
       expect(result).assertEqual(0);
     })
@@ -680,7 +680,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16700', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16800', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16800', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasDrawNestedRoundRect(2);
       expect(result).assertEqual(0);
     })
@@ -694,7 +694,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16800', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapNine(0);
       expect(result).assertEqual(0);
     })
@@ -707,7 +707,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16900', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17000', Level.LEVEL1, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17000', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapNine(1);
       expect(result).assertEqual(0);
     })
@@ -720,7 +720,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17000', Level.LEVEL1, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17100', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17100', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapNine(2);
       expect(result).assertEqual(0);
     })
@@ -734,7 +734,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17100', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17200', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17200', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasCreateWithPixelMap(0);
       expect(result).assertEqual(0);
     })
@@ -747,7 +747,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17200', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasCreateWithPixelMap(1);
       expect(result).assertEqual(0);
     })
@@ -760,7 +760,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17300', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasCreateWithPixelMap(2);
       expect(result).assertEqual(0);
     })
@@ -774,7 +774,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17400', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17500', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17500', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapRectConstraint(0);
       expect(result).assertEqual(0);
     })
@@ -787,7 +787,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17500', Level.LEVEL2, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapRectConstraint(1);
       expect(result).assertEqual(0);
     })
@@ -800,7 +800,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17600', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapRectConstraint(2);
       expect(result).assertEqual(0);
     })
@@ -813,7 +813,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17700', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17800', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17800', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapRectConstraint(3);
       expect(result).assertEqual(0);
     })
@@ -827,7 +827,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17800', Level.LEVEL3, (
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(0);
       expect(result).assertEqual(0);
     })
@@ -840,7 +840,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(1);
       expect(result).assertEqual(0);
     })
@@ -853,7 +853,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(2);
       expect(result).assertEqual(0);
     })
@@ -866,7 +866,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(3);
       expect(result).assertEqual(0);
     })
@@ -879,7 +879,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateBlendMode(4);
       expect(result).assertEqual(0);
     })
@@ -893,7 +893,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(0);
       expect(result).assertEqual(0);
     })
@@ -906,7 +906,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(1);
       expect(result).assertEqual(0);
     })
@@ -919,7 +919,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateCompose(2);
       expect(result).assertEqual(0);
     })
@@ -933,7 +933,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(0);
       expect(result).assertEqual(0);
     })
@@ -946,7 +946,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(1);
       expect(result).assertEqual(0);
     })
@@ -959,7 +959,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(2);
       expect(result).assertEqual(0);
     })
@@ -972,7 +972,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateMatrix(3);
       expect(result).assertEqual(0);
     })
@@ -986,7 +986,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLinearToSrgbGamma(0);
       expect(result).assertEqual(0);
     })
@@ -999,7 +999,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLinearToSrgbGamma(1);
       expect(result).assertEqual(0);
     })
@@ -1013,7 +1013,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateSrgbGammaToLinear(0);
       expect(result).assertEqual(0);
     })
@@ -1026,7 +1026,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateSrgbGammaToLinear(1);
       expect(result).assertEqual(0);
     })
@@ -1040,7 +1040,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLuma(0);
       expect(result).assertEqual(0);
     })
@@ -1053,7 +1053,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLuma(1);
       expect(result).assertEqual(0);
     })
@@ -1067,7 +1067,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -1080,7 +1080,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1094,7 +1094,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(0);
       expect(result).assertEqual(0);
     })
@@ -1107,7 +1107,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(1);
       expect(result).assertEqual(0);
     })
@@ -1120,7 +1120,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(2);
       expect(result).assertEqual(0);
     })
@@ -1133,7 +1133,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorFilterCreateLighting(3);
       expect(result).assertEqual(0);
     })
@@ -1147,7 +1147,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400', Level.LEVE
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgb(0);
       expect(result).assertEqual(0);
     })
@@ -1160,7 +1160,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100', Level.LEVEL0, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgb(1);
       expect(result).assertEqual(0);
     })
@@ -1174,7 +1174,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100', Level.LEVEL
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSpaceDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -1188,7 +1188,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgbLinear(0);
       expect(result).assertEqual(0);
     })
@@ -1201,7 +1201,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200', Level.LEVEL
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgbLinear(1);
       expect(result).assertEqual(0);
     })
@@ -1215,7 +1215,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300', Level.LEVEL
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingColorSetArgb(0);
       expect(result).assertEqual(0);
     })
@@ -1228,7 +1228,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100', Level.LEVEL0, () 
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(1);
       expect(result).assertEqual(0);
     })
@@ -1241,7 +1241,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200', Level.LEVEL3, () 
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(2);
       expect(result).assertEqual(0);
     })
@@ -1254,7 +1254,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300', Level.LEVEL3, () 
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(3);
       expect(result).assertEqual(0);
     })
@@ -1267,7 +1267,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400', Level.LEVEL3, () 
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingColorSetArgb(4);
       expect(result).assertEqual(0);
     })
@@ -1281,7 +1281,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500', Level.LEVEL3, () 
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -1294,7 +1294,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100', Level.LEVEL0, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1307,7 +1307,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -1321,7 +1321,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(0);
       expect(result).assertEqual(0);
     })
@@ -1334,7 +1334,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400', Level.LEVEL0, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(1);
       expect(result).assertEqual(0);
     })
@@ -1347,7 +1347,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(2);
       expect(result).assertEqual(0);
     })
@@ -1361,7 +1361,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(0);
       expect(result).assertEqual(0);
     })
@@ -1374,7 +1374,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700', Level.LEVEL0, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(1);
       expect(result).assertEqual(0);
     })
@@ -1387,7 +1387,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(2);
       expect(result).assertEqual(0);
     })
@@ -1401,7 +1401,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(0);
       expect(result).assertEqual(0);
     })
@@ -1414,7 +1414,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000', Level.LEVEL0, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(1);
       expect(result).assertEqual(0);
     })
@@ -1427,7 +1427,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(2);
       expect(result).assertEqual(0);
     })
@@ -1441,7 +1441,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200', Level.LEVEL3, ()
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -1454,7 +1454,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0100', Level.LEVEL0, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1467,7 +1467,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0200', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -1481,7 +1481,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0300', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(0);
       expect(result).assertEqual(0);
     })
@@ -1494,7 +1494,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0400', Level.LEVEL0, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(1);
       expect(result).assertEqual(0);
     })
@@ -1507,7 +1507,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0500', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(2);
       expect(result).assertEqual(0);
     })
@@ -1520,7 +1520,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0600', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0700', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0700', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontSetBaselineSnap(3);
       expect(result).assertEqual(0);
     })
@@ -1534,7 +1534,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0700', Level.LEVEL2, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0800', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0800', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(0);
       expect(result).assertEqual(0);
     })
@@ -1547,7 +1547,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0800', Level.LEVEL0, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(1);
       expect(result).assertEqual(0);
     })
@@ -1560,7 +1560,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0900', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(2);
       expect(result).assertEqual(0);
     })
@@ -1573,7 +1573,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1000', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1100', Level.LEVEL2, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1100', Level.LEVEL2, () => {
       const result = libDrawingNative.DrawingFontSetSubpixel(3);
       expect(result).assertEqual(0);
     })
@@ -1587,7 +1587,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1100', Level.LEVEL2, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1200', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1200', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(0);
       expect(result).assertEqual(0);
     })
@@ -1600,7 +1600,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1200', Level.LEVEL0, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(1);
       expect(result).assertEqual(0);
     })
@@ -1613,7 +1613,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1300', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(2);
       expect(result).assertEqual(0);
     })
@@ -1626,7 +1626,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1400', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetForceAutoHinting(3);
       expect(result).assertEqual(0);
     })
@@ -1640,7 +1640,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1500', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1600', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1600', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(0);
       expect(result).assertEqual(0);
     })
@@ -1653,7 +1653,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1600', Level.LEVEL0, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(1);
       expect(result).assertEqual(0);
     })
@@ -1666,7 +1666,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1700', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1800', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1800', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(2);
       expect(result).assertEqual(0);
     })
@@ -1679,7 +1679,7 @@ it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1800', Level.LEVEL3, () =
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1900', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1900', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetTypeface(3);
       expect(result).assertEqual(0);
     })
