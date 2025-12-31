@@ -874,7 +874,7 @@ int TestFontMeasureTextWithBrushOrPenAbnormal()
         OH_Drawing_RectCreate(RECT_LEFT_ZERO, RECT_TOP_ZERO, RECT_RIGHT_TWO_HUNDRED, RECT_BOTTOM_TWO_HUNDRED);
     // byteLength passes to 0
     EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, NUMBER_ZERO, TEXT_ENCODING_UTF8, brush, nullptr,
-                                                       bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
+        bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // brush and pen are not empty
     EXPECT_EQ(OH_Drawing_FontMeasureTextWithBrushOrPen(font, text, strlen(text), TEXT_ENCODING_UTF8, brush, pen,
         bounds, &textWidth), OH_DRAWING_ERROR_INVALID_PARAMETER);
