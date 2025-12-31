@@ -25,6 +25,7 @@ import { abilityAccessCtrl, StartOptions ,PermissionRequestResult, Permissions} 
 import { display, screenshot } from '@kit.ArkUI';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 async function getPermision(): Promise<void> {
   let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
