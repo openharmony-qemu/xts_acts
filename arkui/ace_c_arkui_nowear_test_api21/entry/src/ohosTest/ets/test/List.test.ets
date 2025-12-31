@@ -15,8 +15,10 @@
 
 import SwipeActionTest from "./list/swipeActionTest.test";
 import SwipeErrorTest from "./list/swipeErrorTest.test";
+import SourceTypeTest from './sourceType/SourceTypeTest.test'
 
 export default function testsuite() {
   SwipeActionTest();
   SwipeErrorTest();
+  SourceTypeTest();
 }

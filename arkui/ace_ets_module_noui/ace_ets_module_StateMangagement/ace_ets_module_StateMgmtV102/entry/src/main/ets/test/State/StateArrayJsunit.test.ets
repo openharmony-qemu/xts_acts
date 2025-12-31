@@ -68,7 +68,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0100 START');
       let strJson = getInspectorByKey('text_Array');
@@ -88,7 +88,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -116,7 +116,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0300 START');
       let driver = await UiDriver.create()
@@ -144,7 +144,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0400 START');
       let driver = await UiDriver.create()
@@ -172,7 +172,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0500 START');
       let strJson = getInspectorByKey('text_ClassA');
@@ -192,7 +192,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0600 START');
       let driver = await UiDriver.create()
@@ -220,7 +220,7 @@ export default function StateArrayJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayJsunit_0700', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayJsunit_0700', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayJsunit_0700 START');
       let driver = await UiDriver.create()

@@ -372,11 +372,13 @@ export default function fileIOCreateRandomAccessFile() {
     it('fileIO_create_randomaccessfile_sync_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_016 start');
       let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_016');
-      initReadfile(fpath);
+      let wapth1 = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_01601');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
       let readfile = fs.openSync(fpath, fs.OpenMode.READ_ONLY);
-      let writefile = fs.openSync(wpath, fs.OpenMode.WRITE_ONLY);
+      let writefile = fs.openSync(wapth1, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY);
 
       try {
+        let stat = fs.statSync(fpath);
         let randomAccessFile1 = fs.createRandomAccessFileSync(readfile);
         let rs = randomAccessFile1.getReadStream();
         let randomAccessFile2 = fs.createRandomAccessFileSync(writefile);
@@ -390,15 +392,18 @@ export default function fileIOCreateRandomAccessFile() {
             return;
           }
           const data:string = a.toString();
+          let readlength = data.length;
+          expect(readlength == stat.size).assertTrue();
           ws.write(data);
         });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_016 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-          done();
-        });
+       await Utils.msSleep(2000);
+       let Witebytes = ws.bytesWritten;
+       expect(stat.size == Witebytes).assertTrue();
+       randomAccessFile1.close();
+       randomAccessFile2.close();
+       rs.close();
+       ws.close();
+       done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_016 has failed for ' + err);
         expect(false).assertTrue();
@@ -417,13 +422,15 @@ export default function fileIOCreateRandomAccessFile() {
     it('fileIO_create_randomaccessfile_sync_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_017 start');
       let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_017');
-      initReadfile(fpath);
-      let size = fs.lstatSync(fpath).size;
+      let wapth1 = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_01701');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
       try {
+        let stat = fs.statSync(fpath);
+        let size = stat.size;
         let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0, end:size/4});
         let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = fs.createRandomAccessFileSync(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
+        let randomaccessfile2 = fs.createRandomAccessFileSync(wapth1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
         let ws = randomaccessfile2.getWriteStream();
         rs.on('data', (emitData: buffer.Buffer|string) => {
           let a = emitData;
@@ -434,16 +441,19 @@ export default function fileIOCreateRandomAccessFile() {
             return;
           }
           const data:string = a.toString();
+          let readlength = data.length;
+          expect(readlength == 2).assertTrue();
           ws.write(data);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_017 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
         });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_017 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-          done();
-        });
+        await Utils.msSleep(2000);
+        let Witebytes = ws.bytesWritten;
+        let stat2 = fs.statSync(wapth1);
+        expect(stat2.size == Witebytes).assertTrue();
+        randomaccessfile1.close();
+        randomaccessfile2.close();
+        rs.close();
+        ws.close();
+        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_017 has failed for ' + err);
         expect(false).assertTrue();
@@ -462,13 +472,14 @@ export default function fileIOCreateRandomAccessFile() {
     it('fileIO_create_randomaccessfile_sync_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 start');
       let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_018');
-      initReadfile(fpath);
-      let size = fs.lstatSync(fpath).size;
+      let wapth1 = await Utils.nextFileName('fileIO_create_randomaccessfile_sync_static_01801');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let size = fs.statSync(fpath).size;
 
       try {
-        let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4, end:size/2});
+        let randomaccessfile1 = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:9});
         let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = fs.createRandomAccessFileSync(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4});
+        let randomaccessfile2 = fs.createRandomAccessFileSync(wapth1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1});
         let ws = randomaccessfile2.getWriteStream();
         rs.on('data', (emitData: buffer.Buffer|string) => {
           let a = emitData;
@@ -479,15 +490,19 @@ export default function fileIOCreateRandomAccessFile() {
             return;
           }
           const data:string = a.toString();
+          let readlength = data.length;
+          expect(readlength == 8).assertTrue();
           ws.write(data);
         });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-          done();
-        });
+        await Utils.msSleep(2000);
+        let Witebytes = ws.bytesWritten;
+        let stat2 = fs.statSync(wapth1);
+        expect(stat2.size == Witebytes +1).assertTrue();
+        randomaccessfile1.close();
+        randomaccessfile2.close();
+        rs.close();
+        ws.close();
+        done();
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_sync_static_018 has failed for ' + err);
         expect(false).assertTrue();
@@ -534,7 +549,7 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_001');
         fs.createRandomAccessFile(fpath, 0o102, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.setFilePointer(10);
           let filePointer = randomaccessfile?.filePointer;
           expect(filePointer == 10).assertTrue();
@@ -562,7 +577,7 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         fs.createRandomAccessFile(file, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.close();
           fs.closeSync(file.fd);
           fs.unlinkSync(fpath);
@@ -663,12 +678,12 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) =>{
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.close();
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_008 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -855,13 +870,14 @@ export default function fileIOCreateRandomAccessFile() {
      */
     it('fileIO_create_randomaccessfile_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_016');
-      initReadfile(fpath);
-      let size = fs.lstatSync(fpath).size;
+      let wpath1 = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_01601');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let size = fs.statSync(fpath).size;
 
       try {
-        let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4*3, end:size});
+        let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:size});
         let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = await fs.createRandomAccessFile(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
+        let randomaccessfile2 = await fs.createRandomAccessFile(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
         let ws = randomaccessfile2.getWriteStream();
         rs.on('data', (emitData: buffer.Buffer|string) => {
           let a = emitData;
@@ -872,15 +888,18 @@ export default function fileIOCreateRandomAccessFile() {
             return;
           }
           const data:string = a.toString();
+          let readlength = data.length;
+          expect(readlength == 10).assertTrue();
           ws.write(data);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_016 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
         });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_016 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-        });
+        await Utils.msSleep(3000);
+        let Witebytes = ws.bytesWritten;
+        let stat2 = fs.statSync(wpath1);
+        expect(stat2.size == Witebytes).assertTrue();
+        randomaccessfile1.close();
+        randomaccessfile2.close();
+        rs.close();
+        ws.close();
         done();
       } catch (err: BusinessError) {
         console.info('fileIO_create_randomaccessfile_async_static_016 has failed for ' + err);

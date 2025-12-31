@@ -38,6 +38,10 @@
 		"MainAbility/pages/stageAnimator",
         "MainAbility/pages/Particle/RippleFields",
 		"MainAbility/pages/Particle/VelocityFields",
-        "MainAbility/pages/AnimatorResult/UIContextAnimateToImmediately"
+        "MainAbility/pages/AnimatorResult/UIContextAnimateToImmediately",
+        "MainAbility/pages/StepsCurveComponent",
+        "MainAbility/pages/CurvesSpringMotion",
+        "MainAbility/pages/Animation/AnimatorEase",
+        "MainAbility/pages/ExcludeFromRenderGroupDemo"
     ]
 }

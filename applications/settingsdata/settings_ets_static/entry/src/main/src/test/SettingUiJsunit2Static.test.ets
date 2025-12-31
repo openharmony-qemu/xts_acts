@@ -21,8 +21,24 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base';
+import deviceInfo from '@ohos.deviceInfo';
 
 let abilityContext: common.UIAbilityContext
+
+const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
+const deviceType = deviceInfo.deviceType;
+
+function isDevicePhone(): boolean {
+  return deviceType === 'phone';
+}
+
+function isDeviceTablet(): boolean {
+  return deviceType === 'tablet';
+}
+
+function isDeviceSupportInputMethod(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
 
 export default function settingUiJsunit() {
   beforeAll(() => {
@@ -115,15 +131,15 @@ export default function settingUiJsunit() {
     it('settings_get_value_static_119',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness119';//关键字
       let defaultValue = '323445.00';//值
-      let domainName = 'secure';
+      let domainName = 'system';
       try{
         let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
-        expect().assertFail();
+        expect(value).assertEqual(defaultValue);
         done();
       } catch (err: Error) {
         console.error("[settings_set_value_119] error = " + err);
-        expect(err.message).assertEqual("Permission denied");
+        expect().assertFail();
         done();
       }
     });
@@ -1547,6 +1563,110 @@ export default function settingUiJsunit() {
             }
             done();
           })
+    });
+
+    /**
+     * @tc.name   openInputMethodSettings_valid_param
+     * @tc.number openInputMethodSettings_valid_param
+     * @tc.desc   openInputMethodSettings_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(abilityContext);
+      } catch (err) {
+        console.error("[openInputMethodSettings_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_bundleName
+     * @tc.number openInputMethodDetail_invalid_bundleName
+     * @tc.desc   openInputMethodDetail_invalid_bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, '', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_bundleName] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_method
+     * @tc.number openInputMethodDetail_invalid_method
+     * @tc.desc   openInputMethodDetail_invalid_method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, 'bundleName', '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_method] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_valid_param
+     * @tc.number openInputMethodDetail_valid_param
+     * @tc.desc   openInputMethodDetail_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(abilityContext, 'bundleName', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
     });
   })
 }

@@ -88,7 +88,7 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       let url: string = 'https://demo.gmssl.cn:1443';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '6482954d50c1a28f845ce4aa1d3c206c8f418d3fa16419e770955385f816ae82_F';
+        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);
@@ -100,7 +100,11 @@ export default function requestCacheDownloadStateSecretUnitTest() {
             let ifExit: boolean = fs.accessSync(path);
             console.info("====>SUB_Request_cacheDownload_stateSecret_0200 ifExit: " + ifExit);
             expect(ifExit).assertFalse();
-            done();
+            cacheDownload.cancel(url);
+            let t1 = setTimeout(() => {
+              clearTimeout(t1)
+              done();
+            }, 1000)
           }catch (err) {
             console.info("====>SUB_Request_cacheDownload_stateSecret_0200 err: " + JSON.stringify(err));
             done();
@@ -125,12 +129,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0300 is starting-----------------------");
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
-        caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/boc.ca.pem'
+        caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/sm2.ca.pem'
       }
-      let url: string = 'https://ebssec.boc.cn';
+      let url: string = 'https://demo.gmssl.cn:1443';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '6482954d50c1a28f845ce4aa1d3c206c8f418d3fa16419e770955385f816ae82_F';
+        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);
@@ -168,7 +172,7 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0400 is starting-----------------------");
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
-        caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/boc.ca.pem'
+        caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/sm2.ca.pem'
       }
       let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_2.jpg';
       let num: number = 20 * 1024 * 1024
@@ -210,12 +214,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0500 is starting-----------------------");
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
-        caPath?: string | undefined = '/data/storage/el2/bundle/entry_test/resources/resfile/boc.ca.pem'
+        caPath?: string | undefined = '/data/storage/el2/bundle/entry_test/resources/resfile/sm2.ca.pem'
       }
-      let url: string = 'https://ebssec.boc.cn';
+      let url: string = 'https://demo.gmssl.cn:1443';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '6482954d50c1a28f845ce4aa1d3c206c8f418d3fa16419e770955385f816ae82_F';
+        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);
@@ -276,6 +280,121 @@ export default function requestCacheDownloadStateSecretUnitTest() {
         }, 10000)
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_stateSecret_0600 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0100
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0100
+     * @tc.desc clearMemoryCache success.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0100 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.clearMemoryCache();
+        expect(downloadOptions.headers !== undefined).assertTrue();
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0100 clearMemoryCache success");
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0100 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0200
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0200
+     * @tc.desc clearFileCache success.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0200 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_3.jpg';
+      let num: number = 20 * 1024 * 1024
+      let path: string = '/data/storage/el2/base/cache/preload_caches/' +
+        '8b058bba5e7749849d2b6e45df2a43b9ff1d8e71b0bff46f51ac97ff840d3f1e_F';
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.setFileCacheSize(num);
+        cacheDownload.download(url, downloadOptions);
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0200 download success");
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          try {
+            let ifExit1: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 ifExit: " + ifExit1);
+            expect(ifExit1).assertTrue();
+            cacheDownload.clearFileCache();
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 clearFileCache success");
+            let ifExit2: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 clearFileCache ifExit2: " + ifExit2);
+            expect(ifExit2).assertFalse();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 err: " + JSON.stringify(err));
+            done();
+          }
+        }, 10000)
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0200 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0300
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0300
+     * @tc.desc can not clear download file.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0300 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_3.jpg';
+      let num: number = 20 * 1024 * 1024
+      let path: string = '/data/storage/el2/base/cache/preload_caches/' +
+        '8b058bba5e7749849d2b6e45df2a43b9ff1d8e71b0bff46f51ac97ff840d3f1e_F';
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.setFileCacheSize(num);
+        cacheDownload.download(url, downloadOptions);
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 download success");
+        cacheDownload.clearFileCache();
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 clearFileCache success");
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          try {
+            let ifExit1: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0300 ifExit: " + ifExit1);
+            expect(ifExit1).assertTrue();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0300 err: " + JSON.stringify(err));
+            done();
+          }
+        }, 10000)
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

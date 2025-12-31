@@ -87,3 +87,4 @@ export const oHNativeBufferReadFromParcelNormal: () => number;
 export const oHNativeBufferReadFromParcelNull: () => number;
 export const oHNativeBufferReadFromParcelAbnnormal: () => number;
 export const oHNativeBufferWriteAndReadParcelMultipleCalls: () => number;
+export const oHNativeBufferMapPlanesNormal1: () =>Array<number>;

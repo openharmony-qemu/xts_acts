@@ -38,7 +38,7 @@ class StringFields {
 struct httpAuthHandler {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
-  @State str: string = ""
+  @State str: string = ''
   @State onScrollCallBack: boolean = false
   @State javaScriptAccess: boolean = true
   @State onShowFileSelectorCallBack: boolean = false
@@ -47,7 +47,7 @@ struct httpAuthHandler {
   @State HttpAuthHandlerCancelCallBack: boolean = false
   @State HttpAuthHandlerIsHttpAuthInfoSavedCallBack: boolean = false
   @State Http_Error_Code: number = 0
-  no_error: string = "no error happened"
+  no_error: string = 'no error happened'
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -72,13 +72,13 @@ struct httpAuthHandler {
   build() {
     Column() {
       Row() {
-          Button("HttpAuthHandler click").key('HttpAuthHandlerButton').onClick((e: ClickEvent) => {
-          console.info("key==>" +  this.stringObj.str)
+          Button('HttpAuthHandler click').key('HttpAuthHandlerButton').onClick((e: ClickEvent) => {
+          console.info('key==>' +  this.stringObj.str)
           switch ( this.stringObj.str) {
-            case "testHttpAuthHandlerConfirm001": {
+            case 'testHttpAuthHandlerConfirm001': {
               try {
                 this.HttpAuthHandlerCallBack = 'confirm'
-                this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl('http://httpbin.org/basic-auth/admin/123456')
                 setTimeout(() => {
                   Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 32040)
                 }, 3000)
@@ -90,11 +90,11 @@ struct httpAuthHandler {
               break;
             }
 
-            case "testHttpAuthHandlerCancel001": {
+            case 'testHttpAuthHandlerCancel001': {
               try {
                 this.HttpAuthHandlerCallBack = 'cancel'
                 this.HttpAuthHandlerCancelCallBack = true
-                  this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl('www.example.com')
                 setTimeout(() => {
                   Utils.emitEvent(this.Http_Error_Code, 32041)
                 }, 5000)
@@ -106,10 +106,10 @@ struct httpAuthHandler {
               break;
             }
 
-            case "testHttpAuthHandlerIsHttpAuthInfoSaved001": {
+            case 'testHttpAuthHandlerIsHttpAuthInfoSaved001': {
               try {
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSaved'
-                this.controller.loadUrl("http://httpbin.org/basic-auth/2222/3333")
+                this.controller.loadUrl('http://httpbin.org/basic-auth/admin/123456')
                 setTimeout(() => {
                   Utils.emitEvent(this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack, 32042)
                 }, 3000)
@@ -151,10 +151,10 @@ struct httpAuthHandler {
           return true
         })
         .onHttpErrorReceive((event) => {
-          console.log("onHttpErrorReceive")
+          console.log('onHttpErrorReceive')
           if (event) {
               this.Http_Error_Code = event.response.getResponseCode()
-              console.log("errorCode:" + this.Http_Error_Code)
+              console.log('errorCode:' + this.Http_Error_Code)
               this.HttpAuthHandlerCancelCallBack = false
           }
         })

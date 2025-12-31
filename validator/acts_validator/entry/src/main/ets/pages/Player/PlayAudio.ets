@@ -37,34 +37,36 @@ struct playAudio {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+      Scroll(){
+        Row({space:20}) {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/Player/PlayAudioList',
+              params: { result: 'None', }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Player/PlayAudioList',
-            params: { result: 'None', }
-          })
-        })
-
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
+        .height('20%')
+        .width('200%')
+        .justifyContent(FlexAlign.Center)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
         Video({
@@ -80,7 +82,7 @@ struct playAudio {
           })
       }
       .width('100%')
-      .height('80%')
+      .height('65%')
       .onClick(() => {
         this.showControls = !this.showControls;
       })

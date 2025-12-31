@@ -51,6 +51,7 @@ export default function abilityTest() {
       try {
         let userId = USER_ID100;
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME100, USER_ID100);
+        expect(data.length>0).assertTrue();
         expect(data![0].userId).assertEqual(userId);
         expect(data![0].applicationInfo.name).assertEqual(BUNDLE_NAME100);
         expect(data![0].applicationInfo.description).assertEqual("$string:module_desc");
@@ -78,6 +79,7 @@ export default function abilityTest() {
         expect(data![0].applicationInfo.appIndex).assertEqual(APP_Index);
         expect(data![0].applicationInfo.installSource).assertEqual("unknown");
         expect(data![0].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
+        expect(data![0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data![0].applicationInfo.descriptionId).assertLarger(0);
         expect(data![0].applicationInfo.labelId).assertLarger(0);
         expect(data![0].applicationInfo.iconId).assertLarger(0);

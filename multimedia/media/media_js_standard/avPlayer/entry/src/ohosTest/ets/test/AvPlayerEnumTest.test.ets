@@ -77,6 +77,7 @@ export default function AvPlayerEnumTest() {
       expect(media.AVErrorCode.AVERR_SEEK_CONTINUOUS_UNSUPPORTED).assertEqual(5410002);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_UNSUPPORTED).assertEqual(5410003);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED).assertEqual(5410004);
+      expect(media.AVErrorCode.AVERR_IO_CLEARTEXT_NOT_PERMITTED).assertEqual(5411012);
       done();
     });
     /**
@@ -145,6 +146,8 @@ export default function AvPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_HDR_TYPE).assertEqual("hdr_type");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH).assertEqual("original_width");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT).assertEqual("original_height");
+      expect(media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS).assertEqual("ref_track_ids");
+      expect(media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE).assertEqual("track_ref_type");
       done();
     });
     /**

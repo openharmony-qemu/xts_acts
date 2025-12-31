@@ -413,7 +413,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_001 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.read(file!.fd, new ArrayBuffer(4096)).then((readLen: long) => {
             expect(readLen == FILE_CONTENT.length).assertTrue();
             fs.closeSync(file!);
@@ -474,7 +474,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_003 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.write(file!.fd, new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
             fs.closeSync(file!);
@@ -599,7 +599,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_008 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -655,7 +655,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_010 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.read(file!.fd, new ArrayBuffer(4096)).then((readLen: long) => {
             expect(readLen == 0).assertTrue();
             fs.closeSync(file!);
@@ -717,7 +717,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_012 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.writeSync(file!.fd, new ArrayBuffer(length));
           fs.read(file!.fd, new ArrayBuffer(4096), { offset: 0 }).then((readLen: long) => {
             expect(readLen == length + FILE_CONTENT.length).assertTrue();
@@ -774,7 +774,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_014 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -826,7 +826,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_016 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.rmdirSync(dpath);
           done();
         });
@@ -955,7 +955,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_021 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -1008,7 +1008,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_023 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();

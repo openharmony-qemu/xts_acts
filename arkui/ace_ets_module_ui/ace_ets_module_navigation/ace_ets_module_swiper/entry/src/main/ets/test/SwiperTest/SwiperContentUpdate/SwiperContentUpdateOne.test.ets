@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { SwiperContentInfo } from '@kit.ArkUI';
+import { SwiperContentInfo, SwiperItemInfo } from '@kit.ArkUI';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/utils/Common';
 import {
@@ -85,6 +85,10 @@ export default function SwiperContentUpdateOne() {
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
       expect(Object.keys(value).includes('id') && Object.keys(value).includes('uniqueId') && Object.keys(value).includes('swiperItemInfos')).assertTrue();
+      let swiperItemInfos: Array<SwiperItemInfo> = value?.swiperItemInfos;
+      let uniqueId: number = swiperItemInfos[0]?.uniqueId;
+      let index: number = swiperItemInfos[0]?.index;
+      expect(typeof uniqueId == 'number' && typeof index == 'number').assertTrue();
       AppStorage.delete('swiperContentInfo')
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.text('off'));

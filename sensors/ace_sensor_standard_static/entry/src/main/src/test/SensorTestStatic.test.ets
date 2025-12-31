@@ -37,7 +37,7 @@ function callback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onSensorCallback(data: sensor.OrientationResponse) {
@@ -51,7 +51,7 @@ function onSensorCallback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onHallCallback(data: sensor.HallResponse) {
@@ -302,6 +302,10 @@ function onAccelerometerCallback(data: sensor.AccelerometerResponse) {
   expect(typeof(data.x)).assertEqual("number");
   expect(typeof(data.y)).assertEqual("number");
   expect(typeof(data.z)).assertEqual("number");
+}
+
+function onFusionPressureCallback(data: sensor.FusionPressureResponse) {
+  expect(typeof (data.fusionPressure)).assertEqual("number");
 }
 
 export default function SensorJsStaticTest() {
@@ -684,10 +688,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data[0].vendorName) == 'string').assertTrue();
           expect(typeof (data[0].firmwareVersion) == 'string').assertTrue();
           expect(typeof (data[0].hardwareVersion) == 'string').assertTrue();
-          expect(typeof (data[0].sensorId) == 'number').assertTrue();
+          expect(typeof (data[0].sensorId) == 'int').assertTrue();
           expect(typeof (data[0].maxRange) == 'number').assertTrue();
-          expect(typeof (data[0].minSamplePeriod) == 'number').assertTrue();
-          expect(typeof (data[0].maxSamplePeriod) == 'number').assertTrue();
+          expect(typeof (data[0].minSamplePeriod) == 'long').assertTrue();
+          expect(typeof (data[0].maxSamplePeriod) == 'long').assertTrue();
           expect(typeof (data[0].precision) == 'number').assertTrue();
           expect(typeof (data[0].power) == 'number').assertTrue();
           done();
@@ -2497,6 +2501,63 @@ export default function SensorJsStaticTest() {
       })
 
     /**
+     *
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0710
+     * @tc.name       fusion_pressure_SensorJsTest_static_071
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
+     */
+    it("fusion_pressure_SensorJsTest_static_071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071--------------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
+        try {
+          sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': 100000000 });
+          setTimeout(() => {
+            hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off in--------------');
+            sensor.offFusionPressureChange();
+            hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off end--------------');
+            expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
+            done();
+          }, 500);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `fusion_pressure_SensorJsTest_static_071 failed error.code: ${e.code} , error.message: ${e.message}`);
+          if (Available) {
+            expect(false).assertTrue();
+          } else {
+            expect(e.code == 401).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     *
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0720
+     * @tc.name       fusionPressureParamError_SensorJsTest_static_072
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
+     */
+    it("fusionPressureParamError_SensorJsTest_static_072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------fusionPressureParamError_SensorJsTest_static_072--------------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
+        try {
+          sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': -100000000 });
+          setTimeout(() => {
+            hilog.info(0x0000, 'testTag', '---------fusionPressureParamError_SensorJsTest_static_072 timer in--------------');
+            expect(false).assertTrue();
+            done();
+          }, 500);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `fusionPressureParamError_SensorJsTest_static_072 failed error.code: ${e.code} , error.message: ${e.message}`);
+          expect(e.code == 401).assertTrue();
+          expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
+          done();
+        }
+      })
+
+    /**
      * @tc.name   GetSensorListSync_SensorJsTest_static_001
      * @tc.number GetSensorListSync_SensorJsTest_static_001
      * @tc.desc   test getSensorListSync
@@ -4190,10 +4251,10 @@ export default function SensorJsStaticTest() {
             expect(typeof (data.vendorName)).assertEqual("string");
             expect(typeof (data.firmwareVersion)).assertEqual("string");
             expect(typeof (data.hardwareVersion)).assertEqual("string");
-            expect(typeof (data.sensorId)).assertEqual("number");
+            expect(typeof (data.sensorId)).assertEqual("int");
             expect(typeof (data.maxRange)).assertEqual("number");
-            expect(typeof (data.minSamplePeriod)).assertEqual("number");
-            expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+            expect(typeof (data.minSamplePeriod)).assertEqual("long");
+            expect(typeof (data.maxSamplePeriod)).assertEqual("long");
             expect(typeof (data.precision)).assertEqual("number");
             expect(typeof (data.power)).assertEqual("number");
             hilog.info(domain, tag, TAG + ' getSingleSensor success: ');
@@ -4230,10 +4291,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data.vendorName)).assertEqual("string");
           expect(typeof (data.firmwareVersion)).assertEqual("string");
           expect(typeof (data.hardwareVersion)).assertEqual("string");
-          expect(typeof (data.sensorId)).assertEqual("number");
+          expect(typeof (data.sensorId)).assertEqual("int");
           expect(typeof (data.maxRange)).assertEqual("number");
-          expect(typeof (data.minSamplePeriod)).assertEqual("number");
-          expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+          expect(typeof (data.minSamplePeriod)).assertEqual("long");
+          expect(typeof (data.maxSamplePeriod)).assertEqual("long");
           expect(typeof (data.precision)).assertEqual("number");
           expect(typeof (data.power)).assertEqual("number");
           done()

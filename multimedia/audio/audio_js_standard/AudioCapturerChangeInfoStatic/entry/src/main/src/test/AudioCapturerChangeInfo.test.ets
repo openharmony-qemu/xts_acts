@@ -180,7 +180,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCap = data;
@@ -204,7 +204,7 @@ export default function audioCapturerChange() {
             console.info(`${Tag}: ${Tag}: [CAPTURER-CHANGE-ON-002] ######### CapturerChange Off is called #########`);
 
             try {
-              await audioCap.release().then(() => {
+              await audioCap!.release().then(() => {
                 console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
               });
               done();
@@ -216,7 +216,7 @@ export default function audioCapturerChange() {
       });
 
       try {
-        await audioCap.start().then(() => {
+        await audioCap!.start().then(() => {
           console.info(`${Tag}: ${Tag}: Capturer started :Success `);
         });
       } catch (err: BusinessError) {
@@ -657,8 +657,18 @@ export default function audioCapturerChange() {
             let Id = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].id;
             let dType = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceType;
             let dRole = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceRole;
-            let sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
-            let cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            let sRate: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates.length === 0) {
+              console.info("sampleRates is empty");
+            } else {
+              sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
+            }
+            let cCount: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts.length === 0) {
+              console.info("channelCounts is empty");
+            } else {
+              cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            }
             let cMask = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelMasks;
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
@@ -935,8 +945,18 @@ export default function audioCapturerChange() {
             let Id = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].id;
             let dType = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceType;
             let dRole = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].deviceRole;
-            let sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
-            let cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            let sRate: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates.length === 0) {
+              console.info("sampleRates is empty");
+            } else {
+              sRate = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].sampleRates[0];
+            }
+            let cCount: int;
+            if (AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts.length === 0) {
+              console.info("channelCounts is empty");
+            } else {
+              cCount = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelCounts[0];
+            }
             let cMask = AudioCapturerChangeInfoArray[i].deviceDescriptors[j].channelMasks;
             // console.info(`${Tag}: ${Tag}:deviceDescriptors ${i} : ${JSON.stringify(AudioCapturerChangeInfoArray[i].deviceDescriptors[j])}`);
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {

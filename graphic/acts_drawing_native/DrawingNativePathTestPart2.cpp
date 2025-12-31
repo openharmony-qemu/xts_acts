@@ -933,13 +933,15 @@ HWTEST_F(DrawingNativePathPart2Test, testPathBuildFromSvgStringNull, Function | 
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathBuildFromSvgString(nullptr, "M 0 0 L 100 100");
+    bool svgResult = OH_Drawing_PathBuildFromSvgString(nullptr, "M 0 0 L 100 100");
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(svgResult, false);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathBuildFromSvgString(path, nullptr);
+    svgResult = OH_Drawing_PathBuildFromSvgString(path, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(svgResult, false);
     // 4. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
@@ -990,13 +992,16 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsNull, Function | SmallTest 
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathContains with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathContains(nullptr, 50, 50);
+    bool ret = OH_Drawing_PathContains(nullptr, 50, 50);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_PathContains with the second parameter as 0.00, the call fails without crashing.
-    OH_Drawing_PathContains(path, 0.0, 50);
+    ret = OH_Drawing_PathContains(path, 0.0, 50);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_PathContains with the third parameter as 0.00, the call fails without crashing.
-    OH_Drawing_PathContains(path, 50, 0.0);
+    ret = OH_Drawing_PathContains(path, 50, 0.0);
+    EXPECT_EQ(ret, false);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
@@ -1025,9 +1030,11 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsAbnormal, Function | SmallT
     // 6. Close the path using OH_Drawing_PathClose.
     OH_Drawing_PathClose(path);
     // 7. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains.
-    OH_Drawing_PathContains(path, 50, 50.0f);
+    bool ret = OH_Drawing_PathContains(path, 50, 50.0f);
+    EXPECT_EQ(ret, true);
     // 8. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains.
-    OH_Drawing_PathContains(path, 50.0f, 50);
+    ret = OH_Drawing_PathContains(path, 50.0f, 50);
+    EXPECT_EQ(ret, true);
     // 9. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
@@ -1057,10 +1064,12 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsMaximal, Function | SmallTe
     OH_Drawing_PathClose(path);
     // 7. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains with the second
     // parameter as FLT_MAX + 1.
-    OH_Drawing_PathContains(path, FLT_MAX + 1, 50);
+    bool ret = OH_Drawing_PathContains(path, FLT_MAX + 1, 50);
+    EXPECT_EQ(ret, false);
     // 8. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains with the third
     // parameter as FLT_MAX + 1.
-    OH_Drawing_PathContains(path, 50, FLT_MAX + 1);
+    ret = OH_Drawing_PathContains(path, 50, FLT_MAX + 1);
+    EXPECT_EQ(ret, false);
     // 9. Free the memory.
     OH_Drawing_PathDestroy(path);
 }

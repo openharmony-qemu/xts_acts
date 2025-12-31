@@ -68,6 +68,8 @@ import LocalTest0140 from './local/LocalTest0140.test';
 import Consumer0130Test from './consumerTest/Consumer0130Test.test';
 import Consumer0140Test from './consumerTest/Consumer0140Test.test';
 import Consumer0170Test from './consumerTest/Consumer0170Test.test';
+import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
+import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
 export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
@@ -124,5 +126,6 @@ export default function testsuite() {
     Consumer0130Test();
     Consumer0140Test();
     Consumer0170Test();
-
+    SyncMonitor0010Test();
+    SyncMonitor0020Test();
 }

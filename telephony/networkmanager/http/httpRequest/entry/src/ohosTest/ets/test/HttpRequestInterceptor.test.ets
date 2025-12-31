@@ -187,7 +187,7 @@ class CacheHttpInterceptor implements http.HttpInterceptor {
       reqContext.header['CACHE_CHECKED'] = '1';
     }
 
-    rspContext.result = "CACHE_CHECKED";
+    rspContext.result = "READ_CACHE";
     rspContext.responseCode = 500;
     rspContext.header = responseHeader;
     if (!this.result) {
@@ -329,7 +329,7 @@ class NetworkHttpInterceptor implements http.HttpInterceptor {
       }
     }
 
-    rspContext.result = "NETWORK_CONNECT";
+    rspContext.result = "CONNECT_NETWORK";
     rspContext.responseCode = 900;
     rspContext.header = responseHeader;
     if (!this.result) {
@@ -837,7 +837,7 @@ export default function HttpRequestInterceptor() {
             } else {
               hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
               httpRequest.destroy();
-              ExpectTrue(res.result === "NETWORK_CONNECT");
+              ExpectTrue(res.result === "CONNECT_NETWORK");
               done();
             }
           });
@@ -996,7 +996,7 @@ export default function HttpRequestInterceptor() {
                 } else {
                   hilog.info(0x0000, 'testTag', `${caseName} secondResponse ${JSON.stringify(data)}`);
                   httpRequest.destroy();
-                  ExpectTrue(data.result === "CACHE_CHECKED");
+                  ExpectTrue(data.result === "READ_CACHE");
                   done();
                 }
               });

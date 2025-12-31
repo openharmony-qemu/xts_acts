@@ -47,7 +47,9 @@ export default function webAttributeTest() {
         Utils.emitEvent("emitOnAlert001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("emitOnAlert001", "alert test", 70017, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+        await Utils.msSleep(5000);
         done();
       })
 
@@ -65,7 +67,9 @@ export default function webAttributeTest() {
         Utils.emitEvent("emitOnConfirm001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("emitOnConfirm001", "confirm test", 70018, done);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -83,19 +87,41 @@ export default function webAttributeTest() {
         Utils.emitEvent("emitOnPrompt001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("emitOnPrompt001", "prompt test", 70019, done);
-        inspector.sendEventByKey('WebAttributeTestButton', 10, '');
         await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+        await Utils.msSleep(5000);
         done();
       })
 
-    /**
-     * @tc.name   SwitchNextPageStatic
-     * @tc.number SwitchNextPageStatic
-     * @tc.desc   SwitchNextPageStatic
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+
+    /*
+    * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
+    * @tc.name        : testJsResultHandleCancelStatic001
+    * @tc.desc        : test JsResultHandle.cancel()
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 3
+    */
+    it('testJsResultHandleCancelStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitJsResultHandleCancel001", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testJsResultHandleCancel001", "null", 70021, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebAttributeTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /*
+   * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0200
+   * @tc.name        : testJsResultHandleCancelStatic002
+   * @tc.desc        : test JsResultHandle.cancel()
+   * @tc.size        : MediumTest
+   * @tc.type        : Function
+   * @tc.level       : Level 3
+   */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

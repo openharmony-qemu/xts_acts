@@ -87,6 +87,8 @@ namespace ArkUICapiTest {
 #define PARAM_10000 10000
 #define PARAM_20000 20000
 #define PARAM_100000 100000
+#define PARAM_2147483646 2147483646
+#define PARAM_2147483647 2147483647
 #define PARAM_NEGATIVE_1 (-1)
 #define PARAM_NEGATIVE_2 (-2)
 #define PARAM_NEGATIVE_5 (-5)
@@ -298,5 +300,12 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
+#define ASSERT_OBJ_NE(result, expect)                                                                                  \
+    do {                                                                                                               \
+        if ((result) == (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H

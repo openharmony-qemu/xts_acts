@@ -12,13 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import MultimodalInputNdkTest from './MultimodalInputNdk.test'
 import MultimodalMouseNdkTest from './MultimodalMouseNdk.test'
 import MultimodalTouchNdkTest from './MultimodalTouchNdk.test'
+import MultimodalkeycodeTest from './MultimodalkeyCode.test'
 
 export default function testsuite() {
   MultimodalInputNdkTest();
   MultimodalMouseNdkTest();
   MultimodalTouchNdkTest();
+  MultimodalkeycodeTest();
 }

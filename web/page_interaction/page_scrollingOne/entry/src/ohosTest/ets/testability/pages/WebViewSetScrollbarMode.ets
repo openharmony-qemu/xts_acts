@@ -65,12 +65,14 @@ struct webviewGetAndSetHttpAuthUsernamePassword {
           await Utils.waitForExist(()=>this.isPageEnd, this.emitKey+' isPageEnd', 1, 1000);
           switch (this.emitKey) {
             case "emitSetScrollbarMode001": {
-              await Utils.sleep(2000)
+              await Utils.sleep(2000);
+              webview.WebviewController.setScrollbarMode(webview.ScrollbarMode.FORCE_DISPLAY_SCROLLBAR);
               Utils.emitEvent(webview.ScrollbarMode.FORCE_DISPLAY_SCROLLBAR, 20251208)
               break;
             }
             case "emitSetScrollbarMode002": {
               await Utils.sleep(2000)
+              webview.WebviewController.setScrollbarMode(webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR);
               Utils.emitEvent(webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR, 20251209)
               break;
             }

@@ -519,19 +519,24 @@ export default function windowManageTest() {
     it('testOnWindowStageClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageClose';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count = 0;
-        windowStage.on('windowStageClose', () => {
-          console.info(`${caseName} Succeeded in enabling the listener for window stage close event.`);
-          count++;
-          return true;
-        });
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count is: ${count}`);
-        expect(count).assertEqual(1);
-        done();
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count = 0;
+          windowStage.on('windowStageClose', () => {
+            console.info(`${caseName} Succeeded in enabling the listener for window stage close event.`);
+            count++;
+            return true;
+          });
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count is: ${count}`);
+          expect(count).assertEqual(1);
+          done();
+        }else{
+          done();
+        }
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -555,28 +560,33 @@ export default function windowManageTest() {
     it('testOnWindowStageCloseRepeat',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageCloseRepeat';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count1 = 0;
-        let count2 = 0;
-        const closeFunc1 = () => {
-          console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
-          count1++;
-          return true;
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count1 = 0;
+          let count2 = 0;
+          const closeFunc1 = () => {
+            console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
+            count1++;
+            return true;
+          }
+          const closeFunc2 = () => {
+            console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
+            count2++;
+            return true;
+          }
+          windowStage.on('windowStageClose', closeFunc1);
+          windowStage.on('windowStageClose', closeFunc2);
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(1);
+          done();
+        }else{
+          done();
         }
-        const closeFunc2 = () => {
-          console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
-          count2++;
-          return true;
-        }
-        windowStage.on('windowStageClose', closeFunc1);
-        windowStage.on('windowStageClose', closeFunc2);
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
-        expect(count1).assertEqual(0);
-        expect(count2).assertEqual(1);
-        done();
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -600,29 +610,34 @@ export default function windowManageTest() {
     it('testOnWindowStageCloseOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageCloseOff';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count1 = 0;
-        let count2 = 0;
-        const closeFunc1 = () => {
-          console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
-          count1++;
-          return true;
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count1 = 0;
+          let count2 = 0;
+          const closeFunc1 = () => {
+            console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
+            count1++;
+            return true;
+          }
+          const closeFunc2 = () => {
+            console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
+            count2++;
+            return true;
+          }
+          windowStage.on('windowStageClose', closeFunc2);
+          windowStage.off('windowStageClose', closeFunc2);
+          windowStage.on('windowStageClose', closeFunc1);
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
+          expect(count1).assertEqual(1);
+          expect(count2).assertEqual(0);
+          done();
+        }else{
+          done();
         }
-        const closeFunc2 = () => {
-          console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
-          count2++;
-          return true;
-        }
-        windowStage.on('windowStageClose', closeFunc2);
-        windowStage.off('windowStageClose', closeFunc2);
-        windowStage.on('windowStageClose', closeFunc1);
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
-        expect(count1).assertEqual(1);
-        expect(count2).assertEqual(0);
-        done();
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -769,7 +784,11 @@ export default function windowManageTest() {
           console.info(`${caseName} The current device type does not support to set whether to display the maximize buttons of main window.`);
           windowClass.off('windowTitleButtonRectChange');
           done();
-        } else {
+        } else if(!isFreeWindowMode){
+          expect(exception.code).assertEqual(1300002);
+          done();
+        }
+        else {
           console.error(`${caseName} Failed to set whether to display the maximize buttons of main window. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail();
           done();

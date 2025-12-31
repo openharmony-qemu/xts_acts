@@ -61,7 +61,7 @@ export default function LinkHight() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkHight_0100', Level.LEVEL0, async (done: Function) => {
+    it('LinkHight_0100', Level.LEVEL1, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -84,7 +84,7 @@ export default function LinkHight() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkHight_0200', Level.LEVEL0, async (done: Function) => {
+    it('LinkHight_0200', Level.LEVEL1, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -107,7 +107,7 @@ export default function LinkHight() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkHight_0300', Level.LEVEL0, async (done: Function) => {
+    it('LinkHight_0300', Level.LEVEL1, async (done: Function) => {
       console.info('LinkHight_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

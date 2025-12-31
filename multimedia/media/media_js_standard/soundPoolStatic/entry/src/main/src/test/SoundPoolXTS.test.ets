@@ -18,7 +18,7 @@ import deviceInfo from '@ohos.deviceInfo';
 import audio from '@ohos.multimedia.audio';
 import media from '@ohos.multimedia.media';
 import fs from '@ohos.file.fs'
-import { SoundPool, PlayParameters } from 'multimedia.soundPool'
+import { SoundPool, PlayParameters, ErrorInfo, ErrorType } from 'multimedia.soundPool'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
 import { BusinessError, ErrorCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -42,14 +42,17 @@ let uri1: string = "";
 let uri2: string = "";
 let uri3: string = "";
 let uri4: string = "";
+let uri5: string = "";
 let fd1 = -1;
 let fd2 = -1;
 let fd3 = -1;
 let fd4 = -1;
+let fd5 = -1;
 let length1 = -1;
 let length2 = -1;
 let length3 = -1;
 let length4 = -1;
+let length5 = -1;
 
 let audioRendererInfo: audio.AudioRendererInfo = {
   usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
@@ -117,6 +120,11 @@ async function getFileUrl(path: string, uri: string) {
         fd4 = Double.toInt(file.fd);
         length4 = Double.toInt(stat.size);
         break;
+      case "/test_05.wav":
+        uri5 = 'fd://' + file.fd
+        fd5 = Double.toInt(file.fd);
+        length5 = Double.toInt(stat.size);
+        break;
     }
   }).catch((err: Error) => {
     console.info(`${TAG}: open file failed with error message: ${err.message}, error code: `);
@@ -150,8 +158,9 @@ export default function soundPoolTest() {
       await getFileUrl('/test_02.mp3', uri2);
       await getFileUrl('/test_03.mp3', uri3);
       await getFileUrl('/test_04.mp3', uri4);
-      console.info(`${TAG}: uri1 is: ${uri1}; uri2 is: ${uri2}; uri3 is: ${uri3}; uri4 is: ${uri4}`);
-      console.info(`${TAG}: fd1 is: ${fd1}; fd2 is: ${fd2}; fd3 is: ${fd3}; fd4 is: ${fd4}`);
+      await getFileUrl('/test_05.wav', uri5);
+      console.info(`${TAG}: uri1 is: ${uri1}; uri2 is: ${uri2}; uri3 is: ${uri3}; uri4 is: ${uri4}; uri5 is: ${uri5}`);
+      console.info(`${TAG}: fd1 is: ${fd1}; fd2 is: ${fd2}; fd3 is: ${fd3}; fd4 is: ${fd4}; fd5 is: ${fd5}`);
     });
     beforeEach(async () => {
       console.info(`${TAG}: beforeEach in`);
@@ -5012,6 +5021,110 @@ export default function soundPoolTest() {
         console.info(`${TAG}: This device does not support setRate! Ignore this case.`);
         done();
       }
-    })
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100
+     * @tc.desc   Function test. Error code: 5400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0100 in`);
+      try {
+        let soundId = 1;
+        let isExpected = false;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+        }
+        soundPool!!.onErrorOccurred((errorInfo_: ErrorInfo) => {
+          expect(errorInfo_).not().assertNull;
+          console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorCode.message}`);
+          console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorType}`);
+          let errType = errorInfo_.errorType as ErrorType;
+          isExpected = errorInfo_.soundId == soundId && errorInfo_.errorType != undefined && errType == ErrorType.PLAY_ERROR &&
+            errorInfo_.errorCode.code == 5400103;
+        })
+        await soundPool!!.load(uri5).then((soundId_: int) => {
+          if (soundId_ > 0) {
+            console.info(`${TAG}: load(uri) success, soundId: ${soundId_}`);
+            soundId = Double.toInt(soundId_);
+          } else {
+            console.info(`${TAG}: load(uri) fail! soundId: ${soundId_}`);
+            expectFalse();
+          }
+        }).catch((error: Error) => {
+          console.info(`${TAG}: load(uri) fail! catch error, error: [${JSON.stringify(error)}]`);
+          expectFalse();
+        })
+        await sleep(5000);
+        if (isExpected) {
+          console.info(`${TAG}: Test onErrorOccurred when loadfailed success`);
+        } else {
+          console.info(`${TAG}: Test onErrorOccurred when loadfailed failed`);
+          expectFalse();
+        }
+      } catch (error: BusinessError) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0200
+     * @tc.desc   Function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ERROR_OCCURRED_static_0200 in`);
+      let flag = false;
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+        }
+        soundPool!!.onErrorOccurred((errorInfo_: ErrorInfo) => {
+          console.error(`${TAG}: onErrorOccurred called! error happened, message is: ${errorInfo_.errorCode.message}`);
+          flag = true;
+        })
+        soundPool!!.offErrorOccurred();
+        await sleep(500);
+        await soundPool!!.load(uri5).then((soundId_: int) => {
+          if (soundId_ > 0) {
+            console.info(`${TAG}: load(uri) success, soundId: ${soundId_}`);
+            soundId = Double.toInt(soundId_);
+          } else {
+            console.info(`${TAG}: load(uri) fail! soundId: ${soundId_}`);
+            expectFalse();
+          }
+        }).catch((error: Error) => {
+          console.info(`${TAG}: load(uri) fail! catch error, error: [${JSON.stringify(error)}]`);
+          expectFalse();
+        })
+        await sleep(500);
+        if (flag) {
+          console.info(`${TAG}: Test onErrorOccurred off failed`);
+          expectFalse();
+        } else {
+          console.info(`${TAG}: onErrorOccurred off`);
+        }
+        done();
+      } catch (error: BusinessError) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+      }
+    });
   })
 }

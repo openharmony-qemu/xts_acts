@@ -80,6 +80,13 @@ import registerChangeTest from './photoAccessHelper/photoAccessHelper/registerCh
 import releaseTest from './photoAccessHelper/photoAccessHelper/release.test';
 import MediaAssetChangeRequestConstructorTest from './photoAccessHelper/MediaAssetChangeRequest/constructor.test';
 import provisionResourcesTest from './provisionResources.test';
+import getAlbumIdByLPathTest from './photoAccessHelper/photoAccessHelper/getAlbumIdByLPath.test';
+import getAlbumsBySourceAlbumTest from './photoAccessHelper/photoAccessHelper/getAlbumsBySourceAlbum.test';
+import onSinglePhotoChangeTest from './photoAccessHelper/photoAccessHelper/onSinglePhotoChange.test';
+import containsTest from './photoAccessHelper/FetchResult/contains.test';
+import getIndexTest from './photoAccessHelper/FetchResult/getIndex.test';
+import getObjectsIndexSetTest from './photoAccessHelper/FetchResult/getObjectsIndexSet.test';
+import getRangeObjectsTest from './photoAccessHelper/FetchResult/getRangeObjects.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -156,4 +163,11 @@ export default function testsuite() {
   MovingPhotoGetUriTest();
   MovingPhotoRequestContentTest();
   MediaAssetChangeRequestDeleteAssetsTest();
+  getAlbumIdByLPathTest();
+  getAlbumsBySourceAlbumTest();
+  onSinglePhotoChangeTest();
+  containsTest();
+  getIndexTest();
+  getObjectsIndexSetTest();
+  getRangeObjectsTest();
 }

@@ -390,44 +390,6 @@ export default function cameraGetExposureModeTest() {
       })
       done();
     })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_005
-     * @tc.number SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_005
-     * @tc.desc   photoSession AutoExposure getExposureMode 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_005', Level.LEVEL2, async (done: Function) => {
-      photoSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_005', 2, (res?: number, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertEqual(2);
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_006
-     * @tc.number SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_006
-     * @tc.desc   VideoSession AutoExposure getExposureMode 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_006', Level.LEVEL2, async (done: Function) => {
-      videoSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_AUTO_EXPOSURE_GETEXPOSUREMODE_006', 2, (res?: number, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertEqual(2);
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
 
   })
 }

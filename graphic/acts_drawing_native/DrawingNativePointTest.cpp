@@ -239,19 +239,16 @@ HWTEST_F(DrawingNativePointTest, testPointGetXNull, Function | SmallTest | Level
  */
 HWTEST_F(DrawingNativePointTest, testPointGetXMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_PointGetX 10 times with random values
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 100);
     float x;
-    OH_Drawing_Point *point = nullptr;
     for (int i = 0; i < 10; i++) {
-        point = OH_Drawing_PointCreate(dis(gen), dis(gen));
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
         // add assert
         EXPECT_NE(point, nullptr);
-        OH_Drawing_PointGetX(point, &x);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetX(point, &x);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(x, 100);
+        OH_Drawing_PointDestroy(point);
     }
-    //2. free memory
-    OH_Drawing_PointDestroy(point);
 }
 
 /**
@@ -268,12 +265,16 @@ HWTEST_F(DrawingNativePointTest, testPointGetYNormal, Function | SmallTest | Lev
     // add assert
     EXPECT_NE(point, nullptr);
     float y;
-    OH_Drawing_PointGetX(nullptr, &y);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(y, 60);
     //2. Pass floating-point values to OH_Drawing_PointGetX interface
     OH_Drawing_Point *point1 = OH_Drawing_PointCreate(100.0f, 60.0f);
     // add assert
     EXPECT_NE(point1, nullptr);
-    OH_Drawing_PointGetX(point1, &y);
+    errorCode = OH_Drawing_PointGetY(point1, &y);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(y, 60.0f);
     //3. free memory
     OH_Drawing_PointDestroy(point);
     OH_Drawing_PointDestroy(point1);
@@ -310,19 +311,16 @@ HWTEST_F(DrawingNativePointTest, testPointGetYNull, Function | SmallTest | Level
  */
 HWTEST_F(DrawingNativePointTest, testPointGetYMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_PointGetX 10 times with random values
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 100);
     float y;
-    OH_Drawing_Point *point = nullptr;
     for (int i = 0; i < 10; i++) {
-        OH_Drawing_Point *point = OH_Drawing_PointCreate(dis(gen), dis(gen));
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
         // add assert
         EXPECT_NE(point, nullptr);
-        OH_Drawing_PointGetX(point, &y);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(y, 100);
+        OH_Drawing_PointDestroy(point);
     }
-    //2. free memory
-    OH_Drawing_PointDestroy(point);
 }
 
 /**

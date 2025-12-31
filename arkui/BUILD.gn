@@ -28,6 +28,7 @@ group("arkui") {
       "ace_c_arkui_test_api20:ActsAceCArkUI20Test",
       "ace_c_arkui_test_api21:ActsAceCArkUI21Test",
       "ace_c_arkui_test_api22:ActsAceCArkUI22Test",
+      "ace_c_arkui_test_api23:ActsAceCArkUI23Test",
       "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeAPI20",
       "ace_c_scroll_crosslanguage:ActsAceCapiScrollCrossTest",
       "ace_ets_component_advanced:componentAdvancedTest",
@@ -44,6 +45,15 @@ group("arkui") {
       "ace_napi_test_es:ActsAceNapiEtsEsTest",
       "ace_standard_video:ActsAceStandardVideoTest",
       "libuv:libuvTest",
+      "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
+      "ace_c_arkui_test_api14_static:ActsAceCArkUI14StaticTest",
+      "ace_c_arkui_test_api16_static:ActsAceCArkUI16StaticTest",
+      "ace_c_arkui_test_api17_static:ActsAceCArkUI17StaticTest",
+      "ace_c_arkui_test_api18_static:ActsAceCArkUI18StaticTest",
+      "ace_c_arkui_test_api19_static:ActsAceCArkUI19StaticTest",
+      "ace_c_arkui_test_api20_static:ActsAceCArkUI20StaticTest",
+      "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
+      "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
     ]
   } else {
     deps = [
@@ -68,6 +78,7 @@ group("arkui") {
       "ace_c_arkui_test_api20:ActsAceCArkUI20Test",
       "ace_c_arkui_test_api21:ActsAceCArkUI21Test",
       "ace_c_arkui_test_api22:ActsAceCArkUI22Test",
+      "ace_c_arkui_test_api23:ActsAceCArkUI23Test",
       "ActsAceEngineNDK_API20_Test:ActsAceEngineNativeAPI20",
       "ace_c_arkui_testwearcrop:ActsAceCArkUIWearCropTest",
       "ace_c_scroll_crosslanguage:ActsAceCapiScrollCrossTest",
@@ -86,6 +97,21 @@ group("arkui") {
       "ace_standard:ActsAceStandardTest",
       "ace_standard_video:ActsAceStandardVideoTest",
       "libuv:libuvTest",
+      "ace_c_accessibility_api_16_static:ActsAceCapiInspector16StaticTest",
+      "ace_c_arkui_nowear_test_api15_static:ActsAceCArkUINoWear15StaticTest",
+      "ace_c_arkui_nowear_test_api18_static:ActsAceCArkUINoWear18StaticTest",
+      "ace_c_arkui_nowear_test_api19_static:ActsAceCArkUINoWear19StaticTest",
+      "ace_c_arkui_nowear_test_api20_static:ActsAceCArkUINoWear20StaticTest",
+      "ace_c_arkui_test_api14_static:ActsAceCArkUI14StaticTest",
+      "ace_c_arkui_test_api15_static:ActsAceCArkUI15StaticTest",
+      "ace_c_arkui_test_api16_static:ActsAceCArkUI16StaticTest",
+      "ace_c_arkui_test_api17_static:ActsAceCArkUI17StaticTest",
+      "ace_c_arkui_test_api18_static:ActsAceCArkUI18StaticTest",
+      "ace_c_arkui_test_api19_static:ActsAceCArkUI19StaticTest",
+      "ace_c_arkui_test_api20_static:ActsAceCArkUI20StaticTest",
+      "ace_c_arkui_test_static:ActsAceCArkUIStaticTest",
+      "ace_c_arkui_testwearcrop_static:ActsAceCArkUIWearCropStaticTest",
+      "ace_ets_component_apilack_static:ActsAceEtsApiLackStaticTest",
     ]
   }
 }

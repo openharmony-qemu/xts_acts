@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, Level } from "@ohos/hypium";
+import { describe, it, expect, beforeAll, Level, afterAll } from "@ohos/hypium";
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import fs from '@ohos.file.fs'
@@ -35,6 +35,11 @@ export default function getMovingPhotoTranscodeTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+    });
+
+    afterAll(async (done: Function) => {
+      await sleep(5000);
+      done();
     });
 
     let TestHandler: photoAccessHelper.MediaAssetProgressHandler = {

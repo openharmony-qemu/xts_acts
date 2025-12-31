@@ -228,12 +228,12 @@ export default function TLSSocketConnectionsTest() {
   describe('TLSSocketConnectionsTest', () => {
 
     /**
-     * @tc.name   testTLSSocketConnectionSendCallback0100
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_Send_0100
-     * @tc.desc   Sending data through TLSSocketServer connection(data is 'Hello,client!') Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Send_0100
+     * @tc.name    testTLSSocketConnectionSendCallback0100
+     * @tc.desc    Sending data through TLSSocketServer connection(data is 'Hello,client!') Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendCallback0100';
@@ -289,12 +289,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendCallback0200
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_Send_0200
-     * @tc.desc   Sending data through TLSSocketServer connection(data is '') Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Send_0200
+     * @tc.name    testTLSSocketConnectionSendCallback0200
+     * @tc.desc    Sending data through TLSSocketServer connection(data is '') Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendCallback0200';
@@ -350,12 +350,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendCallback0300
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_Send_0300
-     * @tc.desc   Sending data through TLSSocketServer connection(send long message) Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Send_0300
+     * @tc.name    testTLSSocketConnectionSendCallback0300
+     * @tc.desc    Sending data through TLSSocketServer connection(send long message) Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendCallback0300';
@@ -412,12 +412,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendCallback0400
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_Send_0400
-     * @tc.desc   Sending data through TLSSocketServer connection(Send the normal data again after the send content is empty) Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Send_0400
+     * @tc.name    testTLSSocketConnectionSendCallback0400
+     * @tc.desc    Sending data through TLSSocketServer connection(Send the normal data again after the send content is empty) Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendCallback0400';
@@ -492,12 +492,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendCallback0500
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_Send_0500
-     * @tc.desc   Sending data through TLSSocketServer connection(repetition send long message) Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Send_0500
+     * @tc.name    testTLSSocketConnectionSendCallback0500
+     * @tc.desc    Sending data through TLSSocketServer connection(repetition send long message) Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendCallback0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendCallback0500';
@@ -571,12 +571,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendPromise0100
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_SendPromise_0100
-     * @tc.desc   Sending data through TLSSocketServer connection(data is 'hell word!') Use the promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_SendPromise_0100
+     * @tc.name    testTLSSocketConnectionSendPromise0100
+     * @tc.desc    Sending data through TLSSocketServer connection(data is 'hell word!') Use the promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendPromise0100';
@@ -630,12 +630,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendPromise0200
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_SendPromise_0200
-     * @tc.desc   Sending data through TLSSocketServer connection(send long message) Use the promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_SendPromise_0200
+     * @tc.name    testTLSSocketConnectionSendPromise0200
+     * @tc.desc    Sending data through TLSSocketServer connection(send long message) Use the promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendPromise0200';
@@ -688,12 +688,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendPromise0300
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_SendPromise_0300
-     * @tc.desc   Sending data through TLSSocketServer connection(data is '') Use the promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_SendPromise_0300
+     * @tc.name    testTLSSocketConnectionSendPromise0300
+     * @tc.desc    Sending data through TLSSocketServer connection(data is '') Use the promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendPromise0300';
@@ -748,12 +748,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendPromise0400
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_SendPromise_0400
-     * @tc.desc   Sending data through TLSSocketServer connection(Send the normal data again after the send content is empty) Use the promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_SendPromise_0400
+     * @tc.name    testTLSSocketConnectionSendPromise0400
+     * @tc.desc    Sending data through TLSSocketServer connection(Send the normal data again after the send content is empty) Use the promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendPromise0400';
@@ -824,12 +824,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testTLSSocketConnectionSendPromise0500
-     * @tc.number SUB_Network_Socket_TLSSocketConnection_SendPromise_0500
-     * @tc.desc   Sending data through TLSSocketServer connection(twice Send ) Use the promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_SendPromise_0500
+     * @tc.name    testTLSSocketConnectionSendPromise0500
+     * @tc.desc    Sending data through TLSSocketServer connection(twice Send ) Use the promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testTLSSocketConnectionSendPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testTLSSocketConnectionSendPromise0500';
@@ -900,12 +900,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testetworkMgrTLSSocketConnectionGetCipherSuite0100
-     * @tc.number SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0100
-     * @tc.desc   Get the cipher suite negotiated by both parties, Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0100
+     * @tc.name    testetworkMgrTLSSocketConnectionGetCipherSuite0100
+     * @tc.desc    Get the cipher suite negotiated by both parties, Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testetworkMgrTLSSocketConnectionGetCipherSuite0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testetworkMgrTLSSocketConnectionGetCipherSuite0100';
@@ -964,12 +964,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testetworkMgrTLSSocketConnectionGetCipherSuite0200
-     * @tc.number SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0200
-     * @tc.desc   Get the cipher suite negotiated by both parties, Use the Promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_NetworkMgr_TLSSocketConnection_GetCipherSuite_0200
+     * @tc.name    testetworkMgrTLSSocketConnectionGetCipherSuite0200
+     * @tc.desc    Get the cipher suite negotiated by both parties, Use the Promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testetworkMgrTLSSocketConnectionGetCipherSuite0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testetworkMgrTLSSocketConnectionGetCipherSuite0200';
@@ -1024,12 +1024,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100
-     * @tc.number SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0100
-     * @tc.desc   Get the signature algorithms negotiated by both parties, Use the callback method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0100
+     * @tc.name    testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100
+     * @tc.desc    Get the signature algorithms negotiated by both parties, Use the callback method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0100';
@@ -1117,12 +1117,12 @@ export default function TLSSocketConnectionsTest() {
     });
 
     /**
-     * @tc.name   testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200
-     * @tc.number SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0200
-     * @tc.desc   Get the signature algorithms negotiated by both parties, Use the Promise method as the asynchronous method.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number  SUB_NetworkMgr_TLSSocketConnection_GetSignatureAlgorithms_0200
+     * @tc.name    testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200
+     * @tc.desc    Get the signature algorithms negotiated by both parties, Use the Promise method as the asynchronous method.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
      */
     it('testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       let caseName: string = 'testetworkMgrTLSSocketConnectiongetSignatureAlgorithms0200';
@@ -1204,5 +1204,75 @@ export default function TLSSocketConnectionsTest() {
         done();
       }
     });
+
+   /**
+     * @tc.number  SUB_Network_Socket_TLSSocketConnection_Timeout_0100
+     * @tc.name    testNetworkSocketTLSSocketConnectionTimeout0100
+     * @tc.desc    Check whether the TLS timeout connection is normal.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 3
+     */
+    it('testNetworkSocketTLSSocketConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testNetworkSocketTLSSocketConnectionTimeout0100';
+      let tlsServer1: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      let tlsClient1: socket.TLSSocket = socket.constructTLSSocketInstance();
+      console.info(`${caseName} test start`);
+      try {
+        let addr1: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 8001,
+            family: 1
+        };
+        let tlsTimeOutOptions1: socket.TLSConnectOptions = {
+          address: addr1,
+          secureOptions: {
+            ca: server_ca,
+            key: client_key,
+            cert: client_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          timeout: 1
+        };
+         tlsServer1.listen(ServerOptions).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          expectFail();
+          tlsServer1.close();
+          done();
+        });
+        tlsClient1.bind(addr1).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient1.connect(tlsTimeOutOptions1).then(() => {
+            console.info(`${caseName} connect successfully`);
+            expectFail();
+            tlsServer1.close();
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            expectTrue(err.code == 2303501 || err.code == 2303502);
+            tlsServer1.close();
+            done();
+          })
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail:${JSON.stringify(err)}`);
+          expectFail();
+          tlsServer1.close();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false)
+        done();
+      }
+    });
+   
   });
 }

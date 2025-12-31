@@ -25,6 +25,8 @@ import listAnVisible from './List/listAnVisible.test';
 import listHeight from './List/listHeight.test';
 import groupAnVisible from './ListItemGroup/groupAnVisible.test';
 import groupHeight from './ListItemGroup/groupHeight.test';
+import cachedListMin from './List/cachedListMin.test';
+import cachedShowListMin from './List/cachedShowListMin.test';
 import cachedShowList from './List/cachedShowList.test';
 import getItemError from './List/getItemError.test';
 import getVisibleListError from './List/getVisibleListError.test';
@@ -47,6 +49,8 @@ import ListFillPolicyModifier from './List/ListFillPolicyModifier.test';
 import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
+import listNoMakeObserved from './List/listNoMakeObserved.test';
+import listCacheCount from './List/listCacheCount.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -61,6 +65,8 @@ export default function testsuite() {
   listHeight()
   groupAnVisible()
   groupHeight()
+  cachedListMin()
+  cachedShowListMin()
   cachedShowList()
   getItemError()
   getVisibleListError()
@@ -83,4 +89,6 @@ export default function testsuite() {
   listScrollbarColor()
   ListContentSize()
   ListFillPolicy()
+  listNoMakeObserved()
+  listCacheCount()
 }

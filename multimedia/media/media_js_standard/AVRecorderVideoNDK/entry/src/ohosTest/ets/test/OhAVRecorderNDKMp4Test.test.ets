@@ -136,9 +136,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0010', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0010', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -186,8 +186,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0010 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0010 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -196,9 +202,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00101', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00101', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -246,8 +252,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00101 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00101 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -256,9 +268,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00102', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00102', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -302,8 +314,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00102 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00102 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -312,9 +330,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00103', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00103', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -360,8 +378,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00103 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00103 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -370,9 +394,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00104', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00104', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -420,8 +444,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00104 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00104 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -430,9 +460,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00105', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00105', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -478,8 +508,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00105 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00105 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -488,9 +524,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00106', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00106', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -540,8 +576,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00106 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00106 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -550,9 +592,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00107', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00107', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -600,8 +642,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00107 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00107 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -610,9 +658,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00108', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00108', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -660,8 +708,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00108 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00108 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -670,9 +724,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_00109', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_00109', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -718,8 +772,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_00109 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_00109 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -728,9 +788,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_002', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_002', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -774,8 +834,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_002 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_002 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -784,9 +850,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0021', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0021', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -832,8 +898,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0021 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0021 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -842,9 +914,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0022', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0022', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -890,8 +962,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0022 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0022 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -900,9 +978,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0023', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0023', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -948,8 +1026,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0023 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0023 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -958,9 +1042,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0024', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0024', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1008,8 +1092,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0024 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0024 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1018,9 +1108,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0025', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0025', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1066,8 +1156,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0025 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0025 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1076,9 +1172,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0026', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0026', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1128,8 +1224,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0026 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0026 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1138,9 +1240,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0027', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0027', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1188,8 +1290,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0027 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0027 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1198,9 +1306,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_0028', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_0028', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1243,8 +1351,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       )
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_0028 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_0028 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1253,9 +1367,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_003', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_003', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1305,8 +1419,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_003 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_003 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
 
     /**
@@ -1315,9 +1435,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_004', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_004', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1377,8 +1497,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_004 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_004 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   testOhAvRecorder_mp4_success_005
@@ -1386,9 +1512,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_005', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_005', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1446,8 +1572,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_005 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_005 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   testOhAvRecorder_mp4_success_006
@@ -1455,9 +1587,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_006', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_006', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1505,8 +1637,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_006 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_006 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   testOhAvRecorder_mp4_success_007
@@ -1514,9 +1652,9 @@ export default function OhAVRecorderNDKMp4Test() { // L2
      * @tc.desc   Prepare the playback environment and asynchronously cache media data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testOhAvRecorder_mp4_success_007', Level.LEVEL0,async (done: Function) => {
+    it('testOhAvRecorder_mp4_success_007', Level.LEVEL2, async (done: Function) => {
       if (!isSupportCameraVideoProfiles) {
         console.info("Failed to obtain the default  object.Not support usb camera");
         expect(isSupportCameraVideoProfiles).assertFalse();
@@ -1568,8 +1706,14 @@ export default function OhAVRecorderNDKMp4Test() { // L2
         //done recorder
         avRecorderNdkTestBase.END_EVENT
       );
-      await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`testOhAvRecorder_mp4_success_007 test end `);
+      try {
+        await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
+        console.info(`testOhAvRecorder_mp4_success_007 test end `);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.error(`test error end: `+ error);
+      }
     });
   });
 }

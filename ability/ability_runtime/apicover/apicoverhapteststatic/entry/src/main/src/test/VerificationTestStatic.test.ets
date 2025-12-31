@@ -103,7 +103,7 @@ export default function verificationStaticTest() {
         const context: common.UIAbilityContext =
           AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
         context.setMissionLabel(label, (err: BusinessError<void> | null) => {
-          if (err?.code == 0) {
+          if (err == null || err.code == 0) {
             missionLabelUpdatedFlag = true;
             expect(missionLabelUpdatedFlag).assertTrue();
             done();

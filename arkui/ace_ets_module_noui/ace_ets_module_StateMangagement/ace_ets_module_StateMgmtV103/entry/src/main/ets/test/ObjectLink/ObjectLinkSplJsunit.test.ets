@@ -72,7 +72,7 @@ export default function ObjectLinkSplJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSplJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSplJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0100 START');
       let driver = await UiDriver.create()
@@ -115,7 +115,7 @@ export default function ObjectLinkSplJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSplJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSplJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -158,7 +158,7 @@ export default function ObjectLinkSplJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSplJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSplJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0300 START');
       let driver = await UiDriver.create()
@@ -201,7 +201,7 @@ export default function ObjectLinkSplJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSplJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSplJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0400 START');
       let driver = await UiDriver.create()

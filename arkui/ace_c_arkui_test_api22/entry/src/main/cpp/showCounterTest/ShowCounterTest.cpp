@@ -60,6 +60,7 @@ napi_value ShowCounterTest::showCounterTest(
     ArkUI_AttributeItem maxLengthItem1 = {maxLengthValue1, 1};
 
     auto options = OH_ArkUI_ShowCounterConfig_Create();
+    ASSERT_EQ(options == nullptr, false);
     OH_ArkUI_ShowCounterConfig_SetCounterTextColor(options, 0xFF0000FF);
     OH_ArkUI_ShowCounterConfig_SetCounterTextOverflowColor(options, 0xFFFFFF00);
     ArkUI_AttributeItem LABEL_Item1 = {.value = showCounterArray, .size = 3, .object =options};
@@ -88,6 +89,7 @@ napi_value ShowCounterTest::showCounterTest(
             }
         }
     });
+    OH_ArkUI_ShowCounterConfig_Dispose(options);
     std::string id(xComponentID);
     if (OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(id),
         Column) == INVALID_PARAM) {

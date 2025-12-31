@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import testNapi from 'libentry.so'
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
@@ -460,6 +460,69 @@ export default function WebArkWebHttpBodyStream() {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       Utils.waitAndClickComponent("ArkWebHttpBodyStreamTest",driver)
+    })
+
+    /**
+     * @tc.name   testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_Min
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_ASYNCREAD_0021
+     * @tc.desc   test OH_ArkWebHttpBodyStream_AsyncRead  bufLen set 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_Min', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_Min start')
+        try {
+            let ret = testNapi.arkWebHttpBodyStreamAsyncReadBufLenMinValue();
+            expect(ret).assertEqual(1)
+        } catch(error) {
+            console.error('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_Min error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_Min end')
+        done()
+    })
+
+    /**
+     * @tc.name   testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MinBoundary
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_ASYNCREAD_0022
+     * @tc.desc   test OH_ArkWebHttpBodyStream_AsyncRead  bufLen set -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MinBoundary start')
+        try {
+            let ret = testNapi.arkWebHttpBodyStreamAsyncReadBufLenMinBoundary();
+            expect(ret).assertEqual(1)
+        } catch(error) {
+            console.error('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MinBoundary error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MinBoundary end')
+        done()
+    })
+
+    /**
+     * @tc.name   testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MaxBoundary
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_ASYNCREAD_0023
+     * @tc.desc   test OH_ArkWebHttpBodyStream_AsyncRead  bufLen set -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MaxBoundary start')
+        try {
+            let ret = testNapi.arkWebHttpBodyStreamAsyncReadBufLenMaxBoundary();
+            expect(ret).assertEqual(1)
+        } catch(error) {
+            console.error('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MaxBoundary error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testOH_ArkWebHttpBodyStream_AsyncRead_BufLen_MaxBoundary end')
+        done()
     })
 
   })

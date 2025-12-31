@@ -151,7 +151,13 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1400`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1400 begin');
-      context.moveAbilityToBackground();
+      context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';
@@ -182,7 +188,13 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1500`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1500 begin');
-      context.moveAbilityToBackground();
+      context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';
@@ -213,7 +225,13 @@ export default function openLinkPatchStaticTest() {
     it('AbilityRuntime_OpenLink_Static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_Static_1600`;
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_Static_1600 begin');
-      context.moveAbilityToBackground();
+      context.moveAbilityToBackground()
+        .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(1000);
       try {
         const link = 'example://www.example.com';

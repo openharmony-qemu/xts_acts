@@ -730,7 +730,7 @@ export default function cloudFileDownloadTest() {
       try {
         let fileSync = new cloudSync.FileSync();
         hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 new fileSync success.');
-        fileSync.getLastSyncTime().then<number>((timeStamp: number): void => {
+        fileSync.getLastSyncTime().then<number>((timeStamp: long): void => {
           let time = new Date(timeStamp);
           hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 success, time = ' + time);
         }, (err: BusinessError<void>): void => {

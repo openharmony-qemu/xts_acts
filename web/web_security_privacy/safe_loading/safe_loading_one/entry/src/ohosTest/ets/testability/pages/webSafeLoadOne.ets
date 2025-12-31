@@ -188,6 +188,15 @@ struct WebSageLoadOne {
           console.log('onTouchIconUrlReceived:' + JSON.stringify(event));
         })
         .pinchSmooth(true)
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          console.info('onSslErrorEvent url: ' + event.url);
+          console.info('onSslErrorEvent error: ' + event.error);
+          console.info('onSslErrorEvent originalUrl: ' + event.originalUrl);
+          console.info('onSslErrorEvent referrer: ' + event.referrer);
+          console.info('onSslErrorEvent isFatalError: ' + event.isFatalError);
+          console.info('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+          event.handler.handleConfirm();
+        })
     }
   }
 }

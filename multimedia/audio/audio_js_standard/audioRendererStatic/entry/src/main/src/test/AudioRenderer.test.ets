@@ -11590,6 +11590,7 @@ export default function audioRendererTest() {
               console.info('Renderer stopped.');
             }
           });
+          await Utils.msSleep(1000);
           data?.release((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer release failed');

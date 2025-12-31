@@ -1148,5 +1148,45 @@ export default function getTest() {
       const value: string = 'mp4';
       await checkPhotoKeysValue(done, testName, fetchOps, key, value);
     })
+
+    /**
+     * @tc.number     PHOTO_ASSET_GET_052
+     * @tc.name       get_video_media_aspect_ratio_001
+     * @tc.desc       Get the photoKeys.ASPECT_RATIO
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('get_video_media_aspect_ratio_001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'get_video_media_aspect_ratio_001';
+      const displayName = 'getTest.mp4';
+      const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testName, photoKeys.DISPLAY_NAME, displayName);
+      await checkProvisionAsset(done, testName, displayName);
+      const key: string = photoKeys.ASPECT_RATIO;
+      const value: string = 'mp4';
+      let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testName, fetchOps);
+      expect(isNum(asset.get(key))).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number     PHOTO_ASSET_GET_053
+     * @tc.name       get_video_media_owner_album_id_001
+     * @tc.desc       Get the photoKeys.OWNER_ALBUM_ID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('get_video_media_owner_album_id_001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'get_video_media_owner_album_id_001';
+      const displayName = 'getTest.mp4';
+      const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testName, photoKeys.DISPLAY_NAME, displayName);
+      await checkProvisionAsset(done, testName, displayName);
+      const key: string = photoKeys.OWNER_ALBUM_ID;
+      const value: string = 'mp4';
+      let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testName, fetchOps);
+      expect(isNum(asset.get(key))).assertTrue();
+      done()
+    })
   })
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
 import { Driver, ON } from "@kit.TestKit";
@@ -22,8 +22,10 @@ import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from 
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
+const WS_OK = 0;
 const WINDOW_MANAGER_ERRORCODE_NO_PERMISSION = 201;
 const WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401;
+const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
 const INVAILD_WINDOW_ID = 1000;
 const WINDOW_MANAGER_ERRORCODE_STATE_ABNORMAL = 1300002;
 const WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL = 1300003;
@@ -89,7 +91,107 @@ export default function WindowTest() {
       await ClickButtonDriver();
       await sleep(200);
       await Utils.pushPageNoClear("Window/Window", done);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
+
+    beforeEach(async () => {
+      context = AppStorage.get('context') as common.UIAbilityContext;
+      let mainWindow = windowStage.getMainWindowSync();
+      let mainWindowId = mainWindow.getWindowProperties().id;
+      console.info(`beforeEach mainWindowId: `+ mainWindowId);
+      let thisWindow = await window.getLastWindow(context);
+      let thisWindowId = thisWindow.getWindowProperties().id;
+      console.info(`beforeEach thisWindowId: `+ thisWindowId);
+      if (mainWindowId != thisWindowId) {
+        await thisWindow.destroyWindow();
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorwithoutPermission
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0200
+     * @tc.desc   testLockCursorwithoutPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithoutPermission', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithoutPermission';
+      let subWindowClass: window.Window | undefined;
+      try {
+        console.info(`====>${caseName} start<====`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithoutPermission');
+        await subWindowClass.setUIContent('MainAbility/pages/Window/SubWindow');
+        await subWindowClass.showWindow();
+        await sleep(1000);
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: number = windowndkapi20.testLockCursorwithoutPermission(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        await sleep(1000)
+        await subWindowClass.destroyWindow();
+        if (Result == 801) {
+          done()
+        } else {
+          expect(Result).assertEqual(201);
+          done()
+        }
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow();
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnLockCursorwithoutPermission
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0200
+     * @tc.desc   testUnLockCursorwithoutPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithoutPermission', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testUnLockCursorwithoutPermission';
+      let subWindowClass: window.Window | undefined;
+      try {
+        console.info(`====>${caseName} start<====`);
+        subWindowClass = await windowStage.createSubWindow('testUnLockCursorwithoutPermission');
+        await subWindowClass.setUIContent('MainAbility/pages/Window/SubWindow');
+        await subWindowClass.showWindow();
+        await sleep(1000);
+        let windowId = subWindowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: number = windowndkapi20.testUnLockCursorwithoutPermission(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        await sleep(1000);
+        await subWindowClass.destroyWindow();
+        if (Result == 801) {
+          done()
+        } else {
+          expect(Result).assertEqual(201);
+          done()
+        }
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        await subWindowClass?.destroyWindow()
+        expect().assertFail();
+        done()
+      }
+    })
+
     /**
      * @tc.name   testGetWindowAvoidAreaInvalidParam
      * @tc.number SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWAVOIDAREA_0100
@@ -801,7 +903,7 @@ export default function WindowTest() {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
-          expect(Result).assertEqual(OK);
+          expect(Result).assertEqual(WS_OK);
           done()
         } catch (err) {
           console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
@@ -1011,7 +1113,7 @@ export default function WindowTest() {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 windowId: ${windowId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0800(windowId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 Result: ${Result}`);
-          expect(Result).assertEqual(OK);
+          expect(Result).assertEqual(WS_OK);
           done()
         } catch (err) {
           console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 catch err: ` + err);
@@ -1019,6 +1121,223 @@ export default function WindowTest() {
           done()
         }
       } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursorwithOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_LOCKCURSOR_0100
+     * @tc.desc   testLockCursorwithOutofRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testLockCursorwithOutofRange', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testLockCursorwithOutofRange';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testLockCursorwithOutofRange(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(401);
+        expect(Result[1]).assertEqual(401);
+        expect(Result[2]).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnLockCursorwithOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_UNLOCKCURSOR_0100
+     * @tc.desc   testUnLockCursorwithOutofRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUnLockCursorwithOutofRange', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {    
+      let caseName = 'testUnLockCursorwithOutofRange';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testUnLockCursorwithOutofRange(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(401);
+        expect(Result[1]).assertEqual(401);
+        expect(Result[2]).assertEqual(1300002);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowBrightness
+     * @tc.number SUB_BASIC_WMS_FUNCTION_testSetWindowBrightness_0100
+     * @tc.desc   testSetWindowBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowBrightness', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowBrightness';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result1: number = windowndkapi20.testSetWindowBrightness(windowId, -1.0);
+        console.info(`====>${caseName} Result1: ${JSON.stringify(Result1)}`);
+        expect(Result1).assertEqual(OK);
+        let Result2: number = windowndkapi20.testSetWindowBrightness(windowId, 0.0);
+        console.info(`====>${caseName} Result2: ${JSON.stringify(Result2)}`);
+        expect(Result2).assertEqual(OK);
+        let Result3: number = windowndkapi20.testSetWindowBrightness(windowId, 1.0);
+        console.info(`====>${caseName} Result3: ${JSON.stringify(Result3)}`);
+        expect(Result3).assertEqual(OK);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testInjectTouchEvent
+     * @tc.number SUB_BASIC_WMS_FUNCTION_testInjectTouchEvent_0100
+     * @tc.desc   testInjectTouchEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testInjectTouchEvent', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testInjectTouchEvent';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testInjectTouchEvent(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL);
+        if (isSupport) {
+          expect(Result[1]).assertEqual(OK);
+        } else {
+          expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL);
+        }
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot
+     * @tc.number SUB_BASIC_WMS_FUNCTION_testGetMainWindowSnapshot_0100
+     * @tc.desc   testGetMainWindowSnapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetMainWindowSnapshot', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testGetMainWindowSnapshot';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testGetMainWindowSnapshot(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        if (isSupport) {
+          expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        } else {
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+        }
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[3]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testLockCursor
+     * @tc.number SUB_BASIC_WMS_FUNCTION_testLockCursor_0100
+     * @tc.desc   testLockCursor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLockCursor', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testLockCursor';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testLockCursor(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnlockCursor
+     * @tc.number SUB_BASIC_WMS_FUNCTION_testUnlockCursor_0100
+     * @tc.desc   testUnlockCursor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnlockCursor', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnlockCursor';
+      try {
+        console.info(`====>${caseName} start<====`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`====>${caseName} windowId: ${windowId}`);
+        let Result: Array<number> = windowndkapi20.testUnlockCursor(windowId);
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
+        expect().assertFail();
         done()
       }
     })

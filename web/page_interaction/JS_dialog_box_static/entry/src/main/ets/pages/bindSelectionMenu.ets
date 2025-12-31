@@ -15,9 +15,10 @@
 
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import {Entry, Component, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement"
 import { UIContext, Router } from '@ohos.arkui.UIContext'
@@ -48,9 +49,9 @@ function px2vp(px: number): number {
 @Entry
 @Component
 struct WebComponent {
+  stringObj: StringFields  = new StringFields ();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   controller1: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-
   private result: WebContextMenuResult | undefined = undefined;
   @State previewImage: Resource | string | undefined = undefined;
   @State previewWidth: number = 0;
@@ -76,26 +77,20 @@ struct WebComponent {
   }
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, RecordData>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
-        this.str = strValue;
-        console.info('this.str has been updated to: ' + this.str);
+        this.stringObj.str = strValue;
       }
     }
   }
@@ -104,8 +99,8 @@ struct WebComponent {
     Column() {
       Row() {
         Button("web test").key('webcomponentSelectionMenu').onClick( (e: ClickEvent) => {
-          console.info("key==>" + this.str)
-          switch (this.str) {
+          console.info("key==>" +this.stringObj.str)
+          switch (this.stringObj.str) {
             case "bindSelectionMenuType01": {
               this.userAgentPC.str = this.controller.getUserAgent();
               if ((this.userAgentPC.str).includes("PC")) {

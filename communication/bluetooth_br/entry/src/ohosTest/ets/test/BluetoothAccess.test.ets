@@ -96,8 +96,14 @@ export default function btAccessTest() {
         afterEach(() => {
             console.info('afterEach called')
         })
-        afterAll(() => {
+        afterAll(async (done : Function) =>  {
             console.info('afterAll called')
+            await sleep(3000);
+            bluetooth.enableBluetoothAsync();
+            await sleep(3000);
+            await clickRequestPermission(OPEN_BT_TEXT);
+            await sleep(3000);
+            console.info('[bluetooth_js] bluetooth enable state ='+ JSON.stringify(bluetooth.getState()));
         })
 
         /**
@@ -645,6 +651,7 @@ export default function btAccessTest() {
                 let uuid = null;
                 let converuuid = bluetooth.convertUuid(uuid);
                 console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
+                expect().assertFail();
             } catch (error) {
                 console.error(`[bt_arkts]converUuid 0400 is failed, code is ${error.code}, message is ${error.message}`);
                 if (Number(error.code) == 801){

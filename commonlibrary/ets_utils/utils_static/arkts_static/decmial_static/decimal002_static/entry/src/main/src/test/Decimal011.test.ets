@@ -70,7 +70,7 @@ export default function DecimalTest011() {
         maxE: 9e15
       });
       test_floor_001('0', 0);
-      test_floor_001('-0', -0);
+      test_floor_001('-0', -0.0);
       test_floor_002('0', '0.000');
       test_floor_001('Infinity', Infinity);
       test_floor_001('-Infinity', -Infinity);
@@ -326,7 +326,8 @@ export default function DecimalTest011() {
       try {
         test_floor_002('e', 'e');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

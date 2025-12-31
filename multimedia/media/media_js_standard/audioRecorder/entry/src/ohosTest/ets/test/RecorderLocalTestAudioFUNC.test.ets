@@ -206,9 +206,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_01.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -217,7 +217,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -226,9 +232,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0200', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_02.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -238,7 +244,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -247,9 +259,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0300', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_03.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -259,7 +271,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps =  new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -268,9 +286,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0400', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_04.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -281,7 +299,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -290,9 +314,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0500', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_05.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -304,7 +328,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -313,9 +343,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0600', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_06.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -327,7 +357,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -336,9 +372,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0700', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_07.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -350,7 +386,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -359,9 +401,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0800', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_08.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -373,7 +415,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -382,9 +430,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_0900', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_09.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -397,7 +445,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -406,9 +460,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1000', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_10.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -421,7 +475,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -430,9 +490,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_11.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -445,7 +505,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -454,9 +520,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1200', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_12.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -469,7 +535,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -478,9 +550,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CODEC_AAC_1300', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_13.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -493,7 +565,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -502,9 +580,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_MP4_0100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_14.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -517,7 +595,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -526,9 +610,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FORMAT_M4A_0100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_15.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -541,7 +625,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -550,9 +640,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_16.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -562,7 +652,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -571,9 +667,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0200', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_17.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -583,7 +679,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, STOP_STATE,
         RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -592,9 +694,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0300', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_18.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -604,7 +706,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE,
         STOP_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME * 2, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -613,9 +721,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0400', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_19.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -625,7 +733,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -634,9 +748,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0500', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_20.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -646,7 +760,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, PAUSE_STATE,
         STOP_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME * 2, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -655,9 +775,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0600', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_21.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -667,7 +787,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, STOP_STATE,
         RESET_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -676,9 +802,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0700', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_22.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -688,7 +814,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = new Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, STOP_STATE,
         RESET_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME * 2, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -697,9 +829,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0800', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_23.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -710,7 +842,13 @@ export default function RecorderLocalTestAudioFUNC() {
         PAUSE_STATE, RESUME_STATE, STOP_STATE, RESET_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME * 2, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -719,9 +857,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_0900', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_24.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -732,7 +870,13 @@ export default function RecorderLocalTestAudioFUNC() {
         PAUSE_STATE, STOP_STATE, RESET_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -741,9 +885,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1000', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_25.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -753,7 +897,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, RESET_STATE, PRE_STATE,
         START_STATE, STOP_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -762,9 +912,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1100', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_26.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -774,7 +924,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, PAUSE_STATE, START_STATE, ERROR_STATE,
         STOP_STATE, RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -783,9 +939,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1200', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_27.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       audioConfig.uri = fdPath;
@@ -795,7 +951,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, PAUSE_STATE, ERROR_STATE,
         RELEASE_STATE, CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -804,9 +966,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1300', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_28.mp4');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       let newAudioConfig: RecorderConfigFile = {
@@ -826,7 +988,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(newAudioConfig);
+      try {
+        audioRecorder?.prepare(newAudioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
 
     /**
@@ -835,9 +1003,9 @@ export default function RecorderLocalTestAudioFUNC() {
      * @tc.desc   Audio recordr control test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_FUNCTION_1400', Level.LEVEL2, async (done: Function) => {
       fdObject = await mediaTestBase.getFd('audio_29.m4a');
       fdPath = "fd://" + fdObject.fdNumber?.toString();
       let newAudioConfig: RecorderConfigFile = {
@@ -857,7 +1025,13 @@ export default function RecorderLocalTestAudioFUNC() {
       let mySteps = Array<number | Array<Array<string>>>(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE,
         CHECK_STATE, trackArray, RECORDER_TIME, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(newAudioConfig);
+      try {
+        audioRecorder?.prepare(newAudioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     })
   })
 

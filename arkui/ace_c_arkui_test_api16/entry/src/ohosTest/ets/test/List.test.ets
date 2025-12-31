@@ -27,6 +27,7 @@ import TimePickerTest from "./timePicker/EnableCascadeTest.test"
 
 export default function testsuite() {
   postFrameCallbackTest();
+  NodeUtilMoveTest();
   swiperOnSelectTest();
   swiperTest();
   textImmutablfFontWeight();
@@ -36,6 +37,5 @@ export default function testsuite() {
   buttonTypeTest();
   DragTest();
   textInputWordBreakTest();
-  NodeUtilMoveTest();
   TimePickerTest();
 }

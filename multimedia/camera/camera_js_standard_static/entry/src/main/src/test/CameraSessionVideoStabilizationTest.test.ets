@@ -193,7 +193,7 @@ export default function cameraSessionVideoStabilizationTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsVideoStabilizationModeSupportedArray = new Array<boolean>(mCameraNum);
+    mIsVideoStabilizationModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
 
     console.info('Exit getCameraSupportDevicesArray');
 

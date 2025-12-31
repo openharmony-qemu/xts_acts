@@ -68,7 +68,7 @@ export default function CombinationState3Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState3Jsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState3Jsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0100] START');
       let driver = await UiDriver.create()
@@ -98,7 +98,7 @@ export default function CombinationState3Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState3Jsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState3Jsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Click and get the value of State component
       console.info('[CombinationState3Jsunit_0200] START');
       let driver = await UiDriver.create()
@@ -129,7 +129,7 @@ export default function CombinationState3Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState3Jsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState3Jsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0300] START');
       let driver = await UiDriver.create()
@@ -159,7 +159,7 @@ export default function CombinationState3Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState3Jsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState3Jsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0400] START');
       let driver = await UiDriver.create()

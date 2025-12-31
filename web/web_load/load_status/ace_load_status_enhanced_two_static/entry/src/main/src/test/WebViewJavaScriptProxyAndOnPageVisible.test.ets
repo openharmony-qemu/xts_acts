@@ -29,23 +29,7 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
 
   describe('WebViewJavaScriptProxyAndOnPageVisibleTest', () => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtesttwo.static")
-      await Utils.msSleep(5000)
-      console.log('beforeAll end,%s', 'Succeed!')
+      console.info('app start');
     });
     beforeEach(async () => {
       await Utils.msSleep(2000);
@@ -64,15 +48,17 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
-      Utils.emitEvent("emitOnPageVisible", 10)
+      Utils.emitEvent('emitOnPageVisible', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testOnPageVisible001", 'resource://rawfile/icon.html', 1372, done);
+      Utils.registerEvent('testOnPageVisible001', 'resource://rawfile/icon.html', 1372, done);
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
       await Utils.msSleep(3000);
-      Utils.emitEvent("", 10)
+      Utils.emitEvent('', 10)
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
-      await Utils.msSleep(3000);
+      await Utils.msSleep(6000);
       done();
     })
+
   })
 }

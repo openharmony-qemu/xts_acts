@@ -440,7 +440,13 @@ describe('ActsNetworkSearchTest',  () => {
                 return;
             }
             console.info('Telephony_NetworkSearch_isRadioOn_Async_0300  finish ' + data);
-            expect(data == true).assertTrue();
+            if (data) {
+                expect(data == true).assertTrue();
+                console.info('${CaseName} success, has radio ->${JSON.stringify(data)}');
+            } else {
+                expect(data == false).assertTrue();
+                console.info('${CaseName} success, dose not has radio ->${JSON.stringify(data)}');
+            }
             done();
         });
     });

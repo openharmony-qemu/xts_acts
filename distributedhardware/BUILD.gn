@@ -17,5 +17,6 @@ group("distributedhardware") {
   deps = [
     "device_manager:ActsdeviceManager20Test",
     "mechanicmanager:ActsmechanicManagerTest",
+    "device_manager_no_permission:ActsdeviceManager20noTest",
   ]
 }

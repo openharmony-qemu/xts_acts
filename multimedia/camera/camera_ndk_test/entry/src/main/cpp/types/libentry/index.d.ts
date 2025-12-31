@@ -202,15 +202,23 @@ export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
 
+export const getIsoInfoChangeTest: () => number;
+
 export const createCameraInput: () => number;
 
 export const createCameraInputWithPositionAndType: (position: number, type: number) => number;
 
 export const getSupportedOutputCapability: () => cameraOutputCapability;
 
+export const getSupportedFullOutputCapability: () => cameraOutputCapability;
+
 export const createPreviewOutput: () => number;
 
+export const adjustHeifIdx: (idx: number) => number;
+
 export const createPhotoOutput: (surfaceId: string) => number;
+
+export const createHeifPhotoOutput: (surfaceId: string, idx: number) => number;
 
 export const createVideoOutput: (surfaceId: string) => number;
 

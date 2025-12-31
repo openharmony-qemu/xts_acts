@@ -96,7 +96,7 @@ export default function DeviceStatusMetadataBindingTest() {
         })
       } catch (error) {
         console.log('metadataBinding.on is failed catch' + JSON.stringify(error))
-        expect().assertFail()
+        expect(error.code == 32100004).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0300 is end---------------")
       done();

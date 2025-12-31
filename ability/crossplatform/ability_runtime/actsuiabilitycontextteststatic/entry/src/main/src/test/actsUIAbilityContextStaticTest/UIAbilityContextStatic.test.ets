@@ -26,6 +26,7 @@ import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import wifiManager from '@ohos.wifiManager';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -34,16 +35,27 @@ let context: common.UIAbilityContext
 export default function UIAbilityContextStatic() {
   describe("UIAbilityContextStatic", () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.uiabilitycontexttest.static")
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      hilog.info(domain, tag, 'wifiManager end');
+      hilog.info(domain, tag, 'wifiManager start');
       wifiManager.disableWifi();
       hilog.info(domain, tag, 'wifiManager end');
+      hilog.info(domain, tag, 'close usb start');
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      hilog.info(domain, tag, 'close usb end');
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -79,15 +91,15 @@ export default function UIAbilityContextStatic() {
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.label: ` + abilityInfo.label);
           expect(abilityInfo.label == "$string:EntryAbility_label").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.labelId: ` + abilityInfo.labelId);
-          expect(typeof (abilityInfo.labelId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.labelId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.description: ` + abilityInfo.description);
           expect(abilityInfo.description == "$string:EntryAbility_desc").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.descriptionId: ` + abilityInfo.descriptionId);
-          expect(typeof (abilityInfo.descriptionId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.descriptionId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.icon: ` + abilityInfo.icon);
           expect(abilityInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
-          expect(typeof (abilityInfo.iconId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.iconId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo.applicationInfo!.name);
           expect(abilityInfo.applicationInfo!.name == "com.example.uiabilitycontexttest.static").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
@@ -121,15 +133,15 @@ export default function UIAbilityContextStatic() {
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.icon: ' + hapModuleInfo.icon);
           expect(hapModuleInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.iconId: ' + hapModuleInfo.iconId);
-          expect(typeof (hapModuleInfo.iconId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.iconId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.label: ' + hapModuleInfo.label);
           expect(hapModuleInfo.label == "$string:EntryAbility_label").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.labelId: ' + hapModuleInfo.labelId);
-          expect(typeof (hapModuleInfo.labelId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.labelId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.description: ' + hapModuleInfo.description);
           expect(hapModuleInfo.description == "$string:module_desc").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.descriptionId: ' + hapModuleInfo.descriptionId);
-          expect(typeof (hapModuleInfo.descriptionId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.descriptionId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.mainElementName: ' + hapModuleInfo.mainElementName);
           expect(hapModuleInfo.mainElementName == "EntryAbility").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.metadata: ' + hapModuleInfo.metadata.length);
@@ -238,6 +250,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         let options: AtomicServiceOptions = {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
@@ -272,6 +285,7 @@ export default function UIAbilityContextStatic() {
      * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         context.openAtomicService('')
           .then((result: common.AbilityResult) => {

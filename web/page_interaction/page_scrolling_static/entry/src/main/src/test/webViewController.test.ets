@@ -57,7 +57,7 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll001', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(1000)
-        driver.swipe(630, 1530, 630, 1590);
+        await driver.swipe(1200, 600, 1200, 1400);
         await Utils.msSleep(1000);
         Utils.registerEvent('testOnOverScroll001', true, 31038, done);
         await Utils.msSleep(3000)
@@ -81,7 +81,7 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll002', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000);
-        driver.swipe(630, 1530, 630, 1590);
+        await driver.swipe(1200, 600, 1200, 1400);
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll002', true, 100034, done);
         await Utils.msSleep(3000)
@@ -106,7 +106,7 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll003', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000)
-        driver.swipe(630, 1530, 630, 1590);
+        await driver.swipe(1200, 600, 1200, 1400);
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll003', true, 100035, done);
         await Utils.msSleep(3000)
@@ -130,7 +130,7 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll004', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000)
-        driver.swipe(630, 1530, 630, 1590);
+        await driver.swipe(1200, 600, 1200, 1400);
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll004', true, 100036, done);
         await Utils.msSleep(3000)

@@ -18,6 +18,8 @@
 #include "common.h"
 #include "hilog/log.h"
 #include "napi/native_api.h"
+#include <cstdio>
+#include <cwchar>
 
 static CommonEvent_Subscriber *g_subscriber = nullptr;
 static CommonEvent_SubscribeInfo *g_subscribeInfo = nullptr;
@@ -33,8 +35,10 @@ void IsOrderedCommonEventCallback(const CommonEvent_RcvData *data) {
                  "IsOrderedCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isOrderedCommonEvent = OH_CommonEvent_IsOrderedCommonEvent(g_subscriber);
+        ASSERT_EA(g_isOrderedCommonEvent, true);
     } else {
         g_isOrderedCommonEvent = false;
+        ASSERT_EA(g_isOrderedCommonEvent, false);
     }
 }
 
@@ -78,8 +82,10 @@ void FinishCommonEventCallback(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "FinishCommonEventCallback", "FinishCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_EA(g_isFinished, true);
     } else {
         g_isFinished = false;
+        ASSERT_EA(g_isFinished, false);
     }
 }
 
@@ -120,16 +126,24 @@ void GetAbortCommonEventCallback(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetAbortCommonEventCallback",
                  "GetAbortCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
-        if (OH_CommonEvent_AbortCommonEvent(g_subscriber)) {
+        bool exsits = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_EA(exsits, true);
+        if (exsits) {
             g_isGetAbort = OH_CommonEvent_GetAbortCommonEvent(g_subscriber);
+            ASSERT_EA(g_isGetAbort, true);
+        } else {
+            ASSERT_EA(exsits, false);
         }
     } else {
         g_isGetAbort = false;
+        ASSERT_EA(g_isGetAbort, false);
     }
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_EA(g_isFinished, true);
     } else {
         g_isFinished = false;
+        ASSERT_EA(g_isFinished, false);
     }
 }
 
@@ -172,16 +186,20 @@ void AbortCommonEventCallback(const CommonEvent_RcvData *data) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AbortCommonEventCallback",
                      "AbortCommonEventCallback Enter g_subscriber");
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_EA(g_isAbort, true);
     } else {
         g_isAbort = false;
+        ASSERT_EA(g_isAbort, false);
     }
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AbortCommonEventCallback",
                  "AbortCommonEventCallback Enter %{public}d", g_isAbort);
 
     if (g_subscriber != nullptr) {
         g_isFinished = OH_CommonEvent_FinishCommonEvent(g_subscriber);
+        ASSERT_EA(g_isFinished, true);
     } else {
         g_isFinished = false;
+        ASSERT_EA(g_isFinished, false);
     }
 }
 
@@ -223,9 +241,13 @@ void ClearAbortCommonEventCallback(const CommonEvent_RcvData *data) {
                  "ClearAbortCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_EA(g_isAbort, true);
         g_isClearAborted = OH_CommonEvent_ClearAbortCommonEvent(g_subscriber);
+        ASSERT_EA(g_isClearAborted, true);
     } else {
         g_isClearAborted = false;
+        ASSERT_EA(g_isAbort, false);
+        ASSERT_EA(g_isClearAborted, false);
     }
 }
 
@@ -267,9 +289,13 @@ void SubscriberCommonEventCallback(const CommonEvent_RcvData *data) {
                  "SubscriberCommonEventCallback Enter");
     if (g_subscriber != nullptr) {
         g_isAbort = OH_CommonEvent_AbortCommonEvent(g_subscriber);
+        ASSERT_EA(g_isAbort, true);
         g_isClearAborted = OH_CommonEvent_ClearAbortCommonEvent(g_subscriber);
+        ASSERT_EA(g_isClearAborted, true);
     } else {
         g_isAbort = false;
+        ASSERT_EA(g_isAbort, false);
+        ASSERT_EA(g_isClearAborted, false);
     }
 }
 

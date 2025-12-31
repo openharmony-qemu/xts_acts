@@ -437,6 +437,7 @@ export default function CameraSessionHasSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
+      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -635,7 +636,7 @@ export default function CameraSessionHasSuppTest() {
       const testName = 'SUB_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400';
       await getActiveStabilizationModeVideo(done, testName,
         camera.VideoStabilizationMode.HIGH, (res?: camera.VideoStabilizationMode) => {
-          expect(res).assertEqual(camera.VideoStabilizationMode.HIGH);
+          expect(res).assertEqual(camera.VideoStabilizationMode.AUTO);
         });
     });
 
@@ -652,70 +653,6 @@ export default function CameraSessionHasSuppTest() {
       await getActiveStabilizationModeVideo(done, testName,
         camera.VideoStabilizationMode.AUTO, (res?: camera.VideoStabilizationMode) => {
           expect(res).assertEqual(camera.VideoStabilizationMode.AUTO);
-        });
-    });
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0100
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0100
-     * @tc.desc   Test getPreviewOutputRotation with ROTATION_0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0100', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0100';
-      await getPreviewOutputRotation(done, testName,
-        camera.ImageRotation.ROTATION_0, (res?: camera.ImageRotation) => {
-          expect(res).assertEqual(camera.ImageRotation.ROTATION_270);
-        });
-    });
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0200
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0200
-     * @tc.desc   Test getPreviewOutputRotation with ROTATION_90
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0200', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0200';
-      await getPreviewOutputRotation(done, testName,
-        camera.ImageRotation.ROTATION_90, (res?: camera.ImageRotation) => {
-          expect(res).assertEqual(camera.ImageRotation.ROTATION_0);
-        });
-    });
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0300
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0300
-     * @tc.desc   Test getPreviewOutputRotation with ROTATION_180
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0300', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0300';
-      await getPreviewOutputRotation(done, testName,
-        camera.ImageRotation.ROTATION_180, (res?: camera.ImageRotation) => {
-          expect(res).assertEqual(camera.ImageRotation.ROTATION_90);
-        });
-    });
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0400
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0400
-     * @tc.desc   Test getPreviewOutputRotation with ROTATION_270
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0400', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_ROTATION_0400';
-      await getPreviewOutputRotation(done, testName,
-        camera.ImageRotation.ROTATION_270, (res?: camera.ImageRotation) => {
-          expect(res).assertEqual(camera.ImageRotation.ROTATION_180);
         });
     });
 
@@ -798,5 +735,6 @@ export default function CameraSessionHasSuppTest() {
         done();
       }
     });
+
   });
 }

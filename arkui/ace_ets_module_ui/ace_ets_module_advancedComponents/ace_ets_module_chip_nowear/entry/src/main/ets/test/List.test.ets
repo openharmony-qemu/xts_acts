@@ -24,6 +24,10 @@ import ChipTest0010 from './chip/ChipTest0010.test';
 import accessibilitySelectedTypeTest from './chip/accessibilitySelectedTypeTest.test';
 import ChipApi1 from './chip/ChipApi1.test'
 import ChipGroupApi1 from './ChipGroupTest/ChipGroupApi1.test'
+import ChipCloseOptions from './chip/ChipCloseOptions.test'
+import ChipFontScale from './chip/ChipFontScale.test'
+import ChipFontSize from './chip/ChipFontSize.test'
+import ChipPadding from './chip/ChipPadding.test'
 
 import startSpaceTest from './ChipGroupTest/startSpaceTest.test'
 import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
@@ -47,4 +51,8 @@ export default function testsuite() {
   localizedLabelMarginTest();
   ChipGroupIconItemOptionsTest();
   ChipGroupSymbolItemOptionsTest();
+  ChipPadding();
+  ChipFontSize();
+  ChipFontScale();
+  ChipCloseOptions();
 }

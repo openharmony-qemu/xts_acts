@@ -15,9 +15,11 @@
 import ActsAppAccountOptionalParameterTest from './ActsAppAccountOptionalParameterTest.test.ets'
 import AppAccountAuthenticatorStage2Stage from './AppAccountAuthenticatorStage2Stage.test.ets'
 import AppAccountErrCodeCheck from './AppAccountErrCodeCheck.test.ets'
+import AppAccountParamLengthCheck from './AppAccountParamLengthCheck.test';
 
 export default function testsuite() {
 	ActsAppAccountOptionalParameterTest()
 	AppAccountAuthenticatorStage2Stage()
 	AppAccountErrCodeCheck()
+	AppAccountParamLengthCheck();
 }

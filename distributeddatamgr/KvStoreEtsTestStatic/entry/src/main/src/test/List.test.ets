@@ -14,6 +14,43 @@
  */
 
 import KvStoreEtsTestStatic from "./KvStoreEtsTestStatic.test";
+import DeviceKvStoreCallbackErrcodeStatic from "./DeviceKvStoreCallbackErrcode.test";
+import DeviceKvStoreCallbackEtsTestStatic from "./DeviceKvStoreCallbackEtsTest.test";
+import DeviceKvStoreKVPromiseEtsTestStatic from "./DeviceKvStoreKVPromiseEtsTest.test";
+import DeviceKvStorePromiseErrcodeStatic from "./DeviceKvStorePromiseErrcode.test";
+import DeviceKvStoreReturnValueStatic from "./DeviceKvStoreReturnValue.test";
+import KvStoreBackupCallbackEtsTestStatic from "./KvStoreBackupCallbackEtsTest.test";
+import KvStoreBackupPromiseEtsTestStatic from "./KvStoreBackupPromiseEtsTest.test";
+import KvStoreResultSetKVEtsTestStatic from "./KvStoreResultSetKVEtsTest.test";
+import KVStoreResultSetReturnValueStatic from "./KVStoreResultSetReturnValue.test";
+import QueryKvEtsTestStatic from "./QueryKvEtsTest.test";
+import SchemaEtsStatic from "./SchemaEts.test";
+import SchemaFieldNodeStatic from "./SchemaFieldNode.test";
+import SingleKvStoreDataChangeStatic from "./SingleKvStoreDataChange.test";
+import SingleKvStoreEnumEtsTestStatic from "./SingleKvStoreEnumEtsTest.test";
+import SingleKvStoreErrCodeEtsTestStatic from "./SingleKvStoreErrCodeEtsTest.test";
+import SingleKvStoreKVCallbackEtsTestStatic from "./SingleKvStoreKVCallbackEtsTest.test";
+import SingleKvStoreKVPromiseEtsTestStatic from "./SingleKvStoreKVPromiseEtsTest.test";
+import SingleKvStoreReturnValueStatic from "./SingleKvStoreReturnValue.test";
+
 export default function testsuite() {
+  DeviceKvStoreReturnValueStatic();
+  SingleKvStoreDataChangeStatic();
+  DeviceKvStoreCallbackErrcodeStatic();
+  DeviceKvStoreCallbackEtsTestStatic();
+  DeviceKvStoreKVPromiseEtsTestStatic();
+  DeviceKvStorePromiseErrcodeStatic();
+  KvStoreBackupCallbackEtsTestStatic();
+  KvStoreBackupPromiseEtsTestStatic();
+  KvStoreResultSetKVEtsTestStatic();
+  KVStoreResultSetReturnValueStatic();
+  QueryKvEtsTestStatic();
+  SchemaEtsStatic();
+  SchemaFieldNodeStatic();
+  SingleKvStoreEnumEtsTestStatic();
+  SingleKvStoreKVCallbackEtsTestStatic();
+  SingleKvStoreKVPromiseEtsTestStatic();
+  SingleKvStoreReturnValueStatic();
+  SingleKvStoreErrCodeEtsTestStatic();
   KvStoreEtsTestStatic();
 }

@@ -31,6 +31,7 @@ import {
 const TAG = "MEDIA_LIBRARY_LOGTAG_NATIVE";
 const MEDIA_LIBRARY_OK = 0;
 const MEDIA_LIBRARY_PARAMETER_ERROR = 401;
+const MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED = 23800201;
 
 export default function PhotoAccessHelperNativeTest() {
 
@@ -1845,5 +1846,116 @@ export default function PhotoAccessHelperNativeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testManagerQuickRequestImage0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_QUICK_IMAGE_NATIVE_0100
+     * @tc.desc   Request quick image resource when mediaAsset is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testManagerQuickRequestImage0100', Level.LEVEL2, (done: Function) => {
+      let testNum = 'testManagerQuickRequestImage0100';
+      try {
+        let ret:ESObject = mediaLibrary.testManagerQuickRequestImage(2);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+ 
+    /**
+     * @tc.name   testManagerQuickRequestImage0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_QUICK_IMAGE_NATIVE_0200
+     * @tc.desc   Request quick image resource when manager is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testManagerQuickRequestImage0200', Level.LEVEL2, (done: Function) => {
+      let testNum = 'testManagerQuickRequestImage0200';
+      try {
+        let ret:ESObject = mediaLibrary.testManagerQuickRequestImage(1);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+ 
+    /**
+     * @tc.name   testManagerQuickRequestImage0300
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_QUICK_IMAGE_NATIVE_0300
+     * @tc.desc   Request quick image resource when deliveryMode is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testManagerQuickRequestImage0300', Level.LEVEL2, (done: Function) => {
+      let testNum = 'testManagerQuickRequestImage0300';
+      try {
+        let ret:ESObject = mediaLibrary.testManagerQuickRequestImage(3);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+ 
+    /**
+     * @tc.name   testManagerQuickRequestImage0400
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_QUICK_IMAGE_NATIVE_0400
+     * @tc.desc   Request quick image resource when requestId is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testManagerQuickRequestImage0400', Level.LEVEL2, (done: Function) => {
+      let testNum = 'testManagerQuickRequestImage0400';
+      try {
+        let ret:ESObject = mediaLibrary.testManagerQuickRequestImage(4);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+ 
+    /**
+     * @tc.name   testManagerQuickRequestImage0500
+     * @tc.number SUB_PHOTOACCESS_HELPER_MANAGER_REQUEST_QUICK_IMAGE_NATIVE_0500
+     * @tc.desc   Request quick image resource when callback is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testManagerQuickRequestImage0500', Level.LEVEL2, (done: Function) => {
+      let testNum = 'testManagerQuickRequestImage0500';
+      try {
+        let ret:ESObject = mediaLibrary.testManagerQuickRequestImage(5);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_OPERATION_NOT_SUPPORTED);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    
   });
 }

@@ -21,7 +21,7 @@ import Utils from '../../test/Utils';
 import { Driver, ON } from '@kit.TestKit';
 
 const EVENT_ID_SET_SUITE_KEY = 179101;
-let driver: Driver = Driver.create();
+
 
 @Entry
 @Component
@@ -69,6 +69,7 @@ struct WebComponent {
           let webRect = Utils.getComponentRect('webScrollByTo');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
+          let driver: Driver = Driver.create();
           switch (this.str) {
             case "scrollByTo01": {
               let button = await driver.findComponent(ON.id('setScrollableButton'));

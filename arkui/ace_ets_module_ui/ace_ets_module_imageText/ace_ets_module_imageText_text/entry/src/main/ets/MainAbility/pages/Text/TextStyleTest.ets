@@ -39,6 +39,12 @@ struct Text_ellipsisMode {
         .selection(0,1)
         .ellipsisMode(EllipsisMode.START)
         .height('5%')
+      Text(this.text1)
+        .fontSize(10)
+        .copyOption(CopyOptions.InApp)
+        .selection(this.start, this.end)
+        .height('15%')
+	.margin({top:50})
       Button('Set text selection')
         .onClick(() => {
           // 变更文本选中起始点、终点
@@ -46,11 +52,6 @@ struct Text_ellipsisMode {
           this.end = 30
         }).id('buttonSelect')
         .height('5%')
-      Text(this.text1)
-        .fontSize(10)
-        .copyOption(CopyOptions.InApp)
-        .selection(this.start, this.end)
-        .height('15%')
       Row(){
         Text(''+this.start).fontSize(12).margin(0).key('selectionStart').width('40%')
         Text(''+this.end).fontSize(12).margin(0).key('selectionEnd').width('40%')

@@ -322,7 +322,7 @@ function toNextStep(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
 
 function getFd(path: string) {
   mediaTestBase.getFileDescriptorFromFileDir(VIDEO_SOURCE, () => {}).then((res: media.AVFileDescriptor) => {
-    fileDescriptor = { fd: res!.fd } as resourceManager.RawFileDescriptor;
+    fileDescriptor = { fd: res!.fd, length: 0, offset: 0 } as resourceManager.RawFileDescriptor;
   });
 }
 

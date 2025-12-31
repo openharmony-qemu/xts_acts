@@ -14,20 +14,24 @@
  */
 import {Builder, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
-import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, RecordData } from '@ohos.base'
 import { Hypium } from '../../../hypium';
-import testsuite from '../../src/test/List.test';
 import { WebLayoutMode } from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+
+class StringFields {
+  private str: string = '';
+}
 
 @Entry
 @Component
 struct onCreateNativeMediaPlayer {
-
+  stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
@@ -41,35 +45,43 @@ struct onCreateNativeMediaPlayer {
   @State url: string = ''
   mode: WebLayoutMode = WebLayoutMode.FIT_CONTENT;
 
-  aboutToAppear() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+aboutToAppear() {
+  let valueChangeEvent: events_emitter.InnerEvent = {
+    eventId: 10,
+    priority: events_emitter.EventPriority.LOW
   }
+  events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+}
 
-
-  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
-      }
+private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+  if (eventData != null) {
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.stringObj.str = strValue;
     }
   }
+}
 
   build() {
     Column() {
       Row() {
         Button('onCreateNativeMediaPlayerTest').key('WebonSslErrorEventButton').onClick((e: ClickEvent) => {
-          console.info('key==>' + this.str)
-          switch (this.str) {
+          console.info("key==>" + this.stringObj.str)
+          switch (this.stringObj.str) {
             case 'onCreateNativeMediaPlayer': {
                 Utils.emitEvent(WebLayoutMode.FIT_CONTENT, 2025321)
               break;
             }
+
+            case 'emitonSwitchNextPage1': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/SslErrorHandler' })
+              break;
+            }
+
           }
         })
       }

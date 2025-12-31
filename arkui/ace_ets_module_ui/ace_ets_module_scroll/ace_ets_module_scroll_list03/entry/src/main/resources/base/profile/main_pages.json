@@ -13,6 +13,8 @@
         "MainAbility/pages/List/listHeight",
         "MainAbility/pages/ListItemGroup/groupAnVisible",
         "MainAbility/pages/ListItemGroup/groupHeight",
+        "MainAbility/pages/List/cachedListMin",
+        "MainAbility/pages/List/cachedShowListMin",
         "MainAbility/pages/List/cachedShowList",
         "MainAbility/pages/List/getItemError",
         "MainAbility/pages/List/getVisibleListError",
@@ -34,6 +36,8 @@
         "MainAbility/pages/ListItemGroup/listScrollbarColor",
         "MainAbility/pages/List/ListFillPolicyModifier",
         "MainAbility/pages/List/ListFillPolicy",
-        "MainAbility/pages/List/ListContentSize"
+        "MainAbility/pages/List/ListContentSize",
+        "MainAbility/pages/List/listNoMakeObserved",
+        "MainAbility/pages/List/listCacheCount"
     ]
 }

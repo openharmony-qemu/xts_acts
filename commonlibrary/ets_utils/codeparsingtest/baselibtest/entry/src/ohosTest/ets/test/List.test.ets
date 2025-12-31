@@ -20,6 +20,7 @@ import fastbufferBase2Test from './fastbuffer/FastBufferBase2.test';
 import processTest from './process/Process.test';
 import uriTest from './uri/Uri.test';
 import urlTest from './url/Url.test';
+import UtilTypeTest from './util/UtilType.test';
 import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
 import timerTest from './timer/Timer.test';
@@ -65,6 +66,7 @@ export default function testsuite() {
   urlTest();
   utilTest();
   util2Test();
+  UtilTypeTest();
   timerTest();
   jsonTest();
   tresMapTest();

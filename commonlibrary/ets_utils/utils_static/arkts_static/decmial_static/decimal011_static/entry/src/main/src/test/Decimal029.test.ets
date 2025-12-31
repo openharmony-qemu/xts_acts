@@ -130,10 +130,10 @@ export default function DecimalTest029() {
      * @tc.level  LEVEL1
      */
     it("Decimal_intPow_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      test_intPow_001('NaN', 1, Infinity);
-      test_intPow_001('NaN', 1, -Infinity);
-      test_intPow_001('NaN', -1, Infinity);
-      test_intPow_001('NaN', -1, -Infinity);
+      test_intPow_001('1', 1, Infinity);
+      test_intPow_001('1', 1, -Infinity);
+      test_intPow_001('1', -1, Infinity);
+      test_intPow_001('1', -1, -Infinity);
       test_intPow_001('0', 0.1, Infinity);
       test_intPow_001('0', -0.1, Infinity);
       test_intPow_001('0', 0.999, Infinity);
@@ -162,10 +162,10 @@ export default function DecimalTest029() {
       test_intPow_001('-Infinity', 1/-Infinity, -13);
       test_intPow_001('-Infinity', 1/-0.0, 3);
       test_intPow_001('-Infinity', 1/-0.0, 13);
-      test_intPow_001('-Infinity', -0, -3);
-      test_intPow_001('-Infinity', -0, -13);
-      test_intPow_001('-Infinity', -0, -1);
-      test_intPow_001('-Infinity', -0, -10000000001);
+      test_intPow_001('-Infinity', -0.0, -3);
+      test_intPow_001('-Infinity', -0.0, -13);
+      test_intPow_001('-Infinity', -0.0, -1);
+      test_intPow_001('-Infinity', -0.0, -10000000001);
       test_intPow_001('Infinity', 1/-Infinity, -2);
       test_intPow_001('Infinity', 1/+0.0, 1.1);
       test_intPow_001('Infinity', 1/+0.0, 2);

@@ -44,6 +44,9 @@ import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
 
 import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
+import TextDirectionTest from './TextDirectionTest.test';
+import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
+import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -77,4 +80,7 @@ export default function testsuite() {
   TextMenuItemIdEqualsTest()
   TextMenuType()
   RichEditorDeleteTest();
+  TextDirectionTest();
+  IncludeFontPaddingTest();
+  FallbackLineSpacingTest();
 }

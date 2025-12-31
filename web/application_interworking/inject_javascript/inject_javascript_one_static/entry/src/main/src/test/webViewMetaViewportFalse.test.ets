@@ -25,27 +25,8 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function webViewMetaViewportFalse() {
   describe('ActsAceWebViewMetaViewportFalse', ():void => {
-
     beforeAll(async (): Promise<void> => {
       console.log('App start')
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName: 'entry',
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          console.log('onAbilityCreate end')
-        },
-      }, (err: BusinessError<void>|null): void => {
-        if (err != null) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.injectjavascriptonetest.static')
-      await Utils.msSleep(2000)
-      console.log('beforeAll end,%s', 'Succeed!')
     });
 
 

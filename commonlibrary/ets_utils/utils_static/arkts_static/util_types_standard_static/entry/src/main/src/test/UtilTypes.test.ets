@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
-import util from '@ohos.util';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "../../../hypium/index";
+import util from '@ohos.util'
 
 export default function UtilTypesTest() {
   describe('UtilTypesTest', (): void => {

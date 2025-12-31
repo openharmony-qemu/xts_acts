@@ -191,7 +191,7 @@ export default function formHostTest() {
 
       let callGetFormRect: formInfo.GetFormRectInfoCallback = (formId: string): Promise<formInfo.Rect> => {
         hilog.info(0x0000, 'testTag', `cbGetFormRect a new form`);
-        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (rect: formInfo.Rect) => void): void => {
+        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (error: Error) => void): void => {
           hilog.info(0x0000, 'testTag', `cbGetFormRect Promise called`);
           let rect1: formInfo.Rect = {
             left: 1.0,

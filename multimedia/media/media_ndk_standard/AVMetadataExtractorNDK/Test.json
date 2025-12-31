@@ -31,7 +31,8 @@
             "pre-push": [],
             "push": [
                 "./resource/media/MP4_ROTATE_90.mp4 ->/data/app/el2/100/base/com.example.avmetadataextractorndk/haps/entry_test/files",
-                "./resource/media/metadata/H264_AAC.mp4 ->/data/app/el2/100/base/com.example.avmetadataextractorndk/haps/entry_test/files"
+                "./resource/media/metadata/H264_AAC.mp4 ->/data/app/el2/100/base/com.example.avmetadataextractorndk/haps/entry_test/files",
+                "./resource/media/codec/demuxer/Muxer_Auxiliary_01.mp4 ->/data/app/el2/100/base/com.example.avmetadataextractorndk/haps/entry_test/files"
             ]
         },
         {

@@ -23,6 +23,7 @@ import { BusinessError, Callback } from '@ohos.base';
 import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
+import { Driver } from '@ohos.UiTest';
 
 function unexpectedError(error: BusinessError, caseName: string, apiName: string, TRUE_FLAG: boolean, done: Function) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -104,6 +105,16 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
         let type:ohosWindow.AvoidAreaType = ohosWindow.AvoidAreaType.TYPE_SYSTEM;
         avoidArea1 = windowClass.getWindowAvoidArea(type);
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
+        try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     
     /**

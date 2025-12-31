@@ -541,6 +541,8 @@ napi_value JsvmCompileModeDefaultCode(napi_env env1, napi_callback_info info)
     };
     OH_JSVM_CreateStringUtf8(env, "src.c_str()", 1, &jsSrc);
     auto ret = OH_JSVM_CompileScriptWithOptions(env, jsSrc, TWO, option, &script);
+    JSVM_CodeCache code_cache = {nullptr, 0};
+    JSVM_CompileProfile compile_profile = {nullptr, 0};
     
     OH_JSVM_CloseHandleScope(env, handlescope);
     OH_JSVM_CloseEnvScope(env, envScope);

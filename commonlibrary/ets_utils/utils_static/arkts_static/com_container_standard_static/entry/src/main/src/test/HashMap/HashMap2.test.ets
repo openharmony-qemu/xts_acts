@@ -50,7 +50,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -70,7 +71,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("li", 1);
         expect(String(hashMap.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -92,7 +94,8 @@ export default function HashMapTest2() {
         hashMap.set("li", 1);
         hashMap.clear();
         expect(String(hashMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -112,7 +115,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("li", 1);
         expect(String(hashMap.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -136,7 +140,8 @@ export default function HashMapTest2() {
         hashMap.set("li", param);
         let result = hashMap.hasValue(param);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -154,7 +159,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -174,7 +180,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("ji", 1)
         expect(String(hashMap.isEmpty())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -195,7 +202,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", 1)
         hashMap.remove("ji")
         expect(String(hashMap.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -216,7 +224,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", 1)
         hashMap.clear();
         expect(String(hashMap.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -235,7 +244,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.hasKey(""))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -249,14 +259,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasKey0002
-     * @tc.number testHashMapHasKey0002
-     * @tc.desc   testHashMapHasKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasKey0002';
     //   try {
@@ -276,14 +278,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasKey0003
-     * @tc.number testHashMapHasKey0003
-     * @tc.desc   testHashMapHasKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasKey0003';
     //   try {
@@ -308,7 +302,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.hasKey('key'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -328,7 +323,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("ji", 1);
         expect(String(hashMap.hasKey('ji'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -348,7 +344,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("ji", 1);
         expect(String(hashMap.hasKey('li'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -368,7 +365,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.hasKey('hello'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -390,7 +388,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", "hello");
         hashMap.clear();
         expect(String(hashMap.hasKey('hello'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -409,7 +408,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.hasValue('hello'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -423,14 +423,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasValue0002
-     * @tc.number testHashMapHasValue0002
-     * @tc.desc   testHashMapHasValue0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasValue0002';
     //   try {
@@ -450,14 +442,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasValue0003
-     * @tc.number testHashMapHasValue0003
-     * @tc.desc   testHashMapHasValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasValue0003';
     //   try {
@@ -482,7 +466,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.hasValue('key'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -502,7 +487,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.hasValue('hello'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -522,7 +508,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.hasValue('li'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -544,7 +531,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", "hello");
         hashMap.clear();
         expect(String(hashMap.hasValue('hello'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -562,7 +550,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.get(''))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -576,14 +565,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapGet0002
-     * @tc.number testHashMapGet0002
-     * @tc.desc   testHashMapGet0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapGet0002';
     //   try {
@@ -603,14 +584,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapGet0003
-     * @tc.number testHashMapGet0003
-     * @tc.desc   testHashMapGet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapGet0003';
     //   try {
@@ -635,7 +608,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.get('key'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -655,7 +629,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.get('ji'))).assertEqual("hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -675,7 +650,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.get('li'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -697,7 +673,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", "hello");
         hashMap.clear();
         expect(String(hashMap.get('ji'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -716,7 +693,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -740,7 +718,8 @@ export default function HashMapTest2() {
         newHashMap.set("newMap", 99);
         hashMap.setAll(newHashMap);
         expect(String(hashMap.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -764,7 +743,8 @@ export default function HashMapTest2() {
         newHashMap.set("newMap", 100);
         hashMap.setAll(newHashMap);
         expect(String(hashMap.get("sparrow"))).assertEqual('356');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -788,7 +768,8 @@ export default function HashMapTest2() {
         newHashMap.set("sparrow", 100);
         hashMap.setAll(newHashMap);
         expect(String(hashMap.get("sparrow"))).assertEqual('100');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -811,7 +792,8 @@ export default function HashMapTest2() {
         hashMap.clear();
         hashMap.replace("sparrow", 12);
         expect(String(hashMap.get("sparrow"))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -834,7 +816,8 @@ export default function HashMapTest2() {
         newHashMap.set("sparrow", 356);
         hashMap.setAll(newHashMap);
         expect(String(hashMap.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -854,7 +837,8 @@ export default function HashMapTest2() {
         hashMap.set("", 356);
         expect(String(hashMap.length)).assertEqual('1');
         expect(String(hashMap.get(""))).assertEqual('356');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -875,7 +859,8 @@ export default function HashMapTest2() {
         hashMap.set("a", 356);
         expect(String(hashMap.length)).assertEqual('1');
         expect(String(hashMap.get("a"))).assertEqual('356');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -889,14 +874,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0003
-     * @tc.number testHashMapSet0003
-     * @tc.desc   testHashMapSet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0003';
     //   try {
@@ -918,14 +895,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0004
-     * @tc.number testHashMapSet0004
-     * @tc.desc   testHashMapSet0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0004';
     //   try {
@@ -954,7 +923,8 @@ export default function HashMapTest2() {
         hashMap.set(param, 356);
         expect(String(hashMap.length)).assertEqual('1');
         expect(String(hashMap.get(param))).assertEqual('356');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -968,14 +938,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0006
-     * @tc.number testHashMapSet0006
-     * @tc.desc   testHashMapSet0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0006';
     //   try {
@@ -1004,7 +966,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", 1);
         expect(String(hashMap.length)).assertEqual('1');
         expect(String(hashMap.get("ji"))).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1018,14 +981,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0008
-     * @tc.number testHashMapSet0008
-     * @tc.desc   testHashMapSet0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0008';
     //   try {
@@ -1058,7 +1013,8 @@ export default function HashMapTest2() {
           expect(String(hashMap.get("ji" + i))).assertEqual(String(i));
         }
         expect(String(hashMap.length)).assertEqual('1000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1081,7 +1037,8 @@ export default function HashMapTest2() {
         hashMap.clear();
         hashMap.replace("sparrow", 12);
         expect(String(hashMap.get("sparrow"))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1100,7 +1057,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.remove(''))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1114,14 +1072,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapRemove0002
-     * @tc.number testHashMapRemove0002
-     * @tc.desc   testHashMapRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapRemove0002';
     //   try {
@@ -1141,14 +1091,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapRemove0003
-     * @tc.number testHashMapRemove0003
-     * @tc.desc   testHashMapRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapRemove0003';
     //   try {
@@ -1173,7 +1115,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, string>();
         expect(String(hashMap.remove('key'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1193,7 +1136,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.remove('ji'))).assertEqual("hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1213,7 +1157,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, string>();
         hashMap.set("ji", "hello");
         expect(String(hashMap.remove('li'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1235,7 +1180,8 @@ export default function HashMapTest2() {
         hashMap.set("ji", "hello");
         hashMap.clear();
         expect(String(hashMap.remove('ji'))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1256,7 +1202,8 @@ export default function HashMapTest2() {
         expect(String(hashMap.length)).assertEqual('0');
         expect(String(hashMap.get('ji'))).assertEqual('undefined');
         expect(String(hashMap.hasKey('ji'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1279,7 +1226,8 @@ export default function HashMapTest2() {
         expect(String(hashMap.length)).assertEqual('0');
         expect(String(hashMap.get('ji'))).assertEqual('undefined');
         expect(String(hashMap.hasKey('ji'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1301,7 +1249,8 @@ export default function HashMapTest2() {
         hashMap.clear();
         hashMap.set("ji", 13);
         expect(String(hashMap.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1321,7 +1270,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         let keys = hashMap.keys();
         expect(String(keys.next().done)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1352,7 +1302,8 @@ export default function HashMapTest2() {
           temp = keys.next();
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1372,7 +1323,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         let keys = hashMap.values();
         expect(String(keys.next().done)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1403,7 +1355,8 @@ export default function HashMapTest2() {
           temp = values.next();
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1422,7 +1375,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.replace('', 1))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1436,14 +1390,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapReplace0002
-     * @tc.number testHashMapReplace0002
-     * @tc.desc   testHashMapReplace0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapReplace0002';
     //   try {
@@ -1463,14 +1409,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapReplace0003
-     * @tc.number testHashMapReplace0003
-     * @tc.desc   testHashMapReplace0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapReplace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapReplace0003';
     //   try {
@@ -1495,7 +1433,8 @@ export default function HashMapTest2() {
       try {
         const hashMap = new HashMap<string, number>();
         expect(String(hashMap.replace('key', 1))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1515,7 +1454,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("ji", 1);
         expect(String(hashMap.replace("ji", 1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1535,7 +1475,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<string, number>();
         hashMap.set("ji", 1);
         expect(String(hashMap.replace("ji", 2))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1555,7 +1496,8 @@ export default function HashMapTest2() {
         const hashMap = new HashMap<number, number>();
         hashMap.set(2, 1);
         expect(String(hashMap.replace(1, 2))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1575,7 +1517,8 @@ export default function HashMapTest2() {
         hashMap.forEach((value?: number, key?: number) => {
           expect(String(hashMap.length)).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1603,7 +1546,8 @@ export default function HashMapTest2() {
           index++;
         });
         expect(String(hashMap.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1627,7 +1571,8 @@ export default function HashMapTest2() {
         hashMap.forEach((value: number, key: number) => {
           expect(String(hashMap.remove(key))).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1651,7 +1596,8 @@ export default function HashMapTest2() {
         hashMap.forEach((value: number, key: number) => {
           expect(String(hashMap.replace(key, value ? value + 1 : 0))).assertEqual('true');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1676,7 +1622,8 @@ export default function HashMapTest2() {
           hashMap.clear();
           expect(String(hashMap.length)).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1700,7 +1647,8 @@ export default function HashMapTest2() {
         hashMap.forEach((): void => {
           expect(String(hashMap.length)).assertEqual('3');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1723,7 +1671,8 @@ export default function HashMapTest2() {
           expect(String(hashMap.length)).assertEqual('1');
           expect(value?.toString()).assertEqual("0");
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1750,7 +1699,8 @@ export default function HashMapTest2() {
         });
         expect(String(hashMapNew.length)).assertEqual('1');
         expect(String(hashMapNew.get(0))).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1773,7 +1723,8 @@ export default function HashMapTest2() {
           expect(String(hashMap.length)).assertEqual('1');
           expect(value?.toString()).assertEqual("0");
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1797,7 +1748,8 @@ export default function HashMapTest2() {
           expect(String(hashMap.length)).assertEqual('0');
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1830,7 +1782,8 @@ export default function HashMapTest2() {
           temp = entries.next();
         }
         expect(hashMap.length).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1859,7 +1812,8 @@ export default function HashMapTest2() {
           }
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1890,7 +1844,8 @@ export default function HashMapTest2() {
           }
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1920,7 +1875,8 @@ export default function HashMapTest2() {
           }
           temp = entries.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1937,14 +1893,14 @@ export default function HashMapTest2() {
       const TAG = 'testHashMapSymbolIterator0001';
       try {
         const hashMap = new HashMap<number, number>();
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
           let temp: IteratorResult<[Number, Number]> = iter.next();
         while (!temp.done) {
           expect(String(hashMap.length)).assertEqual('0')
           temp = iter.next()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1965,9 +1921,8 @@ export default function HashMapTest2() {
         hashMap.set(0, 0);
         hashMap.set(1, 1);
         hashMap.set(2, 2);
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
-          let temp: IteratorResult<[Number, Number]> = iter.next();
+        let temp: IteratorResult<[Number, Number]> = iter.next();
         let index = 0;
         while (!temp.done) {
           if (!temp.value) {
@@ -1978,7 +1933,8 @@ export default function HashMapTest2() {
           temp = iter.next()
         }
         expect(String(hashMap.length)).assertEqual('3')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2025,10 +1981,28 @@ export default function HashMapTest2() {
         expect(hashMap.remove(0)).assertEqual(temp)
         hashMap.clear()
         expect(hashMap.length).assertEqual(0)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
+    });
+
+    /**
+     * @tc.name   testHashMapIsEmpty0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_IS_EMPTY_1700
+     * @tc.desc   Testing HashMap has data and clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashMapIsEmpty0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const hashMap = new HashMap<string, number>();
+      expect(hashMap.length).assertEqual(0);
+      hashMap.set("ji", 1)
+      hashMap.set("ji2", 2)
+      hashMap.set("ji3", 3)
+      expect(hashMap.length).assertEqual(3);
     });
   });
 }

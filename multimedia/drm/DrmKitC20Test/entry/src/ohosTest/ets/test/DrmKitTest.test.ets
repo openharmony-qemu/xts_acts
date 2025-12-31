@@ -115,6 +115,24 @@ export default function DrmKitTest() {
     });
 
     /**
+     * @tc.name   SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne
+     * @tc.number SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne
+     * @tc.desc   test OH_MediaKeySession_GenerateOfflineReleaseRequestOne Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne', Level.LEVEL1, () => {
+      try {
+        let c: number = testNapi.mediaKeySession_GenerateOfflineReleaseRequestInvalueOne();
+        expect(c).assertEqual(1);
+      } catch (err) {
+        console.error("====>SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    });
+
+    /**
      * @tc.name   SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
      * @tc.number SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
      * @tc.desc   test OH_MediaKeySession_ProcessOfflineReleaseResponse Null Pointer

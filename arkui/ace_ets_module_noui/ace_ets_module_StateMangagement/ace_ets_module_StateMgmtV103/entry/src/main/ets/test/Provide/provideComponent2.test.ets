@@ -63,7 +63,7 @@ export default function provideComponent2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provideComponentTwoTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('provideComponentTwoTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('provideComponentTwoTest_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('provideComponent2');

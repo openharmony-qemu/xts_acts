@@ -305,9 +305,9 @@ export default function appManagerStaticTest() {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1100`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1100 begin');
       try {
-        appManager.getAppMemorySize().then((data: Int) => {
+        appManager.getAppMemorySize().then((data: int) => {
           console.log(`The size of app memory is: ${JSON.stringify(data)}`);
-          expect(typeof (data)).assertEqual("number");
+          expect(typeof (data)).assertEqual("int");
           expect(data).assertLarger(0);
           done();
         }).catch((err: BusinessError): void => {
@@ -333,8 +333,8 @@ export default function appManagerStaticTest() {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1200`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1200 begin');
       try {
-        appManager.getAppMemorySize((err: BusinessError| null, data: Int | undefined)=>{
-          expect(typeof (data)).assertEqual("number");
+        appManager.getAppMemorySize((err: BusinessError| null, data: int | undefined)=>{
+          expect(typeof (data)).assertEqual("int");
           expect(data).assertLarger(0);
           done();
         })

@@ -974,5 +974,96 @@ export default function abilityTest() {
       console.log("getResourceConfiguration_nativeTest_0100" + value);
       expect(value).assertTrue();
     })
+
+    /**
+     * @tc.name   getRawFileDescriptorFalseOrTrue
+     * @tc.number SUB_GLOBAL_getRawFileDescriptorFalseOrTrue_0100
+     * @tc.desc   getRawFileDescriptor return false true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getRawFileDescriptorFalseOrTrue', Level.LEVEL3, () => {
+      let value = nativeTest.getRawFileDescriptorFalseOrTrue(resManager.resourceManager, "test/aa.xml");
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   getRawFileDescriptorDataFalseOrTrue
+     * @tc.number SUB_GLOBAL_getRawFileDescriptorDataFalseOrTrue_0100
+     * @tc.desc   getRawFileDescriptorData return false true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getRawFileDescriptorDataFalseOrTrue', Level.LEVEL3, () => {
+      let value = nativeTest.getRawFileDescriptorDataFalseOrTrue(resManager.resourceManager, "test/aa.xml");
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   getRawFileDescriptor64FalseOrTrue
+     * @tc.number SUB_GLOBAL_getRawFileDescriptor64FalseOrTrue_0100
+     * @tc.desc   getRawFileDescriptor64 return false true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getRawFileDescriptor64FalseOrTrue', Level.LEVEL3, () => {
+      let value = nativeTest.getRawFileDescriptor64FalseOrTrue(resManager.resourceManager, "test/aa.xml");
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   initNativeRsMgrOpenRawDirRawFile64Null
+     * @tc.number SUB_GLOBAL_initNativeRsMgrOpenRawDirRawFile64Null_0100
+     * @tc.desc   initNativeRsMgr OpenRawDir RawFile64 return null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('initNativeRsMgrOpenRawDirRawFile64Null', Level.LEVEL3, () => {
+      let value = nativeTest.initNativeRsMgrOpenRawDirRawFile64Null(null);
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   isRawDirTrue
+     * @tc.number SUB_GLOBAL_isRawDirTrue_0100
+     * @tc.desc   isRawDir return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isRawDirTrue', Level.LEVEL3, () => {
+      let value = nativeTest.isRawDirTrue(resManager.resourceManager, "test");
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   getDirectionVertical
+     * @tc.number SUB_GLOBAL_getDirectionVertical_0100
+     * @tc.desc   getDirection return vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getDirectionVertical', Level.LEVEL3, () => {
+      let value = nativeTest.getDirectionVertical(resManager.resourceManager);
+      expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   getEmuTypeErrorCode
+     * @tc.number SUB_GLOBAL_getEmuTypeErrorCode_0100
+     * @tc.desc   getEmuTypeErrorCode return errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getEmuTypeErrorCode', Level.LEVEL3, () => {
+      let value = nativeTest.getEmuTypeErrorCode(resManager.resourceManager);
+      expect(value).assertTrue();
+    })
   })
 }

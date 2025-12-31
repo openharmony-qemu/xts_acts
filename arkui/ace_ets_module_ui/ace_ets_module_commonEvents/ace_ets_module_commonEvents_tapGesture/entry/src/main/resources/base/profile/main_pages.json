@@ -14,6 +14,7 @@
         "MainAbility/pages/TapGesture/TapGestureBasicClick",
         "MainAbility/pages/TapGesture/TapGestureBasicDoubleClick",
         "MainAbility/pages/tapGestureAddInterface/tapgestures",
-        "MainAbility/pages/TapGesture/tapLocation"
+        "MainAbility/pages/TapGesture/tapLocation",
+        "MainAbility/pages/TapGesture/tapLocation2"
     ]
 }

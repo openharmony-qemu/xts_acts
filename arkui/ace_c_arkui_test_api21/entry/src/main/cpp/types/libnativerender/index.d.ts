@@ -72,3 +72,15 @@ export const listDidStopDraggingTest: (a: string) => void;
 export const listWillStartFlingTest: (a: string) => void;
 export const listDidStopFlingTest: (a: string) => void;
 export const createImageSupportSvg2NativeRoot: (content: NodeContent, tag: string) => void;
+export const SourceTypeTest: (a: string) => void;
+export const testGetPositionGetSize: (a: string) => void;
+
+export const sourceDragTest: (a: string) => void;
+export const sourceFlingTest: (a: string) => void;
+export const sourceEdgeTest: (a: string) => void;
+export const sourceOtherTest: (a: string) => void;
+export const sourceBarTest: (a: string) => void;
+export const sourceBarFlingTest: (a: string) => void;
+export const sourceScrollerTest: (a: string) => void;
+export const sourceAnimationTest: (a: string) => void;
+export const testCustomNodeEvent001: (a: string) => void;

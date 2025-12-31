@@ -917,11 +917,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_mode_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.mode == 'number').assertTrue();
+          expect(typeof statres?.mode == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.mode == 'number').assertTrue();
+          expect(typeof stat2?.mode == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -974,11 +974,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_uid_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.uid == 'number').assertTrue();
+          expect(typeof statres?.uid == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.uid == 'number').assertTrue();
+          expect(typeof stat2?.uid == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1031,11 +1031,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_gid_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.gid == 'number').assertTrue();
+          expect(typeof statres?.gid == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.gid == 'number').assertTrue();
+          expect(typeof stat2?.gid == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1088,11 +1088,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_size_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.size == 'number').assertTrue();
+          expect(typeof statres?.size == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.size == 'number').assertTrue();
+          expect(typeof stat2?.size == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1145,11 +1145,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_atime_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.atime == 'number').assertTrue();
+          expect(typeof statres?.atime == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.atime == 'number').assertTrue();
+          expect(typeof stat2?.atime == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1202,11 +1202,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_mtime_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.mtime == 'number').assertTrue();
+          expect(typeof statres?.mtime == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.mtime == 'number').assertTrue();
+          expect(typeof stat2?.mtime == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1259,11 +1259,11 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_ctime_static_001');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         fs.stat(fpath, (err: BusinessError | null, statres: fs.Stat | undefined) => {
-          expect(typeof statres?.ctime == 'number').assertTrue();
+          expect(typeof statres?.ctime == 'long').assertTrue();
         })
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          expect(typeof stat2?.ctime == 'number').assertTrue();
+          expect(typeof stat2?.ctime == 'long').assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
@@ -1767,7 +1767,8 @@ export default function fileIOStat() {
             expect(false).assertTrue();
           }
           expect(statres?.isSymbolicLink() === false).assertTrue();
-        })
+        });
+        await Utils.msSleep(3000);
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
           if(err?.code != 0) {
@@ -1776,6 +1777,8 @@ export default function fileIOStat() {
           }
           expect(stat2?.isSymbolicLink() === false).assertTrue();
           fs.closeSync(file);
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 unlink start');
           fs.unlinkSync(fpath);
           done();
         })

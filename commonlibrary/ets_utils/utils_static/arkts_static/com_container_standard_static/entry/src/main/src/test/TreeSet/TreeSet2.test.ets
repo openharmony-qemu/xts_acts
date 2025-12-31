@@ -29,6 +29,10 @@ import { BusinessError } from '@ohos.base';
 import TreeSet from '@ohos.util.TreeSet';
 import Utils from '../Util.test';
 
+class TestEntry {
+  public id: number = 0;
+}
+
 export default function TreeSetTest2() {
   describe("TreeSetTest2", (): void => {
     afterEach(() => {
@@ -49,7 +53,8 @@ export default function TreeSetTest2() {
         treeSet.add(65536);
         let length = treeSet.length
         expect(String(length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -74,7 +79,8 @@ export default function TreeSetTest2() {
         treeSet.add('CCC');
         let length = treeSet.length
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -88,31 +94,28 @@ export default function TreeSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testConstructor0003";
-    //   try {
-    //     class TestEntry {
-    //       public id: number = 0;
-    //     }
-    //
-    //     let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): boolean => {
-    //       return t1.id > t2.id;
-    //     });
-    //     let entry1: TestEntry = {
-    //       id: 0
-    //     };
-    //     let entry2: TestEntry = {
-    //       id: 1
-    //     }
-    //     ts1.add(entry1);
-    //     ts1.add(entry2);
-    //     let length = ts1.length
-    //     expect(length).assertEqual(2);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testConstructor0003";
+      try {
+        let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>((t1: TestEntry, t2: TestEntry): double => {
+          return t1.id - t2.id;
+        });
+        let entry1: TestEntry = {
+          id: 0
+        };
+        let entry2: TestEntry = {
+          id: 1
+        }
+        ts1.add(entry1);
+        ts1.add(entry2);
+        let length = ts1.length
+        expect(length).assertEqual(2);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testConstructor0004
@@ -122,30 +125,27 @@ export default function TreeSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testConstructor0004";
-    //   try {
-    //     class TestEntry {
-    //       public id: number = 0;
-    //     }
-    //
-    //     let ts1: TreeSet<TestEntry> = new TreeSet();
-    //     let entry1: TestEntry = {
-    //       id: 0
-    //     };
-    //     let entry2: TestEntry = {
-    //       id: 1
-    //     }
-    //     ts1.add(entry1);
-    //     ts1.add(entry2);
-    //     let length = ts1.length
-    //     expect(length).assertEqual(1);
-    //     console.log("treeSet: ", ts1.length);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testConstructor0004";
+      try {
+        let ts1: TreeSet<TestEntry> = new TreeSet<TestEntry>();
+        let entry1: TestEntry = {
+          id: 0
+        };
+        let entry2: TestEntry = {
+          id: 1
+        }
+        ts1.add(entry1);
+        ts1.add(entry2);
+        let length = ts1.length
+        expect(length).assertEqual(1);
+        console.log("treeSet: ", ts1.length);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testIsEmpty0001
@@ -161,7 +161,8 @@ export default function TreeSetTest2() {
         const treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
         let result = treeSet.isEmpty();
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -182,7 +183,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.isEmpty();
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -204,7 +206,8 @@ export default function TreeSetTest2() {
         treeSet.remove("squirrel");
         let result = treeSet.isEmpty();
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -224,7 +227,8 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
         let result = treeSet.has("");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -246,7 +250,8 @@ export default function TreeSetTest2() {
         let result = treeSet.has("");
         expect(result).assertFalse();
         ;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -260,14 +265,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testHas0003
-     * @tc.number testHas0003
-     * @tc.desc   testHas0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testHas0003";
     //   try {
@@ -288,14 +285,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testHas0004
-     * @tc.number testHas0004
-     * @tc.desc   testHas0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testHas0004";
     //   try {
@@ -317,14 +306,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testHas0005
-     * @tc.number testHas0005
-     * @tc.desc   testHas0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHas0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testHas0005";
     //   try {
@@ -345,14 +326,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testHas0006
-     * @tc.number testHas0006
-     * @tc.desc   testHas0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHas0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testHas0006";
     //   setTimeout(() => {
@@ -382,7 +355,8 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string | number | boolean | Object> = new TreeSet<string | number | boolean | Object>();
         let result = treeSet.has(123);
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -403,7 +377,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.has("squirrel");
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -424,7 +399,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.has("AA");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -461,7 +437,8 @@ export default function TreeSetTest2() {
         let resultSix = treeSet.has("squirrel");
         expect(resultSix).assertFalse();
         expect(String(treeSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -480,10 +457,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getFirstValue();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -502,7 +479,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.getFirstValue();
         expect(result).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
     })
@@ -523,7 +501,8 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         let result = treeSet.getFirstValue();
         expect(String(result)).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -549,7 +528,8 @@ export default function TreeSetTest2() {
         treeSet.add("a");
         let result = treeSet.getFirstValue();
         expect(result).assertEqual("d");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -568,10 +548,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getLastValue();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -590,7 +570,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.getLastValue();
         expect(result).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -612,7 +593,8 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         let result = treeSet.getLastValue();
         expect(String(result)).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -638,7 +620,8 @@ export default function TreeSetTest2() {
         treeSet.add("a");
         let result = treeSet.getLastValue();
         expect(result).assertEqual("a");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -660,7 +643,8 @@ export default function TreeSetTest2() {
         expect(String(treeSet.length)).assertEqual('1');
         let result = treeSet.has("");
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -682,7 +666,8 @@ export default function TreeSetTest2() {
         expect(String(treeSet.length)).assertEqual('1');
         let result = treeSet.has("a");
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -696,14 +681,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testAdd0003
-     * @tc.number testAdd0003
-     * @tc.desc   testAdd0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testAdd0003";
     //   try {
@@ -726,14 +703,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testAdd0004
-     * @tc.number testAdd0004
-     * @tc.desc   testAdd0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testAdd0004";
     //   try {
@@ -755,14 +724,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testAdd0005
-     * @tc.number testAdd0005
-     * @tc.desc   testAdd0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testAdd0005";
     //   try {
@@ -793,7 +754,8 @@ export default function TreeSetTest2() {
           expect(treeSet.has("sparrow" + i)).assertTrue();
         }
         expect(String(treeSet.length)).assertEqual('1000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -815,7 +777,8 @@ export default function TreeSetTest2() {
           expect(treeSet.has("sparrow" + i)).assertTrue();
         }
         expect(String(treeSet.length)).assertEqual('1000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -834,7 +797,8 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.remove("");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -854,7 +818,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.remove("");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -867,14 +832,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testRemove0003
-     * @tc.number testRemove0003
-     * @tc.desc   testRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testRemove0003";
     //   try {
@@ -894,14 +851,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testRemove0004
-     * @tc.number testRemove0004
-     * @tc.desc   testRemove0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testRemove0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testRemove0004";
     //   try {
@@ -922,14 +871,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testRemove0005
-     * @tc.number testRemove0005
-     * @tc.desc   testRemove0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testRemove0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testRemove0005";
     //   try {
@@ -949,14 +890,6 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testRemove0006
-     * @tc.number testRemove0006
-     * @tc.desc   testRemove0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testRemove0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testRemove0006";
     //   try {
@@ -983,7 +916,8 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.remove(123);
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1003,7 +937,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.remove("squirrel");
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1023,7 +958,8 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         let result = treeSet.remove("AA");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1041,10 +977,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getLowerValue("");
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     // /**
@@ -1055,22 +991,15 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testGetLowerValue0002
-     * @tc.number testGetLowerValue0002
-     * @tc.desc   testGetLowerValue0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testGetLowerValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testGetLowerValue0002";
     //   try {
     //     let treeSet: TreeSet<string> = new TreeSet<string>();
     //     treeSet.getLowerValue(null);
+    //     expect(true).assertTrue();
     //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect().assertFail();
+    //     expect(err.code).assertEqual(401);
     //   }
     // });
     // /**
@@ -1081,32 +1010,17 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testGetLowerValue0003
-     * @tc.number testGetLowerValue0003
-     * @tc.desc   testGetLowerValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testGetLowerValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testGetLowerValue0003";
     //   try {
     //     let treeSet: TreeSet<string> = new TreeSet<string>();
     //     treeSet.getLowerValue(undefined);
+    //     expect(true).assertTrue();
     //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect().assertFail();
+    //     expect(err.code).assertEqual(401);
     //   }
     // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4500
-    //  * @tc.name       : testGetLowerValue0004
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
     /**
      * @tc.name   testGetLowerValue0004
      * @tc.number testGetLowerValue0004
@@ -1115,25 +1029,17 @@ export default function TreeSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testGetLowerValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0004";
-    //   try {
-    //     let treeSet: TreeSet<number> = new TreeSet<number>();
-    //     let result = treeSet.getLowerValue(123);
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4600
-    //  * @tc.name       : testGetLowerValue0005
-    //  * @tc.desc       : Test the function of the interface getLowerValue.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
+    it('testGetLowerValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testGetLowerValue0004";
+      try {
+        let treeSet: TreeSet<number> = new TreeSet<number>();
+        let result = treeSet.getLowerValue(123);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
+    });
     /**
      * @tc.name   testGetLowerValue0005
      * @tc.number testGetLowerValue0005
@@ -1142,17 +1048,17 @@ export default function TreeSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testGetLowerValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testGetLowerValue0005";
-    //   try {
-    //     let treeSet: TreeSet<number> = new TreeSet<number>();
-    //     let result = treeSet.getLowerValue(123);
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testGetLowerValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testGetLowerValue0005";
+      try {
+        let treeSet: TreeSet<number> = new TreeSet<number>();
+        let result = treeSet.getLowerValue(123);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
+    });
     /**
      * @tc.name   testGetLowerValue0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_4700
@@ -1169,7 +1075,8 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         let result = treeSet.getLowerValue("squirrel");
         expect(String(result)).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1194,7 +1101,8 @@ export default function TreeSetTest2() {
         treeSet.add("a");
         let result = treeSet.getLowerValue("c");
         expect(result).assertEqual("d");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1212,10 +1120,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getHigherValue("");
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     // /**
@@ -1226,22 +1134,15 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testGetHigherValue0002
-     * @tc.number testGetHigherValue0002
-     * @tc.desc   testGetHigherValue0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testGetHigherValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testGetHigherValue0002";
     //   try {
     //     let treeSet: TreeSet<string> = new TreeSet<string>();
     //     treeSet.getHigherValue(null);
+    //     expect(true).assertTrue();
     //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect().assertFail();
+    //     expect(err.code).assertEqual(401);
     //   }
     // });
     // /**
@@ -1252,22 +1153,15 @@ export default function TreeSetTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testGetHigherValue0003
-     * @tc.number testGetHigherValue0003
-     * @tc.desc   testGetHigherValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testGetHigherValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testGetHigherValue0003";
     //   try {
     //     let treeSet: TreeSet<string> = new TreeSet<string>();
     //     treeSet.getHigherValue(undefined);
+    //     expect(true).assertTrue();
     //   } catch (err: BusinessError) {
     //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect().assertFail();
+    //     expect(err.code).assertEqual(401);
     //   }
     // });
     /**
@@ -1283,10 +1177,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getHigherValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1302,10 +1196,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getHigherValue(123);
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1324,7 +1218,8 @@ export default function TreeSetTest2() {
         treeSet.add("sparrow");
         let result = treeSet.getHigherValue("sparrow");
         expect(String(result)).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1349,7 +1244,8 @@ export default function TreeSetTest2() {
         treeSet.add("a");
         let result = treeSet.getHigherValue("c");
         expect(result).assertEqual("b");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1367,10 +1263,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.popFirst();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1390,7 +1286,8 @@ export default function TreeSetTest2() {
         treeSet.popFirst();
         let result = treeSet.has("sparrow");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1416,7 +1313,8 @@ export default function TreeSetTest2() {
         treeSet.popFirst();
         let result = treeSet.has("d");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1437,7 +1335,8 @@ export default function TreeSetTest2() {
         treeSet.popFirst();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1456,12 +1355,13 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         treeSet.add("squirrel");
         treeSet.remove("squirrel");
-        treeSet.popFirst();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        treeSet.popFirst();
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1479,15 +1379,15 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         treeSet.add("sparrow");
         treeSet.clear();
-        let result = treeSet.popFirst();
-        expect(result).assertEqual(undefined);
         let resultOne = treeSet.has("squirrel");
         expect(resultOne).assertFalse();
         let resultTwo = treeSet.has("sparrow");
         expect(resultTwo).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let result = treeSet.popFirst();
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1503,10 +1403,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.popLast();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1526,7 +1426,8 @@ export default function TreeSetTest2() {
         treeSet.popLast();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1552,7 +1453,8 @@ export default function TreeSetTest2() {
         treeSet.popLast();
         let result = treeSet.has("a");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1573,7 +1475,8 @@ export default function TreeSetTest2() {
         treeSet.popLast();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1592,12 +1495,13 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         treeSet.add("squirrel");
         treeSet.remove("squirrel");
-        treeSet.popLast();
         let result = treeSet.has("squirrel");
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        treeSet.popLast();
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1615,15 +1519,15 @@ export default function TreeSetTest2() {
         treeSet.add("squirrel");
         treeSet.add("sparrow");
         treeSet.clear();
-        let result = treeSet.popLast();
-        expect(result).assertEqual(undefined);
         let resultOne = treeSet.has("squirrel");
         expect(resultOne).assertFalse();
         let resultTwo = treeSet.has("sparrow");
         expect(resultTwo).assertFalse();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        let result = treeSet.popLast();
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     /**
@@ -1642,7 +1546,8 @@ export default function TreeSetTest2() {
         let result = treeSet.has("");
         expect(result).assertFalse();
         expect(String(treeSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1667,7 +1572,8 @@ export default function TreeSetTest2() {
         let resultOne = treeSet.has("sparrow");
         expect(resultOne).assertFalse();
         expect(String(treeSet.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1700,7 +1606,8 @@ export default function TreeSetTest2() {
         let resultThree = treeSet.has("d");
         expect(resultThree).assertFalse();
         expect(treeSet.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1720,7 +1627,8 @@ export default function TreeSetTest2() {
         let it = treeSet.values();
         let result = it.next().done;
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1746,7 +1654,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('BBB');
         expect(String(res.next().value)).assertEqual('CCC');
         expect(String(res.next().value)).assertEqual('DDD');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1775,7 +1684,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('CCC');
         expect(String(res.next().value)).assertEqual('BBB');
         expect(String(res.next().value)).assertEqual('AAA');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1797,7 +1707,8 @@ export default function TreeSetTest2() {
           let length = treeSet.length
           expect(length).assertEqual(0)
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1826,7 +1737,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('BBB');
         expect(String(res.next().value)).assertEqual('CCC');
         expect(String(res.next().value)).assertEqual('DDD');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1859,7 +1771,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('AAA');
         let length = treeSet.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1890,7 +1803,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('DDD');
         let length = treeSet.length;
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1917,7 +1831,8 @@ export default function TreeSetTest2() {
         treeSet.clear()
         let length = treeSet.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1938,7 +1853,8 @@ export default function TreeSetTest2() {
         let it = treeSet.entries();
         let result = it.next().done;
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1968,7 +1884,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('DDD');
         let length = treeSet.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2000,7 +1917,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('AAA');
         let length = treeSet.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2030,7 +1948,8 @@ export default function TreeSetTest2() {
         expect(String(res.next().value)).assertEqual('DDD');
         let length = treeSet.length;
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2056,7 +1975,8 @@ export default function TreeSetTest2() {
         treeSet.clear();
         let length = treeSet.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2083,7 +2003,8 @@ export default function TreeSetTest2() {
         treeSet.clear();
         let length = treeSet.length;
         expect(String(length)).assertEqual('0')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2111,7 +2032,8 @@ export default function TreeSetTest2() {
         treeSet.clear();
         let length = treeSet.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2139,20 +2061,13 @@ export default function TreeSetTest2() {
         treeSet.clear();
         let length = treeSet.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8700
-    //  * @tc.name       : testTreeSetForEach0009
-    //  * @tc.desc       : Test the function of the interface forEach.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
     /**
      * @tc.name   testTreeSetForEach0009
      * @tc.number testTreeSetForEach0009
@@ -2161,23 +2076,70 @@ export default function TreeSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTreeSetForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeSetForEach0009";
-    //   try {
-    //     let treeSet: TreeSet<string> = new TreeSet<string>();
-    //     treeSet.add('AAA');
-    //     treeSet.add('BBB');
-    //     treeSet.add('CCC');
-    //     treeSet.add('DDD');
-    //     treeSet.forEach((value, index, treeSet: TreeSet<string>): void => {
-    //       expect(treeSet.has(value)).assertTrue();
-    //     }, treeSet);
-    //     expect(treeSet.getFirstValue()).assertEqual('AAA');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testTreeSetForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testTreeSetForEach0009";
+      try {
+        let treeSet: TreeSet<string> = new TreeSet<string>();
+        treeSet.add('AAA');
+        treeSet.add('BBB');
+        treeSet.add('CCC');
+        treeSet.add('DDD');
+        treeSet.forEach((value, index, treeSet: TreeSet<string>): void => {
+          expect(treeSet.has(value)).assertTrue();
+        });
+        expect(treeSet.getFirstValue()).assertEqual('AAA');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
+    /**
+     * @tc.name     testTreeSetForEach0010
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8800
+     * @tc.desc     Test the function of the interface forEach.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testTreeSetForEach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testTreeSetForEach0010";
+      try {
+        let treeSet: TreeSet<string> = new TreeSet<string>();
+        treeSet.add('AAA');
+        treeSet.add('BBB');
+        treeSet.add('CCC');
+        treeSet.add('DDD');
+        let iter = treeSet.$_iterator();
+        let temp = iter.next();
+        let flag =0;
+        while (!temp.done) {
+          flag ++;
+          expect(treeSet.length).assertEqual(4)
+          temp = iter.next()
+        }
+        expect(flag).assertEqual(4);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testConstructor0089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_8900
+     * @tc.desc   Test the function of the interface Constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConstructor0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const treeSet: TreeSet<number> = new TreeSet<number>();
+      expect(treeSet.length).assertEqual(0);
+      treeSet.add(65536);
+      expect(treeSet.length).assertEqual(1);
+    });
   })
 }

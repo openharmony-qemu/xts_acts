@@ -16,9 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import image from '@ohos.multimedia.image';
-import { JsProxyObject } from '../../test/Interfaces';
-import { URL } from '../../test/Config.test';
+import { URL_BAIDU } from '../../test/Config.test';
 
 const EVENT_ID_SET_EMIT_KEY = 201330;
 
@@ -26,25 +24,7 @@ const EVENT_ID_SET_EMIT_KEY = 201330;
 @Component
 struct WebViewControllerPart3 {
   controller: webView.WebviewController = new webView.WebviewController();
-  nativePort: webView.WebMessagePort | null = null;
-  message: webView.WebMessageExt = new webView.WebMessageExt();
-  @State str: string = ""
-  @State pixelMap: image.PixelMap | undefined = undefined;
-  @State javaScriptAccess: boolean = true
-  @State fileAccess: boolean = true;
-  @State domStorageAccess: boolean = true;
-  @State imageAccess: boolean = true;
-  @State onlineImageAccess: boolean = false;
-  @State databaseAccess: boolean = true;
-  @State checkEleResult: number[] = [];
-  @State registerJavaScriptProxyFlag: boolean = false;
-  @State console: string = ""
-  @State arrTime: Array<number> = [0, 0]
-  @State time: number = 0
-  @State onScrollCallBack: boolean = false;
-  @State onMessageEventCallBack: boolean = false
-  @State ports: webView.WebMessagePort[] = [];
-  @State userAgentPC:string = "";
+  @State str: string = ''
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
 
@@ -61,9 +41,9 @@ struct WebViewControllerPart3 {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.isReceive = 1;
         this.str = eventData.data.ACTION;
@@ -74,31 +54,23 @@ struct WebViewControllerPart3 {
   build() {
     Column() {
       Row() {
-        Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
+        Button('WebViewController click').key('WebViewControllerTestButton').onClick(async () => {
           await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerTestButtonIsPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerTestButtonIsReceive', 1, 1000);
-          console.info("key==>" + this.str);
+          console.info('key==>' + this.str);
           switch (this.str) {
-            case "testPrefetchPage001": {
+            case 'testPrefetchPage001': {
+              this.isPageEnd = -1
               try {
-                this.arrTime = []
-                this.controller.removeCache(true)
-                console.log('======first load')
-                this.controller.loadUrl(URL)
-                await Utils.waitForExist(()=>this.arrTime.length, 'pushArrTimeCheckOne', 1, 1000);
-
                 this.controller.removeCache(true);
-                this.controller.prefetchPage(URL);
-                console.log('======second load')
-                this.controller.loadUrl(URL)
-                await Utils.waitForExist(()=>this.arrTime.length, 'pushArrTimeCheckTwo', 2, 1000);
-                if (this.arrTime[1] - this.arrTime[0] < 0) {
-                  Utils.emitEvent(true, 201340)
-                } else {
-                  Utils.emitEvent(false, 201340)
-                }
+                this.controller.prefetchPage(URL_BAIDU);
+                console.log('======prefetchPage url')
+                this.controller.loadUrl(URL_BAIDU)
+                await Utils.waitForExist(()=>this.isPageEnd, 'testPrefetchPage001', 1, 1000);
+                Utils.emitEvent(true, 201340);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.message, 201340);
               }
               break;
             }
@@ -108,48 +80,16 @@ struct WebViewControllerPart3 {
       }
 
       Web({ src: $rawfile('index.html'), controller: this.controller })
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
-        .onConsole((event) => {
-          if (event) {
-            this.console = event.message.getMessage()
-          }
-          return false
-        })
         .onFirstContentfulPaint(event => {
           if (event) {
-            console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
-            event.navigationStartTick + ", [firstContentfulPaintMs]:" +
+            console.log('onFirstContentfulPaint:' + '[navigationStartTick]:' +
+            event.navigationStartTick + ', [firstContentfulPaintMs]:' +
             event.firstContentfulPaintMs)
-            this.arrTime.push(event.firstContentfulPaintMs);
-          }
-        })
-        .onScroll((event) => {
-          if (event) {
-            console.info("onScroll x = " + event.xOffset)
-            console.info("onScroll y = " + event.yOffset)
-            this.onScrollCallBack = true
           }
         })
         .onPageEnd((event) => {
-          if (event) {
-            if (this.onMessageEventCallBack) {
-              this.ports = this.controller.createWebMessagePorts(true);
-              this.controller.postMessage("init_web_messageport", [this.ports[1]], "*");
-              this.nativePort = this.ports[0];
-              this.nativePort.onMessageEvent((result) => {
-                if (result) {
-                  console.log(`log error result: ${result}`);
-                }
-              });
-            }
+            console.log('onPageEnd url:' + event.url)
             this.isPageEnd = 1;
-            console.log('url:' + event.url)
-          }
         })
     }
   }

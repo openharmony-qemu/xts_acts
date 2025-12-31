@@ -251,6 +251,30 @@ static napi_value GetSupportedOutputCapability(napi_env env, napi_callback_info 
     return cameraOutputCapability;
 }
 
+static napi_value GetSupportedFullOutputCapability(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetSupportedFullOutputCapability();
+
+    napi_value cameraOutputCapability = nullptr;
+    napi_create_object(env, &cameraOutputCapability);
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->cameraOutputCapability_->previewProfilesSize, &jsValue);
+    napi_set_named_property(env, cameraOutputCapability, "previewProfilesSize", jsValue);
+
+    napi_create_int32(env, ndkCamera_->cameraOutputCapability_->photoProfilesSize, &jsValue);
+    napi_set_named_property(env, cameraOutputCapability, "photoProfilesSize", jsValue);
+
+    napi_create_int32(env, ndkCamera_->cameraOutputCapability_->videoProfilesSize, &jsValue);
+    napi_set_named_property(env, cameraOutputCapability, "videoProfilesSize", jsValue);
+
+    napi_create_int32(env, ndkCamera_->cameraOutputCapability_->metadataProfilesSize, &jsValue);
+    napi_set_named_property(env, cameraOutputCapability, "metadataProfilesSize", jsValue);
+
+    return cameraOutputCapability;
+}
+
 static napi_value CreatePreviewOutput(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -276,6 +300,41 @@ static napi_value CreatePhotoOutput(napi_env env, napi_callback_info info)
     napi_get_value_string_utf8(env, args[0], surfaceId, typeLen + 1, &typeLen);
     Camera_ErrorCode ret = ndkCamera_->CreatePhotoOutput(surfaceId);
     napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CreateHeifPhotoOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
+    size_t typeLen = 0;
+    char* surfaceId = nullptr;
+    int idx = 0;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &typeLen);
+    surfaceId = new char[typeLen + 1];
+    napi_get_value_string_utf8(env, args[0], surfaceId, typeLen + 1, &typeLen);
+    napi_get_value_int32(env, args[1], &idx);
+    Camera_ErrorCode ret = ndkCamera_->CreateHeifPhotoOutput(surfaceId, idx);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value AdjustHeifIdx(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t idx;
+    napi_get_value_int32(env, args[0], &idx);
+    idx = ndkCamera_->AdjustHeifIdx(idx);
+    napi_create_int32(env, idx, &result);
     return result;
 }
 
@@ -2974,6 +3033,15 @@ static napi_value GetMacroStatusChangeTest(napi_env env, napi_callback_info info
     return jsValue;
 }
 
+static napi_value GetIsoInfoChangeTest(napi_env env, napi_callback_info info)
+{
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->IsoInfoChangeTest(), &jsValue);
+
+    return jsValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2989,13 +3057,18 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getCameraHostType", nullptr, GetCameraHostType, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getWhiteBalanceTest", nullptr, GetWhiteBalanceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMacroStatusChangeTest", nullptr, GetMacroStatusChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getIsoInfoChangeTest", nullptr, GetIsoInfoChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createCameraInput", nullptr, CreateCameraInput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createCameraInputWithPositionAndType", nullptr, CreateCameraInputWithPositionAndType, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "getSupportedOutputCapability", nullptr, GetSupportedOutputCapability, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "getSupportedFullOutputCapability", nullptr, GetSupportedFullOutputCapability, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
         { "createPreviewOutput", nullptr, CreatePreviewOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createPhotoOutput", nullptr, CreatePhotoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "createHeifPhotoOutput", nullptr, CreateHeifPhotoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "adjustHeifIdx", nullptr, AdjustHeifIdx, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createVideoOutput", nullptr, CreateVideoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createMetadataOutput", nullptr, CreateMetadataOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createSession", nullptr, CreateSession, nullptr, nullptr, nullptr, napi_default, nullptr },

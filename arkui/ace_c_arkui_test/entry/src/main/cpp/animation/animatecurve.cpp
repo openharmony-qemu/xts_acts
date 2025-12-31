@@ -108,4 +108,52 @@ static napi_value TestAnimateCurve011(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
+static napi_value testAnimateCurve012(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateStepsCurve(PARAM_0, true);
+    ASSERT_OBJ(curveHandle, nullptr);
+    NAPI_END;
+}
+
+static napi_value testAnimateCurve013(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateStepsCurve(PARAM_2147483646, true);
+    ASSERT_EQ((curveHandle != nullptr), true);
+    NAPI_END;
+}
+
+static napi_value testAnimateCurve014(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateStepsCurve(PARAM_2147483647, true);
+    ASSERT_EQ((curveHandle != nullptr), true);
+    NAPI_END;
+}
+
+static napi_value testAnimateCurve015(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateCubicBezierCurve(PARAM_0, PARAM_0, -1.0f, PARAM_1);
+    ASSERT_EQ((curveHandle != nullptr), true);
+    NAPI_END;
+}
+
+static napi_value testAnimateCurve016(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateCubicBezierCurve(PARAM_0, PARAM_0, 2.0f, PARAM_1);
+    ASSERT_EQ((curveHandle != nullptr), true);
+    NAPI_END;
+}
+
+static napi_value testAnimateCurve017(napi_env env, napi_callback_info info)
+{
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_ANIMATE, "ArkUI_NativeAnimateAPI_1");
+    auto curveHandle = OH_ArkUI_Curve_CreateCubicBezierCurve(PARAM_0, PARAM_0, 1.0f, PARAM_1);
+    ASSERT_EQ((curveHandle != nullptr), true);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

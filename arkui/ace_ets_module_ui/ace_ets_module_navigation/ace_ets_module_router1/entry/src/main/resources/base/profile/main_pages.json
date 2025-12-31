@@ -173,6 +173,7 @@
 	    "MainAbility/pages/Router2/systemRouterA",
         "MainAbility/pages/Router2/systemRouterB",
 	    "MainAbility/pages/Router2/ohosRouterA",
-        "MainAbility/pages/Router2/ohosRouterB"
+        "MainAbility/pages/Router2/ohosRouterB",
+        "MainAbility/pages/router/RouterTest"
     ]
 }

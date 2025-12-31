@@ -20,6 +20,8 @@ group("ActsAceEtsModuleThemeTest") {
     deps = [
       "ace_ets_module_theme_api12:ActsAceEtsModuleThemeApi12Test",
       "ace_ets_module_theme_hvigor:ActsAceEtsModuleThemeHVigorTest",
+      "ace_ets_module_theme_api12_static:ActsAceEtsModuleThemeApi12StaticTest",
+      "ace_ets_module_theme_hvigor_static:ActsAceEtsModuleThemeHVigorStaticTest",
     ]
   }
 }

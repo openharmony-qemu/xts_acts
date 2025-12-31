@@ -722,7 +722,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         }
         console.info(`${TAG} BundleOption bundle:uid = ${bundleOpt.bundle},${bundleOpt.uid}`);
         expect(typeof bundleOpt.bundle == 'string').assertTrue()
-        expect(typeof bundleOpt.uid == 'number').assertTrue()
+        expect(typeof bundleOpt.uid == 'int').assertTrue()
         expect(bundleOpt.bundle).assertEqual(bundle_name)
         expect(bundleOpt.uid).assertEqual(101001)
         done()
@@ -751,8 +751,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             = ${flags.soundEnabled},${flags.vibrationEnabled}`);
         console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
             = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
-        expect(typeof flags.soundEnabled).assertEqual('number')
-        expect(typeof flags.vibrationEnabled).assertEqual('number')
+        expect(typeof flags.soundEnabled).assertEqual('int')
+        expect(typeof flags.vibrationEnabled).assertEqual('int')
         let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()

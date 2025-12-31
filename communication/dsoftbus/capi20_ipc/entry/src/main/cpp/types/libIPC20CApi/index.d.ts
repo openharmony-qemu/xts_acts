@@ -72,3 +72,4 @@ export const OHIPCInvalidUserErrorCode: () => number;
 export const OHIPCErrorCodeMAX: () => number;
 export const OHIPCUserErrorCodeMIN: () => number;
 export const OHIPCUserErrorCodeMAX: () => number;
+export const OHIPCErrorCode: () => number;

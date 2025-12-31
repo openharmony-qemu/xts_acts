@@ -271,14 +271,6 @@ export default function DecimalTest018() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   Decimal_log_Func_008
-     * @tc.number Decimal_log_Func_008
-     * @tc.desc   Decimal_log_Func_008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it("Decimal_log_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_log_001('3814697265625', '390625', '2.25', 3, 8);
     //   test_log_001('8', '4294967296', '0.09375', 4, 1);
@@ -307,14 +299,6 @@ export default function DecimalTest018() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   Decimal_log_Func_009
-     * @tc.number Decimal_log_Func_009
-     * @tc.desc   Decimal_log_Func_009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it("Decimal_log_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_log_001('82275648.874341603', '959190115.624130088', '0.88124641544168894893181429200832363', 35, 4);
     //   test_log_001('74257343.4', '743703514.4', '0.88720377341908842250463392057841865999040289364224', 50, 4);
@@ -343,14 +327,6 @@ export default function DecimalTest018() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   Decimal_log_Func_010
-     * @tc.number Decimal_log_Func_010
-     * @tc.desc   Decimal_log_Func_010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it("Decimal_log_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_log_001('100575245.36', '172874206.82', '0.971443699412905370317336892965778', 33, 4);
     //   test_log_001('188632711.8541175', '1056627336.0975408', '0.9170754305183363941127042', 25, 4);
@@ -377,14 +353,6 @@ export default function DecimalTest018() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   Decimal_log_Func_011
-     * @tc.number Decimal_log_Func_011
-     * @tc.desc   Decimal_log_Func_011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it("Decimal_log_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_log_002('27442.6587462411378', 2, '14.74414', 7, 0);
     //   test_log_002('29259.23925137426', 2, '14.83660463902', 13, 1);
@@ -411,14 +379,6 @@ export default function DecimalTest018() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   Decimal_log_Func_012
-     * @tc.number Decimal_log_Func_012
-     * @tc.desc   Decimal_log_Func_012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it("Decimal_log_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_log_002('18334.9', 2, '14.16230477704721387108079127958', 31, 4);
     //   test_log_002('20179.623017', 2, '14.4', 3, 0);
@@ -460,7 +420,8 @@ export default function DecimalTest018() {
       try {
         test_log_001('e1', 'e1', '-Infinity', 40, 4);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);

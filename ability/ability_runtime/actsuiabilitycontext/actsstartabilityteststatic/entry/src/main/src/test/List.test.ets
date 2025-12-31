@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import moveAbilityToBackgroundTestStatic from "./StartAbilityStatic.test";
+import startAbilityTestStatic from "./StartAbilityStatic.test";
 
 export default function testsuite() {
-    moveAbilityToBackgroundTestStatic();
+    startAbilityTestStatic();
 }

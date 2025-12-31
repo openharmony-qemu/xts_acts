@@ -96,6 +96,7 @@ describe('ActsStServiceAbilityTest', function () {
                 console.log('ACTS_AAbilityStartSetting_0100 asyncCallback errCode : ' + JSON.stringify(err) 
                 + " data: " + JSON.stringify(data));
                 expect(errCode).assertEqual(err.code);
+                expect(featureAbility.AbilityStartSetting.BOUNDS_KEY).assertEqual('abilityBounds');
                 done();
             });
         }catch(error){
@@ -136,6 +137,7 @@ describe('ActsStServiceAbilityTest', function () {
             console.log('ACTS_AAbilityStartSettingNew_0200 asyncCallback errCode : ' + JSON.stringify(err) 
             + " data: " + JSON.stringify(data));
             expect(errCode).assertEqual(err.code);
+            expect(featureAbility.AbilityStartSetting.WINDOW_MODE_KEY).assertEqual('windowMode');
             done();
         });
     }catch(error){
@@ -176,6 +178,7 @@ it("ACTS_AAbilityStartSettingNew_0300", Level.LEVEL0, async function(done){
             console.log('ACTS_AAbilityStartSettingNew_0300 asyncCallback errCode : ' + JSON.stringify(err) 
             + " data: " + JSON.stringify(data));
             expect(errCode).assertEqual(err.code);
+            expect(featureAbility.AbilityStartSetting.DISPLAY_ID_KEY).assertEqual('displayId');
             done();
         });
     }catch(error){

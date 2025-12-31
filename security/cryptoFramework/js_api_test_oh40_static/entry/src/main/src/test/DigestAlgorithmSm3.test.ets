@@ -81,11 +81,11 @@ export default function DigestAlgorithmSm3Jsunit() {
     it("Security_CryptoFramework_MDSM3_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let globalMd: cryptoFramework.Md;
-      let globalText: string;
+      let globalText: string = "";
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       let n: number = t.length;
       for (let i = 0; i < 10000; i++) {
-        globalText += t.charAt(Math.floor(Math.random() * n));
+        globalText += t.charAt((Math.floor(Math.random() * n)).toInt());
       }
       console.log("Datablob = " + globalText);
       let ginBlob: cryptoFramework.DataBlob = {
@@ -324,12 +324,12 @@ export default function DigestAlgorithmSm3Jsunit() {
     it("Security_CryptoFramework_HMACSM3_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let globalHMAC: cryptoFramework.Mac;
-      let globalText: string;
+      let globalText: string = "";
       let globalSymKeyGenerator: cryptoFramework.SymKeyGenerator;
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
       let n: number = t.length;
       for (let i = 0; i < 10000; i++) {
-        globalText += t.charAt(Math.floor(Math.random() * n));
+        globalText += t.charAt((Math.floor(Math.random() * n)).toInt())
       }
       console.log("Datablob = " + globalText);
       let ginBlob: cryptoFramework.DataBlob = {

@@ -70,7 +70,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createColorShader(0xFFFFFFFF);
+        let shaderEffect = drawing.ShaderEffect.createColorShader(0xFFFFFFFF.toInt());
         console.info(msg + ' createColorShader successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -116,13 +116,13 @@ export default function shadowEffectTest() {
       let matrix = new drawing.Matrix();
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
         console.info(msg + ' createLinearGradient create successed,shaderEffect:' + JSON.stringify(shaderEffect));
-        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.CLAMP);
+        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.CLAMP);
         console.info(msg + ' createLinearGradient create successed,shaderEffect:' + JSON.stringify(shaderEffect));
-        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.MIRROR);
+        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.MIRROR);
         console.info(msg + ' createLinearGradient create successed,shaderEffect:' + JSON.stringify(shaderEffect));
-        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.DECAL);
+        shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100, y: 100}, {x: 300, y: 300}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.DECAL);
         console.info(msg + ' createLinearGradient1 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -131,7 +131,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null,null);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null,null);
         console.info(msg + ' createLinearGradient2 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -140,7 +140,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null);
         console.info(msg + ' createLinearGradient3 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -149,7 +149,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.2,3]);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.2,3]);
         console.info(msg + ' createLinearGradient4 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -158,7 +158,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.2,3], matrix);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.2,3], matrix);
         console.info(msg + ' createLinearGradient5 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -168,7 +168,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.2,3], matrix);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.2,3], matrix);
         console.info(msg + ' createLinearGradient6 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -178,7 +178,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: -100.1, y: -100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00], drawing.TileMode.REPEAT,[0.2], matrix);
+        let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: -100.1, y: -100.1}, {x: 300.1, y: 300.1}, [0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.2], matrix);
         console.info(msg + ' createLinearGradient7 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -191,7 +191,7 @@ export default function shadowEffectTest() {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient(
           {x: Math.random() * Number.MAX_VALUE, y: Math.random() * Number.MAX_VALUE},
           {x: Math.random() * Number.MAX_VALUE, y:Math.random() * Number.MAX_VALUE},
-          [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0,2], matrix);
+          [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0,2], matrix);
         console.info(msg + ' createLinearGradient8 create successed,shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -233,7 +233,7 @@ export default function shadowEffectTest() {
           let shaderEffect = drawing.ShaderEffect.createLinearGradient(
             {x : Math.random() * Number.MAX_VALUE, y : Math.random() * Number.MAX_VALUE},
             {x : Math.random() * Number.MAX_VALUE, y : Math.random() * Number.MAX_VALUE},
-            [ 0xFF00FF00, 0xFFFF0000 ], itemList[randomEnum], [ getRandomNumber(0,100), getRandomNumber(0,100)], matrix);
+            [ 0xFF00FF00.toInt(), 0xFFFF0000.toInt() ], itemList[randomEnum], [ getRandomNumber(0,100), getRandomNumber(0,100)], matrix);
           console.info(msg + ' createLinearGradient create successed,shaderEffect:' + JSON.stringify(shaderEffect));
         }
       } catch(e) {
@@ -257,7 +257,7 @@ export default function shadowEffectTest() {
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined, matrix);
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,undefined, matrix);
         console.info(msg + ` createLinearGradient create 1 successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -266,7 +266,7 @@ export default function shadowEffectTest() {
       }
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9], undefined);
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9], undefined);
         console.info(msg + ` createLinearGradient create 2 successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -276,7 +276,7 @@ export default function shadowEffectTest() {
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null, matrix);
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null, matrix);
         console.info(msg + ` createLinearGradient create 3 successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -285,7 +285,7 @@ export default function shadowEffectTest() {
       }
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9], null);
+          [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9], null);
         console.info(msg + ` createLinearGradient create 4 successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -305,7 +305,7 @@ export default function shadowEffectTest() {
     it('testShaderEffectCreateLinearGradientAbNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShaderEffectCreateLinearGradientAbNormalStatic';
       try {
-        drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ 0xFFFFFFFF + 1, 0xFFFF0000 ], drawing.TileMode.REPEAT);
+        drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ 0xFFFFFFFF.toInt() + 1, 0xFFFF0000.toInt() ], drawing.TileMode.REPEAT);
         console.info(msg + ' createLinearGradient successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -314,7 +314,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ - 1, 0xFFFF0000 ], drawing.TileMode.REPEAT);
+        drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ - 1, 0xFFFF0000.toInt() ], drawing.TileMode.REPEAT);
         console.info(msg + ' createLinearGradient successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -336,13 +336,13 @@ export default function shadowEffectTest() {
       let matrix = new drawing.Matrix();
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
         console.info(msg + ' createRadialGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.CLAMP);
+        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.CLAMP);
         console.info(msg + ' createRadialGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.MIRROR);
+        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.MIRROR);
         console.info(msg + ' createRadialGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.DECAL);
+        shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100, y: 100}, 100, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.DECAL);
         console.info(msg + ' createRadialGradient1 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -351,7 +351,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 100.1, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null,null);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 100.1, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null,null);
         console.info(msg + ' createRadialGradient2 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -360,7 +360,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 100, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 100, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null);
         console.info(msg + ' createRadialGradient3 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -369,7 +369,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9]);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9]);
         console.info(msg + ' createRadialGradient4 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -378,7 +378,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 80, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 80, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient5 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -388,7 +388,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient6 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -398,7 +398,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: -100.1, y: -100.1}, 100, [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: -100.1, y: -100.1}, 100, [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient7 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -408,7 +408,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: Number.MAX_VALUE, y: Number.MAX_VALUE}, Number.MAX_VALUE, [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: Number.MAX_VALUE, y: Number.MAX_VALUE}, Number.MAX_VALUE, [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient8 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -418,7 +418,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},100, [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},100, [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[],matrix);
         console.info(msg + ' createRadialGradient9 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -428,7 +428,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},100, [0xFF00FF00,0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0.1,0.9,10],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},100, [0xFF00FF00.toInt(),0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.1,0.9,10],matrix);
         console.info(msg + ' createRadialGradient10 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -448,7 +448,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 0, [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 0, [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient12 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -458,7 +458,7 @@ export default function shadowEffectTest() {
 
       try {
         matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, -1, [0xFF00FF00,0xFF00FF00], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, -1, [0xFF00FF00.toInt(),0xFF00FF00.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],matrix);
         console.info(msg + ' createRadialGradient13 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -489,7 +489,7 @@ export default function shadowEffectTest() {
         for ( let i = 0 ; i < 20 ; i ++ ) {
           let shaderEffect = drawing.ShaderEffect.createRadialGradient(
             {x: Math.random() * Number.MAX_VALUE, y: Math.random() * Number.MAX_VALUE}, Math.random() * Number.MAX_VALUE,
-             [0xFF00FF00, 0xFFFF0000], itemList[randomEnum],[Math.random() * Number.MAX_VALUE,Math.random() * Number.MAX_VALUE], matrix);
+             [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], itemList[randomEnum],[Math.random() * Number.MAX_VALUE,Math.random() * Number.MAX_VALUE], matrix);
           console.info(msg + ' createRadialGradient successed, shaderEffect:' + JSON.stringify(shaderEffect));
         }
       } catch(e) {
@@ -511,7 +511,7 @@ export default function shadowEffectTest() {
       const msg = 'testShaderEffectCreateRadialGradientToNullStatic';
       let matrix = new drawing.Matrix();
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 80, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined,matrix);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1}, 80, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,undefined,matrix);
         console.info(msg + ' createRadialGradient successed, shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -520,7 +520,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9],undefined);
+        let shaderEffect = drawing.ShaderEffect.createRadialGradient({x: 100.1, y: 100.1},50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.9],undefined);
         console.info(msg + ' createRadialGradient successed, shaderEffect:' + JSON.stringify(shaderEffect));
       } catch(e) {
         e = e as BusinessError ;
@@ -542,13 +542,13 @@ export default function shadowEffectTest() {
       let matrix = new drawing.Matrix();
       matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,100,200);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,100,200);
         console.info(msg + ' createSweepGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.CLAMP,100,200);
+        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.CLAMP,100,200);
         console.info(msg + ' createSweepGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.MIRROR,100,200);
+        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.MIRROR,100,200);
         console.info(msg + ' createSweepGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.DECAL,100,200);
+        shaderEffect = drawing.ShaderEffect.createSweepGradient({x: 100, y: 100}, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.DECAL,100,200);
         console.info(msg + ' createSweepGradient1 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -557,7 +557,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,0,360,null,null);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,0,360,null,null);
         console.info(msg + ' createSweepGradient2 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -566,7 +566,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,360,0,null,null);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,360,0,null,null);
         console.info(msg + ' createSweepGradient3 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -575,7 +575,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,180.1,180.1,null);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,180.1,180.1,null);
         console.info(msg + ' createSweepGradient4 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -584,7 +584,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:-100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,180.1,180.1,[0.1,0.9]);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:-100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,180.1,180.1,[0.1,0.9]);
         console.info(msg + ' createSweepGradient5 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -593,7 +593,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:-100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,30,90,[0.1,0.9],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:-100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,30,90,[0.1,0.9],matrix_);
         console.info(msg + ' createSweepGradient6 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -602,7 +602,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,30,90,[2,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:-100.1,y:100.1},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,30,90,[2,0.9],matrix);
         console.info(msg + ' createSweepGradient7 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -611,7 +611,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,30,90,[0.1,0.9,5],matrix);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,30,90,[0.1,0.9,5],matrix);
         console.info(msg + ' createSweepGradient8 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -620,7 +620,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,30,90,[],matrix);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,30,90,[],matrix);
         console.info(msg + ' createSweepGradient9 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -629,7 +629,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect=drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,-30,90,[0.1,0.9],matrix);
+        let shaderEffect=drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,-30,90,[0.1,0.9],matrix);
         console.info(msg + ' createSweepGradient10 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -638,7 +638,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,361,90,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,361,90,[0.1,0.9],matrix);
         console.info(msg + ' createSweepGradient11 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -647,7 +647,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,90,-30,[0.1,0.9],matrix);
+        let shaderEffect = drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,90,-30,[0.1,0.9],matrix);
         console.info(msg + ' createSweepGradient12 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -656,7 +656,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect= drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00,0xFF00FF00],drawing.TileMode.REPEAT,90,361,[0.1,0.9],matrix);
+        let shaderEffect= drawing.ShaderEffect.createSweepGradient({x:100.1,y:100.1},[0xFF00FF00.toInt(),0xFF00FF00.toInt()],drawing.TileMode.REPEAT,90,361,[0.1,0.9],matrix);
         console.info(msg + ' createSweepGradient13 successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -690,7 +690,7 @@ export default function shadowEffectTest() {
         for ( let i = 0 ; i < 20 ; i ++ ) {
           let shaderEffect = drawing.ShaderEffect.createSweepGradient(
               {x : Math.random() * Number.MAX_VALUE, y : Math.random() * Number.MAX_VALUE},
-            [ 0xFF00FF00, 0xFFFF0000 ], drawing.TileMode.REPEAT, Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE,
+            [ 0xFF00FF00.toInt(), 0xFFFF0000.toInt() ], drawing.TileMode.REPEAT, Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE,
             [ Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE ], matrix_);
           console.info(msg + ' createSweepGradient successed,shaderEffect:' + shaderEffect);
         }
@@ -714,7 +714,7 @@ export default function shadowEffectTest() {
       const msg = 'testShaderEffectCreateSweepGradientToNullStatic';
       let matrix_ = new drawing.Matrix();
       try {
-        drawing.ShaderEffect.createSweepGradient({x:100,y:100},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,30,90,undefined,matrix_);
+        drawing.ShaderEffect.createSweepGradient({x:100,y:100},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,30,90,undefined,matrix_);
         console.info(msg + ' createSweepGradient11 successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -723,7 +723,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        drawing.ShaderEffect.createSweepGradient({x:100,y:100},[0xFF00FF00,0xFFFF0000],drawing.TileMode.REPEAT,30,90,[0.1,0.9],undefined);
+        drawing.ShaderEffect.createSweepGradient({x:100,y:100},[0xFF00FF00.toInt(),0xFFFF0000.toInt()],drawing.TileMode.REPEAT,30,90,[0.1,0.9],undefined);
         console.info(msg + ' createSweepGradient12 successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -746,22 +746,13 @@ export default function shadowEffectTest() {
       matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.CLAMP);
+        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.CLAMP);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.MIRROR);
+        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.MIRROR);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
-        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.DECAL);
-        console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
-      } catch(e) {
-        e = e as BusinessError ;
-        console.info(msg + ` createConicalGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect().assertFail();
-      }
-
-      try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: -100, y: -100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT, null);
+        shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.DECAL);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -770,7 +761,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,null,null);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: -100, y: -100}, 100, {x: 200, y: 200}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT, null);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -779,7 +770,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],null);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,null,null);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -788,7 +779,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],null);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -797,7 +788,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -806,7 +797,16 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3,0.6],matrix);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix);
+        console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createConicalGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+
+      try {
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3,0.6],matrix);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -824,7 +824,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,2],matrix);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,2],matrix);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -833,7 +833,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, -1, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, -1, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -842,7 +842,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1},0, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1},0, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -851,7 +851,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, -1, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, -1, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -860,7 +860,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 0, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
+        let shaderEffect = drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 0, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3],matrix_);
         console.info(msg + ' createConicalGradient successed,shaderEffect:' + shaderEffect);
       } catch(e) {
         e = e as BusinessError ;
@@ -886,7 +886,7 @@ export default function shadowEffectTest() {
           let shaderEffect = drawing.ShaderEffect.createConicalGradient(
             {x : Math.random() * Number.MAX_VALUE, y : Math.random() * Number.MAX_VALUE},Math.random() * Number.MAX_VALUE,
             {x : Math.random() * Number.MAX_VALUE, y : Math.random() * Number.MAX_VALUE},Math.random() * Number.MAX_VALUE,
-            [0xFF00FF00, 0xFFFF0000],  drawing.TileMode.REPEAT, [ Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE ], matrix_);
+            [0xFF00FF00.toInt(), 0xFFFF0000.toInt()],  drawing.TileMode.REPEAT, [ Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE ], matrix_);
           console.info(msg + ' create createConicalGradient,shaderEffect:'+shaderEffect);
         }
       } catch(e) {
@@ -910,7 +910,7 @@ export default function shadowEffectTest() {
       let matrix = new drawing.Matrix();
       matrix.setMatrix([ 1, 1, 1, 1, 1, 1, 1, 1, 1])
       try {
-        drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined,matrix);
+        drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,undefined,matrix);
         console.info(msg + ' createConicalGradient successed');
       } catch(e) {
         e = e as BusinessError ;
@@ -919,7 +919,7 @@ export default function shadowEffectTest() {
       }
 
       try {
-        drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.3,0.6],undefined);
+        drawing.ShaderEffect.createConicalGradient({x: 100, y: 100}, 100, {x: 200.1, y: 200.1}, 50, [0xFF00FF00.toInt(), 0xFFFF0000.toInt()], drawing.TileMode.REPEAT,[0.1,0.3,0.6],undefined);
         console.info(msg + ' createConicalGradient successed');
       } catch(e) {
         e = e as BusinessError ;

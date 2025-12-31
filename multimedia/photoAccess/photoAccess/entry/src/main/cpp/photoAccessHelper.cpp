@@ -448,6 +448,33 @@ MediaLibrary_ErrorCode NDKMediaLibrary::ManagerRequestImage(int useCaseCode)
     return ret_;
 }
 
+MediaLibrary_ErrorCode NDKMediaLibrary::ManagerQuickRequestImage(int useCaseCode)
+{
+    requestOptions_.deliveryMode = MediaLibrary_DeliveryMode::MEDIA_LIBRARY_FAST_MODE;
+    if (useCaseCode == TEST_PARAMETER_OK) {
+        ret_ = OH_MediaAssetManager_QuickRequestImage(manager_, mediaAsset_,
+            requestOptions_, &requestId_, OnQuickImageCallback_);
+    } else if (TEST_FIRST_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetManager_QuickRequestImage(nullptr, mediaAsset_,
+            requestOptions_, &requestId_, OnQuickImageCallback_);
+    } else if (TEST_SECOND_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetManager_QuickRequestImage(manager_, nullptr,
+            requestOptions_, &requestId_, OnQuickImageCallback_);
+    } else if (TEST_THIRD_PARAMETER_ERROR) {
+        requestOptions_.deliveryMode = static_cast<MediaLibrary_DeliveryMode>(-1);
+        ret_ = OH_MediaAssetManager_QuickRequestImage(manager_, mediaAsset_,
+            requestOptions_, &requestId_, OnQuickImageCallback_);
+    } else if (TEST_FOURTH_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetManager_QuickRequestImage(manager_, mediaAsset_,
+            requestOptions_, nullptr, OnQuickImageCallback_);
+    } else if (TEST_FIFTH_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetManager_QuickRequestImage(manager_, mediaAsset_,
+            requestOptions_, &requestId_, nullptr);
+    }
+ 
+    return ret_;
+}
+
 MediaLibrary_ErrorCode NDKMediaLibrary::ManagerRequestMovingPhoto(int useCaseCode)
 {
     requestOptions_.deliveryMode = MediaLibrary_DeliveryMode::MEDIA_LIBRARY_FAST_MODE;

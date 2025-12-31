@@ -177,7 +177,7 @@ export default function cameraVideoMirrorTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsMirrorSupportedArray =  new Array<boolean>(mCameraNum);
+    mIsMirrorSupportedArray =  new Array<boolean>(mCameraNum.toInt());
 
     console.info('Exit getCameraSupportDevicesArray');
 

@@ -78,7 +78,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: number = a.comparedTo("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -389,7 +390,8 @@ export default function Decimal1Test() {
         let b: Decimal = new Decimal("Nah");
         let c: number = a.comparedTo(b);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -591,7 +593,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: boolean = a.equals("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -909,7 +912,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: boolean = a.greaterThan("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -1227,7 +1231,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: boolean = a.greaterThanOrEqualTo("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -1545,7 +1550,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: boolean = a.lessThan("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -1863,7 +1869,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(Infinity);
         let c: boolean = a.lessThanOrEqualTo("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -2181,7 +2188,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(20);
         let c: Decimal = a.dividedToIntegerBy("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -2259,7 +2267,7 @@ export default function Decimal1Test() {
       const TAG = 'testDividedToIntegerBy0005';
       try {
         let a: Decimal = new Decimal(Infinity);
-        let c: Decimal = a.dividedToIntegerBy(-0);
+        let c: Decimal = a.dividedToIntegerBy(-0.0);
         expect(c.toNumber()).assertEqual(-Infinity);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2299,7 +2307,7 @@ export default function Decimal1Test() {
       const TAG = 'testDividedToIntegerBy0007';
       try {
         let a: Decimal = new Decimal(Infinity);
-        let c: Decimal = a.dividedToIntegerBy(new Decimal(-0));
+        let c: Decimal = a.dividedToIntegerBy(new Decimal(-0.0));
         expect(c.toNumber()).assertEqual(-Infinity);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2517,7 +2525,8 @@ export default function Decimal1Test() {
       const TAG = "testDecimal000f1";
       try {
         let a: Decimal = new Decimal("Nah").sqrt();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
     });
@@ -2650,7 +2659,8 @@ export default function Decimal1Test() {
       try {
         let a: Decimal = new Decimal("abcd").sqrt();
         console.info(TAG + " test Decimal sqrt is " + a.toNumber());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error code: ${err.code}`);
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
@@ -2795,7 +2805,8 @@ export default function Decimal1Test() {
         let b: string = a.toBinary(0);
         console.info(`${TAG} test Decimal toBinary: ${b}`); //
         expect().assertFail()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         console.error(`${TAG} failed, error code: ${err.code}`);
         expect(10200001).assertEqual(err.code);
@@ -3395,7 +3406,8 @@ export default function Decimal1Test() {
         console.info(`${TAG} Decimal :  ${a.toString()}`);
         let b: string = a.toExponential(-1);
         console.info(`${TAG} Decimal toExponential: + ${b.toString()}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         console.error(`${TAG} failed, error code: ${err.code}`);
         expect(10200001).assertEqual(err.code);
@@ -3555,7 +3567,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(n).exp();
         console.info(`${TAG} Decimal exp:  ${a.toString()}`);
         expect().assertFail()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
           .includes('BusinessError: The type of "test(str)" must be Hex/Binary/Octal. Received value is:')).assertTrue()
@@ -3673,7 +3686,8 @@ export default function Decimal1Test() {
         let a: Decimal = Decimal.max("0", "6.758EGB-05", 10, 6.758E+05);
         console.info(`${TAG} Decimal max:  ${a.toString()}`);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
           .includes('BusinessError: The type of "test(str)" must be Hex/Binary/Octal. Received value is:')).assertTrue()
@@ -3792,7 +3806,8 @@ export default function Decimal1Test() {
         let a: Decimal = Decimal.min("-1.1314", "6.758EGB-05", 10, 6.758E+05);
         console.info(`${TAG} Decimal min:  ${a.toString()}`);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
           .includes('BusinessError: The type of "test(str)" must be Hex/Binary/Octal. Received value is:')).assertTrue()
@@ -3890,7 +3905,8 @@ export default function Decimal1Test() {
         let a: Decimal = Decimal.sum("-1.1314S", "6.758EGB-05", 10, 6.758E+05);
         console.info(`${TAG} Decimal sum:  ${a.toString()}`);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
           .includes('BusinessError: The type of "test(str)" must be Hex/Binary/Octal. Received value is:')).assertTrue()
@@ -3990,7 +4006,8 @@ export default function Decimal1Test() {
         let a: Decimal = Decimal.hypot("-1.1314S", "6.758EGB-05", 10, 6.758E+05);
         console.info(`${TAG} Decimal hypot:  ${a.toString()}`);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.toString()
           .includes('BusinessError: The type of "test(str)" must be Hex/Binary/Octal. Received value is:')).assertTrue()
@@ -4257,7 +4274,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal("Nah");
         a.tanh();
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -4472,7 +4490,8 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal("Nah");
         a.sin();
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -4786,7 +4805,8 @@ export default function Decimal1Test() {
       try {
         Decimal.sin("Nah");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(401);
       }
@@ -5079,6 +5099,21 @@ export default function Decimal1Test() {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
+    });
+    
+    /**
+     * @tc.name   testSin0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL_SIN_TO_3100
+     * @tc.desc   Testing the decimal sin with new Decimal(-Infinity).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSin0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let dec = new Decimal(8);
+      expect(JSON.stringify(dec.d)).assertEqual("[8]");
+      expect(dec.e).assertEqual(0);
+      expect(dec.s).assertEqual(1)
     });
   })
 }

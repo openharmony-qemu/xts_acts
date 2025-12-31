@@ -211,6 +211,46 @@ static napi_value TransientTaskSVFailed(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OH_TransientTask_ErrorCode(napi_env env, napi_callback_info info) 
+{
+    int result = 0;
+    TransientTask_ErrorCode errcode = ERR_TRANSIENT_TASK_OK;
+    NAPI_ASSERT(env, errcode == 0, "ERR_TRANSIENT_TASK_OK is fail.");
+    errcode = ERR_TRANSIENT_TASK_INVALID_PARAM;
+    NAPI_ASSERT(env, errcode == 401, "ERR_TRANSIENT_TASK_INVALID_PARAM is fail.");
+    errcode = ERR_TRANSIENT_TASK_PARCEL_FAILED;
+    NAPI_ASSERT(env, errcode == 9800002, "ERR_TRANSIENT_TASK_PARCEL_FAILED is fail.");
+    errcode = ERR_TRANSIENT_TASK_TRANSACTION_FAILED;
+    NAPI_ASSERT(env, errcode == 9800003, "ERR_TRANSIENT_TASK_TRANSACTION_FAILED is fail.");
+    errcode = ERR_TRANSIENT_TASK_SYS_NOT_READY;
+    NAPI_ASSERT(env, errcode == 9800004, "ERR_TRANSIENT_TASK_SYS_NOT_READY is fail.");
+    errcode = ERR_TRANSIENT_TASK_CLIENT_INFO_VERIFICATION_FAILED;
+    NAPI_ASSERT(env, errcode == 9900001, "ERR_TRANSIENT_TASK_CLIENT_INFO_VERIFICATION_FAILED is fail.");
+    errcode = ERR_TRANSIENT_TASK_SERVICE_VERIFICATION_FAILED;
+    NAPI_ASSERT(env, errcode == 9900002, "ERR_TRANSIENT_TASK_SERVICE_VERIFICATION_FAILED is fail.");
+    errcode = ERR_TRANSIENT_TASK_PARCELABLE_FAILED;
+    NAPI_ASSERT(env, errcode == 9900003, "ERR_TRANSIENT_TASK_PARCELABLE_FAILED is fail.");
+    errcode = ERR_TRANSIENT_TASK_SERVICE_NOT_READY;
+    NAPI_ASSERT(env, errcode == 9900004, "ERR_TRANSIENT_TASK_SERVICE_NOT_READY is fail.");
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
+static napi_value OH_BackgroundProcessManager_ErrorCode(napi_env env, napi_callback_info info) 
+{
+    int result = 0;
+    BackgroundProcessManager_ErrorCode errcode = ERR_BACKGROUND_PROCESS_MANAGER_SUCCESS;
+    NAPI_ASSERT(env, errcode == 0, "ERR_BACKGROUND_PROCESS_MANAGER_SUCCESS is fail.");
+    errcode = ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM;
+    NAPI_ASSERT(env, errcode == 401, "ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM is fail.");
+    errcode = ERR_BACKGROUND_PROCESS_MANAGER_REMOTE_ERROR;
+    NAPI_ASSERT(env, errcode == 31800001, "ERR_BACKGROUND_PROCESS_MANAGER_REMOTE_ERROR is fail.");
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -244,6 +284,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TransientTaskCIVerificationFailed", nullptr, TransientTaskCIVerificationFailed,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"TransientTaskSVFailed", nullptr, TransientTaskSVFailed,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"OH_TransientTask_ErrorCode", nullptr, OH_TransientTask_ErrorCode,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"OH_BackgroundProcessManager_ErrorCode", nullptr, OH_BackgroundProcessManager_ErrorCode,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -40,6 +40,7 @@ import VideoTest2 from './Video/VideoTest2.test';
 import VideoOnErrorTest from './Video/VideoOnErrorTest.test'
 import VideoContentTransitionEffectTest from './Video/VideoContentTransitionEffectTest.test'
 import VideoSupportMoreSpeedTest from './Video/VideoSupportMoreSpeedTest'
+import VideoOneBoundaryTest from './Video/VideoOneBoundaryTest'
 
 export default function testsuite() {
   videoEnableShortcutKeyTest();
@@ -68,5 +69,6 @@ export default function testsuite() {
   VideoOnErrorTest()
   VideoContentTransitionEffectTest()
   VideoSupportMoreSpeedTest()
+  VideoOneBoundaryTest()
   videoOnFullscreenChangeJsunit()
 }

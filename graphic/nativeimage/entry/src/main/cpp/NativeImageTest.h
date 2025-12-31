@@ -230,4 +230,14 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, 
 napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, napi_callback_info info);
 napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_callback_info info);
 napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNull(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNull1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNormal0(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNull(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleaseAbnormal(napi_env env, napi_callback_info info);
 #endif // NATIVEIMAGE_TEST_H

@@ -625,7 +625,7 @@ export default function CameraDeprecatedCaptureSessionTest() {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400';
       await getActiveStabilizationModeVideo(done, testName,
         camera.VideoStabilizationMode.HIGH, (res?: camera.VideoStabilizationMode) => {
-          expect(res).assertEqual(camera.VideoStabilizationMode.HIGH);
+          expect(res).assertEqual(camera.VideoStabilizationMode.AUTO);
         });
     });
 

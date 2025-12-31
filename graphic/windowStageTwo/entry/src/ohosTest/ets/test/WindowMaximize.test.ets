@@ -19,6 +19,76 @@ import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
+import { display } from '@kit.ArkUI';
+import { StartOptions } from '@kit.AbilityKit';
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+async function startAbility7(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility7'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest7') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility7(caseName: string) {
+  let pageContext = AppStorage.get('contextTest7') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
 
 export default function windowMaximizeTest() {
   describe('windowMaximize_test', () => {
@@ -1402,6 +1472,227 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
           done();
         }
       });
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0100
+     * @tc.name       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testMaximizeAcrossDisplaywithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithDestoryedSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        await subWindowClass.destroyWindow();
+        await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        done();
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002)
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0200
+     * @tc.name       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testMaximizeAcrossDisplaywithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        let mode = subWindowClass.isInFreeWindowMode();
+        console.log(`${caseName} isInFreeWindowMode: ${mode}`);
+        if (mode) {
+          await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        } else {
+          await subWindowClass.destroyWindow();
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+     /**
+     * @tc.name   testMaximizeAcrossDisplaywithTrue
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0300
+     * @tc.desc   testMaximizeAcrossDisplaywithTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithTrue';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility3(caseName, context);
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let display999:display.Display;
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          await sleep(1000);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
+          console.info(caseName + `Succeeded in obtaining current fold crease region. Data: ${JSON.stringify(CurrentFoldCreaseRegion)}`);
+          display999 = display.getDisplayByIdSync(999);
+          let displayRectArr = await display.getAllDisplayPhysicalResolution();
+          console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+          let displays = await display.getAllDisplays();
+          console.log(caseName + ' displays: ' + JSON.stringify(displays))
+          for(let i = 0; i < displays.length; i++){
+            console.log(caseName + ' displays.id: ' + JSON.stringify(displays[i].id))
+            if(displays[i].id ==0){
+              let displayRes1 = displays[i];
+              console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+              expect(windowRect1.width).assertEqual(displayRes1.width)
+              let height = displayRectArr[i].physicalHeight-display999.height-CurrentFoldCreaseRegion.creaseRects[0].height;
+              console.log(caseName + ' height: ' + JSON.stringify(height));
+              expect(windowRect1.height).assertEqual(height)
+
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+              let windowRect2 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+              let displayRes2 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+              expect(windowRect2.width).assertEqual(displayRes2.width)
+              expect(windowRect2.height).assertEqual(height)
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+              let windowRect3 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect3: ' + JSON.stringify(windowRect3));
+              let displayRes3 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes3: ' + JSON.stringify(displayRes3));
+              expect(windowRect3.width).assertEqual(displayRes3.width)
+              expect(windowRect3.height).assertEqual(displayRes3.height)
+
+              await terminateAbility3(caseName);
+              done();
+            }
+          }
+
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success  ');
+          await terminateAbility3(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility3(caseName);
+        if (!isSupport) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testMaximizeAcrossDisplaywithFalse
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0400
+     * @tc.desc   testMaximizeAcrossDisplaywithFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithFalse';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility3(caseName, context);
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let display999:display.Display;
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          await sleep(1000);
+          let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
+          console.info(caseName + `Succeeded in obtaining current fold crease region. Data: ${JSON.stringify(CurrentFoldCreaseRegion)}`);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          display999 = display.getDisplayByIdSync(999);
+          let displays = await display.getAllDisplays();
+          console.log(caseName + ' displays: ' + JSON.stringify(displays))
+          for(let i = 0; i < displays.length; i++){
+            console.log(caseName + ' displays.id: ' + JSON.stringify(displays[i].id))
+            if(displays[i].id ==0){
+              let displayRes1 = displays[i];
+              console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+              let displayRectArr = await display.getAllDisplayPhysicalResolution();
+              console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+              for (let i = 0; i < displayRectArr.length; i++) {
+                console.log(caseName + ' displayRectArr i: ' + JSON.stringify(displayRectArr[i]));
+                expect(windowRect1.width).assertEqual(displayRectArr[i].physicalWidth)
+                let height = displayRectArr[i].physicalHeight-display999.height-CurrentFoldCreaseRegion.creaseRects[0].height;
+                console.log(caseName + ' height: ' + JSON.stringify(height));
+                expect(windowRect1.height).assertEqual(height)
+                break;
+              }
+              expect(windowRect1.width).assertEqual(displayRes1.width)
+              expect(windowRect1.height).assertEqual(displayRes1.height)
+
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+              let windowRect2 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+              let displayRes2 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+              expect(windowRect2.width).assertEqual(displayRes2.width)
+              expect(windowRect2.height).assertEqual(displayRes2.height)
+
+              await terminateAbility3(caseName);
+              done();
+            }
+          }
+
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success  ');
+          await terminateAbility3(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err))
+        await terminateAbility3(caseName);
+        if (!isSupport) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
     });
 
   })

@@ -1376,7 +1376,12 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js] getLocalName1800 = ' + JSON.stringify(localName));
         } catch (err) {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(801);
+            if (err.code == 801) {
+                console.info('[bluetooth_js]setLocalName is not support');
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
         }
         done();
     })
@@ -1411,7 +1416,100 @@ describe('btConnectionTest', () => {
         }
         done();
     })
-
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2000
+     * @tc.desc   Test setLocalName_401 api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setLocalName(null);
+            expect().assertFail();
+        } catch (err) {
+            console.info("errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code == 801) {
+                console.info('[bluetooth_js]setLocalName is not support');
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+  
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2100
+     * @tc.desc   Test setLocalName_401 api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let str = "a".repeat(249);
+            console.info("[bluetooth_js]setLocalName input 249-401 start " + JSON.stringify(str));
+            bluetooth.setLocalName(str);
+            console.info("[bluetooth_js]setLocalName input 249-401 end");
+            expect().assertFail();
+        } catch (err) {
+            console.info("[bluetooth_js]errCode:" + err.code + ",errMessage:" + err.message);
+            if (err.code == 801) {
+                console.info('[bluetooth_js]setLocalName 2100 is not support');
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2200
+     * @tc.desc   Test setLocalName api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setLocalName('A');
+            await sleep(1000);
+            console.info("[bluetooth_js]setLocalName input A ");
+            let getNewName = bluetooth.getLocalName();
+            console.info('[bluetooth_js] LocalName_2200 NewName = '+ JSON.stringify(getNewName));
+            expect(true).assertEqual('A' == getNewName);
+        } catch (err) {
+            console.info("[bluetooth_js]errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(801);
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2300
+     * @tc.desc   Test setLocalName api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let str = "a".repeat(248);
+            bluetooth.setLocalName(str);
+            await sleep(1000);
+            let getNewName = bluetooth.getLocalName();
+            console.info('[bluetooth_js] LocalName_2300 NewName = '+ JSON.stringify(getNewName));
+            expect(true).assertEqual(str == getNewName);
+        } catch (err) {
+            console.info("[bluetooth_js]errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(801);
+        }
+        done();
+    })
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100

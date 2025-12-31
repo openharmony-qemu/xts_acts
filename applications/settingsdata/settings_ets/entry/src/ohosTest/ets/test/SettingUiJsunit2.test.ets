@@ -16,7 +16,8 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import settings from '@ohos.settings';
 import { BusinessError } from '@ohos.base';
-import { mContext } from '../testability/TestAbility'
+import { mContext } from '../testability/TestAbility';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 interface myObj {
   aa: string
@@ -27,6 +28,19 @@ interface myObj2 {
 }
 
 const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
+const deviceType = deviceInfo.deviceType;
+
+function isDevicePhone(): boolean {
+  return deviceType === 'phone';
+}
+
+function isDeviceTablet(): boolean {
+  return deviceType === 'tablet';
+}
+
+function isDeviceSupportInputMethod(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
 
 export default function settingUiJsunit() {
   beforeAll(() => {
@@ -2329,6 +2343,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodSettings_invalid_context', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let context = null;
       let code = 0;
       try {
@@ -2350,6 +2368,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodSettings(mContext);
@@ -2370,6 +2392,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_invalid_context', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let context = null;
       let code = 0;
       try {
@@ -2391,6 +2417,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_invalid_bundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, null, 'inputMethodId');
@@ -2411,6 +2441,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_invalid_method', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, 'bundleName', null);
@@ -2431,6 +2465,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, 'bundleName', 'inputMethodId');

@@ -79,7 +79,7 @@ struct Grid_ReachStartAndEnd {
         .rowsGap(10)
         .width('80%')
         .backgroundColor(0xFAEEE0)
-        .height(300)
+        .height('100%')
         .scrollBar(BarState.Off)
         .onReachStart(() => {
           this.index++
@@ -97,7 +97,7 @@ struct Grid_ReachStartAndEnd {
         }.width(20).backgroundColor('#ededed')
         .id('Grid_ReachStartAndEnd_scrollBar')
 
-      }.height(300)
+      }.height('50%')
 
     }.width('100%').margin({ top: 5 })
   }

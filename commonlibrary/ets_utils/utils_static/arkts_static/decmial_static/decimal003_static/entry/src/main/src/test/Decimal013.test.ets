@@ -160,16 +160,16 @@ export default function DecimalTest013() {
       test_mul_002('-Infinity', Infinity, '-Infinity');
       test_mul_002('-Infinity', -Infinity, 'Infinity');
       test_mul_001(1, 0, '0');
-      test_mul_001(1, -0, '-0');
+      test_mul_001(1, -0.0, '-0');
       test_mul_001(-1, 0, '-0');
-      test_mul_001(-1, -0, '0');
+      test_mul_001(-1, -0.0, '0');
       test_mul_001(0, 1, '0');
       test_mul_001(0, -1, '-0');
-      test_mul_001(-0, 1, '-0');
-      test_mul_001(-0, -1, '0');
+      test_mul_001(-0.0, 1, '-0');
+      test_mul_001(-0.0, -1, '0');
       test_mul_001(0, 0, '0');
-      test_mul_001(0, -0, '-0');
-      test_mul_001(-0, 0, '-0');
+      test_mul_001(0, -0.0, '-0');
+      test_mul_001(-0.0, 0, '-0');
     });
 
     /**
@@ -228,7 +228,7 @@ export default function DecimalTest013() {
       test_mul_001(1, Number.NEGATIVE_INFINITY, '-Infinity');
       test_mul_002('0', 0, '0');
       test_mul_004('0', '0', '0');
-      test_mul_001(3, -0, '-0');
+      test_mul_001(3, -0.0, '-0');
       test_mul_001(9.654, 0, '0');
       test_mul_003(0, '0.001', '0');
       test_mul_003(0, '111.1111111110000', '0');
@@ -2356,7 +2356,8 @@ export default function DecimalTest013() {
       try {
         test_mul_004('e', 'e', '296243.137');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

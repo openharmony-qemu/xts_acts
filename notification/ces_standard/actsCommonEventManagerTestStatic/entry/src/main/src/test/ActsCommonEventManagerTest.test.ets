@@ -18,7 +18,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Utils from './Util.test';
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import common from '@ohos.app.ability.common';
-import {BusinessError} from '@ohos.base';
+import {BusinessError, RecordData} from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -89,7 +89,10 @@ export default function ActsCommonEventManagerTest() {
       let options: commonEventManager.CommonEventPublishData = {
         code: 0,
         data: "initial data",
-        isOrdered: true
+        isOrdered: true,
+        parameters: {
+          "mykey":"event"
+        }as Record<string, RecordData>
       }
       try {
         commonEventManager.publish("EVENT02", options, (err: BusinessError | null) => {
@@ -187,14 +190,14 @@ export default function ActsCommonEventManagerTest() {
       hilog.info(domain, TAG, `Sub_Notification_Ans_Subscriber_Subscribe_Static_1600 END`)
     })
 
-    /**
-     * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
-     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_0400
-     * @tc.desc   subscribe
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    /**	 
+      * @tc.name   Sub_Notification_Ans_Subscriber_Subscribe_Static_0400	 
+      * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_0400	 
+      * @tc.desc   subscribe	 
+      * @tc.type   FUNCTION	 
+      * @tc.size   MEDIUMTEST 
+      * @tc.level  LEVEL0 
+      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_0400'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 START`)
@@ -313,7 +316,6 @@ export default function ActsCommonEventManagerTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 END`)
 
     })
-
 
     /**
      * @tc.name   Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0200

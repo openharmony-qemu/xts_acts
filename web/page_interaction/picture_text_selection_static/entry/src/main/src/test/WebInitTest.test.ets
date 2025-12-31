@@ -55,6 +55,25 @@ export default function WebInitTest() {
       console.info('componentLifeCycleTestOne beforeEach start');
     })
 
+    /*
+    * @tc.number     : SUB_ACE_BASIC_ETS_API_0800
+    * @tc.name       : testJavaScriptOnDocumentStartStatic001
+    * @tc.desc       : test javaScriptOnDocumentStart
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 3
+    */
+    it('testGetFaviconStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(3000);
+      await Utils.emitEvent('emitGetFavicon', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testGetFavicon',true,114,done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebInitTestButton',10,'');
+      await Utils.msSleep(10000);
+      done()
+    })
+
 
     /**
      * @tc.name   ContextMenuEditStateFlagsStatic
@@ -67,6 +86,7 @@ export default function WebInitTest() {
     it('ContextMenuEditStateFlagsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags', 10)
+        await Utils.msSleep(1000)
         Utils.registerEvent('ContextMenuEditStateFlags', 0, 37, done);
         await Utils.msSleep(1000)
         let driver: Driver = Driver.create();
@@ -74,7 +94,7 @@ export default function WebInitTest() {
         let button = await driver.findComponent(ON.id('WebInitTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(5000);
         done();
       })
 
@@ -89,6 +109,7 @@ export default function WebInitTest() {
     it('ContextMenuEditStateFlags1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags1', 10)
+        await Utils.msSleep(1000)
         Utils.registerEvent('ContextMenuEditStateFlags', 1, 38, done);
         await Utils.msSleep(1000)
         let driver: Driver = Driver.create();
@@ -96,7 +117,7 @@ export default function WebInitTest() {
         let button = await driver.findComponent(ON.id('WebInitTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(5000);
         done();
       })
 
@@ -111,6 +132,7 @@ export default function WebInitTest() {
     it('ContextMenuEditStateFlags2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags2', 10)
+        await Utils.msSleep(1000)
         Utils.registerEvent('ContextMenuEditStateFlags', 2, 39, done);
         await Utils.msSleep(2000)
         let driver: Driver = Driver.create();
@@ -118,7 +140,7 @@ export default function WebInitTest() {
         let button = await driver.findComponent(ON.id('WebInitTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(5000);
         done();
       })
 
@@ -134,14 +156,14 @@ export default function WebInitTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitContextMenuEditStateFlags3', 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent('ContextMenuEditStateFlags', 4, 40, done);
+        Utils.registerEvent('ContextMenuEditStateFlags', 3, 40, done);
         await Utils.msSleep(2000)
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);
         let button = await driver.findComponent(ON.id('WebInitTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(5000);
         done();
       })
 
@@ -158,14 +180,14 @@ export default function WebInitTest() {
         await Utils.msSleep(2000)
         Utils.emitEvent('emitContextMenuEditStateFlags4', 10)
         await Utils.msSleep(2000)
-        Utils.registerEvent('ContextMenuEditStateFlags', 8, 41, done);
+        Utils.registerEvent('ContextMenuEditStateFlags', 4, 41, done);
         await Utils.msSleep(2000)
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);
         let button = await driver.findComponent(ON.id('WebInitTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(5000);
         done();
       })
 

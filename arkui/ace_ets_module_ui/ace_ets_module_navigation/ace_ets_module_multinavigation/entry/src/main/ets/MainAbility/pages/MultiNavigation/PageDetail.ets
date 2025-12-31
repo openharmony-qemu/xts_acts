@@ -96,6 +96,13 @@ export struct PageDetail {
                   this.pageStack.moveIndexToTop(0, false);
                 }
               })
+            Button('moveIndexToTop-1')
+              .height('5%')
+              .onClick(() => {
+                if (this.pageStack !== undefined && this.pageStack !== null) {
+                  this.pageStack.moveIndexToTop(-1, false);
+                }
+              })
             Button('getAllPathName')
               .height('5%')
               .onClick(() => {

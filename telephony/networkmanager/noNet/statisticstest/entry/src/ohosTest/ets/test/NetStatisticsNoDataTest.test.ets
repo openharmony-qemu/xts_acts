@@ -16,6 +16,7 @@
 import { describe, beforeAll,it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import statistics from '@ohos.net.statistics';
+import connection from '@ohos.net.connection';
 import data from '@ohos.telephony.data';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
@@ -455,8 +456,149 @@ export default function   netStatisticsNoDataTest() {
         console.info(`${caseName} test end`);
       }
     });
+    
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0001
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0001
+     * @tc.desc   get SelfTrafficStats(BEARER_CELLULAR)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0001';
+      console.info(`${caseName} test start`);
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: Math.floor(Date.now() / 1000)- 86400 * 31,
+          endTime: Math.floor(Date.now() / 1000),
+          simId: 1,
+        }
 
+        statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(stats.rxBytes == 0 && stats.txBytes == 0)
+          done()
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(error)}`);
+          done()
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
 
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0002
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0002
+     * @tc.desc   get SelfTrafficStats(BEARER_WIFI)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0002';
+      console.info(`${caseName} test start`);
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_WIFI,
+          startTime: Math.floor(Date.now() / 1000)- 86400 * 31,
+          endTime: Math.floor(Date.now() / 1000),
+          simId: 1,
+        }
+
+        statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(stats.rxBytes == 0 && stats.txBytes == 0)
+          done()
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(error)}`);
+          done()
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0003
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0003
+     * @tc.desc   get SelfTrafficStats(BEARER_CELLULAR 2100001)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0003';
+      console.info(`${caseName} test start`);
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: Math.floor(Date.now() / 1000) + 86400 * 31,
+          endTime: Math.floor(Date.now() / 1000),
+          simId: 1,
+        }
+
+        statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(false, `${caseName}`)
+          done()
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(error.code == 2100001);
+          done()
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0004
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0004
+     * @tc.desc   get SelfTrafficStats(BEARER_WIFI 2100001)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0004';
+      console.info(`${caseName} test start`);
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_WIFI,
+          startTime: Math.floor(Date.now() / 1000),
+          endTime: Math.floor(Date.now() / 1000)-86400 * 31,
+          simId: 1,
+        }
+
+        statistics.getSelfTrafficStats(networkInfo).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(false, `${caseName}`)
+          done()
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(error.code == 2100001);
+          done()
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(false, `${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    });
 
 
   });
