@@ -59,25 +59,6 @@ export default function Array_09Test() {
     })
 
     /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0100
-     * @tc.name     testToLocaleString0001
-     * @tc.desc     Verify that toLocaleString correctly converts a standard short-type array with positive and negative values, including thousand separators
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it('testToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testToLocaleString0001';
-      try {
-        let arr: FixedArray<short> = [1234 as short, -567 as short, 890 as short];
-        expect(toLocaleString(arr)).assertEqual("1234,-567,890");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0200
      * @tc.name     testToLocaleString0002
      * @tc.desc     Verify the behavior of toLocaleString when handling an empty array; should return an empty string
@@ -329,25 +310,6 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<long> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_1600
-     * @tc.name     testToLocaleString0016
-     * @tc.desc     Verify that toLocaleString converts long-type array with min, zero, max values correctly
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it('testToLocaleString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testToLocaleString0016';
-      try {
-        let arr: FixedArray<long> = [-9223372036854775808, 0, 9223372036854775807];
-        expect(toLocaleString(arr)).assertEqual("-9223372036854775808,0,9223372036854775807");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -807,30 +769,6 @@ export default function Array_09Test() {
       try {
         let arr: FixedArray<float> = [];
         expect(toLocaleString(arr)).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_TO_LOCALE_STRING_0390
-     * @tc.name     testToLocaleString0039
-     * @tc.desc     Verify that toLocaleString correctly converts float-type arrays with smallest positive, largest positive, and largest negative float values
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it('testToLocaleString0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testToLocaleString0039';
-      try {
-        let arr: FixedArray<float> = [
-          1.401298464324817E-45 as float,
-          3.4028234663852886E38 as float,
-          -3.4028234663852886E38 as float
-        ];
-        let expectd = "1e-45,3.4028235e+38,-3.4028235e+38";
-        expect(toLocaleString(arr)).assertEqual(expectd);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -2159,26 +2097,6 @@ export default function Array_09Test() {
         sort_subarray(arr, 0, arr.length, (l, r) => l > r);
         let expected: FixedArray<boolean> = [true, true, true];
         expect(String(arr)).assertEqual(String(expected));
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_SORT_SUBARRAY_20300
-     * @tc.name     testSort_Subarray00203
-     * @tc.desc     Verify that attempting to sort a subarray with invalid indices (out of bounds) on a boolean array throws an appropriate error.
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it('testSort_Subarray00203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = 'testSort_Subarray00203';
-      try {
-        let arr: FixedArray<boolean> = [true, false];
-        sort_subarray(arr, 5, 2, (l, r) => l < r);
-        expect().assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();

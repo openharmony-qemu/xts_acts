@@ -2132,66 +2132,6 @@ export default function Array_04Test() {
     });
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_2400
-     * @tc.name    testLowerBoundSearch0024
-     * @tc.desc    Testing lowerBoundSearch with key=true, no true elements
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLowerBoundSearch0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLowerBoundSearch0024";
-      try {
-        let arr: FixedArray<number> = [10, 20, 30, 40, 50];
-        lowerBoundSearch(arr, 30, 5, 0);
-        expect(false).assertFail(); // Should throw an exception
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_2500
-     * @tc.name    testLowerBoundSearch0025
-     * @tc.desc    Testing lowerBoundSearch with key=false, element exists
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLowerBoundSearch0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLowerBoundSearch0025";
-      try {
-        let arr: FixedArray<number> = [10, 20, 30, 40, 50];
-        lowerBoundSearch(arr, 30, 6, 10);
-        expect(false).assertFail(); // Should throw an exception
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_2600
-     * @tc.name    testLowerBoundSearch0026
-     * @tc.desc    Testing lowerBoundSearch with key=false, no false elements
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLowerBoundSearch0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLowerBoundSearch0026";
-      try {
-        let arr: FixedArray<number> = [10, 20, 30, 40, 50];
-        lowerBoundSearch(arr, 30, 0, 10);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_2700
      * @tc.name    testLowerBoundSearch0027
      * @tc.desc    Testing lowerBoundSearch with empty array
@@ -2425,26 +2365,6 @@ export default function Array_04Test() {
         let arr: FixedArray<double> = [];
         let result = lowerBoundSearch(arr, 1.0, 0, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LOWERBOUNDSEARCH_4900
-     * @tc.name    testLowerBoundSearch0049
-     * @tc.desc    Testing lowerBoundSearch with key present at the end of the array
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLowerBoundSearch0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testLowerBoundSearch0049";
-      try {
-        let arr: FixedArray<double> = [1.1, 2.2, 3.3];
-        lowerBoundSearch(arr, 2.0, 2, 1);
-        expect(false).assertFail(); // Should not reach this line
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();

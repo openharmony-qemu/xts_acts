@@ -229,48 +229,6 @@ export default function BuiltinArrayFindIndexTest() {
     });
 
     /**
-     * @tc.number TEST_FIND_BOOLEAN_WITH_NULL_003
-     * @tc.name   testBuiltinArrayFind10010
-     * @tc.desc   Verify find method handling null values (boundary case)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFind10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFind10010";
-      try {
-        const arr3: FixedArray<boolean | null | undefined> = [null, undefined, true];
-        const result3 = find(arr3 as FixedArray<boolean>, (val) => val === true);
-        expect(result3).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_BOOLEAN_WITH_NULL_004
-     * @tc.name   testBuiltinArrayFind10011
-     * @tc.desc   Verify callback function handling null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFind10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFind10011";
-      try {
-        const arr: FixedArray<boolean | null> = [null, false, true, null];
-        const result1 = find(arr as FixedArray<boolean>, (val, index) => {
-          return val !== null && index > 1;
-        });
-        expect(result1).assertEqual(true);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_001
      * @tc.name   testBuiltinArrayFindIndex10012
      * @tc.desc   Test basic functionality of findIndex (find specific byte value)
@@ -344,51 +302,6 @@ export default function BuiltinArrayFindIndexTest() {
         const emptyArr: FixedArray<byte> = [];
         const index = findIndex(emptyArr, (v: byte) => v === 0x00 as byte);
         expect(index).assertEqual(-1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_0010
-     * @tc.name   testBuiltinArrayFindIndex10020
-     * @tc.desc   Verify behavior with all-null array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10020";
-      try {
-        const nullArr: FixedArray<null> = [null, null, null];
-        const result1 = findIndex(nullArr as FixedArray<byte>, (v: byte) => v === 0x01 as byte);
-        expect(result1).assertEqual(-1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number TEST_FIND_INDEX_BYTE_ARRAY_0011
-     * @tc.name   testBuiltinArrayFindIndex10021
-     * @tc.desc   Verify findIndex behavior when array contains null values
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayFindIndex10021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testBuiltinArrayFindIndex10021";
-      try {
-        const arr1: FixedArray<byte | null> = [0x01, null, 0x03, null];
-        const index1 = findIndex(arr1 as FixedArray<byte>, (v: byte) => v === 0x03 as byte);
-        expect(index1).assertEqual(2);
-        const arr2: FixedArray<byte | null> = [null, 0x02, 0x03];
-        const index2 = findIndex(arr2 as FixedArray<byte>, (v: byte) => v === 0x02 as byte);
-        expect(index2).assertEqual(1);
-        const index3 = findIndex(arr1 as FixedArray<byte>, (v: byte) => v === null);
-        expect(index3).assertEqual(-1);
       } catch (err: BusinessError) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();

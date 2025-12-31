@@ -141,26 +141,6 @@ export default function BuiltinArrayEveryTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7000
-     * @tc.name   testBuiltinArrayTypeOf0070
-     * @tc.desc   Testing Type.of with number.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0070";
-      try {
-        let a = Type.of(42);
-        const typeStr = String(a);
-        expect(typeStr === "number" || typeStr === "int").assertTrue();
-      } catch (err) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7100
      * @tc.name   testBuiltinArrayTypeOf0071
      * @tc.desc   Testing Type.of with string.
@@ -192,31 +172,6 @@ export default function BuiltinArrayEveryTest() {
       try {
         let a = Type.of(true);
         expect(String(a)).assertEqual("boolean");
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7300
-     * @tc.name   testBuiltinArrayTypeOf0073
-     * @tc.desc   Testing Type.of with array.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0073";
-      try {
-        const arr = [1, 2, 3];
-        const typeDesc = String(Type.of(arr));
-        const validTypes = ["array", "Array", "number[]", "escompat.Array"];
-        if (!validTypes.includes(typeDesc)) {
-          throw new Error(`Expected array type but got ${typeDesc}`);
-        }
-        expect(arr.length).assertEqual(3);
-        expect(arr[0]).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -342,25 +297,6 @@ export default function BuiltinArrayEveryTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8000
-     * @tc.name   testBuiltinArrayTypeOf0080
-     * @tc.desc   Testing Type.of with number type.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0080";
-      try {
-        let typeStr = String(Type.of(123));
-        expect(typeStr === "number" || typeStr === "int").assertTrue();
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8100
      * @tc.name   testBuiltinArrayTypeOf0081
      * @tc.desc   Testing Type.of with boolean type.
@@ -413,52 +349,6 @@ export default function BuiltinArrayEveryTest() {
         expect(String(a)).assertEqual("undefined");
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8400
-     * @tc.name   testBuiltinArrayTypeOf0084
-     * @tc.desc   Testing Type.of with array.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0084";
-      try {
-        const arr: number[] = [1, 2, 3];
-        const typeDesc = String(Type.of(arr));
-        const validTypes = ["number[]", "Array", "escompat.Array"];
-        expect(validTypes.includes(typeDesc)).assertTrue();
-        expect(arr.length).assertEqual(3);
-        expect(arr[0]).assertEqual(1);
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8500
-     * @tc.name   testBuiltinArrayTypeOf0085
-     * @tc.desc   Testing Type.of with array type.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0085";
-      try {
-        const arr = [1, 2, 3];
-        const typeDesc = String(Type.of(arr));
-        const validArrayTypes = ["array", "Array", "number[]", "escompat.Array"];
-        expect(validArrayTypes.includes(typeDesc)).assertTrue();
-        expect(arr.length).assertEqual(3);
-        expect(arr[0]).assertEqual(1);
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
     });

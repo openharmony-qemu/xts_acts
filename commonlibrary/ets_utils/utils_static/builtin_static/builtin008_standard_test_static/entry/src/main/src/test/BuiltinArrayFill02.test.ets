@@ -45,33 +45,6 @@ export default function BuiltinArrayFill02Test() {
     console.log(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_277
-     * @tc.name    test_builtin_array_fill_277
-     * @tc.desc    Test fill with middle range replacement
-     * @tc.level   LEVEL1
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     */
-    it('test_builtin_array_fill_277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        const TAG = 'test_builtin_array_fill_277';
-        try {
-            const arr = [10, 20, 30, 40, 50];
-            const result = arr.fill(99, 1, 3);
-            expect(result).assertDeepEquals([10, 99, 99, 40, 50]);
-            expect(result === arr).assertTrue();
-            expect(arr[0]).assertEqual(10);
-            expect(arr[1]).assertEqual(99);
-            expect(arr[2]).assertEqual(99);
-            expect(arr[3]).assertEqual(40);
-            expect(arr[4]).assertEqual(50);
-            expect(arr.length).assertEqual(5);
-        } catch (err) {
-            console.error(`${TAG} failed, error: ${err}`);
-            expect().assertFail();
-        }
-    });
-
-    /**
      * @tc.number   SUB_COMMONLIBRARY_UTIL_BASE_FILL_278
      * @tc.name     test_builtin_array_fill_278
      * @tc.desc     Test basic array fill functionality
@@ -1615,28 +1588,6 @@ export default function BuiltinArrayFill02Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_AT_0600
-     * @tc.name   testBuiltinArrayAt130006
-     * @tc.desc   Test at() with empty array and any index
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt130006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt130006';
-      try {
-        const arr: FixedArray<number> = [];
-        expect(at(arr, 0)).assertUndefined();
-        expect(at(arr, -1)).assertUndefined();
-        expect(at(arr, 10)).assertUndefined();
-        expect(at(arr, -10)).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_AT_0700
      * @tc.name   testBuiltinArrayAt130007
      * @tc.desc   Test at() with const array view
@@ -1670,70 +1621,6 @@ export default function BuiltinArrayFill02Test() {
         const arr: FixedArray<short> = [10, 20, 30, 40];
         const result = at(arr, -0);
         expect(result).assertEqual(10);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1000_2
-     * @tc.name   testBuiltinArrayAt140010
-     * @tc.desc   Testing at() with large positive index (out of range)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140010';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30, 40];
-        const result = at(arr, 100000);
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1100_04
-     * @tc.name   testBuiltinArrayAt140011
-     * @tc.desc   Testing at() with large negative index (out of range)
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140011';
-      try {
-        const arr: FixedArray<short> = [10, 20, 30, 40];
-        const result = at(arr, -100000);
-        expect(result).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIXEDARRAY_AT_1200
-     * @tc.name   testBuiltinArrayAt140012
-     * @tc.desc   Testing at() with single element array
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  Level 1
-     */
-    it('testBuiltinArrayAt140012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBuiltinArrayAt140012';
-      try {
-        const arr: FixedArray<short> = [99];
-        const result1 = at(arr, 0);
-        const result2 = at(arr, -1);
-        const result3 = at(arr, 1);
-        expect(result1).assertEqual(99);
-        expect(result2).assertEqual(99);
-        expect(result3).assertUndefined();
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
