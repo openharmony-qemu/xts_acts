@@ -58,7 +58,7 @@ import {
   ColumnAttribute,
   CustomBuilder
 } from '@ohos.arkui.component'
-import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';

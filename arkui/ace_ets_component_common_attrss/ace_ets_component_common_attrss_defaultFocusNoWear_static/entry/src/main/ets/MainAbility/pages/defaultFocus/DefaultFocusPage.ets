@@ -116,7 +116,7 @@ import {
   WaterFlow,
   Web,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
@@ -130,7 +130,7 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct DefaultFocusPage {
-  // @StorageProp("_defaultFocus") _defaultFocus: boolean = true
+  // @StoragePropRef("_defaultFocus") _defaultFocus: boolean = true
   @State _defaultFocus: boolean = true;
   @State callback: string = '';
   @State referenceCallback: string = '';

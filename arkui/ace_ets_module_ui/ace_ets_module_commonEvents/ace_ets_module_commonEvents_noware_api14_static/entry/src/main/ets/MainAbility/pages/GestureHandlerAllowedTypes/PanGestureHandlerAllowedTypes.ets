@@ -36,7 +36,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { Callback } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';

@@ -20,7 +20,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 class EntryAbility extends UIAbility {

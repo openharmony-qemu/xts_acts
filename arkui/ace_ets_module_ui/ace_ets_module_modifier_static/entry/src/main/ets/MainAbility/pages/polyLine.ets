@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List,PolylineAttribute, ListItem,Marquee,Nav
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { PolylineModifier } from "@ohos.arkui.modifier";
 

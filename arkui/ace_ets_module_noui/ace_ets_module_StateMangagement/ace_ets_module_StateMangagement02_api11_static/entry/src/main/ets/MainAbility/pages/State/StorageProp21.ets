@@ -41,7 +41,7 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,

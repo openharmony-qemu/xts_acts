@@ -19,7 +19,7 @@ import { Entry,Component,$r,Builder,List, ListItem,Marquee,HorizontalAlign,Menu,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'

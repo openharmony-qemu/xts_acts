@@ -63,7 +63,7 @@ export default function search_gesture() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get search_gesture state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SearchGesture" == pages.name)) {
           console.info("get search_gesture pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

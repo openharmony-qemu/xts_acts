@@ -81,7 +81,7 @@ import {
   LaunchMode,
   NavPathStack
 } from '@ohos.arkui.component';
-import { State, Link, Prop, Provide, Consume, StorageLink } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, Provide, Consume, StorageLink } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { CommonNavigation } from './CommonNavigation';

@@ -31,13 +31,13 @@ import {
 } from '@ohos.arkui.component'
 
 import { Theme } from '@ohos.arkui.theme';
-import { Prop } from '@ohos.arkui.stateManagement'
+import { PropRef } from '@ohos.arkui.stateManagement'
 
 export let customButtonLightTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonLight {
-  @Prop btnText: string = '';
+  @PropRef btnText: string = '';
 
   onWillApplyTheme(theme: Theme) {
     customButtonLightTheme = theme;

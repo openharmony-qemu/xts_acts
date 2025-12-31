@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { ColorMetrics, LengthMetrics } from '@ohos.arkui.node'

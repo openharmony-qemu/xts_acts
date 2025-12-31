@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,Search,Rect, RichEditor,SearchController,Sha
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'

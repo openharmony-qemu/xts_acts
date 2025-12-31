@@ -115,7 +115,7 @@ import {
   VerticalAlign,
   WaterFlow,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'

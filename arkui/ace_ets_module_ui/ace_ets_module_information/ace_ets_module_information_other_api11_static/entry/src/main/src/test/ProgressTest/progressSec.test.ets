@@ -5395,9 +5395,9 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
 
-      let progress_capsule_enableSmoothEffect_boolean = false;
+      let progress_capsule_enableSmoothEffect_boolean = null;
       try {
-        AppStorage.setOrCreate<boolean>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
+        AppStorage.setOrCreate<boolean|null>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
       } catch (err) {
         console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] change component data error: " +
         (err as BusinessError).message);
@@ -5426,9 +5426,9 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
 
-      let progress_capsule_enableSmoothEffect_boolean = false;
+      let progress_capsule_enableSmoothEffect_boolean = undefined;
       try {
-        AppStorage.setOrCreate<boolean>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
+        AppStorage.setOrCreate<boolean|undefined>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
       } catch (err) {
         console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] change component data error: " +
         (err as BusinessError).message);
@@ -5751,8 +5751,7 @@ function progressFontWeight(sysFontWeight: Resource):string {
     'FontWeight.Lighter',
     'FontWeight.Medium',
     'FontWeight.Regular']
-  let context = AppStorage.get<Context>('context')!
-  let resourceFontWeight = context.resourceManager.getInt(sysFontWeight.id.toLong())
-  let newFontWeight: string = fontWeightArr[resourceFontWeight]
+  let resourceFontWeight = AppStorage.get<UIContext>('uiContext')!.getHostContext()?.resourceManager.getDouble(sysFontWeight.id).toInt()
+  let newFontWeight: string = fontWeightArr[resourceFontWeight as int]
   return newFontWeight;
 }

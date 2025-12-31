@@ -17,7 +17,7 @@ import { Entry,Component,$r,Column,ColumnOptions,DatePickerAttribute,Counter,Dat
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { DatePickerModifier } from "@ohos.arkui.modifier";
 //

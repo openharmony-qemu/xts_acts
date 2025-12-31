@@ -38,7 +38,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 let customDialogId: int = 0
 class Params {

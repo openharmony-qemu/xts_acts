@@ -56,7 +56,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { CircleShape,EllipseShape,PathShape,RectShape,PathShapeOptions,RectShapeOptions} from '@ohos.arkui.shape'
 @Entry
