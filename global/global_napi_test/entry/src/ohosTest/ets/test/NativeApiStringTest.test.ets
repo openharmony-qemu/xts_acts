@@ -1052,5 +1052,18 @@ export default function abilityTest() {
       let value = nativeTest.getDirectionVertical(resManager.resourceManager);
       expect(value).assertTrue();
     })
+
+    /**
+     * @tc.name   getEmuTypeErrorCode
+     * @tc.number SUB_GLOBAL_getEmuTypeErrorCode_0100
+     * @tc.desc   getEmuTypeErrorCode return errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getEmuTypeErrorCode', Level.LEVEL3, () => {
+      let value = nativeTest.getEmuTypeErrorCode(resManager.resourceManager);
+      expect(value).assertTrue();
+    })
   })
 }
