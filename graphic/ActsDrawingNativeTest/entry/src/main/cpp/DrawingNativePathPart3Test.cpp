@@ -325,8 +325,8 @@ int TestPathIsClosedNull()
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(path, nullptr);
-    // 2. Check if the path is closed using OH_Drawing_PathIsClosed with nullptr as the parameter, should return
-    // OH_DRAWING_ERROR_INVALID_PARAMETER
+    // 2. Check if the path is closed using OH_Drawing_PathIsClosed with nullptr as the parameter, should
+    // return OH_DRAWING_ERROR_INVALID_PARAMETER
     OH_Drawing_PathIsClosed(nullptr, false);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Free the memory
@@ -338,7 +338,8 @@ int TestPathIsClosedNull()
 /**
  * @tc.name   testPathGetPositionTangentNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20700
- * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to true.
+ * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to
+ * true.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
@@ -354,8 +355,8 @@ int TestPathGetPositionTangentNormal()
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the
-    // second parameter to true.
+    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the second parameter to true.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
     bool isSuccess = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
@@ -372,7 +373,8 @@ int TestPathGetPositionTangentNormal()
 /**
  * @tc.name   testPathGetPositionTangentNormal2
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20800
- * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to false.
+ * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to
+ * false.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
@@ -388,8 +390,8 @@ int TestPathGetPositionTangentNormal2()
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the
-    // second parameter to false.
+    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the second parameter to false.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
     bool isSuccess = OH_Drawing_PathGetPositionTangent(path, false, PATH_D50, &position, &tangent);
@@ -469,26 +471,26 @@ int TestPathGetPositionTangentAbnormal()
     bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess1, true);
-    // 5. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fourth parameter as an integer or
-    // character type
+    // 5. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fourth parameter as an integer
+    // or character type
     position = { PATH_X10, PATH_Y10 };
     bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess2, true);
-    // 6. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fourth parameter as an integer or
-    // character type
+    // 6. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fourth parameter as an integer
+    // or character type
     position = { PATH_X10, PATH_Y10 };
     bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess3, true);
-    // 7. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fifth parameter as an integer or character
-    // type
+    // 7. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fifth parameter as an integer or
+    // character type
     tangent = { PATH_X10, PATH_Y10 };
     bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess4, true);
-    // 8. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fifth parameter as an integer or character
-    // type
+    // 8. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fifth parameter as an integer or
+    // character type
     tangent = { PATH_X10, PATH_Y10 };
     bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
@@ -518,33 +520,33 @@ int TestPathGetPositionTangentMaximal()
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the
-    // third parameter to a large value FLT_MAX + 1.
+    // 4. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the third parameter to a large value FLT_MAX + 1.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
     bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, FLT_MAX + PATH_ONE, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess1, true);
-    // 5. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the x
-    // coordinate of the fourth parameter to a large value FLT_MAX + 1.
+    // 5. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the x coordinate of the fourth parameter to a large value FLT_MAX + 1.
     position = { FLT_MAX + PATH_ONE, PATH_Z };
     bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess2, true);
-    // 6. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the y
-    // coordinate of the fourth parameter to a large value FLT_MAX + 1.
+    // 6. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the y coordinate of the fourth parameter to a large value FLT_MAX + 1.
     position = { PATH_Z, FLT_MAX + PATH_ONE };
     bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess3, true);
-    // 7. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the x
-    // coordinate of the fifth parameter to a large value FLT_MAX + 1.
+    // 7. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the x coordinate of the fifth parameter to a large value FLT_MAX + 1.
     tangent = { FLT_MAX + PATH_ONE, PATH_Z };
     bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess4, true);
-    // 8. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the y
-    // coordinate of the fifth parameter to a large value FLT_MAX + 1.
+    // 8. Get the position and tangent of a point at a specified distance from the starting point of the path.
+    // Set the y coordinate of the fifth parameter to a large value FLT_MAX + 1.
     tangent = { PATH_Z, FLT_MAX + PATH_ONE };
     bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, PATH_D50, &position, &tangent);
     // add assert
@@ -582,8 +584,8 @@ int TestPathOpNormal()
     OH_Drawing_PathMoveTo(src, PATH_X0, PATH_Y0);
     // 6. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(src, PATH_X100, PATH_Y100);
-    // 7. Perform a path operation on the two paths according to the specified path operation mode. The third parameter
-    // enumerates the possible path operation modes.
+    // 7. Perform a path operation on the two paths according to the specified path operation mode. The third
+    // parameter enumerates the possible path operation modes.
     bool pathOp1 = OH_Drawing_PathOp(path, src, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(pathOp1, true);
@@ -635,13 +637,15 @@ int TestPathOpNull()
     OH_Drawing_Path* src = OH_Drawing_PathCreate();
     // add assert
     EXPECT_NE(src, nullptr);
-    // 3. Call OH_Drawing_PathOp with the first parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
+    // 3. Call OH_Drawing_PathOp with the first parameter as nullptr, expect
+    // OH_DRAWING_ERROR_INVALID_PARAMETER
     bool pathOp = OH_Drawing_PathOp(nullptr, src, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(pathOp, false);
     OH_Drawing_ErrorCodeReset();
-    // 4. Call OH_Drawing_PathOp with the second parameter as nullptr, expect OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
+    // 4. Call OH_Drawing_PathOp with the second parameter as nullptr, expect
+    // OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
     pathOp = OH_Drawing_PathOp(path, nullptr, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -656,7 +660,8 @@ int TestPathOpNull()
 /**
  * @tc.name   testPathGetMatrixNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21400
- * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to true.
+ * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to
+ * true.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
@@ -672,13 +677,15 @@ int TestPathGetMatrixNormal()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
+    OH_Drawing_MatrixSetMatrix(
+        matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the path. Set the
-    // second parameter to true. Enumerate the possible values of the fifth parameter to call the interface.
+    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the
+    // path. Set the second parameter to true. Enumerate the possible values of the fifth parameter to call
+    // the interface.
     OH_Drawing_PathMeasureMatrixFlags flags[] = {
         GET_POSITION_MATRIX,
         GET_TANGENT_MATRIX,
@@ -702,7 +709,8 @@ int TestPathGetMatrixNormal()
 /**
  * @tc.name   testPathGetMatrixNormal2
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21500
- * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to false.
+ * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to
+ * false.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
@@ -718,13 +726,15 @@ int TestPathGetMatrixNormal2()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
+    OH_Drawing_MatrixSetMatrix(
+        matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the path. Set the
-    // second parameter to false. Enumerate the possible values of the fifth parameter to call the interface.
+    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the
+    // path. Set the second parameter to false. Enumerate the possible values of the fifth parameter to call
+    // the interface.
     OH_Drawing_PathMeasureMatrixFlags flags[] = {
         GET_POSITION_MATRIX,
         GET_TANGENT_MATRIX,
@@ -764,16 +774,20 @@ int TestPathGetMatrixNull()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
-    // 3. Call OH_Drawing_PathGetMatrix with the first parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
+    OH_Drawing_MatrixSetMatrix(
+        matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
+    // 3. Call OH_Drawing_PathGetMatrix with the first parameter as nullptr, expect
+    // OH_DRAWING_ERROR_INVALID_PARAMETER
     OH_Drawing_PathGetMatrix(nullptr, true, PATH_D50, matrix, GET_POSITION_MATRIX);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
-    // 4. Call OH_Drawing_PathGetMatrix with the third parameter as 0.00, the call should fail without crashing
+    // 4. Call OH_Drawing_PathGetMatrix with the third parameter as 0.00, the call should fail without
+    // crashing
     bool getMatrix = OH_Drawing_PathGetMatrix(path, true, PATH_Z, matrix, GET_POSITION_MATRIX);
     // add assert
     EXPECT_EQ(getMatrix, false);
-    // 5. Call OH_Drawing_PathGetMatrix with the fourth parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
+    // 5. Call OH_Drawing_PathGetMatrix with the fourth parameter as nullptr, expect
+    // OH_DRAWING_ERROR_INVALID_PARAMETER
     OH_Drawing_PathGetMatrix(path, true, PATH_D50, nullptr, GET_POSITION_MATRIX);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 6. Free the memory
@@ -802,13 +816,14 @@ int TestPathGetMatrixAbnormal()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
+    OH_Drawing_MatrixSetMatrix(
+        matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the path. Set the
-    // third parameter to an integer value.
+    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the
+    // path. Set the third parameter to an integer value.
     bool getMatrix = OH_Drawing_PathGetMatrix(path, true, PATH_D50, matrix, GET_POSITION_MATRIX);
     // add assert
     EXPECT_EQ(getMatrix, true);
@@ -838,13 +853,14 @@ int TestPathGetMatrixMaximal()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
+    OH_Drawing_MatrixSetMatrix(
+        matrix, PATH_M00, PATH_M01, PATH_M02, PATH_M10, PATH_M11, PATH_M12, PATH_M20, PATH_M21, PATH_M22);
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, PATH_X0, PATH_Y0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
     OH_Drawing_PathLineTo(path, PATH_X100, PATH_Y100);
-    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the path. Set the
-    // third parameter to a large value FLT_MAX + 1.
+    // 5. Get the transformation matrix of a point at a specified distance from the starting point of the
+    // path. Set the third parameter to a large value FLT_MAX + 1.
     bool getMatrix = OH_Drawing_PathGetMatrix(path, true, FLT_MAX + PATH_ONE, matrix, GET_POSITION_MATRIX);
     // add assert
     EXPECT_EQ(getMatrix, true);
@@ -858,7 +874,8 @@ int TestPathGetMatrixMaximal()
 /**
  * @tc.name   testPathGetSegmentNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21900
- * @tc.desc   Testing the enumeration traversal of the interface for extracting path segments and appending them to the
+ * @tc.desc   Testing the enumeration traversal of the interface for extracting path segments and appending
+ * them to the
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
@@ -902,7 +919,8 @@ int TestPathGetSegmentNormal()
 /**
  * @tc.name   testPathGetSegmentNull
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22000
- * @tc.desc   Tests when an interface that intercepts a path fragment and appends it to the target path passes a null
+ * @tc.desc   Tests when an interface that intercepts a path fragment and appends it to the target path passes
+ * a null
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
@@ -953,7 +971,8 @@ int TestPathGetSegmentNull()
 /**
  * @tc.name   testPathGetSegmentAbnormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22100
- * @tc.desc   Test cases where the function intercepts a path fragment and appends it to the destination path with an
+ * @tc.desc   Test cases where the function intercepts a path fragment and appends it to the destination path
+ * with an
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
@@ -978,7 +997,8 @@ int TestPathGetSegmentAbnormal()
     errorCode = OH_Drawing_PathGetSegment(path, false, PATH_DN50, PATH_D180, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(result, true);
-    // 6. The fourth parameter of the function OH_Drawing_PathGetSegment passes a number greater than the path length
+    // 6. The fourth parameter of the function OH_Drawing_PathGetSegment passes a number greater than the path
+    // length
     errorCode = OH_Drawing_PathGetSegment(path, false, PATH_D120, PATH_D999, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(result, true);
@@ -986,7 +1006,8 @@ int TestPathGetSegmentAbnormal()
     errorCode = OH_Drawing_PathGetSegment(path, false, PATH_D120, PATH_D120, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(result, false);
-    // 8. The third argument of the function OH_Drawing_PathGetSegment is greater than the value of the fourth argument
+    // 8. The third argument of the function OH_Drawing_PathGetSegment is greater than the value of the fourth
+    // argument
     errorCode = OH_Drawing_PathGetSegment(path, false, PATH_D120, PATH_X100, true, dstPath, &result);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_EQ(result, false);
@@ -1000,7 +1021,8 @@ int TestPathGetSegmentAbnormal()
 /**
  * @tc.name   testPathGetSegmentMultiplies
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22200
- * @tc.desc   The test function intercepts the path fragment and appends it to the target path loop several times
+ * @tc.desc   The test function intercepts the path fragment and appends it to the target path loop several
+ * times
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
@@ -1056,7 +1078,8 @@ int TestPathSetPathNormal()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path* other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(
+        other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath is called normally.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathSetPath(path, other);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
@@ -1089,10 +1112,10 @@ int TestPathSetPathNull()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path* other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(
+        other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath passes to nullptr.
-    OH_Drawing_ErrorCode errorCode;
-    errorCode = OH_Drawing_PathSetPath(nullptr, other);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathSetPath(nullptr, other);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     errorCode = OH_Drawing_PathSetPath(path, nullptr);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -1125,7 +1148,8 @@ int TestPathSetPathMulptiCalls()
     // 4. Create a other path object using OH_Drawing_PathCreate.
     OH_Drawing_Path* other = OH_Drawing_PathCreate();
     EXPECT_NE(other, nullptr);
-    OH_Drawing_PathAddCircle(other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(
+        other, PATH_X200, PATH_Y200, PATH_R150, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 5. The function OH_Drawing_PathSetPath is called 10 times.
     OH_Drawing_ErrorCode errorCode;
     for (int i = 0; i < PATH_L10; i++) {
@@ -1192,8 +1216,7 @@ int TestPathIsEmptyNull()
     // 4. Initialization of variable.
     bool isEmpty = false;
     // 5. The function OH_Drawing_PathIsEmpty passes to nullptr.
-    OH_Drawing_ErrorCode errorCode;
-    errorCode = OH_Drawing_PathIsEmpty(nullptr, &isEmpty);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEmpty(nullptr, &isEmpty);
     EXPECT_EQ(isEmpty, false);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     errorCode = OH_Drawing_PathIsEmpty(path, nullptr);
@@ -1270,7 +1293,8 @@ int TestPathIsRectNormal()
     OH_Drawing_Path* path2 = OH_Drawing_PathCreate();
     EXPECT_NE(path2, nullptr);
     // 8. Set the path to a rectangle.
-    OH_Drawing_PathAddRect(path2, PATH_X0, PATH_Y0, PATH_X200, PATH_Y200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    OH_Drawing_PathAddRect(
+        path2, PATH_X0, PATH_Y0, PATH_X200, PATH_Y200, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 9. The function OH_Drawing_PathIsRect is called normally.
     errorCode = OH_Drawing_PathIsRect(path2, rect, &isRect);
     EXPECT_EQ(isRect, true);
@@ -1500,6 +1524,9 @@ int TestPathApproximateNormal()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
+    if (count == 0) {
+        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    }
     float* vals = new float[count];
     // 4. The interface OH_Drawing_PathApproximate is called normally.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
@@ -1534,6 +1561,9 @@ int TestPathApproximateNull()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
+    if (count == 0) {
+        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    }
     float* vals = new float[count];
     // 2. Verify the empty path.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, vals, &count);
@@ -1547,7 +1577,8 @@ int TestPathApproximateNull()
     // 5. The third parameter of the verification interface is passed as a null pointer.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    // 6. The third parameter and the forth parameter of the verification interface are passed as null pointer.
+    // 6. The third parameter and the forth parameter of the verification interface are passed as null
+    // pointer.
     errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, nullptr);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 7. The forth parameter of the verification interface is passed as a null pointer.
@@ -1580,6 +1611,9 @@ int TestPathApproximateAbnormal()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
+    if (count == 0) {
+        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    }
     float* vals = new float[count];
     // 4. AcceptableError lesses than 0.
     errorCode = OH_Drawing_PathApproximate(path, PATH_EN01, vals, &count);
@@ -1619,6 +1653,9 @@ int TestPathApproximateMultiCalls()
     float acceptableError = PATH_E01;
     uint32_t count = PATH_C0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathApproximate(path, acceptableError, nullptr, &count);
+    if (count == 0) {
+        EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    }
     float* vals = new float[count];
     // 4. The interface is called in a loop 10 times.
     for (int i = 0; i < PATH_L10; i++) {
@@ -1666,7 +1703,8 @@ int TestPathInterpolateNormal()
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 10. Call the interface OH_Drawing_PathInterpolate to verify the straight line and the straight line.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, PATH_I05, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_PathInterpolate(path, other1, PATH_I05, &result, interpolatePath);
     EXPECT_EQ(result, true);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 11. Call the interface OH_Drawing_PathInterpolate to verify straight line and arc.
@@ -1704,7 +1742,8 @@ int TestPathInterpolateNull()
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 4. Call the interface OH_Drawing_PathInterpolate to verify the interpolation of the empty path.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, PATH_I05, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_PathInterpolate(path, other, PATH_I05, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 4. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, PATH_X50, PATH_Y50);
@@ -1767,7 +1806,8 @@ int TestPathInterpolateAbnormal()
     EXPECT_NE(interpolatePath, nullptr);
     // 8. The third parameter of the verification interface is passed as a negative number.
     bool result = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, PATH_IN05, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_PathInterpolate(path, other, PATH_IN05, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 9. The third parameter of the verification interface is passed as a number greater than 1.
     errorCode = OH_Drawing_PathInterpolate(path, other, PATH_I15, &result, interpolatePath);

@@ -23,7 +23,7 @@ namespace Drawing {
 namespace {
 // Constants for test values
 constexpr int TEST_LOOP_COUNT_10 = 10;
-
+constexpr int PATH_L2 = 2;
 constexpr int TEST_NUMBER_0 = 0;
 constexpr int TEST_NUMBER_1 = 1;
 constexpr int TEST_NUMBER_2 = 2;
@@ -40,7 +40,10 @@ constexpr int TEST_RECT_SIZE = 100;
 constexpr int TEST_CIRCLE_CENTER = 50;
 constexpr int TEST_CIRCLE_RADIUS = 10;
 constexpr int TEST_POLYGON_POINT_COUNT = 4;
-constexpr float TEST_OFFSET_VALUE = 10.0f;
+constexpr float TEST_OFFSET_VALUE_10_F = 10.0f;
+constexpr float TEST_OFFSET_VALUE_30_F = 30.0f;
+constexpr float TEST_OFFSET_VALUE_10 = 10;
+constexpr float TEST_OFFSET_VALUE_30 = 30;
 constexpr bool TEST_BOOL_TRUE = true;
 constexpr bool TEST_BOOL_FALSE = false;
 constexpr float TEST_FLOAT_ZERO = 0.0f;
@@ -166,10 +169,10 @@ int TestPathAddArcAbnormal()
     OH_Drawing_PathLineTo(path, TEST_RECT_SIZE, TEST_RECT_SIZE);
     // 5. Add an arc to the path using OH_Drawing_PathAddArc, passing an integer or character type as the
     // third parameter.
-    OH_Drawing_PathAddArc(path, rect, 30, 30.0f);
+    OH_Drawing_PathAddArc(path, rect, TEST_OFFSET_VALUE_30, TEST_OFFSET_VALUE_30_F);
     // 6. Add an arc to the path using OH_Drawing_PathAddArc, passing an integer or character type as the
     // fourth parameter.
-    OH_Drawing_PathAddArc(path, rect, 30.0f, 30);
+    OH_Drawing_PathAddArc(path, rect, TEST_OFFSET_VALUE_30_F, TEST_OFFSET_VALUE_30);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -270,7 +273,7 @@ int TestPathAddPathNull()
     // 3. Call OH_Drawing_PathAddPath with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
-    OH_Drawing_MatrixSetMatrix(matrix, 5, 4, 0, 0, -1, 0, 0, 0, 1);
+    OH_Drawing_MatrixSetMatrix(matrix, TEST_NUMBER_5, TEST_NUMBER_4, 0, 0, -1, 0, 0, 0, 1);
     OH_Drawing_PathAddPath(nullptr, src, matrix);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
@@ -317,12 +320,12 @@ int TestPathAddPathWithMatrixAndModeNormal()
     // 5. Add the transformed source path to the current path using OH_Drawing_PathAddPathWithMatrixAndMode.
     // The fourth parameter enumerates calling this interface.
     OH_Drawing_PathAddMode modes[] = { PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND };
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < PATH_L2; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
         // add assert
         EXPECT_NE(matrix, nullptr);
-        OH_Drawing_MatrixSetMatrix(matrix, 5, 4, 0, 0, -1, 0, 0, 0, 1);
+        OH_Drawing_MatrixSetMatrix(matrix, TEST_NUMBER_5, TEST_NUMBER_4, 0, 0, -1, 0, 0, 0, 1);
         OH_Drawing_PathAddPathWithMatrixAndMode(path, src, matrix, modes[i]);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
@@ -360,7 +363,7 @@ int TestPathAddPathWithMatrixAndModeNull()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, 5, 4, 0, 0, -1, 0, 0, 0, 1);
+    OH_Drawing_MatrixSetMatrix(matrix, TEST_NUMBER_5, TEST_NUMBER_4, 0, 0, -1, 0, 0, 0, 1);
     OH_Drawing_PathAddPathWithMatrixAndMode(nullptr, src, matrix, PATH_ADD_MODE_APPEND);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
@@ -407,7 +410,7 @@ int TestPathAddPathWithModeNormal()
     // 5. Add the source path to the current path using OH_Drawing_PathAddPathWithMode. The third parameter
     // enumerates calling this interface.
     OH_Drawing_PathAddMode modes[] = { PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND };
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < PATH_L2; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddPathWithMode(path, src, modes[i]);
         // add assert
@@ -484,9 +487,9 @@ int TestPathAddPathWithOffsetAndModeNormal()
     // 5. Add the transformed source path to the current path using OH_Drawing_PathAddPathWithOffsetAndMode.
     // The fifth parameter enumerates calling this interface.
     OH_Drawing_PathAddMode modes[] = { PATH_ADD_MODE_APPEND, PATH_ADD_MODE_EXTEND };
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < PATH_L2; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE, TEST_OFFSET_VALUE, modes[i]);
+        OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10_F, modes[i]);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
@@ -520,22 +523,22 @@ int TestPathAddPathWithOffsetAndModeNull()
     // 3. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithOffsetAndMode(
-        nullptr, src, TEST_OFFSET_VALUE, TEST_OFFSET_VALUE, PATH_ADD_MODE_APPEND);
+        nullptr, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithOffsetAndMode(
-        path, nullptr, TEST_OFFSET_VALUE, TEST_OFFSET_VALUE, PATH_ADD_MODE_APPEND);
+        path, nullptr, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with 0.00 as the third parameter, expecting failure
     // without crash.
     OH_Drawing_PathAddPathWithOffsetAndMode(
-        path, src, TEST_FLOAT_ZERO, TEST_OFFSET_VALUE, PATH_ADD_MODE_APPEND);
+        path, src, TEST_FLOAT_ZERO, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     // 6. Call OH_Drawing_PathAddPathWithOffsetAndMode with 0.00 as the fourth parameter, expecting failure
     // without crash.
     OH_Drawing_PathAddPathWithOffsetAndMode(
-        path, src, TEST_OFFSET_VALUE, TEST_FLOAT_ZERO, PATH_ADD_MODE_APPEND);
+        path, src, TEST_OFFSET_VALUE_10_F, TEST_FLOAT_ZERO, PATH_ADD_MODE_APPEND);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -570,10 +573,10 @@ int TestPathAddPathWithOffsetAndModeAbnormal()
     OH_Drawing_PathLineTo(src, TEST_RECT_SIZE, TEST_RECT_SIZE);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with an integer as the third parameter, expecting
     // successful call.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10, 10.0f, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     // 6. Call OH_Drawing_PathAddPathWithOffsetAndMode with an integer as the fourth parameter, expecting
     // successful call.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0f, 10, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_OFFSET_VALUE_10_F, TEST_OFFSET_VALUE_10, PATH_ADD_MODE_APPEND);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -608,10 +611,12 @@ int TestPathAddPathWithOffsetAndModeMaximal()
     OH_Drawing_PathLineTo(src, TEST_RECT_SIZE, TEST_RECT_SIZE);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with the third parameter as FLT_MAX + 1, without
     // crashing.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, TEST_FLOAT_MAX_PLUS_ONE, 10.0f, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(
+        path, src, TEST_FLOAT_MAX_PLUS_ONE, TEST_OFFSET_VALUE_10_F, PATH_ADD_MODE_APPEND);
     // 6. Call OH_Drawing_PathAddPathWithOffsetAndMode with the fourth parameter as FLT_MAX + 1, without
     // crashing.
-    OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0f, TEST_FLOAT_MAX_PLUS_ONE, PATH_ADD_MODE_APPEND);
+    OH_Drawing_PathAddPathWithOffsetAndMode(
+        path, src, TEST_OFFSET_VALUE_10_F, TEST_FLOAT_MAX_PLUS_ONE, PATH_ADD_MODE_APPEND);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -647,7 +652,7 @@ int TestPathAddOvalNormal()
     // 5. Add an oval to the path with the specified direction using OH_Drawing_PathAddOval. The third
     // parameter enumerates calling this interface.
     OH_Drawing_PathDirection directions[] = { PATH_DIRECTION_CW, PATH_DIRECTION_CCW };
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < PATH_L2; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddOval(path, rect, directions[i]);
         // add assert
@@ -1022,13 +1027,13 @@ int TestPathAddCircleAbnormal()
     // 4. Add a circle to the path with the second parameter as an integer, which will
     // succeed.
     OH_Drawing_PathAddCircle(
-        path, TEST_CIRCLE_CENTER, 50.0f, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+        path, TEST_CIRCLE_CENTER, 50.0f, TEST_OFFSET_VALUE_10_F, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 5. Add a circle to the path with the third parameter as an integer, which will
     // succeed.
     OH_Drawing_PathAddCircle(
-        path, 50.0f, TEST_CIRCLE_CENTER, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+        path, 50.0f, TEST_CIRCLE_CENTER, TEST_OFFSET_VALUE_10_F, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 6. Add a circle to the path with the fourth parameter as an integer, which will
