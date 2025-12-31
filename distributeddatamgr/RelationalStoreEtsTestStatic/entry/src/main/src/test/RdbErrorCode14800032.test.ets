@@ -676,7 +676,7 @@ export default function RdbErrorCode14800032() {
       let predicates = new data_relationalStore.RdbPredicates('employee');
       let resultSet = await rdbStore!.query(predicates);
       try {
-        resultSet.getRows(50,50)
+        await resultSet.getRows(1);
         resultSet.close();
         done();
       } catch (e: BusinessError) {
