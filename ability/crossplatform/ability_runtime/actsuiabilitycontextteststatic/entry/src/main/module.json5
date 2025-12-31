@@ -66,6 +66,9 @@
       },
       {
         "name": "ohos.permission.MANAGE_WIFI_CONNECTION"
+      },
+      {
+        "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }
     ]
   }
