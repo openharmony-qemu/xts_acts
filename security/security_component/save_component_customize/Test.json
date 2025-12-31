@@ -22,8 +22,6 @@
                 "param set persist.ace.testmode.enabled 1",
                 "param set persist.sys.suspend_manager_enbled 0",
                 "param set persist.usb.setting.gadget_conn_prompt false",
-                "reboot",
-                "wait 5",
                 "power-shell wakeup",
                 "uinput -T -m 540 1752 540 751 100",
                 "uinput -K -d 2054 -u 2054",
