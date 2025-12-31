@@ -68,7 +68,7 @@ export default function DisplayTest() {
     describe("DisplayTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
-        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         // let session:UIExtensionContentSession;
@@ -84,9 +84,8 @@ export default function DisplayTest() {
         let context: common.UIAbilityContext;
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, 'beforeAll start');
-            let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
             await Utils.msSleep(2000);
             displayFoldStatus = display.getFoldStatus();
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);

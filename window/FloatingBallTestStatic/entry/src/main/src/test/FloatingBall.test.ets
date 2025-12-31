@@ -69,17 +69,27 @@ async function getPixelMap(): Promise<image.PixelMap | undefined> {
 
 export default function abilityTest() {
   describe('FloatingBallTest', (): void => {
+    hilog.info(domain, tag, 'FloatingBallTest start');
+    let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     let isFloatingBallEnabled: boolean = false;
     let context : common.UIAbilityContext;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
     let windowStage:window.WindowStage;
+    let win: window.Window;
     beforeAll((): void => {
+      hilog.info(domain, tag, 'beforeAll start');
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+      hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+      await Utils.msSleep(2000);
       isFloatingBallEnabled = floatingBall.isFloatingBallEnabled();
       console.info('beforeAll Floating ball enabled is: ' + isFloatingBallEnabled);
       windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+      hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
+      win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+      hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
       context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-      console.info('beforeAll context  is: ' + context);
+      hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
       isPCStatus = settings.getValueSync(context,'isStatusBarExist','',settings.domainName.USER_PROPERTY)
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
