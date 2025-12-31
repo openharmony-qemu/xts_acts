@@ -75,7 +75,8 @@ static napi_value stabilityTest(napi_env env, napi_callback_info info)
     napi_value args[1];
     napi_valuetype valuetype;
     int32_t caseNum = -1;
-    napi_value promise, resourceName;
+    napi_value promise;
+    napi_value resourceName;
     napi_deferred deferred;
     napi_status status;
 
