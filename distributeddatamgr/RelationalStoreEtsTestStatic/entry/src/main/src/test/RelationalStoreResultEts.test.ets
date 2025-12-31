@@ -871,6 +871,130 @@ export default function RdbResultSetTest() {
       hilog.info(domain, tag, '%{public}s', '************* errcode031 end *************');
     })
 
-
+   /**
+     * @tc.name        testGoToFirstRow001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2400
+     * @tc.desc        GoToFirstRow test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('testGoToFirstRow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testGoToFirstRow001 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let resultSet = await rdbStore2.querySql("SELECT * FROM testerrcode");
+      try{
+        let bool1 = resultSet.goToFirstRow();
+        hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
+        expect(bool1).assertEqual(false);
+        done();
+      }catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testGoToFirstRow001 end *************');
+    })
+    /**
+     * @tc.name        testGoToLastRow001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2500
+     * @tc.desc        testGoToLastRow001 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('testGoToLastRow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testGoToLastRow001 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let resultSet = await rdbStore2.querySql("SELECT * FROM testerrcode");
+      try{
+        let bool1 = resultSet.goToLastRow();
+        hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
+        expect(bool1).assertEqual(false);
+        done();
+      }catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testGoToLastRow001 end *************');
+    })
+    /**
+     * @tc.name        testGoToNextRow001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2600
+     * @tc.desc        testGoToNextRow001 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('testGoToNextRow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testGoToNextRow001 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let resultSet = await rdbStore2.querySql("SELECT * FROM testerrcode");
+      try{
+        let bool1 = resultSet.goToNextRow();
+        hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
+        expect(bool1).assertEqual(false);
+        done();
+      }catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testGoToNextRow001 end *************');
+    })
+    /**
+     * @tc.name        testGoToPreviousRow001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2700
+     * @tc.desc        testGoToNextRow001 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('testGoToPreviousRow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testGoToPreviousRow001 start *************');
+      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      resultSet.goToLastRow();
+      try{
+        let bool1 = resultSet.goToPreviousRow();
+        hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
+        expect(bool1).assertEqual(true);
+        done();
+      }catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testGoToPreviousRow001 end *************');
+    })
+    /**
+     * @tc.name        testIsColumnNull001
+     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_2800
+     * @tc.desc        testIsColumnNull001 test
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('testIsColumnNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testIsColumnNull001 start *************');
+      let resultSet = await rdbStore.querySql("SELECT * FROM test");
+      resultSet.goToFirstRow();
+      try{
+        let bool1 = resultSet.isColumnNull(resultSet.getColumnIndex("data1"));
+        hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
+        expect(bool1).assertEqual(false);
+        done();
+      }catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testIsColumnNull001 end *************');
+    })
   })
 }
