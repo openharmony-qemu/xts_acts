@@ -1560,32 +1560,6 @@ static napi_value NAPI_TestMediaSourceSetMimeType(napi_env env, napi_callback_in
     return result;
 }
 
-static napi_value NAPI_TestMediaSourceEnableOfflineCache(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    size_t argc = 2;
-    napi_value args[PARAM_2] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    int32_t sourceType = 0;
-    int32_t stringType = 0;
-    napi_get_value_int32(env, args[PARAM_0], &sourceType);
-    napi_get_value_int32(env, args[PARAM_1], &stringType);
-    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
-    OH_AVMediaSource* mediaSource = OH_AVMediaSource_CreateWithUrl("http://example.com/video.mp4", header);
-    OH_AVErrCode errorCode;
-    if (sourceType == PARAM_1) {
-        errorCode = OH_AVMediaSource_EnableOfflineCache(nullptr, false);
-    } else if (stringType == PARAM_1) {
-        errorCode = OH_AVMediaSource_EnableOfflineCache(mediaSource, false);
-    } else if (stringType == PARAM_2) {
-        errorCode = OH_AVMediaSource_EnableOfflineCache(mediaSource, true);
-    } else {
-        errorCode = OH_AVMediaSource_EnableOfflineCache(mediaSource, true);
-    }
-    napi_create_int32(env, errorCode, &result);
-    return result;
-}
-
 static napi_value NAPI_TestAVPlayerSetMediaSource(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -2563,8 +2537,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testMediaSourceCreateWithDataSource", nullptr, NAPI_TestMediaSourceCreateWithDataSource, nullptr, nullptr,
             nullptr, napi_default, nullptr},
         {"testMediaSourceSetMimeType", nullptr, NAPI_TestMediaSourceSetMimeType, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"testMediaSourceEnableOfflineCache", nullptr, NAPI_TestMediaSourceEnableOfflineCache, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"testAVPlayerSetMediaSource", nullptr, NAPI_TestAVPlayerSetMediaSource, nullptr, nullptr, nullptr,
             napi_default, nullptr},

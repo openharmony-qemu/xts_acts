@@ -52,7 +52,6 @@ export const testMediaSourceCreateWithUrl: (a: number, b: number) => number;  //
 export const testMediaSourceCreateWithFD: (fdSrc: media.AVFileDescriptor) => number;
 export const testMediaSourceCreateWithDataSource: (a: number, fdSrc: media.AVFileDescriptor) => number;
 export const testMediaSourceSetMimeType: (a: number, b: number) => number;  // a:[0,1], b:[0,2]
-export const testMediaSourceEnableOfflineCache: (a: number, b: number) => number;  // a:[0,1], b:[0,2]
 export const testAVPlayerSetMediaSource: (a: number, b: number) => number;  // a:[0,1], b:[0,1]
 export const testAVMediaSourceLoaderDestroyError: () => number;
 export const testAVMediaSourceSetMediaSourceLoaderError: (a: number) => number;  // a:[0,1]

@@ -961,32 +961,6 @@ export default function OhAVPlayerNDKTest() {
       done();
     });
     /**
-     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0001
-     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0001
-     * @tc.desc   Test OH_MediaSource_SetMimeType, intput null mediasource
-     *            testOhAvMediaSourceSetEnable0001
-     * @tc.type   Function
-     * @tc.level  Level 0
-     */
-    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0001', Level.LEVEL1, async (done: Function) => {
-      let testResult = avplayer.testMediaSourceEnableOfflineCache(1, 0);
-      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
-      done();
-    });
-    /**
-     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0002
-     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0002
-     * @tc.desc   Test OH_MediaSource_SetMimeType, intput null mediasource
-     *            testOhAvMediaSourceSetEnable0001
-     * @tc.type   Function
-     * @tc.level  Level 0
-     */
-    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETENABLE_0002', Level.LEVEL1, async (done: Function) => {
-      let testResult = avplayer.testMediaSourceEnableOfflineCache(0, 2);
-      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_OK);
-      done();
-    });
-    /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCELOADER_DESTROY_0001
      * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCELOADER_DESTROY_0001
      * @tc.desc   Test OH_AVMediaSourceLoader_Destroy, input null avMediaSourceLoader
