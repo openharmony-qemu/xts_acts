@@ -595,7 +595,8 @@ export default function imageNdkTest() {
     it('testNativeCreatePixelmapFromNativeBuffer',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
-        size: { width: 10, height: 10 }
+        size: { width: 10, height: 10 },
+        pixelFormat: image.PixelMapFormat.RGBA_8888
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
       let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, false);
@@ -616,13 +617,14 @@ export default function imageNdkTest() {
     it('testNativeCreatePixelmapFromNativeBufferNotDMA',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
-        size: { width: 10, height: 10 }
+        size: { width: 10, height: 10 },
+        pixelFormat: image.PixelMapFormat.RGBA_8888
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.SHARE_MEMORY);
       let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, false);
       let msg = 'testNativeCreatePixelmapFromNativeBufferNotDMA result: '
       console.info(msg + result);
-      expect(result).assertEqual(401);
+      expect(result).assertEqual(7600173);
       done();
     })
 
@@ -637,13 +639,14 @@ export default function imageNdkTest() {
     it('testNativeCreatePixelmapFromNativeBufferNull',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const options: image.InitializationOptions = {
-        size: { width: 10, height: 10 }
+        size: { width: 10, height: 10 },
+        pixelFormat: image.PixelMapFormat.RGBA_8888
       };
       const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
       let result: number = ndkTest.testNativeCreatePixelmapFromNativeBuffer(pixelMap, true);
       let msg = 'testNativeCreatePixelmapFromNativeBufferNull result: '
       console.info(msg + result);
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(401);
       done();
     })
 
@@ -661,6 +664,15 @@ export default function imageNdkTest() {
       let msg = 'testNativeCreatePixelmapFromSurface result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
+      result = ndkTest.testNativeCreatePixelmapFromSurface('1', false); // 1 length
+      msg = 'testNativeCreatePixelmapFromSurface result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      result = ndkTest.testNativeCreatePixelmapFromSurface(
+        '1234567890123456789012345678901234567890123456789012345678901234', false); // 64 length
+      msg = 'testNativeCreatePixelmapFromSurface result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
       done();
     })
 
@@ -676,6 +688,15 @@ export default function imageNdkTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testNativeCreatePixelmapFromSurface('ABC', false);
       let msg = 'testNativeCreatePixelmapFromSurfaceInvalidId result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      result = ndkTest.testNativeCreatePixelmapFromSurface('', false); // 0 length
+      msg = 'testNativeCreatePixelmapFromSurfaceInvalidId result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      result = ndkTest.testNativeCreatePixelmapFromSurface(
+        '12345678901234567890123456789012345678901234567890123456789012345', false); // 65 length
+      msg = 'testNativeCreatePixelmapFromSurfaceInvalidId result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
       done();
@@ -778,7 +799,7 @@ export default function imageNdkTest() {
       let result: number = ndkTest.testNativeIsReleased(pixelMap, true, false);
       let msg = 'testNativeIsReleasedAfterRelease result: '
       console.info(msg + result);
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(401);
       done();
     })
 
