@@ -546,5 +546,198 @@ export default function RunningLockTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1700
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0170
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1700';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            let lock: runningLock.RunningLock =
+              await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+            hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+            let isRunningLock = lock instanceof runningLock.RunningLock;
+            expect(isRunningLock).assertTrue();
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1800
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0180
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1800';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            let lock: runningLock.RunningLock =
+              await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+            hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+            let isRunningLock = lock instanceof runningLock.RunningLock;
+            expect(isRunningLock).assertTrue();
+            let isHold: boolean = lock.isHolding();
+            hilog.info(domain, tag, `${TAG} before hold isHold: ${JSON.stringify(isHold)}`);
+            expect(isHold).assertFalse();
+            lock.hold(5000);
+            isHold = lock.isHolding();
+            hilog.info(domain, tag, `${TAG} after hold isHold: ${JSON.stringify(isHold)}`);
+            expect(isHold).assertTrue();
+            lock.unhold();
+            isHold = lock.isHolding();
+            hilog.info(domain, tag, `${TAG} after unhold isHold: ${JSON.stringify(isHold)}`);
+            expect(isHold).assertFalse();
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1900
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0190
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1900';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+              (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+                if (lock !== null && lock !== undefined) {
+                  hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                  let isRunningLock = lock instanceof runningLock.RunningLock;
+                  expect(isRunningLock).assertTrue();
+                } else {
+                  hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                  expect().assertFail();
+                }
+              });
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2000
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0200
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2000';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          if (isSupported) {
+            runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+              (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+                if (lock !== null && lock !== undefined) {
+                  hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                  let isRunningLock = lock instanceof runningLock.RunningLock;
+                  expect(isRunningLock).assertTrue();
+                  let isHold: boolean = lock.isHolding();
+                  hilog.info(domain, tag, `${TAG} before hold isHold: ${JSON.stringify(isHold)}`);
+                  expect(isHold).assertFalse();
+                  lock.hold(5000);
+                  isHold = lock.isHolding();
+                  hilog.info(domain, tag, `${TAG} after hold isHold: ${JSON.stringify(isHold)}`);
+                  expect(isHold).assertTrue();
+                  lock.unhold();
+                  isHold = lock.isHolding();
+                  hilog.info(domain, tag, `${TAG} after unhold isHold: ${JSON.stringify(isHold)}`);
+                  expect(isHold).assertFalse();
+                } else {
+                  hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                  expect().assertFail();
+                }
+              });
+          } else {
+            hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
+          }
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2100
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0210
+     * @tc.desc   The lock type is BACKGROUND_USER_IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2100';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          hilog.info(domain, tag,
+            `${TAG} BACKGROUND: ${runningLock.RunningLockType.BACKGROUND_USER_IDLE}`);
+          let runningLockType: int = runningLock.RunningLockType.BACKGROUND_USER_IDLE;
+          hilog.info(domain, tag, `${TAG} runningLockType: ${runningLockType}`);
+          expect(runningLockType).assertEqual(129);
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
   })
 }
