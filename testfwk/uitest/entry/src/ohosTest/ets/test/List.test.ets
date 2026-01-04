@@ -14,7 +14,9 @@
  */
 import UiTest from './uitest.test'
 import uitestEnumTest from './UitestEnum.test';
+import uitestUiWindowTest from './UitestUiWindow.test'
 export default function testsuite() {
   UiTest();
-  uitestEnumTest(); 
+  uitestEnumTest();
+  uitestUiWindowTest();
 }
