@@ -51,6 +51,170 @@ OH_AudioStreamBuilder* ActsAudioNdkTest::CreateRenderBuilder()
     return builder;
 }
 
+
+/**
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100
+ * @tc.desc   Test OH_AudioRenderer_GetLatency interface with valid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100, TestSize.Level0)
+{
+    OH_AudioStreamBuilder* builder = ActsAudioNdkTest::CreateRenderBuilder();
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MOVIE;
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
+
+    OH_AudioRenderer* audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+
+    int32_t latency = -1;
+    result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+    EXPECT_GE(latency, 0);
+
+    latency = -1;
+    result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_SOFTWARE, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+    EXPECT_GE(latency, 0);
+
+    latency = -1;
+    result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_HARDWARE, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+    EXPECT_GE(latency, 0);
+
+    OH_AudioRenderer_Stop(audioRenderer);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+}
+
+/**
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200
+ * @tc.desc   Test OH_AudioRenderer_GetLatency interface with nullptr renderer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200, TestSize.Level1)
+{
+    int32_t latency = 0;
+    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(nullptr,AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_ERROR_INVALID_PARAM);
+}
+
+/**
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300
+ * @tc.desc   Test OH_AudioRenderer_GetLatency interface with nullptr latency pointer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300, TestSize.Level1)
+{
+    OH_AudioStreamBuilder* builder = ActsAudioNdkTest::CreateRenderBuilder();
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MOVIE;
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
+
+    OH_AudioRenderer* audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+
+    result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_ALL, nullptr);
+    EXPECT_EQ(result, AUDIOSTREAM_ERROR_INVALID_PARAM);
+
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+}
+
+/**
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400
+ * @tc.desc   Test OH_AudioRenderer_GetLatency interface with invalid latency type.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400, TestSize.Level1)
+{
+    OH_AudioStreamBuilder* builder = ActsAudioNdkTest::CreateRenderBuilder();
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MOVIE;
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
+
+    OH_AudioRenderer* audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+
+    int32_t latency = 0;
+    OH_AudioStream_LatencyType invalidType = static_cast<OH_AudioStream_LatencyType>(3);
+    result = OH_AudioRenderer_GetLatency(audioRenderer, invalidType, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_ERROR_INVALID_PARAM);
+
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+}
+
+/**
+ * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500
+ * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500
+ * @tc.desc   Test OH_AudioRenderer_GetLatency interface with nullptr latency pointer.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500, TestSize.Level1)
+{
+    OH_AudioStreamBuilder* builder = ActsAudioNdkTest::CreateRenderBuilder();
+
+    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_MOVIE;
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteData;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
+
+    OH_AudioRenderer* audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    EXPECT_EQ(result, AUDIOSTREAM_SUCCESS);
+
+    int32_t latency = 0;
+    result = OH_AudioRenderer_GetLatency(nullptr, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    EXPECT_EQ(result, AUDIOSTREAM_ERROR_INVALID_PARAM);
+
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+}
+
 /**
  * @tc.name   SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100
  * @tc.number SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetUnderflowCount_0100
