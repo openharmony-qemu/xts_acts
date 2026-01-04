@@ -28,6 +28,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0100
      * @tc.number MotionPathOptionsTest_0100
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -40,7 +41,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0200
      * @tc.number MotionPathOptionsTest_0200
-     * @tc.desc   Test SwiperFontWeight Enumerated
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -53,6 +54,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0300
      * @tc.number MotionPathOptionsTest_0300
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -65,6 +67,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0400
      * @tc.number MotionPathOptionsTest_0400
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -77,6 +80,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0500
      * @tc.number MotionPathOptionsTest_0500
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -89,6 +93,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0600
      * @tc.number MotionPathOptionsTest_0600
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -101,6 +106,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0700
      * @tc.number MotionPathOptionsTest_0700
+     * @tc.desc   Test MotionPath options 
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -113,6 +119,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0800
      * @tc.number MotionPathOptionsTest_0800
+     * @tc.desc   Test MotionPath options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
