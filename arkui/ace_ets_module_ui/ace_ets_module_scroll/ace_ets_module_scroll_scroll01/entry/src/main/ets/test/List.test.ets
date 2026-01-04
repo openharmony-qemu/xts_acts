@@ -61,6 +61,7 @@ import scrollFrictionMin from './Scroll/scrollFrictionMin.test';
 import scrollFrictionRes from './Scroll/scrollFrictionRes.test';
 import scrollOffsetRes from './Scroll/scrollOffsetRes.test';
 import scrollContentOffset from './Scroll/scrollContentOffset.test';
+import currentScroll from './scrollCallback/currentScroll.test';
 
 export default function testsuite() {
   OnScrollBeginJsunit()
@@ -111,4 +112,5 @@ export default function testsuite() {
   scrollFrictionRes()
   scrollOffsetRes()
   scrollContentOffset()
+  currentScroll()
 }
