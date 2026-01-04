@@ -40,7 +40,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
 let rdbStore:relationalStore.RdbStore;
 
 async function createTest(rdbStore:relationalStore.RdbStore) {
-  console.log(TAG + "createTest data start");
+  console.log(tag + "createTest data start");
   {
     let u8 = new Uint8Array([1, 2, 3]);
     const valueBucket: relationalStore.ValuesBucket = {

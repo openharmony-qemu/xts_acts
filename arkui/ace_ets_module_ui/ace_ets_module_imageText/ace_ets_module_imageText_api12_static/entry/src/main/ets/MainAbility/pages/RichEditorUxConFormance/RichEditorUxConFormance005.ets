@@ -86,8 +86,8 @@ build() {
               this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.content += '\n'
             } else {
-              console.log('RichEditorController textStyle:' + JSON.stringify((item).textStyle));
-              this.spanInfo = JSON.stringify((item).textStyle);
+              console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
+              this.spanInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
               this.content += (item as RichEditorTextSpanResult).value;
               this.content += '\n'
             }
