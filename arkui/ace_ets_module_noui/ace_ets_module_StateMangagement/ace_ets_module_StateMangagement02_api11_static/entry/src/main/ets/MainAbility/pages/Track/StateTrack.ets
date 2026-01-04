@@ -31,7 +31,7 @@ import {
   PropRef,
   ObjectLink,
   Link,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Consume,
   Provide,
@@ -63,7 +63,7 @@ struct propChild {
 
   build() {
     Column() {
-      Text('@Prop').fontSize(9).height('5%')
+      Text('@PropRef').fontSize(9).height('5%')
       Text('memberA=' + `${this.prop.memberA}`).height('5%')
         .key('Track_prop')
         .fontSize(9)

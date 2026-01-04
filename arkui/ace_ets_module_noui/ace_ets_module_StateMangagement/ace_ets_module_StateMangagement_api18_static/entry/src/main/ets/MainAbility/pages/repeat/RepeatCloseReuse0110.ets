@@ -37,7 +37,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   AppStorage,
   Local,
   Param

@@ -104,7 +104,7 @@ it('StateDate2Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate2Jsunit_static_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T00:00:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0100] END');
       done();
     });
@@ -126,7 +126,7 @@ it('StateDate2Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T00:00:00.001Z\"");
       console.info('[StateDate2Jsunit_static_0200] END');
       done();
     });
@@ -148,12 +148,13 @@ it('StateDate2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0300] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2022-08-08T00:00:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0300] END');
       done();
     });
 
-    /**
+    
+/**
      * @tc.number   StateDate2Jsunit_static_0400
      * @tc.name     StateDate2Jsunit_static_0400
      * @tc.desc     StateDate2Jsunit_static_0400
@@ -170,12 +171,13 @@ it('StateDate2Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0400] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-09-08T00:00:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0400] END');
       done();
     });
 
-    /**
+    
+/**
      * @tc.number   StateDate2Jsunit_static_0500
      * @tc.name     StateDate2Jsunit_static_0500
      * @tc.desc     StateDate2Jsunit_static_0500
@@ -192,7 +194,7 @@ it('StateDate2Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0500] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0500] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-09T00:00:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0500] END');
       done();
     });
@@ -214,7 +216,7 @@ it('StateDate2Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0600] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0600] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T01:00:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0600] END');
       done();
     });
@@ -236,7 +238,7 @@ it('StateDate2Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0700] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0700] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T00:01:00.000Z\"");
       console.info('[StateDate2Jsunit_static_0700] END');
       done();
     });
@@ -258,7 +260,7 @@ it('StateDate2Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0800] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0800] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T00:00:01.000Z\"");
       console.info('[StateDate2Jsunit_static_0800] END');
       done();
     });
@@ -280,7 +282,7 @@ it('StateDate2Jsunit_static_0900', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateDate2Jsunit_static_0900] component obj is: " + JSON.stringify(obj));
       console.info("[StateDate1Jsunit_static_0900] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('content')).getString('store_')).assertEqual("2021-08-08T00:00:00.000Z");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("\"2021-08-08T00:00:00.001Z\"");
       console.info('[StateDate2Jsunit_static_0900] END');
       done();
     });

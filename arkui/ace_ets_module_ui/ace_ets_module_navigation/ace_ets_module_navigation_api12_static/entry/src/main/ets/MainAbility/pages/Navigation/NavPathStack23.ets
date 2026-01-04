@@ -75,7 +75,7 @@ import {
   NavPathStack
 } from '@ohos.arkui.component';
 import {
-  State, Link, Prop, Provide
+  State, Link, PropRef, Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Callback } from '@ohos.base'

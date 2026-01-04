@@ -54,7 +54,7 @@ import {
   TextInputController,
 } from '@ohos.arkui.component';
 import {
-  State, Link, Prop, AppStorage
+  State, Link, PropRef, AppStorage
 } from '@ohos.arkui.stateManagement';
 
 class Params {

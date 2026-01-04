@@ -24,7 +24,7 @@ import uiObserver from '@ohos.arkui.observer'
 import {
   State,
   Link,
-  Prop,Provide,Consume,StorageLink
+  PropRef,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';

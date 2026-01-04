@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List, ListItem,Marquee,NavDestination,Polygo
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { PolygonModifier } from "@ohos.arkui.modifier";
 

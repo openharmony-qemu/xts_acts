@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import {
   AlignRuleOption,
   Color,

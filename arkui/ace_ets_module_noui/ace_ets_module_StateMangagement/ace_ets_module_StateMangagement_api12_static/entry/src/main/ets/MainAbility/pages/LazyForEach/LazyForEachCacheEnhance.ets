@@ -42,7 +42,7 @@ import {
   Watch,
   Link,
   StorageLink,
-  Prop,
+  PropRef,
   PropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';

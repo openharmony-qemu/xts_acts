@@ -33,7 +33,7 @@ import { LevelMode } from '@ohos.promptAction';
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'

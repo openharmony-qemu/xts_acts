@@ -39,7 +39,7 @@ import {
   TextAlign,
   VerticalAlign
 } from '@ohos.arkui.component'
-import { Prop, State, StorageLink } from '@ohos.arkui.stateManagement'
+import { PropRef, State, StorageLink } from '@ohos.arkui.stateManagement'
 import { CustomTheme, Theme, ThemeControl } from '@ohos.arkui.theme';
 import { redCustomTheme, systemDefaultTheme } from '../../themes/CustomTheme1';
 

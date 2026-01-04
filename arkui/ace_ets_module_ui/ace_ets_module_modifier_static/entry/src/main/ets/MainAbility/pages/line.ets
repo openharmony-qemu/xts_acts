@@ -17,7 +17,7 @@ import { Entry,Component,$r, Padding,Column,Line,ImageAnimator,LineAttribute,Ima
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { LineModifier } from "@ohos.arkui.modifier";
 

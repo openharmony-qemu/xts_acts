@@ -83,7 +83,7 @@ import {
   AlphabetIndexer,
   GridRowAttribute
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import { GridRowModifier } from "@ohos.arkui.modifier";
 
 class CustomModifier extends GridRowModifier {

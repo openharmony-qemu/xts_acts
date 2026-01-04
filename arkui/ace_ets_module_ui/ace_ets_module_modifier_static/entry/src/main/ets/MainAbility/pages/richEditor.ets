@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List,CopyOptions, AttributeModifier,RichEdit
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';

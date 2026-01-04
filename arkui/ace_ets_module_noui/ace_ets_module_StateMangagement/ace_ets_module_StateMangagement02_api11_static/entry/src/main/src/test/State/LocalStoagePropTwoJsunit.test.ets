@@ -98,7 +98,7 @@ it('LocalStoagePropTwoJsunit_static_0100', Level.LEVEL0, async (done: () => void
       console.info("[LocalStoagePropTwoJsunit_static_0100] obj1 is: " + JSON.stringify(obj1));
 
       expect(obj1.getElement('$attrs').getString('content'))
-        .assertEqual('Prop1:{"value":6}, Prop2:1, Prop3:true, Prop4:abc, Prop5:1, Prop6:{"value":66}, Prop7:{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":66},{"value":67}],"isAPI_":false}, Prop8:{"buffer":[null,null,null,null],"actualLength":0,"store_":[1,2],"isAPI_":false}, Prop9:{"buffer":[null,null,null,null],"actualLength":0,"store_":[true,false],"isAPI_":false}, Prop10:{"buffer":[null,null,null,null],"actualLength":0,"store_":["abc","efd"],"isAPI_":false}, Prop11:{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":1,"#ordinal":0},{"value":2,"#ordinal":1}],"isAPI_":false}, Prop12:[{"value":66},{"value":67}]')
+        .assertEqual('Prop1:{"value":6}, Prop2:1, Prop3:true, Prop4:abc, Prop5:1, Prop6:{"value":66}, Prop7:[{"value":66},{"value":67}], Prop8:[1,2], Prop9:[true,false], Prop10:["abc","efd"], Prop11:[1,2], Prop12:[{"value":66},{"value":67}]')
       console.info('[LocalStoagePropTwoJsunit_static_0100] END');
       done();
     });

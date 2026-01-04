@@ -37,7 +37,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement'
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';

@@ -51,7 +51,7 @@ import {
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component

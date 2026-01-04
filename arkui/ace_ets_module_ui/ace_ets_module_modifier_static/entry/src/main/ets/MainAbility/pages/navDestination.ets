@@ -18,7 +18,7 @@ import { Entry,Component,$r,Column,Button,NavDestination,ClickEvent,Text,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { NavDestinationModifier } from "@ohos.arkui.modifier";

@@ -96,7 +96,7 @@ it('LocalStoagePropFourJsunit_static_0100', Level.LEVEL0, async (done: () => voi
       let strJson1 = inspector.getInspectorByKey('text_state');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStoagePropFourJsunit_static_0200] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:1,Link:1,Prop:1,Provide:1');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:1,Link:1,PropRef:1,Provide:1');
 
       console.info('[LocalStoagePropFourJsunit_static_0200] END');
       done();

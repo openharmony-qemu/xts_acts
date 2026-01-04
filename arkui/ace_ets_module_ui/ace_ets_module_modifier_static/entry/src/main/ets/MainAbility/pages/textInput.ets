@@ -17,7 +17,7 @@ import { Entry,Component,Video,Resource,$r,TextPicker,TextInputStyle,BarState,In
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { TextInputModifier } from "@ohos.arkui.modifier";

@@ -17,7 +17,7 @@ import { Entry,Component,Video,Resource,$r,ToggleAttribute,TextArea,TextClockCon
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { ToggleModifier } from "@ohos.arkui.modifier";

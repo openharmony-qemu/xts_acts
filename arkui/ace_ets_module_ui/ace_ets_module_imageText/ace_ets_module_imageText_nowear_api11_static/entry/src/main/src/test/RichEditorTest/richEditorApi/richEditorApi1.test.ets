@@ -50,7 +50,7 @@ export default function richEditorApi1() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get richEditorApi1 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("richEditorApi1" == pages.name)) {
           console.info("get richEditorApi1 pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

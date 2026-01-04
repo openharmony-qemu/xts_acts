@@ -33,7 +33,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import dragController from '@ohos.arkui.dragController'
 import { AppStorage } from '@ohos.arkui.stateManagement';

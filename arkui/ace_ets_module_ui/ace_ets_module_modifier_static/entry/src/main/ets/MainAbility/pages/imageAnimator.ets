@@ -17,7 +17,7 @@ import { Entry,Component,$r, Padding,Column,ImageAnimator,Alignment,FillMode,Ani
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { ImageAnimatorModifier } from "@ohos.arkui.modifier";
 

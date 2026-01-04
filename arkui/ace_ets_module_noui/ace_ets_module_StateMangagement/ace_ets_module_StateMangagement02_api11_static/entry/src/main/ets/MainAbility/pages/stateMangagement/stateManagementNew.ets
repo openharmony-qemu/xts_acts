@@ -46,14 +46,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
   Environment,
@@ -79,7 +79,7 @@ struct StateManagementGetShared {
     let uiContext = this.getUIContext();
     try {
       let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('stateManagementNew', router);
+      AppStorage.setOrCreate<Router>('router', router);
     } catch (error: Error) {
       console.log('error ' + error);
     }
@@ -152,8 +152,6 @@ struct StateManagementGetShared {
           } catch (err) {
             console.info("setOrCreate emit action state err: " + JSON.stringify((err as Error)?.message))
           }
-          // this.storage1?.setOrCreate("storageSimpleProp",47)
-          // console.log("storageSimpleProp setOrCreate is :  " + this.simpleVarName)
         })
 
       Text(`Parent from LocalStorage ${this.simpleVarName}`).height('5%')

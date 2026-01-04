@@ -235,7 +235,7 @@ import {
   AlignRuleOption
 } from '@ohos.arkui.component'
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 import { attrsManager } from '../../common/AttrsManager';
@@ -829,7 +829,7 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 @Entry
 @Component
 struct accessibilityTextTestDropPage {
-  @StorageProp('_zIndexButtonModifier') _accessibilityTextButtton: SetV = {
+  @StoragePropRef('_zIndexButtonModifier') _accessibilityTextButtton: SetV = {
     accessibilityText:''
   }
   @State _accessibilityTextAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
