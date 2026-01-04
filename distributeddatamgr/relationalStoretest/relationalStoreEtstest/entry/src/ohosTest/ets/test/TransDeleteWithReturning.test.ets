@@ -48,11 +48,15 @@ const CREATE_TRIGGER2 = "CREATE TRIGGER after_test_delete " +
   "END;"
 const DROP_TRIGGER1 = "DROP TRIGGER IF EXISTS after_test_delete;";
 const dbName = "DeleteTrans.db";
+const dbName1 = "DeleteTransCorrupt.db";
 const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-
+const STORE_CONFIG1: relationalStore.StoreConfig = {
+  name: dbName1,
+  securityLevel: relationalStore.SecurityLevel.S1,
+}
 let options: relationalStore.TransactionOptions = {
   transactionType: relationalStore.TransactionType.IMMEDIATE
 }
@@ -79,7 +83,7 @@ async function corruptDatabaseFile(fileName: string)
 
 async function createCorruptDb()
 {
-  let dbPath = context.databaseDir + "/rdb/" + STORE_CONFIG.name;
+  let dbPath = context.databaseDir + "/rdb/" + STORE_CONFIG1.name;
   let dbPathWal = dbPath + "-wal";
   let dbPathShm = dbPath + "-shm";
   await corruptDatabaseFile(dbPath);
@@ -707,6 +711,36 @@ export default function TransDeleteWithReturning() {
      */
     it('transDeleteWithReturning018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* transDeleteWithReturning018 start *************");
+      let rdbStoreCorrupt: relationalStore.RdbStore | undefined = undefined;
+      rdbStoreCorrupt = await relationalStore.getRdbStore(context,STORE_CONFIG1);
+      await rdbStoreCorrupt?.executeSql(CREATE_TABLE_TEST);
+      let valueBuckets = new Array<relationalStore.ValuesBucket>();
+      for (let i = 0; i < 10; i++) {
+        const asset: relationalStore.Asset = {
+          name: "example-image.jpg" + i,
+          uri: "content://media/external/images/media/12345" + i,
+          path: "/storage/emulated/0/Pictures/example-image.jpg" + i,
+          createTime: "2024-01-15T10:30:00Z" + i,
+          modifyTime: "2024-01-15T14:45:23Z" + i,
+          size: "2048576" + i
+        }
+        const valueBucket: relationalStore.ValuesBucket = {
+          'name': 'zhangsan' + i,
+          'age': 18 + i,
+          'salary': 25000.5 + i,
+          'data': asset,
+          'test_id': i
+        };
+        valueBuckets.push(valueBucket);
+      }
+      const config1: relationalStore.ReturningConfig = {
+        columns: ['name', 'age'],
+      }
+      let results = await rdbStore?.batchInsertWithReturning("test", valueBuckets, config1);
+      const config: relationalStore.ReturningConfig = {
+        columns: ['name', 'age'],
+      }
+      let results = await rdbStore?.batchInsertWithReturning("test", valueBuckets, config);
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
@@ -728,6 +762,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transDeleteWithReturning018 end *************");
       done();
     })
@@ -772,7 +807,7 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.rollback();
+      await deferredTrans?.commit();
       await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning020 end *************");
       done();
