@@ -16,7 +16,7 @@
         "description": "$string:EntryAbility_desc",
         "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
-        "startWindowIcon": "$media:1",
+        "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
         "skills": [
@@ -42,7 +42,7 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ]
+        ],
       }
     ]
   }
