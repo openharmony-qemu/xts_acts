@@ -735,7 +735,7 @@ export default function UiTest() {
                     let windowMode = await window.getWindowMode();
                     if (windowMode != WindowMode.FLOATING) {
                         await window.resume();
-                        await driver.delayMs(3000);
+                        await driver.delayMs(8000);
                     }
                     await window.maximize();
                 } catch (error) {
@@ -1815,9 +1815,9 @@ export default function UiTest() {
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testFlingWithId disPlay is: ${JSON.stringify(disPlay)}`);
             let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+            await driver.delayMs(waitUiReadyMs);
             try {
-                await window.maximize()
-                await driver.delayMs(500)
+                await maxUiWindow(driver, window);
             } catch (error) {
                 console.info('It is already a Fullscreen window')
             }
