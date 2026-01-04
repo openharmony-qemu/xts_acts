@@ -18,6 +18,7 @@
 #include "containerPicker/ContainerPickerSelectedIndexTest.cpp"
 #include "containerPicker/ContainerPickerSelectionIndicatorTest.cpp"
 #include "containerPicker/ContainerPickerSubComponentTest.cpp"
+#include "MotionPath/MotionPathOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -93,6 +94,22 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSubComponent003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent004", nullptr,
          TestContainerPickerSubComponent004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testMotionPathOptions001", nullptr, MotionPathOptionsCreate, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions002", nullptr, MotionPathOptionsPath, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions003", nullptr, MotionPathOptionsFrom, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions004", nullptr, MotionPathOptionsTo, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions005", nullptr, MotionPathOptionsRotatable, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions006", nullptr, GetMotionPathOptions, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions007", nullptr, GetMotionPathOptionsInvalid, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testMotionPathOptions008", nullptr, GetPathBufferSizeError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
