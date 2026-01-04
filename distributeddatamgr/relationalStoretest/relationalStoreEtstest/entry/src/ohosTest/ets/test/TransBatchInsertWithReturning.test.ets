@@ -24,11 +24,15 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "data ASSET, " + "data1 ASSETS," + "blobType BLOB)";
 
 const dbName = "BachInsertTrans.db";
+const dbName1 = "BachInsertTransCorrupt.db";
 const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-
+const STORE_CONFIG1: relationalStore.StoreConfig = {
+  name: dbName1,
+  securityLevel: relationalStore.SecurityLevel.S1,
+}
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
@@ -997,12 +1001,15 @@ export default function TransBatchInsertWithReturning() {
      */
     it('transBatchInsertWithReturning019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       console.log(TAG + "************* transBatchInsertWithReturning019 start *************");
+      let rdbStoreCorrupt: relationalStore.RdbStore | undefined = undefined;
+      rdbStoreCorrupt = await relationalStore.getRdbStore(context,STORE_CONFIG1);
+      await rdbStoreCorrupt?.executeSql(CREATE_TABLE_TEST);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18,
         'salary': 25000.5,
       };
-      let trans = await rdbStore?.createTransaction(options);
+      let trans = await rdbStoreCorrupt?.createTransaction(options);
       await createCorruptDb();
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -1021,6 +1028,7 @@ export default function TransBatchInsertWithReturning() {
         console.error(TAG + `transBatchInsertWithReturningSync019 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800011);
       }
+      await relationalStore.deleteRdbStore(context,STORE_CONFIG1);
       console.log(TAG + "************* transBatchInsertWithReturning019 end *************");
       done();
     })
@@ -1100,7 +1108,7 @@ export default function TransBatchInsertWithReturning() {
         console.error(TAG + `transBatchInsertWithReturningSync021 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual(14800024);
       }
-      await deferredTrans?.rollback();
+      await deferredTrans?.commit();
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning021 end *************");
       done();
