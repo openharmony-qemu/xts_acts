@@ -86,7 +86,7 @@ let netConnOnEvent3 =async (caseName: string,netConn: connection.NetConnection) 
         ListenTimes+=10;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netConnectionPropertiesChange" + JSON.stringify(value));
     });
-    netConn.on('netLost', (value: NetHandle) => {
+    netConn.on('netLost', (value: connection.NetHandle) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
     });
