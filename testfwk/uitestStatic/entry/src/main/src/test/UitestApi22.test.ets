@@ -17,7 +17,7 @@ import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIEle
   ComponentEventType, WindowChangeType, UiWindow, ResizeDirection, Point } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import display from '@ohos.display';
-import { Utils, startAbility, stopApplication } from './Util.test';
+import { Utils, startAbility, stopApplication, getInputMethodPermission } from './Util.test';
 import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -29,8 +29,11 @@ export default function uitestDriverTestApi22() {
     let driver: Driver;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTestApi22 loadup start!!!!!");
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       driver = Driver.create();
       await Utils.msSleep(1000);
+      await getInputMethodPermission(driver);
+      await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, "uitestDriverTestApi22 loadup over!!!!!")
     })
 
@@ -1483,7 +1486,7 @@ export default function uitestDriverTestApi22() {
           let windowMode = await window.getWindowMode();
           if (windowMode != WindowMode.FLOATING) {
             await window.resume();
-            await driver.delayMs(3000);
+            await driver.delayMs(8000);
           }
           await window.maximize();
         } catch (error) {

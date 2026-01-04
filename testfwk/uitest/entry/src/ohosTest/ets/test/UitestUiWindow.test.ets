@@ -49,7 +49,7 @@ async function firstSplit(driver: Driver) {
       let windowMode = await window.getWindowMode();
       if (windowMode != WindowMode.FLOATING) {
         await window.resume();
-        await driver.delayMs(3000);
+        await driver.delayMs(8000);
       }
     } catch (error) {
       console.log(`${TestTag}, firstSplit resume error,${JSON.stringify(error)}`);

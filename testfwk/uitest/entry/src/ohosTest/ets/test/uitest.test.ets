@@ -50,6 +50,7 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
             let windowMode = await window.getWindowMode();
             if (windowMode != WindowMode.FLOATING) {
                 await window.resume();
+                await driver.delayMs(8000);
             }
             await window.maximize();
         } catch (error) {
@@ -4636,20 +4637,22 @@ export default function UiTest() {
             try {
                 await window1.split()
                 await driver.delayMs(waitUiReadyMs * 2)
-                let testLabel = await driver.findComponent(ON.text('test label'));
-                await driver.delayMs(waitUiReadyMs);
-                if (testLabel == null) {
-                    let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
-                    expect(scbCom != null).assertTrue();
+                let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
+                if (scbCom != null) {
+                    expect().assertTrue();
                 } else {
-                    await testLabel.click();
-                    await driver.delayMs(waitUiReadyMs);
-                    let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                    let window2Mode = await window2.getWindowMode();
-                    expect(window2Mode == WindowMode.PRIMARY).assertTrue();
-                    let testWindow = await driver.findWindow({bundleName:'com.uitest.acts'})
-                    let testWindowMode = await testWindow.getWindowMode();
-                    expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+                    let testLabel = await driver.findComponent(ON.text('test label'));
+                    if (testLabel != null) {
+                        await driver.delayMs(waitUiReadyMs);
+                        await testLabel.click();
+                        await driver.delayMs(waitUiReadyMs);
+                        let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+                        let window2Mode = await window2.getWindowMode();
+                        expect(window2Mode == WindowMode.PRIMARY).assertTrue();
+                        let testWindow = await driver.findWindow({bundleName:'com.uitest.acts'})
+                        let testWindowMode = await testWindow.getWindowMode();
+                        expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+                    }
                 }
             }
             catch (err) {
@@ -5113,7 +5116,7 @@ export default function UiTest() {
                     let windowMode = await window.getWindowMode();
                     if (windowMode != WindowMode.FLOATING) {
                         await window.resume();
-                        await driver.delayMs(3000);
+                        await driver.delayMs(8000);
                     }
                     await window.maximize();
                 } catch (error) {

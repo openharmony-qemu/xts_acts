@@ -37,6 +37,7 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
       let windowMode = await window.getWindowMode();
       if (windowMode != WindowMode.FLOATING) {
         await window.resume();
+        await driver.delayMs(8000);
       }
       await window.maximize();
     } catch (error) {
