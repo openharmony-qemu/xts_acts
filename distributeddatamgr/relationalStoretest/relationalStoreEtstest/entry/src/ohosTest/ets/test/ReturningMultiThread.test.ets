@@ -24,7 +24,7 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "data ASSET, " + "data1 ASSETS," + "blobType BLOB," +
   "test_id INTEGER," + "FOREIGN KEY (test_id) REFERENCES test1(test_id)" + ");"
 
-const dbName = "DeleteRdbStore.db";
+const dbName = "returningMuti.db";
 const STORE_CONFIG: relationalStore.StoreConfig = {
   name: dbName,
   securityLevel: relationalStore.SecurityLevel.S1,
