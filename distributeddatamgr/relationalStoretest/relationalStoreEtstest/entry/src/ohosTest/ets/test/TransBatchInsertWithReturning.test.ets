@@ -58,7 +58,7 @@ async function corruptDatabaseFile(fileName: string)
 
 async function createCorruptDb()
 {
-  let dbPath = context.databaseDir + "/rdb/" + STORE_CONFIG.name;
+  let dbPath = context.databaseDir + "/rdb/" + STORE_CONFIG1.name;
   let dbPathWal = dbPath + "-wal";
   let dbPathShm = dbPath + "-shm";
   await corruptDatabaseFile(dbPath);
