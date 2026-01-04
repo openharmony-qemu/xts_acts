@@ -999,7 +999,7 @@ export default function TransUpdateWithReturning() {
     it('updateWithReturning018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* updateWithReturning018 start *************");
       let rdbStoreCorrupt: relationalStore.RdbStore | undefined = undefined;
-      rdbStoreCorrupt = await relationalStore.getRdbStore(coontext, STORE_CONFIG1);
+      rdbStoreCorrupt = await relationalStore.getRdbStore(context, STORE_CONFIG1);
       await rdbStoreCorrupt?.executeSql(CREATE_TABLE_TEST);
       let valueBuckets = new Array<relationalStore.ValuesBucket>();
       for (let i = 0; i < 10; i++) {
