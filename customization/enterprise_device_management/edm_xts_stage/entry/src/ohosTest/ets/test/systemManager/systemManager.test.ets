@@ -39,6 +39,8 @@ export default function systemManagerTest() {
     testAddKeyEventPolicies();
     testRemoveKeyEventPolicies();
     testGetKeyEventPolicies();
+    testStartCollectLog();
+    testFinishLogCollected();
   })
 }
 
@@ -1887,6 +1889,111 @@ function testGetKeyEventPolicies() {
       expect(keyInstances1.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testStartCollectLog() {
+  /**
+   * @tc.name   test_start_collect_log_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_COLLECT_LOG_JS_0001
+   * @tc.desc   test systemManager startCollectLog without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_collect_log_0001", Level.LEVEL2, async (done: Function) => {
+    await systemManager.startCollectLog(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(error.code == 801 || error.code == 9200001).assertTrue();
+    });
+    done();
+  });
+
+  /**
+   * @tc.name   test_start_collect_log_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_COLLECT_LOG_JS_0002
+   * @tc.desc   test systemManager startCollectLog with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_collect_log_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    await systemManager.startCollectLog(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(error.code == 801 || error.code == 9200002).assertTrue();
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+   * @tc.name   test_start_collect_log_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_START_COLLECT_LOG_JS_0003
+   * @tc.desc   test systemManager startCollectLog success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_start_collect_log_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await systemManager.startCollectLog(SELFWANT).then(result=>{
+        expect(result == null).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(error.code == 801).assertTrue();
+      });
+      systemManager.finishLogCollected(SELFWANT);
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testFinishLogCollected() {
+  /**
+   * @tc.name   test_finish_log_collected_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_FINISH_LOG_COLLECTED_JS_0001
+   * @tc.desc   test systemManager finishLogCollected without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_finish_log_collected_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.finishLogCollected(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 801 || error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_finish_log_collected_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_FINISH_LOG_COLLECTED_JS_0002
+   * @tc.desc   test systemManager finishLogCollected with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_finish_log_collected_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.finishLogCollected(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 801 || error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
