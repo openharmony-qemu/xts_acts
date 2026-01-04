@@ -418,5 +418,48 @@ export default function uiUiWindowTest() {
       }
     })
 
+    /**
+     * @tc.name   testApi9_UiWindow_split
+     * @tc.number uitestUiWindowTest_011
+     * @tc.desc   change this UiWindow into split screen mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+      try {
+        await window1.split()
+        await driver.delayMs(waitUiReadyMs * 2)
+        let scbCom = await driver.findComponent(ON.id('scb_block_cover'));
+        if (scbCom != null) {
+          expect(scbCom != null).assertTrue();
+        } else {
+          let testLabel = await driver.findComponent(ON.text('test label'));
+          if (testLabel != null) {
+            await driver.delayMs(waitUiReadyMs);
+            await testLabel.click();
+            await driver.delayMs(waitUiReadyMs);
+            let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
+            let window2Mode = await window2.getWindowMode();
+            expect(window2Mode == WindowMode.PRIMARY).assertTrue();
+            let testWindow = await driver.findWindow({bundleName:'com.uitest.acts'})
+            let testWindowMode = await testWindow.getWindowMode();
+            expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+          }
+        }
+      }
+      catch (err) {
+        if (err.message == 'this device can not support this action') {
+          expect(window1 != null).assertTrue()
+        } else {
+          expect(false).assertTrue()
+        }
+      }
+      await stopApplication('com.uitestScene.acts')
+    })
+
   })
 }
