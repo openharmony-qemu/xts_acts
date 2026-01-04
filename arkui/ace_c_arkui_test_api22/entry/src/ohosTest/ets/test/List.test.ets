@@ -51,6 +51,9 @@ import BindSelectionMenuTest from './BindSelectionMenu/BindSelectionMenuTest.tes
 import LayoutManagerTest from './LayoutManager/LayoutManagerTest.test'
 import TextEditMenuOptionsTest from './TextEditMenuOptions/TextEditMenuOptionsTest.test'
 
+import SwiperWithResetTest from './swiper/SwiperWithResetTest.test';
+import PublicAttributeTest from './publicAttribute/PublicAttribute.test'
+
 export default function testsuite() {
   CoastingAxisTest();
   imageAltTest();
@@ -90,4 +93,7 @@ export default function testsuite() {
   BindSelectionMenuTest();
   LayoutManagerTest();
   TextEditMenuOptionsTest();
+
+  SwiperWithResetTest();
+  PublicAttributeTest();
 }

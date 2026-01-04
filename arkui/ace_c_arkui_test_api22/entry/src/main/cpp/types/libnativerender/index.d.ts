@@ -87,3 +87,8 @@ export const LayoutManagerTest006: (a: string) => void;
 export const LayoutManagerTest007: (a: string) => void;
 
 export const LayoutManagerTest008: (a: string) => void;
+// swiper
+export const testSwiper: (content: NodeContent, context: UIContext, withReset: boolean) => void;
+// publicAttirbute
+export const CreateNativeNodePublic: (content: NodeContent, uicontext: UIContext) => void;
+export const DisposeNativeNodePublic: (content: NodeContent) => void;

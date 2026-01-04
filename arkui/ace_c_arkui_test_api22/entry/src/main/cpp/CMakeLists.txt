@@ -43,6 +43,11 @@ add_library(nativerender SHARED
     clipShape/ClipShapeTest.cpp
     CustomComponent/CustomMarkDirtyTest.cpp
     LayoutManager/LayoutManagerTest.cpp
+
+    framework/node_xts_test.cpp
+    swiper/SwiperTest.cpp
+    publicAttirbute/xts_test_case.cpp
+    publicAttirbute/PublicAttribute.cpp
 )
 
 add_library(nativefunc SHARED
