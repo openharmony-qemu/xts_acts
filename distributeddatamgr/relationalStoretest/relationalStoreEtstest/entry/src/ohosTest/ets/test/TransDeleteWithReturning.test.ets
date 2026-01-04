@@ -736,7 +736,7 @@ export default function TransDeleteWithReturning() {
       const config1: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
-      await rdbStore?.batchInsertWithReturning("test", valueBuckets, config1);
+      await rdbStoreCorrupt?.batchInsertWithReturning("test", valueBuckets, config1);
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
