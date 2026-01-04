@@ -1469,7 +1469,6 @@ export default function nativeWindowTest() {
       done();
     });
 
-
     /**
      * @tc.name   testNativeWindowSetMetadataValue_metadata_type
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1516

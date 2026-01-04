@@ -2112,22 +2112,33 @@ napi_value testNativeWindowSetMetadataValue_metadata_type(napi_env env, napi_cal
         OH_IMAGE_HDR_ISO_DUAL,
         OH_IMAGE_HDR_ISO_SINGLE
     };
+    int32_t bufferSize;
+    uint8_t *metadata;
     for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
-        int32_t bufferSize;
-        uint8_t *type;
-        uint8_t val = hdr_type[i];
-        int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &val);
-        if (flag != SUCCESS) {
+        uint8_t type = hdr_type[i];
+        int32_t errorCode =
+            OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
+        if (errorCode != SUCCESS) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_1, &result);
             return result;
         }
-        flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &type);
-        if (*type != val) {
+        errorCode = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &metadata);
+        if (*metadata != type) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result);
             return result;
         }
     }
-
+    uint8_t type = OH_NativeBuffer_MetadataType::OH_VIDEO_NONE;
+    int32_t errorCode = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
+    if (errorCode != SUCCESS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    errorCode = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &metadata);
+    if (errorCode != SUCCESS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     delete initNative;
     napi_create_int32(env, SUCCESS, &result);
     return result;
