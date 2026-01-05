@@ -37,7 +37,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Relative related test cases (20 cases)
     /**
-     * @tc.name   testPathRMoveToNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03100
      * @tc.desc   test for TestPathRMoveToNormal.
      * @tc.type   FUNCTION
@@ -50,7 +50,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRMoveToNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03200
      * @tc.desc   test for TestPathRMoveToNull.
      * @tc.type   FUNCTION
@@ -63,7 +63,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRMoveToAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03300
      * @tc.desc   test for TestPathRMoveToAbnormal.
      * @tc.type   FUNCTION
@@ -76,7 +76,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRMoveToMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03400
      * @tc.desc   test for TestPathRMoveToMaximal.
      * @tc.type   FUNCTION
@@ -89,7 +89,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRLineToNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03500
      * @tc.desc   test for TestPathRLineToNormal.
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRLineToNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03600
      * @tc.desc   test for TestPathRLineToNull.
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRLineToAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03700
      * @tc.desc   test for TestPathRLineToAbnormal.
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRLineToMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03800
      * @tc.desc   test for TestPathRLineToMaximal.
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRQuadToNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_03900
      * @tc.desc   test for TestPathRQuadToNormal.
      * @tc.type   FUNCTION
@@ -154,7 +154,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRQuadToNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04000
      * @tc.desc   test for TestPathRQuadToNull.
      * @tc.type   FUNCTION
@@ -167,7 +167,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRQuadToAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04100
      * @tc.desc   test for TestPathRQuadToAbnormal.
      * @tc.type   FUNCTION
@@ -180,7 +180,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRQuadToMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04200
      * @tc.desc   test for TestPathRQuadToMaximal.
      * @tc.type   FUNCTION
@@ -193,7 +193,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRConicToNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04300
      * @tc.desc   test for TestPathRConicToNormal.
      * @tc.type   FUNCTION
@@ -206,7 +206,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRConicToNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04400
      * @tc.desc   test for TestPathRConicToNull.
      * @tc.type   FUNCTION
@@ -219,7 +219,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRConicToAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04500
      * @tc.desc   test for TestPathRConicToAbnormal.
      * @tc.type   FUNCTION
@@ -232,7 +232,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRConicToMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04600
      * @tc.desc   test for TestPathRConicToMaximal.
      * @tc.type   FUNCTION
@@ -245,7 +245,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRCubicToNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04700
      * @tc.desc   test for TestPathRCubicToNormal.
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRCubicToNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04800
      * @tc.desc   test for TestPathRCubicToNull.
      * @tc.type   FUNCTION
@@ -271,7 +271,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRCubicToAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_04900
      * @tc.desc   test for TestPathRCubicToAbnormal.
      * @tc.type   FUNCTION
@@ -284,7 +284,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathRCubicToMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05000
      * @tc.desc   test for TestPathRCubicToMaximal.
      * @tc.type   FUNCTION
@@ -298,7 +298,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Add Shape related test cases (14 cases)
     /**
-     * @tc.name   testPathAddRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05100
      * @tc.desc   test for TestPathAddRectNormal.
      * @tc.type   FUNCTION
@@ -311,7 +311,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05200
      * @tc.desc   test for TestPathAddRectNull.
      * @tc.type   FUNCTION
@@ -324,7 +324,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05300
      * @tc.desc   test for TestPathAddRectAbnormal.
      * @tc.type   FUNCTION
@@ -337,7 +337,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05400
      * @tc.desc   test for TestPathAddRectMaximal.
      * @tc.type   FUNCTION
@@ -350,7 +350,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectWithInitialCornerNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05500
      * @tc.desc   test for TestPathAddRectWithInitialCornerNormal.
      * @tc.type   FUNCTION
@@ -363,7 +363,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectWithInitialCornerNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05600
      * @tc.desc   test for TestPathAddRectWithInitialCornerNull.
      * @tc.type   FUNCTION
@@ -376,7 +376,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectWithInitialCornerAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05700
      * @tc.desc   test for TestPathAddRectWithInitialCornerAbnormal.
      * @tc.type   FUNCTION
@@ -389,7 +389,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRectWithInitialCornerMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05800
      * @tc.desc   test for TestPathAddRectWithInitialCornerMaximal.
      * @tc.type   FUNCTION
@@ -402,7 +402,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRoundRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_05900
      * @tc.desc   test for TestPathAddRoundRectNormal.
      * @tc.type   FUNCTION
@@ -415,7 +415,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddRoundRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06000
      * @tc.desc   test for TestPathAddRoundRectNull.
      * @tc.type   FUNCTION
@@ -428,7 +428,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalWithInitialPointNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06100
      * @tc.desc   test for TestPathAddOvalWithInitialPointNormal.
      * @tc.type   FUNCTION
@@ -441,7 +441,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalWithInitialPointNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06200
      * @tc.desc   test for TestPathAddOvalWithInitialPointNull.
      * @tc.type   FUNCTION
@@ -454,7 +454,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalWithInitialPointAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06300
      * @tc.desc   test for TestPathAddOvalWithInitialPointAbnormal.
      * @tc.type   FUNCTION
@@ -467,7 +467,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalWithInitialPointMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_06400
      * @tc.desc   test for TestPathAddOvalWithInitialPointMaximal.
      * @tc.type   FUNCTION
@@ -481,7 +481,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part2 Add related test cases (25 cases)
     /**
-     * @tc.name   testPathAddArcNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10100
      * @tc.desc   test for TestPathAddArcNormal.
      * @tc.type   FUNCTION
@@ -494,7 +494,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddArcNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10200
      * @tc.desc   test for TestPathAddArcNull.
      * @tc.type   FUNCTION
@@ -507,7 +507,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddArcAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10300
      * @tc.desc   test for TestPathAddArcAbnormal.
      * @tc.type   FUNCTION
@@ -520,7 +520,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddArcMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10400
      * @tc.desc   test for TestPathAddArcMaximal.
      * @tc.type   FUNCTION
@@ -533,7 +533,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10500
      * @tc.desc   test for TestPathAddPathNormal.
      * @tc.type   FUNCTION
@@ -546,7 +546,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10600
      * @tc.desc   test for TestPathAddPathNull.
      * @tc.type   FUNCTION
@@ -559,7 +559,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithMatrixAndModeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10700
      * @tc.desc   test for TestPathAddPathWithMatrixAndModeNormal.
      * @tc.type   FUNCTION
@@ -572,7 +572,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithMatrixAndModeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10800
      * @tc.desc   test for TestPathAddPathWithMatrixAndModeNull.
      * @tc.type   FUNCTION
@@ -585,7 +585,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithModeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_10900
      * @tc.desc   test for TestPathAddPathWithModeNormal.
      * @tc.type   FUNCTION
@@ -598,7 +598,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithModeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11000
      * @tc.desc   test for TestPathAddPathWithModeNull.
      * @tc.type   FUNCTION
@@ -611,7 +611,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithOffsetAndModeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11100
      * @tc.desc   test for TestPathAddPathWithOffsetAndModeNormal.
      * @tc.type   FUNCTION
@@ -624,7 +624,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithOffsetAndModeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11200
      * @tc.desc   test for TestPathAddPathWithOffsetAndModeNull.
      * @tc.type   FUNCTION
@@ -637,7 +637,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithOffsetAndModeAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11300
      * @tc.desc   test for TestPathAddPathWithOffsetAndModeAbnormal.
      * @tc.type   FUNCTION
@@ -650,7 +650,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPathWithOffsetAndModeMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11400
      * @tc.desc   test for TestPathAddPathWithOffsetAndModeMaximal.
      * @tc.type   FUNCTION
@@ -663,7 +663,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11500
      * @tc.desc   test for TestPathAddOvalNormal.
      * @tc.type   FUNCTION
@@ -676,7 +676,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddOvalNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11600
      * @tc.desc   test for TestPathAddOvalNull.
      * @tc.type   FUNCTION
@@ -689,7 +689,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPolygonNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11700
      * @tc.desc   test for TestPathAddPolygonNormal.
      * @tc.type   FUNCTION
@@ -702,7 +702,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPolygonNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11800
      * @tc.desc   test for TestPathAddPolygonNormal2.
      * @tc.type   FUNCTION
@@ -715,7 +715,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPolygonNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_11900
      * @tc.desc   test for TestPathAddPolygonNull.
      * @tc.type   FUNCTION
@@ -728,7 +728,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPolygonAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12100
      * @tc.desc   test for TestPathAddPolygonAbnormal.
      * @tc.type   FUNCTION
@@ -741,7 +741,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddPolygonMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12200
      * @tc.desc   test for TestPathAddPolygonMaximal.
      * @tc.type   FUNCTION
@@ -754,7 +754,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddCircleNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12300
      * @tc.desc   test for TestPathAddCircleNormal.
      * @tc.type   FUNCTION
@@ -767,7 +767,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddCircleNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12400
      * @tc.desc   test for TestPathAddCircleNull.
      * @tc.type   FUNCTION
@@ -780,7 +780,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddCircleAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12500
      * @tc.desc   test for TestPathAddCircleAbnormal.
      * @tc.type   FUNCTION
@@ -793,7 +793,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathAddCircleMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12600
      * @tc.desc   test for TestPathAddCircleMaximal.
      * @tc.type   FUNCTION
@@ -807,7 +807,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part2 Transform related test cases (11 cases)
     /**
-     * @tc.name   testPathBuildFromSvgStringNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12700
      * @tc.desc   test for TestPathBuildFromSvgStringNormal.
      * @tc.type   FUNCTION
@@ -820,7 +820,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathBuildFromSvgStringNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12800
      * @tc.desc   test for TestPathBuildFromSvgStringNull.
      * @tc.type   FUNCTION
@@ -833,7 +833,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathContainsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_12900
      * @tc.desc   test for TestPathContainsNormal.
      * @tc.type   FUNCTION
@@ -846,7 +846,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathContainsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13100
      * @tc.desc   test for TestPathContainsNull.
      * @tc.type   FUNCTION
@@ -859,7 +859,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathContainsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13200
      * @tc.desc   test for TestPathContainsAbnormal.
      * @tc.type   FUNCTION
@@ -872,7 +872,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathContainsMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13300
      * @tc.desc   test for TestPathContainsMaximal.
      * @tc.type   FUNCTION
@@ -885,7 +885,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathTransformNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13400
      * @tc.desc   test for TestPathTransformNormal.
      * @tc.type   FUNCTION
@@ -898,7 +898,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathTransformNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13500
      * @tc.desc   test for TestPathTransformNull.
      * @tc.type   FUNCTION
@@ -911,7 +911,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathTransformWithPerspectiveClipNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13600
      * @tc.desc   test for TestPathTransformWithPerspectiveClipNormal.
      * @tc.type   FUNCTION
@@ -924,7 +924,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathTransformWithPerspectiveClipNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13700
      * @tc.desc   test for TestPathTransformWithPerspectiveClipNormal2.
      * @tc.type   FUNCTION
@@ -937,7 +937,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathTransformWithPerspectiveClipNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13800
      * @tc.desc   test for TestPathTransformWithPerspectiveClipNull.
      * @tc.type   FUNCTION
@@ -951,7 +951,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part2 Get/Set related test cases (17 cases)
     /**
-     * @tc.name   testPathSetFillTypeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_13900
      * @tc.desc   test for TestPathSetFillTypeNormal.
      * @tc.type   FUNCTION
@@ -964,7 +964,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathSetFillTypeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14100
      * @tc.desc   test for TestPathSetFillTypeNull.
      * @tc.type   FUNCTION
@@ -977,7 +977,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathSetFillTypeMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14200
      * @tc.desc   test for TestPathSetFillTypeMultipleCalls.
      * @tc.type   FUNCTION
@@ -990,7 +990,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetLengthNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14300
      * @tc.desc   test for TestPathGetLengthNormal.
      * @tc.type   FUNCTION
@@ -1003,7 +1003,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetLengthNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14400
      * @tc.desc   test for TestPathGetLengthNormal2.
      * @tc.type   FUNCTION
@@ -1016,7 +1016,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetLengthNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14500
      * @tc.desc   test for TestPathGetLengthNull.
      * @tc.type   FUNCTION
@@ -1029,7 +1029,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetBoundsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14600
      * @tc.desc   test for TestPathGetBoundsNormal.
      * @tc.type   FUNCTION
@@ -1042,7 +1042,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetBoundsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14700
      * @tc.desc   test for TestPathGetBoundsNull.
      * @tc.type   FUNCTION
@@ -1055,7 +1055,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathCloseNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14800
      * @tc.desc   test for TestPathCloseNormal.
      * @tc.type   FUNCTION
@@ -1068,7 +1068,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathCloseNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_14900
      * @tc.desc   test for TestPathCloseNull.
      * @tc.type   FUNCTION
@@ -1081,7 +1081,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOffsetNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15100
      * @tc.desc   test for TestPathOffsetNormal.
      * @tc.type   FUNCTION
@@ -1094,7 +1094,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOffsetNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15200
      * @tc.desc   test for TestPathOffsetNull.
      * @tc.type   FUNCTION
@@ -1107,7 +1107,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOffsetAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_15300
      * @tc.desc   test for TestPathOffsetAbnormal.
      * @tc.type   FUNCTION
@@ -1120,7 +1120,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOffsetMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_020000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_020000
      * @tc.desc   test for TestPathOffsetMaximal.
      * @tc.type   FUNCTION
@@ -1133,7 +1133,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathResetNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20100
      * @tc.desc   test for TestPathResetNormal.
      * @tc.type   FUNCTION
@@ -1146,7 +1146,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathResetNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20200
      * @tc.desc   test for TestPathResetNull.
      * @tc.type   FUNCTION
@@ -1159,7 +1159,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathResetMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20300
      * @tc.desc   test for TestPathResetMultipleCalls.
      * @tc.type   FUNCTION
@@ -1173,7 +1173,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part3 Query related test cases (12 cases)
     /**
-     * @tc.name   testPathIsClosedNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20400
      * @tc.desc   test for TestPathIsClosedNormal.
      * @tc.type   FUNCTION
@@ -1186,7 +1186,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsClosedNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20500
      * @tc.desc   test for TestPathIsClosedNormal2.
      * @tc.type   FUNCTION
@@ -1199,7 +1199,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsClosedNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20600
      * @tc.desc   test for TestPathIsClosedNull.
      * @tc.type   FUNCTION
@@ -1212,7 +1212,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsEmptyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22600
      * @tc.desc   test for TestPathIsEmptyNormal.
      * @tc.type   FUNCTION
@@ -1225,7 +1225,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsEmptyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22700
      * @tc.desc   test for TestPathIsEmptyNull.
      * @tc.type   FUNCTION
@@ -1238,7 +1238,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsEmptyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22800
      * @tc.desc   test for TestPathIsEmptyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1251,7 +1251,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22900
      * @tc.desc   test for TestPathIsRectNormal.
      * @tc.type   FUNCTION
@@ -1264,7 +1264,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23000
      * @tc.desc   test for TestPathIsRectNull.
      * @tc.type   FUNCTION
@@ -1277,7 +1277,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsRectMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23100
      * @tc.desc   test for TestPathIsRectMultipleCalls.
      * @tc.type   FUNCTION
@@ -1290,7 +1290,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetFillTypeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23400
      * @tc.desc   test for TestPathGetFillTypeNormal.
      * @tc.type   FUNCTION
@@ -1303,7 +1303,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetFillTypeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23500
      * @tc.desc   test for TestPathGetFillTypeNull.
      * @tc.type   FUNCTION
@@ -1316,7 +1316,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetFillTypeMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23600
      * @tc.desc   test for TestPathGetFillTypeMultipleCalls.
      * @tc.type   FUNCTION
@@ -1330,7 +1330,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part3 Transform related test cases (16 cases)
     /**
-     * @tc.name   testPathGetPositionTangentNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20700
      * @tc.desc   test for TestPathGetPositionTangentNormal.
      * @tc.type   FUNCTION
@@ -1343,7 +1343,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetPositionTangentNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20800
      * @tc.desc   test for TestPathGetPositionTangentNormal2.
      * @tc.type   FUNCTION
@@ -1356,7 +1356,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetPositionTangentNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_20900
      * @tc.desc   test for TestPathGetPositionTangentNull.
      * @tc.type   FUNCTION
@@ -1369,7 +1369,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetPositionTangentAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21000
      * @tc.desc   test for TestPathGetPositionTangentAbnormal.
      * @tc.type   FUNCTION
@@ -1382,7 +1382,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetPositionTangentMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21100
      * @tc.desc   test for TestPathGetPositionTangentMaximal.
      * @tc.type   FUNCTION
@@ -1395,7 +1395,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOpNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21200
      * @tc.desc   test for TestPathOpNormal.
      * @tc.type   FUNCTION
@@ -1408,7 +1408,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathOpNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21300
      * @tc.desc   test for TestPathOpNull.
      * @tc.type   FUNCTION
@@ -1421,7 +1421,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetMatrixNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21400
      * @tc.desc   test for TestPathGetMatrixNormal.
      * @tc.type   FUNCTION
@@ -1434,7 +1434,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetMatrixNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21500
      * @tc.desc   test for TestPathGetMatrixNormal2.
      * @tc.type   FUNCTION
@@ -1447,7 +1447,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetMatrixNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21600
      * @tc.desc   test for TestPathGetMatrixNull.
      * @tc.type   FUNCTION
@@ -1460,7 +1460,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetMatrixAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21700
      * @tc.desc   test for TestPathGetMatrixAbnormal.
      * @tc.type   FUNCTION
@@ -1473,7 +1473,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetMatrixMaximal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21800
      * @tc.desc   test for TestPathGetMatrixMaximal.
      * @tc.type   FUNCTION
@@ -1486,7 +1486,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetSegmentNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_21900
      * @tc.desc   test for TestPathGetSegmentNormal.
      * @tc.type   FUNCTION
@@ -1499,7 +1499,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetSegmentNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22000
      * @tc.desc   test for TestPathGetSegmentNull.
      * @tc.type   FUNCTION
@@ -1512,7 +1512,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetSegmentAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22100
      * @tc.desc   test for TestPathGetSegmentAbnormal.
      * @tc.type   FUNCTION
@@ -1525,7 +1525,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathGetSegmentMultiplies
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22200
      * @tc.desc   test for TestPathGetSegmentMultiplies.
      * @tc.type   FUNCTION
@@ -1539,7 +1539,7 @@ export default function ActsNewDrawingNativeTestPart2() {
 
     // Path Part3 Advanced related test cases (14 cases)
     /**
-     * @tc.name   testPathSetPathNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22300
      * @tc.desc   test for TestPathSetPathNormal.
      * @tc.type   FUNCTION
@@ -1552,7 +1552,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathSetPathNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22400
      * @tc.desc   test for TestPathSetPathNull.
      * @tc.type   FUNCTION
@@ -1565,7 +1565,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathSetPathMulptiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_22500
      * @tc.desc   test for TestPathSetPathMulptiCalls.
      * @tc.type   FUNCTION
@@ -1578,7 +1578,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathApproximateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23700
      * @tc.desc   test for TestPathApproximateNormal.
      * @tc.type   FUNCTION
@@ -1591,7 +1591,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathApproximateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23800
      * @tc.desc   test for TestPathApproximateNull.
      * @tc.type   FUNCTION
@@ -1604,7 +1604,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathApproximateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_23900
      * @tc.desc   test for TestPathApproximateAbnormal.
      * @tc.type   FUNCTION
@@ -1617,7 +1617,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathApproximateMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24000
      * @tc.desc   test for TestPathApproximateMultiCalls.
      * @tc.type   FUNCTION
@@ -1630,7 +1630,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathInterpolateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24100
      * @tc.desc   test for TestPathInterpolateNormal.
      * @tc.type   FUNCTION
@@ -1643,7 +1643,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathInterpolateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24200
      * @tc.desc   test for TestPathInterpolateNull.
      * @tc.type   FUNCTION
@@ -1656,7 +1656,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathInterpolateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24300
      * @tc.desc   test for TestPathInterpolateAbnormal.
      * @tc.type   FUNCTION
@@ -1669,7 +1669,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathInterpolateMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24400
      * @tc.desc   test for TestPathInterpolateMultiCalls.
      * @tc.type   FUNCTION
@@ -1682,7 +1682,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsInterpolateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24500
      * @tc.desc   test for TestPathIsInterpolateNormal.
      * @tc.type   FUNCTION
@@ -1695,7 +1695,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsInterpolateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24600
      * @tc.desc   test for TestPathIsInterpolateNull.
      * @tc.type   FUNCTION
@@ -1708,7 +1708,7 @@ export default function ActsNewDrawingNativeTestPart2() {
     })
 
     /**
-     * @tc.name   testPathIsInterpolateMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_24700
      * @tc.desc   test for TestPathIsInterpolateMultiCalls.
      * @tc.type   FUNCTION

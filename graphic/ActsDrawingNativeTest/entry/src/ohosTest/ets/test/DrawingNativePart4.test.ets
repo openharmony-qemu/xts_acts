@@ -36,7 +36,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 DrawImageRect related test cases
     /**
-     * @tc.name   testCanvasDrawImageRectWithSrcNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15300
      * @tc.desc   test for testCanvasDrawImageRectWithSrcNormal.
      * @tc.type   FUNCTION
@@ -49,7 +49,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawImageRectWithSrcNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15400
      * @tc.desc   test for testCanvasDrawImageRectWithSrcNull.
      * @tc.type   FUNCTION
@@ -62,7 +62,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawImageRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15500
      * @tc.desc   test for testCanvasDrawImageRectNormal.
      * @tc.type   FUNCTION
@@ -75,7 +75,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawImageRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15600
      * @tc.desc   test for testCanvasDrawImageRectNull.
      * @tc.type   FUNCTION
@@ -89,7 +89,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 DrawVertices related test cases
     /**
-     * @tc.name   testCanvasDrawVerticesNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21400
      * @tc.desc   test for testCanvasDrawVerticesNormal.
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawVerticesNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21500
      * @tc.desc   test for testCanvasDrawVerticesNull.
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawVerticesAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21600
      * @tc.desc   test for testCanvasDrawVerticesAbnormal.
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawVerticesMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21700
      * @tc.desc   test for testCanvasDrawVerticesMaximum.
      * @tc.type   FUNCTION
@@ -142,7 +142,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 ReadPixels related test cases
     /**
-     * @tc.name   testCanvasReadPixelsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21800
      * @tc.desc   test for testCanvasReadPixelsNormal.
      * @tc.type   FUNCTION
@@ -155,7 +155,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_21900
      * @tc.desc   test for testCanvasReadPixelsNull.
      * @tc.type   FUNCTION
@@ -168,7 +168,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsMismatch
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22000
      * @tc.desc   test for testCanvasReadPixelsMismatch.
      * @tc.type   FUNCTION
@@ -181,7 +181,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22100
      * @tc.desc   test for testCanvasReadPixelsAbnormal.
      * @tc.type   FUNCTION
@@ -194,7 +194,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22200
      * @tc.desc   test for testCanvasReadPixelsMaximum.
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22300
      * @tc.desc   test for testCanvasReadPixelsBoundary.
      * @tc.type   FUNCTION
@@ -221,7 +221,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 ReadPixelsToBitmap related test cases
     /**
-     * @tc.name   testCanvasReadPixelsToBitmapNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22400
      * @tc.desc   test for testCanvasReadPixelsToBitmapNormal.
      * @tc.type   FUNCTION
@@ -234,7 +234,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsToBitmapNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22500
      * @tc.desc   test for testCanvasReadPixelsToBitmapNull.
      * @tc.type   FUNCTION
@@ -247,7 +247,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsToBitmapAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22600
      * @tc.desc   test for testCanvasReadPixelsToBitmapAbnormal.
      * @tc.type   FUNCTION
@@ -260,7 +260,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasReadPixelsToBitmapMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22700
      * @tc.desc   test for testCanvasReadPixelsToBitmapMaximum.
      * @tc.type   FUNCTION
@@ -274,7 +274,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 DrawSingleCharacter related test cases
     /**
-     * @tc.name   testCanvasDrawSingleCharacter
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22800
      * @tc.desc   test for testCanvasDrawSingleCharacter.
      * @tc.type   FUNCTION
@@ -287,7 +287,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawSingleCharacterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_22900
      * @tc.desc   test for testCanvasDrawSingleCharacterNormal.
      * @tc.type   FUNCTION
@@ -300,7 +300,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawSingleCharacterNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23000
      * @tc.desc   test for testCanvasDrawSingleCharacterNull.
      * @tc.type   FUNCTION
@@ -314,7 +314,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 DrawPoint related test cases
     /**
-     * @tc.name   testCanvasDrawPointNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23100
      * @tc.desc   test for testCanvasDrawPointNormal.
      * @tc.type   FUNCTION
@@ -327,7 +327,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPointNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23200
      * @tc.desc   test for testCanvasDrawPointNull.
      * @tc.type   FUNCTION
@@ -340,7 +340,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPointMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23300
      * @tc.desc   test for testCanvasDrawPointMultipleCalls.
      * @tc.type   FUNCTION
@@ -354,7 +354,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 DrawColor related test cases
     /**
-     * @tc.name   testCanvasDrawColorNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23400
      * @tc.desc   test for testCanvasDrawColorNormal.
      * @tc.type   FUNCTION
@@ -367,7 +367,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawColorNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23500
      * @tc.desc   test for testCanvasDrawColorNull.
      * @tc.type   FUNCTION
@@ -380,7 +380,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawColorMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23600
      * @tc.desc   test for testCanvasDrawColorMaximum.
      * @tc.type   FUNCTION
@@ -393,7 +393,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawColorMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23700
      * @tc.desc   test for testCanvasDrawColorMultipleCalls.
      * @tc.type   FUNCTION
@@ -407,7 +407,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 IsClipEmpty related test cases
     /**
-     * @tc.name   testCanvasIsClipEmptyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23800
      * @tc.desc   test for testCanvasIsClipEmptyNormal.
      * @tc.type   FUNCTION
@@ -420,7 +420,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasIsClipEmptyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_23900
      * @tc.desc   test for testCanvasIsClipEmptyNull.
      * @tc.type   FUNCTION
@@ -433,7 +433,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasIsClipEmptyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24000
      * @tc.desc   test for testCanvasIsClipEmptyMultipleCalls.
      * @tc.type   FUNCTION
@@ -447,7 +447,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 GetImageInfo related test cases
     /**
-     * @tc.name   testCanvasGetImageInfoNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24100
      * @tc.desc   test for testCanvasGetImageInfoNormal.
      * @tc.type   FUNCTION
@@ -460,7 +460,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasGetImageInfoNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24200
      * @tc.desc   test for testCanvasGetImageInfoNull.
      * @tc.type   FUNCTION
@@ -473,7 +473,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasGetImageInfoMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24300
      * @tc.desc   test for testCanvasGetImageInfoMultipleCalls.
      * @tc.type   FUNCTION
@@ -487,7 +487,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part4 ClipRegion related test cases
     /**
-     * @tc.name   testCanvasClipRegionNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24400
      * @tc.desc   test for testCanvasClipRegionNormal.
      * @tc.type   FUNCTION
@@ -500,7 +500,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasClipRegionNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24500
      * @tc.desc   test for testCanvasClipRegionNull.
      * @tc.type   FUNCTION
@@ -513,7 +513,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasClipRegionMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24600
      * @tc.desc   test for testCanvasClipRegionMultipleCalls.
      * @tc.type   FUNCTION
@@ -527,7 +527,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 QuickRejectPath related test cases
     /**
-     * @tc.name   testCanvasQuickRejectPathNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15700
      * @tc.desc   test for TestCanvasQuickRejectPathNull.
      * @tc.type   FUNCTION
@@ -540,7 +540,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasQuickRejectPathNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15800
      * @tc.desc   test for TestCanvasQuickRejectPathNormal.
      * @tc.type   FUNCTION
@@ -553,7 +553,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasQuickRejectPathCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_15900
      * @tc.desc   test for TestCanvasQuickRejectPathCalls.
      * @tc.type   FUNCTION
@@ -567,7 +567,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 QuickRejectRect related test cases
     /**
-     * @tc.name   testCanvasQuickRejectRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16000
      * @tc.desc   test for TestCanvasQuickRejectRectNull.
      * @tc.type   FUNCTION
@@ -580,7 +580,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasQuickRejectRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16100
      * @tc.desc   test for TestCanvasQuickRejectRectNormal.
      * @tc.type   FUNCTION
@@ -593,7 +593,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasQuickRejectRectCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16200
      * @tc.desc   test for TestCanvasQuickRejectRectCalls.
      * @tc.type   FUNCTION
@@ -607,7 +607,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 DrawArcWithCenter related test cases
     /**
-     * @tc.name   testCanvasDrawArcWithCenterNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16300
      * @tc.desc   test for TestCanvasDrawArcWithCenterNull.
      * @tc.type   FUNCTION
@@ -620,7 +620,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawArcWithCenterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16400
      * @tc.desc   test for TestCanvasDrawArcWithCenterNormal.
      * @tc.type   FUNCTION
@@ -633,7 +633,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawArcWithCenterCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16500
      * @tc.desc   test for TestCanvasDrawArcWithCenterCalls.
      * @tc.type   FUNCTION
@@ -647,7 +647,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 DrawNestedRoundRect related test cases
     /**
-     * @tc.name   testCanvasDrawNestedRoundRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16600
      * @tc.desc   test for TestCanvasDrawNestedRoundRectNull.
      * @tc.type   FUNCTION
@@ -660,7 +660,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawNestedRoundRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16700
      * @tc.desc   test for TestCanvasDrawNestedRoundRectNormal.
      * @tc.type   FUNCTION
@@ -673,7 +673,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawNestedRoundRectCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16800
      * @tc.desc   test for TestCanvasDrawNestedRoundRectCalls.
      * @tc.type   FUNCTION
@@ -687,7 +687,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 DrawPixelMapNine related test cases
     /**
-     * @tc.name   testCanvasDrawPixelMapNineNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_16900
      * @tc.desc   test for TestCanvasDrawPixelMapNineNull.
      * @tc.type   FUNCTION
@@ -700,7 +700,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPixelMapNineNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17000
      * @tc.desc   test for TestCanvasDrawPixelMapNineNormal.
      * @tc.type   FUNCTION
@@ -713,7 +713,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPixelMapNineCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17100
      * @tc.desc   test for TestCanvasDrawPixelMapNineCalls.
      * @tc.type   FUNCTION
@@ -727,7 +727,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 CreateWithPixelMap related test cases
     /**
-     * @tc.name   testCanvasCreateWithPixelMapNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17200
      * @tc.desc   test for TestCanvasCreateWithPixelMapNormal.
      * @tc.type   FUNCTION
@@ -740,7 +740,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasCreateWithPixelMapNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17300
      * @tc.desc   test for TestCanvasCreateWithPixelMapNull.
      * @tc.type   FUNCTION
@@ -753,7 +753,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasCreateWithPixelMapMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17400
      * @tc.desc   test for TestCanvasCreateWithPixelMapMultipleCalls.
      * @tc.type   FUNCTION
@@ -767,7 +767,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Canvas Part5 DrawPixelMapRectConstraint related test cases
     /**
-     * @tc.name   testCanvasDrawPixelMapRectConstraintNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17500
      * @tc.desc   test for TestCanvasDrawPixelMapRectConstraintNormal.
      * @tc.type   FUNCTION
@@ -780,7 +780,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPixelMapRectConstraintNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17600
      * @tc.desc   test for TestCanvasDrawPixelMapRectConstraintNull.
      * @tc.type   FUNCTION
@@ -793,7 +793,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPixelMapRectConstraintAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17700
      * @tc.desc   test for TestCanvasDrawPixelMapRectConstraintAbnormal.
      * @tc.type   FUNCTION
@@ -806,7 +806,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPixelMapRectConstraintMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_17800
      * @tc.desc   test for TestCanvasDrawPixelMapRectConstraintMultiCalls.
      * @tc.type   FUNCTION
@@ -820,7 +820,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateBlendMode related test cases
     /**
-     * @tc.name   testColorFilterCreateBlendModeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0100
      * @tc.desc   test for TestColorFilterCreateBlendModeNormal.
      * @tc.type   FUNCTION
@@ -833,7 +833,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateBlendModeNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0200
      * @tc.desc   test for TestColorFilterCreateBlendModeNULL.
      * @tc.type   FUNCTION
@@ -846,7 +846,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateBlendModeMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0300
      * @tc.desc   test for TestColorFilterCreateBlendModeMultipleCalls.
      * @tc.type   FUNCTION
@@ -859,7 +859,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateBlendModeAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0400
      * @tc.desc   test for TestColorFilterCreateBlendModeAbnormal.
      * @tc.type   FUNCTION
@@ -872,7 +872,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateBlendModeMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0500
      * @tc.desc   test for TestColorFilterCreateBlendModeMaximum.
      * @tc.type   FUNCTION
@@ -886,7 +886,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateCompose related test cases
     /**
-     * @tc.name   testColorFilterCreateComposeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0600
      * @tc.desc   test for TestColorFilterCreateComposeNormal.
      * @tc.type   FUNCTION
@@ -899,7 +899,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateComposeNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0700
      * @tc.desc   test for TestColorFilterCreateComposeNULL.
      * @tc.type   FUNCTION
@@ -912,7 +912,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateComposeMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0800
      * @tc.desc   test for TestColorFilterCreateComposeMultipleCalls.
      * @tc.type   FUNCTION
@@ -926,7 +926,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateMatrix related test cases
     /**
-     * @tc.name   testColorFilterCreateMatrixNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_0900
      * @tc.desc   test for TestColorFilterCreateMatrixNormal.
      * @tc.type   FUNCTION
@@ -939,7 +939,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateMatrixNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1000
      * @tc.desc   test for TestColorFilterCreateMatrixNULL.
      * @tc.type   FUNCTION
@@ -952,7 +952,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateMatrixAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1100
      * @tc.desc   test for TestColorFilterCreateMatrixAbnormal.
      * @tc.type   FUNCTION
@@ -965,7 +965,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateMatrixMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1200
      * @tc.desc   test for TestColorFilterCreateMatrixMultipleCalls.
      * @tc.type   FUNCTION
@@ -979,7 +979,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateLinearToSrgbGamma related test cases
     /**
-     * @tc.name   testColorFilterCreateLinearToSrgbGammaNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1300
      * @tc.desc   test for TestColorFilterCreateLinearToSrgbGammaNormal.
      * @tc.type   FUNCTION
@@ -992,7 +992,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateLinearToSrgbGammaMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1400
      * @tc.desc   test for TestColorFilterCreateLinearToSrgbGammaMultipleCalls.
      * @tc.type   FUNCTION
@@ -1006,7 +1006,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateSrgbGammaToLinear related test cases
     /**
-     * @tc.name   testColorFilterCreateSrgbGammaToLinearNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1500
      * @tc.desc   test for TestColorFilterCreateSrgbGammaToLinearNormal.
      * @tc.type   FUNCTION
@@ -1019,7 +1019,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateSrgbGammaToLinearMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1600
      * @tc.desc   test for TestColorFilterCreateSrgbGammaToLinearMultipleCalls.
      * @tc.type   FUNCTION
@@ -1033,7 +1033,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateLuma related test cases
     /**
-     * @tc.name   testColorFilterCreateLumaNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1700
      * @tc.desc   test for TestColorFilterCreateLumaNormal.
      * @tc.type   FUNCTION
@@ -1046,7 +1046,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateLumaMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1800
      * @tc.desc   test for TestColorFilterCreateLumaMultipleCalls.
      * @tc.type   FUNCTION
@@ -1060,7 +1060,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter Destroy related test cases
     /**
-     * @tc.name   testColorFilterDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_1900
      * @tc.desc   test for TestColorFilterDestroyNormal.
      * @tc.type   FUNCTION
@@ -1073,7 +1073,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2000
      * @tc.desc   test for TestColorFilterDestroyNULL.
      * @tc.type   FUNCTION
@@ -1087,7 +1087,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorFilter CreateLighting related test cases
     /**
-     * @tc.name   testColorFilterCreateLightingNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2100
      * @tc.desc   test for TestColorFilterCreateLightingNormal.
      * @tc.type   FUNCTION
@@ -1100,7 +1100,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateLightingNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2200
      * @tc.desc   test for TestColorFilterCreateLightingNULL.
      * @tc.type   FUNCTION
@@ -1113,7 +1113,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateLightingAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2300
      * @tc.desc   test for TestColorFilterCreateLightingAbnormal.
      * @tc.type   FUNCTION
@@ -1126,7 +1126,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorFilterCreateLightingMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_FILTER_2400
      * @tc.desc   test for TestColorFilterCreateLightingMultipleCalls.
      * @tc.type   FUNCTION
@@ -1140,7 +1140,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorSpace CreateSrgb related test cases
     /**
-     * @tc.name   testColorSpaceCreateSrgbNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0100
      * @tc.desc   test for TestColorSpaceCreateSrgbNormal.
      * @tc.type   FUNCTION
@@ -1153,7 +1153,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSpaceCreateSrgbMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0100
      * @tc.desc   test for TestColorSpaceCreateSrgbMultipleCalls.
      * @tc.type   FUNCTION
@@ -1167,7 +1167,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorSpace Destroy related test cases
     /**
-     * @tc.name   testColorSpaceDestroyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_SPACE_0101
      * @tc.desc   test for TestColorSpaceDestroyNull.
      * @tc.type   FUNCTION
@@ -1181,7 +1181,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // ColorSpace CreateSrgbLinear related test cases
     /**
-     * @tc.name   testColorSpaceCreateSrgbLinearNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0200
      * @tc.desc   test for TestColorSpaceCreateSrgbLinearNormal.
      * @tc.type   FUNCTION
@@ -1194,7 +1194,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSpaceCreateSrgbLinearMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_SPACE_0300
      * @tc.desc   test for TestColorSpaceCreateSrgbLinearMultipleCalls.
      * @tc.type   FUNCTION
@@ -1208,7 +1208,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Color SetArgb related test cases
     /**
-     * @tc.name   testColorSetArgbNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100
      * @tc.desc   test for TestColorSetArgbNormal.
      * @tc.type   FUNCTION
@@ -1221,7 +1221,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSetArgbNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200
      * @tc.desc   test for TestColorSetArgbNULL.
      * @tc.type   FUNCTION
@@ -1234,7 +1234,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSetArgbMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300
      * @tc.desc   test for TestColorSetArgbMultipleCalls.
      * @tc.type   FUNCTION
@@ -1247,7 +1247,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSetArgbAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400
      * @tc.desc   test for TestColorSetArgbAbnormal.
      * @tc.type   FUNCTION
@@ -1260,7 +1260,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testColorSetArgbMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500
      * @tc.desc   test for TestColorSetArgbMaximum.
      * @tc.type   FUNCTION
@@ -1274,7 +1274,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Filter Create/Destroy related test cases
     /**
-     * @tc.name   testFilterCreateDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100
      * @tc.desc   test for TestFilterCreateDestroyNormal.
      * @tc.type   FUNCTION
@@ -1287,7 +1287,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterCreateDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200
      * @tc.desc   test for TestFilterCreateDestroyNULL.
      * @tc.type   FUNCTION
@@ -1300,7 +1300,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterCreateDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300
      * @tc.desc   test for TestFilterCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1314,7 +1314,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Filter SetImageFilter related test cases
     /**
-     * @tc.name   testFilterSetImageFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400
      * @tc.desc   test for TestFilterSetImageFilterNormal.
      * @tc.type   FUNCTION
@@ -1327,7 +1327,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetImageFilterNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500
      * @tc.desc   test for TestFilterSetImageFilterNULL.
      * @tc.type   FUNCTION
@@ -1340,7 +1340,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetImageFilterMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600
      * @tc.desc   test for TestFilterSetImageFilterMultipleCalls.
      * @tc.type   FUNCTION
@@ -1354,7 +1354,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Filter SetMaskFilter related test cases
     /**
-     * @tc.name   testFilterSetMaskFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700
      * @tc.desc   test for TestFilterSetMaskFilterNormal.
      * @tc.type   FUNCTION
@@ -1367,7 +1367,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetMaskFilterNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800
      * @tc.desc   test for TestFilterSetMaskFilterNULL.
      * @tc.type   FUNCTION
@@ -1380,7 +1380,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetMaskFilterMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900
      * @tc.desc   test for TestFilterSetMaskFilterMultipleCalls.
      * @tc.type   FUNCTION
@@ -1394,7 +1394,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Filter SetColorFilter related test cases
     /**
-     * @tc.name   testFilterSetColorFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000
      * @tc.desc   test for TestFilterSetColorFilterNormal.
      * @tc.type   FUNCTION
@@ -1407,7 +1407,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetColorFilterNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100
      * @tc.desc   test for TestFilterSetColorFilterNULL.
      * @tc.type   FUNCTION
@@ -1420,7 +1420,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFilterSetColorFilterMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200
      * @tc.desc   test for TestFilterSetColorFilterMultipleCalls.
      * @tc.type   FUNCTION
@@ -1434,7 +1434,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Font Create/Destroy related test cases
     /**
-     * @tc.name   testFontCreateDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0100
      * @tc.desc   test for TestFontCreateDestroyNormal.
      * @tc.type   FUNCTION
@@ -1447,7 +1447,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontCreateDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0200
      * @tc.desc   test for TestFontCreateDestroyNULL.
      * @tc.type   FUNCTION
@@ -1460,7 +1460,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontCreateDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0300
      * @tc.desc   test for TestFontCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1474,7 +1474,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Font SetBaselineSnap related test cases
     /**
-     * @tc.name   testFontSetBaselineSnapNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0400
      * @tc.desc   test for TestFontSetBaselineSnapNormal.
      * @tc.type   FUNCTION
@@ -1487,7 +1487,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetBaselineSnapNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0500
      * @tc.desc   test for TestFontSetBaselineSnapNULL.
      * @tc.type   FUNCTION
@@ -1500,7 +1500,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetBaselineSnapMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0600
      * @tc.desc   test for TestFontSetBaselineSnapMultipleCalls.
      * @tc.type   FUNCTION
@@ -1513,7 +1513,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontIsBaselineSnapWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0700
      * @tc.desc   test for TestFontIsBaselineSnapWhenNoSet.
      * @tc.type   FUNCTION
@@ -1527,7 +1527,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Font SetSubpixel related test cases
     /**
-     * @tc.name   testFontSetSubpixelNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0800
      * @tc.desc   test for TestFontSetSubpixelNormal.
      * @tc.type   FUNCTION
@@ -1540,7 +1540,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetSubpixelNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_0900
      * @tc.desc   test for TestFontSetSubpixelNULL.
      * @tc.type   FUNCTION
@@ -1553,7 +1553,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetSubpixelMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1000
      * @tc.desc   test for TestFontSetSubpixelMultipleCalls.
      * @tc.type   FUNCTION
@@ -1566,7 +1566,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontIsSubpixelWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1100
      * @tc.desc   test for TestFontIsSubpixelWhenNoSet.
      * @tc.type   FUNCTION
@@ -1580,7 +1580,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Font SetForceAutoHinting related test cases
     /**
-     * @tc.name   testFontSetForceAutoHintingNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1200
      * @tc.desc   test for TestFontSetForceAutoHintingNormal.
      * @tc.type   FUNCTION
@@ -1593,7 +1593,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetForceAutoHintingNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1300
      * @tc.desc   test for TestFontSetForceAutoHintingNULL.
      * @tc.type   FUNCTION
@@ -1606,7 +1606,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetForceAutoHintingMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1400
      * @tc.desc   test for TestFontSetForceAutoHintingMultipleCalls.
      * @tc.type   FUNCTION
@@ -1619,7 +1619,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontIsForceAutoHintingWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1500
      * @tc.desc   test for TestFontIsForceAutoHintingWhenNoSet.
      * @tc.type   FUNCTION
@@ -1633,7 +1633,7 @@ export default function ActsNewDrawingNativeTestPart4() {
 
     // Font SetTypeface related test cases
     /**
-     * @tc.name   testFontSetTypefaceNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1600
      * @tc.desc   test for TestFontSetTypefaceNormal.
      * @tc.type   FUNCTION
@@ -1646,7 +1646,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetTypefaceNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1700
      * @tc.desc   test for TestFontSetTypefaceNULL.
      * @tc.type   FUNCTION
@@ -1659,7 +1659,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontSetTypefaceMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1800
      * @tc.desc   test for TestFontSetTypefaceMultipleCalls.
      * @tc.type   FUNCTION
@@ -1672,7 +1672,7 @@ export default function ActsNewDrawingNativeTestPart4() {
     })
 
     /**
-     * @tc.name   testFontGetTypefaceWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_1900
      * @tc.desc   test for TestFontGetTypefaceWhenNoSet.
      * @tc.type   FUNCTION
