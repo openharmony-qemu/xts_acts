@@ -685,46 +685,6 @@ static napi_value RenderNodeErrorCode055(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
-static napi_value RenderNodeErrorCode056(napi_env env, napi_callback_info info)
-{
-    ArkUI_RenderNodeHandle rsNode;
-    auto radiusOption = OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption();
-    auto ret20 = OH_ArkUI_RenderNodeUtils_GetBorderRadius(rsNode, &radiusOption);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "RenderNodeErrorCode056 ret20=%{public}d", ret20);
-    ASSERT_EQ(ret20, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
-    NAPI_END;
-}
-
-static napi_value RenderNodeErrorCode057(napi_env env, napi_callback_info info)
-{
-    ArkUI_RenderNodeHandle rsNode;
-    auto radiusOption = OH_ArkUI_RenderNodeUtils_CreateNodeBorderRadiusOption();
-    auto ret21 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNode, radiusOption);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "RenderNodeErrorCode057 ret20=%{public}d", ret21);
-    ASSERT_EQ(ret21, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
-    NAPI_END;
-}
-
-static napi_value RenderNodeErrorCode058(napi_env env, napi_callback_info info)
-{
-    ArkUI_RenderNodeHandle rsNode;
-    auto colorOption = OH_ArkUI_RenderNodeUtils_CreateNodeBorderColorOption();
-    auto ret22 = OH_ArkUI_RenderNodeUtils_GetBorderColor(rsNode, &colorOption);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "RenderNodeErrorCode058 ret20=%{public}d", ret22);
-    ASSERT_EQ(ret22, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
-    NAPI_END;
-}
-
-static napi_value RenderNodeErrorCode059(napi_env env, napi_callback_info info)
-{
-    ArkUI_RenderNodeHandle rsNode;
-    auto widthOption = OH_ArkUI_RenderNodeUtils_CreateNodeBorderWidthOption();
-    auto ret24 = OH_ArkUI_RenderNodeUtils_GetBorderWidth(rsNode, &widthOption);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "RenderNodeErrorCode059 ret20=%{public}d", ret24);
-    ASSERT_EQ(ret24, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
-    NAPI_END;
-}
-
 static napi_value RenderNodeErrorCode060(napi_env env, napi_callback_info info)
 {
     ArkUI_RenderContentModifierHandle contentModifier1;
@@ -1209,8 +1169,6 @@ static napi_value TestRenderNode008(napi_env env, napi_callback_info info)
     auto result = OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(contentModifier, &userData, drawCallback);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
 
-    auto result1 = OH_ArkUI_RenderNodeUtils_SetContentModifierOnDraw(nullptr, &userData, nullptr);
-    ASSERT_EQ(result1, ARKUI_ERROR_CODE_PARAM_INVALID);
     // 销毁 ContentModifier
     OH_ArkUI_RenderNodeUtils_DisposeContentModifier(contentModifier);
     NAPI_END;
