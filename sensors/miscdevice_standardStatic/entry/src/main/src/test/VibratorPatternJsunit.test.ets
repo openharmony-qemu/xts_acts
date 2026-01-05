@@ -1429,11 +1429,11 @@ export default function VibratorJsTest_misc_9() {
             // 添加对deviceId的断言
             expect(vibrators[0].deviceId >= -1).assertEqual(true);
             hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
-            expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+            expect(typeof vibrators[0].deviceId === 'int').assertEqual(true);
             // 添加对vibratorId的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
             expect(vibrators[0].vibratorId >= 0).assertEqual(true);
-            expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+            expect(typeof vibrators[0].vibratorId === 'int').assertEqual(true);
             // 添加对deviceName的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
             expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
@@ -1494,11 +1494,11 @@ export default function VibratorJsTest_misc_9() {
           // 添加对deviceId的断言
           expect(vibrators[0].deviceId >= -1).assertEqual(true);
           hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceId:" + vibrators[0].deviceId);
-          expect(typeof vibrators[0].deviceId === 'number').assertEqual(true);
+          expect(typeof vibrators[0].deviceId === 'int').assertEqual(true);
           // 添加对vibratorId的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync vibratorId:" + vibrators[0].vibratorId);
           expect(vibrators[0].vibratorId >= 0).assertEqual(true);
-          expect(typeof vibrators[0].vibratorId === 'number').assertEqual(true);
+          expect(typeof vibrators[0].vibratorId === 'int').assertEqual(true);
           // 添加对deviceName的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync deviceName:" + vibrators[0].deviceName);
           expect(typeof vibrators[0].deviceName === 'string').assertEqual(true);
