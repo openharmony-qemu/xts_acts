@@ -61,7 +61,7 @@ export default function setOrientationChangeRequestTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'set_orientation_change_request_static_000';
         try {
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1 as long);
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['orientation'],
             predicates: predicates
@@ -129,7 +129,7 @@ export default function setOrientationChangeRequestTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'set_orientation_change_request_static_001';
         try {
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1 as long);
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['orientation'],
             predicates: predicates
@@ -164,7 +164,7 @@ export default function setOrientationChangeRequestTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'set_orientation_change_request_static_002';
         try {
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 1 as long);
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['orientation'],
             predicates: predicates
@@ -199,7 +199,7 @@ export default function setOrientationChangeRequestTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'set_orientation_change_request_static_003';
         try {
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 2);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, 2 as long);
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['orientation'],
             predicates: predicates

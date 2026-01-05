@@ -64,7 +64,7 @@ export default function assetIsAfterLastTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'isAfterLast_callback_static_000';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
@@ -85,7 +85,7 @@ export default function assetIsAfterLastTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'isAfterLast_callback_static_001';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
