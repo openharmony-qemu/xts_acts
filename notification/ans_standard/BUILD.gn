@@ -26,7 +26,7 @@ group("ans_standard") {
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
       "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
       "actsNotificationClassEmitterTest:ActsNotificationClassEmitterTest",
-      "actsNotificationClassEmitterTestStatic:ActsNotificationClassEmitterTestStatic",
+      "actsNotificationClassEmitterTestStatic:ActsNotificationClassEmitterStaticTest",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
       "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
@@ -35,7 +35,7 @@ group("ans_standard") {
       "actsNotificationEmitterTestStatic:ActsNotificationEmitterStaticTest",
       "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest",
       "actsNotificationInterfaceChangeTest:ActsNotificationInterfaceChangeTest",
-      "actsNotificationInterfaceChangeTestStatic:ActsNotificationInterfaceChangeTestStatic",
+      "actsNotificationInterfaceChangeTestStatic:ActsNotificationInterfaceChangeStaticTest",
       "actsNotificationManagerSlotTest:ActsNotificationManagerSlotTest",
       "actsNotificationManagerSlotTestStatic:ActsNotificationManagerSlotStaticTest",
       "actsNotificationNDKEnableTest:ActsNotificationNDKEnableTest",
@@ -56,7 +56,7 @@ group("ans_standard") {
       "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
       "actsNotificationWantUriTest:ActsNotificationWantUriTest",
-      "actsNotificationWantUriTestStatic:ActsNotificationWantUriTestStatic",
+      "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest"
     ]
