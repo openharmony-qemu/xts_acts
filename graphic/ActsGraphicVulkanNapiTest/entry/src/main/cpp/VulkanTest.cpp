@@ -434,7 +434,7 @@ int VkCreateDeviceTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.g_queueCount = 1;
+    queueInfo.queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
@@ -477,7 +477,7 @@ int GetNativeBufferPropertiesOhosTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.g_queueCount = 1;
+    queueInfo.queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
@@ -530,7 +530,7 @@ int GetMemoryNativeBufferOhosTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.g_queueCount = 1;
+    queueInfo.queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());

@@ -69,16 +69,16 @@ static napi_value vulkanTest(napi_env env, napi_callback_info info)
             result = vulkan::loader::LoadInstanceFuncPtrTest();
             break;
         case TEST_CASE_2:
-            result = vulkan::loader::vkEnumeratePhysicalDevices_Test();
+            result = vulkan::loader::VkEnumeratePhysicalDevicesTest();
             break;
         case TEST_CASE_3:
-            result = vulkan::loader::vkCreateDevice_Test();
+            result = vulkan::loader::VkCreateDeviceTest();
             break;
         case TEST_CASE_4:
-            result = vulkan::loader::getNativeBufferPropertiesOHOS_Test();
+            result = vulkan::loader::GetNativeBufferPropertiesOhosTest();
             break;
         case TEST_CASE_5:
-            result = vulkan::loader::getMemoryNativeBufferOHOS_Test();
+            result = vulkan::loader::GetMemoryNativeBufferOhosTest();
             break;
         default:
             napi_throw_type_error(env, nullptr, "The range of case must be 0 to 5");
