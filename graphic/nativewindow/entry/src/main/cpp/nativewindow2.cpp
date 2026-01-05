@@ -2105,7 +2105,7 @@ napi_value testNativeWindowSetMetadataValue_metadata_type(napi_env env, napi_cal
         }
         errorCode = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &metadata);
         if (*metadata != type) {
-            napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result); 
+            napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result);
             return result;
         }
     }
