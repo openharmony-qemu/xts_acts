@@ -19,9 +19,9 @@
 #undef LOG_DOMAIN
 #undef LOG_TAG
 #define LOG_DOMAIN 0x3200
-#define LOG_TAG "NativeWindowSample"
+#define LOG_TAG "NativeImageSample"
 
-constexpr const char *APP_LOG_TAG = "NativeWindowSample";
+constexpr const char *APP_LOG_TAG = "NativeImageSample";
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, APP_LOG_TAG, __VA_ARGS__))
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, APP_LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, APP_LOG_TAG, __VA_ARGS__))

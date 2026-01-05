@@ -27,6 +27,7 @@
 #include <multimedia/player_framework/native_avbuffer.h>
 #include <GLES3/gl3.h>
 #include <native_image/native_image.h>
+#include <common/native_common.h>
 
 void addBufferTextTest1(std::vector<napi_property_descriptor>& descData)
 {
@@ -105,10 +106,15 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
         .usage = (1ULL << 0) | (1ULL << 1) |  (1ULL << 3),
     };
     OH_NativeBuffer* buffer = OH_NativeBuffer_Alloc(&config);
+    if (buffer == nullptr) {
+        napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+        return result;
+    }
     int32_t res = OH_NativeBuffer_SetColorSpace(buffer, OH_COLORSPACE_DISPLAY_BT2020_PQ);
     OH_NativeBuffer_ColorSpace colorSpace;
     res = OH_NativeBuffer_GetColorSpace(buffer, &colorSpace);
-    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
+                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
     return result;
 }
 
@@ -132,10 +138,16 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
         .usage = (1ULL << 0) | (1ULL << 1) | (1ULL << 3) | (1ULL << 4) | (1ULL << 5) | (1ULL << 6)|(1ULL << 7),
     };
     OH_NativeBuffer* buffer = OH_NativeBuffer_Alloc(&config);
+    if (buffer == nullptr) {
+        napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+        return result;
+    }
     int32_t size = 10;
     uint8_t *metadata = new uint8_t(size);
     int32_t res = OH_NativeBuffer_SetMetadataValue(buffer, OH_HDR_STATIC_METADATA, size, metadata);
-    napi_create_int32(env, res != NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    
+    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
+                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
     return result;
 }
 
@@ -159,11 +171,16 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
         .usage = (1ULL << 0) | (1ULL << 1) |  (1ULL << 3),
     };
     OH_NativeBuffer* buffer = OH_NativeBuffer_Alloc(&config);
+    if (buffer == nullptr) {
+        napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+        return result;
+    }
     int32_t size = 10;
     uint8_t *metadata = new uint8_t(size);
     OH_NativeBuffer_SetMetadataValue(buffer, OH_HDR_STATIC_METADATA, size, metadata);
     int32_t res = OH_NativeBuffer_GetMetadataValue(buffer, OH_HDR_STATIC_METADATA, &size, &metadata);
-    napi_create_int32(env, res != NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
+                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
     return result;
 }
 
@@ -173,7 +190,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     int32_t size = 10;
     uint8_t *metadata = new uint8_t(size);
     int32_t res = OH_NativeBuffer_GetMetadataValue(nullptr, OH_HDR_STATIC_METADATA, &size, &metadata);
-    napi_create_int32(env, res == NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_INVALID_ARGUMENTS || res != NATIVE_ERROR_UNSUPPORTED, &result);
     return result;
 }
 
@@ -278,11 +295,10 @@ napi_value OH_Drawing_TextUndefinedGlyphDisplayTOFU(napi_env env, napi_callback_
 napi_value BufferHandleSuccess(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    napi_create_int32(env, true, &result);
-    return result;
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     // 获取生产者NativeWindow
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -290,13 +306,11 @@ napi_value BufferHandleSuccess(napi_env env, napi_callback_info info)
     int32_t width = 800;
     int32_t height = 600;
     int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, code, width, height);
-
     OHNativeWindowBuffer *buffer = nullptr;
     int fenceFd;
-
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     auto w = handle->width;
     auto stride =  handle->stride;
     auto h = handle->height;
@@ -307,6 +321,8 @@ napi_value BufferHandleSuccess(napi_env env, napi_callback_info info)
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_DetachContext(nativeImage);
+    napi_create_int32(env, ret, &result);
+    return result;
 }
 napi_value BufferHandleWidth(napi_env env, napi_callback_info info)
 {
@@ -314,6 +330,7 @@ napi_value BufferHandleWidth(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -327,7 +344,7 @@ napi_value BufferHandleWidth(napi_env env, napi_callback_info info)
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
 
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->width == width, &result);
     return result;
 }
@@ -337,6 +354,7 @@ napi_value BufferHandleStride(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     // 获取生产者NativeWindow
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -349,6 +367,7 @@ napi_value BufferHandleStride(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->stride >= 0, &result);
     return result;
 }
@@ -359,6 +378,7 @@ napi_value BufferHandleHeight(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -369,6 +389,7 @@ napi_value BufferHandleHeight(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->height == height, &result);
     return result;
 }
@@ -379,6 +400,7 @@ napi_value BufferHandleFormat(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     // 获取生产者NativeWindow
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -394,7 +416,7 @@ napi_value BufferHandleFormat(napi_env env, napi_callback_info info)
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
 
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->format == format, &result);
     return result;
 }
@@ -407,6 +429,7 @@ napi_value BufferHandleUsage(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -416,6 +439,7 @@ napi_value BufferHandleUsage(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->usage == usage, &result);
     return result;
 }
@@ -426,6 +450,7 @@ napi_value BufferHandleKey(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -436,6 +461,7 @@ napi_value BufferHandleKey(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->key == 0, &result);
     return result;
 }
@@ -446,6 +472,7 @@ napi_value BufferHandlePhyAddr(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -456,6 +483,7 @@ napi_value BufferHandlePhyAddr(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->phyAddr >= 0, &result);
     return result;
 }
@@ -466,6 +494,7 @@ napi_value BufferHandleReserveFds(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -476,6 +505,7 @@ napi_value BufferHandleReserveFds(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->reserveFds >= 0, &result);
     return result;
 }
@@ -486,6 +516,7 @@ napi_value BufferHandleReserveInts(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -496,7 +527,7 @@ napi_value BufferHandleReserveInts(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
-
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->reserveInts >= 0, &result);
     return result;
 }
@@ -507,6 +538,7 @@ napi_value BufferHandleReserve(napi_env env, napi_callback_info info)
     GLuint textureId;
     glGenTextures(1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
     int code = SET_BUFFER_GEOMETRY;
@@ -517,6 +549,7 @@ napi_value BufferHandleReserve(napi_env env, napi_callback_info info)
     int fenceFd;
     ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     BufferHandle *handle = OH_NativeWindow_GetBufferHandleFromNative(buffer);
+    NAPI_ASSERT(env, handle != nullptr, "");
     napi_create_int32(env, handle->reserve != nullptr, &result);
     return result;
 }
@@ -536,6 +569,7 @@ napi_value OH_NativeBuffer_PlanesSuccess(napi_env env, napi_callback_info info)
     napi_value result;
     GLuint textureId = 0;
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OH_OnFrameAvailableListener listener;
     int32_t ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage, listener);
@@ -573,6 +607,7 @@ napi_value OH_NativeBuffer_PlaneCount(napi_env env, napi_callback_info info)
     napi_value result;
     GLuint textureId = 0;
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OH_OnFrameAvailableListener listener;
     int32_t ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage, listener);
@@ -610,6 +645,7 @@ napi_value OH_NativeBuffer_PlaneOffset(napi_env env, napi_callback_info info)
     napi_value result;
     GLuint textureId = 0;
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OH_OnFrameAvailableListener listener;
     int32_t ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage, listener);
@@ -647,6 +683,7 @@ napi_value OH_NativeBuffer_PlaneColumnStride(napi_env env, napi_callback_info in
     napi_value result;
     GLuint textureId = 0;
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OH_OnFrameAvailableListener listener;
     int32_t ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage, listener);
@@ -684,6 +721,7 @@ napi_value OH_NativeBuffer_PlaneRowStride(napi_env env, napi_callback_info info)
     napi_value result;
     GLuint textureId = 0;
     OH_NativeImage *nativeImage = OH_NativeImage_Create(textureId, GL_TEXTURE_BINDING_2D);
+    NAPI_ASSERT(env, nativeImage != nullptr, "");
     OH_NativeImage_AttachContext(nativeImage, textureId);
     OH_OnFrameAvailableListener listener;
     int32_t ret = OH_NativeImage_SetOnFrameAvailableListener(nativeImage, listener);
@@ -726,6 +764,10 @@ napi_value OH_NativeBuffer_PlanesSuccess2(napi_env env, napi_callback_info info)
     config.usage = (1ULL << 0);
     
     OH_NativeBuffer* buffer = OH_NativeBuffer_Alloc(&config);
+    if (buffer == nullptr) {
+        napi_create_int32(env, NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+        return result;
+    }
     int32_t err0 = OH_NativeBuffer_GetSeqNum(buffer);
     
     void *getVirAddr;

@@ -1310,5 +1310,20 @@ export default function nativeBufferTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   testNativeErrorCodeCover
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1700
+     * @tc.desc   test ErrorCode
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeErrorCodeCover();
+        console.info("testNativeErrorCodeCover result: " + result)
+        expect(result).assertEqual(0);
+        done();
+      });
   });
 }

@@ -550,6 +550,7 @@ napi_value testNativeWindowPreAllocBufferAbNormalPra(napi_env env, napi_callback
     // 2.PreAllocBuffer
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nullptr, 3);
+    NAPI_ASSERT(env, ret1 != NATIVE_ERROR_OK, "ret1 == NATIVE_ERROR_OK");
     int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, NULL);
     if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
@@ -635,7 +636,7 @@ napi_value testNativeWindowPreAllocBufferBufferCnt(napi_env env, napi_callback_i
             return result;
         }
         int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, bufferCnt[i]);
-        if (ret != 0) {
+        if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_3, &result);
             return result;
         }
@@ -1304,6 +1305,33 @@ napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_i
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    NAPI_ASSERT(env, NATIVE_ERROR_OK == 0, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_MEM_OPERATION_ERROR == 30001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_INVALID_ARGUMENTS == 40001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_PERMISSION == 40301000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_BUFFER == 40601000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_CONSUMER == 41202000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NOT_INIT == 41203000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_CONNECTED == 41206000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_STATE_INVALID == 41207000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_IN_CACHE == 41208000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_QUEUE_FULL == 41209000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_NOT_IN_CACHE == 41210000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_DISCONNECTED == 41211000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_NO_LISTENER_REGISTERED == 41212000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNSUPPORTED == 50102000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNKNOWN == 50002000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_HDI_ERROR == 50007000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BINDER_ERROR == 50401000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_STATE_UNKNOWN == 60001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_API_FAILED == 60002000, "");
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

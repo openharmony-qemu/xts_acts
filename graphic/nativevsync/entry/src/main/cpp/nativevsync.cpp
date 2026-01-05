@@ -26,6 +26,8 @@
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
 #include <thread>
+#include <common/log_common.h>
+#include <common/native_common.h>
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -747,7 +749,32 @@ static napi_value OHNativeVSyncSetExpectedFrameRateRange003(napi_env env, napi_c
     napi_set_element(env, result, ARR_NUMBER_3, result4);
     return result;
 }
-
+static napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    NAPI_ASSERT(env, NATIVE_ERROR_OK == 0, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_MEM_OPERATION_ERROR == 30001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_INVALID_ARGUMENTS == 40001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_PERMISSION == 40301000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_BUFFER == 40601000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_CONSUMER == 41202000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NOT_INIT == 41203000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_CONNECTED == 41206000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_STATE_INVALID == 41207000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_IN_CACHE == 41208000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_QUEUE_FULL == 41209000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_NOT_IN_CACHE == 41210000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_DISCONNECTED == 41211000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_NO_LISTENER_REGISTERED == 41212000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNSUPPORTED == 50102000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNKNOWN == 50002000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_HDI_ERROR == 50007000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BINDER_ERROR == 50401000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_STATE_UNKNOWN == 60001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_API_FAILED == 60002000, "");
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
 static napi_value vsyncInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -765,6 +792,7 @@ static napi_value vsyncInit(napi_env env, napi_value exports)
          OHNativeVSyncSetExpectedFrameRateRange002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHNativeVSyncSetExpectedFrameRateRange003", nullptr,
          OHNativeVSyncSetExpectedFrameRateRange003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

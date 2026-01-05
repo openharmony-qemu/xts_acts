@@ -19,6 +19,9 @@
 #include "napi/native_api.h"
 #include <native_buffer/native_buffer.h>
 #include <native_window/graphic_error_code.h>
+#include <common/log_common.h>
+#include <common/native_common.h>
+
 #define FAIL (-1)
 #define NUMBER_MINUS_1 (-1)
 #define NUMBER_0 0
@@ -47,7 +50,6 @@
 #define NUMBER_60 60
 #define NUMBER_100 100
 #define NUMBER_200 200
-#define NUMBER_256 256
 #define NUMBER_500 500
 #define NUMBER_1000 1000
 #define NUMBER_1001 1001
@@ -75,8 +77,6 @@
 #define NUMBER_8002 8002
 #define NUMBER_8003 8003
 #define NUMBER_10000 10000
-#define NUMBER_65536 65536
-#define NUMBER_65537 65537
 #define NUMBER_100000000 100000000
 #define NUMBER_0X001 0x001
 
@@ -166,4 +166,5 @@ napi_value OHNativeBufferReadFromParcelNull(napi_env env, napi_callback_info inf
 napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

@@ -1,13 +1,16 @@
 {
-  "devices": {
-        "general": [],
-    "custom": [
-      {
-        "xts": [
-          "SystemCapability.Graphic.Graphic2D.NativeDrawing",
-          "SystemCapability.Graphic.Graphic2D.NativeBuffer"
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Graphic.Graphic2D.NativeDrawing",
+                    "SystemCapability.Graphic.Graphic2D.NativeBuffer"
+                ]
+            }
         ]
-      }
-    ]
-  }
+    }
 }

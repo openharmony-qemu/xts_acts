@@ -31,6 +31,8 @@
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
 #include <native_window/graphic_error_code.h>
+#include <common/log_common.h>
+#include <common/native_common.h>
 
 #define NUMBER_1 1
 #define NUMBER_3 3
@@ -327,4 +329,5 @@ napi_value testNativeWindowLockBufferUpperLimit(napi_env env, napi_callback_info
 napi_value testNativeWindowLockBufferMultipleCalls(napi_env env, napi_callback_info info);
 napi_value testNativeWindowUnLockAndFlushBufferMultipleCalls(napi_env env, napi_callback_info info);
 napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_info info);
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H

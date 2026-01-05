@@ -312,11 +312,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNormal, Functio
     size_t byteLength = strlen(str);
     int count = OH_Drawing_FontCountText(font, str, byteLength, TEXT_ENCODING_UTF8);
     OH_Drawing_Point2D pts[count];
-    OH_Drawing_TextBlobCreateFromPosText(str, count, &pts[0], font, TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlob* textblob = OH_Drawing_TextBlobCreateFromPosText(str, count, &pts[0], font, TEXT_ENCODING_UTF8);
     // add assert
+    EXPECT_NE(textblob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
@@ -340,27 +342,29 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNull, Function 
     OH_Drawing_Point2D pts[count];
     // 1. OH_Drawing_TextBlobCreateFromPosText with the first parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(nullptr, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlob* textblob =
+        OH_Drawing_TextBlobCreateFromPosText(nullptr, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_TextBlobCreateFromPosText with the second parameter being empty, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, 0, &pts[0], font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, 0, &pts[0], font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_TextBlobCreateFromPosText with the third parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), nullptr, font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), nullptr, font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
-    OH_Drawing_TextBlobCreateFromPosText("123456", 6, &pts[0], font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText("123456", 6, &pts[0], font, TEXT_ENCODING_UTF8);
     // 5. OH_Drawing_TextBlobCreateFromPosText with the fourth parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], nullptr, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], nullptr, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 6. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
@@ -389,9 +393,12 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextMultipleCalls, 
         const char *str = strs[i % 6];
         int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
         OH_Drawing_Point2D pts[count];
-        OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
+        OH_Drawing_TextBlob* textblob =
+            OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
         // add assert
+        EXPECT_NE(textblob, nullptr);
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+        OH_Drawing_TextBlobDestroy(textblob);
     }
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
@@ -418,10 +425,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextAbnormal, Funct
     OH_Drawing_Point2D pts[count];
     // 1. Call OH_Drawing_TextBlobCreateFromPosText interface with OH_Drawing_TextEncoding out of range, check the error
     // code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, static_cast<OH_Drawing_TextEncoding>(-1));
+    OH_Drawing_TextBlob* textblob =
+        OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, static_cast<OH_Drawing_TextEncoding>(-1));
+    EXPECT_NE(textblob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
@@ -492,6 +502,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNull, Function |
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
     OH_Drawing_TextBlob *textBlob3 = OH_Drawing_TextBlobCreateFromString("123456", font, TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob3, nullptr);
     // 4. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TextBlobDestroy(textBlob1);
@@ -524,12 +535,14 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringMultipleCalls, F
     for (int i = 0; i < 10; i++) {
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
         EXPECT_NE(nullptr, canvas);
         OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 0, 0);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         OH_Drawing_CanvasDestroy(canvas);
+        OH_Drawing_TextBlobDestroy(textBlob);
     }
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
@@ -556,6 +569,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringAbnormal, Functi
     // code with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, static_cast<OH_Drawing_TextEncoding>(-1));
+    EXPECT_NE(textBlob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
@@ -580,6 +594,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNormal, Function | Smal
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobGetBounds
     OH_Drawing_TextBlobGetBounds(textBlob, rect);
     float left = OH_Drawing_RectGetLeft(rect);
@@ -608,6 +623,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNull, Function | SmallT
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Pass nullptr as the first parameter to OH_Drawing_TextBlobGetBounds and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobGetBounds(nullptr, rect);
@@ -646,6 +662,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsMultipleCalls, Function
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         OH_Drawing_TextBlobGetBounds(textBlob, rect);
         float left = OH_Drawing_RectGetLeft(rect);
         float right = OH_Drawing_RectGetRight(rect);
@@ -674,6 +691,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsAbnormal, Function | Sm
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobGetBounds with rect initialized with negative values
     OH_Drawing_TextBlobGetBounds(textBlob, rect);
     float left = OH_Drawing_RectGetLeft(rect);
@@ -700,6 +718,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNormal, Function | Small
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobUniqueID
     uint32_t ret = OH_Drawing_TextBlobUniqueID(textBlob);
     EXPECT_EQ(ret > 0, true);
@@ -725,6 +744,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNull, Function | SmallTe
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Pass nullptr as the parameter to OH_Drawing_TextBlobUniqueID and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobUniqueID(nullptr);
@@ -755,6 +775,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDMultipleCalls, Function 
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         uint32_t ret = OH_Drawing_TextBlobUniqueID(textBlob);
         EXPECT_EQ(ret > 0, true);
         // add assert
@@ -780,6 +801,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNormal, Functi
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 2. OH_Drawing_TextBlobBuilderAllocRunPos
     const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 9, rect);
     // add assert
@@ -809,6 +831,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNull, Function
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderAllocRunPos with the first parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, 9, rect);
@@ -851,6 +874,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosMultipleCalls,
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 1. Call OH_Drawing_TextBlobBuilderAllocRunPos 10 times
     for (int i = 0; i < 10; i++) {
         const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 9, rect);
@@ -884,10 +908,9 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNormal, Function | Sm
     EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderMake
     OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobBuilderMake(builder);
+    EXPECT_EQ(textBlob, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    // add assert
-    EXPECT_EQ(textBlob, nullptr);
     // 3. Free memory
     OH_Drawing_TextBlobDestroy(textBlob);
     if (0) {

@@ -30,6 +30,7 @@
 #include <iostream>
 #include <map>
 #include <native_image/graphic_error_code.h>
+#include <common/native_common.h>
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -60,6 +61,7 @@
 #define NUMBER_100000 100000
 #define ERRCODE_40001000 40001000
 #define ERRCODE_40601000 40601000
+#define NUM_MAX 4294967295
 
 class InitNativeWindow {
 private:
@@ -240,4 +242,5 @@ napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info);
 napi_value OHNativeImageIsReleasedCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeImageReleasedCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeImageReleaseAbnormal(napi_env env, napi_callback_info info);
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 #endif // NATIVEIMAGE_TEST_H

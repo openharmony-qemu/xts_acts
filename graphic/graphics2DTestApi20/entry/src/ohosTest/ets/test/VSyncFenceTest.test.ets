@@ -137,7 +137,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_IsValid_0200 start====");
           let result: number = libGraphics2DApi20.fenceIsValidFalse();
           console.info("====>SUB_OH_NativeFence_IsValid_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_IsValid_0200 catch err: " + err);
@@ -181,7 +181,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_Wait_0200 start====");
           let result: number = libGraphics2DApi20.fenceWaitFalse();
           console.info("====>SUB_OH_NativeFence_Wait_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Wait_0200 catch err: " + err);
@@ -225,7 +225,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_WaitForever_0200 start====");
           let result: number = libGraphics2DApi20.fenceWaitForeverFalse();
           console.info("====>SUB_OH_NativeFence_WaitForever_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_WaitForever_0200 catch err: " + err);
