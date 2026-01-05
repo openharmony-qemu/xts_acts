@@ -189,7 +189,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let audioRenderer: audio.AudioRenderer | undefined;
       let errStatus: number = 6800103;
       let errorCode = 0;

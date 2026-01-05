@@ -109,7 +109,7 @@ HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100, 
 HWTEST(ActsAudioNdkTest, SUM_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200, TestSize.Level1)
 {
     int32_t latency = 0;
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(nullptr,AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(nullptr, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
     EXPECT_EQ(result, AUDIOSTREAM_ERROR_INVALID_PARAM);
 }
 
