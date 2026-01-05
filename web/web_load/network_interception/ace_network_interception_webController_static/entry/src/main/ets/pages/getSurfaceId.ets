@@ -35,7 +35,7 @@ import { Callback, RecordData } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 
 class StringFields {
-  private str: string = 'emitSetUrlTrustList0100';
+  public str: string = 'emitSetUrlTrustList0100';
 }
 @Entry
 @Component
