@@ -43,7 +43,7 @@
           }
         ]
       }
-    ]
+    ],
     "requestPermissions":[
       {
         "name":"ohos.permission.MANAGE_UDMF_APP_SHARE_OPTION"
