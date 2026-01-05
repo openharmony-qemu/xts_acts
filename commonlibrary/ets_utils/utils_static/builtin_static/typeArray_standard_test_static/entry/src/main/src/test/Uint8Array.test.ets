@@ -17,18 +17,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-// import { Constants } from './Uint8ArrayData.test';
-
-// function sleep(time: number) {
-//   return new Promise<void>((resolve, reject) => {
-//     setTimeout(():void => {
-//       resolve()
-//     }, time)
-//   }).then(():void => {
-//     console.info( `sleep ${time} over...`)
-//   })
-// }
-
 export default function Uint8ArrayTest() {
   describe('Uint8ArrayTest', ():void => {
     afterEach(() => {
@@ -1105,49 +1093,28 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8ArrayConstructor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0048";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigInt64Array = new BigInt64Array([-21n, 31n]);
-    //     // new Uint8Array
-    //     const byteLength = bigInt64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigInt64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(0);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+ it('testUint8ArrayConstructor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8ArrayConstructor0048";
+      try {
+        // creat bigInt64Array
+        const bigInt64Array = new BigInt64Array([-21n, 31n]);
+        // new Uint8Array
+        const byteLength = bigInt64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
 
-    /** 无效用例
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_4900
-     * @tc.name        testUint8ArrayConstructor0049
-     * @tc.desc        Testing Constructor of Uint8Array with BigInt64Array,and get value is error.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8ArrayConstructor0049',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0049";
-    //   try {
-    //     let bigInt64Array = new BigInt64Array([21n,31n]);
-    //     new Uint8Array(bigInt64Array);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('TypeError');
-    //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
-    //   }
-    // });
+        let offset = 0;
+        for (const num of bigInt64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          uint8Array .set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_5000
@@ -1157,48 +1124,28 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8ArrayConstructor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0050";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigInt64Array = new BigUint64Array([21n, 31n]);
-    //     // new Uint8Array
-    //     const byteLength = bigInt64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigInt64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(2);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /** 无效用例
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_5100
-     * @tc.name        testUint8ArrayConstructor0051
-     * @tc.desc        Testing Constructor of Uint8Array with BigUint64Array, get value error.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8ArrayConstructor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0051";
-    //   try {
-    //     let array = new Uint8Array(new BigUint64Array([21n,31n]));
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('TypeError');
-    //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
-    //   }
-    // });
+    it('testUint8ArrayConstructor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8ArrayConstructor0050";
+      try {
+        // creat bigInt64Array
+        const bigInt64Array = new BigUint64Array([21n, 31n]);
+        // new Uint8Array
+        const byteLength = bigInt64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigInt64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          uint8Array .set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(2);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_5200
@@ -1515,25 +1462,6 @@ export default function Uint8ArrayTest() {
         expect(false).assertFail();
       }
     });
-
-    /** 无效用例
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_BYTESPERELEMENT_6500
-     * @tc.name        testUint8ArrayLength0065
-     * @tc.desc        Testing length of Uint8Array.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8ArrayLength0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayLength0065";
-    //   try {
-    //     let bytes = Uint8Array.length;
-    //     expect(String(bytes)).assertEqual('3');
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_FROM_7000
@@ -2008,48 +1936,6 @@ export default function Uint8ArrayTest() {
         expect(false).assertFail();
       }
     });
-
-    /** 无效用例
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_9200
-     * @tc.name        testUint8ArrayConstructor0092
-     * @tc.desc        Testing Constructor of Uint8Array with BigInt64Array.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8ArrayConstructor0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0092";
-    //   try {
-    //     const array = new BigInt64Array([21n, 31n]);
-    //     new Uint8Array(array);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('TypeError');
-    //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
-    //   }
-    // });
-
-    /** 无效用例
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_9300
-     * @tc.name        testUint8ArrayConstructor0093
-     * @tc.desc        Testing Constructor of Uint8Array with BigUint64Array.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8ArrayConstructor0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8ArrayConstructor0093";
-    //   try {
-    //     const array = new BigUint64Array([21n, 31n]);
-    //     new Uint8Array(array);
-    //     expect(false).assertFail();
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('TypeError');
-    //     expect(err.message).assertContain('srcArrayContentType is not equal objContentType.');
-    //   }
-    // });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_9400
@@ -2998,17 +2884,17 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0148";
-    //   try {
-    //     let MIN_VALUE = -1.8e308;
-    //     let array = new Uint8Array(new Float64Array([MIN_VALUE]));
-    //     expect(String(array[0])).assertEqual('0');
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0148";
+      try {
+        let MIN_VALUE = -1.8e308;
+        let array = new Uint8Array(new Float64Array([MIN_VALUE]));
+        expect(String(array[0])).assertEqual('0');
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_14900
@@ -3019,59 +2905,17 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0149";
-    //   try {
-    //     let MIN_VALUE = -1.8e308 -1;
-    //     let array = new Uint8Array(new Float64Array([MIN_VALUE]));
-    //     expect(array[0]).assertEqual(0);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15000
-     * @tc.name        testUint8Constructor0150
-     * @tc.desc        Testing Constructor of Uint8Array with Float64Array threshold value([1.8e308]),
-     * and get value of index 0 is 0.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8Constructor0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0150";
-    //   try {
-    //     let MAX_VALUE = 1.8e308;
-    //     let array = new Uint8Array(new Float64Array([MAX_VALUE]));
-    //     expect(array[0]).assertEqual(0);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
-     * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15100
-     * @tc.name        testUint8Constructor0151
-     * @tc.desc        Testing Constructor of Uint8Array with Float64Array out of bounds value([1.8e308 + 1]),
-     * and get value of index 0 is 0.
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 1
-     */
-    // it('testUint8Constructor0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0151";
-    //   try {
-    //     let MAX_VALUE = 1.8e308 + 1;
-    //     let array = new Uint8Array(new Float64Array([MAX_VALUE]));
-    //     expect(array[0]).assertEqual(0);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0149";
+      try {
+        let MIN_VALUE = -1.8e308 -1;
+        let array = new Uint8Array(new Float64Array([MIN_VALUE]));
+        expect(array[0]).assertEqual(0);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15200
@@ -3082,31 +2926,31 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0152";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigint64Array = new BigInt64Array([-9223372036854775808n]);
-    //     console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
-    //     // new Uint8Array
-    //     const byteLength = bigint64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,bigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       console.info(`${TAG} bytes is: ${bytes}`);
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(0);
-    //     expect(uint8Array[1]).assertEqual(9);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0152";
+      try {
+        // creat bigInt64Array
+        const bigint64Array = new BigInt64Array([-9223372036854775808n]);
+        console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
+        // new Uint8Array
+        const byteLength = bigint64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,bigInt64 is 8 byte,buffer * 2.
+
+        let offset = 0;
+        for (const num of bigint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          console.info(`${TAG} bytes is: ${bytes}`);
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(0);
+        expect(uint8Array[1]).assertEqual(9);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15300
@@ -3117,31 +2961,31 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0153";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigint64Array = new BigInt64Array([-9223372036854775809n]);
-    //     console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
-    //     // new Uint8Array
-    //     const byteLength = bigint64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       console.info(`${TAG} bytes is: ${bytes}`);
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(9);
-    //     expect(uint8Array[1]).assertEqual(2);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0153";
+      try {
+        // creat bigInt64Array
+        const bigint64Array = new BigInt64Array([-9223372036854775809n]);
+        console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
+        // new Uint8Array
+        const byteLength = bigint64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          console.info(`${TAG} bytes is: ${bytes}`);
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(9);
+        expect(uint8Array[1]).assertEqual(2);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15400
@@ -3152,31 +2996,31 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0154";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigint64Array = new BigInt64Array([9223372036854775807n]);
-    //     console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
-    //     // new Uint8Array
-    //     const byteLength = bigint64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       console.info(`${TAG} bytes is: ${bytes}`);
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(9);
-    //     expect(uint8Array[1]).assertEqual(2);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+it('testUint8Constructor0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0154";
+      try {
+        // creat bigInt64Array
+        const bigint64Array = new BigInt64Array([9223372036854775807n]);
+        console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
+        // new Uint8Array
+        const byteLength = bigint64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+
+        let offset = 0;
+        for (const num of bigint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          console.info(`${TAG} bytes is: ${bytes}`);
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(9);
+        expect(uint8Array[1]).assertEqual(2);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15500
@@ -3187,31 +3031,31 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0155";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigint64Array = new BigInt64Array([9223372036854775808n]);
-    //     console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
-    //     // new Uint8Array
-    //     const byteLength = bigint64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       console.info(`${TAG} bytes is: ${bytes}`);
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(0);
-    //     expect(uint8Array[1]).assertEqual(9);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0155";
+      try {
+        // creat bigInt64Array
+        const bigint64Array = new BigInt64Array([9223372036854775808n]);
+        console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
+        // new Uint8Array
+        const byteLength = bigint64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          console.info(`${TAG} bytes is: ${bytes}`);
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(0);
+        expect(uint8Array[1]).assertEqual(9);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15600
@@ -3222,28 +3066,28 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0156";
-    //   try {
-    //     // creat bigUInt64Array
-    //     const bigUint64Array = new BigUint64Array([0n]);
-    //     // new Uint8Array
-    //     const byteLength = bigUint64Array.buffer.byteLength;
-    //     const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigUint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       uint8Array .set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(0);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0156";
+      try {
+        // creat bigUInt64Array
+        const bigUint64Array = new BigUint64Array([0n]);
+        // new Uint8Array
+        const byteLength = bigUint64Array.buffer.byteLength;
+        const uint8Array  = new Uint8Array(byteLength * 2); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigUint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(0);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15700
@@ -3254,30 +3098,30 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0157";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigUint64Array = new BigUint64Array([-1n]);
-    //     // new Uint8Array
-    //     const byteLength = bigUint64Array.buffer.byteLength;
-    //     console.info(`${TAG} byteLength is: ${byteLength}`);
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigUint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       uint8Array.set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(1);
-    //     expect(uint8Array[1]).assertEqual(8);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0157";
+      try {
+        // creat bigInt64Array
+        const bigUint64Array = new BigUint64Array([-1n]);
+        // new Uint8Array
+        const byteLength = bigUint64Array.buffer.byteLength;
+        console.info(`${TAG} byteLength is: ${byteLength}`);
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigUint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(1);
+        expect(uint8Array[1]).assertEqual(8);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15800
@@ -3288,30 +3132,30 @@ export default function Uint8ArrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testUint8Constructor0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const TAG = "testUint8Constructor0158";
-    //   try {
-    //     // creat bigInt64Array
-    //     const bigUint64Array = new BigUint64Array([18446744073709551615n]);
-    //     // new Uint8Array
-    //     const byteLength = bigUint64Array.buffer.byteLength;
-    //     console.info(`${TAG} byteLength is: ${byteLength}`);
-    //     const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
-    //
-    //     let offset = 0;
-    //     for (const num of bigUint64Array) {
-    //       // BigInt => Uint8Array
-    //       const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
-    //       uint8Array.set(bytes, offset);
-    //       offset += bytes.length;
-    //     }
-    //     expect(uint8Array[0]).assertEqual(1);
-    //     expect(uint8Array[2]).assertEqual(4);
-    //   } catch (err:BusinessError){
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUint8Constructor0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const TAG = "testUint8Constructor0158";
+      try {
+        // creat bigInt64Array
+        const bigUint64Array = new BigUint64Array([18446744073709551615n]);
+        // new Uint8Array
+        const byteLength = bigUint64Array.buffer.byteLength;
+        console.info(`${TAG} byteLength is: ${byteLength}`);
+        const uint8Array  = new Uint8Array(byteLength * 3); // because Uint8 is 1 byte,BigInt64 is 8 byte,buffer * 2.
+    
+        let offset = 0;
+        for (const num of bigUint64Array) {
+          // BigInt => Uint8Array
+          const bytes = new Uint8Array(BigInt(num).toString().split('').map(n => parseInt(n)));
+          uint8Array.set(bytes, offset);
+          offset += bytes.length;
+        }
+        expect(uint8Array[0]).assertEqual(1);
+        expect(uint8Array[2]).assertEqual(4);
+      } catch (err){
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_15900
