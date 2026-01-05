@@ -58,21 +58,21 @@ static PFN_vkGetSwapchainImagesKHR fpGetSwapchainImagesKHR = nullptr;
 static PFN_vkGetNativeBufferPropertiesOHOS fpGetNativeBufferPropertiesOHOS = nullptr;
 static PFN_vkGetMemoryNativeBufferOHOS fpGetMemoryNativeBufferOHOS = nullptr;
 
-static void* libVulkan_ = nullptr;
-static VkInstance instance_ = nullptr;
-static VkSurfaceKHR surface_ = VK_NULL_HANDLE;
-static VkPhysicalDevice physicalDevice_ = nullptr;
-static VkDevice device_ = nullptr;
-static VkSurfaceCapabilitiesKHR surfCaps_ = {};
-static VkSurfaceFormatKHR surfaceFormat_ = {};
-static VkSwapchainKHR swapChain_ = VK_NULL_HANDLE;
-static VkSwapchainKHR swapChain2_ = VK_NULL_HANDLE;
-static VkSemaphore semaphore_ = VK_NULL_HANDLE;
-static bool isSupportedVulkan_ = false;
-static std::vector<VkQueueFamilyProperties> queueProps_;
-static uint32_t queueCount_ = 0;
+static void* libVulkan = nullptr;
+static VkInstance instance = nullptr;
+static VkSurfaceKHR surface = VK_NULL_HANDLE;
+static VkPhysicalDevice physicalDevice = nullptr;
+static VkDevice device = nullptr;
+static VkSurfaceCapabilitiesKHR surfCaps = {};
+static VkSurfaceFormatKHR surfaceFormat = {};
+static VkSwapchainKHR swapChain = VK_NULL_HANDLE;
+static VkSwapchainKHR swapChain2 = VK_NULL_HANDLE;
+static VkSemaphore semaphore = VK_NULL_HANDLE;
+static bool isSupportedVulkan = false;
+static std::vector<VkQueueFamilyProperties> queueProps;
+static uint32_t queueCount = 0;
 static VkDebugUtilsMessengerEXT debugUtilsMessenger = VK_NULL_HANDLE;
-static std::stringstream debugMessage_;
+static std::stringstream debugMessage;
 
 static bool DLOpenLibVulkan()
 {
@@ -81,10 +81,10 @@ static bool DLOpenLibVulkan()
 #else
     const char* path = "/system/lib/libvulkan.so";
 #endif
-    libVulkan_ = dlopen(path, RTLD_NOW | RTLD_LOCAL);
-    if (libVulkan_ == nullptr) {
+    libVulkan = dlopen(path, RTLD_NOW | RTLD_LOCAL);
+    if (libVulkan == nullptr) {
         std::cout << "dlerror: " << dlerror() << std::endl;
-        std::cout << "isSupportedVulkan_: false" << std::endl;
+        std::cout << "isSupportedVulkan: false" << std::endl;
         return false;
     }
     return true;
@@ -109,14 +109,14 @@ static void TrytoCreateVkInstance()
     instanceCreateInfo.enabledExtensionCount = static_cast<uint32_t>(instanceExtensions.size());
     instanceCreateInfo.ppEnabledExtensionNames = instanceExtensions.data();
 
-    VkResult result = vkCreateInstance(&instanceCreateInfo, nullptr, &instance_);
-    std::cout << "instance_ ptr: " << instance_ << std::endl;
-    if (result != VK_SUCCESS || instance_ == nullptr) {
-        isSupportedVulkan_ = false;
+    VkResult result = vkCreateInstance(&instanceCreateInfo, nullptr, &instance);
+    std::cout << "instance ptr: " << instance << std::endl;
+    if (result != VK_SUCCESS || instance == nullptr) {
+        isSupportedVulkan = false;
     } else {
-        isSupportedVulkan_ = true;
+        isSupportedVulkan = true;
     }
-    std::cout << "set isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
+    std::cout << "set isSupportedVulkan: " << isSupportedVulkan << std::endl;
     std::cout << "TrytoCreateVkInstance result: " << result << std::endl;
 }
 
@@ -124,10 +124,10 @@ static VkSwapchainCreateInfoKHR GetSwapchainCreateInfo(VkFormat imageFormat, VkC
 {
     VkSwapchainCreateInfoKHR swapchainCI = {};
     swapchainCI.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
-    swapchainCI.surface = surface_;
-    uint32_t desiredNumberOfSwapchainImages = surfCaps_.minImageCount + 1;
-    if ((surfCaps_.maxImageCount > 0) && (desiredNumberOfSwapchainImages > surfCaps_.maxImageCount)) {
-        desiredNumberOfSwapchainImages = surfCaps_.maxImageCount;
+    swapchainCI.surface = surface;
+    uint32_t desiredNumberOfSwapchainImages = surfCaps.minImageCount + 1;
+    if ((surfCaps.maxImageCount > 0) && (desiredNumberOfSwapchainImages > surfCaps.maxImageCount)) {
+        desiredNumberOfSwapchainImages = surfCaps.maxImageCount;
     }
     swapchainCI.minImageCount = desiredNumberOfSwapchainImages;
     swapchainCI.imageFormat = imageFormat;
@@ -141,7 +141,7 @@ static VkSwapchainCreateInfoKHR GetSwapchainCreateInfo(VkFormat imageFormat, VkC
     swapchainCI.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
     swapchainCI.queueFamilyIndexCount = 0;
     swapchainCI.presentMode = VK_PRESENT_MODE_IMMEDIATE_KHR;
-    swapchainCI.oldSwapchain = swapChain_;
+    swapchainCI.oldSwapchain = swapChain;
     swapchainCI.clipped = VK_TRUE;
     swapchainCI.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
     return swapchainCI;
@@ -149,40 +149,40 @@ static VkSwapchainCreateInfoKHR GetSwapchainCreateInfo(VkFormat imageFormat, VkC
 
 static uint32_t GetQueueFamilyIndex(VkQueueFlagBits queueFlags)
 {
-    if (physicalDevice_ == nullptr || vkGetPhysicalDeviceQueueFamilyProperties == nullptr) {
-        std::cout << "physicalDevice_ or vkGetPhysicalDeviceQueueFamilyProperties is null" << std::endl;
+    if (physicalDevice == nullptr || vkGetPhysicalDeviceQueueFamilyProperties == nullptr) {
+        std::cout << "physicalDevice or vkGetPhysicalDeviceQueueFamilyProperties is null" << std::endl;
         return static_cast<uint32_t>(-1);
     }
 
-    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice_, &queueCount_, nullptr);
-    if (queueCount_ == 0) {
+    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &queueCount, nullptr);
+    if (queueCount == 0) {
         return static_cast<uint32_t>(-1);
     }
 
-    queueProps_.resize(queueCount_);
-    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice_, &queueCount_, queueProps_.data());
+    queueProps.resize(queueCount);
+    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &queueCount, queueProps.data());
 
-    for (size_t i = 0; i < queueProps_.size(); i++) {
+    for (size_t i = 0; i < queueProps.size(); i++) {
         if (queueFlags & VK_QUEUE_COMPUTE_BIT) {
-            if ((queueProps_[i].queueFlags & queueFlags) &&
-                ((queueProps_[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) == 0)) {
+            if ((queueProps[i].queueFlags & queueFlags) &&
+                ((queueProps[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) == 0)) {
                 return static_cast<uint32_t>(i);
             }
         }
     }
 
-    for (size_t i = 0; i < queueProps_.size(); i++) {
+    for (size_t i = 0; i < queueProps.size(); i++) {
         if (queueFlags & VK_QUEUE_TRANSFER_BIT) {
-            if ((queueProps_[i].queueFlags & queueFlags) &&
-                ((queueProps_[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) == 0) &&
-                ((queueProps_[i].queueFlags & VK_QUEUE_COMPUTE_BIT) == 0)) {
+            if ((queueProps[i].queueFlags & queueFlags) &&
+                ((queueProps[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) == 0) &&
+                ((queueProps[i].queueFlags & VK_QUEUE_COMPUTE_BIT) == 0)) {
                 return static_cast<uint32_t>(i);
             }
         }
     }
 
-    for (size_t i = 0; i < queueProps_.size(); i++) {
-        if (queueProps_[i].queueFlags & queueFlags) {
+    for (size_t i = 0; i < queueProps.size(); i++) {
+        if (queueProps[i].queueFlags & queueFlags) {
             return static_cast<uint32_t>(i);
         }
     }
@@ -208,27 +208,27 @@ static VkBool32 UserCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSever
     } else if (messageSeverity & VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT) {
         prefix = "DEBUG: ";
     }
-    debugMessage_ << prefix << "[" << pCallbackData->messageIdNumber << "][" << pCallbackData->pMessageIdName
+    debugMessage << prefix << "[" << pCallbackData->messageIdNumber << "][" << pCallbackData->pMessageIdName
                   << "] : " << pCallbackData->pMessage;
     return VK_FALSE;
 }
 
 static void TearDownTestCase()
 {
-    if (device_ != nullptr) {
-        if (swapChain_ != VK_NULL_HANDLE) {
-            fpDestroySwapchainKHR(device_, swapChain_, nullptr);
+    if (device != nullptr) {
+        if (swapChain != VK_NULL_HANDLE) {
+            fpDestroySwapchainKHR(device, swapChain, nullptr);
         }
-        vkDestroyDevice(device_, nullptr);
-        device_ = nullptr;
+        vkDestroyDevice(device, nullptr);
+        device = nullptr;
     }
-    if (instance_ != nullptr) {
-        if (surface_ != VK_NULL_HANDLE) {
-            vkDestroySurfaceKHR(instance_, surface_, nullptr);
-            surface_ = VK_NULL_HANDLE;
+    if (instance != nullptr) {
+        if (surface != VK_NULL_HANDLE) {
+            vkDestroySurfaceKHR(instance, surface, nullptr);
+            surface = VK_NULL_HANDLE;
         }
-        vkDestroyInstance(instance_, nullptr);
-        instance_ = nullptr;
+        vkDestroyInstance(instance, nullptr);
+        instance = nullptr;
     }
 }
 
@@ -236,181 +236,190 @@ int LoadBaseFuncPtrTest()
 {
     bool opened = DLOpenLibVulkan();
     std::cout << "LibVulkan opened: " << opened << std::endl;
-    std::cout << "libVulkan_ ptr: " << libVulkan_ << std::endl;
-    if (!opened || libVulkan_ == nullptr) {
+    std::cout << "libVulkan ptr: " << libVulkan << std::endl;
+    if (!opened || libVulkan == nullptr) {
         return -1;
     }
 
     vkEnumerateInstanceExtensionProperties = reinterpret_cast<PFN_vkEnumerateInstanceExtensionProperties>(
-        dlsym(libVulkan_, "vkEnumerateInstanceExtensionProperties"));
+        dlsym(libVulkan, "vkEnumerateInstanceExtensionProperties"));
     if (vkEnumerateInstanceExtensionProperties == nullptr) {
         return -1;
     }
     vkEnumerateInstanceLayerProperties = reinterpret_cast<PFN_vkEnumerateInstanceLayerProperties>(
-        dlsym(libVulkan_, "vkEnumerateInstanceLayerProperties"));
+        dlsym(libVulkan, "vkEnumerateInstanceLayerProperties"));
     if (vkEnumerateInstanceLayerProperties == nullptr) {
         return -1;
     }
     vkEnumerateDeviceExtensionProperties = reinterpret_cast<PFN_vkEnumerateDeviceExtensionProperties>(
-        dlsym(libVulkan_, "vkEnumerateDeviceExtensionProperties"));
+        dlsym(libVulkan, "vkEnumerateDeviceExtensionProperties"));
     if (vkEnumerateDeviceExtensionProperties == nullptr) {
         return -1;
     }
     vkEnumerateDeviceLayerProperties =
-        reinterpret_cast<PFN_vkEnumerateDeviceLayerProperties>(dlsym(libVulkan_, "vkEnumerateDeviceLayerProperties"));
+        reinterpret_cast<PFN_vkEnumerateDeviceLayerProperties>(dlsym(libVulkan, "vkEnumerateDeviceLayerProperties"));
     if (vkEnumerateDeviceLayerProperties == nullptr) {
         return -1;
     }
-    vkCreateInstance = reinterpret_cast<PFN_vkCreateInstance>(dlsym(libVulkan_, "vkCreateInstance"));
+    vkCreateInstance = reinterpret_cast<PFN_vkCreateInstance>(dlsym(libVulkan, "vkCreateInstance"));
     if (vkCreateInstance == nullptr) {
         return -1;
     }
-    vkGetInstanceProcAddr = reinterpret_cast<PFN_vkGetInstanceProcAddr>(dlsym(libVulkan_, "vkGetInstanceProcAddr"));
+    vkGetInstanceProcAddr = reinterpret_cast<PFN_vkGetInstanceProcAddr>(dlsym(libVulkan, "vkGetInstanceProcAddr"));
     if (vkGetInstanceProcAddr == nullptr) {
         return -1;
     }
-    vkGetDeviceProcAddr = reinterpret_cast<PFN_vkGetDeviceProcAddr>(dlsym(libVulkan_, "vkGetDeviceProcAddr"));
+    vkGetDeviceProcAddr = reinterpret_cast<PFN_vkGetDeviceProcAddr>(dlsym(libVulkan, "vkGetDeviceProcAddr"));
     if (vkGetDeviceProcAddr == nullptr) {
         return -1;
     }
     TrytoCreateVkInstance();
-    return isSupportedVulkan_ ? 0 : -1;
+    return isSupportedVulkan ? 0 : -1;
+}
+
+template <typename T> static bool LoadInstanceFunc(T& funcPtr, const char* funcName)
+{
+    funcPtr = reinterpret_cast<T>(vkGetInstanceProcAddr(instance, funcName));
+    return funcPtr != nullptr;
+}
+
+static bool LoadInstanceCoreFunc()
+{
+    if (!LoadInstanceFunc(vkDestroyInstance, "vkDestroyInstance")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkEnumeratePhysicalDevices, "vkEnumeratePhysicalDevices")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkCreateDevice, "vkCreateDevice")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkDestroyDevice, "vkDestroyDevice")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkDestroySurfaceKHR, "vkDestroySurfaceKHR")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkCreateSurfaceOHOS, "vkCreateSurfaceOHOS")) {
+        return false;
+    }
+    return true;
+}
+
+static bool LoadInstanceSurfaceFunc()
+{
+    if (!LoadInstanceFunc(fpGetPhysicalDeviceSurfaceCapabilitiesKHR, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(fpGetPhysicalDeviceSurfacePresentModesKHR, "vkGetPhysicalDeviceSurfacePresentModesKHR")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(fpGetPhysicalDeviceSurfaceFormatsKHR, "vkGetPhysicalDeviceSurfaceFormatsKHR")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkGetPhysicalDeviceSurfaceSupportKHR, "vkGetPhysicalDeviceSurfaceSupportKHR")) {
+        return false;
+    }
+    return true;
+}
+
+static bool LoadInstanceDeviceFunc()
+{
+    if (!LoadInstanceFunc(vkGetPhysicalDeviceQueueFamilyProperties, "vkGetPhysicalDeviceQueueFamilyProperties")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkGetPhysicalDeviceProperties, "vkGetPhysicalDeviceProperties")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkGetPhysicalDeviceFeatures, "vkGetPhysicalDeviceFeatures")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkGetPhysicalDeviceMemoryProperties, "vkGetPhysicalDeviceMemoryProperties")) {
+        return false;
+    }
+    return true;
+}
+
+static bool LoadInstanceDebugFunc()
+{
+    if (!LoadInstanceFunc(vkCreateDebugUtilsMessengerEXT, "vkCreateDebugUtilsMessengerEXT")) {
+        return false;
+    }
+    if (!LoadInstanceFunc(vkDestroyDebugUtilsMessengerEXT, "vkDestroyDebugUtilsMessengerEXT")) {
+        return false;
+    }
+    return true;
 }
 
 int LoadInstanceFuncPtrTest()
 {
-    std::cout << "isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
-    if (!isSupportedVulkan_) {
+    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    if (!isSupportedVulkan) {
         return 0;
     }
-    if (instance_ == nullptr || vkGetInstanceProcAddr == nullptr) {
+    if (instance == nullptr || vkGetInstanceProcAddr == nullptr) {
         return -1;
     }
 
-    vkDestroyInstance = reinterpret_cast<PFN_vkDestroyInstance>(vkGetInstanceProcAddr(instance_, "vkDestroyInstance"));
-    if (vkDestroyInstance == nullptr) {
+    if (!LoadInstanceCoreFunc()) {
         return -1;
     }
-    vkEnumeratePhysicalDevices = reinterpret_cast<PFN_vkEnumeratePhysicalDevices>(
-        vkGetInstanceProcAddr(instance_, "vkEnumeratePhysicalDevices"));
-    if (vkEnumeratePhysicalDevices == nullptr) {
+    if (!LoadInstanceSurfaceFunc()) {
         return -1;
     }
-    vkCreateDevice = reinterpret_cast<PFN_vkCreateDevice>(vkGetInstanceProcAddr(instance_, "vkCreateDevice"));
-    if (vkCreateDevice == nullptr) {
+    if (!LoadInstanceDeviceFunc()) {
         return -1;
     }
-    vkDestroyDevice = reinterpret_cast<PFN_vkDestroyDevice>(vkGetInstanceProcAddr(instance_, "vkDestroyDevice"));
-    if (vkDestroyDevice == nullptr) {
-        return -1;
-    }
-    vkDestroySurfaceKHR =
-        reinterpret_cast<PFN_vkDestroySurfaceKHR>(vkGetInstanceProcAddr(instance_, "vkDestroySurfaceKHR"));
-    if (vkDestroySurfaceKHR == nullptr) {
-        return -1;
-    }
-    vkCreateSurfaceOHOS =
-        reinterpret_cast<PFN_vkCreateSurfaceOHOS>(vkGetInstanceProcAddr(instance_, "vkCreateSurfaceOHOS"));
-    if (vkCreateSurfaceOHOS == nullptr) {
-        return -1;
-    }
-    fpGetPhysicalDeviceSurfaceCapabilitiesKHR = reinterpret_cast<PFN_vkGetPhysicalDeviceSurfaceCapabilitiesKHR>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceSurfaceCapabilitiesKHR"));
-    if (fpGetPhysicalDeviceSurfaceCapabilitiesKHR == nullptr) {
-        return -1;
-    }
-    fpGetPhysicalDeviceSurfacePresentModesKHR = reinterpret_cast<PFN_vkGetPhysicalDeviceSurfacePresentModesKHR>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceSurfacePresentModesKHR"));
-    if (fpGetPhysicalDeviceSurfacePresentModesKHR == nullptr) {
-        return -1;
-    }
-    fpGetPhysicalDeviceSurfaceFormatsKHR = reinterpret_cast<PFN_vkGetPhysicalDeviceSurfaceFormatsKHR>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceSurfaceFormatsKHR"));
-    if (fpGetPhysicalDeviceSurfaceFormatsKHR == nullptr) {
-        return -1;
-    }
-    vkGetPhysicalDeviceQueueFamilyProperties = reinterpret_cast<PFN_vkGetPhysicalDeviceQueueFamilyProperties>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceQueueFamilyProperties"));
-    if (vkGetPhysicalDeviceQueueFamilyProperties == nullptr) {
-        return -1;
-    }
-    vkGetPhysicalDeviceProperties = reinterpret_cast<PFN_vkGetPhysicalDeviceProperties>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceProperties"));
-    if (vkGetPhysicalDeviceProperties == nullptr) {
-        return -1;
-    }
-    vkGetPhysicalDeviceFeatures = reinterpret_cast<PFN_vkGetPhysicalDeviceFeatures>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceFeatures"));
-    if (vkGetPhysicalDeviceFeatures == nullptr) {
-        return -1;
-    }
-    vkGetPhysicalDeviceMemoryProperties = reinterpret_cast<PFN_vkGetPhysicalDeviceMemoryProperties>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceMemoryProperties"));
-    if (vkGetPhysicalDeviceMemoryProperties == nullptr) {
-        return -1;
-    }
-    vkGetPhysicalDeviceSurfaceSupportKHR = reinterpret_cast<PFN_vkGetPhysicalDeviceSurfaceSupportKHR>(
-        vkGetInstanceProcAddr(instance_, "vkGetPhysicalDeviceSurfaceSupportKHR"));
-    if (vkGetPhysicalDeviceSurfaceSupportKHR == nullptr) {
-        return -1;
-    }
-    vkCreateDebugUtilsMessengerEXT = reinterpret_cast<PFN_vkCreateDebugUtilsMessengerEXT>(
-        vkGetInstanceProcAddr(instance_, "vkCreateDebugUtilsMessengerEXT"));
-    if (vkCreateDebugUtilsMessengerEXT == nullptr) {
-        return -1;
-    }
-    vkDestroyDebugUtilsMessengerEXT = reinterpret_cast<PFN_vkDestroyDebugUtilsMessengerEXT>(
-        vkGetInstanceProcAddr(instance_, "vkDestroyDebugUtilsMessengerEXT"));
-    if (vkDestroyDebugUtilsMessengerEXT == nullptr) {
+    if (!LoadInstanceDebugFunc()) {
         return -1;
     }
     return 0;
 }
 
-int vkEnumeratePhysicalDevices_Test()
+int VkEnumeratePhysicalDevicesTest()
 {
-    std::cout << "isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
-    if (!isSupportedVulkan_) {
+    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    if (!isSupportedVulkan) {
         return 0;
     }
-    if (instance_ == nullptr || vkEnumeratePhysicalDevices == nullptr) {
+    if (instance == nullptr || vkEnumeratePhysicalDevices == nullptr) {
         return -1;
     }
 
     uint32_t gpuCount = 0;
-    VkResult err = vkEnumeratePhysicalDevices(instance_, &gpuCount, nullptr);
+    VkResult err = vkEnumeratePhysicalDevices(instance, &gpuCount, nullptr);
     if (err != VK_SUCCESS || gpuCount == 0) {
         return -1;
     }
     std::vector<VkPhysicalDevice> physicalDevices(gpuCount);
-    err = vkEnumeratePhysicalDevices(instance_, &gpuCount, physicalDevices.data());
+    err = vkEnumeratePhysicalDevices(instance, &gpuCount, physicalDevices.data());
     if (err != VK_SUCCESS || physicalDevices.empty()) {
         return -1;
     }
-    physicalDevice_ = physicalDevices[0];
-    if (physicalDevice_ == nullptr) {
+    physicalDevice = physicalDevices[0];
+    if (physicalDevice == nullptr) {
         return -1;
     }
 
     VkPhysicalDeviceProperties deviceProperties;
     VkPhysicalDeviceFeatures deviceFeatures;
     VkPhysicalDeviceMemoryProperties deviceMemoryProperties;
-    vkGetPhysicalDeviceProperties(physicalDevice_, &deviceProperties);
-    vkGetPhysicalDeviceFeatures(physicalDevice_, &deviceFeatures);
-    vkGetPhysicalDeviceMemoryProperties(physicalDevice_, &deviceMemoryProperties);
+    vkGetPhysicalDeviceProperties(physicalDevice, &deviceProperties);
+    vkGetPhysicalDeviceFeatures(physicalDevice, &deviceFeatures);
+    vkGetPhysicalDeviceMemoryProperties(physicalDevice, &deviceMemoryProperties);
     (void)deviceProperties;
     (void)deviceFeatures;
     (void)deviceMemoryProperties;
     return 0;
 }
 
-int vkCreateDevice_Test()
+int VkCreateDeviceTest()
 {
-    std::cout << "isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
-    if (!isSupportedVulkan_) {
+    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    if (!isSupportedVulkan) {
         return 0;
     }
-    if (vkCreateDevice == nullptr || physicalDevice_ == nullptr) {
+    if (vkCreateDevice == nullptr || physicalDevice == nullptr) {
         return -1;
     }
 
@@ -437,23 +446,23 @@ int vkCreateDevice_Test()
     deviceCreateInfo.ppEnabledExtensionNames = deviceExtensions.data();
 
     VkDevice logicalDevice = VK_NULL_HANDLE;
-    VkResult err = vkCreateDevice(physicalDevice_, &deviceCreateInfo, nullptr, &logicalDevice);
+    VkResult err = vkCreateDevice(physicalDevice, &deviceCreateInfo, nullptr, &logicalDevice);
     std::cout << "vkCreateDevice err: " << err << std::endl;
     if (err != VK_SUCCESS || logicalDevice == VK_NULL_HANDLE) {
         return -1;
     }
     std::cout << "logicalDevice ptr: " << logicalDevice << std::endl;
-    device_ = logicalDevice;
+    device = logicalDevice;
     return 0;
 }
 
-int getNativeBufferPropertiesOHOS_Test()
+int GetNativeBufferPropertiesOhosTest()
 {
-    std::cout << "isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
-    if (!isSupportedVulkan_) {
+    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    if (!isSupportedVulkan) {
         return 0;
     }
-    if (vkCreateDevice == nullptr || physicalDevice_ == nullptr || vkGetDeviceProcAddr == nullptr) {
+    if (vkCreateDevice == nullptr || physicalDevice == nullptr || vkGetDeviceProcAddr == nullptr) {
         return -1;
     }
 
@@ -480,11 +489,11 @@ int getNativeBufferPropertiesOHOS_Test()
     deviceCreateInfo.ppEnabledExtensionNames = deviceExtensions.data();
 
     VkDevice logicalDevice = VK_NULL_HANDLE;
-    VkResult err = vkCreateDevice(physicalDevice_, &deviceCreateInfo, nullptr, &logicalDevice);
+    VkResult err = vkCreateDevice(physicalDevice, &deviceCreateInfo, nullptr, &logicalDevice);
     if (err != VK_SUCCESS || logicalDevice == VK_NULL_HANDLE) {
         return -1;
     }
-    device_ = logicalDevice;
+    device = logicalDevice;
 
     OH_NativeBuffer* aHardBuffer = {};
     VkNativeBufferPropertiesOHOS nativeBufferPropertiesOHOS = {};
@@ -495,26 +504,24 @@ int getNativeBufferPropertiesOHOS_Test()
     nativeBufferPropertiesOHOS.pNext = &nativeBufferFormatPropertiesOHOS;
 
     fpGetNativeBufferPropertiesOHOS = reinterpret_cast<PFN_vkGetNativeBufferPropertiesOHOS>(
-        vkGetDeviceProcAddr(device_, "vkGetNativeBufferPropertiesOHOS"));
+        vkGetDeviceProcAddr(device, "vkGetNativeBufferPropertiesOHOS"));
     if (fpGetNativeBufferPropertiesOHOS == nullptr) {
         return 0;
     }
     return 0;
 }
 
-int getMemoryNativeBufferOHOS_Test()
+int GetMemoryNativeBufferOhosTest()
 {
-    std::cout << "isSupportedVulkan_: " << isSupportedVulkan_ << std::endl;
-    if (!isSupportedVulkan_) {
+    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    if (!isSupportedVulkan) {
         return 0;
     }
-    if (vkCreateDevice == nullptr || physicalDevice_ == nullptr || vkGetDeviceProcAddr == nullptr) {
+    if (vkCreateDevice == nullptr || physicalDevice == nullptr || vkGetDeviceProcAddr == nullptr) {
         return -1;
     }
-
     VkDeviceCreateInfo deviceCreateInfo = {};
     deviceCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
-
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
     const float defaultQueuePriority = 0.0f;
     VkDeviceQueueCreateInfo queueInfo = {};
@@ -528,28 +535,24 @@ int getMemoryNativeBufferOHOS_Test()
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
     deviceCreateInfo.pQueueCreateInfos = queueCreateInfos.data();
-
     std::vector<const char*> deviceExtensions;
     deviceExtensions.push_back(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
     deviceCreateInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
     deviceCreateInfo.ppEnabledExtensionNames = deviceExtensions.data();
-
     VkDevice logicalDevice = VK_NULL_HANDLE;
-    VkResult err = vkCreateDevice(physicalDevice_, &deviceCreateInfo, nullptr, &logicalDevice);
+    VkResult err = vkCreateDevice(physicalDevice, &deviceCreateInfo, nullptr, &logicalDevice);
     if (err != VK_SUCCESS || logicalDevice == VK_NULL_HANDLE) {
         return -1;
     }
-    device_ = logicalDevice;
-
+    device = logicalDevice;
     OH_NativeBuffer* aHardBuffer = {};
     VkDeviceMemory hardwareBufferMemory = {};
     VkMemoryGetNativeBufferInfoOHOS getNativeBufferInfoOHOS = {};
     getNativeBufferInfoOHOS.sType = VK_STRUCTURE_TYPE_MEMORY_GET_NATIVE_BUFFER_INFO_OHOS;
     getNativeBufferInfoOHOS.pNext = nullptr;
     getNativeBufferInfoOHOS.memory = hardwareBufferMemory;
-
     fpGetMemoryNativeBufferOHOS =
-        reinterpret_cast<PFN_vkGetMemoryNativeBufferOHOS>(vkGetDeviceProcAddr(device_, "vkGetMemoryNativeBufferOHOS"));
+        reinterpret_cast<PFN_vkGetMemoryNativeBufferOHOS>(vkGetDeviceProcAddr(device, "vkGetMemoryNativeBufferOHOS"));
     if (fpGetMemoryNativeBufferOHOS == nullptr) {
         return 0;
     }

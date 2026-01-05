@@ -21,10 +21,10 @@ namespace loader {
 
 int LoadBaseFuncPtrTest();
 int LoadInstanceFuncPtrTest();
-int vkEnumeratePhysicalDevices_Test();
-int vkCreateDevice_Test();
-int getNativeBufferPropertiesOHOS_Test();
-int getMemoryNativeBufferOHOS_Test();
+int VkEnumeratePhysicalDevicesTest();
+int VkCreateDeviceTest();
+int GetNativeBufferPropertiesOhosTest();
+int GetMemoryNativeBufferOhosTest();
 
 } // namespace loader
 } // namespace vulkan
