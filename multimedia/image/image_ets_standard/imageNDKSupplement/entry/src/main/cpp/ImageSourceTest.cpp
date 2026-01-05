@@ -155,8 +155,8 @@ napi_value ImageSourceInitNativeSuppTest(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value ImageSourceCreate(napi_env env, napi_callback_info info) {
-    
+napi_value ImageSourceCreate(napi_env env, napi_callback_info info)
+{
     int32_t fd;
     
     if (env == nullptr) {
@@ -165,7 +165,7 @@ napi_value ImageSourceCreate(napi_env env, napi_callback_info info) {
     }
     
     size_t argc = 2;
-    napi_value args[2] = {nullptr,nullptr};
+    napi_value args[2] = {nullptr, nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     napi_get_value_int32(env, args[0], &fd);

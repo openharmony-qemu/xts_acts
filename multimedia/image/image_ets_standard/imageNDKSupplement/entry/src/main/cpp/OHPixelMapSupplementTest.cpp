@@ -619,7 +619,6 @@ napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info i
 }
 napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callback_info info) 
 {
-
     uint8_t *buffer;
     size_t bufferSize = 0;
     buffer[10000];
@@ -705,7 +704,6 @@ napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback
     Image_ErrorCode returnValue;
     Image_PositionArea area = {};
     switch (testIndex) {
-
     case CASE_INDEX_1: {
         OH_Pixelmap_InitializationOptions *options = nullptr;
         returnValue = OH_PixelmapInitializationOptions_Create(&options);

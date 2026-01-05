@@ -253,7 +253,8 @@ napi_value PixelmapNativeSetMemoryNameTest(napi_env env, napi_callback_info info
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelmap = nullptr;
-    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA ,&pixelmap);
+    Image_ErrorCode errCode =
+        OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA, &pixelmap);
     char name[] = "testName";
     size_t len = strlen(name);
     Image_ErrorCode returnValue;
