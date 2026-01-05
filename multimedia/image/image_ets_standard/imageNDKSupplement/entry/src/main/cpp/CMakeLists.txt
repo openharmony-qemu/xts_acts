@@ -78,6 +78,7 @@ find_library(
 
 
 target_link_libraries(imageEffect PUBLIC
+    libnative_color_space_manager.so
     libimage_processing.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
