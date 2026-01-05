@@ -53,6 +53,11 @@ interface GenericError {
   message?: string;
 }
 
+interface EnumValuePair<T> {
+  enum: T;
+  value: number;
+}
+
 let filesDir: string | undefined;
 let cacheDir: string | undefined;
 let isSupportHEIFDecode: boolean;
@@ -2472,6 +2477,162 @@ export default function imageExifGetModifyByTypeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ORIENTATION_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ORIENTATION_0100
+     * @tc.desc        Verify write and read EXIF Orientation property with all enum values
+     *                 1.Create image source from JPEG file using fd
+     *                 2.Iterate through all 8 Orientation enum values (TOP_LEFT to LEFT_BOTTOM)
+     *                 3.Write each orientation value using writeImageMetadata API
+     *                 4.Read back orientation using readImageMetadata API
+     *                 5.Verify each orientation value matches the expected numeric value (1-8)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ORIENTATION_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ORIENTATION_0100"
+      let result = true;
+      let orientationKey: Array<image.Orientation> = [image.Orientation.TOP_LEFT, image.Orientation.TOP_RIGHT,
+        image.Orientation.BOTTOM_RIGHT, image.Orientation.BOTTOM_LEFT, image.Orientation.LEFT_TOP,
+        image.Orientation.RIGHT_TOP, image.Orientation.RIGHT_BOTTOM, image.Orientation.LEFT_BOTTOM];
+      let orientationValue: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
+
+      const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      let exifMetadata1 = image.ExifMetadata.createInstance();
+      try {
+        for (let i = 0; i < orientationKey.length; i++) {
+          exifMetadata1.orientation = orientationKey[i];
+          const imageMetadata: image.ImageMetadata = {
+            exifMetadata: exifMetadata1
+          };
+          await imageSourceApi.writeImageMetadata(imageMetadata);
+          let value = await imageSourceApi.readImageMetadata(["Orientation"]);
+          if (value.exifMetadata != undefined) {
+            let actualValue = value.exifMetadata!.orientation;
+            console.info(`${testTag} orientation actualValue is: ${actualValue}, expectedValue is: ${orientationKey[i]}`);
+            if (actualValue !== orientationValue[i]) {
+              result = false;
+              console.info(`${testTag} orientation verification failed for key: orientation, Expected: ${orientationKey[i]}, Actual: ${actualValue}`);
+              break;
+            }
+          }
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+      }
+      console.info(`${testTag} getImagePropertyArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ENUM_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ENUM_0100
+     * @tc.desc        Verify Hw MakerNote metadata enum values consistency
+     *                 1.Define FocusMode enum values (AF_A, AF_S, AF_C, MF) and verify against expected values (0-3)
+     *                 2.Define XmageColorMode enum values (NORMAL, BRIGHT, SOFT, MONO) and verify against expected values (0-3)
+     *                 3.Define capture mode constants (PROFESSIONAL, PANORAMA, PORTRAIT, etc.) and verify against expected values
+     *                 4.Verify all enum values match their corresponding numeric constants
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ENUM_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ENUM_0100"
+      let result = true;
+      const focusModeEnums: Array<EnumValuePair<image.FocusMode>> = [
+        { enum: image.FocusMode.AF_A, value: 0 },
+        { enum: image.FocusMode.AF_S, value: 1 },
+        { enum: image.FocusMode.AF_C, value: 2 },
+        { enum: image.FocusMode.MF, value: 3 }
+      ];
+      const xmageColorModeEnums: Array<EnumValuePair<image.XmageColorMode>> = [
+        { enum: image.XmageColorMode.NORMAL, value: 0 },
+        { enum: image.XmageColorMode.BRIGHT, value: 1 },
+        { enum: image.XmageColorMode.SOFT, value: 2 },
+        { enum: image.XmageColorMode.MONO, value: 3 }
+      ];
+      const captureModeEnums: Array<EnumValuePair<number>> = [
+        { enum: image.XMAGE_WATERMARK_MODE_AT_THE_BOTTOM, value: 9 },
+        { enum: image.XMAGE_WATERMARK_MODE_BORDER, value: 10 },
+        { enum: image.CAPTURE_MODE_PROFESSIONAL, value: 2 },
+        { enum: image.CAPTURE_MODE_FRONT_LENS_NIGHT_VIEW, value: 7 },
+        { enum: image.CAPTURE_MODE_PANORAMA, value: 8 },
+        { enum: image.CAPTURE_MODE_TAIL_LIGHT, value: 9 },
+        { enum: image.CAPTURE_MODE_LIGHT_GRAFFITI, value: 10 },
+        { enum: image.CAPTURE_MODE_SILKY_WATER, value: 11 },
+        { enum: image.CAPTURE_MODE_STAR_TRACK, value: 12 },
+        { enum: image.CAPTURE_MODE_WIDEAPERTURE, value: 19 },
+        { enum: image.CAPTURE_MODE_MOVING_PHOTO, value: 20 },
+        { enum: image.CAPTURE_MODE_PORTRAIT, value: 23 },
+        { enum: image.CAPTURE_MODE_REAR_LENS_NIGHT_VIEW, value: 42 },
+        { enum: image.CAPTURE_MODE_SUPER_MACRO, value: 47 },
+        { enum: image.CAPTURE_MODE_SNAP_SHOT, value: 62 }
+      ];
+      try {
+        result = focusModeEnums.every(item => item.enum === item.value) &&
+                 xmageColorModeEnums.every(item => item.enum === item.value) &&
+                 captureModeEnums.every(item => item.enum === item.value);
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      }
+      console.info(`${testTag} getImagePropertyArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ONLY_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ONLY_0100
+     * @tc.desc        Verify read-only Hw MakerNote metadata properties
+     *                 1.Create image source from JPEG file with read-only MakerNote data using fd
+     *                 2.Read read-only MakerNote metadata using readImageMetadata API
+     *                 3.Verify scene recognition confidence values (stage, blue sky, beach, snow, sunset, flowers, night, text)
+     *                 4.Verify other read-only properties (faceCount, burstNumber, isFrontCamera, rollAngle, pitchAngle, physicalAperture, focusMode)
+     *                 5.Verify undefined properties (xmageColorMode, isWindSnapshot, sceneGreenPlantConfidence) are not set
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ONLY_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_ONLY_0100"
+      let result = true;
+      const imageSourceApi = await getImageSource("test_exif_readOnly_jpg_v2.jpg", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(readOnlyMakerNoteHwMetadata);
+        const metadata = exifValue.makerNoteHuaweiMetadata;
+
+        if (metadata != undefined) {
+          result = metadata.xmageColorMode == undefined && 
+            metadata.isWindSnapshot == undefined &&
+            metadata.sceneStageConfidence == 3 && 
+            metadata.sceneBlueSkyConfidence == 4 && 
+            metadata.sceneGreenPlantConfidence == undefined &&
+            metadata.sceneBeachConfidence == 6 && 
+            metadata.sceneSnowConfidence == 7 && 
+            metadata.sceneSunsetConfidence == 8 &&
+            metadata.sceneFlowersConfidence == 9 && 
+            metadata.sceneNightConfidence == 10 && 
+            metadata.sceneTextConfidence == 11 &&
+            metadata.faceCount == 2 && 
+            metadata.burstNumber == 2 && 
+            metadata.isFrontCamera == true && 
+            metadata.rollAngle == 4 &&
+            metadata.pitchAngle == 5 && 
+            metadata.physicalAperture == 6 && 
+            (metadata.focusMode as number) == 7;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      }
+      console.info(`${testTag} getImagePropertyArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
     
   });
 }
