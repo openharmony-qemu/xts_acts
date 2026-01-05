@@ -687,7 +687,7 @@ export default function WindowPCTest() {
                     }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
                         expect(err.code).assertEqual(1300002);
-                        expect(err.message).assertTrue();
+                        expect(err.message!=null).assertTrue();
                         done();
                     })
                 } else {
@@ -696,11 +696,11 @@ export default function WindowPCTest() {
             } catch (err: BusinessError) {
                 hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
                 if(err.code == 801){
-                    expect(err.message).assertTrue();
+                    expect(err.message!=null).assertTrue();
                     done();
                 } else{
                     expect(err.code).assertEqual(1300002);
-                    expect(err.message).assertTrue();
+                    expect(err.message!=null).assertTrue();
                     done();
                 }
             }
@@ -729,11 +729,11 @@ export default function WindowPCTest() {
                 } catch (err: BusinessError) {
                     hilog.error(domain, tag,`${caseName} failed main window, err: ${JSON.stringify(err)}`);
                     if (err.code === 801) {
-                        expect(err.message).assertTrue();
+                        expect(err.message!=null).assertTrue();
                         done();
                     } else {
                         expect(err.code).assertEqual(1300004);
-                        expect(err.message).assertTrue();
+                        expect(err.message!=null).assertTrue();
                     }
                 }
                 // dilog窗
@@ -753,11 +753,11 @@ export default function WindowPCTest() {
                     hilog.error(domain, tag,`${caseName} failed dialog window, err: ${JSON.stringify(err)}`);
                     await windowClass2.destroyWindow();
                     if(err.code == 801){
-                        expect(err.message).assertTrue();
+                        expect(err.message!=null).assertTrue();
                         done();
                     } else{
                         expect(err.code).assertEqual(1300004);
-                        expect(err.message).assertTrue();
+                        expect(err.message!=null).assertTrue();
                     }
                 }
 
