@@ -1107,209 +1107,209 @@ export default function ActsNewDrawingNativeTestPart9() {
 
     // Surface related test cases (16 cases)
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0100
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0100
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0100
      * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0100', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(0);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0200
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0200
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0200
      * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0200', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0200', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(1);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0300
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0300
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0300
      * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0300', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(2);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0400
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0400
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0400
      * @tc.desc   test for testSurfaceDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0400', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0400', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(3);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0500
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0500
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0500
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0500
      * @tc.desc   test for testSurfaceDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(4);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0600
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0600
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0600
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0600
      * @tc.desc   test for testSurfaceGetCanvasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0600', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0600', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(5);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0700
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0700
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0700
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0700
      * @tc.desc   test for testSurfaceGetCanvasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0700', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(6);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0800
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0800
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0800
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0800
      * @tc.desc   test for testSurfaceGetCanvasBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0800', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0800', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(7);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0900
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0900
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0900
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0900
      * @tc.desc   test for testSurfaceCreateOnScreenNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0900', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0900', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(8);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01000
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01000
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01000
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01000
      * @tc.desc   test for testSurfaceCreateOnScreenNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01000', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01000', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(9);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01100
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01100
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01100
      * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01100', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01100', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(10);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01200
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01200
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01200
      * @tc.desc   test for testSurfaceFlushNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01200', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01200', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingSurface(11);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01300
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01300
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01300
      * @tc.desc   test for testSurfaceFlushNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01300', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01300', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(12);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01400
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01400
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01400
      * @tc.desc   test for testSurfaceFlushAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01400', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01400', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(13);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01500
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01500
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01500
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01500
      * @tc.desc   test for testSurfaceFlushMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01500', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01500', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(14);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_1600
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_1600
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_1600
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_1600
      * @tc.desc   test for testSurfaceFlushTiming.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_1600', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_1600', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingSurface(15);
       expect(result).assertEqual(0);
     })
