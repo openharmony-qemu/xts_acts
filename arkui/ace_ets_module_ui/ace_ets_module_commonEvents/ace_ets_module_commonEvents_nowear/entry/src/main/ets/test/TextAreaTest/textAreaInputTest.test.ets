@@ -64,8 +64,8 @@ export default function textAreaInputTest() {
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
-		await driver.triggerKey(2070);
-		await CommonFunc.sleep(1000);
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(500);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         await button1?.click();
@@ -127,8 +127,9 @@ export default function textAreaInputTest() {
           await driver.triggerKey(2047)
         }
       }
-      
-      expect("").assertEqual("");
+
+      let strJson = getInspectorByKey('textArea2');
+      expect(JSON.parse(strJson).$type).assertEqual('TextArea');
       console.info("[textAreaInputTest0001] end");
 
     });
