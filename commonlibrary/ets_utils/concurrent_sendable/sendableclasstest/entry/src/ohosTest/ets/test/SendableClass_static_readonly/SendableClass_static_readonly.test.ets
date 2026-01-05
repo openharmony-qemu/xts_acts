@@ -244,7 +244,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0009';
       try {
-        expect(typeof SendableStaticReadonlyClass.myEnum).assertEqual('number');
+        expect(typeof SendableStaticReadonlyClass.myEnum).assertEqual('int');
         expect(SendableStaticReadonlyClass.myEnum).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -577,7 +577,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticReadonlyClass0026';
       try {
-        expect(typeof SendableStaticReadonlyClass.mySendableUnionArray).assertEqual('number');
+        expect(typeof SendableStaticReadonlyClass.mySendableUnionArray).assertEqual('int');
         expect(SendableStaticReadonlyClass.mySendableUnionArray).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -748,7 +748,7 @@ export default function sendableClassStaticReadonlyTest() {
       () => {
         const TAG = 'testSendableNonParameterFuncStaticReadonlyClass0009';
         try {
-          expect(typeof SendableNonParameterFuncStaticReadonlyClass.myEnum).assertEqual('number');
+          expect(typeof SendableNonParameterFuncStaticReadonlyClass.myEnum).assertEqual('int');
           expect(SendableNonParameterFuncStaticReadonlyClass.myEnum).assertEqual(0);
         } catch (err) {
           console.error(`${TAG} failed, error: ${err.message}`);
@@ -1122,7 +1122,7 @@ export default function sendableClassStaticReadonlyTest() {
       () => {
         const TAG = 'testSendableNonParameterFuncStaticReadonlyClass0026';
         try {
-          expect(typeof SendableNonParameterFuncStaticReadonlyClass.mySendableUnionArray).assertEqual('number');
+          expect(typeof SendableNonParameterFuncStaticReadonlyClass.mySendableUnionArray).assertEqual('int');
           expect(SendableNonParameterFuncStaticReadonlyClass.mySendableUnionArray).assertEqual(1);
         } catch (err) {
           console.error(`${TAG} failed, error: ${err.message}`);
@@ -1282,7 +1282,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableNonFuncStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0009';
       try {
-        expect(typeof SendableNonFuncStaticReadonlyClass.myEnum).assertEqual('number');
+        expect(typeof SendableNonFuncStaticReadonlyClass.myEnum).assertEqual('int');
         expect(SendableNonFuncStaticReadonlyClass.myEnum).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -1615,7 +1615,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableNonFuncStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticReadonlyClass0026';
       try {
-        expect(typeof SendableNonFuncStaticReadonlyClass.mySendableUnionArray).assertEqual('number');
+        expect(typeof SendableNonFuncStaticReadonlyClass.mySendableUnionArray).assertEqual('int');
         expect(SendableNonFuncStaticReadonlyClass.mySendableUnionArray).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -1776,7 +1776,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableArrowNewStaticReadonlyClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0009';
       try {
-        expect(typeof SendableArrowNewStaticReadonlyClass.myEnum).assertEqual('number');
+        expect(typeof SendableArrowNewStaticReadonlyClass.myEnum).assertEqual('int');
         expect(SendableArrowNewStaticReadonlyClass.myEnum).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -2109,7 +2109,7 @@ export default function sendableClassStaticReadonlyTest() {
     it('testSendableArrowNewStaticReadonlyClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticReadonlyClass0026';
       try {
-        expect(typeof SendableArrowNewStaticReadonlyClass.mySendableUnionArray).assertEqual('number');
+        expect(typeof SendableArrowNewStaticReadonlyClass.mySendableUnionArray).assertEqual('int');
         expect(SendableArrowNewStaticReadonlyClass.mySendableUnionArray).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -2280,7 +2280,7 @@ export default function sendableClassStaticReadonlyTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const TAG = 'testSendableExpressionArrowOutStaticReadonlyClass0009';
         try {
-          expect(typeof SendableExpressionArrowOutStaticReadonlyClass.myEnum).assertEqual('number');
+          expect(typeof SendableExpressionArrowOutStaticReadonlyClass.myEnum).assertEqual('int');
           expect(SendableExpressionArrowOutStaticReadonlyClass.myEnum).assertEqual(0);
         } catch (err) {
           console.error(`${TAG} failed, error: ${err.message}`);
@@ -2843,7 +2843,7 @@ export default function sendableClassStaticReadonlyTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const TAG = 'testSendableExpressionOutArrowStaticReadonlyClass0009';
         try {
-          expect(typeof SendableExpressionOutArrowStaticReadonlyClass.myEnum).assertEqual('number');
+          expect(typeof SendableExpressionOutArrowStaticReadonlyClass.myEnum).assertEqual('int');
           expect(SendableExpressionOutArrowStaticReadonlyClass.myEnum).assertEqual(0);
           SendableExpressionOutArrowStaticReadonlyClass.myEnum = SendableConstEnum.OPTION_2;
           expect(SendableExpressionOutArrowStaticReadonlyClass.myEnum).assertEqual(1);

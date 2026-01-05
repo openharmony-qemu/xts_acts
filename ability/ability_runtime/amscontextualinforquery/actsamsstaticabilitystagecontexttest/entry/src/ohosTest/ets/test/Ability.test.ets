@@ -80,25 +80,25 @@ export default function abilityTest() {
             expect(typeof (data)).assertEqual("object");
             expect(typeof (data.name)).assertEqual("string");
             expect(typeof (data.description)).assertEqual("string");
-            expect(typeof (data.descriptionId)).assertEqual("number");
+            expect(typeof (data.descriptionId)).assertEqual("long");
             expect(typeof (data.enabled)).assertEqual("boolean");
             expect(typeof (data.label)).assertEqual("string");
-            expect(typeof (data.labelId)).assertEqual("number");
+            expect(typeof (data.labelId)).assertEqual("long");
             expect(typeof (data.icon)).assertEqual("string");
-            expect(typeof (data.iconId)).assertEqual("number");
+            expect(typeof (data.iconId)).assertEqual("long");
             expect(typeof (data.process)).assertEqual("string");
             expect(Array.isArray(data.permissions)).assertEqual(true);
             expect(typeof (data.codePath)).assertEqual("string");
             expect(typeof (data.removable)).assertEqual("boolean");
-            expect(typeof (data.accessTokenId)).assertEqual("number");
-            expect(typeof (data.uid)).assertEqual("number");
+            expect(typeof (data.accessTokenId)).assertEqual("long");
+            expect(typeof (data.uid)).assertEqual("int");
             expect(typeof (data.iconResource)).assertEqual("object");
             expect(typeof (data.labelResource)).assertEqual("object");
             expect(typeof (data.descriptionResource)).assertEqual("object");
             expect(typeof (data.appDistributionType)).assertEqual("string");
             expect(typeof (data.appProvisionType)).assertEqual("string");
             expect(typeof (data.systemApp)).assertEqual("boolean");
-            expect(typeof (data.bundleType)).assertEqual("number");
+            expect(typeof (data.bundleType)).assertEqual("int");
             expect(typeof (data.debug)).assertEqual("boolean");
             console.log("checkApplicationInfo_expect_typeof_end")
 
@@ -165,11 +165,11 @@ export default function abilityTest() {
             expect(typeof (data)).assertEqual("object");
             expect(typeof (data.name)).assertEqual("string");
             expect(typeof (data.icon)).assertEqual("string");
-            expect(typeof (data.iconId)).assertEqual("number");
+            expect(typeof (data.iconId)).assertEqual("long");
             expect(typeof (data.label)).assertEqual("string");
-            expect(typeof (data.labelId)).assertEqual("number");
+            expect(typeof (data.labelId)).assertEqual("long");
             expect(typeof (data.description)).assertEqual("string");
-            expect(typeof (data.descriptionId)).assertEqual("number");
+            expect(typeof (data.descriptionId)).assertEqual("long");
             expect(typeof (data.mainElementName)).assertEqual("string");
             expect(Array.isArray(data.abilitiesInfo)).assertEqual(true);
             expect(Array.isArray(data.extensionAbilitiesInfo)).assertEqual(true);
@@ -177,7 +177,7 @@ export default function abilityTest() {
             expect(Array.isArray(data.deviceTypes)).assertEqual(true);
             expect(typeof (data.installationFree)).assertEqual("boolean");
             expect(typeof (data.hashValue)).assertEqual("string");
-            expect(typeof (data.type)).assertEqual("number");
+            expect(typeof (data.type)).assertEqual("int");
             expect(Array.isArray(data.dependencies)).assertEqual(true);
             expect(Array.isArray(data.preloads)).assertEqual(true);
             console.log("checkHapModuleInfo_expect_typeof_end")

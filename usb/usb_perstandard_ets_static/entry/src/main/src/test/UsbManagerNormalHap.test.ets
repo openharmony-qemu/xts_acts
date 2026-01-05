@@ -48,9 +48,9 @@ export default function UsbManagerNormalHapTest() {
           const device: usbMgr.USBDevice = devices[i];
           hilog.info(domain, tag, "Device Information:");
           hilog.info(domain, tag, `  Bus Number: ${device.busNum}`);
-          expect(typeof(device.busNum)).assertEqual('number');
+          expect(typeof(device.busNum)).assertEqual('int');
           hilog.info(domain, tag, `  Device Address: ${device.devAddress}`);
-          expect(typeof(device.devAddress)).assertEqual('number');
+          expect(typeof(device.devAddress)).assertEqual('int');
           hilog.info(domain, tag, `  Serial: ${device.serial}`);
           expect(typeof(device.serial)).assertEqual('string');
           hilog.info(domain, tag, `  Name: ${device.name}`);
@@ -62,24 +62,24 @@ export default function UsbManagerNormalHapTest() {
           hilog.info(domain, tag, `  Version: ${device.version}`);
           expect(typeof(device.version)).assertEqual('string');
           hilog.info(domain, tag, `  Vendor ID: ${device.vendorId}`);
-          expect(typeof(device.vendorId)).assertEqual('number');
+          expect(typeof(device.vendorId)).assertEqual('int');
           hilog.info(domain, tag, `  Product ID: ${device.productId}`);
-          expect(typeof(device.productId)).assertEqual('number');
+          expect(typeof(device.productId)).assertEqual('int');
           hilog.info(domain, tag, `  Class: ${device.clazz}`);
-          expect(typeof(device.clazz)).assertEqual('number');
+          expect(typeof(device.clazz)).assertEqual('int');
           hilog.info(domain, tag, `  Subclass: ${device.subClass}`);
-          expect(typeof(device.subClass)).assertEqual('number');
+          expect(typeof(device.subClass)).assertEqual('int');
           hilog.info(domain, tag, `  Protocol: ${device.protocol}`);
-          expect(typeof(device.protocol)).assertEqual('number');
+          expect(typeof(device.protocol)).assertEqual('int');
 
           device.configs.forEach((config, configIndex) => {
             hilog.info(domain, tag, `\n  Configuration ${configIndex + 1}:`);
             hilog.info(domain, tag, `    ID: ${config.id}`);
-            expect(typeof(config.id)).assertEqual('number');
+            expect(typeof(config.id)).assertEqual('int');
             hilog.info(domain, tag, `    Attributes: ${config.attributes}`);
-            expect(typeof(config.attributes)).assertEqual('number');
+            expect(typeof(config.attributes)).assertEqual('int');
             hilog.info(domain, tag, `    Max Power: ${config.maxPower}`);
-            expect(typeof(config.maxPower)).assertEqual('number');
+            expect(typeof(config.maxPower)).assertEqual('int');
             hilog.info(domain, tag, `    Name: ${config.name}`);
             expect(typeof(config.name)).assertEqual('string');
             hilog.info(domain, tag, `    Remote Wakeup: ${config.isRemoteWakeup}`);
@@ -90,36 +90,36 @@ export default function UsbManagerNormalHapTest() {
             config.interfaces.forEach((iface, ifaceIndex) => {
               hilog.info(domain, tag, `\n    Interface ${ifaceIndex + 1}:`);
               hilog.info(domain, tag, `      ID: ${iface.id}`);
-              expect(typeof(iface.id)).assertEqual('number');
+              expect(typeof(iface.id)).assertEqual('int');
               hilog.info(domain, tag, `      Protocol: ${iface.protocol}`);
-              expect(typeof(iface.protocol)).assertEqual('number');
+              expect(typeof(iface.protocol)).assertEqual('int');
               hilog.info(domain, tag, `      Class: ${iface.clazz}`);
-              expect(typeof(iface.clazz)).assertEqual('number');
+              expect(typeof(iface.clazz)).assertEqual('int');
               hilog.info(domain, tag, `      Subclass: ${iface.subClass}`);
-              expect(typeof(iface.subClass)).assertEqual('number');
+              expect(typeof(iface.subClass)).assertEqual('int');
               hilog.info(domain, tag, `      Alternate Setting: ${iface.alternateSetting}`);
-              expect(typeof(iface.alternateSetting)).assertEqual('number');
+              expect(typeof(iface.alternateSetting)).assertEqual('int');
               hilog.info(domain, tag, `      Name: ${iface.name}`);
               expect(typeof(iface.name)).assertEqual('string');
 
               iface.endpoints.forEach((endpoint, endpointIndex) => {
                 hilog.info(domain, tag, `\n      Endpoint ${endpointIndex + 1}:`);
                 hilog.info(domain, tag, `        Address: ${endpoint.address}`);
-                expect(typeof(endpoint.address)).assertEqual('number');
+                expect(typeof(endpoint.address)).assertEqual('int');
                 hilog.info(domain, tag, `        Attributes: ${endpoint.attributes}`);
-                expect(typeof(endpoint.attributes)).assertEqual('number');
+                expect(typeof(endpoint.attributes)).assertEqual('int');
                 hilog.info(domain, tag, `        Interval: ${endpoint.interval}`);
-                expect(typeof(endpoint.interval)).assertEqual('number');
+                expect(typeof(endpoint.interval)).assertEqual('int');
                 hilog.info(domain, tag, `        Max Packet Size: ${endpoint.maxPacketSize}`);
-                expect(typeof(endpoint.maxPacketSize)).assertEqual('number');
+                expect(typeof(endpoint.maxPacketSize)).assertEqual('int');
                 hilog.info(domain, tag, `        Direction: ${endpoint.direction}`);
-                expect(typeof(endpoint.direction)).assertEqual('number');
+                expect(typeof(endpoint.direction)).assertEqual('int');
                 hilog.info(domain, tag, `        Endpoint Number: ${endpoint.endpointAddr}`);
-                expect(typeof(endpoint.endpointAddr)).assertEqual('number');
+                expect(typeof(endpoint.endpointAddr)).assertEqual('int');
                 hilog.info(domain, tag, `        Type: ${endpoint.type}`);
-                expect(typeof(endpoint.type)).assertEqual('number');
+                expect(typeof(endpoint.type)).assertEqual('int');
                 hilog.info(domain, tag, `        Interface ID: ${endpoint.interfaceId}`);
-                expect(typeof(endpoint.interfaceId)).assertEqual('number');
+                expect(typeof(endpoint.interfaceId)).assertEqual('int');
               });
             });
           });
@@ -144,10 +144,10 @@ export default function UsbManagerNormalHapTest() {
     it("usbEnumTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------usbEnumTest001---------------------------');
       hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE}`);
-      expect(typeof(usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE)).assertEqual('number');
+      expect(typeof(usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE)).assertEqual('int');
       expect(usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE.toString()).assertEqual(USB_REQUEST_DIR_TO_DEVICE_STR);
       hilog.info(domain, tag, `USB_REQUEST_DIR_FROM_DEVICE: ${usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE}`);
-      expect(typeof(usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE)).assertEqual('number');
+      expect(typeof(usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE)).assertEqual('int');
       expect(usbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE.toString()).assertEqual(USB_REQUEST_DIR_FROM_DEVICE_STR);
       done()
       hilog.info(domain, tag, '%{public}s', 'usbEnumTest001 end');
