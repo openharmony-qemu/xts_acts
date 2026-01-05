@@ -132,6 +132,7 @@ export default function MotionPathOptionsTest(){
     /**
      * @tc.name   MotionPathOptionsTest_0900
      * @tc.number MotionPathOptionsTest_0900
+     * @tc.desc   Test MotionPath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
