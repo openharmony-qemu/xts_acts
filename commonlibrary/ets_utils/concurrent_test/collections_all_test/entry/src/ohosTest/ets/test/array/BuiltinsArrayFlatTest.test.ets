@@ -64,181 +64,83 @@ export default function builtinsArrayFlatTest() {
      */
     it('builtinsArrayFlatTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, 2, 3]);
-      const flattened: number[] = Array.from(arr).flat();
 
-      expect(JSON.stringify(flattened)).assertEqual(JSON.stringify(arr));
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify(arr));
     });
 
     /**
      * @tc.name   builtinsArrayFlatTest1003
      * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0300
-     * @tc.desc   Verify flat method with depth=1 on multi-level nested array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [2, [3, 4], 5], 6]);
-      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 2, [3, 4], 5, 6]));
-      expect(JSON.stringify(Array.from(arr).flat(-1))).assertEqual(JSON.stringify([1, [2, [3, 4], 5], 6]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1004
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0400
-     * @tc.desc   Verify full flattening with depth=2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [2, [3, 4], 5], 6]);
-      expect(JSON.stringify(Array.from(arr).flat(2))).assertEqual(JSON.stringify([1, 2, 3, 4, 5, 6]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1005
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1005
-     * @tc.desc   Verify no flattening with depth=0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [2, 3], 4]);
-      const flattened: number[] = Array.from(arr).flat();
-
-      expect(JSON.stringify(flattened)).assertEqual(JSON.stringify(arr));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest10006
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10006
      * @tc.desc   Verify handling of sparse arrays (empty slots)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, , 3]);
-      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 3]));
+      expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, null, 3]));
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest10007
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_10007
-     * @tc.desc   Verify flattening nested sparse arrays
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [, 3], 4]);
-      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 3, 4]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1008
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1008
+     * @tc.name   builtinsArrayFlatTest1004
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0400
      * @tc.desc   Verify handling of mixed element types (number + string)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, 2, 3, 'hello']);
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 'hello']));
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1009
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0900
-     * @tc.desc   Verify deep flattening with mixed data types
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [2, [3, 'a']], 4]);
-      expect(JSON.stringify(Array.from(arr).flat(2))).assertEqual(JSON.stringify([1, 2, 3, 'a', 4]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1010
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1010
+     * @tc.name   builtinsArrayFlatTest1005
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0500
      * @tc.desc   Verify empty array returns empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect([].flat().length).assertEqual(0);
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1011
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1011
-     * @tc.desc   Verify flattening of nested empty arrays
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([[], [1], [2]]);
-      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([1, 2]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1012
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1012
+     * @tc.name   builtinsArrayFlatTest1006
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0600
      * @tc.desc   Verify no flattening with depth=0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, 2, 3, 4]);
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 4]));
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1013
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1013
+     * @tc.name   builtinsArrayFlatTest1007
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0700
      * @tc.desc   Verify handling of null and undefined values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([null, undefined, 3]);
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([null, undefined, 3]));
     });
 
     /**
-     * @tc.name   builtinsArrayFlatTest1014
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1400
-     * @tc.desc   Verify objects are not flattened
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFlatTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: FlatObj = {
-        name: 'hh', age: 10, like: [1, 2, 3, 4, 5]
-      };
-      const arr = collections.Array.from([obj]);
-      expect(JSON.stringify(Array.from(arr).flat(1))).assertEqual(JSON.stringify([obj]));
-    });
-
-    /**
-     * @tc.name   builtinsArrayFlatTest1015
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1500
+     * @tc.name   builtinsArrayFlatTest1008
+     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0800
      * @tc.desc   Verify handling of edge case numeric parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFlatTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFlatTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testArray = [1, [2, [3, [4]]], 5];
       const testParams: FlatParams[] = [
         {

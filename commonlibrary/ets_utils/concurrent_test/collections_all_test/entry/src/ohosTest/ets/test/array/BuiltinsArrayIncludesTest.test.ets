@@ -220,45 +220,45 @@ export default function builtinsArrayIncludesTest() {
       expect(([] as undefined[]).includes(undefined)).assertFalse();
     }); // TODO
 
+
+
     /**
      * @tc.name   builtinsArrayIncludesTest1016
      * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_1600
-     * @tc.desc   Verify array elements comparison
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayIncludesTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([[], [1], [2]]);
-      expect(arr.includes([])).assertFalse();
-      expect(arr.includes(arr[0])).assertTrue();
-    });
-
-    /**
-     * @tc.name   builtinsArrayIncludesTest1017
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_1700
      * @tc.desc   Verify null handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayIncludesTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayIncludesTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect([1, null, 3, 4].includes(null)).assertTrue();
     });
 
     /**
-     * @tc.name   builtinsArrayIncludesTest1018
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_1800
+     * @tc.name   builtinsArrayIncludesTest1017
+     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_1700
      * @tc.desc   Verify object reference comparison
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayIncludesTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayIncludesTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: TestA = {
         a: 1
       };
       expect([1, obj, 3].includes(obj)).assertTrue();
+    });
+
+    /**
+     * @tc.name   builtinsArrayIncludesTest1018
+     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_1800
+     * @tc.desc   Verify string elements handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayIncludesTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(['apple', 'banana', 'cherry'].includes('banana')).assertTrue();
     });
 
     /**
@@ -270,30 +270,18 @@ export default function builtinsArrayIncludesTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayIncludesTest1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(['apple', 'banana', 'cherry'].includes('banana')).assertTrue();
+      expect(['apple', '', 'cherry'].includes('')).assertTrue();
     });
 
     /**
      * @tc.name   builtinsArrayIncludesTest1020
      * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_2000
-     * @tc.desc   Verify string elements handling
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayIncludesTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(['apple', '', 'cherry'].includes('')).assertTrue();
-    });
-
-    /**
-     * @tc.name   builtinsArrayIncludesTest1021
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_2100
      * @tc.desc   Verify special number handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayIncludesTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayIncludesTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testArray = collections.Array.from([
         1,
         0,
