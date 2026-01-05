@@ -153,6 +153,7 @@ struct IndexPage {
     { title: 'AccessibilityActionOptionsScrollStep', uri: 'pages/ArkUI/AccessibilityActionOptionsScrollStep' },
     { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
     { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
+    { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
