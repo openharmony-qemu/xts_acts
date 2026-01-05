@@ -72,6 +72,7 @@ group("graphic") {
       "windowstandard:window_hap_test",
       "ActsDrawingNativeTest:ActsNewDrawingNativeTest",
       "ActsGraphicNapiFontTest:ActsGraphicNapiFontHapTest",
+      "ActsGraphicGlesExtensionTest:ActsGraphicGlesExtensionHapTest",
     ]
     if (!(product_name == "ohcore")) {
       deps += [
