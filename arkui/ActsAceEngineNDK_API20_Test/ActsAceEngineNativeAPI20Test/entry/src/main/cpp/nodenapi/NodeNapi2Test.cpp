@@ -29,7 +29,10 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
 {
     OH_LOG_Print(
         LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "HybirdGetNodeHandleTest", "HybirdGetNodeHandleTest CreateNativeNode");
-
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "HybirdGetNodeHandleTest", "GetContext env or info is null");
+        return nullptr;
+    }
     size_t argc = 3;
     napi_value args[3] = { nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -37,10 +40,6 @@ napi_value CreateNodeContent(napi_env env, napi_callback_info info)
     size_t strLength = 0;
     char xComponentID[64] = { 0 };
     napi_get_value_string_utf8(env, args[0], xComponentID, length, &strLength);
-    if ((env == nullptr) || (info == nullptr)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "HybirdGetNodeHandleTest", "GetContext env or info is null");
-        return nullptr;
-    }
   
      // 获取NodeContent
     ArkUI_NodeContentHandle contentHandle;

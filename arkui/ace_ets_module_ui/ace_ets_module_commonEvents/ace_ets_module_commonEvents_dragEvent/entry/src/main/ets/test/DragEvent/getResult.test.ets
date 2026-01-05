@@ -77,11 +77,15 @@ export default function getResultTest() {
       let enabled: Component = await driver.findComponent(ON.id('enabled'));
       let disabled: Component = await driver.findComponent(ON.id('disabled'));
       await images.dragTo(success);
+      await CommonFunc.sleep(500);
       await images.dragTo(failed);
+      await CommonFunc.sleep(500);
       await images.dragTo(canceled);
+      await CommonFunc.sleep(500);
       await images.dragTo(enabled);
+      await CommonFunc.sleep(500);
       await images.dragTo(disabled);
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
       expect(AppStorage.get('DRAG_SUCCESSFUL')).assertEqual(0);
       expect(AppStorage.get('DRAG_FAILED')).assertEqual(1);
       expect(AppStorage.get('DRAG_CANCELED')).assertEqual(2);
