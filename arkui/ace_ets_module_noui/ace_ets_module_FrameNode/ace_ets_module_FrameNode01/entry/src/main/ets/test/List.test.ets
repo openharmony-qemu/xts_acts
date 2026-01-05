@@ -84,6 +84,8 @@ import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
 import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
+import FrameNodeConvertPositionTest from './FrameNodeMethod/FrameNodeConvertPositionTest';
+import FrameNodeConvertPositionErrorCodeTest from './FrameNodeMethod/FrameNodeConvertPositionErrorCodeTest';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -157,5 +159,6 @@ export default function testsuite() {
   frameNodeApi();
 
   GraphicsFourBoundaryTest();
-
+  FrameNodeConvertPositionTest();
+  FrameNodeConvertPositionErrorCodeTest();
 }
