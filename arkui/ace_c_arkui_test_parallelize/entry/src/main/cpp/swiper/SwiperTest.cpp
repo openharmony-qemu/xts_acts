@@ -28,9 +28,11 @@
 #include <string.h>
 #include "./SwiperTest.h"
 
+#define PARAM_1000 1000
 const char* MY_LOG_TAG = "nativeTestSwiper";
 constexpr int SWIPER_COUNT_PER_THREAD = 5;
 constexpr int ASYNC_TASK_COUNT = 20;
+
 
 
 static std::string GetThreadId() {
@@ -174,7 +176,7 @@ static void CheckSwiperAttr(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle nod
     } else {
         for (int32_t i = 0; i < attribute->size && i < expectAttr->size; ++i) {
             int32_t value_i32 = (int32_t)(expectAttr->value[i].i32);
-            if (value_i32 < 1000) {
+            if (value_i32 < PARAM_1000) {
                 if (attribute->value[i].i32 != expectAttr->value[i].i32) {
                     nodeAPI->removeAllChildren(parent);
                     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", "CheckVisualAttr failed, attr[%{public}s] value[%{public}d] mismatch expect:%{public}d, real:%{public}d",
@@ -412,7 +414,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     // Swiper组件属性--NodeAdapter
 
     // Swiper组件属性--cachedCount （预加载子组件个数）
-    // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 16");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 16");
     if (withReset) {
         ArkUI_NumberValue cachedCount_value[] = { { .i32 = 1 } };
         ArkUI_AttributeItem cachedCount_item = { cachedCount_value, sizeof(cachedCount_value) / sizeof(ArkUI_NumberValue) };
@@ -424,7 +426,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // Swiper组件属性--prevMargin （设置前边距）
-    // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 17");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 17");
     if (withReset) {
         ArkUI_NumberValue prevMargin_value[] = { { .f32 = 0.0 }, { .i32 = 0 } };
         ArkUI_AttributeItem prevMargin_item = { prevMargin_value, sizeof(prevMargin_value) / sizeof(ArkUI_NumberValue) };
@@ -436,7 +438,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // Swiper组件属性--nextMargin （设置后边距）
-    // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 18");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 18");
     if (withReset) {
         ArkUI_NumberValue nextMargin_value[] = { { .f32 = 0.0 }, { .i32 = 0 } };
         ArkUI_AttributeItem nextMargin_item = { nextMargin_value, sizeof(nextMargin_value) / sizeof(ArkUI_NumberValue) };
@@ -447,24 +449,16 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
         CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_NEXT_MARGIN, &nextMargin_item);
     }
 
-    // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19");
-    // // Swiper组件属性--INDICATOR （导航器样式）
-    // if (withReset) {
-    //     ArkUI_NumberValue value[] = { 0 };
-    //     ArkUI_AttributeItem expect_item_1 = { value, 1 };
-    //     expect_item_1.object = nullptr;
-    //     CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_INDICATOR, &expect_item_1, true, [](const void* realObj, const void* expectObj) -> bool {
-    //         return realObj == nullptr;
-    //     });
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19");
     if (!withReset) {
         ArkUI_NumberValue value[] = { 0 };
         ArkUI_AttributeItem expect_item_1 = { value, 1 };
         expect_item_1.object = nullptr;
-        // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19-0");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19-0");
         CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_INDICATOR, &expect_item_1, true, [](const void* realObj, const void* expectObj) -> bool {
             return realObj != nullptr;
         });
-        // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19-1");
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 19-1");
     }
 
     // Swiper组件属性--nestedScroll （设置swiper和父组件的嵌套滚动模式）
@@ -511,21 +505,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
         CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_PAGE_FLIP_MODE, &pageFlipModeValueItem);
     }
 
-//    // Swiper组件属性--autoFill （设置swiper一页内元素显示个数根据元素最小宽度自适应） 该属性收到别的属性影响，先屏蔽
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 46");
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_SWIPER_AUTO_FILL);
-//        // 默认值是 0， false
-//        ArkUI_NumberValue expect_autoFillValue[] = { { .f32 = 0.0f }, { .i32 = false } };
-//        ArkUI_AttributeItem expect_autoFillValue_item = { expect_autoFillValue,
-//                                                      sizeof(expect_autoFillValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_AUTO_FILL, &expect_autoFillValue_item);
-//    } else {
-//        ArkUI_NumberValue autoFillValue[] = { { .f32 = 50 }, { .i32 = true } };
-//        ArkUI_AttributeItem autoFillValueItem = { autoFillValue,
-//                                                  sizeof(autoFillValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_AUTO_FILL, &autoFillValueItem);
-//    }
+    // Swiper组件属性--autoFill （设置swiper一页内元素显示个数根据元素最小宽度自适应） 该属性收到别的属性影响，先屏蔽
 
     // Swiper组件属性--设置 swiper 显示区域外插入或者删除数据是否保持可见内容位置不变
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 47");
@@ -542,22 +522,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
         CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_MAINTAIN_VISIBLE_CONTENT_POSITION, &contentPositionValueItem);
     }
 
-//    // Swiper组件属性--设置响应式列数布局策略，影响别的属性，先屏蔽。
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 48");
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_SWIPER_ITEMFILLPOLICY);
-//        ArkUI_NumberValue expect_fillPolicyValue[] = { { .i32 = ARKUI_ITEMFILLPOLICY_NONE }, { .i32 = 0 } };
-//        ArkUI_AttributeItem expect_fillPolicyValue_item = { expect_fillPolicyValue,
-//                                                      sizeof(expect_fillPolicyValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_ITEMFILLPOLICY, &expect_fillPolicyValue_item);
-//    } else {
-//        ArkUI_NumberValue fillPolicyValue[] = { { .i32 = ARKUI_ITEMFILLPOLICY_SM1MD2LG3 }, { .i32 = 1 } };
-//        ArkUI_AttributeItem fillPolicyValueItem = { fillPolicyValue,
-//                                                  sizeof(fillPolicyValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_SWIPER_ITEMFILLPOLICY, &fillPolicyValueItem);
-//    }
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 49");
-    
+    // Swiper组件属性--设置响应式列数布局策略，影响别的属性，先屏蔽。
     
     // 视效属性 NODE_TRANSLATE
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSLATE", " CheckAttributeOnMainThread 45");
@@ -646,10 +611,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     // 视效属性  NODE_OPACITY
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_OPACITY", " CheckAttributeOnMainThread 51");
     if (withReset) {
-//        ArkUI_NumberValue column_opacity_value[] = { { .f32 = 0.0f } };
-//        ArkUI_AttributeItem column_opacity_item = { column_opacity_value,
-//                                                       sizeof(column_opacity_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_OPACITY, &column_opacity_item);
+
     } else {
         ArkUI_NumberValue column_opacity_value[] = { { .f32 = 0.5 } };
         ArkUI_AttributeItem column_opacity_item = { column_opacity_value,
@@ -672,34 +634,10 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_CLIP_SHAPE
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_CLIP_SHAPE", " CheckAttributeOnMainThread 53");
-//    if (withReset) {
-//        ArkUI_NumberValue column_clipShape_value[] = { { .i32 = ARKUI_CLIP_TYPE_RECTANGLE }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, };
-//        ArkUI_AttributeItem column_clipShape_item = { column_clipShape_value,
-//                                                       sizeof(column_clipShape_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    } else {
-//        ArkUI_NumberValue column_clipShape_value[] = { { .i32 = ARKUI_CLIP_TYPE_RECTANGLE }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                       { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                       { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, };
-//        ArkUI_AttributeItem column_clipShape_item = { column_clipShape_value,
-//                                                       sizeof(column_clipShape_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    }
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_CLIP_SHAPE", " CheckAttributeOnMainThread 53");
 
     // 视效属性  NODE_TRANSFORM
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSFORM", " CheckAttributeOnMainThread 53");
-//
-//    ArkUI_NumberValue column_transform_value[] = { { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                   { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                   { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                   { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, };
-//    ArkUI_AttributeItem column_transform_item = { column_transform_value,
-//                                                   sizeof(column_transform_value) / sizeof(ArkUI_NumberValue) };
-//    CheckSwiperAttrForMainThread(nodeAPI, item, NODE_TRANSFORM, &column_transform_item);
-    
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSFORM", " CheckAttributeOnMainThread 53");
 
     // 视效属性  NODE_SHADOW
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SHADOW", " CheckAttributeOnMainThread 54");
@@ -775,7 +713,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_SCALE_TRANSITION
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SCALE_TRANSITION", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SCALE_TRANSITION", " CheckAttributeOnMainThread 58");
     if (withReset) {
         ArkUI_NumberValue column_scaleTransition_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
                                                              { .i32 = 1000 }, { .i32 = ARKUI_CURVE_LINEAR }, { .i32 = 0 }, 
@@ -794,7 +732,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
 
 
     // 视效属性  NODE_TRANSLATE_TRANSITION
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSLATE_TRANSITION", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSLATE_TRANSITION", " CheckAttributeOnMainThread 59");
     if (withReset) {
         ArkUI_NumberValue column_translateTransition_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f },
                                                              { .i32 = 0 }, { .i32 = ARKUI_CURVE_LINEAR }, { .i32 = 0 }, 
@@ -812,17 +750,8 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_MOVE_TRANSITION
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_MOVE_TRANSITION", " CheckAttributeOnMainThread 57");
-//    ArkUI_NumberValue column_moveTransition_value[] = { { .i32 = 1 }, { .i32 = 1 }, { .i32 = 1 },
-//                                                         { .i32 = 1 }, { .i32 = 1 }, { .i32 = 1 }, 
-//                                                         { .f32 = 2.0 } };
-//    ArkUI_AttributeItem column_moveTransition_item = { column_moveTransition_value,
-//                                                   sizeof(column_moveTransition_value) / sizeof(ArkUI_NumberValue) };
-//    CheckSwiperAttrForMainThread(nodeAPI, item, NODE_MOVE_TRANSITION, &column_moveTransition_item);
-
 
     // 视效属性  NODE_SWEEP_GRADIENT
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SWEEP_GRADIENT", " CheckAttributeOnMainThread 57");
     if (withReset) {
         ArkUI_NumberValue column_sweepGradient_value[] = {  { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
                                                              { .f32 = 1.0 }, { .f32 = 1.0 } };
@@ -838,12 +767,12 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_RADIAL_GRADIENT
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RADIAL_GRADIENT", " CheckAttributeOnMainThread 57");
-        if (withReset) {
-            ArkUI_NumberValue column_radialGradient_value[] = { { .f32 = 0.0f }, { .f32 =  0.0f}, { .f32 = 0.0f }, { .i32 = 0 } };
-            ArkUI_AttributeItem column_radialGradient_item = { column_radialGradient_value,
-                                                           sizeof(column_radialGradient_value) / sizeof(ArkUI_NumberValue) };
-        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_RADIAL_GRADIENT, &column_radialGradient_item);
+
+    if (withReset) {
+        ArkUI_NumberValue column_radialGradient_value[] = { { .f32 = 0.0f }, { .f32 =  0.0f}, { .f32 = 0.0f }, { .i32 = 0 } };
+        ArkUI_AttributeItem column_radialGradient_item = { column_radialGradient_value,
+                                                        sizeof(column_radialGradient_value) / sizeof(ArkUI_NumberValue) };
+    CheckSwiperAttrForMainThread(nodeAPI, item, NODE_RADIAL_GRADIENT, &column_radialGradient_item);
     } else {
         ArkUI_NumberValue column_radialGradient_value[] = { { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .i32 = 1 } };
         ArkUI_AttributeItem column_radialGradient_item = { column_radialGradient_value,
@@ -852,25 +781,9 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_MASK
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_MASK", " CheckAttributeOnMainThread 57");
-//    if (withReset) {
-//        ArkUI_NumberValue column_mask_value[] = { { .u32 = 0 }, { .u32 = 0 }, { .f32 = 0.0f }, { .i32 = ARKUI_MASK_TYPE_RECTANGLE },
-//                                                  { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 =0.0f }, { .f32 = 0.0f },
-//                                                  { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f } };
-//        ArkUI_AttributeItem column_mask_item = { column_mask_value,
-//                                                       sizeof(column_mask_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_MASK, &column_mask_item);
-//    } else {
-//        ArkUI_NumberValue column_mask_value[] = { { .u32 = 1 }, { .u32 = 1 }, { .f32 = 1.0 }, { .i32 = ARKUI_MASK_TYPE_RECTANGLE },
-//                                                  { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 },
-//                                                  { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 } };
-//        ArkUI_AttributeItem column_mask_item = { column_mask_value,
-//                                                       sizeof(column_mask_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_MASK, &column_mask_item);
-//    }
 
     // 视效属性  NODE_BLEND_MODE
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_BLEND_MODE", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_BLEND_MODE", " CheckAttributeOnMainThread 60");
     if (withReset) {
         ArkUI_NumberValue column_blend_value[] = { { .i32 = ARKUI_BLEND_MODE_NONE }, { .i32 = BLEND_APPLY_TYPE_FAST } };
         ArkUI_AttributeItem column_blend_item = { column_blend_value,
@@ -884,7 +797,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_GRAY_SCALE
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_GRAY_SCALE", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_GRAY_SCALE", " CheckAttributeOnMainThread 61");
     if (withReset) {
         ArkUI_NumberValue column_grayScale_value[] = { { .f32 = 0.5f } };
         ArkUI_AttributeItem column_grayScale_item = { column_grayScale_value,
@@ -898,7 +811,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_INVERT
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_INVERT", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_INVERT", " CheckAttributeOnMainThread 62");
     if (withReset) {
         ArkUI_NumberValue column_invert_value[] = { { .f32 = 0.5f } };
         ArkUI_AttributeItem column_invert_item = { column_invert_value,
@@ -912,7 +825,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_SEPIA
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SEPIA", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_SEPIA", " CheckAttributeOnMainThread 63");
     if (withReset) {
         ArkUI_NumberValue column_sepia_value[] = { { .f32 = 0.5f } };
         ArkUI_AttributeItem column_sepia_item = { column_sepia_value,
@@ -926,7 +839,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_CONTRAST
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_CONTRAST", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_CONTRAST", " CheckAttributeOnMainThread 64");
     if (withReset) {
         ArkUI_NumberValue column_contrast_value[] = { { .f32 = 1.0f } };
         ArkUI_AttributeItem column_contrast_item = { column_contrast_value,
@@ -940,29 +853,16 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_FOREGROUND_COLOR
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_FOREGROUND_COLOR", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_FOREGROUND_COLOR", " CheckAttributeOnMainThread 65");
     ArkUI_NumberValue column_foregroundColor_value[] = { { .u32 = 0xffff0000 } };
     ArkUI_AttributeItem column_foregroundColor_item = { column_foregroundColor_value,
                                                    sizeof(column_foregroundColor_value) / sizeof(ArkUI_NumberValue) };
     CheckSwiperAttrForMainThread(nodeAPI, item, NODE_FOREGROUND_COLOR, &column_foregroundColor_item);
-    
 
-//    // 视效属性  NODE_OUTLINE_WIDTH
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_OUTLINE_WIDTH", " CheckAttributeOnMainThread 57");
-//    if (withReset) {
-//        ArkUI_NumberValue column_outline_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f } };
-//        ArkUI_AttributeItem column_outline_item = { column_outline_value,
-//                                                       sizeof(column_outline_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_OUTLINE_WIDTH, &column_outline_item);
-//    } else {
-//        ArkUI_NumberValue column_outline_value[] = { { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 }, { .f32 = 1.0 } };
-//        ArkUI_AttributeItem column_outline_item = { column_outline_value,
-//                                                       sizeof(column_outline_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_OUTLINE_WIDTH, &column_outline_item);
-//    }
+    // 视效属性  NODE_OUTLINE_WIDTH
 
     // 视效属性  NODE_RENDER_GROUP
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_GROUP", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_GROUP", " CheckAttributeOnMainThread 66");
     if (withReset) {
         ArkUI_NumberValue column_geometryTransition_value[] = { { .i32 = 0 } };
         ArkUI_AttributeItem column_geometryTransition_item = { column_geometryTransition_value,
@@ -976,7 +876,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_RENDER_FIT
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_FIT", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_FIT", " CheckAttributeOnMainThread 67");
     if (withReset) {
         ArkUI_NumberValue column_renderFit_value[] = { { .i32 = 5 } };
         ArkUI_AttributeItem column_renderFit_item = { column_renderFit_value,
@@ -990,7 +890,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_OUTLINE_COLOR
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_OUTLINE_COLOR", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_OUTLINE_COLOR", " CheckAttributeOnMainThread 68");
     if (withReset) {
         ArkUI_NumberValue column_outlineColor_value[] = { };
         ArkUI_AttributeItem column_outlineColor_item = { column_outlineColor_value,
@@ -1004,7 +904,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_RENDER_GROUP
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_GROUP", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_RENDER_GROUP", " CheckAttributeOnMainThread 69");
     if (withReset) {
         ArkUI_NumberValue column_outlineColor_value[] = { { .u32 = 0 }, { .u32 = 0 }, { .u32 = 0 }, { .u32 = 0 } };
         ArkUI_AttributeItem column_outlineColor_item = { column_outlineColor_value,
@@ -1018,7 +918,7 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_COLOR_BLEND
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_COLOR_BLEND", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_COLOR_BLEND", " CheckAttributeOnMainThread 70");
     if (withReset) {
         ArkUI_NumberValue column_colorBlend_value[] = { { .u32 = 0x00000000 } };
         ArkUI_AttributeItem column_colorBlend_item = { column_colorBlend_value,
@@ -1032,23 +932,9 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_FOREGROUND_BLUR_STYLE
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_FOREGROUND_BLUR_STYLE", " CheckAttributeOnMainThread 57");
-//    if (withReset) {
-//        ArkUI_NumberValue column_foregroundBlur_value[] = { { .i32 = ARKUI_BLUR_STYLE_THIN }, { .i32 = ARKUI_COLOR_MODE_SYSTEM }, { .i32 = ARKUI_ADAPTIVE_COLOR_DEFAULT },
-//                                                            { .f32 = 0.0f }, { .i32 = 0 }, { .i32 = 0 } };
-//        ArkUI_AttributeItem column_foregroundBlur_item = { column_foregroundBlur_value,
-//                                                       sizeof(column_foregroundBlur_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_FOREGROUND_BLUR_STYLE, &column_foregroundBlur_item);
-//    } else {
-//        ArkUI_NumberValue column_foregroundBlur_value[] = { { .i32 = 1 }, { .i32 = 1 }, { .i32 = 1 },
-//                                                            { .f32 = 1.0f }, { .i32 = 1 }, { .i32 = 1 } };
-//        ArkUI_AttributeItem column_foregroundBlur_item = { column_foregroundBlur_value,
-//                                                       sizeof(column_foregroundBlur_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_FOREGROUND_BLUR_STYLE, &column_foregroundBlur_item);
-//    }
 
     // 视效属性  NODE_BACKDROP_BLUR
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_BACKDROP_BLUR", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_BACKDROP_BLUR", " CheckAttributeOnMainThread 71");
     if (withReset) {
         ArkUI_NumberValue column_backdropBlur_value[] = { { .f32 = 0.0f } };
         ArkUI_AttributeItem column_backdropBlur_item = { column_backdropBlur_value,
@@ -1062,23 +948,9 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     }
 
     // 视效属性  NODE_TRANSLATE_WITH_PERCENT
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_TRANSLATE_WITH_PERCENT", " CheckAttributeOnMainThread 57");
-//    if (withReset) {
-//        ArkUI_NumberValue column_translatePercent_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, 
-//                                                              { .i32 = 1 }, { .i32 = 1 } };
-//        ArkUI_AttributeItem column_translatePercent_item = { column_translatePercent_value,
-//                                                       sizeof(column_translatePercent_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_TRANSLATE_WITH_PERCENT, &column_translatePercent_item);
-//    } else {
-//        ArkUI_NumberValue column_translatePercent_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, 
-//                                                              { .i32 = 1 }, { .i32 = 1 } };
-//        ArkUI_AttributeItem column_translatePercent_item = { column_translatePercent_value,
-//                                                       sizeof(column_translatePercent_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttrForMainThread(nodeAPI, item, NODE_TRANSLATE_WITH_PERCENT, &column_translatePercent_item);
-//    }
 
     // 视效属性  NODE_ROTATE_ANGLE
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_ROTATE_ANGLE", " CheckAttributeOnMainThread 57");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_ROTATE_ANGLE", " CheckAttributeOnMainThread 72");
     if (withReset) {
         ArkUI_NumberValue column_rotateAngle_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f } };
         ArkUI_AttributeItem column_rotateAngle_item = { column_rotateAngle_value,
@@ -1469,16 +1341,6 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     ArkUI_AttributeItem expect_item_1 = { expect_value, 1 };
     expect_item_1.object = indicator;
     CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_INDICATOR, &expect_item_1, true);
-    // if (withReset) {
-    //     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " SetAttribute 41-0");
-    //     nodeAPI->resetAttribute(item, NODE_SWIPER_INDICATOR);
-    //     ArkUI_AttributeItem expect_item_1 = { value, 1 };
-    //     expect_item_1.object = nullptr;
-    //     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " SetAttribute 41-1 item_1.object:%{public}p", item_1.object);
-    //     CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_INDICATOR, &expect_item_1, true, [testObj = item_1.object](const void* realObj, const void* expectObj) -> bool {
-    //         return realObj != testObj;
-    //     });
-    // }
 
     // Swiper组件属性--nestedScroll （设置swiper和父组件的嵌套滚动模式）
     ArkUI_NumberValue nestedScroll_value[] = { { .i32 = ARKUI_SWIPER_NESTED_SRCOLL_SELF_FIRST } };
@@ -1537,21 +1399,7 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
         CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_PAGE_FLIP_MODE, &expect_pageFlipModeValue_item);
     }
 
-//    // Swiper组件属性--autoFill （设置swiper一页内元素显示个数根据元素最小宽度自适应） 该属性收到别的属性影响，先屏蔽
-//    ArkUI_NumberValue autoFillValue[] = { { .f32 = 50 }, { .i32 = true } };
-//    ArkUI_AttributeItem autoFillValueItem = { autoFillValue,
-//                                                  sizeof(autoFillValue) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_SWIPER_AUTO_FILL, &autoFillValueItem);
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " SetAttribute 46");
-//    CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_AUTO_FILL, &autoFillValueItem);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_SWIPER_AUTO_FILL);
-//        // 默认值是 0， false
-//        ArkUI_NumberValue expect_autoFillValue[] = { { .f32 = 0.0f }, { .i32 = false } };
-//        ArkUI_AttributeItem expect_autoFillValue_item = { expect_autoFillValue,
-//                                                      sizeof(expect_autoFillValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_AUTO_FILL, &expect_autoFillValue_item);
-//    }
+    // Swiper组件属性--autoFill （设置swiper一页内元素显示个数根据元素最小宽度自适应） 该属性收到别的属性影响，先屏蔽
 
     // Swiper组件属性-- 设置 swiper 显示区域外插入或者删除数据是否保持可见内容位置不变
     ArkUI_NumberValue contentPositionValue[] = { { .i32 = 1 } };
@@ -1569,22 +1417,8 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
         CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_MAINTAIN_VISIBLE_CONTENT_POSITION, &contentPositionValueItem);
     }
 
-//    // Swiper组件属性-- 设置响应式列数布局策略，影响别的属性，先屏蔽
-//    ArkUI_NumberValue fillPolicyValue[] = { { .i32 = ARKUI_ITEMFILLPOLICY_SM1MD2LG3 }, { .i32 = 1 } };
-//    ArkUI_AttributeItem fillPolicyValueItem = { fillPolicyValue,
-//                                                  sizeof(fillPolicyValue) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_SWIPER_ITEMFILLPOLICY, &fillPolicyValueItem);
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " SetAttribute 48");
-//    CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_ITEMFILLPOLICY, &fillPolicyValueItem);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_SWIPER_ITEMFILLPOLICY);
-//        ArkUI_NumberValue expect_fillPolicyValue[] = { { .i32 = ARKUI_ITEMFILLPOLICY_NONE }, { .i32 = 0 } };
-//        ArkUI_AttributeItem expect_fillPolicyValue_item = { expect_fillPolicyValue,
-//                                                      sizeof(expect_fillPolicyValue) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_SWIPER_ITEMFILLPOLICY, &expect_fillPolicyValue_item);
-//    }
+    // Swiper组件属性-- 设置响应式列数布局策略，影响别的属性，先屏蔽
     
-
     // 视效 NODE_TRANSLATE
     ArkUI_NumberValue column_translate_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f } };
     ArkUI_AttributeItem column_translate_item = { column_translate_value,
@@ -1699,46 +1533,9 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     }
     
     // 视效 NODE_CLIP_SHAPE
-//    ArkUI_NumberValue column_clipShape_value[] = { { .i32 = ARKUI_CLIP_TYPE_RECTANGLE }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                                   { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                                   { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, };
-//
-//    ArkUI_AttributeItem column_clipShape_item = { column_clipShape_value,
-//                                                   sizeof(column_clipShape_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    CheckSwiperAttr(nodeAPI, item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_CLIP_SHAPE);
-//        ArkUI_NumberValue column_clipShape_value[] = { { .i32 = ARKUI_CLIP_TYPE_RECTANGLE }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, };
-//        ArkUI_AttributeItem column_clipShape_item = { column_clipShape_value,
-//                                                       sizeof(column_clipShape_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    }
-
 
     // 视效 NODE_TRANSFORM
-//    ArkUI_NumberValue column_transform_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                                   { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                                   { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                                   { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, };
-//    ArkUI_AttributeItem column_transform_item = { column_transform_value,
-//                                                   sizeof(column_transform_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_TRANSFORM, &column_transform_item);
-//
-//    CheckSwiperAttr(nodeAPI, item, NODE_TRANSFORM, &column_transform_item);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_CLIP_SHAPE);
-//        ArkUI_NumberValue column_clipShape_value[] = { { .i32 = ARKUI_CLIP_TYPE_RECTANGLE }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                       { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, };
-//        ArkUI_AttributeItem column_clipShape_item = { column_clipShape_value,
-//                                                       sizeof(column_clipShape_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_CLIP_SHAPE, &column_clipShape_item);
-//    }
-//
-//
+
     // 视效 NODE_SHADOW
     ArkUI_NumberValue column_shadow_value[] = { { .i32 = 1 }};
     ArkUI_AttributeItem column_shadow_item = { column_shadow_value,
@@ -1850,14 +1647,6 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     }
 
     // 视效 NODE_MOVE_TRANSITION
-//    ArkUI_NumberValue column_moveTransition_value[] = { { .i32 = 1 }, { .i32 = 1 }, { .i32 = 1 },
-//                                                         { .i32 = 1 }, { .i32 = 1 }, { .i32 = 2 }, 
-//                                                         { .f32 = 2.0f } };
-//    ArkUI_AttributeItem column_moveTransition_item = { column_moveTransition_value,
-//                                                   sizeof(column_moveTransition_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_MOVE_TRANSITION, &column_moveTransition_item);
-//    CheckSwiperAttr(nodeAPI, item, NODE_MOVE_TRANSITION, &column_moveTransition_item);
-
 
     // 视效 NODE_SWEEP_GRADIENT
     ArkUI_NumberValue column_sweepGradient_value[] = {  { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
@@ -1889,24 +1678,8 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
         CheckSwiperAttr(nodeAPI, item, NODE_RADIAL_GRADIENT, &column_radialGradient_item);
     }
 
-//    // 视效 NODE_MASK
-//    ArkUI_NumberValue column_mask_value[] = { { .u32 = 1 }, { .u32 = 1 }, { .f32 = 1.0f }, { .i32 = ARKUI_MASK_TYPE_RECTANGLE },
-//                                              { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f },
-//                                              { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f } };
-//    ArkUI_AttributeItem column_mask_item = { column_mask_value,
-//                                                   sizeof(column_mask_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_MASK, &column_mask_item);
-//    CheckSwiperAttr(nodeAPI, item, NODE_MASK, &column_mask_item);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_MASK);
-//        ArkUI_NumberValue column_mask_value[] = { { .u32 = 0 }, { .u32 = 0 }, { .f32 = 0.0f }, { .i32 = ARKUI_MASK_TYPE_RECTANGLE },
-//                                                  { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f },
-//                                                  { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f } };
-//        ArkUI_AttributeItem column_mask_item = { column_mask_value,
-//                                                       sizeof(column_mask_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_MASK, &column_mask_item);
-//    }
-//
+    // 视效 NODE_MASK
+
     // 视效 NODE_BLEND_MODE
     ArkUI_NumberValue column_blend_value[] = { { .i32 = ARKUI_BLEND_MODE_NONE }, { .i32 = BLEND_APPLY_TYPE_FAST } };
     ArkUI_AttributeItem column_blend_item = { column_blend_value,
@@ -1984,20 +1757,8 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     nodeAPI->setAttribute(item, NODE_FOREGROUND_COLOR, &column_foregroundColor_item);
     CheckSwiperAttr(nodeAPI, item, NODE_FOREGROUND_COLOR, &column_foregroundColor_item);
 
-////    // 视效 NODE_OUTLINE_WIDTH
-////    ArkUI_NumberValue column_outline_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f } };
-////    ArkUI_AttributeItem column_outline_item = { column_outline_value,
-////                                                   sizeof(column_outline_value) / sizeof(ArkUI_NumberValue) };
-////    nodeAPI->setAttribute(item, NODE_OUTLINE_WIDTH, &column_outline_item);
-////    CheckSwiperAttr(nodeAPI, item, NODE_OUTLINE_WIDTH, &column_outline_item);
-////    if (withReset) {
-////        nodeAPI->resetAttribute(item, NODE_OUTLINE_WIDTH);
-////        ArkUI_NumberValue column_outline_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f } };
-////        ArkUI_AttributeItem column_outline_item = { column_outline_value,
-////                                                       sizeof(column_outline_value) / sizeof(ArkUI_NumberValue) };
-////        CheckSwiperAttr(nodeAPI, item, NODE_OUTLINE_WIDTH, &column_outline_item);
-////    }
-//
+    // 视效 NODE_OUTLINE_WIDTH
+
     // 视效 NODE_GEOMETRY_TRANSITION
     ArkUI_NumberValue column_geometryTransition_value[] = { { .i32 = 0 } };
     ArkUI_AttributeItem column_geometryTransition_item = { column_geometryTransition_value,
@@ -2069,20 +1830,6 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     }
 
     // 视效 NODE_FOREGROUND_BLUR_STYLE
-//    ArkUI_NumberValue column_foregroundBlur_value[] = { { .i32 = 1 }, { .i32 = 1 }, { .i32 = 1 },
-//                                                        { .f32 = 1.0f }, { .i32 = 1 }, { .i32 = 1 } };
-//    ArkUI_AttributeItem column_foregroundBlur_item = { column_foregroundBlur_value,
-//                                                   sizeof(column_foregroundBlur_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_FOREGROUND_BLUR_STYLE, &column_foregroundBlur_item);
-//    CheckSwiperAttr(nodeAPI, item, NODE_FOREGROUND_BLUR_STYLE, &column_foregroundBlur_item);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_FOREGROUND_BLUR_STYLE);
-//        ArkUI_NumberValue column_foregroundBlur_value[] = { { .i32 = 0 }, { .i32 = 0 }, { .i32 = 0 },
-//                                                            { .f32 = 0.0f }, { .i32 = 0 }, { .i32 = 0 } };
-//        ArkUI_AttributeItem column_foregroundBlur_item = { column_foregroundBlur_value,
-//                                                       sizeof(column_foregroundBlur_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_FOREGROUND_BLUR_STYLE, &column_foregroundBlur_item);
-//    }
 
     // 视效 NODE_BACKDROP_BLUR
     ArkUI_NumberValue column_backdropBlur_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f } };
@@ -2099,20 +1846,6 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     }
 
     // 视效 NODE_TRANSLATE_WITH_PERCENT
-//    ArkUI_NumberValue column_translatePercent_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, 
-//                                                          { .i32 = 1 }, { .i32 = 1 } };
-//    ArkUI_AttributeItem column_translatePercent_item = { column_translatePercent_value,
-//                                                   sizeof(column_translatePercent_value) / sizeof(ArkUI_NumberValue) };
-//    nodeAPI->setAttribute(item, NODE_TRANSLATE_WITH_PERCENT, &column_translatePercent_item);
-//    CheckSwiperAttr(nodeAPI, item, NODE_TRANSLATE_WITH_PERCENT, &column_translatePercent_item);
-//    if (withReset) {
-//        nodeAPI->resetAttribute(item, NODE_TRANSLATE_WITH_PERCENT);
-//        ArkUI_NumberValue column_translatePercent_value[] = { { .f32 = 0.0f }, { .f32 = 0.0f }, { .f32 = 0.0f }, 
-//                                                              { .i32 = 1 }, { .i32 = 1 } };
-//        ArkUI_AttributeItem column_translatePercent_item = { column_translatePercent_value,
-//                                                       sizeof(column_translatePercent_value) / sizeof(ArkUI_NumberValue) };
-//        CheckSwiperAttr(nodeAPI, item, NODE_TRANSLATE_WITH_PERCENT, &column_translatePercent_item);
-//    }
 
     // 视效 NODE_ROTATE_ANGLE
     ArkUI_NumberValue column_rotateAngle_value[] = { { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f }, { .f32 = 1.0f } };

@@ -13,10 +13,10 @@ include_directories(
 add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
-    framework/node_xts_test.cpp
+    framework/NodeXtsTest.cpp
     swiper/SwiperTest.cpp
-    publicAttribute/xts_test_case.cpp
-    publicAttribute/PublicAttribute.cpp
+    publicAttribute/XtsTestCaseTest.cpp
+    publicAttribute/PublicAttributeTest.cpp
 )
 
 add_library(nativefunc SHARED

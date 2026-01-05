@@ -25,6 +25,14 @@ export default function SwiperWithResetTest(){
       done();
     });
 
+    /**
+     * @tc.name   SwiperWithResetTest_001
+     * @tc.number SwiperWithResetTest_001
+     * @tc.desc   SwiperWithResetTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperWithResetTest_001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'testSwiperWithReset';
       await Utils.pushPage(`swiper/${PAGE_TAG}`);

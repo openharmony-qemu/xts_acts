@@ -15,7 +15,7 @@
 #include "common/common.h"
 #include "manager/PluginManagerTest.h"
 #include "swiper/SwiperTest.h"
-#include "publicAttribute/xts_test_case.cpp"
+#include "publicAttribute/XtsTestCaseTest.cpp"
 
 
 namespace ArkUICapiTest {
