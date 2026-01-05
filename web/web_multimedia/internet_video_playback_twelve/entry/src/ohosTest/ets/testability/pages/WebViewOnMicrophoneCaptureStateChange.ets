@@ -81,6 +81,7 @@ struct webViewController {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
+                await Utils.sleep(1000)
                 let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
                 await buttonThree.click();
                 let buttonOne = await driver.waitForComponent(ON.text('开启麦克风'),10000);
@@ -88,6 +89,17 @@ struct webViewController {
                 let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
                 await buttonTwo.click();
                 await Utils.sleep(1000)
+                setTimeout(() => {
+                  Utils.emitEvent(true, 20260101);
+                },1000)
+
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitOnMicrophoneCaptureStateChange002": {
+              try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   Utils.emitEvent(1, 20251229);
                 } else {
@@ -102,7 +114,7 @@ struct webViewController {
               }
               break;
             }
-            case "emitOnMicrophoneCaptureStateChange002": {
+            case "emitOnMicrophoneCaptureStateChange003": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   Utils.emitEvent(2, 20251230);
@@ -119,7 +131,7 @@ struct webViewController {
               }
               break;
             }
-            case "emitOnMicrophoneCaptureStateChange003": {
+            case "emitOnMicrophoneCaptureStateChange004": {
               try {
                 if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   Utils.emitEvent(0, 20251231);
