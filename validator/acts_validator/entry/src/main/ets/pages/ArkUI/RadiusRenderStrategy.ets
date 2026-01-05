@@ -14,7 +14,7 @@
 */
 
 import router from '@ohos.router';
-import FirstDialog from './model/FirstDialog';
+import FirstDialog from '../model/FirstDialog';
 import promptAction from '@ohos.promptAction';
 
 @Entry
@@ -174,10 +174,7 @@ struct RadiusRenderStrategy {
             blurStyle: BlurStyle.BACKGROUND_ULTRA_THICK,
             showClose: true,
             preferType: SheetType.BOTTOM,
-            // title: { title: "title", subtitle: "subtitle" },
-            // radius: {topLeft: 30, topRight: 50}
             radiusRenderStrategy: this.strategy,
-            // backgroundColor:Color.Transparent,
           })
       }
       .height('80%')
