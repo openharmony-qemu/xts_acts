@@ -139,14 +139,14 @@ HWTEST_F(DrawingNativeFontTest, testFontSetBaselineSnapNormal, Function | SmallT
     // verify by calling OH_Drawing_FontIsBaselineSnap to check if the font baseline is aligned with pixels
     OH_Drawing_FontSetBaselineSnap(font, false);
     bool isBaselineSnap = OH_Drawing_FontIsBaselineSnap(font);
-    EXPECT_FALSE(isBaselineSnap);
+    EXPECT_EQ(isBaselineSnap, false);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_FontSetBaselineSnap with isForce parameter set to true,
     // verify by calling OH_Drawing_FontIsBaselineSnap to check if the font baseline is aligned with pixels
     OH_Drawing_FontSetBaselineSnap(font, true);
     isBaselineSnap = OH_Drawing_FontIsBaselineSnap(font);
-    EXPECT_TRUE(isBaselineSnap);
+    EXPECT_EQ(isBaselineSnap, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. Release memory
@@ -215,7 +215,7 @@ HWTEST_F(DrawingNativeFontTest, testFontIsBaselineSnapWhenNoSet, Function | Smal
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_FontIsBaselineSnap
     bool isBaselineSnap = OH_Drawing_FontIsBaselineSnap(font);
-    EXPECT_TRUE(isBaselineSnap);
+    EXPECT_EQ(isBaselineSnap, true);
 }
 
 /**
@@ -237,14 +237,14 @@ HWTEST_F(DrawingNativeFontTest, testFontSetSubpixelNormal, Function | SmallTest 
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     bool isSubpixel = OH_Drawing_FontIsSubpixel(font);
-    EXPECT_FALSE(isSubpixel);
+    EXPECT_EQ(isSubpixel, false);
     // 3. Call OH_Drawing_FontSetSubpixel with isSubpixel parameter set to true,
     // verify by calling OH_Drawing_FontIsSubpixel to check if the glyph is rendered using subpixels
     OH_Drawing_FontSetSubpixel(font, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     isSubpixel = OH_Drawing_FontIsSubpixel(font);
-    EXPECT_TRUE(isSubpixel);
+    EXPECT_EQ(isSubpixel, true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
 }
@@ -311,7 +311,7 @@ HWTEST_F(DrawingNativeFontTest, testFontIsSubpixelWhenNoSet, Function | SmallTes
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontIsSubpixel
     bool isSubpixel = OH_Drawing_FontIsSubpixel(font);
-    EXPECT_FALSE(isSubpixel);
+    EXPECT_EQ(isSubpixel, false);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 }
@@ -335,7 +335,7 @@ HWTEST_F(DrawingNativeFontTest, testFontSetForceAutoHintingNormal, Function | Sm
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     bool isForceAutoHinting = OH_Drawing_FontIsForceAutoHinting(font);
-    EXPECT_FALSE(isForceAutoHinting);
+    EXPECT_EQ(isForceAutoHinting, false);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_FontSetForceAutoHinting with isForceAutoHinting parameter set to true,
@@ -344,7 +344,7 @@ HWTEST_F(DrawingNativeFontTest, testFontSetForceAutoHintingNormal, Function | Sm
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     isForceAutoHinting = OH_Drawing_FontIsForceAutoHinting(font);
-    EXPECT_TRUE(isForceAutoHinting);
+    EXPECT_EQ(isForceAutoHinting, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. Release memory
@@ -413,7 +413,7 @@ HWTEST_F(DrawingNativeFontTest, testFontIsForceAutoHintingWhenNoSet, Function | 
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_FontIsForceAutoHinting
     bool isForceAutoHinting = OH_Drawing_FontIsForceAutoHinting(font);
-    EXPECT_FALSE(isForceAutoHinting);
+    EXPECT_EQ(isForceAutoHinting, false);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
 }
