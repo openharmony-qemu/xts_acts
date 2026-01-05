@@ -108,7 +108,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let audioRenderer: audio.AudioRenderer | undefined;
       try {
         audioRenderer = await createMovieRenderer();
@@ -133,7 +133,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let audioRenderer: audio.AudioRenderer | undefined;
       try {
         audioRenderer = await createMovieRenderer();
@@ -161,7 +161,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let audioRenderer: audio.AudioRenderer | undefined;
       let erreParam: number = 6800101;
       let errParam: number = -10;
@@ -172,8 +172,8 @@ export default function audioRendererTest() {
         audioRenderer.getLatency(errParam);
         expect(false).assertTrue();
       } catch (error) {
-        let businessErr = err as BusinessError;
-        errorCode = businessErr.code;
+        let businessErr = error as BusinessError;
+        errorCode = Number(businessErr.code);
         console.info(`${TagFrmwkRender}: getLatency invalid param error: ${JSON.stringify(error)}`);
       }
       await releaseRenderer(audioRenderer);
@@ -189,7 +189,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let audioRenderer: audio.AudioRenderer | undefined;
       let errStatus: number = 6800103;
       let errorCode = 0;
