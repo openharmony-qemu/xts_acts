@@ -3219,7 +3219,7 @@ export default function TextPicker() {
     /**
  	      * @tc.number     testPicker63
  	      * @tc.name       testPicker63
- 	      * @tc.desc       Testing showAssetsCreationDialogEx with isImageFullyDisplayed param.
+ 	      * @tc.desc       Testing showSingleAssetCreationDialogEx with isImageFullyDisplayed param.
  	      * @tc.size       MediumTest
  	      * @tc.type       Function
  	      * @tc.level      Level 0
