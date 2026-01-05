@@ -51,7 +51,6 @@ async function getPermision(): Promise<void> {
             hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
             hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
         });
-        console.error('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
     } catch (err: BusinessError) {
         console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
     }
