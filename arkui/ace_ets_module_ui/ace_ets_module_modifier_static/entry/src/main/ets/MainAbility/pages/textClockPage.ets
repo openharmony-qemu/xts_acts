@@ -17,7 +17,7 @@ import { Entry,Component,Video,Resource,$r,TextArea,TextClockController,FontStyl
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { TextClockModifier } from "@ohos.arkui.modifier";

@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message} from '../../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';

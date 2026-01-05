@@ -19,7 +19,7 @@ import { Entry,Component,$r,List, ListItem,ListAttribute,ScrollSnapAlign,NestedS
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { ListModifier } from "@ohos.arkui.modifier";

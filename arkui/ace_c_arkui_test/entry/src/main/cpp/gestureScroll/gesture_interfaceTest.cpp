@@ -38,14 +38,17 @@ namespace {
        if (!gestureAPI) {
            return ArkUI_GestureInterruptResult::GESTURE_INTERRUPT_RESULT_CONTINUE;
        }
-       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
-          "GestureInterruptFunc  strcmp  %{public}s && OH_ArkUI_GetGestureBuiltInFlag(outerRecognizer) "
-          "%{public}d && gestureAPI->getGestureType(outerRecognizer) %{public}d",
-          nodeId, OH_ArkUI_IsBuiltInGesture(outerRecognizer),
-          gestureAPI->getGestureType(outerRecognizer) == ArkUI_GestureRecognizerType::PAN_GESTURE);
-    
-       if (strcmp(nodeId, "outer") == 0 && OH_ArkUI_IsBuiltInGesture(outerRecognizer) &&
-           gestureAPI->getGestureType(outerRecognizer) == ArkUI_GestureRecognizerType::PAN_GESTURE) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
+                 "GestureInterruptFunc  strcmp  %{public}s && OH_ArkUI_GetGestureBuiltInFlag(outerRecognizer) "
+                 "%{public}d && gestureAPI->getGestureType(outerRecognizer) %{public}d aaa %{public}d bbb %{public}d",
+                 nodeId, OH_ArkUI_IsBuiltInGesture(outerRecognizer),
+                 gestureAPI->getGestureType(outerRecognizer) == ArkUI_GestureRecognizerType::PAN_GESTURE,
+                 OH_ArkUI_GetGestureRecognizerEnabled(outerRecognizer),
+                 OH_ArkUI_IsGestureRecognizerValid(outerRecognizer));
+
+    if (strcmp(nodeId, "outer") == 0 && OH_ArkUI_IsBuiltInGesture(outerRecognizer) &&
+        OH_ArkUI_GetGestureRecognizerEnabled(outerRecognizer) && OH_ArkUI_IsGestureRecognizerValid(outerRecognizer) &&
+        gestureAPI->getGestureType(outerRecognizer) == ArkUI_GestureRecognizerType::PAN_GESTURE) {
            int *count = (int *)malloc(sizeof(int));
            ArkUI_GestureRecognizer **recognizers;
            OH_ArkUI_GetResponseRecognizersFromInterruptInfo(info, &recognizers, count);

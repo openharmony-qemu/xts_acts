@@ -45,10 +45,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'

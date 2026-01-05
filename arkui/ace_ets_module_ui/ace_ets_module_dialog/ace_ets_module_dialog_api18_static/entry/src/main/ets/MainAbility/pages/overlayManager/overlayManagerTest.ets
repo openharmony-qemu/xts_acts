@@ -42,7 +42,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage,StorageLink
+  PropRef,AppStorage,StorageLink
 } from '@ohos.arkui.stateManagement';
 class Params {
   public text: string = ''

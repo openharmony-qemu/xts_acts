@@ -19,7 +19,7 @@
 //   Flex, FlexDirection, ItemAlign, FlexAlign,
 //   Text, Button, FontWeight, ClickEvent, Margin, Color, Row, $r, wrapBuilder,CustomBuilderT,
 // } from '@ohos.arkui.component'
-// import { AppStorage, State, LocalStorage, Prop } from '@ohos.arkui.stateManagement';  // BuildOptions
+// import { AppStorage, State, LocalStorage, PropRef } from '@ohos.arkui.stateManagement';  // BuildOptions
 // import { UIContext } from '@ohos.arkui.UIContext';
 // import { NodeController, BuilderNode, FrameNode } from '@ohos.arkui.node';
 // import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
@@ -37,8 +37,8 @@
 // // 自定义组件
 // @Component
 // struct TextBuilder {
-//   // 作为自定义组件中需要更新的属性，数据类型为基础属性，定义为@Prop
-//   @Prop message: string = "TextBuilder";
+//   // 作为自定义组件中需要更新的属性，数据类型为基础属性，定义为@PropRef
+//   @PropRef message: string = "TextBuilder";
 //
 //   build() {
 //     Row() {

@@ -29,7 +29,7 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  Watch,Param,Prop,
+  Watch,Param,PropRef,
   Link,Monitor,Trace,ObservedV2,Event,Consumer,
   StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef
 } from '@ohos.arkui.stateManagement'

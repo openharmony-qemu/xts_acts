@@ -36,7 +36,7 @@ import {
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { AppStorage, State, StorageLink, StorageProp } from '@ohos.arkui.stateManagement'
+import { AppStorage, State, StorageLink, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const datePickerThemeProperty: string = `datePickerThemeProperty`;
 
@@ -55,7 +55,7 @@ export class DatePickerKeys {
 @Component
 struct DatePickerPage {
   count: int = 0;
-  @StorageProp(datePickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(datePickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   @StorageLink(datePickerThemeSetProperty) themeSet: boolean | undefined = true
   @StorageLink(datePickerIsLunarProperty) isLunar: boolean = true;
   @State selectedSystem: Date = new Date();

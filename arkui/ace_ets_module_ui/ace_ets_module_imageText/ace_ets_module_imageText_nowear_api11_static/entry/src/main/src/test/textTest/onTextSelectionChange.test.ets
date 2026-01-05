@@ -48,7 +48,7 @@ export default function OnTextSelectionChangeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnTextSelectionChangeTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("onTextSelectionChange" == pages.name)) {
           console.info("get OnTextSelectionChangeTest pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

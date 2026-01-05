@@ -17,7 +17,7 @@ import { Entry,Component,Video,Resource,$r,TextPicker,TextPickerAttribute,Playba
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { TextPickerModifier } from "@ohos.arkui.modifier";

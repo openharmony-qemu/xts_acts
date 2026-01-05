@@ -36,7 +36,7 @@ import {
   Row,
   Text
 } from '@ohos.arkui.component'
-import { Prop, State } from '@ohos.arkui.stateManagement'
+import { PropRef, State } from '@ohos.arkui.stateManagement'
 import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { CustomColorList } from '../customComponents/CustomColorList';
 

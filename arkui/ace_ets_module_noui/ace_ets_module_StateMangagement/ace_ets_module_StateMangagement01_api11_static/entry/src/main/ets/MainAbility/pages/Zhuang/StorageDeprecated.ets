@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,StorageLink,
-  Prop,Provide,Consume,AppStorage,Environment,PersistentStorage,SubscribedAbstractProperty
+  PropRef,Provide,Consume,AppStorage,Environment,PersistentStorage,SubscribedAbstractProperty
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

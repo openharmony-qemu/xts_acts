@@ -30,8 +30,6 @@
 #include "common/log_common.h"
 #include "NativeBufferTest.h"
 
-const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
-
 static OH_NativeBuffer *getBuffer()
 {
     OH_NativeBuffer_Config config = {
@@ -457,7 +455,6 @@ napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_callbac
     napi_create_int32(env, ret, &result1);
     napi_set_element(env, result, NUMBER_2, result1);
     OH_NativeBuffer_Unreference(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&_image);
     return result;
 }
@@ -655,43 +652,33 @@ napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_3, &result);
-    OH_NativeBuffer_Format format[] = {
-        NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP,
-        NATIVEBUFFER_PIXEL_FMT_YCRCB_420_SP,
-        NATIVEBUFFER_PIXEL_FMT_YCBCR_420_P,
-        NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P
+    OH_NativeBuffer_Config nativeBufferConfig = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
-    for (int i = 0; i < sizeof(format) / sizeof(format[0]); i++) {
-        OH_NativeBuffer_Config nativeBufferConfig = {
-            .width = 0x100,
-            .height = 0x100,
-            .format = format[i],
-            .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
-        };
-        OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
-        void *virAddr = nullptr;
-        OH_NativeBuffer_Planes* outPlanes;
-        outPlanes->planeCount = 2;    //设置2个平面分量
-        // 平面0：Y分量
-        outPlanes->planes[0].offset = 0;          // 偏移量0
-        outPlanes->planes[0].rowStride = 1920;    // 假设宽度1920，行步长1920字节
-        outPlanes->planes[0].columnStride = 1080; // 假设高度1080，列步长1080字节
-        // 平面1：UV分量
-        const int width = 1920;
-        const int height = 1080;
-        const int column = 540;
-        outPlanes->planes[1].offset = width * height; // 偏移量为Y分量大小
-        outPlanes->planes[1].rowStride = width;     // UV行步长与Y相同
-        outPlanes->planes[1].columnStride = column;   //UV列步长
-        int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, outPlanes);
-        if (ret != NATIVE_ERROR_OK) {
-            napi_create_int32(env, NUMBER_1000 * (i + 1) + NUMBER_1, &result);
-            return result;
-        } else {
-            napi_create_int32(env, NATIVE_ERROR_OK, &result);
-        }
-        OH_NativeBuffer_Unreference(nativeBuffer);
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+    void *virAddr = nullptr;
+    OH_NativeBuffer_Planes outPlanes;
+    int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, &outPlanes);
+    if (outPlanes.planeCount == NUMBER_3 && outPlanes.planes[NUMBER_0].offset == NUMBER_0 &&
+        outPlanes.planes[NUMBER_0].rowStride == NUMBER_1 && outPlanes.planes[NUMBER_0].columnStride == NUMBER_256 &&
+        outPlanes.planes[NUMBER_1].offset == NUMBER_65536 && outPlanes.planes[NUMBER_1].rowStride == NUMBER_2 &&
+        outPlanes.planes[NUMBER_1].columnStride == NUMBER_256 && outPlanes.planes[NUMBER_2].offset == NUMBER_65537 &&
+        outPlanes.planes[NUMBER_2].rowStride == NUMBER_2 && outPlanes.planes[NUMBER_2].columnStride  == NUMBER_256) {
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, NUMBER_1000, &result);
+        return result;
+    } else {
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
 
@@ -1928,6 +1915,12 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
             napi_create_int32(env, FAIL, &result);
             return result;
         }
+    }
+    uint8_t type = OH_NativeBuffer_MetadataType::OH_VIDEO_NONE;
+    int32_t errorCode = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, NATIVE_ERROR_OK, &result);

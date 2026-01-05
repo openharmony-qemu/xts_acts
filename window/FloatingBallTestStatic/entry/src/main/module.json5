@@ -57,7 +57,16 @@
       }
     ],
     "requestPermissions": [
-      {"name": "ohos.permission.CUSTOM_SCREEN_CAPTURE"}
+      {
+        "name": "ohos.permission.USE_FLOAT_BALL"
+      },
+      {
+        "name": 'ohos.permission.CUSTOM_SCREEN_CAPTURE',
+        "reason": "$string:app_name",
+        "usedScene": {
+          "when": "always"
+        }
+      }
     ]
   }
 }

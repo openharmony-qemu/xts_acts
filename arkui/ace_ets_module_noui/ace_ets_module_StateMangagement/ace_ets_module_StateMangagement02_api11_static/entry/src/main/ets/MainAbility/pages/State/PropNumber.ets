@@ -45,10 +45,10 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed
 } from '@ohos.arkui.stateManagement'
@@ -70,7 +70,7 @@ struct PropNumber {
   }
   build() {
     Column() {
-      Text('@Prop 支持数据类型：number').fontSize(9).height('5%')
+      Text('@PropRef 支持数据类型：number').fontSize(9).height('5%')
       Text('Father State:'+ this.numA).width("100%").height('5%')
         .key("PropNumber_A")
         .onClick((e: ClickEvent) => {
@@ -89,8 +89,8 @@ struct ChildPropNumber {
 
   build() {
     Column() {
-      Text('@Prop 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
-      Text('Child Prop:' + this.numB).width("100%").height('5%')
+      Text('@PropRef 单向的 内部修改不会改变父组件').fontSize(9).height('5%')
+      Text('Child PropRef:' + this.numB).width("100%").height('5%')
         .key("ChildPropNumber_A")
         .onClick((e: ClickEvent) => {
           this.numB += 1

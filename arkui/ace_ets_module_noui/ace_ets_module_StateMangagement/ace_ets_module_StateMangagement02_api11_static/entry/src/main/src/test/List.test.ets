@@ -112,8 +112,6 @@ export default function testsuite() {
   LinkSet();
   stateManagementDARKJsunit();
   stateManagementGetSharedJsunit();
-  ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  4
-  ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  3
 
   LocalStoageLinkTwoJsunit();
 
@@ -176,4 +174,7 @@ export default function testsuite() {
   PropNumberJsunit();
   PropStringJsunit();
   StateArrayNewJsunit();
+
+  ObjectLinkMap();
+  ObjectLinkSet();
 }

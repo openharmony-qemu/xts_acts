@@ -24,7 +24,7 @@ import {
   TapGesture,
   Text,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { FrameNode, LengthMetrics, NodeController, typeNode } from '@ohos.arkui.node';

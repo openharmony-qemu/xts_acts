@@ -80,7 +80,7 @@ import {
   AlphabetIndexer,
   GridItemAttribute
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import { GridItemModifier } from "@ohos.arkui.modifier";
 
 class CustomModifier extends GridItemModifier {

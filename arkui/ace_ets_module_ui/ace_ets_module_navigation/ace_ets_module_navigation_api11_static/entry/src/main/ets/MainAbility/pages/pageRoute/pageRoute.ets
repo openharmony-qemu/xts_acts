@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

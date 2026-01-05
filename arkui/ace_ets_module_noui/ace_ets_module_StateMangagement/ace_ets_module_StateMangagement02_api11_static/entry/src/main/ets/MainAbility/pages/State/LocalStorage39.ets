@@ -39,11 +39,11 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
   LocalStoragePropRef,
@@ -51,7 +51,9 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
+AppStorage.setOrCreate<Router>('router', router);
 let storage139: LocalStorage = new LocalStorage({"PropA":47} as Record<string, number>)
 let storage39: LocalStorage = new LocalStorage();
 storage39.set<number>('PropA',47);

@@ -23,7 +23,7 @@ import { Entry,NavPathStack,Scroll,Component,XComponent,Image,ImageSize, XCompon
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import XComponentContext from './interface/XcomponentContext'
 import componentSnapshot from '@ohos.arkui.componentSnapshot'

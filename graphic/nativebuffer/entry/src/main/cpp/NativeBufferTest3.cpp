@@ -276,7 +276,7 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
     OH_NativeBuffer_Config config2 = {
         .width = 0x001,
         .height = 0x001,
-        .format = NATIVEBUFFER_PIXEL_FMT_RGB_888,
+        .format = NATIVEBUFFER_PIXEL_FMT_BGRA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
     OH_NativeBuffer *nativeBuffer2 = OH_NativeBuffer_Alloc(&config2);
@@ -295,7 +295,7 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
         if (ret != 0 || config2.width != NUMBER_0X001 || config2.height != NUMBER_0X001 || config2.format !=
-            NATIVEBUFFER_PIXEL_FMT_RGB_888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
+            NATIVEBUFFER_PIXEL_FMT_BGRA_8888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }

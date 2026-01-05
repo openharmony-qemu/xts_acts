@@ -67,7 +67,7 @@ import {
   TextInputController,
   Margin
 } from '@ohos.arkui.component'
-import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import { Popup, PopupOptions, PopupButtonOptions, PopupIconOptions, PopupTextOptions } from '@ohos.arkui.advanced.Popup'
 

@@ -92,7 +92,7 @@ struct CompStorageProp20 {
         .key('text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
-      Text(`Prop:${this.storProp3}`).height('5%')
+      Text(`PropRef:${this.storProp3}`).height('5%')
         .key('text_Prop')
       Text(`Provide:${this.num}`).height('5%')
         .key('text_Provide')

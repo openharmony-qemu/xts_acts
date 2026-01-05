@@ -572,7 +572,6 @@ napi_value OHNativeImageAcquireNativeWindowNormal(napi_env env, napi_callback_in
     nativeWindow1 = OH_NativeImage_AcquireNativeWindow(nativeImage);
     if (nativeWindow1 != nullptr) {
         nativeWindow2 = OH_NativeImage_AcquireNativeWindow(nativeImage);
-        nativeWindow2 = OH_NativeImage_AcquireNativeWindow(nativeImage);
         if (nativeWindow1 == nativeWindow2) {
             backInfo = SUCCESS;
         }

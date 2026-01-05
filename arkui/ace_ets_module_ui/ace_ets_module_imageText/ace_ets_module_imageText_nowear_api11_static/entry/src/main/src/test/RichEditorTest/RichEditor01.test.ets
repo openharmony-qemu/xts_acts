@@ -50,7 +50,7 @@ export default function RichEditor01() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RichEditor01 state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("RichEditor01" == pages.name)) {
           console.info("get RichEditor01 pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -61,11 +61,6 @@ export default function RichEditor01() {
       console.info("RichEditor01 beforeEach end");
     });
 
-    afterEach(() => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
-      await CommonFunc.sleep(2000);
-    })
     /**
      * @tc.number   RichEditor01_static_001
      * @tc.name     RichEditor01_static_001

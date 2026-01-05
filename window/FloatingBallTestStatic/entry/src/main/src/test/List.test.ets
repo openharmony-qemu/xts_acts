@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import abilityTest from "./FloatingBall.test";
+import FloatingBallTest from "./FloatingBall.test";
 export default function testsuite() {
-  abilityTest();
+  FloatingBallTest();
 }

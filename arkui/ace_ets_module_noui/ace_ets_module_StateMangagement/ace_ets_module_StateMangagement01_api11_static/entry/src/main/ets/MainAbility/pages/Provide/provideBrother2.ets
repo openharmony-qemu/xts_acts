@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

@@ -37,12 +37,9 @@ export default function HidebugJsTest() {
         it('testFaultlogExtension_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("====> testFaultlogExtension_0100  start");
             try {
-                let json1:string = ''
                 const data = await bundleManager.getBundleInfoForSelf(bundleFlags);
-                json1 = JSON.stringify(data);
-                hilog.info(0x0000, 'testTag', 'getBundleInfoForSelf successfully. Data: %{public}s', json1);
-                expect(json1).assertContain("\"extensionAbilityType\":{\"value\":" + bundleManager.ExtensionAbilityType.FAULT_LOG);
-                expect(json1).assertContain("\"extensionAbilityTypeName\":\"faultLog\"");
+                expect(data!.hapModulesInfo[0].extensionAbilitiesInfo[0].extensionAbilityTypeName).assertEqual("faultLog");
+                expect(bundleManager.ExtensionAbilityType.FAULT_LOG).assertEqual(33);
                 done();
             } catch (err) {
                 console.info("====> testFaultlogExtension_0100  catch error: " + JSON.stringify(err));

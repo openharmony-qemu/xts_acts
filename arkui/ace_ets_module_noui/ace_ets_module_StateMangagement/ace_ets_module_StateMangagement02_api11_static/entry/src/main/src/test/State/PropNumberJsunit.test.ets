@@ -104,7 +104,7 @@ it('PropNumberJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[PropNumberJsunit_static_0200] component obj is: " + JSON.stringify(obj1));
       console.info("[PropNumberJsunit_static_0200] content: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("Child Prop:11");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("Child PropRef:11");
       console.info('[PropNumberJsunit_static_0200] END');
       done();
     });
@@ -125,7 +125,7 @@ it('PropNumberJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PropNumberJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[PropNumberJsunit_static_0300] content: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("Child Prop:12");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Child PropRef:12");
 
       let strJson1 = inspector.getInspectorByKey('PropNumber_A');
       let obj1 = JSON.parseJsonElement(strJson1);

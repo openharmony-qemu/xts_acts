@@ -121,7 +121,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';

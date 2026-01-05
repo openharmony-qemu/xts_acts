@@ -43,7 +43,7 @@ import { ComponentContent } from '@ohos.arkui.node'
 import {
   State,
   Link,
-  Prop,AppStorage,Local
+  PropRef,AppStorage,Local
 } from '@ohos.arkui.stateManagement';
 class Params {
   public text: string = '';

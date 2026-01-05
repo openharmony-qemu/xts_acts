@@ -3184,46 +3184,35 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.number     testPicker62
-     * @tc.name       testPicker62
-     * @tc.desc       Testing showAssetsCreationDialogEx with isImageFullyDisplayed param.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   testPicker62
+     * @tc.number testPicker62
+     * @tc.desc   Testing recommendationTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testPicker62', Level.LEVEL0, async (done: Function) => {
+    it('testPicker62',Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
-      const context = getContext();
-      const creationSetting: photoAccessHelper.PhotoCreationConfig = {
-        title: 'test',
-        fileNameExtension: 'jpg',
-        photoType: photoAccessHelper.PhotoType.IMAGE,
-      };
-      const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();
-      const isImageFullyDisplayed = true;
-      photoAccessHelper
-        .getPhotoAccessHelper(context)
-        .showAssetsCreationDialogEx([boxPath], [creationSetting])
-        .catch((error:Error) => {
-          console.error('testPicker62 showAssetsCreationDialogEx error =', JSON.stringify(error));
-          expect(false).assertTrue();
-        });
-      await CommonFunc.sleep(2000);
-      console.info('testPicker62 showAssetsCreationDialogEx success');
-      photoAccessHelper
-        .getPhotoAccessHelper(context)
-        .showSingleAssetCreationDialogEx(boxPath, creationSetting, isImageFullyDisplayed)
-        .catch((error:Error) => {
-          console.error('testPicker62 showSingleAssetCreationDialogEx error =', JSON.stringify(error));
-          expect(false).assertTrue();
-        });
-      await CommonFunc.sleep(2000);
-      console.info('testPicker62 showSingleAssetCreationDialogEx success');
-      console.info('testPicker62 success');
-      expect(true).assertTrue();
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.recommendationOptions = {
+        recommendationTypeList: [photoAccessHelper.RecommendationType.CAT, photoAccessHelper.RecommendationType.DOG, 
+        photoAccessHelper.RecommendationType.ARCHITECTURE, photoAccessHelper.RecommendationType.LANDSCAPE],
+      }
+
+      try{
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker62, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker62, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("testPicker62 finish");
       done();
     });
   })

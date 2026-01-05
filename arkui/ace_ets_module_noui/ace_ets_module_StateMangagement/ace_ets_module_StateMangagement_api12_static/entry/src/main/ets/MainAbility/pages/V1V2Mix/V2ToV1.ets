@@ -31,7 +31,7 @@ import {
   State,
   Watch,Param,
   Link,Monitor,Trace,ObservedV2,Event,Consumer,Observed,ObservedV2,
-  StorageLink,IMonitor,IMonitorValue,Local,Provider,Prop,Provide,PropRef
+  StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef,Provide,PropRef
 } from '@ohos.arkui.stateManagement'
 
 enum MemberType {
@@ -121,7 +121,7 @@ export struct V2ToV1ComponentCorrect_TestV1child1 {
   @State mapValue: Map<string, string> = new Map<string, string>([['key', 'value']])
   @State dateValue: Date = new Date('2024/07/15')
   @State arrValue: Array<number> = [3.0, 4.0]
-  @Prop setValue: Set<string> = new Set<string> (['1', '2'])
+  @PropRef setValue: Set<string> = new Set<string> (['1', '2'])
   @State setValueAlias: newType = new Set<string>()
 
   aboutToReuse(params: Record<string, string | boolean | null | undefined | Set<string> | Set<number> | MemberType

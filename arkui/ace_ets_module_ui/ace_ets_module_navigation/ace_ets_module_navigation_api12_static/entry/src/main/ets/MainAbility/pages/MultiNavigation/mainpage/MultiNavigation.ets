@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Observed
+  PropRef,Provide,Observed
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';

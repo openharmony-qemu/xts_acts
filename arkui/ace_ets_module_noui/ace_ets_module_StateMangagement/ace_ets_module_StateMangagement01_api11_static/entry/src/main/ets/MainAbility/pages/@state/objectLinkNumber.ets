@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  Prop,ObjectLink,Observed
+  PropRef,ObjectLink,Observed
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

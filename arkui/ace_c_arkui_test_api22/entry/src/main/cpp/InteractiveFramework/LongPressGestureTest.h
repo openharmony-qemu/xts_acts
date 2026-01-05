@@ -33,6 +33,7 @@ public:
     static napi_value GetAllowableMovement(napi_env env, napi_callback_info info);
     static napi_value SetMeasureFromViewport(napi_env env, napi_callback_info info);
     static napi_value SetMeasureFromViewport_Invalid(napi_env env, napi_callback_info info);
+    static napi_value GetAllowableMovement_SUPPORTED(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 #endif //ACE_C_ARKUI_TEST_API22_LONGPRESSGESTURETEST_H

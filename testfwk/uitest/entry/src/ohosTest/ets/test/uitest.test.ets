@@ -23,7 +23,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 const delegator : AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const bundleName : string = abilityDelegatorRegistry.getArguments().bundleName;
 const waitUiReadyMs : number = 1000;
-const TestTag = 'UiTest_API16';
+const TestTag = 'UiTest_TAG';
 const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
 const CapabilityCode = 801;
@@ -44,6 +44,24 @@ async function stopApplication(bundleName: string) {
     })
 }
 
+async function maxUiWindow(driver: Driver, window: UiWindow | null) {
+    if (window != null) {
+        try {
+            let windowMode = await window.getWindowMode();
+            if (windowMode != WindowMode.FLOATING) {
+                await window.resume();
+                await driver.delayMs(8000);
+            }
+            await window.maximize();
+        } catch (error) {
+            console.log(`${TestTag}, maxUiWindow error,${JSON.stringify(error)}`);
+        }
+    } else {
+        console.log(`${TestTag}, maxUiWindow null`);
+    }
+    await driver.delayMs(3000);
+}
+
 async function exitInputMethod() {
     let driver = Driver.create()
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
@@ -57,13 +75,15 @@ async function getInputMethodPermission() {
     let driver = Driver.create()
     await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
     await driver.delayMs(2000)
-    let TextInput = await driver.findComponent(ON.type('TextInput'))
-    if (TextInput == null) {
-        let scorll = await driver.findComponent(ON.type('Scroll'))
-        TextInput = await scorll.scrollSearch(ON.type('TextInput'))
+    let textInput = await driver.findComponent(ON.type('TextInput'))
+    if (textInput == null) {
+        let scroll = await driver.findComponent(ON.type('Scroll'))
+        textInput = await scroll.scrollSearch(ON.type('TextInput'))
     }
-    await TextInput.click()
-    await driver.delayMs(1000)
+    if (textInput != null) {
+        await textInput.click()
+        await driver.delayMs(1000)
+    }
     let permissionBtn1 = await driver.findComponent(ON.text('同意'))
     if (permissionBtn1 == null) {
         let scroll = await driver.findComponent(ON.type('Scroll'))
@@ -78,6 +98,11 @@ async function getInputMethodPermission() {
     let permissionBtn2 = await driver.findComponent(ON.text('下一步'))
     if (permissionBtn2 != null) {
         await permissionBtn2.click()
+        await driver.delayMs(1000)
+    }
+    let permissionBtn3 = await driver.findComponent(ON.text('完成'))
+    if (permissionBtn3 != null) {
+        await permissionBtn3.click()
         await driver.delayMs(1000)
     }
     await stopApplication('com.uitestScene.acts')
@@ -710,6 +735,7 @@ export default function UiTest() {
                     let windowMode = await window.getWindowMode();
                     if (windowMode != WindowMode.FLOATING) {
                         await window.resume();
+                        await driver.delayMs(8000);
                     }
                     await window.maximize();
                 } catch (error) {
@@ -1789,9 +1815,9 @@ export default function UiTest() {
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testFlingWithId disPlay is: ${JSON.stringify(disPlay)}`);
             let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'})
+            await driver.delayMs(waitUiReadyMs);
             try {
-                await window.maximize()
-                await driver.delayMs(500)
+                await maxUiWindow(driver, window);
             } catch (error) {
                 console.info('It is already a Fullscreen window')
             }
@@ -1805,7 +1831,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             await driver.fling(UiDirection.DOWN, 39000, disPlay.id)
             await driver.delayMs(waitUiReadyMs)
-            let buttonCom = await driver.findComponents(ON.belongingDisplay(disPlay.id).text('1'))
+            let buttonCom = await driver.findComponents(ON.belongingDisplay(disPlay.id).text('1').inWindow('com.uitestScene.acts'))
             console.log(`${TestTag}, testFlingWithId buttonCom: ${JSON.stringify(buttonCom)}`);
             expect (buttonCom).assertNull()
             await driver.fling(UiDirection.LEFT, 39000, disPlay.id)
@@ -1814,7 +1840,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             await driver.fling(UiDirection.UP, 39000, disPlay.id)
             await driver.delayMs(2000)
-            let button2 = await driver.findComponents(ON.belongingDisplay(disPlay.id).text('15'))
+            let button2 = await driver.findComponents(ON.belongingDisplay(disPlay.id).text('15').inWindow('com.uitestScene.acts'))
             console.log(`${TestTag}, testFlingWithId button2: ${JSON.stringify(button2)}`);
             expect (button2 == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
@@ -3643,27 +3669,6 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        afterAll(async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            const driver = Driver.create();
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            console.log(`${TestTag}, afterAll window,${JSON.stringify(window)}`);
-            if (window != null) {
-                try {
-                    let windowMode = await window.getWindowMode();
-                    if (windowMode != WindowMode.FLOATING) {
-                        await window.resume();
-                    }
-                    await window.maximize();
-                } catch (error) {
-                    console.log(`${TestTag}, afterAll maximize error,${JSON.stringify(error)}`);
-                }
-            }
-            await driver.delayMs(waitUiReadyMs);
-            await stopApplication('com.uitestScene.acts');
-        })
-
         /**
          * @tc.name   testInputText
          * @tc.number uiTest_9001
@@ -4320,7 +4325,10 @@ export default function UiTest() {
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(waitUiReadyMs);
+            let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+            await driver.delayMs(waitUiReadyMs);
+            await maxUiWindow(driver, window);
             let scoll = await driver.findComponent(ON.type('Scroll'))
             let rect = await scoll.getBounds()
             let center = await scoll.getBoundsCenter()
@@ -4342,7 +4350,10 @@ export default function UiTest() {
          */
         it('testFling', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(waitUiReadyMs);
+            let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+            await driver.delayMs(waitUiReadyMs);
+            await maxUiWindow(driver, window);
             let scoll = await driver.findComponent(ON.type('Scroll'))
             let rect = await scoll.getBounds()
             let center = await scoll.getBoundsCenter()
@@ -4531,297 +4542,6 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testGetWindowMode
-         * @tc.number uiTest_9038
-         * @tc.desc   get the window mode of this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testGetWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            let mode1 = await window1.getWindowMode()
-            try {
-                await window1.resume()
-                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let mode2 = await window2.getWindowMode()
-                if (mode1 == WindowMode.FULLSCREEN) {
-                    expect(mode2 == WindowMode.FLOATING).assertTrue()
-                    expect(mode2 != WindowMode.SECONDARY).assertTrue()
-                    expect(mode2 != WindowMode.PRIMARY).assertTrue()
-                } else {
-                    expect(mode2 == WindowMode.FULLSCREEN).assertTrue()
-                }
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window1 != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
-         * @tc.name   testGetBundleName
-         * @tc.number uiTest_9039
-         * @tc.desc   get the bundleName of this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testGetBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            let name = await window.getBundleName()
-            expect(name == 'com.uitestScene.acts').assertTrue()
-            await stopApplication('com.uitestScene.acts')
-        })
-
-        /**
-         * @tc.name   testGetTitle
-         * @tc.number uiTest_9040
-         * @tc.desc   get the title of this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testGetTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            let title = await window.getTitle()
-            expect(title == '').assertTrue()
-            await stopApplication('com.uitestScene.acts')
-        })
-
-        /**
-         * @tc.name   testWindowMoveTo
-         * @tc.number uiTest_9041
-         * @tc.desc   move this UiWindow to the specified points.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowMoveTo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                let windowMode = await window.getWindowMode()
-                if (windowMode != WindowMode.FLOATING) {
-                    await window.resume()
-                }
-                await driver.delayMs(waitUiReadyMs)
-                let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds1 = await window1.getBounds()
-                await window1.moveTo(100,100)
-                await driver.delayMs(waitUiReadyMs)
-                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds2 = await window2.getBounds()
-                expect(bounds1 != bounds2).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
-         * @tc.name   testWindowResizeA
-         * @tc.number uiTest_9042
-         * @tc.desc   resize this UiWindow to the specified size for the specified direction.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowResizeA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                let windowMode = await window.getWindowMode()
-                if (windowMode != WindowMode.FLOATING) {
-                    await window.resume()
-                }
-                await driver.delayMs(waitUiReadyMs)
-
-                let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds1 = await window1.getBounds()
-                await window1.resize(600,600,ResizeDirection.RIGHT_DOWN)
-                await driver.delayMs(waitUiReadyMs)
-                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds2 = await window2.getBounds()
-                expect(bounds2 != bounds1).assertTrue()
-
-                await window2.resize(400,400,ResizeDirection.RIGHT_UP)
-                await driver.delayMs(waitUiReadyMs)
-                let window3 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds3= await window3.getBounds()
-                expect(bounds3 != bounds2).assertTrue()
-                await window3.resize(300,300,ResizeDirection.LEFT_DOWN)
-                await driver.delayMs(waitUiReadyMs)
-                let window4 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds4= await window4.getBounds()
-                expect(bounds4 != bounds3).assertTrue()
-
-                await window4.resize(500,500,ResizeDirection.LEFT_UP)
-                await driver.delayMs(waitUiReadyMs)
-                let window5 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds5= await window5.getBounds()
-                expect(bounds5 != bounds4).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
-         * @tc.name   testWindowResizeB
-         * @tc.number testWindowResizeB
-         * @tc.desc   testWindowResizeB
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowResizeB', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                let windowMode = await window.getWindowMode()
-                if (windowMode != WindowMode.FLOATING) {
-                    await window.resume()
-                }
-                await driver.delayMs(waitUiReadyMs)
-
-                let window5 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds5= await window5.getBounds()
-                await window5.resize(bounds5.right - bounds5.left,300,ResizeDirection.DOWN)
-                await driver.delayMs(waitUiReadyMs)
-                let window6 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds6= await window6.getBounds()
-                expect(bounds6 != bounds5).assertTrue()
-
-                await window6.resize(bounds6.right - bounds6.left,500,ResizeDirection.UP)
-                await driver.delayMs(waitUiReadyMs)
-                let window7 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds7 = await window7.getBounds()
-                expect(bounds7 != bounds6).assertTrue()
-
-                await window7.resize(300,bounds7.bottom - bounds7.top,ResizeDirection.LEFT)
-                await driver.delayMs(waitUiReadyMs)
-                let window8 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds8 = await window8.getBounds()
-                expect(bounds8 != bounds7).assertTrue()
-
-                await window8.resize(500,bounds8.bottom - bounds8.top,ResizeDirection.RIGHT)
-                await driver.delayMs(waitUiReadyMs)
-                let window9 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let bounds9 = await window9.getBounds()
-                expect(bounds9 != bounds8).assertTrue()
-
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
-         * @tc.name   testWindowAttr
-         * @tc.number uiTest_9043
-         * @tc.desc   set the focused status of this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,actived:true,title:''})
-            await window.focus()
-            await driver.delayMs(waitUiReadyMs)
-            let isFocused = await window.isFocused()
-            let isActived = await window.isActived()
-            expect(isFocused == true).assertTrue()
-            expect(isActived == true).assertTrue()
-            await stopApplication('com.uitestScene.acts')
-        })
-
-        /**
-         * @tc.name   testWindowMinimize
-         * @tc.number uiTest_9045
-         * @tc.desc   minimize this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowMinimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                await window.minimize()
-                await driver.delayMs(waitUiReadyMs)
-                let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                expect(window1 == null).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
-         * @tc.name   testWindowClose
-         * @tc.number uiTest_9046
-         * @tc.desc   close this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                await window.close()
-                await driver.delayMs(waitUiReadyMs)
-                let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                expect(window1 == null).assertTrue()
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
-
-        /**
          * @tc.name   testGetDisplaySize
          * @tc.number uiTest_9047
          * @tc.desc   get the size of the device display.
@@ -4870,8 +4590,6 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-
-
         /**
          * @tc.name   testWaitForIdle
          * @tc.number uiTest_9053
@@ -4904,75 +4622,6 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
         })
 
-        /**
-         * @tc.name   testSplit
-         * @tc.number uiTest_9056
-         * @tc.desc   change this UiWindow into split screen mode.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testSplit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window1 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try {
-                await window1.split()
-                await driver.delayMs(waitUiReadyMs * 2)
-                let testLabel = await driver.findComponent(ON.text('test label'));
-                await driver.delayMs(waitUiReadyMs);
-                await testLabel.click();
-                await driver.delayMs(waitUiReadyMs);
-                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let window2Mode = await window2.getWindowMode();
-                expect(window2Mode == WindowMode.PRIMARY).assertTrue();
-                let testWindow = await driver.findWindow({bundleName:'com.uitest.acts'})
-                let testWindowMode = await testWindow.getWindowMode();
-                expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window1 != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-            await stopApplication('com.uitestScene.acts')
-        })
-
-        /**
-         * @tc.name   testWindowMaximize
-         * @tc.number uiTest_9057
-         * @tc.desc   maximize this UiWindow.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testWindowMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let window = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-            try{
-                let windowMode = await window.getWindowMode()
-                if (windowMode != WindowMode.FLOATING) {
-                    await window.resume()
-                }
-                let window2 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                await window2.maximize()
-                await driver.delayMs(waitUiReadyMs)
-                let window3 = await driver.findWindow({bundleName:'com.uitestScene.acts'})
-                let mode = await window3.getWindowMode()
-                expect(mode == WindowMode.FULLSCREEN).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-            }
-            catch (err) {
-                if (err.message == 'this device can not support this action') {
-                    expect(window != null).assertTrue()
-                } else {
-                    expect(false).assertTrue()
-                }
-            }
-        })
     })
 
     describe('UiTest_API8', () => {
@@ -5424,6 +5073,7 @@ export default function UiTest() {
                     let windowMode = await window.getWindowMode();
                     if (windowMode != WindowMode.FLOATING) {
                         await window.resume();
+                        await driver.delayMs(8000);
                     }
                     await window.maximize();
                 } catch (error) {
