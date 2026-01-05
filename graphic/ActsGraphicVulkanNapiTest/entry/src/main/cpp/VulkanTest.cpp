@@ -58,7 +58,7 @@ static PFN_vkGetSwapchainImagesKHR fpGetSwapchainImagesKHR = nullptr;
 static PFN_vkGetNativeBufferPropertiesOHOS fpGetNativeBufferPropertiesOHOS = nullptr;
 static PFN_vkGetMemoryNativeBufferOHOS fpGetMemoryNativeBufferOHOS = nullptr;
 
-static void* libVulkan = nullptr;
+static void* g_libVulkan = nullptr;
 static VkInstance instance = nullptr;
 static VkSurfaceKHR surface = VK_NULL_HANDLE;
 static VkPhysicalDevice physicalDevice = nullptr;
@@ -68,9 +68,9 @@ static VkSurfaceFormatKHR surfaceFormat = {};
 static VkSwapchainKHR swapChain = VK_NULL_HANDLE;
 static VkSwapchainKHR swapChain2 = VK_NULL_HANDLE;
 static VkSemaphore semaphore = VK_NULL_HANDLE;
-static bool isSupportedVulkan = false;
+static bool g_isSupportedVulkan = false;
 static std::vector<VkQueueFamilyProperties> queueProps;
-static uint32_t queueCount = 0;
+static uint32_t g_queueCount = 0;
 static VkDebugUtilsMessengerEXT debugUtilsMessenger = VK_NULL_HANDLE;
 static std::stringstream debugMessage;
 
@@ -81,10 +81,10 @@ static bool DLOpenLibVulkan()
 #else
     const char* path = "/system/lib/libvulkan.so";
 #endif
-    libVulkan = dlopen(path, RTLD_NOW | RTLD_LOCAL);
-    if (libVulkan == nullptr) {
+    g_libVulkan = dlopen(path, RTLD_NOW | RTLD_LOCAL);
+    if (g_libVulkan == nullptr) {
         std::cout << "dlerror: " << dlerror() << std::endl;
-        std::cout << "isSupportedVulkan: false" << std::endl;
+        std::cout << "g_isSupportedVulkan: false" << std::endl;
         return false;
     }
     return true;
@@ -112,11 +112,11 @@ static void TrytoCreateVkInstance()
     VkResult result = vkCreateInstance(&instanceCreateInfo, nullptr, &instance);
     std::cout << "instance ptr: " << instance << std::endl;
     if (result != VK_SUCCESS || instance == nullptr) {
-        isSupportedVulkan = false;
+        g_isSupportedVulkan = false;
     } else {
-        isSupportedVulkan = true;
+        g_isSupportedVulkan = true;
     }
-    std::cout << "set isSupportedVulkan: " << isSupportedVulkan << std::endl;
+    std::cout << "set g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
     std::cout << "TrytoCreateVkInstance result: " << result << std::endl;
 }
 
@@ -154,13 +154,13 @@ static uint32_t GetQueueFamilyIndex(VkQueueFlagBits queueFlags)
         return static_cast<uint32_t>(-1);
     }
 
-    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &queueCount, nullptr);
-    if (queueCount == 0) {
+    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &g_queueCount, nullptr);
+    if (g_queueCount == 0) {
         return static_cast<uint32_t>(-1);
     }
 
-    queueProps.resize(queueCount);
-    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &queueCount, queueProps.data());
+    queueProps.resize(g_queueCount);
+    vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &g_queueCount, queueProps.data());
 
     for (size_t i = 0; i < queueProps.size(); i++) {
         if (queueFlags & VK_QUEUE_COMPUTE_BIT) {
@@ -236,45 +236,45 @@ int LoadBaseFuncPtrTest()
 {
     bool opened = DLOpenLibVulkan();
     std::cout << "LibVulkan opened: " << opened << std::endl;
-    std::cout << "libVulkan ptr: " << libVulkan << std::endl;
-    if (!opened || libVulkan == nullptr) {
+    std::cout << "g_libVulkan ptr: " << g_libVulkan << std::endl;
+    if (!opened || g_libVulkan == nullptr) {
         return -1;
     }
 
     vkEnumerateInstanceExtensionProperties = reinterpret_cast<PFN_vkEnumerateInstanceExtensionProperties>(
-        dlsym(libVulkan, "vkEnumerateInstanceExtensionProperties"));
+        dlsym(g_libVulkan, "vkEnumerateInstanceExtensionProperties"));
     if (vkEnumerateInstanceExtensionProperties == nullptr) {
         return -1;
     }
     vkEnumerateInstanceLayerProperties = reinterpret_cast<PFN_vkEnumerateInstanceLayerProperties>(
-        dlsym(libVulkan, "vkEnumerateInstanceLayerProperties"));
+        dlsym(g_libVulkan, "vkEnumerateInstanceLayerProperties"));
     if (vkEnumerateInstanceLayerProperties == nullptr) {
         return -1;
     }
     vkEnumerateDeviceExtensionProperties = reinterpret_cast<PFN_vkEnumerateDeviceExtensionProperties>(
-        dlsym(libVulkan, "vkEnumerateDeviceExtensionProperties"));
+        dlsym(g_libVulkan, "vkEnumerateDeviceExtensionProperties"));
     if (vkEnumerateDeviceExtensionProperties == nullptr) {
         return -1;
     }
     vkEnumerateDeviceLayerProperties =
-        reinterpret_cast<PFN_vkEnumerateDeviceLayerProperties>(dlsym(libVulkan, "vkEnumerateDeviceLayerProperties"));
+        reinterpret_cast<PFN_vkEnumerateDeviceLayerProperties>(dlsym(g_libVulkan, "vkEnumerateDeviceLayerProperties"));
     if (vkEnumerateDeviceLayerProperties == nullptr) {
         return -1;
     }
-    vkCreateInstance = reinterpret_cast<PFN_vkCreateInstance>(dlsym(libVulkan, "vkCreateInstance"));
+    vkCreateInstance = reinterpret_cast<PFN_vkCreateInstance>(dlsym(g_libVulkan, "vkCreateInstance"));
     if (vkCreateInstance == nullptr) {
         return -1;
     }
-    vkGetInstanceProcAddr = reinterpret_cast<PFN_vkGetInstanceProcAddr>(dlsym(libVulkan, "vkGetInstanceProcAddr"));
+    vkGetInstanceProcAddr = reinterpret_cast<PFN_vkGetInstanceProcAddr>(dlsym(g_libVulkan, "vkGetInstanceProcAddr"));
     if (vkGetInstanceProcAddr == nullptr) {
         return -1;
     }
-    vkGetDeviceProcAddr = reinterpret_cast<PFN_vkGetDeviceProcAddr>(dlsym(libVulkan, "vkGetDeviceProcAddr"));
+    vkGetDeviceProcAddr = reinterpret_cast<PFN_vkGetDeviceProcAddr>(dlsym(g_libVulkan, "vkGetDeviceProcAddr"));
     if (vkGetDeviceProcAddr == nullptr) {
         return -1;
     }
     TrytoCreateVkInstance();
-    return isSupportedVulkan ? 0 : -1;
+    return g_isSupportedVulkan ? 0 : -1;
 }
 
 template <typename T> static bool LoadInstanceFunc(T& funcPtr, const char* funcName)
@@ -353,8 +353,8 @@ static bool LoadInstanceDebugFunc()
 
 int LoadInstanceFuncPtrTest()
 {
-    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
-    if (!isSupportedVulkan) {
+    std::cout << "g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
+    if (!g_isSupportedVulkan) {
         return 0;
     }
     if (instance == nullptr || vkGetInstanceProcAddr == nullptr) {
@@ -378,8 +378,8 @@ int LoadInstanceFuncPtrTest()
 
 int VkEnumeratePhysicalDevicesTest()
 {
-    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
-    if (!isSupportedVulkan) {
+    std::cout << "g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
+    if (!g_isSupportedVulkan) {
         return 0;
     }
     if (instance == nullptr || vkEnumeratePhysicalDevices == nullptr) {
@@ -415,8 +415,8 @@ int VkEnumeratePhysicalDevicesTest()
 
 int VkCreateDeviceTest()
 {
-    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
-    if (!isSupportedVulkan) {
+    std::cout << "g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
+    if (!g_isSupportedVulkan) {
         return 0;
     }
     if (vkCreateDevice == nullptr || physicalDevice == nullptr) {
@@ -434,7 +434,7 @@ int VkCreateDeviceTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.queueCount = 1;
+    queueInfo.g_queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
@@ -458,8 +458,8 @@ int VkCreateDeviceTest()
 
 int GetNativeBufferPropertiesOhosTest()
 {
-    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
-    if (!isSupportedVulkan) {
+    std::cout << "g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
+    if (!g_isSupportedVulkan) {
         return 0;
     }
     if (vkCreateDevice == nullptr || physicalDevice == nullptr || vkGetDeviceProcAddr == nullptr) {
@@ -477,7 +477,7 @@ int GetNativeBufferPropertiesOhosTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.queueCount = 1;
+    queueInfo.g_queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
@@ -513,8 +513,8 @@ int GetNativeBufferPropertiesOhosTest()
 
 int GetMemoryNativeBufferOhosTest()
 {
-    std::cout << "isSupportedVulkan: " << isSupportedVulkan << std::endl;
-    if (!isSupportedVulkan) {
+    std::cout << "g_isSupportedVulkan: " << g_isSupportedVulkan << std::endl;
+    if (!g_isSupportedVulkan) {
         return 0;
     }
     if (vkCreateDevice == nullptr || physicalDevice == nullptr || vkGetDeviceProcAddr == nullptr) {
@@ -530,7 +530,7 @@ int GetMemoryNativeBufferOhosTest()
     if (queueInfo.queueFamilyIndex == static_cast<uint32_t>(-1)) {
         return -1;
     }
-    queueInfo.queueCount = 1;
+    queueInfo.g_queueCount = 1;
     queueInfo.pQueuePriorities = &defaultQueuePriority;
     queueCreateInfos.push_back(queueInfo);
     deviceCreateInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
