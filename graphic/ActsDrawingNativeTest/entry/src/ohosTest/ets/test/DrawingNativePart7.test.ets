@@ -36,7 +36,7 @@ export default function ActsNewDrawingNativeTestPart7() {
 
     // Matrix Part2 Set related test cases
     /**
-     * @tc.name   testMatrixCopyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09800
      * @tc.desc   test for TestMatrixCopyNormal.
      * @tc.type   FUNCTION
@@ -49,7 +49,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testMatrixCopyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09900
      * @tc.desc   test for TestMatrixCopyNull.
      * @tc.type   FUNCTION
@@ -62,7 +62,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testMatrixCopyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_10000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_10000
      * @tc.desc   test for TestMatrixCopyMultipleCalls.
      * @tc.type   FUNCTION
@@ -77,7 +77,7 @@ export default function ActsNewDrawingNativeTestPart7() {
 
     // Canvas related test cases
     /**
-     * @tc.name   testCanvasDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0100
      * @tc.desc   test for testCanvasDestroyNormal.
      * @tc.type   FUNCTION
@@ -90,7 +90,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDestroyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0200
      * @tc.desc   test for testCanvasDestroyNull.
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasBindNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0300
      * @tc.desc   test for testCanvasBindNormal.
      * @tc.type   FUNCTION
@@ -116,7 +116,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasBindNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0400
      * @tc.desc   test for testCanvasBindNull.
      * @tc.type   FUNCTION
@@ -129,7 +129,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasBindDestroyBitmap
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0500
      * @tc.desc   test for testCanvasBindDestroyBitmap.
      * @tc.type   FUNCTION
@@ -142,7 +142,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasBindMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0600
      * @tc.desc   test for testCanvasBindMultipleCalls.
      * @tc.type   FUNCTION
@@ -155,7 +155,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasBindBoundaryMultipleCallsBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0700
      * @tc.desc   test for testCanvasBindBoundaryMultipleCallsBoundary.
      * @tc.type   FUNCTION
@@ -168,7 +168,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachPenDetachPenNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0800
      * @tc.desc   test for testCanvasAttachPenDetachPenNormal.
      * @tc.type   FUNCTION
@@ -181,7 +181,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachPenDetachPenNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_0900
      * @tc.desc   test for testCanvasAttachPenDetachPenNull.
      * @tc.type   FUNCTION
@@ -194,7 +194,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachPenDetachPenMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1000
      * @tc.desc   test for testCanvasAttachPenDetachPenMultipleCalls.
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachPenOnly
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1100
      * @tc.desc   test for testCanvasAttachPenOnly.
      * @tc.type   FUNCTION
@@ -220,7 +220,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDetachPenOnly
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1200
      * @tc.desc   test for testCanvasDetachPenOnly.
      * @tc.type   FUNCTION
@@ -233,7 +233,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachPenDetachPenBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1300
      * @tc.desc   test for testCanvasAttachPenDetachPenBoundary.
      * @tc.type   FUNCTION
@@ -246,7 +246,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachBrushDetachBrushNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1400
      * @tc.desc   test for testCanvasAttachBrushDetachBrushNormal.
      * @tc.type   FUNCTION
@@ -259,7 +259,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachBrushDetachBrushNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1500
      * @tc.desc   test for testCanvasAttachBrushDetachBrushNull.
      * @tc.type   FUNCTION
@@ -272,7 +272,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachBrushDetachBrushMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1600
      * @tc.desc   test for testCanvasAttachBrushDetachBrushMultipleCalls.
      * @tc.type   FUNCTION
@@ -285,7 +285,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachBrushOnly
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1700
      * @tc.desc   test for testCanvasAttachBrushOnly.
      * @tc.type   FUNCTION
@@ -298,7 +298,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDetachBrushOnly
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1800
      * @tc.desc   test for testCanvasDetachBrushOnly.
      * @tc.type   FUNCTION
@@ -311,7 +311,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasAttachBrushDetachBrushBoudary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_1900
      * @tc.desc   test for testCanvasAttachBrushDetachBrushBoudary.
      * @tc.type   FUNCTION
@@ -324,7 +324,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2000
      * @tc.desc   test for testCanvasSaveNormal.
      * @tc.type   FUNCTION
@@ -337,7 +337,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSavetestCanvasGetSaveCountNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2100
      * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountNull.
      * @tc.type   FUNCTION
@@ -350,7 +350,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSavetestCanvasGetSaveCountMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2200
      * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountMultipleCalls.
      * @tc.type   FUNCTION
@@ -363,7 +363,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSavetestCanvasGetSaveCountInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2300
      * @tc.desc   test for testCanvasSavetestCanvasGetSaveCountInputDestroyed.
      * @tc.type   FUNCTION
@@ -376,7 +376,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasGetSaveCountWhenNoSave
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2400
      * @tc.desc   test for testCanvasGetSaveCountWhenNoSave.
      * @tc.type   FUNCTION
@@ -389,7 +389,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveLayerNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2500
      * @tc.desc   test for testCanvasSaveLayerNormal.
      * @tc.type   FUNCTION
@@ -402,7 +402,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveLayerNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2600
      * @tc.desc   test for testCanvasSaveLayerNull.
      * @tc.type   FUNCTION
@@ -415,7 +415,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveLayerAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2700
      * @tc.desc   test for testCanvasSaveLayerAbnormal.
      * @tc.type   FUNCTION
@@ -428,7 +428,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveLayerRestore
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2800
      * @tc.desc   test for testCanvasSaveLayerRestore.
      * @tc.type   FUNCTION
@@ -441,7 +441,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasSaveLayerMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_2900
      * @tc.desc   test for testCanvasSaveLayerMultipleCalls.
      * @tc.type   FUNCTION
@@ -454,7 +454,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3000
      * @tc.desc   test for testCanvasRestoreNormal.
      * @tc.type   FUNCTION
@@ -467,7 +467,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3100
      * @tc.desc   test for testCanvasRestoreNull.
      * @tc.type   FUNCTION
@@ -480,7 +480,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3200
      * @tc.desc   test for testCanvasRestoreMultipleCalls.
      * @tc.type   FUNCTION
@@ -493,7 +493,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreBeforeSave
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3300
      * @tc.desc   test for testCanvasRestoreBeforeSave.
      * @tc.type   FUNCTION
@@ -506,7 +506,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3400
      * @tc.desc   test for testCanvasRestoreInputDestroyed.
      * @tc.type   FUNCTION
@@ -519,7 +519,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreExceededSaveSavelayerTimes
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3500
      * @tc.desc   test for testCanvasRestoreExceededSaveSavelayerTimes.
      * @tc.type   FUNCTION
@@ -532,7 +532,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3600
      * @tc.desc   test for testCanvasRestoreToCountNormal.
      * @tc.type   FUNCTION
@@ -545,7 +545,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3700
      * @tc.desc   test for testCanvasRestoreToCountNull.
      * @tc.type   FUNCTION
@@ -558,7 +558,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3800
      * @tc.desc   test for testCanvasRestoreToCountAbnormal.
      * @tc.type   FUNCTION
@@ -571,7 +571,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_3900
      * @tc.desc   test for testCanvasRestoreToCountMaximum.
      * @tc.type   FUNCTION
@@ -584,7 +584,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountExceeded
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4000
      * @tc.desc   test for testCanvasRestoreToCountExceeded.
      * @tc.type   FUNCTION
@@ -597,7 +597,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasRestoreToCountInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4100
      * @tc.desc   test for testCanvasRestoreToCountInputDestroyed.
      * @tc.type   FUNCTION
@@ -610,7 +610,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawLineNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4200
      * @tc.desc   test for testCanvasDrawLineNormal.
      * @tc.type   FUNCTION
@@ -623,7 +623,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawLineNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24700
      * @tc.desc   test for testCanvasDrawLineNull.
      * @tc.type   FUNCTION
@@ -636,7 +636,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawLineAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24800
      * @tc.desc   test for testCanvasDrawLineAbnormal.
      * @tc.type   FUNCTION
@@ -649,7 +649,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawLineMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24900
      * @tc.desc   test for testCanvasDrawLineMaximum.
      * @tc.type   FUNCTION
@@ -662,7 +662,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawLineInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25000
      * @tc.desc   test for testCanvasDrawLineInputDestroyed.
      * @tc.type   FUNCTION
@@ -675,7 +675,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPathNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25100
      * @tc.desc   test for testCanvasDrawPathNormal.
      * @tc.type   FUNCTION
@@ -688,7 +688,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPathNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25200
      * @tc.desc   test for testCanvasDrawPathNull.
      * @tc.type   FUNCTION
@@ -701,7 +701,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testCanvasDrawPathInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25300
      * @tc.desc   test for testCanvasDrawPathInputDestroyed.
      * @tc.type   FUNCTION
@@ -715,7 +715,7 @@ export default function ActsNewDrawingNativeTestPart7() {
 
     // Bitmap related test cases
     /**
-     * @tc.name   testBitmapDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0100
      * @tc.desc   test for testBitmapDestroyNormal.
      * @tc.type   FUNCTION
@@ -728,7 +728,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapDestroyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0200
      * @tc.desc   test for testBitmapDestroyNull.
      * @tc.type   FUNCTION
@@ -741,7 +741,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapCreateFromPixelsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0400
      * @tc.desc   test for testBitmapCreateFromPixelsNull.
      * @tc.type   FUNCTION
@@ -754,7 +754,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapCreateFromPixelsMismatch
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0500
      * @tc.desc   test for testBitmapCreateFromPixelsMismatch.
      * @tc.type   FUNCTION
@@ -767,7 +767,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapCreateFromPixelsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0600
      * @tc.desc   test for testBitmapCreateFromPixelsAbnormal.
      * @tc.type   FUNCTION
@@ -780,7 +780,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapCreateFromPixelsVeryBig
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0700
      * @tc.desc   test for testBitmapCreateFromPixelsVeryBig.
      * @tc.type   FUNCTION
@@ -793,7 +793,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapBuildNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0900
      * @tc.desc   test for testBitmapBuildNormal.
      * @tc.type   FUNCTION
@@ -806,7 +806,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapBuildNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1000
      * @tc.desc   test for testBitmapBuildNull.
      * @tc.type   FUNCTION
@@ -819,7 +819,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapBuildMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1100
      * @tc.desc   test for testBitmapBuildMultipleCalls.
      * @tc.type   FUNCTION
@@ -832,7 +832,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapBuildBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1200
      * @tc.desc   test for testBitmapBuildBoundary.
      * @tc.type   FUNCTION
@@ -845,7 +845,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapGetXXNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1300
      * @tc.desc   test for testBitmapGetXXNormal.
      * @tc.type   FUNCTION
@@ -858,7 +858,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapGetXXNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1400
      * @tc.desc   test for testBitmapGetXXNull.
      * @tc.type   FUNCTION
@@ -871,7 +871,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapGetXXInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1500
      * @tc.desc   test for testBitmapGetXXInputDestroyed.
      * @tc.type   FUNCTION
@@ -884,7 +884,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapGetXXBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1600
      * @tc.desc   test for testBitmapGetXXBoundary.
      * @tc.type   FUNCTION
@@ -897,7 +897,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapReadPixelsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1700
      * @tc.desc   test for testBitmapReadPixelsNormal.
      * @tc.type   FUNCTION
@@ -910,7 +910,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapReadPixelsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1800
      * @tc.desc   test for testBitmapReadPixelsNull.
      * @tc.type   FUNCTION
@@ -923,7 +923,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapReadPixelsInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_1900
      * @tc.desc   test for testBitmapReadPixelsInputDestroyed.
      * @tc.type   FUNCTION
@@ -936,7 +936,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapReadPixelsMismatch
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2100
      * @tc.desc   test for testBitmapReadPixelsMismatch.
      * @tc.type   FUNCTION
@@ -949,7 +949,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBitmapReadPixelsBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2200
      * @tc.desc   test for testBitmapReadPixelsBoundary.
      * @tc.type   FUNCTION
@@ -963,7 +963,7 @@ export default function ActsNewDrawingNativeTestPart7() {
 
     // Brush related test cases
     /**
-     * @tc.name   testBrushCreateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0100
      * @tc.desc   test for TestBrushCreateNormal.
      * @tc.type   FUNCTION
@@ -976,7 +976,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushCopyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0200
      * @tc.desc   test for TestBrushCopyNormal.
      * @tc.type   FUNCTION
@@ -989,7 +989,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushCopyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0300
      * @tc.desc   test for TestBrushCopyNull.
      * @tc.type   FUNCTION
@@ -1002,7 +1002,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushCopyInputDestroyed
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0400
      * @tc.desc   test for TestBrushCopyInputDestroyed.
      * @tc.type   FUNCTION
@@ -1015,7 +1015,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushCopyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0500
      * @tc.desc   test for TestBrushCopyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1028,7 +1028,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0600
      * @tc.desc   test for TestBrushDestroyNormal.
      * @tc.type   FUNCTION
@@ -1041,7 +1041,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushDestroyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0700
      * @tc.desc   test for TestBrushDestroyNull.
      * @tc.type   FUNCTION
@@ -1054,7 +1054,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushIsAntiAliasNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0800
      * @tc.desc   test for TestBrushIsAntiAliasNormal.
      * @tc.type   FUNCTION
@@ -1067,7 +1067,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushIsAntiAliasNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_0900
      * @tc.desc   test for TestBrushIsAntiAliasNull.
      * @tc.type   FUNCTION
@@ -1080,7 +1080,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAntiAliasNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1000
      * @tc.desc   test for TestBrushSetAntiAliasNormal.
      * @tc.type   FUNCTION
@@ -1093,7 +1093,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAntiAliasNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1100
      * @tc.desc   test for TestBrushSetAntiAliasNull.
      * @tc.type   FUNCTION
@@ -1106,7 +1106,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetColorNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1200
      * @tc.desc   test for TestBrushGetColorNormal.
      * @tc.type   FUNCTION
@@ -1119,7 +1119,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetColorNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1300
      * @tc.desc   test for TestBrushGetColorNull.
      * @tc.type   FUNCTION
@@ -1132,7 +1132,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColorNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1400
      * @tc.desc   test for TestBrushSetColorNormal.
      * @tc.type   FUNCTION
@@ -1145,7 +1145,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColorNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1500
      * @tc.desc   test for TestBrushSetColorNull.
      * @tc.type   FUNCTION
@@ -1158,7 +1158,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColorAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1600
      * @tc.desc   test for TestBrushSetColorAbnormal.
      * @tc.type   FUNCTION
@@ -1171,7 +1171,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColorMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1700
      * @tc.desc   test for TestBrushSetColorMaximum.
      * @tc.type   FUNCTION
@@ -1184,7 +1184,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetAlphaNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1800
      * @tc.desc   test for TestBrushGetAlphaNormal.
      * @tc.type   FUNCTION
@@ -1197,7 +1197,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetAlphaNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_1900
      * @tc.desc   test for TestBrushGetAlphaNull.
      * @tc.type   FUNCTION
@@ -1210,7 +1210,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAlphaNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2000
      * @tc.desc   test for TestBrushSetAlphaNormal.
      * @tc.type   FUNCTION
@@ -1223,7 +1223,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAlphaNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2100
      * @tc.desc   test for TestBrushSetAlphaNull.
      * @tc.type   FUNCTION
@@ -1236,7 +1236,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAlphaAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2200
      * @tc.desc   test for TestBrushSetAlphaAbnormal.
      * @tc.type   FUNCTION
@@ -1249,7 +1249,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetAlphaMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2300
      * @tc.desc   test for TestBrushSetAlphaMaximum.
      * @tc.type   FUNCTION
@@ -1262,7 +1262,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetShaderEffectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2400
      * @tc.desc   test for TestBrushSetShaderEffectNormal.
      * @tc.type   FUNCTION
@@ -1275,7 +1275,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetShaderEffectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2500
      * @tc.desc   test for TestBrushSetShaderEffectNull.
      * @tc.type   FUNCTION
@@ -1288,7 +1288,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetShadowLayerNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2600
      * @tc.desc   test for TestBrushSetShadowLayerNormal.
      * @tc.type   FUNCTION
@@ -1301,7 +1301,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetShadowLayerNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2700
      * @tc.desc   test for TestBrushSetShadowLayerNull.
      * @tc.type   FUNCTION
@@ -1314,7 +1314,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2800
      * @tc.desc   test for TestBrushSetFilterNormal.
      * @tc.type   FUNCTION
@@ -1327,7 +1327,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetFilterNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_2900
      * @tc.desc   test for TestBrushSetFilterNull.
      * @tc.type   FUNCTION
@@ -1340,7 +1340,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3000
      * @tc.desc   test for TestBrushGetFilterNormal.
      * @tc.type   FUNCTION
@@ -1353,7 +1353,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetFilterNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3100
      * @tc.desc   test for TestBrushGetFilterNull.
      * @tc.type   FUNCTION
@@ -1366,7 +1366,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetBlendModeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3200
      * @tc.desc   test for TestBrushSetBlendModeNormal.
      * @tc.type   FUNCTION
@@ -1379,7 +1379,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetBlendModeNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3300
      * @tc.desc   test for TestBrushSetBlendModeNull.
      * @tc.type   FUNCTION
@@ -1392,7 +1392,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushResetNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3400
      * @tc.desc   test for TestBrushResetNormal.
      * @tc.type   FUNCTION
@@ -1405,7 +1405,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushResetNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3500
      * @tc.desc   test for TestBrushResetNull.
      * @tc.type   FUNCTION
@@ -1418,7 +1418,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetAlphaFloatNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3600
      * @tc.desc   test for TestBrushGetAlphaFloatNormal.
      * @tc.type   FUNCTION
@@ -1431,7 +1431,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetAlphaFloatAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3700
      * @tc.desc   test for TestBrushGetAlphaFloatAbnormal.
      * @tc.type   FUNCTION
@@ -1444,7 +1444,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetRedFloatNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3800
      * @tc.desc   test for TestBrushGetRedFloatNormal.
      * @tc.type   FUNCTION
@@ -1457,7 +1457,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetRedFloatAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_3900
      * @tc.desc   test for TestBrushGetRedFloatAbnormal.
      * @tc.type   FUNCTION
@@ -1470,7 +1470,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetGreenFloatNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4000
      * @tc.desc   test for TestBrushGetGreenFloatNormal.
      * @tc.type   FUNCTION
@@ -1483,7 +1483,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetGreenFloatAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4100
      * @tc.desc   test for TestBrushGetGreenFloatAbnormal.
      * @tc.type   FUNCTION
@@ -1496,7 +1496,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetBlueFloatNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4200
      * @tc.desc   test for TestBrushGetBlueFloatNormal.
      * @tc.type   FUNCTION
@@ -1509,7 +1509,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushGetBlueFloatAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4300
      * @tc.desc   test for TestBrushGetBlueFloatAbnormal.
      * @tc.type   FUNCTION
@@ -1522,7 +1522,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColor4fNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4400
      * @tc.desc   test for TestBrushSetColor4fNormal.
      * @tc.type   FUNCTION
@@ -1535,7 +1535,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColor4fNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4500
      * @tc.desc   test for TestBrushSetColor4fNull.
      * @tc.type   FUNCTION
@@ -1548,7 +1548,7 @@ export default function ActsNewDrawingNativeTestPart7() {
     })
 
     /**
-     * @tc.name   testBrushSetColor4fAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BRUSH_4600
      * @tc.desc   test for TestBrushSetColor4fAbnormal.
      * @tc.type   FUNCTION

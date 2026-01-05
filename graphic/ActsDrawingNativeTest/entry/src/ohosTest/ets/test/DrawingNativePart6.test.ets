@@ -36,7 +36,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Image related test cases
     /**
-     * @tc.name   testImageCreateDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0100
      * @tc.desc   test for TestImageCreateDestroyNormal.
      * @tc.type   FUNCTION
@@ -49,7 +49,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageCreateDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0200
      * @tc.desc   test for TestImageCreateDestroyNULL.
      * @tc.type   FUNCTION
@@ -62,7 +62,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageCreateDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0300
      * @tc.desc   test for TestImageCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -75,7 +75,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageBuildFromBitmapNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0400
      * @tc.desc   test for TestImageBuildFromBitmapNormal.
      * @tc.type   FUNCTION
@@ -88,7 +88,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageBuildFromBitmapNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0500
      * @tc.desc   test for TestImageBuildFromBitmapNULL.
      * @tc.type   FUNCTION
@@ -101,7 +101,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageBuildFromBitmapMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0600
      * @tc.desc   test for TestImageBuildFromBitmapMultipleCalls.
      * @tc.type   FUNCTION
@@ -114,7 +114,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageBuildFromBitmapMultipleCallsBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0700
      * @tc.desc   test for TestImageBuildFromBitmapMultipleCallsBoundary.
      * @tc.type   FUNCTION
@@ -127,7 +127,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetWidthHeightNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0800
      * @tc.desc   test for TestImageGetWidthHeightNormal.
      * @tc.type   FUNCTION
@@ -140,7 +140,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetWidthHeightNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_0900
      * @tc.desc   test for TestImageGetWidthHeightNULL.
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetWidthHeightMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1000
      * @tc.desc   test for TestImageGetWidthHeightMultipleCalls.
      * @tc.type   FUNCTION
@@ -166,7 +166,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetWidthHeightMultipleCallsBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1100
      * @tc.desc   test for TestImageGetWidthHeightMultipleCallsBoundary.
      * @tc.type   FUNCTION
@@ -179,7 +179,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1200
      * @tc.desc   test for TestImageGetImageInfoNormal.
      * @tc.type   FUNCTION
@@ -192,7 +192,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1300
      * @tc.desc   test for TestImageGetImageInfoNULL.
      * @tc.type   FUNCTION
@@ -205,7 +205,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1400
      * @tc.desc   test for TestImageGetImageInfoMultipleCalls.
      * @tc.type   FUNCTION
@@ -218,7 +218,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1500
      * @tc.desc   test for TestImageGetImageInfoAbnormal.
      * @tc.type   FUNCTION
@@ -231,7 +231,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1600
      * @tc.desc   test for TestImageGetImageInfoMaximum.
      * @tc.type   FUNCTION
@@ -244,7 +244,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testImageGetImageInfoBoundary
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_1700
      * @tc.desc   test for TestImageGetImageInfoBoundary.
      * @tc.type   FUNCTION
@@ -258,7 +258,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // MaskFilter related test cases
     /**
-     * @tc.name   testMaskFilterCreateBlurDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0100
      * @tc.desc   test for TestMaskFilterCreateBlurDestroyNormal.
      * @tc.type   FUNCTION
@@ -271,7 +271,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMaskFilterCreateBlurDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0200
      * @tc.desc   test for TestMaskFilterCreateBlurDestroyNULL.
      * @tc.type   FUNCTION
@@ -284,7 +284,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMaskFilterCreateBlurDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0300
      * @tc.desc   test for TestMaskFilterCreateBlurDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -297,7 +297,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMaskFilterCreateBlurDestroyAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0400
      * @tc.desc   test for TestMaskFilterCreateBlurDestroyAbnormal.
      * @tc.type   FUNCTION
@@ -310,7 +310,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMaskFilterCreateBlurDestroyMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MASK_FILTER_0500
      * @tc.desc   test for TestMaskFilterCreateBlurDestroyMaximum.
      * @tc.type   FUNCTION
@@ -324,7 +324,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Matrix Create related test cases
     /**
-     * @tc.name   testMatrixCreateDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0100
      * @tc.desc   test for TestMatrixCreateDestroyNormal.
      * @tc.type   FUNCTION
@@ -337,7 +337,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0200
      * @tc.desc   test for TestMatrixCreateDestroyNULL.
      * @tc.type   FUNCTION
@@ -350,7 +350,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0300
      * @tc.desc   test for TestMatrixCreateDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -363,7 +363,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateRotationNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0400
      * @tc.desc   test for TestMatrixCreateRotationNormal.
      * @tc.type   FUNCTION
@@ -376,7 +376,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateRotationNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0500
      * @tc.desc   test for TestMatrixCreateRotationNull.
      * @tc.type   FUNCTION
@@ -389,7 +389,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateRotationAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0600
      * @tc.desc   test for TestMatrixCreateRotationAbnormal.
      * @tc.type   FUNCTION
@@ -402,7 +402,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateRotationMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0700
      * @tc.desc   test for TestMatrixCreateRotationMaximum.
      * @tc.type   FUNCTION
@@ -415,7 +415,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateRotationMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0800
      * @tc.desc   test for TestMatrixCreateRotationMultipleCalls.
      * @tc.type   FUNCTION
@@ -428,7 +428,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateTranslationNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_0900
      * @tc.desc   test for TestMatrixCreateTranslationNormal.
      * @tc.type   FUNCTION
@@ -441,7 +441,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateTranslationNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01000
      * @tc.desc   test for TestMatrixCreateTranslationNull.
      * @tc.type   FUNCTION
@@ -454,7 +454,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateTranslationAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01100
      * @tc.desc   test for TestMatrixCreateTranslationAbnormal.
      * @tc.type   FUNCTION
@@ -467,7 +467,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateTranslationMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01200
      * @tc.desc   test for TestMatrixCreateTranslationMaximum.
      * @tc.type   FUNCTION
@@ -480,7 +480,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateTranslationMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01300
      * @tc.desc   test for TestMatrixCreateTranslationMultipleCalls.
      * @tc.type   FUNCTION
@@ -493,7 +493,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateScaleNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02900
      * @tc.desc   test for TestMatrixCreateScaleNormal.
      * @tc.type   FUNCTION
@@ -506,7 +506,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateScaleNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03000
      * @tc.desc   test for TestMatrixCreateScaleNull.
      * @tc.type   FUNCTION
@@ -519,7 +519,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateScaleAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03100
      * @tc.desc   test for TestMatrixCreateScaleAbnormal.
      * @tc.type   FUNCTION
@@ -532,7 +532,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateScaleMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_003200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_003200
      * @tc.desc   test for TestMatrixCreateScaleMaximum.
      * @tc.type   FUNCTION
@@ -545,7 +545,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixCreateScaleMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03300
      * @tc.desc   test for TestMatrixCreateScaleMultipleCalls.
      * @tc.type   FUNCTION
@@ -559,7 +559,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Matrix Transform related test cases
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01400
      * @tc.desc   test for TestMatrixMatrixSetGetMatrixNormal.
      * @tc.type   FUNCTION
@@ -572,7 +572,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01500
      * @tc.desc   test for TestMatrixMatrixSetGetMatrixNull.
      * @tc.type   FUNCTION
@@ -585,7 +585,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01600
      * @tc.desc   test for TestMatrixMatrixSetGetMatrixAbnormal.
      * @tc.type   FUNCTION
@@ -598,7 +598,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01700
      * @tc.desc   test for TestMatrixMatrixSetGetMatrixMaximum.
      * @tc.type   FUNCTION
@@ -611,7 +611,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMatrixSetGetMatrixMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01800
      * @tc.desc   test for TestMatrixMatrixSetGetMatrixMultipleCalls.
      * @tc.type   FUNCTION
@@ -624,7 +624,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixTranslateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_01900
      * @tc.desc   test for TestMatrixTranslateNormal.
      * @tc.type   FUNCTION
@@ -637,7 +637,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixTranslateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02000
      * @tc.desc   test for TestMatrixTranslateNull.
      * @tc.type   FUNCTION
@@ -650,7 +650,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixTranslateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02100
      * @tc.desc   test for TestMatrixTranslateAbnormal.
      * @tc.type   FUNCTION
@@ -663,7 +663,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixTranslateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02200
      * @tc.desc   test for TestMatrixTranslateMaximum.
      * @tc.type   FUNCTION
@@ -676,7 +676,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixTranslateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02300
      * @tc.desc   test for TestMatrixTranslateMultipleCalls.
      * @tc.type   FUNCTION
@@ -689,7 +689,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixRotateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02400
      * @tc.desc   test for TestMatrixRotateNormal.
      * @tc.type   FUNCTION
@@ -702,7 +702,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixRotateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02500
      * @tc.desc   test for TestMatrixRotateNull.
      * @tc.type   FUNCTION
@@ -715,7 +715,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixRotateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02600
      * @tc.desc   test for TestMatrixRotateAbnormal.
      * @tc.type   FUNCTION
@@ -728,7 +728,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixRotateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02700
      * @tc.desc   test for TestMatrixRotateMaximum.
      * @tc.type   FUNCTION
@@ -741,7 +741,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixRotateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_02800
      * @tc.desc   test for TestMatrixRotateMultipleCalls.
      * @tc.type   FUNCTION
@@ -754,7 +754,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixScaleNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03400
      * @tc.desc   test for TestMatrixScaleNormal.
      * @tc.type   FUNCTION
@@ -767,7 +767,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixScaleNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03500
      * @tc.desc   test for TestMatrixScaleNull.
      * @tc.type   FUNCTION
@@ -780,7 +780,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixScaleAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03600
      * @tc.desc   test for TestMatrixScaleAbnormal.
      * @tc.type   FUNCTION
@@ -793,7 +793,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixScaleMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03700
      * @tc.desc   test for TestMatrixScaleMaximum.
      * @tc.type   FUNCTION
@@ -806,7 +806,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixScaleMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03800
      * @tc.desc   test for TestMatrixScaleMultipleCalls.
      * @tc.type   FUNCTION
@@ -819,7 +819,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetRectToRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_03900
      * @tc.desc   test for TestMatrixSetRectToRectNormal.
      * @tc.type   FUNCTION
@@ -832,7 +832,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetRectToRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04000
      * @tc.desc   test for TestMatrixSetRectToRectNull.
      * @tc.type   FUNCTION
@@ -845,7 +845,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetRectToRectMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04100
      * @tc.desc   test for TestMatrixSetRectToRectMultipleCalls.
      * @tc.type   FUNCTION
@@ -859,7 +859,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Matrix Operation related test cases
     /**
-     * @tc.name   testMatrixPreRotateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04200
      * @tc.desc   test for TestMatrixPreRotateNormal.
      * @tc.type   FUNCTION
@@ -872,7 +872,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreRotateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_4300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_4300
      * @tc.desc   test for TestMatrixPreRotateNull.
      * @tc.type   FUNCTION
@@ -885,7 +885,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreRotateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04400
      * @tc.desc   test for TestMatrixPreRotateAbnormal.
      * @tc.type   FUNCTION
@@ -898,7 +898,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreRotateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04500
      * @tc.desc   test for TestMatrixPreRotateMaximum.
      * @tc.type   FUNCTION
@@ -911,7 +911,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreRotateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04600
      * @tc.desc   test for TestMatrixPreRotateMultipleCalls.
      * @tc.type   FUNCTION
@@ -924,7 +924,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreScaleNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04700
      * @tc.desc   test for TestMatrixPreScaleNormal.
      * @tc.type   FUNCTION
@@ -937,7 +937,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreScaleNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04800
      * @tc.desc   test for TestMatrixPreScaleNull.
      * @tc.type   FUNCTION
@@ -950,7 +950,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreScaleAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_04900
      * @tc.desc   test for TestMatrixPreScaleAbnormal.
      * @tc.type   FUNCTION
@@ -963,7 +963,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreScaleMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05000
      * @tc.desc   test for TestMatrixPreScaleMaximum.
      * @tc.type   FUNCTION
@@ -976,7 +976,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreScaleMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05100
      * @tc.desc   test for TestMatrixPreScaleMultipleCalls.
      * @tc.type   FUNCTION
@@ -989,7 +989,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreTranslateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05200
      * @tc.desc   test for TestMatrixPreTranslateNormal.
      * @tc.type   FUNCTION
@@ -1002,7 +1002,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreTranslateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05300
      * @tc.desc   test for TestMatrixPreTranslateNull.
      * @tc.type   FUNCTION
@@ -1015,7 +1015,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreTranslateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05400
      * @tc.desc   test for TestMatrixPreTranslateAbnormal.
      * @tc.type   FUNCTION
@@ -1028,7 +1028,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreTranslateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05500
      * @tc.desc   test for TestMatrixPreTranslateMaximum.
      * @tc.type   FUNCTION
@@ -1041,7 +1041,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPreTranslateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05600
      * @tc.desc   test for TestMatrixPreTranslateMultipleCalls.
      * @tc.type   FUNCTION
@@ -1054,7 +1054,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostRotateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05700
      * @tc.desc   test for TestMatrixPostRotateNormal.
      * @tc.type   FUNCTION
@@ -1067,7 +1067,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostRotateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05800
      * @tc.desc   test for TestMatrixPostRotateNull.
      * @tc.type   FUNCTION
@@ -1080,7 +1080,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostRotateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_05900
      * @tc.desc   test for TestMatrixPostRotateAbnormal.
      * @tc.type   FUNCTION
@@ -1093,7 +1093,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostRotateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06000
      * @tc.desc   test for TestMatrixPostRotateMaximum.
      * @tc.type   FUNCTION
@@ -1106,7 +1106,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostRotateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06100
      * @tc.desc   test for TestMatrixPostRotateMultipleCalls.
      * @tc.type   FUNCTION
@@ -1120,7 +1120,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Matrix Part2 Transform related test cases
     /**
-     * @tc.name   testMatrixPostScaleNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06200
      * @tc.desc   test for TestMatrixPostScaleNormal.
      * @tc.type   FUNCTION
@@ -1133,7 +1133,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostScaleNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06300
      * @tc.desc   test for TestMatrixPostScaleNull.
      * @tc.type   FUNCTION
@@ -1146,7 +1146,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostScaleAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06400
      * @tc.desc   test for TestMatrixPostScaleAbnormal.
      * @tc.type   FUNCTION
@@ -1159,7 +1159,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostScaleMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06500
      * @tc.desc   test for TestMatrixPostScaleMaximum.
      * @tc.type   FUNCTION
@@ -1172,7 +1172,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostScaleMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06600
      * @tc.desc   test for TestMatrixPostScaleMultipleCalls.
      * @tc.type   FUNCTION
@@ -1185,7 +1185,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostTranslateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06700
      * @tc.desc   test for TestMatrixPostTranslateNormal.
      * @tc.type   FUNCTION
@@ -1198,7 +1198,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostTranslateNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06800
      * @tc.desc   test for TestMatrixPostTranslateNull.
      * @tc.type   FUNCTION
@@ -1211,7 +1211,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostTranslateAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_06900
      * @tc.desc   test for TestMatrixPostTranslateAbnormal.
      * @tc.type   FUNCTION
@@ -1224,7 +1224,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostTranslateMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07000
      * @tc.desc   test for TestMatrixPostTranslateMaximum.
      * @tc.type   FUNCTION
@@ -1237,7 +1237,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixPostTranslateMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07100
      * @tc.desc   test for TestMatrixPostTranslateMultipleCalls.
      * @tc.type   FUNCTION
@@ -1250,7 +1250,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixResetNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07200
      * @tc.desc   test for TestMatrixResetNormal.
      * @tc.type   FUNCTION
@@ -1263,7 +1263,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixResetNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07300
      * @tc.desc   test for TestMatrixResetNull.
      * @tc.type   FUNCTION
@@ -1276,7 +1276,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixResetMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07400
      * @tc.desc   test for TestMatrixResetMultipleCalls.
      * @tc.type   FUNCTION
@@ -1289,7 +1289,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixConcatNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07500
      * @tc.desc   test for TestMatrixConcatNormal.
      * @tc.type   FUNCTION
@@ -1302,7 +1302,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixConcatNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07600
      * @tc.desc   test for TestMatrixConcatNull.
      * @tc.type   FUNCTION
@@ -1315,7 +1315,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixConcatMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07700
      * @tc.desc   test for TestMatrixConcatMultipleCalls.
      * @tc.type   FUNCTION
@@ -1328,7 +1328,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixInvertNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07900
      * @tc.desc   test for TestMatrixInvertNull.
      * @tc.type   FUNCTION
@@ -1341,7 +1341,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixInvertMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08000
      * @tc.desc   test for TestMatrixInvertMultipleCalls.
      * @tc.type   FUNCTION
@@ -1354,7 +1354,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixInvertNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_07800
      * @tc.desc   test for TestMatrixInvertNormal.
      * @tc.type   FUNCTION
@@ -1368,7 +1368,7 @@ export default function ActsNewDrawingNativeTestPart6() {
 
     // Matrix Part2 Map/Query related test cases
     /**
-     * @tc.name   testMatrixSetPolyToPolyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08100
      * @tc.desc   test for TestMatrixSetPolyToPolyNormal.
      * @tc.type   FUNCTION
@@ -1381,7 +1381,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetPolyToPolyNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08200
      * @tc.desc   test for TestMatrixSetPolyToPolyNull.
      * @tc.type   FUNCTION
@@ -1394,7 +1394,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetPolyToPolyAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08300
      * @tc.desc   test for TestMatrixSetPolyToPolyAbnormal.
      * @tc.type   FUNCTION
@@ -1407,7 +1407,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixSetPolyToPolyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08400
      * @tc.desc   test for TestMatrixSetPolyToPolyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1420,7 +1420,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapPointsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08500
      * @tc.desc   test for TestMatrixMapPointsNormal.
      * @tc.type   FUNCTION
@@ -1433,7 +1433,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapPointsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08600
      * @tc.desc   test for TestMatrixMapPointsNull.
      * @tc.type   FUNCTION
@@ -1446,7 +1446,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapPointsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08700
      * @tc.desc   test for TestMatrixMapPointsAbnormal.
      * @tc.type   FUNCTION
@@ -1459,7 +1459,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapPointsMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08800
      * @tc.desc   test for TestMatrixMapPointsMultipleCalls.
      * @tc.type   FUNCTION
@@ -1472,7 +1472,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapRectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_08900
      * @tc.desc   test for TestMatrixMapRectNormal.
      * @tc.type   FUNCTION
@@ -1485,7 +1485,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapRectNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09000
      * @tc.desc   test for TestMatrixMapRectNull.
      * @tc.type   FUNCTION
@@ -1498,7 +1498,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixMapRectMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09100
      * @tc.desc   test for TestMatrixMapRectMultipleCalls.
      * @tc.type   FUNCTION
@@ -1511,7 +1511,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsEqualNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09200
      * @tc.desc   test for TestMatrixIsEqualNormal.
      * @tc.type   FUNCTION
@@ -1524,7 +1524,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsEqualNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09300
      * @tc.desc   test for TestMatrixIsEqualNull.
      * @tc.type   FUNCTION
@@ -1537,7 +1537,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsEqualMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09400
      * @tc.desc   test for TestMatrixIsEqualMultipleCalls.
      * @tc.type   FUNCTION
@@ -1550,7 +1550,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsIdentityNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09500
      * @tc.desc   test for TestMatrixIsIdentityNormal.
      * @tc.type   FUNCTION
@@ -1563,7 +1563,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsIdentityNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09600
      * @tc.desc   test for TestMatrixIsIdentityNull.
      * @tc.type   FUNCTION
@@ -1576,7 +1576,7 @@ export default function ActsNewDrawingNativeTestPart6() {
     })
 
     /**
-     * @tc.name   testMatrixIsIdentityMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_09700
      * @tc.desc   test for TestMatrixIsIdentityMultipleCalls.
      * @tc.type   FUNCTION

@@ -36,7 +36,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetTextSize related test cases
     /**
-     * @tc.name   testFontSetTextSizeNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2000
      * @tc.desc   test for TestFontSetTextSizeNormal.
      * @tc.type   FUNCTION
@@ -49,7 +49,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSizeNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2100
      * @tc.desc   test for TestFontSetTextSizeNULL.
      * @tc.type   FUNCTION
@@ -62,7 +62,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSizeMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2200
      * @tc.desc   test for TestFontSetTextSizeMultipleCalls.
      * @tc.type   FUNCTION
@@ -75,7 +75,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetTextSizeWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2300
      * @tc.desc   test for TestFontGetTextSizeWhenNoSet.
      * @tc.type   FUNCTION
@@ -88,7 +88,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSizeAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2400
      * @tc.desc   test for TestFontSetTextSizeAbnormal.
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font CountText related test cases
     /**
-     * @tc.name   testFontCountTextNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2500
      * @tc.desc   test for TestFontCountTextNormal.
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontCountTextNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2600
      * @tc.desc   test for TestFontCountTextNULL.
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontCountTextMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2700
      * @tc.desc   test for TestFontCountTextMultipleCalls.
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontCountTextAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2800
      * @tc.desc   test for TestFontCountTextAbnormal.
      * @tc.type   FUNCTION
@@ -155,7 +155,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font TextToGlyphs related test cases
     /**
-     * @tc.name   testFontTextToGlyphsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_2900
      * @tc.desc   test for TestFontTextToGlyphsNormal.
      * @tc.type   FUNCTION
@@ -168,7 +168,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontTextToGlyphsNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3000
      * @tc.desc   test for TestFontTextToGlyphsNULL.
      * @tc.type   FUNCTION
@@ -181,7 +181,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontTextToGlyphsMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3100
      * @tc.desc   test for TestFontTextToGlyphsMultipleCalls.
      * @tc.type   FUNCTION
@@ -194,7 +194,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontTextToGlyphsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3200
      * @tc.desc   test for TestFontTextToGlyphsAbnormal.
      * @tc.type   FUNCTION
@@ -207,7 +207,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontTextToGlyphsMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3300
      * @tc.desc   test for TestFontTextToGlyphsMaximum.
      * @tc.type   FUNCTION
@@ -221,7 +221,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font GetWidths related test cases
     /**
-     * @tc.name   testFontGetWidthsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3400
      * @tc.desc   test for TestFontGetWidthsNormal.
      * @tc.type   FUNCTION
@@ -234,7 +234,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3500
      * @tc.desc   test for TestFontGetWidthsNULL.
      * @tc.type   FUNCTION
@@ -247,7 +247,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3600
      * @tc.desc   test for TestFontGetWidthsMultipleCalls.
      * @tc.type   FUNCTION
@@ -260,7 +260,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_7900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_7900
      * @tc.desc   test for TestFontGetWidthsAbnormal.
      * @tc.type   FUNCTION
@@ -273,7 +273,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8000
      * @tc.desc   test for TestFontGetWidthsMaximum.
      * @tc.type   FUNCTION
@@ -287,7 +287,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetLinearText related test cases
     /**
-     * @tc.name   testFontSetLinearTextNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8100
      * @tc.desc   test for TestFontSetLinearTextNormal.
      * @tc.type   FUNCTION
@@ -300,7 +300,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetLinearTextNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8200
      * @tc.desc   test for TestFontSetLinearTextNULL.
      * @tc.type   FUNCTION
@@ -313,7 +313,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetLinearTextMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8300
      * @tc.desc   test for TestFontSetLinearTextMultipleCalls.
      * @tc.type   FUNCTION
@@ -326,7 +326,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontIsLinearTextWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8400
      * @tc.desc   test for TestFontIsLinearTextWhenNoSet.
      * @tc.type   FUNCTION
@@ -340,7 +340,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetTextSkewX related test cases
     /**
-     * @tc.name   testFontSetTextSkewXNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8500
      * @tc.desc   test for TestFontSetTextSkewXNormal.
      * @tc.type   FUNCTION
@@ -353,7 +353,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSkewXNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8600
      * @tc.desc   test for TestFontSetTextSkewXNULL.
      * @tc.type   FUNCTION
@@ -366,7 +366,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSkewXMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8700
      * @tc.desc   test for TestFontSetTextSkewXMultipleCalls.
      * @tc.type   FUNCTION
@@ -379,7 +379,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetTextSkewXWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8800
      * @tc.desc   test for TestFontGetTextSkewXWhenNoSet.
      * @tc.type   FUNCTION
@@ -392,7 +392,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSkewXAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_8900
      * @tc.desc   test for TestFontSetTextSkewXAbnormal.
      * @tc.type   FUNCTION
@@ -405,7 +405,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetTextSkewXMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9000
      * @tc.desc   test for TestFontSetTextSkewXMaximum.
      * @tc.type   FUNCTION
@@ -419,7 +419,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetFakeBoldText related test cases
     /**
-     * @tc.name   testFontSetFakeBoldTextNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9100
      * @tc.desc   test for TestFontSetFakeBoldTextNormal.
      * @tc.type   FUNCTION
@@ -432,7 +432,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetFakeBoldTextNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9200
      * @tc.desc   test for TestFontSetFakeBoldTextNULL.
      * @tc.type   FUNCTION
@@ -445,7 +445,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetFakeBoldTextMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9300
      * @tc.desc   test for TestFontSetFakeBoldTextMultipleCalls.
      * @tc.type   FUNCTION
@@ -458,7 +458,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontIsFakeBoldTextWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9400
      * @tc.desc   test for TestFontIsFakeBoldTextWhenNoSet.
      * @tc.type   FUNCTION
@@ -472,7 +472,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetScaleX related test cases
     /**
-     * @tc.name   testFontSetScaleXNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9500
      * @tc.desc   test for TestFontSetScaleXNormal.
      * @tc.type   FUNCTION
@@ -485,7 +485,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetScaleXNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9600
      * @tc.desc   test for TestFontSetScaleXNULL.
      * @tc.type   FUNCTION
@@ -498,7 +498,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetScaleXMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9700
      * @tc.desc   test for TestFontSetScaleXMultipleCalls.
      * @tc.type   FUNCTION
@@ -511,7 +511,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetScaleXWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9800
      * @tc.desc   test for TestFontGetScaleXWhenNoSet.
      * @tc.type   FUNCTION
@@ -524,7 +524,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetScaleXAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_9900
      * @tc.desc   test for TestFontSetScaleXAbnormal.
      * @tc.type   FUNCTION
@@ -537,7 +537,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetScaleXMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10000
      * @tc.desc   test for TestFontSetScaleXMaximum.
      * @tc.type   FUNCTION
@@ -551,7 +551,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetHinting related test cases
     /**
-     * @tc.name   testFontSetHintingNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10100
      * @tc.desc   test for TestFontSetHintingNormal.
      * @tc.type   FUNCTION
@@ -564,7 +564,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetHintingNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10200
      * @tc.desc   test for TestFontSetHintingNULL.
      * @tc.type   FUNCTION
@@ -577,7 +577,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetHintingMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10300
      * @tc.desc   test for TestFontSetHintingMultipleCalls.
      * @tc.type   FUNCTION
@@ -590,7 +590,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetHintingWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10400
      * @tc.desc   test for TestFontGetHintingWhenNoSet.
      * @tc.type   FUNCTION
@@ -604,7 +604,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetEmbeddedBitmaps related test cases
     /**
-     * @tc.name   testFontSetEmbeddedBitmapsNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10500
      * @tc.desc   test for TestFontSetEmbeddedBitmapsNormal.
      * @tc.type   FUNCTION
@@ -617,7 +617,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetEmbeddedBitmapsNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10600
      * @tc.desc   test for TestFontSetEmbeddedBitmapsNULL.
      * @tc.type   FUNCTION
@@ -630,7 +630,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetEmbeddedBitmapsMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10700
      * @tc.desc   test for TestFontSetEmbeddedBitmapsMultipleCalls.
      * @tc.type   FUNCTION
@@ -643,7 +643,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontIsEmbeddedBitmapsWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10800
      * @tc.desc   test for TestFontIsEmbeddedBitmapsWhenNoSet.
      * @tc.type   FUNCTION
@@ -657,7 +657,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetEdging related test cases
     /**
-     * @tc.name   testFontSetEdgingNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_10900
      * @tc.desc   test for TestFontSetEdgingNormal.
      * @tc.type   FUNCTION
@@ -670,7 +670,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetEdgingNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11000
      * @tc.desc   test for TestFontSetEdgingNULL.
      * @tc.type   FUNCTION
@@ -683,7 +683,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetEdgingMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11100
      * @tc.desc   test for TestFontSetEdgingMultipleCalls.
      * @tc.type   FUNCTION
@@ -696,7 +696,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetEdgingWhenNoSet
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11200
      * @tc.desc   test for TestFontGetEdgingWhenNoSet.
      * @tc.type   FUNCTION
@@ -710,7 +710,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font MeasureSingleCharacter related test cases
     /**
-     * @tc.name   testFontMeasureSingleCharacterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11300
      * @tc.desc   test for TestFontMeasureSingleCharacterNormal.
      * @tc.type   FUNCTION
@@ -723,7 +723,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureSingleCharacterNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11400
      * @tc.desc   test for TestFontMeasureSingleCharacterNull.
      * @tc.type   FUNCTION
@@ -736,7 +736,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureSingleCharacterMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11500
      * @tc.desc   test for TestFontMeasureSingleCharacterMultipleCalls.
      * @tc.type   FUNCTION
@@ -749,7 +749,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureSingleCharacter
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11900
      * @tc.desc   test for TestFontMeasureSingleCharacter.
      * @tc.type   FUNCTION
@@ -763,7 +763,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font Measuretext related test cases
     /**
-     * @tc.name   testFontMeasuretextNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11600
      * @tc.desc   test for TestFontMeasuretextNormal.
      * @tc.type   FUNCTION
@@ -776,7 +776,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasuretextNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11700
      * @tc.desc   test for TestFontMeasuretextNull.
      * @tc.type   FUNCTION
@@ -789,7 +789,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasuretextMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_FONT_11800
      * @tc.desc   test for TestFontMeasuretextMultipleCalls.
      * @tc.type   FUNCTION
@@ -803,7 +803,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // FontArguments Create related test cases
     /**
-     * @tc.name   testFontArgumentsCreateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3700
      * @tc.desc   test for TestFontArgumentsCreateNormal.
      * @tc.type   FUNCTION
@@ -817,7 +817,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // FontArguments AddVariation related test cases
     /**
-     * @tc.name   testFontArgumentsAddVariationNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3800
      * @tc.desc   test for TestFontArgumentsAddVariationNormal.
      * @tc.type   FUNCTION
@@ -830,7 +830,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontArgumentsAddVariationNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_3900
      * @tc.desc   test for TestFontArgumentsAddVariationNull.
      * @tc.type   FUNCTION
@@ -843,7 +843,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontArgumentsAddVariationAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4000
      * @tc.desc   test for TestFontArgumentsAddVariationAbnormal.
      * @tc.type   FUNCTION
@@ -856,7 +856,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontArgumentsAddVariationMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4100
      * @tc.desc   test for TestFontArgumentsAddVariationMultipleCalls.
      * @tc.type   FUNCTION
@@ -870,7 +870,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // FontArguments Destroy related test cases
     /**
-     * @tc.name   testFontArgumentsDestoryNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4200
      * @tc.desc   test for TestFontArgumentsDestoryNormal.
      * @tc.type   FUNCTION
@@ -883,7 +883,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontArgumentsDestoryNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4300
      * @tc.desc   test for TestFontArgumentsDestoryNull.
      * @tc.type   FUNCTION
@@ -896,7 +896,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontArgumentsDestoryMultiplieCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4400
      * @tc.desc   test for TestFontArgumentsDestoryMultiplieCalls.
      * @tc.type   FUNCTION
@@ -910,7 +910,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font SetThemeFontFollowed related test cases
     /**
-     * @tc.name   testFontSetThemeFontFollowedNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4500
      * @tc.desc   test for TestFontSetThemeFontFollowedNormal.
      * @tc.type   FUNCTION
@@ -923,7 +923,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetThemeFontFollowedMuitipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4600
      * @tc.desc   test for TestFontSetThemeFontFollowedMuitipleCalls.
      * @tc.type   FUNCTION
@@ -936,7 +936,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontSetThemeFontFollowedNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4700
      * @tc.desc   test for TestFontSetThemeFontFollowedNull.
      * @tc.type   FUNCTION
@@ -950,7 +950,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font IsThemeFontFollowed related test cases
     /**
-     * @tc.name   testFontIsThemeFontFollowedNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4800
      * @tc.desc   test for TestFontIsThemeFontFollowedNormal.
      * @tc.type   FUNCTION
@@ -963,7 +963,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontIsThemeFontFollowedMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_4900
      * @tc.desc   test for TestFontIsThemeFontFollowedMultipleCalls.
      * @tc.type   FUNCTION
@@ -976,7 +976,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontIsThemeFontFollowedNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5000
      * @tc.desc   test for TestFontIsThemeFontFollowedNull.
      * @tc.type   FUNCTION
@@ -991,7 +991,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     // Font GetMetrics Part2 related test cases
 
     /**
-     * @tc.name   testFontGetMetricsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5200
      * @tc.desc   test for TestFontGetMetricsNull.
      * @tc.type   FUNCTION
@@ -1004,7 +1004,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetMetricsMultiplies
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5300
      * @tc.desc   test for TestFontGetMetricsMultiplies.
      * @tc.type   FUNCTION
@@ -1018,7 +1018,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font MeasureTextWithBrushOrPen related test cases
     /**
-     * @tc.name   testFontMeasureTextWithBrushOrPenNormal1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5400
      * @tc.desc   test for TestFontMeasureTextWithBrushOrPenNormal1.
      * @tc.type   FUNCTION
@@ -1031,7 +1031,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureTextWithBrushOrPenNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5500
      * @tc.desc   test for TestFontMeasureTextWithBrushOrPenNormal2.
      * @tc.type   FUNCTION
@@ -1044,7 +1044,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureTextWithBrushOrPenNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5600
      * @tc.desc   test for TestFontMeasureTextWithBrushOrPenNull.
      * @tc.type   FUNCTION
@@ -1057,7 +1057,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureTextWithBrushOrPenAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5700
      * @tc.desc   test for TestFontMeasureTextWithBrushOrPenAbnormal.
      * @tc.type   FUNCTION
@@ -1070,7 +1070,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureTextWithBrushOrPenMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5800
      * @tc.desc   test for TestFontMeasureTextWithBrushOrPenMultiCalls.
      * @tc.type   FUNCTION
@@ -1084,7 +1084,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font GetWidthsBounds related test cases
     /**
-     * @tc.name   testFontGetWidthsBoundsNormal1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5900
      * @tc.desc   test for TestFontGetWidthsBoundsNormal1.
      * @tc.type   FUNCTION
@@ -1097,7 +1097,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsBoundsNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6000
      * @tc.desc   test for TestFontGetWidthsBoundsNormal2.
      * @tc.type   FUNCTION
@@ -1110,7 +1110,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsBoundsNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6100
      * @tc.desc   test for TestFontGetWidthsBoundsNull.
      * @tc.type   FUNCTION
@@ -1123,7 +1123,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsBoundsAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6200
      * @tc.desc   test for TestFontGetWidthsBoundsAbnormal.
      * @tc.type   FUNCTION
@@ -1136,7 +1136,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetWidthsBoundsMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6300
      * @tc.desc   test for TestFontGetWidthsBoundsMultiCalls.
      * @tc.type   FUNCTION
@@ -1150,7 +1150,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font GetPos related test cases
     /**
-     * @tc.name   testFontGePosNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6400
      * @tc.desc   test for TestFontGePosNormal.
      * @tc.type   FUNCTION
@@ -1163,7 +1163,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGetPosNormal1
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6500
      * @tc.desc   test for TestFontGetPosNormal1.
      * @tc.type   FUNCTION
@@ -1176,7 +1176,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGePosNormal2
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6600
      * @tc.desc   test for TestFontGePosNormal2.
      * @tc.type   FUNCTION
@@ -1189,7 +1189,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGePosNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6700
      * @tc.desc   test for TestFontGePosNull.
      * @tc.type   FUNCTION
@@ -1202,7 +1202,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGePosMultiplieCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6800
      * @tc.desc   test for TestFontGePosMultiplieCalls.
      * @tc.type   FUNCTION
@@ -1215,7 +1215,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGePosAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_6900
      * @tc.desc   test for TestFontGePosAbnormal.
      * @tc.type   FUNCTION
@@ -1229,7 +1229,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font GetSpacing related test cases
     /**
-     * @tc.name   testFontGeSpacingNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7000
      * @tc.desc   test for TestFontGeSpacingNormal.
      * @tc.type   FUNCTION
@@ -1242,7 +1242,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGeSpacingMultiplieCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7100
      * @tc.desc   test for TestFontGeSpacingMultiplieCalls.
      * @tc.type   FUNCTION
@@ -1255,7 +1255,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontGeSpacingNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7200
      * @tc.desc   test for TestFontGeSpacingNull.
      * @tc.type   FUNCTION
@@ -1269,7 +1269,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font MeasureSingleChaWithFeatures related test cases
     /**
-     * @tc.name   testFontMeasureSingleChaWithFeaturesNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7300
      * @tc.desc   test for TestFontMeasureSingleChaWithFeaturesNormal.
      * @tc.type   FUNCTION
@@ -1282,7 +1282,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureSingleChaWithFeaturesAbNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7400
      * @tc.desc   test for TestFontMeasureSingleChaWithFeaturesAbNormal.
      * @tc.type   FUNCTION
@@ -1295,7 +1295,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontMeasureSingleChaWithFeaturesCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7500
      * @tc.desc   test for TestFontMeasureSingleChaWithFeaturesCalls.
      * @tc.type   FUNCTION
@@ -1309,7 +1309,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // Font Features related test cases
     /**
-     * @tc.name   testFontFeaturesAddFeatureNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7600
      * @tc.desc   test for TestFontFeaturesAddFeatureNormal.
      * @tc.type   FUNCTION
@@ -1322,7 +1322,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontFeaturesAddFeatureAbNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7700
      * @tc.desc   test for TestFontFeaturesAddFeatureAbNormal.
      * @tc.type   FUNCTION
@@ -1335,7 +1335,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testFontFeaturesandFeatureDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_7800
      * @tc.desc   test for TestFontFeaturesandFeatureDestroyNULL.
      * @tc.type   FUNCTION
@@ -1349,7 +1349,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // GpuContext related test cases
     /**
-     * @tc.name   testGpuContextCreateFromGLDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0100
      * @tc.desc   test for TestGpuContextCreateFromGLDestroyNormal.
      * @tc.type   FUNCTION
@@ -1362,7 +1362,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testGpuContextDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0200
      * @tc.desc   test for TestGpuContextDestroyNULL.
      * @tc.type   FUNCTION
@@ -1375,7 +1375,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testGpuContextCreateFromGLDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0300
      * @tc.desc   test for TestGpuContextCreateFromGLDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1388,7 +1388,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testGpuContextCreateNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0400
      * @tc.desc   test for TestGpuContextCreateNormal.
      * @tc.type   FUNCTION
@@ -1402,7 +1402,7 @@ export default function ActsNewDrawingNativeTestPart5() {
 
     // ImageFilter related test cases
     /**
-     * @tc.name   testImageFilterCreateBlurNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0100
      * @tc.desc   test for TestImageFilterCreateBlurNormal.
      * @tc.type   FUNCTION
@@ -1415,7 +1415,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0200
      * @tc.desc   test for TestImageFilterCreateBlurNULL.
      * @tc.type   FUNCTION
@@ -1428,7 +1428,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0300
      * @tc.desc   test for TestImageFilterCreateBlurMultipleCalls.
      * @tc.type   FUNCTION
@@ -1441,7 +1441,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0400
      * @tc.desc   test for TestImageFilterCreateBlurAbnormal.
      * @tc.type   FUNCTION
@@ -1454,7 +1454,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurMaximum
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0500
      * @tc.desc   test for TestImageFilterCreateBlurMaximum.
      * @tc.type   FUNCTION
@@ -1467,7 +1467,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromColorFilterNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0600
      * @tc.desc   test for TestImageFilterCreateFromColorFilterNormal.
      * @tc.type   FUNCTION
@@ -1480,7 +1480,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromColorFilterNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0700
      * @tc.desc   test for TestImageFilterCreateFromColorFilterNULL.
      * @tc.type   FUNCTION
@@ -1493,7 +1493,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromColorFilterMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0800
      * @tc.desc   test for TestImageFilterCreateFromColorFilterMultipleCalls.
      * @tc.type   FUNCTION
@@ -1506,7 +1506,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterDestroyNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_0900
      * @tc.desc   test for TestImageFilterDestroyNormal.
      * @tc.type   FUNCTION
@@ -1519,7 +1519,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterDestroyNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1000
      * @tc.desc   test for TestImageFilterDestroyNULL.
      * @tc.type   FUNCTION
@@ -1532,7 +1532,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterDestroyMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1100
      * @tc.desc   test for TestImageFilterDestroyMultipleCalls.
      * @tc.type   FUNCTION
@@ -1545,7 +1545,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateOffsetNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1200
      * @tc.desc   test for TestImageFilterCreateOffsetNormal.
      * @tc.type   FUNCTION
@@ -1558,7 +1558,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateOffsetNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1300
      * @tc.desc   test for TestImageFilterCreateOffsetNULL.
      * @tc.type   FUNCTION
@@ -1571,7 +1571,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateOffsetAbnormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1400
      * @tc.desc   test for TestImageFilterCreateOffsetAbnormal.
      * @tc.type   FUNCTION
@@ -1584,7 +1584,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateOffsetMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1500
      * @tc.desc   test for TestImageFilterCreateOffsetMultipleCalls.
      * @tc.type   FUNCTION
@@ -1597,7 +1597,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromShderEffectNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1600
      * @tc.desc   test for TestImageFilterCreateFromShderEffectNormal.
      * @tc.type   FUNCTION
@@ -1610,7 +1610,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromShderEffectNULL
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1700
      * @tc.desc   test for TestImageFilterCreateFromShderEffectNULL.
      * @tc.type   FUNCTION
@@ -1623,7 +1623,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateFromShderEffectMultipleCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1800
      * @tc.desc   test for TestImageFilterCreateFromShderEffectMultipleCalls.
      * @tc.type   FUNCTION
@@ -1636,7 +1636,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurWithCropNormal
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_1900
      * @tc.desc   test for TestImageFilterCreateBlurWithCropNormal.
      * @tc.type   FUNCTION
@@ -1649,7 +1649,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurWithCropNull
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_2000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_2000
      * @tc.desc   test for TestImageFilterCreateBlurWithCropNull.
      * @tc.type   FUNCTION
@@ -1662,7 +1662,7 @@ export default function ActsNewDrawingNativeTestPart5() {
     })
 
     /**
-     * @tc.name   testImageFilterCreateBlurWithCropMultiCalls
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_2100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_IMAGE_FILTER_2100
      * @tc.desc   test for TestImageFilterCreateBlurWithCropMultiCalls.
      * @tc.type   FUNCTION
