@@ -511,7 +511,7 @@ export default function onSinglePhotoChangeTest() {
         done();
       } catch (err) {
         console.error(`onSinglePhotoChange_009:: failed ::${err.code}, ${err.message} !`);
-        expect(err.code).assertEqual('201');
+        expect(err.code).assertEqual('23800151');
         done();
       }
     });
@@ -531,7 +531,7 @@ export default function onSinglePhotoChangeTest() {
         done();
       } catch (err) {
         console.error(`onSinglePhotoChange_010:: failed ::${err.code}, ${err.message} !`);
-        expect(err.code).assertEqual('201');
+        expect(err.code).assertEqual('23800151');
         done();
       }
     });
@@ -554,7 +554,7 @@ export default function onSinglePhotoChangeTest() {
         done();
       } catch (err) {
         console.error(`onSinglePhotoAlbumChange_011:: failed ::${err.code}, ${err.message} !`);
-        expect(err.code).assertEqual('201');
+        expect(err.code).assertEqual('23800151');
         done();
       }
     });
@@ -574,7 +574,7 @@ export default function onSinglePhotoChangeTest() {
         done();
       } catch (err) {
         console.error(`onSinglePhotoAlbumChange_012:: failed ::${err.code}, ${err.message} !`);
-        expect(err.code).assertEqual('201');
+        expect(err.code).assertEqual('23800151');
         done();
       }
     });
