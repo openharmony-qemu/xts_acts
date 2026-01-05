@@ -214,22 +214,22 @@ static napi_value TestUdpSendQueue(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "TestUdpSendQueue start");
     
-    const size_t TEST_QUEUE_SIZE = 5;
-    const size_t TEST_QUEUE_COUNT = 5;
+    const size_t testQueueSize = 5;
+    const size_t testQueueCount = 5;
     
     uv_udp_t* handle = (uv_udp_t*)malloc(sizeof(uv_udp_t));
     if (handle == nullptr) {
         return CreateResult(env, false, "Memory allocation failed");
     }
-    handle->send_queue_size = TEST_QUEUE_SIZE;
-    handle->send_queue_count = TEST_QUEUE_COUNT;
+    handle->send_queue_size = testQueueSize;
+    handle->send_queue_count = testQueueCount;
     
     size_t size = uv_udp_get_send_queue_size(handle);
     size_t count = uv_udp_get_send_queue_count(handle);
     
     free(handle);
     
-    bool success = (size == TEST_QUEUE_SIZE) && (count == TEST_QUEUE_COUNT);
+    bool success = (size == testQueueSize) && (count == testQueueCount);
     OH_LOG_INFO(LOG_APP, "TestUdpSendQueue end: size=%{public}zu, count=%{public}zu", size, count);
     return CreateResult(env, success, "UDP queue operations successful");
 }
@@ -279,7 +279,7 @@ static napi_value TestDlsym(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "TestDlsym start");
     
-    const int TEST_LIB_COUNT = 3;
+    const int testLibCount = 3;
     const char* testLibs[] = {"aaaa", "bbbb", "cccc"};
     uv_lib_t* lib = (uv_lib_t*)malloc(sizeof(uv_lib_t));
     if (lib == nullptr) {
@@ -287,7 +287,7 @@ static napi_value TestDlsym(napi_env env, napi_callback_info info)
     }
     
     int attemptCount = 0;
-    for (int i = 1; i < TEST_LIB_COUNT; i++) {
+    for (int i = 1; i < testLibCount; i++) {
         int ret = uv_dlopen(testLibs[i], lib);
         attemptCount++;
         
