@@ -26,7 +26,7 @@ class MyNodeController extends NodeController {
   public frameNodeNull: FrameNode | null = null;
   public appendChlidNode: FrameNode | null = null;
   public insertChildNode: FrameNode | null = null;
-  public childList: Array<FrameNode> = new Array<FrameNode>();
+  public childList: FrameNode[] = [];
   private rootNode: FrameNode | null = null;
   private uiContext: UIContext | null = null;
   private childrenCount: number = 0;
@@ -49,9 +49,6 @@ class MyNodeController extends NodeController {
       this.frameNode.appendChild(childNode);
 
       for (let j = 0; j < 2; j++) {
-        // let grandson = new FrameNode(uiContext);
-        // grandson.commonAttribute.size({ width: 10, height: 10 }).backgroundColor(Color.Yellow).key('grandson_' + j);
-        // childNode.appendChild(grandson);
         let grandson = typeNode.createNode(uiContext, 'Text');
         grandson.initialize('Text_' + j).fontColor(Color.Blue).fontSize(14).key('GrandSon_' + j);
         childNode.appendChild(grandson);
@@ -62,7 +59,6 @@ class MyNodeController extends NodeController {
     this.frameNode2.commonAttribute.backgroundColor(Color.Pink);
     this.frameNode2.commonAttribute.size({ width: 100, height: 100 });
     this.frameNode2.commonAttribute.key('FrameNodeTest_2');
-    // this.rootNode.appendChild(this.frameNode2);
 
     this.frameNode3 = new FrameNode(uiContext);
     this.frameNode3.commonAttribute.backgroundColor(Color.Pink);
