@@ -278,5 +278,19 @@ export default function enumTest() {
       done()
     })
 
+    /**
+     * @tc.number   Enum_OH_ArkUI_DragEvent_StartDataLoading
+     * @tc.name     enumTest019
+     * @tc.desc     testing enum
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('enumTest019', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.Enum_OH_ArkUI_DragEvent_StartDataLoading()).assertEqual(0)
+      await Utils.sleep(200)
+      done()
+    })
+
   })
 }

@@ -286,5 +286,13 @@ static napi_value Enum_OH_ArkUI_KeyEvent_GetKeyIntensionCode(napi_env env, napi_
     NAPI_END;
 }
 
+static napi_value Enum_OH_ArkUI_DragEvent_StartDataLoading(napi_env env, napi_callback_info info) {
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    char key[] = "";
+    unsigned int keyLen = 0;
+    int32_t ret = OH_ArkUI_DragEvent_StartDataLoading(nullptr, nullptr, key, keyLen);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
 
 } // namespace ArkUICapiTest
