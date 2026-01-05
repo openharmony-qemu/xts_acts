@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "node_xts_test.h"
+#include "NodeXtsTest.h"
 
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>

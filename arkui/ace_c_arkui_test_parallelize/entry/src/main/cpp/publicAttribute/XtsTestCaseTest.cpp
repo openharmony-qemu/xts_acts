@@ -21,8 +21,8 @@
 #include <ace/xcomponent/native_interface_xcomponent.h>
 #include <arkui/native_animate.h>
 #include <arkui/native_type.h>
-#include "node_xts_test.h"
-#include "PublicAttribute.h"
+#include "NodeXtsTest.h"
+#include "PublicAttributeTest.h"
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
