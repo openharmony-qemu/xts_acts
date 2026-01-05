@@ -352,9 +352,9 @@ export default function requestPermissionOnSettingStaticTest() {
                     });
                   });
                   await Utils.msSleep(2000);
-                  if (!clickRequest(driver3, '允许')) {
-                    if (clickRequest(driver3, '允许写入'))
-                      clickRequest(driver2, '确定');
+                  if (clickRequest(driver3, '允许') || clickRequest(driver3, '禁止')) {
+                    if (clickRequest(driver3, '仅此应用日程'))
+                    clickRequest(driver3, '确定');
                   }
                 });
                 await Utils.msSleep(2000);
