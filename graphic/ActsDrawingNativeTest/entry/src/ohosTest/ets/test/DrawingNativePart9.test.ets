@@ -1105,11 +1105,11 @@ export default function ActsNewDrawingNativeTestPart9() {
       expect(result).assertEqual(0);
     })
 
-    // Surface related test cases (16 cases)
+    // RenderSurface related test cases (16 cases)
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0100
-     * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
+     * @tc.desc   test for testRenderSurfaceCreateFromGpuContextNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1122,7 +1122,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0200
-     * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
+     * @tc.desc   test for testRenderSurfaceCreateFromGpuContextNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1135,7 +1135,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0300
-     * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
+     * @tc.desc   test for testRenderSurfaceCreateFromGpuContextBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1148,7 +1148,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0400
-     * @tc.desc   test for testSurfaceDestroyNormal.
+     * @tc.desc   test for testRenderSurfaceDestroyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1161,7 +1161,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0500
-     * @tc.desc   test for testSurfaceDestroyNull.
+     * @tc.desc   test for testRenderSurfaceDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1174,7 +1174,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0600
-     * @tc.desc   test for testSurfaceGetCanvasNormal.
+     * @tc.desc   test for testRenderSurfaceGetCanvasNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1187,7 +1187,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0700
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0700
-     * @tc.desc   test for testSurfaceGetCanvasNull.
+     * @tc.desc   test for testRenderSurfaceGetCanvasNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1200,7 +1200,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0800
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0800
-     * @tc.desc   test for testSurfaceGetCanvasBoundary.
+     * @tc.desc   test for testRenderSurfaceGetCanvasBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1213,7 +1213,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0900
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_0900
-     * @tc.desc   test for testSurfaceCreateOnScreenNormal.
+     * @tc.desc   test for testRenderSurfaceCreateOnScreenNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1226,7 +1226,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01000
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01000
-     * @tc.desc   test for testSurfaceCreateOnScreenNull.
+     * @tc.desc   test for testRenderSurfaceCreateOnScreenNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1239,7 +1239,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01100
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01100
-     * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
+     * @tc.desc   test for testRenderSurfaceCreateOnScreenMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1252,7 +1252,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01200
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01200
-     * @tc.desc   test for testSurfaceFlushNormal.
+     * @tc.desc   test for testRenderSurfaceFlushNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -1265,7 +1265,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01300
-     * @tc.desc   test for testSurfaceFlushNull.
+     * @tc.desc   test for testRenderSurfaceFlushNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1278,7 +1278,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01400
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01400
-     * @tc.desc   test for testSurfaceFlushAbnormal.
+     * @tc.desc   test for testRenderSurfaceFlushAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1291,7 +1291,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01500
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_01500
-     * @tc.desc   test for testSurfaceFlushMultipleCalls.
+     * @tc.desc   test for testRenderSurfaceFlushMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -1304,7 +1304,7 @@ export default function ActsNewDrawingNativeTestPart9() {
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_1600
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RENDERSURFACE_1600
-     * @tc.desc   test for testSurfaceFlushTiming.
+     * @tc.desc   test for testRenderSurfaceFlushTiming.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3

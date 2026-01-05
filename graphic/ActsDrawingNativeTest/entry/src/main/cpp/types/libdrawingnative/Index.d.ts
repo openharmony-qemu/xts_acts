@@ -516,7 +516,7 @@ export const DrawingShaderEffectCreateSpecial: (caseName: number) => number;
 // ShaderEffect Destroy related functions
 export const DrawingShaderEffectDestroy: (caseName: number) => number;
 
-// Surface related functions
+// RenderSurface related functions
 export const DrawingSurface: (caseName: number) => number;
 
 // TextBlobBuilder related functions
