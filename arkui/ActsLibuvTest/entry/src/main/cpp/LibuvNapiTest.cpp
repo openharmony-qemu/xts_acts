@@ -1,6 +1,16 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 #include <napi/native_api.h>
@@ -16,14 +26,16 @@
 
 // 全局变量（用于 uv_once 测试）
 static uv_once_t once_only = UV_ONCE_INIT;
-static int increment_counter = 0;
+static int g_incrementCounter = 0;
 
-void Increment() {
-    increment_counter++;
+void Increment()
+{
+    g_incrementCounter++;
 }
 
 // 辅助函数：创建结果对象
-static napi_value CreateResult(napi_env env, bool success, const char* message = nullptr, int code = 0) {
+static napi_value CreateResult(napi_env env, bool success, const char* message = nullptr, int code = 0)
+{
     napi_value result;
     napi_create_object(env, &result);
     
@@ -47,7 +59,8 @@ static napi_value CreateResult(napi_env env, bool success, const char* message =
 }
 
 // 测试1: UV Version
-static napi_value TestUVVersion(napi_env env, napi_callback_info info) {
+static napi_value TestUVVersion(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestUVVersion start");
     
     napi_value result;
@@ -84,8 +97,8 @@ static napi_value TestUVVersion(napi_env env, napi_callback_info info) {
     
     // 验证结果
     // 版本号应该大于0，不需要精确匹配 UV_VERSION_HEX（因为可能存在版本差异）
-    bool success = (version > 0) && 
-                   (replaceResult == UV_EINVAL) && 
+    bool success = (version > 0) &&
+                   (replaceResult == UV_EINVAL) &&
                    loopCreatedFlag;
     napi_value successValue;
     napi_get_boolean(env, success, &successValue);
@@ -96,7 +109,8 @@ static napi_value TestUVVersion(napi_env env, napi_callback_info info) {
 }
 
 // 测试2: Loop 生命周期
-static napi_value TestLoop(napi_env env, napi_callback_info info) {
+static napi_value TestLoop(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestLoop start");
     
     uv_loop_t* newLoop = uv_loop_new();
@@ -111,7 +125,8 @@ static napi_value TestLoop(napi_env env, napi_callback_info info) {
 }
 
 // 测试3: 错误名称
-static napi_value TestErrName(napi_env env, napi_callback_info info) {
+static napi_value TestErrName(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestErrName start");
     
     int err = 0;
@@ -136,13 +151,21 @@ static napi_value TestErrName(napi_env env, napi_callback_info info) {
 }
 
 // 测试4: 请求数据
-static napi_value TestReqGetData(napi_env env, napi_callback_info info) {
+static napi_value TestReqGetData(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestReqGetData start");
     
     float f = 5.5f;
     float* pf = &f;
     uv_req_t* req = (uv_req_t*)malloc(sizeof(uv_req_t));
+    if (req == nullptr) {
+        return CreateResult(env, false, "Memory allocation failed");
+    }
     uv_req_t* setReq = (uv_req_t*)malloc(sizeof(uv_req_t));
+    if (setReq == nullptr) {
+        free(req);
+        return CreateResult(env, false, "Memory allocation failed");
+    }
     
     req->data = pf;
     req->type = UV_UNKNOWN_REQ;
@@ -162,7 +185,8 @@ static napi_value TestReqGetData(napi_env env, napi_callback_info info) {
 }
 
 // 测试5: 打印句柄
-static napi_value TestPrintHandles(napi_env env, napi_callback_info info) {
+static napi_value TestPrintHandles(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestPrintHandles start");
     
     uv_loop_t* loop = nullptr;
@@ -186,25 +210,33 @@ static napi_value TestPrintHandles(napi_env env, napi_callback_info info) {
 }
 
 // 测试6: UDP 发送队列
-static napi_value TestUdpSendQueue(napi_env env, napi_callback_info info) {
+static napi_value TestUdpSendQueue(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestUdpSendQueue start");
     
+    const size_t TEST_QUEUE_SIZE = 5;
+    const size_t TEST_QUEUE_COUNT = 5;
+    
     uv_udp_t* handle = (uv_udp_t*)malloc(sizeof(uv_udp_t));
-    handle->send_queue_size = 5;
-    handle->send_queue_count = 5;
+    if (handle == nullptr) {
+        return CreateResult(env, false, "Memory allocation failed");
+    }
+    handle->send_queue_size = TEST_QUEUE_SIZE;
+    handle->send_queue_count = TEST_QUEUE_COUNT;
     
     size_t size = uv_udp_get_send_queue_size(handle);
     size_t count = uv_udp_get_send_queue_count(handle);
     
     free(handle);
     
-    bool success = (size == 5) && (count == 5);
+    bool success = (size == TEST_QUEUE_SIZE) && (count == TEST_QUEUE_COUNT);
     OH_LOG_INFO(LOG_APP, "TestUdpSendQueue end: size=%{public}zu, count=%{public}zu", size, count);
     return CreateResult(env, success, "UDP queue operations successful");
 }
 
 // 测试7: 文件系统 lchown
-static napi_value TestFsLchown(napi_env env, napi_callback_info info) {
+static napi_value TestFsLchown(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestFsLchown start");
     
     uv_loop_t loop;
@@ -232,7 +264,8 @@ static napi_value TestFsLchown(napi_env env, napi_callback_info info) {
 }
 
 // 测试8: 禁用 stdio 继承
-static napi_value TestDisableStdioInheritance(napi_env env, napi_callback_info info) {
+static napi_value TestDisableStdioInheritance(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestDisableStdioInheritance start");
     
     uv_disable_stdio_inheritance();
@@ -242,14 +275,19 @@ static napi_value TestDisableStdioInheritance(napi_env env, napi_callback_info i
 }
 
 // 测试9: 动态库加载
-static napi_value TestDlsym(napi_env env, napi_callback_info info) {
+static napi_value TestDlsym(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestDlsym start");
     
+    const int TEST_LIB_COUNT = 3;
     const char* testLibs[] = {"aaaa", "bbbb", "cccc"};
     uv_lib_t* lib = (uv_lib_t*)malloc(sizeof(uv_lib_t));
+    if (lib == nullptr) {
+        return CreateResult(env, false, "Memory allocation failed");
+    }
     
     int attemptCount = 0;
-    for (int i = 1; i < 3; i++) {
+    for (int i = 1; i < TEST_LIB_COUNT; i++) {
         int ret = uv_dlopen(testLibs[i], lib);
         attemptCount++;
         
@@ -269,17 +307,19 @@ static napi_value TestDlsym(napi_env env, napi_callback_info info) {
 }
 
 // 测试10: uv_once
-static napi_value TestUvOnce(napi_env env, napi_callback_info info) {
+static napi_value TestUvOnce(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestUvOnce start");
     
-    int before = increment_counter;
+    int before = g_incrementCounter;
     uv_once(&once_only, Increment);
-    int after = increment_counter;
+    int after = g_incrementCounter;
     
     napi_value result;
     napi_create_object(env, &result);
     
-    napi_value beforeValue, afterValue;
+    napi_value beforeValue;
+    napi_value afterValue;
     napi_create_int32(env, before, &beforeValue);
     napi_create_int32(env, after, &afterValue);
     napi_set_named_property(env, result, "before", beforeValue);
@@ -296,7 +336,8 @@ static napi_value TestUvOnce(napi_env env, napi_callback_info info) {
 
 // 模块初始化
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"testUVVersion", nullptr, TestUVVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testLoop", nullptr, TestLoop, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -305,7 +346,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"testPrintHandles", nullptr, TestPrintHandles, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testUdpSendQueue", nullptr, TestUdpSendQueue, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testFsLchown", nullptr, TestFsLchown, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"testDisableStdioInheritance", nullptr, TestDisableStdioInheritance, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDisableStdioInheritance", nullptr, TestDisableStdioInheritance, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testDlsym", nullptr, TestDlsym, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testUvOnce", nullptr, TestUvOnce, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
@@ -325,6 +367,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterLibuvTestModule(void) {
+extern "C" __attribute__((constructor)) void RegisterLibuvTestModule(void)
+{
     napi_module_register(&demoModule);
 }
