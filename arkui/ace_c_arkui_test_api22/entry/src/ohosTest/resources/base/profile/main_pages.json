@@ -34,8 +34,6 @@
     "MainAbility/pages/LayoutManager/LayoutManager5Test",
     "MainAbility/pages/LayoutManager/LayoutManager6Test",
     "MainAbility/pages/LayoutManager/LayoutManager7Test",
-    "MainAbility/pages/LayoutManager/LayoutManager8Test",
-    "MainAbility/pages/swiper/testSwiperWithReset",
-    "MainAbility/pages/publicAttribute/PublicAttributeTest"
+    "MainAbility/pages/LayoutManager/LayoutManager8Test"
   ]
 }
