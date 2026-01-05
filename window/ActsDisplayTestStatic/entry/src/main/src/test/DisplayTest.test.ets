@@ -45,7 +45,12 @@ async function getPermision(): Promise<void> {
     let permissions: Array<Permissions> =
         ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
     try {
-        let data: PermissionRequestResult = await atManager.requestPermissionsFromUser(context, permissions);
+        atManager.requestPermissionsFromUser(context, permissions,(err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
+            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
+            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+            hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
+        });
         console.error('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
     } catch (err: BusinessError) {
         console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
@@ -56,9 +61,9 @@ async function clickButtonDriver(){
     console.error(`come in permissionClick`);
     let driver: Driver = Driver.create();
     console.error(`come in Driver create`);
-    let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+    let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
     console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
-    if(buttonOne){
+    if(buttonOne!=null){
         buttonOne.click();
     }
 
@@ -123,8 +128,10 @@ export default function DisplayTest() {
                 }
             }
             await getPermision();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver before');
             await Utils.msSleep(500);
             await clickButtonDriver();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
 
         })
         /**
