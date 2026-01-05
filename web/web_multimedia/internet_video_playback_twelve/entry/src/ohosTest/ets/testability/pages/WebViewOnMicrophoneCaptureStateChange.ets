@@ -81,7 +81,6 @@ struct webViewController {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
-                await Utils.sleep(1000)
                 let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
                 await buttonThree.click();
                 let buttonOne = await driver.waitForComponent(ON.text('开启麦克风'),10000);
