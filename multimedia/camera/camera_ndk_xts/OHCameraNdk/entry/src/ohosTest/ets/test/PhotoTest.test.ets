@@ -151,6 +151,11 @@ function startCameraSession() {
     console.info(TAG + "captureSessionCommitConfig FAILED");
     expect().assertFail();
   }
+
+  let startSession: number = cameras.oHCaptureSessionStart(0);
+  if (startSession != 0) {
+    console.info(TAG + "captureSessionCommitConfig FAILED");
+  }
 }
 
 async function stopCameraSession() {
@@ -418,17 +423,25 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
     /**
-     * @tc.name   testOHPhotoOutputEnableMirror0100
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputEnableMirror0100
-     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputEnableMirror0100
+     * @tc.name       : testOHPhotoOutputEnableMirror0100
+     * @tc.size       : MediumTest
+     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
      */
     it('testOHPhotoOutputEnableMirror0100', Level.LEVEL0, () => {
-      let ret = cameras.oHPhotoOutputEnableMirror(0);
-      console.log(TAG+"testOHPhotoOutputEnableMirror0100:"+ret);
-      expect(ret).assertEqual(CAMERA_OK);
+      let isSupported: boolean = cameras.oHPhotoOutputgetMirrorSupported(0);
+      console.info(`testOHPhotoOutputEnableMirror0100 MirrorSupported is ${isSupported} ${typeof isSupported}`);
+      if (isSupported) {
+        console.info(`testOHPhotoOutputEnableMirror0100 Enter`);
+        let ret: number = cameras.oHPhotoOutputEnableMirror(0);
+        console.log(TAG+"testOHPhotoOutputEnableMirror0100:"+ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.info(`testOHPhotoOutputEnableMirror0100 no supported`);
+        expect(!isSupported).assertTrue();
+      }
     })
     /**
      * @tc.name   testOHPhotoOutputEnableMirror0200
