@@ -58,12 +58,12 @@ struct pasteButton {
   @State fontStyle: FontStyle | undefined = FontStyle.Normal
   @State fontWeight: FontWeight | undefined = FontWeight.Medium
   @State fontFamily: string | undefined = 'HarmonyOS Sans'
-  @State fontColor: int | undefined = 0xffffffff
-  @State iconColor: int | undefined = 0xffffffff
-  @State bgColor: int | undefined = 0xff007dff
+  @State fontColor: string | undefined = '#ffffffff'
+  @State iconColor: string | undefined = '#ffffffff'
+  @State bgColor: string | undefined = '#ff007dff'
   @State borderSty: BorderStyle | undefined = BorderStyle.Dashed
   @State borderWid: number | undefined = 0
-  @State borderCol: int | undefined = 0xffffffff
+  @State borderCol: string | undefined = '#ffffffff'
   @State borderRad: number | undefined = 0
   @State left: number | undefined = 12
   @State right: number | undefined = 12
@@ -85,7 +85,7 @@ struct pasteButton {
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       const data = eventData.data as Record<String,undefined|null|Object>
-      console.info("baoyang ====>page_pasteButton page state change called:" + JSON.stringify(eventData));
+      console.info('====>page_pasteButton page state change called:' + JSON.stringify(eventData));
 
       if (data['bgType'] != null) {
         this.bgType = (data['bgType'] as Object) as ButtonType
@@ -127,13 +127,13 @@ struct pasteButton {
         this.fontFamily = data['fontFamily'] as String
       }
       if (data['fontColor'] != null) {
-        this.fontColor = data['fontColor'] as Int
+        this.fontColor = data['fontColor'] as String
       }
       if (data['iconColor'] != null) {
-        this.iconColor = data['iconColor'] as Int
+        this.iconColor = data['iconColor'] as String
       }
       if (data['bgColor'] != null) {
-        this.bgColor = data['bgColor'] as Int
+        this.bgColor = data['bgColor'] as String
       }
       if (data['borderSty'] != null) {
         this.borderSty = (data['borderSty'] as Object) as BorderStyle
@@ -142,7 +142,7 @@ struct pasteButton {
         this.borderWid = data['borderWid'] as Int
       }
       if (data['borderCol'] != null) {
-        this.borderCol = data['borderCol'] as Int
+        this.borderCol = data['borderCol'] as String
       }
       if (data['borderRad'] != null) {
         this.borderRad = data['borderRad'] as Int
@@ -229,18 +229,18 @@ struct pasteButton {
               try {
                 let clickData:events_emitter.EventData = {
                   data: {
-                    "clickResult": result,
+                    'clickResult': result,
                   } as Record<string, undefined|null|Object>
                 }
                 let clickEvent:events_emitter.InnerEvent = {
                   eventId: 2,
                   priority: events_emitter.EventPriority.LOW
                 }
-                console.info("====>page_pasteButton onclick result:" + JSON.stringify(result))
+                console.info('====>page_pasteButton onclick result: ' + JSON.stringify(result))
                 events_emitter.emit(clickEvent, clickData)
               } catch (err) {
                 err = err as BusinessError
-                console.info("====>page_pasteButton emit action state err: " + JSON.stringify(err.message))
+                console.info('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
               }
             })
             .iconSize(this.iconSize)
@@ -268,8 +268,8 @@ struct pasteButton {
               strokeColor: ColorMetrics.rgba(this.strokeColorR, this.strokeColorG, this.strokeColorB),
               strokeWidth: LengthMetrics.px(this.strokeWidth)
             })
-            .id("keyPaste")
-            .key("keyPaste")
+            .id('keyPaste')
+            .key('keyPaste')
         }.width(this.rowWidth).height(this.rowHeight)
       }.width('100%').alignItems(HorizontalAlign.Center)
     }.height('100%')
