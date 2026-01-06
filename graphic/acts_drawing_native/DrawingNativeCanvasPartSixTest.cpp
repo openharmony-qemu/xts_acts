@@ -171,8 +171,8 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesCalls,
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     EXPECT_NE(features, nullptr);
     for (int i = 0; i < count; i++) {
-    EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
+            OH_DRAWING_SUCCESS);
     }
     OH_Drawing_FontDestroy(font);
     OH_Drawing_FontFeaturesDestroy(features);
