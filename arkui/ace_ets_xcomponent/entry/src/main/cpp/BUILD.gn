@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import("//build/config/ohos/config.gni")
-import("//build/ohos.gni")
+import("//test/xts/tools/build/suite.gni")
 import("//foundation/arkui/napi/napi.gni")
 comPath =
     "../../../../../../../../../foundation/arkui/ace_engine/interfaces/native"
@@ -31,7 +31,7 @@ config("config") {
 config("public_config") {
 }
 
-ohos_shared_library("nativerender") {
+ohos_xts_shared_library("nativerender") {
   testonly = true
   sources = [
     "./napi/napi_init.cpp",

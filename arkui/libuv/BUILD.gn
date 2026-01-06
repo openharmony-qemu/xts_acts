@@ -201,7 +201,7 @@ ohos_static_library("libuvTestStatic") {
   deps = [ "//third_party/libuv:uv_static" ]
 }
 
-ohos_executable("libuvruntest") {
+ohos_xts_executable("libuvruntest") {
   include_dirs = [
     "//third_party/libuv/include",
     "//third_party/libuv/src",
@@ -229,7 +229,7 @@ ohos_moduletest_suite("ActsLibuvTest") {
   cflags = [ "-Wno-error" ]
 }
 
-action("cpLibuv") {
+ohos_xts_action("cpLibuv") {
   testonly = true
   script = "cplibuv.sh"
   outputs = [ "${target_out_dir}/cplibuv.log" ]
