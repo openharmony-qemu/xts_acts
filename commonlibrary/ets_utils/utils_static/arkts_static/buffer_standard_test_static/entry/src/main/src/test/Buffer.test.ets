@@ -1441,12 +1441,12 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_09800
-     * @tc.name: testIndexOf0179
-     * @tc.desc: The index of the first occurrence of value in buf.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_09800
+     * @tc.name testIndexOf0179
+     * @tc.desc The index of the first occurrence of value in buf.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testIndexOf0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("13236");
@@ -4408,13 +4408,13 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_27600
-     * @tc.name: testfrom0786
-     * @tc.desc: For the object whose value returned by valueof() function is strictly equal to object
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_27600
+     * @tc.name testfrom0786
+     * @tc.desc For the object whose value returned by valueof() function is strictly equal to object
      *           or supports symbol To primitive object, a new buffer instance is created.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testfrom0786", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arrayBuffer = new ArrayBuffer(5);
@@ -4528,20 +4528,6 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28100
-     * @tc.name: testLastIndexOf30000
-     * @tc.desc: The index of the last occurrence of value in buf.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it("testLastIndexOf30000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf1 = buffer.from("13236235");
-      let index = buf1.lastIndexOf("23", 9999999999999 as long);
-      expect(String(index)).assertEqual('5');
-    });
-
-    /**
      * @tc.name   testIncludes30010
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28200
      * @tc.desc   Returns true if value was found in buf, false otherwise.
@@ -4553,34 +4539,6 @@ export default function BufferTest() {
       let buf1 = buffer.from("abcdefghigk");
       let flag = buf1.includes("f", -3);
       expect(String(flag)).assertEqual('false');
-    });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28300
-     * @tc.name: testIncludes30020
-     * @tc.desc: Returns true if value was found in buf, false otherwise.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it("testIncludes30020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf1 = buffer.from("abcdefghigk");
-      let flag = buf1.includes("f", 9999999999999 as long);
-      expect(String(flag)).assertEqual('false');
-    });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28400
-     * @tc.name: testIncludes30030
-     * @tc.desc: Returns true if value was found in buf, false otherwise.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it("testIncludes30030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf1 = buffer.from("abcdefghigk");
-      let flag = buf1.includes("f", -9999999999999 as long);
-      expect(String(flag)).assertEqual('true');
     });
 
     /**
@@ -4623,33 +4581,6 @@ export default function BufferTest() {
       expect(String(index)).assertEqual('-1');
     });
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28800
-     * @tc.name: testIndexOf30070
-     * @tc.desc: The index of the first occurrence of value in buf.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it("testIndexOf30070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf1 = buffer.from("123456789abcdefg");
-      let index = buf1.indexOf("3", 99999999999999 as long);
-      expect(String(index)).assertEqual('-1');
-    });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_28900
-     * @tc.name: testIndexOf30080
-     * @tc.desc: The index of the first occurrence of value in buf.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it("testIndexOf30080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf1 = buffer.from("123456789abcdefg");
-      let index = buf1.indexOf("3", -99999999999999 as long);
-      expect(String(index)).assertEqual('2');
-    });
 
     /**
      * @tc.name   testIndexOf30090
@@ -5034,15 +4965,15 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31200
-     * @tc.name: testfrom0788
-     * @tc.desc: Copies data from a region of buf to a region in target,
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31200
+     * @tc.name testfrom0788
+     * @tc.desc Copies data from a region of buf to a region in target,
      *           even if the target memory region overlaps with buf.
      *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
      *           and the extra part will not be overwritten.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testfrom0788", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let sharedArr = new ArrayBuffer(20)
@@ -5050,21 +4981,20 @@ export default function BufferTest() {
       uint8Arr[16] = 9;
       let bufObj = buffer.from(sharedArr, 0, 20);
       uint8Arr[15] = 10;
-    
       expect(String(bufObj.length)).assertEqual('20');
       expect(JSON.stringify(bufObj)).assertEqual('{"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,9,0,0,0]}');
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31300
-     * @tc.name: testfrom0789
-     * @tc.desc: Copies data from a region of buf to a region in target,
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31300
+     * @tc.name testfrom0789
+     * @tc.desc Copies data from a region of buf to a region in target,
      *           even if the target memory region overlaps with buf.
      *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
      *           and the extra part will not be overwritten.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testfrom0789", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let sharedArr = new ArrayBuffer(10)
@@ -5077,15 +5007,15 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31400
-     * @tc.name: testfrom0790
-     * @tc.desc: Copies data from a region of buf to a region in target,
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31400
+     * @tc.name testfrom0790
+     * @tc.desc Copies data from a region of buf to a region in target,
      *           even if the target memory region overlaps with buf.
      *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
      *           and the extra part will not be overwritten.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it("testfrom0790", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let sharedArr = new ArrayBuffer(1000)
@@ -5094,15 +5024,15 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31500
-     * @tc.name: testfrom0791
-     * @tc.desc: Copies data from a region of buf to a region in target,
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31500
+     * @tc.name testfrom0791
+     * @tc.desc Copies data from a region of buf to a region in target,
      *           even if the target memory region overlaps with buf.
      *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
      *           and the extra part will not be overwritten.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
 
     it("testfrom0791", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {

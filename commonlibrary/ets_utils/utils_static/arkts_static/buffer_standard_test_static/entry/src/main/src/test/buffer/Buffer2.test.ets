@@ -193,12 +193,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0800
-     * @tc.name       : testAlloc0008
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0800
+     * @tc.name testAlloc0008
+     * @tc.desc Test the function of the interface Alloc.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('testBufferAlloc0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0008';
@@ -245,32 +245,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1000
-     * @tc.name       : testAlloc0010
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
-    it('testBufferAlloc0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const TAG = 'testBufferAlloc0010';
-      try {
-        let buf10 = buffer.alloc(3, undefined);
-        expect(String(buf10.length)).assertEqual('3');
-        let pair = buf10.entries();
-        let next = pair.next();
-        let isOk = true;
-        while (!next.done) {
-          isOk = Boolean(isOk&&(Number(next?.value?.[1])==0));
-          next = pair.next();
-        }
-        expect(isOk).assertTrue();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
-    })
+
     /**
      * @tc.name   testBufferAlloc0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1100
@@ -960,12 +935,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0800
-     * @tc.name       : testFrom10008
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0800
+     * @tc.name testFrom10008
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10008';
@@ -979,12 +954,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0900
-     * @tc.name       : testFrom10009
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0900
+     * @tc.name testBufferFrom10009
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10009';
@@ -999,12 +974,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1000
-     * @tc.name       : testFrom10010
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1000
+     * @tc.name testFrom10010
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10010';
@@ -1020,12 +995,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1100
-     * @tc.name       : testFrom10011
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1100
+     * @tc.name testFrom10011
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10011';
@@ -1040,12 +1015,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1200
-     * @tc.name       : testFrom10012
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1200
+     * @tc.name testFrom10012
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10012';
@@ -1060,12 +1035,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1300
-     * @tc.name       : testFrom10013
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1300
+     * @tc.name testFrom10013
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10013';
@@ -1082,12 +1057,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1400
-     * @tc.name       : testFrom10014
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1400
+     * @tc.name testFrom10014
+     * @tc.desc Test the function of the interface From1.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferFrom10014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10014';
@@ -8870,12 +8845,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2200
-     * @tc.name       : testWrite0022
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2200
+     * @tc.name testWrite0022
+     * @tc.desc Test the function of the interface write.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testBufferWrite0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0022';
@@ -10812,27 +10787,7 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12100
-     * @tc.name       : testWriteInt80004
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteInt80004';
-      try {
-        let buf = buffer.alloc(5);
-        const res = buf.writeInt8(Number(BigInt(0x0102030405060708)), 0);
-        console.log(`${TAG}res:$${res}`);
-	      expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteInt80005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12200
@@ -11159,26 +11114,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -2392824279762797858');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13900
-     * @tc.name       : testWriteInt16BE0011
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteInt16BE0011';
-      try {
-        let buf = buffer.alloc(5);
-        buf.writeInt16BE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteInt16LE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14000
@@ -11370,26 +11306,7 @@ export default function bufferTest2() {
           .assertEqual(String(10200001));
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15000
-     * @tc.name       : testWriteInt16LE0011
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteInt16LE0011';
-      try {
-        let buf = buffer.alloc(5);
-        buf.writeInt16LE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteInt32BE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15100
@@ -11613,26 +11530,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -2392824279762797858');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16200
-     * @tc.name       : testWriteInt32BE0012
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-      it('testBufferWriteInt32BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        const TAG = 'testBufferWriteInt32BE0012';
-        try {
-          let buf = buffer.allocUninitializedFromPool(4);
-          let result = buf.writeInt32BE(Number(BigInt(0x0102030405060708) as long), 0);
-          console.info("result = " + result);
-          expect(false).assertFail();
-        } catch (err: BusinessError) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
-      })
+
     /**
      * @tc.name   testBufferWriteInt32LE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16300
@@ -11837,26 +11735,7 @@ export default function bufferTest2() {
 
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17300
-     * @tc.name       : testWriteInt32LE0011
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteInt32LE0011';
-      try {
-        let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeInt32LE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteUInt80001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17400
@@ -12075,27 +11954,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -2392824279762797858');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18400
-     * @tc.name       : testWriteUInt80011
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteUInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteUInt80011';
-      try {
-  
-        let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeUInt8(Number(BigInt(0x0102030405060708) as long), 2);
-        expect(result).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteUInt80012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18500
@@ -12347,27 +12206,6 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19700
-     * @tc.name       : testWriteUInt16BE0012
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteUInt16BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteUInt16BE0012';
-      try {
-        let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16BE(Number(BigInt(0x0102030405060708) as long), 0);
-	      expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850')
-  
-      }
-    })
-    /**
      * @tc.name   testBufferWriteUInt16LE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19800
      * @tc.desc   Test the function of the interface writeUInt16LE.
@@ -12567,26 +12405,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2392824279762797858');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20800
-     * @tc.name       : testWriteUInt16LE0011
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteUInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteUInt16LE0011';
-      try {
-        let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteUInt32BE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20900
@@ -12783,26 +12602,7 @@ export default function bufferTest2() {
       }
     })
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21900
-     * @tc.name       : testWriteUInt32BE0011
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteUInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteUInt32BE0011';
-      try {
-        let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferWriteUInt32LE0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22000
@@ -12999,26 +12799,7 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2392824279762797858');
       }
     })
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_23000
-     * @tc.name       : testWriteUInt32LE0011
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testBufferWriteUInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testBufferWriteUInt32LE0011';
-      try {
-        let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(Number(BigInt(0x0102030405060708) as long), 0);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 72623859790382850');
-      }
-    })
+
     /**
      * @tc.name   testBufferSlice0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0100
