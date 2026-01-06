@@ -33,14 +33,11 @@ describe('hiSysEventJsTest', function () {
         console.info('hiSysEventJsTest afterEach called')
     })
 
- /**
-  * @tc.name   testHiSysEventApi01
-  * @tc.number DFX_DFT_HiSysEvent_JS_0100
-  * @tc.desc   添加Js打点事件-callback方式进行回调处理
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0100
+	 * @tc.name testHiSysEventApi01
+	 * @tc.desc 添加Js打点事件-callback方式进行回调处理
+	 */
 	it('testHiSysEventApi01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi01 start')
 		hiSysEvent.write({
@@ -62,14 +59,11 @@ describe('hiSysEventJsTest', function () {
 		console.info('testHiSysEventApi01 end')
 	})
 
- /**
-  * @tc.name   testHiSysEventApi02
-  * @tc.number DFX_DFT_HiSysEvent_JS_0200
-  * @tc.desc   添加Js打点事件-Promise方式中then()方法进行打点成功回调处理
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL1
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0200
+	 * @tc.name testHiSysEventApi02
+	 * @tc.desc 添加Js打点事件-Promise方式中then()方法进行打点成功回调处理
+	 */
 	it('testHiSysEventApi02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventApi02 start')
 		hiSysEvent.write({
@@ -91,14 +85,11 @@ describe('hiSysEventJsTest', function () {
 		console.info('testHiSysEventApi02 end')
 	})
 
- /**
-  * @tc.name   testHiSysEventApi03
-  * @tc.number DFX_DFT_HiSysEvent_JS_0300
-  * @tc.desc   验证调用HiSysEvent write接口，打点fault类型事件，支持基础数据类型自定义传参
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0300
+	 * @tc.name testHiSysEventApi03
+	 * @tc.desc 验证调用HiSysEvent write接口，打点fault类型事件，支持基础数据类型自定义传参
+	 */
 	it('testHiSysEventApi03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi03 start')
 		try {
@@ -138,14 +129,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi04
-  * @tc.number DFX_DFT_HiSysEvent_JS_0400
-  * @tc.desc   验证调用HiSysEvent write接口，打点statistic类型事件，支持基础数据类型自定义传参
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0400
+	 * @tc.name testHiSysEventApi04
+	 * @tc.desc 验证调用HiSysEvent write接口，打点statistic类型事件，支持基础数据类型自定义传参
+	 */
 	it('testHiSysEventApi04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi04 start')
 		try {
@@ -185,14 +173,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi05
-  * @tc.number DFX_DFT_HiSysEvent_JS_0500
-  * @tc.desc   验证调用HiSysEvent write接口，打点security类型事件，支持基础数据类型自定义传参
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0500
+	 * @tc.name testHiSysEventApi05
+	 * @tc.desc 验证调用HiSysEvent write接口，打点security类型事件，支持基础数据类型自定义传参
+	 */
 	it('testHiSysEventApi05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi05 start')
 		try {
@@ -232,14 +217,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi06
-  * @tc.number DFX_DFT_HiSysEvent_JS_0600
-  * @tc.desc   验证调用HiSysEvent write接口，打点behavior类型事件，支持基础数据类型自定义传参
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0600
+	 * @tc.name testHiSysEventApi06
+	 * @tc.desc 验证调用HiSysEvent write接口，打点behavior类型事件，支持基础数据类型自定义传参
+	 */
 	it('testHiSysEventApi06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi06 start')
 		try {
@@ -279,14 +261,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi07
-  * @tc.number DFX_DFT_HiSysEvent_JS_0700
-  * @tc.desc   验证调用HiSysEvent write接口，支持自定义传参最大字符串10k
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0700
+	 * @tc.name testHiSysEventApi07
+	 * @tc.desc 验证调用HiSysEvent write接口，支持自定义传参最大字符串10k
+	 */
 	it('testHiSysEventApi07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi07 start')
 		try {
@@ -317,14 +296,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi08
-  * @tc.number DFX_DFT_HiSysEvent_JS_0800
-  * @tc.desc   验证调用HiSysEvent write接口，支持自定义传参最多参数个数128个
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0800
+	 * @tc.name testHiSysEventApi08
+	 * @tc.desc 验证调用HiSysEvent write接口，支持自定义传参最多参数个数128个
+	 */
 	it('testHiSysEventApi08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi08 start')
 		let largeParams = {}
@@ -357,14 +333,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi09
-  * @tc.number DFX_DFT_HiSysEvent_JS_0900
-  * @tc.desc   验证调用HiSysEvent write接口，支持自定义传参最长数组个数100个
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_0900
+	 * @tc.name testHiSysEventApi09
+	 * @tc.desc 验证调用HiSysEvent write接口，支持自定义传参最长数组个数100个
+	 */
 	it('testHiSysEventApi09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi09 start')
 		let msgArray = []
@@ -399,14 +372,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi10
-  * @tc.number DFX_DFT_HiSysEvent_JS_1000
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=PREFIX
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1000
+	 * @tc.name testHiSysEventApi10
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=PREFIX
+	 */
 	it('testHiSysEventApi10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi10 start')
 		let watcher110
@@ -459,14 +429,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi11
-  * @tc.number DFX_DFT_HiSysEvent_JS_1100
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=REGULAR
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1100
+	 * @tc.name testHiSysEventApi11
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=REGULAR
+	 */
 	it('testHiSysEventApi11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi11 start')
 		let watcher111
@@ -519,14 +486,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi12
-  * @tc.number DFX_DFT_HiSysEvent_JS_1200
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=WHOLE_WORD
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1200
+	 * @tc.name testHiSysEventApi12
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventName+tag, rule=WHOLE_WORD
+	 */
 	it('testHiSysEventApi12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi12 start')
 		let watcher112
@@ -579,14 +543,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi13
-  * @tc.number DFX_DFT_HiSysEvent_JS_1300
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventNameg, rule=PREFIX
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1300
+	 * @tc.name testHiSysEventApi13
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventNameg, rule=PREFIX
+	 */
 	it('testHiSysEventApi13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi13 start')
 		let watcher113
@@ -638,14 +599,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi14
-  * @tc.number DFX_DFT_HiSysEvent_JS_1400
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventName, rule=REGULAR
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1400
+	 * @tc.name testHiSysEventApi14
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventName, rule=REGULAR
+	 */
 	it('testHiSysEventApi14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi14 start')
 		let watcher114
@@ -697,14 +655,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi15
-  * @tc.number DFX_DFT_HiSysEvent_JS_1500
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则domain+eventName, rule=WHOLE_WORD
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1500
+	 * @tc.name testHiSysEventApi15
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则domain+eventName, rule=WHOLE_WORD
+	 */
 	it('testHiSysEventApi15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi15 start')
 		let watcher115
@@ -756,14 +711,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi16
-  * @tc.number DFX_DFT_HiSysEvent_JS_1600
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则tag, rule=PREFIX
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1600
+	 * @tc.name testHiSysEventApi16
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则tag, rule=PREFIX
+	 */
 	it('testHiSysEventApi16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi16 start')
 		let watcher116
@@ -816,14 +768,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi17
-  * @tc.number DFX_DFT_HiSysEvent_JS_1700
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则tag, rule=REGULAR
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1700
+	 * @tc.name testHiSysEventApi17
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则tag, rule=REGULAR
+	 */
 	it('testHiSysEventApi17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi17 start')
 		let watcher117
@@ -876,14 +825,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi18
-  * @tc.number DFX_DFT_HiSysEvent_JS_1800
-  * @tc.desc   验证可成功调用addwatcher接口，订阅规则tag, rule=WHOLE_WORD
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1800
+	 * @tc.name testHiSysEventApi18
+	 * @tc.desc 验证可成功调用addwatcher接口，订阅规则tag, rule=WHOLE_WORD
+	 */
 	it('testHiSysEventApi18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi18 start')
 		let watcher118
@@ -936,14 +882,11 @@ describe('hiSysEventJsTest', function () {
 		}, 1000)
 	})
 
- /**
-  * @tc.name   testHiSysEventApi19
-  * @tc.number DFX_DFT_HiSysEvent_JS_1900
-  * @tc.desc   验证可添加订阅者后调用removewatcher接口删除订阅者
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL0
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_1900
+	 * @tc.name testHiSysEventApi19
+	 * @tc.desc 验证可添加订阅者后调用removewatcher接口删除订阅者
+	 */
 	it('testHiSysEventApi19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi19 start')
 		let watcher119 = {
@@ -972,14 +915,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi20
-  * @tc.number DFX_DFT_HiSysEvent_JS_2000
-  * @tc.desc   验证调用addwatcher接口，可添加20个规则
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL3
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_2000
+	 * @tc.name testHiSysEventApi20
+	 * @tc.desc 验证调用addwatcher接口，可添加20个规则
+	 */
 	it('testHiSysEventApi20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi20 start')
 		let msgArray = []
@@ -1010,14 +950,11 @@ describe('hiSysEventJsTest', function () {
 		done()
 	})
 
- /**
-  * @tc.name   testHiSysEventApi21
-  * @tc.number DFX_DFT_HiSysEvent_JS_2100
-  * @tc.desc   验证调用addwatcher接口，可添加20个订阅者
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL3
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_2100
+	 * @tc.name testHiSysEventApi21
+	 * @tc.desc 验证调用addwatcher接口，可添加20个订阅者
+	 */
 	it('testHiSysEventApi21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi21 start')
 		let maxNumber = 20
@@ -1056,14 +993,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi22
-  * @tc.number DFX_DFT_HiSysEvent_JS_2200
-  * @tc.desc   验证调用query接口，可添加100条查询规则
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL3
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_2200
+	 * @tc.name testHiSysEventApi22
+	 * @tc.desc 验证调用query接口，可添加100条查询规则
+	 */
 	it('testHiSysEventApi22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi22 start')
 		try {
@@ -1098,14 +1032,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi24
-  * @tc.number DFX_DFT_HiSysEvent_JS_2400
-  * @tc.desc   HiSysEvent查询接口测试-查询成功回调函数被调用（查询一个事件）
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL1
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_2400
+	 * @tc.name testHiSysEventApi24
+	 * @tc.desc HiSysEvent查询接口测试-查询成功回调函数被调用（查询一个事件）
+	 */
 	it('testHiSysEventApi24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventApi24 start')
 		try {
@@ -1132,39 +1063,43 @@ describe('hiSysEventJsTest', function () {
 				}
 			});
 			setTimeout(() => {
-				hiSysEvent.query({
-					beginTime: -1,
-					endTime: -1,
-					maxEvents: 1,
-				}, [{
-					domain: "WORKSCHEDULER",
-					names: ["WORK_ADD"],
-				}], {
-					onQuery: function (infos) {
-						console.info(`testHiSysEventApi24: onQuery...`)
-						expect(infos.length >= 0).assertTrue()
-						console.info(`testHiSysEventApi24: infos.size is ${infos.length}`)
-						if (infos instanceof Array) {
-							for (let i = 0; i < infos.length; i++) {
-								let item = infos[i];
-								console.info(`testHiSysEventApi24: domain is ${item.domain}, name is ${item.name},
-																eventType is ${item.eventType}`)
-								if (item.params instanceof Object) {
-									for (const key in item.params) {
-										console.info(`testHiSysEventApi24: ${key}: ${item.params[key]}`)
+				try {
+					hiSysEvent.query({
+						beginTime: -1,
+						endTime: -1,
+						maxEvents: 1,
+					}, [{
+						domain: "WORKSCHEDULER",
+						names: ["WORK_ADD"],
+					}], {
+						onQuery: function (infos) {
+							console.info(`testHiSysEventApi24: onQuery...`)
+							expect(infos.length >= 0).assertTrue()
+							console.info(`testHiSysEventApi24: infos.size is ${infos.length}`)
+							if (infos instanceof Array) {
+								for (let i = 0; i < infos.length; i++) {
+									let item = infos[i];
+									console.info(`testHiSysEventApi24: domain is ${item.domain}, name is ${item.name},
+																	eventType is ${item.eventType}`)
+									if (item.params instanceof Object) {
+										for (const key in item.params) {
+											console.info(`testHiSysEventApi24: ${key}: ${item.params[key]}`)
+										}
 									}
 								}
 							}
+						},
+						onComplete: function(reason, total) {
+							console.info(`testHiSysEventApi24: onComplete...`)
+							console.info(`testHiSysEventApi24: reason is ${reason}, total is ${total}`)
+							expect(reason == 0).assertTrue()
+							done()
+							console.info(`testHiSysEventApi24 end`)
 						}
-					},
-					onComplete: function(reason, total) {
-						console.info(`testHiSysEventApi24: onComplete...`)
-						console.info(`testHiSysEventApi24: reason is ${reason}, total is ${total}`)
-						expect(reason == 0).assertTrue()
-						done()
-						console.info(`testHiSysEventApi24 end`)
-					}
-				})
+					})
+				} catch (error) {
+					console.error(`error code: ${error.code}, error msg: ${error.message}`);
+				}
 			}, 2000);
 		} catch (error) {
 			expect(false).assertTrue()
@@ -1172,14 +1107,11 @@ describe('hiSysEventJsTest', function () {
 		}
 	})
 
- /**
-  * @tc.name   testHiSysEventApi25
-  * @tc.number DFX_DFT_HiSysEvent_JS_2500
-  * @tc.desc   HiSysEvent查询接口测试-查询成功回调函数被调用（查询多个事件）
-  * @tc.type   FUNCTION
-  * @tc.size   MEDIUMTEST
-  * @tc.level  LEVEL1
-  */
+	/**
+	 * @tc.number DFX_DFT_HiSysEvent_JS_2500
+	 * @tc.name testHiSysEventApi25
+	 * @tc.desc HiSysEvent查询接口测试-查询成功回调函数被调用（查询多个事件）
+	 */
 	it('testHiSysEventApi25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventApi25 start')
 		try {
@@ -1205,39 +1137,43 @@ describe('hiSysEventJsTest', function () {
 				})
 			},1000)
 			setTimeout(() => {
-				hiSysEvent.query({
-					beginTime: -1,
-					endTime: -1,
-					maxEvents: 5,
-				}, [{
-					domain: "HIVIEWDFX",
-					names: ["SYS_USAGE","PLUGIN_STATS"],
-				}], {
-					onQuery: function (infos) {
-						console.info(`testHiSysEventApi25: onQuery...`)
-						expect(infos.length >= 0).assertTrue()
-						console.info(`testHiSysEventApi25: infos.size is ${infos.length}`)
-						if (infos instanceof Array) {
-							for (let i = 0; i < infos.length; i++) {
-								let item = infos[i];
-								console.info(`testHiSysEventApi25: domain is ${item.domain}, name is ${item.name},
-																   eventType is ${item.eventType}`)
-								if (item.params instanceof Object) {
-									for (const key in item.params) {
-										console.info(`testHiSysEventApi25: ${key}: ${item.params[key]}`)
+				try {
+					hiSysEvent.query({
+						beginTime: -1,
+						endTime: -1,
+						maxEvents: 5,
+					}, [{
+						domain: "HIVIEWDFX",
+						names: ["SYS_USAGE","PLUGIN_STATS"],
+					}], {
+						onQuery: function (infos) {
+							console.info(`testHiSysEventApi25: onQuery...`)
+							expect(infos.length >= 0).assertTrue()
+							console.info(`testHiSysEventApi25: infos.size is ${infos.length}`)
+							if (infos instanceof Array) {
+								for (let i = 0; i < infos.length; i++) {
+									let item = infos[i];
+									console.info(`testHiSysEventApi25: domain is ${item.domain}, name is ${item.name},
+																	eventType is ${item.eventType}`)
+									if (item.params instanceof Object) {
+										for (const key in item.params) {
+											console.info(`testHiSysEventApi25: ${key}: ${item.params[key]}`)
+										}
 									}
 								}
 							}
+						},
+						onComplete: function(reason, total) {
+							console.info(`testHiSysEventApi25: onComplete...`)
+							console.info(`testHiSysEventApi25: reason is ${reason}, total is ${total}`)
+							expect(reason == 0).assertTrue()
+							done()
+							console.info(`testHiSysEventApi25 end`)
 						}
-					},
-					onComplete: function(reason, total) {
-						console.info(`testHiSysEventApi25: onComplete...`)
-						console.info(`testHiSysEventApi25: reason is ${reason}, total is ${total}`)
-						expect(reason == 0).assertTrue()
-						done()
-						console.info(`testHiSysEventApi25 end`)
-					}
-				})
+					})
+				} catch (error) {
+					console.error(`error code: ${error.code}, error msg: ${error.message}`);
+				}
 			}, 2000);
 		} catch (error) {
 			expect(false).assertTrue()
