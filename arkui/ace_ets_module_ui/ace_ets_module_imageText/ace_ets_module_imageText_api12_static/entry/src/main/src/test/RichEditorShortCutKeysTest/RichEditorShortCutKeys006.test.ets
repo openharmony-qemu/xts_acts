@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import router from '@ohos.router';
 import {
   Component,
@@ -24,10 +24,11 @@ import {
   DisplayRotation,
   ResizeDirection,
   WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import {MessageManager,Callback,Message} from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback, Message } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -40,11 +41,13 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import text from "@ohos.graphics.text";
-import {KeyCode} from '@ohos.multimodalInput.keyCode';
-import {UtilsTest,startAbility} from '../Util.test';
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
+import { UtilsTest, startAbility } from '../Util.test';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
+
 export default function RichEditorShortCutKeys006() {
   describe('RichEditorShortCutKeys006', () => {
     beforeAll(() => {
@@ -59,7 +62,7 @@ export default function RichEditorShortCutKeys006() {
       }
       try {
         defaultRouter.clear();
-        let pages:router.RouterState = defaultRouter.getState();
+        let pages: router.RouterState = defaultRouter.getState();
         console.info("get RichEditorShortCutKeys006 state pages: " + JSON.stringify(pages));
         if (!("RichEditorShortCutKeys006" == pages.name)) {
           console.info("get RichEditorShortCutKeys006 state pages.name: " + JSON.stringify(pages.name));
@@ -73,50 +76,52 @@ export default function RichEditorShortCutKeys006() {
       }
     });
 
-    
+
     /**
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012
      * @tc.level   Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012 START');
-      let driver = Driver.create();
-      let get_content = await (driver.findComponent(ON.id('get_content')) as Promise<Component>);
-      await get_content.click();
-      await CommonFunc.sleep(500);
-      let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
-      let styleText = await style.getText();
-      await CommonFunc.sleep(500);
-      expect(styleText).assertContain('"fontWeight":11');
-      let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys006')) as Promise<Component>);
-      let pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
-      await CommonFunc.sleep(500);
-      let selectAll = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
-      await selectAll.click();
-      await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
-      await CommonFunc.sleep(2000);
-      await get_content.click();
-      await CommonFunc.sleep(500);
-      styleText = await style.getText();
-      await CommonFunc.sleep(500);
-      expect(styleText).assertContain('"fontWeight":9');
-      let select = await (driver.findComponent(ON.id('select')) as Promise<Component>);
-      await select.click();
-      await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
-      await CommonFunc.sleep(2000);
-      await get_content.click();
-      await CommonFunc.sleep(500);
-      styleText = await style.getText();
-      await CommonFunc.sleep(500);
-      console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012 styleText',styleText);
-      expect(styleText).assertContain('"value":"b","previewText":"","textStyle":{"fontColor"');
-      done();
-    });
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012 START');
+        let driver = Driver.create();
+        let get_content = await (driver.findComponent(ON.id('get_content')) as Promise<Component>);
+        await get_content.click();
+        await CommonFunc.sleep(500);
+        let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
+        let styleText = await style.getText();
+        await CommonFunc.sleep(500);
+        expect(styleText).assertContain('"fontWeight":11');
+        let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys006')) as Promise<Component>);
+        let pointCenter = await rich.getBoundsCenter();
+        await driver.longClick(pointCenter.x, pointCenter.y);
+        await CommonFunc.sleep(500);
+        let selectAll = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
+        await selectAll.click();
+        await CommonFunc.sleep(500);
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
+        await CommonFunc.sleep(2000);
+        await get_content.click();
+        await CommonFunc.sleep(500);
+        styleText = await style.getText();
+        await CommonFunc.sleep(500);
+        expect(styleText).assertContain('"fontWeight":9');
+        let select = await (driver.findComponent(ON.id('select')) as Promise<Component>);
+        await select.click();
+        await CommonFunc.sleep(500);
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
+        await CommonFunc.sleep(2000);
+        await get_content.click();
+        await CommonFunc.sleep(500);
+        styleText = await style.getText();
+        await CommonFunc.sleep(500);
+        console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0012 styleText', styleText);
+        expect(styleText).assertContain('"value":"b","textStyle":{"fontSize":35,"fontColor":"#FF000000","fontStyl' +
+          'e":0,"decoration":{"type":0,"color":"#FF000000","style":0},"fontFamily":"HarmonyOS Sans","fontWeight":10,"lineHeight":0,"halfLeading":false,"strokeColor":"#FF000000","strokeWidth":0,"letterSpacing":0},"previewText":""');
+        done();
+      });
 
   })
 }
