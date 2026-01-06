@@ -140,3 +140,4 @@ export const testNativeWindowLockBufferUpperLimit: () => number;
 export const testNativeWindowLockBufferMultipleCalls: () => number;
 export const testNativeWindowUnLockAndFlushBufferMultipleCalls: () => number;
 export const testNativeWindowLockAndUnLockAndRequest: () => number;
+export const OHNativeErrorCodeCover: () => number;
