@@ -569,7 +569,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringAbnormal, Functi
     // code with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, static_cast<OH_Drawing_TextEncoding>(-1));
-    EXPECT_NE(textBlob, nullptr);
+    EXPECT_EQ(textBlob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
