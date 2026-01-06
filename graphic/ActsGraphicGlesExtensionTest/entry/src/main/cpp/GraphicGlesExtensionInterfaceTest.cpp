@@ -36,18 +36,20 @@ static napi_value ohGlesExtensionTest(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    assert(status == napi_ok);
+    if (status != napi_ok) {
+        return createResultValue(env, false);
+    }
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
         return createResultValue(env, false);
     }
-
     int32_t caseNum = -1;
     status = napi_get_value_int32(env, args[0], &caseNum);
-    assert(status == napi_ok);
-
+    if (status != napi_ok) {
+        return createResultValue(env, false);
+    }
     int result;
     switch (caseNum) {
         case CASE_NUM_0:
