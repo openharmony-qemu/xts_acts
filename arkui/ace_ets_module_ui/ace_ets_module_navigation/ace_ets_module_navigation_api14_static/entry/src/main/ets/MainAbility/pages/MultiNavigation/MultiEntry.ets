@@ -42,7 +42,7 @@ struct MultiEntry {
   }
 
   onHomeShowOnTopCallback() {
-    AppStorage.setOrCreate('onNavigationModeChangeCallbackValue', 1);
+    AppStorage.setOrCreate<Double>('onNavigationModeChangeCallbackValue', 1);
   }
 
   build() {

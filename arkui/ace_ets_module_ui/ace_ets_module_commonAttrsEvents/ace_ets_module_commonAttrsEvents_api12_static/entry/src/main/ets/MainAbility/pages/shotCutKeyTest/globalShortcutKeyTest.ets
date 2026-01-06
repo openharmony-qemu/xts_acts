@@ -87,23 +87,23 @@ struct FunctionKeyTest {
     FunctionKey.TAB, FunctionKey.DPAD_UP,
     FunctionKey.DPAD_DOWN, FunctionKey.DPAD_LEFT,
     FunctionKey.DPAD_RIGHT)
-  messageManager: MessageManager<string | FunctionKey> = new MessageManager<string | FunctionKey>();
+  messageManager: MessageManager<string | FunctionKey | Array<ModifierKey>> = new MessageManager<string | FunctionKey | Array<ModifierKey>>();
   @State changeChar2: string | FunctionKey = "";
   @State keys: Array<ModifierKey> = new Array<ModifierKey>();
   @State changeChar3: string | FunctionKey = "";
-  @State changeChar4: string | FunctionKey = "1";
+  @State changeChar4: string | FunctionKey | Array<ModifierKey> = "1";
 
   onPageShow(): void {
     console.info("FunctionKeyTest onPageShow");
-    AppStorage.setOrCreate<MessageManager<string | FunctionKey>>('messageManager', this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string | FunctionKey| Array<ModifierKey>>>('messageManager', this.messageManager);
 
-    let callback: Callback<string | FunctionKey> = (message: Message<string | FunctionKey>) => {
+    let callback: Callback<string | FunctionKey | Array<ModifierKey>> = (message: Message<string | FunctionKey | Array<ModifierKey>>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'changeChar2') {
-        this.changeChar2 = message.value
+        this.changeChar2 = (message as Message<string | FunctionKey >).value
       }
       if (message.name == 'changeChar3') {
-        this.changeChar3 = message.value
+        this.changeChar3 = (message as Message<string | FunctionKey >).value
       }
       if (message.name == 'changeChar4') {
         this.changeChar4 = message.value
@@ -111,7 +111,6 @@ struct FunctionKeyTest {
       if (message.name == 'keys') {
         this.keys = (message as Message<Array<ModifierKey>>).value
       }
-
     }
     this.messageManager.registerCallback(callback)
   }
@@ -164,7 +163,6 @@ struct FunctionKeyTest {
           this.message6 = "I clicked Button 6";
           console.info("I clicked 6");
         }).keyboardShortcut(FunctionKey.DPAD_LEFT, [ModifierKey.CTRL, ModifierKey.SHIFT]).enabled(false)
-
       }
       .width('100%').height('100%')
   }
