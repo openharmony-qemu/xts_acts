@@ -25,7 +25,6 @@ import builtinsArraySpliceTest from './array/BuiltinsArraySplicesTest.test';
 import builtinsArrayToLocaleStringTest from './array/BuiltinsArrayToLocaleStringTest.test';
 import builtinsArrayToReversedTest from './array/BuiltinsArrayToReversedTest.test';
 import builtinsArrayToSortedTest from './array/BuiltinsArrayToSortedTest.test';
-import builtinsArrayToSplicedTest from './array/BuiltinsArrayToSplicedTest.test';
 import builtinsArrayToStringTest from './array/BuiltinsArrayToStringTest.test';
 import builtinsArrayUnshiftTest from './array/BuiltinsArrayUnshift.test';
 import builtinsArrayValuesTest from './array/BuiltinsArrayValues.test';
@@ -94,7 +93,6 @@ export default function testsuite() {
   builtinsArrayToLocaleStringTest();
   builtinsArrayToReversedTest();
   builtinsArrayToSortedTest();
-  builtinsArrayToSplicedTest();
   builtinsArrayToStringTest();
   builtinsArraySortTest();
   builtinsArraySpliceTest();

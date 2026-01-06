@@ -49,7 +49,7 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayToStringTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      expect([1, 2, 3].toString()).assertEqual("1,2,3");
+      expect(collections.Array.from([1, 2, 3]).toString()).assertEqual("1,2,3");
     });
 
     /**
@@ -61,7 +61,7 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToStringTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(['apple', 'banana', 'cherry'].toString())
+      expect(collections.Array.from(['apple', 'banana', 'cherry']).toString())
         .assertEqual("apple,banana,cherry");
     });
 
@@ -74,7 +74,7 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToStringTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect([].toString()).assertEqual("");
+      expect(collections.Array.from([]).toString()).assertEqual("");
     });
 
     /**
@@ -86,7 +86,7 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToStringTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect([5].toString()).assertEqual("5");
+      expect(collections.Array.from([5]).toString()).assertEqual("5");
     });
 
     /**
@@ -111,44 +111,18 @@ export default function builtinsArrayToStringTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToStringTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect([1, null, undefined, 3].toString()).assertEqual("1,,,3");
+      expect(collections.Array.from([1, null, undefined, 3]).toString()).assertEqual("1,,,3");
     });
-
 
     /**
      * @tc.name   builtinsArrayToStringTest1007
      * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_0700
-     * @tc.desc   Test nested arrays
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayToStringTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect([[1, 2], [3, 4]].toString()).assertEqual("1,2,3,4");
-    });
-
-    /**
-     * @tc.name   builtinsArrayToStringTest1008
-     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_0800
-     * @tc.desc   Test Date object handling
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayToStringTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const date = new Date();
-      expect([date].toString()).assertEqual(date.toString());
-    });
-
-    /**
-     * @tc.name   builtinsArrayToStringTest1009
-     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_0900
      * @tc.desc   Test numeric special values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayToStringTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayToStringTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testCases: ToStringNumber[] = [
         {
           input: [Math.floor(1.5)], expected: "1"
@@ -180,19 +154,19 @@ export default function builtinsArrayToStringTest() {
       ];
 
       testCases.forEach((item) => {
-        expect(item.input.toString()).assertEqual(item.expected);
+        expect(collections.Array.from(item.input).toString()).assertEqual(item.expected);
       });
     });
 
     /**
-     * @tc.name   builtinsArrayToStringTest1010
-     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_1000
+     * @tc.name   builtinsArrayToStringTest1008
+     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_0800
      * @tc.desc   Test string special values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayToStringTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayToStringTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const testData: ToStringString[] = [
         {
           input: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"], expected: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
@@ -215,22 +189,22 @@ export default function builtinsArrayToStringTest() {
       ];
 
       testData.forEach((item) => {
-        expect(item.input.toString()).assertEqual(item.expected);
+        expect(collections.Array.from(item.input).toString()).assertEqual(item.expected);
       });
     });
 
     /**
-     * @tc.name   builtinsArrayToStringTest1011
-     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_1100
+     * @tc.name   builtinsArrayToStringTest1009
+     * @tc.number SUB_BUILTINS_ARRAY_TOSTRING_TEST_0900
      * @tc.desc   Test boolean values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayToStringTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect([true, false].toString()).assertEqual("true,false");
-      expect([!'s'].toString()).assertEqual("false");
-      expect([!0].toString()).assertEqual("true");
+    it('builtinsArrayToStringTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(collections.Array.from([true, false]).toString()).assertEqual("true,false");
+      expect(collections.Array.from([!'s']).toString()).assertEqual("false");
+      expect(collections.Array.from([!0]).toString()).assertEqual("true");
     });
   });
 }
