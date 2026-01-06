@@ -28,7 +28,7 @@ export async function getFd(pathName: string) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   pathName = testContext.filesDir + "/" + pathName;
   console.log(TAG, 'pathName =' + pathName);
-  let file = await fs.openSync(pathName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let file = await fs.openSync(pathName);
   let fdNumber = file.fd;
   console.info(TAG, 'case getFd number is: ' + fdNumber);
   return fdNumber;
