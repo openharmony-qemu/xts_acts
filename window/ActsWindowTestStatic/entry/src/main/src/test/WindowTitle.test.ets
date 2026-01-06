@@ -468,15 +468,29 @@ export default function WindowTitleTest() {
                 hilog.info(domain, tag,`${msgStr} setDecorButtonStyle success.`);
             } catch (error) {
                 error = error as BusinessError;
-                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
                 } else {
                     expect(error.code).assertEqual(401);
-                    let result = windowClass.getDecorButtonStyle();
-                    hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
-                    expect(result.buttonIconSize).assertEqual(20);
-                    done();
+                     try {
+                        let result = windowClass.getDecorButtonStyle();
+                        hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
+                        expect(result.buttonIconSize).assertEqual(20);
+                        done();
+                    } catch (exception) {
+                        exception = exception as BusinessError;
+                        console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
+                        if (exception.code == 801) {
+                            done();
+                        } else {
+                            expect(false).assertFail();
+                            done()
+                        }
+                    }
+
+
+                    
                 }
             }
         })
@@ -505,10 +519,21 @@ export default function WindowTitleTest() {
                     done();
                 } else {
                     expect(error.code).assertEqual(401);
-                    let result = windowClass.getDecorButtonStyle();
-                    hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
-                    expect(result.buttonBackgroundCornerRadius).assertEqual(4);
-                    done();
+                    try {
+                        let result = windowClass.getDecorButtonStyle();
+                        hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
+                        expect(result.buttonBackgroundCornerRadius).assertEqual(4);
+                        done();
+                    } catch (exception) {
+                        exception = exception as BusinessError;
+                        console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
+                        if (exception.code == 801) {
+                            done();
+                        } else {
+                            expect(false).assertFail();
+                            done()
+                        }
+                    }
                 }
             }
         })
