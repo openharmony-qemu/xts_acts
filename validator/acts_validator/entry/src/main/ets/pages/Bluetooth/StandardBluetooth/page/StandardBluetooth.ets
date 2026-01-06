@@ -362,16 +362,16 @@ struct StandardBluetooth {
                       value: '确定',
                       action: () => {
                         let deleteStatus : Boolean = false;
-                        // try {
-                        //   connection.cancelPairedDevice(item, (err: BusinessError) => {
-                        //     Logger.info(TAG, 'connection.cancelPairedDevice err: ' + JSON.stringify(err));
-                        //     if (err === undefined) {
-                        //       deleteStatus = true
-                        //     }
-                        //   });
-                        // } catch (err) {
-                        //   Logger.info(TAG, 'errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
-                        // }
+                        try {
+                          connection.cancelPairedDevice(item, (err: BusinessError) => {
+                            Logger.info(TAG, 'connection.cancelPairedDevice err: ' + JSON.stringify(err));
+                            if (err === undefined) {
+                              deleteStatus = true
+                            }
+                          });
+                        } catch (err) {
+                          Logger.info(TAG, 'errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+                        }
                         Logger.info(TAG, `deleteStatus = ${deleteStatus}`)
                         if (deleteStatus === true) {
                           this.deviceList = connection.getPairedDevices()
