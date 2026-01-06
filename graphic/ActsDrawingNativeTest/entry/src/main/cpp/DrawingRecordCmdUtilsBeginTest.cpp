@@ -47,7 +47,7 @@ void DrawingRecordCmdUtilsBeginRecordingTestTearDown()
 
 /**
  * @tc.name   testRecordCmdUtilsBeginRecordingAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_04100
  * @tc.desc   test for testRecordCmdUtilsBeginRecordingAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -81,7 +81,7 @@ int TestRecordCmdUtilsBeginRecordingAbnormal()
 
 /**
  * @tc.name   testRecordCmdUtilsBeginRecordingCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_04200
  * @tc.desc   test for testRecordCmdUtilsBeginRecordingCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

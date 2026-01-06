@@ -577,7 +577,7 @@ int TestBitmapBuildMultipleCalls()
     OH_Drawing_BitmapDestroy(bitmap);
 
     // step 4
-    OH_Drawing_Image_Info imageInfo;
+    OH_Drawing_Image_Info imageInfo = {};  // 初始化为零
     OH_Drawing_Bitmap* bitmap2 = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap2, nullptr);
     OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };

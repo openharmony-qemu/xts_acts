@@ -17,6 +17,8 @@ import expressionTest4 from './expression/ExpressionTest4.test';
 import expressionTest5 from './expression/ExpressionTest5.test';
 import expressionTest6 from './expression/ExpressionTest6.test';
 
+import DoubleEnumTest from './enumerations/DoubleEnum.test';
+
 export default function testsuite() {
   builtinsBlockTest();
   builtinsBreakTest();
@@ -36,4 +38,6 @@ export default function testsuite() {
   expressionTest4();
   expressionTest5();
   expressionTest6();
+
+  DoubleEnumTest();
 }
