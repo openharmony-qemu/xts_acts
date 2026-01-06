@@ -26,7 +26,7 @@
 
 const int GLOBAL_RESMGR = 0xFF00;
 const char *TAG = "[SensorCapiSample]";
-const int LENGTH = 128;
+const uint32_t LENGTH = 128;
 const int FOCUS = 129;
 
 static napi_value GetPointerLocation1(napi_env env, napi_callback_info info)
@@ -280,11 +280,16 @@ static napi_value CustomCursor1(napi_env env, napi_callback_info info)
 static napi_value CustomCursor2(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    OH_PixelmapNative *pixelmap1;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
     Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
-    int result1 = customCursor != nullptr ? 1 : 0;
+    int32_t result1 = customCursor != nullptr ? 1 : 0;
     OH_Input_CustomCursor_Destroy(&customCursor);
-    int result2 = customCursor == nullptr ? 1 : 0;
+    int32_t result2 = customCursor == nullptr ? 1 : 0;
     napi_create_int32(env, (result1 == 1 && result2 == 1) ? 1 : 0, &result);
     return result;
 }
@@ -663,7 +668,8 @@ static napi_value CustomCursor15(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = 0;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;

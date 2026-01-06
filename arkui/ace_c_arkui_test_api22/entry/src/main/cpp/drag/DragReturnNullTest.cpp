@@ -167,4 +167,11 @@ static napi_value Nullptr_OH_ArkUI_UIInputEvent_GetCoastingAxisEvent(napi_env en
     ASSERT_EQ_INT(result, nullptr);
     NAPI_END;
 }
+
+static napi_value Nullptr_OH_ArkUI_NodeEvent_GetTouchTestInfo(napi_env env, napi_callback_info info) {
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto result = OH_ArkUI_NodeEvent_GetTouchTestInfo(nullptr);
+    ASSERT_EQ_INT(result, nullptr);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

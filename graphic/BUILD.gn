@@ -73,6 +73,7 @@ group("graphic") {
       "ActsDrawingNativeTest:ActsNewDrawingNativeTest",
       "ActsGraphicNapiFontTest:ActsGraphicNapiFontHapTest",
       "ActsGraphicGlesExtensionTest:ActsGraphicGlesExtensionHapTest",
+      "ActsGraphicVulkanNapiTest:ActsGraphicVulkanNapiNdkTest",
     ]
     if (!(product_name == "ohcore")) {
       deps += [

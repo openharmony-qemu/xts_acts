@@ -22,7 +22,7 @@ import { Hypium } from '../../../hypium/index';
 import Utils from '../../src/test/Utils.test';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

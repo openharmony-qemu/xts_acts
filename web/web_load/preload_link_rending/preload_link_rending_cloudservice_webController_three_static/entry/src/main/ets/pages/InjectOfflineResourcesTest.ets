@@ -32,7 +32,7 @@ import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 interface ResourceConfig {
