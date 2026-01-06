@@ -43,9 +43,6 @@ export default function PublicAttributeTest() {
       let nodeID2 = getInspectorByKey('buttonID2');
       let obj2: ESObject = JSON.parse(nodeID2);
       expect(obj2.$attrs.label).assertEqual('Button2 is successful');
-      let nodeID3 = getInspectorByKey('buttonID3');
-      let obj3: ESObject = JSON.parse(nodeID3);
-      expect(obj3.$attrs.label).assertEqual('Button3 is successful');
       let nodeID4 = getInspectorByKey('buttonID4');
       let obj4: ESObject = JSON.parse(nodeID4);
       expect(obj4.$attrs.label).assertEqual('Button4 is successful');

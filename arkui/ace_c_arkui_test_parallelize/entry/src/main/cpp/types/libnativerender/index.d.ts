@@ -18,3 +18,8 @@ export const testSwiper: (content: NodeContent, context: UIContext, withReset: b
 // publicAttirbute
 export const CreateNativeNodePublic: (content: NodeContent, uicontext: UIContext) => void;
 export const DisposeNativeNodePublic: (content: NodeContent) => void;
+// XComponent
+export const XComponentCreateNativeNode: (a: Content, b: UIContext) => void;
+export const XComponentDisposeNativeNode: (a: Content) => void;
+export const XComponentTextureCreateNativeNode: (a: Content, b: UIContext) => void;
+export const XComponentTextureDisposeNativeNode: (a: Content) => void;

@@ -17,6 +17,9 @@ add_library(nativerender SHARED
     swiper/SwiperTest.cpp
     publicAttribute/XtsTestCaseTest.cpp
     publicAttribute/PublicAttributeTest.cpp
+    xcomponent/XcomponentTextureTest.cpp
+    xcomponent/XcomponentTest.cpp
+    xcomponent/NodeXtsTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -16,7 +16,7 @@
 #include "manager/PluginManagerTest.h"
 #include "swiper/SwiperTest.h"
 #include "publicAttribute/XtsTestCaseTest.cpp"
-
+#include "xcomponent/XcomponentTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -36,6 +36,15 @@ static napi_value Init(napi_env env, napi_value exports)
         {"CreateNativeNodePublic", nullptr, CreateNativeNodePublic,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"DisposeNativeNodePublic", nullptr, DisposeNativeNodePublic,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // XComponent
+        {"XComponentDisposeNativeNode", nullptr, ArkUIXComponentCApiDemo::XComponentTest::DisposeNativeNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"XComponentCreateNativeNode", nullptr, ArkUIXComponentCApiDemo::XComponentTest::CreateNativeNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"XComponentTextureDisposeNativeNode", nullptr, ArkUIXComponentCApiDemo::XComponentTextureTest::DisposeNativeNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"XComponentTextureCreateNativeNode", nullptr, ArkUIXComponentCApiDemo::XComponentTextureTest::CreateNativeNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

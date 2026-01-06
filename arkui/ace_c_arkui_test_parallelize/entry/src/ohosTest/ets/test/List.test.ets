@@ -14,9 +14,12 @@
  */
 import SwiperWithResetTest from './swiper/SwiperWithResetTest.test';
 import PublicAttributeTest from './publicAttribute/PublicAttribute.test'
-
+import XComponentMultiThreadTest from './xcomponent/XComponentMultiThreadTest.test'
+import XComponentTextureMultiThreadTest from './xcomponent/XComponentTextureMultiThreadTest.test'
 
 export default function testsuite() {
   SwiperWithResetTest();
   PublicAttributeTest();
+  XComponentMultiThreadTest();
+  XComponentTextureMultiThreadTest();
 }

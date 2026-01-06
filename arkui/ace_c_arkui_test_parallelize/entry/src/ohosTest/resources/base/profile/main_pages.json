@@ -2,6 +2,8 @@
   "src": [
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/swiper/testSwiperWithReset",
-    "MainAbility/pages/publicAttribute/PublicAttributeTest"
+    "MainAbility/pages/publicAttribute/PublicAttributeTest",
+    "MainAbility/pages/xcomponent/xcomponent_multithread",
+    "MainAbility/pages/xcomponent/xcomponent_texture_multithread"
   ]
 }

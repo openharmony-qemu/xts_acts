@@ -13,38 +13,33 @@
  * limitations under the License.
  */
 
-import nativerender from 'libnativerender.so'
+import { NodeContent } from '@kit.ArkUI';
+import nativeNode from "libnativerender.so"
 
 @Entry
 @Component
 struct Index {
+  // 初始化NodeContent对象。
+  private rootSlot = new NodeContent();
+
   build() {
-    Column() {
-      Column({ space: 10 }) {
-        Text('TextWidthTest')
-          .fontSize('32fp')
-          .fontWeight(500)
-          .margin({ bottom: 24 })
+    Scroll() {
+      Flex({ direction: FlexDirection.Row, wrap: FlexWrap.Wrap }) {
+        Column({ space: 10 }){
+          // 将NodeContent和ContentSlot占位组件绑定。
+          ContentSlot(this.rootSlot)
+        }
+        .onAppear(() => {
+          nativeNode.XComponentCreateNativeNode(this.rootSlot, this.getUIContext())
+        })
+        .onDisAppear(() => {
+          nativeNode.XComponentDisposeNativeNode(this.rootSlot)
+        })
+        .width('100%')
 
-        XComponent({
-          id: 'xComponentId',
-          type: XComponentType.NODE,
-          libraryname: 'nativerender'
-        }).onDestroy(() => {
-          console.log('onDestroy');
-        }).onAppear(() => {
-
-        }).width('100%')
-          .height('100%')
-      }.margin({
-        top: 27,
-        left: 12,
-        right: 12
-      })
-      .height('40%')
-      .width('90%')
+      }
+      .width('100%')
     }
     .width('100%')
-    .height('100%')
   }
 }
