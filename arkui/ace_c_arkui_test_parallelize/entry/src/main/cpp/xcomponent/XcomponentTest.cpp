@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+#include "../common/common.h"
 #include "xcomponent/NodeXtsTest.h"
 #include "xcomponent/XcomponentTest.h"
 #include <string>

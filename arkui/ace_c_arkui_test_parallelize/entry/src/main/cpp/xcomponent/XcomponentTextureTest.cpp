@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+#include "../common/common.h"
 #include "xcomponent/NodeXtsTest.h"
 #include "xcomponent/XcomponentTest.h"
 #include <string>
@@ -61,7 +62,7 @@ static void RunOnSubThread(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_Nod
         SetNodeId(nodeAPI, xc, "xcomponent_texture_failed_get_surfacesize_multithread");
     }
     const ArkUI_AttributeItem* rect = nodeAPI->getAttribute(xc, NODE_XCOMPONENT_SURFACE_RECT);
-    if (size->value[0].i32 != 0 || size->value[1].i32 != 0 || size->value[PARAM_2].i32 != 0 || size->value[3].i32 != 0) {
+    if (size->value[0].i32 != 0 || size->value[1].i32 != 0 || size->value[PARAM_2].i32 != 0 || size->value[PARAM_3].i32 != 0) {
         SetNodeId(nodeAPI, xc, "xcomponent_texture_failed_get_surfacerect_multithread");
     }
     const ArkUI_AttributeItem* type = nodeAPI->getAttribute(xc, NODE_XCOMPONENT_TYPE);
@@ -91,7 +92,7 @@ static void RunOnUIThread(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_Node
             SetNodeId(nodeAPI, xc, "xcomponent_texture_failed_get_surfacesize_multithread");
         }
         const ArkUI_AttributeItem* rect = nodeAPI->getAttribute(xc, NODE_XCOMPONENT_SURFACE_RECT);
-        if (size->value[0].i32 != 0 || size->value[1].i32 != 0 || size->value[PARAM_2].i32 != 0 || size->value[3].i32 != 0) {
+        if (size->value[0].i32 != 0 || size->value[1].i32 != 0 || size->value[PARAM_2].i32 != 0 || size->value[PARAM_3].i32 != 0) {
             SetNodeId(nodeAPI, xc, "xcomponent_texture_failed_get_surfacerect_multithread");
         }
         const ArkUI_AttributeItem* type = nodeAPI->getAttribute(xc, NODE_XCOMPONENT_TYPE);

@@ -13,20 +13,21 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
 #include <arkui/native_node.h>
 #include <arkui/native_type.h>
 #include <hilog/log.h>
 #include <vector>
-const float VALUE_0 = 0.0
-const float VALUE_0_5 = 0.5
-const float VALUE_2 = 2.0
-const float VALUE_3 = 3.0
-const float VALUE_3_5 = 3.5
-const float VALUE_4 = 4.0
-const float VALUE_10 = 10.0
-const float VALUE_20 = 20.0
-const float VALUE_100 = 100.0
+
+const float VALUE_0 = 0.0;
+const float VALUE_0_5 = 0.5;
+const float VALUE_2 = 2.0;
+const float VALUE_3 = 3.0;
+const float VALUE_3_5 = 3.5;
+const float VALUE_4 = 4.0;
+const float VALUE_10 = 10.0;
+const float VALUE_20 = 20.0;
+const float VALUE_100 = 100.0;
 
 namespace ArkUICApiAttributeDemo {
 namespace {

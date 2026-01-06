@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include "common/common.h"
+#include "../common/common.h"
 #include "manager/PluginManagerTest.h"
 #include <arkui/native_node.h>
 #include <arkui/native_type.h>
@@ -25,10 +25,10 @@
 #include "arkui/native_interface.h"
 #include <thread>
 #include <sstream>
-#include <cstring.h>
-#include "./SwiperTest.h"
+#include <string>
+#include "SwiperTest.h"
 
-#define PARAM_1000 1000
+#define PARAM_1000 1000;
 const char* MY_LOG_TAG = "nativeTestSwiper";
 constexpr int SWIPER_COUNT_PER_THREAD = 5;
 constexpr int ASYNC_TASK_COUNT = 20;
@@ -1957,7 +1957,7 @@ napi_value SwiperCreateNativeNodeTest::CreateNativeNode(napi_env env, napi_callb
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
     OH_ArkUI_GetContextFromNapiValue(env, args[1], &contextHandle);
     bool withReset = false;
-    napi_get_value_bool(env, args[2], &withReset);
+    napi_get_value_bool(env, args[PARAM_2], &withReset);
 
     ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);

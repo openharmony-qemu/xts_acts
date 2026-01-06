@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
 #include "napi/native_api.h"
 #include <arkui/native_node.h>
 #include <arkui/native_node_napi.h>
