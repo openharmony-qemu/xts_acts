@@ -299,7 +299,7 @@ export default function BuiltinsArrayIndexOfTest() {
 
     /**
      * @tc.name   BuiltinsArrayIndexOfTest1600
-     * @tc.number SUB_BUILTINS_ARRAY_INDEXOF_TEST_1700
+     * @tc.number SUB_BUILTINS_ARRAY_INDEXOF_TEST_1600
      * @tc.desc   test IndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function BuiltinsArrayIndexOfTest() {
 
     /**
      * @tc.name   BuiltinsArrayIndexOfTest1700
-     * @tc.number SUB_BUILTINS_ARRAY_INDEXOF_TEST_1900
+     * @tc.number SUB_BUILTINS_ARRAY_INDEXOF_TEST_1700
      * @tc.desc   test IndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

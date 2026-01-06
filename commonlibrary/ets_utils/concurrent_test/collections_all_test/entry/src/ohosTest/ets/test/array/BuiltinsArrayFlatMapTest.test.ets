@@ -68,7 +68,7 @@ export default function builtinsArrayFlatMapTest() {
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1003
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_0300
+     * @tc.number SUB_BUILTINS_ARRAY_FLATMAP_TEST_0300
      * @tc.desc   Verify empty slots are removed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function builtinsArrayFlatMapTest() {
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1004
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1004
+     * @tc.number SUB_BUILTINS_ARRAY_FLATMAP_TEST_0400
      * @tc.desc   Verify empty array returns empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function builtinsArrayFlatMapTest() {
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1005
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1005
+     * @tc.number SUB_BUILTINS_ARRAY_FLATMAP_TEST_0500
      * @tc.desc   Verify identity mapping behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function builtinsArrayFlatMapTest() {
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1006
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1006
+     * @tc.number SUB_BUILTINS_ARRAY_FLATMAP_TEST_0600
      * @tc.desc   Verify thisArg parameter binding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function builtinsArrayFlatMapTest() {
 
     /**
      * @tc.name   builtinsArrayFlatMapTest1007
-     * @tc.number SUB_BUILTINS_ARRAY_FLAT_TEST_1007
+     * @tc.number SUB_BUILTINS_ARRAY_FLATMAP_TEST_0700
      * @tc.desc   Verify undefined return handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
