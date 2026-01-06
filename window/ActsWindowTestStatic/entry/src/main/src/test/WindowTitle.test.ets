@@ -514,7 +514,7 @@ export default function WindowTitleTest() {
                 hilog.error(domain, tag,`${msgStr} setDecorButtonStyle success.`);
             } catch (error) {
                 error = error as BusinessError;
-                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
                 } else {
