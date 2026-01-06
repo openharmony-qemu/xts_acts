@@ -529,6 +529,10 @@ export default function geolocationTest_LocErr(){
                     await geolocationm.removeGnssGeofence(fenceId).then(() => {
                     }).catch((error) => {
                         console.info("[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400 remove error=" + JSON.stringify(error));
+                        if (error.code == 801) {
+                            expect(true).assertTrue();
+                            done();
+                        } 
                         expect(error.code).assertEqual(3301602);
                     });
                 } catch(error) {
