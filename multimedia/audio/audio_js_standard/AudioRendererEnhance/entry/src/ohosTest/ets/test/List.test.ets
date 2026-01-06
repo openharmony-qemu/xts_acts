@@ -14,6 +14,7 @@
  */
 import AudioRoutingManagerTest from './AudioRoutingManager.test';
 import getCurrentOutputDevices from './GetCurrentOutputDevices.test';
+import getLatency from './GetLatency.test';
 import getMax_MinStreamVolume from './GetMaxAndMinStreamVolume.test';
 import getUnderflowCount from './GetUnderflowCount.test';
 import on_off_outputDeviceChange from './OnOffOutputDeviceChange.test';
@@ -25,6 +26,7 @@ export default function testsuite() {
   getMax_MinStreamVolume();
   getUnderflowCount();
   getCurrentOutputDevices();
+  getLatency();
   on_off_outputDeviceChange();
   setChannelBlendMode();
   setVolumeWithRamp();
