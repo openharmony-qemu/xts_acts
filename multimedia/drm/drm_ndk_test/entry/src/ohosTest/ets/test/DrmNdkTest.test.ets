@@ -2671,6 +2671,20 @@ export default function abilityTest() {
       console.log(`Drm_ErrorCode.DRM_ERR_MAX_SESSION_NUM_REACHED: ${Drm_ErrorCode.DRM_ERR_MAX_SESSION_NUM_REACHED}`);
       expect(Drm_ErrorCode.DRM_ERR_EXTEND_START == 24700600).assertTrue();
       console.log(`Drm_ErrorCode.DRM_ERR_EXTEND_START: ${Drm_ErrorCode.DRM_ERR_EXTEND_START}`);
-    })
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_DRM_C_API_189
+     * @tc.number SUB_MULTIMEDIA_DRM_C_API_189
+     * @tc.desc   system_set Drm_ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_DRM_C_API_189', Level.LEVEL0, () => {
+      let c = testNapi.Test_MediaKeySystem_Drmerrcode();
+      expect(c).assertEqual(Drm_ErrorCode.DRM_ERR_OK);
+    });
+    
   })
 }
