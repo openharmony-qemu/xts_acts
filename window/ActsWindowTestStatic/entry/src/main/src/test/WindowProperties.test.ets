@@ -58,7 +58,9 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
     })
 }
 async function terminateAbility(caseName: string) {
+    hilog.info(domain, tag,`${caseName} terminateSelf start..`);
     let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    hilog.info(domain, tag,`${caseName} pageContext :${pageContext}`);
     try {
         if (pageContext !== null && pageContext !== undefined) {
             hilog.info(domain, tag,`${caseName} terminateSelf begin`);
@@ -2395,7 +2397,10 @@ export default function WindowPropertiesTest() {
             hilog.info(domain, tag,caseName + 'begin');
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             let windowStageStart :window.WindowStage = await startAbility(caseName, context);
+            hilog.info(domain, tag,msgStr + 'startAbility success... ' );
+            await Utils.msSleep(300);
             await terminateAbility(caseName);
+            hilog.info(domain, tag,msgStr + 'terminateAbility success... ' );
             try {
                 windowStageStart.setCustomDensity(-1);
                 hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
