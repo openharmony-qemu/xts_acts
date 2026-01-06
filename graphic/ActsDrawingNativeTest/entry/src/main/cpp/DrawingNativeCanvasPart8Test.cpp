@@ -1450,6 +1450,310 @@ int TestCanvasClipRegionMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+/**
+ * @tc.name   testCanvasDrawLineNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24700
+ * @tc.desc   test for testCanvasDrawLineNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawLineNull()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // 1. OH_Drawing_CanvasCreate
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+
+    // 2. Pass an empty value for the first parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(nullptr,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+    // add assert
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+
+    // 3. Pass NULL for the second parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 4. Pass NULL for the third parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 5. Pass NULL for the fourth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 6. Pass NULL for the fifth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_MATRIX_VALUE_0));
+
+    // 7. Free the memory.
+    OH_Drawing_CanvasDestroy(canvas);
+
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawLineAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24800
+ * @tc.desc   test for testCanvasDrawLineAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawLineAbnormal()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // 1. OH_Drawing_CanvasCreate
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+
+    // 2. Pass a negative value for the second parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_NEG_1),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 3. Pass a negative value for the third parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_MATRIX_VALUE_NEG_1),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 4. Pass a negative value for the fourth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(-TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 5. Pass a negative value for the fifth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(-TEST_CANVAS_COORD_20));
+
+    // 6. The Y-coordinate (Y1) of the starting point of the line segment in OH_Drawing_CanvasDrawLine is equal to the
+    // X-coordinate (X2) of the end point, but the Y-coordinate is different.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20 + TEST_MATRIX_VALUE_1));
+
+    // 7. The X-coordinate (X1) of the starting point of the line segment in OH_Drawing_CanvasDrawLine is equal to the
+    // Y-coordinate (Y2) of the starting point, but the X-coordinate is different.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_MATRIX_VALUE_0),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20 + TEST_MATRIX_VALUE_1),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 8. The coordinates of the starting point of the line segment in OH_Drawing_CanvasDrawLine are equal to the
+    // coordinates of the end point.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_10),
+                              static_cast<int>(TEST_CANVAS_COORD_10));
+
+    // 9. The coordinates of the starting point of the line segment in OH_Drawing_CanvasDrawLine are greater than the
+    // coordinates of the end point.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<int>(TEST_CANVAS_COORD_100),
+                              static_cast<int>(TEST_CANVAS_COORD_100),
+                              static_cast<int>(TEST_CANVAS_COORD_20),
+                              static_cast<int>(TEST_CANVAS_COORD_20));
+
+    // 10. Free the memory.
+    OH_Drawing_CanvasDestroy(canvas);
+
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawLineMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_24900
+ * @tc.desc   test for testCanvasDrawLineMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawLineMaximum()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // 1. OH_Drawing_CanvasCreate
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+
+    // 2. Pass a maximum value for the second parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(
+        canvas, FLT_MAX_VALUE, static_cast<float>(TEST_MATRIX_VALUE_0), TEST_CANVAS_COORD_20, TEST_CANVAS_COORD_20);
+
+    // 3. Pass a maximum value for the third parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(
+        canvas, static_cast<float>(TEST_MATRIX_VALUE_0), FLT_MAX_VALUE, TEST_CANVAS_COORD_20, TEST_CANVAS_COORD_20);
+
+    // 4. Pass a maximum value for the fourth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<float>(TEST_MATRIX_VALUE_0),
+                              static_cast<float>(TEST_MATRIX_VALUE_0),
+                              FLT_MAX_VALUE,
+                              TEST_CANVAS_COORD_20);
+
+    // 5. Pass a maximum value for the fifth parameter of OH_Drawing_CanvasDrawLine.
+    OH_Drawing_CanvasDrawLine(canvas,
+                              static_cast<float>(TEST_MATRIX_VALUE_0),
+                              static_cast<float>(TEST_MATRIX_VALUE_0),
+                              TEST_CANVAS_COORD_20,
+                              FLT_MAX_VALUE);
+
+    // 6. Free the memory.
+    OH_Drawing_CanvasDestroy(canvas);
+
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawLineInputDestroyed
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25000
+ * @tc.desc   test for testCanvasDrawLineInputDestroyed.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawLineInputDestroyed()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // Deprecated
+
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawPathNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25100
+ * @tc.desc   test for testCanvasDrawPathNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+int TestCanvasDrawPathNormal()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // 1. OH_Drawing_CanvasCreate
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+
+    // 2. OH_Drawing_PathCreate
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+
+    // 3. OH_Drawing_PathMoveTo
+    OH_Drawing_PathMoveTo(path, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_50);
+
+    // 4. OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_50);
+
+    // 5. OH_Drawing_CanvasDrawPath
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    // add assert
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+
+    // 6. Free the memory.
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_PathDestroy(path);
+
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawPathNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25200
+ * @tc.desc   test for testCanvasDrawPathNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawPathNull()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+
+    // 1. OH_Drawing_CanvasCreate
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    // 2. OH_Drawing_PathCreate
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    // 3. Pass null as the first argument for OH_Drawing_CanvasDrawPath.
+    OH_Drawing_CanvasDrawPath(nullptr, path);
+    // add assert
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_ErrorCodeReset();
+    // 4. Pass null as the second argument for OH_Drawing_CanvasDrawPath.
+    OH_Drawing_CanvasDrawPath(canvas, nullptr);
+    // add assert
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 5. Pass null path as the second argument for OH_Drawing_CanvasDrawPath.
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    // 6. Free the memory.
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_PathDestroy(path);
+
+    DrawingNativeCanvasPart8TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testCanvasDrawPathInputDestroyed
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_25300
+ * @tc.desc   test for testCanvasDrawPathInputDestroyed.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestCanvasDrawPathInputDestroyed()
+{
+    DrawingNativeCanvasPart8TestSetUp();
+    // Deprecated
+    DrawingNativeCanvasPart8TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

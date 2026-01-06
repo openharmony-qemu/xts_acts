@@ -55,7 +55,7 @@ void DrawingNativeShadowLayerTestTearDown()
 
 /**
  * @tc.name   testShadowLayerCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0100
  * @tc.desc   test for testShadowLayerCreateNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -87,7 +87,7 @@ int TestShadowLayerCreateNormal()
 
 /**
  * @tc.name   testShadowLayerCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0200
  * @tc.desc   test for testShadowLayerCreateNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -129,7 +129,7 @@ int TestShadowLayerCreateNull()
 
 /**
  * @tc.name   testShadowLayerCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0300
  * @tc.desc   test for testShadowLayerCreateAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -171,7 +171,7 @@ int TestShadowLayerCreateAbnormal()
 
 /**
  * @tc.name   testShadowLayerCreateMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0103
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0400
  * @tc.desc   test for testShadowLayerCreateMaximum.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -211,7 +211,7 @@ int TestShadowLayerCreateMaximum()
 
 /**
  * @tc.name   testShadowLayerCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0104
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0500
  * @tc.desc   test for testShadowLayerCreateMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -242,7 +242,7 @@ int TestShadowLayerCreateMultipleCalls()
 
 /**
  * @tc.name   testShadowLayerDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0600
  * @tc.desc   test for testShadowLayerDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -267,7 +267,7 @@ int TestShadowLayerDestroyNormal()
 
 /**
  * @tc.name   testShadowLayerDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SHADOW_LAYER_0700
  * @tc.desc   test for testShadowLayerDestroyNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

@@ -36,5 +36,7 @@ export const OH_AVTranscoderConfig_EnableBFrame0100: () => number;
 export const Create100: () => number;
 export const Release200: () => number;
 export const SetDstFD200: () => number;
+export const Cancel100: () => number;
+export const Start100: () => number;
 
 
