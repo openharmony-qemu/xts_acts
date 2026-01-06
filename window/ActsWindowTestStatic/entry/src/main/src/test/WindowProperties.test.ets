@@ -2396,7 +2396,7 @@ export default function WindowPropertiesTest() {
             let caseName: string = 'test_testSetCustomDensity_1300002_static';
             hilog.info(domain, tag,caseName + 'begin');
             let msgStr :string = 'jsunittest ' + caseName + ' ';
-            let windowStageStart :window.WindowStage = await startAbility(caseName, context);
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
             hilog.info(domain, tag,msgStr + 'startAbility success... ' );
             await Utils.msSleep(300);
             await terminateAbility(caseName);
