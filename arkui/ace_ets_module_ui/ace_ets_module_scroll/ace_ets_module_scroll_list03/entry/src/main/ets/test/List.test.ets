@@ -51,6 +51,14 @@ import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 import listNoMakeObserved from './List/listNoMakeObserved.test';
 import listCacheCount from './List/listCacheCount.test';
+import listLazyTrue from './emptyBranch/listLazyTrue.test';
+import listLazyFalse from './emptyBranch/listLazyFalse.test';
+import listLazyUn from './emptyBranch/listLazyUn.test';
+import listLazyNull from './emptyBranch/listLazyNull.test';
+import listRepeatTrue from './emptyBranch/listRepeatTrue.test';
+import listRepeatFalse from './emptyBranch/listRepeatFalse.test';
+import listRepeatUn from './emptyBranch/listRepeatUn.test';
+import listRepeatNull from './emptyBranch/listRepeatNull.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -91,4 +99,12 @@ export default function testsuite() {
   ListFillPolicy()
   listNoMakeObserved()
   listCacheCount()
+  listLazyTrue()
+  listLazyFalse()
+  listLazyUn()
+  listLazyNull()
+  listRepeatTrue()
+  listRepeatFalse()
+  listRepeatUn()
+  listRepeatNull()
 }
