@@ -93,7 +93,8 @@ export default function RichEditorLayoutStyle003() {
       let imageStyle = await (driver.findComponent(ON.id('imageStyle')) as Promise<Component>);
       let imageStyleText = await imageStyle.getText();
       await CommonFunc.sleep(500);
-      expect(imageStyleText.indexOf('"margin":"[0.00px,0.00px,0.00px,0.00px]"') > 0).assertEqual(true);
+      console.info("[RichEditorLayoutStyle003.test.ets] component obj attrs is: " + imageStyleText);
+      expect(imageStyleText).assertEqual("imageStyle:{\"margin\":{\"top\":\"0.00px\",\"left\":\"0.00px\",\"right\":\"0.00px\",\"bottom\":\"0.00px\"}}");
       done();
     });
 

@@ -103,11 +103,11 @@ export default function RichEditorTransformation004() {
       let textStyle = await (driver.findComponent(ON.id('textStyle')) as Promise<Component>);
       let textStyleText = await textStyle.getText();
       await CommonFunc.sleep(500);
-expect(textStyleText).assertContain('"fontColor":"#FF008000"');
+      expect(textStyleText).assertContain('"fontColor":"#FF008000"');
       expect(textStyleText).assertContain('"fontFamily":"Arial"');
       expect(textStyleText).assertContain('"fontSize":"40.00vp"');
       expect(textStyleText).assertContain('"fontStyle":1');
-      expect(textStyleText).assertContain('fontWeight":0');
+      expect(textStyleText).assertContain('fontWeight":12');
       expect(textStyleText).assertContain('"decoration":{"type":2,"color":"#80A91AF6"}');
       done();
     });
