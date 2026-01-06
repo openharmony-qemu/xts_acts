@@ -99,6 +99,7 @@ export default function imagePixelmap() {
   let testContext: common.UIAbilityContext;
   let isSupportHEIFDecode: boolean;
   let isSupportHdr: Boolean;
+  let isSupportTiff: Boolean;
   const AUTO = image.AllocatorType.AUTO;
   const DMA = image.AllocatorType.DMA;
   const SHARE_MEMORY = image.AllocatorType.SHARE_MEMORY;
@@ -142,6 +143,8 @@ export default function imagePixelmap() {
       cacheDir = AppStorage.get('cacheDir')
       isSupportHEIFDecode =
         image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      isSupportTiff =
+        image.getImageSourceSupportedFormats().includes("image/tiff");
       isSupportHdr =
         !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
         display.getDefaultDisplaySync().hdrFormats.length != 0;
@@ -267,6 +270,53 @@ export default function imagePixelmap() {
         done();
       }
       return ret;
+    }
+
+     const testDecodeTiff = async (
+      logger: Logger,
+      isSync: boolean,
+      fileName: string,
+      decodeOption: image.DecodingOptions,
+      exceptedMimeType: string,
+      allocatorType: image.AllocatorType
+    ): Promise<boolean> => {
+      try {
+        let filePath = getFilePath(fileName);
+        let imageSource = image.createImageSource(filePath);
+        let pixelMap: image.PixelMap;
+        if (isSync) {
+          pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodeOption, allocatorType);
+        } else {
+          pixelMap = await imageSource.createPixelMapUsingAllocator(decodeOption, allocatorType);
+        }
+
+        logger.log("createPixelMap end!");
+        let imageInfo = await pixelMap.getImageInfo();
+        logger.log("getImageInfoSync end, InfoSync is:" + JSON.stringify(imageInfo));
+
+        let expectedWidth = decodeOption.desiredSize?.width;
+        let expectedHeight = decodeOption.desiredSize?.height;
+        let expectedPixelFormat = decodeOption.desiredPixelFormat;
+        if (decodeOption.cropAndScaleStrategy == SCALE_FIRST && decodeOption.desiredRegion) {
+          expectedWidth = decodeOption.desiredRegion.size.width;
+          expectedHeight = decodeOption.desiredRegion.size.height;
+          expectedPixelFormat = RGBA_8888; // SCALE_FIRST模式下，像素格式为RGBA_8888
+        }
+
+        let ret = (expectedWidth == imageInfo!.size.width) &&
+                  (expectedHeight == imageInfo!.size.height) &&
+                  (expectedPixelFormat  == imageInfo!.pixelFormat) &&
+                  (exceptedMimeType == imageInfo!.mimeType);
+        logger.log("expectedWidth is: " + expectedWidth + ", imageInfo.width is: " + imageInfo!.size.width);
+        logger.log("expectedHeight is: " + expectedHeight + ", imageInfo.height is: " + imageInfo!.size.height);
+        logger.log("desiredPixelFormat is: " + expectedPixelFormat + ", imageInfo.pixelFormat is: " + imageInfo!.pixelFormat);
+        logger.log("exceptedMimeType is: " + exceptedMimeType + ", imageInfo.mimeType is: " + imageInfo!.mimeType);
+        logger.log("testDecodeTiff ret is: " + ret);
+        return ret;
+      } catch (error) {
+        logger.log("testDecodeTiff error is: " + JSON.stringify(error));
+        return false;
+      }
     }
 
     /**
@@ -6749,5 +6799,332 @@ export default function imagePixelmap() {
       buffer = undefined;
       done();
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0100
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGB_565
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0100");
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      let decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGB_565,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      let ret = await testDecodeTiff(logger, false, '1920x1080_Deflate.tiff', decodingOptions, 'image/tiff', AUTO);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0200
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGB_565
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0200', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0200');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGB_565,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, false, '1920x1080_G3.tiff', decodingOptions, 'image/tiff', AUTO);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0300
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGB_565
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0300', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0300');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGB_565,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, false, '1920x1080_G4.tiff', decodingOptions, 'image/tiff', AUTO);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0400
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGB_565
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0400', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0400');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGB_565,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, false, '1920x1080_Jpeg.tiff', decodingOptions, 'image/tiff', SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0500
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGBA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0500', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0500');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGBA_8888,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, false, '1920x1080_Lzw.tiff', decodingOptions, 'image/tiff', SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0600
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGBA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0600', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0600');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGBA_8888,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, false, '1920x1080_Next.tiff', decodingOptions, 'image/tiff', SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0700
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGBA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0700', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0700');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGBA_8888,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, true, '1920x1080_none.tiff', decodingOptions, 'image/tiff', SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0800
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0800
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: RGBA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0800', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0800');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: RGBA_8888,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, true, '1920x1080_Packbits.tiff', decodingOptions, 'image/tiff', DMA);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0900
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0900
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: BGRA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0900', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_0900');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: BGRA_8888,
+        desiredSize: { width: 2048, height: 2048 }
+      };
+
+      const ret = await testDecodeTiff(logger, true, '1920x1080_PixarLog_RGB.tiff', decodingOptions, 'image/tiff', DMA);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1000
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1000
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: BGRA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                    desiredRegion: { size: { width: 150, height: 150 }, x: 0, y: 0 }
+     *                    cropAndScaleStrategy: CROP_FIRST
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1000', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1000');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: BGRA_8888,
+        desiredSize: { width: 2048, height: 2048 },
+        desiredRegion: { size: { width: 150, height: 150 }, x: 0, y: 0 },
+        cropAndScaleStrategy: CROP_FIRST
+      };
+
+      const ret = await testDecodeTiff(logger, true, '1920x1080_SGILOG_gray16.tiff', decodingOptions, 'image/tiff', DMA);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1100
+     * @tc.desc        1.create pixelMap object by imageSource
+     *                 2.set decodingOptions
+     *                    desiredPixelFormat: BGRA_8888
+     *                    desiredSize: { width: 2048, height: 2048 }
+     *                    desiredRegion: { size: { width: 150, height: 150 }, x: 0, y: 0 }
+     *                    cropAndScaleStrategy: SCALE_FIRST
+     *                 3.return imageInfo
+     * @tc.size        MediumTest
+     * @tc.type        Functional
+     * @tc.level       Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1100', Level.LEVEL0, async (done: () => void) => {
+      const logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_TIFF_1100');
+      if (!isSupportTiff) {
+        logger.log("device is not support tiff");
+        done();
+        return;
+      }
+      const decodingOptions: image.DecodingOptions = {
+        desiredPixelFormat: BGRA_8888,
+        desiredSize: { width: 2048, height: 2048 },
+        desiredRegion: { size: { width: 150, height: 150 }, x: 0, y: 0 },
+        cropAndScaleStrategy: SCALE_FIRST
+      };
+
+      const ret = await testDecodeTiff(logger, true, 'thunderscan-1920x1080.tiff', decodingOptions, 'image/tiff', DMA);
+      expect(ret).assertTrue();
+      done();
+    });
   })
 }
