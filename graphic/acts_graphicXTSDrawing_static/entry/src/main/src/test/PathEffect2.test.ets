@@ -141,7 +141,7 @@ export default function PathEffect2() {
         }
         image.createPixelMap(color, opts).then((pixelMap) => {
           const canvas = new drawing.Canvas(pixelMap);
-          let intervals = [10, 5];
+          let intervals: number[] = [10, 5];
           let pathEffectOne = drawing.PathEffect.createDashPathEffect(intervals, 5);
           let pathEffectTwo = drawing.PathEffect.createDashPathEffect(intervals, 10);
           if (pathEffectOne != undefined && pathEffectTwo != undefined){

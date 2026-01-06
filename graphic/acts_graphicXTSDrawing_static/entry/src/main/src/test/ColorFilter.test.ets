@@ -493,7 +493,7 @@ export default function colorFilterTest() {
      */
     it('testColorFilterCreateMatrixColorFilterNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testColorFilterCreateMatrixColorFilterNormalStatic';
-      const matrix_ = [
+      const matrix_: number[] = [
         1, 0, 0, 0, 0, // 红色通道
         0, 1, 0, 0, 0, // 绿色通道
         0, 0, 1, 0, 0, // 蓝色通道
