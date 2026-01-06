@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsArktsAniStaticGroup4Test.hap"
+                "ActsArktsAniGroup4StaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
