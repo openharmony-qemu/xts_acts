@@ -1509,6 +1509,7 @@ export default function EsArrayTest001(){
                     srcArr[1] = 3;
                     return true;
                 }
+                return false;
             };
             let resArr = srcArr.filter(callbackfn);
             expect(resArr.length).assertEqual(2);
