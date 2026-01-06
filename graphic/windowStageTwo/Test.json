@@ -11,7 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsWindowStageTwoTest.hap"
+                "ActsWindowStageTwoTest.hap",
+                "ActsWindowLifeCycleTestDemo.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

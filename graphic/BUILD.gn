@@ -69,10 +69,11 @@ group("graphic") {
       "windowPermission:ActsWindowPermissionTest",
       "windowStage:ActsWindowStageTest",
       "windowStageTwo:ActsWindowStageTwoTest",
+      "windowLifeCycleTestDemo:ActsWindowLifeCycleTestDemo",
       "windowstandard:window_hap_test",
       "ActsDrawingNativeTest:ActsNewDrawingNativeTest",
       "ActsGraphicNapiFontTest:ActsGraphicNapiFontHapTest",
-       "ActsGraphicVulkanNapiTest:ActsGraphicVulkanNapiNdkTest"
+      "ActsGraphicVulkanNapiTest:ActsGraphicVulkanNapiNdkTest"
     ]
     if (!(product_name == "ohcore")) {
       deps += [

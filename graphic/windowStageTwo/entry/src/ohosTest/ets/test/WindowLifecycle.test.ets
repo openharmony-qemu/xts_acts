@@ -3007,6 +3007,104 @@ export default function WindowLifecycle() {
       }
     });
 
+    /**
+     * @tc.name   testWindow_Front_Desk_Split_Restore_0100
+     * @tc.number SUB_BASIC_WMS_WINDOW_FRONT_DESK_SPLIT_RESTORE_0100
+     * @tc.desc   验证分屏状态下调用restore接口生效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testWindow_Front_Desk_Split_Restore_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testWindow_Front_Desk_Split_Restore_0100";
+      console.log(caseName + " begin");
+      let driver = Driver.create()
+      if (isPCStatus != '') {
+        try {
+          let mainWindowClass = windowStage.getMainWindowSync();
+          await mainWindowClass.setWindowTitle("windowClass1")
+          await context.startAbility({
+            bundleName: 'com.acts.ActsWindowLifeCycleTestDemo',
+            abilityName: 'EntryAbility',
+          }).then(() => {
+            console.log(caseName + ' - startAbility success.');
+          }).catch((err: BusinessError) => {
+            console.log(caseName + " - start failed" + JSON.stringify(err));
+            expect().assertFail()
+            done()
+          })
+          await sleep(2000);
+          // 2、将当前测试套窗口拖进左分屏，点击预览窗口的辅助demo形成分屏
+          let title = await driver.findComponent(ON.text('windowClass1'))
+          await sleep(1000)
+          let titlePoint = await title.getBounds()
+          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+          await sleep(1000)
+          // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
+          let assistDemo = await driver.findComponent(ON.id('AssistHelloWorld'))
+          await sleep(1000);
+          await assistDemo.click();
+          await sleep(3000);
+          await mainWindowClass.restore();
+          let isFocused = mainWindowClass.isFocused();
+          console.log(caseName + " mainWindowClass isFocused" + JSON.stringify(isFocused));
+          expect(isFocused).assertEqual(true);
+          // 4、互换左右分屏位置，并点击辅助demo，使辅助demo获焦，3s后测试套窗口调用window.restore和window.isFocused接口
+          let title2 = await driver.findComponent(ON.text('windowClass1'))
+          await sleep(1000)
+          let titlePoint2 = await title2.getBounds();
+          await driver.drag(titlePoint2.right - 100, titlePoint2.top + 10, 0, titlePoint2.top + 10, 5000)
+          await sleep(1000)
+          let assistDemo2 = await driver.findComponent(ON.id('AssistHelloWorld'))
+          await sleep(1000);
+          await assistDemo2.click();
+          await sleep(3000);
+          await mainWindowClass.restore();
+          let isFocused2 = mainWindowClass.isFocused();
+          console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
+          expect(isFocused).assertEqual(true);
+          // 5、退出分屏，将辅助demo拖进左分屏，点击预览窗口的测试套窗口形成分屏
+          await mainWindowClass.recover();
+          let title3 = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+          await sleep(1000)
+          let titlePoint3 = await title3.getBounds()
+          await driver.drag(titlePoint3.left + 100, titlePoint3.top + 10, 0, titlePoint3.top + 10, 5000)
+          await sleep(1000)
+          // 6、点击辅助demo获焦，3s后测试套窗口调用window.restore和window.isFocused接口
+          let assistDemo3 = await driver.findComponent(ON.id('AssistHelloWorld'))
+          await sleep(1000);
+          await assistDemo3.click();
+          await sleep(3000);
+          await mainWindowClass.restore();
+          let isFocused3 = mainWindowClass.isFocused();
+          console.log(caseName + " mainWindowClass isFocused3" + JSON.stringify(isFocused3));
+          expect(isFocused).assertEqual(true);
+          // 7、互换左右分屏位置，并点击辅助demo，使辅助demo获焦，3s后测试套窗口调用window.restore和window.isFocused接口"
+          let title4 = await driver.findComponent(ON.text('windowClass1'))
+          await sleep(1000)
+          let titlePoint4 = await title4.getBounds()
+          await driver.drag(titlePoint4.left + 100, titlePoint4.top + 10, 0, titlePoint4.top + 10, 5000)
+          await sleep(1000)
+          let assistDemo4 = await driver.findComponent(ON.id('AssistHelloWorld'))
+          await sleep(1000);
+          await assistDemo4.click();
+          await sleep(3000);
+          await mainWindowClass.restore();
+          let isFocused4 = mainWindowClass.isFocused();
+          console.log(caseName + " mainWindowClass isFocused4" + JSON.stringify(isFocused4));
+          expect(isFocused).assertEqual(true);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+
   })
 
 }
