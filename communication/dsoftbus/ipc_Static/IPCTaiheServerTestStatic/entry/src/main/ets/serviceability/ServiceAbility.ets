@@ -52,6 +52,27 @@ class Stub extends rpc.RemoteObject {
       reply.writeInt(res);
       reply.writeString(resS);
       return true;
+    }
+    if (code == 100) {
+      hilog.info(domain, tag, '%{public}s', 'code is 100');
+      let remoteObject = data.readRemoteObject();
+      let option2 = new rpc.MessageOption();
+      let data2 = rpc.MessageSequence.create();
+      let reply2 = rpc.MessageSequence.create();
+      remoteObject.sendMessageRequest(1, data2, reply2, option2)
+        .then((result: rpc.RequestResult) => {
+          hilog.info(domain, tag, '%{public}s', '100 send request done, error code: ' + result.errCode );
+        })
+        .catch((err: Error) => {
+          hilog.info(domain, tag, '%{public}s', '100 send request got exception: ' +err);
+        })
+        .finally(() => {
+          data2.reclaim();
+          reply2.reclaim();
+          hilog.info(domain, tag, '%{public}s', 'case 100 test done');
+        })
+      hilog.info(domain, tag, '%{public}s', 'onRemoteMessageRequest success');
+      return true;
     } else {
       hilog.info(domain, tag, '%{public}s', 'code err:' + code);
     }
