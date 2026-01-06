@@ -541,13 +541,13 @@ export default function BufferTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
-     * @tc.name  : testIsBuffer0003
-     * @tc.desc  : Testing isBuffer for buffer with value '[]'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
+     * @tc.name testIsBuffer0003
+     * @tc.desc Testing isBuffer for buffer with value '[]'.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testIsBuffer0003";
@@ -5246,12 +5246,12 @@ export default function BufferTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
-     * @tc.name: testFrom0013
-     * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
+     * @tc.name testFrom0013
+     * @tc.desc Test the from interface by pass the parameter byteOffset is outside of the range.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testFrom0013";

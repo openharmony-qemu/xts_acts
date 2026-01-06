@@ -5027,14 +5027,10 @@ export default function BufferTest() {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31500
      * @tc.name testfrom0791
      * @tc.desc Copies data from a region of buf to a region in target,
-     *           even if the target memory region overlaps with buf.
-     *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-     *           and the extra part will not be overwritten.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it("testfrom0791", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let sharedArr = new ArrayBuffer(10)
       let bufObj = buffer.from(sharedArr, 3, 6);

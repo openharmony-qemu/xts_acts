@@ -194,7 +194,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0800
-     * @tc.name testAlloc0008
+     * @tc.name testBufferAlloc0008
      * @tc.desc Test the function of the interface Alloc.
      * @tc.size MediumTest
      * @tc.type Function
@@ -936,7 +936,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0800
-     * @tc.name testFrom10008
+     * @tc.name testBufferFrom10008
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -975,7 +975,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1000
-     * @tc.name testFrom10010
+     * @tc.name testBufferFrom10010
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -996,7 +996,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1100
-     * @tc.name testFrom10011
+     * @tc.name testBufferFrom10011
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -1016,7 +1016,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1200
-     * @tc.name testFrom10012
+     * @tc.name testBufferFrom10012
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -1036,7 +1036,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1300
-     * @tc.name testFrom10013
+     * @tc.name testBufferFrom10013
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -1058,7 +1058,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_1400
-     * @tc.name testFrom10014
+     * @tc.name testBufferFrom10014
      * @tc.desc Test the function of the interface From1.
      * @tc.size MediumTest
      * @tc.type Function
@@ -8846,7 +8846,7 @@ export default function bufferTest2() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2200
-     * @tc.name testWrite0022
+     * @tc.name testBufferWrite0022
      * @tc.desc Test the function of the interface write.
      * @tc.size MediumTest
      * @tc.type Function
