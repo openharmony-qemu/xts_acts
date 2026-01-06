@@ -85,10 +85,10 @@ struct V2Param {
   @Local resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text(this.resultText)
         .id('V2text_01')
-        .fontSize(20)
+        .height('5%')
         .fontWeight(FontWeight.Bold)
 
       Child01()
@@ -96,7 +96,7 @@ struct V2Param {
       Child03()
       Button('test1')
         .id('V2test_01')
-        .fontSize(20)
+        .height('5%')
         .onClick(() => {
           this.resultText = '';
           this.resultText = this.resultText + text(this.a)
@@ -126,12 +126,13 @@ export struct Child02 {
   @Local resultText1: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text(this.resultText1)
+        .height('5%')
         .id('V2text_02')
       Button('test2')
+        .height('5%')
         .id('V2test_02')
-        .fontSize(20)
         .onClick(() => {
           this.resultText1 = '';
           this.resultText1 = this.resultText1 + text(this.b)
@@ -145,12 +146,13 @@ export struct Child03 {
   @Local resultText2: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text('Child01'+this.c.c)
         .id('V2text_03')
+        .height('5%')
       Button('test3')
         .id('V2test_03')
-        .fontSize(20)
+        .height('5%')
         .onClick(() => {
           this.resultText2 = '';
           this.resultText2 = this.resultText2 + text(this.c)
