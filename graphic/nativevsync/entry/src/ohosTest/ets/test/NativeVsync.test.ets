@@ -501,7 +501,7 @@ export default function nativeVsyncTest() {
     });
 
     /**
-     * @tc.name   testOHNativeVSyncSetExpectedFrameRateRange002
+     * @tc.name   testNativeErrorCodeCover
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_3100
      * @tc.desc   test ErrorCode
      * @tc.type   FUNCTION
