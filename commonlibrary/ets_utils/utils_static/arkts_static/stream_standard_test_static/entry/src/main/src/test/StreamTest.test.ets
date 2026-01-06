@@ -4802,7 +4802,7 @@ function mustCall(fn?: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4825,7 +4825,7 @@ function mustCallDoWrite(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4848,7 +4848,7 @@ function mustCallDoTransform(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4871,7 +4871,7 @@ function mustCallDoWritev(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4894,7 +4894,7 @@ function mustCallOnError(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4914,7 +4914,7 @@ function mustCallNoArgs(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4951,7 +4951,7 @@ function mustCallOneObjectArgs(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
@@ -4974,7 +4974,7 @@ function mustCallSizeArgs(fn: Function, times: number = 1) {
   if (typeof fn !== "function") {
     throw new Error("fn Parameter error")
   }
-  if (typeof times !== "int") {
+  if (typeof times !== "number") {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
