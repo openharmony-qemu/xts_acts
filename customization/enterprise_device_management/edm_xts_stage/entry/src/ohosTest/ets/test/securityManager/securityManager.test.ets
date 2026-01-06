@@ -299,6 +299,27 @@ function testGetSecurityStatus() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_security_status_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0108
+   * @tc.desc   test securityManager get fastboot status
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_security_status_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret:string = securityManager.getSecurityStatus(SELFWANT, 'fastboot');
+      expect(ret.length > 0).assertTrue();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testSetPasswordPolicy() {
