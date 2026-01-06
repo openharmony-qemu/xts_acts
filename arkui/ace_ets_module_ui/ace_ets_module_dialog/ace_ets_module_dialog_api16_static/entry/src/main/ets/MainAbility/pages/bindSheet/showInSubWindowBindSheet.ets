@@ -134,7 +134,7 @@ struct showInSubWindowBindSheet {
           showInSubWindow: this.showInSub,
           placement: Placement.Bottom,
           placementOnTarget: true,
-          onHeightDidChange: ((height: number) => {
+          onHeightDidChange: ((height: int) => {
             console.log('TestTag:: height is' + height)
           }),
           onDetentsDidChange: ((height: int) => {

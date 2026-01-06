@@ -69,7 +69,7 @@ struct SheetTransitionExample12 {
         .margin(10)
         .bindSheet(this.isShow, this.myBuilder, {
           height: this.sheetHeight,
-          onHeightDidChange:((value: number)=> {
+          onHeightDidChange:((value: int)=> {
             console.log("bind sheet shouldDismiss"+ value)
             this.Height1 = "onHeightDidChange success"
           }),
