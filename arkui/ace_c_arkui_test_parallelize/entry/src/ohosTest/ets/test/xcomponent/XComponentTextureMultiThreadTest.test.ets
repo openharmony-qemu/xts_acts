@@ -28,9 +28,9 @@ export default function XComponentTextureMultiThreadTest(){
     });
 
     /**
-     * @tc.name   scrollBarTest_001
-     * @tc.number SUB_ARKUI_CAPI_scrollBarTest_001
-     * @tc.desc   Test RegisterCommonEvent.
+     * @tc.name   xcomponentTextureMultiThreadTest
+     * @tc.number xcomponentTextureMultiThreadTest
+     * @tc.desc   Test xcomponentTextureMultiThreadTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

@@ -18,6 +18,15 @@
 #include <arkui/native_type.h>
 #include <hilog/log.h>
 #include <vector>
+const float VALUE_0 = 0.0
+const float VALUE_0_5 = 0.5
+const float VALUE_2 = 2.0
+const float VALUE_3 = 3.0
+const float VALUE_3_5 = 3.5
+const float VALUE_4 = 4.0
+const float VALUE_10 = 10.0
+const float VALUE_20 = 20.0
+const float VALUE_100 = 100.0
 
 namespace ArkUICApiAttributeDemo {
 namespace {
@@ -135,7 +144,7 @@ void TestNodeBackgroundImageSize001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHa
     ArkUI_AttributeItem backgroundImageSize_item = { .value = sizeArray, .size = 2};
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_SIZE, &backgroundImageSize_item);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE);
-    if(result->value[0].f32 != 20.0 || result->value[1].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_20 || result->value[1].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -144,7 +153,7 @@ void TestNodeBackgroundImageSize001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHa
 void TestNodeBackgroundImageSize002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE);
-    if(result->value[0].f32 != 20.0 || result->value[1].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_20 || result->value[1].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -156,7 +165,7 @@ void TestNodeBackgroundImageSizeWithStyle001(ArkUI_NativeNodeAPI_1 *nodeAPI, Ark
     ArkUI_AttributeItem backgroundBlurStyle_item = { .value = blurStyle, .size = 1};
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE, &backgroundBlurStyle_item);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE);
-    if(result->value->i32 != 2) {
+    if(result->value->i32 != PARAM_2) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -165,7 +174,7 @@ void TestNodeBackgroundImageSizeWithStyle001(ArkUI_NativeNodeAPI_1 *nodeAPI, Ark
 void TestNodeBackgroundImageSizeWithStyle002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE);
-    if(result->value->i32 != 2) {
+    if(result->value->i32 != PARAM_2) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE_WITH_STYLE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -177,7 +186,7 @@ void TestNodeDefaultFocus001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &b
     ArkUI_AttributeItem focusableItem = { defaultFocusValue, 1 };
     nodeAPI->setAttribute(button, NODE_DEFAULT_FOCUS, &focusableItem);
     auto result = nodeAPI->getAttribute(button, NODE_DEFAULT_FOCUS);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_DEFAULT_FOCUS is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -186,7 +195,7 @@ void TestNodeDefaultFocus001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &b
 void TestNodeDefaultFocus002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_DEFAULT_FOCUS);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_DEFAULT_FOCUS is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -198,7 +207,8 @@ void TestNodeResponseRegion001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
     ArkUI_AttributeItem responseRegion_item = {responseRegion_value, sizeof(responseRegion_value)/sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(button, NODE_RESPONSE_REGION, &responseRegion_item);
     auto result = nodeAPI->getAttribute(button, NODE_RESPONSE_REGION);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 100.0 || result->value[3].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_100 || result->value[PARAM_3].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_RESPONSE_REGION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -207,7 +217,8 @@ void TestNodeResponseRegion001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
 void TestNodeResponseRegion002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_RESPONSE_REGION);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 100.0 || result->value[3].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_100 || result->value[PARAM_3].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_RESPONSE_REGION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -219,7 +230,7 @@ void TestNodeOverlay001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
     ArkUI_AttributeItem overlay_item = { overlay_value, sizeof(overlay_value) / sizeof(ArkUI_NumberValue), "test" };
     nodeAPI->setAttribute(button, NODE_OVERLAY, &overlay_item);
     auto result = nodeAPI->getAttribute(button, NODE_OVERLAY);
-    if(result->value[0].i32 != 0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 10.0) {
+    if(result->value[0].i32 != PARAM_0 || result->value[1].f32 != VALUE_0 || result->value[PARAM_2].f32 != VALUE_10) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_OVERLAY is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -227,7 +238,7 @@ void TestNodeOverlay001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
 void TestNodeOverlay002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_OVERLAY);
-    if(result->value[0].i32 != 0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 10.0) {
+    if(result->value[0].i32 != PARAM_0 || result->value[1].f32 != VALUE_0 || result->value[PARAM_2].f32 != VALUE_10) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_OVERLAY is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -239,7 +250,7 @@ void TestNodeBackgroundImagePosition001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_No
     ArkUI_AttributeItem backgroundImagePosition_item = { .value = positionArray, .size = 2};
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_POSITION, &backgroundImagePosition_item);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_POSITION);
-    if(result->value[0].f32 != 20.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_20 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_POSITION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -248,7 +259,7 @@ void TestNodeBackgroundImagePosition001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_No
 void TestNodeBackgroundImagePosition002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_POSITION);
-    if(result->value[0].f32 != 20.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_20 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_POSITION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -260,7 +271,7 @@ void TestNodeFocusOnTouch001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &b
     ArkUI_AttributeItem focusOnTouchItem = {focusOnTouchValue, 1};
     nodeAPI->setAttribute(button, NODE_FOCUS_ON_TOUCH, &focusOnTouchItem);
     auto result = nodeAPI->getAttribute(button, NODE_FOCUS_ON_TOUCH);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_FOCUS_ON_TOUCH is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -269,7 +280,7 @@ void TestNodeFocusOnTouch001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &b
 void TestNodeFocusOnTouch002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_FOCUS_ON_TOUCH);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_FOCUS_ON_TOUCH is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -281,7 +292,7 @@ void TestNodeVisibleAreaChangeRatiO001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     ArkUI_AttributeItem visibleAreaChangeRatio_item = {visibleAreaChangeRatio_value, 1};
     nodeAPI->setAttribute(button, NODE_VISIBLE_AREA_CHANGE_RATIO, &visibleAreaChangeRatio_item);
     auto result = nodeAPI->getAttribute(button, NODE_VISIBLE_AREA_CHANGE_RATIO);
-    if(result->value->f32 != 0.5) {
+    if(result->value->f32 != VALUE_0_5) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_VISIBLE_AREA_CHANGE_RATIO is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -290,7 +301,7 @@ void TestNodeVisibleAreaChangeRatiO001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
 void TestNodeVisibleAreaChangeRatiO002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_VISIBLE_AREA_CHANGE_RATIO);
-    if(result->value->f32 != 0.5) {
+    if(result->value->f32 != VALUE_0_5) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_VISIBLE_AREA_CHANGE_RATIO is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -302,7 +313,7 @@ void TestNodeTabStop001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
     ArkUI_AttributeItem tabStop_item = {tabStop_value, sizeof(tabStop_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(button, NODE_TAB_STOP, &tabStop_item);
     auto result = nodeAPI->getAttribute(button, NODE_TAB_STOP);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_TAB_STOP is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -311,7 +322,7 @@ void TestNodeTabStop001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
 void TestNodeTabStop002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_TAB_STOP);
-    if(result->value->i32 != 1) {
+    if(result->value->i32 != PARAM_1) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_TAB_STOP is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -323,7 +334,8 @@ void TestNodeBackgroundImageResizableWithSlice001(ArkUI_NativeNodeAPI_1 *nodeAPI
     ArkUI_AttributeItem slice = {.value = sliceVec, .size = 4};
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE, &slice);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE);
-    if(result->value[0].f32 != 2.0 || result->value[1].f32 != 3.0 || result->value[2].f32 != 3.5 || result->value[3].f32 != 4.0) {
+    if(result->value[0].f32 != VALUE_2 || result->value[1].f32 != VALUE_3 ||
+        result->value[PARAM_2].f32 != VALUE_3_5 || result->value[PARAM_3].f32 != VALUE_4) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -332,7 +344,8 @@ void TestNodeBackgroundImageResizableWithSlice001(ArkUI_NativeNodeAPI_1 *nodeAPI
 void TestNodeBackgroundImageResizableWithSlice002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE);
-    if(result->value[0].f32 != 2.0 || result->value[1].f32 != 3.0 || result->value[2].f32 != 3.5 || result->value[3].f32 != 4.0) {
+    if(result->value[0].f32 != VALUE_2 || result->value[1].f32 != VALUE_3 ||
+        result->value[PARAM_2].f32 != VALUE_3_5 || result->value[PARAM_3].f32 != VALUE_4) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -344,7 +357,7 @@ void TestNodeEnabled001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
     ArkUI_AttributeItem enableItem = {enableValue, 1};
     nodeAPI->setAttribute(button, NODE_ENABLED, &enableItem);
     auto result = nodeAPI->getAttribute(button, NODE_ENABLED);
-    if(result->value->i32 != 0) {
+    if(result->value->i32 != PARAM_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_ENABLED is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -353,7 +366,7 @@ void TestNodeEnabled001(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
 void TestNodeEnabled002(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_ENABLED);
-    if(result->value->i32 != 0) {
+    if(result->value->i32 != PARAM_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_ENABLED is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -543,7 +556,7 @@ void TestNodeBackgroundImageSize011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHa
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_SIZE, &backgroundImageSize_item);
     nodeAPI->resetAttribute(button, NODE_BACKGROUND_IMAGE_SIZE);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -552,7 +565,7 @@ void TestNodeBackgroundImageSize011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHa
 void TestNodeBackgroundImageSize012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_SIZE);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_SIZE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -590,7 +603,8 @@ void TestNodeResponseRegion011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
     nodeAPI->setAttribute(button, NODE_RESPONSE_REGION, &responseRegion_item);
     nodeAPI->resetAttribute(button, NODE_RESPONSE_REGION);
     auto result = nodeAPI->getAttribute(button, NODE_RESPONSE_REGION);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 100.0 || result->value[3].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_100 || result->value[PARAM_3].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_RESPONSE_REGION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -599,7 +613,8 @@ void TestNodeResponseRegion011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle 
 void TestNodeResponseRegion012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_RESPONSE_REGION);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 100.0 || result->value[3].f32 != 100.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_100 || result->value[PARAM_3].f32 != VALUE_100) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_RESPONSE_REGION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -612,7 +627,7 @@ void TestNodeOverlay011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
     nodeAPI->setAttribute(button, NODE_OVERLAY, &overlay_item);
     nodeAPI->resetAttribute(button, NODE_OVERLAY);
     auto result = nodeAPI->getAttribute(button, NODE_OVERLAY);
-    if(result->value[0].i32 != 0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 0.0) {
+    if(result->value[0].i32 != 0 || result->value[1].f32 != VALUE_0 || result->value[PARAM_2].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_OVERLAY is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -620,7 +635,7 @@ void TestNodeOverlay011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button
 void TestNodeOverlay012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_OVERLAY);
-    if(result->value[0].i32 != 0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 0.0) {
+    if(result->value[0].i32 != 0 || result->value[1].f32 != VALUE_0 || result->value[PARAM_2].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_OVERLAY is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -635,7 +650,7 @@ void TestNodeBackgroundImagePosition011(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_No
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_POSITION);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "zdl", "NODE_BACKGROUND_IMAGE_POSITION %{public}f %{public}f ",
                  result->value[0].f32, result->value[1].f32);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_POSITION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -646,7 +661,7 @@ void TestNodeBackgroundImagePosition012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_No
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_POSITION);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "zdl", "NODE_BACKGROUND_IMAGE_POSITION %{public}f %{public}f ",
                  result->value[0].f32, result->value[1].f32);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_POSITION is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -709,7 +724,8 @@ void TestNodeBackgroundImageResizableWithSlice011(ArkUI_NativeNodeAPI_1 *nodeAPI
     nodeAPI->setAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE, &slice);
     nodeAPI->resetAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE);
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 0.0 || result->value[3].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_0 || result->value[PARAM_3].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -718,7 +734,8 @@ void TestNodeBackgroundImageResizableWithSlice011(ArkUI_NativeNodeAPI_1 *nodeAPI
 void TestNodeBackgroundImageResizableWithSlice012(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle &button)
 {
     auto result = nodeAPI->getAttribute(button, NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE);
-    if(result->value[0].f32 != 0.0 || result->value[1].f32 != 0.0 || result->value[2].f32 != 0.0 || result->value[3].f32 != 0.0) {
+    if(result->value[0].f32 != VALUE_0 || result->value[1].f32 != VALUE_0 ||
+        result->value[PARAM_2].f32 != VALUE_0 || result->value[PARAM_3].f32 != VALUE_0) {
         ArkUI_AttributeItem buttonLabel = {.string = "set NODE_BACKGROUND_IMAGE_RESIZABLE_WITH_SLICE is error"};
         nodeAPI->setAttribute(button, NODE_BUTTON_LABEL, &buttonLabel);
     }
@@ -774,7 +791,7 @@ void TestNodeInitAttribute011(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
 
 void TestNodeInitAttribute111(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
-    auto button = nodeList[2];
+    auto button = nodeList[PARAM_2];
     if (button) {
         TestNodeBackgroundColor012(nodeAPI, button);
         TestNodeBackgroundImage012(nodeAPI, button);
@@ -805,7 +822,7 @@ void TestNodeInitAttribute012(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_
 
 void TestNodeInitAttribute112(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>& nodeList)
 {
-    auto button = nodeList[3];
+    auto button = nodeList[PARAM_3];
     if (button) {
         TestNodeEnabled012(nodeAPI, button);
     }
@@ -828,4 +845,3 @@ void RunOnUIThread(ArkUI_NativeNodeAPI_1 *nodeAPI, std::vector<ArkUI_NodeHandle>
     TestNodeInitAttribute112(nodeAPI, nodeList);
 }
 }
-

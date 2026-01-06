@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
+#include "common/common.h"
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <arkui/native_node_napi.h>
@@ -88,7 +88,7 @@ napi_value NodeXTSTest::CreateCNodeTree(napi_env env, napi_callback_info info,
         return nullptr;
     }
     size_t argc = 2;
-    napi_value args[2] = { nullptr, nullptr };
+    napi_value args[PARAM_2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     // 获取NodeContent

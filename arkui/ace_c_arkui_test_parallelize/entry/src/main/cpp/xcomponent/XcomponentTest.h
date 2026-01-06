@@ -12,6 +12,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+#ifndef CAPIHAP_XCOMPONENT_TEST_H
+#define CAPIHAP_XCOMPONENT_TEST_H
+
 #include "napi/native_api.h"
 #include <arkui/native_node.h>
 #include <arkui/native_type.h>
@@ -36,3 +39,4 @@ public:
 };
 }
 }
+#endif //CAPIHAP_XCOMPONENT_TEST_H

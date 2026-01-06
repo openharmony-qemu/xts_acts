@@ -25,7 +25,7 @@
 #include "arkui/native_interface.h"
 #include <thread>
 #include <sstream>
-#include <string.h>
+#include <cstring.h>
 #include "./SwiperTest.h"
 
 #define PARAM_1000 1000
@@ -226,7 +226,7 @@ static void CheckSwiperAttrForMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_N
     } else {
         for (int32_t i = 0; i < attribute->size && i < expectAttr->size; ++i) {
             int32_t value_i32 = (int32_t)(expectAttr->value[i].i32);
-            if (value_i32 < 1000) {
+            if (value_i32 < PARAM_1000) {
                 if (attribute->value[i].i32 != expectAttr->value[i].i32) {
                     nodeAPI->removeAllChildren(parent);
                     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", "CheckVisualAttrForMainThread failed, attr[%{public}s] value[%{public}d] mismatch expect:%{public}d, real:%{public}d",
@@ -400,7 +400,6 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
 
     // Swiper组件属性--effectMode （边缘滑动效果）
     
-    // OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " CheckAttributeOnMainThread 15");
     if (withReset) {
         ArkUI_NumberValue effectMode_value[] = { { .i32 = ARKUI_EDGE_EFFECT_SPRING } };
         ArkUI_AttributeItem effectMode_item = { effectMode_value, sizeof(effectMode_value) / sizeof(ArkUI_NumberValue) };
@@ -1320,9 +1319,7 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     // Swiper组件属性--INDICATOR （导航器样式）
     auto indicator = OH_ArkUI_SwiperIndicator_Create(ARKUI_SWIPER_INDICATOR_TYPE_DOT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "SwiperTest", " SetAttribute 20");
-    // OH_ArkUI_SwiperIndicator_SetLeftPosition(indicator, 1.0f);
     OH_ArkUI_SwiperIndicator_SetTopPosition(indicator, 1.0f);
-    // OH_ArkUI_SwiperIndicator_SetRightPosition(indicator, 1.0f);
     OH_ArkUI_SwiperIndicator_SetBottomPosition(indicator, 1.0f);
     OH_ArkUI_SwiperIndicator_SetItemWidth(indicator, 1.0f);
     OH_ArkUI_SwiperIndicator_SetItemHeight(indicator, 1.0f);
