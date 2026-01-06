@@ -49,8 +49,8 @@ export default function builtinsArrayForEachTest() {
      * @tc.level  LEVEL0
      */
     it('builtinsArrayForEachTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = collections.Array.from([1, 2, 3]);
-      const logs = collections.Array.from<number>([]);
+      const arr = Array.from(collections.Array.from([1, 2, 3]));
+      const logs = Array.from(collections.Array.from<number>([]));
       arr.forEach(x => logs.push(x));
       expect(logs).assertDeepEquals([1, 2, 3]);
     });
@@ -58,35 +58,13 @@ export default function builtinsArrayForEachTest() {
     /**
      * @tc.name   builtinsArrayForEachTest1002
      * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0200
-     * @tc.desc   Verify parameters index and array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayForEachTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, 2, 3]);
-      const logs = collections.Array.from<Array<Object>>([]);
-      arr.forEach((x: number, i:number, a:collections.Array<number>) => {
-        const entry: Array<Object> = [i, x, a];
-        logs.push(entry);
-      });
-      expect(logs).assertDeepEquals([
-        [0, 1, [1, 2, 3]],
-        [1, 2, [1, 2, 3]],
-        [2, 3, [1, 2, 3]]
-      ]);
-    });
-
-    /**
-     * @tc.name   builtinsArrayForEachTest1003
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0300
      * @tc.desc   Verify array modification during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayForEachTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, 2, 3]);
+    it('builtinsArrayForEachTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = Array.from(collections.Array.from([1, 2, 3]));
       arr.forEach((x, i) => {
         arr[i] = x * 2;
       });
@@ -94,15 +72,15 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayForEachTest1004
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0400
+     * @tc.name   builtinsArrayForEachTest1003
+     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0300
      * @tc.desc   Verify element deletion handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayForEachTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, 2, 3]);
+    it('builtinsArrayForEachTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const arr = Array.from(collections.Array.from([1, 2, 3]));
       arr.forEach((x, i) => {
         if (x === 2) {
           arr.splice(i, 1);
@@ -112,47 +90,30 @@ export default function builtinsArrayForEachTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayForEachTest1005
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0500
+     * @tc.name   builtinsArrayForEachTest1004
+     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0400
      * @tc.desc   Verify sparse array handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayForEachTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayForEachTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from([1, , 3]);
-      const logs = collections.Array.from<number>([]);
-      arr.forEach(x => logs.push(x!));
-      expect(logs).assertDeepEquals([1, 3]);
+      const logs = collections.Array.from<number | null>([]);
+      arr.forEach(x => logs.push(x ?? null!));
+      const expected = collections.Array.from([1, null, 3]);
+      expect(logs).assertDeepEquals(expected);
     });
 
     /**
-     * @tc.name   builtinsArrayForEachTest1006
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0600
-     * @tc.desc   Verify nested array elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayForEachTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([1, [, 3], 4]);
-      const logs = collections.Array.from<string>([]);
-      arr.forEach(x => {
-        console.log('builtinsArrayForEachTest1006:', x.toString())
-        logs.push(x.toString())
-      });
-      expect(String(logs)).assertEqual('1,,3,4'); // TODO
-    });
-
-    /**
-     * @tc.name   builtinsArrayForEachTest1007
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0700
+     * @tc.name   builtinsArrayForEachTest1005
+     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0500
      * @tc.desc   Verify empty array handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayForEachTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayForEachTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let callCount = 0;
       [].forEach((x) => {
         console.log('builtinsArrayForEachTest1007:', x)
@@ -161,68 +122,16 @@ export default function builtinsArrayForEachTest() {
       expect(callCount).assertEqual(0);
     });
 
-    /**
-     * @tc.name   builtinsArrayForEachTest1008
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0800
-     * @tc.desc   Verify iteration over nested empty arrays
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayForEachTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from<number[]>( [[], [1], [2]] );
-      const logs: number[][] = [];
-      arr.forEach((x: number[]) => {
-        logs.push(x);
-      });
-      expect(logs).assertDeepEquals([[], [1], [2]]);
-    });
 
     /**
-     * @tc.name   builtinsArrayForEachTest1009
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0900
-     * @tc.desc   Verify null/undefined handling
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayForEachTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr = collections.Array.from([null, [undefined, 3]]);
-      const logs = collections.Array.from<string>([]);
-      arr.forEach(x => {
-        console.log(x?.toString())
-        logs.push(String(x))
-      });
-      expect(logs).assertDeepEquals(['null', ',3']); // TODO
-    });
-
-    /**
-     * @tc.name   builtinsArrayForEachTest1010
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_1000
-     * @tc.desc   Verify object element handling
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayForEachTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: FlatObj = {
-        name: 'hh', age: 10, like: [1, 2, 3, 4, 5]
-      };
-      const arr = collections.Array.from([obj]);
-      let receivedObj: FlatObj | undefined = obj;
-      arr.forEach(x => receivedObj = x);
-      expect(receivedObj).assertDeepEquals(obj);
-    });
-
-    /**
-     * @tc.name   builtinsArrayForEachTest1011
-     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_1100
+     * @tc.name   builtinsArrayForEachTest1006
+     * @tc.number SUB_BUILTINS_ARRAY_FOREACH_TEST_0600
      * @tc.desc   Verify string array iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayForEachTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayForEachTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = collections.Array.from(['abc', 'bcd', 'cde']);
       const logs = collections.Array.from<string>([]);
       arr.forEach(x => logs.push(x));

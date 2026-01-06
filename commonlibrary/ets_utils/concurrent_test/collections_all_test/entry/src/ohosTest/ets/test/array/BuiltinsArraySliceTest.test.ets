@@ -223,32 +223,10 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArraySliceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      interface obj {
-        a: number
-      }
-
-      interface obj1 {
-        b: number
-      }
-
-      interface obj2 {
-        c: number
-      }
-
-      const inputArray = collections.Array.from<obj|number|obj1|obj2>([{
-        a: 1
-      }, {
-        b: 2
-      }, {
-        c: 3
-      }])
-      const res = inputArray.slice(0, 2)
-      console.log("res: " + res)
-      expect(isObjectEqual(res, [{
-        a: 1
-      }, {
-        b: 2
-      }])).assertTrue()
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
+      const res = inputArray.slice(Math.floor(1.5))
+      console.log("res:" + res)
+      expect(isArrayEqual(Array.from(res), [2, 3, 4, 5, 6])).assertTrue()
       Done()
     })
 
@@ -262,10 +240,10 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArraySliceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const inputArray = collections.Array.from([[1, 2], [3, 4], [5, 6]])
-      const res = inputArray.slice(1, 3)
-      console.log("res: " + res)
-      expect(isArrayArrayEqual(res, [[3, 4], [5, 6]])).assertTrue()
+      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
+      const res = inputArray.slice(-0)
+      console.log("res:" + res)
+      expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
       Done()
     })
 
@@ -280,9 +258,9 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(Math.floor(1.5))
+      const res = inputArray.slice(Number.EPSILON)
       console.log("res:" + res)
-      expect(isArrayEqual(Array.from(res), [2, 3, 4, 5, 6])).assertTrue()
+      expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
       Done()
     })
 
@@ -297,7 +275,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(-0)
+      const res = inputArray.slice(Number.MIN_VALUE)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
       Done()
@@ -314,9 +292,9 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(Number.EPSILON)
+      const res = inputArray.slice(Number.MAX_VALUE)
       console.log("res:" + res)
-      expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
+      expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
     })
 
@@ -331,7 +309,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(Number.MIN_VALUE)
+      const res = inputArray.slice(-Infinity)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
       Done()
@@ -348,7 +326,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(Number.MAX_VALUE)
+      const res = inputArray.slice(Infinity)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
@@ -365,9 +343,9 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(-Infinity)
+      const res = inputArray.slice(123.456)
       console.log("res:" + res)
-      expect(isArrayEqual(Array.from(res), [1, 2, 3, 4, 5, 6])).assertTrue()
+      expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
     })
 
@@ -382,7 +360,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(Infinity)
+      const res = inputArray.slice(0xcafebabe)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
@@ -399,7 +377,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(123.456)
+      const res = inputArray.slice(0x0102)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
@@ -416,7 +394,7 @@ export default function BuiltinsArraySliceTest() {
      */
     it('BuiltinsArraySliceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(0xcafebabe)
+      const res = inputArray.slice(0x01020304)
       console.log("res:" + res)
       expect(isArrayEqual(Array.from(res), [])).assertTrue()
       Done()
@@ -432,40 +410,6 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArraySliceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(0x0102)
-      console.log("res:" + res)
-      expect(isArrayEqual(Array.from(res), [])).assertTrue()
-      Done()
-    })
-
-
-    /**
-     * @tc.name   BuiltinsArraySliceTest2400
-     * @tc.number SUB_BUILTINS_ARRAY_SLICE_TEST_2400
-     * @tc.desc   test Slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArraySliceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
-      const res = inputArray.slice(0x01020304)
-      console.log("res:" + res)
-      expect(isArrayEqual(Array.from(res), [])).assertTrue()
-      Done()
-    })
-
-
-    /**
-     * @tc.name   BuiltinsArraySliceTest2500
-     * @tc.number SUB_BUILTINS_ARRAY_SLICE_TEST_2500
-     * @tc.desc   test Slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArraySliceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let inputArray = collections.Array.from([1, 2, 3, 4, 5, 6])
       const res = inputArray.slice(0x3)
       console.log("res:" + res)

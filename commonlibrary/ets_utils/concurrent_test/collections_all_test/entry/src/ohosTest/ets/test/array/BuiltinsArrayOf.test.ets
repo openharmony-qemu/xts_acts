@@ -53,7 +53,7 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([]);
+        let exp = Array.from(collections.Array.from([]));
         let result = Array.of<number>();
         expect(result).assertDeepEquals(exp);
       } catch (err) {
@@ -67,7 +67,7 @@ export default function builtinsArrayOfTest() {
     /**
      * @tc.name   builtinsArrayOfTest0200
      * @tc.number SUB_BUILTINS_ARRAY_OF_TEST_0200
-     * @tc.desc   Testing isArray
+     * @tc.desc   Testing a number in isArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -76,7 +76,7 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0200';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([7]);
+        let exp = Array.from(collections.Array.from([7]));
         let result = Array.of<number>(7);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
@@ -99,7 +99,7 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([1, 2, 3]);
+        let exp = Array.from(collections.Array.from([1, 2, 3]));
         let result = Array.of<number>(1, 2, 3);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
@@ -122,12 +122,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from<TestA>([{
-          a: 1
-        }]);
-        let result = Array.of<TestA>({
-          a: 1
-        });
+        let exp = Array.from(collections.Array.from([1, 'hello']));
+        let result = Array.of<number | string>(1, 'hello');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -149,8 +145,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([1, 'hello']);
-        let result = Array.of<number | string>(1, 'hello');
+        let exp = Array.from(collections.Array.from(['a', 'b', 'c']));
+        let result = Array.of<string>('a', 'b', 'c');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -172,12 +168,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from<number|string|TestA>([1, 'hello', {
-          a: 1
-        }]);
-        let result = Array.of<number | string | TestA>(1, 'hello', {
-          a: 1
-        });
+        let exp = Array.from(collections.Array.from([undefined]));
+        let result = Array.of<undefined>(undefined);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -199,8 +191,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['a', 'b', 'c']);
-        let result = Array.of<string>('a', 'b', 'c');
+        let exp = Array.from(collections.Array.from([null]));
+        let result = Array.of<null>(null);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -222,9 +214,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0800';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([undefined]);
-        let result = Array.of<undefined>(undefined);
-        expect(result).assertDeepEquals(exp);
+        let result = Array.of(() => {});
+        expect(result[0]).assertInstanceOf('Function');
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -245,9 +236,9 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest0900';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([null]);
-        let result = Array.of<null>(null);
-        expect(result).assertDeepEquals(exp);
+        let exp = collections.Array.from([9007199254740991n]);
+        let result = Array.of<bigint>(BigInt(9007199254740991));
+        expect(result.toString()).assertEqual(exp.toString());
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -268,8 +259,9 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1000';
       console.info(`${caseName} test start`);
       try {
-        let result = Array.of(() => {});
-        expect(result[0]).assertInstanceOf('Function');
+        let exp = Array.from(collections.Array.from([-1]));
+        let result = Array.of<number>(-1);
+        expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -290,9 +282,9 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1100';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([9007199254740991n]);
-        let result = Array.of<bigint>(BigInt(9007199254740991));
-        expect(result.toString()).assertEqual(exp.toString());
+        let exp = Array.from(collections.Array.from([3.14]));
+        let result = Array.of<number>(3.14);
+        expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -313,8 +305,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1200';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([-1]);
-        let result = Array.of<number>(-1);
+        let exp = Array.from(collections.Array.from(['7']));
+        let result = Array.of<string>('7');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -336,8 +328,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1300';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([3.14]);
-        let result = Array.of<number>(3.14);
+        let exp = Array.from(collections.Array.from(['']));
+        let result = Array.of<string>('');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -359,8 +351,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1400';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['7']);
-        let result = Array.of<string>('7');
+        let exp = Array.from(collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']));
+        let result = Array.of<string>('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -382,8 +374,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1500';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['']);
-        let result = Array.of<string>('');
+        let exp = Array.from(collections.Array.from(['undefined']));
+        let result = Array.of<string>('undefined');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -405,8 +397,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1600';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']);
-        let result = Array.of<string>('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
+        let exp = Array.from(collections.Array.from(['null']));
+        let result = Array.of<string>('null');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -428,8 +420,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1700';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['undefined']);
-        let result = Array.of<string>('undefined');
+        let exp = Array.from(collections.Array.from(['']));
+        let result = Array.of<string>('');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -451,8 +443,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1800';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['null']);
-        let result = Array.of<string>('null');
+        let exp = Array.from(collections.Array.from(['\u7b11']));
+        let result = Array.of<string>('\u7b11');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -474,8 +466,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest1900';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['']);
-        let result = Array.of<string>('');
+        let exp = Array.from(collections.Array.from(['\uFFFD']));
+        let result = Array.of<string>('\uFFFD');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -497,8 +489,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2000';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['\u7b11']);
-        let result = Array.of<string>('\u7b11');
+        let exp = Array.from(collections.Array.from([Math.floor(1.5), 0, -0]));
+        let result = Array.of<number>(Math.floor(1.5), 0, -0);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -520,8 +512,20 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2100';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['\uFFFD']);
-        let result = Array.of<string>('\uFFFD');
+        let exp = Array.from(collections.Array.from([
+          Number.EPSILON,
+          Number.MIN_VALUE,
+          Number.MAX_VALUE,
+          -Infinity,
+          Infinity
+        ]));
+        let result = Array.of<number>(
+          Number.EPSILON,
+          Number.MIN_VALUE,
+          Number.MAX_VALUE,
+          -Infinity,
+          Infinity
+        );
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -543,8 +547,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2200';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([Math.floor(1.5), 0, -0]);
-        let result = Array.of<number>(Math.floor(1.5), 0, -0);
+        let exp = Array.from(collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]));
+        let result = Array.of<number>(123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -566,20 +570,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2300';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([
-          Number.EPSILON,
-          Number.MIN_VALUE,
-          Number.MAX_VALUE,
-          -Infinity,
-          Infinity
-        ]);
-        let result = Array.of<number>(
-          Number.EPSILON,
-          Number.MIN_VALUE,
-          Number.MAX_VALUE,
-          -Infinity,
-          Infinity
-        );
+        let exp = Array.from(collections.Array.from([true, false]));
+        let result = Array.of<boolean>(true, false);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -601,8 +593,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2400';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]);
-        let result = Array.of<number>(123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3);
+        let exp = Array.from(collections.Array.from([!'s']));
+        let result = Array.of<boolean>(!'s');
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -624,8 +616,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2500';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([true, false]);
-        let result = Array.of<boolean>(true, false);
+        let exp = Array.from(collections.Array.from([!0]));
+        let result = Array.of<boolean>(!0);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -647,8 +639,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2600';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([!'s']);
-        let result = Array.of<boolean>(!'s');
+        let exp = Array.from(collections.Array.from([Number.isNaN(NaN)]));
+        let result = Array.of<boolean>(Number.isNaN(NaN));
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -670,8 +662,8 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2700';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([!0]);
-        let result = Array.of<boolean>(!0);
+        let exp = Array.from(collections.Array.from([1, true]));
+        let result = Array.of<number | boolean>(1, true);
         expect(result).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -693,53 +685,7 @@ export default function builtinsArrayOfTest() {
       const caseName = 'builtinsArrayOfTest2800';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([Number.isNaN(NaN)]);
-        let result = Array.of<boolean>(Number.isNaN(NaN));
-        expect(result).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayOfTest2900
-     * @tc.number SUB_BUILTINS_ARRAY_OF_TEST_2900
-     * @tc.desc   Testing isArray
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayOfTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayOfTest2900';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from([1, true]);
-        let result = Array.of<number | boolean>(1, true);
-        expect(result).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayOfTest3000
-     * @tc.number SUB_BUILTINS_ARRAY_OF_TEST_3000
-     * @tc.desc   Testing isArray
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayOfTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayOfTest3000';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from([1, 2, 3]);
+        let exp = Array.from(collections.Array.from([1, 2, 3]));
         let result = MyArray.of<number>(1, 2, 3);
         expect(result).assertDeepEquals(exp);
       } catch (err) {

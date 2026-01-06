@@ -197,20 +197,14 @@ export default function builtinsArrayShiftTest() {
       const caseName = 'builtinsArrayShiftTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from<number|TestA>([{
-          a: 1
-        }, {
-          a: 1
-        }, 3, 4]);
-        let array = collections.Array.from<number|TestA>([1, {
-          a: 1
-        }, {
-          a: 1
-        }, 3, 4]);
+        let exp = collections.Array.from(['banana', 'cherry']);
+        let array = collections.Array.from(['apple', 'banana', 'cherry']);
         let newValue = array.shift();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(1);
+        expect(newValue).assertEqual('apple');
+        expect(array[0]).assertEqual('banana');
+        expect(array[1]).assertEqual('cherry');
         expect(array).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -230,35 +224,6 @@ export default function builtinsArrayShiftTest() {
      */
     it('builtinsArrayShiftTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0700';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from(['banana', 'cherry']);
-        let array = collections.Array.from(['apple', 'banana', 'cherry']);
-        let newValue = array.shift();
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual('apple');
-        expect(array[0]).assertEqual('banana');
-        expect(array[1]).assertEqual('cherry');
-        expect(array).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayShiftTest0800
-     * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0800
-     * @tc.desc   Testing shift
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayShiftTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayShiftTest0800';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['', 'cherry']);

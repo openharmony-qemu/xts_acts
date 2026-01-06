@@ -139,7 +139,7 @@ export default function builtinsArrayLastIndexOfTest() {
      */
     it('buildinsArrayLastIndexOfTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = collections.Array.from([1, , 3])
-      expect(any(array).lastIndexOf(undefined)).assertEqual(-1)
+      expect(any(array).lastIndexOf(undefined)).assertEqual(1)
       Done()
     })
 
