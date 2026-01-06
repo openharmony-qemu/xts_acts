@@ -10,6 +10,7 @@
 		"MainAbility/pages/frameNode/APIsetOnHover",
 	  "MainAbility/pages/frameNode/nodeList",
 	  "MainAbility/pages/frameNode/nodeListItemGroup",
-	  "MainAbility/pages/nodeAdapter/NodeAdapter001"
+	  "MainAbility/pages/nodeAdapter/NodeAdapter001",
+	  "MainAbility/pages/frameNode/isInRenderStateTest"
     ]
 }
