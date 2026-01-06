@@ -3049,6 +3049,9 @@ static napi_value NAPI_Global_GetPlaybackStatisticMetricsAbnormal(napi_env env, 
 static napi_value NAPI_Global_GetMediaDescription(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    int32_t hasSubtitle = false;
+    int32_t hasVideo = false;
+    int32_t hasAudio = false;
     int backParam = FAIL;
     OH_AVPlayer *player = OH_AVPlayer_Create();
     AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
@@ -3060,6 +3063,9 @@ static napi_value NAPI_Global_GetMediaDescription(napi_env env, napi_callback_in
     OH_AVFormat* format = OH_AVPlayer_GetMediaDescription(player);
     if (format != nullptr) {
         backParam = SUCCESS;
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_SUBTITLE, &hasSubtitle);
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_VIDEO, &hasVideo);
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_AUDIO, &hasAudio);
     }
     OH_AVPlayer_ReleaseSync(player);
     napi_create_int32(env, backParam, &result);
@@ -3081,6 +3087,7 @@ static napi_value NAPI_Global_GetMediaDescriptionOne(napi_env env, napi_callback
 static napi_value NAPI_Global_GetTrackDescription(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    int32_t trackCount = -1;
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -3098,6 +3105,7 @@ static napi_value NAPI_Global_GetTrackDescription(napi_env env, napi_callback_in
     OH_AVFormat* format = OH_AVPlayer_GetTrackDescription(player, index);
     if (format != nullptr) {
         backParam = SUCCESS;
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_TRACK_INDEX, &trackCount);
     }
     OH_AVPlayer_ReleaseSync(player);
     napi_create_int32(env, backParam, &result);
