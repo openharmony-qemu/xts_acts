@@ -608,17 +608,11 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer2, fenceFd, region);
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer3, fenceFd, region);
     int32_t errorCode1 = OH_NativeImage_UpdateSurfaceImage(image);
-    if (errorCode1 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, errorCode1 == NATIVE_ERROR_OK, "errorCode1 != NATIVE_ERROR_OK");
     OH_NativeBuffer_ColorSpace colorSpace1;
     OH_NativeImage_GetColorSpace(image, &colorSpace1);
     int32_t errorCode2 = OH_NativeImage_ReleaseTextImage(image);
-    if (errorCode2 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, errorCode2 == NATIVE_ERROR_OK, "errorCode2 != NATIVE_ERROR_OK");
     napi_create_int32(env, SUCCESS, &result);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer1);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
