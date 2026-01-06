@@ -422,13 +422,13 @@ export default function PhotoTest() {
       console.log(TAG+"testOHPhotoOutputIsMirrorSupported0300:"+ret);
       expect(ret).assertEqual(CAMERA_ERROR_7400101);
     })
-    /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputEnableMirror0100
-     * @tc.name       : testOHPhotoOutputEnableMirror0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**	 
+     * @tc.name   testOHPhotoOutputEnableMirror0100	 
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputEnableMirror0100	 
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.	 
+     * @tc.type   FUNCTION	 
+     * @tc.size   MEDIUMTEST	 
+     * @tc.level  LEVEL0	 
      */
     it('testOHPhotoOutputEnableMirror0100', Level.LEVEL0, () => {
       let isSupported: boolean = cameras.oHPhotoOutputgetMirrorSupported(0);
