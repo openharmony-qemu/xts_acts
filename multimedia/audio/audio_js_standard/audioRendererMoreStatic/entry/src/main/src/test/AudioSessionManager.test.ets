@@ -526,19 +526,27 @@ export default function audioSessionManagerTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
-        if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
-          console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
-        }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
-          console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+      try {
+        sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+          if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }
+        });
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
         }
-      });
-      let strategy: audio.AudioSessionStrategy = {
-        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+        await activateAudioSession(strategy, done, !isDone);
+        sessionManager.offAudioSessionDeactivated();
+        isAudioSessionActivatedTrue(done, isDone);
+        done();
+      } catch (err: BusinessError) {
+        expect(false).assertTrue();
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
       }
-      await activateAudioSession(strategy, done, !isDone);
-      sessionManager.offAudioSessionDeactivated();
-      isAudioSessionActivatedTrue(done, isDone);
+      done();
     })
 
     /**
@@ -637,7 +645,7 @@ export default function audioSessionManagerTest() {
           expect(deviceType).assertEqual(200);
           console.info(`getDefaultOutputDevice success: ${deviceType}`);
         }
-      }catch (err){
+      }catch (err: BusinessError){
         console.log('getDefaultOutputDevice failed, err :' + err.message)
         expect(false).assertTrue();
       }
