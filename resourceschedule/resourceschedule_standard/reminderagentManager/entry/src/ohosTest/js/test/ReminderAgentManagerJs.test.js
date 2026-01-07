@@ -1496,5 +1496,85 @@ export default function ReminderAgentManagerTest() {
             }
             });
         })
+
+        /**
+         * @tc.name   reminderRequestAttribute_0042
+         * @tc.number reminderRequestAttribute_0042
+         * @tc.desc   test subscribeReminderState promise function and unsubscribeReminderState promise function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderRequestAttribute_0042", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderRequestAttribute_0042---------------------------');
+            let reminderStateCallback = (states) =>{
+                console.info('reminderRequestAttribute_0042 length is : ' + states.length)
+                if(states === undefined){
+                    states=[
+                        {
+                            reminderId: 1,
+                            buttonType: reminderAgent.ReminderType.REMINDER_TYPE_CALENDAR,
+                            isMessageResent: true
+                        }
+                    ];
+                    console.info('reminderRequestAttribute_0042 states callback reminderId ' + states[0].reminderId)
+                    console.info('reminderRequestAttribute_0042 states callback buttonType ' + states[0].buttonType)
+                    console.info('reminderRequestAttribute_0042 states callback isMessageResent ' + states[0].isMessageResent)
+
+                    expect(states[0].reminderId).assertInstanceOf('Number');
+                    expect(states[0].buttonType == reminderAgent.ReminderType.REMINDER_TYPE_CALENDAR).assertTrue();
+                    expect(states[0].isMessageResent == true).assertTrue();
+                    done();
+                }
+            }
+
+            try {   
+                let callbakFlag1 = 1;
+                await reminderAgent.subscribeReminderState(reminderStateCallback);
+                console.info('reminderRequestAttribute_0042 subscribe succeed');
+                expect(callbakFlag1 == 1).assertTrue();
+            } catch (error) {
+                console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+
+            await sleep(1500);
+
+            try {   
+                let callbakFlag2 = 1;
+                await reminderAgent.unsubscribeReminderState(reminderStateCallback);
+                console.info('reminderRequestAttribute_0042 unsubscribe succeed');
+                expect(callbakFlag2 == 1).assertTrue();
+            } catch (error) {
+                console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   reminderRequestAttribute_0043
+         * @tc.number reminderRequestAttribute_0043
+         * @tc.desc   test api23 unsubscribeReminderState promise function and input is empty
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderRequestAttribute_0042", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderRequestAttribute_0042---------------------------');
+
+            try {   
+                let callbakFlag2 = 1;
+                await reminderAgent.unsubscribeReminderState(reminderStateCallback);
+                console.info('reminderRequestAttribute_0042 unsubscribe succeed');
+                expect(callbakFlag2 == 1).assertTrue();
+            } catch (error) {
+                console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        
     })
 }
