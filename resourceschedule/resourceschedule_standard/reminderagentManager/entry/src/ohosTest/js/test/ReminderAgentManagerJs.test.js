@@ -1566,7 +1566,7 @@ export default function ReminderAgentManagerTest() {
 
             try {   
                 let callbakFlag2 = 1;
-                await reminderAgent.unsubscribeReminderState(reminderStateCallback);
+                await reminderAgent.unsubscribeReminderState();
                 console.info('reminderRequestAttribute_0043 unsubscribe succeed');
                 expect(callbakFlag2 == 1).assertTrue();
             } catch (error) {
