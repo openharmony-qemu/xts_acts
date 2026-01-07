@@ -29,7 +29,7 @@ struct Five {
   @State inSetValueTwo: number = 40;
   private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   scroller: Scroller = new Scroller();
-  @State isWearAble: number = 40; 
+  @State isWearAble: boolean = false; 
 
   aboutToAppear(): void {
     this.isWearAble = deviceInfo.deviceType == deviceInfo.DeviceTypes.TYPE_WEARABLE;
