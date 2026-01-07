@@ -151,11 +151,6 @@ function startCameraSession() {
     console.info(TAG + "captureSessionCommitConfig FAILED");
     expect().assertFail();
   }
-
-  let startSession: number = cameras.oHCaptureSessionStart(0);
-  if (startSession != 0) {
-    console.info(TAG + "captureSessionCommitConfig FAILED");
-  }
 }
 
 async function stopCameraSession() {
