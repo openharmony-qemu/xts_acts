@@ -253,7 +253,7 @@ export default function pixelMapSupportYuvFetchFrame() {
             height: 1440
           }
           let pixelMap_NV21 = await fetchFrameByTimeFromVideo(testTag, 'test.mp4', timeUs, queryOption, param);
-          const result = await testPixelMapFlip(testTag, pixelMap_NV21, 'promise', true, true, 1920, 1080)
+          const result = await testPixelMapFlip(testTag, pixelMap_NV21, 'promise', true, true, 1080, 1920)
           expect(result).assertTrue()
           done()
         }catch(error){
