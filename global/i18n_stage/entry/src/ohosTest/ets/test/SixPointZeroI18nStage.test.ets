@@ -1,6 +1,8 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { i18n, intl } from '@kit.LocalizationKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { BusinessError } from '@Kit.BasicServicesKit';
+import { LengthMetrics } from '@Kit.ArkUI';
 
 export default function SixPointZeroI18nStageTest() {
   describe('SixPointZeroI18nStageTest', () => {
@@ -4267,6 +4269,426 @@ export default function SixPointZeroI18nStageTest() {
       expect(value.length > 0).assertEqual(true)
     })
 
+    /**
+     * @tc.name   SUB_GLOBAL_i18n_RelativeTimeFormat_0500
+     * @tc.number SUB_GLOBAL_i18n_testStyledDateTimeFormat_0500
+     * @tc.desc   StyledDateTimeFormat  with formatter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_i18n_RelativeTimeFormat_0500', Level.LEVEL2, () => {
+      let yearTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "HarmonyOS Sans",
+        fontSize: lengthMetrics.fp(30),
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      })
+      let monthTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "Arial",
+        fontSize: lengthMetrics.vp(20),
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      })
+      let dayTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Orange,
+        fontFamily: "HarmonyOS Sans",
+        fontSize: lengthMetrics.fp(30),
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      })
+      let hourTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Orange,
+        fontFamily: "Arial",
+        fontSize: lengthMetrics.vp(20),
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      })
+      let minuteTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Red,
+        fontFamily: "HarmonyOS Sans",
+        fontSize: lengthMetrics.fp(30),
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      })
+      let secondTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Blue,
+        fontFamily: "Arial",
+        fontSize: lengthMetrics.vp(20),
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      })
+      let weekdayTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Green,
+        fontFamily: "HarmonyOS Sans",
+        fontSize: lengthMetrics.fp(30),
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      })
+      let eraTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Green,
+        fontFamily: "Arial",
+        fontSize: lengthMetrics.vp(20),
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      })
+      let dayPeriodTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Green,
+        fontFamily: "HarmonyOS Sans",
+        fontSize: lengthMetrics.fp(30),
+        fontWeight: FontWeight.Medium,
+        fontStyle: FontStyle.Italic
+      })
+      let timeZoneNameTextStyle: TextStyle = new TextStyle({
+        fontColor: Color.Green,
+        fontFamily: "Arial",
+        fontSize: lengthMetrics.vp(20),
+        fontWeight: FontWeight.Lighter,
+        fontStyle: FontStyle.Normal
+      })
+      let date = new Date(2025, 6, 17, 3, 24, 30.1234);
+      let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
+      let formatter: i18n.SimpleDateTimeFormat =
+        i18n.getSimpleDateTimeFormatByPattern("'time('y'/'M'/'d' 'h':'m':'s' 'E'-'G'-'a'-'z')'", locale);
+      let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(formatter,{
+        year: yearTextStyle,
+        month: monthTextStyle,
+        day: dayTextStyle,
+        hour: hourTextStyle,
+        minute: minuteTextStyle,
+        second: secondTextStyle,
+        weekday: weekdayTextStyle,
+        era: eraTextStyle,
+        dayPeriod: dayPeriodTextStyle,
+        timeZoneName: timeZoneNameTextStyle
+      });
+      let formattedDate: StyledString = styledDateFormat.format(date);
+      expect(formattedDate.getString()).assertEqual('time(2025/7/17 3:24:30 周四-公元-上午-GMT+8)')
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0100
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0100
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_AGRICULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0100', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_AGRICULT});
+      expect(aft.format(100)).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0200
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0200
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_AGRICULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0200', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_COMMERCL});
+      expect(aft.format(100)).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0300
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0300
+     * @tc.desc   AdvancedMeasureFormat  with AREA_LAND_RESIDNTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0300', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "hectare", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.AREA_LAND_RESIDNTL});
+      expect(aft.format(100)).assertEqual("247.105 ac")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0400
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0400
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0400', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON});
+      expect(aft.format(2)).assertEqual("78.74 in")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0500
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0500
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0500', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL});
+      expect(aft.format(2)).assertEqual("78.74 in")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0600
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0600
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_RAINFALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0600', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_RAINFALL});
+      expect(aft.format(2)).assertEqual("2 mL")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0700
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0700
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0700', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD});
+      expect(aft.format(100)).assertEqual("0.062 mi")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0800
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0800
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0800', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_SMALL});
+      expect(aft.format(100)).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_0900
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_0900
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_SNOWFALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_0900', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "milliliter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_SNOWFALL});
+      expect(aft.format(100)).assertEqual("100 mL")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1000
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1000
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VEHICLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1000', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VEHICLE});
+      expect(aft.format(100)).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1100
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1100
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VISIBLTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1100', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY});
+      expect(aft.format(100)).assertEqual("0.062 mi")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1200
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1200
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_VISIBLTY_SMALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1200', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_VISIBLTY_SMALL});
+      expect(aft.format(100)).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1300
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1300
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_PERSON_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1300', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_INFORMAL});
+      expect(aft.format(100)).assertEqual("328.084 ft")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1400
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1400
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_SMALL_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1400', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_PERSON_SMALL_INFORMAL});
+      expect(aft.format(100)).assertEqual("100 m")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1500
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1500
+     * @tc.desc   AdvancedMeasureFormat  with LENGTH_ROAD_INFORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1500', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.LENGTH_ROAD_INFORMAL});
+      expect(aft.format(100)).assertEqual("100 m")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1600
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1600
+     * @tc.desc   AdvancedMeasureFormat  with SPEED_ROAD_TRAVEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1600', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "meter-per-hour", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_ROAD_TRAVEL});
+      expect(aft.format(100)).assertEqual("100 m/h")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1700
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1700
+     * @tc.desc   AdvancedMeasureFormat  with SPEED_WIND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1700', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "meter-per-hour", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SPEED_WIND});
+      expect(aft.format(100)).assertEqual("100 米/小时")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1800
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1800
+     * @tc.desc   AdvancedMeasureFormat  with TEMPERATURE_PERSON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1800', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_PERSON});
+      expect(aft.format(100)).assertEqual("37.778°C")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_1900
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_1900
+     * @tc.desc   AdvancedMeasureFormat  with TEMPERATURE_WEATHER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_1900', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "fahrenheit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.TEMPERATURE_WEATHER});
+      expect(aft.format(100)).assertEqual("37.778°C")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_2000
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_2000
+     * @tc.desc   AdvancedMeasureFormat  with VOLUME_VEHICLE_FUEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_2000', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "liter", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.VOLUME_VEHICLE_FUEL});
+      expect(aft.format(100)).assertEqual("26.417 gal")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_2100
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_2100
+     * @tc.desc   AdvancedMeasureFormat  with ELAPSED_TIME_SECOND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_2100', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "day", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.ELAPSED_TIME_SECOND});
+      expect(aft.format(100)).assertEqual("3个月前")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_2200
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_2200
+     * @tc.desc   AdvancedMeasureFormat  with SIZE_FILE_BYTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_2200', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('en-US', {style:"unit", unit: "bit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_FILE_BYTE});
+      expect(aft.format(100)).assertEqual("100 bit")
+    })
+
+    /**
+     * @tc.name   test_AdvancedMeasureFormat_2300
+     * @tc.number SUB_GLOBAL_i18n_NumberFormatSupportUnit_2300
+     * @tc.desc   AdvancedMeasureFormat  with SIZE_SHORTFILE_BYTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AdvancedMeasureFormat_2300', Level.LEVEL2, () => {
+      let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "terabit", unitDisplay: "short"});
+      let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_SHORTFILE_BYTE});
+      expect(aft.format(100)).assertEqual("100 Tb")
+    })
 
   })
 }
