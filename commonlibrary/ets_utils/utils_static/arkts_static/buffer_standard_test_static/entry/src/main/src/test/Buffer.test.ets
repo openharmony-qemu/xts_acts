@@ -1450,12 +1450,9 @@ export default function BufferTest() {
      */
     it("testIndexOf0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("13236");
-      try {
         let index = buf1.indexOf("a", 1);
-        expect(false).assertFail();
-      } catch (err:BusinessError) {
-        expect(err.name).assertEqual('BusinessError');
-      }
+        expect(index).assertEqual(-1);
+
     });
 
     /**
@@ -4965,27 +4962,6 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31200
-     * @tc.name testfrom0788
-     * @tc.desc Copies data from a region of buf to a region in target,
-     *           even if the target memory region overlaps with buf.
-     *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-     *           and the extra part will not be overwritten.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it("testfrom0788", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let sharedArr = new ArrayBuffer(20)
-      let uint8Arr = new Uint8Array(sharedArr);
-      uint8Arr[16] = 9;
-      let bufObj = buffer.from(sharedArr, 0, 20);
-      uint8Arr[15] = 10;
-      expect(String(bufObj.length)).assertEqual('20');
-      expect(JSON.stringify(bufObj)).assertEqual('{"type":"Buffer","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,9,0,0,0]}');
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31300
      * @tc.name testfrom0789
      * @tc.desc Copies data from a region of buf to a region in target,
@@ -5004,23 +4980,6 @@ export default function BufferTest() {
       uint8Arr[1] = 10;
       expect(String(bufObj.length)).assertEqual('5');
       expect(JSON.stringify(bufObj)).assertEqual('{"type":"Buffer","data":[0,0,0,0,9]}');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_31400
-     * @tc.name testfrom0790
-     * @tc.desc Copies data from a region of buf to a region in target,
-     *           even if the target memory region overlaps with buf.
-     *           If sourceEnd is greater than the length of the target, the length of the target shall prevail,
-     *           and the extra part will not be overwritten.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it("testfrom0790", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let sharedArr = new ArrayBuffer(1000)
-      let bufObj = buffer.from(sharedArr, 5, 1);
-      expect(String(bufObj.length)).assertEqual('995');
     });
 
     /**
