@@ -253,7 +253,7 @@ export default function UiTest() {
             try {
                 await window2.resize(600, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
                 await driver.delayMs(waitUiReadyMs*5)
-                let window3 = await driver.findWindow({ bundleName: 'com.uitest.acts' })
+                let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
                 let bounds2 = await window3.getBounds()
                 expect(bounds1.RIGHT != bounds2.RIGHT).assertTrue()
             } catch (error) {
@@ -297,7 +297,7 @@ export default function UiTest() {
             let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' })
             let bounds1 = await window2.getBounds()
             try {
-                await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.LEFT)
+                await window2.resize(600, bounds1.bottom - bounds1.top, ResizeDirection.LEFT)
                 await driver.delayMs(waitUiReadyMs)
                 let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
                 let bounds2 = await window3.getBounds()
