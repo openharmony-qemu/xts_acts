@@ -1533,6 +1533,7 @@ export default function ReminderAgentManagerTest() {
                 await reminderAgent.subscribeReminderState(reminderStateCallback);
                 console.info('reminderRequestAttribute_0042 subscribe succeed');
                 expect(callbakFlag1 == 1).assertTrue();
+                done();
             } catch (error) {
                 console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
                 expect(false).assertTrue();
@@ -1546,6 +1547,7 @@ export default function ReminderAgentManagerTest() {
                 await reminderAgent.unsubscribeReminderState(reminderStateCallback);
                 console.info('reminderRequestAttribute_0042 unsubscribe succeed');
                 expect(callbakFlag2 == 1).assertTrue();
+                done();
             } catch (error) {
                 console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
                 expect(false).assertTrue();
@@ -1565,10 +1567,11 @@ export default function ReminderAgentManagerTest() {
             console.info('----------------------reminderRequestAttribute_0043---------------------------');
 
             try {   
-                let callbakFlag2 = 1;
+                let callbakFlag = 1;
                 await reminderAgent.unsubscribeReminderState();
                 console.info('reminderRequestAttribute_0043 unsubscribe succeed');
-                expect(callbakFlag2 == 1).assertTrue();
+                expect(callbakFlag == 1).assertTrue();
+                done();
             } catch (error) {
                 console.log("reminderRequestAttribute_0043 subscribeReminderState error.code:" + error.code);
                 expect(false).assertTrue();
