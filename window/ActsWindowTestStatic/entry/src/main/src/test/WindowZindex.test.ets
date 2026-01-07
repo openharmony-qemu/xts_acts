@@ -78,6 +78,7 @@ export default function WindowZindexTest() {
         let windowStage: window.WindowStage;
         let win: window.Window;
         let context: common.UIAbilityContext;
+        let windowclassArr:Array<window.Window>;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -103,6 +104,18 @@ export default function WindowZindexTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+            try{
+                windowclassArr = await windowStage.getSubWindow();
+                hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+                if(windowclassArr.length!=0){
+                    for(let i = 0;i<windowclassArr.length;i++){
+                        await windowclassArr[i].destroyWindow();
+                        hilog.info(domain, tag,`brforeAll destroyWindow windowclassArr ${i} success`);
+                    }
+                }
+            }catch (err) {
+                hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
+            }
         })
         beforeEach((): void => {
             let mainWindowId:int = win.getWindowProperties().id;
