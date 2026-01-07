@@ -50,7 +50,7 @@ export default function RunningLockPermissionTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(201);
         } finally {

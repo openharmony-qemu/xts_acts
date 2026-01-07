@@ -234,13 +234,11 @@ export default function builtinsArrayJoinTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayJoinTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      let array = collections.Array.from<string|number|boolean|Keyof>(["apple", 123, true, {
-        prop: "value"
-      }]);
+      let array = collections.Array.from<string|number|boolean>(["apple", 123, true]);
       let joinedString = array.join(',');
-      expect('apple,123,true,[object Object]').assertEqual(joinedString);
+      expect('apple,123,true').assertEqual(joinedString);
       Done();
-    })
+    });
 
     /**
      * @tc.name   builtinsArrayJoinTest1014

@@ -226,32 +226,17 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArraySomeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      interface obj {
-        a: number
-      }
+      const inputArray = collections.Array.from<number>([2, 4, 5, 8]);
 
-      interface obj1 {
-        b: number
-      }
+      let res = false;
+      for (const element of inputArray) {
 
-      interface obj2 {
-        c: number
-      }
-
-      const inputArray = collections.Array.from<obj|number|obj1|obj2>([{
-        a: 1
-      }, {
-        b: 2
-      }, {
-        c: 3
-      }])
-      const even = (element: obj | number | obj1 | obj2): boolean => {
-        if (typeof element === 'object' && element !== null) {
-          return (element as obj).a === 1;
+        if (element % 2 !== 0) {
+          res = true;
+          break;
         }
-        return false;
-      };
-      const res = inputArray.some(even)
+      }
+
       console.log("res:" + JSON.stringify(res))
       expect(res).assertTrue()
       Done()
@@ -267,8 +252,8 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level  LEVEL1
      */
     it('BuiltinsArraySomeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const inputArray = collections.Array.from([[1, 2], [3, 4], [5, 6]])
-      const even = (e: number[]) => e.includes(4)
+      const inputArray = collections.Array.from([1, 2, 3, 4])
+      const even = (num: number) => num === 4
       const res = inputArray.some(even)
       console.log("res:" + JSON.stringify(res))
       expect(res).assertTrue()

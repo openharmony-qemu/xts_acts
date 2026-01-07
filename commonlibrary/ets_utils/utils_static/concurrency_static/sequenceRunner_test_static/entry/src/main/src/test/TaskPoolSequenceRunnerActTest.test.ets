@@ -78,7 +78,8 @@ export default function taskPoolSequenceRunnerActTest() {
           try {
             let task1: taskpool.Task = new taskpool.Task(secPool, 1.0);
             let task2: taskpool.Task = new taskpool.Task(secPool, 2.0);
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result: number = value as number;
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
@@ -89,7 +90,8 @@ export default function taskPoolSequenceRunnerActTest() {
           }
           try {
             let task2: taskpool.Task = new taskpool.Task(secPool, 2.0);
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result: number = value as number;
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
@@ -127,7 +129,8 @@ export default function taskPoolSequenceRunnerActTest() {
             let asyncLockTest = new AsyncLockTest1()
             let task1: taskpool.Task = new taskpool.Task(asyncLock4, asyncLockTest);
             let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result: number = value as number;
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
@@ -139,7 +142,8 @@ export default function taskPoolSequenceRunnerActTest() {
           try {
             let asyncLockTest = new AsyncLockTest1()
             let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result: number = value as number;
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
@@ -176,7 +180,8 @@ export default function taskPoolSequenceRunnerActTest() {
           let task1: taskpool.Task = new taskpool.Task(asyncLock4, asyncLockTest);
           let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
           try {
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result: number = value as number;
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
@@ -186,7 +191,8 @@ export default function taskPoolSequenceRunnerActTest() {
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result: number = value as number;
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
@@ -223,7 +229,8 @@ export default function taskPoolSequenceRunnerActTest() {
           let task1 = new taskpool.Task(printArgs1, 1.0);
           let task2 = new taskpool.Task(printArgs1, 2.0);
           try {
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result : number = value as number;
               cancelTask(task1)
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
@@ -234,7 +241,8 @@ export default function taskPoolSequenceRunnerActTest() {
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result : number = value as number;
               cancelTask(task2)
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
@@ -271,13 +279,15 @@ export default function taskPoolSequenceRunnerActTest() {
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(timeout, 1.0);
           let task2: taskpool.Task = new taskpool.Task(timeout, 2.0);
-          runner.execute(task1).then((result: number): void => {
+          runner.execute(task1).then((value: Any): void => {
+            const result: number = value as number;
             count1++;
             console.info('testTag', 'Task1 result: %{public}d', result);
             expect('1').assertEqual(string(result))
           })
 
-          runner.execute(task2).then((result: number): void => {
+          runner.execute(task2).then((value: Any): void => {
+            const result: number = value as number;
             count2++;
             console.info('testTag', 'Task2 result: %{public}d', result);
             expect('2').assertEqual(string(result))
@@ -311,7 +321,8 @@ export default function taskPoolSequenceRunnerActTest() {
           let task1: taskpool.Task = new taskpool.Task(asyncLock4, asyncLockTest);
           let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
           try {
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result: number = value as number;
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
@@ -321,7 +332,8 @@ export default function taskPoolSequenceRunnerActTest() {
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result: number = value as number;
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
@@ -359,14 +371,16 @@ export default function taskPoolSequenceRunnerActTest() {
           let task1: taskpool.Task = new taskpool.Task(asyncLock4, asyncLockTest); // TODO
           let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
 
-          runner.execute(task1).then((result: number): void => {
+          runner.execute(task1).then((value: Any): void => {
+            const result: number = value as number;
             count1++;
             console.info('testTag', 'Task1 result: %{public}d', result);
             expect('1').assertEqual(string(result))
           }).catch((err: Object | null | undefined) => {
             console.error('testTag', 'Task1 Error: %{public}s', err);
           })
-          runner.execute(task2).then((result: number): void => {
+          runner.execute(task2).then((value: Any): void => {
+            const result: number = value as number;
             count2++;
             console.info('testTag', 'Task2 result: %{public}d', result);
             expect('2').assertEqual(string(result))
@@ -402,7 +416,8 @@ export default function taskPoolSequenceRunnerActTest() {
           let task1: taskpool.Task = new taskpool.Task(asyncLock4, asyncLockTest); // TODO
           let task2: taskpool.Task = new taskpool.Task(asyncLock5, asyncLockTest);
           try {
-            runner.execute(task1).then((result: number): void => {
+            runner.execute(task1).then((value: Any): void => {
+              const result: number = value as number;
               count1++;
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
@@ -412,7 +427,8 @@ export default function taskPoolSequenceRunnerActTest() {
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
-            runner.execute(task2).then((result: number): void => {
+            runner.execute(task2).then((value: Any): void => {
+              const result: number = value as number;
               count2++;
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))

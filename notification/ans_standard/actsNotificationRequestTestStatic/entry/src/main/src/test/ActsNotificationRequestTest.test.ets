@@ -127,7 +127,7 @@ export default function ActsNotificationRequestTest() {
           hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case end`);
           done();
         }
-      }).catch((error: BusinessError):void => {
+      }).catch((error: Error):void => {
         console.error(TEST_CASE_NAME+'Failed to create pixelmap.');
       })
     })

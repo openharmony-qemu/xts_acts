@@ -161,7 +161,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000004);
           done();
@@ -206,7 +206,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000050);
           done();
@@ -242,7 +242,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000004);
           done();
@@ -287,7 +287,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000050);
           done();
@@ -363,7 +363,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           if (err.code !== 0) {
             if(err.code==801) {
               done()
@@ -480,7 +480,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000005);
           done();
@@ -512,7 +512,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000005);
           done();
@@ -536,7 +536,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -552,7 +552,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(201);
           done();
@@ -576,7 +576,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -596,7 +596,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(201);
           done();
@@ -620,7 +620,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -666,7 +666,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -750,7 +750,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         };
         context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
         })
         await Utils.msSleep(500);

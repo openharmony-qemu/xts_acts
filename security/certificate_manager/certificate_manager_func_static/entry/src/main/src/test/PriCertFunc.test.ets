@@ -186,7 +186,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         hilog.info(domain, tag, '%{public}s', "[Promise] cmResult.appUidList: " + cmResult.appUidList);
         hilog.info(domain, tag, '%{public}s', "[Promise] cmResult.outData: " + cmResult.outData);
         keyUri = cmResult.uri;
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "[Promise] installPrivateCertificate err: " + err.code);
         expect(null).assertFail();
       });
@@ -279,7 +279,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
           hilog.info(domain, tag, '%{public}s', "[Promise] credData: " + credential.credentialData);
         }
       })
-      .catch((err: BusinessError): void => {
+      .catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0400 getPrivateCertificate err: " + err.code);
         expect(null).assertFail();
       });
@@ -343,7 +343,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyCallback.signVerifyNormalProcess(gAppKeyUri1, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0600 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -368,7 +368,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyPromise.signVerifyNormalProcess(gAppKeyUri2, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0700 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -563,7 +563,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyCallback.signVerifyNormalProcess(gAppKeyUri1, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1500 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -596,7 +596,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyPromise.signVerifyNormalProcess(gAppKeyUri2, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1600 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -631,7 +631,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyCallback.signVerifyNormalProcess(gAppKeyUri1, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1700 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -664,7 +664,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyPromise.signVerifyNormalProcess(gAppKeyUri2, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1800 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -700,7 +700,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyCallback.signVerifyNormalProcess(gAppKeyUri1, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1900 get err: " + err.code);
         expect(null).assertFail();
       });
@@ -729,7 +729,7 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
       };
       await signVerifyPromise.signVerifyNormalProcess(gAppKeyUri2, keyStore, signSpec, verifySpec).then((result: certManager.CMResult) => {
         expect(result.outData == null).assertTrue();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_2000 get err: " + err.code);
         expect(null).assertFail();
       });

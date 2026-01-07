@@ -96,7 +96,7 @@ struct openCustomDialogWithConOrder {
               .then(() => {
                 console.info('succeeded')
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`OpenCustomDialogWithController args error code is ${err.code}, message is ${err.message}`);
               })
           })
@@ -114,7 +114,7 @@ struct openCustomDialogWithConOrder {
               .then(() => {
                 console.info('succeeded')
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`OpenCustomDialogWithController args error code is ${err.code}, message is ${err.message}`);
               })
           })

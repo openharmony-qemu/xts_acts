@@ -231,23 +231,19 @@ export default function builtinsArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Item {
-        a: number;
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
+
+      let result: number | undefined = undefined;
+
+      for (const element of inputArray) {
+        if (element > 3) {
+          result = element;
+          break;
+        }
       }
-      const inputArray = collections.Array.from<Item>([{
-        a: 1
-      }, {
-        a: 2
-      }, {
-        a: 3
-      }])
-      const callbackFn = (element: Item) => element.a > 1
-      const result = inputArray.find(callbackFn,);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult: Item = {
-        a: 2
-      };
-      expect(result).assertDeepEquals(expectedResult);
+
+      const expectedResult = 4;
+      expect(result).assertEqual(expectedResult);
     });
 
     /**

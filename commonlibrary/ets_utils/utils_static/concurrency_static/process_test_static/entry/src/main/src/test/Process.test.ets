@@ -368,7 +368,8 @@ export default function ProcessTest() {
               results.push(isApp);
             }
             return results;
-          })).then((res: Array<number>): void => {
+          })).then((value: Any): void => {
+            const res = value as Array<number>;
             res.forEach(item => expect(item).assertEqual(-1));
           });
         } catch (err) {
@@ -431,7 +432,8 @@ export default function ProcessTest() {
               count++;
             }
             return count;
-          }), taskpool.Priority.LOW).then((res: Number): void => {
+          }), taskpool.Priority.LOW).then((value: Any): void => {
+            const res = value as Number;
             expect(res).assertEqual(100);
           });
         } catch (err) {

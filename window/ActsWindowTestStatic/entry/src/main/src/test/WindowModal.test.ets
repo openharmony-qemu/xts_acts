@@ -38,13 +38,13 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
@@ -61,7 +61,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             console.log(`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
@@ -137,7 +137,7 @@ export default function WindowModalTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting subwindow modal');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to set subwindow modal. Cause:' + JSON.stringify(err));
                     if(err.code == 801){
                         done();
@@ -174,7 +174,7 @@ export default function WindowModalTest() {
             try {
                 await subWin.setSubWindowModal(false).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting subwindow modal');
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         done();
@@ -211,7 +211,7 @@ export default function WindowModalTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting subwindow modal');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to setSubWindowModal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300004) {
                         hilog.info(domain, tag,msgStr + 'The mainWindow not support setSubWindowModal');
@@ -250,7 +250,7 @@ export default function WindowModalTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting subwindow modal');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300002) {
                         hilog.info(domain, tag,msgStr + 'The SubWindow is destroyed');
@@ -286,7 +286,7 @@ export default function WindowModalTest() {
                 promise.then(() => {
                     hilog.info(domain, tag,`${message} setSubWindowModal success`)
                     expect(false).assertTrue();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                }).catch((err: Error) :PromiseLike<void>|undefined => {
                     if (err.code == 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
                         expect(false).assertFalse()
@@ -330,7 +330,7 @@ export default function WindowModalTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
                     expect(false).assertTrue();
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
@@ -363,7 +363,7 @@ export default function WindowModalTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowModal.');
                     expect(true).assertTrue();
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + JSON.stringify(err));
                     if(err.code == 801){
                         expect(err.code).assertEqual(801);

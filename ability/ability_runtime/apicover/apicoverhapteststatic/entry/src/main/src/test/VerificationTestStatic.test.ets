@@ -79,7 +79,7 @@ export default function verificationStaticTest() {
           missionLabelUpdatedFlag = true;
           expect(missionLabelUpdatedFlag).assertTrue();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'setMissionLabel err');
           expect().assertFail();
           done();

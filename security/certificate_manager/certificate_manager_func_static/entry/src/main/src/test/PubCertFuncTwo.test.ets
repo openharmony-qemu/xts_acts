@@ -109,7 +109,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias).then((cmResult: certManager.CMResult) => {
         let uri: string = cmResult.uri ?? '';
         hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_PriCertJsApi_Func_Static_0102 Succeeded in installing private certificate.');
-      }).catch((err: BusinessError) : void => {
+      }).catch((err: Error) : void => {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0102 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(17500003);
       })
@@ -161,10 +161,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     it('SUB_Security_CertManager_PriCertJsApi_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let keyUri: string | undefined = "";
       try {
-        await certManager.uninstallPrivateCertificate(keyUri).then((cmResult: certManager.CMResult): void => {
+        await certManager.uninstallPrivateCertificate(keyUri).then((): void => {
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Succeeded in uninstalling private certificate.');
           expect(null).assertFail();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
@@ -218,10 +218,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       ]);
       let srcData: Uint8Array = new Uint8Array();
       try {
-        certManager.update(cmHandle, srcData).then((result: certManager.CMResult): void => {
+        certManager.update(cmHandle, srcData).then((): void => {
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_SignThree_Func_Static_0100 Succeeded in updating.');
           expect(null).assertFail();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
@@ -281,7 +281,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         certManager.finish(cmHandle, signRes).then((cmResult: certManager.CMResult) => {
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_SignThree_Func_Static_0102 Succeeded in finishing verification.');
           expect(null).assertFail();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0102 Failed to finish verification. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
@@ -368,10 +368,10 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     it('SUB_Security_CertManager_SignThree_Func_Static_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let cmHandle: Uint8Array = new Uint8Array();
       try {
-        certManager.abort(cmHandle).then((result: certManager.CMResult): void => {
+        certManager.abort(cmHandle).then((): void => {
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_SignThree_Func_Static_0105 Succeeded in aborting.');
           expect(null).assertFail();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0105 Failed to abort. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })

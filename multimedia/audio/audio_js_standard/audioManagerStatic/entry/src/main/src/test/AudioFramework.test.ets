@@ -369,7 +369,7 @@ export default function audioFramework() {
             console.info(`AudioFrameworkRecLog: audioParamsGet is : ${audioParamsGet}`);
             console.info('AudioFrameworkRecLog: audioParams getCapturerInfo are incorrect');
           }
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`AudioFrameworkRecLog: CapturerInfo :ERROR: ${err}`);
         })
         let periodReachCallback = (position: long) => {
@@ -400,11 +400,11 @@ export default function audioFramework() {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
           console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer!.state}`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
           expect(true).assertFalse();
         });
-      }).catch(async(err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`AudioCapturer Created : ERROR : ${err}`);
         expect(true).assertFalse();
       });

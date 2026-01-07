@@ -188,7 +188,7 @@ export default function AbilityStageContextStatic() {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise successful`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise` + err?.code);
           expect(err?.code).assertEqual(16000100);
           done()
@@ -219,7 +219,7 @@ export default function AbilityStageContextStatic() {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise successful`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `${itName} waitAbilityStageMonitor promise` + err?.code);
           expect(err?.code).assertEqual(16000100);
           done()
@@ -249,7 +249,7 @@ export default function AbilityStageContextStatic() {
       await abilityDelegator.addAbilityStageMonitor(stageMonitor).then(() => {
         hilog.info(domain, tag, "stageMonitor addAbilityStageMonitor promise success");
         addMonitor = true;
-      }).catch((err: BusinessError<void>): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag, "SUB_AA_AbilityStageMonitor_Static_0700 addAbilityStageMonitor err: " + JSON.stringify(err));
         expect().assertFail()
         done()
@@ -258,7 +258,7 @@ export default function AbilityStageContextStatic() {
       await abilityDelegator.removeAbilityStageMonitor(stageMonitor).then(() => {
         hilog.info(domain, tag, "stageMonitor addAbilityStageMonitor promise success");
         removeMonitor = true;
-      }).catch((err: BusinessError<void>): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag,
           "SUB_AA_AbilityStageMonitor_Static_0700 removeAbilityStageMonitor err: " + JSON.stringify(err));
         expect().assertFail()

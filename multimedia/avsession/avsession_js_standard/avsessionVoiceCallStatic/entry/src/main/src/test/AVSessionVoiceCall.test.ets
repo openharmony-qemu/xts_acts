@@ -418,7 +418,7 @@ export default function abilityTest() {
             };
             await session!.setCallMetadata(callMetadata0).then(() => {
                 console.info(`${TAG}: setCallMetadata successfully`);
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.info(`${TAG}: setCallMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -426,7 +426,7 @@ export default function abilityTest() {
             await controller.getCallMetadata().then(() => {
                 console.info(`${TAG}: getCallMetadata without avsession test fail, get successful!`);
                 expect(false).assertTrue();
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 if (err) {
                 if (err.code == 6600102) {
                     console.info(`${TAG}: getCallMetadata without avsession test success, error: code: ${err.code}, message: ${err.message}`);
@@ -1161,7 +1161,7 @@ export default function abilityTest() {
             try {
                 await session!.setAVCallState(avCallState0).then(() => {
                     console.info(`${TAG}: setAVCallState successfully`);
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`${TAG}: setAVCallState error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 });
@@ -1169,7 +1169,7 @@ export default function abilityTest() {
                 await controller.getAVCallState().then(() => {
                     console.info(`${TAG}: getAVCallState without session test fail, get successful!`);
                     expect(false).assertTrue();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     if (err.code == 6600102) {
                         console.info(`${TAG}: getCallMetadata without session test success, error: code: ${err.code}, message: ${err.message}`);
                         expect(true).assertTrue();
@@ -3180,7 +3180,7 @@ export default function abilityTest() {
             try {
                 session!.onPlayWithAssetId(playWithAssetIdCallback1);
                 session!.onPlayWithAssetId(playWithAssetIdCallback2);
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -3252,7 +3252,7 @@ export default function abilityTest() {
                     assetId1=data;
                 });
                 session!.offPlayWithAssetId()
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(6600105);
                     done();
@@ -3289,7 +3289,7 @@ export default function abilityTest() {
                 session!.onPlayWithAssetId(playWithAssetIdCallback1);
                 session!.onPlayWithAssetId(playWithAssetIdCallback2);
                 session!.offPlayWithAssetId(playWithAssetIdCallback2);
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(false).assertTrue();
                     done();
@@ -3330,7 +3330,7 @@ export default function abilityTest() {
                 session!.onPlayWithAssetId(playWithAssetIdCallback1);
                 session!.onPlayWithAssetId(playWithAssetIdCallback2);
                 session!.offPlayWithAssetId();
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(6600105);
                     done();
@@ -3438,7 +3438,7 @@ export default function abilityTest() {
                     session!.offPlayWithAssetId();
                     done();
                 });
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(401);
                     done();
@@ -3469,7 +3469,7 @@ export default function abilityTest() {
                     session!.offPlayWithAssetId();
                     done();
                 });
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(401);
                     done();
@@ -3501,7 +3501,7 @@ export default function abilityTest() {
                     session!.offPlayWithAssetId();
                     done();
                 });
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(401);
                     done();
@@ -3533,7 +3533,7 @@ export default function abilityTest() {
                     session!.offPlayWithAssetId();
                     done();
                 });
-                await controller.sendControlCommand(command).catch(async(err: BusinessError) => {
+                await controller.sendControlCommand(command).catch((err: Error) => {
                     console.info(`${TAG}: sendControlCommand failed, error: [${err.code}, ${err.message}]`);
                     expect(err.code).assertEqual(401);
                     done();

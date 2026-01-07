@@ -16,13 +16,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
 import { cert } from "@kit.DeviceCertificateKit";
 import { createCertChain, createX509Cert,
-  caChain,
   caTrustCert, caChain2, caChainWithOcsp,
   caTrustCertWithOcsp,
-  caChainRevokedEntry,
-  caChainRevokedEntry2,
-  caTrustCert2,
-  caChainRevokedEntry3,
   caChainWithOcsp2,
   caTrustCertWithOcsp2,
   caChainWithOcsp3,
@@ -30,7 +25,13 @@ import { createCertChain, createX509Cert,
   interCertRevokedChain,
   interCertRevokedChainTrustCert,
   leafCertRevokedChainTrustCert,
-  leafCertRevokedChain
+  leafCertRevokedChain,
+  CHAIN_TCP_ECC_3_1_PEM,
+  CHAIN_TCP_ECC_3_3_PEM,
+  CHAIN_TCP_ECC_3_2_PEM,
+  CHAIN_TCP_ECC_3_3_NO_REVOKED_PEM,
+  CHAIN_TCP_ECC_3_3_OCSP_PEM,
+  CHAIN_TCP_ECC_3_3_REVOKED_PEM,
 } from "./utils/crl/crl";
 
 
@@ -66,8 +67,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
+          let x509CertChain: cert.X509CertChain =
+            await createCertChain(CHAIN_TCP_ECC_3_3_NO_REVOKED_PEM+CHAIN_TCP_ECC_3_2_PEM+CHAIN_TCP_ECC_3_1_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -172,8 +174,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
+          let x509CertChain: cert.X509CertChain =
+            await createCertChain(CHAIN_TCP_ECC_3_3_OCSP_PEM+CHAIN_TCP_ECC_3_2_PEM+CHAIN_TCP_ECC_3_1_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -268,79 +271,6 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       });
 
     /**
-     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0700
-     * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0700
-     * @tc.desc   The Online CRL, Promise Type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0700",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
-          const param: cert.CertChainValidationParameters = {
-            trustAnchors: [{
-              CACert: x509Cert
-            }],
-            revocationCheckParam: {
-              crlDownloadURI: "https://gitcode.com/m0_72610775/compatibility/blob/master/test_suite" +
-                "/resource/master/standard%20system/acts/resource/security" +
-                "/certificate_framework/20250818178834/inter.crl",
-              options: [
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_FALLBACK_NO_PREFER,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_CHECK_INTERMEDIATE_CA_ONLINE
-              ],
-            }
-          };
-          await x509CertChain.validate(param);
-          expect(null).assertFail();
-        } catch (error) {
-          console.error(`[XTS] CheckCa_Func_0700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
-        }
-        done();
-      });
-
-    /**
-     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0800
-     * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0800
-     * @tc.desc   The Online CRL, Promise Type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0800",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChain);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
-          const param: cert.CertChainValidationParameters = {
-            trustAnchors: [{
-              CACert: x509Cert
-            }],
-            revocationCheckParam: {
-              options: [
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_FALLBACK_NO_PREFER,
-                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_CHECK_INTERMEDIATE_CA_ONLINE
-              ],
-            }
-          };
-          await x509CertChain.validate(param);
-          expect(null).assertFail();
-        } catch (error) {
-          console.error(`[XTS] CheckCa_Func_0800 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
-        }
-        done();
-      });
-
-    /**
      * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_0900
      * @tc.desc   The Online CRL, Promise Type
@@ -351,8 +281,8 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert);
+          let x509CertChain: cert.X509CertChain = await createCertChain(CHAIN_TCP_ECC_3_3_NO_REVOKED_PEM+CHAIN_TCP_ECC_3_2_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -384,8 +314,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry2);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
+          let x509CertChain: cert.X509CertChain =
+            await createCertChain(CHAIN_TCP_ECC_3_3_REVOKED_PEM+CHAIN_TCP_ECC_3_2_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -417,8 +348,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
     it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainRevokedEntry3);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCert2);
+          let x509CertChain: cert.X509CertChain =
+            await createCertChain(CHAIN_TCP_ECC_3_3_REVOKED_PEM+CHAIN_TCP_ECC_3_2_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -580,6 +512,37 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
         done();
       });
 
-
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_1600
+     * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1600
+     * @tc.desc   The Online CRL, Promise Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1600",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let x509CertChain: cert.X509CertChain =
+            await createCertChain(CHAIN_TCP_ECC_3_3_PEM+CHAIN_TCP_ECC_3_2_PEM+CHAIN_TCP_ECC_3_1_PEM);
+          let x509Cert: cert.X509Cert = await createX509Cert(CHAIN_TCP_ECC_3_1_PEM);
+          const param: cert.CertChainValidationParameters = {
+            trustAnchors: [{
+              CACert: x509Cert
+            }],
+            revocationCheckParam: {
+              options: [
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
+              ]
+            }
+          };
+          await x509CertChain.validate(param);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] CheckCa_Func_1600 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        }
+        done();
+      });
   })
 }

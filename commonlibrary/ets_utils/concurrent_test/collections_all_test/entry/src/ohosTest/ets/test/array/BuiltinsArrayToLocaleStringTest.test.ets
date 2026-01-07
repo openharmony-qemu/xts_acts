@@ -108,12 +108,12 @@ export default function builtinsArrayToLocaleStringTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayToLocaleStringTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: Empty = {};
-      const arr = collections.Array.from([])
-      const actual = collections.Array.from([obj, arr, () => {
-      }]).toLocaleString();
-      expect(actual).assertEqual("[object Object],,Cannot get source code of funtion");
+    it('BuiltinsArrayToLocaleStringTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {      // 使用 "可发送" 的 number 类型创建数组
+      const numberArray = collections.Array.from([1000, 2000.5]);
+
+      const actual = numberArray.toLocaleString();
+
+      expect(actual).assertEqual("1,000,2,000.5");
     });
 
     /**

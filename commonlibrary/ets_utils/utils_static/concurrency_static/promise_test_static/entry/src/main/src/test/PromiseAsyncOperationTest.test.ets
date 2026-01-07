@@ -111,7 +111,8 @@ export default function PromiseAsyncOperationTest() {
      */
     it('PromiseAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
       const asyncLock: AsyncLock = AsyncLock.request('Lock');
-      await asyncLock.lockAsync(taskFunction).then((result:number):void => {
+      await asyncLock.lockAsync(taskFunction).then((value: Any):void => {
+        const result = value as number;
         expect(42).assertEqual(result)
         Done();
       })

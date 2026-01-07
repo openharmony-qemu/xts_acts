@@ -175,7 +175,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info("${TAG} remove sticky event AsyncCallback success");
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -226,7 +226,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish2 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600004);
         });
@@ -290,7 +290,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish4 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600007);
         });
@@ -354,7 +354,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' notificationRequest1600014 promiss fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
           done()
@@ -419,7 +419,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(`${Tag} requestEnableNotification1 Promise success!`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} requestEnableNotification1 Promise err: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(1600013)
         })
@@ -470,7 +470,7 @@ export default function ActsCommonEventSystemAPITest() {
             console.info(`${Tag} publish_${index} Promise success`)
             count++;
             expect(count).assertEqual(1);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
               expect(err?.code).assertEqual(1600009)
@@ -498,7 +498,7 @@ export default function ActsCommonEventSystemAPITest() {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             done();
@@ -517,7 +517,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + "Succeed to openNotificationSettings");
           expect(false).assertTrue();
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code == 801).assertTrue();

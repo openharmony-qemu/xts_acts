@@ -1469,6 +1469,7 @@ export default function nativeWindowTest() {
       done();
     });
 
+
     /**
      * @tc.name   testNativeWindowSetMetadataValue_metadata_type
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1516
@@ -1960,6 +1961,21 @@ export default function nativeWindowTest() {
     it('testNativeWindowLockAndUnLockAndRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         let result: number = nativeWindow.testNativeWindowLockAndUnLockAndRequest();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeErrorCodeCover
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2400
+     * @tc.desc   test ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.OHNativeErrorCodeCover();
         expect(result).assertEqual(0);
         done();
       });

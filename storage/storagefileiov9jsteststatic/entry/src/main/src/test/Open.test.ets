@@ -548,7 +548,7 @@ export default function fileIOOpen() {
       try {
         fs.open(fpath, fs.OpenMode.READ_WRITE).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError) : Promise<void> => {
+        }).catch((err: Error) : Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_006 has error for' + JSON.stringify(err));
           expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
@@ -901,7 +901,7 @@ export default function fileIOOpen() {
       try {
         await fs.open(fpath, fs.OpenMode.DIR).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError) : Promise<void> => {
+        }).catch((err: Error) : Promise<void> => {
           fs.unlinkSync(fpath);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_019 has error for' + JSON.stringify(err));
           expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();

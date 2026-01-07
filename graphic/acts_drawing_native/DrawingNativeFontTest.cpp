@@ -2225,7 +2225,6 @@ HWTEST_F(DrawingNativeFontTest, testFontMeasuretextMultipleCalls, Function | Sma
     OH_Drawing_RectDestroy(bounds);
 }
 
-
 /**
  * @tc.name   testFontMeasureSingleCharacter
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_1703
