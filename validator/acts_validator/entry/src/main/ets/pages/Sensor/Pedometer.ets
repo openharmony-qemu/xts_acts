@@ -243,7 +243,7 @@ struct Pedometer {
       .height('40%')
 
       Scroll(){
-        Row({space:20}) {
+        Row({space:12}) {
           this.PassBtn($r('app.string.btn_fullscreen'), true);
           Button() {
             Image($r('app.media.ic_public_help'))

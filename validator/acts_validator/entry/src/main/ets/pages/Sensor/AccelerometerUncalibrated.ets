@@ -273,7 +273,7 @@ struct AccelerometerUncalibrated {
       .margin({ top: '30vp' })
 
       Scroll() {
-        Row({ space: 12 }) {
+        Row({space:12}) {
           this.PassBtn($r('app.string.btn_fullscreen'), true);
           Button() {
             Image($r('app.media.ic_public_help'))
