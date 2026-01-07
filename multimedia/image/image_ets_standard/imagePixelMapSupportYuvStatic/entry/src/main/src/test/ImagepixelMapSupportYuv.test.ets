@@ -25,7 +25,7 @@ import resourceManager from '@ohos.resourceManager';
 import fileIo from '@ohos.file.fs';
 import { initialize } from './AbilityContextHelper.test';
 
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 let sleep = (delay: int): Promise<void> => {
   return new Promise<void>((resolve, _) => {
     setTimeout((): Promise<int> => {
@@ -238,7 +238,7 @@ export default function imagepixelMapSupportYuv() {
         }
         let data: ArrayBuffer = await imagePackerApi.packToData(pixelMap, packOpts);
       }else {
-        const uri: string = testContext.cacheDir + "/" + `${testNum}` + "jpg"
+        const uri: string = testContext!.cacheDir + "/" + `${testNum}` + "jpg"
         const file: fileIo.File = fs.openSync(uri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         if(type === "promise"){
           try {

@@ -55,7 +55,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -67,7 +67,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         updateDateTime: '231123033300Z'
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
       catch (err: BusinessError) {
@@ -85,7 +85,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -97,7 +97,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         updateDateTime: '281123033300Z'
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
       catch (err: BusinessError) {
@@ -115,7 +115,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL2
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -127,7 +127,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         updateDateTime: ''
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -145,7 +145,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -157,7 +157,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         maxCRL: BigInt(10)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
       catch (err: BusinessError) {
@@ -175,7 +175,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -187,7 +187,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         maxCRL: BigInt(0)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
       catch (err: BusinessError) {
@@ -205,7 +205,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -217,7 +217,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         maxCRL: BigInt(-1)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -235,7 +235,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -247,7 +247,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         minCRL: BigInt(0)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertTrue();
       }
       catch (err: BusinessError) {
@@ -265,7 +265,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -277,7 +277,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         minCRL: BigInt(10)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(result).assertFalse();
       }
       catch (err: BusinessError) {
@@ -295,7 +295,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -307,7 +307,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         minCRL: BigInt(-1)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -325,7 +325,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_CRL_Match_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509CRL: cert.X509CRL;
+      let x509CRL: cert.X509CRL | undefined;
       try {
         x509CRL = await crlFunc.createCustomizedX509CRLPromise(PEM, 2);
         expect(x509CRL != null).assertTrue();
@@ -338,7 +338,7 @@ export default function certFrameworkCRLMatchJsAPIFunctionTestUnit() {
         maxCRL: BigInt(1)
       };
       try {
-        const result = x509CRL.match(param);
+        const result = x509CRL!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {

@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 export default function actsStageContextTestStatic() {
   describe('ActsStageContextStaticTest', () => {
@@ -69,7 +69,7 @@ export default function actsStageContextTestStatic() {
       })
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      hilog.info(domain, tag, `context: ${!!context}`);
+      hilog.info(domain, tag, `context: ${!!context!}`);
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -85,7 +85,7 @@ export default function actsStageContextTestStatic() {
     it("ACTS_StageContext_Static_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1500 begin');
       try {
-        application.createModuleContext(context, 'entry').then((Context: common.Context) => {
+        application.createModuleContext(context!, 'entry').then((Context: common.Context) => {
           hilog.info(domain, tag, 'createContext success' + JSON.stringify(Context));
           hilog.info(domain, tag, 'createContext area: ' + JSON.stringify(Context.area));
           expect(Context.area + "").assertEqual("1");
@@ -127,7 +127,7 @@ export default function actsStageContextTestStatic() {
     it("ACTS_StageContext_Static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ACTS_StageContext_Static_1600 begin");
       try {
-        application.createModuleContext(context, 'entry').then((Context: common.Context) => {
+        application.createModuleContext(context!, 'entry').then((Context: common.Context) => {
           hilog.info(domain, tag, 'createContext success');
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + JSON.stringify(Context.applicationInfo.name));
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
@@ -156,7 +156,7 @@ export default function actsStageContextTestStatic() {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1700 begin');
       let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
-        application.createModuleContext(context, 'entrytest').then((Context: common.Context) => {
+        application.createModuleContext(context!, 'entrytest').then((Context: common.Context) => {
           hilog.info(domain, tag, 'createContext success');
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + `${Context.applicationInfo.name}`);
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
@@ -185,7 +185,7 @@ export default function actsStageContextTestStatic() {
     it('ACTS_StageContext_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_0900';
       hilog.info(domain, tag, `${itName} start`);
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub;
       try {
         eventHub.on('event1', callback1);
         eventHub.on('event1', callback2);
@@ -221,7 +221,7 @@ export default function actsStageContextTestStatic() {
      */
     it('ACTS_StageContext_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1000';
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub;
       hilog.info(domain, tag, `${itName} eventHub: ${!!eventHub}`);
       eventHub.on('event1', callback1);
       eventHub.on('event2', callback2);
@@ -256,7 +256,7 @@ export default function actsStageContextTestStatic() {
     it('ACTS_StageContext_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1100';
       hilog.info(domain, tag, `${itName} start`);
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub;
       eventHub.on('event1', callback1);
       eventHub.on('event1', callback1);
       eventHub.emit('event1');
@@ -282,10 +282,10 @@ export default function actsStageContextTestStatic() {
     it('ACTS_StageContext_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1200';
       hilog.info(domain, tag, `${itName} start`);
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub;
       let count = 0;
       let func = () => {
-        let callback: () => void;
+        let callback: (() => void) | undefined;
         callback = () => {
           count++;
           hilog.info(domain, tag, `${itName} callback: ${!!callback}`);
@@ -316,7 +316,7 @@ export default function actsStageContextTestStatic() {
     it('ACTS_StageContext_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1300';
       hilog.info(domain, tag, `${itName} start`);
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub;
       let count = 0;
       let func = () => {
         let callback = () => {
@@ -348,7 +348,7 @@ export default function actsStageContextTestStatic() {
     it('ACTS_StageContext_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1400';
       hilog.info(domain, tag, `${itName} start`);
-      const eventHub = context.eventHub;
+      const eventHub = context!.eventHub!;
       let count = 0;
       let func = () => {
         let callback = () => {

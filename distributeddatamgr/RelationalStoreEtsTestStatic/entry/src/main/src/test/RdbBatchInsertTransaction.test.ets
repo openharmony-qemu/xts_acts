@@ -40,9 +40,9 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "TransactionTest.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let rdbStore: relationalStore.RdbStore;
+let rdbStore: relationalStore.RdbStore | undefined;
 
 export default function RdbBatchInsertTransactionTest() {
   describe('RdbBatchInsertTransactionTest', () => {
@@ -51,21 +51,21 @@ export default function RdbBatchInsertTransactionTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       console.info(TAG + 'beforeAll end');
     });
     beforeEach(async () => {
       console.info(TAG + 'beforeEach');
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
     });
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await rdbStore.executeSql("DELETE FROM test");
+      await rdbStore!.executeSql("DELETE FROM test");
     });
     afterAll(async () => {
       console.info(TAG + 'afterAll');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     });
 
 
@@ -81,7 +81,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0100 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -125,7 +125,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0200 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -169,7 +169,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0300 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -213,7 +213,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0300 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -257,7 +257,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0500 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -301,7 +301,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0500 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -345,7 +345,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0701 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -395,7 +395,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0800 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -444,7 +444,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0900 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -495,7 +495,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1000 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": null,
@@ -537,7 +537,7 @@ export default function RdbBatchInsertTransactionTest() {
       async (done: () => void): Promise<void> => {
         console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1201 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": null,
@@ -584,7 +584,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0100 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -630,7 +630,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0200 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -676,7 +676,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0300 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -722,7 +722,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0300 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -768,7 +768,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0500 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -814,7 +814,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0500 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": "zhangsan",
@@ -860,7 +860,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0700 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -911,7 +911,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0800 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -961,7 +961,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction0900 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "id": 2 as long,
@@ -1013,7 +1013,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction1000 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": null,
@@ -1056,7 +1056,7 @@ export default function RdbBatchInsertTransactionTest() {
         console.log(TAG +
           "************* testbatchInsertWithConflictResolutionSyncInTransaction1200 start *************");
         let u8 = new Uint8Array([1, 2, 3]);
-        let transaction = await rdbStore.createTransaction();
+        let transaction = await rdbStore!.createTransaction();
         try {
           const valueBucket: relationalStore.ValuesBucket = {
             "name": null,

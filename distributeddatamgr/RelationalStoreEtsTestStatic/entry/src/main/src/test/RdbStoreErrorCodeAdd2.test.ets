@@ -12,9 +12,9 @@ import contextConstant from '@ohos.app.ability.contextConstant';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 real," + "data4 blob)";
@@ -109,13 +109,13 @@ export default function RdbStoreErrorCodeAdd2Test() {
       await Utils.msSleep(10000)
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       try {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        hilog.info(domain, tag, '%{public}s', 'contextDir' + context.databaseDir);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+        hilog.info(domain, tag, '%{public}s', 'contextDir' + context!.databaseDir);
 
         expect(rdbStore != undefined).assertTrue();
         if (rdbStore != undefined) {
-          await rdbStore.execute(CREATE_TABLE_TEST)
-          await rdbStore.execute(CREATE_ASSERT_TABLE_TEST);
+          await rdbStore!.execute(CREATE_TABLE_TEST)
+          await rdbStore!.execute(CREATE_ASSERT_TABLE_TEST);
           let u8 = new Uint8Array([1, 2, 3])
           const valueBucket: relationalStore.ValuesBucket = {
             'data1': 'zhangsan',
@@ -139,10 +139,10 @@ export default function RdbStoreErrorCodeAdd2Test() {
             'data1': asset2,
             'data2': assets2
           };
-          await rdbStore.insert('test', valueBucket);
-          await rdbStore.insert('test', valueBucket1);
-          await rdbStore.insert('asset_table', valueBucket2);
-          await rdbStore.insert('asset_table', valueBucket3);
+          await rdbStore!.insert('test', valueBucket);
+          await rdbStore!.insert('test', valueBucket1);
+          await rdbStore!.insert('asset_table', valueBucket2);
+          await rdbStore!.insert('asset_table', valueBucket3);
         }
       } catch(error) {
         hilog.info(domain, tag, '%{public}s', 'beforeEach failed');
@@ -159,7 +159,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
       hilog.info(domain, tag, '%{public}s', 'afterAll');
       try {
         rdbStore?.close();
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       } catch(error) {
         hilog.info(domain, tag, '%{public}s', 'afterAll failed');
         expect().assertFail();
@@ -177,12 +177,12 @@ export default function RdbStoreErrorCodeAdd2Test() {
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
       hilog.error(domain, tag, '%{public}s',"************* RelationalStore_ErrCodeAdd2Test_normal_columns_0001 start *************");
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates);
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         if (resultSet) {
-          checkResultSetForNormalGet(resultSet);
+          checkResultSetForNormalGet(resultSet!);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0001 failed, code is' + e.code + e.message);
@@ -190,9 +190,9 @@ export default function RdbStoreErrorCodeAdd2Test() {
       }
 
       try {
-        resultSet = await rdbStore.queryWithoutRowCount(predicates, ["data1"]);
-        resultSet.goToNextRow();
-        let data1 = resultSet.getString(resultSet.getColumnIndex("data1"));
+        resultSet = await rdbStore!.queryWithoutRowCount(predicates, ["data1"]);
+        resultSet!.goToNextRow();
+        let data1 = resultSet!.getString(resultSet!.getColumnIndex("data1"));
         expect(data1).assertEqual('zhangsan');
         resultSet?.close();
       } catch(e:BusinessError) {
@@ -213,14 +213,14 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates, []);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates, []);
         }
         if (resultSet) {
-          checkResultSetForNormalGet(resultSet);
+          checkResultSetForNormalGet(resultSet!);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
@@ -229,11 +229,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates, [""]);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates, [""]);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let data1 = resultSet.getString(0);
+          resultSet!.goToNextRow();
+          let data1 = resultSet!.getString(0);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
@@ -242,13 +242,13 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates, ["", "data1"]);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates, ["", "data1"]);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let data1 = resultSet.getString(resultSet.getColumnIndex("data1"));
+          resultSet!.goToNextRow();
+          let data1 = resultSet!.getString(resultSet!.getColumnIndex("data1"));
           expect(data1).assertEqual('zhangsan');
-          resultSet.close();
+          resultSet!.close();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0002 failed, code is' + e.code + e.message);
@@ -265,21 +265,21 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       try {
         if (rdbStore) {
-          await rdbStore.close();
+          await rdbStore!.close();
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0003 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800014).assertTrue();
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       }
     })
 
@@ -294,15 +294,15 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       const sql = "select * from test";
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount(sql);
+          resultSet = await rdbStore!.querySqlWithoutRowCount(sql);
         }
         if (resultSet) {
-          checkResultSetForNormalGet(resultSet);
-          resultSet.close();
+          checkResultSetForNormalGet(resultSet!);
+          resultSet!.close();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
@@ -312,13 +312,13 @@ export default function RdbStoreErrorCodeAdd2Test() {
       const sql1 = "select * from test where data2 = 20";
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount(sql1, []);
+          resultSet = await rdbStore!.querySqlWithoutRowCount(sql1, []);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let data1 = resultSet.getString(resultSet.getColumnIndex("data1"));
+          resultSet!.goToNextRow();
+          let data1 = resultSet!.getString(resultSet!.getColumnIndex("data1"));
           expect("lisi").assertEqual(data1);
-          resultSet.close();
+          resultSet!.close();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
@@ -328,13 +328,13 @@ export default function RdbStoreErrorCodeAdd2Test() {
       const sql2 = "select * from test where data2 = ?";
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount(sql2, [18 as long]);
+          resultSet = await rdbStore!.querySqlWithoutRowCount(sql2, [18 as long]);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let data2 = resultSet.getLong(resultSet.getColumnIndex("data2"));
+          resultSet!.goToNextRow();
+          let data2 = resultSet!.getLong(resultSet!.getColumnIndex("data2"));
           expect(18).assertEqual(data2);
-          resultSet.close();
+          resultSet!.close();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0004 failed, code is' + e.code + e.message);
@@ -353,7 +353,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       const valueBucket: relationalStore.ValuesBucket = {
         'data1': "wangwu",
         'data2': null,
@@ -362,31 +362,31 @@ export default function RdbStoreErrorCodeAdd2Test() {
       const sql = "select * from test where data2 = ?";
       try {
         if (rdbStore) {
-          await rdbStore.insert('test', valueBucket);
-          resultSet = await rdbStore.querySqlWithoutRowCount(sql, []);
+          await rdbStore!.insert('test', valueBucket);
+          resultSet = await rdbStore!.querySqlWithoutRowCount(sql, []);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let data2 = resultSet.getLong(resultSet.getColumnIndex("data2"));
+          resultSet!.goToNextRow();
+          let data2 = resultSet!.getLong(resultSet!.getColumnIndex("data2"));
         }
         expect().assertFail();
       } catch (e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0005 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue();
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("");
           expect().assertFail();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0005 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
@@ -401,21 +401,21 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       const sql = "select * from test";
       try {
         if (rdbStore) {
-          await rdbStore.close();
-          resultSet = await rdbStore.querySqlWithoutRowCount(sql);
+          await rdbStore!.close();
+          resultSet = await rdbStore!.querySqlWithoutRowCount(sql);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0006 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800014).assertTrue();
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       }
     })
 
@@ -431,19 +431,19 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.goToNextRow();
+          resultSet!.goToNextRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
@@ -451,11 +451,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.goToNextRow();
+          resultSet!.close();
+          resultSet!.goToNextRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -465,16 +465,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.goToNextRow();
+          resultSet!.goToNextRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -482,16 +482,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
+          resultSet!.goToNextRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0007 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -513,8 +513,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         name: "rdbQuery1.db",
         securityLevel: relationalStore.SecurityLevel.S1,
       }
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-      let resultSet : relationalStore.LiteResultSet;
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+      let resultSet : relationalStore.LiteResultSet | undefined;
       try {
         let predicates = new relationalStore.RdbPredicates('test');
         if (rdbStore1) {
@@ -525,18 +525,18 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore1.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
+          resultSet!.goToNextRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0008 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         if (rdbStore1) {
           await rdbStore1.close();
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         expect(e.code === 14800028).assertTrue()
       }
     })
@@ -553,64 +553,64 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnIndex("");
+          resultSet!.getColumnIndex("");
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.getColumnIndex("data1");
+          resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnIndex("data5");
+          resultSet!.getColumnIndex("data5");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getColumnIndex("data1")
+          resultSet!.close();
+          resultSet!.getColumnIndex("data1")
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -620,16 +620,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.getColumnIndex("data1")
+          resultSet!.getColumnIndex("data1")
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0009-5 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -637,16 +637,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnIndex("data1");
+          resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_00096 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -668,8 +668,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         name: "rdbQuery1.db",
         securityLevel: relationalStore.SecurityLevel.S1,
       }
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-      let resultSet : relationalStore.LiteResultSet;
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+      let resultSet : relationalStore.LiteResultSet | undefined;
       try {
         let predicates = new relationalStore.RdbPredicates('test');
         if (rdbStore1) {
@@ -680,18 +680,18 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore1.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnIndex("data1");
+          resultSet!.getColumnIndex("data1");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0010 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         if (rdbStore1) {
           await rdbStore1.close();
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         expect(e.code === 14800028).assertTrue()
       }
     })
@@ -709,21 +709,21 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.getColumnName(1);
+          resultSet!.getColumnName(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
@@ -731,43 +731,43 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnName(-1 as int);
+          resultSet!.getColumnName(-1 as int);
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnName(5);
+          resultSet!.getColumnName(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getColumnName(1);
+          resultSet!.close();
+          resultSet!.getColumnName(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -777,16 +777,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.getColumnName(1);
+          resultSet!.getColumnName(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-5 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -794,16 +794,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnName(1);
+          resultSet!.getColumnName(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0011-6 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -825,8 +825,8 @@ export default function RdbStoreErrorCodeAdd2Test() {
         name: "rdbQuery1.db",
         securityLevel: relationalStore.SecurityLevel.S1,
       }
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-      let resultSet : relationalStore.LiteResultSet;
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
+      let resultSet : relationalStore.LiteResultSet | undefined;
       try {
         let predicates = new relationalStore.RdbPredicates('test');
         if (rdbStore1) {
@@ -837,18 +837,18 @@ export default function RdbStoreErrorCodeAdd2Test() {
           resultSet = await rdbStore1.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnName(1);
+          resultSet!.getColumnName(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0012 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         if (rdbStore1) {
           await rdbStore1.close();
         }
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         expect(e.code === 14800028).assertTrue()
       }
     })
@@ -865,15 +865,15 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let rows = await resultSet.getRows(2 as int);
+          let rows = await resultSet!.getRows(2 as int);
           for (let i = 0; i < rows.length; i++) {
             if (i == 0) {
               let valueBucket_ret = rows[i] as relationalStore.ValuesBucket;
@@ -894,7 +894,7 @@ export default function RdbStoreErrorCodeAdd2Test() {
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0013 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -913,69 +913,69 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          await resultSet.getRows(2 as int);
+          await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getRows(-1 as int);
+          await resultSet!.getRows(-1 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getRows(2  as int, -1 as int);
+          await resultSet!.getRows(2  as int, -1 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getRows(2  as int, 3 as int);
+          await resultSet!.getRows(2  as int, 3 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-4 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
@@ -983,11 +983,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          await resultSet.getRows(2 as int);
+          resultSet!.close();
+          await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -997,16 +997,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          await resultSet.getRows(2 as int);
+          await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-6 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -1014,16 +1014,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getRows(2 as int);
+          await resultSet!.getRows(2 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0014-7 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -1041,37 +1041,37 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.getRow();
+          resultSet!.getRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getRow();
+          resultSet!.getRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
@@ -1079,11 +1079,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getRow();
+          resultSet!.close();
+          resultSet!.getRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1093,16 +1093,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.getRow();
+          resultSet!.getRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-4 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -1110,16 +1110,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getRow();
+          resultSet!.getRow();
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0015-5 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -1138,28 +1138,28 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let valueBucket_ret = resultSet.getRow();
+          resultSet!.goToNextRow();
+          let valueBucket_ret = resultSet!.getRow();
           if (valueBucket_ret) {
             expect(1 as int).assertEqual(valueBucket_ret["id"]);
             expect('zhangsan').assertEqual(valueBucket_ret["data1"]);
             expect(18 as int).assertEqual(valueBucket_ret["data2"]);
             expect(25000.0 as double).assertEqual(valueBucket_ret["data3"]);
           }
-          resultSet.close();
+          resultSet!.close();
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0016 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -1178,71 +1178,71 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.isColumnNull(0);
+          resultSet!.isColumnNull(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.isColumnNull(0);
+          resultSet!.isColumnNull(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.isColumnNull(-1);
+          resultSet!.goToNextRow();
+          resultSet!.isColumnNull(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.isColumnNull(5);
+          resultSet!.goToNextRow();
+          resultSet!.isColumnNull(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-4 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1250,11 +1250,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.isColumnNull(0);
+          resultSet!.close();
+          resultSet!.isColumnNull(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1264,16 +1264,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.isColumnNull(0);
+          resultSet!.isColumnNull(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-6 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -1281,16 +1281,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.isColumnNull(0);
+          resultSet!.isColumnNull(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0017-7 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -1308,55 +1308,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getLong(0);
+          let id = resultSet!.getLong(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getLong(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getLong(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getLong(5);
+          resultSet!.goToNextRow();
+          resultSet!.getLong(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0018-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1364,11 +1364,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getLong(0);
+          resultSet!.close();
+          resultSet!.getLong(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1389,55 +1389,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getString(1);
+          let id = resultSet!.getString(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getString(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getString(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getString(5);
+          resultSet!.goToNextRow();
+          resultSet!.getString(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0019-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1445,11 +1445,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getString(1);
+          resultSet!.close();
+          resultSet!.getString(1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1470,56 +1470,56 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getDouble(3);
+          let id = resultSet!.getDouble(3);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getDouble(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getDouble(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
 
-          resultSet.goToNextRow();
-          resultSet.getDouble(5);
+          resultSet!.goToNextRow();
+          resultSet!.getDouble(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0020-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1527,11 +1527,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getDouble(3);
+          resultSet!.close();
+          resultSet!.getDouble(3);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1552,55 +1552,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getBlob(4);
+          let id = resultSet!.getBlob(4);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getBlob(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getBlob(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getBlob(5);
+          resultSet!.goToNextRow();
+          resultSet!.getBlob(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0021-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1608,11 +1608,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getBlob(4);
+          resultSet!.close();
+          resultSet!.getBlob(4);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1633,55 +1633,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getValue(0);
+          let id = resultSet!.getValue(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-1 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getValue(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getValue(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getValue(5);
+          resultSet!.goToNextRow();
+          resultSet!.getValue(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0022-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1689,11 +1689,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getValue(0);
+          resultSet!.close();
+          resultSet!.getValue(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1714,55 +1714,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getBlob(4);
+          let id = resultSet!.getBlob(4);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-1, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getBlob(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getBlob(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getBlob(5);
+          resultSet!.goToNextRow();
+          resultSet!.getBlob(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0023-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1770,11 +1770,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getBlob(4);
+          resultSet!.close();
+          resultSet!.getBlob(4);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1795,55 +1795,55 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          let id = resultSet.getValue(0);
+          let id = resultSet!.getValue(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getValue(-1);
+          resultSet!.goToNextRow();
+          resultSet!.getValue(-1);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getValue(5);
+          resultSet!.goToNextRow();
+          resultSet!.getValue(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0024-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
@@ -1851,11 +1851,11 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getValue(0);
+          resultSet!.close();
+          resultSet!.getValue(0);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -1876,41 +1876,41 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let type = await resultSet.getColumnType(resultSet.getColumnIndex("id"))
+          resultSet!.goToNextRow();
+          let type = await resultSet!.getColumnType(resultSet!.getColumnIndex("id"))
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data1"));
+          type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data1"));
           expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data2"));
+          type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data2"));
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data3"));
+          type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data3"));
           expect(type).assertEqual(relationalStore.ColumnType.REAL);
-          type = await resultSet.getColumnType(resultSet.getColumnIndex("data4"));
+          type = await resultSet!.getColumnType(resultSet!.getColumnIndex("data4"));
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
 
-          type = await resultSet.getColumnType("id")
+          type = await resultSet!.getColumnType("id")
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType("data1");
+          type = await resultSet!.getColumnType("data1");
           expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-          type = await resultSet.getColumnType("data2");
+          type = await resultSet!.getColumnType("data2");
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType("data3");
+          type = await resultSet!.getColumnType("data3");
           expect(type).assertEqual(relationalStore.ColumnType.REAL);
-          type = await resultSet.getColumnType("data4");
+          type = await resultSet!.getColumnType("data4");
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0025 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -1928,37 +1928,37 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
           const valueBucket: relationalStore.ValuesBucket = {
             'data1': null,
             'data2': null,
             'data3': null,
             'data4': null,
           };
-          await rdbStore.insert('test', valueBucket);
+          await rdbStore!.insert('test', valueBucket);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.goToNextRow();
-          resultSet.goToNextRow();
-          let type = await resultSet.getColumnType("id")
+          resultSet!.goToNextRow();
+          resultSet!.goToNextRow();
+          resultSet!.goToNextRow();
+          let type = await resultSet!.getColumnType("id")
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = await resultSet.getColumnType("data2");
+          type = await resultSet!.getColumnType("data2");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
-          type = await resultSet.getColumnType("data3");
+          type = await resultSet!.getColumnType("data3");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
-          type = await resultSet.getColumnType("data4");
+          type = await resultSet!.getColumnType("data4");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0026 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -1976,115 +1976,115 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          await resultSet.getColumnType("id")
+          await resultSet!.getColumnType("id")
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          await resultSet.getColumnType(-1 as int);
+          resultSet!.goToNextRow();
+          await resultSet!.getColumnType(-1 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          await resultSet.getColumnType("");
+          resultSet!.goToNextRow();
+          await resultSet!.getColumnType("");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getColumnType("id")
+          await resultSet!.getColumnType("id")
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-4 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getColumnType(0)
+          await resultSet!.getColumnType(0)
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-5 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          await resultSet.getColumnType(5);
+          resultSet!.goToNextRow();
+          await resultSet!.getColumnType(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-6 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          await resultSet.getColumnType("id");
+          resultSet!.close();
+          await resultSet!.getColumnType("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -2094,16 +2094,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          await resultSet.getColumnType("id");
+          await resultSet!.getColumnType("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-8 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -2111,16 +2111,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          await resultSet.getColumnType("id");
+          await resultSet!.getColumnType("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0027-9 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }
@@ -2139,41 +2139,41 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          let type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("id"))
+          resultSet!.goToNextRow();
+          let type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("id"))
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data1"));
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data1"));
           expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-          type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data2"));
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data2"));
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data3"));
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data3"));
           expect(type).assertEqual(relationalStore.ColumnType.REAL);
-          type = resultSet.getColumnTypeSync(resultSet.getColumnIndex("data4"));
+          type = resultSet!.getColumnTypeSync(resultSet!.getColumnIndex("data4"));
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
 
-          type = resultSet.getColumnTypeSync("id")
+          type = resultSet!.getColumnTypeSync("id")
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = resultSet.getColumnTypeSync("data1");
+          type = resultSet!.getColumnTypeSync("data1");
           expect(type).assertEqual(relationalStore.ColumnType.TEXT);
-          type = resultSet.getColumnTypeSync("data2");
+          type = resultSet!.getColumnTypeSync("data2");
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = resultSet.getColumnTypeSync("data3");
+          type = resultSet!.getColumnTypeSync("data3");
           expect(type).assertEqual(relationalStore.ColumnType.REAL);
-          type = resultSet.getColumnTypeSync("data4");
+          type = resultSet!.getColumnTypeSync("data4");
           expect(type).assertEqual(relationalStore.ColumnType.BLOB);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0028 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -2191,33 +2191,33 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
           const valueBucket: relationalStore.ValuesBucket = {
             'data1': null,
             'data2': null,
             'data3': null,
             'data4': null,
           };
-          await rdbStore.insert('test', valueBucket);
+          await rdbStore!.insert('test', valueBucket);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.goToNextRow();
-          resultSet.goToNextRow();
-          let type = resultSet.getColumnTypeSync("id")
+          resultSet!.goToNextRow();
+          resultSet!.goToNextRow();
+          resultSet!.goToNextRow();
+          let type = resultSet!.getColumnTypeSync("id")
           expect(type).assertEqual(relationalStore.ColumnType.INTEGER);
-          type = resultSet.getColumnTypeSync("data4");
+          type = resultSet!.getColumnTypeSync("data4");
           expect(type).assertEqual(relationalStore.ColumnType.NULL);
         }
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0029 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect().assertFail();
       }
@@ -2235,115 +2235,115 @@ export default function RdbStoreErrorCodeAdd2Test() {
      * @tc.level       Level 2
      */
     it('RelationalStore_ErrCodeAdd2Test_normal_columns_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () : Promise<void> => {
-      let resultSet : relationalStore.LiteResultSet;
+      let resultSet : relationalStore.LiteResultSet | undefined;
       let predicates = new relationalStore.RdbPredicates('test');
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("se");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("se");
         }
         if (resultSet) {
-          resultSet.getColumnTypeSync("id")
+          resultSet!.getColumnTypeSync("id")
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getColumnTypeSync(-1 as int);
+          resultSet!.goToNextRow();
+          resultSet!.getColumnTypeSync(-1 as int);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-2 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getColumnTypeSync("");
+          resultSet!.goToNextRow();
+          resultSet!.getColumnTypeSync("");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-3 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800001).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnTypeSync("id")
+          resultSet!.getColumnTypeSync("id")
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-4 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnTypeSync(0)
+          resultSet!.getColumnTypeSync(0)
         }
         expect().assertFail();
       } catch (e:BusinessError){
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-5 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800012).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.goToNextRow();
-          resultSet.getColumnTypeSync(5);
+          resultSet!.goToNextRow();
+          resultSet!.getColumnTypeSync(5);
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-6 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800013).assertTrue()
       }
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.close();
-          resultSet.getColumnTypeSync("id");
+          resultSet!.close();
+          resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
@@ -2353,16 +2353,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
 
       try {
         if (rdbStore) {
-          resultSet = await rdbStore.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
+          resultSet = await rdbStore!.querySqlWithoutRowCount("insert into test (data1) values ('wangwu')");
         }
         if (resultSet) {
-          resultSet.getColumnTypeSync("id");
+          resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-8 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800019).assertTrue()
       }
@@ -2370,16 +2370,16 @@ export default function RdbStoreErrorCodeAdd2Test() {
       try {
         if (rdbStore) {
           let predicates = new relationalStore.RdbPredicates('test1');
-          resultSet = await rdbStore.queryWithoutRowCount(predicates);
+          resultSet = await rdbStore!.queryWithoutRowCount(predicates);
         }
         if (resultSet) {
-          resultSet.getColumnTypeSync("id");
+          resultSet!.getColumnTypeSync("id");
         }
         expect().assertFail();
       } catch(e:BusinessError) {
         hilog.error(domain, tag, '%{public}s','RelationalStore_ErrCodeAdd2Test_normal_columns_0030-9 failed, code is' + e.code + e.message);
         if (resultSet) {
-          resultSet.close();
+          resultSet!.close();
         }
         expect(e.code === 14800021).assertTrue()
       }

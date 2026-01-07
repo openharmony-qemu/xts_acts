@@ -29,7 +29,7 @@ const domain = 0xFF00;
 const tag = "TestTag";
 let kvManager: ddm.KVManager | null = null;
 let kvStore: ddm.SingleKVStore | null = null;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function putBatchString(len: number, prefix: string) {
@@ -136,7 +136,7 @@ export default function schemaTest(){
           });
           await Utils.msSleep(8000)
           context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
         } catch (e) {
           hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
           hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
@@ -144,7 +144,7 @@ export default function schemaTest(){
 
         const config: ddm.KVManagerConfig = {
           bundleName : TEST_BUNDLE_NAME,
-          context: context,
+          context: context!,
         }
         console.info(`beforeAll: createKVManager (single) with ${config}`);
         kvManager = ddm.createKVManager(config)

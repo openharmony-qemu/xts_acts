@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
   describe("certFrameworkCertMatchJsAPIFunctionTestUnit", () => {
     let pemCert0: cert.X509Cert;
-    let pemCert1: cert.X509Cert;
+    let pemCert1: cert.X509Cert | undefined;
     let pemCert7: cert.X509Cert;
     console.info("##########start certFrameworkCertMatchJsAPIFunctionTestUnit##########");
     beforeAll(async () => {
@@ -209,7 +209,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         subjectAlternativeNames: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -504,7 +504,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         authorityKeyIdentifier: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -884,7 +884,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         extendedKeyUsage: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -973,7 +973,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         nameConstraints: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -1061,7 +1061,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         certPolicy: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -1149,7 +1149,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         privateKeyValid: ''
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -1240,7 +1240,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         subjectKeyIdentifier: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {

@@ -37,8 +37,8 @@ export default function imageDecodeOptions() {
     let filesDir: string | undefined | null;
     let filePath: string;
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
+    let globalpixelmap: image.PixelMap | undefined;
+    let globalimageSource: image.ImageSource | undefined;
     beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -48,7 +48,7 @@ export default function imageDecodeOptions() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -56,7 +56,7 @@ export default function imageDecodeOptions() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }

@@ -34,7 +34,7 @@ import Utils from './Util.test';
 
 let TAG = "testTag";
 let rdbStore: relationalStore.RdbStore | undefined = undefined;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const STORE_NAME = "statistics.db"
 const CREATE_TABLE_SQL = "CREATE TABLE IF NOT EXISTS test (" +
   "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -53,7 +53,7 @@ export default function SqlExecutionTimeTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext
-      rdbStore = await relationalStore.getRdbStore(context, config);
+      rdbStore = await relationalStore.getRdbStore(context!, config);
 
     })
 
@@ -95,7 +95,7 @@ export default function SqlExecutionTimeTest() {
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
       rdbStore = undefined;
-      await relationalStore.deleteRdbStore(context, config);
+      await relationalStore.deleteRdbStore(context!, config);
     })
 
     /**

@@ -855,7 +855,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0001 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let booleanValue = new BooleanValue(booleanType, true);
       expect(booleanValue.getValueData()).assertTrue();
       expect(booleanValue.getType()).assertEqual(booleanType);
@@ -873,7 +873,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0002 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let booleanValue = new BooleanValue(booleanType, false);
       expect(booleanValue.getValueData()).assertFalse();
       expect(booleanValue.getType()).assertEqual(booleanType);
@@ -891,7 +891,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0003 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let value1 = new BooleanValue(booleanType, true);
       let value2 = new BooleanValue(booleanType, false);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -910,7 +910,7 @@ export default function constructorTest() {
      */
     it("BooleanValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'BooleanValueConstructor0004 start');
-      let booleanType: BooleanType;
+      let booleanType: BooleanType = BooleanType.REF;
       let trueValue = new BooleanValue(booleanType, true);
       let falseValue = new BooleanValue(booleanType, false);
       expect(trueValue.toString()).assertEqual("true");
@@ -929,7 +929,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0001 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, -128);
       expect(byteValue.getValueData()).assertEqual(-128);
       expect(byteValue.toString()).assertEqual("-128");
@@ -947,7 +947,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0002 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 127);
       expect(byteValue.getValueData()).assertEqual(127);
       expect(byteValue.toString()).assertEqual("127");
@@ -965,7 +965,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0003 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 0);
       expect(byteValue.getValueData()).assertEqual(0);
       expect(byteValue.toLocaleString()).assertEqual("0");
@@ -983,7 +983,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0004 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let value1 = new ByteValue(byteType, 10);
       let value2 = new ByteValue(byteType, 20);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -1002,7 +1002,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0005_01 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let byteValue = new ByteValue(byteType, 64);
       expect(byteValue.getValueData()).assertEqual(64);
       expect(byteValue.toLocaleString()).assertEqual("64");
@@ -1020,7 +1020,7 @@ export default function constructorTest() {
      */
     it("ByteValueConstructor0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'ByteValueConstructor0006 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       let values: byte[] = [-128, 0, 127] as byte[];
       for (let i = 0; i < values.length; i++) {
         let value = values[i];
@@ -1043,7 +1043,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0001 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charData: char = 'A'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
@@ -1062,7 +1062,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0003 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charData: char = '\n'.charAt(0) as char;
       let charValue = new CharValue(charType, charData);
       expect(charValue.getValueData()).assertEqual(charData);
@@ -1081,7 +1081,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0004 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let charValue1 = new CharValue(charType, 'X'.charAt(0) as char);
       let charValue2 = new CharValue(charType, 'Y'.charAt(0) as char);
       expect(charValue1.getType()).assertEqual(charValue2.getType());
@@ -1099,7 +1099,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0005 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       let testChars = [
         '\u0000'.charAt(0) as char,
         '\uffff'.charAt(0) as char
@@ -1123,7 +1123,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor001 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, 3.1415926);
       expect(doubleValue.getValueData()).assertEqual(3.1415926);
       expect(doubleValue.toString()).assertEqual("3.1415926");
@@ -1141,7 +1141,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor0002 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, -2.71828);
       expect(doubleValue.getValueData()).assertEqual(-2.71828);
       expect(doubleValue.toPrint(0)).assertEqual("-2.71828");
@@ -1159,7 +1159,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor003 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let doubleValue = new DoubleValue(doubleType, 0.0);
       expect(doubleValue.getValueData()).assertEqual(0.0);
       expect(doubleValue.toLocaleString()).assertEqual("0");
@@ -1177,7 +1177,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor004 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let value1 = new DoubleValue(doubleType, 1.0);
       let value2 = new DoubleValue(doubleType, 2.0);
       expect(value1.getType()).assertEqual(value2.getType());
@@ -1195,7 +1195,7 @@ export default function constructorTest() {
      */
     it("CharValueConstructor005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'CharValueConstructor005 start');
-      let doubleType : DoubleType;
+      let doubleType : DoubleType = DoubleType.REF;
       let testValues = [Number.MIN_VALUE, Number.MAX_VALUE, Number.POSITIVE_INFINITY] as double[];
       for (let i = 0; i < testValues.length; i++) {
         let value = testValues[i];
@@ -1298,7 +1298,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0001 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, 42);
       expect(intValue.getValueData()).assertEqual(42);
       expect(intValue.toString()).assertEqual("42");
@@ -1316,7 +1316,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0002 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, -100);
       expect(intValue.getValueData()).assertEqual(-100);
       expect(intValue.toPrint(0)).assertEqual("-100");
@@ -1334,7 +1334,7 @@ export default function constructorTest() {
      */
     it("IntValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'IntValueConstructor0003 start');
-      let intType : IntType;
+      let intType : IntType = IntType.REF;
       let intValue = new IntValue(intType, 0);
       expect(intValue.getValueData()).assertEqual(0);
       expect(intValue.toLocaleString()).assertEqual("0");
@@ -1528,7 +1528,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0001 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "A";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1547,7 +1547,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0002 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "你";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1566,7 +1566,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0003 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "\n";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1585,7 +1585,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0004 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "";
       try {
         const charValue = new CharValue(charType, testString.charAt(0));
@@ -1608,7 +1608,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0005 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "7";
       const charValue = new CharValue(charType, testString.charAt(0));
       const result = charValue.getValueData();
@@ -1627,7 +1627,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionCharValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionCharValueGetValueData0006 start');
-      let charType : CharType;
+      let charType : CharType = CharType.REF;
       const testString = "AB";
       try {
         const charValue = new CharValue(charType, testString.charAt(0));
@@ -1650,7 +1650,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0001 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = -128;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1670,7 +1670,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0002 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 127;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1690,7 +1690,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0003 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 0;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1710,7 +1710,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0004 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 42;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1730,7 +1730,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0005 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = -42;
       const byteValue = new ByteValue(byteType, testValue);
       const result = byteValue.getValueData();
@@ -1750,7 +1750,7 @@ export default function constructorTest() {
      */
     it("SUBReflectionByteValueGetValueData0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(domain, tag, '%{public}s', 'SUBReflectionByteValueGetValueData0006 start');
-      let byteType : ByteType;
+      let byteType : ByteType = ByteType.REF;
       const testValue: byte = 100;
       const byteValue = new ByteValue(byteType, testValue);
       const valueData = byteValue.getValueData();

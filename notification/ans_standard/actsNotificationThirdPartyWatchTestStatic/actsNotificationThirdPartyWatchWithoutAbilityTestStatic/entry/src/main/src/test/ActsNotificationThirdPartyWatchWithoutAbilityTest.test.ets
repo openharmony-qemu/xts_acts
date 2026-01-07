@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
 
@@ -63,7 +63,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          await notificationExtensionSubscription.openSubscriptionSettings(context)
+          await notificationExtensionSubscription.openSubscriptionSettings(context!)
             .then(() => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               expect().assertFail();

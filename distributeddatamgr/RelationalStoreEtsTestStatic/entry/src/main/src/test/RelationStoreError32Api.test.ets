@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
-let context:common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 let domain: int = 0x0000;
@@ -90,14 +90,14 @@ export default function RelationStoreError32Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     afterEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -110,7 +110,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0001 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
@@ -141,7 +141,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0002 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
@@ -173,7 +173,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0003 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
@@ -204,7 +204,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0004 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.execute("CREATE TRIGGER prevent_insert_example BEFORE INSERT ON test BEGIN SELECT RAISE(FAIL, '表example_table为只读模式'); END;");
@@ -236,7 +236,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0005 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -253,7 +253,7 @@ export default function RelationStoreError32Test() {
         let rows:long = await rdbStore.delete(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0005 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -276,7 +276,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0006 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -293,7 +293,7 @@ export default function RelationStoreError32Test() {
         let rows:long = rdbStore.deleteSync(predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0006 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -316,7 +316,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0007 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -333,7 +333,7 @@ export default function RelationStoreError32Test() {
         let rows:long = await rdbStore.update(valueBucket0,predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0007 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -357,7 +357,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0008 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -374,7 +374,7 @@ export default function RelationStoreError32Test() {
         let rows:long = rdbStore.updateSync(valueBucket0,predicates);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0008 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -398,7 +398,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0009 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -415,7 +415,7 @@ export default function RelationStoreError32Test() {
         let rows:long = await rdbStore.update(valueBucket0,predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0009 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -439,7 +439,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0010 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -456,7 +456,7 @@ export default function RelationStoreError32Test() {
         let rows:long = rdbStore.updateSync(valueBucket0,predicates, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0010 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -479,7 +479,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError32Test0011 start *************");
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -496,7 +496,7 @@ export default function RelationStoreError32Test() {
         let rows = await rdbStore.execute("UPDATE test SET data1 = '王五'");
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0011 rows *************' + rows);
         expect(rows == 1).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch (e) {
         e = e as BusinessError;
@@ -519,7 +519,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0012 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -538,14 +538,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0012 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0012 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0012 end *************');
@@ -561,7 +561,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0013 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -580,14 +580,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0013 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0013 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0013 end *************');
@@ -605,7 +605,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0014 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -624,14 +624,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0014 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0014 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0014 end *************');
@@ -648,7 +648,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0015 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -666,14 +666,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0015 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0015 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0015 end *************');
@@ -689,7 +689,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0016 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -708,14 +708,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0016 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0016 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0016 end *************');
@@ -731,7 +731,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0017 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -750,14 +750,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0017 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0017 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0017 end *************');
@@ -772,7 +772,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0018 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -791,14 +791,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0018 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0018 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0018 end *************');
@@ -814,7 +814,7 @@ export default function RelationStoreError32Test() {
      */
     it('RelationStoreError32Test0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0019 start *************');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       const valueBucket2 :data_relationalStore.ValuesBucket = {
@@ -833,14 +833,14 @@ export default function RelationStoreError32Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0019 rows *************' + rows);
         expect(rows == 1).assertFail();
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0019 err *************' + err);
         expect(err.code == 14800032).assertEqual(true);
         trans.rollback();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError32Test0019 end *************');

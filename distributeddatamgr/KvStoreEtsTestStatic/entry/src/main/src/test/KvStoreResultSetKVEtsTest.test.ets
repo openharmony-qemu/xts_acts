@@ -32,7 +32,7 @@ const TEST_STORE_ID = 'storeId';
 let kvManager: factory.KVManager | null = null;
 let kvStore: factory.SingleKVStore | null = null;
 let resultSet: factory.KVStoreResultSet | null = null;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 
@@ -61,7 +61,7 @@ export default function KvStoreResultSetTest(){
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
@@ -69,7 +69,7 @@ export default function KvStoreResultSetTest(){
 
       const config : factory.KVManagerConfig = {
         bundleName : TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       }
 
       console.info('beforeAll');
@@ -218,7 +218,7 @@ export default function KvStoreResultSetTest(){
       TAG = 'SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0200';
       hilog.info(domain, tag, TAG + ' start ');
       try {
-        let rs: factory.KVStoreResultSet;
+        let rs: factory.KVStoreResultSet | undefined;
         hilog.info(domain, tag, TAG + 'SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0200 getResultSet start');
         hilog.info(domain, tag, TAG + 'SUB_DDM_DKV_KVSTORERESULTSET_GETCOUNT_0200 getResultSet start,' + JSON.stringify(kvStore));
         if (kvStore == null) {

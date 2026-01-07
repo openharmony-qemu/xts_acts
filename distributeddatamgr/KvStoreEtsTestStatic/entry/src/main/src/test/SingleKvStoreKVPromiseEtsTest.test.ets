@@ -2876,7 +2876,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key'
@@ -2906,7 +2906,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100 closeResultSet success   err:'+err);
             expect(err == undefined).assertTrue();
             done();
@@ -2936,7 +2936,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           await kvStore!.getResultSet('batch_test_string_key').then((result: factory.KVStoreResultSet) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200 getResultSet success');
             resultSet = result;
@@ -2946,7 +2946,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0200 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -2976,7 +2976,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           // kvStore!.getResultSet('test_key_string', 123).then((result) => {
           await kvStore!.getResultSet('test_key_string').then((result: factory.KVStoreResultSet) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400 getResultSet success');
@@ -2987,7 +2987,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          await kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          await kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0400 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -3019,7 +3019,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0500');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key';
@@ -3051,7 +3051,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0500 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -3081,7 +3081,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0600');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'batch_test_string_key';
@@ -3113,7 +3113,7 @@ export default function SingleKvStorePromiseTest() {
               `, error code is ${err.code}, message is ${err.message}`);
             expect(null).assertFail();
           });
-          kvStore!.closeResultSet(resultSet).then((err: Error | undefined) => {
+          kvStore!.closeResultSet(resultSet!).then((err: Error | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0600 closeResultSet success');
             expect(err == undefined).assertTrue();
             done();
@@ -3143,7 +3143,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0700');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let entries: factory.Entry[] = [];
           for (let i = 0; i < 10; i++) {
             let key = 'name_';
@@ -3206,7 +3206,7 @@ export default function SingleKvStorePromiseTest() {
       async (done: () => void): Promise<void> => {
         console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0800');
         try {
-          let resultSet: factory.KVStoreResultSet;
+          let resultSet: factory.KVStoreResultSet | undefined;
           let query = new factory.Query();
           await kvStore!.getResultSet(query).then((result: factory.KVStoreResultSet) => {
             console.log('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0800 getResultSet success');

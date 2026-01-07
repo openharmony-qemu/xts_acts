@@ -34,10 +34,10 @@ import {
   import common from '@ohos.app.ability.common';
   import relationalStore from '@ohos.data.relationalStore';
   
-  let context: common.UIAbilityContext;
+  let context: common.UIAbilityContext | undefined;
   let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   const TAG = "[RELATIONAL_STORE_JS_READ_ONLY_TEST]";
-  let rdbStore: relationalStore.RdbStore;
+  let rdbStore: relationalStore.RdbStore | undefined;
   
   let STORE_CONFIG: relationalStore.StoreConfig = {
     name: "test.db",
@@ -72,12 +72,12 @@ import {
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
         await Utils.msSleep(2000)
         context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
         const CREATE_TABLE_SQL = "CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "name TEXT, age INTEGER, salary REAL, blobType BLOB)";
-        await rdbStore.execute(CREATE_TABLE_SQL);
-        rdbStore.close();
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
+        await rdbStore!.execute(CREATE_TABLE_SQL);
+        rdbStore!.close();
+        rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG1);
         console.info(TAG + 'beforeAll End ');
       })
   
@@ -91,7 +91,7 @@ import {
   
       afterAll(async () : Promise<void> => {
         console.info(TAG + 'afterAll');
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
       })
   
       console.info(TAG + "*************JS Test Begin*************");
@@ -108,7 +108,7 @@ import {
       it('ReadonlyErrCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
         async (done: () => void): Promise<void> => {
           console.info(TAG + "************* ReadonlyErrCode001 start *************");
-          rdbStore.insert("test", valueBucket).then((rowId: long) => {
+          rdbStore!.insert("test", valueBucket).then((rowId: long) => {
             console.info(`ReadonlyErrCode001 Insert2 is successful, rowId = ${rowId}`);
             expect().assertFail();
           }).catch((e: Error): void => {
@@ -118,7 +118,7 @@ import {
           });
   
           try {
-            await rdbStore.insert("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            await rdbStore!.insert("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
             console.info(`ReadonlyErrCode001 insert is successful`);
             expect().assertFail();
           } catch (error) {
@@ -128,7 +128,7 @@ import {
             expect(error.code == 801).assertTrue();
           }
           try {
-            await rdbStore.execute("INSERT INTO test (name, age, salary, blobType) VALUES (?, ?, ?, ?)");
+            await rdbStore!.execute("INSERT INTO test (name, age, salary, blobType) VALUES (?, ?, ?, ?)");
             expect().assertFail();
           } catch (error) {
             error = error as BusinessError;
@@ -137,7 +137,7 @@ import {
             expect(error.code == 801).assertTrue();
           }
           try {
-            rdbStore.insertSync("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            rdbStore!.insertSync("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
             console.info(TAG + `ReadonlyErrCode001 insertSync1 is successful`);
             expect().assertFail();
           } catch (error) {
@@ -148,7 +148,7 @@ import {
           }
   
           let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket, valueBucket1);
-          rdbStore.batchInsert("test", valueBuckets).then((insertNum: long) => {
+          rdbStore!.batchInsert("test", valueBuckets).then((insertNum: long) => {
             console.info(TAG +
               `ReadonlyErrCode001 batchInsert2 is successful, the number of values that were inserted = ${insertNum}`);
             expect().assertFail();
@@ -160,7 +160,7 @@ import {
           });
   
           try {
-            let rowId: long = rdbStore.batchInsertSync("test", valueBuckets);
+            let rowId: long = rdbStore!.batchInsertSync("test", valueBuckets);
             console.info(TAG + `ReadonlyErrCode001 batchInsertSync is successful, rowId = ${rowId}`);
             expect().assertFail();
           } catch (error) {

@@ -158,9 +158,9 @@ export default function TextTextLineTest() {
     let globalTextStyle: text.TextStyle;
     let globalParagraphStyle: text.ParagraphStyle;
     let globalStructStyle: text.StrutStyle;
-    let globalCanvas: drawing.Canvas;
+    let globalCanvas: drawing.Canvas | undefined;
     let checkFontStyle: text.FontStyle;
-    let globalParagraph: text.Paragraph;
+    let globalParagraph: text.Paragraph | undefined;
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
@@ -297,7 +297,7 @@ export default function TextTextLineTest() {
       async (done: () => void): Promise<void> => {
         console.info('www data textLine 000 ')
         try {
-          globalParagraph.layoutSync(500);
+          globalParagraph?.layoutSync(500);
           console.info('www data textLine 11111 ')
 
           let point: common2D.Point = {
@@ -306,7 +306,7 @@ export default function TextTextLineTest() {
           }
           console.info('www data textLine 22222 ')
 
-          let textLines: Array<text.TextLine> = globalParagraph.getTextLines();
+          let textLines: Array<text.TextLine> = globalParagraph!.getTextLines();
           console.info('www data textLine 33333 ' + JSON.stringify(textLines))
           let length = textLines.length;
           console.info('www data textLine 44444 ' + length)
@@ -347,7 +347,7 @@ export default function TextTextLineTest() {
             let textRange: text.Range = textLine.getTextRange();
             expect(textRange.start).assertEqual(textLineExpectData[i].textRange.start);
             expect(textRange.end).assertEqual(textLineExpectData[i].textRange.end);
-            textLine.paint(globalCanvas, 0, 0);
+            textLine.paint(globalCanvas!, 0, 0);
             textLine.createTruncatedLine(4, text.EllipsisMode.START, "...");
             let bounds: text.TypographicBounds = textLine.getTypographicBounds();
             expect(Math.round(bounds.ascent * 100) / 100).assertEqual(textLineExpectData[i].typographicBounds.ascent);

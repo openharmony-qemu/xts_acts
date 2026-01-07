@@ -83,11 +83,11 @@ let g_context: common.UIAbilityContext;
 
 export default function audioVoip() {
     describe('audioVoip', (): void => {
-        let mediaDir: string;
+        let mediaDir: string = '';
         let fdRead: int;
         let readpath: string;
         let fdPath: string;
-        let filePath: string;
+        let filePath: string = '';
         let TagRender = "AudioFrameworkRenderLog";
         let TagRec = "AudioFrameworkRecLog";
         const AUDIOMANAGER = audio.getAudioManager();

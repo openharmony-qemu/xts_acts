@@ -2424,8 +2424,8 @@ export default function MessageTest() {
             await Sleep(1000);
             flag = true;
           }, eaw);
-          let callback: CB;
-          let message: concurrency.Message = new concurrency.Message(callback, handler);
+          let callback: CB | undefined;
+          let message: concurrency.Message = new concurrency.Message(callback!, handler);
           message.sendToTarget();
           while (!flag) {
             await Utils.msSleep(100)

@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
-  let audioRen: audio.AudioRenderer | null;
+  let audioRen: audio.AudioRenderer | null = null;
   let TagFrmwkRender = "audioRendererEnhanceTest";
 
   describe('on_off_outputDeviceChange', () => {

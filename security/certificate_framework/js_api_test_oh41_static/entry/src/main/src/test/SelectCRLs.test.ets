@@ -183,7 +183,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       const param: cert.X509CRLMatchParameters = {
         issuer: [new Uint8Array([0x30, 0x5D, 0x31])]
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
@@ -192,7 +192,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -213,7 +213,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       const param: cert.X509CRLMatchParameters = {
         issuer: []
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([], [2], PEM);
       }
@@ -222,7 +222,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
         expect(null).assertFail();
       }
       try {
-        await crlFunc.selectCRLsCallback(collection, param);
+        await crlFunc.selectCRLsCallback(collection!, param);
         expect(null).assertFail();
       }
       catch (err: BusinessError) {
@@ -282,7 +282,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509Cert: cert.X509Cert;
+      let x509Cert: cert.X509Cert | undefined;
       try {
         x509Cert = await certFunc.createPEMCustomizedX509CertPromise(CRL_CERT_DATA_02[0]);
         expect(x509Cert != null).assertTrue();
@@ -292,7 +292,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       }
       const param: cert.X509CRLMatchParameters = {
         issuer: [CRL_DATA_MAP_02.issuer],
-        x509Cert: x509Cert
+        x509Cert: x509Cert!
       };
       try {
         const crls = await crlFunc.checkSelectCRLs(PEM, [2], param, IS_CALLBACK);
@@ -314,7 +314,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
      * @tc.level  LEVEL1
      */
     it("SUB_Security_Cert_Framework_Select_CRLs_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let x509Cert: cert.X509Cert;
+      let x509Cert: cert.X509Cert | undefined;
       try {
         x509Cert = await certFunc.createPEMCustomizedX509CertPromise(CRL_CERT_DATA_01[0]);
         expect(x509Cert != null).assertTrue();
@@ -324,7 +324,7 @@ export default function certFrameworkSelectCRLsJsAPIFunctionTestUnit() {
       }
       const param: cert.X509CRLMatchParameters = {
         issuer: [CRL_DATA_MAP_02.issuer],
-        x509Cert: x509Cert
+        x509Cert: x509Cert!
       };
       try {
         const crls = await crlFunc.checkSelectCRLs(PEM, [2], param, IS_CALLBACK);

@@ -27,9 +27,9 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 const TAG = "[RELATIONAL_STORE_TEST]";
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
@@ -72,7 +72,7 @@ export default function RdbStoreErrorCodeAddTest() {
     });
     beforeEach(async (): Promise<void>  => {
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.executeSql(DROP_TEST);
       await rdbStore!.executeSql(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([1, 2, 3])
@@ -87,7 +87,7 @@ export default function RdbStoreErrorCodeAddTest() {
     })
     afterEach(async (): Promise<void>  => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     afterAll(async () : Promise<void> => {
       console.info(TAG + 'afterAll');

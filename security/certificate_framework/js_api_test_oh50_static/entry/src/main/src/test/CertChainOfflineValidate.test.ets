@@ -33,9 +33,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit() {
   describe("certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit", () => {
     console.info("##########start certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit##########");
-    let certChain0: cert.X509CertChain;
-    let rootCaCert0: cert.X509Cert;
-    let leafCert: cert.X509Cert;
+    let certChain0: cert.X509CertChain | undefined;
+    let rootCaCert0: cert.X509Cert | undefined;
+    let leafCert: cert.X509Cert | undefined;
     let parentCert0: cert.X509Cert;
     let otherCert: cert.X509Cert;
     console.info("##########start certFrameworkCertChainOfflineValidateJsAPIFunctionTestUnit##########");
@@ -248,7 +248,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_0800';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           options: [
@@ -260,7 +260,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       certChain0 = await certChainFunc.createX509CertChainPromise("pem", 0);
       expect(certChain0 != null).assertTrue();
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
@@ -381,7 +381,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_1400';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           options: [
@@ -391,7 +391,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
@@ -624,7 +624,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [certCrl],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           options: [
@@ -634,10 +634,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         }
       };
       try {
-        const validRes = await certChainFunc.certChainValidateCallback(certChain0, param);
+        const validRes = await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
@@ -662,11 +662,11 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [certCrl],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }]
       };
       try {
-        await certChainFunc.certChainValidateCallback(certChain0, param);
+        await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
@@ -689,7 +689,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           options: [
@@ -699,7 +699,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         }
       };
       try {
-        await certChainFunc.certChainValidateCallback(certChain0, param);
+        await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
@@ -763,7 +763,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let certCrl: cert.CertCRLCollection = cert.createCertCRLCollection([], [crl]);
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         certCRLs: [certCrl],
         revocationCheckParam: {
@@ -780,10 +780,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        const validRes = await certChainFunc.certChainValidateCallback(certChain0, param);
+        const validRes = await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
@@ -808,7 +808,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [certCrl],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           ocspResponderURI: 'aaaaaa',
@@ -824,7 +824,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        await certChainFunc.certChainValidateCallback(certChain0, param);
+        await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
@@ -849,7 +849,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [certCrl],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           ocspResponderURI: 'aaaaaa',
@@ -864,10 +864,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        const validRes = await certChainFunc.certChainValidateCallback(certChain0, param);
+        const validRes = await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
@@ -931,7 +931,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let param: cert.CertChainValidationParameters = {
         certCRLs: [certCrl],
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {
           ocspResponderURI: 'aaaaaa',
@@ -946,7 +946,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        await certChainFunc.certChainValidateCallback(certChain0, param);
+        await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
@@ -1028,16 +1028,16 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Online_Func_4000';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         revocationCheckParam: {}
       }
 
       try {
-        const validRes = await certChainFunc.certChainValidateCallback(certChain0, param);
+        const validRes = await certChainFunc.certChainValidateCallback(certChain0!, param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);

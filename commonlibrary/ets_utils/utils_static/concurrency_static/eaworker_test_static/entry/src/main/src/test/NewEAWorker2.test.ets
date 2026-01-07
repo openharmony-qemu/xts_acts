@@ -732,12 +732,12 @@ export default function NewEAWorkerTes2() {
      * @tc.level Level 0
      */
     it("MainTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let getValue: WorkerPriority;
+      let getValue: WorkerPriority | undefined;
       try {
         await taskpool.execute(() => {
           getValue = EAWorker.main().getPriority()
         })
-        expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+        expect(getValue!).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
       } catch (error) {
         expect(false).assertFail()
       } finally {

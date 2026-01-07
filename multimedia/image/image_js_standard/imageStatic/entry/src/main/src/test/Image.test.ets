@@ -38,7 +38,7 @@ export default function imageJsTest() {
   describe('imageJsTest', (): void => {
     let filesDir: string | undefined | null;
     let testContext: common.UIAbilityContext;
-    let filePath: string;
+    let filePath: string = '';
 
     let fdNumber: int;
     let globalpixelmap: image.PixelMap | undefined = undefined;
@@ -48,7 +48,7 @@ export default function imageJsTest() {
     const getFd = (fileName: string): int => {
       filePath = filesDir + "/" + fileName;
       console.info("image filePath:" + filePath);
-      const file = fs.openSync(filePath);
+      const file = fs.openSync(filePath!);
       fdNumber = file.fd as int;
       return fdNumber;
     };
@@ -374,7 +374,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.jpg');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 create image source failed');
           expect(false).assertTrue();
@@ -403,7 +403,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.bmp');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 create image source failed');
           expect(false).assertTrue();
@@ -432,7 +432,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.gif');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 create image source failed');
           expect(false).assertTrue();
@@ -461,7 +461,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.png');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 create image source failed');
           expect(false).assertTrue();
@@ -491,7 +491,7 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_STATIC_0100");
       try {
         getFd('test.123');
-        let imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        let imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -689,7 +689,7 @@ export default function imageJsTest() {
           sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: opt_size
         };
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath, opts);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!, opts);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();

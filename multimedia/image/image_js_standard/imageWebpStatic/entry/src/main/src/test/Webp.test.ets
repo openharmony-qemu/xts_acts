@@ -35,7 +35,7 @@ class Logger {
 export default function imageWebp() {
   describe('imageWebp', (): void => {
     let filesDir: string | undefined | null;
-    let filePath: string;
+    let filePath: string = '';
     const ERR_CODE = 62980149;
 
     let globalpixelmap: image.PixelMap | undefined = undefined;

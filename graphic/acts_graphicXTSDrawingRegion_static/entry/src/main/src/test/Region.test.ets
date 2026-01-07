@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsRegionTest() {
   describe('DrawingTsRegionTest', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -59,7 +59,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsPointContainedNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionIsPointContainedNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         region.setRect(100, 100, 400, 400);
         let flag: boolean = region.isPointContained(200, 200);
@@ -94,7 +94,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsPointContainedMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionIsPointContainedMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         region.setRect(100, 100, 400, 400);
         let flag: boolean = false;
@@ -127,7 +127,7 @@ export default function drawingTsRegionTest() {
     it('testRegionIsRegionContainedNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionIsRegionContainedNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let other = new drawing.Region();
         region.setRect(100, 100, 400, 400);
@@ -193,7 +193,7 @@ export default function drawingTsRegionTest() {
     it('testRegionQuickRejectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionQuickRejectNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let other = new drawing.Region();
         region.setRect(100, 100, 400, 400);
@@ -253,7 +253,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetPathNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionSetPathNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let path = new drawing.Path();
         region.setRect(100, 100, 400, 400);
@@ -280,7 +280,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetPathMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionSetPathMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let path = new drawing.Path();
         region.setRect(100, 100, 400, 400);
@@ -311,7 +311,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetRectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionSetRectNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         let result1: boolean = region.setRect(100, 100, 400, 400);
         console.info(msg + " setRect -----result1:  " + result1);
@@ -351,7 +351,7 @@ export default function drawingTsRegionTest() {
     it('testRegionSetRectMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRegionSetRectMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let region = new drawing.Region();
         for (let index = 0; index < 20; index++) {
           region.setRect((Math.random() * Number.MAX_VALUE).toInt(), (Math.random() * Number.MAX_VALUE).toInt(),
@@ -375,7 +375,7 @@ export default function drawingTsRegionTest() {
      */
     it('testRegionOpNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRegionOpNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         let region = new drawing.Region();
         region.setRect(200, 200, 400, 400);
@@ -480,7 +480,7 @@ export default function drawingTsRegionTest() {
         drawing.RegionOp.XOR
       ];
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         for (let index = 0; index < 20; index++) {
           let region = new drawing.Region();
           region.setRect(200, 200, 400, 400);

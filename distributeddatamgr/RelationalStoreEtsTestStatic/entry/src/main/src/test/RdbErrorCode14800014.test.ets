@@ -29,7 +29,7 @@ const TABLE = 'distributedTables';
 const TAG = "[RdbErrorCode14800014]"
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let dmInstance: distributedDeviceManager.DeviceManager;
 let deviceId: string | undefined = undefined;
 let rdbStore: data_relationalStore.RdbStore | undefined | null;
@@ -134,9 +134,9 @@ export default function RdbErrorCode14800014() {
       //await createTest();
     });
     beforeEach(async (): Promise<void> => {
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: delete rdbStore success');
-      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore!.execute(CREATE_TABLE_TEST);
       await rdbStore!.execute(CREATE_TABLE_TEST1);
       hilog.info(domain, tag, '%{public}s', 'beforeEach: creat rdbStore success');
@@ -154,7 +154,7 @@ export default function RdbErrorCode14800014() {
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
       rdbStore = undefined;
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     });
 
     /**
@@ -378,7 +378,7 @@ export default function RdbErrorCode14800014() {
     it('SUB_DistributedData_RelationalStore_SDK_DETACH_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_DETACH_1600 start *************");
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -394,7 +394,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(err.code);
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         console.info(TAG + "************* SUB_DistributedData_RelationalStore_SDK_DETACH_1600 end *************");
         done();
       })
@@ -499,7 +499,7 @@ export default function RdbErrorCode14800014() {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
 
-        const dbPath = context.databaseDir + "/rdb/Rst14.db";
+        const dbPath = context!.databaseDir + "/rdb/Rst14.db";
         try {
           rdbStore!.attach(dbPath, "attachDB").then((number: int) => {
             console.info('attach succeeded');
@@ -532,9 +532,9 @@ export default function RdbErrorCode14800014() {
         } catch (err: Error) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
         }
-        const dbPath = context.databaseDir + "/rdb/Rst14.db";
+        const dbPath = context!.databaseDir + "/rdb/Rst14.db";
         try {
-          await rdbStore!.attach(context, STORE_CONFIG3, "attachDB");
+          await rdbStore!.attach(context!, STORE_CONFIG3, "attachDB");
           expect().assertFail();
         } catch (err: Error) {
           console.log(TAG + "err.code:" + err.code);
@@ -553,7 +553,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -570,7 +570,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(err.code);
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -584,7 +584,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -604,7 +604,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -619,7 +619,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -639,7 +639,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(err.code);
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -653,7 +653,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -674,7 +674,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -688,7 +688,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -708,7 +708,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -722,7 +722,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -742,7 +742,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -756,7 +756,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -776,7 +776,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -790,7 +790,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -811,7 +811,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -826,7 +826,7 @@ export default function RdbErrorCode14800014() {
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
         hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 start *************");
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -847,7 +847,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 end *************");
         done();
       })
@@ -862,7 +862,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -881,7 +881,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(err.code);
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -895,7 +895,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -915,7 +915,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -929,7 +929,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -946,7 +946,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -960,7 +960,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -984,7 +984,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -998,7 +998,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -1022,7 +1022,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1036,7 +1036,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1061,7 +1061,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
         console.log(TAG + "************* testGetAssets0001 end *************");
       })
@@ -1077,7 +1077,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1103,7 +1103,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
         console.log(TAG + "************* testGetAssets0001 end *************");
       })
@@ -1118,7 +1118,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1143,7 +1143,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
         console.log(TAG + "************* testGetAssets0001 end *************");
       })
@@ -1159,7 +1159,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1188,7 +1188,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1202,7 +1202,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1237,7 +1237,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1251,7 +1251,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_12001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -1271,7 +1271,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1285,7 +1285,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -1305,7 +1305,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(e.code)
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1319,7 +1319,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -1339,7 +1339,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1355,7 +1355,7 @@ export default function RdbErrorCode14800014() {
       async (done: () => void) => {
         hilog.info(domain, tag, '%{public}s',
           "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2400 start *************");
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
 
         try {
@@ -1373,7 +1373,7 @@ export default function RdbErrorCode14800014() {
           done();
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
         hilog.info(domain, tag, '%{public}s',
           "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2400 end *************");
@@ -1392,7 +1392,7 @@ export default function RdbErrorCode14800014() {
       async (done: () => void) => {
         hilog.info(domain, tag, '%{public}s',
           "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200 start *************");
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -1413,7 +1413,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(e.code)
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         hilog.info(domain, tag, '%{public}s',
           "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_RemoteQuery_1200 end *************");
         done();
@@ -1429,7 +1429,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         try {
           await rdbStore!.close();
@@ -1447,7 +1447,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(e.code)
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1461,7 +1461,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1490,7 +1490,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1504,7 +1504,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1527,7 +1527,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1541,7 +1541,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1565,7 +1565,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1580,7 +1580,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1604,7 +1604,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1618,7 +1618,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1644,7 +1644,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1658,7 +1658,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1684,7 +1684,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(e.code)
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1698,7 +1698,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1725,7 +1725,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1739,7 +1739,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array(2);
         u8.fill(1);
@@ -1782,7 +1782,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1796,7 +1796,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array(2);
         u8.fill(1);
@@ -1839,7 +1839,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1853,7 +1853,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         let u8 = new Uint8Array(2);
         u8.fill(1);
@@ -1896,7 +1896,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -1910,7 +1910,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -1939,7 +1939,7 @@ export default function RdbErrorCode14800014() {
         }
 
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 
@@ -2027,7 +2027,7 @@ export default function RdbErrorCode14800014() {
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG3);
         await rdbStore!.execute(CREATE_TABLE_TEST1);
         const u8 = new Uint8Array([1, 2, 3]);
         const valueBucket: data_relationalStore.ValuesBucket = {
@@ -2063,7 +2063,7 @@ export default function RdbErrorCode14800014() {
           expect(14800014).assertEqual(e.code)
         }
         rdbStore = undefined;
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG3);
         done();
       })
 

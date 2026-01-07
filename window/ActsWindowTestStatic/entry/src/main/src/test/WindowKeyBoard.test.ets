@@ -32,8 +32,8 @@ export default function WindowKeyBoardTest() {
 
     describe("WindowKeyBoardTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowKeyBoardTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
         let context: common.UIAbilityContext;
         let isFreeWindowMode:boolean = false;
         // let session:UIExtensionContentSession;
@@ -53,7 +53,7 @@ export default function WindowKeyBoardTest() {
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-            let mainWindowClass:window.Window = windowStage.getMainWindowSync();
+            let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
             isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
             //isFreeWindowMode == true 自由窗口模式
             //isFreeWindowMode == false 非自由窗口模式
@@ -82,7 +82,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardDidShowErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOnKeyboardDidShowErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -122,7 +122,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardDidShowErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardDidShowErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -162,7 +162,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardDidHideErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOnKeyboardDidHideErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -201,7 +201,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardDidHideErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardDidHideErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -240,7 +240,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardHeightChangeErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOnKeyboardHeightChangeErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -271,7 +271,7 @@ export default function WindowKeyBoardTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardHeightChangeErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardHeightChangeErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -302,7 +302,7 @@ export default function WindowKeyBoardTest() {
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
+                subWin = await windowStage!.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -402,7 +402,7 @@ export default function WindowKeyBoardTest() {
             let caseName:string =  'testSetWindowTransitionAnimationNormal_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let mainWin :window.Window= windowStage.getMainWindowSync();
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             console.info(msgStr + 'Succeeded getMainWindowSync.');
             const animationConfig: window.WindowAnimationConfig = {
@@ -456,7 +456,7 @@ export default function WindowKeyBoardTest() {
         it('testSubWindowDestroy_onKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_onKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_onKeyboradWillShow_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradWillShow_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -492,7 +492,7 @@ export default function WindowKeyBoardTest() {
         it('testSubWindowDestroy_offKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_offKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offKeyboradWillShow_static');
+            const subWindowClass = await windowStage!.createSubWindow('testSubWindowDestroy_offKeyboradWillShow_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -527,7 +527,7 @@ export default function WindowKeyBoardTest() {
         it('testSubWindowDestroy_onkeyboardWillHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_onkeyboardWillHide_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_onkeyboardWillHide_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onkeyboardWillHide_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -563,7 +563,7 @@ export default function WindowKeyBoardTest() {
         it('testSubWindowDestroy_offkeyboardWillHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_offkeyboardWillHide_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardWillHide_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_offkeyboardWillHide_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -599,7 +599,7 @@ export default function WindowKeyBoardTest() {
             let caseName:string= 'testGetWindowTransitionAnimationNormal_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let mainWin :window.Window= windowStage.getMainWindowSync();
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             console.info(msgStr + 'Succeeded getMainWindowSync.');
             const animationConfig: window.WindowAnimationConfig = {
@@ -662,7 +662,7 @@ export default function WindowKeyBoardTest() {
         it('testMainWindow_onKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainWindow_onKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
             try {
                 if (isFreeWindowMode == true) {
                     done();

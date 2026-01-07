@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base';
 import deviceInfo from '@ohos.deviceInfo';
 
-let abilityContext: common.UIAbilityContext
+let abilityContext: common.UIAbilityContext | undefined;
 
 const SETTINGS_PARAM_INVALID_CODE:number = 16900010;
 const deviceType = deviceInfo.deviceType;
@@ -114,7 +114,7 @@ export default function settingUiJsunit() {
      */
     it('settings_get_value_static_005',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness20';
-      let value = settings.getValueSync(abilityContext, name, "test getValueSync");
+      let value = settings.getValueSync(abilityContext!, name, "test getValueSync");
       console.info("[settings_get_value_005] value is: " + value);
       expect(value).assertEqual("test getValueSync");
       done();
@@ -133,7 +133,7 @@ export default function settingUiJsunit() {
       let defaultValue = '323445.00';//值
       let domainName = 'system';
       try{
-        let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
+        let value = settings.getValueSync(abilityContext!, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
         expect(value).assertEqual(defaultValue);
         done();
@@ -157,8 +157,8 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness33';
       let value = 'brightness33'
       try{
-        settings.setValueSync(abilityContext, name, value);
-        settings.getValue(abilityContext, name, (err, ret) => {
+        settings.setValueSync(abilityContext!, name, value);
+        settings.getValue(abilityContext!, name, (err, ret) => {
           console.info("[settings_get_value_033] value is: " + ret);
           expect().assertFail();
         })
@@ -184,8 +184,8 @@ export default function settingUiJsunit() {
       let value = 'brightness34'
 
       try{
-        settings.setValueSync(abilityContext, name, value);
-        settings.getValue(abilityContext, name).then(ret =>{
+        settings.setValueSync(abilityContext!, name, value);
+        settings.getValue(abilityContext!, name).then(ret =>{
           console.info("[settings_get_value_034] value is: " + ret);
           expect().assertFail();
         })
@@ -210,7 +210,7 @@ export default function settingUiJsunit() {
       let defaultValue = '323445.00';//值
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
-        let value = settings.setValueSync(abilityContext, name, defaultValue, domainName);
+        let value = settings.setValueSync(abilityContext!, name, defaultValue, domainName);
         expect().assertFail();
         done();
       }catch (err: Error) {
@@ -233,10 +233,10 @@ export default function settingUiJsunit() {
       let value = 'brightness35';//值
       let domainName = 'secure';
       try{
-        settings.setValue(abilityContext, name, value, domainName)
+        settings.setValue(abilityContext!, name, value, domainName)
           .then((data)=>{
             console.info("[settings_get_value_35] value is:" + data);
-            settings.getValue(abilityContext, name, domainName).then(ret => {
+            settings.getValue(abilityContext!, name, domainName).then(ret => {
               console.info("[settings_get_value_35] value is:" + ret);
               expect().assertFail();
               done();
@@ -267,7 +267,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness113';//关键字
       let value = 'brightness113'//值
       try{
-        settings.setValue(abilityContext, name, value)
+        settings.setValue(abilityContext!, name, value)
           .then((data)=>{
             expect().assertFail();
             done();
@@ -1440,7 +1440,7 @@ export default function settingUiJsunit() {
       let value = 'brightness117';//值
       let domainName = 'secure';
       try{
-        settings.setValue(abilityContext, name, value, domainName)
+        settings.setValue(abilityContext!, name, value, domainName)
           .then((data)=>{
             console.info("[settings_get_value_static_117] value is:" + data);
             done();
@@ -1471,7 +1471,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness118';//关键字
       let domainName = settings.domainName.USER_PROPERTY;
       try{
-        let value = settings.registerKeyObserver(abilityContext, name, domainName, (err, ret) => {
+        let value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {
           if (err) {
             console.info("[settings_get_value_static_118] error is:" + String(err));
             expect(err.code).assertEqual(201);
@@ -1500,14 +1500,14 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness122';//关键字
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
-        let value = settings.registerKeyObserver(abilityContext, name, domainName, (err, ret) => {
+        let value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {
           if (err) {
             console.info("[settings_get_value_static_118] error is:" + String(err));
             expect(err.code).assertEqual(201);
           }
           done();
         })
-        let value2 = settings.unregisterKeyObserver(abilityContext, name, domainName);
+        let value2 = settings.unregisterKeyObserver(abilityContext!, name, domainName);
         expect(value2).assertTrue();
         done();
       }catch (err: Error) {
@@ -1526,7 +1526,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value = settings.openNetworkManagerSettings(abilityContext)
+      let value = settings.openNetworkManagerSettings(abilityContext!)
         .then((status)=>{
           console.info("[open_manager_settings_static_119] value is:" + status);
           expect(status).assertTrue();
@@ -1550,7 +1550,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('open_manager_settings_static_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let value = settings.openNetworkManagerSettings(abilityContext)
+        let value = settings.openNetworkManagerSettings(abilityContext!)
           .then((status)=>{
             console.info("[open_manager_settings_static_120] value is:" + status);
             expect(status).assertTrue();
@@ -1580,7 +1580,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openInputMethodSettings(abilityContext);
+        settings.openInputMethodSettings(abilityContext!);
       } catch (err) {
         console.error("[openInputMethodSettings_valid_param] error = " + err);
         if ((err as BusinessError).code) {
@@ -1606,7 +1606,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openInputMethodDetail(abilityContext, '', 'inputMethodId');
+        settings.openInputMethodDetail(abilityContext!, '', 'inputMethodId');
       } catch (err) {
         console.error("[openInputMethodDetail_invalid_bundleName] error = " + err);
         if ((err as BusinessError).code) {
@@ -1632,7 +1632,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openInputMethodDetail(abilityContext, 'bundleName', '');
+        settings.openInputMethodDetail(abilityContext!, 'bundleName', '');
       } catch (err) {
         console.error("[openInputMethodDetail_invalid_method] error = " + err);
         if ((err as BusinessError).code) {
@@ -1658,7 +1658,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openInputMethodDetail(abilityContext, 'bundleName', 'inputMethodId');
+        settings.openInputMethodDetail(abilityContext!, 'bundleName', 'inputMethodId');
       } catch (err) {
         console.error("[openInputMethodDetail_valid_param] error = " + err);
         if ((err as BusinessError).code) {

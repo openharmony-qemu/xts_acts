@@ -42,7 +42,7 @@ export default function ResmgrTest() {
   describe("ResmgrTest", (): void => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start ResmgrTest*************');
     let resContext: Context;
-    let res: resourceManager.ResourceManager;
+    let res: resourceManager.ResourceManager | undefined;
 
     beforeAll(async () => {
       console.info("beforeAll case");
@@ -511,7 +511,7 @@ export default function ResmgrTest() {
        */
       it('getDeviceCapability_test_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          res.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
+          res?.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
             if (dc.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
               console.log('getDeviceCapability_test_static_008 DEVICE_TYPE_PHONE');
             }
@@ -709,7 +709,7 @@ export default function ResmgrTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
-      res.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
+      res?.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
         console.log('getRawFd_test_static_0100 error code:' + error?.code);
         expect(error?.code).assertEqual(9001005);
       })
@@ -724,7 +724,7 @@ export default function ResmgrTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
-      res.getRawFd('plural_name_loop').then(() => {
+      res?.getRawFd('plural_name_loop').then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError;
         console.log('getRawFd_test_static_0200 error code:' + error.code);
@@ -2285,7 +2285,7 @@ export default function ResmgrTest() {
      */
     it('resourceManager_test_getStringByNameSync_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        res.getStringByNameSync('test_stringLoopB', 'aaa', 1);
+        res?.getStringByNameSync('test_stringLoopB', 'aaa', 1);
         done();
       } catch (err) {
         console.log('resourceManager_test_getStringByNameSync_static_0270 error code:' + err?.code);
@@ -2304,7 +2304,7 @@ export default function ResmgrTest() {
        */
       it('resourceManager_test_getStringByNameSync_static_0280', Level.LEVEL0,
         async (done: () => void): Promise<void> => {
-          let resMgr = res;
+          let resMgr = res!;
           try {
             resMgr.getStringByNameSync('test_stringTwentyFour', "format string", "format", "1.5", "string");
             done();
@@ -2726,7 +2726,7 @@ export default function ResmgrTest() {
        * @tc.level  LEVEL2
        */
       it('getScreenDensity_test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-          res.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
+          res?.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
             if (error) {
               console.log('getScreenDensity_test_static_001 errorCode: ' + error.code +'errorMessage:'+ error.message);
               expect().assertFail();

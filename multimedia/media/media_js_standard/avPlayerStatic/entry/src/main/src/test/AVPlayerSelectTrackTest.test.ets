@@ -32,7 +32,7 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let avFd: media.AVFileDescriptor;
+let avFd: media.AVFileDescriptor | undefined;
 let avPlayer: media.AVPlayer | undefined;
 let audioTrackList: Array<Object> = [];
 let selectedTrackList: Array<number> = [];
@@ -231,7 +231,7 @@ export default function AVPlayerSelectTrackTest() {
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await mediaTestBase.closeFdNumber(avFd.fd)
+      await mediaTestBase.closeFdNumber(avFd!.fd)
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
@@ -264,7 +264,7 @@ export default function AVPlayerSelectTrackTest() {
         await resetAndCallbackOff();
         done();
       }
-      await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined , done);
+      await testChangeTrack(avFd!, preparedOperation, playedOperation, stoppedOperation, undefined , done);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
@@ -297,7 +297,7 @@ export default function AVPlayerSelectTrackTest() {
         done();
       }
 
-      await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testChangeTrack(avFd!, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
   })
 }

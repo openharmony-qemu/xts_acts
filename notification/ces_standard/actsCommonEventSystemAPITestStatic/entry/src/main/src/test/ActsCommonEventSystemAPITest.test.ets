@@ -43,7 +43,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let bundleName: string = 'com.example.systemAPI.static'
 let count: int = 0;
 
@@ -442,11 +442,11 @@ export default function ActsCommonEventSystemAPITest() {
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282'
 
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
         })
         await Utils.msSleep(1000)
-        notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${Tag} requestEnableNotification1 Promise success!`)
           expect(false).assertTrue()
           done()
@@ -527,7 +527,7 @@ export default function ActsCommonEventSystemAPITest() {
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
-        notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+        notificationManager.openNotificationSettings(testAbilityContext!).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
         }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
@@ -544,7 +544,7 @@ export default function ActsCommonEventSystemAPITest() {
           }
         })
         await Utils.msSleep(2000)
-        await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
+        await notificationManager.openNotificationSettings(testAbilityContext!).then(() => {
           console.info(Tag + "Succeed to openNotificationSettings");
           expect(false).assertTrue();
           done()

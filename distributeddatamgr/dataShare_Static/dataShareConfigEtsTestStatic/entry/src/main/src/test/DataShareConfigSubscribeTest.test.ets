@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import dataShare from '@ohos.data.dataShare';
 import { BusinessError } from '@ohos.base';
 
-let g_handle: dataShare.DataProxyHandle;
+let g_handle: dataShare.DataProxyHandle | undefined;
 let g_config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG
 }

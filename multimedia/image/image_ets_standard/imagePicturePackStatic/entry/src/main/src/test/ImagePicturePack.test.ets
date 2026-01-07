@@ -48,7 +48,7 @@ class Logger {
 export default function imagePicturePack() {
   let filesDir: string | undefined | null;
   let cacheDir: string | undefined | null;
-  let testContext: common.UIAbilityContext;
+  let testContext: common.UIAbilityContext | undefined;
   let isSupportHEIFDecode: boolean;
   let isSupportHEICEncode: boolean;
   let isSupportHdr: Boolean;
@@ -112,7 +112,7 @@ export default function imagePicturePack() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath);
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
         waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
         imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor);

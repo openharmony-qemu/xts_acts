@@ -129,8 +129,8 @@ let tag: string = 'testTag';
 
 export default function lifecycleStaticTest() {
   describe("lifecycleStaticTest", () => {
-    let applicationContext: common.ApplicationContext;
-    let uiAbilityContext: common.UIAbilityContext;
+    let applicationContext: common.ApplicationContext | undefined;
+    let uiAbilityContext: common.UIAbilityContext | undefined;
     beforeAll(async () => {
       hilog.info(domain, tag,'beforeAll start');
       let driver = Driver.create();	
@@ -146,9 +146,9 @@ export default function lifecycleStaticTest() {
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.test.lifecycle_crossplatform_xts.static");
       await Utils.msSleep(2000);
       uiAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-      hilog.info(domain, tag, `uiAbilityContext: ${!!uiAbilityContext}`);
-      applicationContext = uiAbilityContext.getApplicationContext() as common.ApplicationContext;
-      hilog.info(domain, tag, `applicationContext: ${!!applicationContext}`);
+      hilog.info(domain, tag, `uiAbilityContext: ${!!uiAbilityContext!}`);
+      applicationContext = uiAbilityContext?.getApplicationContext() as common.ApplicationContext;
+      hilog.info(domain, tag, `applicationContext: ${!!applicationContext!}`);
       hilog.info(domain, tag, 'beforeAll end');
     });
 
@@ -169,15 +169,15 @@ export default function lifecycleStaticTest() {
           const abilityLifecycleCb = new CustomAbilityLifecycleCallback();
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle1`);
-          const id1 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
-          hilog.info(domain, tag, `${itName} on abilityLifecycle1 id: ${id1}`);
+          const id1 = applicationContext?.onAbilityLifecycle(abilityLifecycleCb);
+          hilog.info(domain, tag, `${itName} on abilityLifecycle1 id: ${id1!}`);
           await Utils.msSleep(2000);
           let want: Want = {
             bundleName: 'com.test.lifecycle_crossplatform_xts.static',
             abilityName: 'EntryAbility1',
           };
           try {
-            uiAbilityContext.startAbility(want).then(() => {
+            uiAbilityContext?.startAbility(want).then(() => {
               hilog.info(domain, tag, `startAbility success`);
             }).catch((err: Error): void => {
               hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
@@ -197,7 +197,7 @@ export default function lifecycleStaticTest() {
           expect(abilityLifecycleCb.isAbilityForeground).assertTrue();
           expect(abilityLifecycleCb.isAbilityWillForeground).assertTrue();
           hilog.info(domain, tag, `${itName} off abilityLifecycle1`);
-          applicationContext.offAbilityLifecycle(id1, (err: BusinessError<void> | null) => {
+          applicationContext?.offAbilityLifecycle(id1!, (err: BusinessError<void> | null) => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle1 error code: ${err?.code}, msg: ${err?.message}`);
             if (err?.code) {
               hilog.info(domain, tag, `${itName} off abilityLifecycle1 fail`);
@@ -209,10 +209,10 @@ export default function lifecycleStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle2`);
-          const id2 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
-          hilog.info(domain, tag, `${itName} on abilityLifecycle2 id: ${id2}`);
+          const id2 = applicationContext?.onAbilityLifecycle(abilityLifecycleCb);
+          hilog.info(domain, tag, `${itName} on abilityLifecycle2 id: ${id2!}`);
           hilog.info(domain, tag, `${itName} off abilityLifecycle2`);
-          applicationContext.offAbilityLifecycle(id2, (err: BusinessError<void> | null) => {
+          applicationContext?.offAbilityLifecycle(id2!, (err: BusinessError<void> | null) => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle2 error code: ${err?.code}, msg: ${err?.message}`);
             if (err?.code) {
               hilog.info(domain, tag, `${itName} off abilityLifecycle2 fail`);
@@ -224,14 +224,14 @@ export default function lifecycleStaticTest() {
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} on abilityLifecycle3`);
-          const id3 = applicationContext.onAbilityLifecycle(abilityLifecycleCb);
-          hilog.info(domain, tag, `${itName} on abilityLifecycle3 id: ${id3}`);
+          const id3 = applicationContext?.onAbilityLifecycle(abilityLifecycleCb);
+          hilog.info(domain, tag, `${itName} on abilityLifecycle3 id: ${id3!}`);
           hilog.info(domain, tag, `${itName} off abilityLifecycle3`);
-          applicationContext.offAbilityLifecycle(id3).then(() => {
+          applicationContext?.offAbilityLifecycle(id3!).then(() => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle3 success`);
-            expect(id1 >= 0).assertTrue();
-            expect(`${id2}`).assertEqual(`${id1 + 1}`);
-            expect(`${id3}`).assertEqual(`${id2 + 1}`);
+            expect(id1! >= 0).assertTrue();
+            expect(`${id2!}`).assertEqual(`${id1! + 1}`);
+            expect(`${id3!}`).assertEqual(`${id2! + 1}`);
           }).catch((e) => {
             hilog.info(domain, tag, `${itName} off abilityLifecycle3 fail`);
             expect().assertFail();

@@ -23,7 +23,7 @@ import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 const domain = 0xFF00;
 const tag = "TestTag";
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 const TAG = "[ttt]"
@@ -74,7 +74,7 @@ export default function SingleKvStoreErrCodeTest(){
         await Utils.msSleep(8000)
 
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end databaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end databaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.error(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         expect().assertFail();
@@ -82,7 +82,7 @@ export default function SingleKvStoreErrCodeTest(){
       }
       const config: distributedKVStore.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
       console.info(TAG + 'beforeAll config:' + JSON.stringify(config));
       kvManager = distributedKVStore.createKVManager(config);
@@ -1719,7 +1719,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore!.put("key", "zhangsan");
         resultSet = await kvStore!.getResultSet('key');
@@ -1739,7 +1739,7 @@ export default function SingleKvStoreErrCodeTest(){
           if (err != undefined) {
             console.error(TAG + `Failed to put.code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800047);
-            await kvStore!.closeResultSet(resultSet);
+            await kvStore!.closeResultSet(resultSet!);
             console.info(TAG + `Succeeded in closeResultSet`);
           } else {
             console.info(TAG + `Succeeded in put`);
@@ -1764,7 +1764,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore!.put("key", "zhangsan");
         resultSet = await kvStore!.getResultSet('key');
@@ -1797,7 +1797,7 @@ export default function SingleKvStoreErrCodeTest(){
           if (err != undefined) {
             console.error(TAG + `Failed to put.code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800047);
-            await kvStore!.closeResultSet(resultSet);
+            await kvStore!.closeResultSet(resultSet!);
             console.info(TAG + `Succeeded in closeResultSet`);
           }else {
             console.info(TAG + `Succeeded in putBatch`);
@@ -1822,7 +1822,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore!.put("key", "zhangsan");
         resultSet = await kvStore!.getResultSet('key');
@@ -1858,7 +1858,7 @@ export default function SingleKvStoreErrCodeTest(){
       } catch (err:Error) {
         console.error(TAG + `Failed to catch is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(14800047);
-        await kvStore!.closeResultSet(resultSet);
+        await kvStore!.closeResultSet(resultSet!);
         console.info(TAG + `Succeeded in closeResultSet`);
         done();
       }
@@ -1874,7 +1874,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try{
         try {
           await kvStore!.put("key", "zhangsan");
@@ -1903,7 +1903,7 @@ export default function SingleKvStoreErrCodeTest(){
             if (err != undefined) {
               console.error(TAG + `Failed to delete.code is ${err.code},message is ${err.message}`);
               expect(err.code).assertEqual(14800047);
-              await kvStore!.closeResultSet(resultSet);
+              await kvStore!.closeResultSet(resultSet!);
               console.info(TAG + `Succeeded in closeResultSet`);
             }else {
               console.info(TAG + `Succeeded in delete`);
@@ -1933,7 +1933,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       let keys = ["key", "key1"];
       try {
         await kvStore!.put("key", "zhangsan");
@@ -1963,7 +1963,7 @@ export default function SingleKvStoreErrCodeTest(){
           if (err != undefined) {
             console.error(TAG + `Failed to deleteBatch.code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800047);
-            await kvStore!.closeResultSet(resultSet);
+            await kvStore!.closeResultSet(resultSet!);
             console.info(TAG + `Succeeded in closeResultSet`);
           }else {
             console.info(TAG + `Succeeded in deleteBatch`);
@@ -1988,7 +1988,7 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230 start');
-      let resultSet: distributedKVStore.KVStoreResultSet;
+      let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore!.put("key", "zhangsan");
         resultSet = await kvStore!.getResultSet('key');
@@ -2017,7 +2017,7 @@ export default function SingleKvStoreErrCodeTest(){
           if (err != undefined) {
             console.error(TAG + `Failed to startTransaction.code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800047);
-            await kvStore!.closeResultSet(resultSet);
+            await kvStore!.closeResultSet(resultSet!);
             console.info(TAG + `Succeeded in closeResultSet`);
           }else {
             console.info(TAG + `Succeeded in startTransaction`);

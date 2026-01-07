@@ -26,7 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 
 const VALID_WEARABLE_BUNDLE: notificationExtensionSubscription.BundleOption = {
   bundle: 'com.example.helloworld', uid: 20010043
@@ -70,7 +70,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          await notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
+          await notificationExtensionSubscription.openSubscriptionSettings(context!).then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();

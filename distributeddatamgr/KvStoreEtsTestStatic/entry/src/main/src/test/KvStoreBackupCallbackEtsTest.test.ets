@@ -28,7 +28,7 @@ let kvStore : distributedData.SingleKVStore|null = null;
 //let delresult = null;
 let delresult: Array<[string, int]> = {};
 let STORE_ID = 'kvstoreBackupCallback';
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const domain = 0xFF00;
 const tag = "TestTag";
@@ -164,7 +164,7 @@ export default function kvStoreBackupCallbackJsunittest() {
         await Utils.msSleep(8000)
 
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end databaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end databaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.error(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         expect().assertFail();
@@ -172,7 +172,7 @@ export default function kvStoreBackupCallbackJsunittest() {
       }
       const config: distributedData.KVManagerConfig = {
         bundleName: BUNDLE_NAME,
-        context: context
+        context: context!
       };
       kvManager = distributedData.createKVManager(config);
       console.info(TAG+ 'beforeAll end');

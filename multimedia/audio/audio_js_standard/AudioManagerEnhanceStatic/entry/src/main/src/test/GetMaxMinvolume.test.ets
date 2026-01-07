@@ -21,7 +21,7 @@ import ArrayList from '@ohos.util.ArrayList';
 import { TestConst } from './Const.test';
 
 let TagFrmwk: string = "audioManagerEnhanceTest";
-let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
+let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 
 function getAudioManager() {
   let audioManager = audio.getAudioManager();
@@ -81,7 +81,7 @@ export default function audioManagerTest() {
       try {
         let actual_maxvol = new ArrayList<int>();
         for (let index = 0; index < TestConst.AudioVolumeType.length; index++) {
-          let maxvol = await audioVolumeGroupManager.getMaxVolume(TestConst.AudioVolumeType[index]);
+          let maxvol = await audioVolumeGroupManager!.getMaxVolume(TestConst.AudioVolumeType[index]);
           console.info(`${TestConst.AudioVolumeType[index]} max volume : ${maxvol}`);
           actual_maxvol.add(maxvol);
         }
@@ -110,7 +110,7 @@ export default function audioManagerTest() {
       try {
         let actual_minvol = new ArrayList<int>();
         for (let index = 0; index < TestConst.AudioVolumeType.length; index++) {
-          let minvol = await audioVolumeGroupManager.getMinVolume(TestConst.AudioVolumeType[index]);
+          let minvol = await audioVolumeGroupManager!.getMinVolume(TestConst.AudioVolumeType[index]);
           console.info(`${TestConst.AudioVolumeType[index]} min volume : ${minvol}`);
           actual_minvol.add(minvol);
         }

@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsPath4Test() {
   describe('DrawingTsPath4Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       const color: ArrayBuffer = new ArrayBuffer(40000); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -748,7 +748,7 @@ export default function drawingTsPath4Test() {
     it('testPathIsRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathIsRectNormalStatic';
       let path = new drawing.Path();
-      let canvas = new drawing.Canvas(pixel);
+      let canvas = new drawing.Canvas(pixel!);
       try {
         let isRect = path.isRect(null);
         console.info(msg + `path isRect success`);

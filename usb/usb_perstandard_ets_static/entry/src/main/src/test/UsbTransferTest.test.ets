@@ -316,8 +316,8 @@ export default function UsbTransferTest() {
             let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(device);
             hilog.info(domain, tag, `UsbMgr.connectDevice(device) = ${devicePipe.busNum}`);
             hilog.info(domain, tag, `UsbMgr.connectDevice(device) = ${devicePipe.devAddress}`);
-            let interfaces: UsbMgr.USBInterface;
-            let endpoint: UsbMgr.USBEndpoint;
+            let interfaces: UsbMgr.USBInterface | undefined;
+            let endpoint: UsbMgr.USBEndpoint | undefined;
             for (const config of device.configs) {
               for (const intf of config.interfaces) {
                 for (const ep of intf.endpoints) {
@@ -336,7 +336,7 @@ export default function UsbTransferTest() {
             } else {
               hilog.info(domain, tag, "没有有效的endpoint");
             }
-            let ret: int = UsbMgr.claimInterface(devicePipe, interfaces, true);
+            let ret: int = UsbMgr.claimInterface(devicePipe, interfaces!, true);
             hilog.info(domain, tag, `bulkTransfer begin  = ${ret}`);
             if (ret == 0) {
               hilog.info(domain, tag, 'USB claim sucess');
@@ -346,7 +346,7 @@ export default function UsbTransferTest() {
               hilog.info(domain, tag, `test_bulkTransfer buffer = ${bufferTransfer}`);
               let timeout: int | undefined = 8000;
 
-              UsbMgr.bulkTransfer(devicePipe, endpoint, bufferTransfer, timeout).then((retVal: int) => {
+              UsbMgr.bulkTransfer(devicePipe, endpoint!, bufferTransfer, timeout).then((retVal: int) => {
                 hilog.info(domain, tag, `test_bulkTransfer02 retVal = ${retVal}`);
                 expect(retVal == 128).assertTrue();
               });

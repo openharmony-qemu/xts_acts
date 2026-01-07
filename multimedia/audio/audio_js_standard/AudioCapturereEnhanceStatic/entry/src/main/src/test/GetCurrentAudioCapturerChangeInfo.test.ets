@@ -27,12 +27,12 @@ import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
-let audioCap: audio.AudioCapturer | null;
+let audioCap: audio.AudioCapturer | null = null;
 let g_context: common.UIAbilityContext;
 
 export default function audioCapturerEnhanceTest() {
   describe('getCurrentAudioCapturerChangeInfo', () => {
-    let dirPath: string;
+    let dirPath: string = "";
 
     let releaseFun = async (audioCap: audio.AudioCapturer) => {
       try {

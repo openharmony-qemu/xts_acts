@@ -27,8 +27,8 @@ import constant from '@ohos.bluetooth.constant';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtNotPermissionTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let gattClientDevice: ble.GattClientDevice;
-let gattServerDevice: ble.GattServer;
+let gattClientDevice: ble.GattClientDevice | undefined;
+let gattServerDevice: ble.GattServer | undefined;
 
 export default function btNopUiJsunit() {
     describe('btNopUiJsunit', (): void => {
@@ -177,7 +177,7 @@ export default function btNopUiJsunit() {
          */
         it("clientCloseErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.close();
+                gattClientDevice!.close();
                 hilog.info(domain, tag, 'gattClientDevice close success');
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -202,7 +202,7 @@ export default function btNopUiJsunit() {
          */
         it("serverCloseErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattServerDevice.close();
+                gattServerDevice!.close();
                 hilog.info(domain, tag, 'gattServerDevice close success');
                 expect().assertFail();
             } catch (err: BusinessError) {
@@ -228,7 +228,7 @@ export default function btNopUiJsunit() {
          */
         it("clientConnectErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                gattClientDevice.connect();
+                gattClientDevice!.connect();
                 hilog.info(domain, tag, 'gattClientDevice connect success');
                 expect().assertFail();
             } catch (err: BusinessError) {
