@@ -19,7 +19,7 @@
 #include "containerPicker/ContainerPickerSelectionIndicatorTest.cpp"
 #include "containerPicker/ContainerPickerSubComponentTest.cpp"
 #include "MotionPath/MotionPathOptionsTest.cpp"
-#include "publicCapacity/AtomicServiceMenuBarSetVisible.cpp"
+#include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 
 
 namespace ArkUICapiTest {
