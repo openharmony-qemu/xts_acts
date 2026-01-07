@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
@@ -103,6 +103,23 @@ export default function WindowZindexTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+        })
+        beforeEach((): void => {
+            let mainWindowId:int = win.getWindowProperties().id;
+            hilog.info(domain, tag, 'jsUnittest beforeEach mainWindowId =' + mainWindowId);
+            let topWind:window.Window;
+            let lastWindId:int;
+              window.getLastWindow(context).then((data:window.Window) => {
+                hilog.info(0x0000, '[ANI]','jsUnittest beforeEach getLastWindow: ' + JSON.stringify(data));
+                topWind = data;
+                lastWindId = topWind.getWindowProperties().id;
+                hilog.info(domain, tag, 'jsUnittest beforeEach lastWindId =' + lastWindId);
+              }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.error(0x0000, '[ANI]','jsUnittest beforeEach Failed to obtain the top window. Cause: ' + JSON.stringify(err));
+              })
+            if(mainWindowId!=lastWindId){
+              await topWind.destroyWindow();
+            }
         })
 
         /**
