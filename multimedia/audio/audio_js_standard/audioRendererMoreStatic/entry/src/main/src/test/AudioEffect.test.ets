@@ -80,11 +80,11 @@ export default function AudioEffectTest() {
 
     let createAudioRenderer = async (assertFunction: ()=>void, done: ()=>void) => {
       if (audioRendererList && audioRendererList?.length) {
-        audioRendererList.map( (audioRenderer: audio.AudioRenderer | null, index: double, array: Array<audio.AudioRenderer | null>) => {
+        audioRendererList.map( (audioRenderer: audio.AudioRenderer | null, index: int, array: Array<audio.AudioRenderer | null>) => {
           console.info(TAG + `create audio renderer release index:  ${index} length : ${audioRendererList.length}`)
-          if (audioRendererList[index as int]) {
-            await audioRendererList[index as int]!.release();
-            audioRendererList[index as int] = null;
+          if (audioRendererList[index]) {
+            await audioRendererList[index]!.release();
+            audioRendererList[index] = null;
           }
         })
       }

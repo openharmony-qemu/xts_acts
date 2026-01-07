@@ -11521,8 +11521,8 @@ export default function audioRendererTest() {
           console.info(`write data: ${data}`);
       };
 
-      audioRenderer.onWriteData(writeDataCallback);
-      audioRenderer.offWriteData();
+      audioRenderer!.onWriteData(writeDataCallback);
+      audioRenderer!.offWriteData();
 
       await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
