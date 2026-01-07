@@ -4112,6 +4112,7 @@ export default function AudioEffectTest() {
         expect(false).assertTrue();
         done();
       })
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTMODE_STATIC_0200

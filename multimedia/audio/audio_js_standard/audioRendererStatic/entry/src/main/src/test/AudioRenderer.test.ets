@@ -2178,6 +2178,8 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
+      await audioRen!.offWriteData();
+
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         expect(true).assertTrue();
@@ -11516,13 +11518,6 @@ export default function audioRendererTest() {
 
       audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
       audioVolumeManager.offAppVolumeChange();
-
-      let writeDataCallback = (data: ArrayBuffer): audio.AudioDataCallbackResult => {
-          console.info(`write data: ${data}`);
-      };
-
-      audioRenderer!.onWriteData(writeDataCallback);
-      audioRenderer!.offWriteData();
 
       await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
