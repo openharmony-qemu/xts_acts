@@ -177,7 +177,7 @@ struct ScrollExample {
               }
               .id('wearListBtn')
               .type(ButtonType.Capsule)
-              .margin({ top: 20 })
+              .margin({ top: 5 })
               .onClick(() => {
                 console.info('jump to wearList')
                 router.push({ uri: 'pages/wearList' })

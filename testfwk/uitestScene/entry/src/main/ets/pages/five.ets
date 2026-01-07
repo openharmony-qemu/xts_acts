@@ -14,6 +14,7 @@
  */
 
 import { uniformTypeDescriptor } from '@kit.ArkData';
+
 @Entry
 @Component
 struct Five {
@@ -40,7 +41,6 @@ struct Five {
           .id('longClickBtn')
           .fontSize(10)
           .margin({ left: 10 })
-          .type(ButtonType.Capsule)
           .gesture(LongPressGesture({ repeat: true }).onAction((event: GestureEvent) => {
             if (event && event.repeat) {
               this.isShowLongEventCom = true;
@@ -59,11 +59,11 @@ struct Five {
       .backgroundColor(Color.Red)
         .alignItems(VerticalAlign.Center)
         .justifyContent(FlexAlign.Center)
-      Row() {
+
+        Row() {
         Column() {
           Text('this is abstract')
             .fontSize(10)
-            .width('100%')
         }
         .margin({ left: 5, top: 5 })
         .id('dragCol')
@@ -80,7 +80,6 @@ struct Five {
         .onPreDrag((status: PreDragStatus) => {
         })
         .backgroundColor(this.backGroundColor)
-
 
         if (this.isShowDragEventCom) {
           Text('ShowDragEventText')
@@ -99,7 +98,7 @@ struct Five {
         .width('30%')
       }
       .width('100%')
-      .backGroundColor(Color.Red)
+      .backgroundColor(Color.Red)
       .margin({top: 10})
 
       Text('HorizontalScroll')
