@@ -400,7 +400,7 @@ export default function WindowPCTest() {
                         done();
                     }
                     
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         done();
