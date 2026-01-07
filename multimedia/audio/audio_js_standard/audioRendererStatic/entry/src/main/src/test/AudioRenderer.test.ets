@@ -2178,7 +2178,7 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen!.offWriteData();
+      audioRen!.offWriteData();
 
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
@@ -11464,57 +11464,6 @@ export default function audioRendererTest() {
       console.info(`${TAG},createAudioRenderer SUCCESS`);
       let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
       console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
-
-      await audioRenderer!.release().then(() => {
-        console.info(`AudioRenderer release : SUCCESS`);
-      }).catch(async(err:BusinessError) => {
-        console.info(`AudioRenderer release :ERROR : ${err.message}`);
-        expect(false).assertTrue();
-      });
-      console.info('afterAll called')
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
-     * @tc.desc   getVolumeByStream
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200';
-      //define manager
-      let audioManager:audio.AudioManager = audio.getAudioManager();
-      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
-
-      //define audiorenderer Parameter
-      let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
-      let audioStreamInfo:audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let audioRendererInfo:audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-        rendererFlags: 0
-      }
-      let audioRendererOptions:audio.AudioRendererOptions = {
-        streamInfo: audioStreamInfo,
-        rendererInfo: audioRendererInfo
-      }
-      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
-      console.info(`${TAG},createAudioRenderer SUCCESS`);
-      let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
-      console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
-
-      let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
-        console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
-        console.info(`Volume level: ${volumeEvent.volume} `);
-        console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
-      };
 
       audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
       audioVolumeManager.offAppVolumeChange();
