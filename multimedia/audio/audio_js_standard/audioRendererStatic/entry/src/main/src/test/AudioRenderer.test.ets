@@ -1287,10 +1287,15 @@ export default function audioRendererTest() {
         audioRen!.offMarkReach();
         expect(true).assertTrue();
       });
+      let markReachCallback = (position: long) => {
+        if (position == 100) {
+          console.info('markReachCallback successfully');
+        }
+      };
       audioRen!.onMarkReach(100, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen!.offMarkReach();
+        audioRen!.offMarkReach(markReachCallback);
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
@@ -1584,11 +1589,16 @@ export default function audioRendererTest() {
         audioRen!.offPeriodReach();
 
       });
+      let periodReachCallback = (position: long) => {
+        if (position == 100) {
+          console.info('periodReachCallback successfully');
+        }
+      };
       audioRen!.onPeriodReach(100, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen!.offPeriodReach();
+        audioRen!.offPeriodReach(periodReachCallback);
       });
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
@@ -11355,6 +11365,43 @@ export default function audioRendererTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200
+     * @tc.desc   off_streamVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      try{
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let streamVolumeChangeCB = (data:audio.StreamVolumeEvent) =>{
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
+          done();
+        };
+        console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
+
+        audioVolumeManager.onStreamVolumeChange(StreamUsage,streamVolumeChangeCB)
+        console.info(`${TAG},audioVolumeManager_on SUCCESS`);
+        audioVolumeManager.offStreamVolumeChange()
+        console.info(`${TAG},audioVolumeManager_off SUCCESS`);
+        expect(true).assertTrue();
+        done();
+      } catch (error: BusinessError){
+        console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
      * @tc.desc   getVolumeInUnitOfDbByStream
@@ -11415,6 +11462,67 @@ export default function audioRendererTest() {
       console.info(`${TAG},createAudioRenderer SUCCESS`);
       let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
       console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
+
+      await audioRenderer!.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch(async(err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('afterAll called')
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
+     * @tc.desc   getVolumeByStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      //define audiorenderer Parameter
+      let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TAG},createAudioRenderer SUCCESS`);
+      let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
+      console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
+
+      let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+        console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
+        console.info(`Volume level: ${volumeEvent.volume} `);
+        console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+      };
+
+      audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
+      audioVolumeManager.offAppVolumeChange();
+
+      let writeDataCallback = (data: ArrayBuffer): audio.AudioDataCallbackResult => {
+          console.info(`write data: ${data}`);
+      };
+
+      audioRender.onWriteData(writeDataCallback);
+      audioRender.offWriteData();
 
       await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
