@@ -603,11 +603,11 @@ export default function fileIOStat() {
             fs.closeSync(file);
             fs.unlinkSync(fpath);
             done();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           });
-        }).catch((err: BusinessError): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
           expect(false).assertTrue();
         });

@@ -1336,7 +1336,8 @@ export default function taskPoolTest() {
             }).Await();
             return worker;
           }, worker);
-          await workerPromise.then((returnedWorker: EAWorker): void => {
+          await workerPromise.then((value: Any): void => {
+            const returnedWorker: EAWorker = value as EAWorker;
             returnedWorker.run<EAWorker>((): EAWorker => {
               executedFlag2 = true;
               return returnedWorker;

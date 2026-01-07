@@ -56,7 +56,7 @@ export default function getProfileByExtensionAbility() {
         hilog.info(domain, tag, "getProfileByExtensionAbilityInvalidModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
         done()
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, "getProfileByExtensionAbilityInvalidModulePro_static failed" + JSON.stringify(err))
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST)
         done()
@@ -76,7 +76,7 @@ export default function getProfileByExtensionAbility() {
         hilog.info(domain, tag, "getProfileByExtensionAbilityEmptyModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
         done()
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, "getProfileByExtensionAbilityEmptyModulePro_static failed" + JSON.stringify(err))
         expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST)
         done()
@@ -129,7 +129,7 @@ export default function getProfileByExtensionAbility() {
         hilog.info(domain, tag, "getProfileByExtensionAbilityInvalidAbilityPro_static success" + JSON.stringify(data))
         expect(data).assertFail()
         done()
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, "getProfileByExtensionAbilityInvalidAbilityPro_static failed" + JSON.stringify(err))
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST)
         done()
@@ -149,7 +149,7 @@ export default function getProfileByExtensionAbility() {
         hilog.info(domain, tag, "getProfileByExtensionAbilityEmptyAbilityPro_static success" + JSON.stringify(data))
         expect(data).assertFail()
         done()
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, "getProfileByExtensionAbilityEmptyAbilityPro_static failed" + JSON.stringify(err))
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST)
         done()
@@ -220,7 +220,7 @@ export default function getProfileByExtensionAbility() {
         JSON.stringify(data));
         expect().assertFail();
         done()
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, '[getProfileByExtensionAbilityInvalidMetaDataPro_static]Operation failed. Cause: ' +
         JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
@@ -242,7 +242,7 @@ export default function getProfileByExtensionAbility() {
         JSON.stringify(data));
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, '[getProfileByExtensionAbilityNoProfilePro_static]Operation failed. Cause: ' + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
         done();
@@ -264,7 +264,7 @@ export default function getProfileByExtensionAbility() {
         hilog.info(domain, tag, '[getProfileByExtensionAbilityNoJsonPro_static] data is: ' + JSON.stringify(data));
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void  => {
+      }).catch((err: Error): void  => {
         hilog.error(domain, tag, '[getProfileByExtensionAbilityNoJsonPro_static] Operation failed. Cause: ' + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
         done();

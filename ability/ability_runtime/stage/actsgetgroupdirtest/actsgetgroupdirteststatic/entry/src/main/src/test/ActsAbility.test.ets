@@ -54,7 +54,7 @@ export default function abilityTest() {
             abilityContext.getGroupDir("111").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_002 ====> result data" + data);
                 expect(data).assertEqual("");
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
                 console.error("getGroupDir Context_getGroupDir_Static_002 ====> result err" + JSON.stringify(error));
                 expect().assertFail();
             });
@@ -75,7 +75,7 @@ export default function abilityTest() {
             abilityContext.getGroupDir("context_hap1").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_003 ====> result data" + data);
                 expect(data).assertEqual("");
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
                 console.error("getGroupDir Context_getGroupDir_Static_003 ====> result err" + JSON.stringify(error));
                 expect().assertFail();
             });

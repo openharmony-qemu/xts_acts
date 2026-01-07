@@ -141,7 +141,7 @@ struct getLastHitTest {
                   message: "hitTestType: " + tmp.type + "\nextra: " + tmp.extra
                 })
               })
-              .catch((error: BusinessError): void => {
+              .catch((error: Error): void => {
                 console.error(0x0000, 'testTag', `getMainWindow error: ${JSON.stringify(error)}`);
               });
           } catch (e) {

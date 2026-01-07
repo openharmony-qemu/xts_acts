@@ -80,7 +80,7 @@ struct getDialogControllerTest {
           let ctx = this.getUIContext()
           let promptAction = ctx.getPromptAction()
           promptAction.openCustomDialog(new ComponentContent<Params>(ctx, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message)))
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               console.error('openCustomDialog error: ' + err.code + ' ' + err.message)
             })
         })

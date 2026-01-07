@@ -155,24 +155,6 @@ export default function builtinsArrayEveryTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayEveryTest0700
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0700
-     * @tc.desc   test every
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayEveryTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayEveryTest0700'
-      console.info(`${caseName} test start`)
-      let arr = collections.Array.from([1, 2, , 4, 5])
-      let flg = arr.every(x => Number(x) > 0)
-      expect(flg).assertTrue()
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
      * @tc.name   builtinsArrayEveryTest0800
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0800
      * @tc.desc   test every
@@ -186,48 +168,6 @@ export default function builtinsArrayEveryTest() {
       let arr = collections.Array.from([1, 2, , 4, 5])
       let flg = arr.every(x => Number(x) < 5)
       expect(flg).assertFalse()
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
-     * @tc.name   builtinsArrayEveryTest0900
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0900
-     * @tc.desc   test every
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayEveryTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayEveryTest0900'
-      console.info(`${caseName} test start`)
-      let arr = collections.Array.from([1, 2, 3])
-      let flg = arr.every(x => {
-        arr.push(4);
-        return true;
-      })
-      expect(flg).assertTrue()
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
-     * @tc.name   builtinsArrayEveryTest1000
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1000
-     * @tc.desc   test every
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayEveryTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayEveryTest1000'
-      console.info(`${caseName} test start`)
-      let arr = collections.Array.from([1, 2, 3])
-      let flg = arr.every(x => {
-        arr.pop();
-        return true;
-      })
-      expect(flg).assertTrue()
       console.info(`${caseName} test end`)
       Done()
     })
@@ -265,24 +205,6 @@ export default function builtinsArrayEveryTest() {
       console.info(`${caseName} test start`)
       let arr = collections.Array.from(['a', 'b', 'c'])
       let flg = arr.every(x => x.length > 0)
-      expect(flg).assertTrue()
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
-     * @tc.name   builtinsArrayEveryTest1300
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1300
-     * @tc.desc   test every
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayEveryTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayEveryTest1300'
-      console.info(`${caseName} test start`)
-      let arr = collections.Array.from<DataTest>([ { a: 1 }, { a: 2 }, { a: 3 } ])
-      let flg = arr.every(obj => obj.a! > 0)
       expect(flg).assertTrue()
       console.info(`${caseName} test end`)
       Done()

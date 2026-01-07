@@ -595,7 +595,7 @@ export default function math03Test() {
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testStaticOf21001 start');
         try {
-          const sourceArray = [10, 20, 30, 40];
+          const sourceArray: number[] = [10, 20, 30, 40];
           const typedArray = new Int32Array(sourceArray);
           expect(typedArray instanceof Int32Array).assertTrue();
           expect(typedArray.length).assertEqual(4);
@@ -625,7 +625,7 @@ export default function math03Test() {
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testStaticOf21002 start');
         try {
-          const boundaryValues = [32767, -32768, 0];
+          const boundaryValues: number[] = [32767, -32768, 0];
           const typedArray = new Int32Array(boundaryValues);
           expect(typedArray.length).assertEqual(3);
           expect(typedArray[0]).assertEqual(32767);

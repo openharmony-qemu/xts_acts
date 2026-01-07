@@ -39,13 +39,13 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
@@ -62,7 +62,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             console.log(`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
@@ -165,7 +165,7 @@ export default function WindowEnterpriseTest() {
                     }
                     await terminateAbility(caseName);
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
                     await terminateAbility(caseName);
                     expect(false).assertTrue();

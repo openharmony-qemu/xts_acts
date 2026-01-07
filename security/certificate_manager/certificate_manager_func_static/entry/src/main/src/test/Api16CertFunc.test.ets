@@ -598,7 +598,7 @@ export default function api16CertFuncTestUnit() {
       if (keyUri != undefined) {
         await signVerifyPromise.signVerifyNormalProcess(keyUri, credData, signspec, verifySpec).then((result1: certManager.CMResult) => {
         expect(result1.outData == null).assertTrue();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010 error.code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         });

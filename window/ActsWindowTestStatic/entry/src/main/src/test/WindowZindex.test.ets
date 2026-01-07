@@ -39,13 +39,13 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
@@ -62,7 +62,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             console.log(`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
@@ -199,7 +199,7 @@ export default function WindowZindexTest() {
                     await subWindow.destroyWindow();
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,msgStr + `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code = 801){
                         done();
@@ -279,7 +279,7 @@ export default function WindowZindexTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling raiseToAppTop.');
                     expect(false).assertTrue();
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
                     expect(err.code).assertEqual(1300009);
                     expect(err.message!=null).assertTrue();
@@ -350,7 +350,7 @@ export default function WindowZindexTest() {
                             await subWindow1.destroyWindow();
                             await subWindow2.destroyWindow();
                             done();
-                        }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(domain, tag,msgStr + `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                             await subWindow1.destroyWindow();
                             await subWindow2.destroyWindow();
@@ -362,12 +362,12 @@ export default function WindowZindexTest() {
                             }
 
                         });
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,msgStr +` Failed to create the subwindow2. Cause code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                         done();
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr +` Failed to create the subwindow1. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                     done();
@@ -441,7 +441,7 @@ export default function WindowZindexTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setRaiseByClickEnabled.');
                     expect(false).assertTrue();
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
                     if (err.code == 801) {
                         hilog.info(domain, tag,msgStr + '此设备不支持setWindowTitleMoveEnabled能力.');
@@ -485,7 +485,7 @@ export default function WindowZindexTest() {
                     await subWindow.destroyWindow();
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to setRaiseByClickEnabled the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code = 801){
                         done();
@@ -571,7 +571,7 @@ export default function WindowZindexTest() {
                     await windowClass.setWindowTopmost(false)
                     await subWindowClass.destroyWindow();
                     done();
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code === 801) {
                         await subWindowClass.destroyWindow();
@@ -610,7 +610,7 @@ export default function WindowZindexTest() {
                     hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code === 801) {
                         subWindowClass.destroyWindow();
@@ -656,7 +656,7 @@ export default function WindowZindexTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
@@ -765,7 +765,7 @@ export default function WindowZindexTest() {
                     hilog.info(domain, tag,caseName + 'Succeeded in calling setSubWindowZLevel.');
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,caseName + 'Failed to call setSubWindowZLevel. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done()

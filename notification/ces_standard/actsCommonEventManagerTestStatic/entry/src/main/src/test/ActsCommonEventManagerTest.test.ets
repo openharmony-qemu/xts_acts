@@ -698,7 +698,7 @@ export default function ActsCommonEventManagerTest() {
                   console.info(TAG+`setCode_2 success `)
                   count++;
                   expect(count).assertEqual(1);
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`setCode_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()
@@ -707,7 +707,7 @@ export default function ActsCommonEventManagerTest() {
                 await subscriber.getCode().then((Code:int) => {
                   console.info(TAG+`getCode_2 success ${Code}`)
                   expect(Code).assertEqual(3)
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`getCode_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()
@@ -721,12 +721,12 @@ export default function ActsCommonEventManagerTest() {
                   subscriber.getData().then((data:string) => {
                     console.info(TAG+`getData_2 success ${data}`)
                     expect(data).assertEqual('data03')
-                  }).catch((err:BusinessError):void => {
+                  }).catch((err:Error):void => {
                     console.info(TAG+`getData_2 err, error code: ${err.code}, message: ${err.message}`)
                     expect(false).assertTrue()
                     done()
                   })
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`setData_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()
@@ -737,7 +737,7 @@ export default function ActsCommonEventManagerTest() {
                   console.info(TAG+`setCodeAndData_2 success `)
                   count++;
                   expect(count).assertEqual(1);
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`setCodeAndData_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()
@@ -748,7 +748,7 @@ export default function ActsCommonEventManagerTest() {
                   console.info(TAG+`getSubscribeInfo_2 success `)
                   count++;
                   expect(count).assertEqual(1);
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`getSubscribeInfo_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()
@@ -760,7 +760,7 @@ export default function ActsCommonEventManagerTest() {
                   count++;
                   expect(count).assertEqual(1);
                   done()
-                }).catch((err:BusinessError):void => {
+                }).catch((err:Error):void => {
                   console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue()
                   done()

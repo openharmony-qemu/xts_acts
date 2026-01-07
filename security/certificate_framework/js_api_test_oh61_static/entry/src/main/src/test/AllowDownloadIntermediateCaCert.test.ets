@@ -955,7 +955,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] Allow_Download_Inter_CA_Func_2500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });

@@ -67,7 +67,7 @@ export default function GetBundleNameByUidTest() {
           console.info(TAG + 'getBundleNameByUidPromise17700021 successfully: ' + JSON.stringify(data));
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(TAG + 'getBundleNameByUidPromise17700021 failed: ' + err.message);
           expect(err.code).assertEqual(17700021);
           done();

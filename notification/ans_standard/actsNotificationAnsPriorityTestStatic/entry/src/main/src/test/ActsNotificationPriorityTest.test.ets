@@ -25,7 +25,7 @@ export default function actsNotificationPriorityTest() {
 
       notificationManager.requestEnableNotification(testAbilityContext).then(() => {
         console.info(`${TEST_SUITE_NAME} requestEnableNotification succeeded`);
-      }).catch((err: BusinessError) :void=> {
+      }).catch((err: Error) :void=> {
         console.info(`${TEST_SUITE_NAME} requestEnableNotification err: `+ JSON.stringify(err));
         expect(err).assertNull()
       });
@@ -66,7 +66,7 @@ export default function actsNotificationPriorityTest() {
 
       await notificationManager.publish(notificationRequest).then(() => {
         console.info(`${TAG} publish success`);
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.error(`${TAG} publish failed, code is ${err?.code}, message is ${err?.message}`);
         expect(false).assertTrue()
         done()
@@ -77,7 +77,7 @@ export default function actsNotificationPriorityTest() {
           expect(data[0]?.priorityNotificationType).assertEqual("OTHER")
           done()
         })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.info(`${TAG} getActiveNotifications Promise err: ${err?.code}`)
           expect(false).assertTrue()
           done()

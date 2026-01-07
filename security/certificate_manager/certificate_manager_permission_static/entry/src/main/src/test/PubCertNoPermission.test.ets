@@ -109,7 +109,7 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       certManager.getPublicCertificate(keyUri).then((data: certManager.CMResult) => {
         expect(null).assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, "%{public}s", "[Promise]getPublicCertificate err: " + JSON.stringify(err));
         expect(err.code == certManager.CMErrorCode.CM_ERROR_NO_PERMISSION).assertTrue();
         done();
@@ -129,7 +129,7 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       certManager.isAuthorizedApp(keyUri).then((data: boolean) => {
         expect(null).assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, "%{public}s", "[Promise]isAuthorizedApp err: " + JSON.stringify(err));
         expect(err.code == certManager.CMErrorCode.CM_ERROR_NO_PERMISSION).assertTrue();
         done();

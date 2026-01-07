@@ -66,7 +66,7 @@ export default function ActsZlibTest() {
         hilog.info(domain, 'bmsTestTag',"001 compressFileInFileNotExist invalid src file success!");
         expect().assertFail();
         done();
-      }, (err: BusinessError | null): void => {
+      }, (err: Error): void => {
         hilog.info(domain, 'bmsTestTag',"001 compressFileInFileNotExist zipFile fail: %{public}s ", JSON.stringify(err));
         expect(err?.code).assertEqual(SRC_FILE_INVALID);
         done();
@@ -103,7 +103,7 @@ export default function ActsZlibTest() {
         hilog.info(domain, 'bmsTestTag',"003 compressFileOutFileNotExist invalid src file success!");
         expect().assertFail();
         done();
-      }, (err: BusinessError): void => {
+      }, (err: Error): void => {
         hilog.info(domain, 'bmsTestTag',"003 compressFileOutFileNotExist zipFile fail: %{public}s ", JSON.stringify(err));
         expect(err?.code).assertEqual(900002);
         done();
@@ -142,18 +142,18 @@ export default function ActsZlibTest() {
           await zlib.compressFiles([fpath, pathDir12, pathDir12], "kkk", {}).then(() => {
             expect().assertFail();
             done();
-          }, (err: BusinessError): void => {
+          }, (err: Error): void => {
             hilog.info(domain, 'bmsTestTag',"005 compressFileOutFileNotExist zipFile fail: %{public}s ", JSON.stringify(err));
             expect(err.code).assertEqual(900002);
           })
           await zlib.compressFiles([""], zippath2, {}).then(() => {
             expect().assertFail();
             done();
-          },(err: BusinessError): void => {
+          },(err: Error): void => {
             hilog.info(domain, 'bmsTestTag',`006 errData is errCode:${err.code}  message:${err.message}`);
             expect(err.code).assertEqual(900001);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info('fileio_test_stream_write_sync_000 has failed for ' + err);
           expect().assertFail();
           done();
@@ -177,7 +177,7 @@ export default function ActsZlibTest() {
           strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY}).then(() => {
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, 'bmsTestTag',"007 decompress fail: " + JSON.stringify(err));
           expect(err.code).assertEqual(900001);
           done();
@@ -217,12 +217,12 @@ export default function ActsZlibTest() {
             let data: boolean = fileIo.accessSync(zipDest1);
             expect(data).assertTrue();
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
             console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
             expect().assertFail();
             done();
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info("compressFile fail " + JSON.stringify(err));
           expect(err).assertFail();
           done();
@@ -233,7 +233,7 @@ export default function ActsZlibTest() {
           console.info("decompressFile success");
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, 'bmsTestTag',"009 decompress fail: " + JSON.stringify(err));
           expect(err.code).assertEqual(OUTPUT_FILE_INVALID);
           done();
@@ -266,12 +266,12 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
         done();
@@ -280,11 +280,11 @@ export default function ActsZlibTest() {
         await zlib.decompressFile(path13, unzipdir1, {}).then(() => {
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, 'bmsTestTag',"011 decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
           expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -315,12 +315,12 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(zipDest22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag, "compressFile fail " + JSON.stringify(err));
         expect().assertFail();
         done()
@@ -331,11 +331,11 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
       });
@@ -349,13 +349,13 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag, "decompressFile fail1 " + JSON.stringify(err) + dir);
         expect().assertFail();
         done();
@@ -375,12 +375,12 @@ export default function ActsZlibTest() {
           let data: boolean = fileIo.accessSync(zippath25);
           expect(data).assertTrue();
           done();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
-      }, (errData: BusinessError): void => {
+      }, (errData: Error): void => {
         hilog.info(domain, tag, `errData is errCode:${errData.code}  message:${errData.message}`);
         expect().assertFail();
         done();
@@ -405,12 +405,12 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
       });
@@ -447,12 +447,12 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
         done();

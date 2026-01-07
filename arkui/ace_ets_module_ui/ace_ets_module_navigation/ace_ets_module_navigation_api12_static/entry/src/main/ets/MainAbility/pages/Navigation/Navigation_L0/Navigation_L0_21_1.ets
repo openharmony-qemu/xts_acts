@@ -43,7 +43,7 @@ struct Navigation_L0_21_1 {
       Button('pushDestination pageTwo')
         .onClick((event: ClickEvent) => {
           console.log('++++++++++++++++++++++++++++++++++++1')
-        this.pageInfos.pushDestination(new NavPathInfo('pageTwo',null)).catch((error: BusinessError): void=>{
+        this.pageInfos.pushDestination(new NavPathInfo('pageTwo',null)).catch((error: Error): void=>{
           console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
           this.text1 = '' + error.code
         })

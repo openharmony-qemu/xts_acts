@@ -496,7 +496,7 @@ export default function ArrayBlockingQueuetest() {
       let initialCapacity = queue.capacity;
       expect(String(initialCapacity)).assertEqual('1');
 
-      const arr = [1, 2, 3];
+      const arr: number[] = [1, 2, 3];
       queue.push(arr);
       let sizeAfterPush = queue.size;
       expect(String(sizeAfterPush)).assertEqual('1');
@@ -872,7 +872,7 @@ export default function ArrayBlockingQueuetest() {
         let initialCapacity = queue.capacity;
         expect(String(initialCapacity)).assertEqual('1');
 
-        const arr = [1, 2, 3];
+        const arr: number[] = [1, 2, 3];
         expect(String(queue.add(arr))).assertEqual('true');
         expect(String(queue.size)).assertEqual('1');
       });
@@ -890,7 +890,7 @@ export default function ArrayBlockingQueuetest() {
         let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
         let initialCapacity = queue.capacity;
         expect(String(initialCapacity)).assertEqual('1');
-        const arr = [1, 2, 3];
+        const arr: number[] = [1, 2, 3];
         queue.add(arr);
         let sizeAfterPush = queue.size;
         expect(String(sizeAfterPush)).assertEqual('1');

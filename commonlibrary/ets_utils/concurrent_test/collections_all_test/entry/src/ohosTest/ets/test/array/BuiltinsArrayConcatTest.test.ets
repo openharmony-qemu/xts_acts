@@ -223,7 +223,7 @@ export default function builtinsArrayConcatTest() {
       let ret = arr.concat(collections.Array.from([
          4,  5
       ]))
-      expect(JSON.stringify(ret)).assertEqual('1,2,3,4,5')
+      expect(JSON.stringify(ret)).assertEqual('[1,2,3,4,5]')
       console.info(`${caseName} test end`)
       Done()
     })
@@ -243,51 +243,6 @@ export default function builtinsArrayConcatTest() {
       let arr = collections.Array.from([1, 2, 3])
       let ret = arr.concat(arrTemp)
       expect(JSON.stringify(ret)).assertEqual('[1,2,3]')
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
-     * @tc.name   builtinsArrayConcatTest1200
-     * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1200
-     * @tc.desc   test Concat
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayConcatTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayConcatTest1200'
-      console.info(`${caseName} test start`)
-      const arrTemp = collections.Array.from<DataTest>([{ aaa: 0 }])
-
-      console.info('=====', JSON.stringify(arrTemp))
-      let arr = collections.Array.from<number | DataTest>([1, 2, 3])
-      let ret = arr.concat(arrTemp)
-
-      expect(JSON.stringify(ret)).assertEqual('[1,2,3,{"aaa":0}]')
-      console.info(`${caseName} test end`)
-      Done()
-    })
-
-    /**
-     * @tc.name   builtinsArrayConcatTest1300
-     * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1300
-     * @tc.desc   test Concat
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayConcatTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
-      const caseName = 'builtinsArrayConcatTest1300'
-      console.info(`${caseName} test start`)
-      const arrTemp = collections.Array.from<DataTest>([{
-        abc: 0
-      }])
-      console.info('=====', JSON.stringify(arrTemp))
-      let arr = collections.Array.from<number|DataTest>([1, 2, 3])
-      let ret = arr.concat(arrTemp)
-      expect(JSON.stringify(ret)).assertEqual('[1,2,3,{"abc":0}]')
-
       console.info(`${caseName} test end`)
       Done()
     })

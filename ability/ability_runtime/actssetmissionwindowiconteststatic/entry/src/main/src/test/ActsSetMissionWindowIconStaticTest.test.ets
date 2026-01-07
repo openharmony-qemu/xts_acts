@@ -67,12 +67,12 @@ export default function ActsSetMissionWindowIconStaticTest() {
               expect(JSON.stringify(idata)).assertEqual('0')
               done();
             })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               console.error(`${TEST_CASE_NAME}setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
               expect(err.code).assertEqual(801);
               done();
             });
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(`${TEST_CASE_NAME}createPixelMap failed, code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
           done();

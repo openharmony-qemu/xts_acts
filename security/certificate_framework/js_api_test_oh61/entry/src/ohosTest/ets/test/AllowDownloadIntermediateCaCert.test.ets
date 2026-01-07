@@ -22,19 +22,13 @@ import {
   CHAIN_2_1_HTTP_PEM,
   CHAIN_2_2_HTTP_PEM,
   CHAIN_3_1_HTTP_NO_CA_PEM,
-  CHAIN_3_1_HTTP_TIME_PEM,
   CHAIN_3_1_HTTP_URLS_PEM,
   CHAIN_3_1_PEM,
-  CHAIN_3_3_HTTP_2_URLS_PEM,
   CHAIN_3_3_HTTP_3_EXPIRED_TIME_PEM,
-  CHAIN_3_3_HTTP_3_URLS_PEM,
   CHAIN_3_3_HTTP_4_URLS_PEM,
   CHAIN_3_3_HTTP_5_URLS_PEM,
   CHAIN_3_3_HTTP_6_URLS_PEM,
-  CHAIN_3_3_HTTP_EXPIRED_TIME_PEM,
-  CHAIN_3_3_HTTP_NOT_EFFECT_TIME_PEM,
   CHAIN_3_3_HTTP_NO_CA_PEM,
-  CHAIN_3_3_HTTP_URLS_PEM,
   CHAIN_3_3_PEM,
   CHAIN_4_1_HTTP_PEM,
   CHAIN_4_1_PEM,
@@ -45,10 +39,21 @@ import {
   CHAIN_4_4_HTTPS_PEM,
   CHAIN_4_4_HTTP_PEM,
   CHAIN_4_4_PEM,
-  CHAIN_7_1_HTTP_PEM,
-  CHAIN_7_7_HTTP_PEM,
-  CHAIN_8_1_HTTP_PEM,
-  CHAIN_8_8_HTTP_PEM,
+  CHAIN_ECC_3_1_PEM,
+  CHAIN_ECC_3_1_TIME_PEM,
+  CHAIN_ECC_3_3_AIA_URIS_PEM,
+  CHAIN_ECC_3_3_AIA_XXX_PEM,
+  CHAIN_ECC_3_3_PEM,
+  CHAIN_ECC_3_3_RESP_PEM,
+  CHAIN_ECC_3_3_TIME_PEM,
+  CHAIN_ECC_3_3_YET_PEM,
+  CHAIN_ECC_4_1_PEM,
+  CHAIN_ECC_4_3_PEM,
+  CHAIN_ECC_4_4_PEM,
+  CHAIN_ECC_7_1_PEM,
+  CHAIN_ECC_7_7_PEM,
+  CHAIN_ECC_8_1_PEM,
+  CHAIN_ECC_8_8_PEM,
   CHAIN_GIT_CODE_INTER_PEM,
   CHAIN_GIT_CODE_LEAF_PEM,
   CHAIN_GIT_CODE_ROOT_PEM,
@@ -196,8 +201,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_GIT_CODE_ROOT_PEM);
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_GIT_CODE_LEAF_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -232,8 +237,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_4_1_HTTP_PEM);
-          let x509CertChain: cert.X509CertChain = await createCertChain(CHAIN_4_4_HTTP_PEM + CHAIN_4_3_HTTP_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_4_1_PEM);
+          let x509CertChain: cert.X509CertChain = await createCertChain(CHAIN_ECC_4_4_PEM + CHAIN_ECC_4_3_PEM);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [
               {
@@ -413,8 +418,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_4_4_HTTP_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_4_1_HTTP_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_4_4_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_4_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -492,8 +497,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_7_7_HTTP_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_7_1_HTTP_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_7_7_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_7_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -528,8 +533,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_URLS_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_URLS_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_AIA_URIS_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -564,8 +569,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_2_URLS_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_URLS_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_AIA_XXX_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -600,8 +605,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_3_URLS_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_URLS_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_RESP_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -809,8 +814,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_8_8_HTTP_PEM);
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_8_1_HTTP_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_8_8_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_8_1_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -871,7 +876,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     /**
      * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300
-     * @tc.desc   不开启下载中间证书能力，3级证书链缺失过期的中间证书，信任证书仅包中间证书
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失过期的中间证书，信任证书仅包中间证书
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -879,8 +884,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_TIME_PEM);
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_EXPIRED_TIME_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_TIME_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_TIME_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -892,7 +897,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
                 }
               ],
               allowDownloadIntermediateCa: true,
-              date: "251203083852Z"
+              date: "251229093852Z"
             }
           }
           await cert.buildX509CertChain(param);
@@ -907,7 +912,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     /**
      * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400
-     * @tc.desc   不开启下载中间证书能力，3级证书链缺失未生效的中间证书，信任证书仅包中间证书
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失未生效的中间证书，信任证书仅包中间证书
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -915,8 +920,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_TIME_PEM);
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_NOT_EFFECT_TIME_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_TIME_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_YET_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, rootCert]);
           let param: cert.CertChainBuildParameters = {
             certMatchParameters: {},
@@ -928,7 +933,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
                 }
               ],
               allowDownloadIntermediateCa: true,
-              date: "251203083852Z"
+              date: "251229093852Z"
             }
           }
           await cert.buildX509CertChain(param);
@@ -943,7 +948,7 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     /**
      * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500
-     * @tc.desc   不开启下载中间证书能力，含多本叶子证书，3级证书链缺失未生效的中间证书，第二本叶子证书过期，信任证书仅包中间证书
+     * @tc.desc   开启下载中间证书能力，含多本叶子证书，3级证书链缺失未生效的中间证书，第二本叶子证书过期，信任证书仅包中间证书
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -951,8 +956,8 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_1_HTTP_TIME_PEM);
-          let entryCert1: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_NOT_EFFECT_TIME_PEM);
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_TIME_PEM);
+          let entryCert1: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_YET_PEM);
           let entryCert2: cert.X509Cert = await createX509CertPem(CHAIN_3_3_HTTP_3_EXPIRED_TIME_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert1, entryCert2, rootCert]);
           let param: cert.CertChainBuildParameters = {
@@ -965,18 +970,53 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
                 }
               ],
               allowDownloadIntermediateCa: true,
-              date: "251203083852Z"
+              date: "251229093852Z"
             }
           }
           await cert.buildX509CertChain(param);
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Allow_Download_Inter_CA_Func_2500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
 
-
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2600
+     * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2600
+     * @tc.desc   开启下载中间证书能力，含多本叶子证书，3级证书链缺失未生效的中间证书，第二本叶子证书对应的中间证书过期，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2600",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_1_TIME_PEM);
+          let entryCert1: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_YET_PEM);
+          let entryCert2: cert.X509Cert = await createX509CertPem(CHAIN_ECC_3_3_TIME_PEM);
+          let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert1, entryCert2, rootCert]);
+          let param: cert.CertChainBuildParameters = {
+            certMatchParameters: {},
+            validationParameters: {
+              certCRLs: [collection],
+              trustAnchors: [
+                {
+                  CACert: rootCert
+                }
+              ],
+              allowDownloadIntermediateCa: true,
+              date: "251229093852Z"
+            }
+          }
+          await cert.buildX509CertChain(param);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] Allow_Download_Inter_CA_Func_2600 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_EXPIRED);
+        }
+        done();
+      });
   })
 }

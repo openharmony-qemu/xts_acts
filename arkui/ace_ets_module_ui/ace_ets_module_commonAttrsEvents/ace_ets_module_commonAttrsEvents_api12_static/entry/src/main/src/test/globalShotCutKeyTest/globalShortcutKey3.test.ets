@@ -80,7 +80,7 @@ export default function globalShortcutKeyTest3() {
         if (pages == null || !("globalShortcutKeyTest3" == pages.name)) {
           routerInstance.pushUrl(options).then(() => {
             console.info(`globalShortcutKeyTest3 router.pushUrl success`);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.error(`globalShortcutKeyTest3 router.pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
           await CommonFunc.sleep(2500);

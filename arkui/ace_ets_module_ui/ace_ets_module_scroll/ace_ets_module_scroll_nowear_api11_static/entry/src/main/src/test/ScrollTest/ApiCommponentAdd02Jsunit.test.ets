@@ -99,7 +99,7 @@ it('ApiCommponentAdd02Jsunit_static_0900', Level.LEVEL1, async (done: () => void
         } as DataObj
       }).then(() => {
         // success
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
       })
       await CommonFunc.sleep(2000);

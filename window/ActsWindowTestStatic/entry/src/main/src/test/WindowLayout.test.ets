@@ -233,7 +233,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]', caseName +' Succeeded in showing the window.');
                 expect(false).assertTrue();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(0x0000, '[ANI]', caseName +` Failed to show the window. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err!.code).assertEqual(1300002);
                 done();
@@ -260,7 +260,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in destroying the window.');
                 expect(false).assertTrue();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to destroy the window. Cause: ' + JSON.stringify(err));
                 expect(err.code).assertEqual(1300002);
                 done();
@@ -318,7 +318,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done();
@@ -388,7 +388,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause: ' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done();
@@ -465,7 +465,7 @@ export default function WindowLayoutTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -521,7 +521,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',CaseName + ' startMoving success ');
                     expect(false).assertTrue();
                     done();
-                }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
+                }).catch((err:Error):PromiseLike<void>|undefined=>{
                     hilog.error(0x0000, '[ANI]',CaseName + ' startMoving failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                     expect(err!.code).assertEqual(1300002);
                     done();
@@ -552,7 +552,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded startMoving ` );
                     expect(true).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',`${caseName} :Failed to startMoving. Cause code: ${err.code}, message: ${err.message}`);
                     if(err!.code == 801){
                         done();
@@ -595,7 +595,7 @@ export default function WindowLayoutTest() {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling startMoving.');
                             expect(false).assertTrue();
                             done()
-                        }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
+                        }).catch((err: Error) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
                             expect(false).assertTrue();
                             done()
@@ -608,7 +608,7 @@ export default function WindowLayoutTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -861,7 +861,7 @@ export default function WindowLayoutTest() {
                             await Utils.msSleep(1000);
                             expect(true).assertTrue();
                             done();
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                             await dialogWindowClass.destroyWindow();
                             await Utils.msSleep(1000);
@@ -876,7 +876,7 @@ export default function WindowLayoutTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined =>{
+                }).catch((err: Error) :PromiseLike<void>|undefined =>{
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -921,7 +921,7 @@ export default function WindowLayoutTest() {
                             hilog.info(domain, tag,`${message} succeed setSystemAvoidAreaEnabled`);
                             expect(false).assertTrue();
                             done();
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                             expect(err.code == 801 || err.code ==1300002).assertTrue();
                             done();
@@ -932,7 +932,7 @@ export default function WindowLayoutTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -972,7 +972,7 @@ export default function WindowLayoutTest() {
                             await Utils.msSleep(1000);
                             expect(false).assertTrue();
                             done();
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(domain, tag,`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                             await subWindowClass.destroyWindow();
                             await Utils.msSleep(1000);
@@ -987,7 +987,7 @@ export default function WindowLayoutTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -1037,7 +1037,7 @@ export default function WindowLayoutTest() {
                         expect(err.code).assertEqual(801);
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -1085,7 +1085,7 @@ export default function WindowLayoutTest() {
                         expect(err.code == 801 || err.code ==1300004).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -1134,7 +1134,7 @@ export default function WindowLayoutTest() {
                         expect(err.code == 801 || err.code ==1300002).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -1178,7 +1178,7 @@ export default function WindowLayoutTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -1229,7 +1229,7 @@ export default function WindowLayoutTest() {
                     hilog.info(domain, tag,`${message} succeed setStatusBarColor`);
                     expect(true).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${message} promise Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
                     expect(err.code).assertEqual(801);
                     done();
@@ -1264,7 +1264,7 @@ export default function WindowLayoutTest() {
                 subWindowClass!.setStatusBarColor(ColorMetrics.numeric(0x112233)).then( () => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setStatusBarColor.');
                     expect(false).assertTrue();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setStatusBarColor. Cause: ' + JSON.stringify(err.code) +',errMessage: '+ err.message);
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();

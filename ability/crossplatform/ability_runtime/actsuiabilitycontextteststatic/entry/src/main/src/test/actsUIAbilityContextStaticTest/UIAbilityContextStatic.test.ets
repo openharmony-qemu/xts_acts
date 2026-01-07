@@ -264,7 +264,7 @@ export default function UIAbilityContextStatic() {
             expect().assertFail();
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -293,7 +293,7 @@ export default function UIAbilityContextStatic() {
             expect().assertFail();
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -372,7 +372,7 @@ export default function UIAbilityContextStatic() {
         }
         context.startAbility(want).then(() => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start successful. ');
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
         })
         await Utils.msSleep(1000);

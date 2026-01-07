@@ -131,7 +131,7 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         }
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(TAG + ': getSubscribeInfo promise failed! event.Info ===> ' + JSON.stringify(err.code))
         expect(false).assertTrue()
       })
@@ -219,7 +219,7 @@ export default function ActsSubscriberTestUnorder() {
           expect(false).assertTrue()
           done()
         }
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(TAG + ': getSubscribeInfo promise failed! event.Info ===> ' + JSON.stringify(err.code))
         expect(false).assertTrue()
       })
@@ -353,7 +353,7 @@ export default function ActsSubscriberTestUnorder() {
         expect(CommonEventPublishData.data).assertEqual('initial_data')
         expect(CommonEventPublishData.isOrdered).assertTrue()
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(TAG + ': isOrderedCommonEvent failed! event.Info ===> ' + JSON.stringify(err.code))
         expect(false).assertTrue()
         done()
@@ -496,7 +496,7 @@ export default function ActsSubscriberTestUnorder() {
         expect(CommonEventPublishData.data).assertEqual('initial_data')
         expect(CommonEventPublishData.isSticky).assertTrue()
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(TAG + ': isStickyCommonEvent failed! event.Info ===> ' + JSON.stringify(err.code))
         expect(false).assertTrue()
         done()

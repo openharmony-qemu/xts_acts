@@ -61,14 +61,7 @@
 #define CONSTANT_99999999 99999999
 #define CONSTANT_99999999999999999 99999999999999999
 #define CONSTANT_999999999999999999 999999999999999999
-#define CONSTANT_40001000 40001000
-#define CONSTANT_50002000 50002000
-#define CONSTANT_50102000 50102000
 #define CONSTANT_41201000 41201000
-#define CONSTANT_41209000 41209000
-#define CONSTANT_41210000 41210000
-#define CONSTANT_41211000 41211000
-#define CONSTANT_40601000 40601000
 #define CONSTANT_500 500
 
 
@@ -550,6 +543,7 @@ napi_value testNativeWindowPreAllocBufferAbNormalPra(napi_env env, napi_callback
     // 2.PreAllocBuffer
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nullptr, 3);
+    NAPI_ASSERT(env, ret1 != NATIVE_ERROR_OK, "ret1 == NATIVE_ERROR_OK");
     int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, NULL);
     if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
@@ -635,7 +629,7 @@ napi_value testNativeWindowPreAllocBufferBufferCnt(napi_env env, napi_callback_i
             return result;
         }
         int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, bufferCnt[i]);
-        if (ret != 0) {
+        if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, CONSTANT_3, &result);
             return result;
         }
@@ -1304,6 +1298,33 @@ napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_i
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    NAPI_ASSERT(env, NATIVE_ERROR_OK == ERRORCODE_0, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_MEM_OPERATION_ERROR == ERRORCODE_30001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_INVALID_ARGUMENTS == ERRORCODE_40001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_PERMISSION == ERRORCODE_40301000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_BUFFER == ERRORCODE_40601000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_CONSUMER == ERRORCODE_41202000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NOT_INIT == ERRORCODE_41203000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_CONNECTED == ERRORCODE_41206000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_STATE_INVALID == ERRORCODE_41207000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_IN_CACHE == ERRORCODE_41208000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_QUEUE_FULL == ERRORCODE_41209000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_NOT_IN_CACHE == ERRORCODE_41210000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_DISCONNECTED == ERRORCODE_41211000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_NO_LISTENER_REGISTERED == ERRORCODE_41212000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNSUPPORTED == ERRORCODE_50102000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNKNOWN == ERRORCODE_50002000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_HDI_ERROR == ERRORCODE_50007000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BINDER_ERROR == ERRORCODE_50401000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_STATE_UNKNOWN == ERRORCODE_60001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_API_FAILED == ERRORCODE_60002000, "");
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
