@@ -576,7 +576,6 @@ export default function documentPickerCallback(abilityContext: Context) {
     it("test_Documentpicker_Save_Callback_014", Level.LEVEL1, async (done: Function) => {
       let testNum = "test_Documentpicker_Save_Callback_014";
       let option = new picker.DocumentSaveOptions();
-      // expect(option).assertTrue();
       option.autoCreateEmptyFile = false;
       let result = await saveWithOption(testNum, done, option);
       expect(result.length == 0).assertTrue();
