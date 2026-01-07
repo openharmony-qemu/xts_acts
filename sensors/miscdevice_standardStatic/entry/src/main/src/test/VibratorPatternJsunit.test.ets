@@ -64,21 +64,15 @@ export default function VibratorJsTest_misc_9() {
     afterEach(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'afterEach called');
       try{
-        vibrator.stopVibration().then(() => {
-          hilog.info(domain, tag, 'afterEach: Success in stopping vibration. ');
-          setTimeout(() => {
-              done();
-          }, 500);
-        }, (error) => {
-          hilog.info(domain, tag, 'afterEach: error in stopping vibration. error: ' + JSON.stringify(error));
-          done();
-        })
+        await vibrator.stopVibration();
+        hilog.info(domain, tag, 'afterEach: Success in stopping vibration. ');
+        done();
       } catch(error){
         hilog.info(domain, tag, 'afterEach error: ' + JSON.stringify(error));
         done();
       }
       console.info('afterEach end');
-  })
+    })
 
     /**
      * @tc.name   VibratorProgramticHapticTestStatic001
