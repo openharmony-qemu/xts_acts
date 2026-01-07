@@ -117,7 +117,7 @@ export default function WindowZindexTest() {
                 hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
             }
         })
-        beforeEach(() {
+        beforeEach(() =>{
             let mainWindowId:int = win.getWindowProperties().id;
             hilog.info(domain, tag, 'jsUnittest beforeEach mainWindowId =' + mainWindowId);
             let topWind:window.Window;

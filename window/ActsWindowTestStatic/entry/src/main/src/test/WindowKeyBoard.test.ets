@@ -61,7 +61,7 @@ export default function WindowKeyBoardTest() {
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
         })
-        beforeEach(() {
+        beforeEach(() =>{
             let mainWindowId:int = win.getWindowProperties().id;
             hilog.info(domain, tag, 'jsUnittest beforeEach mainWindowId =' + mainWindowId);
             let topWind:window.Window;
