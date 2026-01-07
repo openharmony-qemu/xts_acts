@@ -81,6 +81,7 @@ export default function windowTitleBarTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let deviceType:string = deviceInfo.deviceType;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -100,6 +101,7 @@ export default function windowTitleBarTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -2301,7 +2303,6 @@ export default function windowTitleBarTest() {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreenandSplit";
       console.log(caseName + "begin");
       let test = false;
-      let driver = Driver.create();
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -2364,7 +2365,6 @@ export default function windowTitleBarTest() {
     it("testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen";
       console.log(caseName + "begin");
-      let driver = Driver.create();
       let test = true;
       let mainWindow = windowStage.getMainWindowSync();
       let options: StartOptions = {
@@ -2444,7 +2444,6 @@ export default function windowTitleBarTest() {
       let mainWindow = windowStage.getMainWindowSync();
       let windowStageStart:window.WindowStage|undefined = undefined
       let test = true;
-      let driver = Driver.create();
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
