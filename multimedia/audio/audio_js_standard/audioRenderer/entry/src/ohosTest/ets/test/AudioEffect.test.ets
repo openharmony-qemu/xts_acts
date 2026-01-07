@@ -4494,7 +4494,7 @@ export default function AudioEffectTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300', 1, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300', Level.LEVEL0, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300]'
       console.info(TAG + testCaseName + 'start')
       streamNum = 1
