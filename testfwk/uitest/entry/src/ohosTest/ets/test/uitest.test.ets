@@ -122,6 +122,10 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts');
         })
 
+        afterAll(async () => {
+            await stopApplication('com.uitestScene.acts');
+        })
+
         /**
          * @tc.name   testComponentEventOccurOptionsClickMonitor
          * @tc.number UiTest_API22_001
