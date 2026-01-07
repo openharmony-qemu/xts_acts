@@ -99,7 +99,7 @@ constexpr uint32_t NUM_200 = 200;
 #define OPTIONS_SET_WIDTH 6
 #define OPTIONS_SET_HEIGHT 4
 
-napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info) 
+napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -120,7 +120,7 @@ napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info)
     }
     return ret;
 }
-napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_info info) 
+napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -160,7 +160,7 @@ napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
-napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info) 
+napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -180,7 +180,7 @@ napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, res, &ret);
     return ret;
 }
-napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info) 
+napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -224,7 +224,7 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info) 
+napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -274,7 +274,7 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info info) 
+napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
@@ -311,7 +311,7 @@ napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info 
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info) 
+napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -360,7 +360,7 @@ napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, errCode, &result);
     return result;
 }
-napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info) 
+napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -410,7 +410,7 @@ const int32_t BUFFER_LENGTH = 255900;
 const int32_t SIZE_WIDTH = 820;
 const int32_t SIZE_HEIGHT = 312;
 
-napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info) 
+napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
