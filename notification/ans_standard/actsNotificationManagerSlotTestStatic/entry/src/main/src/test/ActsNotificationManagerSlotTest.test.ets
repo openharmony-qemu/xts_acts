@@ -1091,7 +1091,7 @@ export default function ActsNotificationManagerSlotTest() {
         expect(false).assertTrue()
         done()
       })
-
+      await Utils.msSleep(1500)
       try {
         notificationManager.getSlot(notificationManager.SlotType.CONTENT_INFORMATION, (err: BusinessError | null, data) => {
           if (err) {
