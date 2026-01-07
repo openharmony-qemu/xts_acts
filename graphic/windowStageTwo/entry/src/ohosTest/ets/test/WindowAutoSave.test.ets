@@ -128,6 +128,7 @@ export default function windowAutoSaveTest() {
     let mainWindowClass:ohosWindow.Window;
     let isAutoWindow:string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -148,6 +149,7 @@ export default function windowAutoSaveTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -256,7 +258,6 @@ export default function windowAutoSaveTest() {
      */
     it('testSetWindowRectAutoSaveTrue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0200';
-      let driver = Driver.create()
       // 拉起Ability
       let windowStageStart = await startAbility(message, context)
       // 设置setWindowRectAutoSave = true
@@ -749,7 +750,6 @@ export default function windowAutoSaveTest() {
      */
     it('testSetWindowRectAutoSaveFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0200';
-      let driver = Driver.create()
       // 拉起Ability
       let windowStageStart = await startAbility(message, context)
       let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
@@ -1306,7 +1306,6 @@ export default function windowAutoSaveTest() {
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
           await sleep(300);
-          let driver: Driver = Driver.create()
           // 二分屏
           let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
           await sleep(1000)
@@ -1589,7 +1588,6 @@ export default function windowAutoSaveTest() {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
           await mainWindow.moveWindowToAsync(300, 400)
           await mainWindow.resizeAsync(1000, 1200)
-          let driver: Driver = Driver.create()
           // 二分屏
           let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
           await sleep(1000)

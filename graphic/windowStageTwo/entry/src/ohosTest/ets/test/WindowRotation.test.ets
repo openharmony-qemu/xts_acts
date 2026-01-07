@@ -1335,7 +1335,6 @@ export default function windowRotationTest() {
     it('testTwoPagesWithoutSetPreferredOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTwoPagesWithoutSetPreferredOrientation';
       if(isSupportRotate){
-        // let driver = Driver.create();
         
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility(caseName, context);
@@ -1383,7 +1382,6 @@ export default function windowRotationTest() {
     it('testSetPreferredOrientationLandscapeToPortrait_Inverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
       if(isSupportRotate){
-        // let driver = Driver.create();
         
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
@@ -1451,7 +1449,6 @@ export default function windowRotationTest() {
     it('testSetPreferredOrientationLandscape_InvertedToPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
       if(isSupportRotate){
-        // let driver = Driver.create();
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1518,7 +1515,6 @@ export default function windowRotationTest() {
     it('testSetPreferredOrientationUserPortraitToUserLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
       if(isSupportRotate){
-        // let driver = Driver.create();
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1586,7 +1582,6 @@ export default function windowRotationTest() {
     it('testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
       if(isSupportRotate){
-        // let driver = Driver.create();
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
@@ -1653,7 +1648,6 @@ export default function windowRotationTest() {
     it('testSetPreferredOrientationFollowDeskTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
       if(isSupportRotate){
-        // let driver = Driver.create();
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
