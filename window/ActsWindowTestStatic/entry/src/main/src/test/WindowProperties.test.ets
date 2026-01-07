@@ -54,6 +54,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         }
         await Utils.msSleep(1000)
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.`+windowStageStart);
         resolve(windowStageStart);
     })
 }
