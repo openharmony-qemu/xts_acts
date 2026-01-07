@@ -77,7 +77,7 @@ struct Brightness {
       .scrollBarColor('#cccccc')
     }
     .width('100%')
-    .height('80%')
+    .height('65%')
     .backgroundColor(Color.White)
   }
 
