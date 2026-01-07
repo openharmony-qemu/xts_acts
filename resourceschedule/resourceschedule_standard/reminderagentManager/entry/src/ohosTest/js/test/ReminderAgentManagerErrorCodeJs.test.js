@@ -451,6 +451,7 @@ export default function ReminderAgentManagerErrorCodeTest() {
             } catch (error) {
                 console.error("reminderErrorCode_1200 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
                 expect(error.code == 1700007).assertTrue();
+                done();
             }
 
             console.info('----------------------reminderErrorCode_1200 after---------------------------');
@@ -473,6 +474,7 @@ export default function ReminderAgentManagerErrorCodeTest() {
             } catch (error) {
                 console.error("reminderErrorCode_1300 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
                 expect(error.code == 1700007).assertTrue();
+                done();
             }
 
             console.info('----------------------reminderErrorCode_1300 after---------------------------');
@@ -495,6 +497,7 @@ export default function ReminderAgentManagerErrorCodeTest() {
             } catch (error) {
                 console.error("reminderErrorCode_1400 subscribeReminderState promise err code:" + error.code + " message:" + error.message);
                 expect(error.code == 1700007).assertTrue();
+                done();
             }
 
             console.info('----------------------reminderErrorCode_1400 after---------------------------');
@@ -517,6 +520,7 @@ export default function ReminderAgentManagerErrorCodeTest() {
             } catch (error) {
                 console.error("reminderErrorCode_1500 unsubscribeReminderState promise err code:" + error.code + " message:" + error.message);
                 expect(error.code == 1700007).assertTrue();
+                done();
             }
 
             console.info('----------------------reminderErrorCode_1500 after---------------------------');
@@ -539,6 +543,7 @@ export default function ReminderAgentManagerErrorCodeTest() {
             } catch (error) {
                 console.error("reminderErrorCode_1600 unsubscribeReminderState promise err code:" + error.code + " message:" + error.message);
                 expect(error.code == 1700007).assertTrue();
+                done();
             }
 
             console.info('----------------------reminderErrorCode_1600 after---------------------------');
