@@ -1561,16 +1561,16 @@ export default function ReminderAgentManagerTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("reminderRequestAttribute_0042", Level.LEVEL3, async function (done) {
-            console.info('----------------------reminderRequestAttribute_0042---------------------------');
+        it("reminderRequestAttribute_0043", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderRequestAttribute_0043---------------------------');
 
             try {   
                 let callbakFlag2 = 1;
                 await reminderAgent.unsubscribeReminderState(reminderStateCallback);
-                console.info('reminderRequestAttribute_0042 unsubscribe succeed');
+                console.info('reminderRequestAttribute_0043 unsubscribe succeed');
                 expect(callbakFlag2 == 1).assertTrue();
             } catch (error) {
-                console.log("reminderRequestAttribute_0042 subscribeReminderState error.code:" + error.code);
+                console.log("reminderRequestAttribute_0043 subscribeReminderState error.code:" + error.code);
                 expect(false).assertTrue();
                 done();
             }
