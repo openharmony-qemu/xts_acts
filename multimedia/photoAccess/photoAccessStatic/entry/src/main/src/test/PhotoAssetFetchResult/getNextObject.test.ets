@@ -34,7 +34,7 @@ export default function assetGetNextObjectTest() {
     let getNextObjectCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
       try {
-        let fetchResult = await helper.getAssets(fetchOps);
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount()).assertEqual(2);
         await fetchResult.getFirstObject();
         fetchResult.getNextObject((err: BusinessError | null, asset) => {
@@ -61,7 +61,7 @@ export default function assetGetNextObjectTest() {
     let getNextObjectPromiseTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount()).assertEqual(2);
           let asset = await fetchResult.getFirstObject();
           asset = await fetchResult.getNextObject();

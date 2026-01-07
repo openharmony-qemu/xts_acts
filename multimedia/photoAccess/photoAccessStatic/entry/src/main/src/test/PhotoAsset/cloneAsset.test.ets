@@ -166,7 +166,7 @@ export default function cloneAssetTest() {
           hilog.info(domain, tag, `${testNum} :: title is ${title}`);
           let newPhotoAsset: photoAccessHelper.PhotoAsset | undefined;
           if (movingPhotoAsset !== undefined) {
-            newPhotoAsset = await movingPhotoAsset.clone(cloneTitle);
+            newPhotoAsset = await (movingPhotoAsset as photoAccessHelper.PhotoAsset).clone(cloneTitle);
           }
           if (newPhotoAsset === undefined) {
             hilog.error(domain, tag, `${testNum} :: clone failed !`)

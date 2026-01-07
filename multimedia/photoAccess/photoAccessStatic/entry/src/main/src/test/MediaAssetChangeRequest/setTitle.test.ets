@@ -57,7 +57,7 @@ export default function setTitleChangeRequestTest() {
           const asset = await getFileAsset(testNum, fetchOps);
           let assetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
           assetChangeRequest.setTitle("");
-          await helper.applyChanges(assetChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
           expect(false).assertTrue();
           done();
         } catch (error: BusinessError) {

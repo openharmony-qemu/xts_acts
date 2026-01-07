@@ -29,7 +29,7 @@ export default function assetIsAfterLastTest() {
     let isAfterLastCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let count = fetchResult.getCount();
           expect(count).assertEqual(2);
           let asset = await fetchResult.getFirstObject();
