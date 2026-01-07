@@ -26,13 +26,12 @@ struct ScrollExample {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('MainPage')
-        .fontSize(50)
         .fontWeight(FontWeight.Bold)
         .accessibilityDefaultFocus(true)
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Column() {
-            Button('toast').fontSize(25).fontWeight(FontWeight.Bold)
+            Button('toast').fontWeight(FontWeight.Bold)
               .id('toastBtn')
               .onClick(() => {
                 try {
@@ -47,7 +46,7 @@ struct ScrollExample {
                 };
               })
 
-            Button('dialog').fontSize(25).fontWeight(FontWeight.Bold)
+            Button('dialog').fontWeight(FontWeight.Bold)
               .id('dialogBtn')
               .onClick(() => {
                 console.info('dialog start')
@@ -68,12 +67,11 @@ struct ScrollExample {
               })
             Button() {
               Text('next page')
-                .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
             .key('my-key')
             .type(ButtonType.Capsule)
-            .margin({ top: 20 })
+            .margin({ top: 5 })
             .onClick(() => {
               console.info('jump to second')
               router.push({ uri: 'pages/second' })
@@ -97,12 +95,11 @@ struct ScrollExample {
             )
             Button() {
               Text('Click twice')
-                .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
             .id('twiceBtn')
             .type(ButtonType.Capsule)
-            .margin({ top: 20 })
+            .margin({ top: 5 })
             .gesture(
               TapGesture({ count: 2 })
                 .onAction(() => {
@@ -121,12 +118,11 @@ struct ScrollExample {
             )
             Button() {
               Text(this.hoverText)
-                .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
             .type(ButtonType.Capsule)
             .key('jump')
-            .margin({ top: 20 })
+            .margin({ top: 5 })
             .onHover((isHover: boolean) => {
               console.info('hover start')
               if (isHover) {
@@ -164,12 +160,11 @@ struct ScrollExample {
             )
             Button() {
               Text('scroll')
-                .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
             .id('scrollBtn')
             .type(ButtonType.Capsule)
-            .margin({ top: 20 })
+            .margin({ top: 5 })
             .onClick(() => {
               console.info('jump to scroll')
               router.push({ uri: 'pages/scroll' })
@@ -178,7 +173,6 @@ struct ScrollExample {
             Row() {
               Button() {
                 Text('wearList')
-                  .fontSize(25)
                   .fontWeight(FontWeight.Bold)
               }
               .id('wearListBtn')
@@ -191,13 +185,12 @@ struct ScrollExample {
               })
               Button() {
                 Text('并行测试')
-                  .fontSize(25)
                   .fontWeight(FontWeight.Bold)
               }
               .id('to5')
-              .margin({left: 10})
+              .margin({left: 5})
               .type(ButtonType.Capsule)
-              .margin({ top: 20 })
+              .margin({ top: 5 })
               .onClick(() => {
                 console.info('jump to five')
                 router.push({ uri: 'pages/five' })
@@ -222,22 +215,19 @@ struct ScrollExample {
               .type(InputType.Normal)
               .width(300)
               .height(50)
-              .fontSize(40)
               .enabled(true)
-              .margin({ top: 20 })
+              .margin({ top: 5 })
             ForEach(this.arr, (item:number) => {
               Text(item.toString())
                 .width('100%')
-                .height('30%')
+                .height('15%')
                 .backgroundColor(0xFFFFFF)
-                .borderRadius(75)
-                .fontSize(80)
+                .borderRadius(35)
                 .textAlign(TextAlign.Center)
-                .margin({ top: 10 })
+                .margin({ top: 5 })
             }, (item:string) => item)
             Button() {
               Text('bottom')
-                .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }.type(ButtonType.Capsule)
             .margin({
@@ -273,13 +263,10 @@ struct ScrollExample {
       Column() {
           Text('ShowSwipeEventCom')
             .id('ShowSwipeEventCom')
-            .fontSize(20)
             .visibility(this.isShowSwipeEventCom ? Visibility.Visible: Visibility.Hidden)
         Text(this.pressure.toFixed(1))
           .id('pressure')
-          .fontSize(20)
         Text('MainPage_End')
-          .fontSize(50)
           .fontWeight(FontWeight.Bold)
       }.margin({
         top: 20
