@@ -34,6 +34,22 @@ export default function webViewController() {
 
     beforeAll(async (): Promise<void> => {
       console.log('App start')
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      abilityDelegator.addAbilityMonitor({
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
+        onAbilityCreate: (abilitys : UIAbility) : void => {
+          testAbilityContext = abilitys.context
+          console.log('onAbilityCreate end')
+        },
+      }, (err : BusinessError | null) : void => {
+        if (err != null ) {
+          console.log('-----' + err.code)
+        }
+        console.log('BusinessError  end')
+      });
+      await Utils.msSleep(2000)
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.pageInteractionTwo.test.static')
       await Utils.msSleep(2000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -53,20 +69,28 @@ export default function webViewController() {
      */
     it('testOnOverScrollStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(3000)
-        Utils.emitEvent('testOnOverScroll001', 10)
-        let driver: Driver = Driver.create();
-        await Utils.msSleep(1000)
+      await Utils.msSleep(3000);
+      Utils.emitEvent('testOnOverScroll001', 10);
+      let driver: Driver = Driver.create();
+      await Utils.msSleep(1000);
+      let userAgentPC = '';
+      const isPC: boolean = userAgentPC.includes('PC');
+      if (isPC) {
+        console.info("isPC")
         await driver.swipe(1200, 600, 1200, 1400);
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testOnOverScroll001', true, 31038, done);
-        await Utils.msSleep(3000)
-        let button = await driver.findComponent(ON.id('WebViewControllerButton'));
-        await Utils.msSleep(3000);
-        button?.click();
-        await Utils.msSleep(3000);
-        done();
-      })
+      }else{
+        console.info("isPhone")
+        await driver.swipe(100, 300, 400, 300, 600);
+      }
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testOnOverScroll001', true, 31038, done);
+      await Utils.msSleep(3000);
+      let button = await driver.findComponent(ON.id('WebViewControllerButton'));
+      await Utils.msSleep(2000);
+      button?.click();
+      await Utils.msSleep(3000);
+      done();
+    });
 
     /**
      * @tc.name   testOnOverScrollStatic002
@@ -81,7 +105,15 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll002', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000);
-        await driver.swipe(1200, 600, 1200, 1400);
+        let userAgentPC = ''
+        const isPC: boolean = userAgentPC.includes('PC');
+        if (isPC) {
+          console.info("isPC")
+          await driver.swipe(1200, 600, 1200, 1400);
+        }else{
+          console.info("isPhone")
+          await driver.swipe(100, 300, 400, 300, 600);
+        }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll002', true, 100034, done);
         await Utils.msSleep(3000)
@@ -106,7 +138,15 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll003', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000)
-        await driver.swipe(1200, 600, 1200, 1400);
+        let userAgentPC = ''
+        const isPC: boolean = userAgentPC.includes('PC');
+        if (isPC) {
+          console.info("isPC")
+          await driver.swipe(1200, 600, 1200, 1400);
+        }else{
+          console.info("isPhone")
+          await driver.swipe(100, 300, 400, 300, 600);
+        }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll003', true, 100035, done);
         await Utils.msSleep(3000)
@@ -130,7 +170,15 @@ export default function webViewController() {
         Utils.emitEvent('testOnOverScroll004', 10)
         let driver: Driver = Driver.create();
         await Utils.msSleep(3000)
-        await driver.swipe(1200, 600, 1200, 1400);
+        let userAgentPC = ''
+        const isPC: boolean = userAgentPC.includes('PC');
+        if (isPC) {
+          console.info("isPC")
+          await driver.swipe(1200, 600, 1200, 1400);
+        }else{
+          console.info("isPhone")
+          await driver.swipe(100, 300, 400, 300, 600);
+        }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll004', true, 100036, done);
         await Utils.msSleep(3000)
