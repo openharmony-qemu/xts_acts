@@ -459,22 +459,22 @@ static napi_value TestSetCrashObjType(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &objType);
     uint64_t crashObj;
     char data[] = "test set crashObject"; //长度64
-    if (objType == 0) {
+    if (objType == HIDEBUG_CRASHOBJ_STRING) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, data);
         OH_HiDebug_ResetCrashObj(crashObj);
-    } else if (objType == 1) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_64B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_64B, data);
         OH_HiDebug_ResetCrashObj(crashObj);
-    } else if (objType == 2) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_256B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_256B, data);
         OH_HiDebug_ResetCrashObj(crashObj);
-    } else if (objType == 3) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_1024B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_1024B, data);
         OH_HiDebug_ResetCrashObj(crashObj);
-    } else if (objType == 4) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_2048B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_2048B, data);
         OH_HiDebug_ResetCrashObj(crashObj);
-    } else if (objType == 5) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_4096B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_4096B, data);
         OH_HiDebug_ResetCrashObj(crashObj);
     } else {
@@ -504,17 +504,17 @@ static napi_value TestSetCrashObjAddr(napi_env env, napi_callback_info info)
     int32_t objType;
     napi_get_value_int32(env, args[0], &objType);
     uint64_t crashObj;
-    if (objType == 0) {
+    if (objType == HIDEBUG_CRASHOBJ_STRING) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, nullptr);
-    } else if (objType == 1) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_64B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_64B, nullptr);
-    } else if (objType == 2) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_256B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_256B, nullptr);
-    } else if (objType == 3) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_1024B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_1024B, nullptr);
-    } else if (objType == 4) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_2048B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_2048B, nullptr);
-    } else if (objType == 5) {
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_4096B) {
         crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_4096B, nullptr);
     } else {
         napi_value input;
@@ -558,7 +558,8 @@ static napi_value TestSetCrashObjAddrLen(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &addrLen);
     uint64_t crashObj;
     std::string str = "test set crashObject addr length";
-    str.resize(addrLen * 1024, '0');
+    const int KB = 1024;
+    str.resize(addrLen * KB, '0');
     crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, (void*)str.c_str());
     OH_HiDebug_ResetCrashObj(crashObj);
     if (std::to_string(crashObj).c_str() == nullptr) {
