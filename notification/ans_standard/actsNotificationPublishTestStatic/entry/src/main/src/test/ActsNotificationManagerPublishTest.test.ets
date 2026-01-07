@@ -95,7 +95,7 @@ export default function ActsNotificationManagerPublishTest() {
           hilog.info(DOMAIN_NUMBER, TAG, `Sub_Notification_Ans_Publish_Cancel_Static_3250 cancel Promise success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(DOMAIN_NUMBER, TAG,
             `Sub_Notification_Ans_Publish_Cancel_Static_3250 cancel Promise err: ${err.code}, errMes: ${err.message}`)
           count++;
@@ -157,7 +157,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
         expect(err.code == 1600007).assertTrue()
         done()
@@ -170,7 +170,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
         expect(err.code == 1600007).assertTrue()
         done()
@@ -197,7 +197,7 @@ export default function ActsNotificationManagerPublishTest() {
           console.info(`${TAG} cancel Promise success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
           count++;
               expect(count).assertEqual(1);
@@ -258,7 +258,7 @@ export default function ActsNotificationManagerPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancelAll Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -321,7 +321,7 @@ export default function ActsNotificationManagerPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -348,7 +348,7 @@ export default function ActsNotificationManagerPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -414,7 +414,7 @@ export default function ActsNotificationManagerPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} requestEnableNotification Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -470,7 +470,7 @@ export default function ActsNotificationManagerPublishTest() {
           console.info(`${TAG} getActiveNotificationCount Promise success :${data}`)
           expect(data !== null).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -535,7 +535,7 @@ export default function ActsNotificationManagerPublishTest() {
             expect(data.length == 0).assertTrue()
             done()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
@@ -559,7 +559,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
         expect(data !== null).assertTrue()
         done()
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -583,7 +583,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
         expect(data !== null).assertTrue()
         done()
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -641,7 +641,7 @@ export default function ActsNotificationManagerPublishTest() {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
           expect(data).assertTrue()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -681,7 +681,7 @@ export default function ActsNotificationManagerPublishTest() {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
           expect(data).assertFalse()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -706,7 +706,7 @@ export default function ActsNotificationManagerPublishTest() {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
         expect(data).assertFalse()
         done()
-      }).catch((err: BusinessError):void => {
+      }).catch((err: Error):void => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1450,7 +1450,7 @@ export default function ActsNotificationManagerPublishTest() {
                 console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
                 expect(data.length > 0).assertTrue()
                 done()
-              }).catch((err: BusinessError): void => {
+              }).catch((err: Error): void => {
                 console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
                 expect(false).assertTrue()
                 done()
@@ -1657,7 +1657,7 @@ export default function ActsNotificationManagerPublishTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} =====size: ====  ${imageInfo.size}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
         })
         let notificationRequest: notificationManager.NotificationRequest = {
@@ -1732,7 +1732,7 @@ export default function ActsNotificationManagerPublishTest() {
 
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info(`=====size: ==== + ${JSON.stringify(imageInfo.size)}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
           return;
         })
@@ -1817,7 +1817,7 @@ export default function ActsNotificationManagerPublishTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info(`=====size: ==== + ${JSON.stringify(imageInfo.size)}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
           return;
         })
@@ -1901,7 +1901,7 @@ export default function ActsNotificationManagerPublishTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info(`=====size: ==== + ${JSON.stringify(imageInfo.size)}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
           return;
         })
@@ -1976,7 +1976,7 @@ export default function ActsNotificationManagerPublishTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info(`=====size: ==== + ${JSON.stringify(imageInfo.size)}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
           return;
         })

@@ -91,7 +91,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result1 = 'success'
                   })
-                  .catch((error: BusinessError): void =>{
+                  .catch((error: Error): void =>{
                     this.result1 = (error.code).toString() + error.message
                   })
               })
@@ -105,7 +105,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result2 = 'success'
                   })
-                  .catch((error: BusinessError): void => {
+                  .catch((error: Error): void => {
                     this.result2 = (error.code).toString() + error.message
                   })
               })
@@ -118,7 +118,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result3 = 'success'
                   })
-                  .catch((error: BusinessError): void =>{
+                  .catch((error: Error): void =>{
                     this.result3 = (error.code).toString() + error.message
                   })
               })
@@ -140,7 +140,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result1 = 'success'
                   })
-                  .catch((error: BusinessError): void =>{
+                  .catch((error: Error): void =>{
                     this.result1 = (error.code).toString() + error.message
                   })
               })
@@ -153,7 +153,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result2 = 'success'
                   })
-                  .catch((error: BusinessError): void =>{
+                  .catch((error: Error): void =>{
                     this.result2 = (error.code).toString() + error.message
                   })
               })
@@ -166,7 +166,7 @@ struct navigation_pushDestination9 {
                   .then(()=>{
                     this.result3 = 'success'
                   })
-                  .catch((error: BusinessError): void =>{
+                  .catch((error: Error): void =>{
                     this.result3 = (error.code).toString() + error.message
                   })
               })

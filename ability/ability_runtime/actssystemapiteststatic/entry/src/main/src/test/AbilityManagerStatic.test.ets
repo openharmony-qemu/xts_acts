@@ -54,7 +54,7 @@ export default function abilityManagerStaticTest() {
           expect(data[0].startTime).assertLarger(0);
           done();
         })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, ' err:' + JSON.stringify(err));
           expect().assertFail();
           done();

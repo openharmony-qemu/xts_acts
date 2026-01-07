@@ -158,7 +158,8 @@ export default function sequenceRunnerAbilityTest() {
           let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           let task1: taskpool.Task = new taskpool.Task(stringTaskFunction1, 'task1');
           let task2: taskpool.Task = new taskpool.Task(stringTaskFunction2, 'task2');
-          sequenceRunner.execute(task1).then((result: string): void => {
+          sequenceRunner.execute(task1).then((value: Any): void => {
+            const result = value as string;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = string(result);
             task1Count++;
@@ -169,7 +170,8 @@ export default function sequenceRunnerAbilityTest() {
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
 
           })
-          sequenceRunner.execute(task2).then((result: string): void => {
+          sequenceRunner.execute(task2).then((value: Any): void => {
+            const result = value as string;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = string(result);
             task2Count++;
@@ -218,7 +220,8 @@ export default function sequenceRunnerAbilityTest() {
           let task3: taskpool.Task = new taskpool.Task(stringTaskFunction3, 'task3');
           let task4: taskpool.Task = new taskpool.Task(stringTaskFunction4, 'task4');
 
-          sequenceRunner.execute(task3).then((result: string): void => {
+          sequenceRunner.execute(task3).then((value: Any): void => {
+            const result = value as string;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = string(result);
             task1Count++;
@@ -229,7 +232,8 @@ export default function sequenceRunnerAbilityTest() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-          sequenceRunner.execute(task4).then((result: string): void => {
+          sequenceRunner.execute(task4).then((value: Any): void => {
+            const result = value as string;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = string(result);
             task2Count++;
@@ -279,14 +283,16 @@ export default function sequenceRunnerAbilityTest() {
           let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           let task1: taskpool.Task = new taskpool.Task(numberTaskFunction1, 1.0);
           let task2: taskpool.Task = new taskpool.Task(numberTaskFunction2, 2.0);
-          sequenceRunner.execute(task1).then((result: number): void => {
+          sequenceRunner.execute(task1).then((value: Any): void => {
+            const result = value as number;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = string(result);
             task1Count++;
             array1.push(er);
             er = '';
           });
-          sequenceRunner.execute(task2).then((result: number): void => {
+          sequenceRunner.execute(task2).then((value: Any): void => {
+            const result = value as number;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = string(result);
             task2Count++;
@@ -331,7 +337,8 @@ export default function sequenceRunnerAbilityTest() {
           let task1: taskpool.Task = new taskpool.Task(booleanTaskFunction1, true);
           let task2: taskpool.Task = new taskpool.Task(booleanTaskFunction2, true);
 
-          sequenceRunner.execute(task1).then((result: boolean): void => {
+          sequenceRunner.execute(task1).then((value: Any): void => {
+            const result = value as boolean;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = string(result);
             task1Count++;
@@ -342,7 +349,8 @@ export default function sequenceRunnerAbilityTest() {
             task3Count++;
             console.error(`${caseName}error message error1300: ${JSON.stringify(error)}`)
           })
-          sequenceRunner.execute(task2).then((result: boolean): void => {
+          sequenceRunner.execute(task2).then((value: Any): void => {
+            const result = value as boolean;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = string(result);
             task2Count++;
@@ -391,7 +399,8 @@ export default function sequenceRunnerAbilityTest() {
           let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
           let task3: taskpool.Task = new taskpool.Task(booleanTaskFunction3, true);
           let task4: taskpool.Task = new taskpool.Task(booleanTaskFunction4, true);
-          sequenceRunner.execute(task3).then((result: boolean): void => {
+          sequenceRunner.execute(task3).then((value: Any): void => {
+            const result = value as boolean;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             er = string(result);
             task1Count++;
@@ -402,7 +411,8 @@ export default function sequenceRunnerAbilityTest() {
             task3Count++;
             console.error(`${caseName} error message error3: ${JSON.stringify(error)}`)
           })
-          sequenceRunner.execute(task4).then((result: boolean): void => {
+          sequenceRunner.execute(task4).then((value: Any): void => {
+            const result = value as boolean;
             console.log(`${caseName}Execution ${i + 1}: ${result}`);
             ir = string(result);
             task2Count++;

@@ -35,7 +35,7 @@ class EntryAbility3 extends UIAbility {
       setTimeout(()=>{
         this.context.getApplicationContext().killAllProcesses().then(():void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses promiseresult');
-        }).catch((err:BusinessError):void=>{
+        }).catch((err:Error):void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses promise err' + err?.code);
         })
       },1000)
@@ -44,7 +44,7 @@ class EntryAbility3 extends UIAbility {
       setTimeout(()=>{
         this.context.getApplicationContext().killAllProcesses(false).then(():void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStackresult');
-        }).catch((err:BusinessError):void=>{
+        }).catch((err:Error):void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'killAllProcesses clearPageStack err' + err?.code);
         })
       },1000)
@@ -60,7 +60,7 @@ class EntryAbility3 extends UIAbility {
       setTimeout(()=>{
         this.context.getApplicationContext().clearUpApplicationData().then(():void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'clearUpApplicationData promise result');
-        }).catch((err:BusinessError):void=>{
+        }).catch((err:Error):void=>{
           hilog.info(0x0000, 'testTag EntryAbility3', 'clearUpApplicationData promise err' + err?.code);
         })
       },1000)

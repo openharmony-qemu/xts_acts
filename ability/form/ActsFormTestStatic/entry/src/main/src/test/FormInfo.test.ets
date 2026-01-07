@@ -253,7 +253,7 @@ export default function formInfoTest() {
                 hilog.info(0x0000, 'testTag', 'onGetFormRect success');
                 expect().assertFail();
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.info(0x0000, 'testTag', 'onGetFormRect catch error');

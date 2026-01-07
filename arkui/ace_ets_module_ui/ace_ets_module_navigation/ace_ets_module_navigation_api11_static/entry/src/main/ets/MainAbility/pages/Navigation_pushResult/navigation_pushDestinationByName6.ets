@@ -61,7 +61,7 @@ struct navigation_pushDestinationByName6 {
               .then(()=>{
                 this.str = 'success'
               })
-              .catch((error: BusinessError): void =>{
+              .catch((error: Error): void =>{
                 console.log('Test:'+JSON.stringify(error))
                 this.code = (error.code).toString() + error.message
               })

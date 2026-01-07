@@ -112,7 +112,7 @@ export default function GetCurrentTopAbilityTest() {
               done();
             }
           })
-          .catch((error: BusinessError):void => {
+          .catch((error: Error):void => {
             abilityDelegator.printSync(
               "ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 catch error: " + error
             );

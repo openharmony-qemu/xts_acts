@@ -77,7 +77,7 @@ export default function getBundleInfo() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               hilog.info(0x0000, tag, 'getBundleInfoTestWithUserIdPromise201 err1 ====> ' + JSON.stringify(err));
               expect(err.code).assertEqual(201);
               done();

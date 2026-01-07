@@ -113,7 +113,7 @@ export default function fileIOFdatasync() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -204,7 +204,7 @@ export default function fileIOFdatasync() {
       try {
         fs.fdatasync(-1).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_005 error: {message: ' + JSON.stringify(err) + '}');
           expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
           done();

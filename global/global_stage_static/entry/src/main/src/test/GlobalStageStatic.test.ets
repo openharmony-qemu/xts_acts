@@ -1860,7 +1860,7 @@ export default function globalStageTest() {
      */
     it('getStringByName_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getStringByName('').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getStringByName_stage_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -1877,7 +1877,7 @@ export default function globalStageTest() {
      */
     it('getStringByName_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getStringByName('test_stringLoopA').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getStringByName_stage_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
         done();
@@ -2871,7 +2871,7 @@ export default function globalStageTest() {
      */
     it('getMediaBase64ByName_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getMediaBase64ByName('').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getMediaBase64ByName_test_static_0500 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2888,7 +2888,7 @@ export default function globalStageTest() {
      */
     it('getMediaBase64ByName_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getMediaBase64ByName('', 0).then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getMediaBase64ByName_test_static_0600 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2921,7 +2921,7 @@ export default function globalStageTest() {
      */
     it('getMediaByName_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getMediaByName('').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getMediaByName_test_static_0500 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2938,7 +2938,7 @@ export default function globalStageTest() {
      */
     it('getMediaByName_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getMediaByName('', 0).then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getMediaByName_test_static_0600 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2971,7 +2971,7 @@ export default function globalStageTest() {
      */
     it('getStringArrayByName_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getStringArrayByName('sizeListThree').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getStringArrayByName_stage_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
         done();
@@ -3004,7 +3004,7 @@ export default function globalStageTest() {
      */
     it('getStringArrayByName_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       res.getStringArrayByName('').then(() => {
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.log('getStringArrayByName_stage_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();

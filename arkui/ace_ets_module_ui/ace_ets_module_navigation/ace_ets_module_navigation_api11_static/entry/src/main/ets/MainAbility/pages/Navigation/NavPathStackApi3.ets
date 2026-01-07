@@ -67,7 +67,7 @@ struct Navigation_NavPathStackTest3 {
           .onClick((e: ClickEvent) => {
             this.pageInfos.pushDestinationByName('pageOne', {}, (popInfo: PopInfo): void=>{
               console.log('[pushDestinationByName]last page is: ' + popInfo.info.name + ', result: ' + JSON.stringify(popInfo.result));
-            }).catch((error: BusinessError): void =>{
+            }).catch((error: Error): void =>{
               console.error(`[pushDestinationByName]failed, error code = ${error.code}, error.message = ${error.message}.`);
             }).then(()=>{
               console.error('[pushDestinationByName]success.');
