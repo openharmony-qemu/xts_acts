@@ -26,6 +26,8 @@
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
 #include <thread>
+#include <common/log_common.h>
+#include <common/native_common.h>
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -37,12 +39,31 @@
 #define NUMBER_255 255
 #define NUMBER_256 256
 #define NUMBER_500 500
-#define NUMBER_40001000 40001000
 #define ARR_NUMBER_0 0
 #define ARR_NUMBER_1 1
 #define ARR_NUMBER_2 2
 #define ARR_NUMBER_3 3
 #define ARR_NUMBER_4 4
+#define ERRORCODE_0 0
+#define ERRORCODE_30001000 30001000
+#define ERRORCODE_40001000 40001000
+#define ERRORCODE_40301000 40301000
+#define ERRORCODE_40601000 40601000
+#define ERRORCODE_41202000 41202000
+#define ERRORCODE_41203000 41203000
+#define ERRORCODE_41206000 41206000
+#define ERRORCODE_41207000 41207000
+#define ERRORCODE_41208000 41208000
+#define ERRORCODE_41209000 41209000
+#define ERRORCODE_41210000 41210000
+#define ERRORCODE_41211000 41211000
+#define ERRORCODE_41212000 41212000
+#define ERRORCODE_50102000 50102000
+#define ERRORCODE_50002000 50002000
+#define ERRORCODE_50007000 50007000
+#define ERRORCODE_50401000 50401000
+#define ERRORCODE_60001000 60001000
+#define ERRORCODE_60002000 60002000
 
 static bool g_flag = false;
 static void OnVSync(long long timestamp, void *data) { g_flag = true; }
@@ -747,7 +768,32 @@ static napi_value OHNativeVSyncSetExpectedFrameRateRange003(napi_env env, napi_c
     napi_set_element(env, result, ARR_NUMBER_3, result4);
     return result;
 }
-
+static napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    NAPI_ASSERT(env, NATIVE_ERROR_OK == ERRORCODE_0, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_MEM_OPERATION_ERROR == ERRORCODE_30001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_INVALID_ARGUMENTS == ERRORCODE_40001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_PERMISSION == ERRORCODE_40301000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_BUFFER == ERRORCODE_40601000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_CONSUMER == ERRORCODE_41202000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NOT_INIT == ERRORCODE_41203000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_CONNECTED == ERRORCODE_41206000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_STATE_INVALID == ERRORCODE_41207000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_IN_CACHE == ERRORCODE_41208000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_QUEUE_FULL == ERRORCODE_41209000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_NOT_IN_CACHE == ERRORCODE_41210000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_DISCONNECTED == ERRORCODE_41211000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_NO_LISTENER_REGISTERED == ERRORCODE_41212000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNSUPPORTED == ERRORCODE_50102000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNKNOWN == ERRORCODE_50002000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_HDI_ERROR == ERRORCODE_50007000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BINDER_ERROR == ERRORCODE_50401000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_STATE_UNKNOWN == ERRORCODE_60001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_API_FAILED == ERRORCODE_60002000, "");
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
 static napi_value vsyncInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -765,6 +811,7 @@ static napi_value vsyncInit(napi_env env, napi_value exports)
          OHNativeVSyncSetExpectedFrameRateRange002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHNativeVSyncSetExpectedFrameRateRange003", nullptr,
          OHNativeVSyncSetExpectedFrameRateRange003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

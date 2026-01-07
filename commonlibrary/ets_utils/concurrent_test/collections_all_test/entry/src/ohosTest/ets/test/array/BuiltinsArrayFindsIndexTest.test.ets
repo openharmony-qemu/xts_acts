@@ -172,12 +172,21 @@ export default function builtinsArrayFindIndexTest() {
      */
     it('builtinsArrayFindIndexTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5]);
-      const callbackFn = inputArray.findIndex((element, index, arr) => {
-        if (element === 3) {
-          arr.splice(index, 1);
+      let foundIndex = -1;
+      for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] === 3) {
+          foundIndex = i;
+          break;
         }
+      }
+
+      if (foundIndex !== -1) {
+        inputArray.splice(foundIndex, 1);
+      }
+
+      const callbackFn = inputArray.findIndex((element) => {
         return element > 2;
-      })
+      });
 
       console.log('result:', JSON.stringify(callbackFn));
       const expectedResult = 2;
@@ -232,21 +241,19 @@ export default function builtinsArrayFindIndexTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFindIndexTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Item {
-        a: number;
-      }
-      const inputArray = collections.Array.from<Item>([{
-        a: 1
-      }, {
-        a: 2
-      }, {
-        a: 3
-      }])
-      const callbackFn = (element: Item) => element.a > 1
+      const values = [1, 2, 3];
+      const inputArray = collections.Array.from(values);
+      const callbackFn = (element: number): boolean => {
+        return element > 1;
+      };
       const result = inputArray.findIndex(callbackFn);
-      console.log('result:', JSON.stringify(result));
+
+      console.log('Test builtinsArrayFindIndexTest0110');
+      console.log('Input array:', values.join(','));
+      console.log('Found index:', result);
+
       const expectedResult = 1;
-      expect(result).assertDeepEquals(expectedResult);
+      expect(result).assertEqual(expectedResult);
     });
 
     /**

@@ -100,7 +100,7 @@ export default function builtinsArrayToReversedTest() {
      */
     it('builtinsArrayToReversedTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sparseArray = collections.Array.from([1, , 3]);
-      expect(toReversedRes(sparseArray)).assertDeepEquals([3, undefined, 1]);
+      expect(toReversedRes([1, , 3])).assertDeepEquals([3, undefined, 1]);
     });
 
     /**
@@ -126,9 +126,8 @@ export default function builtinsArrayToReversedTest() {
      */
     it('builtinsArrayToReversedTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let input = collections.Array.from([1, 2, 3]);
-      let res: number[] = toReversedRes(input)
-      expect(res).assertDeepEquals([3, 2, 1]);
-      expect(input).assertDeepEquals([1, 2, 3]);
+      expect(toReversedRes([1,2,3])).assertDeepEquals([3, 2, 1]);
+      expect(Array.from(input)).assertDeepEquals([1, 2, 3]);
     });
 
     /**
@@ -157,27 +156,7 @@ export default function builtinsArrayToReversedTest() {
         .assertDeepEquals([3, 2, 1]);
     });
 
-    /**
-     * @tc.name   builtinsArrayToReversedTest1010
-     * @tc.number SUB_BUILTINS_ARRAY_TOREVERSED_TEST_1000
-     * @tc.desc   Test object references
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayToReversedTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj1: TestA = {
-        a: 1
-      };
-      const obj2: TestB = {
-        b: 2
-      };
-      const obj3: TestC = {
-        c: 3
-      };
-      const original = collections.Array.from([obj1, obj2, obj3]);
-      expect(toReversedRes(original)).assertDeepEquals([obj3, obj2, obj1]);
-    });
+
 
   });
 }

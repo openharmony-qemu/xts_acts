@@ -116,7 +116,7 @@ export default function LightWeightMapTest1() {
      */
     it("testLightWeightMap0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightMap = new LightWeightMap<number, number[]>();
-      let a = [1, 2, 3, 4];
+      let a: number[] = [1, 2, 3, 4];
       lightWeightMap.set(1, a);
       let res = lightWeightMap.hasValue(a);
       expect(String(res)).assertEqual('true');

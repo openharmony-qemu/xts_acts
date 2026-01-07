@@ -23,6 +23,7 @@ import APIsetOnHoverTest from './frameNodeTest/APIsetOnHoverTest.test';
 import nodeList from './frameNodeTest/nodeList.test';
 import nodeListItemGroup from './frameNodeTest/nodeListItemGroup.test';
 import NodeAdapter001Test from './nodeAdapterTest/NodeAdapter001Test.test';
+import IsOnMainTreeMethodTest from './frameNodeTest/IsOnMainTreeMethodTest.test';
 import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
 
 export default function testsuite() {
@@ -37,5 +38,7 @@ export default function testsuite() {
   nodeList()
   nodeListItemGroup()
   NodeAdapter001Test()
+  IsOnMainTreeMethodTest()
   isInRenderStateTest()
+
 }
