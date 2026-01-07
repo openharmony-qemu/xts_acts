@@ -99,8 +99,7 @@ constexpr uint32_t NUM_200 = 200;
 #define OPTIONS_SET_WIDTH 6
 #define OPTIONS_SET_HEIGHT 4
 
-napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -120,8 +119,7 @@ napi_value OHImageInitImageNativeSupp(napi_env env, napi_callback_info info)
     }
     return ret;
 }
-napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -160,14 +158,13 @@ napi_value OHPictureMetadataGetPropertyWithNullSupp(napi_env env, napi_callback_
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
-napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    OH_PackingOptions *options;
+    OH_PackingOptions *options = nullptr;
     Image_ErrorCode res;
     switch (index) {
     case CASE_INDEX_1:
@@ -180,8 +177,7 @@ napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, res, &ret);
     return ret;
 }
-napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -213,6 +209,9 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     case CASE_INDEX_2:
         returnValue = OH_PixelmapNative_GetMetadata(nullptr, HDR_METADATA_TYPE, &value);
         break;
+    case CASE_INDEX_3:
+        returnValue = OH_PixelmapNative_GetMetadata(pixelMap, (OH_Pixelmap_HdrMetadataKey)6, &value);
+        break;
     default:
         break;
     }
@@ -221,8 +220,7 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -244,8 +242,10 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
         OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataSize, createOpts, IMAGE_ALLOCATOR_MODE_DMA, &pixelMap);
     OH_Pixelmap_HdrMetadataValue *pvalue = new OH_Pixelmap_HdrMetadataValue;
     pvalue->type = HDR_METADATA_TYPE_BASE;
+    OH_Pixelmap_HdrDynamicMetadata *dValue = new OH_Pixelmap_HdrDynamicMetadata;
+    dValue->data = data;
+    dValue->length = 16;
     Image_ErrorCode returnValue;
-    OH_NativeBuffer *buffer = nullptr;
     switch (index) {
     case CASE_INDEX_1:
         returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
@@ -257,9 +257,9 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
         errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
         returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
         break;
-    case CASE_INDEX_4:
-        errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
-        returnValue = OH_PixelmapNative_GetNativeBuffer(pixelMap, &buffer);
+    case CASE_INDEX_5:
+        returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_DYNAMIC_METADATA, (OH_Pixelmap_HdrMetadataValue*)dValue);
+        LOGI("OH_PixelmapNative_SetMetadata,%{public}d", returnValue);
         break;
     default:
         break;
@@ -269,8 +269,7 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -306,8 +305,7 @@ napi_value OHConvertPixelmapNativeFromNapiSupp(napi_env env, napi_callback_info 
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info) {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
     napi_value result = nullptr;
@@ -325,6 +323,7 @@ napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
     Image_ErrorCode errCode;
     OH_ImageSourceNative *tempImageSource = nullptr;
     errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
+    LOGI("OH_ImageSourceNative_CreateFromUri:%{public}d", errCode);
     OH_DecodingOptions *ops = nullptr;
     errCode = OH_DecodingOptions_Create(&ops);
     OH_PixelmapNative *mainPixelMap = nullptr;
@@ -333,12 +332,12 @@ napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
     errCode = OH_PictureNative_CreatePicture(mainPixelMap, &picture);
     OH_PictureMetadata *metadata = nullptr;
     Image_String key;
-        key.data = strdup(keyString.c_str());
-        key.size = strlen(key.data);
-        Image_String srcValue;
-        char bufferValue[] = "666";
-        srcValue.data = bufferValue;
-        srcValue.size = strlen(bufferValue);
+    key.data = strdup(keyString.c_str());
+    key.size = strlen(key.data);
+    Image_String srcValue;
+    char bufferValue[] = "666";
+    srcValue.data = bufferValue;
+    srcValue.size = strlen(bufferValue);
     Image_String outValue;
     switch (index) {
     case CASE_INDEX_1:
@@ -354,8 +353,7 @@ napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, errCode, &result);
     return result;
 }
-napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info) {
     size_t argc = 2;
     napi_value args[2] = {nullptr};
     napi_value result = nullptr;
@@ -370,7 +368,7 @@ napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
     size_t urlSize = 0;
     napi_get_value_string_utf8(env, args[1], url, maxUrlLen, &urlSize);
     const std::string keyString = "aaa";
-    Image_ErrorCode errCode ;
+    Image_ErrorCode errCode;
     OH_ImageSourceNative *tempImageSource = nullptr;
     errCode = OH_ImageSourceNative_CreateFromUri(url, urlSize, &tempImageSource);
     LOGI("OH_ImageSourceNative_CreateFromUri:%{public}d", errCode);
@@ -382,12 +380,12 @@ napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
     errCode = OH_PictureNative_CreatePicture(mainPixelMap, &picture);
     OH_PictureMetadata *metadata = nullptr;
     Image_String key;
-        key.data = strdup(keyString.c_str());
-        key.size = strlen(key.data);
-        Image_String srcValue;
-        char bufferValue[] = "666";
-        srcValue.data = bufferValue;
-        srcValue.size = strlen(bufferValue);
+    key.data = strdup(keyString.c_str());
+    key.size = strlen(key.data);
+    Image_String srcValue;
+    char bufferValue[] = "666";
+    srcValue.data = bufferValue;
+    srcValue.size = strlen(bufferValue);
     switch (index) {
     case CASE_INDEX_1:
         errCode = OH_PictureMetadata_Create(FRAGMENT_METADATA, &metadata);
@@ -404,8 +402,7 @@ const int32_t BUFFER_LENGTH = 255900;
 const int32_t SIZE_WIDTH = 820;
 const int32_t SIZE_HEIGHT = 312;
 
-napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
-{
+napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
