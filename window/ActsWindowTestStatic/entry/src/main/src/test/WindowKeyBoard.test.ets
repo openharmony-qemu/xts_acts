@@ -66,16 +66,13 @@ export default function WindowKeyBoardTest() {
             hilog.info(domain, tag, 'jsUnittest beforeEach mainWindowId =' + mainWindowId);
             let topWind:window.Window;
             let lastWindId:int;
-              window.getLastWindow(context).then((data:window.Window) => {
-                hilog.info(0x0000, '[ANI]','jsUnittest beforeEach getLastWindow: ' + JSON.stringify(data));
-                topWind = data;
-                lastWindId = topWind.getWindowProperties().id;
-                hilog.info(domain, tag, 'jsUnittest beforeEach lastWindId =' + lastWindId);
-              }).catch((err: BusinessError):PromiseLike<void>|undefined => {
-                hilog.error(0x0000, '[ANI]','jsUnittest beforeEach Failed to obtain the top window. Cause: ' + JSON.stringify(err));
-              })
+            topWind = await window.getLastWindow(context)
+            hilog.info(0x0000, '[ANI]','jsUnittest beforeEach getLastWindow: ' + JSON.stringify(topWind));
+            lastWindId = topWind.getWindowProperties().id;
+            hilog.info(domain, tag, 'jsUnittest beforeEach lastWindId =' + lastWindId);
+
             if(mainWindowId!=lastWindId){
-              await topWind.destroyWindow();
+                await topWind.destroyWindow();
             }
         })
 
