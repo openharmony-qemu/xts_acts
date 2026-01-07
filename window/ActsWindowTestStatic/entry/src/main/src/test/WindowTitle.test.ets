@@ -795,9 +795,11 @@ export default function WindowTitleTest() {
             try {
                 (tempWnd! as window.Window).getDecorButtonStyle();
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
+                await tempWnd.destroyWindow();
             } catch (exception) {
                 exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
+                await tempWnd.destroyWindow();
                 if (exception.code == 801) {
                     done();
                 } else if (exception.code == 1300004) {

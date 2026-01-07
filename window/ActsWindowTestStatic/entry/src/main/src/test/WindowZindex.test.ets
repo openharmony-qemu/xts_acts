@@ -117,20 +117,7 @@ export default function WindowZindexTest() {
                 hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
             }
         })
-        beforeEach(() =>{
-            let mainWindowId:int = win.getWindowProperties().id;
-            hilog.info(domain, tag, 'jsUnittest beforeEach mainWindowId =' + mainWindowId);
-            let topWind:window.Window;
-            let lastWindId:int;
-            topWind = await window.getLastWindow(context)
-            hilog.info(0x0000, '[ANI]','jsUnittest beforeEach getLastWindow: ' + JSON.stringify(topWind));
-            lastWindId = topWind.getWindowProperties().id;
-            hilog.info(domain, tag, 'jsUnittest beforeEach lastWindId =' + lastWindId);
-
-            if(mainWindowId!=lastWindId){
-                await topWind.destroyWindow();
-            }
-        })
+        
 
         /**
          * @tc.number    SUB_BASIC_WMS_RAISETOAPPTOP_static_0100
@@ -341,7 +328,7 @@ export default function WindowZindexTest() {
                             hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
                             let lastWindowClass = await window.getLastWindow(context);
                             let properties = lastWindowClass.getWindowProperties();
-                            hilog.info(domain, tag,msgStr + 'properties:'+JSON.stringify(properties));
+                            hilog.info(domain, tag,msgStr + 'properties:'+JSON.stringify(properties)+'name:'+properties.name);
                             expect(properties.windowRect.height).assertEqual(1000);
                             expect(properties.windowRect.width).assertEqual(800);
                             await subWindow1.destroyWindow();
