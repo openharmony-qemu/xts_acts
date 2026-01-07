@@ -22,6 +22,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 const delegator : AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const waitUiReadyMs : number = 1000;
 const TestTag = 'uitestUiWindowTest';
+const WindowsErrorCode = 17000005;
 
 async function startAbility(bundleName: string, abilityName: string) {
   await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
