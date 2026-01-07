@@ -28,7 +28,7 @@
 #include <string>
 #include "SwiperTest.h"
 
-#define PARAM_1000 1000;
+const int PARAM_1000 = 1000;
 const char* MY_LOG_TAG = "nativeTestSwiper";
 constexpr int SWIPER_COUNT_PER_THREAD = 5;
 constexpr int ASYNC_TASK_COUNT = 20;
