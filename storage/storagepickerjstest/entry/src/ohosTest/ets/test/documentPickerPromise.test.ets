@@ -533,6 +533,36 @@ export default function documentPickerPromise(abilityContext: Context) {
       option.pickerMode = picker.DocumentPickerMode.DEFAULT;
       await saveWithOption(testNum, done, option);
     });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Promise_013
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_PROMISE_1300
+     * @tc.desc   save autoCreateEmptyFile=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Promise_013", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Promise_013";
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = true;
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Promise_014
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_PROMISE_1400
+     * @tc.desc   save autoCreateEmptyFile=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Promise_014", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Promise_014";
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = false;
+      await saveWithOption(testNum, done, option);
+    });
   });
 }
 

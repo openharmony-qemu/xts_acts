@@ -548,6 +548,36 @@ export default function documentPickerCallback(abilityContext: Context) {
         done();
       }
     });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_013
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1300
+     * @tc.desc   save autoCreateEmptyFile=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_013", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_013";
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = true;
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_014
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1400
+     * @tc.desc   save autoCreateEmptyFile=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_014", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_014";
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = false;
+      await saveWithOption(testNum, done, option);
+    });
   });
 }
 
