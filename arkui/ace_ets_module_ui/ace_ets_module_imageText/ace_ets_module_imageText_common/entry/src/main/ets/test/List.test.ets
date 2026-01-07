@@ -47,6 +47,13 @@ import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
 import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
 import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
+import TextTest from './TextTest/TextTest.test';
+import TextInputTest from './TextTest/TextInputTest.test';
+import TextAreaTest from './TextTest/TextAreaTest.test';
+import SearchTest from './TextTest/SearchTest.test';
+import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
+import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
+import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -83,4 +90,11 @@ export default function testsuite() {
   TextDirectionTest();
   IncludeFontPaddingTest();
   FallbackLineSpacingTest();
+  TextTest();
+  TextInputTest();
+  TextAreaTest();
+  SearchTest();
+  SearchDeleteTest();
+  TextAreaDeleteTest();
+  TextInputDelete();
 }
