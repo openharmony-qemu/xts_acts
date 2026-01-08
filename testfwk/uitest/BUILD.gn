@@ -28,4 +28,7 @@ ohos_js_app_suite("ActsUiTest") {
   hap_name = "ActsUiTest"
   part_name = "arkxtest"
   subsystem_name = "testfwk"
+  deps = [
+      ":ActsPerfTest",
+    ]
 }
