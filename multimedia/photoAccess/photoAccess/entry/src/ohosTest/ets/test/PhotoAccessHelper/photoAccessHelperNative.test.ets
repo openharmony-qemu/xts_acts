@@ -1956,6 +1956,50 @@ export default function PhotoAccessHelperNativeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   TestChangeRequestSaveCameraImageHeif0100
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_IMAGE_HEIF_NATIVE_0100
+     * @tc.desc   Save camera photo when changeRequest is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TestChangeRequestSaveCameraImageHeif0100', Level.LEVEL2, (done: Function) => {
+      let testNum = 'TestChangeRequestSaveCameraImageHeif0100';
+      try {
+        let ret: ESObject = mediaLibrary.testChangeRequestSaveCameraImageHeif(1);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_PARAMETER_ERROR);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   TestChangeRequestSaveCameraImageHeif0200
+     * @tc.number SUB_PHOTOACCESS_HELPER_CHANGE_REQUEST_SAVE_CAMERA_IMAGE_HEIF_NATIVE_0200
+     * @tc.desc   Save camera photo when imageFileType is invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TestChangeRequestSaveCameraImageHeif0200', Level.LEVEL2, (done: Function) => {
+      let testNum = 'TestChangeRequestSaveCameraImageHeif0200';
+      try {
+        let ret: ESObject = mediaLibrary.testChangeRequestSaveCameraImageHeif(2);
+        console.log(`${testNum} ret: ${ret}`);
+        expect(ret).assertEqual(MEDIA_LIBRARY_PARAMETER_ERROR);
+        done();
+      } catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
     
   });
 }
