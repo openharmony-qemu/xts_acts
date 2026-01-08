@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "1800000",
         "bundle-name": "com.uitest.acts",
-        "package-name": "com.uitest.acts",
+        "module-name": "entry_test",
         "shell-timeout": "180000",
         "testcase-timeout": "1800000"
     },
@@ -19,6 +19,8 @@
                 "uinput -T -m 300 2600 280 200",
                 "wait 5",
                 "uinput -T -m 300 2600 280 200",
+                "wait 5",
+                "uinput -T -m 300 1279 280 200",
                 "uinput -K -d 2054 -u 2054",
                 "hidumper -s 3301 -a -t",
                 "uitest dumpLayout"

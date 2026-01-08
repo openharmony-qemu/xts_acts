@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import UiTest from './uitest.test';
-
 export default function testsuite() {
   UiTest();
 }

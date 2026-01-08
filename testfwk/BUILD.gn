@@ -28,7 +28,6 @@ group("testfwk") {
       "perftestStatic:ActsPerfTestTestStaticTest",
       "perftestScene:ActsPerfTestScene",
       "uitest:ActsUiTest",
-      "uitest_new:ActsUiTestNew",
       "uitestScene:ActsUiTestScene",
       "uitestStatic:ActsUiStaticTest",
       "uitest_errorcode:ActsUiTestErrorCodeTest",
