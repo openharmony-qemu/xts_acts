@@ -199,7 +199,8 @@ async function testChangeTrack(fd: media.AVFileDescriptor, preparedOp: () => Pro
       extraOp();
     }
   });
-  setSource(avPlayer!, fd);
+  console.info('case fdsrc test');
+  avPlayer.fdSrc = fd;
 }
 
 function openFileFailed() {
