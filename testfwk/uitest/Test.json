@@ -33,7 +33,7 @@
             "test-file-name": [
                 "ActsUiTest.hap",
                 "ActsUiTestScene.hap",
-                "ActsUiTestTest"
+                "ActsUiTestEntry.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
