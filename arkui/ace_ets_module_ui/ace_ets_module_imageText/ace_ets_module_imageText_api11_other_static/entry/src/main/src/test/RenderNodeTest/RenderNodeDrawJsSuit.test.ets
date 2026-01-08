@@ -110,8 +110,6 @@ export default function RenderNodeDrawJsSuit() {
 
     
     
-
-
 /**
      * @tc.number   RenderNodeDrawJsSuit_static_0100
      * @tc.name     RenderNodeDrawJsSuit_static_0100

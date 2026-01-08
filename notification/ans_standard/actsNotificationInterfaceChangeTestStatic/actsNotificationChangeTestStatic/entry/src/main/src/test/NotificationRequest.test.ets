@@ -72,7 +72,7 @@ export default function ActsNotificationRequestTest() {
         await notificationManager.isNotificationEnabled().then((data: boolean) => {
           console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertFalse();
-        }).catch((err: BusinessError) :void  => {
+        }).catch((err: Error) :void  => {
           console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
           expect(true).assertFalse();
           done()
@@ -120,7 +120,7 @@ export default function ActsNotificationRequestTest() {
         await notificationManager.isNotificationEnabled().then((data: boolean) => {
             console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
             expect(data).assertTrue();
-          }).catch((err: BusinessError) : void => {
+          }).catch((err: Error) : void => {
             console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
             expect(true).assertFalse();
           });
@@ -245,7 +245,7 @@ export default function ActsNotificationRequestTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           console.info(`=====size: ==== + ${JSON.stringify(imageInfo.size)}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
           return;
         })
@@ -373,7 +373,7 @@ export default function ActsNotificationRequestTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) =>{
           console.log("=====size: ====" + JSON.stringify(imageInfo.size));
-        }).catch((err:BusinessError):void  => {
+        }).catch((err:Error):void  => {
           console.error(0x000, `${TAG}`, `${TEST_CASE_NAME}` + "Failed to obtain the image pixel map information.");
         })
         let notificationRequest: notificationManager.NotificationRequest = {

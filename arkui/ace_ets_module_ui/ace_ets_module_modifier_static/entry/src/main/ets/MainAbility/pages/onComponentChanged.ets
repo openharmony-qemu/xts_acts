@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Video,BarPosition,ButtonAttribute,Resource,$r,F
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { AttributeUpdater } from "@ohos.arkui.modifier";

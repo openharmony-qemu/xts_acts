@@ -46,7 +46,7 @@ import {
   Watch,
   Link,
   StorageLink,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -113,7 +113,7 @@ struct ANode {
         .fontSize(9)
         .height('7%')
     }
-    .onVisibleAreaChange(new Array<number>(0.5), (isVisible: boolean, currentRatio: number): void => {
+    .onVisibleAreaChange([0.5], (isVisible: boolean, currentRatio: number): void => {
       console.info('Node展示状态:', isVisible, '当前比率:', currentRatio)
       this.visibleAreaChangeCount++
     })

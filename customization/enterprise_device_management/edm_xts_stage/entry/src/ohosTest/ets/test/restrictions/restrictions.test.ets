@@ -66,6 +66,7 @@ const LABEL_APP_CLONE = "appClone";
 const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 const LABEL_HDC_REMOTE = "hdcRemote";
 const LABEL_VIRTUAL_SERVICE = "virtualService";
+const LABEL_MODIFY_WALLPAPER = "modifyWallpaper";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -78,6 +79,8 @@ export default function restrictionsTest() {
     testGetDisallowedListForAccountPolicy();
     testSetUserRestrictionPolicy();
     testGetUserRestrictedPolicy();
+    testSetUserRestrictionForAccountPolicy();
+    testGetUserRestrictedForAccountPolicy();
   })
 }
 
@@ -4973,6 +4976,225 @@ function testGetUserRestrictedPolicy() {
       expect(res).assertFalse();
     } catch (error) {
       console.info('test_get_user_restricted_0303 error 801 is expected, actually catch: '
+        + error.code);
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetUserRestrictionForAccountPolicy() {
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test setUserRestrictionForAccount with unActiveadmin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0101
+   * @tc.desc   test setUserRestrictionForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0101", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0102
+   * @tc.desc   test setUserRestrictionForAccount with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0102", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 1002, true);
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0103
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setUserRestrictionForAccount(INVALID_WANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0104
+   * @tc.desc   test setUserRestrictionForAccount with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      let res : boolean = restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(res).assertTrue();
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, false);
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetUserRestrictedForAccountPolicy() {
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with unActiveadmin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0100 error 9200001 or 801 is expected, actually catch: '
+        + error.code);
+      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0101
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0101", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0100 error 9200002 or 801 is expected, actually catch: '
+        + error.code);
+      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0102
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0102", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getUserRestrictedForAccount(INVALID_WANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_0102 error 401 or 801 is expected, actually catch: '
+        + error.code);
+      expect((error.code == 401) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_user_restricted_for_account_0103
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0103
+  * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with admin null
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_user_restricted_for_account_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let res : boolean = restrictions.getUserRestrictedForAccount(null, LABEL_MODIFY_WALLPAPER, 100);
+      expect(res).assertFalse();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0103 error 801 is expected, actually catch: '
+        + error.code);
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0104
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let res : boolean = restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(res).assertFalse();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0104 error 801 is expected, actually catch: '
         + error.code);
       expect(error.code == 801).assertTrue();
     } finally {

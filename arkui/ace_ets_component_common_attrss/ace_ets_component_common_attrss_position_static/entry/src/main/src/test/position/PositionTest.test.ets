@@ -40,65 +40,65 @@ let testAbilityContext:common.UIAbilityContext;
 export default function positionTest() {
   //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
-    // 'Button',
-    // 'Checkbox',
-    // 'CheckboxGroup',
-    // 'DataPanel',
-    // 'DatePicker',
-    // 'Divider',
-    // 'Image',
-    // 'ImageAnimator',
-    // 'LoadingProgress',
-    // 'Marquee',
-    // 'Menu',
-    // 'MenuItem',
-    // 'MenuItemGroup',
-    // 'ScrollBar',
-    // 'Row',
-    // 'RelativeContainer',
-    // 'GridItem',
-    // 'GridCol',
-    // 'TextTimer',
-    // 'Flex',
-    // 'Progress',
-    // 'QRCode',
-    // 'Radio',
-    // 'Rating',
-    // 'Search',
-    // 'Slider',
-    // 'Text',
-    // 'TextArea',
-    // 'TextInput',
-    // 'TextPicker',
-    // 'TimePicker',
-    // 'Toggle',
-    // 'Column',
-    // 'Counter',
-    // 'GridRow',
-    // 'Grid',
-    // 'List',
-    // 'ListItem',
-    // 'Refresh',
-    // 'Scroll',
-    // 'Stack',
-    // 'Swiper',
-    // 'Circle',
-    // 'Ellipse',
-    // 'Line',
-    // 'Polyline',
-    // 'Polygon',
-    // 'Path',
-    // 'Rect',
-    // 'Shape',
-    // 'AlphabetIndexer',//10.22 pass 4
-    // 'Navigation',//10.22 pass 4
-    // 'NavRouter',//10.22 pass 4
-    // 'ListItemGroup',//10.22 pass 4
-    // 'Navigator', // 10.22  废弃，平替接口Navigation，已有用例覆盖。
-    // 'Panel', // 10.22 pass 4
-    // 'Tabs',//10.22 pass 7
-    // 'Gauge',//  10.22 pass 4
-    'TabContent', //11.28SDK  SetStringPx appDied
+    'Button',
+    'Checkbox',
+    'CheckboxGroup',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Marquee',
+    'Menu',
+    'MenuItem',
+    'MenuItemGroup',
+    'ScrollBar',
+    'Row',
+    'RelativeContainer',
+    'GridItem',
+    'GridCol',
+    'TextTimer',
+    'Flex',
+    'Progress',
+    'QRCode',
+    'Radio',
+    'Rating',
+    'Search',
+    'Slider',
+    'Text',
+    'TextArea',
+    'TextInput',
+    'TextPicker',
+    'TimePicker',
+    'Toggle',
+    'Column',
+    'Counter',
+    'GridRow',
+    'Grid',
+    'List',
+    'ListItem',
+    'Refresh',
+    'Scroll',
+    'Stack',
+    'Swiper',
+    'Circle',
+    'Ellipse',
+    'Line',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape',
+    'AlphabetIndexer',//10.22 pass 4
+    'Navigation',//10.22 pass 4
+    'NavRouter',//10.22 pass 4
+    'ListItemGroup',//10.22 pass 4
+    'Navigator', // 10.22  废弃，平替接口Navigation，已有用例覆盖。
+    'Panel', // 10.22 pass 4
+    'Tabs',//10.22 pass 7
+    'Gauge',//  10.22 pass 4
+    'TabContent', //11.28SDK
   )
   // 存在问题的自定义组件 TabsView ListItemGroupView NavigationView NavRouterView  AlphabetIndexerView
   // 存在问题的官方组件 TabContent Column>Text   Navigator Gauge
@@ -182,8 +182,8 @@ export default function positionTest() {
 
       let uiContext = AppStorage.get<UIContext>('uiContext');
       if (data.testValue.describe=='SetNumber') {
-        data.testValue.expectValue.left = uiContext!.vp2px(data.testValue.expectValue.left as Double)
-        data.testValue.expectValue.top = uiContext!.vp2px(data.testValue.expectValue.top as Double)
+        data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
       }
       if (data.testValue.describe=='SetStringPercent') {
         data.testValue.expectValue.left =Number(uiContext!.vp2px(parentWidth)) * 0.2
@@ -207,6 +207,8 @@ export default function positionTest() {
       //Modify the target component properties.
       console.info('[' + data.caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
       // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      AppStorage.setOrCreate<Position>('_position', { x: 0, y: 0 } as Position)
+      await Utils.sleep(1000);
       AppStorage.setOrCreate<Position>('_position', data.testValue.setValue as Position)
       await Utils.sleep(1000);
 
@@ -277,8 +279,8 @@ export default function positionTest() {
 
       //Confirm that the position attribute value has been set successfully.
       console.info('[' + data.caseTag + '] check position attr value.');
-      console.log('+++++++++++++++data.pageConfig.componentKey',data.pageConfig.componentKey)
-      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? ""); //appDied在这里died
+      console.log('+++++++++++++++data.pageConfig.componentKey',data.pageConfig.componentKey,'getComp',Utils.getComponentByKey(data.pageConfig.componentKey ?? ""))
+      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? "");
       console.info('[' + data.caseTag + '] check position x.'+viewObj.getElement('$attrs').getElement('position').getString('x')+'expect'+data.testValue.expectValue.x);
       expect(viewObj.getElement('$attrs').getElement('position').getString('x')).assertEqual(data.testValue.expectValue.x);
       console.info('[' + data.caseTag + '] check position y.'+viewObj.getElement('$attrs').getElement('position').getString('y'));

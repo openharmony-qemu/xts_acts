@@ -47,7 +47,7 @@ export default function getAppCloneIdentity() {
               expect().assertFail();
               done();
             }
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             let message = (err as BusinessError).message;
             console.info(TAG + 'getAppCloneIdentity_0100 getBundleInfo catch failed: ' + message);
             expect(err).assertFail();

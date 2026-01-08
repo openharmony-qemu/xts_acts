@@ -40,11 +40,11 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
   LocalStoragePropRef,
@@ -53,7 +53,9 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, UIUtils } from '@ohos.arkui.stateManagement';
 
+const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
+AppStorage.setOrCreate<Router>('router', router);
 
 enum He2 {Q = 1, W, E}
 

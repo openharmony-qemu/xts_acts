@@ -143,6 +143,7 @@ public:
     Camera_ErrorCode PhotoOutputRelease(int useCaseCode); // 释放拍照输出
     Camera_ErrorCode TakePictureWithPhotoSettings(Camera_PhotoCaptureSetting photoSetting,
                                                   int useCaseCode); // 使用捕获设置捕获拍照
+    bool getMirrorSupported();
     // RegisterCallback
     Camera_ErrorCode CameraManagerRegisterCallback(int useCaseCode);  // 注册相机状态更改事件回调。
     Camera_ErrorCode PreviewOutputRegisterCallback(int useCaseCode);  // 注册预览输出更改事件回调。

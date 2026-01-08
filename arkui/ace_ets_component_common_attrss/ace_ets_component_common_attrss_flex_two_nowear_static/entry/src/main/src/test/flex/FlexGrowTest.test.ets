@@ -46,7 +46,6 @@ function expectForFlexGrow(space: number, countFlexGrow: number, realRect: numbe
   //Verify based on different parent container spindle directions
   let ratio = countFlexGrow / (flexGrow + compareFlexGrow);
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
-  // expect(Math.abs(Math.round(realRect) - Math.round(uiContext.vp2px((space * ratio) + targetSize))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
 }
 
@@ -149,12 +148,6 @@ export default function flexGrowTest() {
           if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
             || data.pageConfig.containerView == 'FlexRowReverse') {
             console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
-            // console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + Math.round(uiContext.vp2px(targetWidth)));
-            // expect(Math.abs(Math.round(rect.right - rect.left) - Math.round(uiContext.vp2px(targetWidth))) <= 3).assertTrue();
-          } else {
-            // console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
-            // console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + Math.round(uiContext.vp2px(targetHeight)));
-            // expect(Math.abs(Math.round(rect.bottom - rect.top) - Math.round(uiContext.vp2px(targetHeight))) <= 3).assertTrue();
           }
         } else {
           //Verify the standard component not be changed

@@ -66,7 +66,8 @@ export default function closeDialogTest() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   closeDialogTest_static_0100
      * @tc.name     closeDialogTest_static_0100
      * @tc.desc     closeDialogTest_static_0100

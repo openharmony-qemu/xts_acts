@@ -88,8 +88,7 @@ export default function Tabs_barMode() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsBarModeFixed_static_01
      * @tc.name     testTabsBarModeFixed_static_01
      * @tc.desc     testTabsBarModeFixed_static_01
@@ -204,8 +203,7 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    // 
-/**
+    /**
      * @tc.number   testTabsBarModeScrollable
      * @tc.name     testTabsBarModeScrollable
      * @tc.desc     testTabsBarModeScrollable

@@ -35,6 +35,8 @@ import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompre
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
+import MotionPathOptionsTest from './MotionPath/MotionPathOptionsTest.test'
+import AtomicServiceMenuBarSetVisibleTest from './publicCapacity/AtomicServiceMenuBarSetVisibleTest.test'
 
 export default function testsuite() {
   ContainerPickerCanLoop();
@@ -60,4 +62,6 @@ export default function testsuite() {
   hoverEffectTest();
   distanceTest();
   monopolizeTest();
+  MotionPathOptionsTest();
+  AtomicServiceMenuBarSetVisibleTest();
 }

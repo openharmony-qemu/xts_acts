@@ -90,7 +90,7 @@ struct PageTwo1 {
         this.pageInfos.popToName('pageOne', undefined)
       }).height('10%')
       Button('popToIndexNull').id('popNullId').onClick((e: ClickEvent) => {
-        // this.pageInfos.popToIndex(0, null)
+        this.pageInfos.popToIndex(0, undefined)
       }).height('10%')
     }
     .title('pageTwo')

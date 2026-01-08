@@ -113,7 +113,7 @@ export default function AccessPixelsSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_PIXEL_MAP_WRITE_PIXELS_MAP_TO_AREA_SUPP_0001
      * @tc.name     SUB_IMAGE_PIXEL_MAP_WRITE_PIXELS_MAP_TO_AREA_SUPP_0001
-     * @tc.desc     WriteToArea-success
+     * @tc.desc     OH_PixelmapNative_WritePixelsToArea-IMAGE_SUCCESS
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1

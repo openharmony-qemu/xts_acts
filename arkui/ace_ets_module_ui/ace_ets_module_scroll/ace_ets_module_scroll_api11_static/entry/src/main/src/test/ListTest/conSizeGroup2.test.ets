@@ -81,8 +81,7 @@ export default function conSizeGroup2() {
 
 
     
-    
-/**
+    /**
      * @tc.number   conSizeGroup2_static_0100
      * @tc.name     conSizeGroup2_static_0100
      * @tc.desc     conSizeGroup2_static_0100

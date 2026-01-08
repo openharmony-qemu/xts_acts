@@ -27,7 +27,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 let domain: int = 0x0000;
 let tag: string = 'testTag';

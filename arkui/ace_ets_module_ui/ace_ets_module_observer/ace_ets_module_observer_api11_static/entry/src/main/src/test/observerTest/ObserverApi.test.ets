@@ -98,7 +98,7 @@ it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJson = inspector.getInspectorByKey('ObserverApi2_text');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
-      console.info("[ObserverApi_001] obj is: " + JSON.stringify(obj));
+      console.info("[ObserverApi_001] obj is: " + strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('HideAppearShow');
 
       let btn4 = await driver.findComponent(ON.id('ObserverApi2_backToPageOne'));
@@ -114,7 +114,7 @@ it('ObserverApi_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJson2 = inspector.getInspectorByKey('ObserverApi_text1');
       let obj2 = JSON.parseJsonElement(strJson2);
       await CommonFunc.sleep(1000);
-      console.info("[ObserverApi_001] obj2 is: " + JSON.stringify(obj2));
+      // console.info("[ObserverApi_001] obj2 is: " + strJson2);
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('Disappear');
 
       let btn6 = await driver.findComponent(ON.id('ObserverApi_ObserverOff'));

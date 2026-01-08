@@ -96,8 +96,7 @@ export default function ApiCommponentAddJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0100
      * @tc.name     apiCommponentAddJsunit_static_0100
      * @tc.desc     apiCommponentAddJsunit_static_0100
@@ -132,8 +131,7 @@ it('apiCommponentAddJsunit_static_0100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0200
      * @tc.name     apiCommponentAddJsunit_static_0200
      * @tc.desc     apiCommponentAddJsunit_static_0200
@@ -181,8 +179,7 @@ it('apiCommponentAddJsunit_static_0200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0300
      * @tc.name     apiCommponentAddJsunit_static_0300
      * @tc.desc     apiCommponentAddJsunit_static_0300
@@ -220,8 +217,7 @@ it('apiCommponentAddJsunit_static_0300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0400
      * @tc.name     apiCommponentAddJsunit_static_0400
      * @tc.desc     apiCommponentAddJsunit_static_0400
@@ -259,8 +255,7 @@ it('apiCommponentAddJsunit_static_0400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0500
      * @tc.name     apiCommponentAddJsunit_static_0500
      * @tc.desc     apiCommponentAddJsunit_static_0500
@@ -293,8 +288,7 @@ it('apiCommponentAddJsunit_static_0500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0600
      * @tc.name     apiCommponentAddJsunit_static_0600
      * @tc.desc     apiCommponentAddJsunit_static_0600
@@ -329,8 +323,7 @@ it('apiCommponentAddJsunit_static_0600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0700
      * @tc.name     apiCommponentAddJsunit_static_0700
      * @tc.desc     apiCommponentAddJsunit_static_0700
@@ -363,8 +356,7 @@ it('apiCommponentAddJsunit_static_0700', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_0800
      * @tc.name     apiCommponentAddJsunit_static_0800
      * @tc.desc     apiCommponentAddJsunit_static_0800
@@ -398,8 +390,7 @@ it('apiCommponentAddJsunit_static_0800', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1000
      * @tc.name     apiCommponentAddJsunit_static_1000
      * @tc.desc     apiCommponentAddJsunit_static_1000
@@ -432,8 +423,7 @@ it('apiCommponentAddJsunit_static_1000', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1100
      * @tc.name     apiCommponentAddJsunit_static_1100
      * @tc.desc     apiCommponentAddJsunit_static_1100
@@ -467,8 +457,7 @@ it('apiCommponentAddJsunit_static_1100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1200
      * @tc.name     apiCommponentAddJsunit_static_1200
      * @tc.desc     apiCommponentAddJsunit_static_1200
@@ -488,8 +477,7 @@ it('apiCommponentAddJsunit_static_1200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1300
      * @tc.name     apiCommponentAddJsunit_static_1300
      * @tc.desc     apiCommponentAddJsunit_static_1300
@@ -528,8 +516,7 @@ it('apiCommponentAddJsunit_static_1300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1400
      * @tc.name     apiCommponentAddJsunit_static_1400
      * @tc.desc     apiCommponentAddJsunit_static_1400
@@ -562,8 +549,7 @@ it('apiCommponentAddJsunit_static_1400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1500
      * @tc.name     apiCommponentAddJsunit_static_1500
      * @tc.desc     apiCommponentAddJsunit_static_1500
@@ -596,8 +582,7 @@ it('apiCommponentAddJsunit_static_1500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1600
      * @tc.name     apiCommponentAddJsunit_static_1600
      * @tc.desc     apiCommponentAddJsunit_static_1600
@@ -631,8 +616,7 @@ it('apiCommponentAddJsunit_static_1600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1700
      * @tc.name     apiCommponentAddJsunit_static_1700
      * @tc.desc     apiCommponentAddJsunit_static_1700
@@ -666,8 +650,7 @@ it('apiCommponentAddJsunit_static_1700', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1800
      * @tc.name     apiCommponentAddJsunit_static_1800
      * @tc.desc     apiCommponentAddJsunit_static_1800
@@ -701,8 +684,7 @@ it('apiCommponentAddJsunit_static_1800', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_1900
      * @tc.name     apiCommponentAddJsunit_static_1900
      * @tc.desc     apiCommponentAddJsunit_static_1900
@@ -736,8 +718,7 @@ it('apiCommponentAddJsunit_static_1900', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2000
      * @tc.name     apiCommponentAddJsunit_static_2000
      * @tc.desc     apiCommponentAddJsunit_static_2000
@@ -770,8 +751,7 @@ it('apiCommponentAddJsunit_static_2000', Level.LEVEL0, async (done: () => void):
     });
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2100
      * @tc.name     apiCommponentAddJsunit_static_2100
      * @tc.desc     apiCommponentAddJsunit_static_2100
@@ -805,8 +785,7 @@ it('apiCommponentAddJsunit_static_2100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2200
      * @tc.name     apiCommponentAddJsunit_static_2200
      * @tc.desc     apiCommponentAddJsunit_static_2200
@@ -840,8 +819,7 @@ it('apiCommponentAddJsunit_static_2200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2300
      * @tc.name     apiCommponentAddJsunit_static_2300
      * @tc.desc     apiCommponentAddJsunit_static_2300
@@ -883,8 +861,7 @@ it('apiCommponentAddJsunit_static_2300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2400
      * @tc.name     apiCommponentAddJsunit_static_2400
      * @tc.desc     apiCommponentAddJsunit_static_2400
@@ -917,8 +894,7 @@ it('apiCommponentAddJsunit_static_2400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2500
      * @tc.name     apiCommponentAddJsunit_static_2500
      * @tc.desc     apiCommponentAddJsunit_static_2500
@@ -951,8 +927,7 @@ it('apiCommponentAddJsunit_static_2500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2600
      * @tc.name     apiCommponentAddJsunit_static_2600
      * @tc.desc     apiCommponentAddJsunit_static_2600
@@ -970,8 +945,7 @@ it('apiCommponentAddJsunit_static_2600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   apiCommponentAddJsunit_static_2700
      * @tc.name     apiCommponentAddJsunit_static_2700
      * @tc.desc     apiCommponentAddJsunit_static_2700

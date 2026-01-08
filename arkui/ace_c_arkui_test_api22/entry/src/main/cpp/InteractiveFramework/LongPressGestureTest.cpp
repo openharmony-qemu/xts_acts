@@ -54,8 +54,8 @@ namespace ArkUICapiTest {
         auto gestureAPI = reinterpret_cast<ArkUI_NativeGestureAPI_1*>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
         
-        auto panGesture = gestureAPI->createPanGesture(1, GESTURE_DIRECTION_LEFT, 1);
-        int ret = OH_ArkUI_LongPressGesture_SetAllowableMovement(panGesture, 0);
+        auto tapGesture = gestureAPI->createTapGesture(1, 1);
+        int ret = OH_ArkUI_LongPressGesture_SetAllowableMovement(tapGesture, 0.0);
         int expect_val = 0;
         if(ret == ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED) //Varies depending on the specific type of equipment. 
             expect_val =  ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED;
@@ -91,6 +91,26 @@ namespace ArkUICapiTest {
         
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetAllowableMovement", "check GetAllowableMovement ret: %{public}d   -----------------", ret);
         ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+        NAPI_END;
+    }
+
+    napi_value LongPressGestureTest::GetAllowableMovement_SUPPORTED(napi_env env, napi_callback_info info)
+    {
+        NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetAllowableMovement", "CreateNativeNode");
+        auto gestureAPI = reinterpret_cast<ArkUI_NativeGestureAPI_1*>(
+        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+        
+        auto panGesture = gestureAPI->createTapGesture(1, 1);
+        double  vval = 0.0;
+        int ret = OH_ArkUI_LongPressGesture_GetAllowableMovement(panGesture, &vval);
+        int expect_val = 0;
+        if(ret == ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED) //Varies depending on the specific type of equipment. 
+            expect_val =  ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED;
+        else 
+            expect_val = ARKUI_ERROR_CODE_NO_ERROR;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetAllowableMovement_SUPPORTED", "check GetAllowableMovement_SUPPORTED ret: %{public}d   -----------------", ret);
+        ASSERT_EQ(ret, expect_val);
         NAPI_END;
     }
 

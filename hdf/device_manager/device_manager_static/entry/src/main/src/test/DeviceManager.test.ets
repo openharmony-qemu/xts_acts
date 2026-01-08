@@ -27,20 +27,20 @@ function isUsbDevice(deviceId : long) {
 
 function assertInterfaceDesc(interfaceDesc : deviceManager.USBInterfaceDesc) {
   hilog.info(TAG, 'testTag', 'interfaceDesc.bInterfaceNumber:' + interfaceDesc.bInterfaceNumber);
-  expect(typeof(interfaceDesc.bInterfaceNumber)).assertEqual('number');
+  expect(typeof(interfaceDesc.bInterfaceNumber)).assertEqual('int');
   hilog.info(TAG, 'testTag', 'interfaceDesc.bClass:' + interfaceDesc.bClass);
-  expect(typeof(interfaceDesc.bClass)).assertEqual('number');
+  expect(typeof(interfaceDesc.bClass)).assertEqual('int');
   hilog.info(TAG, 'testTag', 'interfaceDesc.bSubClass:' + interfaceDesc.bSubClass);
-  expect(typeof(interfaceDesc.bSubClass)).assertEqual('number');
+  expect(typeof(interfaceDesc.bSubClass)).assertEqual('int');
   hilog.info(TAG, 'testTag', 'interfaceDesc.bProtocol:' + interfaceDesc.bProtocol);
-  expect(typeof(interfaceDesc.bProtocol)).assertEqual('number');
+  expect(typeof(interfaceDesc.bProtocol)).assertEqual('int');
 }
 
 function assertUsbDeviceInfoExt(usbDeviceInfo : deviceManager.USBDeviceInfo) {
   hilog.info(TAG, 'testTag', 'usbDeviceInfo.vendorId:' + usbDeviceInfo.vendorId);
-  expect(typeof(usbDeviceInfo.vendorId)).assertEqual('number');
+  expect(typeof(usbDeviceInfo.vendorId)).assertEqual('int');
   hilog.info(TAG, 'testTag', 'usbDeviceInfo.productId:' + usbDeviceInfo.productId);
-  expect(typeof(usbDeviceInfo.productId)).assertEqual('number');
+  expect(typeof(usbDeviceInfo.productId)).assertEqual('int');
   expect(Array.isArray(usbDeviceInfo.interfaceDescList)).assertTrue();
   for (const desc of usbDeviceInfo.interfaceDescList) {
     assertInterfaceDesc(desc);
@@ -49,7 +49,7 @@ function assertUsbDeviceInfoExt(usbDeviceInfo : deviceManager.USBDeviceInfo) {
 
 function assertDeviceInfo(deviceInfo : deviceManager.DeviceInfo) {
   hilog.info(TAG, 'testTag', 'deviceInfo.deviceId:' + deviceInfo.deviceId);
-  expect(typeof(deviceInfo.deviceId)).assertEqual('number');
+  expect(typeof(deviceInfo.deviceId)).assertEqual('long');
   hilog.info(TAG, 'testTag', 'deviceInfo.isDriverMatched:' + deviceInfo.isDriverMatched);
   expect(typeof(deviceInfo.isDriverMatched)).assertEqual('boolean');
   if (deviceInfo.isDriverMatched) {
@@ -64,7 +64,7 @@ function assertDeviceInfo(deviceInfo : deviceManager.DeviceInfo) {
 
 function assertDriverInfo(driverInfo : deviceManager.DriverInfo) {
   hilog.info(TAG, 'testTag', 'driverInfo.busType:' + driverInfo.busType);
-  expect(typeof(driverInfo.busType)).assertEqual('number');
+  expect(typeof(driverInfo.busType)).assertEqual('int');
   hilog.info(TAG, 'testTag', 'driverInfo.driverUid:' + driverInfo.driverUid);
   expect(typeof(driverInfo.driverUid)).assertEqual('string');
   hilog.info(TAG, 'testTag', 'driverInfo.driverName:' + driverInfo.driverName);
@@ -82,10 +82,10 @@ function assertDriverInfo(driverInfo : deviceManager.DriverInfo) {
     hilog.info(TAG, 'testTag', 'driverInfo.vendorIdList:' + JSON.stringify(driverInfoUsb.vendorIdList));
     expect(Array.isArray(driverInfoUsb.vendorIdList)).assertTrue();
     for (const productId of driverInfoUsb.productIdList) {
-      expect(typeof(productId)).assertEqual('number');
+      expect(typeof(productId)).assertEqual('int');
     }
     for (const vendorId of driverInfoUsb.vendorIdList) {
-      expect(typeof(vendorId)).assertEqual('number');
+      expect(typeof(vendorId)).assertEqual('int');
     }
   }
 }

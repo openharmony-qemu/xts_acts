@@ -86,8 +86,8 @@ struct NavigationTitleTextModifier {
         {
           paddingStart: this.paddingStart,
           paddingEnd: this.paddingEnd,
-          mainTitleModifier: this.mainTitleModifier,  // SDK11.25 设置颜色未生效  取值是#FF182431，设置是#FFFFC000
-          subTitleModifier: this.subTitleModifier,  // SDK11.25 设置颜色未生效  取值是#99182431，设置是#FFFFCEEE
+          mainTitleModifier: this.mainTitleModifier,  // master22 设置颜色未生效  取值是#FF182431，设置是#FFFFC000
+          subTitleModifier: this.subTitleModifier,  // master22 设置颜色未生效  取值是#99182431，设置是#FFFFCEEE
         } as NavigationTitleOptions : {
         paddingStart: this.paddingStart,
         paddingEnd: this.paddingEnd

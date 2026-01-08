@@ -77,8 +77,6 @@ export default function scale() {
 
     
     
-
-
 /**
      * @tc.number   scale_static_0100
      * @tc.name     scale_static_0100
@@ -103,8 +101,6 @@ it('scale_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
 
     
     
-
-
 /**
      * @tc.number   scale_static_0200
      * @tc.name     scale_static_0200

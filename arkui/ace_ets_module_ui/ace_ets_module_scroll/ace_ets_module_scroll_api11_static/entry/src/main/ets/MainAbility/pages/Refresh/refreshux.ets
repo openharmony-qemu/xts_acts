@@ -56,7 +56,7 @@ struct refreshux {
       Button('DARK')
         .onClick((e: ClickEvent) => {
           uiAppearance.setDarkMode(uiAppearance.DarkMode.ALWAYS_DARK).then(() => {
-          }).catch((error: BusinessError<void> | null): void => {
+          }).catch((error: Error): void => {
             console.error('Set dark-mode failed ')
           })
         })

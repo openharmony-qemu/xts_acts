@@ -67,8 +67,7 @@ export default function scrollCodeJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_001
      * @tc.name     test_scrollCode_static_001
      * @tc.desc     test_scrollCode_static_001
@@ -92,8 +91,7 @@ it('test_scrollCode_static_001', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_002
      * @tc.name     test_scrollCode_static_002
      * @tc.desc     test_scrollCode_static_002
@@ -129,8 +127,7 @@ it('test_scrollCode_static_002', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_003
      * @tc.name     test_scrollCode_static_003
      * @tc.desc     test_scrollCode_static_003
@@ -165,8 +162,7 @@ it('test_scrollCode_static_003', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_004
      * @tc.name     test_scrollCode_static_004
      * @tc.desc     test_scrollCode_static_004
@@ -201,8 +197,7 @@ it('test_scrollCode_static_004', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_005
      * @tc.name     test_scrollCode_static_005
      * @tc.desc     test_scrollCode_static_005
@@ -237,8 +232,7 @@ it('test_scrollCode_static_005', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   test_scrollCode_static_006
      * @tc.name     test_scrollCode_static_006
      * @tc.desc     test_scrollCode_static_006

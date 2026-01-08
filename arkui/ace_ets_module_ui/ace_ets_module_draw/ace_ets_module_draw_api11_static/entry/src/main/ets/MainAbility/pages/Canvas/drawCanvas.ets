@@ -35,7 +35,7 @@ renderNode.translation = { x: 30, y: 30 };
 
 renderNode.rotation = { x: 10, y: 45, z: 0 };
 
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 
 
 renderNode.size = { width: 100, height: 100 };

@@ -183,7 +183,7 @@ export default function AVSessionManager() {
                 let aVCastController: avSession.AVCastController | undefined;
                 currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                     aVCastController = avcontroller;
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });
@@ -296,7 +296,7 @@ export default function AVSessionManager() {
                             console.info(`getCurrentItem successfully`);
                         }
                     });
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });
@@ -336,7 +336,7 @@ export default function AVSessionManager() {
                     }catch(err: BusinessError){
                         console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);
                     };
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });

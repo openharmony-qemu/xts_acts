@@ -31,9 +31,9 @@ export default function NavigationLevelTest9() {
   describe('NavigationLevelTest9', () => {
     beforeAll(() => {
 
-      
-      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
+      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -72,6 +72,7 @@ export default function NavigationLevelTest9() {
      * @tc.level    Level.LEVEL0
      */
 it('NavigationLevelTest9_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[NavigationLevelTest9_static_0100] START');
       await CommonFunc.sleep(1000);
 

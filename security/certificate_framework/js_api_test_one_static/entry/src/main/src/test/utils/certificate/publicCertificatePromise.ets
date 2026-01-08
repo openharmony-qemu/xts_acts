@@ -475,7 +475,7 @@ async function checkValidateOfCertChainValidatorPromise(algName: string, flag?: 
     let uInt16CertLength1 = new Uint16Array([byteLength1]);
     let uInt8CertLength1: Uint8Array;
     if (flag == "error") {
-      const temp = [123];
+      const temp: number[] = [123];
       uInt8CertLength1 = new Uint8Array(temp);
     } else {
       uInt8CertLength1 = new Uint8Array(uInt16CertLength1.buffer);

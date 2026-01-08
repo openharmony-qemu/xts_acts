@@ -78,7 +78,7 @@ export default function List_strokeWidth() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("List_strokeWidth after each called");
     });
 
@@ -104,7 +104,7 @@ it('SUB_ACE_List_strokeWidth_static_0100', Level.LEVEL0, async (done: () => void
       let List_01: RectValue = CommonFunc.getComponentRect('List_strokeWidth_list_01');
 
       console.log('get divider width')
-      expect(Math.abs(Math.round(ListItem_02.top - ListItem_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem_02.top - ListItem_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('[SUB_ACE_List_strokeWidth_0100] END');
       done();
     });

@@ -85,8 +85,7 @@ export default function tabs_WidHeiTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsWidHei01_static_01
      * @tc.name     testTabsWidHei01_static_01
      * @tc.desc     testTabsWidHei01_static_01
@@ -222,8 +221,7 @@ it('testTabsWidHei01_static_01', Level.LEVEL0, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsWidHei02_static_02
      * @tc.name     testTabsWidHei02_static_02
      * @tc.desc     testTabsWidHei02_static_02

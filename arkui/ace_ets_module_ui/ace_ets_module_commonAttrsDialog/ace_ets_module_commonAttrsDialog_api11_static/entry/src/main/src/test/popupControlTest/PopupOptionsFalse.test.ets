@@ -57,9 +57,9 @@ export default function PopupOptionsFalse() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("SpanTextShadowTest beforeEach start");
+      console.info("PopupOptionsFalse beforeEach start");
       let options: router.RouterOptions = {
-        url:'MainAbility/pages/text/SpanTextShadowTest',
+        url:'MainAbility/pages/popupControl/PopupOptionsFalse',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

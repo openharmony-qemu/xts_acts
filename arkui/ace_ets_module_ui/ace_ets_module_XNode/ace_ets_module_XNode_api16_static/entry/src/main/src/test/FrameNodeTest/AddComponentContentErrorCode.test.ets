@@ -71,13 +71,14 @@ export default function AddComponentContentErrorCodeTest() {
 
 
 
-/**
+    /**
      * @tc.number   addComponentContentErrorCodeTest_static_0100
      * @tc.name     addComponentContentErrorCodeTest_static_0100
      * @tc.desc     addComponentContentErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('addComponentContentErrorCodeTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+
       console.info('addComponentContentErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

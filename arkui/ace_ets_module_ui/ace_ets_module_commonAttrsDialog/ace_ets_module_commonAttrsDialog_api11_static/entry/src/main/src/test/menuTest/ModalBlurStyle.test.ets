@@ -59,7 +59,7 @@ export default function ModalBlurStyle() {
     beforeEach(async (): Promise<void> => {
       console.info("ModalBlurStyle beforeEach start");
       let options: router.RouterOptions = {
-        url:'MainAbility/pages/text/ModalBlurStyle',
+        url:'MainAbility/pages/menu/ModalBlurStyle',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

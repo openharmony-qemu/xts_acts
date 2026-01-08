@@ -36,7 +36,7 @@ import {
 import {
   State,
   Link,StorageLink,
-  Prop,Provide,Consume,PersistentStorage
+  PropRef,Provide,Consume,PersistentStorage
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

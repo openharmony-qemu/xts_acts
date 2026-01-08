@@ -71,23 +71,23 @@ export default function ActsZlibInterfaceTest() {
               hilog.info(domain, tag, `ActsZlibInterfaceTest_static_01 getOriginalSize success. getOriginalSize: ${data}`);
               expect(data >= 0).assertEqual(true);
               done();
-              }).catch((errData: BusinessError<void>): void => {
+              }).catch((errData: Error): void => {
                 hilog.error(domain, tag,
                   `ACTS_ZlibInterfaceTest_static_01 getOriginalSize failed errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData).assertFail();
               done();
             });
-          } catch(errData: BusinessError) {
+          } catch(errData) {
             hilog.error(domain, tag, `011 errData is errCode:${errData.code}  message:${errData.message}`);
             expect(errData).assertFail();
             done();
           }
-        }, (errData: BusinessError<void>): void => {
+        }, (errData: Error): void => {
           hilog.error(domain, tag, `012 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData).assertFail();
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
         hilog.error(domain, tag, `013 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();
@@ -111,12 +111,12 @@ export default function ActsZlibInterfaceTest() {
           hilog.info(domain, tag, `ACTS_ZlibInterfaceTest_static_03 getOriginalSize success. getOriginalSize: ${data}`);
           expect(data).assertFail();
           done();
-        }).catch((errData: BusinessError<void>): void=> {
+        }).catch((errData: Error): void=> {
           hilog.info(domain, 'bmsTestTag',`015 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(900001);
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
         hilog.error(domain, tag, `ACTS_ZlibInterfaceTest_static_03 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();
@@ -144,12 +144,12 @@ export default function ActsZlibInterfaceTest() {
           hilog.info(domain, tag, `ACTS_ZlibInterfaceTest_static_04 getOriginalSize success. getOriginalSize: ${data}`);
           expect(data).assertFail();
           done();
-        }).catch((errData: BusinessError<void>): void=> {
+        }).catch((errData: Error): void=> {
           hilog.info(domain, 'bmsTestTag', `016 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(900003);
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
         hilog.error(domain, tag, `ACTS_ZlibInterfaceTest_static_04 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();

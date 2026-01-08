@@ -1968,7 +1968,7 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: int = 0xffffffff;
+      let a: int = 0xffffffff.toInt();
       let result: int = a >>> 1;
       let expected: int = 0x7fffffff;
       expect(result).assertEqual(expected);

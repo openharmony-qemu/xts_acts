@@ -98,11 +98,16 @@ it('popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>
       console.info('popup_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
+        const data = indexEvent.data as Record<string, Object | undefined | null>
+        const arrowWidth = data['arrowWidth'] as Record<string, Object | undefined | null>
+        const arrowHeight = data['arrowHeight'] as Record<string, Object | undefined | null>
+        const arrowPointPosition = data['arrowPointPosition'] as Record<string, Object | undefined | null>
+
         console.info("popup_0100 get state result is: " + JSON.stringify(indexEvent));
-        console.info("zxr " + JSON.stringify(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')));
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowWidth')).assertEqual('20px');
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowHeight')).assertEqual('20px');
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')).assertEqual('Start');
+        console.info("zxr " + JSON.stringify(arrowPointPosition));
+        expect(arrowWidth).assertEqual('20px');
+        expect(arrowHeight).assertEqual('20px');
+        expect(arrowPointPosition).assertEqual('Start');
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 65,

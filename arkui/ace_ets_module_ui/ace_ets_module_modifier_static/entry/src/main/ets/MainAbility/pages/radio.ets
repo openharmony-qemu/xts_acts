@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List,RadioAttribute, ListItem,Radio,Marquee,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { RadioModifier } from "@ohos.arkui.modifier";

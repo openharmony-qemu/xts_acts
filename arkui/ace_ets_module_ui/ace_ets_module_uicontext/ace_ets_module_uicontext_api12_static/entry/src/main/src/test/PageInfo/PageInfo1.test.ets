@@ -60,13 +60,15 @@ export default function PageInfo1() {
       console.info("PageInfo1 after each called");
     });
     
-    /**
+    
+/**
      * @tc.number   PageInfo1_static_0100
      * @tc.name     PageInfo1_static_0100
      * @tc.desc     PageInfo1_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('PageInfo1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[PageInfo1_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

@@ -271,6 +271,12 @@ static bool parseSetConfigAudioCodec(napi_env env, napi_value arg, struct OH_AVR
         case AVRECORDER_AUDIO_G711MU:
             config.profile.audioCodec = AVRECORDER_AUDIO_G711MU;
             break;
+        case AVRECORDER_AUDIO_AMR_NB:
+            config.profile.audioCodec = AVRECORDER_AUDIO_AMR_NB;
+            break;
+        case AVRECORDER_AUDIO_AMR_WB:
+            config.profile.audioCodec = AVRECORDER_AUDIO_AMR_WB;
+            break;
         default:
             config.profile.audioCodec = AVRECORDER_AUDIO_AAC;
             break;

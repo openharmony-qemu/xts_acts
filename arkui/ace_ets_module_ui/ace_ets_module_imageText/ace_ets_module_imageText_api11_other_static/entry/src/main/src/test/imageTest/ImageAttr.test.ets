@@ -90,8 +90,6 @@ export default function ImageAttr() {
 
     
     
-
-
 /**
      * @tc.number   ImageAttr_static_001
      * @tc.name     ImageAttr_static_001
@@ -124,8 +122,6 @@ it('ImageAttr_static_001', Level.LEVEL2, async (done: () => void): Promise<void>
 
     
     
-
-
 /**
      * @tc.number   ImageAttr_static_002
      * @tc.name     ImageAttr_static_002

@@ -37,7 +37,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage, ObservedV2, Local, Trace, Monitor
+  PropRef,AppStorage, ObservedV2, Local, Trace, Monitor
 } from '@ohos.arkui.stateManagement';
 
 @ObservedV2

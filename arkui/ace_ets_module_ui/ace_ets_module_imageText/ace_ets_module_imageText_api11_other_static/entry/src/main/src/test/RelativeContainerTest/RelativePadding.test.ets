@@ -92,8 +92,6 @@ export default function RelativePadding() {
     
 
     
-
-
 /**
      * @tc.number   RelativePadding_static_001
      * @tc.name     RelativePadding_static_001
@@ -119,9 +117,9 @@ it('RelativePadding_static_001', Level.LEVEL3, async (done: () => void): Promise
       console.info("[RelativePadding_001] RelativeContainer is: " + JSON.stringify(rel) + 'row1:' +
       JSON.stringify(row1) + 'row2:' + JSON.stringify(row2) + 'row3:' + JSON.stringify(row3));
       expect(Math.abs(Math.round(row2.left - row1.right) - Math.round(row3.left - row2.right)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row3.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row2.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(row1.top - rel.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row3.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row2.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(row1.top - rel.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativePadding_001] END');
       done();

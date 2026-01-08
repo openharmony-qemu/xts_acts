@@ -603,11 +603,11 @@ export default function fileIOStat() {
             fs.closeSync(file);
             fs.unlinkSync(fpath);
             done();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           });
-        }).catch((err: BusinessError): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -1767,7 +1767,8 @@ export default function fileIOStat() {
             expect(false).assertTrue();
           }
           expect(statres?.isSymbolicLink() === false).assertTrue();
-        })
+        });
+        await Utils.msSleep(3000);
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
           if(err?.code != 0) {
@@ -1776,6 +1777,8 @@ export default function fileIOStat() {
           }
           expect(stat2?.isSymbolicLink() === false).assertTrue();
           fs.closeSync(file);
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 unlink start');
           fs.unlinkSync(fpath);
           done();
         })

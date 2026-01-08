@@ -62,13 +62,14 @@ export default function UIObserverDidLayoutTest() {
 
 
 
-/**
+    /**
      * @tc.number   UIObserverDidLayoutTest_static_0100
      * @tc.name     UIObserverDidLayoutTest_static_0100
      * @tc.desc     UIObserverDidLayoutTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('UIObserverDidLayoutTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+
       console.info('UIObserverDidLayoutTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

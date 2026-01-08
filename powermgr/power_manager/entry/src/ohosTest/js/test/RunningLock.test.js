@@ -1335,5 +1335,186 @@ export default function RunningLockTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0480
+     * @tc.name testRunningLockTest_4800
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_4800';
+      try {
+        let backgroundUserIdle = runningLock.RunningLockType.BACKGROUND_USER_IDLE;
+        console.info(`${TAG} backgroundUserIdle: ${backgroundUserIdle}`);
+        expect(backgroundUserIdle).assertEqual(129);
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0490
+     * @tc.name testRunningLockTest_4900
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_4900';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+          console.info(`${TAG} lock: ${lock instanceof runningLock.RunningLock}`);
+          let isRunningLock = lock instanceof runningLock.RunningLock;
+          expect(isRunningLock).assertTrue();
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0500
+     * @tc.name testRunningLockTest_5000
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5000';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+          console.info(`${TAG} lock: ${lock instanceof runningLock.RunningLock}`);
+          let isRunningLock = lock instanceof runningLock.RunningLock;
+          expect(isRunningLock).assertTrue();
+          let isHolding = lock.isHolding();
+          console.info(`${TAG} isHolding: ${isHolding}`);
+          expect(isHolding).assertFalse();
+          lock.hold(500);
+          isHolding = lock.isHolding();
+          console.info(`${TAG} isHolding: ${isHolding}`);
+          expect(isHolding).assertTrue();
+          lock.unhold();
+          isHolding = lock.isHolding();
+          console.info(`${TAG} isHolding: ${isHolding}`);
+          expect(isHolding).assertFalse();
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0510
+     * @tc.name testRunningLockTest_5100
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5100';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE, (error, lock) => {
+            if (error) {
+              console.error(`${TAG} error: ${JSON.stringify(error)}`);
+              expect().assertFail();
+            } else {
+              console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+              console.info(`${TAG} lock: ${lock instanceof runningLock.RunningLock}`);
+              let isRunningLock = lock instanceof runningLock.RunningLock;
+              expect(isRunningLock).assertTrue();
+            }
+          });
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_PowerSystem_RunningLock_JSTest_0520
+     * @tc.name testRunningLockTest_5200
+     * @tc.desc test BACKGROUND_USER_IDLE
+     * @tc.level: Level 3
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it('testRunningLockTest_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testRunningLockTest_5200';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE, (error, lock) => {
+            if (error) {
+              console.error(`${TAG} error: ${JSON.stringify(error)}`);
+              expect().assertFail();
+            } else {
+              console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+              console.info(`${TAG} lock: ${lock instanceof runningLock.RunningLock}`);
+              let isRunningLock = lock instanceof runningLock.RunningLock;
+              expect(isRunningLock).assertTrue();
+              let isHolding = lock.isHolding();
+              console.info(`${TAG} isHolding: ${isHolding}`);
+              expect(isHolding).assertFalse();
+              lock.hold(1500);
+              isHolding = lock.isHolding();
+              console.info(`${TAG} isHolding: ${isHolding}`);
+              expect(isHolding).assertTrue();
+              lock.unhold();
+              isHolding = lock.isHolding();
+              console.info(`${TAG} isHolding: ${isHolding}`);
+              expect(isHolding).assertFalse();
+            }
+          });
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
   })
 } 

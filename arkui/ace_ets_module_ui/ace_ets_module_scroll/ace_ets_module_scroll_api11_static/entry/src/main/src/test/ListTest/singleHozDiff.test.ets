@@ -81,8 +81,7 @@ export default function singleHozDiff() {
 
 
     
-    
-/**
+    /**
      * @tc.number   singleHozDiff_static_0100
      * @tc.name     singleHozDiff_static_0100
      * @tc.desc     singleHozDiff_static_0100

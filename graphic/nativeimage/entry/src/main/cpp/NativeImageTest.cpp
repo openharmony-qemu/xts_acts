@@ -232,6 +232,7 @@ napi_property_descriptor desc[] = {
         OHNativeImageReleasedCalls, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeImageReleaseAbnormal", nullptr,
         OHNativeImageReleaseAbnormal, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

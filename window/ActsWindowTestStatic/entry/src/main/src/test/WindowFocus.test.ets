@@ -92,7 +92,7 @@ export default function WindowFocusTest() {
                         hilog.info(domain, tag,caseName+ ' Succeeded in shifting app window pointer event');
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,`${caseName} :Failed to shift app window pointer event. Cause code: ${err.code}, message: ${err.message}`);
                         if(err.code == 801){
                             done();
@@ -104,7 +104,7 @@ export default function WindowFocusTest() {
                             done();
                         }
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} :Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                     done();
@@ -156,7 +156,7 @@ export default function WindowFocusTest() {
                         hilog.info(domain, tag,caseName+ ' Succeeded in shifting app window pointer event');
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,`${caseName} :Failed to shift app window pointer event. Cause code: ${err.code}, message: ${err.message}`);
                         await dialogWindowClass.destroyWindow();
                         if(err.code == 801){
@@ -169,7 +169,7 @@ export default function WindowFocusTest() {
                             done();
                         }
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} :Failed to create the dialogwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                     done();

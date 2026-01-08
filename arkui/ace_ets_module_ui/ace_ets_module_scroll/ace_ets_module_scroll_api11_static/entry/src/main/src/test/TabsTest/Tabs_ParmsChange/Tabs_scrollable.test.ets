@@ -86,8 +86,7 @@ export default function Tabs_scrollable() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsScrollableToTrue_static_01
      * @tc.name     testTabsScrollableToTrue_static_01
      * @tc.desc     testTabsScrollableToTrue_static_01
@@ -211,8 +210,7 @@ it('testTabsScrollableToTrue_static_01', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsScrollableToFalse_static_02
      * @tc.name     testTabsScrollableToFalse_static_02
      * @tc.desc     testTabsScrollableToFalse_static_02

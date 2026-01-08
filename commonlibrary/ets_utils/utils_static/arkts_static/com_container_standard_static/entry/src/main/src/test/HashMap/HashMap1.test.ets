@@ -93,7 +93,7 @@ export default function HashMapTest1() {
      */
     it("testHashMap0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number[]>();
-      let c = [1, 2, 3];
+      let c: number[] = [1, 2, 3];
       hashMap.set(1, c);
       let res = hashMap.get(1);
       expect(String(res)).assertEqual(String(c));

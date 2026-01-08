@@ -33,7 +33,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

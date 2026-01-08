@@ -67,35 +67,38 @@ struct ScreenShot {
   build() {
     Stack() {
       Column() {
-        Row() {
-          Button() {
-            Image($r('app.media.ic_public_back'))
-              .width('20vp')
-              .height('18vp')
-              .margin({ left: '20vp' })
+        Scroll(){
+          Row({space:20}) {
+            Button() {
+              Image($r('app.media.ic_public_back'))
+                .width('20vp')
+                .height('18vp')
+                .margin({ left: '20vp' })
+            }
+            .backgroundColor(Color.Black)
+            .size({ width: '40vp', height: '30vp' })
+            .onClick(() => {
+              router.back({
+                url: 'pages/Screen/Screen_index',
+                params: { result: 'None' }
+              })
+            })
+
+            Text(this.name)
+              .fontColor(Color.White)
+              .fontSize('18fp')
+              .margin({ left: '-20vp' })
+            Text('hello')
+              .fontColor(Color.White)
+              .visibility(Visibility.Hidden)
           }
           .backgroundColor(Color.Black)
-          .size({ width: '40vp', height: '30vp' })
-          .onClick(() => {
-            router.back({
-              url: 'pages/Screen/Screen_index',
-              params: { result: 'None' }
-            })
-          })
+          .height('20%')
+          .width('130%')
+          .justifyContent(FlexAlign.Center)
+          .zIndex(1)
+        }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
-          Text(this.name)
-            .fontColor(Color.White)
-            .fontSize('18fp')
-            .margin({ left: '-20vp' })
-          Text('hello')
-            .fontColor(Color.White)
-            .visibility(Visibility.Hidden)
-        }
-        .backgroundColor(Color.Black)
-        .height('10%')
-        .width('100%')
-        .justifyContent(FlexAlign.SpaceBetween)
-        .zIndex(1)
 
         Row() {
           Column() {
@@ -109,7 +112,7 @@ struct ScreenShot {
               Button('拉起截屏应用')
                 .width('80%')
                 .height('100%')
-                .margin({ top: '40vp'})
+                .margin({ top: '10vp'})
             }
             .justifyContent(FlexAlign.SpaceBetween)
             .onClick(() => {
@@ -120,7 +123,7 @@ struct ScreenShot {
           }
 
           Text(`返回值：${this.resMessage}`)
-        }.height('80%')
+        }.height('65%')
         .width('100%')
         .margin({ bottom: '-10vp' })
         CustomContainer({

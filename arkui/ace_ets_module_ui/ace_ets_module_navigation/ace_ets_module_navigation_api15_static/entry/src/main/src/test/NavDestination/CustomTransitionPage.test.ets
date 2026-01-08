@@ -76,6 +76,7 @@ export default function CustomTransitionPage() {
      * @tc.level    Level.LEVEL0
      */
 it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('CustomTransitionPage_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -108,6 +109,7 @@ it('CustomTransitionPage_static_0100', Level.LEVEL0, async (done: () => void): P
      * @tc.level    Level.LEVEL0
      */
 it('CustomTransitionPage_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('CustomTransitionPage_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -146,6 +148,7 @@ it('CustomTransitionPage_static_0200', Level.LEVEL0, async (done: () => void): P
      * @tc.level    Level.LEVEL0
      */
 it('CustomTransitionPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('CustomTransitionPage_0300 START');
       await CommonFunc.sleep(1000);
 
@@ -183,6 +186,7 @@ it('CustomTransitionPage_static_0300', Level.LEVEL0, async (done: () => void): P
      * @tc.level    Level.LEVEL0
      */
 it('CustomTransitionPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('CustomTransitionPage_0400 START');
       await CommonFunc.sleep(1000);
 

@@ -16,5 +16,5 @@
 import frameNodeApi from './FrameNode/frameNodeApi.test';
 
 export default function testsuite() {
-  frameNodeApi();
+  frameNodeApi(); //pass1
 }

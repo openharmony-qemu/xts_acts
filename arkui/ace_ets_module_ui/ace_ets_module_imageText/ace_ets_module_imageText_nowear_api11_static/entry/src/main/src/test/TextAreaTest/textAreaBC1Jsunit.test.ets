@@ -49,7 +49,7 @@ export default function textAreaBC1Jsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaBC1Jsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaBC1" == pages.name)) {
           console.info("get textAreaBC1Jsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

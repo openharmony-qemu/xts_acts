@@ -99,7 +99,7 @@ export default function ApiCoverStaticTest() {
         expect((String(el5))).assertEqual("4");
         hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `AreaMode end`);
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', '%{public}s', `catch code: ${err.code}, message: ${err.message}`);
         expect().assertFail();
         done();
@@ -139,10 +139,10 @@ export default function ApiCoverStaticTest() {
           for (let i = 0; i < data.length; i++) {
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.pid: ' + data[i].pid);
-            expect(typeof (data[i].pid)).assertEqual("number");
+            expect(typeof (data[i].pid)).assertEqual("int");
             expect(data[i].pid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.uid: ' + data[i].uid);
-            expect(typeof (data[i].uid)).assertEqual("number");
+            expect(typeof (data[i].uid)).assertEqual("int");
             expect(data[i].uid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.processName: ' + data[i].processName);
             expect(typeof (data[i].processName)).assertEqual("string");
@@ -151,14 +151,14 @@ export default function ApiCoverStaticTest() {
             expect(Array.isArray(data[i].bundleNames)).assertEqual(true);
             expect(data[i].bundleNames.length).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.bundleType: ' + data[i]?.bundleType);
-            expect(typeof (data[i]?.bundleType)).assertEqual("number");
+            expect(typeof (data[i]?.bundleType)).assertEqual("int");
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.appCloneIndex: ' + data[i]?.appCloneIndex);
             expect(data[i]?.appCloneIndex).assertUndefined();
           }
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation done');
           done();
         })
-        .catch<void>((err: BusinessError): void => {
+        .catch<void>((err: Error): void => {
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation err: ' + err);
           expect().assertFail();
           done();
@@ -181,10 +181,10 @@ export default function ApiCoverStaticTest() {
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data.length: ' + data!.length);
           for (let i = 0; i < data!.length; i++) {
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.pid: ' + data![i].pid);
-            expect(typeof (data![i].pid)).assertEqual("number");
+            expect(typeof (data![i].pid)).assertEqual("int");
             expect(data![i].pid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.uid: ' + data![i].uid);
-            expect(typeof (data![i].uid)).assertEqual("number");
+            expect(typeof (data![i].uid)).assertEqual("int");
             expect(data![i].uid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.processName: ' + data![i].processName);
             expect(typeof (data![i].processName)).assertEqual("string");
@@ -230,7 +230,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`)
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -265,7 +265,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -300,7 +300,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000002');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -334,7 +334,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -394,7 +394,7 @@ export default function ApiCoverStaticTest() {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
           expect(options.isConnect).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -439,7 +439,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -479,7 +479,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();

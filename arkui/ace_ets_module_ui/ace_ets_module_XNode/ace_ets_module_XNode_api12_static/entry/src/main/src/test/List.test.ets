@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,51 +89,51 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 
 export default function testsuite() {
-  // getNumeric();// SDK12.9 问题表格84行
-  // getAlpha();// SDK12.9 问题表格84行
-  // getBlue();// SDK12.9 问题表格84行
-  // getGreen();// SSDK12.9 问题表格84行
-  // getRed();// SDK12.9 问题表格84行
-  // LengthMetricsUnitTest();// SDK12.9 pass 1
-  // typeNodechildrenMainSizeTest(); //SDK12.9 pass 2
-  // APIdisposeTreeTest();   //SDK12.9 0702表格18 1
-  // RELOAD(); // SDK12.9 pass 1
-  // ComponentContentAPIRecycleTest();// SDK12.9 pass 1
-  // APIPanGestureisisBeginTest();// // SDK12.9 pass 2
-  // LengthUnitTest(); // SDK12.9 表格94行
-  // getBlendColor();  // SDK12.9 表格84行
-  // RenderNodeDemo02Test();   // SDK12.9 表格104行
-  // RenderNodeDemo01Test();   // SDK12.9 表格104行
-  // RenderNodeDemo03Test();   // SDK12.9 表格104行
-  // RenderNodeDemo04Test();   // SDK12.9 表格104行
-  // RenderNodeDemo05Test();   // SDK12.9 表格104行
-  // RenderNodeDemo06Test();   // SDK12.9 表格104行
-  // updateConfigurationTest1(); // SDK12.9 表格104行
-  // updateConfigurationTest2(); // SDK12.9 pass 1
-  // setLabelTest();   // SDK12.9 表格104行
-  // setMarkNodeGroupTest(); // SDK12.9 表格104行
-  // setShapeClipTest(); // SDK12.9 表格104行
-  // typeNodeSwiperTest();  //SDK12.9 pass 1
-  // typeNodeRelativeContainerTest(); //SDK12.9 pass 1
-  // typeNodeProgressTest(); //0702问题 吴金辉DTS2512020009099
-  // typeNodeLoadingProgressTest();  //SDK12.9 pass 1
-  // typeNodeListTest(); //SDK12.9 pass 1
-  // typeNodeGridColTest();//SDK12.9 pass 1
-  // typeNodeDividerTest();//SDK12.9 pass 1
-  // typeNodeBlankTest();///SDK12.9 pass 1
-  // BuilderNodeApiRecycleTest();//SDK12.9 pass 1
-  // BuilderNodeApiReuseTest();//SDK12.9 pass 1
-  // ComponentContentAPIReuseTest(); //SDK12.9 pass 1
-  // APImarkNodeGroupTest();  // SDK12.9 表格104行
-  // borderRadiuses();  // SDK12.9 表格104行
-  // borderStyles();  // SDK12.9 表格104行 后面问题也类似，不测了
-  // edgeColors();  //11.22 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335
+  // getNumeric();// SDK11.17 pass
+  // getAlpha();// SDK11.17 pass
+  // getBlue();// SDK11.17 pass
+  // getGreen();// SDK11.17 pass
+  // getRed();// SDK11.17 pass
+  // LengthMetricsUnitTest();// SDK11.17 pass
+  // typeNodechildrenMainSizeTest(); //SDK11.17 pass2
+  // APIdisposeTreeTest();   // SDK12.11 记录在表格18行
+  // RELOAD();  // SDK11.17 pass
+  // ComponentContentAPIRecycleTest();// SDK11.17 pass
+  // APIPanGestureisisBeginTest();// SDK11.17 pass
+  // LengthUnitTest(); // SDK11.17 pass
+  // getBlendColor();  // SDK11.17 记录到表格243行 master22 The key 'backgroundColor' was not found in the JSON object.
+  // RenderNodeDemo02Test();   // SDK11.17 pass
+  // RenderNodeDemo01Test();   //11.22  62行 吴金辉2512020009099
+  // RenderNodeDemo03Test();   // SDK11.17 pass
+  // RenderNodeDemo04Test();   // SDK11.17 pass
+  // RenderNodeDemo05Test();   // SDK11.17 pass
+  // RenderNodeDemo06Test();   // 11.22  62行 吴金辉2512020009099
+  // updateConfigurationTest1(); // SDK11.17 pass
+  // updateConfigurationTest2(); // pass SDK11.19
+  // setLabelTest();   // pass SDK11.19
+  // setMarkNodeGroupTest(); // 11.22. 吴金辉2512020009099
+  // setShapeClipTest(); // SDK11.28 pass 1个
+  // typeNodeSwiperTest();  // pass 1
+  // typeNodeRelativeContainerTest();  // pass 1
+  // typeNodeProgressTest(); //Failure: 2, Pass: 1 55行 吴金辉2512020009099
+  // typeNodeLoadingProgressTest();  // pass
+  // typeNodeListTest(); // pass
+  // typeNodeGridColTest();//pass
+  // typeNodeDividerTest();// pass
+  // typeNodeBlankTest();// pass
+  // BuilderNodeApiRecycleTest();// pass
+  // BuilderNodeApiReuseTest();// pass
+  // ComponentContentAPIReuseTest(); // pass
+  // APImarkNodeGroupTest();  // 11.22. renderNode.markNodeGroup 吴金辉2512020009099
+  // borderRadiuses();  // pass1
+  // borderStyles();  // pass
+  // edgeColors();  //11.22 吴金辉找se问 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335  0702表格21行  已发邮件12.27
   // edgeWidths();  // pass1
-  // renderNodeGetInterfaceTest();  //11.22 16进制转10进制不对 Failure: 1, Error: 0, Pass: 3 expect bColor:-16711698 equals bColor:4278255598
+  // renderNodeGetInterfaceTest();  //11.22 吴金辉找se问 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335  0702表格21行  已发邮件12.27
   // disposeTest();  // pass
-  // getAttrsTest();  //Failure: 6, Error: 0, Pass: 5 getAttrs.test.ets:173:0     expect {} equals {"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}
+  // getAttrsTest();  // 记录在问题表格245行 Failure: 6, Error: 0, Pass: 5 getAttrs.test.ets:173:0     expect {} equals {"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}
   // getPosition();  // pass
-  // setLayout();  //11.22  expect 310 equals 0
+  // setLayout();  ////master SDK12.9 期望是0，实际是310，开发在看，开发找晨苏看
   // RenderNodeAttributeTest();  // pass
   // setRectShape();  // pass
   // resourceColor();  // pass
@@ -156,11 +156,10 @@ export default function testsuite() {
   // setCircleShapeTest();  // pass
   // typeNodeTextInputTest();  // pass
   // typeNodeListItemTest();  // pass
-  // attachNodeAdapterTest();  //11.22. RangeError message: Out of bounds
-  // getAttachedFrameNodeById();  // pass
-  // getAfterRemove();  // pass
-  // PercentReferenceTest();  // pass
-  // graphicGetInterfaceTest();  //12.2 DTS2025101419802
-  // setMeasureSizeTest();  // SDK11.19 setMeasureSize.test.ets:81:0 expect 0 equals 105
-  // SDK11.19 run: 119, Failure: 31, Error: 16, Pass: 72, Ignore: 0 appDied 2
+  attachNodeAdapterTest();  //11.22 记录在表格23行 master22 onAttachToNode执行后appDied
+  // getAttachedFrameNodeById();  // SDK12.9 pass 2
+  // getAfterRemove();  // SDK12.9 pass 3
+  // PercentReferenceTest();  // SDK12.9 pass 1
+  // graphicGetInterfaceTest();  //12.2 2025101419802  master22 未通过
+  // setMeasureSizeTest();  // SDK11.19 记录到33行
 }

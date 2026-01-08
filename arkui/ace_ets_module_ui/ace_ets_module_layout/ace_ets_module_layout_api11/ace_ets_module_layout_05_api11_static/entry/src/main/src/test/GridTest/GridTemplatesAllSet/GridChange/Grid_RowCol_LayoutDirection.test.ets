@@ -107,20 +107,20 @@ it('testGridRowColGridLayoutDirection_static_01', Level.LEVEL0, async (done: () 
         .assertTrue();
 
       expect(Math.abs(Grid_RowCol_LayoutDirection_011.right - Grid_RowCol_LayoutDirection_011.left -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_012.right - Grid_RowCol_LayoutDirection_012.left -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_013.right - Grid_RowCol_LayoutDirection_013.left -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_014.right - Grid_RowCol_LayoutDirection_014.left -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_LayoutDirection_011.bottom - Grid_RowCol_LayoutDirection_011.top -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_013.bottom - Grid_RowCol_LayoutDirection_013.top -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_014.bottom - Grid_RowCol_LayoutDirection_014.top -
-      UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColGridLayoutDirection_static_01] END');
       done();
     });

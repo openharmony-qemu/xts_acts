@@ -30,19 +30,19 @@ import ImageContentEmpty from './ImageContentTest/ImageContentEmpty.test';
 import ImageOnError from './ImageErrorTest/ImageOnError.test';
 
 export default function testsuite() {
-  // textAreaInputTest(); // 1 pass
-  // ContentTypeTest1(); // 7 pass 7
-  // ContentTypeTest2(); // 7 pass 7
-  // symbolGlyphFontScaleTest(); // 13 pass 6
-  // monitorInvisibleAreaTest(); // 4 pass
-  // textBackgroundStyleTest(); // 7 pass 1
-  // SearchGetTextTest(); // 8 pass 8
-  // TextAreaGetTextTest(); // 8 pass 8
-  // TextInputGetTextTest(); // 8 pass 8
-  // ParagraphSpacingTest(); // 4 pass 2
-  HapticFeedbackModeTest(); // App died
-  // RichEditorMaxLinesTest(); // App died
-  // WordBreakTest(); // 4 pass 4
-  // ImageContentEmpty(); // 1 pass 1
-  // ImageOnError(); // 1 pass
+  ContentTypeTest1();
+  ContentTypeTest2();
+  symbolGlyphFontScaleTest();
+  monitorInvisibleAreaTest();
+  textBackgroundStyleTest();
+  SearchGetTextTest();
+  TextAreaGetTextTest();
+  TextInputGetTextTest();
+  ParagraphSpacingTest();
+  RichEditorMaxLinesTest();
+  WordBreakTest();
+  ImageContentEmpty();
+  ImageOnError();
+  HapticFeedbackModeTest();
+  textAreaInputTest();
 }

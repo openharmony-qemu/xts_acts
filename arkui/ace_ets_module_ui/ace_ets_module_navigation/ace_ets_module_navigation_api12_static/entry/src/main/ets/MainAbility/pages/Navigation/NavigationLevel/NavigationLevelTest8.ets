@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -40,7 +40,7 @@ struct NavigationLevelTest8 {
         Button('popToIndex 11000000')
           .onClick((e: ClickEvent) => {
             console.log('++++++++++++++++++++++1')
-            this.pageInfos.popToIndex(11000000)   //appDied  11.4
+            this.pageInfos.popToIndex(11000000)   //appDied  12.15
             console.log('++++++++++++++++++++++2')
           })
           .id('NavigationLevelTest8_btn2')
@@ -72,7 +72,7 @@ struct NavigationLevelTest8 {
         Column({space:10} as ColumnOptions) {
           Button('pushPath pageOne')
             .onClick((e: ClickEvent) => {
-this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
+           this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
             })
             .id('NavigationLevelTest8_btn1')
         }
@@ -81,7 +81,6 @@ this.pageInfos.pushPath(new NavPathInfo('pageOne','mes'))
       .title('NavIndex')
       .navDestination(this.PageMap)
     }
-
   }
 }
 

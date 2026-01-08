@@ -47,7 +47,7 @@ export default function textAreaInputTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaInputTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaInputTest" == pages.name)) {
           console.info("get textAreaInputTest pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

@@ -70,6 +70,7 @@ export default function MultiNavigation18() {
      * @tc.level    Level.LEVEL0
      */
 it('MultiNavigation18_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('MultiNavigation18_static_0100 START');
       await CommonFunc.sleep(1000);
 

@@ -76,8 +76,6 @@ export default function relativeCTest() {
 
     
     
-
-
 /**
      * @tc.number   relativeCTest_static_0100
      * @tc.name     relativeCTest_static_0100
@@ -94,7 +92,7 @@ it('relativeCTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       let btleft1 = CommonFunc.getComponentRect('row2common');
       let left1 = btleft1.left
       let diff = Math.round(left1 - right)
-      expect(Math.abs((diff + Number("")) - (UIContext.getFocusedUIContext()!.vp2px(100) + Number(""))) <= 1).assertTrue();
+      expect(Math.abs((diff + Number("")) - (UIContext.resolveUIContext()!.vp2px(100) + Number(""))) <= 1).assertTrue();
       done();
     });
 

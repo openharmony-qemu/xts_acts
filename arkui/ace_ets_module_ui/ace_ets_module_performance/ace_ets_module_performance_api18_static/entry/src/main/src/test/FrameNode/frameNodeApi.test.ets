@@ -71,14 +71,13 @@ export default function frameNodeApi() {
      * @tc.level    Level.LEVEL3
      */
 it('frameNodeApi_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+
       console.info('frameNodeApi_static_0100 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('frameNodeApi_Bind'));
-      console.log('+++++++++++++button',button)
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(4000);
       let button2 = await driver.findComponent(ON.id('frameNodeApi_Bind'));
-      console.log('+++++++++++++button2','11',button2,AppStorage.get<Int>('reuse'),'22',AppStorage.get<Int>('recycle'))
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(4000);
       expect(AppStorage.get<Int>('reuse')!).assertEqual(1);

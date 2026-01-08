@@ -31,7 +31,7 @@ import {
   State,
   Watch,
   Link,
-  StorageLink,LocalStorage,LocalStorageProp, LocalStoragePropRef
+  StorageLink,LocalStorage,LocalStoragePropRef, LocalStoragePropRef
 } from '@ohos.arkui.stateManagement'
 
 let storageLink0320:LocalStorage = new LocalStorage()

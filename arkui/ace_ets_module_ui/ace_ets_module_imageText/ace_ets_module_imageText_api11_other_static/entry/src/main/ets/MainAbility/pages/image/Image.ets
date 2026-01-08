@@ -79,7 +79,7 @@ struct image_textcase {
           .renderMode(ImageRenderMode.Original)
           .autoResize(false)
           .syncLoad(false)
-          .sourceSize({ width: UIContext.getFocusedUIContext()!.px2vp(200), height: UIContext.getFocusedUIContext()!.px2vp(100) })
+          .sourceSize({ width: UIContext.resolveUIContext()!.px2vp(200), height: UIContext.resolveUIContext()!.px2vp(100) })
           .alt("/resources/rawfile/person.png")
           .key('image1')
         Image("/resources/rawfile/hand.png")

@@ -59,7 +59,8 @@ export default function previewBorderRadius() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   BindContextMenu_previewBorderRadius_static_001
      * @tc.name     BindContextMenu_previewBorderRadius_static_001
      * @tc.desc     BindContextMenu_previewBorderRadius_static_001
@@ -81,7 +82,8 @@ it('BindContextMenu_previewBorderRadius_static_001', TestType.FUNCTION | Size.ME
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   BindContextMenu_previewBorderRadius_static_002
      * @tc.name     BindContextMenu_previewBorderRadius_static_002
      * @tc.desc     BindContextMenu_previewBorderRadius_static_002
@@ -103,7 +105,8 @@ it('BindContextMenu_previewBorderRadius_static_002', TestType.FUNCTION | Size.ME
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   BindContextMenu_previewBorderRadius_static_003
      * @tc.name     BindContextMenu_previewBorderRadius_static_003
      * @tc.desc     BindContextMenu_previewBorderRadius_static_003

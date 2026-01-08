@@ -77,8 +77,6 @@ export default function arkuiNodeEventTest() {
 
     
     
-
-
 /**
      * @tc.number   arkuinodeevent_static_0100
      * @tc.name     arkuinodeevent_static_0100
@@ -107,8 +105,6 @@ it('arkuinodeevent_static_0100', Level.LEVEL2, async (done: () => void): Promise
 
     
     
-
-
 /**
      * @tc.number   arkuinodeevent_static_0200
      * @tc.name     arkuinodeevent_static_0200

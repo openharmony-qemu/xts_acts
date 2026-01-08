@@ -109,31 +109,31 @@ import globalShortcutKeyTest2 from './globalShotCutKeyTest/globalShortcutKey2.te
 
 
 export default function testsuite() {
-  requestFocus19();// 交互框架 requestFocus 失败1个用例
-  requestFocus20();// 交互框架 requestFocus 失败1个用例
-  requestFocus22();// 交互框架 requestFocus 失败1个用例
-  requestFocus23();// 交互框架 requestFocus 失败1个用例 断言不符合预期
-  onWillApplyTheme()// 交互框架 theme 失败1个用例
-  FocusScopePriority14();// 交互框架 focusScopePriority 失败1个用例 expect false equals true
-  FocusScopePriority15();// 交互框架 focusScopePriority 失败1个用例 expect false equals true
-  FocusScopeId005();// focusBox配置项LengthMetrics/ColorMetrics会导致页面空指针，注释可pass
-  FocusScopeId007();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例  expect false equals true
-  FocusScopeId016();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
-  FocusScopeId017();// 交互框架 focusScopeId、focusOnTouch、focusBox 失败1个用例 expect false equals true
-  FocusScopeId13();// 交互框架 focusScopeId 失败1个用例 expect false equals true
-  FocusScopeId14();// 交互框架 focusScopeId 失败1个用例 expect false equals true
-  ACTION_CANCELED_BEFORE_DRAG_APITest();// 交互框架 onPreDrag 失败1个用例  expect init equals ACTION_CANCELED_BEFORE_DRAG
-  globalShortcutKeyTest();// 交互框架 keyboardShortcut 失败3个用例 expect  equals I clicked Button 8
-  requestFocus6();// 交互框架 requestFocus 失败1个用例
-  requestFocus7();// 交互框架 requestFocus 失败1个用例
-  requestFocus8();// 交互框架 requestFocus 失败1个用例
-  requestFocus9();// 交互框架 requestFocus 失败1个用例
-  requestFocus2();// 交互框架 requestFocus 失败1个用例 断言不符合预期
-  requestFocus3();// 交互框架 requestFocus 失败1个用例
-  requestFocus4();// 交互框架 requestFocus 失败1个用例
-  requestFocus13();// 交互框架 requestFocus 失败1个用例
-  requestFocus15();// 交互框架 requestFocus 失败1个用例
-  requestFocus17();// 交互框架 requestFocus 失败1个用例
+  requestFocus19();
+  requestFocus20();
+  requestFocus22();
+  requestFocus23();
+  onWillApplyTheme()
+  FocusScopePriority14();
+  FocusScopePriority15();
+  FocusScopeId005();
+  FocusScopeId007();
+  FocusScopeId016();
+  FocusScopeId017();
+  FocusScopeId13();
+  FocusScopeId14();
+  ACTION_CANCELED_BEFORE_DRAG_APITest();
+  globalShortcutKeyTest();
+  requestFocus6();
+  requestFocus7();
+  requestFocus8();
+  requestFocus9();
+  requestFocus2();
+  requestFocus3();
+  requestFocus4();
+  requestFocus13();
+  requestFocus15();
+  requestFocus17();
 
   requestFocus1();
   requestFocus5();

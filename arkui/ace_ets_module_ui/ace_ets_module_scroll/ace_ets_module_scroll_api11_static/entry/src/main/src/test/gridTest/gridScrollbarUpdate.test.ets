@@ -53,8 +53,7 @@ export default function gridScrollbarUpdateTest() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   Grid_scrollbarUpdate_static_0801
      * @tc.name     Grid_scrollbarUpdate_static_0801
      * @tc.desc     Grid_scrollbarUpdate_static_0801
@@ -84,8 +83,7 @@ it('Grid_scrollbarUpdate_static_0801', Level.LEVEL0, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   Grid_scrollbarUpdate_static_0802
      * @tc.name     Grid_scrollbarUpdate_static_0802
      * @tc.desc     Grid_scrollbarUpdate_static_0802

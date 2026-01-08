@@ -86,7 +86,7 @@ import {
 
 } from '@ohos.arkui.component'
 import {SetValue} from '../../common/Utils'
-import { State, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';

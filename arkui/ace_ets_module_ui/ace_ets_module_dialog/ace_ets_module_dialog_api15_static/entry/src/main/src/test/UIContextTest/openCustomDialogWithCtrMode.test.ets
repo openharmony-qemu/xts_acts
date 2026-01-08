@@ -70,7 +70,6 @@ export default function openCustomDialogWithCtrMode() {
     
     
 
-
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0100
      * @tc.name     openCustomDialogWithCtrMode_static_0100
@@ -124,7 +123,6 @@ it('openCustomDialogWithCtrMode_static_0100', Level.LEVEL1, async (done: () => v
     
     
 
-
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0200
      * @tc.name     openCustomDialogWithCtrMode_static_0200
@@ -177,7 +175,6 @@ it('openCustomDialogWithCtrMode_static_0200', Level.LEVEL1, async (done: () => v
     
     
 
-
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0300
      * @tc.name     openCustomDialogWithCtrMode_static_0300
@@ -229,7 +226,6 @@ it('openCustomDialogWithCtrMode_static_0300', Level.LEVEL1, async (done: () => v
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0400
@@ -284,7 +280,6 @@ it('openCustomDialogWithCtrMode_static_0400', Level.LEVEL1, async (done: () => v
      
     
 
-
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0500
      * @tc.name     openCustomDialogWithCtrMode_static_0500
@@ -327,7 +322,6 @@ it('openCustomDialogWithCtrMode_static_0500', Level.LEVEL1, async (done: () => v
      
     
 
-
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0600
      * @tc.name     openCustomDialogWithCtrMode_static_0600
@@ -368,7 +362,6 @@ it('openCustomDialogWithCtrMode_static_0600', Level.LEVEL1, async (done: () => v
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0700
@@ -422,7 +415,6 @@ it('openCustomDialogWithCtrMode_static_0700', Level.LEVEL1, async (done: () => v
 
     
     
-
 
 /**
      * @tc.number   openCustomDialogWithCtrMode_static_0800

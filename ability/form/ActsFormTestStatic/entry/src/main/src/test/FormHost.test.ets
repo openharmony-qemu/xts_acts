@@ -72,7 +72,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -103,7 +103,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'formOverflow catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -136,7 +136,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -169,7 +169,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState success');
         expect().assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.error(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState catch error');
         expect(error?.code).assertEqual(202);
         done();
@@ -191,7 +191,7 @@ export default function formHostTest() {
 
       let callGetFormRect: formInfo.GetFormRectInfoCallback = (formId: string): Promise<formInfo.Rect> => {
         hilog.info(0x0000, 'testTag', `cbGetFormRect a new form`);
-        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (rect: formInfo.Rect) => void): void => {
+        return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (error: Error) => void): void => {
           hilog.info(0x0000, 'testTag', `cbGetFormRect Promise called`);
           let rect1: formInfo.Rect = {
             left: 1.0,
@@ -207,7 +207,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');
@@ -233,7 +233,7 @@ export default function formHostTest() {
         hilog.info(0x0000, 'testTag EntryFormAbility', 'getFormRect success');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         hilog.error(0x0000, 'testTag EntryFormAbility', 'getFormRect catch error');

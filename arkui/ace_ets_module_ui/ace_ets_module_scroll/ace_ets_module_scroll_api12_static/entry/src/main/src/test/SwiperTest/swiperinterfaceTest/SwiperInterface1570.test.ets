@@ -75,7 +75,6 @@ export default function SwiperInterface1570() {
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570
@@ -96,7 +95,6 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1570', Level.LEVEL0, async (don
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1580

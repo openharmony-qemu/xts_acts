@@ -57,7 +57,7 @@ struct detentSelection {
           this.isShow = true
         })
         .bindSheet(this.isShow, this.myBuilder, {
-          // detents: [SheetSize.MEDIUM, SheetSize.FIT_CONTENT, SheetSize.LARGE] as TripleLengthDetents,
+          detents: [SheetSize.MEDIUM, SheetSize.FIT_CONTENT, SheetSize.LARGE] as TripleLengthDetents,
           preferType: SheetType.BOTTOM,
           detentSelection: this.detentSelection,
           onAppear: () => {

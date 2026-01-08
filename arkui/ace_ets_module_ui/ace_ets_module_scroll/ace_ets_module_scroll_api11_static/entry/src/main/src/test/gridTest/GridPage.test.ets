@@ -59,8 +59,7 @@ export default function GridTest() {
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_api_static_0001
      * @tc.name     ArkUX_Grid_api_static_0001
      * @tc.desc     ArkUX_Grid_api_static_0001
@@ -87,8 +86,7 @@ it('ArkUX_Grid_api_static_0001', Level.LEVEL0, async (done: () => void): Promise
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_api_static_0002
      * @tc.name     ArkUX_Grid_api_static_0002
      * @tc.desc     ArkUX_Grid_api_static_0002
@@ -115,8 +113,7 @@ it('ArkUX_Grid_api_static_0002', Level.LEVEL0, async (done: () => void): Promise
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_api_static_0003
      * @tc.name     ArkUX_Grid_api_static_0003
      * @tc.desc     ArkUX_Grid_api_static_0003
@@ -152,8 +149,7 @@ it('ArkUX_Grid_api_static_0003', Level.LEVEL0, async (done: () => void): Promise
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_api_static_0004
      * @tc.name     ArkUX_Grid_api_static_0004
      * @tc.desc     ArkUX_Grid_api_static_0004
@@ -180,8 +176,7 @@ it('ArkUX_Grid_api_static_0004', Level.LEVEL0, async (done: () => void): Promise
      */
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_api_static_0005
      * @tc.name     ArkUX_Grid_api_static_0005
      * @tc.desc     ArkUX_Grid_api_static_0005

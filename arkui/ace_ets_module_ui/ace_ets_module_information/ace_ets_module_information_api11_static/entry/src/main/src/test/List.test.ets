@@ -34,11 +34,11 @@ import QrcodeJsunit from './QrcodeTest/QrcodeJsunit.test';
 import QRCodeUIJsunit from './QrcodeTest/QRCodeUIJsunit.test';
 import SearchJsunit from './SearchTest/SearchJsunit.test';
 export default function testsuite() {
-  advancedCounter();//@ohos.arkui.advanced.Counter未交付 2
-  CounterComponentTest();//@ohos.arkui.advanced.Counter未交付 1
-  datapanel();//fail 1 in ArkUX_Stage_DataPanel_TrackShadow_static_0200, expect 5.000000 equals 20.000000
+  advancedCounter();
+  CounterComponentTest();
+  datapanel();
 
-  gaugeux();//fail 2 // ArkUX_Gauge_TrackShadow_InterfaceName_static_1400  ArkUX_Gauge_Indicator_InterfaceName_static_1400 .trackShadow(undefined)和.indicator(undefined)会导致app died
+  gaugeux();
   gauge3Jsunit();
   GaugeJsunit();
   QRCodeUIJsunit();

@@ -71,8 +71,7 @@ export default function columnSplitJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   columnSplitTest_static_0001
      * @tc.name     columnSplitTest_static_0001
      * @tc.desc     columnSplitTest_static_0001
@@ -95,8 +94,7 @@ it('columnSplitTest_static_0001', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   columnSplitTest_static_0002
      * @tc.name     columnSplitTest_static_0002
      * @tc.desc     columnSplitTest_static_0002
@@ -116,8 +114,7 @@ it('columnSplitTest_static_0002', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   columnSplitTest_static_0003
      * @tc.name     columnSplitTest_static_0003
      * @tc.desc     columnSplitTest_static_0003

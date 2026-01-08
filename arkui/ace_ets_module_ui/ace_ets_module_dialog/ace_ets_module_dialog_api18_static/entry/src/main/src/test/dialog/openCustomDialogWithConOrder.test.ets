@@ -68,7 +68,8 @@ export default function openCustomDialogWithConOrder() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogWithConOrder_static_0100
      * @tc.name     openCustomDialogWithConOrder_static_0100
      * @tc.desc     openCustomDialogWithConOrder_static_0100
@@ -95,7 +96,8 @@ it('openCustomDialogWithConOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogWithConOrder_static_0200
      * @tc.name     openCustomDialogWithConOrder_static_0200
      * @tc.desc     openCustomDialogWithConOrder_static_0200
@@ -122,7 +124,8 @@ it('openCustomDialogWithConOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTE
     });
 
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogWithConOrder_static_0300
      * @tc.name     openCustomDialogWithConOrder_static_0300
      * @tc.desc     openCustomDialogWithConOrder_static_0300
@@ -148,7 +151,8 @@ it('openCustomDialogWithConOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTE
       done();
     });
     
-    /**
+    
+/**
      * @tc.number   openCustomDialogWithConOrder_static_0400
      * @tc.name     openCustomDialogWithConOrder_static_0400
      * @tc.desc     openCustomDialogWithConOrder_static_0400

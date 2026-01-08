@@ -30,7 +30,7 @@ import {
 import {
   State,
   Watch,
-  Link,Local,Trace,Track,Prop,Monitor,Computed,Param,Require,IMonitor,
+  Link,Local,Trace,Track,PropRef,Monitor,Computed,Param,Require,IMonitor,
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
 
@@ -43,10 +43,10 @@ struct makeObserved0080 {
   listChildrenSize: ChildrenMainSize = UIUtils.makeObserved(new ChildrenMainSize(30))
   @Local count: number = 0
 
-  getColor(): Color {
-    this.count++
-    return Color.Pink
-  }
+  // getColor(): Color {
+  //   this.count++
+  //   return Color.Pink
+  // }
 
   build() {
     Column() {
@@ -80,7 +80,7 @@ struct makeObserved0080 {
         })
       }.id('listTest')
       .childrenMainSize(this.listChildrenSize) // 10
-      .backgroundColor(this.getColor())
+      .backgroundColor(Color.Pink)
     }
   }
 }

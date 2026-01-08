@@ -39,10 +39,40 @@ function isPositiveInteger(value:int) {
   //判断是否为正整数
   return Number.isInteger(value) && value > 0;
 }
+async function getPermision(): Promise<void> {
+    let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    let context : common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+    let permissions: Array<Permissions> =
+        ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+    try {
+        atManager.requestPermissionsFromUser(context, permissions,(err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
+            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
+            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+            hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
+        });
+    } catch (err: BusinessError) {
+        console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }
+}
+
+async function clickButtonDriver(){
+    console.error(`come in permissionClick`);
+    let driver: Driver = Driver.create();
+    console.error(`come in Driver create`);
+    let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
+    console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
+    if(buttonOne!=null){
+        buttonOne.click();
+    }
+
+}
 export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         // let session:UIExtensionContentSession;
@@ -54,41 +84,21 @@ export default function DisplayTest() {
         let rotation:string[];
         let orientation:string[];
         let code:number = 0;
-        let displayFoldStatus:number;
+        let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext;
         beforeAll(async (): Promise<void> => {
-            try{
-                let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-                context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-                let permissions: Array<Permissions> =
-                    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
-                atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError<void>|null,data:PermissionRequestResult|undefined):void=>{
-                    let errCode = err!.code;
-                    if(errCode){
-                        hilog.error(domain, tag,'capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
-                    }else {
-                        hilog.info(domain, tag,'capture requestPermissionsFromUser success: ' + JSON.stringify(data));
-                    }
-                })
-                hilog.info(domain, tag,`come in permissionClick`);
-                let driver = Driver.create();
-                hilog.info(domain, tag,`come in Driver create`);
-                let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
-                hilog.info(domain, tag,`buttonOne is ${JSON.stringify(permissionButton)}`);
-                if (permissionButton != null) {
-                    await permissionButton.click();
-                    hilog.info(domain, tag, 'clickRequestPermission end');
-                }
-            }catch(err) {
-                err = err as BusinessError;
-                hilog.info(domain, tag, 'RequestPermission failed '+err);
-            }
+            hilog.info(domain, tag, 'beforeAll start');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            await Utils.msSleep(2000);
             displayFoldStatus = display.getFoldStatus();
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
             windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+            hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
             win = AppStorage.get<window.Window>('mainWindow') as window.Window;
-            // context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-            // let win = windowStage.getMainWindowSync();
+            hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
+            context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+            hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
             try{
                 let data:string = displayClass.getDisplayCapability();
                 // let capabilityData = JSON.parse(data);
@@ -116,6 +126,12 @@ export default function DisplayTest() {
                     hilog.info(domain, tag, 'jsUnittest getDisplayCapability failed');
                 }
             }
+            await getPermision();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver before');
+            await Utils.msSleep(500);
+            await clickButtonDriver();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
+
         })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
@@ -130,7 +146,21 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
              display.getAllDisplays().then((data:Array<display.Display>) => {
-                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data: ' + JSON.stringify(data));
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data.length: ' + data.length);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].id: ' + data[0].id);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].refreshRate: ' + data[0].refreshRate);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].width: ' + data[0].width);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].height: ' + data[0].height);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].rotation: ' + data[0].rotation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].orientation: ' + data[0].orientation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityDPI: ' + data[0].densityDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].name: ' + data[0].name);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].alive: ' + data[0].alive);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].state: ' + data[0].state);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityPixels: ' + data[0].densityPixels);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].scaledDensity: ' + data[0].scaledDensity);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].xDPI: ' + data[0].xDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].yDPI: ' + data[0].yDPI);
                 expect(data[0].id != null).assertTrue();
                 expect(data[0].refreshRate != null).assertTrue();
                 expect(data[0].width != null).assertTrue();
@@ -146,7 +176,7 @@ export default function DisplayTest() {
                 expect(data[0].xDPI != null).assertTrue();
                 expect(data[0].yDPI != null).assertTrue();
                 done();
-            }).catch((err:BusinessError) :PromiseLike<void>|undefined => {
+            }).catch((err:Error) :PromiseLike<void>|undefined => {
                  hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -510,7 +540,7 @@ export default function DisplayTest() {
                     expect(resolutionObject.physicalHeight).assertLarger(0);
                     done();
                 }
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 if (err.code == 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
                     expect(true).assertTrue();
@@ -984,7 +1014,7 @@ export default function DisplayTest() {
                         expect(data.height).assertEqual(displayClass?.availableHeight);
                     }
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1047,7 +1077,7 @@ export default function DisplayTest() {
                                 }
                                 subWindow.destroyWindow();
                                 done();
-                            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            }).catch((err: Error):PromiseLike<void>|undefined => {
                                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                                 if (err.code == 801) {
                                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1067,13 +1097,13 @@ export default function DisplayTest() {
                             expect().assertFail();
                             done();
                         }
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
                         subWindow.destroyWindow();
                         expect(false).assertTrue();
                         done();
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1117,7 +1147,7 @@ export default function DisplayTest() {
                         await mainWindowClass.setWindowSystemBarEnable(['status', 'navigation']);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowSystemBarEnable success');
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                         if (err.code == 801) {
                             hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1128,7 +1158,7 @@ export default function DisplayTest() {
                             done();
                         }
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1186,7 +1216,7 @@ export default function DisplayTest() {
                                 expect(false).assertTrue();
                                 done();
                             }
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                             if (err.code == 801) {
                                 hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1197,13 +1227,13 @@ export default function DisplayTest() {
                                 done();
                             }
                         });
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
                         expect().assertFail();
                         done();
                     })
 
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1296,7 +1326,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1361,7 +1391,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1427,7 +1457,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1492,7 +1522,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1724,7 +1754,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err));
                     expect(err.code == 1400001).assertTrue();
                     done();
@@ -1761,7 +1791,7 @@ export default function DisplayTest() {
                      display.destroyVirtualScreen(screenId).then(() => {
                         hilog.info(domain, tag,caseName + 'succeeded in destroyVirtualScreen');
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
                         expect(false).assertTrue();
                         done();
@@ -1789,7 +1819,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
                      expect(err.code).assertTrue();
                     done();
@@ -1827,18 +1857,18 @@ export default function DisplayTest() {
                         hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen2');
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen2');
                         expect(err.code == 401);
                         done();
                     })
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
                         expect(false).assertTrue();
                         done();
                     })
                     
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1866,7 +1896,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
                      expect(false).assertTrue();
                      done();
@@ -1902,7 +1932,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
                      expect(false).assertTrue();
                      done();
@@ -1929,7 +1959,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                }).catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1968,7 +1998,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'Success in make unique screen');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
 
                     done();
@@ -2016,7 +2046,7 @@ export default function DisplayTest() {
                             PixelMap.release(); // PixelMap使用完后及时释放内存
                             done();
                         })
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
                         if(err.code == 801){
                             windowClass.setWindowPrivacyMode(false);

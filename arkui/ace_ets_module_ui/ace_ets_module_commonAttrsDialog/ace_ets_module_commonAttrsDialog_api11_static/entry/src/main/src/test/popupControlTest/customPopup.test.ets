@@ -99,7 +99,9 @@ it('customPopup_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       await Utils.sleep(1500);
       let callback = (indexEvent:events_emitter.EventData) => {
         console.info("customPopup_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('arrowPointPosition')).assertEqual('Start');
+        const data = indexEvent.data as Record<string, Object | undefined | null>
+        const event = data['arrowPointPosition'] as Record<string, Object | undefined | null>
+        expect(event).assertEqual('Start');
         done();
       }
       let indexEvent:events_emitter.InnerEvent = {

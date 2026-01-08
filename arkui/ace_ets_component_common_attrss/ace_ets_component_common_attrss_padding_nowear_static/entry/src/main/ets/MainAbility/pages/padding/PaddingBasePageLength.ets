@@ -33,11 +33,8 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  // MutableState,
-  // stateOf,
-  // observableProxy,
   AppStorage,
-  StorageProp
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color } from '@ohos.arkui.component'
@@ -61,7 +58,7 @@ struct PaddingPage_Length {
   private value: string[] = ['#', 'A', 'B'];
   //Use for Scroll,Grid,DataPanel.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
-  @StorageProp('_padding') _padding: number|string|Padding|Resource = 0 as number;
+  @StoragePropRef('_padding') _padding: number|string|Padding|Resource = 0 as number;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink

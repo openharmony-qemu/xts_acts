@@ -15,7 +15,7 @@
  */
 import { Entry, Component, $r, Column, ColumnOptions, Button, ClickEvent, } from '@ohos.arkui.component';
 import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import { PromptAction } from '@ohos.arkui.UIContext';
 
 @Entry

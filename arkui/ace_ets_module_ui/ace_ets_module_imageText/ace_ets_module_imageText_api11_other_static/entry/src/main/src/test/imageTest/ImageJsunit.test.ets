@@ -100,8 +100,6 @@ export default function imageJsunit() {
 
     
     
-
-
 /**
      * @tc.number   testGetImageAttr_static_010
      * @tc.name     testGetImageAttr_static_010
@@ -137,8 +135,6 @@ it('testGetImageAttr_static_010', Level.LEVEL1, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   testGetImageAttr_static_020
      * @tc.name     testGetImageAttr_static_020
@@ -162,8 +158,6 @@ it('testGetImageAttr_static_020', Level.LEVEL1, async (done: () => void): Promis
     });
     
     
-
-
 /**
      * @tc.number   testGetImageAttr_static_030
      * @tc.name     testGetImageAttr_static_030
@@ -186,8 +180,6 @@ it('testGetImageAttr_static_030', Level.LEVEL1, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   testGetImageAttr_static_040
      * @tc.name     testGetImageAttr_static_040
@@ -210,8 +202,6 @@ it('testGetImageAttr_static_040', Level.LEVEL1, async (done: () => void): Promis
 
     
     
-
-
 /**
      * @tc.number   testGetImageAttr_static_050
      * @tc.name     testGetImageAttr_static_050

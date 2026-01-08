@@ -51,9 +51,9 @@ export default function alertDialogCenterStartJsunit() {
   describe('alertDialogCenterStartTest', () => {
     beforeAll(() => {
       console.info("alertDialogCenterStartTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("alertDialogCenterStartTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -62,8 +62,6 @@ export default function alertDialogCenterStartJsunit() {
         url: 'MainAbility/pages/AlertDialog/alertDialog2',
       }
       try {
-
-
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
@@ -71,7 +69,7 @@ export default function alertDialogCenterStartJsunit() {
         if (!("alertDialog2" == pages.name)) {
           console.info("get alertDialog state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push alertDialog success: " + JSON.stringify(result));
         }

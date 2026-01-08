@@ -78,7 +78,7 @@ export default function SwiperMarginTest() {
         if (pages == null || !("SwiperMargin" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             console.error(`${SUITE} router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }

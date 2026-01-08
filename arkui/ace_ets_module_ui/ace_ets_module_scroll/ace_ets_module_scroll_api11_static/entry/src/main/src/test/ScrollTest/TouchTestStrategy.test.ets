@@ -77,8 +77,7 @@ export default function TouchTestStrategy() {
 
 
     
-    
-/**
+    /**
      * @tc.number   TouchTestStrategy_static_0100
      * @tc.name     TouchTestStrategy_static_0100
      * @tc.desc     TouchTestStrategy_static_0100

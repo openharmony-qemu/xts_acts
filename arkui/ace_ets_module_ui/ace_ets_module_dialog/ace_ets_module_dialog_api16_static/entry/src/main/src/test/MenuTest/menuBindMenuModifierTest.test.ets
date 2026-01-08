@@ -70,16 +70,16 @@ export default function menuBindMenuModifierTest() {
     });
 
 
+    
     /**
      * @tc.number   MenuBindMenu_static_0001
      * @tc.name     MenuBindMenu_static_0001
      * @tc.desc     MenuBindMenu_static_0001
      * @tc.level    Level.LEVEL2
      */
-    it('MenuBindMenu_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('MenuBindMenu_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MenuBindMenu_static_0001 START');
-      try{
-        let driver: Driver = Driver.create();
+      let driver: Driver = Driver.create();
       let btn1 = (await driver.findComponent(ON.id('btnModifier1')));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -98,9 +98,6 @@ export default function menuBindMenuModifierTest() {
       let btn44 = (await driver.findComponent(ON.id('btnModifier4')));
       await (btn44?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      }catch(e){
-        expect().assertFail()
-      }
       done();
     });
   })

@@ -81,7 +81,7 @@ it('getLength3_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       console.info('[getLength3_static_0100] btn2 click');
 
-      let str = AppStorage.get('getLength3_size') + '';
+      let str = AppStorage.get<string>('getLength3_size') + '';
       expect(str).assertEqual('32');
 
       console.info('[getLength3_static_0100] END');

@@ -169,7 +169,7 @@ export default function lifecycleStaticTest() {
           try {
             uiAbilityContext.startAbility(want).then(() => {
               hilog.info(domain, tag, `startAbility success`);
-            }).catch((err: BusinessError<void>): void => {
+            }).catch((err: Error): void => {
               hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
               expect().assertFail();
               done();

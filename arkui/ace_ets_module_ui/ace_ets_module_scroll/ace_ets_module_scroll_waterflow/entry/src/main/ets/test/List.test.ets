@@ -22,6 +22,12 @@ import waterOffsetRes from './WaterFlow/waterOffsetRes.test';
 import waterContentOffset from './WaterFlow/waterContentOffset.test';
 import cachedFlowMin from './WaterFlow/cachedFlowMin.test';
 import cachedShowFlowMin from './WaterFlow/cachedShowFlowMin.test';
+import waterFlowStopDrag from './WaterFlow/waterFlowStopDrag.test';
+import syncLoadFlow from './WaterFlow/syncLoadFlow.test';
+import scrollbarColor from './WaterFlow/scrollbarColor.test';
+import WaterFlowFillPolicy from './WaterFlow/WaterFlowFillPolicy.test';
+import WaterFlowContentSize from './WaterFlow/WaterFlowContentSize.test';
+import WaterFlowFillPolicyModifier from './WaterFlow/WaterFlowFillPolicyModifier.test';
 
 export default function testsuite() {
   WaterflowDemo()
@@ -33,4 +39,10 @@ export default function testsuite() {
   waterContentOffset()
   cachedFlowMin()
   cachedShowFlowMin()
+  waterFlowStopDrag()
+  syncLoadFlow()
+  scrollbarColor();
+  WaterFlowFillPolicy();
+  WaterFlowContentSize();
+  WaterFlowFillPolicyModifier();
 }

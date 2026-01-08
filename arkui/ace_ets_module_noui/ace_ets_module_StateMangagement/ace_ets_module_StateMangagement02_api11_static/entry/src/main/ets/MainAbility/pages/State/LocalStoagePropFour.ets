@@ -43,7 +43,7 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
   LocalStoragePropRef,
@@ -51,7 +51,9 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
+AppStorage.setOrCreate<Router>('router', router);
 let storage111 = new LocalStorage()
 
 
@@ -93,7 +95,7 @@ struct ChildComp {
   @Provide num : number = 0
   build() {
     Column(){
-      Text(`State:${this.storProp1},Link:${this.storProp2},Prop:${this.storProp3},Provide:${this.num}`)
+      Text(`State:${this.storProp1},Link:${this.storProp2},PropRef:${this.storProp3},Provide:${this.num}`)
         .key('text_state').height('5%')
     }
   }

@@ -1393,7 +1393,7 @@ export default function DeviceKvStoreReturnValue(){
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1800 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
 
-        await kvStore!.putBatch(entries).catch((err: BusinessError): Promise<void> => {
+        await kvStore!.putBatch(entries).catch((err: Error): Promise<void> => {
           console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
           expect(null).assertFail();
           done();

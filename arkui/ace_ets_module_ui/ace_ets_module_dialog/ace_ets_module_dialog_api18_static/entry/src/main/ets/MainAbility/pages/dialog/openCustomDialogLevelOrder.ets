@@ -42,7 +42,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage,Local
+  PropRef,AppStorage,Local
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -102,7 +102,7 @@ struct openCustomDialogLevelOrder {
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`openCustomDialog error code is ${err.code}, message is ${err.message}`)
               })
           })
@@ -130,7 +130,7 @@ struct openCustomDialogLevelOrder {
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`openCustomDialog error code is ${err.code}, message is ${err.message}`)
               })
           })
@@ -160,7 +160,7 @@ struct openCustomDialogLevelOrder {
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`openCustomDialog error code is ${err.code}, message is ${err.message}`)
               })
           })
@@ -187,7 +187,7 @@ struct openCustomDialogLevelOrder {
             } as promptAction.CustomDialogOptions).then((dialogId: int) => {
               this.customDialogComponentId = dialogId
             })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error(`openCustomDialog error code is ${err.code}, message is ${err.message}`)
               })
           })

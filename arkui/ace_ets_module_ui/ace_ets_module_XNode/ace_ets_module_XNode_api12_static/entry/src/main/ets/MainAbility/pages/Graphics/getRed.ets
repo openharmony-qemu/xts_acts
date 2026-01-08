@@ -45,7 +45,7 @@ struct getRedExample {
         .width('80%')
         .align(Alignment.Center)
         .height(50)
-        .backgroundColor(getResourceColor(255, 100, 255, 0.5).red as int)
+        .backgroundColor(getResourceColor(255, 100, 255, 0.5).red)
     }
     .width('100%')
     .height('100%')

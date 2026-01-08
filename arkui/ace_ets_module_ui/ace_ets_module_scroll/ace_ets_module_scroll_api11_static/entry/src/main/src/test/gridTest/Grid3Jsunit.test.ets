@@ -59,8 +59,7 @@ export default function gridJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest01_static_01
      * @tc.name     gridTest01_static_01
      * @tc.desc     gridTest01_static_01
@@ -104,8 +103,7 @@ it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest02_static_02
      * @tc.name     gridTest02_static_02
      * @tc.desc     gridTest02_static_02
@@ -148,8 +146,7 @@ it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest03_static_03
      * @tc.name     gridTest03_static_03
      * @tc.desc     gridTest03_static_03
@@ -195,8 +192,7 @@ it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
 
 
     
-    
-/**
+    /**
      * @tc.number   gridTest04_static_04
      * @tc.name     gridTest04_static_04
      * @tc.desc     gridTest04_static_04

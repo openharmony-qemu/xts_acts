@@ -47,7 +47,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
-renderNode.backgroundColor = 0XFF00FF00
+renderNode.backgroundColor = 0XFF00FF00.toInt()
 renderNode.position = { x: 10, y: 10 }
 let x = renderNode.position.x
 let y = renderNode.position.y

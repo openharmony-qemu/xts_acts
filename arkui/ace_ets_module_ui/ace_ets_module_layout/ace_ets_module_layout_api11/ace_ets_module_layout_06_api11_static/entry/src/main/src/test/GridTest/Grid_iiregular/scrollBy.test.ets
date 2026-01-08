@@ -51,7 +51,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get scrollByJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollBy" == pages.name)) {
@@ -218,7 +218,7 @@ it('scrollByJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollByJsunit_0004] START');
       await CommonFunc.sleep(1000);
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'distance', value: UIContext.getFocusedUIContext()!.px2vp(150)
+        name: 'distance', value: UIContext.resolveUIContext()!.px2vp(150)
       })
 
       let driver = Driver.create();

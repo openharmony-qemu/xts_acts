@@ -78,13 +78,14 @@ export default function closePopupTest() {
     });
 
 
+    
     /**
      * @tc.number   closePopupTest_static_0100
-   * @tc.name     closePopupTest_static_0100
-   * @tc.desc     closePopupTest_static_0100
-   * @tc.level    Level.LEVEL2
-   */
-    it('closePopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     closePopupTest_static_0100
+     * @tc.desc     closePopupTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('closePopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'closePopupTest_static_0100';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);

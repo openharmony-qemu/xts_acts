@@ -167,7 +167,7 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void=>{
+        }).catch((err: Error): void=>{
           hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
           expect(err?.code).assertEqual(16000073);
           done();
@@ -217,7 +217,7 @@ export default function abilitystaticTest() {
           console.log(`${domain} ${tag} ${itName} abilityStateData: `,observer.abilityStateData);
           expect(observer.abilityStateData?.bundleName).assertEqual(`${RELY_BUNDLE_NAME}`);
           expect(observer.abilityStateData?.uid).assertLarger(0);
-          expect(typeof (observer.abilityStateData?.state)).assertEqual('number');
+          expect(typeof (observer.abilityStateData?.state)).assertEqual('int');
           expect(observer.abilityStateData?.abilityName).assertEqual('EntryAbility');
           expect(observer.abilityStateData?.pid).assertEqual(observer.processData?.pid);
           expect(observer.abilityStateData?.moduleName).assertEqual('entry');
@@ -233,7 +233,7 @@ export default function abilitystaticTest() {
           expect(observer.processData?.uid).assertLarger(0);
           expect(observer.processData?.isContinuousTask).assertFalse();
           expect(observer.processData?.isKeepAlive).assertFalse();
-          expect(typeof (observer.processData?.state)).assertEqual('number');
+          expect(typeof (observer.processData?.state)).assertEqual('int');
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
@@ -261,7 +261,7 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `SUB_Ability_AbilityRuntime_AppManager_Static_0300 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(16000050);
           done();

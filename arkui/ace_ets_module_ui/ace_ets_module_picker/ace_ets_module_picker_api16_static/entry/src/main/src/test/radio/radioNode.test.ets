@@ -44,11 +44,11 @@ export default function radioNodeTest() {
         console.info("get radioNodeTest state pages:" + JSON.stringify(pages));
         if (!("radioNode" == pages.name)) {
           console.info("get radioNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push radioNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push radioNodeTest page error:" + err);
@@ -73,6 +73,7 @@ export default function radioNodeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('radioNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
 
       let tagName = 'radioNode_static_0100';
       console.info('[' + tagName + '] START============================');

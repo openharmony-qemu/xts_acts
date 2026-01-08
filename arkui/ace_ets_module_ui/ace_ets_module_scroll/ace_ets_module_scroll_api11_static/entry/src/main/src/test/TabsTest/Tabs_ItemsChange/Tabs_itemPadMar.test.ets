@@ -86,8 +86,7 @@ export default function Tabs_itemPadMar() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsItemPad_static_01
      * @tc.name     testTabsItemPad_static_01
      * @tc.desc     testTabsItemPad_static_01
@@ -218,8 +217,7 @@ it('testTabsItemPad_static_01', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsItemMar_static_02
      * @tc.name     testTabsItemMar_static_02
      * @tc.desc     testTabsItemMar_static_02
@@ -352,8 +350,7 @@ it('testTabsItemMar_static_02', Level.LEVEL0, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsItemPadMar_static_03
      * @tc.name     testTabsItemPadMar_static_03
      * @tc.desc     testTabsItemPadMar_static_03

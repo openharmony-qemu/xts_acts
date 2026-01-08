@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Scroller,NestedScrollMode,ScrollState,ScrollSou
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';

@@ -25,11 +25,11 @@ import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
 
 export default function testsuite() {
   BarStylePage()  // pass 35000ms SDK11.25 1个用例
-  NavigationTitleTextModifier()  //  SDK11.25 page88行 设置颜色未生效  取值是#FF182431，设置是#FFFFC000 提到遗留单 12.3
+  NavigationTitleTextModifier()  //  SDK11.25 SDK11.25 问题提到0702表格265行
   EntryOptionPage() // pass 1个用例
   EntryOptionPage2() // pass 1个用例
-  NavigationCustomTitlePage() //  页面显示后退出
-  NavDestinationUIObserver() //并发问题，正在解决
-  HideToolBarNavPage()   // app died  代码注释 1个用例
-  TitleOptionsToolOptions() //  SDK11.25 appDied THREAD_BLOCK_6S at 20210208030958
+  NavigationCustomTitlePage() //  问题提到0702表格104行
+  NavDestinationUIObserver() //并发问题  2025110729059
+  HideToolBarNavPage()   // master22 pass 1
+  TitleOptionsToolOptions() // master22 The key 'backgroundBlurStyle' was not found in the JSON object.
 }

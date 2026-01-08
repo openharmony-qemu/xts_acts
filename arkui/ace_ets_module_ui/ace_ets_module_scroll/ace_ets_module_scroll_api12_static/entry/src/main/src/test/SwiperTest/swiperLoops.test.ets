@@ -68,7 +68,6 @@ export default function swiperLoops() {
     
       
   
-
 /**
      * @tc.number   swiperLoops_static_0100
      * @tc.name     swiperLoops_static_0100

@@ -78,7 +78,6 @@ export default function SwiperMargin_2() {
     
       
   
-
 /**
      * @tc.number   SwiperMargin_static_0040
      * @tc.name     SwiperMargin_static_0040
@@ -114,7 +113,6 @@ it('SwiperMargin_static_0040', Level.LEVEL0, async (done: () => void): Promise<v
     
       
   
-
 /**
      * @tc.number   SwiperMargin_static_0170
      * @tc.name     SwiperMargin_static_0170

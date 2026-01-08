@@ -2107,7 +2107,9 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest073, Function | Med
 HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest074, Function | MediumTest | Level1)
 {
     OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
+    EXPECT_NE(typoStyle, nullptr);
     OH_Drawing_StrutStyle *strutstyle = new OH_Drawing_StrutStyle();
+    EXPECT_NE(strutstyle, nullptr);
     strutstyle->weight = FONT_WEIGHT_400;
     strutstyle->style = FONT_STYLE_ITALIC;
     // 17.0 For size

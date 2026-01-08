@@ -461,7 +461,7 @@ export default function fileIOLstat() {
           expect(stat !== null).assertTrue();
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_000 has error' + JSON.stringify(err));
           expect(false).assertTrue();
         });

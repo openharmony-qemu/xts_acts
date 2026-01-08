@@ -70,7 +70,7 @@ export default function ActsDenyTest() {
           console.info(`${TAG} requestEnableNotification should failed`);
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.info(`${TAG} requestEnableNotification err: JSON.stringify(err)`);
           if (err.code !== 1600004) {
             console.info(`${TAG} requestEnableNotification err: JSON.stringify(err)`);

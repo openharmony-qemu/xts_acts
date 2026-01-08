@@ -123,10 +123,10 @@ it('testSwiperItemSetMargin_static', Level.LEVEL0, async (done: () => void): Pro
       console.info("Before page turningsizepmkey01.left - swiperItemMargin.left value is " +
       JSON.stringify(swiperItemMargin01.left - swiperItemMargin.left));
       const uiContext = new UIContext();
-      expect(Math.round(swiperItemMargin01.left - swiperItemMargin.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
-      expect(Math.round(swiperItemMargin.right - swiperItemMargin01.right)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
-      expect(Math.round(swiperItemMargin01.top - swiperItemMargin.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
-      expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin01.left - swiperItemMargin.left)).assertEqual(UIContext.resolveUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin.right - swiperItemMargin01.right)).assertEqual(UIContext.resolveUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin01.top - swiperItemMargin.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(20));
+      expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(UIContext.resolveUIContext()!.vp2px(20));
       // Page turning.
       let driver = Driver.create();
       // await driver.swipe(250, 230, 200, 230);

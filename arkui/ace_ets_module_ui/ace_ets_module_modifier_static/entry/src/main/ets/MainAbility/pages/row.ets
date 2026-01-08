@@ -18,7 +18,7 @@ import { Entry,Component,RowAttribute, Column, Button, VerticalAlign, FlexAlign,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { RowModifier } from "@ohos.arkui.modifier";

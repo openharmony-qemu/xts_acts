@@ -28,7 +28,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -75,7 +75,7 @@ struct Index {
               console.info('openPopup success');
               this.openPopup = 'openPopup'
             })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               console.info('openPopup error: ' + err.code + ' ' + err.message);
             })
           setTimeout(() => {

@@ -1,6 +1,6 @@
 
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,10 @@ import { RenderNode, FrameNode, NodeController } from "@ohos.arkui.node";
 
 const renderNode = new RenderNode();
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.borderWidth = { left: 8, top: 8, right: 8, bottom: 8 };
-renderNode.borderColor = { left: 0xFF0000FF, top: 0xFF0000FF, right: 0xFF0000FF, bottom: 0xFF0000FF };
+renderNode.borderColor = { left: 0xFF0000FF.toInt(), top: 0xFF0000FF.toInt(),
+  right: 0xFF0000FF.toInt(), bottom: 0xFF0000FF.toInt() };
 renderNode.borderStyle = {
   left: BorderStyle.Solid,
   top: BorderStyle.Dotted,
@@ -85,9 +86,9 @@ struct renderSetGetInterface{
         Button('changeColor').height('2%')
           .id("bColorChange")
           .onClick((e:ClickEvent) => {
-            borderColor!.left = 0xFF00FFEE
+            borderColor!.left = 0xFF00FFEE.toInt()
             renderNode.invalidate()
-            this.bColor = renderNode!.borderColor!.left
+            this.bColor = renderNode!.borderColor!.left  //master22  bColor:-16711698 equals bColor:4278255598
           })
 
 

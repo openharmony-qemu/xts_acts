@@ -937,12 +937,19 @@ export default function WebsocketServerTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerClose0100';
       console.info(`${caseName} test start`);
       try {
+        let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
         if(!server) {
           console.info(`${caseName} Server is nullptr`);
           ExpectTrue(true,`${caseName}`);
           done();
           console.info(`${caseName} test end`);
         }else {
+          let serverConfig: webSocket.WebSocketServerConfig = {
+            serverIP: "0.0.0.0",
+            serverPort: 8090,
+            maxConcurrentClientsNumber: 10,
+            maxConnectionsForOneClient: 4,
+          }
           await server.start(serverConfig).then((success: boolean) => {
             if (success){
               console.log(`${caseName} webSocketServer start success`)
@@ -959,7 +966,7 @@ export default function WebsocketServerTest() {
           })
           let client: webSocket.WebSocket = webSocket.createWebSocket()
           console.info(`${caseName}client-- >${client}`)
-          client.connect('ws://127.0.0.1:8088', (err: BusinessError, value: boolean) => {
+          client.connect('ws://127.0.0.1:8090', (err: BusinessError, value: boolean) => {
             if (value) {
               console.info(`${caseName} test connect success and value is ${value}`);
             } else {

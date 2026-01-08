@@ -50,7 +50,7 @@ struct EnableToolBarAdaptation {
   }
 
   build() {
-    Navigation(new NavPathStack()) {
+    Navigation(this.pageInfos) {
         Column({ space: '5vp' } as ColumnOptions) {
           Button('Landscape')
             .fontColor(Color.Black)

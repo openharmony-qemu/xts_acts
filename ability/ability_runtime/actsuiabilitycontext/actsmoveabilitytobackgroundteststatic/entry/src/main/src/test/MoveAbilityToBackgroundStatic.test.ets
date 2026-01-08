@@ -52,7 +52,7 @@ export default function moveAbilityToBackgroundTestStatic() {
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(JSON.stringify(err?.code) == '16000061'){
             done();
@@ -91,7 +91,7 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(JSON.stringify(err?.code) == '16000061'){
             done();
@@ -105,7 +105,7 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000065);
           done();

@@ -72,6 +72,7 @@ export default function tabContentState() {
      * @tc.level    Level.LEVEL0
      */
 it('tabContentState_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[tabContentState_001] START');
       await CommonFunc.sleep(1000);
       let swiperTabs = CommonFunc.getComponentRectOnScreen('tabsId');

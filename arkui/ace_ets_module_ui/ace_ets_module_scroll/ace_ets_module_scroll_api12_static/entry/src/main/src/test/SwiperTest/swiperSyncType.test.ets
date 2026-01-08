@@ -76,7 +76,6 @@ export default function swiperSyncType() {
     
       
   
-
 /**
      * @tc.number   swiperSyncType_static_0100
      * @tc.name     swiperSyncType_static_0100

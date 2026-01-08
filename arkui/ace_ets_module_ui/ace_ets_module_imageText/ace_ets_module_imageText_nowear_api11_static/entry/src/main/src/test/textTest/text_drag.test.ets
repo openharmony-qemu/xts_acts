@@ -47,7 +47,7 @@ export default function text_drag() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get text_drag state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextDrag" == pages.name)) {
           console.info("get text_drag pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

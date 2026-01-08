@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-//
-// Created on 2024/8/6.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
 #include "napi/native_api.h"
 #include <IPCKit/ipc_cparcel.h>
 #include <bits/alltypes.h>
@@ -66,12 +61,9 @@
 napi_value testNativeWindowCreateNativeWindowNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    OHNativeWindow *p = OH_NativeWindow_CreateNativeWindow(nullptr);
-    if (p == nullptr) {
-        napi_create_int32(env, SUCCESS, &result);
-    } else {
-        napi_create_int32(env, FAIL, &result);
-    }
+    OHNativeWindow *nativeWindow = OH_NativeWindow_CreateNativeWindow(nullptr);
+    NAPI_ASSERT(env, nativeWindow == nullptr, "nativeWindow != nullptr");
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 
@@ -228,6 +220,7 @@ napi_value testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr(napi
 {
     napi_value result = nullptr;
     OHNativeWindowBuffer *buffer = OH_NativeWindow_CreateNativeWindowBufferFromSurfaceBuffer(nullptr);
+    NAPI_ASSERT(env, buffer == nullptr, "buffer != nullptr");
     if (buffer == nullptr) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -347,7 +340,7 @@ napi_value testNativeWindowNativeWindowRequestBufferNullptr(napi_env env, napi_c
 {
     napi_value result = nullptr;
 
-    OHNativeWindowBuffer *oHNativeWindowBuffer;
+    OHNativeWindowBuffer *oHNativeWindowBuffer = nullptr;
     int fenceFd;
 
     int32_t flag = OH_NativeWindow_NativeWindowRequestBuffer(nullptr, &oHNativeWindowBuffer, &fenceFd);
@@ -374,7 +367,7 @@ napi_value testNativeWindowNativeWindowAbortBufferNullptr(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage *image = initNative->returnNativeImage();
-    OHNativeWindowBuffer *oHNativeWindowBuffer;
+    OHNativeWindowBuffer *oHNativeWindowBuffer = nullptr;
 
     // 1. window 为空指针
     int32_t flag = OH_NativeWindow_NativeWindowAbortBuffer(nullptr, oHNativeWindowBuffer);
@@ -978,7 +971,7 @@ napi_value testNativeWindowNativeWindowFlushBufferErrorCode(napi_env env, napi_c
     };
     OH_NativeBuffer *newBuffer = OH_NativeBuffer_Alloc(&config);
     nativeWindowBuffer = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(newBuffer);
-
+    NAPI_ASSERT(env, nativeWindowBuffer != nullptr, "nativeWindowBuffer == nullptr");
     // 1.
     int32_t flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, -1, region);
     if (flag != NATIVE_ERROR_BUFFER_NOT_IN_CACHE) {
@@ -1169,7 +1162,7 @@ napi_value testNativeWindowGetNativeObjectMagicNormal(napi_env env, napi_callbac
         return result;
     }
     OH_NativeImage *image = initNative->returnNativeImage();
-    OHNativeWindowBuffer *nativeWindowBuffer;
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int fenceFd = -1;
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
 
@@ -1443,15 +1436,17 @@ napi_value testNativeWindowNativeWindowAttachBufferErrorCode(napi_env env, napi_
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
     OHNativeWindowBuffer **arr[] = {&nwb1, &nwb2, &nwb3, &nwb4};
     nwb1 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb1 != nullptr, "nwb1 == nullptr");
     nwb2 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb2 != nullptr, "nwb2 == nullptr");
     nwb3 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb3 != nullptr, "nwb3 == nullptr");
     nwb4 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
-
+    NAPI_ASSERT(env, nwb4 != nullptr, "nwb4 == nullptr");
     int32_t flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb1);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb2);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb3);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb4);
-    
     delete initNative;
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, SUCCESS, &result);

@@ -98,10 +98,10 @@ it('SUB_ACE_GridRow_onBreakPointChange_static_0100', Level.LEVEL0, async (done: 
       expect(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top) <= 1).assertTrue();
       expect(Math.abs(firstBreakpoint.left - Breakpoint_1.left) <= 1).assertTrue();
 
-      expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
+      expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
+      expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
+      expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
+      expect(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100 END');
       done();

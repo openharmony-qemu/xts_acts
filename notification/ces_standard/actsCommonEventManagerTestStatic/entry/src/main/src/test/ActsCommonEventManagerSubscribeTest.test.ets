@@ -153,7 +153,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               console.info(TAG+`finishCommonEvent_2 success `)
               expect(count).assertEqual(0);
               done()
-            }).catch((err:BusinessError):void => {
+            }).catch((err:Error):void => {
               console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()
@@ -206,7 +206,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             await subscriber.isStickyCommonEvent().then((isSticky:boolean) => {
               console.info(TAG+`isStickyCommonEvent_10 success ${isSticky}`)
               expect(isSticky).assertFalse()
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.info(TAG+`isStickyCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
@@ -218,7 +218,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             await subscriber.isOrderedCommonEvent().then((isOrdered:boolean) => {
               console.info(TAG+`isOrderedCommonEvent_10 success ${isOrdered}`)
               expect(isOrdered).assertFalse()
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.info(TAG+`isOrderedCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
@@ -230,7 +230,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
             await subscriber.abortCommonEvent().then(() => {
               console.info(TAG+`abortCommonEvent_10 success`)
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.info(TAG+`abortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
@@ -239,7 +239,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             await subscriber.getAbortCommonEvent().then((abortEvent:boolean) => {
               console.info(TAG+`getAbortCommonEvent_10 success ${abortEvent}`)
               expect(abortEvent).assertFalse()
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.info(TAG+`getAbortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
@@ -253,7 +253,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               console.info(TAG+`clearAbortCommonEvent_10 success`)
               count++;
               expect(count).assertEqual(1);
-            }).catch((err: BusinessError):void => {
+            }).catch((err: Error):void => {
               console.info(TAG+`clearAbortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
               done()
@@ -265,7 +265,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               count++;
               expect(count).assertEqual(1);
               done()
-            }).catch((err:BusinessError):void => {
+            }).catch((err:Error):void => {
               console.info(TAG+`finishCommonEvent_2 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
               done()

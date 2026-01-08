@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-// import { SegmentButtonV2Items, TabSegmentButtonV2 } from '@kit.ArkUI';
+import { SegmentButtonV2Items, TabSegmentButtonV2,SegmentButtonV2ItemOptions } from '@ohos.arkui.advanced.SegmentButtonV2';
 import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, FontWeight, FlexAlign } from '@ohos.arkui.component';
+import { Entry, ComponentV2, Scroll, Column, ColumnOptions, FontWeight, FlexAlign,$r } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
 
 @Entry
 @ComponentV2
 struct TabSegmentButtonV2Example {
-  @Local textSelectedIndex: number = 0;
-  // @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { text: '语文' },
-  //   { text: '数学' },
-  //   { text: '英语' },
-  //   { text: '地理' },
-  // ]);
-  @Local hybridSelectedIndex: number = 0;
-  // @Local hybridItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { text: '手机', symbol: $r('sys.symbol.phone') },
-  //   { text: '平板', symbol: $r('sys.symbol.pad') },
-  //   { text: '2in1', symbol: $r('sys.symbol.matebook') },
-  //   { text: '智能穿戴', symbol: $r('sys.symbol.watch') },
-  // ]);
+  @Local textSelectedIndex: Int = 0;
+  @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { text: '语文' },
+    { text: '数学' },
+    { text: '英语' },
+    { text: '地理' },
+  ]);
+  @Local hybridSelectedIndex: Int = 0;
+  @Local hybridItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { text: '手机', symbol: $r('sys.symbol.phone') } as SegmentButtonV2ItemOptions,
+    { text: '平板', symbol: $r('sys.symbol.pad') } as SegmentButtonV2ItemOptions,
+    { text: '2in1', symbol: $r('sys.symbol.matebook') } as SegmentButtonV2ItemOptions,
+    { text: '智能穿戴', symbol: $r('sys.symbol.watch') } as SegmentButtonV2ItemOptions,
+  ]);
 
-  @Local imageSelectedIndex: number = 0;
-  // @Local imageItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { icon: $r('sys.media.ohos_ic_public_device_phone') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_pad') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_matebook') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_watch') },
-  // ]);
+  @Local imageSelectedIndex: Int = 0;
+  @Local imageItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { icon: $r('sys.media.ohos_ic_public_device_phone') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_pad') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_matebook') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_watch') } as SegmentButtonV2ItemOptions,
+  ]);
 
 
   @Local itemMinFontScale: number = 0.5
@@ -67,41 +67,41 @@ struct TabSegmentButtonV2Example {
   build() {
     Scroll() {
       Column({ space: 12 } as ColumnOptions) {
-        // TabSegmentButtonV2({
-        //   items: this.textItems,
-        //   selectedIndex: this.textSelectedIndex!!,
-        //   itemMinFontScale: this.itemMinFontScale,
-        //   itemMaxFontScale: this.itemMaxFontScale,
-        //   itemSpace: this.itemSpace,
-        //   itemFontSize: this.itemFontSize,
-        //   itemSelectedFontSize: this.itemSelectedFontSize,
-        //   itemFontColor: this.itemFontColor,
-        //   itemSelectedFontColor: this.itemSelectedFontColor,
-        //   itemFontWeight: this.itemFontWeight,
-        //   itemSelectedFontWeight: this.itemSelectedFontWeight,
-        //   itemBorderRadius: this.itemBorderRadius,
-        //   itemSelectedBackgroundColor: this.itemSelectedBackgroundColor
-        // }).key('TabSegmentButtonV2_01')
+        TabSegmentButtonV2({
+          items: this.textItems,
+          selectedIndex: this.textSelectedIndex!!,
+          itemMinFontScale: this.itemMinFontScale,
+          itemMaxFontScale: this.itemMaxFontScale,
+          itemSpace: this.itemSpace,
+          itemFontSize: this.itemFontSize,
+          itemSelectedFontSize: this.itemSelectedFontSize,
+          itemFontColor: this.itemFontColor,
+          itemSelectedFontColor: this.itemSelectedFontColor,
+          itemFontWeight: this.itemFontWeight,
+          itemSelectedFontWeight: this.itemSelectedFontWeight,
+          itemBorderRadius: this.itemBorderRadius,
+          itemSelectedBackgroundColor: this.itemSelectedBackgroundColor
+        }).key('TabSegmentButtonV2_01')
 
-        // TabSegmentButtonV2({
-        //   items: this.hybridItems,
-        //   selectedIndex: this.hybridSelectedIndex!!,
-        //   itemSymbolFontSize: this.itemSymbolFontSize,
-        //   itemSymbolFontColor: this.itemSymbolFontColor,
-        //   itemSelectedSymbolFontColor: this.itemSelectedSymbolFontColor
-        // }).key('TabSegmentButtonV2_02')
+        TabSegmentButtonV2({
+          items: this.hybridItems,
+          selectedIndex: this.hybridSelectedIndex!!,
+          itemSymbolFontSize: this.itemSymbolFontSize,
+          itemSymbolFontColor: this.itemSymbolFontColor,
+          itemSelectedSymbolFontColor: this.itemSelectedSymbolFontColor
+        }).key('TabSegmentButtonV2_02')
 
-        // TabSegmentButtonV2({
-        //   items: this.imageItems,
-        //   selectedIndex: this.imageSelectedIndex!!,
-        //   itemMinHeight: this.itemMinHeight,
-        //   itemIconSize: {
-        //     width: LengthMetrics.vp(30),
-        //     height: LengthMetrics.vp(30)
-        //   },
-        //   itemIconFillColor: this.itemIconFillColor,
-        //   itemSelectedIconFillColor: this.itemSelectedIconFillColor,
-        // }).key('TabSegmentButtonV2_02')
+        TabSegmentButtonV2({
+          items: this.imageItems,
+          selectedIndex: this.imageSelectedIndex!!,
+          itemMinHeight: this.itemMinHeight,
+          itemIconSize: {
+            width: LengthMetrics.vp(30),
+            height: LengthMetrics.vp(30)
+          },
+          itemIconFillColor: this.itemIconFillColor,
+          itemSelectedIconFillColor: this.itemSelectedIconFillColor,
+        }).key('TabSegmentButtonV2_02')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

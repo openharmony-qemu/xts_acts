@@ -67,7 +67,7 @@ struct StorageProp20 {
   @State num: number = 0
   @State vae: string = ''
 
-  onPageShow() {
+  static {
     AppStorage.clear()
     Environment.envProp<number>('Prop20', 10);
   }
@@ -92,7 +92,7 @@ struct CompStorageProp20 {
         .key('text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
-      Text(`Prop:${this.storProp3}`).height('5%')
+      Text(`PropRef:${this.storProp3}`).height('5%')
         .key('text_Prop')
       Text(`Provide:${this.num}`).height('5%')
         .key('text_Provide')

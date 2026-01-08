@@ -2389,6 +2389,44 @@ static napi_value Test_MediaKeySystem_GetMediaKeySystems(napi_env env, napi_call
     return result;
 }
 
+static napi_value Test_MediaKeySystem_Drmerrcode(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    size_t inSessionLen = 0;
+    char *inSession = nullptr;
+    Drm_ErrCode ret = DRM_ERR_INVALID_VAL;
+    DRM_ContentProtectionLevel sessionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
+    MediaKeySystem *drmKeySystem = nullptr;
+    MediaKeySession *drmKeySession = nullptr;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &inSessionLen);
+    inSession = new char[inSessionLen + 1];
+    napi_get_value_string_utf8(env, args[0], inSession, inSessionLen + 1, &inSessionLen);
+
+    Drm_ErrCode ret1 = OH_MediaKeySystem_Create(judge_uuid(), &drmKeySystem);
+    Drm_ErrCode ret2 = DRM_CAPI_ERR_BASE;
+    Drm_ErrCode ret3 = DRM_ERR_NO_MEMORY;
+    Drm_ErrCode ret4 = DRM_ERR_OPERATION_NOT_PERMITTED;
+    Drm_ErrCode ret5 = DRM_ERR_IO;
+    Drm_ErrCode ret6 = DRM_ERR_TIMEOUT;
+    Drm_ErrCode ret7 = DRM_ERR_SERVICE_DIED;
+    Drm_ErrCode ret8 = DRM_ERR_INVALID_STATE;
+    Drm_ErrCode ret9 = DRM_ERR_UNSUPPORTED;
+    Drm_ErrCode ret10 = DRM_ERR_MAX_SYSTEM_NUM_REACHED;
+    Drm_ErrCode ret11 = DRM_ERR_MAX_SESSION_NUM_REACHED;
+    Drm_ErrCode ret12 = DRM_ERR_EXTEND_START;
+    Drm_ErrCode ret13 = OH_MediaKeySystem_Destroy(drmKeySystem);
+    if (ret1 == DRM_ERR_OK && ret13 == DRM_ERR_OK) {
+        ret = DRM_ERR_OK;
+    } else {
+        ret = DRM_ERR_INVALID_VAL;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
@@ -2464,6 +2502,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"Test_MediaKeySession_SetCallback", nullptr, Test_MediaKeySession_SetCallback, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"Test_MediaKeySystem_GetMediaKeySystems", nullptr, Test_MediaKeySystem_GetMediaKeySystems, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"Test_MediaKeySystem_Drmerrcode", nullptr, Test_MediaKeySystem_Drmerrcode, nullptr, nullptr,
          nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

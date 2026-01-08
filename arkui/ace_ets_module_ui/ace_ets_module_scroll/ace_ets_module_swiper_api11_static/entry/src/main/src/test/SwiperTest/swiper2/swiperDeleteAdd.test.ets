@@ -113,7 +113,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070', Level.LEVEL1, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(winLeft + Math.round(btLeft)  + Math.round(UIContext.getFocusedUIContext()!.vp2px(20) )as Int,
+      await driver.swipe(winLeft + Math.round(btLeft)  + Math.round(UIContext.resolveUIContext()!.vp2px(20) )as Int,
       (winTop + btTop + Math.round(btHeight / 2))as Int, (winLeft + Math.round(btRight)) as Int, (winTop + btTop + Math.round(btHeight / 2))as Int);
       await CommonFunc.sleep(3000);
 
@@ -164,9 +164,9 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080', Level.LEVEL1, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
       // right scroll
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
+      await driver.swipe(Math.round(winLeft + Math.round(btRight) - UIContext.resolveUIContext()!.vp2px(10)) as Int,
         Math.round(winTop + btTop + Math.round(btHeight / 2)) as Int,
-        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(20) as Int)) as Int,
+        Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(20) as Int)) as Int,
         Math.round(winTop + btTop + Math.round(btHeight / 2)) as Int);
       await CommonFunc.sleep(5000);
 

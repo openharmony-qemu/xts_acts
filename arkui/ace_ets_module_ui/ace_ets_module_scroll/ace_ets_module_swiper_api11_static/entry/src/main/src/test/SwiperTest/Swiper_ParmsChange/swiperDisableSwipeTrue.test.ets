@@ -116,8 +116,8 @@ it('testSwiperDisableSwipeTrue_static', Level.LEVEL0, async (done: () => void): 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       const uiContext = new UIContext();
-      await driver.swipe(Math.round(UIContext.getFocusedUIContext()!.vp2px(150)) as Int, Math.round(UIContext.getFocusedUIContext()!.vp2px(100)) as Int,
-        Math.round(UIContext.getFocusedUIContext()!.vp2px(100)) as Int, Math.round(UIContext.getFocusedUIContext()!.vp2px(100)) as Int);
+      await driver.swipe(Math.round(UIContext.resolveUIContext()!.vp2px(150)) as Int, Math.round(UIContext.resolveUIContext()!.vp2px(100)) as Int,
+        Math.round(UIContext.resolveUIContext()!.vp2px(100)) as Int, Math.round(UIContext.resolveUIContext()!.vp2px(100)) as Int);
       //  await driver.swipe(250, 230, 200, 230);
       await CommonFunc.sleep(1000);
       disableTrue01 = CommonFunc.getComponentRectOnScreen('disableTrue01');

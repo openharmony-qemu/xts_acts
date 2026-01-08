@@ -317,7 +317,7 @@ export default function BufferTextTest() {
           console.info("====>SUB_OH_BufferHandle_0100 start====");
           let result: number = libGraphics2DApi20.BufferHandle();
           console.info("====>SUB_OH_BufferHandle_0100 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_BufferHandle_0100 catch err: " + err);

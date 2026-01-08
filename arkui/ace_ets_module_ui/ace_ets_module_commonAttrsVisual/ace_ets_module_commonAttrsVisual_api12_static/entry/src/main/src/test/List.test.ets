@@ -25,10 +25,10 @@ import foregroundEffect from './ForegroundEffectTest.test'
 export default function testsuite() {
   backgroundBrightness();
   backgroundImageResizableTest();
-  foregroundEffect(); // The key 'foregroundEffect' was not found in the JSON object.
-  fractionStops(); // The key 'linearGradientBlur' was not found in the JSON object.
-  // freezeTest();
-  // systemBarEffectTest();
-  // motionBlurTest(); // motionBlur / curve: Curves.springCurve(10, 1, 228, 30)
-  // visualEffectTest();
+  foregroundEffect();
+  fractionStops();
+  freezeTest();
+  systemBarEffectTest();
+  motionBlurTest();
+  visualEffectTest();
 }

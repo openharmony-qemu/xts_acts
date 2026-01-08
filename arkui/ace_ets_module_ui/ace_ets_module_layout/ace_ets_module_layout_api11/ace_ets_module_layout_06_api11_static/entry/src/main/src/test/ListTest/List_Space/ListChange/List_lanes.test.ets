@@ -99,31 +99,31 @@ it('testListLanesToTwo_static', Level.LEVEL0, async (done: () => void): Promise<
       let List_lanes_01: RectValue = CommonFunc.getComponentRect('List_lanes_01');
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.top - List_lanes_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.top - List_lanes_012.bottom) - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       expect(Math.abs(List_lanes_011.left - List_lanes_01.left) <= 1).assertTrue();
       expect(Math.abs(List_lanes_013.left - List_lanes_01.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(75) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) * 10) / 10 - Math.round(UIContext.resolveUIContext()!.vp2px(75) * 10) / 10) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_lanes_014.left - List_lanes_013.right) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(75) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((List_lanes_014.left - List_lanes_013.right) * 10) / 10 - Math.round(UIContext.resolveUIContext()!.vp2px(75) * 10) / 10) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.floor((List_lanes_011.right - List_lanes_011.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_012.right - List_lanes_012.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.right - List_lanes_013.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.right - List_lanes_014.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_011.right - List_lanes_011.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_012.right - List_lanes_012.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.right - List_lanes_013.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.right - List_lanes_014.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor((List_lanes_011.bottom - List_lanes_011.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_012.bottom - List_lanes_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.bottom - List_lanes_013.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_011.bottom - List_lanes_011.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_012.bottom - List_lanes_012.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.bottom - List_lanes_013.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_013');
-      expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToTwo END');
       done();
     });
@@ -158,30 +158,30 @@ it('testListLanesToRange01_static', Level.LEVEL0, async (done: () => void): Prom
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_013.top - List_lanes_01.top) <= 1).assertTrue();
-      expect(Math.abs(List_lanes_014.top - List_lanes_011.bottom - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(List_lanes_014.top - List_lanes_011.bottom - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       expect(Math.abs(List_lanes_011.left - List_lanes_01.left) <= 1).assertTrue();
       expect(Math.abs(List_lanes_014.left - List_lanes_01.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) -(UIContext.getFocusedUIContext()!.vp2px(50 / 3)))) <= 1)
+      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) -(UIContext.resolveUIContext()!.vp2px(50 / 3)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_lanes_013.left - List_lanes_012.right) -(UIContext.getFocusedUIContext()!.vp2px(50 / 3)))) <= 1)
+      expect(Math.abs(Math.round((List_lanes_013.left - List_lanes_012.right) -(UIContext.resolveUIContext()!.vp2px(50 / 3)))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(List_lanes_011.right - List_lanes_011.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_012.right - List_lanes_012.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_013.right - List_lanes_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_014.right - List_lanes_014.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_011.right - List_lanes_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_012.right - List_lanes_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_013.right - List_lanes_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_014.right - List_lanes_014.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(List_lanes_011.bottom - List_lanes_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_012.bottom - List_lanes_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_013.bottom - List_lanes_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_011.bottom - List_lanes_011.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_012.bottom - List_lanes_012.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_013.bottom - List_lanes_013.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_014');
-      expect(Math.abs(List_lanes_024.top - List_lanes_01.top - Math.round(UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(List_lanes_024.top - List_lanes_01.top - Math.round(UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToRange01 END');
       done();
     });
@@ -215,31 +215,31 @@ it('testListLanesToRange02_static', Level.LEVEL0, async (done: () => void): Prom
       let List_lanes_01: RectValue = CommonFunc.getComponentRect('List_lanes_01');
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.top - List_lanes_012.bottom) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.top - List_lanes_012.bottom) - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       expect(Math.abs(List_lanes_011.left - List_lanes_01.left) <= 1).assertTrue();
       expect(Math.abs(List_lanes_013.left - List_lanes_01.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(75) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) * 10) / 10 - Math.round(UIContext.resolveUIContext()!.vp2px(75) * 10) / 10) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_lanes_014.left - List_lanes_013.right) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(75) * 10) / 10) <= 1)
+      expect(Math.abs(Math.round((List_lanes_014.left - List_lanes_013.right) * 10) / 10 - Math.round(UIContext.resolveUIContext()!.vp2px(75) * 10) / 10) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.floor((List_lanes_011.right - List_lanes_011.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_012.right - List_lanes_012.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.right - List_lanes_013.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.right - List_lanes_014.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_011.right - List_lanes_011.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_012.right - List_lanes_012.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.right - List_lanes_013.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.right - List_lanes_014.left) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor((List_lanes_011.bottom - List_lanes_011.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_012.bottom - List_lanes_012.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_013.bottom - List_lanes_013.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_011.bottom - List_lanes_011.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_012.bottom - List_lanes_012.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_013.bottom - List_lanes_013.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
       driver.swipe(100, 120, 100, 0);
       await CommonFunc.sleep(1000);
       let List_lanes_024: RectValue = CommonFunc.getComponentRect('List_lanes_013');
-      expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.getFocusedUIContext()!.vp2px(120))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - UIContext.resolveUIContext()!.vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToRange02 END');
       done();
     });

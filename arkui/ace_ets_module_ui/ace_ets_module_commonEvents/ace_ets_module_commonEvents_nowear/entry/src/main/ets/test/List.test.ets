@@ -43,8 +43,10 @@ import listMonopolize from './customGestureTest/listMonopolize.test'
 import gestureDefine6 from './customGestureTest/gestureParallel.test';
 import SwipeGestureExample01Test from './SwipeGesture/SwipeGestureExample01Test.test';
 import SwipeGestureExample02Test from './SwipeGesture/SwipeGestureExample02Test.test';
+import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
 
 export default function testsuite() {
+  textAreaInputTest()
   // FrameNodeTest();
   setCursorTest();
   tapGestureAddInterfaceTest();

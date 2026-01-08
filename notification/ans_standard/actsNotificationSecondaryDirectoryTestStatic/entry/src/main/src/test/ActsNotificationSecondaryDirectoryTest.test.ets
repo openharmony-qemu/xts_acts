@@ -125,7 +125,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             done()
           }
           ;
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect(false).assertTrue();
           done();
         });
@@ -688,7 +688,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                   }
                 }
                 done()
-              }).catch((err: BusinessError): void => {
+              }).catch((err: Error): void => {
                 console.info(`${TAG} getSlots failed err: + ${err.code}`)
                 expect(false).assertTrue()
                 done()
@@ -751,8 +751,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             = ${flags.soundEnabled},${flags.vibrationEnabled}`);
         console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
             = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
-        expect(typeof flags.soundEnabled).assertEqual('number')
-        expect(typeof flags.vibrationEnabled).assertEqual('number')
+        expect(typeof flags.soundEnabled).assertEqual('int')
+        expect(typeof flags.vibrationEnabled).assertEqual('int')
         let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()

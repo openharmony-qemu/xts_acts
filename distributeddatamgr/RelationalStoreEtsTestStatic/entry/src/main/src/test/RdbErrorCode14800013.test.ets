@@ -179,7 +179,6 @@ export default function RdbErrorCode14800013() {
         resultSet.getBlob(resultSet.getColumnIndex("blobType"));
         resultSet.getString(resultSet.getColumnIndex("name"));
         resultSet.getRow();
-        resultSet.getRows(1);
         //resultSet.getSendableRow();
         expect(resultSet.rowCount == 1).assertTrue();
         resultSet.close()

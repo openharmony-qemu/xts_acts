@@ -77,8 +77,6 @@ export default function Navigation4() {
 
     
     
-
-
 /**
      * @tc.number   Navigation4_static_0100
      * @tc.name     Navigation4_static_0100

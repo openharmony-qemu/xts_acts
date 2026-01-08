@@ -79,7 +79,7 @@ export default function Grid_Row_GutterOption_String() {
 it('SUB_ACE_GridRowGutterOption_STRING_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_STRING_static_0100 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'length', value: '80px'
+        name: 'length', value: '80px' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -107,7 +107,7 @@ it('SUB_ACE_GridRowGutterOption_STRING_static_0100', Level.LEVEL0, async (done: 
 it('SUB_ACE_GridRowGutterOption_STRING_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_STRING_static_0200 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'length', value: '30%'
+        name: 'length', value: '30%' as String
       })
       await CommonFunc.sleep(2000)
 

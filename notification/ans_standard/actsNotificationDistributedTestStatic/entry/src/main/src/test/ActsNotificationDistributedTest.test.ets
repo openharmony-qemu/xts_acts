@@ -64,7 +64,7 @@ export default function ActsNotificationDistributedTest() {
         let data1: boolean = data as boolean
         expect(data1).assertFalse()
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(`${TAG} isDistributedEnabled Promise err: ${err}`)
         expect(false).assertTrue()
         done()

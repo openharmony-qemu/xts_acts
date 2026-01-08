@@ -19,7 +19,8 @@ import {
   videoPlayStateChangedCallback,
   VideoPlayerState,
   PreselectedInfo,
-  UpdatablePickerConfigs
+  UpdatablePickerConfigs,
+  MovingPhotoBadgeStateChangedCallback,
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -62,6 +63,7 @@ struct PickerComponent {
   private currentAlbumDeletedCallback: CurrentAlbumDeletedCallback = () => this.onCurrentAlbumDeleted();
   private videoPlayStateChangedCallback: videoPlayStateChangedCallback =
     (state: VideoPlayerState) => this.onVideoPlayStateChanged(state);
+  private onMovingPhotoBadgeStateChangedCallback: MovingPhotoBadgeStateChangedCallback = () => {};
 
   sendEvent(message: Object, eventId: number) {
     let eventData: events_emitter.EventData = {
@@ -354,6 +356,7 @@ struct PickerComponent {
         onVideoPlayStateChanged: this.videoPlayStateChangedCallback,
         onScrollStopAtEnd: this.onScrollStopAtEndCallback,
         onScrollStopAtStart: this.onScrollStopAtStartCallback,
+        onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
       })
         .height('70%')

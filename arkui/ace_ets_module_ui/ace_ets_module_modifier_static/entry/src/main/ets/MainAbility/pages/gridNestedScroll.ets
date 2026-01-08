@@ -23,7 +23,7 @@ import { Entry,Builder,Component,Scroller,Scroll,GridItem,Grid,List,Video,Image,
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';

@@ -36,7 +36,7 @@ import {
   Path,
   Margin,
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 
 import Log from '../../common/Log';
 

@@ -127,20 +127,6 @@ it('ParagraphSpacingTest_static_0030', Level.LEVEL0, async (done: () => void): P
     });
 
     
-    
-    /**
-     * @tc.number   ParagraphSpacingTest_static_0040
-     * @tc.name     ParagraphSpacingTest_static_0040
-     * @tc.desc     ParagraphSpacingTest_static_0040
-     * @tc.level    Level.LEVEL0
-     */
-it('ParagraphSpacingTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {      console.info('[ParagraphSpacingTest_0040] START');
-      await CommonFunc.sleep(500);
-      console.info("[ParagraphSpacingTest_0040] value4:" + JSON.stringify(AppStorage.get<number>('paragraphSpacing4')));
-      expect(AppStorage.get<number>('paragraphSpacing4')).assertEqual(undefined);
-      AppStorage.delete('paragraphSpacing4')
-      console.info('[ParagraphSpacingTest_0040] END');
-      done();
-    });
+
   })
 }

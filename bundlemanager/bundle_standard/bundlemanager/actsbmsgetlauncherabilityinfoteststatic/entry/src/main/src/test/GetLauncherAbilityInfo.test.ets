@@ -58,6 +58,7 @@ export default function actsGetLauncherAbilityInfoTest() {
         expect(data[0].iconId).assertLarger(0.0);
         expect(data[0].userId).assertEqual(100);
         expect(data[0].installTime).assertLarger(0.0);
+        expect(data[0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data[0].elementName.deviceId).assertEqual("");
         expect(data[0].elementName.bundleName).assertEqual(BUNDLE_NAME2);
         expect(data[0].elementName.moduleName).assertEqual("entry");
@@ -193,7 +194,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].orientationId).assertEqual(PARAM_0);
         }
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_00 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);
@@ -219,7 +220,7 @@ export default function actsGetLauncherAbilityInfoTest() {
       bundleManager.getAbilityInfo(uri, abilityFlags).then((data: Array<bundleManager.AbilityInfo>) => {
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_01 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);

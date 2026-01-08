@@ -62,7 +62,7 @@ export default function positionSettingJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get positionSettingJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("positionSetting" == pages.name)) {
           console.info("get positionSettingJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

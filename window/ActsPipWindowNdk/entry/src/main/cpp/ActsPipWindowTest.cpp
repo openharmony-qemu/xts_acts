@@ -1700,7 +1700,8 @@ napi_value TestPictureInPicture_PipState_enum(napi_env env, napi_callback_info i
         PictureInPicture_PipState::STARTED == TWO &&
         PictureInPicture_PipState::ABOUT_TO_STOP == THREE &&
         PictureInPicture_PipState::STOPPED == FOUR &&
-        PictureInPicture_PipState::ABOUT_TO_RESTORE == FIVE) {
+        PictureInPicture_PipState::ABOUT_TO_RESTORE == FIVE &&
+        PictureInPicture_PipState::ERROR == SIX) {
         napi_create_int32(env, 0, &retValue);
     } else {
         napi_create_int32(env, -1, &retValue);

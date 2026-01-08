@@ -108,8 +108,6 @@ export default function aboutToRecycleiamge() {
     });
 
     
-
-
 /**
      * @tc.number   aboutToRecycleiamge_static_0100
      * @tc.name     aboutToRecycleiamge_static_0100

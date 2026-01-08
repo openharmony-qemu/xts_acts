@@ -550,11 +550,16 @@ export default function drawingTsCanvasTest() {
         const canvas = new drawing.Canvas(pixel);
         const brush = new drawing.Brush();
         canvas.attachBrush(brush);
-        canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
-        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF], 0);
-        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1 , [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00], 1);
-        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF], 0);
-        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1 , [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00], 1);
+        canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0,
+          [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt(),0xFFFFFF00.toInt(),0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
+        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1,
+          [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt()], 0);
+        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1,
+          [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt(),0xFFFFFF00.toInt()], 1);
+        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1,
+          [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt()], 0);
+        canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1,
+          [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt(),0xFFFFFF00.toInt()], 1);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh successed');
       } catch (e) {
@@ -578,7 +583,7 @@ export default function drawingTsCanvasTest() {
         const brush = new drawing.Brush();
         canvas.attachBrush(brush);
         let verts : Array<number> = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360];
-        canvas.drawPixelMapMesh(pixel, 2, 2, verts, 0, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
+        canvas.drawPixelMapMesh(pixel, 2, 2, verts, 0, [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt(),0xFFFFFF00.toInt(),0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh 1 successed');
       } catch (e) {

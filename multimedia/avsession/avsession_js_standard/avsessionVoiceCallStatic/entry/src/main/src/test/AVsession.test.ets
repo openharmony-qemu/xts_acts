@@ -14,7 +14,6 @@
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import avSession from '@ohos.multimedia.avsession';
-import { canIUse } from '@internal.full.global'
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -829,7 +828,7 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             await controller.getAVMetadata().then((metadata: avSession.AVMetadata) => {
                 console.info(`GetAVMetadata12 : SUCCESS : assetId : ${metadata.assetId}`);
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`GetAVMetadata12 BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             });
@@ -874,7 +873,7 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             await controller.getLaunchAbility().then((agent: object) => {
                 console.info(`GetLaunchAbility12 : SUCCESS : wantAgent : ${agent}`);
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`GetLaunchAbility12 BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             });
@@ -895,7 +894,7 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             await controller.isActive().then((isActive: boolean) => {
                 console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             });
@@ -939,7 +938,7 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             await controller.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
                 console.info('getAVPlaybackState : SUCCESS');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             })
@@ -1418,7 +1417,7 @@ export default function abilityTest() {
             };
             await session!.setAVMetadata(metadata).then(() => {
                 console.info('TestLog: Set filter successfully');
-            }).catch(async(err:BusinessError) => {
+            }).catch((err:Error) => {
                 console.error(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
                 done();
@@ -1431,7 +1430,7 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            }).catch(async(err:BusinessError) => {
+            }).catch((err:Error) => {
                 console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -1461,7 +1460,7 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     }
                     done();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`GetOutputDevice BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 })
@@ -1551,10 +1550,10 @@ export default function abilityTest() {
                     console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                     expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                     done();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                 });
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`SetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1602,10 +1601,10 @@ export default function abilityTest() {
                     console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                     expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                     done();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                 });
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`SetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1656,7 +1655,7 @@ export default function abilityTest() {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                         done();
-                    }).catch(async(err: BusinessError) => {
+                    }).catch((err: Error) => {
                         console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                     });
                     console.info('SetAVQueueItems successfully');
@@ -1710,7 +1709,7 @@ export default function abilityTest() {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.pcmSrc).assertEqual(queueItem_1.description?.pcmSrc);
                         done();
-                    }).catch(async(err: BusinessError) => {
+                    }).catch((err: Error) => {
                         console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                     });
                 }
@@ -1753,7 +1752,7 @@ export default function abilityTest() {
             let commandName = "my_command";
             await controller.sendCommonCommand(commandName, {'command' : "This is my command"}).then(() => {
                 console.info('SendCommonCommand successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`SendCommonCommand BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             })
@@ -1829,7 +1828,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.setExtras({'extras' : true}).then(() => {
                 console.info('setExtras successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`setExtras BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             })
@@ -1848,7 +1847,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.setExtras({'extras' : 123}).then(() => {
                 console.info('setExtras successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`setExtras BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             })
@@ -1867,7 +1866,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await session!.setExtras({'extras' : [123,'123']}).then(() => {
                 console.info('setExtras successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`setExtras BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             })
@@ -1937,7 +1936,7 @@ export default function abilityTest() {
                         console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
                         expect(items[0].description?.launchClientData).assertEqual(queueItem_1.description?.launchClientData);
                         done();
-                    }).catch(async(err: BusinessError) => {
+                    }).catch((err: Error) => {
                         console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
                     });
                     console.info('SetAVQueueItems successfully');
@@ -1959,7 +1958,7 @@ export default function abilityTest() {
             console.info('avsession sendCustomData Start');
             await session!.sendCustomData(customdata).then(() => {
                 console.info('avsession sendCustomData Successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.info(`avsession sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -1979,7 +1978,7 @@ export default function abilityTest() {
             console.info('controller sendCustomData Start');
             await controller.sendCustomData(customdata).then(() => {
                 console.info('controller sendCustomData Successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             });
@@ -2040,7 +2039,7 @@ export default function abilityTest() {
             console.info('session sendCustomData Start');
             await session!.sendCustomData(customdata2).then(() => {
                 console.info('session sendCustomData Successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.info(`session sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600101);
             });
@@ -2061,7 +2060,7 @@ export default function abilityTest() {
             console.info('controller sendCustomData Start');
             await controller.sendCustomData(customdata2).then(() => {
                 console.info('controller sendCustomData Successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.info(`controller sendCustomData BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600101);
             });
@@ -2343,7 +2342,7 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
             await session!.dispatchSessionEvent(eventName, {'lyric' : 123 }).then(() => {
                 console.info('dispatchSessionEvent successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
             })
@@ -2362,7 +2361,7 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
             await session!.dispatchSessionEvent(eventName, {'lyric' : true }).then(() => {
                 console.info('dispatchSessionEvent successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
             })
@@ -2381,7 +2380,7 @@ export default function abilityTest() {
             await Utils.msSleep(1000);
             await session!.dispatchSessionEvent(eventName, {'lyric' : [123,'123'] }).then(() => {
                 console.info('dispatchSessionEvent successfully');
-            }).catch(async(err: BusinessError) => {
+            }).catch((err: Error) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
             })

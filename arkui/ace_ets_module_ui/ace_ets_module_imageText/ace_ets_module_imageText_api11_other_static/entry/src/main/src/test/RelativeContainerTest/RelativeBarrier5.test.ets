@@ -92,8 +92,6 @@ export default function RelativeBarrier5() {
     
 
     
-
-
 /**
      * @tc.number   RelativeBarrier5_static_001
      * @tc.name     RelativeBarrier5_static_001

@@ -19,7 +19,7 @@ import {
   State,
   Watch,
   Link,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   StorageLink,
   Observed,
@@ -60,7 +60,7 @@ prop2?.set(new StorageB(100, 200))
 @Component
 struct localTrack {
   storage1: LocalStorage = this.getUIContext().getSharedLocalStorage()!;
-  // @LocalStorageProp('PropA') storageProp2:StorageB=new StorageB(0,0) 下一行使用平替
+  // @LocalStoragePropRef('PropA') storageProp2:StorageB=new StorageB(0,0) 下一行使用平替
   @State storageProp2: StorageB = storage.get<StorageB>('PropA') ?? new StorageB(0, 0)
   @LocalStorageLink('PropA') storageLink2: StorageB = new StorageB(0, 0)
 
@@ -73,7 +73,7 @@ struct localTrack {
           this.storageProp2 = new StorageB(10, 20)
           this.storageLink2 = new StorageB(10, 20)
         })
-      Button('LocalStorageProp:' + `${this.storageProp2.a}`)
+      Button('LocalStoragePropRef:' + `${this.storageProp2.a}`)
         .height('5%')
         .key('Track_LocalStorageProp')
         .onClick((): void => {

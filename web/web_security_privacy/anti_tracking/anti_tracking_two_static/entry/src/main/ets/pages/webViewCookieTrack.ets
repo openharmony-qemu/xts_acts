@@ -41,7 +41,7 @@ class DataTrans {
 }
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

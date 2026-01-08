@@ -78,6 +78,7 @@ export default function SystemTransition2() {
      * @tc.level    Level.LEVEL0
      */
 it('SystemTransition2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('SystemTransition2_0100 START');
       await CommonFunc.sleep(200);
 
@@ -114,6 +115,7 @@ it('SystemTransition2_static_0100', Level.LEVEL0, async (done: () => void): Prom
      * @tc.level    Level.LEVEL0
      */
 it('SystemTransition2_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('SystemTransition2_0200 START');
       await CommonFunc.sleep(200);
 

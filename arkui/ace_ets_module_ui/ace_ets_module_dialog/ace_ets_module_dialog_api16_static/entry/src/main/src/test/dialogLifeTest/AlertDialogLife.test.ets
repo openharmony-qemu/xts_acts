@@ -74,13 +74,14 @@ export default function AlertDialogLifeTest() {
     });
 
 
+    
     /**
      * @tc.number   AlertDialogLife_static_0001
      * @tc.name     AlertDialogLife_static_0001
      * @tc.desc     AlertDialogLife_static_0001
      * @tc.level    Level.LEVEL2
      */
-    it('AlertDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('AlertDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogLife_static_0001 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('AlertDialog', 10, "")

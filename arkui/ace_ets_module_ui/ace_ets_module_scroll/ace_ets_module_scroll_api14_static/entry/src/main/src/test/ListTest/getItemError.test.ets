@@ -64,14 +64,14 @@ export default function getItemError() {
 
 
     
-    // /**
-    //  * @tc.number   getItemError_static_0100
-    //  * @tc.name     getItemError_static_0100
-    //  * @tc.desc     getItemError_static_0100
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    //it('getItemError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    // 异常参数
+    /**
+     * @tc.number   getItemError_static_0100
+     * @tc.name     getItemError_static_0100
+     * @tc.desc     getItemError_static_0100
+     * @tc.level    Level.LEVEL0
+     */
+//it('getItemError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // // 异常参数
     //   console.info('[getItemError_static_0100] START');
     //   let driver = Driver.create()
     //   let btn1: Component = await driver.findComponent(ON.id('getItemRect_401')) as Component;
@@ -114,14 +114,14 @@ it('getItemError_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
 
     
-    // /**
-    // * @tc.number   getItemError_static_0300
-    // * @tc.name     getItemError_static_0300
-    // * @tc.desc     getItemError_static_0300
-    // * @tc.level    Level.LEVEL0
-    // */
-    //it('getItemError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    // 异常参数
+    /**
+     * @tc.number   getItemError_static_0300
+     * @tc.name     getItemError_static_0300
+     * @tc.desc     getItemError_static_0300
+     * @tc.level    Level.LEVEL0
+     */
+//it('getItemError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // //异常参数
     //   console.info('[getItemError_static_0300] START');
     //   let driver = Driver.create()
     //   let btn1: Component = await driver.findComponent(ON.id('getItemIndex_401')) as Component;

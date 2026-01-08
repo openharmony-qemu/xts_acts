@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-// import onListener from "../../common/plugin_component.js"
+
 import {
   Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign,
   Alignment, TextAlign, TextOverflow, PluginErrorData,

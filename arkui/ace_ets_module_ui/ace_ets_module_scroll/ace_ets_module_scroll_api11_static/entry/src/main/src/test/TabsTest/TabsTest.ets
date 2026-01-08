@@ -117,8 +117,7 @@ export default function tabs() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0100
      * @tc.name     ArkUI_Tabs_Divider_static_0100
      * @tc.desc     ArkUI_Tabs_Divider_static_0100
@@ -139,8 +138,7 @@ it('ArkUI_Tabs_Divider_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0200
      * @tc.name     ArkUI_Tabs_Divider_static_0200
      * @tc.desc     ArkUI_Tabs_Divider_static_0200
@@ -163,8 +161,7 @@ it('ArkUI_Tabs_Divider_static_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0300
      * @tc.name     ArkUI_Tabs_Divider_static_0300
      * @tc.desc     ArkUI_Tabs_Divider_static_0300
@@ -186,8 +183,7 @@ it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0400
      * @tc.name     ArkUI_Tabs_Divider_static_0400
      * @tc.desc     ArkUI_Tabs_Divider_static_0400
@@ -210,8 +206,7 @@ it('ArkUI_Tabs_Divider_static_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0500
      * @tc.name     ArkUI_Tabs_Divider_static_0500
      * @tc.desc     ArkUI_Tabs_Divider_static_0500
@@ -234,8 +229,7 @@ it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0600
      * @tc.name     ArkUI_Tabs_Divider_static_0600
      * @tc.desc     ArkUI_Tabs_Divider_static_0600
@@ -281,8 +275,7 @@ it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0700
      * @tc.name     ArkUI_Tabs_Divider_static_0700
      * @tc.desc     ArkUI_Tabs_Divider_static_0700
@@ -331,8 +324,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0800
      * @tc.name     ArkUI_Tabs_Divider_static_0800
      * @tc.desc     ArkUI_Tabs_Divider_static_0800
@@ -371,8 +363,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_0900
      * @tc.name     ArkUI_Tabs_Divider_static_0900
      * @tc.desc     ArkUI_Tabs_Divider_static_0900
@@ -411,8 +402,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1000
      * @tc.name     ArkUI_Tabs_Divider_static_1000
      * @tc.desc     ArkUI_Tabs_Divider_static_1000
@@ -451,8 +441,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1100
      * @tc.name     ArkUI_Tabs_Divider_static_1100
      * @tc.desc     ArkUI_Tabs_Divider_static_1100
@@ -501,8 +490,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_Divider_static_1200
      * @tc.name     ArkUI_Tabs_Divider_static_1200
      * @tc.desc     ArkUI_Tabs_Divider_static_1200
@@ -623,8 +611,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0100
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0100
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0100
@@ -680,8 +667,7 @@ it('ArkUI_Tabs_LabelStyle_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0200
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0200
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0200
@@ -712,8 +698,7 @@ it('ArkUI_Tabs_LabelStyle_static_0200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0300
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0300
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0300
@@ -746,8 +731,7 @@ it('ArkUI_Tabs_LabelStyle_static_0300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0400
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0400
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0400
@@ -780,8 +764,7 @@ it('ArkUI_Tabs_LabelStyle_static_0400', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0500
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0500
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0500
@@ -814,8 +797,7 @@ it('ArkUI_Tabs_LabelStyle_static_0500', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0600
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0600
      * @tc.desc     ArkUI_Tabs_LabelStyle_static_0600
@@ -870,8 +852,7 @@ it('ArkUI_Tabs_LabelStyle_static_0600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0100
@@ -889,8 +870,7 @@ it('ArkUI_Tabs_FadingEdge_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0200
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0200
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0200
@@ -925,8 +905,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0300
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0300
      * @tc.desc     ArkUI_Tabs_FadingEdge_static_0300
@@ -961,8 +940,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0100
      * @tc.name     ArkUI_Tabs_IndicatorColor_0100
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0100
@@ -991,8 +969,7 @@ it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0200
      * @tc.name     ArkUI_Tabs_IndicatorColor_0200
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0200
@@ -1012,8 +989,7 @@ it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0300
      * @tc.name     ArkUI_Tabs_IndicatorColor_0300
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0300
@@ -1033,8 +1009,7 @@ it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0400
      * @tc.name     ArkUI_Tabs_IndicatorColor_0400
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0400
@@ -1054,8 +1029,7 @@ it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0500
      * @tc.name     ArkUI_Tabs_IndicatorColor_0500
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0500
@@ -1075,8 +1049,7 @@ it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0600
      * @tc.name     ArkUI_Tabs_IndicatorColor_0600
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0600
@@ -1120,8 +1093,7 @@ it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0700
      * @tc.name     ArkUI_Tabs_IndicatorColor_0700
      * @tc.desc     ArkUI_Tabs_IndicatorColor_0700
@@ -1174,8 +1146,7 @@ it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0100
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0100
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0100
@@ -1202,8 +1173,7 @@ it('ArkUI_Tabs_IndicatorHeight_0100', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0200
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0200
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0200
@@ -1223,8 +1193,7 @@ it('ArkUI_Tabs_IndicatorHeight_0200', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0300
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0300
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0300
@@ -1244,8 +1213,7 @@ it('ArkUI_Tabs_IndicatorHeight_0300', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0400
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0400
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0400
@@ -1265,8 +1233,7 @@ it('ArkUI_Tabs_IndicatorHeight_0400', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0500
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0500
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0500
@@ -1310,8 +1277,7 @@ it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorHeight_0600
      * @tc.name     ArkUI_Tabs_IndicatorHeight_0600
      * @tc.desc     ArkUI_Tabs_IndicatorHeight_0600
@@ -1394,8 +1360,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0100
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0100
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0100
@@ -1415,8 +1380,7 @@ it('ArkUI_Tabs_IndicatorWidth_0100', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0200
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0200
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0200
@@ -1436,8 +1400,7 @@ it('ArkUI_Tabs_IndicatorWidth_0200', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0300
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0300
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0300
@@ -1457,8 +1420,7 @@ it('ArkUI_Tabs_IndicatorWidth_0300', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0400
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0400
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0400
@@ -1478,8 +1440,7 @@ it('ArkUI_Tabs_IndicatorWidth_0400', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0500
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0500
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0500
@@ -1516,8 +1477,7 @@ it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorWidth_0600
      * @tc.name     ArkUI_Tabs_IndicatorWidth_0600
      * @tc.desc     ArkUI_Tabs_IndicatorWidth_0600
@@ -1600,8 +1560,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0100
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0100
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0100
@@ -1621,8 +1580,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0100', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0200
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0200
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0200
@@ -1642,8 +1600,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0200', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0300
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0300
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0300
@@ -1663,8 +1620,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0300', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0400
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0400
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0400
@@ -1684,8 +1640,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0400', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0500
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0500
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0500
@@ -1722,8 +1677,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorBorderRadius_0600
      * @tc.name     ArkUI_Tabs_IndicatorBorderRadius_0600
      * @tc.desc     ArkUI_Tabs_IndicatorBorderRadius_0600
@@ -1808,8 +1762,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0100
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0100
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0100
@@ -1835,8 +1788,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0100', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0200
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0200
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0200
@@ -1855,8 +1807,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0200', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0300
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0300
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0300
@@ -1875,8 +1826,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0300', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0400
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0400
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0400
@@ -1895,8 +1845,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0400', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0500
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0500
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0500
@@ -1939,8 +1888,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0600
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0600
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0600
@@ -2022,8 +1970,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBorderRadius_0700
      * @tc.name     ArkUI_Tabs_SubTabBorderRadius_0700
      * @tc.desc     ArkUI_Tabs_SubTabBorderRadius_0700
@@ -2060,8 +2007,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0100
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0100
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0100
@@ -2080,8 +2026,7 @@ it('ArkUI_Tabs_SelectedMode_static_0100', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0200
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0200
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0200
@@ -2101,8 +2046,7 @@ it('ArkUI_Tabs_SelectedMode_static_0200', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SelectedMode_static_0300
      * @tc.name     ArkUI_Tabs_SelectedMode_static_0300
      * @tc.desc     ArkUI_Tabs_SelectedMode_static_0300
@@ -2138,8 +2082,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0100
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0100
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0100
@@ -2166,8 +2109,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0100', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0200
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0200
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0200
@@ -2187,8 +2129,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0200', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0300
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0300
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0300
@@ -2208,8 +2149,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0300', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0400
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0400
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0400
@@ -2229,8 +2169,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0400', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0500
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0500
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0500
@@ -2275,8 +2214,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_IndicatorMarginTop_static_0600
      * @tc.name     ArkUI_Tabs_IndicatorMarginTop_static_0600
      * @tc.desc     ArkUI_Tabs_IndicatorMarginTop_static_0600

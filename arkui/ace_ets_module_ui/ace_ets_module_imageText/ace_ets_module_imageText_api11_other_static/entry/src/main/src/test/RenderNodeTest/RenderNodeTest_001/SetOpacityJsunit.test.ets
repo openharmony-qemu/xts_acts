@@ -82,8 +82,6 @@ export default function SetOpacityJsunit() {
 
     
     
-
-
 /**
      * @tc.number   SetOpacityJsunit_static_001
      * @tc.name     SetOpacityJsunit_static_001

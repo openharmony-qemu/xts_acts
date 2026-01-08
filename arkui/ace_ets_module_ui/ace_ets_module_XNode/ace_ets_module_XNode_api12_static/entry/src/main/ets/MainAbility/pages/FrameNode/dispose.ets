@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ class MyNodeControllerDispose extends NodeController {
     const rootRenderNode = this.rootNode?.getRenderNode();
     if (rootRenderNode !== null) {
       rootRenderNode!.size = { width: 200, height: 200 };
-      rootRenderNode!.backgroundColor = 0xff00ff00;
+      rootRenderNode!.backgroundColor = 0xff00ff00.toInt();
       rootRenderNode!.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     }
 

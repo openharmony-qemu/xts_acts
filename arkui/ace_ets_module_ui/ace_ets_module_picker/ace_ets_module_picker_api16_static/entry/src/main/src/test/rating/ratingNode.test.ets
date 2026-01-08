@@ -44,11 +44,11 @@ export default function ratingNodeTest() {
         console.info("get ratingNodeTest state pages:" + JSON.stringify(pages));
         if (!("ratingNode" == pages.name)) {
           console.info("get ratingNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ratingNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push ratingNodeTest page error:" + err);
@@ -73,6 +73,7 @@ export default function ratingNodeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ratingNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
 
       let tagName = 'ratingNode_static_0100';
       console.info('[' + tagName + '] START============================');

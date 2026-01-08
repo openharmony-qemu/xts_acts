@@ -70,8 +70,7 @@ export default function alphabetIndexerOnSelectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerWidth0001_static_01
      * @tc.name     testalphabetIndexerWidth0001_static_01
      * @tc.desc     testalphabetIndexerWidth0001_static_01
@@ -92,8 +91,7 @@ it('testalphabetIndexerWidth0001_static_01', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerHeight0002_static_02
      * @tc.name     testalphabetIndexerHeight0002_static_02
      * @tc.desc     testalphabetIndexerHeight0002_static_02
@@ -114,8 +112,7 @@ it('testalphabetIndexerHeight0002_static_02', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerColor0003_static_03
      * @tc.name     testalphabetIndexerColor0003_static_03
      * @tc.desc     testalphabetIndexerColor0003_static_03
@@ -136,8 +133,7 @@ it('testalphabetIndexerColor0003_static_03', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerSelectedColor0004_static_04
      * @tc.name     testalphabetIndexerSelectedColor0004_static_04
      * @tc.desc     testalphabetIndexerSelectedColor0004_static_04
@@ -160,8 +156,7 @@ it('testalphabetIndexerSelectedColor0004_static_04', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerPopupColor0005_static_05
      * @tc.name     testalphabetIndexerPopupColor0005_static_05
      * @tc.desc     testalphabetIndexerPopupColor0005_static_05
@@ -182,8 +177,7 @@ it('testalphabetIndexerPopupColor0005_static_05', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerSelectedBackgroundColor0006_static_06
      * @tc.name     testalphabetIndexerSelectedBackgroundColor0006_static_06
      * @tc.desc     testalphabetIndexerSelectedBackgroundColor0006_static_06
@@ -207,8 +201,7 @@ it('testalphabetIndexerSelectedBackgroundColor0006_static_06', Level.LEVEL0, asy
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerPopupBackground0007_static_07
      * @tc.name     testalphabetIndexerPopupBackground0007_static_07
      * @tc.desc     testalphabetIndexerPopupBackground0007_static_07
@@ -231,8 +224,7 @@ it('testalphabetIndexerPopupBackground0007_static_07', Level.LEVEL0, async () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerUsingPopup0009_static_08
      * @tc.name     testalphabetIndexerUsingPopup0009_static_08
      * @tc.desc     testalphabetIndexerUsingPopup0009_static_08
@@ -253,8 +245,7 @@ it('testalphabetIndexerUsingPopup0009_static_08', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerItemSize0010_static_09
      * @tc.name     testalphabetIndexerItemSize0010_static_09
      * @tc.desc     testalphabetIndexerItemSize0010_static_09
@@ -275,8 +266,7 @@ it('testalphabetIndexerItemSize0010_static_09', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerAlignStyle0011_static_10
      * @tc.name     testalphabetIndexerAlignStyle0011_static_10
      * @tc.desc     testalphabetIndexerAlignStyle0011_static_10
@@ -298,8 +288,7 @@ it('testalphabetIndexerAlignStyle0011_static_10', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testalphabetIndexerOnSelect0012_static_11
      * @tc.name     testalphabetIndexerOnSelect0012_static_11
      * @tc.desc     testalphabetIndexerOnSelect0012_static_11

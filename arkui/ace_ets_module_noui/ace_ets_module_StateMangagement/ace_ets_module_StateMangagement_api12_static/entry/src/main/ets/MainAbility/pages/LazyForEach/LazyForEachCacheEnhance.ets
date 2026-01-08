@@ -42,7 +42,7 @@ import {
   Watch,
   Link,
   StorageLink,
-  Prop,
+  PropRef,
   PropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -79,14 +79,17 @@ class MyDataSource0427 implements IDataSource<string> {
 }
 
 
-AppStorage.setOrCreate('reuseCount', 0)
+
 
 @Entry
 @Component
 struct LazyForEachCacheEnhanceDemo {
   private data: MyDataSource0427 = new MyDataSource0427();
   private scroller: Scroller = new Scroller();
+  static {AppStorage.setOrCreate<number>('reuseCount', 0)}
+
   @StorageLink('reuseCount') reuseCount: number = 0;
+
 
   aboutToAppear(): void {
     for (let i = 1; i <= 1000; i++) {

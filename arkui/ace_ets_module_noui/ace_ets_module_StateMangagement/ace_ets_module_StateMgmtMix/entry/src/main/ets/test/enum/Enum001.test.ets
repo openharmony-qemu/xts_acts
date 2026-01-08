@@ -16,6 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, UIElementInfo} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { CustomComponentLifecycleState } from '@kit.ArkUI';
+
 
 export default function Enum001() {
   describe('Enum001', () => {
@@ -57,6 +59,29 @@ export default function Enum001() {
       expect(SystemProperties.BREAK_POINT).assertEqual('system.arkui.breakpoint');
       await CommonFunc.sleep(1000);
       console.info('[Enum001_002] END');
+      done();
+    });
+
+        /**
+     * @tc.name   Enum001_003
+     * @tc.number Enum001_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Enum001_003', Level.LEVEL0, async (done: Function) => {
+      console.info('[Enum001_001] START');
+      await CommonFunc.sleep(1000);
+      console.info('[Enum001_003] CustomComponentLifecycleState.INIT:' + CustomComponentLifecycleState.INIT);
+      expect(CustomComponentLifecycleState.INIT).assertEqual(0);
+      expect(CustomComponentLifecycleState.APPEARED).assertEqual(1);
+      expect(CustomComponentLifecycleState.BUILT).assertEqual(2);
+      expect(CustomComponentLifecycleState.MOUNTED).assertEqual(3);
+      expect(CustomComponentLifecycleState.RECYCLED).assertEqual(4);
+      expect(CustomComponentLifecycleState.DISAPPEARED).assertEqual(5);
+      await CommonFunc.sleep(1000);
+      console.info('[Enum001_003] END');
       done();
     });
   })

@@ -41,7 +41,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   UIUtils
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';

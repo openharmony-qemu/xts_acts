@@ -83,8 +83,6 @@ export default function getChildTest() {
 
     
     
-
-
 /**
      * @tc.number   getChildTest_static_0100
      * @tc.name     getChildTest_static_0100
@@ -111,8 +109,6 @@ it('getChildTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
 
     
     
-
-
 /**
      * @tc.number   getChildTest_static_0200
      * @tc.name     getChildTest_static_0200
@@ -139,8 +135,6 @@ it('getChildTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
 
     
     
-
-
 /**
      * @tc.number   getChildTest_static_0300
      * @tc.name     getChildTest_static_0300
@@ -169,8 +163,6 @@ it('getChildTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<v
 
     
     
-
-
 /**
      * @tc.number   getChildTest_static_0400
      * @tc.name     getChildTest_static_0400

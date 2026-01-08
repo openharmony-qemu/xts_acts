@@ -120,13 +120,13 @@ it('testSwiperSetItemSpace_static', Level.LEVEL0, async (done: () => void): Prom
       expect(Math.abs(itemspacekey.top - itemspacekey02.top) <= 1).assertTrue();
       expect(Math.abs(itemspacekey.bottom - itemspacekey02.bottom) <= 1).assertTrue();
       const uiContext = new UIContext();
-      expect(Math.abs(Math.round(itemspacekey02.left - itemspacekey01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(itemspacekey02.left - itemspacekey01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(itemspacekey.right - itemspacekey02.right) <= 1).assertTrue();
 
       let driver = Driver.create();
       // await CommonFunc.sleep(500);
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
       await CommonFunc.sleep(1000);
 
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('itemspacekey')
@@ -157,7 +157,7 @@ it('testSwiperSetItemSpace_static', Level.LEVEL0, async (done: () => void): Prom
 
       expect(Math.abs(itemspacekey.top - itemspacekey03.top) <= 1).assertTrue();
       expect(Math.abs(itemspacekey.bottom - itemspacekey03.bottom) <= 1).assertTrue();
-      expect(Math.abs(Math.round(itemspacekey03.left - itemspacekey02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(itemspacekey03.left - itemspacekey02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       expect(Math.abs(itemspacekey.right - itemspacekey03.right) <= 1).assertTrue();
       console.info("The type value is " +

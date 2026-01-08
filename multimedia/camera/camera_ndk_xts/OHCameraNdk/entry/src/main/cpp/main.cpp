@@ -1401,6 +1401,15 @@ static napi_value OHPhotoOutputIsMirrorSupported(napi_env env, napi_callback_inf
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHPhotoOutputgetMirrorSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    bool isSupported  = g_ndkCamera->getMirrorSupported();
+
+    napi_create_int32(env, isSupported, &result);
+    return result;
+}
 static napi_value OHPhotoOutputEnableMirror(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1675,6 +1684,8 @@ napi_property_descriptor desc3[] = {
     {"oHPhotoOutputUnregisterCallback", nullptr, OHPhotoOutputUnregisterCallback, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHPhotoOutputIsMirrorSupported", nullptr, OHPhotoOutputIsMirrorSupported, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHPhotoOutputgetMirrorSupported", nullptr, OHPhotoOutputgetMirrorSupported, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHPhotoOutputEnableMirror", nullptr, OHPhotoOutputEnableMirror, nullptr, nullptr, nullptr,
      napi_default, nullptr},

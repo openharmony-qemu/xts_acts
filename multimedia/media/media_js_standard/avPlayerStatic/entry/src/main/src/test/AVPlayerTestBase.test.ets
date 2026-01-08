@@ -233,13 +233,13 @@ export function offCallback(avPlayer: media.AVPlayer | null, typeArr: Array<stri
 export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
   playTest: PlayTest,
   playTime: number, done: () => void) {
-  let volumeCnt = [0];
-  let endOfStreamCnt = [0];
-  let speedDoneCnt = [0];
-  let videoSizeCnt = [0];
-  let startRenderFrameCnt = [0];
-  let durationUpdateCnt = [0];
-  let seekDoneCnt = [0];
+  let volumeCnt: number[] = [0];
+  let endOfStreamCnt: number[] = [0];
+  let speedDoneCnt: number[] = [0];
+  let videoSizeCnt: number[] = [0];
+  let startRenderFrameCnt: number[] = [0];
+  let durationUpdateCnt: number[] = [0];
+  let seekDoneCnt: number[] = [0];
   let prepareCnt = 0;
   let playCnt = 0;
   let completedCnt = 0;
@@ -2364,10 +2364,10 @@ export async function testAVPlayerFun(src: string | media.AVFileDescriptor, avPl
 }
 
 export function setAVPlayerSeekCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, playTest: PlayTest, playTime: number, done: () => void) {
-  let volumeCnt = [0];
+  let volumeCnt: number[] = [0];
   let endOfStreamCnt: int = 0;
   let seekDoneCnt: int = 0;
-  let speedDoneCnt = [0];
+  let speedDoneCnt: number[] = [0];
   let playCnt: int = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);

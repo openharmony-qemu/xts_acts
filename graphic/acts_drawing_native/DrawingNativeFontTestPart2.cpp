@@ -309,7 +309,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNull, Function 
 }
 /**
  * @tc.name   testFontIsThemeFontFollowedNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400
  * @tc.desc   test for testFontIsThemeFontFollowedNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -339,15 +339,40 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNormal, Function
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
+
+/**
+ * @tc.name   testFontIsThemeFontFollowedNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2401
+ * @tc.desc   test for testFontIsThemeFontFollowedNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNull, Function | SmallTest | Level3) {
+    // 1. OH_Drawing_FontCreate
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    // add assert
+    EXPECT_NE(font, nullptr);
+    bool followed = true;
+    OH_Drawing_ErrorCode drawingErrorCode1 = OH_DRAWING_SUCCESS;
+    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_SUCCESS;
+    drawingErrorCode1 = OH_Drawing_FontIsThemeFontFollowed(nullptr, &followed);
+    EXPECT_EQ(drawingErrorCode1, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, nullptr);
+    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. OH_Drawing_FontDestroy
+    OH_Drawing_FontDestroy(font);
+}
+
 /**
  * @tc.name   testFontIsThemeFontFollowedMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2402
  * @tc.desc   test for testFontIsThemeFontFollowedMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
+ * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
@@ -363,29 +388,6 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, F
         EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
         EXPECT_EQ(followed, isFollowed[i]);
     }
-    // 2. OH_Drawing_FontDestroy
-    OH_Drawing_FontDestroy(font);
-}
-/**
- * @tc.name   testFontIsThemeFontFollowedNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400
- * @tc.desc   test for testFontIsThemeFontFollowedNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNull, Function | SmallTest | Level0) {
-    // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    // add assert
-    EXPECT_NE(font, nullptr);
-    bool followed = true;
-    OH_Drawing_ErrorCode drawingErrorCode1 = OH_DRAWING_SUCCESS;
-    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_SUCCESS;
-    drawingErrorCode1 = OH_Drawing_FontIsThemeFontFollowed(nullptr, &followed);
-    EXPECT_EQ(drawingErrorCode1, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, nullptr);
-    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
@@ -1371,6 +1373,8 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureAbNormal, Functio
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     code = OH_Drawing_FontFeaturesAddFeature(features, nullptr, 0.1f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    code = OH_Drawing_FontFeaturesAddFeature(features, "", 0.0f);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     code = OH_Drawing_FontFeaturesAddFeature(features, "aaaa", 0.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     OH_Drawing_FontFeaturesDestroy(features);

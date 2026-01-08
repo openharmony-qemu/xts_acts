@@ -110,19 +110,19 @@ it('testSwiperSetPaddingMargin_static', Level.LEVEL0, async (done: () => void): 
       const uiContext = new UIContext();
       console.info("Before page turning , swiperMarPad01.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad01.left - swiperMarPad.left));
-      expect(Math.abs(Math.round(swiperMarPad01.left - swiperMarPad.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad01.left - swiperMarPad.left) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad01.top - swiperMarPad.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad01.top - swiperMarPad.top) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       // Page turning.
       let driver = Driver.create();
       // await CommonFunc.sleep(500)
       // //  await driver.swipe(250, 230, 200, 230);
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
       // await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperMarPad')
       await driver.swipe(
@@ -142,13 +142,13 @@ it('testSwiperSetPaddingMargin_static', Level.LEVEL0, async (done: () => void): 
       // After flipping the page.
       console.info("After page turning, swiperMarPad02.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad02.left - swiperMarPad.left));
-      expect(Math.abs(Math.round(swiperMarPad02.left - swiperMarPad.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad02.left - swiperMarPad.left) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.right - swiperMarPad02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad02.top - swiperMarPad.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad02.top - swiperMarPad.top) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
+      expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad02.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       console.info("The type value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));

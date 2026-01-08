@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -61,7 +61,7 @@ struct navigation_pushDestination2 {
               .then(()=>{
                 this.str = 'success'
               })
-              .catch((error: BusinessError): void=>{
+              .catch((error: Error): void=>{
                 this.code = String(error.code) + error.message
               })
           })

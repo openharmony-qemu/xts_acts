@@ -34,7 +34,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

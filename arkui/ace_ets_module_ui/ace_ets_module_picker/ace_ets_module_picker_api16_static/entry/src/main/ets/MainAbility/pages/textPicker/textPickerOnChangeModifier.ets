@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 import {MessageManager,Callback} from '../../common/MessageManager';
-// import{TextPickerModifier} from '@ohos.arkui.modifier'
+import{TextPickerModifier} from '@ohos.arkui.modifier'
 
 import {
   Entry, Component, Builder,NodeContainer, TextCascadePickerRangeContent, TextPickerRangeContent,
@@ -43,17 +43,17 @@ struct TimePickerPage {
   @State isLunar: boolean = false
   @State onChangeOff: string = 'false'
   @State onDateChangeOff: string = 'false'
-  // @State modifier:TextPickerModifier = new TextPickerModifier()
-  //   .onChange((value: string | string[], index: int | int[]) => {
-  //     console.info('check003 TextPickerOnChangeModifier 单列 Picker item changed, value: ' + value + ', index: ' + index)
-  //     this.onChangeOff = 'true'
-  // })
-  //
-  // @State modifier1:TextPickerModifier = new TextPickerModifier()
-  //   .onScrollStop((value: string | string[], index: number | number[]) => {
-  //     console.info('check003 TextPickerOnScrollStopeModifier Picker item changed, value: ' + value + ', index: ' + index)
-  //     this.onDateChangeOff = 'true'
-  // })
+  @State modifier:TextPickerModifier = new TextPickerModifier()
+    .onChange((value: string | string[], index: int | int[]) => {  //SDK12.15 onChange回调未执行
+      console.info('check003 TextPickerOnChangeModifier 单列 Picker item changed, value: ' + value + ', index: ' + index)
+      this.onChangeOff = 'true'
+  })
+
+  @State modifier1:TextPickerModifier = new TextPickerModifier()
+    .onScrollStop((value: string | string[], index: int | int[]) => {
+      console.info('check003 TextPickerOnScrollStopeModifier Picker item changed, value: ' + value + ', index: ' + index)
+      this.onDateChangeOff = 'true'
+  })
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4']
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4']
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
@@ -118,10 +118,10 @@ struct TimePickerPage {
           this.isLunar = !this.isLunar
         }).id('LunarBtn')
       TextPicker({ range: this.apfruits, selected: this.select as int})
-      // .attributeModifier(this.modifier as TextPickerModifier)
-      // .attributeModifier(this.modifier1 as TextPickerModifier)
-      // .margin(50)
-      // .id('TextPicker')
+      .attributeModifier(this.modifier as TextPickerModifier)
+      .attributeModifier(this.modifier1 as TextPickerModifier)
+      .margin(50)
+      .id('TextPicker')
       Text(this.onChangeOff.toString()).key('onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onScrollStopOff')
     }

@@ -48,12 +48,12 @@ export default function PaddingContainerLengthTest() {
     'Column',
     'Grid',
     'GridItem',
-    'Navigator',
     'Refresh',
     'Row',
     'Scroll',
     'Stack',
     'Swiper',
+    // 'Navigator',// SDK12.2 appDied
     'Badge',  //other // 組件問題
   )
 

@@ -22,10 +22,10 @@ import repeatReusableTrue from './ReusableTest/repeatReusableTrue.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
 
 export default function testsuite() {
-  ArrayLikeStringTest(); //全pass 注释
-  RepeatCloseReuseTest0110(); //全pass 注释
-  RepeatLazyTest0150();  //driver.findComponent(ON.text('item_0'))结果为null 断言失败
-  repeatReusableFalse(); //全pass 注释
-  repeatReusableTrue(); //全pass 注释
+  ArrayLikeStringTest(); 
+  RepeatCloseReuseTest0110(); 
+  RepeatLazyTest0150();  
+  repeatReusableFalse(); 
+  repeatReusableTrue(); 
   ReuseV2Test0030();
 }

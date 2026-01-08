@@ -66,6 +66,8 @@
         "MainAbility/pages/FrameNodeMethod/AdoptChildThreeTest",
         "MainAbility/pages/FrameNodeMethod/AdoptChildTest",
         "MainAbility/pages/FrameNode/frameNodeApi",	
-        "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary"
+        "MainAbility/pages/FrameNodeNew/GraphicsFourBoundary",
+        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPosition",
+        "MainAbility/pages/FrameNodeMethod/FrameNodeConvertPositionErrorCode"
     ]
 }

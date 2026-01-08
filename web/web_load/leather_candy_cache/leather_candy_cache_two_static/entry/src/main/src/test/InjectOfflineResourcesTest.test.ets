@@ -49,7 +49,7 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testInjectOfflineResources001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testInjectOfflineResources001", 401, 20001, done);
+        Utils.registerEvent("testInjectOfflineResources001", true, 20001, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
         await Utils.msSleep(4000);

@@ -81,8 +81,7 @@ export default function offsetAlignEnd() {
 
 
     
-    
-/**
+    /**
      * @tc.number   offsetAlignEnd_static_0100
      * @tc.name     offsetAlignEnd_static_0100
      * @tc.desc     offsetAlignEnd_static_0100

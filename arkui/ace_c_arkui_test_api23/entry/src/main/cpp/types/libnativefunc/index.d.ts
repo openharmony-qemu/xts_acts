@@ -75,3 +75,15 @@ export const TestContainerPickerSubComponent002: () => number;
 export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
+
+export const testMotionPathOptions001: () => number;
+export const testMotionPathOptions002: () => number;
+export const testMotionPathOptions003: () => number;
+export const testMotionPathOptions004: () => number;
+export const testMotionPathOptions005: () => number;
+export const testMotionPathOptions006: () => number;
+export const testMotionPathOptions007: () => number;
+export const testMotionPathOptions008: () => number;
+export const testMotionPathOptions009: () => number;
+
+export const TestAtomicServiceMenuBarSetVisible01: () => number;

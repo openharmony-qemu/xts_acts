@@ -100,16 +100,19 @@ it('LazyForEachAdd_static_001', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(4000);
 
       let strJson = inspector.getInspectorByKey('repeat_add10');
+      console.log("[LazyForEachAdd_static_001] strJson " +  strJson);
       let obj= JSON.parseJsonElement(strJson);
       console.info("[LazyForEachAdd_static_001] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Item10');
-      console.info('[LazyForEachAdd_static_001] END');
+      const content:string = obj.getElement('$attrs').getString('content')
+      console.info("[LazyForEachAdd_static_001]content is: " + content);
+      expect(content).assertEqual('Item10');
+      console.info('[LazyForEachAdd_static_001] END1');
       await CommonFunc.sleep(4000);
       let strJson1 = inspector.getInspectorByKey('lazyForeach_add10');
       let obj1= JSON.parseJsonElement(strJson1);
       console.info("[LazyForEachAdd_static_001] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('11add_1add');
-      console.info('[LazyForEachAdd_static_001] END');
+      console.info('[LazyForEachAdd_static_001] END2');
       done();
     });
   })

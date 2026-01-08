@@ -62,9 +62,9 @@ export default function stagePromptTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stagePromptTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("stagePromptTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

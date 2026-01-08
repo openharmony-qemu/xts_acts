@@ -66,7 +66,8 @@ export default function closeToastTest() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   closeToastTest_static_0100
      * @tc.name     closeToastTest_static_0100
      * @tc.desc     closeToastTest_static_0100

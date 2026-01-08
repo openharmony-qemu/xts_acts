@@ -157,7 +157,7 @@ class MySequence implements rpc.Parcelable {
 }
 
 @Concurrent
-async function getImgs(img: image.Image) {
+async function getImgs(img: sendableImage.Image) {
   let component = await img.getComponent(4)
   if (component) {
     console.info('0x000 getComponent succeeded')
@@ -168,7 +168,7 @@ async function getImgs(img: image.Image) {
 }
 
 @Concurrent
-async function getRelease(img: image.Image) {
+async function getRelease(img: sendableImage.Image) {
   await img.release()
   console.info('0x000 img release succeeded')
 }
@@ -966,7 +966,7 @@ export default function sendableImageSource() {
       console.info(`0x0000 ${tag} success receiver`)
       receiver.on('imageArrival', () => {
         console.info(`onImageArrival receiver.on start`)
-        receiver.readNextImage().then((img: image.Image) => {
+        receiver.readNextImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readNextImage success`)
           expect(isEmpty(img.clipRect)).assertFalse()
           expect(isEmpty(img.format)).assertFalse()
@@ -1001,7 +1001,7 @@ export default function sendableImageSource() {
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
         console.info(`onImageArrival receiver.on start`)
-        receiver.readNextImage().then((img: image.Image) => {
+        receiver.readNextImage().then((img: sendableImage.Image) => {
           let clipRect = img.clipRect
           let format = img.format
           let size = img.size
@@ -1047,7 +1047,7 @@ export default function sendableImageSource() {
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
         console.info(`onImageArrival receiver.on start`)
-        receiver.readNextImage().then((img: image.Image) => {
+        receiver.readNextImage().then((img: sendableImage.Image) => {
           img.getComponent(5).then((Component: image.Component) => {
             console.info(`0x0000 ${tag} img.getComponent succeeded`)
             expect().assertFail()
@@ -1160,7 +1160,7 @@ export default function sendableImageSource() {
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', () => {
         console.info(`onImageArrival receiver.on start`)
-        receiver.readNextImage().then(async (img: image.Image) => {
+        receiver.readNextImage().then(async (img: sendableImage.Image) => {
           let result = await img.release()
           console.info(`0x0000 ${tag} img.release succeeded`)
           expect(isEmpty(result)).assertTrue()
@@ -1290,7 +1290,7 @@ export default function sendableImageSource() {
       console.info(`onImageArrival start`)
       receiver.on('imageArrival', () => {
         console.info(`onImageArrival receiver.on start`)
-        receiver.readLatestImage().then((img: image.Image) => {
+        receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readLatestImage success`)
           expect(isEmpty(img)).assertFalse()
           done()
@@ -2572,7 +2572,7 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      receiver.readLatestImage().then((img: image.Image) => {
+      receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(tag + ' readLatestImage succeeded.');
           done();
       }).catch((error: BusinessError) => {
@@ -2598,7 +2598,7 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      receiver.readNextImage().then((img: image.Image) => {
+      receiver.readNextImage().then((img: sendableImage.Image) => {
           console.info(tag + ' readNextImage  succeeded.');
           done();
       }).catch((error: BusinessError) => {

@@ -125,7 +125,7 @@ it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0100', Level.LEVEL0, async (done: () =>
       expect(visiblekey.bottom).assertEqual(visiblekey01.bottom);
       let driver = Driver.create();
       await CommonFunc.sleep(2500);
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
       // //  await driver.swipe(250, 230, 200, 230);原代码注释
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);
@@ -269,7 +269,7 @@ it('SUB_ACE_SWIPER_VISIBLECHANGED_static_0300', Level.LEVEL0, async (done: () =>
       visiblekey03 = CommonFunc.getComponentRect('visiblekey03');
       let driver = Driver.create();
       // await CommonFunc.sleep(500);原代码注释
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
       // //  await driver.swipe(250, 230, 200, 230);原代码注释
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);

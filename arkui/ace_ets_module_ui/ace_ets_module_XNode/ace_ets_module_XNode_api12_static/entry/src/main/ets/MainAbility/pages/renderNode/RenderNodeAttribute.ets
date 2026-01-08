@@ -26,13 +26,14 @@ const renderNode = new RenderNode();
 const mask = new ShapeMask();
 mask.setRectShape({ left: 0, right: 150, top: 0, bottom: 150 });
 mask.fillColor = 0X55FF0000;
-mask.strokeColor = 0XFFFF0000;
+mask.strokeColor = 0XFFFF0000.toInt();
 mask.strokeWidth = 24;
 
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.borderWidth = { left: 8, top: 8, right: 8, bottom: 8 };
-renderNode.borderColor = { left: 0xFF0000FF, top: 0xFF0000FF, right: 0xFF0000FF, bottom: 0xFF0000FF };
+renderNode.borderColor = { left: 0xFF0000FF.toInt(), top: 0xFF0000FF.toInt(),
+  right: 0xFF0000FF.toInt(), bottom: 0xFF0000FF.toInt() };
 renderNode.borderStyle = {
   left: BorderStyle.Solid,
   top: BorderStyle.Dotted,
@@ -84,13 +85,13 @@ struct RenderNodeAttribute {
       }
 
       Row(){
-        Text(`${borderColor!.left == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_left')
+        Text(`${borderColor!.left == 0xFF0000FF.toInt()}`).key('RenderNodeAttribute_borderColor_left')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor!.right == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_right')
+        Text(`${borderColor!.right == 0xFF0000FF.toInt()}`).key('RenderNodeAttribute_borderColor_right')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor!.top == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_top')
+        Text(`${borderColor!.top == 0xFF0000FF.toInt()}`).key('RenderNodeAttribute_borderColor_top')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor!.bottom == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_bottom')
+        Text(`${borderColor!.bottom == 0xFF0000FF.toInt()}`).key('RenderNodeAttribute_borderColor_bottom')
           .fontWeight(700).fontSize(30).width('25%')
       }
 

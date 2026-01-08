@@ -95,8 +95,6 @@ export default function progressJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_100
      * @tc.name     testProgress_static_100
@@ -124,8 +122,6 @@ it('testProgress_static_100', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_200
      * @tc.name     testProgress_static_200
@@ -143,8 +139,6 @@ it('testProgress_static_200', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_300
      * @tc.name     testProgress_static_300
@@ -171,8 +165,6 @@ it('testProgress_static_300', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_400
      * @tc.name     testProgress_static_400
@@ -190,8 +182,6 @@ it('testProgress_static_400', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_500
      * @tc.name     testProgress_static_500
@@ -218,8 +208,6 @@ it('testProgress_static_500', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_600
      * @tc.name     testProgress_static_600
@@ -237,8 +225,6 @@ it('testProgress_static_600', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_700
      * @tc.name     testProgress_static_700
@@ -265,8 +251,6 @@ it('testProgress_static_700', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_800
      * @tc.name     testProgress_static_800
@@ -293,8 +277,6 @@ it('testProgress_static_800', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_900
      * @tc.name     testProgress_static_900
@@ -321,8 +303,6 @@ it('testProgress_static_900', Level.LEVEL1, async (done: () => void): Promise<vo
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_1000
      * @tc.name     testProgress_static_1000
@@ -350,8 +330,6 @@ it('testProgress_static_1000', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
     
-
-
 /**
      * @tc.number   testProgress_static_1100
      * @tc.name     testProgress_static_1100

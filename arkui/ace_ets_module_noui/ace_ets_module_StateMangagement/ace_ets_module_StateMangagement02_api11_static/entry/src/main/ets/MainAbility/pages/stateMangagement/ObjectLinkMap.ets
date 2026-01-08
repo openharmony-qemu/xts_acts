@@ -42,14 +42,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
   Track
@@ -60,39 +60,24 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
 class MapClassA {
-  @Track public a: MyMap<number, string> = new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]])
+  @Track public a: Map<number, string> = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
 
-  constructor(a: MyMap<number, string>) {
+  constructor(a: Map<number, string>) {
     this.a = a;
-  }
-}
-
-
-@Observed
-export class MyMap<K, V> extends Map<K, V> {
-  public name: string = '';
-
-  constructor(name?: string, args?: [K, V][]) {
-    super(args);
-    this.name = name ? name : "My Map";
-  }
-
-  getName() {
-    return this.name;
   }
 }
 
 @Entry
 @Component
 struct ObjectLinkMapNested {
-  @State message: MapClassA = new MapClassA(new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]]));
+  @State message: MapClassA = new MapClassA(new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]]));
 
   build() {
     Row() {
       Column() {
         Button('init map').id("ObtLinkMap_init").height('5%')
           .onClick((e: ClickEvent) => {
-            this.message.a = new MyMap<number, string>("myMap", [[0, "a"], [1, "b"], [3, "c"]])
+            this.message.a = new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
           })
 
         ObjectLinkMapNestedChild({ myMap: this.message.a })
@@ -105,7 +90,7 @@ struct ObjectLinkMapNested {
 
 @Component
 struct ObjectLinkMapNestedChild {
-  @ObjectLink myMap: MyMap<number, string>
+  @ObjectLink myMap: Map<number, string>
 
   build() {
     Row() {

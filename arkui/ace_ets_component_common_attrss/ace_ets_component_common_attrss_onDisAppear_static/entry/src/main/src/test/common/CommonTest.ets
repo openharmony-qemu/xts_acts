@@ -17,6 +17,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -96,20 +97,10 @@ export default class CommonTest {
                 testValue: testValue,
               }
               console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              AppStorage.setOrCreate<boolean>('_isShow', data.testValue.setValue.isShow)
               await Utils.sleep(1000);
-              //Check test result
-              let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
-              console.log('[wll1]'+pageConfig.componentKey)
-              console.log('[wll2]'+strJson)
-              await Utils.sleep(1000);
-              console.log('[wll3]'+strJson)
-              await Utils.sleep(1000);
-              console.log('[wll4]'+strJson)
-              await Utils.sleep(1000);
-              console.log('[wll5]'+strJson)
-              console.info('[' + caseTag + '] ================== strJson: ' + strJson);
-              data.viewObj = JSON.parseJsonElement(strJson);
-              await (functions[functions.length - 1] as CallbackWithReturn)(data);
+
+            await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
             // } catch (err: Error) {
             //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err

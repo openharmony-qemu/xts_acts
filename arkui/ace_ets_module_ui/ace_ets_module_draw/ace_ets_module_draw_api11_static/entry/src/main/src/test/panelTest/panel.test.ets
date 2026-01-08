@@ -53,10 +53,8 @@ export default function panelBackgroundMaskJsunit() {
         console.info("get panel state pages:" + JSON.stringify(pages));
         if (!("panel" == pages.name)) {
           console.info("get panel pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push panel page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push panel page error: " + err);
@@ -66,28 +64,6 @@ export default function panelBackgroundMaskJsunit() {
     afterEach(async () => {
       await Utils.sleep(1000);
       console.info("panelBackgroundMask after each called");
-    });
-
-
-    // 接口未交付 页面注释导致用例失败
-    /**
-     * @tc.number   testpanelBackgroundMask_static_0001
-     * @tc.name     testpanelBackgroundMask_static_0001
-     * @tc.desc     testpanelBackgroundMask_static_0001
-     * @tc.level    Level.LEVEL0
-     */
-it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async (): Promise<void> => {
-      console.info('panelBackgroundMask testpanelBackgroundMask_static_0001 START');
-      await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('panel');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("get inspector value is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.log(JSON.stringify(JSON.parseJsonElement(strJson).getString("$type")))
-      expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Panel')
-      console.log('Panel‘s backgroundMask is ' +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundMask')))
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundMask')).assertEqual('#FF00FF00');
-
     });
 
 

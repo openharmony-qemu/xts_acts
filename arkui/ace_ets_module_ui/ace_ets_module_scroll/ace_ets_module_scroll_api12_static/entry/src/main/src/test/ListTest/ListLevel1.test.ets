@@ -63,8 +63,7 @@ export default function listLevel1Test() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0100
      * @tc.name     listLevel1Test_static_static_0100
      * @tc.desc     listLevel1Test_static_static_0100
@@ -88,8 +87,7 @@ it('listLevel1Test_static_static_0100', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0200
      * @tc.name     listLevel1Test_static_static_0200
      * @tc.desc     listLevel1Test_static_static_0200
@@ -115,8 +113,7 @@ it('listLevel1Test_static_static_0200', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0300
      * @tc.name     listLevel1Test_static_static_0300
      * @tc.desc     listLevel1Test_static_static_0300
@@ -142,8 +139,7 @@ it('listLevel1Test_static_static_0300', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0400
      * @tc.name     listLevel1Test_static_static_0400
      * @tc.desc     listLevel1Test_static_static_0400
@@ -169,8 +165,7 @@ it('listLevel1Test_static_static_0400', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0500
      * @tc.name     listLevel1Test_static_static_0500
      * @tc.desc     listLevel1Test_static_static_0500
@@ -196,8 +191,7 @@ it('listLevel1Test_static_static_0500', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0600
      * @tc.name     listLevel1Test_static_static_0600
      * @tc.desc     listLevel1Test_static_static_0600
@@ -223,8 +217,7 @@ it('listLevel1Test_static_static_0600', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0700
      * @tc.name     listLevel1Test_static_static_0700
      * @tc.desc     listLevel1Test_static_static_0700
@@ -250,8 +243,7 @@ it('listLevel1Test_static_static_0700', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0800
      * @tc.name     listLevel1Test_static_static_0800
      * @tc.desc     listLevel1Test_static_static_0800
@@ -277,8 +269,7 @@ it('listLevel1Test_static_static_0800', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_static_0900
      * @tc.name     listLevel1Test_static_static_0900
      * @tc.desc     listLevel1Test_static_static_0900
@@ -304,8 +295,7 @@ it('listLevel1Test_static_static_0900', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1000
      * @tc.name     listLevel1Test_static_1000
      * @tc.desc     listLevel1Test_static_1000
@@ -335,8 +325,7 @@ it('listLevel1Test_static_1000', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1100
      * @tc.name     listLevel1Test_static_1100
      * @tc.desc     listLevel1Test_static_1100
@@ -360,8 +349,7 @@ it('listLevel1Test_static_1100', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1200
      * @tc.name     listLevel1Test_static_1200
      * @tc.desc     listLevel1Test_static_1200
@@ -389,8 +377,7 @@ it('listLevel1Test_static_1200', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1300
      * @tc.name     listLevel1Test_static_1300
      * @tc.desc     listLevel1Test_static_1300
@@ -438,8 +425,7 @@ it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1400
      * @tc.name     listLevel1Test_static_1400
      * @tc.desc     listLevel1Test_static_1400
@@ -482,8 +468,7 @@ it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1500
      * @tc.name     listLevel1Test_static_1500
      * @tc.desc     listLevel1Test_static_1500
@@ -523,8 +508,7 @@ it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1600
      * @tc.name     listLevel1Test_static_1600
      * @tc.desc     listLevel1Test_static_1600
@@ -566,8 +550,7 @@ it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1Test_static_1700
      * @tc.name     listLevel1Test_static_1700
      * @tc.desc     listLevel1Test_static_1700

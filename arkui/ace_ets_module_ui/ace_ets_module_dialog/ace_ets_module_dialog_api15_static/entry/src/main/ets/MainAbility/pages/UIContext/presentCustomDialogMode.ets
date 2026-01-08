@@ -58,7 +58,7 @@ import {
 } from '@ohos.arkui.component'
 import { BusinessError } from '@ohos.base';
 import { LevelMode } from '@ohos.promptAction';
-import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
@@ -124,13 +124,13 @@ function customDialogDemo() {
 }
 
 
-function superFancyText1(this: TextAttribute) {
+function superFancyText1(this: TextAttribute){
   this.fontSize(9);
   this.width('100%');
   return this;
 }
 
-function superFancyText2(this: TextAttribute) {
+function superFancyText2(this: TextAttribute){
   this.fontSize(15);
   this.backgroundColor(Color.Orange)
   this.width('100%');
@@ -140,7 +140,7 @@ function superFancyText2(this: TextAttribute) {
   return this;
 }
 
-function superFancyColumn(this: ColumnAttribute) {
+function superFancyColumn(this: ColumnAttribute){
   this.backgroundColor(Color.Pink)
   this.width('100%');
   this.padding(10)

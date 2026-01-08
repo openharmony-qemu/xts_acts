@@ -46,12 +46,11 @@ export default function abilityTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        if (pages == null || !("Index" == pages.name)) {
-          let driver = Driver.create()
-          console.log('beforeEach', 'push start')
+        console.info("get SearchJsunit state pages:" + "");
+        if (!("SegmentButtonIndex" == pages.name)) {
+          console.info("get SearchJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
-          console.log('beforeEach', 'push success')
-          await driver.delayMs(2000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));

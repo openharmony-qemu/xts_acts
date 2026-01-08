@@ -406,7 +406,7 @@ export default function abilityTest() {
                 session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
-                        if (typeof castDisplay.id === 'number'){
+                        if (typeof castDisplay.id === 'int'){
                             console.info('castDisplay id type ture')
                         } else {
                             console.info(`castDisplay id type false`);
@@ -468,7 +468,7 @@ export default function abilityTest() {
                 session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
-                        if (typeof castDisplay.width === 'number'){
+                        if (typeof castDisplay.width === 'int'){
                             console.info('castDisplay width type ture')
                         } else {
                             console.info(`castDisplay width type false`);
@@ -499,7 +499,7 @@ export default function abilityTest() {
                 session!.onCastDisplayChange((display) => {
                     if (display.state === avSession.CastDisplayState.STATE_ON) {
                         let castDisplay = display
-                        if (typeof castDisplay.height === 'number'){
+                        if (typeof castDisplay.height === 'int'){
                             console.info('castDisplay height type ture')
                         } else {
                             console.info(`castDisplay height type false`);

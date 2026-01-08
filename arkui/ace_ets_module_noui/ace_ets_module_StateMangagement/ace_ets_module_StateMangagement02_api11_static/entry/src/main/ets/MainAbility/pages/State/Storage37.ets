@@ -41,14 +41,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -66,8 +66,8 @@ let prop137: SubscribedAbstractProperty<number> = AppStorage.link('sss') as Subs
 @Component
 struct LocalStorage37 {
   //@LocalStorageLink变量装饰器与LocalStorage中的'PropA'属性建立双向绑定
-  @StorageProp('PropA') storLink: number = 1;
-  @StorageProp('PropA1') storLink1: number = 47;
+  @StoragePropRef('PropA') storLink: number = 1;
+  @StoragePropRef('PropA1') storLink1: number = 47;
   @State link1Date: number | undefined = 0;
   @State link1Date2: number | undefined = 0;
  aboutToAppear() {

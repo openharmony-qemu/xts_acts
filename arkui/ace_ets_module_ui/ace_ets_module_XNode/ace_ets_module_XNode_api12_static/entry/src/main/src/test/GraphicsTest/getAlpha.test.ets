@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,14 @@ export default function getAlpha() {
 
 
 
-/**
+    /**
      * @tc.number   getAlpha_static_0100
      * @tc.name     getAlpha_static_0100
      * @tc.desc     getAlpha_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('getAlpha_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('getAlpha_0100 START');
       let strJson: string = inspector.getInspectorByKey('getAlpha');
       let obj = JSON.parseJsonElement(strJson);

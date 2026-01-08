@@ -107,8 +107,6 @@ export default function imageTwoJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0100
      * @tc.name     imageTwoJsunit_static_0100
@@ -139,8 +137,6 @@ it('imageTwoJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0200
      * @tc.name     imageTwoJsunit_static_0200
@@ -162,8 +158,6 @@ it('imageTwoJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
 
     //异常参数undefined 注释
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0300
      * @tc.name     imageTwoJsunit_static_0300
@@ -184,8 +178,6 @@ it('imageTwoJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0400
      * @tc.name     imageTwoJsunit_static_0400
@@ -230,8 +222,6 @@ it('imageTwoJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
 
     // 异常参数undefined
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0500
      * @tc.name     imageTwoJsunit_static_0500
@@ -252,8 +242,6 @@ it('imageTwoJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-
-
 /**
      * @tc.number   imageTwoJsunit_static_0600
      * @tc.name     imageTwoJsunit_static_0600

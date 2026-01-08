@@ -260,7 +260,7 @@ export default function audioLoopBack() {
             } else {
               console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 audio loopback enable fail`);
             }
-          }).catch(async (err: BusinessError) => {
+          }).catch((err: Error) => {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
@@ -271,7 +271,7 @@ export default function audioLoopBack() {
             } else {
               console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 audio loopback enable fail`);
             }
-          }).catch(async (err: BusinessError) => {
+          }).catch((err: Error) => {
             console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_ENABLE_0500 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
