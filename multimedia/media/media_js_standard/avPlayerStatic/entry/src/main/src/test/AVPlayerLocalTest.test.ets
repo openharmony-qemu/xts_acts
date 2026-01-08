@@ -214,7 +214,7 @@ async function testCheckPlaybackInfo(src: media.AVFileDescriptor, avPlayer: medi
         avPlayer = video;
         setPlaybackInfoCb(avPlayer!, descriptionKey, descriptionValue, done)
         console.info('case fdsrc test');
-        avPlayer.fdSrc = src;
+        avPlayer!!.fdSrc = src;
       } else {
         console.error(`case createAVPlayer failed`);
         expect().assertFail();
@@ -320,7 +320,7 @@ async function testVideoScaleType(src: media.AVFileDescriptor, avPlayer: media.A
       avPlayer = video;
       setAVPlayerScaleCb(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if(err != null){
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -596,7 +596,7 @@ async function testOffCallback(src: media.AVFileDescriptor, avPlayer: media.AVPl
       avPlayer = video;
       setOnCallback(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -616,7 +616,7 @@ async function testSubtitle(src: media.AVFileDescriptor, subtitleSrc: string | m
       avPlayer = video;
       setOnCallback(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
       setSubtitle(avPlayer!, subtitleSrc);
     }
     if (err != null) {
@@ -637,7 +637,7 @@ async function testSetPlaybackStrategy(src: media.AVFileDescriptor, avPlayer: me
       avPlayer = video;
       setPlaybackStrategy(avPlayer!, done, playbackStrategy)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -656,7 +656,7 @@ async function testSetPlaybackStrategyDASH(src: media.AVFileDescriptor, avPlayer
       avPlayer = video;
       setPlaybackStrategyDASH(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -676,7 +676,7 @@ async function testSetMediaMuted(src: media.AVFileDescriptor, avPlayer: media.AV
       avPlayer = video;
       setMediaMuted(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -743,7 +743,7 @@ async function testGetPlaybackPosition(src: media.AVFileDescriptor, avPlayer: me
       avPlayer = video;
       getPlaybackPosition(avPlayer!, done);
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -921,7 +921,7 @@ async function testSetPlaybackRange(src: media.AVFileDescriptor, avPlayer: media
       avPlayer = video;
       setPlaybackRange(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -994,7 +994,7 @@ async function testOnOffSubtitleUpdate(src: media.AVFileDescriptor, avPlayer: me
       avPlayer = video;
       OnOffSubtitleUpdate(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
@@ -1267,7 +1267,7 @@ async function testOnOffTrackInfoUpdate(src: media.AVFileDescriptor, avPlayer: m
       avPlayer = video;
       OnOffTrackInfoUpdate(avPlayer!, done)
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
