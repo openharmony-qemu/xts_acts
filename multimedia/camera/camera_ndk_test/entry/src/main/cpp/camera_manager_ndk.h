@@ -268,6 +268,7 @@ public:
     // RegisterCallback
     Camera_ErrorCode CameraManagerRegisterCallback(void);
     Camera_ErrorCode CameraInputRegisterCallback(void);
+    Camera_ErrorCode CameraInputRegisterOcclusionDetectionCallback(void);
     Camera_ErrorCode PreviewOutputRegisterCallback(void);
     Camera_ErrorCode PhotoOutputRegisterCallback(void);
     Camera_ErrorCode VideoOutputRegisterCallback(void);
@@ -278,6 +279,7 @@ public:
     // UnRegisterCallback
     Camera_ErrorCode CameraManagerUnRegisterCallback(void);
     Camera_ErrorCode CameraInputUnRegisterCallback(void);
+    Camera_ErrorCode CameraInputUnRegisterOcclusionDetectionCallback(void);
     Camera_ErrorCode PreviewOutputUnRegisterCallback(void);
     Camera_ErrorCode PhotoOutputUnRegisterCallback(void);
     Camera_ErrorCode VideoOutputUnRegisterCallback(void);
@@ -393,6 +395,7 @@ public:
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
+    Camera_ErrorCode CameraOcclusionDetectChangeTest(void);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,
