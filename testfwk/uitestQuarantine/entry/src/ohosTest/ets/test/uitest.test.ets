@@ -72,6 +72,11 @@ async function getInputMethodPermission() {
       await permissionBtn2.click()
       await driver.delayMs(1000)
     }
+  let permissionBtn3 = await driver.findComponent(ON.text('完成'))
+  if (permissionBtn3 != null) {
+    await permissionBtn3.click()
+    await driver.delayMs(1000)
+  }
     await stopApplication('com.uitestScene.acts')
 }
 
