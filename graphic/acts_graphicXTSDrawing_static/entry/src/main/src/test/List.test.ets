@@ -16,8 +16,6 @@ import drawingTsPath6Test from "./Path6.test";
 import pathEffectTest from './PathEffect.test';
 import PathEffect2 from './PathEffect2.test';
 import PathIterator from './PathIterator.test';
-
-
 import penTest from "./Pen.test";
 import penPart2Test from "./PenPart2.test";
 import PenPart3 from './PenPart3.test';
