@@ -173,41 +173,6 @@ export default function UiTest() {
       console.log(TestTag, 'testPressHomeWithId over');
     })
 
-    /**
-     * @tc.name   tesIsComponentPresentWhenDragTrue
-     * @tc.number UiTest_API22_001
-     * @tc.desc   isComponentPresentWhenDrag test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesIsComponentPresentWhenDragTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver.delayMs(waitUiReadyMs);
-      let to5Btn = await driver.findComponent(ON.id('to5'));
-      if (to5Btn == null) {
-        let scroll = await driver.findComponent(ON.type('Scroll'))
-        to5Btn = await scroll.scrollSearch(ON.id('to5'))
-
-      }
-      await to5Btn.click();
-      await driver.delayMs(waitUiReadyMs);
-      let dragColCom = await driver.findComponent(ON.id('dragCol'));
-      await driver.delayMs(waitUiReadyMs);
-      let center1 = await dragColCom.getBoundsCenter();
-      let dragResultTextCom = await driver.findComponent(ON.id('dragResultText'));
-      await driver.delayMs(waitUiReadyMs);
-      let center2 = await dragResultTextCom.getBoundsCenter();
-      let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue result, ${JSON.stringify(result)}`);
-      expect(result).assertTrue();
-      let text = await driver.findComponent(ON.text('drag end'));
-      expect(text != null).assertTrue()
-      await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue end`);
-    })    
-
   })
   describe('UiTest_API16', () => {
     let driver: Driver
