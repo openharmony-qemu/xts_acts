@@ -117,6 +117,22 @@ export default function brushTest() {
           expect(e.code).assertEqual(401);
         }
       }
+      try {
+        brush.setColor(null);
+        console.info(msg + ` 1 setColor succeeded`);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` 1 setColor failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        brush.setColor(undefined);
+        console.info(msg + ` 2 setColor succeeded`);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` 2 setColor failed. Error code is: ${e.code}. Error message is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     });
 
     /**
@@ -1228,8 +1244,14 @@ export default function brushTest() {
         }
         brush.setColor(colors);
         let colorGet = brush.getColor();
-        expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
+        expect(colors.alpha == colorGet.alpha).assertTrue();
+        expect(colors.red == colorGet.red).assertTrue();
+        expect(colors.green == colorGet.green).assertTrue();
+        expect(colors.blue == colorGet.blue).assertTrue();
         console.info(msg + ' getColor2 successed,colorGet:'+ JSON.stringify(colorGet));
+        console.info(`${msg} 2 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+        console.info(msg + ' getColor2 successed,colors:'+ JSON.stringify(colors));
+        console.info(`${msg} 2 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
       } catch( e ) {
         console.info(msg + ` getColor2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
@@ -1241,8 +1263,14 @@ export default function brushTest() {
         }
         brush.setColor(colors);
         let colorGet = brush.getColor();
-        expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
+        expect(colors.alpha == colorGet.alpha).assertTrue();
+        expect(colors.red == colorGet.red).assertTrue();
+        expect(colors.green == colorGet.green).assertTrue();
+        expect(colors.blue == colorGet.blue).assertTrue();
         console.info(msg + ' getColor3 successed,colorGet:'+ JSON.stringify(colorGet));
+        console.info(`${msg} 3 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+        console.info(msg + ' getColor3 successed,colors:'+ JSON.stringify(colors));
+        console.info(`${msg} 3 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
       } catch( e ) {
         console.info(msg + ` getColor3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
@@ -1496,6 +1524,7 @@ export default function brushTest() {
       const msg = 'testBrushSetAndGetColor4fNull';
       const brush = new drawing.Brush();
       let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+      let color4f:common2D.Color4f = {alpha:0.8, red:0.5, green:0.4, blue:0.7};
       try {
         brush.setColor4f(null, colorSpace);
         console.info(msg + `setColor4f 1 successes`);
@@ -1518,6 +1547,14 @@ export default function brushTest() {
         expect().assertFail()
       } catch (e) {
         console.info(msg + `setColor4f 3 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        brush.setColor4f(color4f, undefined);
+        console.info(msg + `setColor4f 4 successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `setColor4f 4 errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
     })

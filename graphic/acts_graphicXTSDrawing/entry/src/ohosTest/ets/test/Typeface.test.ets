@@ -163,6 +163,22 @@ export default function typefaceTest() {
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        const mytypeface = drawing.Typeface.makeFromFile(null);
+        console.info(msg + ' 3 test succeeded.');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` 3 test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const mytypeface = drawing.Typeface.makeFromFile(undefined);
+        console.info(msg + ' 4 test succeeded.');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` 4 test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     });
     /**
      * @tc.name   testTypeFaceMakeFromRawFileAbnormal

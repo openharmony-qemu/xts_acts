@@ -154,12 +154,26 @@ export default function imageFilterTest() {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
+      try {
+        let imgFilter = drawing.ImageFilter.createBlurImageFilter(undefined, 10, uiEffect.TileMode.CLAMP, null);
+        console.info(msg + ' createBlurImageFilter(undefined) succeeded');
+      } catch (e) {
+        console.info(msg + ` createBlurImageFilter(undefined) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
 
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, null, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, undefined, uiEffect.TileMode.CLAMP, null);
+        console.info(msg + ' 2 undefined createBlurImageFilter(null) succeeded');
+      } catch (e) {
+        console.info(msg + ` 2 undefined createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
 
@@ -1196,6 +1210,21 @@ export default function imageFilterTest() {
         expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createOffsetImageFilter offsetFilter3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let offsetFilter2 = drawing.ImageFilter.createOffsetImageFilter(200, 200, null);
+        console.info(msg + ' createOffsetImageFilter 4 successed');
+      } catch( e ) {
+        console.info(msg + ` createOffsetImageFilter 4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let offsetFilter3 = drawing.ImageFilter.createOffsetImageFilter(200, 200, undefined);
+        console.info(msg + ' createOffsetImageFilter 5 successed');
+        expect().assertFail();
+      } catch( e ) {
+        console.info(msg + ` createOffsetImageFilter 5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
     });
