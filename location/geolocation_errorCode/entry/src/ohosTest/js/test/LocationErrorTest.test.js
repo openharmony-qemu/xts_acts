@@ -532,8 +532,9 @@ export default function geolocationTest_LocErr(){
                         if (error.code == 801) {
                             expect(true).assertTrue();
                             done();
-                        } 
-                        expect(error.code).assertEqual(3301602);
+                        } else{
+                            expect(error.code).assertEqual(3301602);
+                        }
                     });
                 } catch(error) {
                     console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
