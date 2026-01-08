@@ -149,7 +149,7 @@ struct ListSwipe {
         .swipeAction({
           end: {
             builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
-            without onAction, no deleteArea
+            // without onAction, no deleteArea
           },
           edgeEffect: SwipeEdgeEffect.Spring,
           onOffsetChange: (offset: number) => {
