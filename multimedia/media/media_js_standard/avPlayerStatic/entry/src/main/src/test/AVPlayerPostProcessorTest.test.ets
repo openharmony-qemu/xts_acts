@@ -182,11 +182,11 @@ export default function AVPlayerPostProcessorTest() {
           console.error(`setPlaybackStrategy failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
         })
+        await mediaTestBase.msleepAsync(200);
         avPlayer!!.setSuperResolution(true).catch((error: Error) => {
           console.error(`setSuperResolution failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
         })
-        await mediaTestBase.msleepAsync(200);
         avPlayer!!.setVideoWindowSize(1080, 720).catch((error: Error) => {
           console.error(`setVideoWindowSize failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
