@@ -561,6 +561,7 @@ export default function uiUiWindowTest() {
         }else {
           let testLabel = await driver.findComponent(ON.text('test label'));
           await testLabel.click()
+          await driver.delayMs(waitUiReadyMs)
           let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           await window1.resume()
           await driver.delayMs(waitUiReadyMs)
@@ -606,6 +607,7 @@ export default function uiUiWindowTest() {
         }else {
           let testLabel = await driver.findComponent(ON.text('test label'));
           await testLabel.click()
+          await driver.delayMs(waitUiReadyMs)
           let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           await window1.resume()
           await driver.delayMs(waitUiReadyMs)
