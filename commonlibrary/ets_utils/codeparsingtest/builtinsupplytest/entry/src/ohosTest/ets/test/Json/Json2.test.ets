@@ -32,7 +32,6 @@ export default function Json2Test() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      await sleep(30);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
