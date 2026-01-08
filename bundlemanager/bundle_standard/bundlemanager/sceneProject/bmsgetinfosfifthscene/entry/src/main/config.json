@@ -33,7 +33,7 @@
             ]
           }
         ],
-        "name": "com.example.third5.AMainAbility",
+        "name": ".AMainAbility",
         "srcLanguage": "js",
         "visible": true,
         "icon": "$media:icon",
@@ -187,7 +187,7 @@
           "voip",
           "taskKeeping"
         ],
-        "name": "com.example.third5.MainAbilityA",
+        "name": ".MainAbilityA",
         "srcLanguage": "js",
         "visible": true,
         "icon": "$media:icon",
@@ -212,7 +212,7 @@
           "dataTransfer",
           "voip"
         ],
-        "name": "com.example.third5.MainAbilityB",
+        "name": ".MainAbilityB",
         "srcLanguage": "js",
         "visible": true,
         "icon": "$media:icon",
@@ -228,7 +228,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third5.AMainAbility",
+        "name": ".AMainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
@@ -248,7 +248,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third5.MainAbilityA",
+        "name": ".MainAbilityA",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
@@ -258,7 +258,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third5.MainAbilityB",
+        "name": ".MainAbilityB",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
