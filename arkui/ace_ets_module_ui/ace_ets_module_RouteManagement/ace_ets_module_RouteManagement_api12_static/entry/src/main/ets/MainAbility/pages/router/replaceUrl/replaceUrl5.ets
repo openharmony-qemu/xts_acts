@@ -18,11 +18,26 @@ import { BusinessError } from '@ohos.base'
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
-class routerParams5 {
+class routerParams5 implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable{
   data1:string
 
   constructor(str:string) {
     this.data1 = str
+  }
+
+  constructor() {
+    this.data1 = "";
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.getString("data1")
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(this.data1)
+    }
+    return jsonx.JsonElement.createObject(root)
   }
 }
 
@@ -41,7 +56,7 @@ struct replaceUrl5 {
         .onClick((e:ClickEvent)=>{
           this.getUIContext().getRouter().replaceUrl({
             url: 'MainAbility/pages/router/replaceUrl/detail5',
-            params: new routerParams5('message')
+            params: (new routerParams5('message')).toJSON()
           })
             .then(() => {
             })

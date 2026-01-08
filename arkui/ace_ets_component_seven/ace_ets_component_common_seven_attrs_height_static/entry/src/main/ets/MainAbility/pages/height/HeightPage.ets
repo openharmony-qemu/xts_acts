@@ -696,16 +696,18 @@ struct heightPage {
 
   onPageShow() {
     console.info('height page show called ')
-    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
-    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
-    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
-    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
-    this.BackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.BackGroundColor
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
-    this._heightButtonMod.mheight = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.height
+    let routerParamOptions = new RouterParams()
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    this.targetView = routerParamOptions.view.targetView;
+    this.componentKey = routerParamOptions.view.componentKey as string;
+    this.parentWidth = routerParamOptions.view.parentWidth;
+    this.parentHeight = routerParamOptions.view.parentHeight;
+    this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
+    this.BackGroundColor = routerParamOptions.view.BackGroundColor
+    this.columns = (routerParamOptions.view.columns as int)
+    this.gutter = (routerParamOptions.view.gutter as int)
+    this._heightButtonMod.mheight = routerParamOptions.view.testValue.setValue.height
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('[registerDataChange2] ' + value.height)
       

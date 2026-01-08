@@ -143,7 +143,8 @@ struct AlignSelfPage {
     // AppStorage.setOrCreate<ItemAlign>('_alignItemsForGridRow', ItemAlign.Start)
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       console.log('test start 0012')
       await Utils.sleep(2000);
       this.containerView = routerParamOptions.view.containerView ?? ''

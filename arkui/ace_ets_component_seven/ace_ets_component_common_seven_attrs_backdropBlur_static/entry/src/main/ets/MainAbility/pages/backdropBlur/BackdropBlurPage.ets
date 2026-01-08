@@ -1207,7 +1207,8 @@ struct BackdropBlurPage {
   @State parentBackGroundColor: Color = Color.White
   onPageShow() {
     console.info('backdropBlur translate page show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this._backdropBlurButton = routerParamOptions.view.testValue.setValue
     this._backdropBlurButtonModifier.backdropBlur = routerParamOptions.view.testValue.setValue.backdropBlur
     console.info('backdropBlur = ' + this._backdropBlurButton.backdropBlur)

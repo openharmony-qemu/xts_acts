@@ -55,7 +55,8 @@ struct ResponseRegionPage {
   onPageShow() {
 
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       // AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
       console.info('[wll]after'+JSON.stringify(routerParamOptions.view.testValue.setValue[0]))
       this.targetView = routerParamOptions.view.targetView

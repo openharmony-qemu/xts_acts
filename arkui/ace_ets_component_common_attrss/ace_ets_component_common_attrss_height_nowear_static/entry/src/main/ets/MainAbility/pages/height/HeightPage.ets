@@ -159,7 +159,8 @@ struct heightPage {
     AppStorage.setOrCreate<Length>('_height', 0)
     AppStorage.setOrCreate<Length>('_width', 0)
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<Length>('_height', routerParamOptions.view.testValue.setValue.height)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

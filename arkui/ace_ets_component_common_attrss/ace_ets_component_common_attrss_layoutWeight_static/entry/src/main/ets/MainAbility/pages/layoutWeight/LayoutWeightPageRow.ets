@@ -115,7 +115,8 @@ struct LayoutWeightPageRow {
     console.info('LayoutWeight page show called ')
     AppStorage.setOrCreate<number>('_layoutWeight',0)
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      let routerParamOptions = new RouterParams()
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<number | string>('_layoutWeight',routerParamOptions.view.testValue.setValue.layoutWeight)
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView

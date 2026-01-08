@@ -115,7 +115,8 @@ struct DefaultFlexPage {
     console.info('DefaultFlexPage show called ')
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      let routerParamOptions = new RouterParams()
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.containerView = routerParamOptions.view.containerView ?? ''
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight

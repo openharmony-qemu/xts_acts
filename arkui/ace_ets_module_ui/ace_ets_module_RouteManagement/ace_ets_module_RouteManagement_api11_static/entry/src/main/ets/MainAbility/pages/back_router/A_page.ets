@@ -14,13 +14,7 @@
  * limitations under the License.
  */
 import {Entry,Component,Column,ColumnOptions,Button,ClickEvent,ButtonType} from '@ohos.arkui.component';
-
-class JsonObject {
-  data1: JsonObject1 = new JsonObject1()
-}
-class JsonObject1 {
-  data2: [string, string] = ['', '']
-}
+import { JsonObject, JsonObject1 } from '../../common/Utils';
 
 @Entry
 @Component
@@ -34,11 +28,7 @@ struct router_page1 {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: "MainAbility/pages/back_router/B_page",
-            params: {
-              data1: {
-                data2: ['message', 'message1']
-              }
-            } as JsonObject
+            params: (new JsonObject(new JsonObject1(['message', 'message1']))).toJSON()
           })
         })
     }

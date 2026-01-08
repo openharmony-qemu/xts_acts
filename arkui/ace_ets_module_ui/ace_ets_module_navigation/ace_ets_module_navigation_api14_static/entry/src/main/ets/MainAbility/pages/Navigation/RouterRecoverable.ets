@@ -20,22 +20,77 @@ import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Colo
 } from '@ohos.arkui.component'
 import router from '@ohos.router';
 
-class InnerParams {
-  private data3: number[]
+class InnerParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data3: number[];
 
-  constructor(tuple:number[]) {
-    this.data3 = tuple
+  constructor() {
+    this.data3 = new Array<number>();
+  }
+
+  constructor(arr: number[]) {
+    this.data3 = arr;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data3.length; ++i) {
+      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data3', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let arrJson = jsonElem.tryAsArray();
+    if (!arrJson) {
+      this.data3 = new Array<number>();
+      return;
+    }
+    let arr = new Array<number>();
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsDouble();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data3 = arr;
   }
 }
-class RouterParams {
-  private data1: string
-  private data2: InnerParams
 
-  constructor(str:string, tuple:number[]) {
-    this.data1 = str
-    this.data2 = new InnerParams(tuple)
+class RouterParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: InnerParams;
+
+  constructor() {
+    this.data1 = "";
+    this.data2 = new InnerParams();
+  }
+
+  constructor(data1: string, data2: number[]) {
+    this.data1 = data1;
+    this.data2 = new InnerParams(data2);
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1))
+    root.set('data2', this.data2.toJSON());
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let data2 = jsonElem.tryGetElement('data2');
+    if (data2) {
+      this.data2 = new InnerParams();
+      this.data2.fromJSON(data2!);
+    }
   }
 }
+
+
 @Entry
 @Component
 struct RouterRecoverable {
@@ -59,7 +114,7 @@ struct RouterRecoverable {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Navigation/RouterPage2',
-            params: new RouterParams('message' ,[123,456,789]),
+            params: (new RouterParams('message' ,[123,456,789])).toJSON(),
             recoverable:true
           })
         })
@@ -71,7 +126,7 @@ struct RouterRecoverable {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Navigation/RouterPage2',
-            params: new RouterParams('message' ,[123,456,789]),
+            params: (new RouterParams('message' ,[123,456,789])).toJSON(),
             recoverable:false
           })
         })

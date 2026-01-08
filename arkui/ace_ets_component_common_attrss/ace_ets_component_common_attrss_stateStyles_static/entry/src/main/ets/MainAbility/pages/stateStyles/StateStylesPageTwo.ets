@@ -42,7 +42,8 @@ struct StateStylesPageTwo {
     AppStorage.setOrCreate<boolean>('_isSelect', true)
     console.info('this._isSelect:' + this._isSelect)
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
     } catch (error: Error) {

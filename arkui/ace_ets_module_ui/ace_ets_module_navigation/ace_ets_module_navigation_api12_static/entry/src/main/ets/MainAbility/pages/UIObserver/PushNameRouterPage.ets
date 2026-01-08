@@ -28,13 +28,82 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { BusinessError } from '@ohos.base';
-interface Data2 {
-  data3: int[]
+
+class Data2 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data3: int[];
+
+  constructor() {
+    this.data3 = [0];
+  }
+
+  constructor(arr: int[]) {
+    this.data3 = arr;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data3.length; ++i) {
+      arr.push(jsonx.JsonElement.createInteger(this.data3[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data3', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let arrJson = jsonElem.tryAsArray();
+    if (!arrJson) {
+      this.data3 = new Array<int>();
+      return;
+    }
+    let arr = new Array<int>();
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsInteger();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data3 = arr;
+  }
 }
-interface Param {
-  data1: string,
-  data2: Data2
+
+class Param implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: Data2;
+
+  constructor() {
+    this.data1 = "";
+    this.data2 = new Data2();
+  }
+
+  constructor(data1: string, data2: Data2) {
+    this.data1 = data1;
+    this.data2 = data2;
+  }
+
+  constructor(data1: string, data2: Array<int>) {
+    this.data1 = data1;
+    this.data2 = new Data2(data2);
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1))
+    root.set('data2', this.data2.toJSON());
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let data2 = jsonElem.tryGetElement('data2');
+    if (data2) {
+      this.data2 = new Data2();
+      this.data2.fromJSON(data2!);
+    }
+  }
 }
+
 @Entry({routeName:'pushNameRouter'})
 @Component
 struct PushNameRouterPage {
@@ -45,12 +114,7 @@ struct PushNameRouterPage {
       console.log('+++++++++++++++++++++++++++2');
       uiContext.getRouter().pushNamedRoute({
         name: 'pushNameRouter',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          }
-        } as Param,
+        params: (new Param('message', new Data2([123, 456, 789]))).toJSON(),
         recoverable: false
       } as router.NamedRouterOptions,
         (err: BusinessError|null): void => {  //没走这里

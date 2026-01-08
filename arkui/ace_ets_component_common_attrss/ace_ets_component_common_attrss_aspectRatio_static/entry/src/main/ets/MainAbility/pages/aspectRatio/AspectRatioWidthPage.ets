@@ -69,7 +69,8 @@ struct AspectRatioWidthPage {
     .backgroundColor(Color.Pink)
   }
   onPageShow() {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<number>('_aspectRatio',  routerParamOptions.view.testValue.setValue.aspectRatio)
     AppStorage.setOrCreate<number>('_width',  routerParamOptions.view.testValue.setValue.width as number)
     this.targetView = routerParamOptions.view.targetView

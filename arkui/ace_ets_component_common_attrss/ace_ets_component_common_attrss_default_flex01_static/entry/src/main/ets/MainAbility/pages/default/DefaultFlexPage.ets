@@ -42,7 +42,8 @@ struct DefaultFlexPage {
 
   onPageShow() {
     console.info('DefaultFlexPage show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions =  new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this.containerView = routerParamOptions.view.containerView ?? ""
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.parentWidth = routerParamOptions.view.parentWidth

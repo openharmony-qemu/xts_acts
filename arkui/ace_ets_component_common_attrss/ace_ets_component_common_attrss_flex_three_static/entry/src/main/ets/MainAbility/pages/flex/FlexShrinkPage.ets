@@ -171,7 +171,8 @@ struct FlexShrinkPage {
     AppStorage.setOrCreate<number>('_parentHeight',  400)
     AppStorage.setOrCreate<number>('_compareFlexShrink',  1)
     AppStorage.setOrCreate<number>('_standardFlexShrink',  0)
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.containerView = routerParamOptions.view.containerView ?? ""
