@@ -149,6 +149,11 @@ struct PickerComponent {
     // 已勾选图片被删除时的回调
   }
 
+  private onPinchGridSwitched(gridLevel: photoAccessHelper.GridLevel): void {
+    console.info('onSelectedItemsDeleted');
+    // 捏合图片时的回调
+  }
+
   private onExceedMaxSelected(exceedMaxCountType: MaxCountType): void {
     console.info('onExceedMaxSelected');
     // 超过最大选择数量再次点击时的回调
