@@ -612,13 +612,55 @@ export default function GraphicTextAPI23() {
       let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
       let fontFamily: string = 'family';
       try {
-        await expect(fontCollection.loadFontWithCheck(fontFamily, 'file:///dev/tun'))
-        .assertPromiseIsRejectedWith({ code: 25900003});
+        fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///dev/tun', 0);
+        console.info('www data success to do loadFontSyncWithCheck');
+        expect().assertFail();
+      } catch (e) {
+        console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+        expect(Number(e.code) == 25900003).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_1900
+     * @tc.number testLoadFontSyncWithCheck_1900
+     * @tc.desc   text loadFontSyncWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      try {
+        fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc');
         console.info('www data success to do loadFontSyncWithCheck');
       } catch (e) {
         console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
         expect().assertFail();
       }
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2000
+     * @tc.number testLoadFontSyncWithCheck_2000
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      await fontCollection.loadFontWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc')
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+        }).catch((error: BusinessError) => {
+          console.error(`Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          expect().assertFail();
+        });
       done();
     })
 
