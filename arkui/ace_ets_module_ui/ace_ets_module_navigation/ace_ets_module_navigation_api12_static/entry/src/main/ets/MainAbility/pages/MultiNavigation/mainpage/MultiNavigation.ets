@@ -598,13 +598,13 @@ export class MultiNavPathStack extends NavPathStack {
       return value.navInfo?.name === name;
     });
     if (index !== -1) {
-      this.moveIndexToTop(index as int, animated);
+      this.moveIndexToTop(index, animated);
     }
 
     return index as int;
   }
 
-  moveIndexToTop(index: int, animated?: boolean): void {
+  moveIndexToTop(index: number, animated?: boolean): void {
     hilog.info(0x0000, 'MultiNavigation', 'MultiNavPathStack moveIndexToTop index=' + index);
     if (index < 0 || index > this.totalStack.length) {
       hilog.error(0x0000, 'MultiNavigation', 'MultiNavPathStack moveIndexToTop wrong index');
@@ -621,7 +621,7 @@ export class MultiNavPathStack extends NavPathStack {
         if (this.subStackList[subIndex].getPrimaryPolicy() === SplitPolicy.HOME_PAGE) {
           let innerIndex = index - stepStartIndex;
           if (innerIndex !== 0) {
-            this.subStackList[subIndex].secondaryStack.moveIndexToTop((innerIndex - 1) as int, animated);
+            this.subStackList[subIndex].secondaryStack.moveIndexToTop((innerIndex - 1), animated);
             const subInfo = this.subStackList[subIndex].secondaryStack.policyInfoList.splice((innerIndex - 1) as int, 1);
             this.subStackList[subIndex].secondaryStack.policyInfoList.push(...subInfo);
           }
@@ -632,7 +632,7 @@ export class MultiNavPathStack extends NavPathStack {
     if (outerIndex !== -1) {
       let subStack = this.subStackList.splice(outerIndex as int, 1);
       this.subStackList.push(...subStack);
-      this.outerStack.moveIndexToTop(outerIndex as int, animated);
+      this.outerStack.moveIndexToTop(outerIndex, animated);
     }
 
     this.totalStack = [];

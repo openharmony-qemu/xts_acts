@@ -47,7 +47,7 @@ class DerivedNavPathStack extends NavPathStack{
   moveToTop(name: string, animated?: boolean): int {
     return super.moveToTop(name,animated)
   }
-  moveIndexToTop(index: int, animated?: boolean): void {
+  moveIndexToTop(index: number, animated?: boolean): void {
     return super.moveIndexToTop(index,animated)
   }
   getAllPathName(): string[] {
