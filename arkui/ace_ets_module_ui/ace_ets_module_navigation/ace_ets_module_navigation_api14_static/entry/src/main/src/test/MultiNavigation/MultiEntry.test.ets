@@ -95,7 +95,7 @@ it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[MultiEntry_0100] btn1 click');
       await CommonFunc.sleep(3000);
 
-      let onNavigationModeChangeCallbackValue:number = AppStorage.get('onNavigationModeChangeCallbackValue')! as number
+      let onNavigationModeChangeCallbackValue:Double = AppStorage.get<Double>('onNavigationModeChangeCallbackValue')! as Double
       expect(onNavigationModeChangeCallbackValue).assertEqual(1);
       AppStorage.delete('onNavigationModeChangeCallbackValue');
 
@@ -202,7 +202,7 @@ it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[MultiEntry_0400] btn2 click');
       await CommonFunc.sleep(3000);
 
-      let allPathName:String = AppStorage.get('allPathName')! as String;
+      let allPathName:String = AppStorage.get<String>('allPathName')! as String;
       expect(allPathName).assertEqual('PageHome,PageDetail');
       AppStorage.delete('allPathName');
 
@@ -237,7 +237,7 @@ it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[MultiEntry_0500] btn2 click');
       await CommonFunc.sleep(3000);
 
-      let indexParam:String = AppStorage.get('indexParam')! as String;
+      let indexParam:String = AppStorage.get<String>('indexParam')! as String;
       expect(indexParam).assertEqual('paramTest');
       AppStorage.delete('indexParam');
 
@@ -272,7 +272,7 @@ it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[MultiEntry_0600] btn2 click');
       await CommonFunc.sleep(3000);
 
-      let nameParam:String = AppStorage.get('nameParam')! as String;
+      let nameParam:String = AppStorage.get<String>('nameParam')! as String;
       expect(nameParam).assertEqual('testParam');
       AppStorage.delete('nameParam');
 
@@ -307,7 +307,7 @@ it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[MultiEntry_0700] btn2 click');
       await CommonFunc.sleep(3000);
 
-      let sizeNum:number = AppStorage.get('sizeNum')! as number;
+      let sizeNum:Double = AppStorage.get<Double>('sizeNum')! as Double;
       expect(sizeNum).assertEqual(2);
       AppStorage.delete('sizeNum');
 

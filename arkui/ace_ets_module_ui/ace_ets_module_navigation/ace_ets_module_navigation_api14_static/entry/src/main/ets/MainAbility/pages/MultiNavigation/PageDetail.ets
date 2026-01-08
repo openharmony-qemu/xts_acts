@@ -106,7 +106,7 @@ export struct PageDetail {
                 if (this.pageStack !== undefined && this.pageStack !== null) {
                   let result = this.pageStack.getAllPathName();
                   console.log('multi test getAllPathName is: ', result.toString())
-                  AppStorage.setOrCreate('allPathName', result.toString());
+                  AppStorage.setOrCreate<String>('allPathName', result.toString());
                 }
               })
               .id('getAllPathNameId')
@@ -114,9 +114,9 @@ export struct PageDetail {
               .height('5%')
               .onClick((e: ClickEvent) => {
                 if (this.pageStack !== undefined && this.pageStack !== null) {
-                  let result = this.pageStack.getParamByIndex(0);
+                  let result: String = this.pageStack.getParamByIndex(0) as String;
                   console.log('multi test getParamByIndex: ' + result);
-                  AppStorage.setOrCreate('indexParam', result);
+                  AppStorage.setOrCreate<String>('indexParam', result);
                 }
               })
               .id('getParamByIndexId')
@@ -126,7 +126,7 @@ export struct PageDetail {
                 if (this.pageStack !== undefined && this.pageStack !== null) {
                   let result = this.pageStack.getParamByName('PageDetail');
                   console.log('multi test getParamByName: ' + result.toString());
-                  AppStorage.setOrCreate('nameParam', result.toString());
+                  AppStorage.setOrCreate<String>('nameParam', result.toString());
                 }
               })
               .id('getParamByNameId')
@@ -135,7 +135,7 @@ export struct PageDetail {
               .onClick((e: ClickEvent) => {
                 if (this.pageStack !== undefined && this.pageStack !== null) {
                   console.log('getSize: ' + this.pageStack.size());
-                  AppStorage.setOrCreate('sizeNum', this.pageStack.size());
+                  AppStorage.setOrCreate<Double>('sizeNum', this.pageStack.size());
                 }
               })
               .id('getSizeId')
