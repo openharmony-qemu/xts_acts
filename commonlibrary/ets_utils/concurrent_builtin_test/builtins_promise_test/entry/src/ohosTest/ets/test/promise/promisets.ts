@@ -813,7 +813,7 @@ export async function PromiseRaceTest033() {
   }
 
   const p1: Promise<number> = (async () => {
-    for await (const val of asyncGenerator(40, 1)) {
+    for await (const val of asyncGenerator(240, 1)) {
       return val;
     }
     return -1;
@@ -838,7 +838,7 @@ export let obj65 = { p1: 0, p2: 0 }
 
 export const customThenable42_1 = {
   then: function (resolve: (value: number) => void) {
-    setTimeout(() => resolve(1), 50);
+    setTimeout(() => resolve(1), 150);
   }
 };
 
@@ -864,7 +864,7 @@ export async function PromiseRaceTest057() {
     return result;
   }
 
-  const p1: Promise<number> = processGenerator(delayGenerator(20, 5), 2);
+  const p1: Promise<number> = processGenerator(delayGenerator(200, 5), 2);
   const p2: Promise<number> = processGenerator(delayGenerator(15, 3), 3);
 
   const result = await Promise.race([p1, p2]);
@@ -881,7 +881,7 @@ export async function PromiseRaceTest068() {
   }
 
   const p1: Promise<number> = (async () => {
-    for await (const val of timedYield(2, 3, 10)) {
+    for await (const val of timedYield(2, 3, 100)) {
       if (val === 4) {
         return val;
       } // Return on second yield
@@ -928,7 +928,7 @@ export async function PromiseRaceTest066() {
   // State transitions with cumulative delays
   const p1: Promise<number> = stateMachine(1, [
     { delay: 10, state: State66.RUNNING },
-    { delay: 20, state: State66.RUNNING },
+    { delay: 200, state: State66.RUNNING },
     { delay: 15, state: State66.COMPLETE }
   ]); // Total ~45ms
 
@@ -975,7 +975,7 @@ export async function PromiseRaceTest077() {
   const p2: Promise<number> = new Promise<number>(resolve => {
     signaler2.setCallback(resolve);
     // Send signal with value 2 after 20ms
-    setTimeout(() => signaler2.signal(2), 20);
+    setTimeout(() => signaler2.signal(2), 200);
     // Send signal with value 3 after 10ms (will resolve first)
     setTimeout(() => signaler2.signal(3), 10);
   });

@@ -64,7 +64,7 @@ struct StartImageAnalyzerErrorCode {
               .then(() => {
                 console.log('abc analysis complete')
               })
-              .catch( (error: BusinessError<void> | null): void => {   //SDK 11.22 catch未执行
+              .catch( (error: Error): void => {   //SDK 11.22 catch未执行
                 console.log('abc error code: ' + error?.code)
                 this.ErrorCode = error?.code.toString()
               })

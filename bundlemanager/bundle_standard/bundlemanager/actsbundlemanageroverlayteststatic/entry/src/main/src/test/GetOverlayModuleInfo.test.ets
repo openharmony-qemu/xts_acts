@@ -35,7 +35,7 @@ export default function getOverlayModuleInfo() {
             hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
             expect().assertFail();
             done();
-          }, (err: BusinessError<void>): void => {
+          }, (err: Error): void => {
             hilog.error(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise then failed: %{public}s',
               JSON.stringify(err));
             expect(err.code).assertEqual(401);
@@ -98,7 +98,7 @@ export default function getOverlayModuleInfo() {
           hilog.info(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise success');
           expect().assertFail();
           done();
-        }, (err: BusinessError<void>): void => {
+        }, (err: Error): void => {
           hilog.error(0x0000, 'testParamTag', 'o6 getOverlayModuleInfo Promise then failed: %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(17700032);
           done();

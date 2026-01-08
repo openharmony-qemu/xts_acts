@@ -93,7 +93,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430', Level.LEVEL0,
       
       let strJson = inspector.getInspectorByKey('lSwipe43Action0');
 
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430] current component obj is: " + strJson);
       
       let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe43Action0');
       let right: number = ListItem_00.right;

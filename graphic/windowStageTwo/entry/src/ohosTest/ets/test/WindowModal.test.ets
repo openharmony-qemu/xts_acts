@@ -121,6 +121,7 @@ export default function windowModalTest() {
     let windowStage: ohosWindow.WindowStage;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -139,6 +140,7 @@ export default function windowModalTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      driver = Driver.create();
       
     })
     afterEach(async ()=>{
@@ -304,7 +306,6 @@ export default function windowModalTest() {
     it("test_SubWindow_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_IsModal_true";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let num = 0;
       let minWidth = 0;
       let minHeight = 0;
@@ -395,7 +396,6 @@ export default function windowModalTest() {
       console.log(msgStr + "begin");
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let num = 0;
       let subWindowClass: ohosWindow.Window;
       let windowClass = await windowStage.getMainWindow();
@@ -482,7 +482,6 @@ export default function windowModalTest() {
     it("test_SubWindow_hide_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_hide_IsModal_true";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let num = 0;
       let subWindowClass: ohosWindow.Window;
       let windowClass = await windowStage.getMainWindow();
@@ -1434,7 +1433,6 @@ export default function windowModalTest() {
       await sleep(300);
       let windowRect = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowRect = ${JSON.stringify(windowRect)}`)
-      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1500)
       let btnPoint = await btn.getBoundsCenter()
@@ -1509,7 +1507,6 @@ export default function windowModalTest() {
       await sleep(300);
       let windowRect = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowRect = ${JSON.stringify(windowRect)}`)
-      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnPoint = await btn.getBoundsCenter()

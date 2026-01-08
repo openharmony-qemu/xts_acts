@@ -824,7 +824,7 @@ export default function ActsNotificationWantUriTest() {
           pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}
               get pixelMap info succeeded`);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}
               get pixelMap info failed code:${err.code} message:${err.message}`);
           });
@@ -928,7 +928,7 @@ export default function ActsNotificationWantUriTest() {
           pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}
               get pixelMap info succeeded`);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}
               get pixelMap info failed code:${err.code} message:${err.message}`);
           });
@@ -1037,7 +1037,7 @@ export default function ActsNotificationWantUriTest() {
           try {
             notificationManager.cancelAll().then(() => {
               hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} cancel all notification succeeded.`);
-            }).catch((err: BusinessError<void> | null) : void => {
+            }).catch((err: Error) : void => {
               hilog.error(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} cancel all notification failed
               code:${err?.code} message:${err?.message}`);
             });

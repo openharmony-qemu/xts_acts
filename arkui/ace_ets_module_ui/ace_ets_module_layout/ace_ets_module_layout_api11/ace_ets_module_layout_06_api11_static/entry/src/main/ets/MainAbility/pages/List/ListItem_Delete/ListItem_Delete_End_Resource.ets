@@ -99,6 +99,7 @@ struct ListItem_Delete_End_Resource {
             end: {
               onAction: () => {
                 this.getUIContext().animateTo({ duration: 1000 }, () => {
+                  console.info('[ListItem_Delete_End_Resource] start!');
                   let index = this.arr.indexOf(item)
                   this.arr.splice(index, 1)
                 })

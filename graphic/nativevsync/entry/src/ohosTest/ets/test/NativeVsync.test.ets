@@ -34,6 +34,7 @@ export default function nativeVsyncTest() {
       done();
     });
 
+
     /**
      * @tc.name   testNativeVSyncCreateNotEq
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_0200
@@ -498,5 +499,20 @@ export default function nativeVsyncTest() {
       expect(result[3]).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testNativeErrorCodeCover
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_VSYNC_3100
+     * @tc.desc   test ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = vsync.oHNativeErrorCodeCover();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

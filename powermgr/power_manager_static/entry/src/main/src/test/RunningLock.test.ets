@@ -89,7 +89,7 @@ export default function RunningLockTest() {
               expect(isHold).assertFalse();
               done();
             })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
               expect().assertFail();
               done();
@@ -403,7 +403,7 @@ export default function RunningLockTest() {
               expect(isHold).assertFalse();
               done();
             })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
               expect().assertFail();
               done();

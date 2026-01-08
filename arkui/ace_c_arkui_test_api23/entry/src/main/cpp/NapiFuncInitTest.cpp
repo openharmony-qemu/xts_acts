@@ -19,6 +19,8 @@
 #include "containerPicker/ContainerPickerSelectionIndicatorTest.cpp"
 #include "containerPicker/ContainerPickerSubComponentTest.cpp"
 #include "MotionPath/MotionPathOptionsTest.cpp"
+#include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
+
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -111,6 +113,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testMotionPathOptions008", nullptr, GetPathBufferSizeError, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testMotionPathOptions009", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TestAtomicServiceMenuBarSetVisible01", nullptr,
+         TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

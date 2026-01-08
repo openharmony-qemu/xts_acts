@@ -443,7 +443,7 @@ export default function WindowImmersiveTest() {
                 hilog.info(0x0000, '[ANI]',CaseName + ' setWindowLayoutFullScreen success ');
                 expect(false).assertTrue();
                 done();
-            }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
                 hilog.error(0x0000, '[ANI]',CaseName + ' setWindowLayoutFullScreen failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                 expect(err.code).assertEqual(1300002);
                 done();
@@ -468,7 +468,7 @@ export default function WindowImmersiveTest() {
                 hilog.info(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable success ');
                 expect(false).assertTrue();
                 done();
-            }).catch((err:BusinessError):PromiseLike<void>|undefined=>{
+            }).catch((err:Error):PromiseLike<void>|undefined=>{
                 hilog.error(0x0000, '[ANI]',CaseName + ' setWindowSystemBarEnable failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                 expect(err.code).assertEqual(1300002);
                 done();
@@ -503,7 +503,7 @@ export default function WindowImmersiveTest() {
                 (win as window.Window).setWindowSystemBarProperties(SystemBarProperties).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the system bar properties.');
                     expect(false).assertTrue();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the system bar properties. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002)
                     done();
@@ -549,7 +549,7 @@ export default function WindowImmersiveTest() {
                         hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1 finished step:' + i);
                         done()
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]','setWindowSystemBarPropertiesTest1  error : ' + JSON.stringify(err));
                     if (err.code == 801) {
                         expect(true).assertTrue();
@@ -582,7 +582,7 @@ export default function WindowImmersiveTest() {
                     (subWin! as window.Window).setSpecificSystemBarEnabled('status', true, true).then(() => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setSpecificSystemBarEnabled.');
                         expect(false).assertTrue();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setSpecificSystemBarEnabled. Cause: ' + JSON.stringify(err));
                         expect(err.code).assertEqual(1300002);
                     });
@@ -593,7 +593,7 @@ export default function WindowImmersiveTest() {
                     expect(false).assertTrue();
                     done()
                 }
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
@@ -630,7 +630,7 @@ export default function WindowImmersiveTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -750,7 +750,7 @@ export default function WindowImmersiveTest() {
                 await (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async () => {
                     console.info(msgStr + 'Succeeded in calling maximize.');
                     expect(false).assertTrue();
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done()
@@ -911,7 +911,7 @@ export default function WindowImmersiveTest() {
                     console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
                     expect(false).assertTrue();
                     done()
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done()
@@ -955,7 +955,7 @@ export default function WindowImmersiveTest() {
                     expect(false).assertTrue();
                     await (subWin! as window.Window).destroyWindow();
                     done()
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
                     await (subWin! as window.Window).destroyWindow();
                     if (err.code == 801) {

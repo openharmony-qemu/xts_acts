@@ -22,11 +22,15 @@ import sim from '@ohos.telephony.sim';
 let simState: sim.SimState = sim.getSimStateSync(0);
 export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    if(sim.hasSimCardSync(0)){
       Sim1Public();
       Sim2Public();
       Sim3Public();
       Sim4Public();
+    } else {
+      Sim3Public();
+    }
   }else{
-    EmptyTest();
+    EmptyTest()
   }
 }

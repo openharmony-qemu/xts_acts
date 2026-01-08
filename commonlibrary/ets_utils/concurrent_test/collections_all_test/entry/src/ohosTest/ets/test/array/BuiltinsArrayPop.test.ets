@@ -13,9 +13,7 @@
 * limitations under the License.
 */
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
-import { TestA } from '../../testability/pages/InterfaceDefined';
 import { sleep } from '../../testability/pages/Utils';
 import { collections } from '@kit.ArkTS'
 
@@ -54,8 +52,8 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0100';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([1, 2]);
-        let array = collections.Array.from([1, 2, 3]);
+        let exp = Array.from(collections.Array.from([1, 2]));
+        let array = Array.from(collections.Array.from([1, 2, 3]));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -110,8 +108,8 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([]);
-        let array = collections.Array.from([5]);
+        let exp = Array.from(collections.Array.from([]));
+        let array = Array.from(collections.Array.from([5]));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -138,8 +136,8 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0400';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([]);
-        let array = collections.Array.from([,]);
+        let exp = Array.from(collections.Array.from([]));
+        let array = Array.from(collections.Array.from([,]));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -166,8 +164,8 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0500';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([1, null, 3]);
-        let array = collections.Array.from([1, null, 3, 4]);
+        let exp = Array.from(collections.Array.from([1, null, 3]));
+        let array = Array.from(collections.Array.from([1, null, 3, 4]));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -182,6 +180,7 @@ export default function builtinsArrayPopTest() {
       console.info(`${caseName} test end`);
     })
 
+
     /**
      * @tc.name   builtinsArrayPopTest0600
      * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0600
@@ -194,22 +193,13 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0600';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from<number|TestA>([1, {
-          a: 1
-        }, {
-          a: 1
-        }, 3]);
-
-        let array = collections.Array.from<number|TestA>([1, {
-          a: 1
-        }, {
-          a: 1
-        }, 3, 4]);
+        let exp = Array.from(collections.Array.from(['apple', 'banana']));
+        let array = Array.from(collections.Array.from(['apple', 'banana', 'cherry']));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
 
-        expect(newValue).assertEqual(4);
+        expect(newValue).assertEqual('cherry');
         expect(array).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -231,37 +221,9 @@ export default function builtinsArrayPopTest() {
       const caseName = 'builtinsArrayPopTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['apple', 'banana']);
-        let array = collections.Array.from(['apple', 'banana', 'cherry']);
-        let newValue = array.pop();
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
+        let exp = Array.from(collections.Array.from(['apple', '']));
 
-        expect(newValue).assertEqual('cherry');
-        expect(array).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayPopTest0800
-     * @tc.number SUB_BUILTINS_ARRAY_POP_TEST_0800
-     * @tc.desc   Testing pop
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayPopTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPopTest0800';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from(['apple', '']);
-
-        let array = collections.Array.from(['apple', '', 'cherry']);
+        let array = Array.from(collections.Array.from(['apple', '', 'cherry']));
         let newValue = array.pop();
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);

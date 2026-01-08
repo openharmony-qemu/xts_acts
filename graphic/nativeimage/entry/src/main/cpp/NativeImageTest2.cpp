@@ -14,6 +14,7 @@
  */
 
 #include "NativeImageTest.h"
+#include "common/native_common.h"
 #include "napi/native_api.h"
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
@@ -154,6 +155,11 @@ napi_value OHNativeImageCreateWithSingleBufferModeUsingTextImageNull(napi_env en
         napi_create_int32(env, FAIL, &result);
         return result;
     }
+    nativeImage = OH_NativeImage_CreateWithSingleBufferMode(NUM_MAX, NUM_MAX, true);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     napi_create_int32(env, SUCCESS, &result);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
@@ -172,7 +178,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal(napi_en
         napi_create_int32(env, FAIL, &result1);
     }
     napi_set_element(env, result, ARR_NUMBER_0, result1);
-    nativeImage = OH_NativeImage_CreateWithSingleBufferMode(0xFFFFFFFF + 1, 0xFFFFFFFF + 1, true);
+    nativeImage = OH_NativeImage_CreateWithSingleBufferMode(NUM_MAX + 1, NUM_MAX + 1, true);
     if (nativeImage != nullptr) {
         napi_create_int32(env, SUCCESS, &result2);
     } else {
@@ -242,7 +248,9 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     napi_value result3 = nullptr;
     napi_create_array_with_length(env, ARR_NUMBER_3, &result);
     OH_NativeImage *nativeImage = OH_ConsumerSurface_CreateWithSingleBufferMode(true);
+    NAPI_ASSERT(env, nativeImage != nullptr, "nativeImage == nullptr");
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -313,7 +321,15 @@ napi_value OHNativeImageReleaseTextImageNormal(napi_env env, napi_callback_info 
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, true);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -325,7 +341,6 @@ napi_value OHNativeImageReleaseTextImageNormal(napi_env env, napi_callback_info 
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    
     Region region{nullptr, PARAM_0};
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
     OH_NativeImage_UpdateSurfaceImage(nativeImage);
@@ -406,7 +421,15 @@ napi_value OHNativeImageReleaseTextImageDestroyImage(napi_env env, napi_callback
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, true);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -433,6 +456,7 @@ napi_value OHNativeImageGetColorSpaceNormal(napi_env env, napi_callback_info inf
 {
     napi_value result = nullptr;
     OH_NativeImage *image = OH_ConsumerSurface_CreateWithSingleBufferMode(true);
+    NAPI_ASSERT(env, image != nullptr, "image == nullptr");
     OH_NativeBuffer_ColorSpace colorSpace;
     int32_t ret = OH_NativeImage_GetColorSpace(image, &colorSpace);
     if (ret == NATIVE_ERROR_OK) {
@@ -518,7 +542,9 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest1(napi_env env, napi_callb
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *image = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, true);
+    NAPI_ASSERT(env, image != nullptr, "image == nullptr");
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
+    NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -557,7 +583,9 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *image = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, false);
+    NAPI_ASSERT(env, image != nullptr, "image == nullptr");
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
+    NAPI_ASSERT(env, nativeWindow != nullptr, "nativeWindow == nullptr");
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -580,17 +608,11 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer2, fenceFd, region);
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer3, fenceFd, region);
     int32_t errorCode1 = OH_NativeImage_UpdateSurfaceImage(image);
-    if (errorCode1 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, errorCode1 == NATIVE_ERROR_OK, "errorCode1 != NATIVE_ERROR_OK");
     OH_NativeBuffer_ColorSpace colorSpace1;
     OH_NativeImage_GetColorSpace(image, &colorSpace1);
     int32_t errorCode2 = OH_NativeImage_ReleaseTextImage(image);
-    if (errorCode2 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, errorCode2 == NATIVE_ERROR_OK, "errorCode2 != NATIVE_ERROR_OK");
     napi_create_int32(env, SUCCESS, &result);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer1);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
@@ -849,7 +871,15 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
     int32_t height = PARAM_600;
@@ -1187,5 +1217,32 @@ napi_value OHNativeImageReleaseAbnormal(napi_env env, napi_callback_info info)
     }
     OH_NativeImage_Destroy(&nativeImage);
     delete initNative;
+    return result;
+}
+
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    NAPI_ASSERT(env, NATIVE_ERROR_OK == ERRORCODE_0, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_MEM_OPERATION_ERROR == ERRORCODE_30001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_INVALID_ARGUMENTS == ERRORCODE_40001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_PERMISSION == ERRORCODE_40301000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_BUFFER == ERRORCODE_40601000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NO_CONSUMER == ERRORCODE_41202000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_NOT_INIT == ERRORCODE_41203000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_CONNECTED == ERRORCODE_41206000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_STATE_INVALID == ERRORCODE_41207000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_IN_CACHE == ERRORCODE_41208000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_QUEUE_FULL == ERRORCODE_41209000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BUFFER_NOT_IN_CACHE == ERRORCODE_41210000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_DISCONNECTED == ERRORCODE_41211000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_CONSUMER_NO_LISTENER_REGISTERED == ERRORCODE_41212000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNSUPPORTED == ERRORCODE_50102000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_UNKNOWN == ERRORCODE_50002000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_HDI_ERROR == ERRORCODE_50007000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_BINDER_ERROR == ERRORCODE_50401000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_STATE_UNKNOWN == ERRORCODE_60001000, "");
+    NAPI_ASSERT(env, NATIVE_ERROR_EGL_API_FAILED == ERRORCODE_60002000, "");
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }

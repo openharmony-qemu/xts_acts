@@ -47,3 +47,5 @@ export const distanceTest: (a: string) => void;
 export const hoverEffectTest: (a: string) => void;
 
 export const monopolizeTest: (a: string) => void;
+
+export const textSelectionTest: (a: string) => void;

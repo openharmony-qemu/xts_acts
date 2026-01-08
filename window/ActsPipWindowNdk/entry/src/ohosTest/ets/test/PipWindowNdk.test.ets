@@ -26,6 +26,7 @@ export default function PipWindowNdkTest() {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
+    let OK = 0;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -1179,6 +1180,67 @@ export default function PipWindowNdkTest() {
         console.log(caseName + ' www data Failed2 to start pip. Cause:' +
             JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
         await subWindowClass?.destroyWindow()
+        if(error.code == 801){
+          expect(error.message!=null).assertTrue();
+          done();
+        } else{
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testPipSetParentMainWindowId
+     * @tc.number SUB_BASIC_WMS_PIP_NDK_SETPARENTWIDNOWID_0200
+     * @tc.desc   testPipSetParentMainWindowId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPipSetParentMainWindowId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPipSetParentMainWindowId';
+      let pipController:pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config:pipWindow.PiPConfiguration = {
+        context: context,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let WindowClass: window.Window | undefined;
+      try {
+        pipController = await pipWindow.create(config)
+        console.log(caseName + ' www data startPiP_Function_Promise begin')
+        WindowClass = windowStage.getMainWindowSync();
+        let WindId = WindowClass.getWindowProperties().id;
+        console.log(caseName + ' WindowClass WindId: ' + WindId)
+        let promise = pipController.startPiP();
+        promise.then(async () => {
+          console.log(caseName + ' www data Succeeded in starting pip')
+          let result = testNapi.testPipSetParentWindowId(WindId);
+          console.log(`${caseName} result: ${JSON.stringify(result)}`);
+          if (result==801) {
+            done();
+          } else {
+            expect(result).assertEqual(OK);
+            await pipController?.stopPiP();
+            done();
+          }
+        }).catch(async (err:BusinessError) => {
+          console.log(caseName + ' www data Failed1 to start pip. Cause:' +
+              JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.log(caseName + ' www data Failed2 to start pip. Cause:' +
+            JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
         if(error.code == 801){
           expect(error.message!=null).assertTrue();
           done();

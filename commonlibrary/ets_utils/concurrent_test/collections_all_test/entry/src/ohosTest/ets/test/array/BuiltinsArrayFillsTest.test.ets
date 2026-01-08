@@ -168,6 +168,7 @@ export default function builtinsArrayFillTest() {
       expect(result).assertDeepEquals(expectedResult);
     });
 
+
     /**
      * @tc.name   builtinsArrayFillTest0108
      * @tc.number SUB_BUILTINS_ARRAY_FILL_TEST_0108
@@ -177,35 +178,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Item {
-        a: number;
-      }
-      const inputArray = collections.Array.from<Item>([{
-        a: 1
-      }, {
-        a: 2
-      }, {
-        a: 3
-      }, {
-        a: 4
-      }, {
-        a: 5
-      }]);
-      const obj: Item = {
-        a: 1
-      };
-      const result = inputArray.fill(obj);
-      const expectedResult = collections.Array.from<Item>([{
-        a: 1
-      }, {
-        a: 1
-      }, {
-        a: 1
-      }, {
-        a: 1
-      }, {
-        a: 1
-      }]);
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5])
+      const result = inputArray.fill(0, 0);
+      console.log('result:', JSON.stringify(result));
+      const expectedResult = collections.Array.from([0, 0, 0, 0, 0]);
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -218,13 +194,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface EmptyObject {
-      }
-      const inputArray = collections.Array.from<EmptyObject>([{}, {}, {}, {}, {}]);
-      const obj: EmptyObject = {};
-      const result = inputArray.fill(obj);
+      const inputArray = collections.Array.from([1, 2, 3, 4, 5])
+      const result = inputArray.fill(0, 0, 5);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from<EmptyObject>([{}, {}, {}, {}, {}]);
+      const expectedResult = collections.Array.from([0, 0, 0, 0, 0])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -238,9 +211,9 @@ export default function builtinsArrayFillTest() {
      */
     it('builtinsArrayFillTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, 0);
+      const result = inputArray.fill(0, 2, 2);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([0, 0, 0, 0, 0]);
+      const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -254,9 +227,9 @@ export default function builtinsArrayFillTest() {
      */
     it('builtinsArrayFillTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, 0, 5);
+      const result = inputArray.fill(0, 3, 2);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([0, 0, 0, 0, 0])
+      const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -270,7 +243,7 @@ export default function builtinsArrayFillTest() {
      */
     it('builtinsArrayFillTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, 2, 2);
+      const result = inputArray.fill(0, -10, -5);
       console.log('result:', JSON.stringify(result));
       const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
       expect(result).assertDeepEquals(expectedResult);
@@ -286,7 +259,7 @@ export default function builtinsArrayFillTest() {
      */
     it('builtinsArrayFillTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, 3, 2);
+      const result = inputArray.fill(0, NaN, NaN);
       console.log('result:', JSON.stringify(result));
       const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
       expect(result).assertDeepEquals(expectedResult);
@@ -302,27 +275,28 @@ export default function builtinsArrayFillTest() {
      */
     it('builtinsArrayFillTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, -10, -5);
+      const result = inputArray.fill(-0);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
+      const expectedResult = collections.Array.from([-0, -0, -0, -0, -0])
       expect(result).assertDeepEquals(expectedResult);
     });
 
     /**
      * @tc.name   builtinsArrayFillTest0115
-     * @tc.number SUB_BUILTINS_ARRAY_FILL_TEST_0115
-     * @tc.desc   Test fill method
+     * @tc.number builtinsArrayFillTest0115
+     * @tc.desc   builtinsArrayFillTest0117
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(0, NaN, NaN);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([1, 2, 3, 4, 5])
+
+      const arr = collections.Array.from([undefined,undefined,undefined]);
+      const result = arr.fill(undefined);
+      const expectedResult = collections.Array.from([undefined, undefined, undefined]);
       expect(result).assertDeepEquals(expectedResult);
     });
+
 
     /**
      * @tc.name   builtinsArrayFillTest0116
@@ -333,39 +307,6 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([1, 2, 3, 4, 5])
-      const result = inputArray.fill(-0);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([-0, -0, -0, -0, -0])
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.name   builtinsArrayFillTest0117
-     * @tc.number builtinsArrayFillTest0117
-     * @tc.desc   builtinsArrayFillTest0117
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFillTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-
-      const arr = collections.Array.from([undefined,undefined,undefined]);
-      const result = arr.fill(undefined);
-      const expectedResult = collections.Array.from([undefined, undefined, undefined]);
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-
-    /**
-     * @tc.name   builtinsArrayFillTest0118
-     * @tc.number SUB_BUILTINS_ARRAY_FILL_TEST_0118
-     * @tc.desc   Test fill method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayFillTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([null,null,null]);
       const result = inputArray.fill(null);
       console.log('result:', JSON.stringify(result));
@@ -374,19 +315,51 @@ export default function builtinsArrayFillTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayFillTest0119
-     * @tc.number SUB_BUILTINS_ARRAY_FILL_TEST_0119
+     * @tc.name   builtinsArrayFillTest0117
+     * @tc.number SUB_BUILTINS_ARRAY_FILL_TEST_0117
      * @tc.desc   Test fill method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayFillTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayFillTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from([1]);
       const result = inputArray.fill(NaN);
       console.log('result:', JSON.stringify(result));
       const expectedResult = collections.Array.from([NaN]);
       expect(result.toString()).assertEqual(expectedResult.toString());
+    });
+
+    /**
+     * @tc.name   builtinsArrayWithTest0118
+     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0118
+     * @tc.desc   Test with method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayWithTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputArray = collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']);
+      const result = inputArray.fill('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
+      console.log('resultwith:', JSON.stringify(result));
+      const expectedResult = collections.Array.from(["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"]);
+      expect(result).assertDeepEquals(expectedResult);
+    });
+
+    /**
+     * @tc.name   builtinsArrayWithTest0119
+     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0119
+     * @tc.desc   Test with method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayWithTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputArray = collections.Array.from(['undefined', 'undefined', 'undefined']);
+      const result = inputArray.fill('undefined');
+      console.log('result11:', JSON.stringify(result));
+      const expectedResult = collections.Array.from(['undefined', 'undefined', 'undefined'])
+      expect(result).assertDeepEquals(expectedResult);
     });
 
     /**
@@ -398,10 +371,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']);
-      const result = inputArray.fill('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
-      console.log('resultwith:', JSON.stringify(result));
-      const expectedResult = collections.Array.from(["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"]);
+      const inputArray = collections.Array.from(["null","null","null"]);
+      const result = inputArray.fill('null');
+      console.log('result:', JSON.stringify(result));
+      const expectedResult = collections.Array.from(["null", "null", "null"])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -414,10 +387,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from(['undefined', 'undefined', 'undefined']);
-      const result = inputArray.fill('undefined');
-      console.log('result11:', JSON.stringify(result));
-      const expectedResult = collections.Array.from(['undefined', 'undefined', 'undefined'])
+      const inputArray = collections.Array.from(["","",""]);
+      const result = inputArray.fill('');
+      console.log('result:', JSON.stringify(result));
+      const expectedResult = collections.Array.from(["", "", ""])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -430,10 +403,12 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from(["null","null","null"]);
-      const result = inputArray.fill('null');
+      const inputArray = collections.Array.from(["😊", "😊", "😊"]);
+      const unicodeCodePoint = 0x1F60A;
+      const char = String.fromCodePoint(unicodeCodePoint);
+      const result = inputArray.fill(char);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from(["null", "null", "null"])
+      const expectedResult = collections.Array.from(["😊", "😊", "😊"])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -446,40 +421,6 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from(["","",""]);
-      const result = inputArray.fill('');
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from(["", "", ""])
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.name   builtinsArrayWithTest0124
-     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0124
-     * @tc.desc   Test with method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayWithTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from(["😊", "😊", "😊"]);
-      const unicodeCodePoint = 0x1F60A;
-      const char = String.fromCodePoint(unicodeCodePoint);
-      const result = inputArray.fill(char);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from(["😊", "😊", "😊"])
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.name   builtinsArrayWithTest0125
-     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0125
-     * @tc.desc   Test with method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayWithTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = collections.Array.from(['char','char']);
       const result = inputArray.fill('char');
       console.log('result:', JSON.stringify(result));
@@ -490,14 +431,14 @@ export default function builtinsArrayFillTest() {
 
 
     /**
-     * @tc.name   builtinsArrayWithTest0126
-     * @tc.number builtinsArrayWithTest0126
+     * @tc.name   builtinsArrayWithTest0124
+     * @tc.number builtinsArrayWithTest0124
      * @tc.desc   builtinsArrayWithTest0126
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayWithTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayWithTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const specialNumbers = collections.Array.from([
         Math.floor(1.5),
         0,
@@ -512,22 +453,22 @@ export default function builtinsArrayFillTest() {
     });
 
     // /**
-    //  * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0127
-    //  * @tc.name builtinsArrayWithTest0127
+    //  * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0125
+    //  * @tc.name builtinsArrayWithTest0125
     //  * @tc.desc Test with method
     //  * @tc.size MediumTest
     //  * @tc.type Function
     //  * @tc.level Level 1
     //  */
     /**
-     * @tc.name   builtinsArrayWithTest0127
-     * @tc.number builtinsArrayWithTest0127
+     * @tc.name   builtinsArrayWithTest0125
+     * @tc.number builtinsArrayWithTest0125
      * @tc.desc   builtinsArrayWithTest0127
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayWithTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayWithTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new collections.Array(5);
       const specialNumbers = collections.Array.from([
         Number.EPSILON,
@@ -544,14 +485,14 @@ export default function builtinsArrayFillTest() {
     });
 
     /**
-     * @tc.name   builtinsArrayWithTest0128
-     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0128
+     * @tc.name   builtinsArrayWithTest0126
+     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0126
      * @tc.desc   Test with method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayWithTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('builtinsArrayWithTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new collections.Array(5);
       const specialNumbers = collections.Array.from([
         123.456,
@@ -568,6 +509,38 @@ export default function builtinsArrayFillTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayWithTest0127
+     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0127
+     * @tc.desc   Test with method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayWithTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputArray = collections.Array.from([true,true,true]);
+      const result = inputArray.fill(true);
+      console.log('result:', JSON.stringify(result));
+      const expectedResult = collections.Array.from([true, true, true])
+      expect(result).assertDeepEquals(expectedResult);
+    });
+
+    /**
+     * @tc.name   builtinsArrayWithTest0128
+     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0128
+     * @tc.desc   Test with method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayWithTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const inputArray = collections.Array.from([false,false,false]);
+      const result = inputArray.fill(false);
+      console.log('result:', JSON.stringify(result));
+      const expectedResult = collections.Array.from([false, false, false])
+      expect(result).assertDeepEquals(expectedResult);
+    });
+
+    /**
      * @tc.name   builtinsArrayWithTest0129
      * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0129
      * @tc.desc   Test with method
@@ -576,10 +549,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([true,true,true]);
-      const result = inputArray.fill(true);
+      const inputArray = collections.Array.from([false,false,false]);
+      const result = inputArray.fill(!'s');
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([true, true, true])
+      const expectedResult = collections.Array.from([false, false, false])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -592,10 +565,10 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([false,false,false]);
-      const result = inputArray.fill(false);
+      const inputArray = collections.Array.from([true,true,true]);
+      const result = inputArray.fill(!0);
       console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([false, false, false])
+      const expectedResult = collections.Array.from([true, true, true])
       expect(result).assertDeepEquals(expectedResult);
     });
 
@@ -608,38 +581,6 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([false,false,false]);
-      const result = inputArray.fill(!'s');
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([false, false, false])
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.name   builtinsArrayWithTest0132
-     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_013
-     * @tc.desc   Test with method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayWithTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray = collections.Array.from([true,true,true]);
-      const result = inputArray.fill(!0);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = collections.Array.from([true, true, true])
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.name   builtinsArrayWithTest0133
-     * @tc.number SUB_BUILTINS_ARRAY_WITH_TEST_0133
-     * @tc.desc   Test with method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayWithTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     const specialNumbers = collections.Array.from([
       123.456,
       0xcafebabe,

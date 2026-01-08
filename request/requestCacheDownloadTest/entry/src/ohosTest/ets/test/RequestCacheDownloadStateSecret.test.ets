@@ -85,10 +85,10 @@ export default function requestCacheDownloadStateSecretUnitTest() {
       class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLS
       }
-      let url: string = 'https://demo.gmssl.cn:1443';
+      let url: string = 'https://test1.gmssl.cn';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
+        'b7efbb405e31b1cf5b21574dfff403101643b00c55f0cdfb9c4b015f914b4488_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);
@@ -131,10 +131,10 @@ export default function requestCacheDownloadStateSecretUnitTest() {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
         caPath?: string | undefined = '/data/storage/el1/bundle/entry_test/resources/resfile/sm2.ca.pem'
       }
-      let url: string = 'https://demo.gmssl.cn:1443';
+      let url: string = 'https://test1.gmssl.cn';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
+        'b7efbb405e31b1cf5b21574dfff403101643b00c55f0cdfb9c4b015f914b4488_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);
@@ -216,10 +216,10 @@ export default function requestCacheDownloadStateSecretUnitTest() {
         sslType?: cacheDownload.SslType | undefined = cacheDownload.SslType.TLCP
         caPath?: string | undefined = '/data/storage/el2/bundle/entry_test/resources/resfile/sm2.ca.pem'
       }
-      let url: string = 'https://demo.gmssl.cn:1443';
+      let url: string = 'https://test1.gmssl.cn';
       let num: number = 20 * 1024 * 1024
       let path: string = '/data/storage/el2/base/cache/preload_caches/' +
-        '241a0d7639e1528cf709781cc1eba55f260681d08c4ed001a4e2cf9c42331236_F';
+        'b7efbb405e31b1cf5b21574dfff403101643b00c55f0cdfb9c4b015f914b4488_F';
       try {
         let downloadOptions = new cacheDownloadOptions();
         cacheDownload.setFileCacheSize(num);

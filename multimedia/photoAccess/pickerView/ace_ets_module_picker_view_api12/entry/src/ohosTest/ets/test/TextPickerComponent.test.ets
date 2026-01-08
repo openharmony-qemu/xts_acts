@@ -3217,33 +3217,52 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.name   testPicker63
-     * @tc.number testPicker63
-     * @tc.desc   Testing isReturnToPhotoBrowserEnabled
+     * @tc.name   testPicker64
+     * @tc.number testPicker64
+     * @tc.desc   Testing  change PhotoPickerComponent pickerOptions gridPinchMode property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPicker63',Level.LEVEL0, async (done: Function) => {
+    it('testPicker64',Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
-      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-      sheetPickerOptions.isReturnToPhotoBrowserEnabled = false;
-      try{
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(sheetPickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('testPicker63, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-          JSON.stringify(PhotoSelectResult));
-        })
-      } catch(err) {
-        expect(false).assertTrue();
-        console.error(`testPicker63, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.gridPinchMode = {
+        gridPinchModeType: photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID,
+        defaultGridLevel: photoAccessHelper.GridLevel.COMPACT
+      };
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker64 result event.data.msg =' + result?.gridPinchMode?.defaultGridLevel);
+        console.info('testPicker64 result expect = ' + expectResult);
+        expect(result?.gridPinchMode?.defaultGridLevel).assertEqual(expectResult);
       }
-      console.info("testPicker63 finish");
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker64 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker64 finish");
+      events_emitter.off(event.eventId);
       done();
     });
-
   })
 }
