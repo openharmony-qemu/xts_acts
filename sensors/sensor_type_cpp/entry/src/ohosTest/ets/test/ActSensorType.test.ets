@@ -61,7 +61,7 @@ export default function sensorTypeNdkTest() {
         await vibrator.stopVibration()
         console.info("afterEach: Success in stopping vibration. ");
         done();
-      } catch(error){
+      } catch (error) {
         console.info("afterEach error: " + JSON.stringify(error));
         done();
       }
