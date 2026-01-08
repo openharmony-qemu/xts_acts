@@ -27,8 +27,8 @@ export function testTreeMapConstructorWithComparator() {
   try {
     console.log(`${caseName} test start`);
     let treeMap: TreeMap<string, string> =
-      new TreeMap<string, string>((firstValue: string, secondValue: string): boolean => {
-        return firstValue > secondValue;
+      new TreeMap<string, string>((firstValue: string, secondValue: string): number => {
+      return firstValue.localeCompare(secondValue);
       });
     treeMap.set('AAA', '111');
     treeMap.set('BBB', '222');

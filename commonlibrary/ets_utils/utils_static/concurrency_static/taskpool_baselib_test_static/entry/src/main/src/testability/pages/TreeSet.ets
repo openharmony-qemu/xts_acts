@@ -24,8 +24,8 @@ export function testTreeSetConstructorWithComparator() {
   const caseName = 'testConstructor0002';
   try {
     console.log(`${caseName} test start`);
-    let treeSet: TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string): boolean => {
-      return firstValue > secondValue;
+    let treeSet: TreeSet<string> = new TreeSet<string>((firstValue: string, secondValue: string): number => {
+      return firstValue.localeCompare(secondValue);
     });
     treeSet.add('AAA');
     treeSet.add('BBB');
