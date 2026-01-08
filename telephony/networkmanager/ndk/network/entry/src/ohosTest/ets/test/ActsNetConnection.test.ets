@@ -24,6 +24,7 @@ const NETCONN_PERMISSION_DENIED = 201;
 const OH_HTTP_PARAMETER_ERROR = 401;
 const NETCONN_PARAMETER_ERROR = 401;
 const OH_HTTP_OUT_OF_MEMORY = 2300027;
+const NETCONN_OPERATTION_FAILED = 2100002;
 const NETCONN_INTERNAL_ERROR = 2100003;
 const WEBSOCKET_CLIENT_NULL = 1001;
 const WEBSOCKET_CLIENT_NOT_CREATED = 1002;
@@ -65,7 +66,53 @@ export default function ActsNetConnectionTest() {
         done();
       }
     })
+    
+    /**
+     * @tc.name   testSUBNetworkManagerNetHasDefaultNetNoP0200
+     * @tc.number SUB_NetworkManager_Net_HasDefaultNet_NoP_0200
+     * @tc.desc   Test whether the right of interface is denied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+        it('testSUBNetworkManagerNetHasDefaultNetNoP0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+          let caseName: string = 'testSUBNetworkManagerNetHasDefaultNetNoP0200';
+          try {
+            console.info(`${caseName} ---start`);
+            let result : number = NetConnectionTest.Netconn_GetEnum();
+            console.info(`${caseName} result is: ` + JSON.stringify(result));
+            expect(result).assertEqual(NETCONN_OPERATTION_FAILED);
+            done();
+          } catch (err) {
+            console.error(`${caseName} cache error is: ` + JSON.stringify(err));
+            expect(false).assertEqual(true);
+            done();
+          }
+        })
 
+    /**
+     * @tc.name   testSUBNetworkManagerNetHasDefaultNetNoP0300
+     * @tc.number SUB_NetworkManager_Net_HasDefaultNet_NoP_0300
+     * @tc.desc   Test whether the right of interface is denied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+            it('testSUBNetworkManagerNetHasDefaultNetNoP0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+              let caseName: string = 'testSUBNetworkManagerNetHasDefaultNetNoP0300';
+              try {
+                console.info(`${caseName} ---start`);
+                let result : number = NetConnectionTest.Netconn_GetEnumInternalError();
+                console.info(`${caseName} result is: ` + JSON.stringify(result));
+                expect(result).assertEqual(NETCONN_INTERNAL_ERROR);
+                done();
+              } catch (err) {
+                console.error(`${caseName} cache error is: ` + JSON.stringify(err));
+                expect(false).assertEqual(true);
+                done();
+              }
+            })
+    
     /**
      * @tc.name   testNetworkManagerNetGetDefaultNetNoP0100
      * @tc.number SUB_NetworkManager_Net_GetDefaultNet_NoP_0100
