@@ -1250,7 +1250,7 @@ export default function ImagePackerNativeTest() {
      * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_SETNEEDSPACKPROPERTIES_ERROR_0200", Level.LEVEL3, async (done: Function) => {
-      let res: number = ndkTest.jsPackingOptionsSetDesiredDynamicRangeBadParameter();
+      let res: number = ndkTest.JSPackingOptionsSetNeedsPackPropertiesBadParameter();
       expect(res).assertEqual(0);
       done();
     });
@@ -1281,7 +1281,7 @@ export default function ImagePackerNativeTest() {
      * @tc.level  LEVEL3
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKINGOPTIONS_GETDESIREDDYNAMICRANGE_ERROR_0200", Level.LEVEL3, async (done: Function) => {
-      let res: number = ndkTest.jsPackingOptionsGetQualityBadParameter();
+      let res: number = ndkTest.JSPackingOptionsGetDesiredDynamicRangeBadParameter();
       expect(res).assertEqual(0);
       done();
     });
