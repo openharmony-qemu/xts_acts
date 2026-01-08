@@ -130,6 +130,7 @@ napi_value EnumOHAVOutputFormat3(napi_env env, napi_callback_info info);
 napi_value EnumOHAVOutputFormat4(napi_env env, napi_callback_info info);
 napi_value EnumOHAVOutputFormat5(napi_env env, napi_callback_info info);
 napi_value EnumOHAVOutputFormat6(napi_env env, napi_callback_info info);
+napi_value EnumOHAVOutputFormat7(napi_env env, napi_callback_info info);
 napi_value EnumOHAVColorPrimary1(napi_env env, napi_callback_info info);
 napi_value EnumOHAVColorPrimary2(napi_env env, napi_callback_info info);
 napi_value EnumOHAVColorPrimary3(napi_env env, napi_callback_info info);
