@@ -38,6 +38,7 @@ export default function DisplayNdkTest() {
     let orientation:string[];
     let code:number;
     let displayFoldStatus:number;
+    let DISPLAY_MANAGER_OK = 0;
     beforeAll(async () => {
       try{
         displayFoldStatus = display.getFoldStatus();
@@ -473,6 +474,9 @@ export default function DisplayNdkTest() {
         console.log(caseName + ' displayMode1:'+ displayMode1 );
         if(displayIsFoldable == true){
           if(displayMode1 == 1 || displayMode1 == 2){
+            let result = testNapi.unregisterFoldDisplayModeChange(displayMode1);
+            console.log(caseName + ' result:'+ result );
+            expect(result).assertEqual(DISPLAY_MANAGER_OK);
             done();
           }
           
