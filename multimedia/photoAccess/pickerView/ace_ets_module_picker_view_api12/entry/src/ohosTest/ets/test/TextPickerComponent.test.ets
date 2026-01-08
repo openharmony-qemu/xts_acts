@@ -201,7 +201,7 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
   await routeToUrl(options);
   let chooostModeButton: Component = await driver.findComponent(ON.text(buttonText));
   let button: Component = await driver.findComponent(ON.text('select photo'));
-  if (!button && !chooostModeButton) {
+  if (!(!!button) && !(!!chooostModeButton)) {
     await chooostModeButton.click();
     await button.click();
   } else {
@@ -2515,7 +2515,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
       let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      if (!button && !chooostModeButton) {
+      if (!(!!button) && !(!!chooostModeButton)) {
         await chooostModeButton.click();
         await button.click();
       } else {
@@ -2524,7 +2524,7 @@ export default function TextPicker() {
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      if (!checkbox) {
+      if (!(!!checkbox)) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
         const finishBtn: Component = await driver.findComponent(ON.id('Complete'));
