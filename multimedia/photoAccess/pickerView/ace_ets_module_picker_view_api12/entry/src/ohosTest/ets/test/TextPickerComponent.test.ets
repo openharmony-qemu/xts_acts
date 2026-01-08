@@ -3215,5 +3215,49 @@ export default function TextPicker() {
       console.info("testPicker62 finish");
       done();
     });
+
+    /**
+     * @tc.number     testPicker63
+     * @tc.name       testPicker63
+     * @tc.desc       Testing showSingleAssetCreationDialogEx with isImageFullyDisplayed param.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker63', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      const context = getContext();
+      const creationSetting: photoAccessHelper.PhotoCreationConfig = {
+        title: 'test',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+      };
+      const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();
+      const isImageFullyDisplayed = true;
+      photoAccessHelper
+        .getPhotoAccessHelper(context)
+        .showAssetsCreationDialogEx([boxPath], [creationSetting])
+        .catch((error:Error) => {
+          console.error('testPicker63 showAssetsCreationDialogEx error =', JSON.stringify(error));
+          expect(false).assertTrue();
+        });
+      await CommonFunc.sleep(2000);
+      console.info('testPicker63 showAssetsCreationDialogEx success');
+      photoAccessHelper
+        .getPhotoAccessHelper(context)
+        .showSingleAssetCreationDialogEx(boxPath, creationSetting, isImageFullyDisplayed)
+        .catch((error:Error) => {
+          console.error('testPicker63 showSingleAssetCreationDialogEx error =', JSON.stringify(error));
+          expect(false).assertTrue();
+        });
+      await CommonFunc.sleep(2000);
+      console.info('testPicker63 showSingleAssetCreationDialogEx success');
+      console.info('testPicker63 success');
+      expect(true).assertTrue();
+      done();
+    });
   })
 }
