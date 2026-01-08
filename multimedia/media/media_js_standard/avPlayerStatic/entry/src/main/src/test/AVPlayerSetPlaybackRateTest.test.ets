@@ -134,7 +134,7 @@ async function testSetPlaybackSpeed(fd: media.AVFileDescriptor, done: () => void
     avPlayer!!.onError(errorCallback);
   }
   console.info('case fdsrc test');
-  avPlayer.fdSrc = fd;
+  avPlayer!!.fdSrc = fd;
 }
 
 function openFileFailed() {
