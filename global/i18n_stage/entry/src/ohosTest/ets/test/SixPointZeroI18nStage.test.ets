@@ -1,7 +1,6 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { i18n, intl } from '@kit.LocalizationKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { BusinessError } from '@Kit.BasicServicesKit';
 import { LengthMetrics } from '@Kit.ArkUI';
 
 export default function SixPointZeroI18nStageTest() {
@@ -4280,71 +4279,71 @@ export default function SixPointZeroI18nStageTest() {
     it('SUB_GLOBAL_i18n_RelativeTimeFormat_0500', Level.LEVEL2, () => {
       let yearTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Blue,
-        fontFamily: "HarmonyOS Sans",
-        fontSize: lengthMetrics.fp(30),
+        fontFamily: "Sans",
+        fontSize: LengthMetrics.fp(30),
         fontWeight: FontWeight.Medium,
         fontStyle: FontStyle.Italic
       })
       let monthTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Red,
         fontFamily: "Arial",
-        fontSize: lengthMetrics.vp(20),
+        fontSize: LengthMetrics.vp(20),
         fontWeight: FontWeight.Lighter,
         fontStyle: FontStyle.Normal
       })
       let dayTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Orange,
-        fontFamily: "HarmonyOS Sans",
-        fontSize: lengthMetrics.fp(30),
+        fontFamily: "Sans",
+        fontSize: LengthMetrics.fp(30),
         fontWeight: FontWeight.Medium,
         fontStyle: FontStyle.Italic
       })
       let hourTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Orange,
         fontFamily: "Arial",
-        fontSize: lengthMetrics.vp(20),
+        fontSize: LengthMetrics.vp(20),
         fontWeight: FontWeight.Lighter,
         fontStyle: FontStyle.Normal
       })
       let minuteTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Red,
-        fontFamily: "HarmonyOS Sans",
-        fontSize: lengthMetrics.fp(30),
+        fontFamily: "Sans",
+        fontSize: LengthMetrics.fp(30),
         fontWeight: FontWeight.Medium,
         fontStyle: FontStyle.Italic
       })
       let secondTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Blue,
         fontFamily: "Arial",
-        fontSize: lengthMetrics.vp(20),
+        fontSize: LengthMetrics.vp(20),
         fontWeight: FontWeight.Lighter,
         fontStyle: FontStyle.Normal
       })
       let weekdayTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Green,
-        fontFamily: "HarmonyOS Sans",
-        fontSize: lengthMetrics.fp(30),
+        fontFamily: "Sans",
+        fontSize: LengthMetrics.fp(30),
         fontWeight: FontWeight.Medium,
         fontStyle: FontStyle.Italic
       })
       let eraTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Green,
         fontFamily: "Arial",
-        fontSize: lengthMetrics.vp(20),
+        fontSize: LengthMetrics.vp(20),
         fontWeight: FontWeight.Lighter,
         fontStyle: FontStyle.Normal
       })
       let dayPeriodTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Green,
-        fontFamily: "HarmonyOS Sans",
-        fontSize: lengthMetrics.fp(30),
+        fontFamily: "Sans",
+        fontSize: LengthMetrics.fp(30),
         fontWeight: FontWeight.Medium,
         fontStyle: FontStyle.Italic
       })
       let timeZoneNameTextStyle: TextStyle = new TextStyle({
         fontColor: Color.Green,
         fontFamily: "Arial",
-        fontSize: lengthMetrics.vp(20),
+        fontSize: LengthMetrics.vp(20),
         fontWeight: FontWeight.Lighter,
         fontStyle: FontStyle.Normal
       })
