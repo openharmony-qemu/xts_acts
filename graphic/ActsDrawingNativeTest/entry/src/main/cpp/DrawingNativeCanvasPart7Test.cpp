@@ -37,8 +37,8 @@ void DrawingNativeCanvasPart7TestTearDown()
 
 // Helper function to create and initialize PixelMap
 static OH_Drawing_PixelMap* CreateTestPixelMap(OH_Pixelmap_InitializationOptions** createOps,
-                                                 OH_PixelmapNative** pixelMapNative,
-                                                 void** buffer)
+    OH_PixelmapNative** pixelMapNative,
+    void** buffer)
 {
     uint32_t imageWidth = TEST_CANVAS_COORD_200;
     uint32_t imageHeight = TEST_CANVAS_COORD_200;
@@ -65,9 +65,9 @@ static OH_Drawing_PixelMap* CreateTestPixelMap(OH_Pixelmap_InitializationOptions
 
 // Helper function to clean up resources
 static void CleanupPixelMapResources(OH_Drawing_PixelMap* pixelMap,
-                                      OH_PixelmapNative* pixelMapNative,
-                                      OH_Pixelmap_InitializationOptions* createOps,
-                                      void* buffer)
+    OH_PixelmapNative* pixelMapNative,
+    OH_Pixelmap_InitializationOptions* createOps,
+    void* buffer)
 {
     if (pixelMap != nullptr) {
         OH_Drawing_PixelMapDissolve(pixelMap);
@@ -189,42 +189,17 @@ int TestCanvasDrawPixelMapMeshNull01()
     OH_Drawing_Brush* brush = nullptr;
     CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(nullptr,
-                                                                       pixelMap,
-                                                                       meshWidth,
-                                                                       meshHeight,
-                                                                       vertices.data(),
-                                                                       vertices.size(),
-                                                                       vertOffest,
-                                                                       colors.data(),
-                                                                       colors.size(),
-                                                                       colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(nullptr, pixelMap, meshWidth,
+        meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  nullptr,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  colors.size(),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, nullptr, meshWidth, meshHeight,
+        vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  static_cast<uint32_t>(TEST_MATRIX_VALUE_0),
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  colors.size(),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
+        static_cast<uint32_t>(TEST_MATRIX_VALUE_0), meshHeight, vertices.data(), vertices.size(),
+        vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
     DestroyCanvasAndBrush(canvas, brush);
     CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
@@ -265,42 +240,18 @@ int TestCanvasDrawPixelMapMeshNull02()
     OH_Drawing_Brush* brush = nullptr;
     CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                                       pixelMap,
-                                                                       meshWidth,
-                                                                       static_cast<uint32_t>(TEST_MATRIX_VALUE_0),
-                                                                       vertices.data(),
-                                                                       vertices.size(),
-                                                                       vertOffest,
-                                                                       colors.data(),
-                                                                       colors.size(),
-                                                                       colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth,
+        static_cast<uint32_t>(TEST_MATRIX_VALUE_0), vertices.data(), vertices.size(),
+        vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  nullptr,
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  colors.size(),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        nullptr, vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  static_cast<size_t>(TEST_MATRIX_VALUE_0),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  colors.size(),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        vertices.data(), static_cast<size_t>(TEST_MATRIX_VALUE_0), vertOffest,
+        colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
     DestroyCanvasAndBrush(canvas, brush);
     CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
@@ -342,42 +293,18 @@ int TestCanvasDrawPixelMapMeshNull03()
     OH_Drawing_Brush* brush = nullptr;
     CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                                       pixelMap,
-                                                                       meshWidth,
-                                                                       meshHeight,
-                                                                       vertices.data(),
-                                                                       vertices.size(),
-                                                                       static_cast<size_t>(TEST_MATRIX_VALUE_0),
-                                                                       colors.data(),
-                                                                       colors.size(),
-                                                                       colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth,
+        meshHeight, vertices.data(), vertices.size(), static_cast<size_t>(TEST_MATRIX_VALUE_0),
+        colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  nullptr,
-                                                  colors.size(),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        vertices.data(), vertices.size(), vertOffest, nullptr, colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  static_cast<size_t>(TEST_MATRIX_VALUE_0),
-                                                  colorOffest);
-    OH_Drawing_CanvasDetachBrush(canvas);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        vertices.data(), vertices.size(), vertOffest, colors.data(),
+        static_cast<size_t>(TEST_MATRIX_VALUE_0), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
     DestroyCanvasAndBrush(canvas, brush);
     CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
@@ -472,28 +399,12 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
     OH_Drawing_Pen* pen = OH_Drawing_PenCreate();
     OH_Drawing_CanvasAttachPen(canvas, pen);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                                       pixelMap,
-                                                                       meshWidth,
-                                                                       meshHeight,
-                                                                       vertices.data(),
-                                                                       vertices.size(),
-                                                                       vertOffest,
-                                                                       colors.data(),
-                                                                       colors.size(),
-                                                                       colorOffest);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth,
+        meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachPen(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  colors.size(),
-                                                  colorOffest);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
@@ -737,32 +648,22 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
     OH_Drawing_Brush* brush = nullptr;
     CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits a number greater than the actual quantity.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                                       pixelMap,
-                                                                       meshWidth,
-                                                                       meshHeight,
-                                                                       vertices.data(),
-                                                                       TEST_PIXELMAP_VERTICES_SIZE_11,
-                                                                       vertOffest,
-                                                                       colors.data(),
-                                                                       colors.size(),
-                                                                       colorOffest);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth,
+        meshHeight, vertices.data(), TEST_PIXELMAP_VERTICES_SIZE_11, vertOffest,
+        colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
-                                                  pixelMap,
-                                                  meshWidth,
-                                                  meshHeight,
-                                                  vertices.data(),
-                                                  vertices.size(),
-                                                  vertOffest,
-                                                  colors.data(),
-                                                  TEST_PIXELMAP_COLORS_SIZE_6,
-                                                  colorOffest);
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
+        vertices.data(), vertices.size(), vertOffest, colors.data(),
+        TEST_PIXELMAP_COLORS_SIZE_6, colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
     DestroyCanvasAndBrush(canvas, brush);
     CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
+
+    DrawingNativeCanvasPart7TestTearDown();
+
+    return OH_DRAWING_SUCCESS;
 }
 
 /**
