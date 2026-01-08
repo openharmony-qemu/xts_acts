@@ -13,6 +13,14 @@
 
 import("//test/xts/tools/build/suite.gni")
 
+ohos_app_assist_suite("ActsUiTestTest") {
+  testonly = true
+  subsystem_name = "testfwk"
+  part_name = "arkxtest"
+  certificate_profile = "./signature/openharmony_sx.p7b"
+  hap_name = "ActsUiTestTest"
+}
+
 ohos_js_app_suite("ActsUiTest") {
   test_hap = true
   testonly = true
