@@ -73,7 +73,7 @@ const string CODEC_NAME_RV30 = "OH.Media.Codec.Decoder.Video.Rv30";
 const string CODEC_NAME_RV40 = "OH.Media.Codec.Decoder.Video.Rv40";
 const string CODEC_NAME_MJPEG = "OH.Media.Codec.Decoder.Video.MJPEG";
 const string CODEC_NAME_MSVIDEO1 = "OH.Media.Codec.Decoder.Video.MSVIDEO1";
-const string CODEC_NAME_RAWVIDEO = "OH.Media.Codec.Decoder.Video.      ";
+const string CODEC_NAME_RAWVIDEO = "OH.Media.Codec.Decoder.Video.RAWVIDEO";
 const string CODEC_NAME_MPEG1 = "OH.Media.Codec.Decoder.Video.MPEG";
 const string CODEC_NAME_WVC1 = "OH.Media.Codec.Decoder.Video.WVC1";
 const string CODEC_NAME_WMV3 = "OH.Media.Codec.Decoder.Video.WMV3";
@@ -191,7 +191,7 @@ HWTEST_F(DecApiNdkTest, VIDEO_VP8DEC_CAP_API_0001, TestSize.Level2)
 
 /**
  * @tc.name   VIDEO_VP9DEC_CAP_API_0001
- * @tc.number VIDEO_VP9DEC_CAP_API_0001    
+ * @tc.number VIDEO_VP9DEC_CAP_API_0001
  * @tc.desc   api test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
