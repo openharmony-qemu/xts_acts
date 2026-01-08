@@ -97,6 +97,34 @@ function isValidMetadataType(value: number): boolean {
   return Object.values(image.HdrMetadataType).includes(value);
 }
 
+function checkSupportOutputFormat(
+  logger: Logger,
+  cameraManager: camera.CameraManager,
+  cameraDevice: camera.CameraDevice,
+  sceneMode: camera.SceneMode,
+  profileKey: 'photoProfiles' | 'previewProfiles',
+  expectFormat: camera.CameraFormat
+): boolean {
+  const cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevice, sceneMode);
+  if (!cameraOutputCap) {
+    logger.log('getSupportedOutputCapability returned null');
+    return false;
+  }
+  const profilesArray: camera.Profile[] = cameraOutputCap[profileKey];
+  logger.log(`Retrieved ${profileKey}: ${JSON.stringify(profilesArray)}`);
+  if (!profilesArray || profilesArray.length === 0) {
+    logger.log(`No ${profileKey} available`);
+    return false;
+  }
+
+  const configProfile = profilesArray.find((profile) => profile.format === expectFormat);
+  if (!configProfile) {
+    logger.log('Expected format not supported');
+    return false;
+  }
+  return true;
+}
+
 async function decodeImageUsingAllocator(
   logger: Logger,
   bufferData: image.ImageBufferData
@@ -241,7 +269,7 @@ function validationStride(logger: Logger, imageFormat: image.PixelMapFormat, buf
   return ret;
 }
 
-async function GetAndVerifyImageBufferData(img: image.Image, logger: Logger, expectSize: image.Size): Promise<boolean> {
+async function GetAndVerifyImageBufferData(img: image.Image, logger: Logger): Promise<boolean> {
   logger.log("Getting image buffer data");
   let bufferData = img.getBufferData();
   if (bufferData == null) {
@@ -284,7 +312,6 @@ function waitForImage(
   logger: Logger,
   imageReceiver: image.ImageReceiver,
   isPreView: boolean,
-  expectSize: image.Size,
   expectFormat: camera.CameraFormat,
 ): Promise<boolean> {
   return new Promise<boolean>((resolve) => {
@@ -324,7 +351,7 @@ function waitForImage(
           logger.log('No HDR metadata retrieval needed');
         }
         let imgFormat = cameraFormatToImgFormatMap.get(expectFormat) ?? 25;
-        const ret = await GetAndVerifyImageBufferData(img, logger, expectSize) && img.format == imgFormat && isValidColorSpace(img.colorSpace);
+        const ret = await GetAndVerifyImageBufferData(img, logger) && img.format == imgFormat && isValidColorSpace(img.colorSpace);
         await img.release();
         resolve(ret);
       } catch (error) {
@@ -370,8 +397,7 @@ async function configCameraOutput(
   imageReceiver: image.ImageReceiver,
   sceneMode: camera.SceneMode,
   profileKey: 'photoProfiles' | 'previewProfiles',
-  expectFormat: number,
-  expectSize: image.Size
+  expectFormat: number
 ): Promise<camera.PhotoOutput | camera.PreviewOutput> {
   logger.log(`Configuring camera output for scene mode: ${sceneMode}, profile key: ${profileKey}`);
   const cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevice, sceneMode);
@@ -475,8 +501,7 @@ async function capturePhoto(logger: Logger, photoOutput: camera.PhotoOutput): Pr
 async function imageReceiverPhotoCase(
   logger: Logger,
   context: common.UIAbilityContext,
-  expectCameraFormat: camera.CameraFormat,
-  expectSize: image.Size
+  expectCameraFormat: camera.CameraFormat
 ): Promise<CaseResult> {
   const imageReceiver = createImageReceiver(logger);
   const imageReceiverPreview = createImageReceiver(logger);
@@ -488,13 +513,20 @@ async function imageReceiverPhotoCase(
   const cameraManager = cameraInitResult.cameraManager;
   const cameraInput = cameraInitResult.cameraInput;
   const cameraDevice = cameraInitResult.cameraDevice;
+  const outputCheck = checkSupportOutputFormat(logger, cameraManager, cameraDevice, camera.SceneMode.NORMAL_PHOTO,
+    'photoProfiles', expectCameraFormat);
+  if (!outputCheck) {
+    logger.log('Expected output format not supported, releasing resources and skipping case');
+    await releaseResources({ imageReceiver: imageReceiverPreview });
+    return { resources: { imageReceiver, cameraInput }, result: true };
+  }
+  logger.log('Expected output format is supported');
   const photoOutput = await configCameraOutput(logger, cameraManager, cameraDevice, imageReceiver,
-    camera.SceneMode.NORMAL_PHOTO, 'photoProfiles', expectCameraFormat, expectSize) as camera.PhotoOutput;
+    camera.SceneMode.NORMAL_PHOTO, 'photoProfiles', expectCameraFormat) as camera.PhotoOutput;
   
   const previewOutput = await configCameraOutput(logger, cameraManager, cameraDevice, imageReceiverPreview,
-    camera.SceneMode.NORMAL_PHOTO, 'previewProfiles', expectCameraFormat, expectSize
-  ) as camera.PreviewOutput;
-  const retPromise = waitForImage(logger, imageReceiver, false, expectSize, expectCameraFormat);
+    camera.SceneMode.NORMAL_PHOTO, 'previewProfiles', expectCameraFormat) as camera.PreviewOutput;
+  const retPromise = waitForImage(logger, imageReceiver, false, expectCameraFormat);
   const photoSession = await startPhotoSession(logger, cameraManager, cameraInput, photoOutput, previewOutput);
   await capturePhoto(logger, photoOutput);
   const ret = await retPromise;
@@ -505,8 +537,7 @@ async function imageReceiverPhotoCase(
 async function imageReceiverPreviewCase(
   logger: Logger,
   context: common.UIAbilityContext,
-  expectCameraFormat: camera.CameraFormat,
-  expectSize: image.Size
+  expectCameraFormat: camera.CameraFormat
 ): Promise<CaseResult> {
   const imageReceiver = createImageReceiver(logger);
   if (!imageReceiver) {
@@ -518,17 +549,17 @@ async function imageReceiverPreviewCase(
   const cameraManager = cameraInitResult.cameraManager;
   const cameraInput = cameraInitResult.cameraInput;
   const cameraDevice = cameraInitResult.cameraDevice;
-  const previewOutput = await configCameraOutput(
-    logger,
-    cameraManager,
-    cameraDevice,
-    imageReceiver,
-    camera.SceneMode.NORMAL_VIDEO,
-    'previewProfiles',
-    expectCameraFormat,
-    expectSize) as camera.PreviewOutput;
+  const outputCheck = checkSupportOutputFormat(logger, cameraManager, cameraDevice, camera.SceneMode.NORMAL_VIDEO,
+    'previewProfiles', expectCameraFormat);
+  if (!outputCheck) {
+    logger.log('Expected preview output format not supported, releasing resources and skipping case');
+    return { resources: { imageReceiver, cameraInput }, result: true };
+  }
+  logger.log('Expected preview output format is supported');
+  const previewOutput = await configCameraOutput(logger, cameraManager, cameraDevice, imageReceiver, camera.SceneMode.NORMAL_VIDEO,
+    'previewProfiles', expectCameraFormat) as camera.PreviewOutput;
   logger.log('Preview output configured');
-  const retPromise = waitForImage(logger, imageReceiver, true, expectSize, expectCameraFormat);
+  const retPromise = waitForImage(logger, imageReceiver, true, expectCameraFormat);
   logger.log('Waiting for image setup complete');
   let isHdr = (expectCameraFormat != CAMERA_FORMAT_YUV_420_SP) ? true : false;
   const previewSession = await startPreviewSession(logger, cameraManager, cameraInput, previewOutput, isHdr);
@@ -767,10 +798,9 @@ export default function ImageReceiverTest() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_RECEIVER_PREVIEW_TEST_0100
      * @tc.desc        1.create receiver
      *                 2.init camera
-     *                 3.config photo output
-     *                 4.start photo session
-     *                 5.capture photo
-     *                 6.wait image arrival and get image data
+     *                 3.config preview output
+     *                 4.start preview session
+     *                 5.wait image arrival and get image data
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 0
@@ -788,8 +818,7 @@ export default function ImageReceiverTest() {
       }
       let ret: CaseResult | undefined;
       try {
-        let size: image.Size = { width: 720, height: 720 };
-        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YUV_420_SP, size);
+        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YUV_420_SP);
         logger.log('Preview test case result: ' + JSON.stringify(ret));
         expect(ret.result).assertTrue();
         done();
@@ -809,10 +838,9 @@ export default function ImageReceiverTest() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_RECEIVER_PREVIEW_TEST_0200
      * @tc.desc        1.create receiver
      *                 2.init camera
-     *                 3.config photo output
-     *                 4.start photo session
-     *                 5.capture photo
-     *                 6.wait image arrival and get image data
+     *                 3.config preview output
+     *                 4.start preview session
+     *                 5.wait image arrival and get image data
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 0
@@ -831,8 +859,7 @@ export default function ImageReceiverTest() {
       }
       let ret: CaseResult | undefined;
       try {
-        let size: image.Size = { width: 720, height: 720 };
-        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YCBCR_P010, size);
+        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YCBCR_P010);
         logger.log('Preview test case result: ' + JSON.stringify(ret));
         expect(ret.result).assertTrue();
         done();
@@ -852,10 +879,9 @@ export default function ImageReceiverTest() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_RECEIVER_PREVIEW_TEST_0300
      * @tc.desc        1.create receiver
      *                 2.init camera
-     *                 3.config photo output
-     *                 4.start photo session
-     *                 5.capture photo
-     *                 6.wait image arrival and get image data
+     *                 3.config preview output
+     *                 4.start preview session
+     *                 5.wait image arrival and get image data
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 0
@@ -874,8 +900,7 @@ export default function ImageReceiverTest() {
       }
       let ret: CaseResult | undefined;
       try {
-        let size: image.Size = { width: 480, height: 480 };
-        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YCRCB_P010, size);
+        ret = await imageReceiverPreviewCase(logger, context, CAMERA_FORMAT_YCRCB_P010);
         logger.log('Preview test case result: ' + JSON.stringify(ret));
         expect(ret.result).assertTrue();
         done();
@@ -916,8 +941,7 @@ export default function ImageReceiverTest() {
       }
       let ret: CaseResult | undefined;
       try {
-        let size: image.Size = { width: 480, height: 480 };
-        ret = await imageReceiverPhotoCase(logger, context, CAMERA_FORMAT_JPEG, size);
+        ret = await imageReceiverPhotoCase(logger, context, CAMERA_FORMAT_JPEG);
         logger.log('Test case result: ' + JSON.stringify(ret));
         expect(ret.result).assertTrue();
       } catch(err) {
