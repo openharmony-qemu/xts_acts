@@ -80,7 +80,7 @@ export function testEntries() {
 export function testFill() {
   const TAG = 'testFill';
   try {
-    const array = [1, 2, 3];
+    const array: number[] = [1, 2, 3];
     const value = new Uint8Array(array).fill(4);
     const json = JSON.stringify(value);
     if (json !== '{"0":4,"1":4,"2":4}') {
@@ -97,7 +97,7 @@ export function testFill() {
 export function testFilter() {
   const TAG = 'testFilter';
   try {
-    const array = [12, 5, 8, 130, 44];
+    const array: number[] = [12, 5, 8, 130, 44];
     const value = new Uint8Array(array).filter((elem) => elem >= 10);
     const json = JSON.stringify(value);
     if (json !== '{"0":12,"1":130,"2":44}') {

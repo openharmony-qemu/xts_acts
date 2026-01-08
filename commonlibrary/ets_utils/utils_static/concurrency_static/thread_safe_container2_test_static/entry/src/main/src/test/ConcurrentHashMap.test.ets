@@ -1417,7 +1417,7 @@ export default function ConcurrentHashMapTest() {
     it("set_With_Set_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<CustomClass, number[]> = new  containers.ConcurrentHashMap<CustomClass, number[]>();
       const key = new CustomClass(1, "Alice");
-      const value = [1, 2, 3];
+      const value: number[] = [1, 2, 3];
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(String(keyData.get(key))).assertEqual(String(value));
@@ -1433,7 +1433,7 @@ export default function ConcurrentHashMapTest() {
      */
     it("set_With_Set_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number[], object> = new  containers.ConcurrentHashMap<number[], object>();
-      const key = [1, 2, 3];
+      const key: number[] = [1, 2, 3];
       const value: KeyType2 = {
         a: 1, b: 2
       };
@@ -1523,7 +1523,7 @@ export default function ConcurrentHashMapTest() {
       const key: KeyType = {
         id: 2
       };
-      const value = [4, 5, 6];
+      const value: number[] = [4, 5, 6];
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(String(keyData.get(key))).assertEqual(String(value));
@@ -1700,7 +1700,7 @@ export default function ConcurrentHashMapTest() {
      */
     it("delete_Key_With_Test_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<number[], string> = new  containers.ConcurrentHashMap<number[], string>();
-      const key = [1, 2, 3];
+      const key: number[] = [1, 2, 3];
       const value = "TestString";
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
@@ -1803,7 +1803,7 @@ export default function ConcurrentHashMapTest() {
     it("delete_Key_With_Test_static_Test_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let keyData:  containers.ConcurrentHashMap<string, number[]> = new  containers.ConcurrentHashMap<string, number[]>();
       const key = "key1";
-      const value = [1, 2, 3];
+      const value: number[] = [1, 2, 3];
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(JSON.stringify(keyData.get(key))).assertEqual(JSON.stringify(value));
