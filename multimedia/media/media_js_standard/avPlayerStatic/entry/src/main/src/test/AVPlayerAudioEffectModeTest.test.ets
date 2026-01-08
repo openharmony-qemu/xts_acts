@@ -115,11 +115,11 @@ export default function AVPlayerAudioEffectModeTest() {
             console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_777")
             console.info('case fdsrc test');
             if (resetConfig == 2) {
-              avPlayer.fdSrc = fileDescriptor2 as media.AVFileDescriptor;
+              avPlayer!!.fdSrc = fileDescriptor2 as media.AVFileDescriptor;
             } else if (resetConfig == 3) {
-              avPlayer.fdSrc = fileDescriptor3 as media.AVFileDescriptor;
+              avPlayer!!.fdSrc = fileDescriptor3 as media.AVFileDescriptor;
             } else {
-              avPlayer.fdSrc = fileDescriptor as media.AVFileDescriptor;
+              avPlayer!!.fdSrc = fileDescriptor as media.AVFileDescriptor;
             }
             break;
           case INITIALIZED:
@@ -232,7 +232,7 @@ export default function AVPlayerAudioEffectModeTest() {
       });
       console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_666")
       console.info('case fdsrc test');
-      avPlayer.fdSrc = fileDescriptor as media.AVFileDescriptor;
+      avPlayer!!.fdSrc = fileDescriptor as media.AVFileDescriptor;
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
@@ -291,7 +291,7 @@ export default function AVPlayerAudioEffectModeTest() {
         avPlayer?.release();
       });
       console.info('case fdsrc test');
-      avPlayer.fdSrc = fileDescriptor as media.AVFileDescriptor;
+      avPlayer!!.fdSrc = fileDescriptor as media.AVFileDescriptor;
     });
   })
 }
