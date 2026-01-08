@@ -95,6 +95,7 @@ struct PickerComponent {
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
     result.edgeEffect = this.pickerOptions.edgeEffect ?? EdgeEffect.Spring;
+    result.gridPinchMode = this.pickerOptions.gridPinchMode;
     return result;
   }
 
@@ -358,6 +359,7 @@ struct PickerComponent {
         onScrollStopAtStart: this.onScrollStopAtStartCallback,
         onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
+        onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
       })
         .height('70%')
         .width('100%')
