@@ -700,9 +700,9 @@ export default function WindowLayoutTest() {
          */
         it("testOnRectChangeOptionsMoveErrorCode1300002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnRectChangeOptionsMoveErrorCode1300002_static_0100" ;
-            try {
                 let subWindowClass : window.Window = await windowStage.createSubWindow("TestOnRectChangeOptionsMove");
                 hilog.info(0x0000, '[ANI]', `${caseName} Succeeded in creating the sub window.`);
+            try {
                 await subWindowClass.showWindow();
                 await Utils.msSleep(1000);
                 subWindowClass.onWindowRectChange((data : window.RectChangeOptions) => {
@@ -718,6 +718,7 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in moving the window.`);
             } catch (error) {
                 error = error as BusinessError;
+                subWindowClass.destroyWindow();
                 if (error!.code == 1300002) {
                     hilog.error(0x0000, '[ANI]',`${caseName} This window state is abnormal`);
                     done();
