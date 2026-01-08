@@ -43,6 +43,7 @@ DrawingNativeImageTest.cpp
 DrawingNativeMaskFilterTest.cpp
 DrawingNativeMatrixTest.cpp
 DrawingNativeMatrixPart2Test.cpp
+DrawingNativeMatrixPart3Test.cpp
 DrawingNativeMemoryStreamTest.cpp
 DrawingNativePathEffectTest.cpp
 DrawingNativePathTest.cpp
@@ -62,6 +63,11 @@ DrawingNativeSurFaceTest.cpp
 DrawingNativePointTest.cpp
 DrawingNativeTextBlobTest.cpp
 DrawingNativeTypeFaceTest.cpp
+DrawingNativeCanvasPart7Test.cpp
+DrawingNativePathPart4Test.cpp
+DrawingNativeRegionPart2Test.cpp
+DrawingNativeRectPart2Test.cpp
+DrawingNativeTypeFacePart2Test.cpp
 )
 
 target_link_libraries(drawingnative PUBLIC 
