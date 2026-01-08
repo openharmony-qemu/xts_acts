@@ -41,7 +41,7 @@ async function testSeiMessage(src: media.AVFileDescriptor, avPlayer: media.AVPla
       avPlayer = video;
       setAVPlayerSeiMessageCb(avPlayer!, payloadTypes, done);
       console.info('case fdsrc test');
-      avPlayer.fdSrc = src;
+      avPlayer!!.fdSrc = src;
     } else if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err.message}`);
       expect().assertFail();
