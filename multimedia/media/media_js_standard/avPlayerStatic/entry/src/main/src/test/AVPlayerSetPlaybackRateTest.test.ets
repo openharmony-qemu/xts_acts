@@ -112,7 +112,7 @@ async function handleState(state: string, operationRecord: Record<string, () => 
     }
 }
 
-async function testSetPlaybackSpeed(fd: media.AVFileDescriptor | string, done: () => void, callback: media.OnPlaybackRateDone,
+async function testSetPlaybackSpeed(fd: media.AVFileDescriptor, done: () => void, callback: media.OnPlaybackRateDone,
   operationRecord: Record<string, () => Promise<void>>, errorCallback?: ErrorCallback) {
   await media.createAVPlayer().then((video: media.AVPlayer | undefined) => {
     if (typeof (video) != 'undefined') {
@@ -133,7 +133,8 @@ async function testSetPlaybackSpeed(fd: media.AVFileDescriptor | string, done: (
   if (errorCallback != undefined) {
     avPlayer!!.onError(errorCallback);
   }
-  setSource(avPlayer!, fd);
+  console.info('case fdsrc test');
+  avPlayer.fdSrc = fd;
 }
 
 function openFileFailed() {
