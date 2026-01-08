@@ -63,6 +63,7 @@ async function handleState(state: string, initializedOp: AsyncVoidCallback, prep
       console.info(`case avPlayer.surfaceId is ${avPlayer!!.surfaceId}`);
       await initializedOp();
       done();
+      break;
     case PREPARED:
       expect(avPlayer!!.state).assertEqual(PREPARED);
       expect(avPlayer!!.currentTime).assertEqual(0);
