@@ -33,3 +33,7 @@ export const CHECK_HICOLLIE_REMOTE_FAILED: () => boolean;
 export const CHECK_ThreadCpuUsage: () => number;
 export const CHECK_OH_HiDebug_GetDefaultMallocDispatchTable: () => number;
 export const CHECK_OH_HiDebug_CreateBacktraceObject: () => number;
+export const testSetCrashObjType: (obj_type: number) => number;
+export const testSetCrashObjAddr: (obj_type: number) => number;
+export const checkSetCrashObj: () => number;
+export const testSetCrashObjAddrLen: (addr_len: number) => number;
