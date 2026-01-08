@@ -16,7 +16,7 @@
 import vibrator from '@ohos.vibrator'
 import deviceInfo from '@ohos.deviceInfo'
 import sensor from 'libsensorNdk.so'
-import { describe, beforeAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, TestType, Size, Level, afterEach } from '@ohos/hypium'
 
 export default function sensorTypeNdkTest() {
   let isAvailable  = false;
@@ -52,6 +52,18 @@ export default function sensorTypeNdkTest() {
       } catch(error) {
         console.error('Sensor_typeNdkTest exception :' + JSON.stringify(error))
         done()
+      }
+    });
+
+    afterEach(async (done: Function) => {
+      console.info('====>Sensor_typeNdkTest afterEach start');
+      try{
+        await vibrator.stopVibration()
+        console.info("afterEach: Success in stopping vibration. ");
+        done();
+      } catch(error){
+        console.info("afterEach error: " + JSON.stringify(error));
+        done();
       }
     });
 
@@ -831,7 +843,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest3();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -854,7 +870,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest4();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -877,7 +897,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest5();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -900,7 +924,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest6();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -923,7 +951,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest7();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -945,7 +977,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest8();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
@@ -968,7 +1004,11 @@ export default function sensorTypeNdkTest() {
         console.info(TAG + "===> START");
         let ret : number = sensor.vibrator_AttributeTest9();
         console.info(TAG + "Test ret Result ===> " + ret);
-        expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
         done()
       } catch (err)  {
         console.error(TAG + "Test err ===>" + err);
