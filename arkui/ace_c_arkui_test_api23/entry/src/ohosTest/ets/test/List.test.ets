@@ -37,6 +37,7 @@ import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
 import MotionPathOptionsTest from './MotionPath/MotionPathOptionsTest.test'
 import AtomicServiceMenuBarSetVisibleTest from './publicCapacity/AtomicServiceMenuBarSetVisibleTest.test'
+import TextSelectionTest from './textSelection/textSelectionTest.test'
 
 export default function testsuite() {
   ContainerPickerCanLoop();
@@ -64,4 +65,5 @@ export default function testsuite() {
   monopolizeTest();
   MotionPathOptionsTest();
   AtomicServiceMenuBarSetVisibleTest();
+  TextSelectionTest();
 }
