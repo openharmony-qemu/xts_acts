@@ -93,7 +93,7 @@ export default function ActsNewDrawingNativeTestPart11() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_Bitmap_0008', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0800', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBitmap(7);
       expect(result).assertEqual(0);
     })

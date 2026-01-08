@@ -383,7 +383,7 @@ export default function ActsNewDrawingNativeTestPart10() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_RectPart2_OtherOperations_0008', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECT_4600', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRectPart2OtherOperations(7);
       expect(result).assertEqual(0);
     })
@@ -839,7 +839,7 @@ export default function ActsNewDrawingNativeTestPart10() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_RegionPart2_QueryOperations_0016', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_REGION_3900', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(15);
       expect(result).assertEqual(0);
     })
@@ -897,8 +897,8 @@ export default function ActsNewDrawingNativeTestPart10() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01700
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01700
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01800
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01800
      * @tc.desc   test for TestTypefaceIsBoldMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -923,8 +923,8 @@ export default function ActsNewDrawingNativeTestPart10() {
     })
 
     /**
-     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01900
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01900
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_02000
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_02000
      * @tc.desc   test for TestTypefaceIsItalicNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -970,7 +970,7 @@ export default function ActsNewDrawingNativeTestPart10() {
    * @tc.size   SMALLTEST
    * @tc.level  LEVEL3
    */
-  it('testMatrixPerConcatNull1', Level.LEVEL3, () => {
+  it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_MATRIX_10200', Level.LEVEL3, () => {
     const result = libDrawingNative.DrawingMatrixPart3(1);
     expect(result).assertEqual(0);
   })
@@ -1189,7 +1189,7 @@ export default function ActsNewDrawingNativeTestPart10() {
    * @tc.size   SMALLTEST
    * @tc.level  LEVEL3
    */
-  it('SUB_Drawing_Region_BasicOperations_0021', Level.LEVEL3, () => {
+  it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_REGION_5200', Level.LEVEL3, () => {
     const result = libDrawingNative.DrawingRegionAdvancedOperations(10);
     expect(result).assertEqual(0);
   })

@@ -35,6 +35,69 @@ void DrawingNativeCanvasPart7TestTearDown()
     std::cout << "DrawingNativeCanvasPart6Test errorCodeReset after each test case." << std::endl;
 }
 
+// Helper function to create and initialize PixelMap
+static OH_Drawing_PixelMap* CreateTestPixelMap(OH_Pixelmap_InitializationOptions** createOps,
+                                                 OH_PixelmapNative** pixelMapNative,
+                                                 void** buffer)
+{
+    uint32_t imageWidth = TEST_CANVAS_COORD_200;
+    uint32_t imageHeight = TEST_CANVAS_COORD_200;
+    OH_PixelmapInitializationOptions_Create(createOps);
+    OH_PixelmapInitializationOptions_SetWidth(*createOps, imageWidth);
+    OH_PixelmapInitializationOptions_SetHeight(*createOps, imageHeight);
+    OH_PixelmapInitializationOptions_SetPixelFormat(*createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(*createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetAlphaType(*createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
+    *buffer = malloc(bufferSize);
+    if (*buffer == nullptr) {
+        return nullptr;
+    }
+    
+    for (uint32_t i = 0; i < imageWidth * imageHeight; i++) {
+        ((uint32_t*)(*buffer))[i] = 0xFFFF00FF;
+    }
+    
+    OH_PixelmapNative_CreatePixelmap((uint8_t*)(*buffer), bufferSize, *createOps, pixelMapNative);
+    return OH_Drawing_PixelMapGetFromOhPixelMapNative(*pixelMapNative);
+}
+
+// Helper function to clean up resources
+static void CleanupPixelMapResources(OH_Drawing_PixelMap* pixelMap,
+                                      OH_PixelmapNative* pixelMapNative,
+                                      OH_Pixelmap_InitializationOptions* createOps,
+                                      void* buffer)
+{
+    if (pixelMap != nullptr) {
+        OH_Drawing_PixelMapDissolve(pixelMap);
+    }
+    if (pixelMapNative != nullptr) {
+        OH_PixelmapNative_Release(pixelMapNative);
+    }
+    if (createOps != nullptr) {
+        OH_PixelmapInitializationOptions_Release(createOps);
+    }
+    if (buffer != nullptr) {
+        free(buffer);
+    }
+}
+
+// Helper function to create canvas and brush
+static void CreateCanvasAndBrush(OH_Drawing_Canvas** canvas, OH_Drawing_Brush** brush)
+{
+    *canvas = OH_Drawing_CanvasCreate();
+    *brush = OH_Drawing_BrushCreate();
+    OH_Drawing_CanvasAttachBrush(*canvas, *brush);
+}
+
+// Helper function to destroy canvas and brush
+static void DestroyCanvasAndBrush(OH_Drawing_Canvas* canvas, OH_Drawing_Brush* brush)
+{
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_BrushDestroy(brush);
+}
+
 /**
  * @tc.name   testCanvasDrawPixelMapMeshNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_20300
@@ -46,29 +109,12 @@ void DrawingNativeCanvasPart7TestTearDown()
 int TestCanvasDrawPixelMapMeshNormal()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
+    EXPECT_NE(pixelMap, nullptr);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_2;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_2;
@@ -87,9 +133,9 @@ int TestCanvasDrawPixelMapMeshNormal()
         TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE,
         TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits parameters normally.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -104,12 +150,8 @@ int TestCanvasDrawPixelMapMeshNormal()
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -127,29 +169,11 @@ int TestCanvasDrawPixelMapMeshNormal()
 int TestCanvasDrawPixelMapMeshNull01()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_2;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -161,9 +185,9 @@ int TestCanvasDrawPixelMapMeshNull01()
     std::vector<uint32_t> colors = {
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(nullptr,
                                                                        pixelMap,
@@ -202,12 +226,8 @@ int TestCanvasDrawPixelMapMeshNull01()
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -225,29 +245,11 @@ int TestCanvasDrawPixelMapMeshNull01()
 int TestCanvasDrawPixelMapMeshNull02()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_2;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -259,9 +261,9 @@ int TestCanvasDrawPixelMapMeshNull02()
     std::vector<uint32_t> colors = {
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -300,12 +302,8 @@ int TestCanvasDrawPixelMapMeshNull02()
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -323,29 +321,11 @@ int TestCanvasDrawPixelMapMeshNull02()
 int TestCanvasDrawPixelMapMeshNull03()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -358,9 +338,9 @@ int TestCanvasDrawPixelMapMeshNull03()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -399,12 +379,8 @@ int TestCanvasDrawPixelMapMeshNull03()
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -422,29 +398,11 @@ int TestCanvasDrawPixelMapMeshNull03()
 int TestCanvasDrawPixelMapMeshNull04()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -456,9 +414,9 @@ int TestCanvasDrawPixelMapMeshNull04()
     std::vector<uint32_t> colors = {
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -473,12 +431,8 @@ int TestCanvasDrawPixelMapMeshNull04()
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -496,29 +450,11 @@ int TestCanvasDrawPixelMapMeshNull04()
 int TestCanvasDrawPixelMapMeshBindAndUnbind()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -562,10 +498,7 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
     // 3. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_PenDestroy(pen);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -583,29 +516,11 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
 int TestCanvasDrawPixelMapMeshAbnormal01()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -619,9 +534,9 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -647,12 +562,8 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -670,29 +581,11 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
 int TestCanvasDrawPixelMapMeshAbnormal02()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -706,9 +599,9 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -734,12 +627,8 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -757,29 +646,11 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
 int TestCanvasDrawPixelMapMeshAbnormal03()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -793,9 +664,9 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -821,12 +692,8 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 
@@ -844,33 +711,13 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
 int TestCanvasDrawPixelMapMeshAbnormal04()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     if (pixelMap == nullptr) {
-        OH_PixelmapNative_Release(pixelMapNative);
-        OH_PixelmapInitializationOptions_Release(createOps);
-        free(buffer);
+        CleanupPixelMapResources(nullptr, pixelMapNative, createOps, buffer);
         return 0;
     }
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
@@ -886,9 +733,9 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits a number greater than the actual quantity.
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas,
                                                                        pixelMap,
@@ -914,12 +761,8 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 }
 
 /**
@@ -933,29 +776,11 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
 int TestCanvasDrawPixelMapMeshMultipleCalls()
 {
     DrawingNativeCanvasPart7TestSetUp();
-    uint32_t imageWidth = TEST_CANVAS_COORD_200;
-    uint32_t imageHeight = TEST_CANVAS_COORD_200;
     OH_Pixelmap_InitializationOptions* createOps = nullptr;
-    auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
-    OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
-    OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    // 2 is ALPHA_FORMAT_PREMUL
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
-    // 4 for test
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
-    void* buffer = malloc(bufferSize);
-    EXPECT_NE(buffer, nullptr);
-    for (int i = 0; i < imageWidth * imageHeight; i++) {
-        ((uint32_t*)buffer)[i] = 0xFFFF00FF;
-    }
     OH_PixelmapNative* pixelMapNative = nullptr;
-    ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
+    void* buffer = nullptr;
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    OH_Drawing_PixelMap* pixelMap = CreateTestPixelMap(&createOps, &pixelMapNative, &buffer);
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
@@ -969,9 +794,9 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
         TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
         TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
     };
-    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
-    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_Canvas* canvas = nullptr;
+    OH_Drawing_Brush* brush = nullptr;
+    CreateCanvasAndBrush(&canvas, &brush);
     OH_Drawing_ErrorCode errorCode;
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh is called 10 times.
     for (int i = 0; i < 10; i++) {
@@ -989,12 +814,8 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
     }
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
-    OH_Drawing_CanvasDestroy(canvas);
-    OH_Drawing_BrushDestroy(brush);
-    OH_Drawing_PixelMapDissolve(pixelMap);
-    OH_PixelmapNative_Release(pixelMapNative);
-    OH_PixelmapInitializationOptions_Release(createOps);
-    free(buffer);
+    DestroyCanvasAndBrush(canvas, brush);
+    CleanupPixelMapResources(pixelMap, pixelMapNative, createOps, buffer);
 
     DrawingNativeCanvasPart7TestTearDown();
 

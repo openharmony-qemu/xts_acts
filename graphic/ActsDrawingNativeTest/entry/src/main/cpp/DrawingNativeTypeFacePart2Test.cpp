@@ -55,7 +55,7 @@ int TestTypefaceIsBoldNormal()
 
     OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf",
                                                                        TYPEFACE_INDEX_0);
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf",
+    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSans-Italic.ttf",
                                                                        TYPEFACE_INDEX_0);
     bool isBold = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface1, &isBold);
@@ -86,7 +86,7 @@ int TestTypefaceIsBoldNull()
 
     OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf",
                                                                        TYPEFACE_INDEX_0);
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf",
+    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSans-Italic.ttf",
                                                                        TYPEFACE_INDEX_0);
     bool isBold = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(nullptr, &isBold);
@@ -144,7 +144,7 @@ int TestTypefaceIsItalicNormal()
 
     OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf",
                                                                        TYPEFACE_INDEX_0);
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf",
+    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSans-Italic.ttf",
                                                                        TYPEFACE_INDEX_0);
     bool isItalic = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface1, &isItalic);
@@ -175,7 +175,7 @@ int TestTypefaceIsItalicNull()
 
     OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf",
                                                                        TYPEFACE_INDEX_0);
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf",
+    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSans-Italic.ttf",
                                                                        TYPEFACE_INDEX_0);
     bool isItalic = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(nullptr, &isItalic);
@@ -204,7 +204,7 @@ int TestTypefaceIsItalicMultipleCalls()
 {
     DrawingNativeTypeFacePart2TestSetUp();
 
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf",
+    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSans-Italic.ttf",
                                                                       TYPEFACE_INDEX_0);
     bool isItalic = false;
     for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
