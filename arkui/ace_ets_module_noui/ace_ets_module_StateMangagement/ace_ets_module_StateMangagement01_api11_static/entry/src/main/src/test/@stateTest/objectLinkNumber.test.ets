@@ -94,7 +94,7 @@ it('objectLinkNumber_static_0100', Level.LEVEL0, async (done: () => void): Promi
       console.info('objectLinkNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('state1_ObjectLinkNumber'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('objectLinkNumber');
@@ -117,7 +117,7 @@ it('objectLinkNumber_static_0200', Level.LEVEL0, async (done: () => void): Promi
       console.info('objectLinkNumber_static_0200 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('state2_ObjectLinkNumber'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('objectLinkNumber');
