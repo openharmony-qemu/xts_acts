@@ -5404,7 +5404,7 @@ export default function MapComboTest() {
       expect(genreValue.get('programming')).assertEqual(5 * 29.99 + 2 * 34.99);
 
       // Remove out-of-print books (older than 5 years)
-      const currentYear = new Date().getFullYear();
+      const currentYear = new Date(2025, 1, 1).getFullYear();
       bookstoreInventory.forEach((book, isbn) => {
         if (currentYear - book.published! > 5) {
           bookstoreInventory.delete(isbn);
