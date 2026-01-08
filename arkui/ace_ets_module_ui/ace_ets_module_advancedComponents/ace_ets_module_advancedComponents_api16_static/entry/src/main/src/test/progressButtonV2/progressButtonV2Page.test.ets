@@ -73,7 +73,7 @@ export default function progressButtonV2PageTest() {
 it('progressButtonV2PageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[progressButtonV2PageTest_static_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       // 查看progressButtonV2Page是否存在以下入口。
       let itemText = await driver.findComponent(ON.text('下载'));
       expect(itemText !== null).assertTrue();

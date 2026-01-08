@@ -63,7 +63,7 @@ it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
       console.info('textPickerDialogSelectedAreaTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('showTextPickerDialog')) as Component;
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let textPickerDialog = await driver.findComponent(ON.id('colComponent')) as Component;
@@ -84,7 +84,7 @@ it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
 
       let btn1 = await driver.findComponent(ON.text('确定')) as Component;
       await Utils.sleep(500);
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(500);
 
       let textStr = await driver.findComponent(ON.id('textFlag'));

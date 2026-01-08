@@ -172,7 +172,7 @@ export default function testsuite() {
   imageThreeJsunit();
   buttonJsunit();
   buttonEnabledJsunit();
-  checkBoxGroupUIJsunit();   // 1
+  checkBoxGroupUIJsunit();
   CheckBoxJsunit();
   TextClockJsunit();
   TextClockLongJsunit();

@@ -90,10 +90,10 @@ it('activeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollBar.scrollSearch(ON.id('active1'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button2 = await scrollBar.scrollSearch(ON.id('active2'));
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0010] attrs is: " +
@@ -120,10 +120,10 @@ it('activeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      button3?.click()
+      await (button3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active1'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0020] attrs is: " +
@@ -150,7 +150,7 @@ it('activeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      button3?.click()
+      await (button3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0030] attrs is: " +
@@ -179,10 +179,10 @@ it('activeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<voi
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
 
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      button3?.click()
+      await (button3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active2'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0040] attrs is: " +
@@ -210,10 +210,10 @@ it('activeTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      button3?.click()
+      await (button3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active3'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0050] attrs is: " +
@@ -241,12 +241,12 @@ it('activeTest_static_0060', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(500);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button3 = await scrollBar.scrollSearch(ON.id('init'));
-      button3?.click()
+      await (button3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button = await scrollBar.scrollSearch(ON.id('active3'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[activeTest_0050] attrs is: " +

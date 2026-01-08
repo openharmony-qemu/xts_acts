@@ -76,7 +76,7 @@ it('ImageOrientationTest_static_0100', Level.LEVEL0, async (done: () => void): P
       // get the image component and test attribute
       let button = await driver.findComponent(ON.id('changeOrientation'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('imageOrientation');
       let obj = JSON.parseJsonElement(strJson);

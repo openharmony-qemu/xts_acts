@@ -79,7 +79,7 @@ export default function TextStyleSuperscriptTest() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let getObj = await driver.findComponent(ON.id('get_superscript'))
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[TextStyleSuperscriptTest_static_0010] superscript: ' + AppStorage.get('TextStyle_superscript_0'));
       expect(AppStorage.get('TextStyle_superscript_0')).assertEqual('SuperscriptStyle.NORMAL');
@@ -99,7 +99,7 @@ export default function TextStyleSuperscriptTest() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let getObj = await driver.findComponent(ON.id('get_superscript'))
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[TextStyleSuperscriptTest_static_0010] superscript: ' + AppStorage.get('TextStyle_superscript_1'));
       expect(AppStorage.get('TextStyle_superscript_1')).assertEqual('SuperscriptStyle.SUPERSCRIPT');
@@ -119,7 +119,7 @@ export default function TextStyleSuperscriptTest() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let getObj = await driver.findComponent(ON.id('get_superscript'))
-      getObj?.click();
+      await (getObj?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('[TextStyleSuperscriptTest_static_0030] superscript: ' + AppStorage.get('TextStyle_superscript_1'));
       expect(AppStorage.get('TextStyle_superscript_2')).assertEqual('SuperscriptStyle.SUBSCRIPT');

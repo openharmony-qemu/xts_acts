@@ -108,7 +108,7 @@ it('onSubmitTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('changeIsCallKeepEditableState'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let TextArea: Component | null = await driver.findComponent(ON.id('TextArea'));
       await (TextArea?.inputText('这是测试文本') as Promise<void>)
@@ -179,7 +179,7 @@ it('onSubmitTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('changeIsCallKeepEditableState'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let Search: Component | null = await driver.findComponent(ON.id('Search'));
       await (Search?.inputText('这是测试文本') as Promise<void>)

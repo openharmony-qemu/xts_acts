@@ -64,7 +64,7 @@ export default function TextPickerDialogShadowTest() {
 it('TextPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('shadowOptionID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -72,7 +72,7 @@ it('TextPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getElement('shadow').getString('color');
       expect(shadow).assertEqual('#FFFF0000');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -86,7 +86,7 @@ it('TextPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_XS_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -94,7 +94,7 @@ it('TextPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterDefaultXS');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -108,7 +108,7 @@ it('TextPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_SM_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -116,7 +116,7 @@ it('TextPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterDefaultSM');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -130,7 +130,7 @@ it('TextPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_MD_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -138,7 +138,7 @@ it('TextPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterDefaultMD');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -152,7 +152,7 @@ it('TextPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_LG_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -160,7 +160,7 @@ it('TextPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterDefaultLG');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -174,7 +174,7 @@ it('TextPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_SM_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -182,7 +182,7 @@ it('TextPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterFloatingSM');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -196,7 +196,7 @@ it('TextPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
 it('TextPickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_MD_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -204,7 +204,7 @@ it('TextPickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () => voi
       let shadow: string = column.getElement('$attrs').getString('shadow');
       expect(shadow).assertEqual('ShadowStyle.OuterFloatingMD');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
 
