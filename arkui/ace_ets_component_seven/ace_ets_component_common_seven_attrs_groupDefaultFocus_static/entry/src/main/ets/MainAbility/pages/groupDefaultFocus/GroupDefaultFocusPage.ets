@@ -803,15 +803,17 @@ struct GroupDefaultFocusPage {
 
 	onPageShow() {
 		console.info('groupDefaultFocus translate page show called ')
-		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
-		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
-		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
-		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
-		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
-		this._groupDefaultFocusButtonModifier.mGroupDefaultFocus = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.groupDefaultFocus
+		let routerParamOptions = new RouterParams()
+		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+		this.targetView = routerParamOptions.view.targetView;
+		this.componentKey = routerParamOptions.view.componentKey as string;
+		this.parentWidth = routerParamOptions.view.parentWidth;
+		this.parentHeight = routerParamOptions.view.parentHeight;
+		this.columns = (routerParamOptions.view.columns as int)
+		this.gutter = (routerParamOptions.view.gutter as int)
+		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+		this.parentComponentKey = routerParamOptions.view.parentComponentKey;
+		this._groupDefaultFocusButtonModifier.mGroupDefaultFocus = routerParamOptions.view.testValue.setValue.groupDefaultFocus
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('groupDefaultFocus [registerDataChange] ' + JSON.stringify(value.groupDefaultFocus))
 			this._groupDefaultFocusAlphabetIndexerModifier.mGroupDefaultFocus = value.groupDefaultFocus

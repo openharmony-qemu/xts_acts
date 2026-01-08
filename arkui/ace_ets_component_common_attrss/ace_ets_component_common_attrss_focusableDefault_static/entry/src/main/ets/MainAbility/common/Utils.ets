@@ -36,8 +36,28 @@ import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 let viewPage:string = ""
-export class RouterParams {
+export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
   view: PageConfig = new PageConfig()
+
+  constructor() {}
+
+  constructor(view: PageConfig) {
+    this.view = view
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
+    if (info) {
+      this.view = info!
+    }
+  }
 }
 
 export class RectValue {
@@ -167,9 +187,7 @@ static async pushPage(obj: PageConfig) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: {
-            view: obj
-          } as RouterParams
+          params: (new RouterParams(obj)).toJSON()
         });
         await Utils.sleep(2000);
         console.info('push ' + obj.pageName );

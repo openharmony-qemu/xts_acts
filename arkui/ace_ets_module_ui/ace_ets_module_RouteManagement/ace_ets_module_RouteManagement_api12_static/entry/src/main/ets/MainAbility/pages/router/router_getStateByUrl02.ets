@@ -26,7 +26,7 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-
+import { AgeObj } from '../../common/Utils'
 @Entry
 @Component
 struct router_getStateByUrl02 {
@@ -45,7 +45,9 @@ struct router_getStateByUrl02 {
             let index = 'index=' + options[i].index
             let name = 'name=' + options[i].name
             let path = 'path=' + options[i].path
-            let params = 'params=' + JSON.stringify(options[i].params)
+            let param = new AgeObj()
+            param.fromJSON(options[i].params)
+            let params = 'params=' + JSON.stringify(param)
             this.str = this.str + index + ';' + name + ';' + path + ';' + params + ';'
           }
         })

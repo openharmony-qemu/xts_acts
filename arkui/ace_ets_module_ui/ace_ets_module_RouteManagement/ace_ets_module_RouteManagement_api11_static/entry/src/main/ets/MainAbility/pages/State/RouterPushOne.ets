@@ -19,9 +19,30 @@ import router from '@ohos.router';
 import { Entry,Component,Column,Margin,Text, Button, ButtonType, ClickEvent, Scroll, FontWeight } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
-export interface RouterParams {
-  view: string;
+
+export class RouterParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  view:string
+
+  constructor(str:string) {
+    this.view = str
+  }
+
+  constructor() {
+    this.view = "";
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.view = jsonElem.getString("view")
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(this.view)
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
 }
+
 @Entry
 @Component
 struct RouterPushOne {
@@ -59,9 +80,7 @@ struct RouterPushOne {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
-              params: {
-                view: "params"
-              } as RouterParams
+              params: (new RouterParams("params")).toJSON()
             })
           })
 
@@ -85,9 +104,7 @@ struct RouterPushOne {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
-              params: {
-                view: "params"
-              } as RouterParams
+              params: (new RouterParams("params")).toJSON()
             })
           })
 
@@ -112,9 +129,7 @@ struct RouterPushOne {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
-              params: {
-                view: "params"
-              } as RouterParams
+              params: (new RouterParams("params")).toJSON()
             })
           })
 
@@ -138,9 +153,7 @@ struct RouterPushOne {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
-              params: {
-                view: "params"
-              } as RouterParams
+              params: (new RouterParams("params")).toJSON()
             })
           })
       }

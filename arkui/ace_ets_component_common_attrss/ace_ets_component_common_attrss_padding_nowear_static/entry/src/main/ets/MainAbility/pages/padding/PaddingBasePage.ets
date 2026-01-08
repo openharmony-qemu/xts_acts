@@ -63,7 +63,8 @@ struct paddingPage {
   onPageShow() {
     console.info('padding page show called ')
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<Padding>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as Padding)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

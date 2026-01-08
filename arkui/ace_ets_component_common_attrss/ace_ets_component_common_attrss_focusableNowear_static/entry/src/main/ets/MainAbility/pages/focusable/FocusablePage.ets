@@ -151,7 +151,8 @@ struct FocusablePage {
 
   onPageShow() {
     console.info('[FocusablePage] page show called ');
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<boolean>('_focusable',  routerParamOptions.view.testValue.setValue)
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey

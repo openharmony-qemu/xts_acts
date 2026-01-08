@@ -82,7 +82,8 @@ struct PositionPage {
     //   this._position = value
     // })
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       // console.info('[wll]x'+routerParamOptions.view.testValue.setValue.x)
       // console.info('[wll]xp'+routerParamOptions.view.testValue.setValue.y)
       // console.info('[wll]y'+routerParamOptions.view.testValue.setValue.xp)

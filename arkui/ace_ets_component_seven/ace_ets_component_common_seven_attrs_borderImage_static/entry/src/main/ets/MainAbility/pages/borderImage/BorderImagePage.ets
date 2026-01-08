@@ -2118,9 +2118,10 @@ struct BorderImagePage {
 
 	onPageShow() {
 		console.info('borderImage translate page show called ')
-		let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+		let routerParamOptions = new RouterParams();
+		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
 		this.borderImageButton = routerParamOptions.view.testValue.setValue
-		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+		const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
 			.getElement("view")
 		this.targetView = viewElement.getString("targetView")
 		this.componentKey = viewElement.getString("componentKey")

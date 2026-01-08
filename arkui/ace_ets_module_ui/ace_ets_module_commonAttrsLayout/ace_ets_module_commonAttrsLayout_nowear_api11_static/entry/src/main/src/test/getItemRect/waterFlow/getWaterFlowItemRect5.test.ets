@@ -32,13 +32,74 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-interface ParamsData {
+class ParamsData implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
   data3: number[];
+
+  constructor() {
+    this.data3 = new Array<number>();
+  }
+
+  constructor(arr: number[]) {
+    this.data3 = arr;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data3.length; ++i) {
+      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data3', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let arrJson = jsonElem.tryAsArray();
+    if (!arrJson) {
+      this.data3 = new Array<number>();
+      return;
+    }
+    let arr = new Array<number>();
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsDouble();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data3 = arr;
+  }
 }
 
-interface MyParams {
+class MyParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
   data1: string;
   data2: ParamsData;
+
+  constructor() {
+    this.data1 = "";
+    this.data2 = new ParamsData();
+  }
+
+  constructor(data1: string, data2: ParamsData) {
+    this.data1 = data1;
+    this.data2 = data2;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1))
+    root.set('data2', this.data2.toJSON());
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let data2 = jsonElem.tryGetElement('data2');
+    if (data2) {
+      this.data2 = new ParamsData();
+      this.data2.fromJSON(data2!);
+    }
+  }
 }
 
 export default function getWaterFlowItemRect5() {
@@ -147,12 +208,7 @@ it('getWaterFlowItemRect5_static_0200', Level.LEVEL0, async (done: () => void): 
         console.info("getWaterFlowItemRect5 " + JSON.stringify(pages));
         ohosrouter.pushUrl({
           url: 'MainAbility/pages/getItemRect/waterFlow/getWaterFlowItemRect5',
-          params: {
-            data1: 'message',
-            data2: {
-              data3: [123, 456, 789]
-            }
-          } as MyParams
+          params: (new MyParams('message', new ParamsData([123, 456, 789]))).toJSON()
         }).then(() => {
           // success
         })

@@ -17,7 +17,7 @@ import router from '@ohos.router'
 import { BusinessError } from '@ohos.base'
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-
+import { AgeObj } from '../../common/Utils'
 
 @Entry
 @Component
@@ -32,7 +32,9 @@ struct router_back8 {
       Button('getParams')
         .id('router_back8_btn1')
         .onClick((e:ClickEvent)=>{
-          this.str = JSON.stringify(this.getUIContext().getRouter().getParams()) + ''
+          let age = new AgeObj()
+          age.fromJSON(this.getUIContext().getRouter().getParams())
+          this.str = JSON.stringify(age) + ''
         })
 
       Button('go to second')

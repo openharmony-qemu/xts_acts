@@ -15,6 +15,7 @@
  */
 import { Entry,Component,FlexDirection,ItemAlign, Button, FlexAlign, Color, ClickEvent, Flex } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import { JsonObj4, JsonObj4Inner } from '../../common/Utils';
 
 @Entry
 @Component
@@ -36,12 +37,7 @@ struct stageRouter {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'pages/Animator',
-            params: {
-              data1: 'message',
-              data2: {
-                data3: [123, 456, 789]
-              }
-            } as JsonObj
+            params: (new JsonObj4('message', new JsonObj4Inner([123, 456, 789]))).toJSON()
           })
         })
         .key("routerPushUrl")
@@ -49,12 +45,4 @@ struct stageRouter {
     .width("100%")
     .height("100%")
   }
-}
-
-class JsonObj {
-  data1: string = '';
-  data2: JsonObj1 = new JsonObj1();
-}
-class JsonObj1 {
-  data3: int[] = [0];
 }

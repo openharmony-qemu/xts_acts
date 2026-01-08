@@ -41,7 +41,8 @@ struct RouterPushTwo {
 
   onPageShow() {
     try{
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      let routerParamOptions = new RouterParams()
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.params = routerParamOptions ? routerParamOptions.view : ''
     }catch(e){}
   }

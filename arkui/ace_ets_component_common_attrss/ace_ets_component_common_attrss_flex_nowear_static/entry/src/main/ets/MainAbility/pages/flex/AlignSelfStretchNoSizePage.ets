@@ -145,7 +145,8 @@ struct AlignSelfStretchNoSizePage {
     AppStorage.setOrCreate<FlexDirection>('_direction', FlexDirection.Row)
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.containerView = routerParamOptions.view.containerView ?? ''
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''

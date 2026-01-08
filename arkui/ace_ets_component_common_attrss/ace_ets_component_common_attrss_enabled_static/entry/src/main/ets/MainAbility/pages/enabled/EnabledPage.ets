@@ -131,12 +131,12 @@ struct EnabledPage {
 
   onPageShow() {
     console.info('[EnabledPage] page show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<boolean>('_enabled', routerParamOptions.view.testValue.setValue)
 
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey

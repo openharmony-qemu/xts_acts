@@ -148,7 +148,8 @@ struct StateStylesPage {
   onPageShow() {
     console.info('StateStylesPage show called ', this._isEnable)
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
     } catch (error: Error) {

@@ -135,7 +135,8 @@ struct FlexBasisPage {
     console.info('[FlexBasis] page show called ')
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
 
       AppStorage.setOrCreate('_flexBasis', routerParamOptions.view.testValue.setValue.flexBasis)
 

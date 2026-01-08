@@ -154,7 +154,8 @@ struct FocusablePage {
     AppStorage.setOrCreate<boolean>('_focusable',  false)
     AppStorage.setOrCreate<string>('callback',  '')
 
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey
     this.referenceComponentKey = routerParamOptions.view.referenceComponentKey

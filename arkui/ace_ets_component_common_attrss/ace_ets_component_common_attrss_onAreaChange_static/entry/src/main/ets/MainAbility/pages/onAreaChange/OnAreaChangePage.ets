@@ -69,7 +69,8 @@ struct OnAreaChangePage {
   onPageShow() {
     console.info('OnAreaChangePage show called')
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       console.log('routerParamOptions',JSON.stringify(routerParamOptions))
       this.parentMargin = routerParamOptions.view.parentMargin
       this.parentWidth = routerParamOptions.view.parentWidth

@@ -82,7 +82,8 @@ struct PaddingPage_Length {
     console.info('[wll]75')
     try {
       console.info('[wll]77')
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       console.info('[wll]79')
       AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as number|string|Padding|Resource)
       this.targetView = routerParamOptions.view.targetView

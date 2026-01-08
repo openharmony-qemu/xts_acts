@@ -143,7 +143,8 @@ struct AlignSelfStretchPage {
 
   onPageShow() {
     console.info('AlignSelfStretchPage page show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     const value = routerParamOptions.view.testValue.setValue;
     AppStorage.setOrCreate<ItemAlign>('_alignSelf', value.alignSelf)
     AppStorage.setOrCreate<FlexWrap>('_wrap', value.wrap)

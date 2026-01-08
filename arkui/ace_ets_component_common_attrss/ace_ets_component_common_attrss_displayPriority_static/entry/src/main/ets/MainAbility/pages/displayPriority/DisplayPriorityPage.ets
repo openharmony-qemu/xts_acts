@@ -149,7 +149,8 @@ struct DisplayPriorityPage {
   onPageShow() {
     console.info('DisplayPriorityPage page show called');
 
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<number>('_displayPriority', routerParamOptions.view.testValue.setValue.displayPriority!)
     this._compareOneButtonDisplayPriority =
       routerParamOptions.view.testValue.setValue.compareOneButtonDisplayPriority ?? 2.0
@@ -166,7 +167,6 @@ struct DisplayPriorityPage {
 
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.containerView = routerParamOptions.view.containerView ?? ''
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView ?? ''

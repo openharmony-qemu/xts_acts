@@ -21,7 +21,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import { sendTouchEvent } from "@ohos.arkui.Test";
 
-export default class Utils {
+export class Utils {
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;
@@ -125,5 +125,265 @@ export default class Utils {
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)
     Utils.sleep(500)
+  }
+}
+
+export class JsonObj implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: int;
+
+  constructor() {
+    this.data1 = '';
+    this.data2 = 0;
+  }
+
+  constructor(a: string, b: int) {
+    this.data1 = a;
+    this.data2 = b;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      'data1': jsonx.JsonElement.createString(this.data1),
+      'data2': jsonx.JsonElement.createInteger(this.data2)
+    };
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    this.data2 = jsonElem.tryGetInteger('data2');
+  }
+}
+
+export class JsonObj2 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: int[];
+
+  constructor() {
+    this.data1 = '';
+    this.data2 = [0];
+  }
+
+  constructor(a: string, b: Array<int>) {
+    this.data1 = a;
+    this.data2 = b;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1));
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data2.length; ++i) {
+      arr.push(jsonx.JsonElement.createInteger(this.data2[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data2', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let arr = new Array<int>();
+    let arrJson = jsonElem.tryGetArray('data2');
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsInteger();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data2 = arr;
+  }
+}
+
+export class JsonObj3 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data: string;
+
+  constructor() {
+    this.data = "";
+  }
+
+  constructor(data: string) {
+    this.data = data;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data', jsonx.JsonElement.createString(this.data))
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data = jsonElem.tryGetString('data');
+  }
+}
+
+export class JsonObj4Inner implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data3: number[];
+
+  constructor() {
+    this.data3 = [0];
+  }
+
+  constructor(arr: number[]) {
+    this.data3 = arr;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data3.length; ++i) {
+      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data3', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let arrJson = jsonElem.tryAsArray();
+    if (!arrJson) {
+      this.data3 = new Array<number>();
+      return;
+    }
+    let arr = new Array<number>();
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsDouble();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data3 = arr;
+  }
+}
+
+export class JsonObj4 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: JsonObj4Inner;
+
+  constructor() {
+    this.data1 = "";
+    this.data2 = new JsonObj4Inner();
+  }
+
+  constructor(data1: string, data2: JsonObj4Inner) {
+    this.data1 = data1;
+    this.data2 = data2;
+  }
+
+  constructor(data1: string, data2: Array<number>) {
+    this.data1 = data1;
+    this.data2 = new JsonObj4Inner(data2);
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1))
+    root.set('data2', this.data2.toJSON());
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let data2 = jsonElem.tryGetElement('data2');
+    if (data2) {
+      this.data2 = new JsonObj4Inner();
+      this.data2.fromJSON(data2!);
+    }
+  }
+}
+
+export class JsonObject1 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data2: string | string[];
+  data3: int | undefined;
+
+  constructor() {
+    this.data2 = '';
+    this.data3 = undefined;
+  }
+
+  constructor(a: string, b: int) {
+    this.data2 = a;
+    this.data3 = b;
+  }
+
+  constructor(a: Array<string>, b: int) {
+    this.data2 = a;
+    this.data3 = b;
+  }
+
+  constructor(a: Array<string>) {
+    this.data2 = a;
+    this.data3 = undefined;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    if (this.data2 instanceof string) {
+      root.set('data2', jsonx.JsonElement.createString(this.data2 as string));
+    } else {
+      let arr = new Array<jsonx.JsonElement>();
+      for (let i = 0; i < (this.data2 as Array<string>).length; ++i) {
+        arr.push(jsonx.JsonElement.createString((this.data2 as Array<string>)[i]));
+      }
+      let arrJson = jsonx.JsonElement.createArray(arr);
+      root.set('data2', arrJson);
+    }
+    if (this.data3) {
+      root.set('data3', jsonx.JsonElement.createInteger(this.data3!));
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let data2Json = jsonElem.tryGetElement('data2');
+    if (!data2Json) {
+      this.data2 = '';
+    } else if (data2Json.jsonType == jsonx.JsonType.JsonString) {
+      this.data2 = jsonElem.tryGetString('data2');
+    } else {
+      let arr = new Array<string>();
+      let arrJson = jsonElem.tryGetArray('data2');
+      for (let i = 0; i < arrJson!.length; i++) {
+        let val = arrJson![i].tryAsString();
+        if (val) {
+          arr.push(val);
+        }
+      }
+      this.data2 = arr;
+    }
+    let data3Json = jsonElem.tryGetElement('data3');
+    if (data3Json && data3Json.jsonType == jsonx.JsonType.JsonNumber) {
+      this.data3 = jsonElem.tryGetInteger('data3');
+    } else {
+      this.data3 = undefined;
+    }
+  }
+}
+
+export class JsonObject implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: JsonObject1;
+
+  constructor() {
+    this.data1 = new JsonObject1()
+  }
+
+  constructor(a: JsonObject1) {
+    this.data1 = a;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      'data1': this.data1.toJSON()
+    };
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = new JsonObject1();
+    let data = jsonElem.tryGetElement('data1');
+    if (data) {
+      this.data1.fromJSON(data!);
+    }
   }
 }

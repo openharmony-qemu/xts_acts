@@ -34,8 +34,28 @@ export class RectValue {
   bottom: number = 0;
 }
 
-export class RouterParams {
+export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
   view: PageConfig = new PageConfig()
+
+  constructor() {}
+
+  constructor(view: PageConfig) {
+    this.view = view
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
+    if (info) {
+      this.view = info!
+    }
+  }
 }
 
 class Size {
@@ -148,7 +168,9 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
+      let info = new RouterParams()
+      info.fromJSON(router.getParams())
+      let pageParams = JSON.parseJsonElement(JSON.stringify(info));
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
@@ -162,9 +184,7 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: {
-            view: obj
-          } as RouterParams
+          params: (new RouterParams(obj)).toJSON()
         });
         await Utils.sleep(500);
         console.info('push ' + obj.pageName);

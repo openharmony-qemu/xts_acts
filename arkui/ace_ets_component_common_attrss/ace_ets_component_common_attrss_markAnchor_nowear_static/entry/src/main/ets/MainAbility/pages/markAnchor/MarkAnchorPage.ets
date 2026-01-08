@@ -54,7 +54,8 @@ struct Index {
 
     AppStorage.setOrCreate<Position>('_markAnchor', { x: 0, y: 0 });
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ""
       this.parentWidth = routerParamOptions.view.parentWidth

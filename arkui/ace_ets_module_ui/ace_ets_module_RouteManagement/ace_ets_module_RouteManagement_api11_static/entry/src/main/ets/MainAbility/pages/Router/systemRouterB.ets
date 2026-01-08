@@ -33,19 +33,22 @@ struct SystemRouterB {
   }
 
   onPageShow() {
-    let params = this.getUIContext().getRouter().getParams() as Record<String,undefined|null|Object>;
-    if (params && params['data']) {
-      console.info("[SystemRouterB] getParams result: " + params['data']);
-      this.getRouterParams(params['data']!);
+    let params = this.getUIContext().getRouter().getParams();
+    if (params) {
+      let data = params.tryGetElement('data');
+      if (data) {
+        console.info("[SystemRouterB] getParams result: " + JSON.stringifyJsonElement(data!));
+        this.getRouterParams(data!);
+      }
     }
   }
 
-  getRouterParams(data: Object) {
+  getRouterParams(data: jsonx.JsonElement) {
     try {
       let paramsData: events_emitter.EventData = {
         data: {
           "params": data,
-        } as Record<String,undefined|null|Object>
+        } as Record<String,undefined|null|Object|jsonx.JsonElement>
       }
       let paramsEvent: events_emitter.InnerEvent = {
         eventId: 211,

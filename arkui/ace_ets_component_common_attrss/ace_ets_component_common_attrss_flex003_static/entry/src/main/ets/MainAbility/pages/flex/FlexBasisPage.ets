@@ -137,7 +137,8 @@ struct FlexBasisPage {
   @State targetHeight: number = 0
 
   onPageShow() {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate('_flexBasis', routerParamOptions.view.testValue.setValue.flexBasis)
     console.info('xxxyyybbb: [FlexBasis] page show called ' + JSON.stringify(routerParamOptions))
     this.targetView = routerParamOptions.view.targetView ?? ''
