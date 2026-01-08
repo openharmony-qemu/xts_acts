@@ -37,7 +37,7 @@ void DrawingNativePathPart4TestTearDown()
 
 /**
  * @tc.name   testPathIsInverseFillTypeNormalOne
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4900
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_4900
  * @tc.desc   test for testPathIsInverseFillTypeNormalOne
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -55,8 +55,8 @@ int TestPathIsInverseFillTypeNormalOne()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_200, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_300, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -67,8 +67,8 @@ int TestPathIsInverseFillTypeNormalOne()
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_600, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_700, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -83,7 +83,7 @@ int TestPathIsInverseFillTypeNormalOne()
 
 /**
  * @tc.name   testPathIsInverseFillTypeNormalTwo
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4901
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5000
  * @tc.desc   test for testPathIsInverseFillTypeNormalTwo
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -101,8 +101,8 @@ int TestPathIsInverseFillTypeNormalTwo()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_200, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_300, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -113,8 +113,8 @@ int TestPathIsInverseFillTypeNormalTwo()
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_600, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_700, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -129,7 +129,7 @@ int TestPathIsInverseFillTypeNormalTwo()
 
 /**
  * @tc.name   testPathIsInverseFillTypeNormalThree
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4902
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5100
  * @tc.desc   test for testPathIsInverseFillTypeNormalThree
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -147,8 +147,8 @@ int TestPathIsInverseFillTypeNormalThree()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_200, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_300, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -159,8 +159,8 @@ int TestPathIsInverseFillTypeNormalThree()
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_600, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_700, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -175,7 +175,7 @@ int TestPathIsInverseFillTypeNormalThree()
 
 /**
  * @tc.name   testPathIsInverseFillTypeNormalFour
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4903
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5200
  * @tc.desc   test for testPathIsInverseFillTypeNormalFour
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -193,8 +193,8 @@ int TestPathIsInverseFillTypeNormalFour()
     OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
     EXPECT_EQ(isInverseFillType, true);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_200, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_300, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xffff0000);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -205,8 +205,8 @@ int TestPathIsInverseFillTypeNormalFour()
     EXPECT_EQ(isInverseFillType, false);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
-    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
-    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_600, PATH_CIRCLE_Y_200, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, PATH_CIRCLE_X_700, PATH_CIRCLE_Y_300, PATH_CIRCLE_RADIUS_100, PATH_DIRECTION_CW);
     OH_Drawing_BrushSetColor(brush, 0xff00ff00);
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_CanvasDrawPath(canvas, path);
@@ -221,7 +221,7 @@ int TestPathIsInverseFillTypeNormalFour()
 
 /**
  * @tc.name   testPathIsInverseFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4904
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5300
  * @tc.desc   test for testPathIsInverseFillTypeNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -254,7 +254,7 @@ int TestPathIsInverseFillTypeNull()
 
 /**
  * @tc.name   testPathToggleInverseFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4905
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5400
  * @tc.desc   test for testPathToggleInverseFillTypeNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -288,7 +288,7 @@ int TestPathToggleInverseFillTypeNull()
 
 /**
  * @tc.name   testPathIsInverseFillTypeCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4906
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5500
  * @tc.desc   test for testPathIsInverseFillTypeCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -317,7 +317,7 @@ int TestPathIsInverseFillTypeCalls()
 
 /**
  * @tc.name   testPathToggleInverseFillTypeCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4907
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_PATH_5600
  * @tc.desc   test for testPathToggleInverseFillTypeCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

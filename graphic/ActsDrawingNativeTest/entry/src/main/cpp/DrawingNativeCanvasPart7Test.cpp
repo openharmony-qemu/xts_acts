@@ -52,10 +52,14 @@ int TestCanvasDrawPixelMapMeshNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -69,10 +73,20 @@ int TestCanvasDrawPixelMapMeshNormal()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_2;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_2;
-    std::vector<float> vertices = { TEST_CANVAS_COORD_10,  TEST_CANVAS_COORD_50,  TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_180, TEST_MATRIX_VALUE_0,   TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_20,  TEST_MATRIX_VALUE_0,   TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0,   TEST_MATRIX_VALUE_0,
-                                    TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_150, TEST_CANVAS_COORD_410, TEST_CANVAS_COORD_180, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_360, TEST_CANVAS_COORD_190, TEST_CANVAS_COORD_340, TEST_CANVAS_COORD_410, TEST_CANVAS_COORD_360 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE,
-                                     TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_CANVAS_COORD_10, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_180,
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_20, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_150, TEST_CANVAS_COORD_410, TEST_CANVAS_COORD_180,
+        TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_360, TEST_CANVAS_COORD_190, TEST_CANVAS_COORD_340,
+        TEST_CANVAS_COORD_410, TEST_CANVAS_COORD_360
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE,
+        TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE,
+        TEST_COLOR_BLACK_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -119,10 +133,14 @@ int TestCanvasDrawPixelMapMeshNull01()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -136,8 +154,13 @@ int TestCanvasDrawPixelMapMeshNull01()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -208,10 +231,14 @@ int TestCanvasDrawPixelMapMeshNull02()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -225,8 +252,13 @@ int TestCanvasDrawPixelMapMeshNull02()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_2;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -297,10 +329,14 @@ int TestCanvasDrawPixelMapMeshNull03()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -314,8 +350,14 @@ int TestCanvasDrawPixelMapMeshNull03()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -386,10 +428,14 @@ int TestCanvasDrawPixelMapMeshNull04()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -402,8 +448,14 @@ int TestCanvasDrawPixelMapMeshNull04()
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -450,10 +502,14 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -467,8 +523,15 @@ int TestCanvasDrawPixelMapMeshBindAndUnbind()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Pen* pen = OH_Drawing_PenCreate();
     OH_Drawing_CanvasAttachPen(canvas, pen);
@@ -526,10 +589,14 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -543,8 +610,15 @@ int TestCanvasDrawPixelMapMeshAbnormal01()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -602,10 +676,14 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -619,8 +697,15 @@ int TestCanvasDrawPixelMapMeshAbnormal02()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -678,10 +763,14 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -695,8 +784,15 @@ int TestCanvasDrawPixelMapMeshAbnormal03()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -754,10 +850,14 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -767,12 +867,25 @@ int TestCanvasDrawPixelMapMeshAbnormal04()
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
     OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
+    if (pixelMap == nullptr) {
+        OH_PixelmapNative_Release(pixelMapNative);
+        OH_PixelmapInitializationOptions_Release(createOps);
+        free(buffer);
+        return 0;
+    }
     uint32_t meshWidth = TEST_PIXELMAP_MESH_WIDTH_1;
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
@@ -826,10 +939,14 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);    // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA); // 3 is RGBA fromat
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);      // 2 is ALPHA_FORMAT_PREMUL
-    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;                 // 4 for test
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 3 is RGBA fromat
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
+    // 2 is ALPHA_FORMAT_PREMUL
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    // 4 for test
+    size_t bufferSize = imageWidth * imageHeight * BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     EXPECT_NE(buffer, nullptr);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -843,8 +960,15 @@ int TestCanvasDrawPixelMapMeshMultipleCalls()
     uint32_t meshHeight = TEST_PIXELMAP_MESH_HEIGHT_1;
     uint32_t vertOffest = TEST_PIXELMAP_VERT_OFFSET_1;
     uint32_t colorOffest = TEST_PIXELMAP_COLOR_OFFSET_1;
-    std::vector<float> vertices = { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180, TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180 };
-    std::vector<uint32_t> colors = { TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE, TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE };
+    std::vector<float> vertices = {
+        TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_50, TEST_MATRIX_VALUE_0,
+        TEST_CANVAS_COORD_410, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_180,
+        TEST_CANVAS_COORD_50, TEST_CANVAS_COORD_180
+    };
+    std::vector<uint32_t> colors = {
+        TEST_COLOR_RED_VERTEX, TEST_COLOR_GREEN, TEST_CANVAS_COLOR_BLUE,
+        TEST_COLOR_WHITE_OPAQUE, TEST_COLOR_BLACK_OPAQUE
+    };
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);

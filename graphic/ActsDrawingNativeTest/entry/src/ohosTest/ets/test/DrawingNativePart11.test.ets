@@ -36,58 +36,58 @@ export default function ActsNewDrawingNativeTestPart11() {
 
     // run error test cases
     /**
-     * @tc.name   SUB_Drawing_Canvas_DrawPixelMapRect_0005
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_CANVAS_1103
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4700
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4700
      * @tc.desc   test for TestCanvasDrawPixelMapRect4KBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Drawing_Canvas_DrawPixelMapRect_0005', Level.LEVEL3, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4700', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapRect(4);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_Drawing_Font_GetMetrics_Part2_0001
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2500
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5100
      * @tc.desc   test for TestFontGetMetricsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_Font_GetMetrics_Part2_0001', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FONT_5100', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetMetricsPart2(0);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   SUB_Drawing_Bitmap_0022
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0600
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2300
      * @tc.desc   test for testBitmapBuildMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_Bitmap_0022', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_2300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBitmap(21);
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.name   SUB_Drawing_Bitmap_0003
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0200
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0300
      * @tc.desc   test for testBitmapCreateFromPixelsNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Drawing_Bitmap_0003', Level.LEVEL0, () => {
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0300', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingBitmap(2);
       expect(result).assertEqual(0);
     })
     /**
-     * @tc.name   SUB_Drawing_Bitmap_0008
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_BITMAP_0205
+     * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0800
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_BITMAP_0800
      * @tc.desc   test for testBitmapCreateFromPixelsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

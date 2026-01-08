@@ -71,8 +71,6 @@ napi_value DrawingRegionAdvancedOperations(napi_env env, napi_callback_info info
     });
 }
 
-
-
 // Path Part4 InverseFillType related functions
 napi_value DrawingPathPart4InverseFillType(napi_env env, napi_callback_info info)
 {
