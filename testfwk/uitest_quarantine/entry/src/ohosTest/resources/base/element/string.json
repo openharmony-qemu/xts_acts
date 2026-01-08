@@ -1,12 +1,8 @@
 {
   "string": [
     {
-      "name": "MainAbility_desc",
-      "value": "the main ability"
-    },
-    {
-      "name": "MainAbility_label",
-      "value": "main label"
+      "name": "module_test_desc",
+      "value": "test ability description"
     },
     {
       "name": "TestAbility_desc",
@@ -15,6 +11,10 @@
     {
       "name": "TestAbility_label",
       "value": "test label"
+    },
+    {
+      "name": "reason",
+      "value": "test lable"
     }
   ]
 }
