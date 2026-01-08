@@ -136,7 +136,8 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
       expect().assertFail();
     }
   });
-  setSource(avPlayer!, fd);
+  console.info('case fdsrc test');
+  avPlayer.fdSrc = fd;
 }
 
 function openFileFailed() {
