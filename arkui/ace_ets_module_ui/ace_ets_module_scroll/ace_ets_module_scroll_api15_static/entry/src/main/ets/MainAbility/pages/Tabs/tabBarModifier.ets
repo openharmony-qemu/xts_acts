@@ -32,7 +32,7 @@ import {
   Alignment,
   BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';

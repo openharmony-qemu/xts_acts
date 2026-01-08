@@ -404,7 +404,7 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapBuildNormal, Function | SmallTest | 
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
-
+    EXPECT_NE(bitmap, nullptr);
     // step 2
     for (int i = 1; i < 4; i++) {
         OH_Drawing_BitmapFormat bitmapFormat = {formats[3], alphaFormats[i]};
@@ -489,7 +489,7 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapBuildMultipleCalls, Function | Small
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
-
+    EXPECT_NE(bitmap, nullptr);
     // step 2
     for (int i = 1; i < 4; i++) {
         OH_Drawing_BitmapFormat bitmapFormat = {formats[3], alphaFormats[i]};
@@ -552,7 +552,7 @@ HWTEST_F(DrawingNativeBitmapTest, testBitmapBuildBoundary, Function | SmallTest 
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
-
+    EXPECT_NE(bitmap, nullptr);
     // step 2
     for (int i = 1; i < 4; i++) {
         OH_Drawing_BitmapFormat bitmapFormat = {formats[3], alphaFormats[i]};

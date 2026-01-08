@@ -30,7 +30,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { canIUse } from "@internal.full.global";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -48,7 +47,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 let syncProgressDetail: relationalStore.ProgressDetails;
 
 function Progess(ProgressDetail: relationalStore.ProgressDetails): void {
-  console.log(TAG + ` Progess:` + JSON.stringify(ProgressDetail));
+  console.log(tag + ` Progess:` + JSON.stringify(ProgressDetail));
   syncProgressDetail = ProgressDetail;
 }
 

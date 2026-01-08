@@ -90,18 +90,18 @@ it('testGridRowColGridPad_static_01', Level.LEVEL0, async (done: () => void): Pr
       let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
 
       expect(Math.abs(Math.round(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left) -
-        Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.left - Grid_RowCol_PadMar_011.left) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_012.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_014.left) <= 1).assertTrue();
 
       expect(Math.abs(Math.floor(Grid_RowCol_PadMar_01.right - Grid_RowCol_PadMar_012.right) -
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      Math.floor(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_012.right) <= 1).assertTrue();
 
-      expect(Math.abs( Math.round(Grid_RowCol_PadMar_011.top - Grid_RowCol_PadMar_01.top) -
-        Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Grid_RowCol_PadMar_011.top - Grid_RowCol_PadMar_01.top) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_012.top - Grid_RowCol_PadMar_011.top) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_013.top) <= 1).assertTrue();
@@ -109,26 +109,34 @@ it('testGridRowColGridPad_static_01', Level.LEVEL0, async (done: () => void): Pr
       expect(Math.abs(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_014.top) <= 1).assertTrue();
 
       expect(Math.abs(Math.floor(Grid_RowCol_PadMar_01.bottom - Grid_RowCol_PadMar_013.bottom) -
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      Math.floor(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_014.bottom) <= 1).assertTrue();
 
       console.info(`[testGridRowColGridPad_static_01] Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left=
         ${(Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left)}`);
       console.info(`[testGridRowColGridPad_static_01] Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left=
         ${(Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left)}`);
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
 
       console.info(`[testGridRowColGridPad_static_01] Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top=
         ${(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top)}`);
       console.info(`[testGridRowColGridPad_static_01] Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top=
         ${(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top)}`);
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
       console.info('[testGridRowColGridPad_static_01] END');
       done();
     });
@@ -178,20 +186,32 @@ it('testGridRowColGridMargin_static_02', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(Grid_RowCol_PadMar_01.bottom - Grid_RowCol_PadMar_013.bottom) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_014.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_PadMar_01.left - Grid_RowCol_PadMar_Box_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_01.top - Grid_RowCol_PadMar_Box_01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_Box_01.right - Grid_RowCol_PadMar_01.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_Box_01.bottom - Grid_RowCol_PadMar_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_01.left - Grid_RowCol_PadMar_Box_01.left -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_01.top - Grid_RowCol_PadMar_Box_01.top -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_Box_01.right - Grid_RowCol_PadMar_01.right -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_Box_01.bottom - Grid_RowCol_PadMar_01.bottom -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top -
+      UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
       console.info('[testGridRowColGridMargin_static_02] END');
       done();
     });
@@ -224,7 +244,8 @@ it('testGridRowColGridPadMar_static_03', Level.LEVEL0, async (done: () => void):
       let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
       let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_Box_01');
 
-      expect(Math.abs(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_PadMar_013.left - Grid_RowCol_PadMar_011.left) <= 1).assertTrue();
 
@@ -232,41 +253,54 @@ it('testGridRowColGridPadMar_static_03', Level.LEVEL0, async (done: () => void):
       expect(Math.abs(Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_014.left) <= 1).assertTrue();
 
       expect(Math.abs(Math.floor(Grid_RowCol_PadMar_01.right - Grid_RowCol_PadMar_012.right) -
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      Math.floor(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_012.right) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_PadMar_011.top - Grid_RowCol_PadMar_01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_011.top - Grid_RowCol_PadMar_01.top -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_012.top - Grid_RowCol_PadMar_011.top) <= 1).assertTrue();
 
       expect(Math.abs(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_013.top) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_014.top) <= 1).assertTrue();
 
       expect(Math.abs(Math.floor(Grid_RowCol_PadMar_01.bottom - Grid_RowCol_PadMar_013.bottom) -
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      Math.floor(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_014.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(Grid_RowCol_PadMar_01.left - Grid_RowCol_PadMar_Box_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_01.top - Grid_RowCol_PadMar_Box_01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_Box_01.right - Grid_RowCol_PadMar_01.right - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Grid_RowCol_PadMar_Box_01.bottom - Grid_RowCol_PadMar_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_01.left - Grid_RowCol_PadMar_Box_01.left -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_01.top - Grid_RowCol_PadMar_Box_01.top -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_Box_01.right - Grid_RowCol_PadMar_01.right -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Grid_RowCol_PadMar_Box_01.bottom - Grid_RowCol_PadMar_01.bottom -
+      UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
 
       console.info(`[testGridRowColGridPadMar_static_03] Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left=
         ${(Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left)}`);
       console.info(`[testGridRowColGridPadMar_static_03] Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left=
         ${(Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left)}`);
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.right - Grid_RowCol_PadMar_011.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.right - Grid_RowCol_PadMar_012.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.right - Grid_RowCol_PadMar_013.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.right - Grid_RowCol_PadMar_014.left) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
 
       console.info(`[testGridRowColGridPadMar_static_03] Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top=
         ${(Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top)}`);
       console.info(`[testGridRowColGridPadMar_static_03] Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top=
         ${(Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top)}`);
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_011.bottom - Grid_RowCol_PadMar_011.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_012.bottom - Grid_RowCol_PadMar_012.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_013.bottom - Grid_RowCol_PadMar_013.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_RowCol_PadMar_014.bottom - Grid_RowCol_PadMar_014.top) -
+      UIContext.resolveUIContext()!.vp2px(140))) <= 1).assertTrue();
 
       console.info('[testGridRowColGridPadMar_static_03] END');
       done();

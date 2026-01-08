@@ -59,7 +59,8 @@ export default function getDialogControllerTest() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   getDialogControllerTest_static_0100
      * @tc.name     getDialogControllerTest_static_0100
      * @tc.desc     getDialogControllerTest_static_0100

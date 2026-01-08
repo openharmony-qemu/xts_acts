@@ -21,9 +21,7 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-let driver = Driver.create();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
-const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function BackgroundPromise() {
   describe("BackgroundPromise", () => {
@@ -40,7 +38,7 @@ export default function BackgroundPromise() {
       }
     })
 
-    beforeEach(async (done: Function) => {
+    beforeEach((done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
@@ -49,7 +47,7 @@ export default function BackgroundPromise() {
       });
       setTimeout(() => {
         done();
-      }, 200);
+      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
@@ -68,12 +66,13 @@ export default function BackgroundPromise() {
         done();
         return;
       }
+      setTimeout(() => {
       abilityDelegator.startAbility({
           abilityName: "Main4Ability",
           bundleName: "com.example.crossplatformpromise",
           moduleName: "entry_test",
-        }, async () => {
-          await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, () => {
+          setTimeout(() => {
           abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
               abilityDelegator.printSync(
                 "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 Main4Ability: " +
@@ -83,8 +82,8 @@ export default function BackgroundPromise() {
                 abilityName: "Main3Ability",
                 bundleName: "com.example.crossplatformpromise",
                 moduleName: "entry_test",
-              }, async () => {
-                await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              }, () => {
+                setTimeout(() => {
                 abilityDelegator.getCurrentTopAbility(
                   (err: BusinessError, ability2: UIAbility) => {
                     abilityDelegator.printSync(
@@ -113,19 +112,22 @@ export default function BackgroundPromise() {
                             );
                           }
                           done();
-                        }, START_ABILITY_TIMEOUT_THOUSAND);
+                        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                       })
                       .catch((error: BusinessError) => {
-                        abilityDelegator.printSync(
-                          "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 error error:" +
-                            error
-                        );
-                      });
-                    }
-                  );
+                          abilityDelegator.printSync(
+                            "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 error error:" +
+                              error
+                          );
+                        });
+                      }
+                    );
+                  }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                });
               });
-            });
-        });
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          });
+        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
@@ -147,6 +149,7 @@ export default function BackgroundPromise() {
           done();
           return;
         }
+        setTimeout(() => {
         abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
           abilityDelegator.printSync(
             "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002 Main4Ability: " +
@@ -156,11 +159,11 @@ export default function BackgroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
+            }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002 startAbility"
             );
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            setTimeout(() => {
             abilityDelegator.getCurrentTopAbility(
               (err: BusinessError, ability2: UIAbility) => {
                 try {
@@ -208,11 +211,12 @@ export default function BackgroundPromise() {
                 }
               }
             );
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
-          });
-      }
-    );
-
+        });
+      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+    }
+  );
     /**
      * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
@@ -234,8 +238,8 @@ export default function BackgroundPromise() {
         abilityName: "Main4Ability",
         bundleName: "com.example.crossplatformpromise",
         moduleName: "entry_test",
-      }, async () => {
-        await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+      }, () => {
+        setTimeout(() => {
         abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004 Main4Ability: " +
@@ -245,8 +249,8 @@ export default function BackgroundPromise() {
               abilityName: "Main3Ability",
               bundleName: "com.example.crossplatformpromise",
               moduleName: "entry_test",
-            }, async () => {
-              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, () => {
+              setTimeout(() => {
               abilityDelegator.getCurrentTopAbility(
                 (err: BusinessError, ability2: UIAbility) => {
                   abilityDelegator.printSync(
@@ -285,7 +289,7 @@ export default function BackgroundPromise() {
                             done();
                           }
                         );
-                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                     })
                     .catch((error: BusinessError) => {
                       abilityDelegator.printSync(
@@ -293,10 +297,12 @@ export default function BackgroundPromise() {
                           error
                       );
                     });
-                }
-                );
+                  }
+                  );
+                }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              });
             });
-          });
+          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
       });
     });
 
@@ -328,11 +334,11 @@ export default function BackgroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
+          }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005 startAbility"
             );
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            setTimeout(() => {
             abilityDelegator.getCurrentTopAbility(
               (err: BusinessError, ability2: UIAbility) => {
                 ability2.context.terminateSelf(() => {
@@ -352,10 +358,11 @@ export default function BackgroundPromise() {
                       );
                     }
                     done();
-                  }, START_ABILITY_TIMEOUT_THOUSAND);
+                  }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                 });
               }
             );
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
         });
       }

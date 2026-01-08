@@ -92,8 +92,6 @@ export default function RelativeBarrier() {
     
 
     
-
-
 /**
      * @tc.number   RelativeBarrier_static_001
      * @tc.name     RelativeBarrier_static_001
@@ -112,7 +110,7 @@ it('RelativeBarrier_static_001', Level.LEVEL3, async (done: () => void): Promise
 
       console.info("[RelativeBarrier_001] RelativeContainer is: " + JSON.stringify(rel) + 'row1:' +
       JSON.stringify(row1) + 'row2:' + JSON.stringify(row2) + 'row3:' + JSON.stringify(row3));
-      expect(Math.abs(Math.round(rel.bottom - row3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.bottom - row3.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(150))) <= 1).assertTrue();
 
       console.info('[RelativeBarrier_001] END');
       done();

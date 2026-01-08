@@ -74,7 +74,7 @@ import {
   AlphabetIndexer,
   GaugeAttribute
 } from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { GaugeModifier } from "@ohos.arkui.modifier";
 

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -48,10 +48,8 @@ export default function BaseDialogTest() {
         console.info("get BaseDialogTest state pages: " + JSON.stringify(pages));
         if (!("BaseDialogTest" == pages.name)) {
           console.info("get BaseDialogTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = await BaseDialogTest.pushUrl(options);
           BaseDialogTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push BaseDialogTest success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -74,11 +72,11 @@ it('BaseDialogTest_static_0100', Level.LEVEL2, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn1: Component|null = ( await driver.findComponent(ON.id('btn1'))) ;
-      let TextInput: Component =( await driver.findComponent(ON.id('TextInput')) ) as Component;
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      // await CommonFunc.sleep(1000);
-      // await TextInput?.click() as Promise<void>;
+  await (btn1?.click() as Promise<void>);
+  await CommonFunc.sleep(1000);
+  let TextInput: Component =( await driver.findComponent(ON.id('TextInput')) ) as Component;
+
+
       await CommonFunc.sleep(1000);
       let text1 = inspector.getInspectorByKey('text1');
       await CommonFunc.sleep(1000);
@@ -101,15 +99,15 @@ it('BaseDialogTest_static_0200', Level.LEVEL2, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn2: Component|null = (await driver.findComponent(ON.id('btn2'))) ;
-      let TextInput: Component =( await driver.findComponent(ON.id('TextInput')) ) as Component;
+  await (btn2?.click() as Promise<void>);
+  await CommonFunc.sleep(1000);
+
+  let TextInput: Component =( await driver.findComponent(ON.id('TextInput')) ) as Component;
       await CommonFunc.sleep(1000);
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      // await TextInput?.click() as Promise<void>;
-      // await CommonFunc.sleep(1000);
       let text2 = inspector.getInspectorByKey('text2');
       await CommonFunc.sleep(1000);
-      console.info("[BaseDialogTest_static_0200] getText is: " + JSON.stringify('text2'));
+      console.info("[BaseDialogTest_static_0200] getText is: " + JSON.stringify(text2));
+  console.info("[BaseDialogTest_static_0200] getText is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(text2).getElement('$attrs')));
       expect(JSON.parseJsonElement(text2).getElement('$attrs').getString('content')).assertEqual('1');
       console.info('[BaseDialogTest_static_0200] END');
       done();

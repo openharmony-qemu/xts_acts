@@ -72,7 +72,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange001", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange001", 1, 20251229, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange001", true, 20260101, done);
       sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
@@ -88,7 +88,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange002", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", 2, 20251230, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", 1, 20251229, done);
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
 
@@ -103,10 +103,23 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange003", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange003", 0, 20251231, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange003", 2, 20251230, done);
       Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
     })
 
+    /**
+     * @tc.name   testOnMicrophoneCaptureStateChange004
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0004
+     * @tc.desc   test OnMicrophoneCaptureStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL2
+     */
+    it('testOnMicrophoneCaptureStateChange004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitOnMicrophoneCaptureStateChange004", 300752)
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange004", 0, 20251231, done);
+      Utils.waitAndClickComponent(driver, "webViewOnMicrophoneCaptureStateChangeButton");
+    })
 
   })
 }

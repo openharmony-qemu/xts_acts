@@ -129,7 +129,7 @@ export default function searchTest() {
       expect(obj.getString('$type')).assertEqual('Search');
       const context = AppStorage.get<UIContext>('uiContext')!.getHostContext();
       let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id) as double
-      expect(obj.getElement('$attrs').getElement('placeholderFont'))
+      expect(obj.getElement('$attrs').getString('placeholderFont'))
         .assertEqual('{"style":"FontStyle.Normal","size":"' + uiContext!.px2fp(resourceSize) +
           '.00fp","weight":"400","fontFamily":"sans-serif"}');
       try {

@@ -211,7 +211,6 @@ export default function RdbErrorCode14800012() {
         resultSet.getAssets(5);
         resultSet.getValue(5);
         resultSet.getRow();
-        resultSet.getRows(5);
         resultSet.isColumnNull(-1);
         resultSet.close();
         expect().assertFail();

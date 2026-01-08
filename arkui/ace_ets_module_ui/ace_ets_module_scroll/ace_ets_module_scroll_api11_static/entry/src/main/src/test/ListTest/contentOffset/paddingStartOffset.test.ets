@@ -81,8 +81,7 @@ export default function paddingStartOffset() {
 
 
     
-    
-/**
+    /**
      * @tc.number   paddingStartOffset_static_0100
      * @tc.name     paddingStartOffset_static_0100
      * @tc.desc     paddingStartOffset_static_0100

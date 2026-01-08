@@ -95,7 +95,7 @@ struct maxDisplayCountExample {
           .color(Color.Gray)
           .selectedColor(Color.Blue)
           .maxDisplayCount(5)
-          .end(LengthMetrics.vp(30))
+          // .end(LengthMetrics.vp(30))
       )
       .displayArrow({
         // 设置导航点箭头样式

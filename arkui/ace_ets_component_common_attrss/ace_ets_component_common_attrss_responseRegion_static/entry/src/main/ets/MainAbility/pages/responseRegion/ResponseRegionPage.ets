@@ -87,7 +87,7 @@ struct ResponseRegionPage {
     instance.height(this.targetHeight)
     instance.responseRegion(this._responseRegion)
     instance.onClick((event: ClickEvent) => {
-      console.info('[ResponseRegionPage] ' + this.targetView + ' onClick called at' + event.timestamp);  //Button onClick called at0
+      console.info('[ResponseRegionPage] ' + this.targetView + ' onClick called at' + event.timestamp);
       this.eventCallBackStr += 'onClick, '
       console.log("====================================== instance.onClick " + this.eventCallBackStr);
     })

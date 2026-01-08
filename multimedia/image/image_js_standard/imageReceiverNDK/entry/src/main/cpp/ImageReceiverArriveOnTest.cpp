@@ -15,8 +15,11 @@
 
 #include "napi/native_api.h"
 #include <hilog/log.h>
+#include "native_color_space_manager/native_color_space_manager.h"
 #include <multimedia/image_framework/image/image_native.h>
 #include <multimedia/image_framework/image/image_receiver_native.h>
+#include <multimedia/image_framework/image/pixelmap_native.h>
+#include <native_buffer/buffer_common.h>
 #include <cstdint>
 #include <unistd.h>
 #include <string>
@@ -45,6 +48,7 @@
 #define IMAGE_HEIGHT 480
 #define IMAGE_CAPACITY 2
 #define MAX_PATH_SIZE 1024
+#define UNSUPPORTED_CAMERA_FORMAT (-1)
 
 #define DECLARE_NAPI_FUNCTION(name, func)                                                                              \
     {                                                                                                                  \
@@ -56,6 +60,9 @@ static constexpr int32_t NUM_1 = 1;
 static constexpr int32_t NUM_2 = 2;
 static constexpr int32_t NUM_3 = 3;
 static constexpr int32_t NUM_4 = 4;
+static constexpr int32_t TEST_TYPE_PREVIEW = 0;
+static constexpr int32_t TEST_TYPE_PHOTO = 1;
+static constexpr int32_t DESIRED_FORMAT_UNSPECIFIED = -1;
 
 static const char *MYDATA_KEY_ID  = "callBackId";
 static const char *MYDATA_KEY_NUM  = "num";
@@ -67,6 +74,25 @@ std::string BoolToString(bool value)
 {
     return value ? "true" : "false";
 }
+
+struct ImageInfoForJs {
+    int32_t format = 0;
+    int32_t colorSpace = 0;
+    bool strideAlignedRet = false;
+};
+
+struct PixelMapInfo {
+    uint32_t width = 0;
+    uint32_t height = 0;
+    int32_t pixelFormat = 0;
+    bool isHdr = false;
+};
+
+struct CameraContext {
+    Camera_Input* cameraInput = nullptr;
+    Camera_CaptureSession* captureSession = nullptr;
+    Camera_Manager* cameraManager = nullptr;
+};
 
 class MyData {
 public:
@@ -95,11 +121,14 @@ public:
     uint32_t num_ = NUM_0;
     std::string s_;
     bool callbackTriggered_ = false;
+    ImageInfoForJs imageInfo_;
+    PixelMapInfo pixelMapInfo_;
 };
 std::mutex g_mtx;
 std::condition_variable g_condVar;
 std::vector<std::shared_ptr<MyData>> g_myDataVector;
 using CallbackFunc = void(*)(OH_ImageReceiverNative*, void*);
+static CameraContext g_cameraCtx;
 
 napi_value getJsResult(napi_env env, int result)
 {
@@ -108,7 +137,15 @@ napi_value getJsResult(napi_env env, int result)
     return resultNapi;
 }
 
-static int32_t Getint32NamedProperty(napi_env env, napi_value object, const char* key)
+static void SetUint32NamedProperty(napi_env env, napi_value object, const char* key, uint32_t value)
+{
+    napi_value temp = nullptr;
+    napi_create_uint32(env, value, &temp);
+    napi_set_named_property(env, object, key, temp);
+    return;
+}
+
+static int32_t GetInt32NamedProperty(napi_env env, napi_value object, const char* key)
 {
     napi_value temp = nullptr;
     int32_t ulResult = NUM_0;
@@ -149,103 +186,14 @@ static bool GetBoolNamedProperty(napi_env env, napi_value object, const char* ke
     return ulResult;
 }
 
-MyData* GetMyData(size_t myDataIndex)
+MyData* GetMyData(int32_t myDataIndex)
 {
     try {
-        return g_myDataVector.at(g_myDataIndex).get();
+        return g_myDataVector.at(myDataIndex).get();
     } catch (const std::out_of_range& e) {
         OH_LOG_ERROR(LOG_APP, "GetMyData error is: %{public}s!", e.what());
         return nullptr;
     }
-}
-
-void NDKCamera(char *str)
-{
-    Camera_Manager *cameraManager = nullptr;
-    Camera_Device *cameras = nullptr;
-    Camera_OutputCapability *cameraOutputCapability = nullptr;
-    Camera_PreviewOutput *previewOutput = nullptr;
-    const Camera_Profile *previewProfile = nullptr;
-    uint32_t size = NUM_0;
-    uint32_t cameraDeviceIndex = NUM_0;
-    char *previewSurfaceId = str;
-    Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager);
-    if (cameraManager == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_Camera_GetCameraManager failed.");
-    }
-
-    Camera_Input *cameraInput = nullptr;
-    ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
-    for (int index = NUM_0; index < size; index++) {
-        OH_LOG_INFO(LOG_APP, "cameraId  =  %{public}s ", cameras[index].cameraId);
-        OH_LOG_INFO(LOG_APP, "cameraPosition  =  %{public}d ", cameras[index].cameraPosition);
-        OH_LOG_INFO(LOG_APP, "cameraType  =  %{public}d ", cameras[index].cameraType);
-        OH_LOG_INFO(LOG_APP, "connectionType  =  %{public}d ", cameras[index].connectionType);
-    }
-    if (cameras == nullptr || size < NUM_0 || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
-    }
-    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[NUM_0], &cameraInput);
-    if (cameraInput == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCameraInput failed.ret:%{public}d", ret);
-    }
-
-    ret = OH_CameraManager_GetSupportedCameraOutputCapability(cameraManager, &cameras[cameraDeviceIndex],
-                                                              &cameraOutputCapability);
-    if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
-    }
-    if (cameraOutputCapability->previewProfilesSize < NUM_0) {
-        OH_LOG_ERROR(LOG_APP, "previewProfilesSize == null");
-    }
-    previewProfile = cameraOutputCapability->previewProfiles[NUM_0];
-    ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, previewSurfaceId, &previewOutput);
-    if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");
-    }
-
-    ret = OH_CameraInput_Open(cameraInput);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraInput_open failed.");
-    }
-
-    Camera_CaptureSession *captureSession = nullptr;
-    ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
-    if (captureSession == nullptr || ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCaptureSession failed.");
-    }
-    ret = OH_CaptureSession_SetSessionMode(captureSession, NORMAL_PHOTO);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetSessionMode failed.");
-    }
-
-    ret = OH_CaptureSession_BeginConfig(captureSession);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_BeginConfig failed.");
-    }
-
-    ret = OH_CaptureSession_AddInput(captureSession, cameraInput);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddInput failed.");
-    }
-
-    ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPreviewOutput failed.");
-    }
-
-    ret = OH_CaptureSession_CommitConfig(captureSession);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_CommitConfig failed.");
-    }
-
-    ret = OH_CaptureSession_Start(captureSession);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
-    } else {
-        OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Start SUCC!");
-    }
-    return;
 }
 
 std::unique_ptr<char[]> ConvertUint64ToChar(uint64_t value)
@@ -256,6 +204,295 @@ std::unique_ptr<char[]> ConvertUint64ToChar(uint64_t value)
     charBuffer[strValue.size()] = '\0';
 
     return charBuffer;
+}
+
+void ReleaseCameraContext(CameraContext& ctx)
+{
+    if (ctx.captureSession) {
+        OH_CaptureSession_Stop(ctx.captureSession);
+        OH_CaptureSession_Release(ctx.captureSession);
+        ctx.captureSession = nullptr;
+    }
+    if (ctx.cameraInput) {
+        OH_CameraInput_Close(ctx.cameraInput);
+        OH_CameraInput_Release(ctx.cameraInput);
+        ctx.cameraInput = nullptr;
+    }
+    if (ctx.cameraManager) {
+        OH_Camera_DeleteCameraManager(ctx.cameraManager);
+        ctx.cameraManager = nullptr;
+    }
+}
+
+bool SetCaptureSessionColorSpace(Camera_CaptureSession* session, bool isHdr)
+{
+    if (session == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "SetCaptureSessionColorSpace: session is nullptr");
+        return false;
+    }
+
+    OH_NativeBuffer_ColorSpace* colorSpaces = nullptr;
+    uint32_t colorSpaceCount = 0;
+    Camera_ErrorCode ret = OH_CaptureSession_GetSupportedColorSpaces(session, &colorSpaces, &colorSpaceCount);
+    if (ret != CAMERA_OK || colorSpaces == nullptr || colorSpaceCount == 0) {
+        OH_LOG_ERROR(LOG_APP, "GetSupportedColorSpaces failed, ret=%{public}d", ret);
+        return false;
+    }
+
+    OH_NativeBuffer_ColorSpace desiredColorSpace = isHdr ? OH_NativeBuffer_ColorSpace::OH_COLORSPACE_BT2020_HLG_LIMIT :
+                                                           OH_NativeBuffer_ColorSpace::OH_COLORSPACE_BT709_LIMIT;
+    bool found = false;
+    for (uint32_t i = 0; i < colorSpaceCount; ++i) {
+        OH_LOG_INFO(LOG_APP, "Supported color space[%{public}d]: %{public}d", i, colorSpaces[i]);
+        if (colorSpaces[i] == desiredColorSpace) {
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        OH_LOG_ERROR(LOG_APP, "Desired color space %{public}d not supported by session", desiredColorSpace);
+        desiredColorSpace = OH_NativeBuffer_ColorSpace::OH_COLORSPACE_SRGB_FULL;
+    }
+
+    ret = OH_CaptureSession_SetActiveColorSpace(session, desiredColorSpace);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "SetColorSpace failed, ret=%{public}d", ret);
+    }
+    OH_LOG_INFO(LOG_APP, "Set color space to %{public}d successfully", desiredColorSpace);
+    return true;
+}
+
+bool InitCameraManagerAndInput(Camera_Manager*& cameraManager, Camera_Device*& cameras, uint32_t& size,
+    Camera_Input*& cameraInput)
+{
+    cameraManager = nullptr;
+    cameras = nullptr;
+    size = 0;
+    cameraInput = nullptr;
+    Camera_ErrorCode ret = OH_Camera_GetCameraManager(&cameraManager);
+    if (cameraManager == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_Camera_GetCameraManager failed.");
+        return false;
+    }
+    ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+    if (cameras == nullptr || size < 1 || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
+        return false;
+    }
+
+    for (uint32_t i = 0; i < size; ++i) {
+        OH_LOG_INFO(LOG_APP, "Camera[%{public}u]: id=%{public}s, position=%{public}d, type=%{public}d, "
+            "connectionType=%{public}d", i, cameras[i].cameraId, cameras[i].cameraPosition, cameras[i].cameraType,
+            cameras[i].connectionType);
+    }
+
+    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &cameraInput);
+    if (cameraInput == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCameraInput failed.ret:%{public}d", ret);
+        return false;
+    }
+
+    g_cameraCtx.cameraManager = cameraManager;
+    g_cameraCtx.cameraInput = cameraInput;
+    return true;
+}
+
+bool GetCameraOutputCapability(Camera_Manager* cameraManager, Camera_Device* cameras, uint32_t cameraDeviceIndex,
+    Camera_SceneMode sceneMode, Camera_OutputCapability*& capability)
+{
+    capability = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &cameras[cameraDeviceIndex], sceneMode, &capability);
+    if (capability == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode failed.");
+        return false;
+    }
+    return true;
+}
+
+const Camera_Profile* FindProfile(const Camera_OutputCapability* capability, int desiredFormat, bool isPreview)
+{
+    OH_LOG_INFO(LOG_APP, "FindProfile: isPreview=%{public}s, desiredFormat=%{public}d",
+        isPreview ? "true" : "false", desiredFormat);
+    int size = isPreview ? capability->previewProfilesSize : capability->photoProfilesSize;
+    Camera_Profile **profiles = isPreview ? capability->previewProfiles : capability->photoProfiles;
+    for (int i = 0; i < size; i++) {
+        Camera_Format format = profiles[i]->format;
+        OH_LOG_INFO(LOG_APP, "Profile[%{public}d]: format=%{public}d, width=%{public}d, height=%{public}d, ",
+            i, profiles[i]->format, profiles[i]->size.width, profiles[i]->size.height);
+        if (desiredFormat != -1 && format == desiredFormat) {
+            OH_LOG_INFO(LOG_APP, "Selected profile[%{public}d] for format: %{public}d", i, format);
+            return profiles[i];
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "No profile found for desired format or not specified, use default: format=%{public}d.",
+        profiles[0]->format);
+    return profiles[0];
+}
+
+static bool GetSurfaceIdFromReceiver(OH_ImageReceiverNative* receiver, std::unique_ptr<char[]>& surfaceID_c)
+{
+    uint64_t surfaceID = 0;
+    Image_ErrorCode errCode = OH_ImageReceiverNative_GetReceivingSurfaceId(receiver, &surfaceID);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "imageReceiverTest get image receiver surfaceID failed, errCode: %{public}d.", errCode);
+        return false;
+    }
+    surfaceID_c = ConvertUint64ToChar(surfaceID);
+    OH_LOG_INFO(LOG_APP, "imageReceiverTest surfaceID_c: %{public}s.", surfaceID_c.get());
+    return true;
+}
+
+Camera_CaptureSession* CreateConfigSession(Camera_Manager* cameraManager, Camera_Input* cameraInput,
+    Camera_SceneMode sessionMode)
+{
+    Camera_CaptureSession* captureSession = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
+    if (captureSession == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCaptureSession failed.");
+        return nullptr;
+    }
+    ret = OH_CaptureSession_SetSessionMode(captureSession, static_cast<Camera_SceneMode>(sessionMode));
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetSessionMode failed.");
+        return nullptr;
+    }
+    ret = OH_CaptureSession_BeginConfig(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_BeginConfig failed.");
+        return nullptr;
+    }
+    ret = OH_CaptureSession_AddInput(captureSession, cameraInput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddInput failed.");
+        return nullptr;
+    }
+    g_cameraCtx.captureSession = captureSession;
+    return captureSession;
+}
+
+static bool CreatePhotoOutput(Camera_Manager* cameraManager, const Camera_Profile* photoProfile, char* str,
+    Camera_PhotoOutput*& photoOutput)
+{
+    Camera_ErrorCode ret = OH_CameraManager_CreatePhotoOutput(cameraManager, photoProfile, str, &photoOutput);
+    if (photoProfile == nullptr || photoOutput == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePhotoOutput failed.");
+        return false;
+    }
+    return true;
+}
+
+static bool CreatePreviewOutput(Camera_Manager* cameraManager, const Camera_Profile* previewProfile,
+    const char* surfaceId, Camera_PreviewOutput*& previewOutput)
+{
+    Camera_ErrorCode ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surfaceId, &previewOutput);
+    if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");
+        return false;
+    }
+    return true;
+}
+
+static bool StartPreviewSession(Camera_CaptureSession* captureSession, Camera_PreviewOutput* previewOutput,
+    int32_t desiredFormat)
+{
+    Camera_ErrorCode ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPreviewOutput failed.");
+        return false;
+    }
+    bool isHdr = (desiredFormat == Camera_Format::CAMERA_FORMAT_YCBCR_P010 ||
+                  desiredFormat == Camera_Format::CAMERA_FORMAT_YCRCB_P010);
+    SetCaptureSessionColorSpace(captureSession, isHdr);
+
+    ret = OH_CaptureSession_CommitConfig(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_CommitConfig failed.");
+        return false;
+    }
+
+    ret = OH_CaptureSession_Start(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
+        return false;
+    }
+    OH_LOG_INFO(LOG_APP, "OH_CaptureSession_Start SUCC!");
+    return true;
+}
+
+static bool StartPhotoPreviewSession(Camera_CaptureSession* captureSession, Camera_PhotoOutput* photoOutput,
+    Camera_PreviewOutput* previewOutput)
+{
+    Camera_ErrorCode ret = OH_CaptureSession_AddPhotoOutput(captureSession, photoOutput);
+    ret = OH_CaptureSession_AddPreviewOutput(captureSession, previewOutput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_AddPhotoOutput/PreviewOutput failed.");
+        return false;
+    }
+    SetCaptureSessionColorSpace(captureSession, false);
+    ret = OH_CaptureSession_CommitConfig(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_CommitConfig failed.");
+        return false;
+    }
+    ret = OH_CaptureSession_Start(captureSession);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
+        return false;
+    }
+    return true;
+}
+
+static bool DoPhotoCapture(Camera_PhotoOutput* photoOutput)
+{
+    Camera_ErrorCode ret = OH_PhotoOutput_Capture(photoOutput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_PhotoOutput_Capture failed.");
+        return false;
+    }
+    OH_LOG_INFO(LOG_APP, "OH_PhotoOutput_Capture SUCC!");
+    return true;
+}
+
+bool NDKCameraTest(char *str, int32_t desiredFormat)
+{
+    Camera_Manager *cameraManager = nullptr;
+    Camera_Device *cameras = nullptr;
+    uint32_t size = 0;
+    Camera_Input *cameraInput = nullptr;
+    if (!InitCameraManagerAndInput(cameraManager, cameras, size, cameraInput)) {
+        return false;
+    }
+
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
+    if (!GetCameraOutputCapability(cameraManager, cameras, 0, Camera_SceneMode::NORMAL_VIDEO, cameraOutputCapability)) {
+        return false;
+    }
+
+    const Camera_Profile *previewProfile = FindProfile(cameraOutputCapability, desiredFormat, true);
+    Camera_PreviewOutput *previewOutput = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, str, &previewOutput);
+    if (previewProfile == nullptr || previewOutput == nullptr || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed.");
+        return false;
+    }
+
+    ret = OH_CameraInput_Open(cameraInput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraInput_open failed.");
+        return false;
+    }
+
+    Camera_CaptureSession *captureSession = CreateConfigSession(cameraManager, cameraInput,
+        Camera_SceneMode::NORMAL_VIDEO);
+    if (captureSession == nullptr) {
+        return false;
+    }
+    if (!StartPreviewSession(captureSession, previewOutput, desiredFormat)) {
+        return false;
+    }
+    return true;
 }
 
 Image_ErrorCode InitReceiverOptions(OH_ImageReceiverOptions *&options)
@@ -321,6 +558,181 @@ Image_ErrorCode InitReceiverOptions(OH_ImageReceiverOptions *&options)
     return IMAGE_SUCCESS;
 }
 
+bool NDKCameraPhotoOutput(char *str, int32_t desiredFormat, OH_ImageReceiverNative* receiver)
+{
+    Camera_Manager *cameraManager = nullptr;
+    Camera_Device *cameras = nullptr;
+    uint32_t size = 0;
+    Camera_Input *cameraInput = nullptr;
+    if (!InitCameraManagerAndInput(cameraManager, cameras, size, cameraInput)) {
+        return false;
+    }
+
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
+    if (!GetCameraOutputCapability(cameraManager, cameras, 0, Camera_SceneMode::NORMAL_PHOTO, cameraOutputCapability)) {
+        return false;
+    }
+    const Camera_Profile *photoProfile = FindProfile(cameraOutputCapability, desiredFormat, false);
+    Camera_PhotoOutput *photoOutput = nullptr;
+    if (!CreatePhotoOutput(cameraManager, photoProfile, str, photoOutput)) {
+        return false;
+    }
+
+    std::unique_ptr<char[]> surfaceID_c;
+    if (!GetSurfaceIdFromReceiver(receiver, surfaceID_c)) {
+        return false;
+    }
+    OH_LOG_INFO(LOG_APP, "SurfaceID for PhotoOutput: %{public}s", surfaceID_c.get());
+    const Camera_Profile *previewProfile = cameraOutputCapability->previewProfiles[0];
+    Camera_PreviewOutput *previewOutput = nullptr;
+    if (!CreatePreviewOutput(cameraManager, previewProfile, surfaceID_c.get(), previewOutput)) {
+        return false;
+    }
+
+    Camera_ErrorCode ret = OH_CameraInput_Open(cameraInput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraInput_open failed.");
+        return false;
+    }
+
+    Camera_CaptureSession *captureSession = CreateConfigSession(cameraManager, cameraInput,
+        Camera_SceneMode::NORMAL_PHOTO);
+    if (captureSession == nullptr) {
+        return false;
+    }
+    if (!StartPhotoPreviewSession(captureSession, photoOutput, previewOutput)) {
+        return false;
+    }
+    return DoPhotoCapture(photoOutput);
+}
+
+PixelMapInfo GetPixelMapImageInfo(OH_PixelmapNative *pixelMap)
+{
+    PixelMapInfo info;
+    OH_Pixelmap_ImageInfo *imageInfo = nullptr;
+    if (OH_PixelmapImageInfo_Create(&imageInfo) != IMAGE_SUCCESS) {
+        return info;
+    }
+
+    if (OH_PixelmapNative_GetImageInfo(pixelMap, imageInfo) == IMAGE_SUCCESS) {
+        OH_PixelmapImageInfo_GetWidth(imageInfo, &info.width);
+        OH_PixelmapImageInfo_GetHeight(imageInfo, &info.height);
+        OH_PixelmapImageInfo_GetPixelFormat(imageInfo, &info.pixelFormat);
+        OH_PixelmapImageInfo_GetDynamicRange(imageInfo, &info.isHdr);
+    } else {
+        OH_LOG_ERROR(LOG_APP, "GetPixelMapImageInfo: GetImageInfo failed");
+    }
+
+    OH_PixelmapImageInfo_Release(imageInfo);
+    return info;
+}
+
+Image_ErrorCode DecodePixelMap(OH_NativeBuffer *nativeBuffer, OH_PixelmapNative **pixelmap)
+{
+    if (nativeBuffer == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "DecodePixelMap: invalid input params");
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    Image_ErrorCode ret =  OH_PixelmapNative_CreatePixelmapFromNativeBuffer(nativeBuffer, pixelmap);
+    if (ret != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "DecodePixelMap: OH_PixelmapNative_CreatePixelmapFromNativeBuffer failed, errCode: "
+            "%{public}d", ret);
+    }
+
+    return ret;
+}
+
+bool CheckStrideAligned(const OH_ImageBufferData& imageBufferData, Image_Size imgSize, OH_NativeBuffer_Format format)
+{
+    if (format == OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_BLOB) {
+        OH_LOG_INFO(LOG_APP, "Blob format no need to check stride aligned.");
+        return true;
+    }
+
+    OH_LOG_INFO(LOG_APP, "Image buffer data: numStride=%{public}d", imageBufferData.numStride);
+    OH_LOG_INFO(LOG_APP, "Image buffer data: rowStride[0]=%{public}zu, rowStride[1]=%{public}zu",
+        imageBufferData.rowStride[0], imageBufferData.rowStride[1]);
+    OH_LOG_INFO(LOG_APP, "Image buffer data: pixelStride[0]=%{public}zu, pixelStride[1]=%{public}zu",
+        imageBufferData.pixelStride[0], imageBufferData.pixelStride[1]);
+
+    int32_t pixelStrideY = NUM_0;
+    int32_t pixelStrideUV = NUM_0;
+    switch (format) {
+        case OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP:
+            pixelStrideY = NUM_1;
+            pixelStrideUV = NUM_2;
+            break;
+        case OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_YCBCR_P010:
+        case OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_YCRCB_P010:
+            pixelStrideY = NUM_2;
+            pixelStrideUV = NUM_4;
+    }
+    OH_LOG_INFO(LOG_APP, "CheckStrideAligned: format=%{public}d, pixelStrideY=%{public}d, pixelStrideUV=%{public}d",
+        format, pixelStrideY, pixelStrideUV);
+    bool isYAligned = (imageBufferData.rowStride[0] >= imgSize.width) &&
+                      (imageBufferData.rowStride[1] >= imgSize.width) &&
+                      (imageBufferData.pixelStride[0] >= pixelStrideY) &&
+                      (imageBufferData.pixelStride[1] >= pixelStrideUV);
+    return isYAligned;
+}
+
+void ExtractImageInfo(OH_ImageNative *image, MyData* myData)
+{
+    Image_Size imgSize;
+    Image_ErrorCode sizeErr = OH_ImageNative_GetImageSize(image, &imgSize);
+    if (sizeErr == IMAGE_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "PhotoOutput image size: width=%{public}d, height=%{public}d", imgSize.width,
+            imgSize.height);
+    } else {
+        OH_LOG_ERROR(LOG_APP, "GetImageSize failed, errCode: %{public}d", sizeErr);
+    }
+    OH_NativeBuffer_Format format;
+    Image_ErrorCode errCode = OH_ImageNative_GetFormat(image, &format);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "GetFormat failed, errCode: %{public}d", errCode);
+        return;
+    }
+    myData->imageInfo_.format = format;
+
+    int32_t colorSpaceName;
+    errCode = OH_ImageNative_GetColorSpace(image, &colorSpaceName);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "GetColorSpace failed, errCode: %{public}d", errCode);
+        return;
+    }
+    myData->imageInfo_.colorSpace = static_cast<int32_t>(colorSpaceName);
+
+    OH_ImageBufferData imageBufferData;
+    errCode = OH_ImageNative_GetBufferData(image, &imageBufferData);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "GetBufferData failed, errCode: %{public}d", errCode);
+        return;
+    }
+    OH_LOG_INFO(LOG_APP, "Image format: %{public}d, ColorSpace: %{public}d, BufferSize: %{public}zu",
+        format, static_cast<int>(colorSpaceName), imageBufferData.bufferSize);
+    myData->imageInfo_.strideAlignedRet = CheckStrideAligned(imageBufferData, imgSize, format);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    if (format == OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_BLOB ||
+        format == OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_YCBCR_P010 ||
+        format == OH_NativeBuffer_Format::NATIVEBUFFER_PIXEL_FMT_YCRCB_P010) {
+        OH_LOG_INFO(LOG_APP, "Image format no need to decode.");
+        return;
+    } else {
+        Image_ErrorCode ret = DecodePixelMap(imageBufferData.nativeBuffer, &pixelmap);
+        if (ret != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "DecodePixelMap failed, errCode: %{public}d", ret);
+            return;
+        }
+    }
+
+    PixelMapInfo info = GetPixelMapImageInfo(pixelmap);
+    myData->pixelMapInfo_ = info;
+    OH_PixelmapNative_Release(pixelmap);
+    pixelmap = nullptr;
+}
+
 static void ImageArriveOnCallback_01(OH_ImageReceiverNative *receiver, void *userData)
 {
     OH_LOG_INFO(LOG_APP, "ImageArriveOnCallback_01 IN");
@@ -333,6 +745,17 @@ static void ImageArriveOnCallback_01(OH_ImageReceiverNative *receiver, void *use
         myData->CallBackModifyUserData();
         myData->PrintMyData("after");
     }
+
+    OH_ImageNative *image = nullptr;
+    Image_ErrorCode errCode = OH_ImageReceiverNative_ReadNextImage(receiver, &image);
+    if (errCode != IMAGE_SUCCESS || image == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "ImageArriveOnCallback_01 ReadNextImage failed, errCode: %{public}d.", errCode);
+        g_condVar.notify_all();
+        return;
+    }
+
+    ExtractImageInfo(image, myData);
+    OH_ImageNative_Release(image);
     g_condVar.notify_all();
     return;
 }
@@ -383,6 +806,68 @@ static void NativeOnCallback(OH_ImageReceiverNative *receiver)
     return;
 }
 
+static void SetMyDataBaseProperties(napi_env env, napi_value object, const MyData* userData)
+{
+    napi_value temp = nullptr;
+    napi_create_int32(env, userData->callBackId_, &temp);
+    napi_set_named_property(env, object, MYDATA_KEY_ID, temp);
+
+    napi_create_int32(env, userData->num_, &temp);
+    napi_set_named_property(env, object, MYDATA_KEY_NUM, temp);
+
+    napi_create_string_utf8(env, (const char *)(userData->s_.c_str()), NAPI_AUTO_LENGTH, &temp);
+    napi_set_named_property(env, object, MYDATA_KEY_STR, temp);
+
+    napi_get_boolean(env, userData->callbackTriggered_, &temp);
+    napi_set_named_property(env, object, MYDATA_KEY_BOOL, temp);
+
+    napi_value imageInfoObj = nullptr;
+    napi_create_object(env, &imageInfoObj);
+    SetUint32NamedProperty(env, imageInfoObj, "format", static_cast<uint32_t>(userData->imageInfo_.format));
+    SetUint32NamedProperty(env, imageInfoObj, "colorSpace", static_cast<uint32_t>(userData->imageInfo_.colorSpace));
+    napi_get_boolean(env, userData->imageInfo_.strideAlignedRet, &temp);
+    napi_set_named_property(env, imageInfoObj, "strideAlignedRet", temp);
+    napi_set_named_property(env, object, "imageInfo", imageInfoObj);
+    napi_value pixelMapInfoObj = nullptr;
+    napi_create_object(env, &pixelMapInfoObj);
+    SetUint32NamedProperty(env, pixelMapInfoObj, "width", static_cast<uint32_t>(userData->pixelMapInfo_.width));
+    SetUint32NamedProperty(env, pixelMapInfoObj, "height", static_cast<uint32_t>(userData->pixelMapInfo_.height));
+    SetUint32NamedProperty(env, pixelMapInfoObj, "pixelFormat",
+        static_cast<uint32_t>(userData->pixelMapInfo_.pixelFormat));
+    napi_get_boolean(env, userData->pixelMapInfo_.isHdr, &temp);
+    napi_set_named_property(env, pixelMapInfoObj, "isHdr", temp);
+
+    napi_set_named_property(env, object, "pixelMapInfo", pixelMapInfoObj);
+}
+
+static bool CheckSupportFormat(int32_t desiredFormat, int32_t testType)
+{
+    Camera_Manager *cameraManager = nullptr;
+    Camera_Device *cameras = nullptr;
+    uint32_t size = 0;
+    Camera_Input *cameraInput = nullptr;
+    if (!InitCameraManagerAndInput(cameraManager, cameras, size, cameraInput)) {
+        return false;
+    }
+
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
+    Camera_SceneMode sceneMode = (testType == TEST_TYPE_PREVIEW) ? Camera_SceneMode::NORMAL_VIDEO :
+                                                                   Camera_SceneMode::NORMAL_PHOTO;
+    if (!GetCameraOutputCapability(cameraManager, cameras, 0, sceneMode, cameraOutputCapability)) {
+        return false;
+    }
+
+    bool isPreview = (testType == TEST_TYPE_PREVIEW);
+    const Camera_Profile *previewProfile = FindProfile(cameraOutputCapability, desiredFormat, isPreview);
+    if (previewProfile == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "CheckSupportFormat: FindProfile returned nullptr for format %{public}d.",
+            desiredFormat);
+        return false;
+    }
+
+    return previewProfile->format == desiredFormat;
+}
+
 static napi_value createReceiver(napi_env env, napi_callback_info info)
 {
     OH_ImageReceiverOptions* options = nullptr;
@@ -422,8 +907,8 @@ static napi_value nativeOn(napi_env env, napi_callback_info info)
     napi_get_value_external(env, argValue[NUM_0], &ptr);
     OH_ImageReceiverNative *receiver = reinterpret_cast<OH_ImageReceiverNative *>(ptr);
 
-    int32_t callBackId = Getint32NamedProperty(env, argValue[NUM_0], MYDATA_KEY_ID);
-    int32_t num = Getint32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_NUM);
+    int32_t callBackId = GetInt32NamedProperty(env, argValue[NUM_0], MYDATA_KEY_ID);
+    int32_t num = GetInt32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_NUM);
     char *str = GetStringNamedProperty(env, argValue[NUM_1], MYDATA_KEY_STR);
     bool callbackTriggered = GetBoolNamedProperty(env, argValue[NUM_1], MYDATA_KEY_BOOL);
     std::shared_ptr<MyData> userData = std::make_shared<MyData>(NUM_0, num, str, callbackTriggered);
@@ -456,8 +941,8 @@ static napi_value imageArriveOn(napi_env env, napi_callback_info info)
     napi_get_value_external(env, argValue[NUM_0], &ptr);
     OH_ImageReceiverNative *receiver = reinterpret_cast<OH_ImageReceiverNative *>(ptr);
 
-    int32_t callBackId = Getint32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_ID);
-    int num = Getint32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_NUM);
+    int32_t callBackId = GetInt32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_ID);
+    int num = GetInt32NamedProperty(env, argValue[NUM_1], MYDATA_KEY_NUM);
     char *str = GetStringNamedProperty(env, argValue[NUM_1], MYDATA_KEY_STR);
     bool callbackTriggered = GetBoolNamedProperty(env, argValue[NUM_1], MYDATA_KEY_BOOL);
     std::shared_ptr<MyData> userData = std::make_shared<MyData>(NUM_0, num, str, callbackTriggered);
@@ -524,18 +1009,7 @@ static napi_value waitForCondition(napi_env env, napi_callback_info info)
             OH_LOG_INFO(LOG_APP, "waitForCondition condition met!");
             napi_value object = nullptr;
             napi_create_object(env, &object);
-
-            napi_value temp = nullptr;
-            napi_create_int32(env, userData->callBackId_, &temp);
-            napi_set_named_property(env, object, MYDATA_KEY_ID, temp);
-            napi_create_int32(env, userData->num_, &temp);
-            napi_set_named_property(env, object, MYDATA_KEY_NUM, temp);
-
-            napi_create_string_utf8(env, (const char *)(userData->s_.c_str()), NAPI_AUTO_LENGTH, &temp);
-            napi_set_named_property(env, object, MYDATA_KEY_STR, temp);
-
-            napi_get_boolean(env, userData->callbackTriggered_, &temp);
-            napi_set_named_property(env, object, MYDATA_KEY_BOOL, temp);
+            SetMyDataBaseProperties(env, object, userData);
             return object;
         }
     } catch (const std::out_of_range& e) {
@@ -544,33 +1018,74 @@ static napi_value waitForCondition(napi_env env, napi_callback_info info)
     }
 }
 
+static bool ParseImageReceiverTestArgs(napi_env env, napi_callback_info info, void*& receiver, void*& previewReceiver,
+    int32_t& desiredFormat, int32_t& testType, napi_value* argValue, size_t& argCount)
+{
+    napi_get_undefined(env, &argValue[NUM_0]);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        OH_LOG_ERROR(LOG_APP, "imageReceiverTest, the input parameters are smaller than the required parameters");
+        return false;
+    }
+    napi_get_value_external(env, argValue[NUM_0], &receiver);
+
+    if (argCount >= NUM_4) {
+        napi_get_value_external(env, argValue[NUM_3], &previewReceiver);
+    } else {
+        previewReceiver = nullptr;
+    }
+    desiredFormat = DESIRED_FORMAT_UNSPECIFIED;
+    if (argCount >= NUM_2) {
+        napi_get_value_int32(env, argValue[NUM_1], &desiredFormat);
+    }
+    testType = TEST_TYPE_PREVIEW;
+    if (argCount >= NUM_3) {
+        napi_get_value_int32(env, argValue[NUM_2], &testType);
+    }
+    return true;
+}
+
 static napi_value imageReceiverTest(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    napi_value argValue[NUM_1] = {nullptr};
-    size_t argCount = NUM_1;
-
+    napi_value argValue[NUM_4] = {nullptr};
+    size_t argCount = NUM_4;
     napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
-        OH_LOG_ERROR(LOG_APP, "imageReceiverTest, the input parameters are smaller than the required parameters");
+
+    void* receiver = nullptr;
+    void* previewReceiver = nullptr;
+    int32_t desiredFormat = DESIRED_FORMAT_UNSPECIFIED;
+    int32_t testType = TEST_TYPE_PREVIEW;
+    if (!ParseImageReceiverTestArgs(env, info, receiver, previewReceiver, desiredFormat, testType, argValue, argCount)) {
         return result;
     }
 
-    void *ptr = nullptr;
-    napi_get_value_external(env, argValue[NUM_0], &ptr);
-    OH_ImageReceiverNative *receiver = reinterpret_cast<OH_ImageReceiverNative *>(ptr);
-
-    uint64_t surfaceID = NUM_0;
-    Image_ErrorCode errCode = OH_ImageReceiverNative_GetReceivingSurfaceId(receiver, &surfaceID);
-    if (errCode != IMAGE_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "imageReceiverTest get image receiver surfaceID failed, errCode: %{public}d.",
-            errCode);
-        OH_ImageReceiverNative_Release(receiver);
-        return getJsResult(env, errCode);
+    std::unique_ptr<char[]> surfaceID_c;
+    if (!GetSurfaceIdFromReceiver(reinterpret_cast<OH_ImageReceiverNative*>(receiver), surfaceID_c)) {
+        OH_ImageReceiverNative_Release(reinterpret_cast<OH_ImageReceiverNative*>(receiver));
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
     }
-    OH_LOG_INFO(LOG_APP, "imageReceiverTest get image receiver surfaceID: %{public}llu.", surfaceID);
-    auto surfaceID_c = ConvertUint64ToChar(surfaceID);
-    NDKCamera(surfaceID_c.get());
+
+    if (argCount >= NUM_3) {
+        if (!CheckSupportFormat(desiredFormat, testType)) {
+            OH_LOG_ERROR(LOG_APP, "imageReceiverTest desiredFormat %{public}d is not supported.", desiredFormat);
+            return getJsResult(env, UNSUPPORTED_CAMERA_FORMAT);
+        }
+    }
+
+    bool testResult = false;
+    if (testType == TEST_TYPE_PHOTO) {
+        OH_LOG_INFO(LOG_APP, "imageReceiverTest start NDKCameraPhotoOutput.");
+        testResult = NDKCameraPhotoOutput(surfaceID_c.get(), desiredFormat,
+                                          reinterpret_cast<OH_ImageReceiverNative*>(previewReceiver));
+    } else {
+        OH_LOG_INFO(LOG_APP, "imageReceiverTest start NDKCameraTest.");
+        testResult = NDKCameraTest(surfaceID_c.get(), desiredFormat);
+    }
+
+    if (!testResult) {
+        OH_LOG_ERROR(LOG_APP, "imageReceiverTest camera operation failed.");
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
+    }
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
@@ -698,12 +1213,57 @@ static napi_value releaseImageReceiver(napi_env env, napi_callback_info info)
         if (errCode != IMAGE_SUCCESS) {
             OH_LOG_ERROR(LOG_APP, "releaseImageReceiver release image receiver failed, errCode: %{public}d.", errCode);
         }
-        g_myDataVector.clear();
-        return getJsResult(env, errCode);
+    } else {
+        OH_LOG_INFO(LOG_APP, "releaseImageReceiver image receive is nullptr!");
     }
-    OH_LOG_INFO(LOG_APP, "releaseImageReceiver image receive is nullptr!");
+    OH_LOG_INFO(LOG_APP, "releaseImageReceiver ReleaseCameraContext IN");
+    ReleaseCameraContext(g_cameraCtx);
     g_myDataVector.clear();
     return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value CreateErrResultObj(napi_env env, int err1, int err2)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    napi_value val1;
+    napi_value val2;
+    napi_create_int32(env, err1, &val1);
+    napi_create_int32(env, err2, &val2);
+    napi_set_named_property(env, resultObj, "err1", val1);
+    napi_set_named_property(env, resultObj, "err2", val2);
+    return resultObj;
+}
+
+static napi_value testGetFormatNullptr(napi_env env, napi_callback_info info)
+{
+    OH_NativeBuffer_Format format;
+    Image_ErrorCode err1 = OH_ImageNative_GetFormat(nullptr, &format);
+
+    OH_ImageNative *dummyImage = nullptr;
+    Image_ErrorCode err2 = OH_ImageNative_GetFormat(dummyImage, nullptr);
+
+    return CreateErrResultObj(env, err1, err2);
+}
+
+static napi_value testGetColorSpaceNullptr(napi_env env, napi_callback_info info)
+{
+    int32_t colorSpace;
+    Image_ErrorCode err1 = OH_ImageNative_GetColorSpace(nullptr, &colorSpace);
+    OH_ImageNative *dummyImage = nullptr;
+    Image_ErrorCode err2 = OH_ImageNative_GetColorSpace(dummyImage, nullptr);
+
+    return CreateErrResultObj(env, err1, err2);
+}
+
+static napi_value testGetBufferDataNullptr(napi_env env, napi_callback_info info)
+{
+    OH_ImageBufferData bufferData;
+    Image_ErrorCode err1 = OH_ImageNative_GetBufferData(nullptr, &bufferData);
+    OH_ImageNative *dummyImage = nullptr;
+    Image_ErrorCode err2 = OH_ImageNative_GetBufferData(dummyImage, nullptr);
+
+    return CreateErrResultObj(env, err1, err2);
 }
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
@@ -718,7 +1278,10 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("waitForCondition", waitForCondition),
         DECLARE_NAPI_FUNCTION("imageArriveOn_Error", imageArriveOn_Error),
         DECLARE_NAPI_FUNCTION("imageArriveOff_Error", imageArriveOff_Error),
-        DECLARE_NAPI_FUNCTION("releaseImageReceiver", releaseImageReceiver)
+        DECLARE_NAPI_FUNCTION("releaseImageReceiver", releaseImageReceiver),
+        DECLARE_NAPI_FUNCTION("testGetFormatNullptr", testGetFormatNullptr),
+        DECLARE_NAPI_FUNCTION("testGetColorSpaceNullptr", testGetColorSpaceNullptr),
+        DECLARE_NAPI_FUNCTION("testGetBufferDataNullptr", testGetBufferDataNullptr)
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

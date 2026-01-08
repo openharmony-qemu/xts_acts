@@ -33,6 +33,7 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation1:ActsAceEtsModuleNavigation1Test",
       "ace_ets_module_navigation2:ActsAceEtsModuleNavigation2Test",
       "ace_ets_module_navigation3:ActsAceEtsModuleNavigation3Test",
+      "ace_ets_module_navigation4:ActsAceEtsModuleNavigation4Test",
       "ace_ets_module_Indicator:ActsAceEtsModuleIndicatorTest",
       "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_swiper02:ActsAceEtsModuleSwiper02Test",
@@ -42,6 +43,9 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation_api11_static:ActsAceEtsModuleNavigationApi11StaticTest",
       "ace_ets_module_navigation_api18_static:ActsAceEtsModuleNavigationApi18StaticTest",
       "ace_ets_module_navigation_api12_static:ActsAceEtsModuleNavigationApi12StaticTest",
+      "ace_ets_module_navigation_api13_static:ActsAceEtsModuleNavigationApi13StaticTest",
+      "ace_ets_module_navigation_api14_static:ActsAceEtsModuleNavigationApi14StaticTest",
+      "ace_ets_module_navigation_api15_static:ActsAceEtsModuleNavigationApi15StaticTest",
     ]
   } else {
     deps = [
@@ -68,6 +72,7 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation1:ActsAceEtsModuleNavigation1Test",
       "ace_ets_module_navigation2:ActsAceEtsModuleNavigation2Test",
       "ace_ets_module_navigation3:ActsAceEtsModuleNavigation3Test",
+      "ace_ets_module_navigation4:ActsAceEtsModuleNavigation4Test",
       "ace_ets_module_Indicator:ActsAceEtsModuleIndicatorTest",
       "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_swiper02:ActsAceEtsModuleSwiper02Test",
@@ -77,6 +82,9 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation_api18_static:ActsAceEtsModuleNavigationApi18StaticTest",
       "ace_ets_module_navigation_api16_static:ActsAceEtsModuleNavigationApi16StaticTest",
       "ace_ets_module_navigation_api12_static:ActsAceEtsModuleNavigationApi12StaticTest",
+      "ace_ets_module_navigation_api13_static:ActsAceEtsModuleNavigationApi13StaticTest",
+      "ace_ets_module_navigation_api14_static:ActsAceEtsModuleNavigationApi14StaticTest",
+      "ace_ets_module_navigation_api15_static:ActsAceEtsModuleNavigationApi15StaticTest",
     ]
   }
 }

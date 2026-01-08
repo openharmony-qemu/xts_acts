@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +42,7 @@ export default function UIContextComponentSnapshotJsunit() {
         console.info('get UIContextComponentSnapshot state pages:' + JSON.stringify(pages));
         if (!('UIContextComponentSnapshot' == pages.name)) {
           console.info('get UIContextComponentSnapshot state pages.name:' + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
+          
           router.pushUrl(options);
           await Utils.sleep(2000);
         }
@@ -64,6 +65,7 @@ export default function UIContextComponentSnapshotJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshotTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('UIContextComponentSnapshotTest_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('getComponentSnapshot_01'));
@@ -85,6 +87,7 @@ it('UIContextComponentSnapshotTest_static_0100', Level.LEVEL0, async (done: ()=>
      * @tc.level    Level.LEVEL0
      */
 it('UIContextComponentSnapshotTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('UIContextComponentSnapshotTest_0200 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('getComponentSnapshot_02'));

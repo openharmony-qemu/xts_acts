@@ -2267,7 +2267,7 @@ export default function Decimal1Test() {
       const TAG = 'testDividedToIntegerBy0005';
       try {
         let a: Decimal = new Decimal(Infinity);
-        let c: Decimal = a.dividedToIntegerBy(-0);
+        let c: Decimal = a.dividedToIntegerBy(-0.0);
         expect(c.toNumber()).assertEqual(-Infinity);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -2307,7 +2307,7 @@ export default function Decimal1Test() {
       const TAG = 'testDividedToIntegerBy0007';
       try {
         let a: Decimal = new Decimal(Infinity);
-        let c: Decimal = a.dividedToIntegerBy(new Decimal(-0));
+        let c: Decimal = a.dividedToIntegerBy(new Decimal(-0.0));
         expect(c.toNumber()).assertEqual(-Infinity);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -3164,7 +3164,7 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(randomNumber);
         let b: Decimal = a.toDecimalPlaces(0);
         console.info(`${TAG} Decimal :  ${b.toString()}`);
-        let alist = [1, 2, 3, 4, 5, 6]
+        let alist: number[] = [1, 2, 3, 4, 5, 6]
         expect(alist.includes(b.toNumber())).assertTrue()
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);

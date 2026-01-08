@@ -17,7 +17,7 @@ import { Entry,Component,Video,TimePicker,$r,TextArea,TimePickerAttribute,TextCl
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { TimePickerModifier } from "@ohos.arkui.modifier";

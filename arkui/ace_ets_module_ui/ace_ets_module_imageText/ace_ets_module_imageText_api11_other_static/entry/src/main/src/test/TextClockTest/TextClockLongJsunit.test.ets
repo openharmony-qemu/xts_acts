@@ -78,8 +78,6 @@ export default function TextClockLongJsunit() {
 
     
     
-
-
 /**
      * @tc.number   TextClockLongJsunit_static_0100
      * @tc.name     TextClockLongJsunit_static_0100
@@ -112,8 +110,6 @@ it('TextClockLongJsunit_static_0100', Level.LEVEL2, async (done: () => void): Pr
 
     
     
-
-
 /**
      * @tc.number   TextClockLongJsunit_static_0200
      * @tc.name     TextClockLongJsunit_static_0200
@@ -140,8 +136,6 @@ it('TextClockLongJsunit_static_0200', Level.LEVEL2, async (done: () => void): Pr
 
     
     
-
-
 /**
      * @tc.number   TextClockLongJsunit_static_0300
      * @tc.name     TextClockLongJsunit_static_0300

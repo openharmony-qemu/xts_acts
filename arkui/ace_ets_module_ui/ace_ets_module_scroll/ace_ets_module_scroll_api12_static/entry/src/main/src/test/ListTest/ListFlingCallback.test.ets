@@ -67,8 +67,7 @@ export default function ListFlingCallbackJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ListFlingCallbackTest_static_0100
      * @tc.name     ListFlingCallbackTest_static_0100
      * @tc.desc     ListFlingCallbackTest_static_0100
@@ -89,8 +88,7 @@ it('ListFlingCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ListFlingCallbackTest_static_0200
      * @tc.name     ListFlingCallbackTest_static_0200
      * @tc.desc     ListFlingCallbackTest_static_0200

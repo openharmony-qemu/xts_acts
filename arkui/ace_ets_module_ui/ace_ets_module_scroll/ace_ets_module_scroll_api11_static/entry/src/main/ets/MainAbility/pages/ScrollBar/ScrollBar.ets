@@ -110,7 +110,7 @@ struct ScrollBarExample {
                 Text(item.toString())
                   .width('10%')
                   .height(150)
-                  .backgroundColor(0xfff5deb3)
+                  .backgroundColor(0xfff5deb3.toInt())
                   .fontSize(16)
                   .textAlign(TextAlign.Center)
                   .margin(5)

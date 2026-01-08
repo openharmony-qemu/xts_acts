@@ -69,13 +69,12 @@ export default function FreezeV2Child() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FreezeV2Child state pages:" + JSON.stringify(pages));
         if (!("FreezeV2Child" == pages.name)) {
+          routerInstance.clear();
           console.info("get FreezeV2Child pages.name:" + JSON.stringify(pages.name));
-
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
 
         }

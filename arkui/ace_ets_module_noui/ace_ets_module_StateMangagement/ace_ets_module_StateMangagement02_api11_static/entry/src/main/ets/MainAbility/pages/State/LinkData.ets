@@ -31,23 +31,23 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp
+  LocalStoragePropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, Track } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 interface LinkModelLinkData {
   value: string
 }
 class LinkModel implements LinkModelLinkData {
-  value: string = ''
+  @Track value: string = ''
 
   constructor(value: string) {
     this.value = value

@@ -92,8 +92,6 @@ export default function RelativeChain7() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain7_static_001
      * @tc.name     RelativeChain7_static_001

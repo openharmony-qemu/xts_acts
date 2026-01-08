@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +66,8 @@ export default function UIContextCreateFromBuilderJsunit() {
      * @tc.desc     UIContextCreateFromBuilderTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {  // App died
+it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+  // App died
       console.info('UIContextCreateFromBuilderTest_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('getComponentSnapshot_03'));
@@ -77,7 +79,7 @@ it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>
       console.info('UIContextCreateFromBuilderTest_0100 END');
       done();
     });
-
+    
     
 
 
@@ -88,6 +90,7 @@ it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>
      * @tc.level    Level.LEVEL0
      */
 it('UIContextCreateFromBuilderTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+
       console.info('UIContextCreateFromBuilderTest_0200 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('getComponentSnapshot_04'));

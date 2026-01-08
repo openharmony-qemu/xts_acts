@@ -7668,13 +7668,13 @@ export default function windowPropertiesTest() {
             windowClass.on('frameMetricsMeasured', callback1);
             let windowProperties = windowClass.getWindowProperties();
             console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-            let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+            let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
             console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-            let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+            let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
             console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-            let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+            let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
             console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-            let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+            let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
             console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
             await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
             await sleep(3000)
@@ -7754,13 +7754,13 @@ export default function windowPropertiesTest() {
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
           let driver: Driver = Driver.create();
-          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
           console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
           console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
           console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
           await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
           await sleep(3000);
@@ -7830,13 +7830,13 @@ export default function windowPropertiesTest() {
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
           let driver: Driver = Driver.create();
-          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
           console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
           console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
           console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
           await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
           await sleep(3000)
@@ -7947,13 +7947,13 @@ export default function windowPropertiesTest() {
           windowClass.on('frameMetricsMeasured', callback1);
           let windowProperties = windowClass.getWindowProperties();
           console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let dragFromX = windowProperties.windowRect.width/4 +windowProperties.windowRect.left;
+          let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
           console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-          let dragToX = windowProperties.windowRect.width/2 +windowProperties.windowRect.left;
+          let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
           console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-          let dragFromY = windowProperties.windowRect.height/4 +windowProperties.windowRect.top;
+          let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
           console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-          let dragToY = windowProperties.windowRect.height/2 +windowProperties.windowRect.top;
+          let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
           console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
           await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
           await sleep(3000)

@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { MultiNavigation, MultiNavPathStack, SplitPolicy } from './mainpage/MultiNavigation';
@@ -89,7 +89,7 @@ export struct PageDetail2 {
         Text('PageDetail2').id('MultiNavigation1_PageDetail2_text1')
         Button('pop').onClick((e: ClickEvent) => {
           if (this.pageStack !== undefined && this.pageStack !== null){
-            this.pageStack.pop()
+            // this.pageStack.pop()
           }
         }).id('MultiNavigation1_PageDetail2_btn1')
       }

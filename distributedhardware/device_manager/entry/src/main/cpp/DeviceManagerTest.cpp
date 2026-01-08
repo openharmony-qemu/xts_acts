@@ -27,8 +27,9 @@ static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info
     char *localDeviceName = nullptr;
     unsigned int len = 256;
     int32_t result = OH_DeviceManager_GetLocalDeviceName(&localDeviceName, len);
-    if (localDeviceName != nullptr) {
-        free(localDeviceName); // 释放内存
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr; // 释放内存
     }
     napi_value retValue;
     int32_t confirmResult;
@@ -44,12 +45,56 @@ static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info
     return retValue;
 }
 
+static napi_value FisrtGetLocalDeviceNameErrorCode401(napi_env env, napi_callback_info info)
+{
+    char *localDeviceName = nullptr;
+    unsigned int len = 256;
+    int32_t result = OH_DeviceManager_GetLocalDeviceName(nullptr, len);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr; // 释放内存
+    }
+    napi_value retValue;
+    int32_t confirmResult = ERR_OK;
+    if (result == ERR_INVALID_PARAMETER) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_ONE;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
+
+static napi_value SecondGetLocalDeviceNameErrorCode401(napi_env env, napi_callback_info info)
+{
+    char arr[] = "Hello, World!";
+    char *localDeviceName = arr;
+    unsigned int len = 256;
+    int32_t result = OH_DeviceManager_GetLocalDeviceName(&localDeviceName, len);
+    if (result == ERR_OK && localDeviceName != nullptr) {
+        delete [] localDeviceName;
+        localDeviceName = nullptr; // 释放内存
+    }
+    napi_value retValue;
+    int32_t confirmResult = ERR_OK;
+    if (result == ERR_INVALID_PARAMETER) {
+        confirmResult = ERR_OK;
+    } else {
+        confirmResult = CONFIRM_RESULT_ONE;
+    }
+    napi_create_int32(env, confirmResult, &retValue);
+    return retValue;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"GetLocalDeviceNameErrorCodeOK", nullptr, GetLocalDeviceNameErrorCodeOK, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"FisrtGetLocalDeviceNameErrorCode401", nullptr, FisrtGetLocalDeviceNameErrorCode401, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"SecondGetLocalDeviceNameErrorCode401", nullptr, SecondGetLocalDeviceNameErrorCode401, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

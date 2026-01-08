@@ -95,12 +95,12 @@ it('Prefetcher2_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let text = await driver.findComponent(ON.id('Prefetcher2_static_add'));
+      let text = await driver.findComponent(ON.id('Prefetcher2_add'));
       await (text?.click() as Promise<void>);
       console.info("[Prefetcher2_static_0100] text click");
       await CommonFunc.sleep(1000);
 
-      let strJson: string = inspector.getInspectorByKey('Prefetcher2_static_add');
+      let strJson: string = inspector.getInspectorByKey('Prefetcher2_add');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[Prefetcher2_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('add22');

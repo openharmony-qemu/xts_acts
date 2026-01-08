@@ -48,7 +48,7 @@ struct NavigationBindToNestedScrollable {
 
 @Component
 export struct PageOne {
-  @Consume('navPathStack') navPathStack:NavPathStack;
+  @Consume('navPathStack') navPathStack:NavPathStack = new NavPathStack();
   private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
   private arr1: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
   scroller: Scroller = new Scroller()
@@ -87,8 +87,7 @@ export struct PageOne {
     }
     .title('pageOne', {backgroundColor: Color.Red})
     .bindToNestedScrollable([{parent: this.scroller, child: this.scroller1}])
-    .toolbarConfiguration([   //滑动后toolbar不见了
-
+    .toolbarConfiguration([   //
       {value: 'a', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
       {value: 'b', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
       {value: 'c', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},

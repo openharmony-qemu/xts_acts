@@ -91,7 +91,7 @@ export default function ActsAllowTest() {
         let TAG: string = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100'
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification succeeded`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} requestEnableNotification err: JSON.stringify(err)`);
           expect(false).assertTrue()
         });
@@ -150,7 +150,7 @@ export default function ActsAllowTest() {
           console.info(TAG + "publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(notificationRequest.creatorBundleName + " publish success1")
           console.info(notificationRequest.creatorUid + " publish success1")
           console.info(notificationRequest.creatorPid + " publish success1")
@@ -226,7 +226,7 @@ export default function ActsAllowTest() {
             expect(false).assertTrue()
             done();
           }
-        }).catch((err: BusinessError):void => {
+        }).catch((err: Error):void => {
           console.error(`${TAG} Failed to get subscribe info. Code is ${err.code}, message is ${err.message}`);
           expect(false).assertTrue()
           done();

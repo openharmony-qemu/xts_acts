@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,11 @@ export default function TimePicker() {
         console.info("get TimePicker state pages:" + JSON.stringify(pages));
         if (!("TimePicker" == pages.name)) {
           console.info("get TimePicker pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push TimePicker page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push TimePicker page error:" + err);
@@ -78,6 +78,7 @@ export default function TimePicker() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0100] START');
           let strJson = inspector.getInspectorByKey('timepicker01');
@@ -102,6 +103,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0100', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0200] START');
           let strJson = inspector.getInspectorByKey('timepicker02');
@@ -127,6 +129,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0200', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0300] START');
           let strJson = inspector.getInspectorByKey('timepicker03');
@@ -150,6 +153,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0300', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0400] START');
           let strJson = inspector.getInspectorByKey('timepicker04');
@@ -173,6 +177,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0400', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0500] START');
           let strJson = inspector.getInspectorByKey('timepicker05');
@@ -196,6 +201,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0500', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         // Verify the functions of the ArcAlphabetIndexer component
         console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0500] START');
         let strJson = inspector.getInspectorByKey('timepicker06');
@@ -219,6 +225,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0600', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TimePicker_ComponentTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
         // Verify the functions of the ArcAlphabetIndexer component
         console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0700] START');
         let strJson = inspector.getInspectorByKey('timepicker07');

@@ -44,11 +44,11 @@ export default function checkboxGroupNodeTest() {
         console.info("get checkboxGroupNodeTest state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupNode" == pages.name)) {
           console.info("get checkboxGroupNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push checkboxGroupNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push checkboxGroupNodeTest page error:" + err);
@@ -73,6 +73,7 @@ export default function checkboxGroupNodeTest() {
      * @tc.level    Level.LEVEL1
      */
 it('checkboxGroupNode_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
 
       let tagName = 'checkboxGroupNode_static_0100';
       console.info('[' + tagName + '] START============================');

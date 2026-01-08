@@ -106,8 +106,6 @@ export default function imageThreeJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   imageThreeJsunit_static_0100
      * @tc.name     imageThreeJsunit_static_0100
@@ -127,8 +125,6 @@ it('imageThreeJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-
-
 /**
      * @tc.number   imageThreeJsunit_static_0200
      * @tc.name     imageThreeJsunit_static_0200
@@ -147,8 +143,6 @@ it('imageThreeJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-
-
 /**
      * @tc.number   imageThreeJsunit_static_0300
      * @tc.name     imageThreeJsunit_static_0300
@@ -172,8 +166,6 @@ it('imageThreeJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
 
 
     
-
-
 /**
      * @tc.number   imageThreeJsunit_static_0400
      * @tc.name     imageThreeJsunit_static_0400

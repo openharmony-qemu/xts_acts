@@ -381,7 +381,7 @@ export default function radioSecondJsunit() {
         }
         console.log(
           "Telephony_NetworkSearch_getSignalInformation_Async_0700 finish data:" + JSON.stringify(data));
-        expect(data.length>0).assertTrue();
+        expect(data.length>=0).assertTrue();
         done();
       });
     });

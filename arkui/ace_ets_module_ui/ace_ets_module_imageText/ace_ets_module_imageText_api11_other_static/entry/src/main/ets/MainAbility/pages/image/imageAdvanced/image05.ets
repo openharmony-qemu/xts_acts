@@ -58,9 +58,9 @@ struct image05 {
   @State numTest80:Number = 0
 
   aboutToAppear(){
-    this.numTest50 = UIContext.getFocusedUIContext()!.vp2px(50)
+    this.numTest50 = UIContext.resolveUIContext()!.vp2px(50)
     console.info(`numTest50 vp is: ${this.numTest50}`)
-    this.numTest80 = UIContext.getFocusedUIContext()!.vp2px(80)
+    this.numTest80 = UIContext.resolveUIContext()!.vp2px(80)
     console.info(`numTest80 vp is: ${this.numTest80}`)
   }
 

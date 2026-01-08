@@ -90,9 +90,7 @@ export default function focusJsunit() {
     });
 
     
-    
-
-/**
+    /**
      * @tc.number   focusTest_0100
      * @tc.name     focusTest_0100
      * @tc.desc     focusTest_0100

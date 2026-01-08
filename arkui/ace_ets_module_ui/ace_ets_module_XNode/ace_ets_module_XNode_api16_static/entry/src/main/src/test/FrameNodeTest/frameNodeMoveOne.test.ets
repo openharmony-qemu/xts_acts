@@ -72,14 +72,6 @@ export default function frameNodeMoveOneTest() {
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      // let options: router.RouterOptions = {
-      //   url: 'MainAbility/pages/index/index',
-      // }
-      // const router = AppStorage.get<Router>("router") as Router
-      // router.clear();
-      // let pages = router.getState();
-      // // let result = await router.replaceUrl(options);
-      // router.pushUrl(options);
       console.info("frameNodeMoveOneTest after each called");
     });
 
@@ -88,13 +80,14 @@ export default function frameNodeMoveOneTest() {
 
 
 
-/**
+    /**
      * @tc.number   frameNodeMoveOneTest_static_0100
      * @tc.name     frameNodeMoveOneTest_static_0100
      * @tc.desc     frameNodeMoveOneTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('frameNodeMoveOneTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+
       console.info('frameNodeMoveOneTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -128,13 +121,14 @@ it('frameNodeMoveOneTest_static_0100', Level.LEVEL2, async (done: () => void) =>
 
 
 
-/**
+    /**
      * @tc.number   frameNodeMoveOneTest_static_0200
      * @tc.name     frameNodeMoveOneTest_static_0200
      * @tc.desc     frameNodeMoveOneTest_static_0200
      * @tc.level    Level.LEVEL2
      */
 it('frameNodeMoveOneTest_static_0200', Level.LEVEL2, async (done: () => void) => {
+
       console.info('frameNodeMoveOneTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

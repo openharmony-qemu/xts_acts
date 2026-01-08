@@ -36,7 +36,7 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { Prop, State } from '@ohos.arkui.stateManagement'
+import { PropRef, State } from '@ohos.arkui.stateManagement'
 
 import { postfixDark } from '../themeTokensPages/WithThemeTestPage';
 import { Theme } from '@ohos.arkui.theme';

@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,5 +17,5 @@
 import OnNewParamRouter from './OnNewParamRouter.test.ets'
 
 export default function testsuite() {
-  OnNewParamRouter(); ////SDK12.9 问题表格72行 3
+  OnNewParamRouter(); //pass 3 SDK11.25
 }

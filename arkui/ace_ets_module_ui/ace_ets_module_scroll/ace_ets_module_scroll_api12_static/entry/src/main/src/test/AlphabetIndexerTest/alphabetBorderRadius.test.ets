@@ -72,8 +72,7 @@ export default function alphabetBorderRadiusTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_001
      * @tc.name     alphabetBorderRadiusTest_static_001
      * @tc.desc     alphabetBorderRadiusTest_static_001
@@ -94,8 +93,7 @@ it('alphabetBorderRadiusTest_static_001', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_002
      * @tc.name     alphabetBorderRadiusTest_static_002
      * @tc.desc     alphabetBorderRadiusTest_static_002
@@ -116,8 +114,7 @@ it('alphabetBorderRadiusTest_static_002', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_003
      * @tc.name     alphabetBorderRadiusTest_static_003
      * @tc.desc     alphabetBorderRadiusTest_static_003
@@ -142,8 +139,7 @@ it('alphabetBorderRadiusTest_static_003', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_004
      * @tc.name     alphabetBorderRadiusTest_static_004
      * @tc.desc     alphabetBorderRadiusTest_static_004
@@ -168,8 +164,7 @@ it('alphabetBorderRadiusTest_static_004', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_005
      * @tc.name     alphabetBorderRadiusTest_static_005
      * @tc.desc     alphabetBorderRadiusTest_static_005
@@ -198,8 +193,7 @@ it('alphabetBorderRadiusTest_static_005', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   alphabetBorderRadiusTest_static_006
      * @tc.name     alphabetBorderRadiusTest_static_006
      * @tc.desc     alphabetBorderRadiusTest_static_006

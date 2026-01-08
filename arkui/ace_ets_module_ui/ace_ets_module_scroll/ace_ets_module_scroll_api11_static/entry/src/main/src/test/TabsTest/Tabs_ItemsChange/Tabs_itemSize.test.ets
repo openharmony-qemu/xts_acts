@@ -84,7 +84,6 @@ export default function Tabs_itemSize() {
     
       
   
-
 /**
      * @tc.number   testTabsItemSize_static_01
      * @tc.name     testTabsItemSize_static_01

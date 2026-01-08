@@ -61,7 +61,6 @@ export default function tabsCallBack5() {
     });
 
   
-
 /**
      * @tc.number   tabsCallBack5_static_0100
      * @tc.name     tabsCallBack5_static_0100

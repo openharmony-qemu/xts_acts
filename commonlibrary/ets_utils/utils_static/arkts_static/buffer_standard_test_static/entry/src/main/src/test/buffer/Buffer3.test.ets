@@ -349,7 +349,7 @@ export default function bufferTest3() {
       let result = buffer.isEncoding('utf-8');
       expect(result).assertTrue();
       let result2 = buffer.isEncoding('');
-      expect(result).assertFalse();
+      expect(result2).assertFalse();
     })
 
     /**

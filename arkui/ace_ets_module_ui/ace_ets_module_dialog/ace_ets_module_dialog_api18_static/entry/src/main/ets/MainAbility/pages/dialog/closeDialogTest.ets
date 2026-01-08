@@ -42,7 +42,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage,Local
+  PropRef,AppStorage,Local
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -91,7 +91,7 @@ struct closeDialogTest {
           } as promptAction.CustomDialogOptions).then((dialogId: int) => {
             this.customDialogComponentId = dialogId
           })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`)
             })
           setTimeout(() => {

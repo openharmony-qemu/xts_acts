@@ -102,7 +102,7 @@ export default function textInputThemeTest() {
 
     afterEach(async () => {
       await sleep(frameTime)
-      console.info("Prop after each called");
+      console.info("PropRef after each called");
     })
 
     

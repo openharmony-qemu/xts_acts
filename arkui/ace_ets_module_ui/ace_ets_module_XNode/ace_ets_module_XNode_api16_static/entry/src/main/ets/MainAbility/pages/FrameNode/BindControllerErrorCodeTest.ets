@@ -60,7 +60,7 @@ class MyNodeController extends NodeController {
     const rootRenderNode = this.rootNode!.getRenderNode()!;
     if (rootRenderNode !== null) {
       rootRenderNode.size = { width: 200, height: 50 };
-      rootRenderNode.backgroundColor = 0xff00ff00;
+      rootRenderNode.backgroundColor = 0xff00ff00.toInt();
       rootRenderNode.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     }
     return this.rootNode;
@@ -104,13 +104,13 @@ struct BindControllerTest {
         .id('error_bnt401_id')
         .width('100%')
         .onClick((e:ClickEvent):void => {
-          this.errorStr401 = this.myNodeController.builderNodeBindController401();  //取值是空  ""
+          // this.errorStr401 = this.myNodeController.builderNodeBindController401();  //取值是空  ""
         })
       Button('BindController checkError 100021')
         .id('error_bnt100021_id')
         .width('100%')
         .onClick((e:ClickEvent) => {
-          this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
+          // this.errorStr100021 = this.myNodeController.builderNodeBindController100021();
         })
     }
   }

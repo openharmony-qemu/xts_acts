@@ -517,6 +517,28 @@ export default function AVTranscoderConfigNdkTest() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Start100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Start100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVTranscoder_Start100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVTranscoder_Start100 start====");
+          let result: number = avtranscoderconfig.Start100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVTranscoder_Start100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
 
   })
 }

@@ -366,7 +366,7 @@ export default function RDBErrorCode14800021() {
         let resultSet: relationalStore.ResultSet = await rdbStore.query(predicates1);
 
         try {
-          resultSet.getRows(resultSet.columnCount);
+          await resultSet.getRows(resultSet.columnCount);
         } catch (err: BusinessError) {
           expect(err.code).assertEqual(14800021);
         }

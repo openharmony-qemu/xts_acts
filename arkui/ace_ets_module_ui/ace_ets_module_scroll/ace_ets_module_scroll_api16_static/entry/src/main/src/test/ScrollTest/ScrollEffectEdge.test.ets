@@ -54,7 +54,7 @@ export default function ScrollEffectEdge() {
       try {
         let pages = ScrollEffectEdge.getState();
         console.info("get ScrollEffectEdge state pages:" + JSON.stringify(pages));
-        if (!("ScrollEffectEdge" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/ScrollEffectEdge" == pages.name)) {
           console.info("get ScrollEffectEdge pages.name:" + JSON.stringify(pages.name));
           ScrollEffectEdge.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -64,6 +64,11 @@ export default function ScrollEffectEdge() {
       }
       console.info("ScrollEffectEdge beforeEach end");
     });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     
     /**

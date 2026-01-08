@@ -130,7 +130,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   StoragePropRef
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'

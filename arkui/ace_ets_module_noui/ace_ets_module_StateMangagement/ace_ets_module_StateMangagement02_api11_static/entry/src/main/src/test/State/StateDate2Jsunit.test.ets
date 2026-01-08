@@ -153,7 +153,8 @@ it('StateDate2Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-    /**
+    
+/**
      * @tc.number   StateDate2Jsunit_static_0400
      * @tc.name     StateDate2Jsunit_static_0400
      * @tc.desc     StateDate2Jsunit_static_0400
@@ -175,7 +176,8 @@ it('StateDate2Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-    /**
+    
+/**
      * @tc.number   StateDate2Jsunit_static_0500
      * @tc.name     StateDate2Jsunit_static_0500
      * @tc.desc     StateDate2Jsunit_static_0500

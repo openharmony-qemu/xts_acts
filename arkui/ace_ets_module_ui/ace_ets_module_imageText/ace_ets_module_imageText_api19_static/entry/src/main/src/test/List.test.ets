@@ -17,5 +17,5 @@
 import ImageHdrBrightness from './ImageHdrBrightnessTest/ImageHdrBrightness.test';
 
 export default function testsuite() {
-  ImageHdrBrightness();// 组件1组 Image组件 失败3个用例
+  ImageHdrBrightness();
 }

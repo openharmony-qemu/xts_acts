@@ -18,7 +18,7 @@ import upDownTreeEventTest from './FrameNodeTest/upDownTreeEvent.test';
 import frameNodeIsVisibleTest from './FrameNodeTest/frameNodeIsVisible.test';
 
 export default function testsuite() {
-  // upDownTreeEventTest(); //SDK12.9 表格52行
-  // gestureEventTest(); //SDK12.9 表格110行
-  frameNodeIsVisibleTest(); //SDK12.9 pass1
+  upDownTreeEventTest();
+  frameNodeIsVisibleTest();
+  gestureEventTest(); 
 }

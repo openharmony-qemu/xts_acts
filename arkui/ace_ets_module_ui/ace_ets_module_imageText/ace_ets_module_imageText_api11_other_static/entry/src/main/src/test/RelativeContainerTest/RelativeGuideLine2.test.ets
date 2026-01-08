@@ -90,8 +90,6 @@ export default function RelativeGuideLine2() {
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine2_static_001
      * @tc.name     RelativeGuideLine2_static_001
@@ -108,7 +106,7 @@ it('RelativeGuideLine2_static_001', Level.LEVEL3, async (done: () => void): Prom
 
       console.info("[RelativeGuideLine2_001] RelativeContainer bottom is: " + rel.bottom + 'button bottom:' +
       bt.bottom);
-      expect(Math.abs(Math.round(rel.bottom - bt.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.bottom - bt.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine2_001] END');
       done();
@@ -117,8 +115,6 @@ it('RelativeGuideLine2_static_001', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine2_static_002
      * @tc.name     RelativeGuideLine2_static_002
@@ -138,7 +134,7 @@ it('RelativeGuideLine2_static_002', Level.LEVEL3, async (done: () => void): Prom
       let bt = CommonFunc.getComponentRect('RelButton2');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine2_002] RelativeContainerRight is: " + rel.right + 'button right:' + bt.right);
-      expect(Math.abs(Math.round(rel.right - bt.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.right - bt.right) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine2_002] END');
       done();
@@ -147,8 +143,6 @@ it('RelativeGuideLine2_static_002', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine2_static_003
      * @tc.name     RelativeGuideLine2_static_003
@@ -168,11 +162,11 @@ it('RelativeGuideLine2_static_003', Level.LEVEL3, async (done: () => void): Prom
       let bt = CommonFunc.getComponentRect('RelButton2');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine2_002] RelativeContainerRight is: " + rel.right + 'button right:' + bt.right);
-      expect(Math.abs(Math.round(rel.right - bt.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.right - bt.right) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info("[RelativeGuideLine2_001] RelativeContainer bottom is: " + rel.bottom + 'button bottom:' +
       bt.bottom);
-      expect(Math.abs(Math.round(rel.bottom - bt.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.bottom - bt.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine2_003] END');
       done();
@@ -181,8 +175,6 @@ it('RelativeGuideLine2_static_003', Level.LEVEL3, async (done: () => void): Prom
     
 
     
-
-
 /**
      * @tc.number   RelativeGuideLine2_static_004
      * @tc.name     RelativeGuideLine2_static_004
@@ -202,11 +194,11 @@ it('RelativeGuideLine2_static_004', Level.LEVEL3, async (done: () => void): Prom
       let bt = CommonFunc.getComponentRect('RelButton2');
       await CommonFunc.sleep(2000);
       console.info("[RelativeGuideLine2_004] RelativeContainerRight is: " + rel.right + 'button right:' + bt.right);
-      expect(Math.abs(Math.round(bt.right - rel.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.right - rel.right) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info("[RelativeGuideLine2_004] RelativeContainer bottom is: " + rel.bottom + 'button bottom:' +
       bt.bottom);
-      expect(Math.abs(Math.round(bt.bottom - rel.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(bt.bottom - rel.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[RelativeGuideLine2_004] END');
       done();

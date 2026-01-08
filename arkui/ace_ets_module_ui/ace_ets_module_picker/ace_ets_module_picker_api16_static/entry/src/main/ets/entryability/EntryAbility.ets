@@ -19,6 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -28,10 +29,6 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
-
-  // onDestroy() {
-  //   hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-  // }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability

@@ -62,7 +62,8 @@ export default function DateTimeOptions() {
     });
     
     
-    /**
+    
+/**
      * @tc.number   DateTimeOptions_static_0100
      * @tc.name     DateTimeOptions_static_0100
      * @tc.desc     DateTimeOptions_static_0100
@@ -83,7 +84,7 @@ it('DateTimeOptions_static_0100', Level.LEVEL2, async (done: () => void): Promis
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[DateTimeOptions_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"minute":"2-digit","hour":"numeric"} / false');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit"} / false');
       console.info('[DateTimeOptions_static_0100] END');
       done();
     });

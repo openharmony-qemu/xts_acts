@@ -75,8 +75,7 @@ export default function List07Test() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0250
      * @tc.name     ArkUX_Grid_List_Swiper_static_0250
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0250
@@ -104,8 +103,7 @@ it('ArkUX_Grid_List_Swiper_static_0250', Level.LEVEL1, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0260
      * @tc.name     ArkUX_Grid_List_Swiper_static_0260
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0260
@@ -131,8 +129,7 @@ it('ArkUX_Grid_List_Swiper_static_0260', Level.LEVEL1, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0270
      * @tc.name     ArkUX_Grid_List_Swiper_static_0270
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0270
@@ -158,8 +155,7 @@ it('ArkUX_Grid_List_Swiper_static_0270', Level.LEVEL1, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0280
      * @tc.name     ArkUX_Grid_List_Swiper_static_0280
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0280
@@ -185,8 +181,7 @@ it('ArkUX_Grid_List_Swiper_static_0280', Level.LEVEL1, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Grid_List_Swiper_static_0290
      * @tc.name     ArkUX_Grid_List_Swiper_static_0290
      * @tc.desc     ArkUX_Grid_List_Swiper_static_0290

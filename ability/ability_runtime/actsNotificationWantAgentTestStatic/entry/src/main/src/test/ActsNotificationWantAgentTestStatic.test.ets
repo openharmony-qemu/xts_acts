@@ -135,12 +135,12 @@ export default function ActsNotificationWantAgentStaticTest() {
             hilog.info(domain, tag, 'cancel Promise success')
             expect(true).assertTrue()
             done()
-          }).catch((err: BusinessError<void>): void => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, 'cancel Promise err:' + JSON.stringify(err))
             expect().assertFail()
             done()
           })
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getWantAgent Promise err:' + JSON.stringify(err))
           expect().assertFail()
           done()
@@ -213,12 +213,12 @@ export default function ActsNotificationWantAgentStaticTest() {
               expect(data + '').assertEqual('com.example.actsnotificationwantagent.static')
               done()
             })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               hilog.info(domain, tag, 'getBundleName Promise err:' + JSON.stringify(err))
               expect().assertFail()
               done()
             })
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getWantAgent Promise err:' + JSON.stringify(err))
           expect().assertFail()
           done()
@@ -287,12 +287,12 @@ export default function ActsNotificationWantAgentStaticTest() {
             hilog.info(domain, tag, 'getUid Promise success:' + JSON.stringify(data))
             expect(true).assertTrue()
             done()
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, 'getUid Promise err: ' + JSON.stringify(err))
             expect().assertFail();
             done()
           })
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getWantAgent Promise err: ' + JSON.stringify(err))
           expect().assertFail();
           done()
@@ -374,7 +374,7 @@ export default function ActsNotificationWantAgentStaticTest() {
                 hilog.info(domain, tag, 'equal Promise success:' + JSON.stringify(data))
                 expect(data).assertTrue()
                 done()
-              }).catch((err: BusinessError<void>): void => {
+              }).catch((err: Error): void => {
                 hilog.info(domain, tag, 'equal Promise err:' + JSON.stringify(err))
                 expect().assertFail()
                 done()
@@ -448,12 +448,12 @@ export default function ActsNotificationWantAgentStaticTest() {
             hilog.info(domain, tag, 'getOperationType Promise success: ' + JSON.stringify(data))
             expect(true).assertTrue()
             done()
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, 'getOperationType Promise err: ' + JSON.stringify(err))
             expect().assertFail();
             done()
           })
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getWantAgent Promise err: ' + JSON.stringify(err))
           expect().assertFail();
           done()

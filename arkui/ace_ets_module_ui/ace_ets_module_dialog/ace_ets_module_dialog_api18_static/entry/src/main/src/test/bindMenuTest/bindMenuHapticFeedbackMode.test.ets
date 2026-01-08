@@ -61,7 +61,8 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindMenuHapticFeedbackModeTest_static_0100
      * @tc.name     bindMenuHapticFeedbackModeTest_static_0100
      * @tc.desc     bindMenuHapticFeedbackModeTest_static_0100
@@ -84,7 +85,8 @@ it('bindMenuHapticFeedbackModeTest_static_0100', TestType.FUNCTION | Size.MEDIUM
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindMenuHapticFeedbackModeTest_static_0200
      * @tc.name     bindMenuHapticFeedbackModeTest_static_0200
      * @tc.desc     bindMenuHapticFeedbackModeTest_static_0200
@@ -107,7 +109,8 @@ it('bindMenuHapticFeedbackModeTest_static_0200', TestType.FUNCTION | Size.MEDIUM
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindMenuHapticFeedbackModeTest_static_0300
      * @tc.name     bindMenuHapticFeedbackModeTest_static_0300
      * @tc.desc     bindMenuHapticFeedbackModeTest_static_0300
@@ -130,7 +133,8 @@ it('bindMenuHapticFeedbackModeTest_static_0300', TestType.FUNCTION | Size.MEDIUM
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindMenuHapticFeedbackModeTest_static_0400
      * @tc.name     bindMenuHapticFeedbackModeTest_static_0400
      * @tc.desc     bindMenuHapticFeedbackModeTest_static_0400
@@ -153,7 +157,8 @@ it('bindMenuHapticFeedbackModeTest_static_0400', TestType.FUNCTION | Size.MEDIUM
     });
 
     
-    /**
+    
+/**
      * @tc.number   bindMenuHapticFeedbackModeTest_static_0500
      * @tc.name     bindMenuHapticFeedbackModeTest_static_0500
      * @tc.desc     bindMenuHapticFeedbackModeTest_static_0500

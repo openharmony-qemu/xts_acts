@@ -210,9 +210,15 @@ export const createCameraInputWithPositionAndType: (position: number, type: numb
 
 export const getSupportedOutputCapability: () => cameraOutputCapability;
 
+export const getSupportedFullOutputCapability: () => cameraOutputCapability;
+
 export const createPreviewOutput: () => number;
 
+export const adjustHeifIdx: (idx: number) => number;
+
 export const createPhotoOutput: (surfaceId: string) => number;
+
+export const createHeifPhotoOutput: (surfaceId: string, idx: number) => number;
 
 export const createVideoOutput: (surfaceId: string) => number;
 

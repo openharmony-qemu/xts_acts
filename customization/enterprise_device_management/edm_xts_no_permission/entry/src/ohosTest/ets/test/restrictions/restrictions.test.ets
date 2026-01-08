@@ -57,6 +57,7 @@ const LABLE_RANDOM_MAC = "randomMac";
 const LABEL_APP_CLONE = "appClone";
 const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 const LABEL_VIRTUAL_SERVICE = "virtualService";
+const LABEL_MODIFY_WALLPAPER = "modifyWallpaper";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -69,6 +70,8 @@ export default function restrictionsTest() {
     testGetDisallowedListForAccountPolicy();
     testSetUserRestrictionPolicy();
     testGetUserRestrictedPolicy();
+    testSetUserRestrictionForAccountPolicy();
+    testGetUserRestrictedForAccountPolicy();
   })
 }
 
@@ -1217,6 +1220,54 @@ function testGetUserRestrictedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetUserRestrictionForAccountPolicy() {
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions setUserRestrictionForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUserRestrictedForAccountPolicy() {
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
       expect((error.code == 201) || (error.code == 801)).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);

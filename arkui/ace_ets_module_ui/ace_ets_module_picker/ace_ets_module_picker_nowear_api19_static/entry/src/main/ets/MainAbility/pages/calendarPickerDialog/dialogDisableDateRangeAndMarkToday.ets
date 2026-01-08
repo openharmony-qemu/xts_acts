@@ -13,12 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { abilityManager, common } from '@kit.AbilityKit';
-// import abilityManager from '@ohos.app.abilityManager'
-// import common from '@ohos.app.ability.common';
 import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Direction, Scroll, CalendarPicker, CalendarPickerDialog,
- Row, RowOptions, DateRange } from '@ohos.arkui.component'
+ Row, RowOptions, DateRange, CalendarPickerDialog } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
 let environmentCallback: EnvironmentCallback

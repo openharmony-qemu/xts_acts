@@ -870,13 +870,14 @@ export default function fileIOCreateRandomAccessFile() {
      */
     it('fileIO_create_randomaccessfile_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_016');
-      initReadfile(fpath);
-      let size = fs.lstatSync(fpath).size;
+      let wpath1 = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_01601');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let size = fs.statSync(fpath).size;
 
       try {
-        let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:size/4*3, end:size});
+        let randomaccessfile1 = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:1, end:size});
         let rs = randomaccessfile1.getReadStream();
-        let randomaccessfile2 = await fs.createRandomAccessFile(wpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
+        let randomaccessfile2 = await fs.createRandomAccessFile(wpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, {start:0});
         let ws = randomaccessfile2.getWriteStream();
         rs.on('data', (emitData: buffer.Buffer|string) => {
           let a = emitData;
@@ -887,15 +888,18 @@ export default function fileIOCreateRandomAccessFile() {
             return;
           }
           const data:string = a.toString();
+          let readlength = data.length;
+          expect(readlength == 10).assertTrue();
           ws.write(data);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_016 content ' + data.slice(0, 10) + ', data.length: ' + data?.length);
         });
-        rs.on('close', async() =>{
-          let readhash = await Hash.hash(fpath, 'sha256');
-          let writehash = await Hash.hash(wpath, 'sha256');
-          hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_016 readhash ' + readhash + ', writehash: ' + writehash);
-          expect(readhash == writehash).assertTrue();
-        });
+        await Utils.msSleep(3000);
+        let Witebytes = ws.bytesWritten;
+        let stat2 = fs.statSync(wpath1);
+        expect(stat2.size == Witebytes).assertTrue();
+        randomaccessfile1.close();
+        randomaccessfile2.close();
+        rs.close();
+        ws.close();
         done();
       } catch (err: BusinessError) {
         console.info('fileIO_create_randomaccessfile_async_static_016 has failed for ' + err);

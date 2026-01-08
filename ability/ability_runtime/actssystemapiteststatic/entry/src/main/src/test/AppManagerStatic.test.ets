@@ -76,7 +76,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
           done();
@@ -105,7 +105,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1800 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
           done();
@@ -152,7 +152,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'isRunningInStabilityTest success, pid: ' + data);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
           expect().assertFail();
           done();
@@ -204,7 +204,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void=>{
+        }).catch((err: Error): void=>{
           hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
           expect(err?.code).assertEqual(201);
           done();
@@ -232,7 +232,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void=>{
+        }).catch((err: Error): void=>{
           hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
           expect(err?.code).assertEqual(201);
           done();
@@ -282,7 +282,7 @@ export default function appManagerStaticTest() {
         appManager.isRamConstrainedDevice().then((data: boolean)=>{
           expect(typeof data).assertEqual('boolean');
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect().assertFail();
           done();
         })
@@ -305,12 +305,12 @@ export default function appManagerStaticTest() {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1100`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1100 begin');
       try {
-        appManager.getAppMemorySize().then((data: Int) => {
+        appManager.getAppMemorySize().then((data: int) => {
           console.log(`The size of app memory is: ${JSON.stringify(data)}`);
-          expect(typeof (data)).assertEqual("number");
+          expect(typeof (data)).assertEqual("int");
           expect(data).assertLarger(0);
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect().assertFail();
           done();
         })
@@ -333,8 +333,8 @@ export default function appManagerStaticTest() {
       let tag = `SUB_Ability_AbilityBase_AppManager_Static_1200`;
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_AppManager_Static_1200 begin');
       try {
-        appManager.getAppMemorySize((err: BusinessError| null, data: Int | undefined)=>{
-          expect(typeof (data)).assertEqual("number");
+        appManager.getAppMemorySize((err: BusinessError| null, data: int | undefined)=>{
+          expect(typeof (data)).assertEqual("int");
           expect(data).assertLarger(0);
           done();
         })

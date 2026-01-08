@@ -94,8 +94,6 @@ export default function imageJsunit55() {
     });
 
     
-
-
 /**
      * @tc.number   imageTest_static_0100
      * @tc.name     imageTest_static_0100
@@ -115,8 +113,6 @@ it('imageTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void
     });
 
     
-
-
 /**
      * @tc.number   imageTest_static_0200
      * @tc.name     imageTest_static_0200

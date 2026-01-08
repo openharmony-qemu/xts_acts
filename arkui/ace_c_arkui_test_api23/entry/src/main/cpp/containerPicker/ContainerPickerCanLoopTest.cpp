@@ -33,7 +33,7 @@ static napi_value TestContainerPickerCanLoop001(napi_env env, napi_callback_info
     ArkUI_AttributeItem canLoopItem = { canLoopValue,
         sizeof(canLoopValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_CAN_LOOP, &canLoopItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_CAN_LOOP)->value[PARAM_0].i32, canLoop);
     NAPI_END;
 }
@@ -47,7 +47,7 @@ static napi_value TestContainerPickerCanLoop002(napi_env env, napi_callback_info
     ArkUI_AttributeItem canLoopItem = { canLoopValue,
         sizeof(canLoopValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_CAN_LOOP, &canLoopItem);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(nodeAPI->getAttribute(containerPicker, NODE_PICKER_CAN_LOOP)->value[PARAM_0].i32, canLoop);
     NAPI_END;
 }
@@ -61,7 +61,7 @@ static napi_value TestContainerPickerCanLoop003(napi_env env, napi_callback_info
     ArkUI_AttributeItem canLoopItem = { canLoopValue,
         sizeof(canLoopValue) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_CAN_LOOP, &canLoopItem);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     if (nodeAPI->getAttribute(containerPicker, NODE_PICKER_CAN_LOOP) != nullptr) {
         ASSERT_NE(nodeAPI->getAttribute(containerPicker, NODE_PICKER_CAN_LOOP)->value[PARAM_0].i32, canLoop);
     }

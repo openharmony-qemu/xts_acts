@@ -78,7 +78,6 @@ export default function tabJsunit() {
     
       
   
-
 /**
      * @tc.number   tabTest001_static_01
      * @tc.name     tabTest001_static_01
@@ -108,7 +107,6 @@ it('tabTest001_static_01', Level.LEVEL0, async () => {
     
       
   
-
 /**
      * @tc.number   tabTest003_static_02
      * @tc.name     tabTest003_static_02

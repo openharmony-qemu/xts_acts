@@ -70,6 +70,7 @@ export default function RouterPageUpdateTest() {
      * @tc.level    Level.LEVEL2
      */
 it('RouterPageUpdateTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+
       console.info('RouterPageUpdateTest_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

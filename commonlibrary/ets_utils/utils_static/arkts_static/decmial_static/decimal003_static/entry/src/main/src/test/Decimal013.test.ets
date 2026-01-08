@@ -228,7 +228,7 @@ export default function DecimalTest013() {
       test_mul_001(1, Number.NEGATIVE_INFINITY, '-Infinity');
       test_mul_002('0', 0, '0');
       test_mul_004('0', '0', '0');
-      test_mul_001(3, -0, '-0');
+      test_mul_001(3, -0.0, '-0');
       test_mul_001(9.654, 0, '0');
       test_mul_003(0, '0.001', '0');
       test_mul_003(0, '111.1111111110000', '0');

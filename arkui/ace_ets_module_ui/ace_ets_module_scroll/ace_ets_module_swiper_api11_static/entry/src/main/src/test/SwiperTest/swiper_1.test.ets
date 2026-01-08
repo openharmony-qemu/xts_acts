@@ -111,7 +111,7 @@ export default function swiperTest_1() {
           router.pushUrl(options)
           //   .then(() => {
           //   console.info(`Swiper1_1 router.pushUrl success`);
-          // }).catch((error: BusinessError): void => {
+          // }).catch((error: Error): void => {
           //   console.error(`Swiper1_1 router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           // })
           await CommonFunc.sleep(2000);

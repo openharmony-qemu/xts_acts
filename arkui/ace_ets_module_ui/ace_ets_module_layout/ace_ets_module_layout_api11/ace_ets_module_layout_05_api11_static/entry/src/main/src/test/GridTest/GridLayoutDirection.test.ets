@@ -82,7 +82,7 @@ it('GridLayoutDirection_static_001', Level.LEVEL0, async (done: () => void): Pro
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem00.top - GridItem01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem00.top - GridItem01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_001] END');
       done();
@@ -108,7 +108,7 @@ it('GridLayoutDirection_static_002', Level.LEVEL0, async (done: () => void): Pro
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_002] END');
       done();
@@ -134,7 +134,7 @@ it('GridLayoutDirection_static_003', Level.LEVEL0, async (done: () => void): Pro
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem00.left - GridItem01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem00.left - GridItem01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_003] END');
       done();
@@ -160,7 +160,7 @@ it('GridLayoutDirection_static_004', Level.LEVEL0, async (done: () => void): Pro
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_004] END');
       done();
@@ -186,7 +186,7 @@ it('GridLayoutDirection_static_005', Level.LEVEL0, async (done: () => void): Pro
       let GridItem00 = CommonFunc.getComponentRect('GridItem00');
       await CommonFunc.sleep(1000);
 
-      expect(Math.abs(Math.round(GridItem00.top - GridLayoutDirKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridItem00.top - GridLayoutDirKey.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_005] END');
       done();
@@ -212,7 +212,7 @@ it('GridLayoutDirection_static_006', Level.LEVEL0, async (done: () => void): Pro
       let ColumnKey = CommonFunc.getComponentRect('ColumnKey');
       await CommonFunc.sleep(1000);
 
-      expect(Math.abs(Math.round(GridLayoutDirKey.top - ColumnKey.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridLayoutDirKey.top - ColumnKey.top) - Math.round(UIContext.resolveUIContext()!.vp2px(50))) <= 1).assertTrue();
 
       console.info('[GridLayoutDirection_static_006] END');
       done();

@@ -68,8 +68,7 @@ export default function alignItemsGrid() {
 
 
     
-    
-/**
+    /**
      * @tc.number   alignItemsGrid_0100
      * @tc.name     alignItemsGrid_0100
      * @tc.desc     alignItemsGrid_0100
@@ -97,8 +96,7 @@ it('alignItemsGrid_0100', Level.LEVEL0, async (done: () => void): Promise<void> 
 
 
     
-    
-/**
+    /**
      * @tc.number   alignItemsGrid_0200
      * @tc.name     alignItemsGrid_0200
      * @tc.desc     alignItemsGrid_0200

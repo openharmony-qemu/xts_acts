@@ -67,8 +67,7 @@ export default function tabsOnContentWillChangeIndex04JsunitTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   tabsOnContentWillChangeJsunitTest_static_0040
      * @tc.name     tabsOnContentWillChangeJsunitTest_static_0040
      * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0040

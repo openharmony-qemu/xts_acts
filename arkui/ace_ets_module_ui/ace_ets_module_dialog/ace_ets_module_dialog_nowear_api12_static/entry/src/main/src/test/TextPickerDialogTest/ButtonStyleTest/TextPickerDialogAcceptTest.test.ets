@@ -68,7 +68,8 @@ export default function TextPickerDialog_Accept_Test() {
 
     
     
-    /**
+    
+/**
      * @tc.number   TextPickerDialog_Accept_Test_static_001
      * @tc.name     TextPickerDialog_Accept_Test_static_001
      * @tc.desc     TextPickerDialog_Accept_Test_static_001

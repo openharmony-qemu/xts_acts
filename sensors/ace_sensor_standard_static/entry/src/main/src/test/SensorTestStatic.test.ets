@@ -37,7 +37,7 @@ function callback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onSensorCallback(data: sensor.OrientationResponse) {
@@ -51,7 +51,7 @@ function onSensorCallback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onHallCallback(data: sensor.HallResponse) {
@@ -688,10 +688,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data[0].vendorName) == 'string').assertTrue();
           expect(typeof (data[0].firmwareVersion) == 'string').assertTrue();
           expect(typeof (data[0].hardwareVersion) == 'string').assertTrue();
-          expect(typeof (data[0].sensorId) == 'number').assertTrue();
+          expect(typeof (data[0].sensorId) == 'int').assertTrue();
           expect(typeof (data[0].maxRange) == 'number').assertTrue();
-          expect(typeof (data[0].minSamplePeriod) == 'number').assertTrue();
-          expect(typeof (data[0].maxSamplePeriod) == 'number').assertTrue();
+          expect(typeof (data[0].minSamplePeriod) == 'long').assertTrue();
+          expect(typeof (data[0].maxSamplePeriod) == 'long').assertTrue();
           expect(typeof (data[0].precision) == 'number').assertTrue();
           expect(typeof (data[0].power) == 'number').assertTrue();
           done();
@@ -4251,10 +4251,10 @@ export default function SensorJsStaticTest() {
             expect(typeof (data.vendorName)).assertEqual("string");
             expect(typeof (data.firmwareVersion)).assertEqual("string");
             expect(typeof (data.hardwareVersion)).assertEqual("string");
-            expect(typeof (data.sensorId)).assertEqual("number");
+            expect(typeof (data.sensorId)).assertEqual("int");
             expect(typeof (data.maxRange)).assertEqual("number");
-            expect(typeof (data.minSamplePeriod)).assertEqual("number");
-            expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+            expect(typeof (data.minSamplePeriod)).assertEqual("long");
+            expect(typeof (data.maxSamplePeriod)).assertEqual("long");
             expect(typeof (data.precision)).assertEqual("number");
             expect(typeof (data.power)).assertEqual("number");
             hilog.info(domain, tag, TAG + ' getSingleSensor success: ');
@@ -4291,10 +4291,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data.vendorName)).assertEqual("string");
           expect(typeof (data.firmwareVersion)).assertEqual("string");
           expect(typeof (data.hardwareVersion)).assertEqual("string");
-          expect(typeof (data.sensorId)).assertEqual("number");
+          expect(typeof (data.sensorId)).assertEqual("int");
           expect(typeof (data.maxRange)).assertEqual("number");
-          expect(typeof (data.minSamplePeriod)).assertEqual("number");
-          expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+          expect(typeof (data.minSamplePeriod)).assertEqual("long");
+          expect(typeof (data.maxSamplePeriod)).assertEqual("long");
           expect(typeof (data.precision)).assertEqual("number");
           expect(typeof (data.power)).assertEqual("number");
           done()

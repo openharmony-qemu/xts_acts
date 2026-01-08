@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ export default class CommonFunc {
     let rectInfo = parts.map((part: string) => {
       return part.split(",").map((item: string):double => parseFloat(item.trim()));
     });
-    // console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-    //   "windowRect Top: " + AppStorage.get<number>("winTop"));
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),

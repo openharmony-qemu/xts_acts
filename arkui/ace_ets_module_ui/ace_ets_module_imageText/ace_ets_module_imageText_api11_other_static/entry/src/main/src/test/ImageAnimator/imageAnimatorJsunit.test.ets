@@ -105,8 +105,6 @@ export default function imageAniamtorJsunit() {
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0100
      * @tc.name     imageAniamtorJsunit_static_0100
@@ -140,8 +138,6 @@ it('imageAniamtorJsunit_static_0100', Level.LEVEL1, async (done: () => void): Pr
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0200
      * @tc.name     imageAniamtorJsunit_static_0200
@@ -175,8 +171,6 @@ it('imageAniamtorJsunit_static_0200', Level.LEVEL1, async (done: () => void): Pr
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0300
      * @tc.name     imageAniamtorJsunit_static_0300
@@ -198,8 +192,6 @@ it('imageAniamtorJsunit_static_0300', Level.LEVEL1, async (done: () => void): Pr
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0400
      * @tc.name     imageAniamtorJsunit_static_0400
@@ -232,8 +224,6 @@ it('imageAniamtorJsunit_static_0400', Level.LEVEL1, async (done: () => void): Pr
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0500
      * @tc.name     imageAniamtorJsunit_static_0500
@@ -255,8 +245,6 @@ it('imageAniamtorJsunit_static_0500', Level.LEVEL1, async (done: () => void): Pr
     });
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0600
      * @tc.name     imageAniamtorJsunit_static_0600
@@ -289,8 +277,6 @@ it('imageAniamtorJsunit_static_0600', Level.LEVEL1, async (done: () => void): Pr
 
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0700
      * @tc.name     imageAniamtorJsunit_static_0700
@@ -323,8 +309,6 @@ it('imageAniamtorJsunit_static_0700', Level.LEVEL1, async (done: () => void): Pr
 
 
     
-
-
 /**
      * @tc.number   imageAniamtorJsunit_static_0800
      * @tc.name     imageAniamtorJsunit_static_0800

@@ -113,8 +113,6 @@ export default function button3Jsunit() {
     })
 
     
-
-
 /**
      * @tc.number   testButton_static_01
      * @tc.name     testButton_static_01
@@ -132,8 +130,6 @@ it('testButton_static_01', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_02
      * @tc.name     testButton_static_02
@@ -151,8 +147,6 @@ it('testButton_static_02', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_03
      * @tc.name     testButton_static_03
@@ -169,8 +163,6 @@ it('testButton_static_03', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_04
      * @tc.name     testButton_static_04
@@ -187,8 +179,6 @@ it('testButton_static_04', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_05
      * @tc.name     testButton_static_05
@@ -212,8 +202,6 @@ it('testButton_static_05', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_06
      * @tc.name     testButton_static_06
@@ -237,8 +225,6 @@ it('testButton_static_06', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_07
      * @tc.name     testButton_static_07
@@ -264,8 +250,6 @@ it('testButton_static_07', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_08
      * @tc.name     testButton_static_08
@@ -289,8 +273,6 @@ it('testButton_static_08', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_09
      * @tc.name     testButton_static_09
@@ -314,8 +296,6 @@ it('testButton_static_09', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_10
      * @tc.name     testButton_static_10
@@ -339,8 +319,6 @@ it('testButton_static_10', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_11
      * @tc.name     testButton_static_11
@@ -368,8 +346,6 @@ it('testButton_static_11', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_12
      * @tc.name     testButton_static_12
@@ -398,8 +374,8 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
         let ScreenX: number = Number(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('screenX'))
         let ScreenY: number = Number(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('screenY'))
         try {
-          expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(ScreenX) - point.x + Number(AppStorage.get<number>("winLeft"))) <= 1).assertTrue()
-          expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(ScreenY) - point.y + Number(AppStorage.get<number>("winTop"))) <= 1).assertTrue()
+          expect(Math.abs(UIContext.resolveUIContext()!.vp2px(ScreenX) - point.x + Number(AppStorage.get<number>("winLeft"))) <= 1).assertTrue()
+          expect(Math.abs(UIContext.resolveUIContext()!.vp2px(ScreenY) - point.y + Number(AppStorage.get<number>("winTop"))) <= 1).assertTrue()
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('x'))).assertEqual(100)
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('y'))).assertEqual(50)
         } catch (err:Error) {
@@ -424,8 +400,6 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_13
      * @tc.name     testButton_static_13
@@ -451,8 +425,6 @@ it('testButton_static_13', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_14
      * @tc.name     testButton_static_14
@@ -480,8 +452,6 @@ it('testButton_static_14', Level.LEVEL1, async (done: () => void): Promise<void>
     });
 
     
-
-
 /**
      * @tc.number   testButton_static_15
      * @tc.name     testButton_static_15

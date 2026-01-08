@@ -70,6 +70,7 @@ export default function NavPathStack7() {
      * @tc.level    Level.LEVEL0
      */
 it('NavPathStack7_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavPathStack7_static_0100 START');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('NavPathStack7_btn2',10,"")

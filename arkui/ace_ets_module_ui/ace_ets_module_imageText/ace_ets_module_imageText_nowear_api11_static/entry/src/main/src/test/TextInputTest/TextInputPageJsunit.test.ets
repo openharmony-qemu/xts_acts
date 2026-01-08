@@ -17,7 +17,7 @@ import {
   InputType,
   Color,
   EnterKeyType,
-  TextAlign,Font
+  TextAlign,Font,$r
 } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
@@ -56,7 +56,7 @@ export default function TextInputPageJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextInputPageJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextInputPage" == pages.name)) {
           console.info("get TextInputPageJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -71,8 +71,8 @@ export default function TextInputPageJsunit() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
     })
-    
-    
+
+
     /**
      * @tc.number   TextInputPageJsunit_static_0100
      * @tc.name     TextInputPageJsunit_static_0100
@@ -139,16 +139,14 @@ it('TextInputPageJsunit_static_0200', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0200] showPasswordIcon: " + JSON.stringify(obj.getElement('$attrs').getBoolean('showPasswordIcon')));
       console.info("[TextInputPageJsunit_0200] style: " + JSON.stringify(obj.getElement('$attrs').getString('style')));
       console.info("[TextInputPageJsunit_0200] textAlign: " + JSON.stringify(obj.getElement('$attrs').getString('textAlign')));
-
-      // let resourceSize = AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('sys.float.ohos_id_text_size_body1').id)
-
-        expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('inline style');
-        expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Normal');
-        // expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"'+AppStorage.get<UIContext>('uiContext')!.px2fp(resourceSize)+'.00fp","weight":"400","fontFamily":"sans-serif"}');
-        expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
-        expect(obj.getElement('$attrs').getString('maxLength')).assertEqual('INF');
-        expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
-        expect(obj.getElement('$attrs').getBoolean('showPasswordIcon')).assertEqual(true);
+      let resourceSize = AppStorage.get<UIContext>('uiContext')!.getHostContext()?.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id) as double
+      expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('inline style');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Normal');
+      expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"'+AppStorage.get<UIContext>('uiContext')!.px2fp(resourceSize)+'.00fp","weight":"400","fontFamily":"sans-serif"}');
+      expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
+      expect(obj.getElement('$attrs').getString('maxLength')).assertEqual('INF');
+      expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
+      expect(obj.getElement('$attrs').getBoolean('showPasswordIcon')).assertEqual(true);
 
       await CommonFunc.sleep(1000);
       console.info('[TextInputPageJsunit_0200] END');

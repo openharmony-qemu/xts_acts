@@ -73,8 +73,7 @@ export default function waterFlowNestedScrollJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.name     ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.desc     ArkUI_Stage_waterFlowNestedScroll01_static
@@ -88,7 +87,7 @@ it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () =
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.getFocusedUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.getFocusedUIContext()!.vp2px(60)).toInt());
+      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.resolveUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.resolveUIContext()!.vp2px(60)).toInt());
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] driver.swipe end');
       try {
         let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {

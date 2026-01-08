@@ -60,6 +60,7 @@ export default function APIFontPrimaryTest() {
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0100
      * @tc.name     APIFontPrimaryTest_static_0100
@@ -67,6 +68,7 @@ export default function APIFontPrimaryTest() {
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('c');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -85,6 +87,7 @@ it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0200
      * @tc.name     APIFontPrimaryTest_static_0200
@@ -92,6 +95,7 @@ it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0200 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -109,6 +113,7 @@ it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0300
      * @tc.name     APIFontPrimaryTest_static_0300
@@ -116,6 +121,7 @@ it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0300 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -133,6 +139,7 @@ it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0400
      * @tc.name     APIFontPrimaryTest_static_0400
@@ -140,6 +147,7 @@ it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0400 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -157,6 +165,7 @@ it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0500
      * @tc.name     APIFontPrimaryTest_static_0500
@@ -164,6 +173,7 @@ it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0500 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -181,6 +191,7 @@ it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0600
      * @tc.name     APIFontPrimaryTest_static_0600
@@ -188,6 +199,7 @@ it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0600 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -205,6 +217,7 @@ it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0700
      * @tc.name     APIFontPrimaryTest_static_0700
@@ -212,6 +225,7 @@ it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0700 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -229,6 +243,7 @@ it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0800
      * @tc.name     APIFontPrimaryTest_static_0800
@@ -236,6 +251,7 @@ it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0800 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -253,6 +269,7 @@ it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_0900
      * @tc.name     APIFontPrimaryTest_static_0900
@@ -260,6 +277,7 @@ it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_0900 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -277,6 +295,7 @@ it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1000
      * @tc.name     APIFontPrimaryTest_static_1000
@@ -284,6 +303,7 @@ it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1000 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -301,6 +321,7 @@ it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1100
      * @tc.name     APIFontPrimaryTest_static_1100
@@ -308,6 +329,7 @@ it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -325,6 +347,7 @@ it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1200
      * @tc.name     APIFontPrimaryTest_static_1200
@@ -332,6 +355,7 @@ it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1200 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -349,6 +373,7 @@ it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1300
      * @tc.name     APIFontPrimaryTest_static_1300
@@ -356,6 +381,7 @@ it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1300 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -373,6 +399,7 @@ it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1400
      * @tc.name     APIFontPrimaryTest_static_1400
@@ -380,6 +407,7 @@ it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1400 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
@@ -397,6 +425,7 @@ it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Pro
     });
     
 
+
 /**
      * @tc.number   APIFontPrimaryTest_static_1500
      * @tc.name     APIFontPrimaryTest_static_1500
@@ -404,6 +433,7 @@ it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('APIFontPrimaryTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('APIFontPrimaryTest_static_1500 START');
       let driver = Driver.create()
       await Utils.sleep(1000);

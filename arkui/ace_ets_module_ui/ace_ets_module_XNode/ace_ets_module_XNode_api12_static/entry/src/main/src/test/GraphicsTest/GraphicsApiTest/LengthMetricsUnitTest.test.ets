@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,14 @@ export default function LengthMetricsUnitTest() {
     
     
 
-/**
+    /**
      * @tc.number   LengthMetricsUnitTest_static_001
      * @tc.name     LengthMetricsUnitTest_static_001
      * @tc.desc     LengthMetricsUnitTest_static_001
      * @tc.level    Level.LEVEL0
      */
 it('LengthMetricsUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info("[LengthMetricsUnitTest_001] START");
       await CommonFunc.sleep(1000);
       let LengthMetricsUnit = inspector.getInspectorByKey("LengthMetricsUnit");

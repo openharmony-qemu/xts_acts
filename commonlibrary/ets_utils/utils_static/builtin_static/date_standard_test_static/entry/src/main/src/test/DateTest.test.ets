@@ -6091,7 +6091,7 @@ export default function dateTest() {
           month: 'long',
           day: 'numeric',
         };
-        expect(event.toLocaleDateString('ar-EG', options)).assertEqual('الخميس، ٢٠ ديسمبر ٢٠١٢');
+        expect(event.toLocaleDateString('ar-EG', options)).assertEqual('الخميس، ٢٠ ديسمبر، ٢٠١٢');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6211,7 +6211,7 @@ export default function dateTest() {
       const TAG = "testDataToUTCString0001";
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        expect(event.toLocaleDateString("fa-IR")).assertEqual("۱۳۹۱/۹/۳۰");
+        expect(event.toLocaleDateString("fa-IR")).assertEqual('۲۰۱۲/۱۲/۲۰');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6332,7 +6332,7 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         const result = event.toLocaleString();
-        expect(result).assertEqual("12/20/2012, 11:00:00 AM");
+        expect(result).assertEqual("12/20/2012, 11:00:00 AM");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6393,7 +6393,7 @@ export default function dateTest() {
         const result = event.toLocaleString(undefined, {
           timeZone: 'UTC'
         });
-        expect(result).assertEqual("12/20/2012, 3:00:00 AM");
+        expect(result).assertEqual("12/20/2012, 3:00:00 AM");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6412,7 +6412,7 @@ export default function dateTest() {
       const TAG = "testDateToLocaleStringDate0001";
       try {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        expect(date.toLocaleString("en-US")).assertEqual("12/20/2012, 11:00:00 AM");
+        expect(date.toLocaleString("en-US")).assertEqual("12/20/2012, 11:00:00 AM");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6530,7 +6530,7 @@ export default function dateTest() {
       const TAG = 'testDateToLocaleTimeString0001';
       try {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
-        expect(event.toLocaleTimeString('en-US')).assertEqual("7:15:30 AM");
+        expect(event.toLocaleTimeString('en-US')).assertEqual("7:15:30 AM");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6627,7 +6627,7 @@ export default function dateTest() {
       const TAG = 'testDateToLocaleTimeString0006';
       try {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-        expect(date.toLocaleTimeString("en-US")).assertEqual("11:00:00 AM");
+        expect(date.toLocaleTimeString("en-US")).assertEqual("11:00:00 AM");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6731,7 +6731,7 @@ export default function dateTest() {
           timeZoneName: "short"
         };
         const result = date.toLocaleTimeString("en-US", options);
-        expect(result).assertEqual("3:00:00 AM UTC");
+        expect(result).assertEqual("3:00:00 AM UTC");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -6781,7 +6781,7 @@ export default function dateTest() {
         };
         const str: string[] = []
         const result = date.toLocaleTimeString(str, options);
-        expect(result).assertEqual('03:00 AM UTC');
+        expect(result).assertEqual('03:00 AM UTC');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);

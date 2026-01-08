@@ -51,9 +51,8 @@ export default function accessibilitySelectedTypeTest() {
         if (!('accessibilitySelectedTypeTest' == pages.name)) {
           console.info('get accessibilitySelectedTypeTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
           await CommonFunc.sleep(2000);
-          // console.info('push accessibilitySelectedTypeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push accessibilitySelectedTypeTest page error:' + err);
@@ -66,6 +65,7 @@ export default function accessibilitySelectedTypeTest() {
     
     
     
+    
     /**
      * @tc.number   accessibilitySelectedTypeTest_static_0100
      * @tc.name     accessibilitySelectedTypeTest_static_0100
@@ -73,6 +73,7 @@ export default function accessibilitySelectedTypeTest() {
      * @tc.level    Level.LEVEL3
      */
 it('accessibilitySelectedTypeTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+
      console.info('[accessibilitySelectedTypeTest_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

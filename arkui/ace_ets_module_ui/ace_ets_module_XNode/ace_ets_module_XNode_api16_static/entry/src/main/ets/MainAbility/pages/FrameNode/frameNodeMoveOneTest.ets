@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,7 +135,7 @@ class MyNodeController extends NodeController {
     } catch(err:Error){
       console.log('+++++++++addFrame2-1 Error ',err)
     }
-    this.rootNode!.appendChild(this.node2!) //
+    // this.rootNode!.appendChild(this.node2!) //
     console.log('+++++++++addFrame2-2')
   }
 
@@ -202,7 +202,8 @@ struct frameNodeMoveOne {
             console.log('++++++++++++++++++++1')
             this.myNodeController.addFrame2()
             console.log('++++++++++++++++++++2')
-            this.frame1ChildCount = this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount() //SDK12.9执行后appDied
+            this.frame1ChildCount = this.myNodeController.rootNode!.getFirstChild()!.getChildrenCount()
+
             console.log('++++++++++++++++++++3')
             if (this.myNodeController.rootNode!.getChild(1)) {
               console.log('sally' + this.myNodeController.rootNode!.getChild(1)!.getChildrenCount())

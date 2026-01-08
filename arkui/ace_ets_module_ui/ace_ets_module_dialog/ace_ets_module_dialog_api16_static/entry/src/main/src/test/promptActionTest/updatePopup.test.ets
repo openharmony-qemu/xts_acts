@@ -77,13 +77,14 @@ export default function updatePopupTest() {
     });
 
 
+    
     /**
      * @tc.number   updatePopupTest_static_0100
-   * @tc.name     updatePopupTest_static_0100
-   * @tc.desc     updatePopupTest_static_0100
-   * @tc.level    Level.LEVEL2
-   */
-    it('updatePopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.name     updatePopupTest_static_0100
+     * @tc.desc     updatePopupTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('updatePopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'updatePopupTest_static_0100';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);

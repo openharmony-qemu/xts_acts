@@ -606,7 +606,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_BorderColor_0200]: " + JSON.stringify(newJson));
 
-      let progress_capsule_borderColor_number = 0xFFFF0000;
+      let progress_capsule_borderColor_number = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_capsule_borderColor_number',progress_capsule_borderColor_number)
       } catch (err) {
@@ -1943,7 +1943,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_FontColor_0200]: " + JSON.stringify(newJson));
 
-      let progress_capsule_fontColor_number = 0xFFFF0000;
+      let progress_capsule_fontColor_number = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_capsule_fontColor_number',progress_capsule_fontColor_number)
       } catch (err) {
@@ -3446,7 +3446,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_ring_number');
       console.info("[ArkUI_Stage_Progress_Ring_Color_0200]: " + JSON.stringify(newJson));
 
-      let progress_ring_color_purity = 0xFFFF0000;
+      let progress_ring_color_purity = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_ring_color_purity',progress_ring_color_purity)
       } catch (err) {
@@ -3477,9 +3477,9 @@ export default function progressSecTest() {
       console.info("[ArkUI_Stage_Progress_Ring_Color_0300]: " + JSON.stringify(newJson));
 
       let progress_ring_color_linear_number = new LinearGradient([{
-        color: 0xFFFF0000, offset: 0
+        color: 0xFFFF0000.toInt(), offset: 0
       }, {
-        color: 0xFFFFFFFF, offset: 1
+        color: 0xFFFFFFFF.toInt(), offset: 1
       }]);
       AppStorage.setOrCreate<LinearGradient>('progress_ring_color_linear_number',progress_ring_color_linear_number)
       await CommonFunc.sleep(2000);
@@ -3708,7 +3708,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_linear_color_number');
       console.info("[ArkUI_Stage_Progress_Ring_Color_1200]: " + JSON.stringify(newJson));
 
-      let progress_ring_color_purity = 0xFFFF0000;
+      let progress_ring_color_purity = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_ring_color_purity',progress_ring_color_purity)
       } catch (err) {
@@ -3740,9 +3740,9 @@ export default function progressSecTest() {
 
 
       let progress_ring_color_linear_number = new LinearGradient([{
-        color: 0xFFFF0000, offset: 0
+        color: 0xFFFF0000.toInt(), offset: 0
       }, {
-        color: 0xFFFFFFFF, offset: 1
+        color: 0xFFFFFFFF.toInt(), offset: 1
       }]);
       AppStorage.setOrCreate<LinearGradient>('progress_ring_color_linear_number',progress_ring_color_linear_number)
       await CommonFunc.sleep(2000);
@@ -3971,7 +3971,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
       console.info("[ArkUI_Stage_Progress_Ring_Color_2200]: " + JSON.stringify(newJson));
 
-      let progress_ring_color_purity = 0xFFFF0000;
+      let progress_ring_color_purity = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_ring_color_purity',progress_ring_color_purity)
       } catch (err) {
@@ -4002,9 +4002,9 @@ export default function progressSecTest() {
       console.info("[ArkUI_Stage_Progress_Ring_Color_2300]: " + JSON.stringify(newJson));
 
       let progress_ring_color_linear_number = new LinearGradient([{
-        color: 0xFFFF0000, offset: 0
+        color: 0xFFFF0000.toInt(), offset: 0
       }, {
-        color: 0xFFFFFFFF, offset: 1
+        color: 0xFFFFFFFF.toInt(), offset: 1
       }]);
       AppStorage.setOrCreate<LinearGradient>('progress_ring_color_linear_number',progress_ring_color_linear_number)
       await CommonFunc.sleep(2000);
@@ -4233,7 +4233,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
       console.info("[ArkUI_Stage_Progress_Ring_Color_3200]: " + JSON.stringify(newJson));
 
-      let progress_ring_color_purity = 0xFFFF0000;
+      let progress_ring_color_purity = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_ring_color_purity',progress_ring_color_purity)
       } catch (err) {
@@ -4264,9 +4264,9 @@ export default function progressSecTest() {
       console.info("[ArkUI_Stage_Progress_Ring_Color_3300]: " + JSON.stringify(newJson));
 
       let progress_ring_color_linear_number = new LinearGradient([{
-        color: 0xFFFF0000, offset: 0
+        color: 0xFFFF0000.toInt(), offset: 0
       }, {
-        color: 0xFFFFFFFF, offset: 1
+        color: 0xFFFFFFFF.toInt(), offset: 1
       }]);
 
       AppStorage.setOrCreate<LinearGradient>('progress_ring_color_linear_number',progress_ring_color_linear_number)
@@ -4497,7 +4497,7 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_color_number');
       console.info("[ArkUI_Stage_Progress_Ring_Color_4200]: " + JSON.stringify(newJson));
 
-      let progress_ring_color_purity = 0xFFFF0000;
+      let progress_ring_color_purity = 0xFFFF0000.toInt();
       try {
         AppStorage.setOrCreate<int>('progress_ring_color_purity',progress_ring_color_purity)
       } catch (err) {
@@ -4528,9 +4528,9 @@ export default function progressSecTest() {
       console.info("[ArkUI_Stage_Progress_Ring_Color_4300]: " + JSON.stringify(newJson));
 
       let progress_ring_color_linear_number = new LinearGradient([{
-        color: 0xFFFF0000, offset: 0
+        color: 0xFFFF0000.toInt(), offset: 0
       }, {
-        color: 0xFFFFFFFF, offset: 1
+        color: 0xFFFFFFFF.toInt(), offset: 1
       }]);
       AppStorage.setOrCreate<LinearGradient>('progress_ring_color_linear_number',progress_ring_color_linear_number)
       await CommonFunc.sleep(2000);
@@ -5395,9 +5395,9 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
 
-      let progress_capsule_enableSmoothEffect_boolean = false;
+      let progress_capsule_enableSmoothEffect_boolean = null;
       try {
-        AppStorage.setOrCreate<boolean>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
+        AppStorage.setOrCreate<boolean|null>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
       } catch (err) {
         console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] change component data error: " +
         (err as BusinessError).message);
@@ -5426,9 +5426,9 @@ export default function progressSecTest() {
       let newJson = inspector.getInspectorByKey('progress_capsule_number');
       console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
 
-      let progress_capsule_enableSmoothEffect_boolean = false;
+      let progress_capsule_enableSmoothEffect_boolean = undefined;
       try {
-        AppStorage.setOrCreate<boolean>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
+        AppStorage.setOrCreate<boolean|undefined>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
       } catch (err) {
         console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] change component data error: " +
         (err as BusinessError).message);
@@ -5751,8 +5751,7 @@ function progressFontWeight(sysFontWeight: Resource):string {
     'FontWeight.Lighter',
     'FontWeight.Medium',
     'FontWeight.Regular']
-  let context = AppStorage.get<Context>('context')!
-  let resourceFontWeight = context.resourceManager.getInt(sysFontWeight.id.toLong())
-  let newFontWeight: string = fontWeightArr[resourceFontWeight]
+  let resourceFontWeight = AppStorage.get<UIContext>('uiContext')!.getHostContext()?.resourceManager.getDouble(sysFontWeight.id).toInt()
+  let newFontWeight: string = fontWeightArr[resourceFontWeight as int]
   return newFontWeight;
 }

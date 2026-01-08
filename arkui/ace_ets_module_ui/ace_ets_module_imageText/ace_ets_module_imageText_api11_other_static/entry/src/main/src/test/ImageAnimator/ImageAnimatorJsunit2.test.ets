@@ -97,8 +97,6 @@ export default function imageAnimatorJsunitt() {
     })
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0100
      * @tc.name     imageAnimatorTest_static_0100
@@ -129,8 +127,6 @@ it('imageAnimatorTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0200
      * @tc.name     imageAnimatorTest_static_0200
@@ -162,8 +158,6 @@ it('imageAnimatorTest_static_0200', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0300
      * @tc.name     imageAnimatorTest_static_0300
@@ -195,8 +189,6 @@ it('imageAnimatorTest_static_0300', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0400
      * @tc.name     imageAnimatorTest_static_0400
@@ -227,8 +219,6 @@ it('imageAnimatorTest_static_0400', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0500
      * @tc.name     imageAnimatorTest_static_0500
@@ -259,8 +249,6 @@ it('imageAnimatorTest_static_0500', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0600
      * @tc.name     imageAnimatorTest_static_0600
@@ -290,8 +278,6 @@ it('imageAnimatorTest_static_0600', Level.LEVEL1, async (done: () => void): Prom
     });
 
     
-
-
 /**
      * @tc.number   imageAnimatorTest_static_0700
      * @tc.name     imageAnimatorTest_static_0700

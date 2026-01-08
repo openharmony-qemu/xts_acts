@@ -80,8 +80,7 @@ export default function GridColJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testGridColOffset_static_01
      * @tc.name     testGridColOffset_static_01
      * @tc.desc     testGridColOffset_static_01
@@ -149,8 +148,7 @@ it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promis
 
 
     
-    
-/**
+    /**
      * @tc.number   testGridColSpan_static_02
      * @tc.name     testGridColSpan_static_02
      * @tc.desc     testGridColSpan_static_02
@@ -218,8 +216,7 @@ it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   testGridColOrder_static_03
      * @tc.name     testGridColOrder_static_03
      * @tc.desc     testGridColOrder_static_03

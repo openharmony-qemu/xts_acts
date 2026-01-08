@@ -17,7 +17,7 @@ import { Entry,Component,$r,Column,Stack,ColumnOptions, RowSplitAttribute,Positi
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { RowSplitModifier } from "@ohos.arkui.modifier";
 

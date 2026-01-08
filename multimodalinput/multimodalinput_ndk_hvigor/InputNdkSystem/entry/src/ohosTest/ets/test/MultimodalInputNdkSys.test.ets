@@ -2673,5 +2673,29 @@ export default function MultimodalInputNdkSysTest() {
       }
       console.info(`${caseName} end to test OH_Input_GetAxisEventWindowId and OH_Input_GetAxisEventDisplayId`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_NdkSys_AddKeyEventHook_0100
+     * @tc.number SUB_MMI_Input_Api_NdkSys_AddKeyEventHook_0100
+     * @tc.desc   OH_Input_AddKeyEventHook Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_NdkSys_AddKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_NdkSys_AddKeyEventHook_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = input.AddKeyEventHook2();
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
   });
 }

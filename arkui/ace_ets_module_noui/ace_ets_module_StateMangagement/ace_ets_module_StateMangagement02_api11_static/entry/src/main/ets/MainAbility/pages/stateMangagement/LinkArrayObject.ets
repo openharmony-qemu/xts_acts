@@ -42,14 +42,14 @@ import {
   Watch,
   Link,
   Provide,
-  Prop,
+  PropRef,
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
-  LocalStorageProp,
+  LocalStoragePropRef,
   LocalStorageLink,
   Observed,
 } from '@ohos.arkui.stateManagement'
@@ -70,7 +70,7 @@ class ArrayLinkObject {
 
 @Component
 struct LinkArrayObjectChild {
-  @Link value: Array<ArrayLinkObject> = new Array<ArrayLinkObject>(new ArrayLinkObject(1,'2'))
+  @Link value: Array<ArrayLinkObject>
 
   build() {
     Column() {

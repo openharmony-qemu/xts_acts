@@ -70,6 +70,7 @@ export default function Navigation_SingleInstanceJump8() {
      * @tc.level    Level.LEVEL0
      */
 it('Navigation_SingleInstanceJump8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('Navigation_SingleInstanceJump8_static_0100 START');
       await CommonFunc.sleep(1000);
 

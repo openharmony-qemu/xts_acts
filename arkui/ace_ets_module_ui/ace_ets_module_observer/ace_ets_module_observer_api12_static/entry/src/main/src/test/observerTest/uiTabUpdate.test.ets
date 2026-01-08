@@ -69,6 +69,7 @@ export default function uiTabUpdate() {
      * @tc.level    Level.LEVEL0
      */
 it('uiTabUpdate_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('[uiTabUpdate_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

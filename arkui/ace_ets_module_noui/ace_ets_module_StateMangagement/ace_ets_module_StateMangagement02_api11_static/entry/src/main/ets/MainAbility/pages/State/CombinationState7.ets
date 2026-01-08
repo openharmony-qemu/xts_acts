@@ -91,7 +91,7 @@ struct SubProp7 {
 
   build() {
     Column() {
-      Text('@Prop:'+ this.num1).id("SubProp_text1").height('5%')
+      Text('@PropRef:'+ this.num1).id("SubProp_text1").height('5%')
     }
   }
 }
@@ -102,7 +102,7 @@ struct SubProp72 {
 
   build() {
     Column() {
-      Text('@Prop:'+ this.num1).id("SubProp_text2").height('5%')
+      Text('@PropRef:'+ this.num1).id("SubProp_text2").height('5%')
     }
   }
 }

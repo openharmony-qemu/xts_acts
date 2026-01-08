@@ -65,7 +65,6 @@ export default function verticalTrue() {
     
       
   
-
 /**
      * @tc.number   verticalTrue_static_0100
      * @tc.name     verticalTrue_static_0100

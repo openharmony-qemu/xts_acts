@@ -20,9 +20,6 @@ import hilog from '@ohos.hilog';
 
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../test/List.test';
-import { BusinessError } from '@ohos.base';
-import { ShellCmdResult } from 'application.shellCmdResult';
-
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
@@ -34,42 +31,15 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
   public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
-
-  // public onRun: () => void = () => {
-  //   hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
-  //
-  //   abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-  //   abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-  //   hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-  //
-  //   Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-  //   hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
-  // }
 
   public onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    let cmd = 'aa start -d 0 -a EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
-    let debug = abilityDelegatorArguments.parameters['-D']
-    if (debug == 'true') {
-      cmd += ' -D'
-    }
-
-    setTimeout(() => {
-      hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
-    }, 5000);
-
-    hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
-
-    abilityDelegator.executeShellCommand(cmd,
-      (err:BusinessError|null, d: ShellCmdResult|undefined) : void => {
-      })
-    hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
+    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }

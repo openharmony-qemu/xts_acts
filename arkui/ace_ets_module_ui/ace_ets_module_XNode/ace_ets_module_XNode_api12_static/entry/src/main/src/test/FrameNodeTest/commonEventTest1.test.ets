@@ -69,13 +69,14 @@ export default function commonEventTest1() {
 
 
 
-/**
+    /**
      * @tc.number   commonEventTest1_static_0100
      * @tc.name     commonEventTest1_static_0100
      * @tc.desc     commonEventTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('commonEventTest1_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -100,13 +101,14 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
 
 
-/**
+    /**
      * @tc.number   commonEventTest1_static_0200
      * @tc.name     commonEventTest1_static_0200
      * @tc.desc     commonEventTest1_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('commonEventTest1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('commonEventTest1_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

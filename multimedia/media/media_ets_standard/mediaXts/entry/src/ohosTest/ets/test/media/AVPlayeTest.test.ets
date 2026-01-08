@@ -1404,6 +1404,194 @@ export function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payload
   });
 }
 
+function setPlaybackStatisticMetricsCb(avPlayer: media.AVPlayer | null, playBackMetricsKey: Array<string>, done: Function, testName: string) {
+  let arrayPlaybackMetrics: media.PlaybackMetrics | undefined = undefined;
+  let surfaceID: string = globalThis.value;
+  let playCount = 0;
+  avPlayer?.on('stateChange', async (state, reason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(TAG, testName + ` avPlayer is null`);
+          break;
+        }
+        console.info(TAG, testName + ` case INITIALIZED`);
+        avPlayer.surfaceId = surfaceID;
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer?.prepare((err) => {
+          console.info(TAG, testName + ' case prepare called ' + err);
+          if (err != null) {
+            console.error(TAG, testName + ` case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info(TAG, testName + ' case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        if (playCount == 0) {
+          playCount++;
+          avPlayer?.pause();
+        }
+        break;
+      case PAUSED:
+        await avPlayer?.getPlaybackStatisticMetrics().then(res => {
+          console.info(TAG, testName + ' case getPlaybackStatisticMetrics called!!');
+          if (typeof (res) != 'undefined') {
+            arrayPlaybackMetrics = res;
+          } else {
+            console.info(TAG, testName + ' case getPlaybackStatisticMetrics is failed');
+            expect().assertFail();
+          }
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        if (arrayPlaybackMetrics) {
+          mediaTestBase.checkPlaybackStatisticMetrics(arrayPlaybackMetrics, playBackMetricsKey);
+        }
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        await avPlayer?.getPlaybackStatisticMetrics().then(res => {
+          console.info(TAG, testName + ' case getPlaybackStatisticMetrics called!!');
+          if (typeof (res) != 'undefined') {
+            arrayPlaybackMetrics = res;
+          } else {
+            console.info(TAG, testName + ' case getPlaybackStatisticMetrics is failed');
+            expect().assertFail();
+          }
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        if (arrayPlaybackMetrics) {
+          mediaTestBase.checkPlaybackStatisticMetrics(arrayPlaybackMetrics, playBackMetricsKey);
+        }
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testCheckPlaybackStatisticMetrics(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
+  playBackMetricsKey: Array<string>, done: Function, testName: string) {
+  console.info(TAG, testName + ` case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    if (err != null) {
+      console.error(TAG, testName + ` case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      console.info(TAG, testName + ` case media err: ${err}`);
+      if (typeof (video) != 'undefined') {
+        console.info(TAG, testName + ' case createAVPlayer success');
+        avPlayer = video;
+        setPlaybackStatisticMetricsCb(avPlayer, playBackMetricsKey, done, testName);
+        setSource(avPlayer, src, testName);
+      } else {
+        console.error(TAG, testName + ` case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+async function metricsON(avPlayer: media.AVPlayer, done: Function) {
+  avPlayer.onMetricsEvent((eventArray: Array<media.AVMetricsEvent>) => {
+    if (eventArray) {
+      for (let i = 0; i < eventArray.length; i++) {
+        console.info('onMetricsEvent info: AVMetricsEvent=' + JSON.stringify(eventArray[i]));
+        expect(eventArray[i].event).assertLargerOrEqual(0);
+        expect(eventArray[i].timeStamp).assertLargerOrEqual(0);
+        expect(eventArray[i].playbackPosition).assertLargerOrEqual(0);
+        expect(eventArray[i].details['mediaType']).assertLargerOrEqual(0);
+        expect(eventArray[i].details['duration']).assertLargerOrEqual(0);
+      }
+      avPlayer.offMetricsEvent();
+    } else {
+      console.info('subtitleUpdate info is null');
+      expect(false).assertTrue();
+      done();
+    }
+  })
+}
+
+function metricsOFF(avPlayer: media.AVPlayer | null, done: Function) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        avPlayer?.offMetricsEvent();
+        avPlayer?.release()
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testMetricsListening(src: string | media.AVFileDescriptor, testName: string,
+  avPlayer: media.AVPlayer | null, metricsListening:Function, done: Function) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      metricsOFF(avPlayer, done);
+      metricsListening(avPlayer,done);
+      setSource(avPlayer, src, testName);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 export default function AVPlayerTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -2241,5 +2429,40 @@ export default function AVPlayerTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   getPlaybackStatisticMetrics_001
+     * @tc.number AVPLAYER_LOCAL_TEST_048
+     * @tc.desc   Test getPlaybackStatisticMetrics promise.
+     * @tc.size   MediumTest
+     * @tc.type   Function test
+     * @tc.level  Level0
+     */
+    it('getPlaybackStatisticMetrics_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'getPlaybackStatisticMetrics_001';
+      let playBackMetricsKey =
+        new Array('prepare_duration', 'resource_connection_duration', 'first_frame_decapsulation_duration', 
+          'total_playback_time', 'loading_count', 'total_loading_time', 'total_loading_Bytes', 
+          'stalling_count', 'total_stalling_time');
+      expect(fileDescriptor.fd).assertLarger(0);
+      if (fileDescriptor) {
+        testCheckPlaybackStatisticMetrics(fileDescriptor, avPlayer, playBackMetricsKey, done, testName);
+      }
+    })
+
+    /**
+     * @tc.name   metricsControl_001
+     * @tc.number AVPLAYER_LOCAL_TEST_049
+     * @tc.desc   Local Video metrics control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('metricsControl_001', Level.LEVEL0,async (done: Function) => {
+      expect(fileDescriptor.fd).assertLarger(0);     
+      if (fileDescriptor && subtitleFdSrc) {
+        testMetricsListening(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100", avPlayer, metricsON, done);
+      }
+    });
   })
 }

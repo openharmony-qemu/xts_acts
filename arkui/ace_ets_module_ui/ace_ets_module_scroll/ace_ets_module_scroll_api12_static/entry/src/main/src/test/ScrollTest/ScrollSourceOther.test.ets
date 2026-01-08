@@ -83,7 +83,6 @@ export default function ScrollSourceOther() {
     
       
   
-
 /**
      * @tc.number   ScrollSourceOther_0100
      * @tc.name     ScrollSourceOther_0100
@@ -112,7 +111,6 @@ it('ScrollSourceOther_0100', Level.LEVEL0, async (done: () => void): Promise<voi
     
       
   
-
 /**
      * @tc.number   ScrollSourceOther_0200
      * @tc.name     ScrollSourceOther_0200
@@ -146,7 +144,6 @@ it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<voi
     
       
   
-
 /**
      * @tc.number   ScrollSourceOther_0300
      * @tc.name     ScrollSourceOther_0300

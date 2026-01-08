@@ -463,7 +463,7 @@ export default function DeviceInfoTest() {
       let majorVersionInfo = deviceinfo.majorVersion;
       console.info('the value of the majorVersion is :' + majorVersionInfo);
 
-      expect(majorVersionInfo).assertInstanceOf('Number');
+      expect(majorVersionInfo).assertInstanceOf('int');
       expect(majorVersionInfo >= 1 && majorVersionInfo <= 99).assertTrue();
       done();
 
@@ -483,7 +483,7 @@ export default function DeviceInfoTest() {
       let seniorVersionInfo = deviceinfo.seniorVersion;
       console.info('the value of the seniorVersion is :' + seniorVersionInfo);
 
-      expect(seniorVersionInfo).assertInstanceOf('Number');
+      expect(seniorVersionInfo).assertInstanceOf('int');
       expect(seniorVersionInfo >= 0 && seniorVersionInfo <= 99).assertTrue();
       done();
 
@@ -503,7 +503,7 @@ export default function DeviceInfoTest() {
       let featureVersionInfo = deviceinfo.featureVersion;
       console.info('the value of the featureVersion is :' + featureVersionInfo);
 
-      expect(featureVersionInfo).assertInstanceOf('Number');
+      expect(featureVersionInfo).assertInstanceOf('int');
       expect((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0).assertTrue();
       done();
 
@@ -523,7 +523,7 @@ export default function DeviceInfoTest() {
       let buildVersionInfo = deviceinfo.buildVersion;
       console.info('the value of the buildVersion is :' + buildVersionInfo);
 
-      expect(buildVersionInfo).assertInstanceOf('Number');
+      expect(buildVersionInfo).assertInstanceOf('int');
       expect(buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)).assertTrue();
       done();
 
@@ -543,7 +543,7 @@ export default function DeviceInfoTest() {
       let sdkApiVersionInfo = deviceinfo.sdkApiVersion;
       console.info('the value of the sdkApiVersion is :' + sdkApiVersionInfo);
 
-      expect(sdkApiVersionInfo).assertInstanceOf('Number');
+      expect(sdkApiVersionInfo).assertInstanceOf('int');
       expect(sdkApiVersionInfo >= 0).assertTrue();
       done();
 
@@ -563,7 +563,7 @@ export default function DeviceInfoTest() {
       let firstApiVersionInfo = deviceinfo.firstApiVersion;
       console.info('the value of the firstApiVersion is :' + firstApiVersionInfo);
 
-      expect(firstApiVersionInfo).assertInstanceOf('Number');
+      expect(firstApiVersionInfo).assertInstanceOf('int');
       expect(firstApiVersionInfo >= 0).assertTrue();
       done();
 
@@ -806,7 +806,7 @@ export default function DeviceInfoTest() {
       let distributionOSApiVersionInfo = deviceinfo.distributionOSApiVersion;
       console.info('the value of the distributionOSApiVersion is :' + distributionOSApiVersionInfo);
 
-      expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
+      expect(distributionOSApiVersionInfo).assertInstanceOf('int');
       expect(distributionOSApiVersionInfo >= 0).assertTrue();
       done();
 

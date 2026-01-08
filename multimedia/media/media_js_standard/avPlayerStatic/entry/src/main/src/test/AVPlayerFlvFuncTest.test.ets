@@ -107,7 +107,7 @@ function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: 
       expect(messages !== null && messages !== undefined).assertTrue();
       expect(messages.length).assertLarger(0);
       messages.forEach((message) => {
-        expect(typeof message.payload === 'number').assertTrue();
+        expect(typeof message.payload === 'int').assertTrue();
         expect(message.payloadType).assertEqual(expectType);
         expect(message.payload !== null && message.payload !== undefined).assertTrue();
         expect(message.payload.byteLength).assertLarger(0);

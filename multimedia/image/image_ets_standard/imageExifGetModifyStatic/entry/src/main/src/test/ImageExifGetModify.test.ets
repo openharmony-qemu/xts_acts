@@ -35,8 +35,8 @@ interface picTypeValue {
 interface picTypeValue2 {
   name: string
   fileName: string
-  value?: Record<image.PropertyKey, string | null>
-  initValue?: Record<image.PropertyKey, string | null>
+  value?: Record<string, string | null>
+  initValue?: Record<string, string | null>
   modifyData?: string
   compareData?: string
   errorData?: string
@@ -76,13 +76,13 @@ export default function imageExifGetModifyTest() {
     let testContext: common.UIAbilityContext;
     let filesDir: string | undefined | null;
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       await sleep(300)
     })
 
@@ -108,11 +108,11 @@ export default function imageExifGetModifyTest() {
       orientation: string,
       imageLength: string,
       imageWidth: string
-    ): Record<image.PropertyKey, string | null> => {
-      const value: Record<image.PropertyKey, string | null> = {};
-      value[image.PropertyKey.ORIENTATION] = orientation;
-      value[image.PropertyKey.IMAGE_LENGTH] = imageLength;
-      value[image.PropertyKey.IMAGE_WIDTH] = imageWidth;
+    ): Record<string, string | null> => {
+      const value: Record<string, string | null> = {};
+      value[image.PropertyKey.ORIENTATION as string] = orientation;
+      value[image.PropertyKey.IMAGE_LENGTH as string] = imageLength;
+      value[image.PropertyKey.IMAGE_WIDTH as string] = imageWidth;
       return value;
     }
 
@@ -344,7 +344,7 @@ export default function imageExifGetModifyTest() {
     const testGetImageProperties = async (
       testTag: string,
       keys: Array<image.PropertyKey>,
-      compareData: Record<image.PropertyKey, string | null> | undefined,
+      compareData: Record<string, string | null> | undefined,
       fileName:string,
       type:string
     ): Promise<boolean> => {
@@ -359,9 +359,9 @@ export default function imageExifGetModifyTest() {
             console.info(testTag + "compareData == undefined");
           } else {
             keys.forEach((item: image.PropertyKey) => {
-              console.info(testTag + "data: " + data[item]);
-              console.info(testTag + "compareData: " + compareData[item]);
-              checkResult = data[item] == compareData[item];
+              console.info(testTag + "data: " + data[item as string]);
+              console.info(testTag + "compareData: " + compareData[item as string]);
+              checkResult = data[item as string] == compareData[item as string];
               console.info(testTag + "checkResult: " + checkResult);
             })
           }
@@ -422,8 +422,8 @@ export default function imageExifGetModifyTest() {
     const testModifyImageProperties = async (
       testTag: string,
       keys: Array<image.PropertyKey>,
-      records: Record<image.PropertyKey, string | null>,
-      compareData: Record<image.PropertyKey, string | null> | undefined,
+      records: Record<string, string | null>,
+      compareData: Record<string, string | null> | undefined,
       fileName: string,
       type:string
     ): Promise<boolean> => {
@@ -441,9 +441,9 @@ export default function imageExifGetModifyTest() {
             testTag, fileName, JSON.stringify(data))
         } else {
           keys.forEach((item: image.PropertyKey) => {
-            console.info(testTag + "data: " + data[item]);
-            console.info(testTag + "compareData: " + compareData[item]);
-            checkResult = data[item] == compareData[item];
+            console.info(testTag + "data: " + data[item as string]);
+            console.info(testTag + "compareData: " + compareData[item as string]);
+            checkResult = data[item as string] == compareData[item as string];
             console.info(testTag + "checkResult: " + checkResult);
           })
           // checkResult = JSON.stringify(data) == compareData
@@ -469,7 +469,7 @@ export default function imageExifGetModifyTest() {
     //type:创建imageSource的方式，取值: uri、fd、buffer,rawfile,incremental 默认fd
     const testModifyImagePropertiesError = async (
       testTag: string,
-      records: Record<image.PropertyKey, string | null>,
+      records: Record<string, string | null>,
       expectedErrorCodes: int,
       fileName: string,
       type: string
@@ -506,7 +506,7 @@ export default function imageExifGetModifyTest() {
     //type:创建imageSource的方式，取值: uri、fd、buffer,rawfile,incremental 默认fd
     const testModifyGetPropertiesError = async (
       testTag: string,
-      records: Record<image.PropertyKey, string | null>,
+      records: Record<string, string | null>,
       expectedErrorCodes: int,
       keys: Array<image.PropertyKey>,
       compareData: string | undefined,
@@ -18696,10 +18696,10 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100';
       try {
-        let valueDng: Record<image.PropertyKey, string | null> = getCompareData("Top-left", "192", "256");
-        let value: Record<image.PropertyKey, string | null> = getCompareData("Left-bottom", "65535", "65535");
-        let rawfileValue: Record<image.PropertyKey, string | null> = getCompareData("Top-left", "0", "0");
-        let rawfileValueWebp: Record<image.PropertyKey, string | null> = getCompareData("Top-right", "4608", "3456");
+        let valueDng: Record<string, string | null> = getCompareData("Top-left", "192", "256");
+        let value: Record<string, string | null> = getCompareData("Left-bottom", "65535", "65535");
+        let rawfileValue: Record<string, string | null> = getCompareData("Top-left", "0", "0");
+        let rawfileValueWebp: Record<string, string | null> = getCompareData("Top-right", "4608", "3456");
 
         const filesList: Array<picTypeValue2> = [
           {name: "jpeg", fileName: "test_exif_v2.jpg", value: value, initValue: rawfileValue},
@@ -18824,19 +18824,19 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100';
       try {
-        let records:Record<image.PropertyKey, string | null> = {};
-        records[image.PropertyKey.ORIENTATION] = "8";
-        records[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        records[image.PropertyKey.IMAGE_WIDTH] = "65535";
-        records[image.PropertyKey.GPS_LATITUDE] = "39,54,25.16513";
-        records[image.PropertyKey.GPS_LONGITUDE] = "39,54,25.16513";
+        let records:Record<string, string | null> = {};
+        records[image.PropertyKey.ORIENTATION as string] = "8";
+        records[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        records[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
+        records[image.PropertyKey.GPS_LATITUDE as string] = "39,54,25.16513";
+        records[image.PropertyKey.GPS_LONGITUDE as string] = "39,54,25.16513";
 
-        const compareData: Record<image.PropertyKey, string | null> = {};
-        compareData[image.PropertyKey.ORIENTATION] = "Left-bottom";
-        compareData[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        compareData[image.PropertyKey.IMAGE_WIDTH] = "65535";
-        compareData[image.PropertyKey.GPS_LATITUDE] = "39, 54, 25.16513";
-        compareData[image.PropertyKey.GPS_LONGITUDE] = "39, 54, 25.16513";
+        const compareData: Record<string, string | null> = {};
+        compareData[image.PropertyKey.ORIENTATION as string] = "Left-bottom";
+        compareData[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        compareData[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
+        compareData[image.PropertyKey.GPS_LATITUDE as string] = "39, 54, 25.16513";
+        compareData[image.PropertyKey.GPS_LONGITUDE as string] = "39, 54, 25.16513";
         const keys = [image.PropertyKey.ORIENTATION, image.PropertyKey.IMAGE_LENGTH, image.PropertyKey.IMAGE_WIDTH,
           image.PropertyKey.GPS_LATITUDE, image.PropertyKey.GPS_LONGITUDE]
         const filesList:Array<picTypeValue> = [
@@ -18875,17 +18875,17 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200';
       try {
-        let records: Record<image.PropertyKey, string | null> = {};
-        records[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        records[image.PropertyKey.IMAGE_WIDTH] = "65535";
-        records[image.PropertyKey.GPS_LATITUDE] = "39,54,25.16513";
-        records[image.PropertyKey.GPS_LONGITUDE] = "39,54,25.16513";
+        let records: Record<string, string | null> = {};
+        records[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        records[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
+        records[image.PropertyKey.GPS_LATITUDE as string] = "39,54,25.16513";
+        records[image.PropertyKey.GPS_LONGITUDE as string] = "39,54,25.16513";
 
-        const compareData: Record<image.PropertyKey, string | null> = {};
-        compareData[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        compareData[image.PropertyKey.IMAGE_WIDTH] = "65535";
-        compareData[image.PropertyKey.GPS_LATITUDE] = "39, 54, 25.16513";
-        compareData[image.PropertyKey.GPS_LONGITUDE] = "39, 54, 25.16513";
+        const compareData: Record<string, string | null> = {};
+        compareData[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        compareData[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
+        compareData[image.PropertyKey.GPS_LATITUDE as string] = "39, 54, 25.16513";
+        compareData[image.PropertyKey.GPS_LONGITUDE as string] = "39, 54, 25.16513";
         const keys = [image.PropertyKey.IMAGE_LENGTH, image.PropertyKey.IMAGE_WIDTH,
           image.PropertyKey.GPS_LATITUDE, image.PropertyKey.GPS_LONGITUDE]
         const filesList: Array<picTypeValue> = [
@@ -18924,9 +18924,9 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300';
       try {
-        let records: Record<image.PropertyKey, string | null> = {};
-        records[image.PropertyKey.IMAGE_LENGTH] = "abc";
-        records[image.PropertyKey.IMAGE_WIDTH] = "abc";
+        let records: Record<string, string | null> = {};
+        records[image.PropertyKey.IMAGE_LENGTH as string] = "abc";
+        records[image.PropertyKey.IMAGE_WIDTH as string] = "abc";
 
         const filesList:Array<picTypeValue> = [
           {name: "jpeg", fileName: "test_exif_v2.jpg"},
@@ -18965,9 +18965,9 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400';
       try {
-        let records: Record<image.PropertyKey, string | null> = {};
-        records[image.PropertyKey.IMAGE_LENGTH] = "abc";
-        records[image.PropertyKey.IMAGE_WIDTH] = "abc";
+        let records: Record<string, string | null> = {};
+        records[image.PropertyKey.IMAGE_LENGTH as string] = "abc";
+        records[image.PropertyKey.IMAGE_WIDTH as string] = "abc";
 
         const filesList:Array<picTypeValue> = [
           {name: "jpeg", fileName: "test_exif_empty_2.jpg"},
@@ -19006,15 +19006,15 @@ export default function imageExifGetModifyTest() {
       await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700';
       try {
-        let records: Record<image.PropertyKey, string | null> = {};
-        records[image.PropertyKey.ORIENTATION] = "8";
-        records[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        records[image.PropertyKey.IMAGE_WIDTH] = "65535";
+        let records: Record<string, string | null> = {};
+        records[image.PropertyKey.ORIENTATION as string] = "8";
+        records[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        records[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
 
-        let compareData: Record<image.PropertyKey, string | null> = {};
-        compareData[image.PropertyKey.ORIENTATION] = "Left-bottom";
-        compareData[image.PropertyKey.IMAGE_LENGTH] = "65530";
-        compareData[image.PropertyKey.IMAGE_WIDTH] = "65535";
+        let compareData: Record<string, string | null> = {};
+        compareData[image.PropertyKey.ORIENTATION as string] = "Left-bottom";
+        compareData[image.PropertyKey.IMAGE_LENGTH as string] = "65530";
+        compareData[image.PropertyKey.IMAGE_WIDTH as string] = "65535";
 
         // const compareData: PropertyKeyValues = {Orientation:"Left-bottom",ImageLength:"65530", ImageWidth:"65535"}
         const keys = [image.PropertyKey.ORIENTATION, image.PropertyKey.IMAGE_LENGTH, image.PropertyKey.IMAGE_WIDTH]

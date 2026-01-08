@@ -61,7 +61,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get scrollEgeJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollEge" == pages.name)) {
@@ -79,7 +79,6 @@ export default function scrollByJsunit() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      // routerInstance.clear()
       console.info("List_scrollToIndex1 after each called");
     });
 

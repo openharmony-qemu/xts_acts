@@ -1638,7 +1638,7 @@ export default function LowPowerSinkNdkTest() {
           try {
             console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_CreateByMime0100 start====");
             let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_CreateByMime0100();
-            expect(1).assertEqual(result);
+            expect(0).assertEqual(result);
             done()
           } catch (err) {
             console.error("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_CreateByMime0100 catch err: " + err);

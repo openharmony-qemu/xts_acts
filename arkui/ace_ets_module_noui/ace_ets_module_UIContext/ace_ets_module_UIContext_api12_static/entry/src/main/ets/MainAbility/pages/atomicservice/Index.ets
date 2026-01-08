@@ -20,7 +20,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, Row, RowOptions, Color, ButtonType,
   Text, Button, FontWeight, ClickEvent, Margin, Navigation, NavPathStack,
-  // NavPushPathHelper,
+  
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -28,7 +28,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct NavigationExample {
   pageInfo: NavPathStack = new NavPathStack()
-  // helper: NavPushPathHelper = new NavPushPathHelper(this.pageInfo)
+  
 
   build() {
     Navigation(this.pageInfo) {

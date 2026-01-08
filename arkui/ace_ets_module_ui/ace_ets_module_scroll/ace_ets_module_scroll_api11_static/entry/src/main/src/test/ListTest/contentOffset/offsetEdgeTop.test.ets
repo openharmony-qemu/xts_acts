@@ -81,8 +81,7 @@ export default function offsetEdgeTop() {
 
 
     
-    
-/**
+    /**
      * @tc.number   offsetEdgeTop_static_0100
      * @tc.name     offsetEdgeTop_static_0100
      * @tc.desc     offsetEdgeTop_static_0100

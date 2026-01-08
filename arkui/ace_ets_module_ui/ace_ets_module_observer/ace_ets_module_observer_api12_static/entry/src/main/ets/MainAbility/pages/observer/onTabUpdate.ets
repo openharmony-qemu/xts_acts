@@ -30,11 +30,11 @@ struct callbackFuncTabsExample {
   @State index1: number = -1
 
   aboutToAppear(): void {
-    observer.onTabContentUpdate(callbackFunc);
+    observer.onTabContentUpdate(callbackFunc);//master22 导致白屏
   }
 
   aboutToDisappear(): void {
-    observer.offTabContentUpdate(callbackFunc);
+    observer.offTabContentUpdate(callbackFunc);//master22 导致白屏
   }
 
   build() {

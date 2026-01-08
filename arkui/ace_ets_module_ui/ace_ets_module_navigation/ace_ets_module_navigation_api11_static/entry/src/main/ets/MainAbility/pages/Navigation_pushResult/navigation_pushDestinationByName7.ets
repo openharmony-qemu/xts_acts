@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -60,7 +60,7 @@ struct navigation_pushDestinationByName7 {
               .then(()=>{
                 this.str = 'success'
               })
-              .catch((error: BusinessError): void =>{
+              .catch((error: Error): void =>{
                 console.log('Test:'+JSON.stringify(error))
                 this.code = (error.code).toString() + error.message
               })

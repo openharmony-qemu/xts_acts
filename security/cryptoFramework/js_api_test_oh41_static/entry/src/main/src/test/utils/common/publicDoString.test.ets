@@ -136,7 +136,7 @@ function genIvParamsSpec(n: number): crypto.IvParamsSpec|null {
 }
 
 function genCcmParamsSpec(): crypto.CcmParamsSpec {
-  let arr = [0, 0, 0, 0, 0, 0, 0];
+  let arr: number[] = [0, 0, 0, 0, 0, 0, 0];
   let dataIv = new Uint8Array(arr);
   let ivBlob: crypto.DataBlob = { data: dataIv };
   arr = [0, 0, 0, 0, 0, 0, 0, 0];

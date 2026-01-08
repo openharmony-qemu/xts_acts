@@ -33,11 +33,11 @@ struct NavigationCustomTitlePage {
   @Builder
   NavigationTitle() {
     Column() {
-      Text('title').fontColor(Color.Red).fontSize(30).id('customTitleId')
+      Text('title').fontColor(Color.Red).fontSize(30).id('customTitleId')  //master22 页面有显示，但找不到这个组件
     }
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
-       AppStorage.setOrCreate('customTitle', 14);
+       AppStorage.setOrCreate<Double>('customTitle', 14);
     })
   }
 
@@ -63,12 +63,12 @@ struct PageNavDestination {
   @Builder
   NavDesTitle() {
     Column() {
-      Text('title').fontColor(Color.Red).fontSize(30).id('customNavTitleId')
+      Text('title').fontColor(Color.Red).fontSize(30).id('customNavTitleId') //master22 页面有显示，但找不到这个组件
     }
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
        this.num = 15;
-       AppStorage.setOrCreate('customNavTitle', 15);
+       AppStorage.setOrCreate<Double>('customNavTitle', 15);
     })
   }
 

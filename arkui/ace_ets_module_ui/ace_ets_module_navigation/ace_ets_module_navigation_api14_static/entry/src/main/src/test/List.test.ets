@@ -29,13 +29,13 @@ import SystemTransition2 from './Navigation/SystemTransition2.test'
 export default function testsuite() {
   SafeAreaPadding()   // SDK12.2 pass1
   NavigationEnableDragBar() // SDK12.2 pass1
-  MultiNavigationTest()  //SDK12.2 Error: 3 MultiNavigation不显示 12.3
-  MultiEntry()   // SDK12.2 Error: 7, MultiNavigation不显示 12.3
   Recoverable()   // pass 4
   RouterRecoverable() // pass1
-  NavigationBindToNestedScrollable()  //SDK 12.2 Error: 1 Component not exist matching: {selfMatcher=[{attrName:visible; value:true; Pattern:0},{attrName:type; value:ToolBar; Pattern:0},]}
-  NavigationBindToScrollable()  // SDK12.2 pass
   RouterRecoverable2()  // pass 1ge
   SystemTransition() //SDK12.2 pass1
   SystemTransition2() //SDK12.2 pass2
+  NavigationBindToScrollable()  // SDK12.2 pass
+  MultiNavigationTest()  //SDK12.2 0702表格 105行 2025091107964 可发邮件
+  MultiEntry()   // SDK12.2  0702表格 105行 2025091107964 可发邮件
+  NavigationBindToNestedScrollable()  //SDK 12.2 0702表格 107行 vp2px 基础框架可发邮件
 }

@@ -24,6 +24,7 @@ napi_value ImageSourceGetSupportedFormatsTest(napi_env env, napi_callback_info i
 napi_value ImageSourceCreateIncrementalTest(napi_env env, napi_callback_info info);
 napi_value ImageSourceInitNativeSuppTest(napi_env env, napi_callback_info info);
 napi_value ImageSourceCreatSuccessTest(napi_env env, napi_callback_info info);
+napi_value ImageSourceCreate(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

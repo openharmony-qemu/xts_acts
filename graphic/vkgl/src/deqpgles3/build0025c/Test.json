@@ -17,9 +17,7 @@
                 "tar zxvf /data/local/tmp/vkgldata.tar.gz -C /data/local/tmp/gl_cts",
                 "cp -r /data/local/tmp/gl_cts/data/gles2 /data/local/tmp",
                 "cp -r /data/local/tmp/gl_cts/data/gles3 /data/local/tmp",
-                "cp -r /data/local/tmp/gl_cts/data/gles31 /data/local/tmp",
-                "cp /data/local/tmp/libdeqp* /system/lib",
-                "cp /data/local/tmp/librosen_context* /system/lib"
+                "cp -r /data/local/tmp/gl_cts/data/gles31 /data/local/tmp"
             ],
             "push": [
                 "ActsDeqpgles3Suite0025cTest->/data/local/tmp/ActsDeqpgles3Suite0025cTest",
@@ -36,7 +34,15 @@
             "run-command": [
                 "remount",
                 "mkdir /data/test",
-                "cd /data/local/tmp"
+                "cd /data/local/tmp",
+                "rm -rf libdeqp_ohos_platform.z.so",
+                "rm -rf librosen_context.z.so",
+                "rm -rf libdeqp_spirv.z.so",
+                "rm -rf libdeqp_spvremapper.z.so",
+                "ln -s /data/local/tmp/libdeqp_ohos_platform.z.so /system/lib/libdeqp_ohos_platform.z.so",
+                "ln -s /data/local/tmp/librosen_context.z.so /system/lib/librosen_context.z.so",
+                "ln -s /data/local/tmp/libdeqp_spirv.z.so /system/lib/libdeqp_spirv.z.so",
+                "ln -s /data/local/tmp/libdeqp_spvremapper.z.so /system/lib/libdeqp_spvremapper.z.so"
             ]
         }
     ]

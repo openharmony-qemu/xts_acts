@@ -31,7 +31,7 @@ import {
 } from '@ohos.arkui.component'
 
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { Color } from '@ohos.arkui.component'
 interface ViewOption {
@@ -54,7 +54,7 @@ struct paddingPage {
   private value: string[] = ['#', 'A', 'B'];
   //Use for DataPanel.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
-  @StorageProp('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
+  @StoragePropRef('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink
@@ -62,23 +62,14 @@ struct paddingPage {
 
   onPageShow() {
     console.info('padding page show called ')
-    // attrsManager.registerDataChange((value: SetValue) => {
-    //   console.info('[wll]attrsManager1' + value.padding)
-    //   this._padding = value.padding as Padding
-    // })
-
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Padding>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as Padding)
-
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
 
-      // console.log('[wll][onPageShow]'+routerParamOptions.view.testValue)
-      // console.log('[wll][all]'+routerParamOptions.view.testValue.setValue.padding)
-      // console.log('[wll][onPageShow]'+(routerParamOptions.view.testValue.setValue))
   } catch (error: Error) {
     console.log(' routerParamOptions error ' + error);
   }

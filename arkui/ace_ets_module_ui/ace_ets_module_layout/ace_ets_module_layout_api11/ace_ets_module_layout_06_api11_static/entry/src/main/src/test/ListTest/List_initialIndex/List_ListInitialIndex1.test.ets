@@ -108,51 +108,51 @@ it('testListInitialIndexToTwoWithOneLane_static', Level.LEVEL0, async (done: () 
       let listContainerStrJson = inspector.getInspectorByKey('List_ListInitialIndex1_Container01');
       expect(JSON.parseJsonElement(listContainerStrJson).getString('$type')).assertEqual('List');
 
-      expect(Math.abs(Math.floor(firstListItem.right - firstListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.floor(firstListItem.bottom - firstListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(firstListItem.right - firstListItem.left) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(firstListItem.bottom - firstListItem.top) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(secondListItem.right - secondListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.floor(secondListItem.bottom - secondListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(secondListItem.right - secondListItem.left) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(secondListItem.bottom - secondListItem.top) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
 
       expect(Math.abs(thirdListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(thirdListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdListItem.right - thirdListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(thirdListItem.bottom - thirdListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdListItem.right - thirdListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(thirdListItem.bottom - thirdListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(fourthListItem.top - thirdListItem.bottom - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(fourthListItem.top - thirdListItem.bottom - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(fourthListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthListItem.right - fourthListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fourthListItem.bottom - fourthListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthListItem.right - fourthListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fourthListItem.bottom - fourthListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(fifthListItem.top - fourthListItem.bottom - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(fifthListItem.top - fourthListItem.bottom - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(fifthListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fifthListItem.right - fifthListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(fifthListItem.bottom - fifthListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fifthListItem.right - fifthListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(fifthListItem.bottom - fifthListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(sixthListItem.top - fifthListItem.bottom - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(sixthListItem.top - fifthListItem.bottom - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(sixthListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(sixthListItem.right - sixthListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(sixthListItem.bottom - sixthListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(sixthListItem.right - sixthListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(sixthListItem.bottom - sixthListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(seventhListItem.top - sixthListItem.bottom - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(seventhListItem.top - sixthListItem.bottom - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(seventhListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(seventhListItem.right - seventhListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(seventhListItem.bottom - seventhListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(seventhListItem.right - seventhListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(seventhListItem.bottom - seventhListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.round(eighthListItem.right - eighthListItem.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
-      expect(Math.round(eighthListItem.bottom - eighthListItem.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(eighthListItem.right - eighthListItem.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
+      expect(Math.round(eighthListItem.bottom - eighthListItem.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
 
-      expect(Math.round(ninthListItem.right - ninthListItem.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
-      expect(Math.round(ninthListItem.bottom - ninthListItem.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(ninthListItem.right - ninthListItem.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
+      expect(Math.round(ninthListItem.bottom - ninthListItem.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
 
-      expect(Math.round(tenthListItem.right - tenthListItem.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
-      expect(Math.round(tenthListItem.bottom - tenthListItem.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(tenthListItem.right - tenthListItem.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
+      expect(Math.round(tenthListItem.bottom - tenthListItem.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
 
-      expect(Math.round(eleventhListItem.right - eleventhListItem.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
-      expect(Math.round(eleventhListItem.bottom - eleventhListItem.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
+      expect(Math.round(eleventhListItem.right - eleventhListItem.left)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
+      expect(Math.round(eleventhListItem.bottom - eleventhListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
-      expect(Math.round(twelfthListItem.right - twelfthListItem.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
-      expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
+      expect(Math.round(twelfthListItem.right - twelfthListItem.left)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
+      expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
@@ -165,13 +165,13 @@ it('testListInitialIndexToTwoWithOneLane_static', Level.LEVEL0, async (done: () 
       listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
       expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(firstListItem.bottom - firstListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.floor(secondListItem.top - firstListItem.bottom - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.abs(Math.floor(secondListItem.top - firstListItem.bottom - UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(secondListItem.left - listContainer.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondListItem.right - secondListItem.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(secondListItem.bottom - secondListItem.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondListItem.right - secondListItem.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(secondListItem.bottom - secondListItem.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.info('[testListInitialIndexToTwoWithOneLane] END');
       done();
     });

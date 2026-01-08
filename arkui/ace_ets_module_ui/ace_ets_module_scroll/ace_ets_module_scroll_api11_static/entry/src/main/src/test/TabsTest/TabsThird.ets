@@ -138,8 +138,7 @@ export default function tabsThird() {
     })
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0100
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0100
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0100
@@ -169,8 +168,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0100', 0, async (done: () => void): Promise<v
       done();
     });
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0200
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0200
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0200
@@ -206,8 +204,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0200', 0, async (done: () => void): Promise<v
       done();
     });
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0300
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0300
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0300
@@ -243,8 +240,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0300', 0, async (done: () => void): Promise<v
       done();
     });
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0400
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0400
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0400
@@ -281,8 +277,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0400', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0500
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0500
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0500
@@ -319,8 +314,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0500', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0600
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0600
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0600
@@ -357,8 +351,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0600', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0700
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0700
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0700
@@ -395,8 +388,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0700', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0800
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0800
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0800
@@ -433,8 +425,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0800', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_static_0900
      * @tc.name     ArkUI_Tabs_BarGridAlign_static_0900
      * @tc.desc     ArkUI_Tabs_BarGridAlign_static_0900
@@ -453,8 +444,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0900', 0, async (done: () => void): Promise<v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1000
      * @tc.name     ArkUI_Tabs_BarGridAlign_1000
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1000
@@ -491,8 +481,7 @@ it('ArkUI_Tabs_BarGridAlign_1000', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1100
      * @tc.name     ArkUI_Tabs_BarGridAlign_1100
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1100
@@ -529,8 +518,7 @@ it('ArkUI_Tabs_BarGridAlign_1100', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1200
      * @tc.name     ArkUI_Tabs_BarGridAlign_1200
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1200
@@ -567,8 +555,7 @@ it('ArkUI_Tabs_BarGridAlign_1200', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1300
      * @tc.name     ArkUI_Tabs_BarGridAlign_1300
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1300
@@ -605,8 +592,7 @@ it('ArkUI_Tabs_BarGridAlign_1300', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1400
      * @tc.name     ArkUI_Tabs_BarGridAlign_1400
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1400
@@ -643,8 +629,7 @@ it('ArkUI_Tabs_BarGridAlign_1400', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1500
      * @tc.name     ArkUI_Tabs_BarGridAlign_1500
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1500
@@ -681,8 +666,7 @@ it('ArkUI_Tabs_BarGridAlign_1500', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1600
      * @tc.name     ArkUI_Tabs_BarGridAlign_1600
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1600
@@ -719,8 +703,7 @@ it('ArkUI_Tabs_BarGridAlign_1600', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1700
      * @tc.name     ArkUI_Tabs_BarGridAlign_1700
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1700
@@ -757,8 +740,7 @@ it('ArkUI_Tabs_BarGridAlign_1700', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1800
      * @tc.name     ArkUI_Tabs_BarGridAlign_1800
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1800
@@ -795,8 +777,7 @@ it('ArkUI_Tabs_BarGridAlign_1800', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_1900
      * @tc.name     ArkUI_Tabs_BarGridAlign_1900
      * @tc.desc     ArkUI_Tabs_BarGridAlign_1900
@@ -816,8 +797,7 @@ it('ArkUI_Tabs_BarGridAlign_1900', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_2000
      * @tc.name     ArkUI_Tabs_BarGridAlign_2000
      * @tc.desc     ArkUI_Tabs_BarGridAlign_2000
@@ -854,8 +834,7 @@ it('ArkUI_Tabs_BarGridAlign_2000', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarGridAlign_2100
      * @tc.name     ArkUI_Tabs_BarGridAlign_2100
      * @tc.desc     ArkUI_Tabs_BarGridAlign_2100
@@ -892,8 +871,7 @@ it('ArkUI_Tabs_BarGridAlign_2100', 0, async (done: () => void): Promise<void> =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2200]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2200]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2200]
@@ -936,8 +914,7 @@ it('[ArkUI_Tabs_BarGridAlign_2200]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2300]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2300]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2300]
@@ -980,8 +957,7 @@ it('[ArkUI_Tabs_BarGridAlign_2300]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2400]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2400]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2400]
@@ -1024,8 +1000,7 @@ it('[ArkUI_Tabs_BarGridAlign_2400]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2500]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2500]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2500]
@@ -1068,8 +1043,7 @@ it('[ArkUI_Tabs_BarGridAlign_2500]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2600]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2600]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2600]
@@ -1112,8 +1086,7 @@ it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2700]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2700]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2700]
@@ -1156,8 +1129,7 @@ it('[ArkUI_Tabs_BarGridAlign_2700]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2800]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2800]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2800]
@@ -1200,8 +1172,7 @@ it('[ArkUI_Tabs_BarGridAlign_2800]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_2900]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_2900]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_2900]
@@ -1244,8 +1215,7 @@ it('[ArkUI_Tabs_BarGridAlign_2900]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3000]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3000]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3000]
@@ -1288,8 +1258,7 @@ it('[ArkUI_Tabs_BarGridAlign_3000]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3100]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3100]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3100]
@@ -1332,8 +1301,7 @@ it('[ArkUI_Tabs_BarGridAlign_3100]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3200]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3200]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3200]
@@ -1376,8 +1344,7 @@ it('[ArkUI_Tabs_BarGridAlign_3200]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3300]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3300]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3300]
@@ -1420,8 +1387,7 @@ it('[ArkUI_Tabs_BarGridAlign_3300]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3400]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3400]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3400]
@@ -1464,8 +1430,7 @@ it('[ArkUI_Tabs_BarGridAlign_3400]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3500]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3500]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3500]
@@ -1508,8 +1473,7 @@ it('[ArkUI_Tabs_BarGridAlign_3500]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3600]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3600]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3600]
@@ -1552,8 +1516,7 @@ it('[ArkUI_Tabs_BarGridAlign_3600]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarGridAlign_3700]
      * @tc.name     [ArkUI_Tabs_BarGridAlign_3700]
      * @tc.desc     [ArkUI_Tabs_BarGridAlign_3700]
@@ -1596,8 +1559,7 @@ it('[ArkUI_Tabs_BarGridAlign_3700]', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarHeight_0100
      * @tc.name     ArkUI_Tabs_BarHeight_0100
      * @tc.desc     ArkUI_Tabs_BarHeight_0100
@@ -1632,8 +1594,7 @@ it('ArkUI_Tabs_BarHeight_0100', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BarMode_static_0100]
      * @tc.name     [ArkUI_Tabs_BarMode_static_0100]
      * @tc.desc     [ArkUI_Tabs_BarMode_static_0100]
@@ -1652,8 +1613,7 @@ it('[ArkUI_Tabs_BarMode_static_0100]', 0, async (done: () => void): Promise<void
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0200
      * @tc.name     ArkUI_Tabs_BarMode_static_0200
      * @tc.desc     ArkUI_Tabs_BarMode_static_0200
@@ -1689,8 +1649,7 @@ it('ArkUI_Tabs_BarMode_static_0200', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0300
      * @tc.name     ArkUI_Tabs_BarMode_static_0300
      * @tc.desc     ArkUI_Tabs_BarMode_static_0300
@@ -1726,8 +1685,7 @@ it('ArkUI_Tabs_BarMode_static_0300', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0400
      * @tc.name     ArkUI_Tabs_BarMode_static_0400
      * @tc.desc     ArkUI_Tabs_BarMode_static_0400
@@ -1764,8 +1722,7 @@ it('ArkUI_Tabs_BarMode_static_0400', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0500
      * @tc.name     ArkUI_Tabs_BarMode_static_0500
      * @tc.desc     ArkUI_Tabs_BarMode_static_0500
@@ -1802,8 +1759,7 @@ it('ArkUI_Tabs_BarMode_static_0500', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0600
      * @tc.name     ArkUI_Tabs_BarMode_static_0600
      * @tc.desc     ArkUI_Tabs_BarMode_static_0600
@@ -1840,8 +1796,7 @@ it('ArkUI_Tabs_BarMode_static_0600', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0700
      * @tc.name     ArkUI_Tabs_BarMode_static_0700
      * @tc.desc     ArkUI_Tabs_BarMode_static_0700
@@ -1878,8 +1833,7 @@ it('ArkUI_Tabs_BarMode_static_0700', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0800
      * @tc.name     ArkUI_Tabs_BarMode_static_0800
      * @tc.desc     ArkUI_Tabs_BarMode_static_0800
@@ -1916,8 +1870,7 @@ it('ArkUI_Tabs_BarMode_static_0800', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_static_0900
      * @tc.name     ArkUI_Tabs_BarMode_static_0900
      * @tc.desc     ArkUI_Tabs_BarMode_static_0900
@@ -1954,8 +1907,7 @@ it('ArkUI_Tabs_BarMode_static_0900', 0, async (done: () => void): Promise<void> 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1000
      * @tc.name     ArkUI_Tabs_BarMode_1000
      * @tc.desc     ArkUI_Tabs_BarMode_1000
@@ -1992,8 +1944,7 @@ it('ArkUI_Tabs_BarMode_1000', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1100
      * @tc.name     ArkUI_Tabs_BarMode_1100
      * @tc.desc     ArkUI_Tabs_BarMode_1100
@@ -2029,8 +1980,7 @@ it('ArkUI_Tabs_BarMode_1100', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1200
      * @tc.name     ArkUI_Tabs_BarMode_1200
      * @tc.desc     ArkUI_Tabs_BarMode_1200
@@ -2067,8 +2017,7 @@ it('ArkUI_Tabs_BarMode_1200', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1300
      * @tc.name     ArkUI_Tabs_BarMode_1300
      * @tc.desc     ArkUI_Tabs_BarMode_1300
@@ -2105,8 +2054,7 @@ it('ArkUI_Tabs_BarMode_1300', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1400
      * @tc.name     ArkUI_Tabs_BarMode_1400
      * @tc.desc     ArkUI_Tabs_BarMode_1400
@@ -2143,8 +2091,7 @@ it('ArkUI_Tabs_BarMode_1400', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1500
      * @tc.name     ArkUI_Tabs_BarMode_1500
      * @tc.desc     ArkUI_Tabs_BarMode_1500
@@ -2181,8 +2128,7 @@ it('ArkUI_Tabs_BarMode_1500', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1600
      * @tc.name     ArkUI_Tabs_BarMode_1600
      * @tc.desc     ArkUI_Tabs_BarMode_1600
@@ -2219,8 +2165,7 @@ it('ArkUI_Tabs_BarMode_1600', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1700
      * @tc.name     ArkUI_Tabs_BarMode_1700
      * @tc.desc     ArkUI_Tabs_BarMode_1700
@@ -2257,8 +2202,7 @@ it('ArkUI_Tabs_BarMode_1700', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1800
      * @tc.name     ArkUI_Tabs_BarMode_1800
      * @tc.desc     ArkUI_Tabs_BarMode_1800
@@ -2295,8 +2239,7 @@ it('ArkUI_Tabs_BarMode_1800', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BarMode_1900
      * @tc.name     ArkUI_Tabs_BarMode_1900
      * @tc.desc     ArkUI_Tabs_BarMode_1900
@@ -2334,8 +2277,7 @@ it('ArkUI_Tabs_BarMode_1900', 0, async (done: () => void): Promise<void> => {
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_SubTabBarStylePadding_0100]
      * @tc.name     [ArkUI_Tabs_SubTabBarStylePadding_0100]
      * @tc.desc     [ArkUI_Tabs_SubTabBarStylePadding_0100]
@@ -2364,8 +2306,7 @@ it('[ArkUI_Tabs_SubTabBarStylePadding_0100]', 0, async (done: () => void): Promi
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0200
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0200
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0200
@@ -2402,8 +2343,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0200', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0300
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0300
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0300
@@ -2440,8 +2380,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0300', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0400
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0400
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0400
@@ -2461,8 +2400,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0400', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0500
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0500
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0500
@@ -2508,8 +2446,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0500', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0600
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0600
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0600
@@ -2546,8 +2483,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0600', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0700
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0700
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0700
@@ -2593,8 +2529,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0700', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0800
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0800
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0800
@@ -2640,8 +2575,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0800', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_0900
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_0900
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_0900
@@ -2681,8 +2615,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0900', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1000
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1000
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1000
@@ -2722,8 +2655,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1000', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1100
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1100
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1100
@@ -2743,8 +2675,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1100', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1200
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1200
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1200
@@ -2787,8 +2718,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1200', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1300
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1300
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1300
@@ -2829,8 +2759,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1300', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1400
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1400
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1400
@@ -2873,8 +2802,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1400', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1500
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1500
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1500
@@ -2917,8 +2845,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1500', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1600
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1600
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1600
@@ -2961,8 +2888,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1600', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1700
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1700
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1700
@@ -3003,8 +2929,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1700', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1800
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1800
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1800
@@ -3047,8 +2972,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1800', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_1900
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_1900
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_1900
@@ -3091,8 +3015,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1900', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2000
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2000
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2000
@@ -3135,8 +3058,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2000', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2100
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2100
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2100
@@ -3177,8 +3099,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2100', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2200
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2200
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2200
@@ -3221,8 +3142,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2200', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2300
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2300
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2300
@@ -3265,8 +3185,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2300', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2400
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2400
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2400
@@ -3309,8 +3228,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2400', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2500
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2500
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2500
@@ -3351,8 +3269,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2500', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2600
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2600
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2600
@@ -3395,8 +3312,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2600', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_SubTabBarStylePadding_2700
      * @tc.name     ArkUI_Tabs_SubTabBarStylePadding_2700
      * @tc.desc     ArkUI_Tabs_SubTabBarStylePadding_2700
@@ -3439,8 +3355,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2700', 0, async (done: () => void): Promise
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BottomTabBarStylePadding_0100]
      * @tc.name     [ArkUI_Tabs_BottomTabBarStylePadding_0100]
      * @tc.desc     [ArkUI_Tabs_BottomTabBarStylePadding_0100]
@@ -3462,8 +3377,7 @@ it('[ArkUI_Tabs_BottomTabBarStylePadding_0100]', 0, async (done: () => void): Pr
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0200
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0200
@@ -3500,8 +3414,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0200', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0300
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0300
@@ -3538,8 +3451,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0300', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0400
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0400
@@ -3559,8 +3471,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0400', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0500
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0500
@@ -3597,8 +3508,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0500', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0600
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0600
@@ -3635,8 +3545,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0600', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0700
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0700
@@ -3673,8 +3582,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0700', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0800
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0800
@@ -3711,8 +3619,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0800', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_0900
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_0900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_0900
@@ -3752,8 +3659,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0900', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1000
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1000
@@ -3793,8 +3699,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1000', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1100
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1100
@@ -3814,8 +3719,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1100', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1200
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1200
@@ -3855,8 +3759,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1200', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1300
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1300
@@ -3896,8 +3799,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1300', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1400
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1400
@@ -3937,8 +3839,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1400', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1500
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1500
@@ -3978,8 +3879,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1500', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1600
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1600
@@ -4019,8 +3919,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1600', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1700
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1700
@@ -4060,8 +3959,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1700', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1800
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1800
@@ -4101,8 +3999,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1800', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_1900
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_1900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_1900
@@ -4142,8 +4039,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1900', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2000
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2000
@@ -4183,8 +4079,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2000', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2100
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2100
@@ -4224,8 +4119,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2100', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2200
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2200
@@ -4265,8 +4159,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2200', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2300
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2300
@@ -4306,8 +4199,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2300', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2400
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2400
@@ -4347,8 +4239,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2400', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2500
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2500
@@ -4388,8 +4279,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2500', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2600
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2600
@@ -4429,8 +4319,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2600', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStylePadding_2700
      * @tc.name     ArkUI_Tabs_BottomTabBarStylePadding_2700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStylePadding_2700
@@ -4470,8 +4359,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2700', 0, async (done: () => void): Prom
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
      * @tc.name     [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
      * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]
@@ -4491,8 +4379,7 @@ it('[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0100]', 0, async (done: ()
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200
@@ -4529,8 +4416,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200', 0, async (done: () =
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300
@@ -4567,8 +4453,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300', 0, async (done: () =
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400
@@ -4605,8 +4490,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400', 0, async (done: () =
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500
@@ -4643,8 +4527,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500', 0, async (done: () =
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600
@@ -4681,8 +4564,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600', 0, async (done: () =
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
      * @tc.name     [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
      * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]
@@ -4702,8 +4584,7 @@ it('[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0100]', 0, async (done: () =>
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200
@@ -4740,8 +4621,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300
@@ -4778,8 +4658,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400
@@ -4816,8 +4695,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500
@@ -4854,8 +4732,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600
@@ -4892,8 +4769,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
      * @tc.name     [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
      * @tc.desc     [ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]
@@ -4913,8 +4789,7 @@ it('[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0100]', 0, async (do
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200
@@ -4951,8 +4826,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200', 0, async (done
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300
@@ -4989,8 +4863,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300', 0, async (done
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400
@@ -5027,8 +4900,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400', 0, async (done
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500
@@ -5065,8 +4937,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500', 0, async (done
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100
@@ -5115,8 +4986,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200
@@ -5154,8 +5024,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300
@@ -5193,8 +5062,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400
@@ -5232,8 +5100,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500
@@ -5271,8 +5138,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600
@@ -5310,8 +5176,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700
@@ -5349,8 +5214,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800
@@ -5388,8 +5252,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900
@@ -5427,8 +5290,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000
@@ -5466,8 +5328,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100
@@ -5505,8 +5366,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200
@@ -5544,8 +5404,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300
@@ -5583,8 +5442,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400
@@ -5622,8 +5480,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500
@@ -5644,8 +5501,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600
@@ -5683,8 +5539,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700
@@ -5722,8 +5577,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800
@@ -5761,8 +5615,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900
@@ -5800,8 +5653,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000
@@ -5839,8 +5691,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100
@@ -5878,8 +5729,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200
@@ -5900,8 +5750,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300
@@ -5939,8 +5788,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400
@@ -5978,8 +5826,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500
@@ -6017,8 +5864,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600
@@ -6056,8 +5902,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700
@@ -6095,8 +5940,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800
@@ -6134,8 +5978,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900
@@ -6173,8 +6016,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000
@@ -6212,8 +6054,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100
@@ -6251,8 +6092,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200
@@ -6291,8 +6131,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300
@@ -6331,8 +6170,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400
@@ -6354,8 +6192,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500
@@ -6402,8 +6239,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600
@@ -6442,8 +6278,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700
@@ -6490,8 +6325,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800
@@ -6538,8 +6372,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900
@@ -6578,8 +6411,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000
@@ -6618,8 +6450,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100
@@ -6658,8 +6489,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200
@@ -6698,8 +6528,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300
@@ -6738,8 +6567,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400
@@ -6778,8 +6606,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500
@@ -6818,8 +6645,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600
@@ -6858,8 +6684,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700
@@ -6898,8 +6723,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800
@@ -6938,8 +6762,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900
@@ -6978,8 +6801,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000
@@ -7018,8 +6840,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100
@@ -7058,8 +6879,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200
@@ -7098,8 +6918,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300
@@ -7121,8 +6940,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5300', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400
@@ -7161,8 +6979,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500
@@ -7201,8 +7018,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600
@@ -7241,8 +7057,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700
@@ -7281,8 +7096,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800
@@ -7321,8 +7135,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800', 0, async (done: () => v
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
      * @tc.name     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900
      * @tc.desc     ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900

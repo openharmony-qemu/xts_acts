@@ -145,7 +145,7 @@ export default function LightWeightMapTest2() {
     //     data.forEach((i: Number): void => lightWeightMap.set('key' + i, i));
     //     data.forEach((i: Number): void => lightWeightMap.remove('key' + i));
     //     expect(lightWeightMap.isEmpty()).assertTrue();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -167,7 +167,7 @@ export default function LightWeightMapTest2() {
     //     data.forEach((i: Number): void => lightWeightMap.set('key' + i, i));
     //     lightWeightMap.clear();
     //     expect(lightWeightMap.isEmpty()).assertTrue();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -213,7 +213,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("sparrow", 356);
     //     lightWeightMap.hasAll(null);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -235,7 +235,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("sparrow", 356);
     //     lightWeightMap.hasAll(undefined);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -319,7 +319,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("squirrel", 123);
     //     expect(lightWeightMap.hasKey(null)).assertFalse();
     //     expect(lightWeightMap.hasKey(undefined)).assertFalse();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -403,7 +403,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("squirrel", 123);
     //     expect(lightWeightMap.hasValue(null)).assertFalse();
     //     expect(lightWeightMap.hasValue(undefined)).assertFalse();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -599,7 +599,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("squirrel", 123);
     //     expect(lightWeightMap.get(null)).assertUndefined();
     //     expect(lightWeightMap.get(undefined)).assertUndefined();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -856,7 +856,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("sparrow", 356);
     //     expect(lightWeightMap.getIndexOfKey(null)).assertEqual(-1);
     //     expect(lightWeightMap.getIndexOfKey(undefined)).assertEqual(-1);
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -927,7 +927,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("squirrel", 123);
     //     expect(lightWeightMap.getIndexOfValue(null)).assertEqual(-1);
     //     expect(lightWeightMap.getIndexOfValue(undefined)).assertEqual(-1);
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -1016,7 +1016,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.getKeyAt(null);
     //     lightWeightMap.getKeyAt(undefined);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -1107,7 +1107,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.setAll(null);
     //     lightWeightMap.setAll(undefined);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -1172,7 +1172,7 @@ export default function LightWeightMapTest2() {
     //     expect(lightWeightMap.get("squirrel")).assertNull();
     //     lightWeightMap.set("squirrel", undefined);
     //     expect(lightWeightMap.get("squirrel")).assertUndefined();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -1238,7 +1238,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("sparrow", 356);
     //     expect(lightWeightMap.remove(null)).assertUndefined();
     //     expect(lightWeightMap.remove(undefined)).assertUndefined();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -1419,7 +1419,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.set("squirrel", 123);
     //     expect(lightWeightMap.setValueAt(0, null)).assertTrue();
     //     expect(lightWeightMap.setValueAt(0, undefined)).assertTrue();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }
@@ -1463,7 +1463,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.setValueAt(null, 356);
     //     lightWeightMap.setValueAt(undefined, 356);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -1555,7 +1555,7 @@ export default function LightWeightMapTest2() {
     //     lightWeightMap.getValueAt(null);
     //     lightWeightMap.getValueAt(undefined);
     //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(err.code).assertEqual(401);
     //   }
@@ -1967,7 +1967,7 @@ export default function LightWeightMapTest2() {
     //       expect(lightWeightMap.length).assertEqual(10);
     //     }, str);
     //     expect(str).assertEqual(0);
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail();
     //   }

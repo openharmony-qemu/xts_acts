@@ -415,6 +415,7 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsMult
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_TypefaceCreateFromFile
+    OH_Drawing_ErrorCodeReset();
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -448,6 +449,7 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNormal, Functio
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceCreateFromFile
+    OH_Drawing_ErrorCodeReset();
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -483,6 +485,7 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNull, Function 
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceCreateFromFile
+    OH_Drawing_ErrorCodeReset();
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);

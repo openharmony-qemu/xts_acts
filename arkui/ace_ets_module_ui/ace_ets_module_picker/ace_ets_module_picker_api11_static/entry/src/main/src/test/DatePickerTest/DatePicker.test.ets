@@ -450,7 +450,7 @@ it('ArkUI_Stage_datePicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datePicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let value: PickerTextStyle = {color:0xFF808080,font:{size:'10px',weight:100}}
+        let value: PickerTextStyle = {color:0xFF808080.toInt(),font:{size:'10px',weight:100}}
         try {
           let eventData: events_emitter.EventData = {
             data: {
@@ -771,7 +771,7 @@ it('ArkUI_Stage_datepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_datepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        let value: PickerTextStyle = {color:0xFF808080,font:{size:'20px',weight:100}}
+        let value: PickerTextStyle = {color:0xFF808080.toInt(),font:{size:'20px',weight:100}}
         try {
           let eventData: events_emitter.EventData = {
             data: {

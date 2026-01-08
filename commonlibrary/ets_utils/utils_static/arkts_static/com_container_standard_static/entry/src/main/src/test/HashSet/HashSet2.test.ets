@@ -1177,14 +1177,14 @@ export default function hasSetTest2() {
      */
     it('testHashSetLength0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const hashSet = new HashSet<number>();
-      expect(String(hashSet.length)).assertEqual(0);
+      expect(String(hashSet.length)).assertEqual('0');
       hashSet.add(1);
       hashSet.add(1);
       hashSet.add(1);
       hashSet.add(1);
-      expect(String(hashSet.length)).assertEqual(1);
+      expect(String(hashSet.length)).assertEqual('1');
       hashSet.add(2);
-      expect(String(hashSet.length)).assertEqual(2);
+      expect(String(hashSet.length)).assertEqual('2');
     });
 
   })

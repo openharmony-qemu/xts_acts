@@ -133,6 +133,7 @@ struct ListItemExample43 {
       Button("collapseAll").margin("4vp").key('bt43').onClick((e: ClickEvent) => {
         this.listScroller.closeAllSwipeActions({
           onFinish: () => {
+            console.info("[listTest43]onFinish start!");
             this.closeCount = this.closeCount + 1;
           }
         })

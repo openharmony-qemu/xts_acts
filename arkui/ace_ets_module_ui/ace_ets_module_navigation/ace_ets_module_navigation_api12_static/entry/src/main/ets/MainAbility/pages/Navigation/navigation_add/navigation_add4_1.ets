@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -69,6 +69,7 @@ struct pageOne{
       Text(this.text1)
       Button('getAllPathName').onClick((event: ClickEvent) => {
         this.text1 = JSON.stringify(this.pageInfos.getAllPathName())
+        console.log('++++++++++++++pageOne',this.pageInfos.getAllPathName())
       }).id('navigation_add4_1_pageOne_btn1')
       Button('pushPageTwo').onClick((event: ClickEvent) => {
         this.index = 0
@@ -111,6 +112,7 @@ struct pageTwo{
       Text(this.text1).id('navigation_add4_1_pageTwo_text1')
       Button('getAllPathName').onClick((event: ClickEvent) => {
         this.text1 = JSON.stringify(this.pageInfos.getAllPathName())
+        console.log('++++++++++++++pageTwo',this.pageInfos.getAllPathName())
       }).id('navigation_add4_1_pageTwo_btn1')
       Button('pushPageTwo').onClick((event: ClickEvent) => {
         this.index = 0

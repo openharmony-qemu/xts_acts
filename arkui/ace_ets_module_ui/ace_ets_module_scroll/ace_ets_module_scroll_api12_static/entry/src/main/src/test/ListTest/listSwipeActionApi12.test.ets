@@ -62,8 +62,7 @@ export default function listSwipeActionApi12Test() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listSwipeActionApi12Test_static_001
      * @tc.name     listSwipeActionApi12Test_static_001
      * @tc.desc     listSwipeActionApi12Test_static_001

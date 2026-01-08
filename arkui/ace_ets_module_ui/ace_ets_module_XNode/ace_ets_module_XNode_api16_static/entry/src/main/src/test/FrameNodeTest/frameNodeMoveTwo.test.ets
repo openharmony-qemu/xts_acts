@@ -80,13 +80,14 @@ export default function frameNodeMoveTwoTest() {
 
 
 
-/**
+    /**
      * @tc.number   frameNodeMoveTwoTest_static_0100
      * @tc.name     frameNodeMoveTwoTest_static_0100
      * @tc.desc     frameNodeMoveTwoTest_static_0100
      * @tc.level    Level.LEVEL2
      */
 it('frameNodeMoveTwoTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+
       console.info('frameNodeMoveTwoTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -64,7 +64,6 @@ export default function symbolTabs() {
     
       
   
-
 /**
      * @tc.number   symbolTabs_static_0100
      * @tc.name     symbolTabs_static_0100

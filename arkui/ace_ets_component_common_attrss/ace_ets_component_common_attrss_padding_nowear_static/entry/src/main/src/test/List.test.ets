@@ -21,8 +21,8 @@ import paddingTestContainer2 from './padding/PaddingContainerLengthTest.test';
 
 export default function testsuite() {
 
-  paddingTest1(); //web
-  paddingTest2();//web
+  paddingTest1(); //web 外领域 不用管
+  paddingTest2(); //web 外领域 不用管
   paddingTestContainer1();
   paddingTestContainer2();
 

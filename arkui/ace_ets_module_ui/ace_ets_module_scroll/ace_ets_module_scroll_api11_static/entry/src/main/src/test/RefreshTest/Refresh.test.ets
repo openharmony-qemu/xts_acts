@@ -71,8 +71,7 @@ export default function RefreshTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Refresh_Visual_static_0010
      * @tc.name     ArkUX_Refresh_Visual_static_0010
      * @tc.desc     ArkUX_Refresh_Visual_static_0010
@@ -97,8 +96,7 @@ it('ArkUX_Refresh_Visual_static_0010', Level.LEVEL1, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Refresh_Visual_static_0020
      * @tc.name     ArkUX_Refresh_Visual_static_0020
      * @tc.desc     ArkUX_Refresh_Visual_static_0020
@@ -123,8 +121,7 @@ it('ArkUX_Refresh_Visual_static_0020', Level.LEVEL1, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Refresh_Visual_static_0030
      * @tc.name     ArkUX_Refresh_Visual_static_0030
      * @tc.desc     ArkUX_Refresh_Visual_static_0030
@@ -149,8 +146,7 @@ it('ArkUX_Refresh_Visual_static_0030', Level.LEVEL1, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Refresh_Visual_static_0040
      * @tc.name     ArkUX_Refresh_Visual_static_0040
      * @tc.desc     ArkUX_Refresh_Visual_static_0040
@@ -175,8 +171,7 @@ it('ArkUX_Refresh_Visual_static_0040', Level.LEVEL1, async (done: () => void): P
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUX_Refresh_Visual_static_0050
      * @tc.name     ArkUX_Refresh_Visual_static_0050
      * @tc.desc     ArkUX_Refresh_Visual_static_0050

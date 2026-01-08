@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Scroller,Scroll,List,ColorFilter,CopyOptions,Im
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 import { ImageModifier } from "@ohos.arkui.modifier";
 import { AppStorage } from '@ohos.arkui.stateManagement';

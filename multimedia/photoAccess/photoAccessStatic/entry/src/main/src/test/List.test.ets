@@ -67,6 +67,7 @@ import albumCommitModifyTest from "./Album/commitModify.test.ets"
 import removeAssetsTest from "./Album/removeAssets.test.ets"
 import getAlbumChangeRequestTest from "./MediaAlbumChangeRequest/getAlbum.test.ets"
 import setAlbumNameChangeRequestTest from "./MediaAlbumChangeRequest/setAlbumName.test.ets"
+import registerPhotoChangeTest from "./PhotoAccessHelper/registerPhotoChange.test.ets"
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -123,4 +124,5 @@ export default function testsuite() {
   removeAssetsTest();
   getAlbumChangeRequestTest();
   setAlbumNameChangeRequestTest();
+  registerPhotoChangeTest();
 }

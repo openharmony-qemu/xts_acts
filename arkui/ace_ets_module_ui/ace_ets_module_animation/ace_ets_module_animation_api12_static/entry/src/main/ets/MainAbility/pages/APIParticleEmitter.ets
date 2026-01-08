@@ -39,14 +39,6 @@ import CommonFunc from '../common/Common';
 @Entry
 @Component
 struct APIParticleEmitter {
-  // @State emitterProperties: Array<EmitterProperty> = [
-  //   {
-  //     index: 0,
-  //     emitRate: 100,
-  //     position: { x: 60, y: 80 },
-  //     size: { width: 200, height: 200 }
-  //   }
-  // ] as Array<EmitterProperty>
   @State text: string = 'start'
 
   aboutToAppear() {
@@ -115,7 +107,6 @@ struct APIParticleEmitter {
         })
           .width('50%')
           .height('50%')
-          // .emitter(this.emitterProperties)
           .emitter([
             {
               index: 0,
@@ -138,7 +129,7 @@ struct APIParticleEmitter {
             && (JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson)
               .getElement('$attrs')))?.getElement('emitter')?.getDouble('length') as number) > 0) {
             this.text = JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson)
-              .getElement('$attrs')))?.getElement('emitter')[0]?.getString('index') + ''
+              .getElement('$attrs'))).getElement('emitter')[0].getString('index') + ''
           } else {
             this.text = 'does not exist'
           }

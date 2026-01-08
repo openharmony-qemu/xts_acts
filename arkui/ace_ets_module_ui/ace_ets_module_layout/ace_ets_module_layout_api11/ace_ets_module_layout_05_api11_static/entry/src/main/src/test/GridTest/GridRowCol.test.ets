@@ -86,10 +86,10 @@ it('GridRowCol_static_001', Level.LEVEL0, async (done: () => void): Promise<void
       console.info("[GridRowCol_static_001] component obj is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(GridItem02.left - GridItem01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(GridItem03.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(GridItem11.top - GridItem03.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem02.left - GridItem01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem03.top - GridItem00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem11.top - GridItem03.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridRowCol_static_001] END');
       done();
@@ -167,7 +167,7 @@ it('GridRowCol_static_004', Level.LEVEL0, async (done: () => void): Promise<void
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem01.top - GridItem00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridRowCol_static_004] END');
       done();
@@ -193,7 +193,7 @@ it('GridRowCol_static_005', Level.LEVEL0, async (done: () => void): Promise<void
       let GridItem01 = CommonFunc.getComponentRect('GridItem01');
       await CommonFunc.sleep(1000);
 
-	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(GridItem01.left - GridItem00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[GridRowCol_static_005] END');
       done();

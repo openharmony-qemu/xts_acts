@@ -59,8 +59,7 @@ export default function gridMaxCountJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testcheckgridMaxCount0001_static_01
      * @tc.name     testcheckgridMaxCount0001_static_01
      * @tc.desc     testcheckgridMaxCount0001_static_01
@@ -79,8 +78,7 @@ it('testcheckgridMaxCount0001_static_01', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testEdgeEffectOptions0002_static_02
      * @tc.name     testEdgeEffectOptions0002_static_02
      * @tc.desc     testEdgeEffectOptions0002_static_02
@@ -101,8 +99,7 @@ it('testEdgeEffectOptions0002_static_02', Level.LEVEL0, async () => {
 
 
     
-    
-/**
+    /**
      * @tc.number   testEdgeEffectOptions0003_static_03
      * @tc.name     testEdgeEffectOptions0003_static_03
      * @tc.desc     testEdgeEffectOptions0003_static_03

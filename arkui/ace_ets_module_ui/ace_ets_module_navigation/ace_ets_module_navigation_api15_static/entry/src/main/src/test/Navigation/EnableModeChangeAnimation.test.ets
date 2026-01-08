@@ -77,6 +77,7 @@ export default function EnableModeChangeAnimation() {
      * @tc.level    Level.LEVEL0
      */
 it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableModeChangeAnimation_0100 START');
       await CommonFunc.sleep(200);
 
@@ -119,6 +120,7 @@ it('EnableModeChangeAnimation_static_0100', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('EnableModeChangeAnimation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('EnableModeChangeAnimation_0200 START');
       await CommonFunc.sleep(200);
 

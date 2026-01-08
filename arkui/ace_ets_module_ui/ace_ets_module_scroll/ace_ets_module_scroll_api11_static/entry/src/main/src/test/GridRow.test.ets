@@ -81,8 +81,7 @@ export default function gridRowXlJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testgridRowXl_static_0001
      * @tc.name     testgridRowXl_static_0001
      * @tc.desc     testgridRowXl_static_0001

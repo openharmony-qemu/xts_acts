@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ struct TimePickerPage {
   @State hour: number = 10
   @State isLunar: boolean = false
   @State minute: number = 0
-  @State onChangeOff: string = 'false'
-  @State onDateChangeOff: string = 'false'
+  @State onChangeOff: string = 'true'
+  @State onDateChangeOff: string = 'true'
   // messageManager: MessageManager = new MessageManager()
   @State enableCascade: boolean | undefined | null = true
   @State modifier:DatePickerModifier = new DatePickerModifier().onDateChange((value: Date) => {
@@ -43,10 +43,9 @@ struct TimePickerPage {
     console.info('check002 DatePickerOnDateChangeModifier select: ' + value.toString())
   })
   @State modifier1:DatePickerModifier = new DatePickerModifier().onDateChange((value: Date) => {
-    // console.info('check002 DatePickerOnchange modifier select current year is: ' + value.year)
-    // console.info('check002 DatePickerOnchange modifier select current month is: ' + value.month)
-    // console.info('check002 DatePickerOnchange modifier select current day is: ' + value.day)
-    console.log('++++++++++++modifier1')
+    // console.info('check002 DatePickerOnchange modifier select current year is: ',value.year)
+    // console.info('check002 DatePickerOnchange modifier select current month is: ',value.month)
+    // console.info('check002 DatePickerOnchange modifier select current day is: ', value.day)
     this.onChangeOff = 'true'
   })
 
@@ -68,8 +67,8 @@ struct TimePickerPage {
       })
         .id('DatePicker')
         .lunar(this.isLunar)
-        .attributeModifier(this.modifier1 as DatePickerModifier) //回调未执行
         .attributeModifier(this.modifier as DatePickerModifier)
+        .attributeModifier(this.modifier1 as DatePickerModifier)
 
       Text(this.onChangeOff.toString()).key('onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onDateChangeOff')

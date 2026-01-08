@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,7 +33,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CustomDialogTest() {
   describe('CustomDialogTest', () => {
     beforeAll(() => {
-
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
 
@@ -44,15 +43,15 @@ export default function CustomDialogTest() {
       }
       try {
         const CustomDialogTest = AppStorage.get<Router>("router") as Router
-        CustomDialogTest.clear();
+        // CustomDialogTest.clear();
         let pages:router.RouterState = CustomDialogTest.getState();
         console.info("get CustomDialogTest state pages: " + JSON.stringify(pages));
         if (!("CustomDialogTest" == pages.name)) {
           console.info("get CustomDialogTest state pages.name: " + JSON.stringify(pages.name));
-          // let result = await CustomDialogTest.pushUrl(options);
+          
           CustomDialogTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CustomDialogTest success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);

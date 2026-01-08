@@ -29,16 +29,6 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
-// function sleep(time: number) {
-//   return new Promise<void>((resolve, reject) => {
-//     setTimeout((): void => {
-//       resolve()
-//     }, time)
-//   }).then((): void => {
-//     console.info( `sleep ${time} over...`)
-//   })
-// }
-
 export default function BigUint64ArrayTest() {
   describe('BigUint64ArrayTest', (): void => {
     afterEach(() => {
@@ -181,7 +171,6 @@ export default function BigUint64ArrayTest() {
         expect(false).assertFail();
       }
     });
-
 
     /**
      * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIG_UINT64ARRAY_CONSTRUCTOR_0800
@@ -1000,7 +989,6 @@ export default function BigUint64ArrayTest() {
         let array: Array<number> = new Array<number>(2);
         array[0] = 21;
         array[1] = 31;
-        //let bigIntArray = array.map(num => BigInt(num));
         let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });
@@ -1028,7 +1016,6 @@ export default function BigUint64ArrayTest() {
         let array: Array<number> = new Array<number>(2);
         array[0] = 21;
         array[1] = 31;
-        //let bigIntArray = array.map(num => BigInt(num));
         let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });
@@ -1931,29 +1918,6 @@ export default function BigUint64ArrayTest() {
     });
 
     /**
-     * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64ARRAY_CONSTRUCTOR_9400
-     * @tc.name         testBigUint64Constructor0094
-     * @tc.desc         Testing Constructor of BigUint64Array with Float64Array threshold value([-1.8e308]),
-     * and get value of index 0 is 0.
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
-     */
-    // it('testBigUint64Constructor0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testBigUint64Constructor0094";
-    //   try {
-    //     let MIN_VALUE = -1.8e308;
-    //     let array1 = new Float64Array([MIN_VALUE]);
-    //     let array = new BigUint64Array([BigInt(array1[0])]);
-    //    expect(false).assertFail();
-    //   }catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('RangeError');
-    //     expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
-    //   }
-    // });
-
-    /**
      * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64ARRAY_CONSTRUCTOR_9500
      * @tc.name         testBigUint64Constructor0095
      * @tc.desc         Testing Constructor of BigUint64Array with Float64Array out of bounds value([-1.8e308 -1]),
@@ -1962,65 +1926,19 @@ export default function BigUint64ArrayTest() {
      * @tc.type         Function
      * @tc.level        Level 1
      */
-    // it('testBigUint64Constructor0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testBigUint64Constructor0095";
-    //   try {
-    //     let MIN_VALUE = -1.8e308 -1;
-    //     let array1 = new Float64Array([MIN_VALUE]);
-    //     let array = new BigUint64Array([BigInt(array1[0])]);
-    //    expect(false).assertFail();
-    //   }catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('RangeError');
-    //     expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
-    //   }
-    // });
-
-    /**
-     * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64ARRAY_CONSTRUCTOR_9600
-     * @tc.name         testBigUint64Constructor0096
-     * @tc.desc         Testing Constructor of BigUint64Array with Float64Array threshold value([1.8e308]),
-     * and get value of index 0 is 0.
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
-     */
-    // it('testBigUint64Constructor0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testBigUint64Constructor0096";
-    //   try {
-    //     let MAX_VALUE = 1.8e308;
-    //     let array1 = new Float64Array([MAX_VALUE]);
-    //     let array = new BigUint64Array([BigInt(array1[0])]);
-    //    expect(false).assertFail();
-    //   }catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('RangeError');
-    //     expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
-    //   }
-    // });
-
-    /**
-     * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64ARRAY_CONSTRUCTOR_9700
-     * @tc.name         testBigUint64Constructor0097
-     * @tc.desc         Testing Constructor of BigUint64Array with Float64Array out of bounds value([1.8e308 + 1]),
-     * and get value of index 0 is 0.
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
-     */
-    // it('testBigUint64Constructor0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testBigUint64Constructor0097";
-    //   try {
-    //     let MAX_VALUE = 1.8e308 + 1;
-    //     let array1 = new Float64Array([MAX_VALUE]);
-    //     let array = new BigUint64Array([BigInt(array1[0])]);
-    //    expect(false).assertFail();
-    //   }catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.name).assertEqual('RangeError');
-    //     expect(err.message).assertContain('The number cannot be converted to a BigInt because it is not an integer');
-    //   }
-    // });
+    it('testBigUint64Constructor0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testBigUint64Constructor0095";
+      try {
+        let MIN_VALUE = -1.8e308 -1;
+        let array1 = new Float64Array([MIN_VALUE]);
+        let array = new BigUint64Array([BigInt(array1[0])]);
+        expect(false).assertFail();
+      }catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(err.name).assertEqual('RangeError');
+        expect(err.message).assertContain('the Double value -Infinity cannot be converted to a BigInt because it is not an integer');
+      }
+    });
 
     /**
      * @tc.number       SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64ARRAY_CONSTRUCTOR_9800
@@ -2465,7 +2383,6 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64ArrayFrom0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64ArrayFrom0118";
       try {
-        // let array = BigUint64Array.from([BigInt(1), BigInt(2), BigInt(3)]);
         let array = BigUint64Array.from(new Array<BigInt>(BigInt(1), BigInt(2), BigInt(3)));
         expect(String(array[0])).assertEqual('1');
         expect(String(array[1])).assertEqual('2');

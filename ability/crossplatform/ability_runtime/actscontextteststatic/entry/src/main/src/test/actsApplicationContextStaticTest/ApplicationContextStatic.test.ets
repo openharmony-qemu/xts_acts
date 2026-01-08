@@ -61,7 +61,7 @@ export default function ApplicationContextStatic() {
           expect(data[0].bundleNames[0] == "com.example.contexttest.static").assertTrue();
           console.log(`testGetRunningProcessInformationPromise001 success`);
           done();
-        }).catch<void>((err: BusinessError): void => {
+        }).catch<void>((err: Error): void => {
           console.log(`testGetRunningProcessInformationPromise001 fail ` + err.message);
           expect().assertFail();
           done();
@@ -98,7 +98,7 @@ export default function ApplicationContextStatic() {
           console.log(`testGetRunningProcessInformationCb001 success`);
           done();
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.log(`testGetRunningProcessInformationCb001 fail ` + err);
         expect().assertFail();
         done();

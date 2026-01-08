@@ -117,8 +117,8 @@ it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): 
       Math.abs(Flex1.left - Column1_1.left));
       console.info('[FlexSpaceResourceTest_0010] Column1_1.left - Column1_3.left: ' +
       Math.abs(Column1_1.left - Column1_3.left));
-      console.info('[FlexSpaceResourceTest_0010] Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10.9): ' +
-      Math.abs(Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10.9)));
+      console.info('[FlexSpaceResourceTest_0010] Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10.9): ' +
+      Math.abs(Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10.9)));
       console.info('[FlexSpaceResourceTest_0010] Column1_3.top - Column1_1.bottom: ' +
       Math.abs(Column1_3.top - Column1_1.bottom));
 
@@ -126,7 +126,7 @@ it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): 
       expect(Math.floor(Math.abs(Column1_1.top - Column1_2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Flex1.left - Column1_1.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_1.left - Column1_3.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10.9))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_3.top - Column1_1.bottom)) <= 1).assertTrue();
 
       console.info('[FlexSpaceResourceTest_0010] END');
@@ -168,15 +168,15 @@ it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): 
       Math.abs(Column1_1.left - Column1_3.left));
       console.info('[FlexSpaceResourceTest_0020] Math.abs(Column1_2.left - Column1_1.right): ' +
       Math.abs(Column1_2.left - Column1_1.right));
-      console.info('[FlexSpaceResourceTest_0020] Math.abs(Column1_3.top - Column1_1.bottom - UIContext.getFocusedUIContext()!.vp2px(10)): ' +
-      Math.abs(Column1_3.top - Column1_1.bottom - UIContext.getFocusedUIContext()!.vp2px(10)));
+      console.info('[FlexSpaceResourceTest_0020] Math.abs(Column1_3.top - Column1_1.bottom - UIContext.resolveUIContext()!.vp2px(10)): ' +
+      Math.abs(Column1_3.top - Column1_1.bottom - UIContext.resolveUIContext()!.vp2px(10)));
 
       expect(Math.floor(Math.abs(Flex1.top - Column1_1.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_1.top - Column1_2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Flex1.left - Column1_1.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_1.left - Column1_3.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_2.left - Column1_1.right)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_3.top - Column1_1.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_3.top - Column1_1.bottom - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[FlexSpaceResourceTest_0020] END');
       done();
@@ -216,8 +216,8 @@ it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): 
       Math.abs(Flex1.left - Column1_1.left));
       console.info('[FlexSpaceResourceTest_0030] Math.abs(Column1_1.left - Column1_3.left): ' +
       Math.abs(Column1_1.left - Column1_3.left));
-      console.info('[FlexSpaceResourceTest_0030] Math.abs(Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10)): ' +
-      Math.abs(Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10)));
+      console.info('[FlexSpaceResourceTest_0030] Math.abs(Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10)): ' +
+      Math.abs(Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10)));
       console.info('[FlexSpaceResourceTest_0030] Math.abs(Column1_3.top - Column1_1.bottom - 10): ' +
       Math.abs(Column1_3.top - Column1_1.bottom - 10));
 
@@ -225,7 +225,7 @@ it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): 
       expect(Math.floor(Math.abs(Column1_1.top - Column1_2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Flex1.left - Column1_1.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_1.left - Column1_3.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_2.left - Column1_1.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_2.left - Column1_1.right - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Column1_3.top - Column1_1.bottom - 10)) <= 1).assertTrue();
 
       console.info('[FlexSpaceResourceTest_0030] END');

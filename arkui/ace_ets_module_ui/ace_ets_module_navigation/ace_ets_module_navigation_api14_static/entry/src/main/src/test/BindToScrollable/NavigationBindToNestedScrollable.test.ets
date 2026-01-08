@@ -78,6 +78,7 @@ export default function NavigationBindToNestedScrollable() {
      * @tc.level    Level.LEVEL0
      */
 it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavigationBindToNestedScrollable_0100 START');
       let driver = Driver.create();
       let uiContext =AppStorage.get<UIContext>('uiContext');
@@ -126,7 +127,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom - uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top) as int);
+      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom - uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top) as int); //master22
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       

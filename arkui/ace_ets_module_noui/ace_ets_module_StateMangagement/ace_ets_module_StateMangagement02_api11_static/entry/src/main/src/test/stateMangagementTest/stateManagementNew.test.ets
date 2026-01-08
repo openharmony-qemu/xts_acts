@@ -216,10 +216,12 @@ it('test_staticClear_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('test_staticClear_0001 Register a customized font in the FontManagerSTART');
       await CommonFunc.sleep(2000);
       try {
+
+        const routerInstance = AppStorage.get<Router>("router") as Router
         let simple = AppStorage.clear();
         console.info('simple is ' + simple)
-        expect(simple).assertTrue();  //和1.1的区别为，无订阅者返回true。
-
+        expect(simple).assertTrue();
+        AppStorage.setOrCreate<Router>('router', routerInstance);
       } catch (err) {
         console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
         expect(true).assertTrue();

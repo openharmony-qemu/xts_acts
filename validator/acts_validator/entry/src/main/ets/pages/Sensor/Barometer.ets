@@ -119,7 +119,7 @@ struct Barometer {
           .height('20vp')
       }
       .margin({ bottom: '20vp' })
-      .width('30%')
+      .width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .opacity(0.4)
@@ -134,7 +134,7 @@ struct Barometer {
           .height('20vp')
       }
       .margin({ bottom: '20vp' })
-      .width('30%')
+      .width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -159,7 +159,7 @@ struct Barometer {
         .height('20vp')
     }
     .margin({ bottom: '20vp' })
-    .width('30%')
+    .width('20%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -177,34 +177,37 @@ struct Barometer {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+      Scroll(){
+        Row({space:20}) {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'None' }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Sensor/Sensor_index',
-            params: { result: 'None' }
-          })
-        })
+        .height('20%')
+        .width('130%')
+        .justifyContent(FlexAlign.Center)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
 
       Column() {
         Text('气压值: ' + this.dataBarometer)
@@ -212,16 +215,16 @@ struct Barometer {
           .fontSize('18fp')
           .textAlign(TextAlign.Start)
           .width('100%')
-          .margin({ bottom: 24 })
+
         Text('触发订阅的次数: ' + this.backCount)
           .fontColor(Color.White)
           .fontSize('18fp')
           .textAlign(TextAlign.Start)
           .width('100%')
-          .margin({ bottom: 24 })
+
       }
       .width('80%')
-      .height('30%')
+      .height('10%')
 
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start, direction: FlexDirection.Column }) {
         Scroll() {
@@ -245,39 +248,43 @@ struct Barometer {
         .scrollBarWidth(10)
       }
       .width('80%')
-      .height('50%')
+      .height('45%')
+      .margin({ top: '10vp' })
 
-      Row() {
-        this.PassBtn($r('app.string.btn_fullscreen'), true);
-        Button() {
-          Image($r('app.media.ic_public_help'))
-            .width('20vp')
-            .height('20vp')
-        }
-        .margin({ bottom: '20vp' })
-        .width('30%')
-        .height('30vp')
-        .backgroundColor(Color.Grey)
-        .onClick(() => {
-          AlertDialog.show(
-            {
-              title: '操作提示',
-              message: this.StepTips,
-              confirm: {
-                value: 'OK',
-                action: () => {
+      Scroll(){
+        Row({space:12}) {
+          this.PassBtn($r('app.string.btn_fullscreen'), true);
+          Button() {
+            Image($r('app.media.ic_public_help'))
+              .width('20vp')
+              .height('20vp')
+          }
+          .margin({ bottom: '20vp' })
+          .width('20%')
+          .height('30vp')
+          .backgroundColor(Color.Grey)
+          .onClick(() => {
+            AlertDialog.show(
+              {
+                title: '操作提示',
+                message: this.StepTips,
+                confirm: {
+                  value: 'OK',
+                  action: () => {
+                  }
                 }
               }
-            }
-          )
-        })
+            )
+          })
 
-        this.FailBtn($r('app.string.btn_fullscreen'), true);
-      }
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceEvenly)
-      .backgroundColor(Color.Black)
+          this.FailBtn($r('app.string.btn_fullscreen'), true);
+        }
+        .height('22%')
+        .width('130%')
+        .justifyContent(FlexAlign.Center)
+        .backgroundColor(Color.Black)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
+
     }
     .width('100%')
     .height('100%')

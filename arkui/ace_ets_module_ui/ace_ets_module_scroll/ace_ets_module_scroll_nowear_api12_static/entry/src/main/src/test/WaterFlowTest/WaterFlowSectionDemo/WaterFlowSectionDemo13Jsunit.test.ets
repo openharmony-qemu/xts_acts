@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WaterFlowSectionDemo13Jsunit() {
   describe('WaterFlowSectionDemo13Jsunit', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowSectionDemo13Jsunit beforeEach start");
@@ -62,7 +62,7 @@ it('WaterFlowSectionDemo13Jsunit_static_0100', Level.LEVEL1, async (done: () => 
       await CommonFunc.sleep(2000);
       console.log('WaterFlowSectionDemo13Jsunit_1111',str0.right,str1.left)
       console.log('WaterFlowSectionDemo13Jsunit_2222',str1.left - str0.right)
-      expect(Math.abs(Math.round(str1.left - str0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(str1.left - str0.right) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('WaterFlowSectionDemo13Jsunit_static_0100 END')
       done();
     });

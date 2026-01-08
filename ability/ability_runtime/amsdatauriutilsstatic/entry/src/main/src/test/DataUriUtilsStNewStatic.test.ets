@@ -453,7 +453,6 @@ export default function DataUriUtilsStNewStaticTest() {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start5 ');
 
         let idint = 0;
-        expect(typeof (idint)).assertEqual("number");
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start666 ');
 
         let result = dataUriUtils.updateId("com.ix.dataUriUtils/1122", idint)

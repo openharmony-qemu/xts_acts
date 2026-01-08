@@ -118,9 +118,9 @@ it('sheetSize1Jsunit_static_0200', Level.LEVEL2, async (done: () => void): Promi
       let button = (await driver.findComponent(ON.id('bindSheet_SheetSize1')));
       await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
-      await (driver.click(Math.round(AppStorage.get<number>("winLeft") ?? 0 + 50) as int,
-        Math.round(AppStorage.get<number>("winTop") ?? 0 + 50) as int) as Promise<void>)
-      await CommonFunc.sleep(1000);
+      await (driver.click(Math.round(AppStorage.get<number>("winLeft") ?? 0 + 50).toInt(),
+        Math.round(AppStorage.get<number>("winTop") ?? 0 + 50).toInt()) as Promise<void>)
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('bindSheet_dismiss1');
       await CommonFunc.sleep(1000);
       console.info("[sheetSize1Jsunit_0200] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

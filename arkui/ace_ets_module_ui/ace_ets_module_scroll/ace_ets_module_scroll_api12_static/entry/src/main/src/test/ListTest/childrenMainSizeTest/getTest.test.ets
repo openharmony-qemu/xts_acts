@@ -70,8 +70,7 @@ export default function getTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   getTest_static_0100
      * @tc.name     getTest_static_0100
      * @tc.desc     getTest_static_0100

@@ -129,7 +129,7 @@ export default function swiperSecTest() {
         if (pages == null || !("Swipersec" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`SwiperSec router.pushUrl success`);
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             console.error(`SwiperSec router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }

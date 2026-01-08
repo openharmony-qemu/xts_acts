@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,7 +114,7 @@ struct frameNodeMoveTwo {
       }
       node2?.moveTo(this.myNodeController3.columnNode!, 0)
 
-      this.frame1ChildCount = this.myNodeController1.rootNode!.getFirstChild()!.getChildrenCount(); //appDied
+      this.frame1ChildCount = this.myNodeController1.rootNode!.getFirstChild()!.getChildrenCount();
       this.frame2ChildCount = this.myNodeController2.rootNode!.getFirstChild()!.getChildrenCount();
       this.frame3ChildCount = this.myNodeController3.rootNode!.getFirstChild()!.getChildrenCount();
 

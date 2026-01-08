@@ -94,12 +94,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext stageMode: ' + JSON.stringify(Context.stageMode));
           expect(Context.stageMode + "").assertEqual("true");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
         expect().assertFail();
         done()
@@ -122,12 +122,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + JSON.stringify(Context.applicationInfo.name));
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
         expect().assertFail();
         done()
@@ -151,12 +151,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + `${Context.applicationInfo.name}`);
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'err: createContext fail');
           expect(error.code).assertEqual(401);
           done()
         })
-      } catch (paramError: Error) {
+      } catch (paramError) {
         let code: number = (paramError as BusinessError).code;
         hilog.info(domain, tag, 'createContext fail');
         expect().assertFail();

@@ -81,7 +81,7 @@ struct getColor1 {
         .key('getSet_color')
         .id('getSet_color')
         .onClick((e: ClickEvent) => {
-          renderNode.backgroundColor = 0XFF00FF00
+          renderNode.backgroundColor = 0XFF00FF00.toInt()
           this.bgc = renderNode.backgroundColor
         })
     }

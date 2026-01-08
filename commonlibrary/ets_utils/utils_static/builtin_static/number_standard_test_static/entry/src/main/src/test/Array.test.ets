@@ -940,10 +940,10 @@ export default function ArrayTest() {
     it("testArrayCreate005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate005';
       try {
-        let array = Array.create<number>(Infinity, 0);
+        let array = Array.create<number>(6 * Int.MAX_VALUE, 0);
       } catch (err) {
         err = err as Error;
-        expect(err.message).assertEqual('AllocateObject failed');
+        expect(err.message).assertEqual('size = -6');
         console.error(`Expected error caught: ${err.message}`);
       }
     });
@@ -979,11 +979,11 @@ export default function ArrayTest() {
     it("testArrayCreate007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate007';
       try {
-        let array = Array.create<number>(Number.MAX_SAFE_INTEGER, 0);
+        let array = Array.create<number>(2 * Int.MAX_VALUE, 0);
       } catch (err) {
         err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('AllocateObject failed');
+        expect(err.message).assertEqual('size = -2');
       }
     });
 
@@ -1017,12 +1017,12 @@ export default function ArrayTest() {
     it("testArrayCreate009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate009';
       try {
-        let array = Array.create<number>(Number.MAX_VALUE, 0);
+        let array = Array.create<number>(8 * Int.MAX_VALUE, 0);
         expect(array.length).assertEqual(8);
       } catch (err) {
         err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('AllocateObject failed');
+        expect(err.message).assertEqual('size = -8');
       }
     });
 
@@ -1098,11 +1098,11 @@ export default function ArrayTest() {
     it("testArrayCreate013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate013';
       try {
-        let array = Array.create<number>(Number.POSITIVE_INFINITY, 0);
+        let array = Array.create<number>(4 * Int.MAX_VALUE, 0);
       } catch (err) {
         err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('AllocateObject failed');
+        expect(err.message).assertEqual('size = -4');
       }
     });
 

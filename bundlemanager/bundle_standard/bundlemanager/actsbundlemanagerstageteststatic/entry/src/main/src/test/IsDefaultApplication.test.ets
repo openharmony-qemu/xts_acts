@@ -66,7 +66,7 @@ export default function isDefaultApplicationTest() {
             hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 success, boolean: ' + result);
             expect(result).assertFalse();
             done();
-          }, (err: BusinessError<void>): void => {
+          }, (err: Error): void => {
             if (err.code != 0) {
               hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 failed: %{public}s',
                 JSON.stringify(err));

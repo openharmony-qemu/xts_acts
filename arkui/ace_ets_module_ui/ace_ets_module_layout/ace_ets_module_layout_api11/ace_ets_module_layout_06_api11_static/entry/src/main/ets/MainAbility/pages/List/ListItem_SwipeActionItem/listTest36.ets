@@ -167,6 +167,7 @@ struct ListItemExample36 {
             }
           ,
             onOffsetChange: (offset: number) => {
+              console.info('[listTest36.ets] onOffsetChange start! ');
               this.swipeOffSet = offset + "";
             }
 

@@ -81,8 +81,7 @@ export default function gridColXlJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testgridColXl_static_0001
      * @tc.name     testgridColXl_static_0001
      * @tc.desc     testgridColXl_static_0001
@@ -102,8 +101,7 @@ it('testgridColXl_static_0001', Level.LEVEL1, async (done: () => void): Promise<
 
 
     
-    
-/**
+    /**
      * @tc.number   testgridColXl_static_0002
      * @tc.name     testgridColXl_static_0002
      * @tc.desc     testgridColXl_static_0002

@@ -22,7 +22,10 @@ import common from '@ohos.app.ability.common';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { image } from '@kit.ImageKit';
 import { PermissionRequestResult, Permissions } from '@kit.AbilityKit';
+import { colorSpaceManager } from '@kit.ArkGraphics2D';
 import { isSupportedCameras } from './common';
+import hdrCapability from '@ohos.graphics.hdrCapability';
+import display from '@ohos.display';
 import arriveOnNdkTest from 'libArriveOnNdk.so';
 
 let WIDTH = 1280;
@@ -34,6 +37,7 @@ let SET_CAPACITY = 6;
 let Jpg_Stride = 1;
 let isSupportedCamerasResult = isSupportedCameras();
 let isSupportCameraVideoProfiles = true;
+let isSupportHdr: Boolean;
 
 let RGBA = 12;
 let RECEIVER_FORMAT = 2000;
@@ -44,7 +48,16 @@ const CALLBACK_FUC_02 = 2;
 const CALLBACK_FUC_03 = 3;
 const CALLBACK_FUC_04 = 4;
 const PARA_ERROR_CODE = 7900201;
-    
+const UNSUPPORT_CAMERA_FORMAT = -1;
+
+const TEST_TYPE_PREVIEW = 0;
+const TEST_TYPE_PHOTO = 1;
+const CAMERA_FORMAT_JPEG = cameraObj.CameraFormat.CAMERA_FORMAT_JPEG;
+const CAMERA_FORMAT_RGBA_8888 = cameraObj.CameraFormat.CAMERA_FORMAT_RGBA_8888;
+const CAMERA_FORMAT_YUV_420_SP = cameraObj.CameraFormat.CAMERA_FORMAT_YUV_420_SP;
+const CAMERA_FORMAT_YCBCR_P010 = cameraObj.CameraFormat.CAMERA_FORMAT_YCBCR_P010;
+const CAMERA_FORMAT_YCRCB_P010 = cameraObj.CameraFormat.CAMERA_FORMAT_YCRCB_P010;
+
 let sleep = (ms?: number | undefined): Promise<void> => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -93,6 +106,10 @@ let createReceiverErr = async (done: Function, TAG: String, width: ESObject, hei
         expect(false).assertTrue();
         done();
     }
+}
+
+function isValidColorSpace(value: number): boolean {
+  return Object.values(colorSpaceManager.ColorSpace).includes(value);
 }
 
 let getUserData = (userCallBackId: number, userNum: number, userStr: string, userCallbackTag: boolean): arriveOnNdkTest.onImageArriveData => {
@@ -203,6 +220,8 @@ export default function ImageReceiverTest() {
                 isSupportCameraVideoProfiles = false;
                 console.info(`Not support camera Video Profiles`);
             }
+            isSupportHdr = !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
+                           display.getDefaultDisplaySync().hdrFormats.length != 0;
         });
 
         beforeEach(() => {
@@ -1482,5 +1501,248 @@ export default function ImageReceiverTest() {
             }
         });
 
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0100
+         * @tc.desc   1.createImageReceiver
+         *            2.start preview
+         *            3.readNextImage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0100`;
+            if (!isSupportedCamerasResult) {
+                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
+                done();
+                return;
+            }
+            if (!isSupportHdr) {
+                console.info(`${TAG} device is not supported HDR, skipping test case`);
+                done();
+                return;
+            }
+            const receiver: image.ImageReceiver = arriveOnNdkTest.createReceiver();
+            const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
+            expect(arriveOnNdkTest.imageArriveOn(receiver, myData) == IMAGE_SUCCESS).assertTrue();
+            let status = arriveOnNdkTest.imageReceiverTest(receiver, CAMERA_FORMAT_YUV_420_SP, TEST_TYPE_PREVIEW);
+            if (status == UNSUPPORT_CAMERA_FORMAT) {
+                console.info(`${TAG} device is not supported YCRCB_P010 format, skipping test case`);
+                expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+                expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+                done();
+                return;
+            }
+            expect(status == IMAGE_SUCCESS).assertTrue();
+            const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+            expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+            expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+            let ret = false;
+            if (typeof result != 'number') {
+                console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
+                ret = result.imageInfo!.format == 25 &&
+                      result.imageInfo!.strideAlignedRet == true &&
+                      isValidColorSpace(result.imageInfo!.colorSpace) &&
+                      result.pixelMapInfo!.width > 0 &&
+                      result.pixelMapInfo!.height > 0 &&
+                      result.pixelMapInfo!.pixelFormat == image.PixelMapFormat.NV21;
+            } else {
+                console.info(`${TAG} result is number ${result}`);
+            }
+            expect(ret).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0200
+         * @tc.desc   1.createImageReceiver
+         *            2.start preview
+         *            3.readNextImage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0200', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0200`;
+            if (!isSupportedCamerasResult) {
+                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
+                done();
+                return;
+            }
+            if (!isSupportHdr) {
+                console.info(`${TAG} device is not supported HDR, skipping test case`);
+                done();
+                return;
+            }
+            const receiver: image.ImageReceiver = arriveOnNdkTest.createReceiver();
+            const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
+            expect(arriveOnNdkTest.imageArriveOn(receiver, myData) == IMAGE_SUCCESS).assertTrue();
+            let status = arriveOnNdkTest.imageReceiverTest(receiver, CAMERA_FORMAT_YCBCR_P010, TEST_TYPE_PREVIEW);
+            if (status == UNSUPPORT_CAMERA_FORMAT) {
+                console.info(`${TAG} device is not supported YCRCB_P010 format, skipping test case`);
+                expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+                expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+                done();
+                return;
+            }
+            expect(status == IMAGE_SUCCESS).assertTrue();
+            const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+            expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+            expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+            let ret = false;
+            if (typeof result != 'number') {
+                console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
+                ret = result.imageInfo!.format == 35 &&
+                      result.imageInfo!.strideAlignedRet == true &&
+                      isValidColorSpace(result.imageInfo!.colorSpace);
+            } else {
+                console.info(`${TAG} result is number ${result}`);
+            }
+            expect(ret).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0300
+         * @tc.desc   1.createImageReceiver
+         *            2.start preview
+         *            3.readNextImage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0300', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_PREVIEW_READ_IMAGE_0300`;
+            if (!isSupportedCamerasResult) {
+                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
+                done();
+                return;
+            }
+            if (!isSupportHdr) {
+                console.info(`${TAG} device is not supported HDR, skipping test case`);
+                done();
+                return;
+            }
+            const receiver: image.ImageReceiver = arriveOnNdkTest.createReceiver();
+            const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
+            expect(arriveOnNdkTest.imageArriveOn(receiver, myData) == IMAGE_SUCCESS).assertTrue();
+            let status = arriveOnNdkTest.imageReceiverTest(receiver, CAMERA_FORMAT_YCRCB_P010, TEST_TYPE_PREVIEW);
+            if (status == UNSUPPORT_CAMERA_FORMAT) {
+                console.info(`${TAG} device is not supported YCRCB_P010 format, skipping test case`);
+                expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+                expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+                done();
+                return;
+            }
+            expect(status == IMAGE_SUCCESS).assertTrue();
+            const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+            expect(arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+            expect(arriveOnNdkTest.releaseImageReceiver(receiver) == IMAGE_SUCCESS).assertTrue();
+            let ret = false;
+            if (typeof result != 'number') {
+                console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
+                ret = result.imageInfo!.format == 36 &&
+                      result.imageInfo!.strideAlignedRet == true &&
+                      isValidColorSpace(result.imageInfo!.colorSpace);
+            } else {
+                console.info(`${TAG} result is number ${result}`);
+            }
+            expect(ret).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_PHOTO_READ_IMAGE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_PHOTO_READ_IMAGE_0100
+         * @tc.desc   1.createImageReceiver
+         *            2.start Photo
+         *            3.readNextImage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_PHOTO_READ_IMAGE_0100', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_PHOTO_READ_IMAGE_0100`;
+            if (!isSupportedCamerasResult) {
+                console.info(`${TAG} Failed to obtain the default camera or device object. Not support usb camera`);
+                done();
+                return;
+            }
+            if (!isSupportHdr) {
+                console.info(`${TAG} device is not supported HDR, skipping test case`);
+                done();
+                return;
+            }
+            const receiverPhoto: image.ImageReceiver = arriveOnNdkTest.createReceiver();
+            const receiverPreview: image.ImageReceiver = arriveOnNdkTest.createReceiver();
+            const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
+            expect(arriveOnNdkTest.imageArriveOn(receiverPhoto, myData) == IMAGE_SUCCESS).assertTrue();
+            expect(arriveOnNdkTest.imageReceiverTest(receiverPhoto, CAMERA_FORMAT_JPEG, TEST_TYPE_PHOTO, receiverPreview) == IMAGE_SUCCESS).assertTrue();
+            const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+            expect(arriveOnNdkTest.imageArriveOff(receiverPhoto, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
+            arriveOnNdkTest.releaseImageReceiver(receiverPhoto);
+            arriveOnNdkTest.releaseImageReceiver(receiverPreview);
+            let ret = false;
+            if (typeof result != 'number') {
+                console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
+                ret = result.imageInfo!.format == 38 &&
+                      isValidColorSpace(result.imageInfo!.colorSpace);
+            } else {
+                console.info(`${TAG} result is number ${result}`);
+            }
+            expect(ret).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_FORMAT_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_FORMAT_ERROR_0100
+         * @tc.desc   1.get format with nullptr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_FORMAT_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_FORMAT_ERROR_0100`;
+            let errorData: arriveOnNdkTest.errorData = arriveOnNdkTest.testGetFormatNullptr();
+            console.info(`${TAG} testGetFormatNullptr result is ${JSON.stringify(errorData)}`);
+            expect(errorData.err1 == 401 && errorData.err2 == 401).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_COLORSPACE_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_COLORSPACE_ERROR_0100
+         * @tc.desc   1.get colorspace with nullptr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_COLORSPACE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_COLORSPACE_ERROR_0100`;
+            let errorData: arriveOnNdkTest.errorData = arriveOnNdkTest.testGetColorSpaceNullptr();
+            console.info(`${TAG} testGetColorSpaceNullptr result is ${JSON.stringify(errorData)}`);
+            expect(errorData.err1 == 401 && errorData.err2 == 401).assertTrue();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_BUFFER_DATA_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_BUFFER_DATA_ERROR_0100
+         * @tc.desc   1.get buffer data with nullptr
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_BUFFER_DATA_ERROR_0100', Level.LEVEL0, async (done: Function) => {
+            const TAG = `SUB_MULTIMEDIA_IMAGE_RECEIVER_GET_BUFFER_DATA_ERROR_0100`;
+            let errorData: arriveOnNdkTest.errorData = arriveOnNdkTest.testGetBufferDataNullptr();
+            console.info(`${TAG} testGetBufferDataNullptr result is ${JSON.stringify(errorData)}`);
+            expect(errorData.err1 == 401 && errorData.err2 == 401).assertTrue();
+            done();
+        });
     })
 }

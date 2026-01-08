@@ -463,7 +463,7 @@ export default function RdbErrorCode14800033() {
       let resultSet = await rdbStore!.query(predicates);
       expect(true).assertEqual(resultSet.goToFirstRow())
       try {
-        resultSet.getRows(50, 50)
+        await resultSet.getRows(1);
         resultSet.close();
       } catch (e: Error) {
         console.error(TAG + `getRow failed, code is ${e.code},message is ${e.message}`);

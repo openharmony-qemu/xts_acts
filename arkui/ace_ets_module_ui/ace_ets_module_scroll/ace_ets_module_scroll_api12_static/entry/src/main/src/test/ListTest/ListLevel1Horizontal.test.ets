@@ -64,8 +64,7 @@ export default function listLevel1HorizontalTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0100
      * @tc.name     listLevel1HorizontalTest_static_0100
      * @tc.desc     listLevel1HorizontalTest_static_0100
@@ -101,8 +100,7 @@ it('listLevel1HorizontalTest_static_0100', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0200
      * @tc.name     listLevel1HorizontalTest_static_0200
      * @tc.desc     listLevel1HorizontalTest_static_0200
@@ -138,8 +136,7 @@ it('listLevel1HorizontalTest_static_0200', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0300
      * @tc.name     listLevel1HorizontalTest_static_0300
      * @tc.desc     listLevel1HorizontalTest_static_0300
@@ -175,8 +172,7 @@ it('listLevel1HorizontalTest_static_0300', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0400
      * @tc.name     listLevel1HorizontalTest_static_0400
      * @tc.desc     listLevel1HorizontalTest_static_0400
@@ -212,8 +208,7 @@ it('listLevel1HorizontalTest_static_0400', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0500
      * @tc.name     listLevel1HorizontalTest_static_0500
      * @tc.desc     listLevel1HorizontalTest_static_0500
@@ -249,8 +244,7 @@ it('listLevel1HorizontalTest_static_0500', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0600
      * @tc.name     listLevel1HorizontalTest_static_0600
      * @tc.desc     listLevel1HorizontalTest_static_0600
@@ -286,8 +280,7 @@ it('listLevel1HorizontalTest_static_0600', Level.LEVEL1, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   listLevel1HorizontalTest_static_0700
      * @tc.name     listLevel1HorizontalTest_static_0700
      * @tc.desc     listLevel1HorizontalTest_static_0700

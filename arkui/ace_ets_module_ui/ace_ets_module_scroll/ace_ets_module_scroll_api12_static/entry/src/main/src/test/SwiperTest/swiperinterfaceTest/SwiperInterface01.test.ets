@@ -74,7 +74,6 @@ export default function SwiperInterface01() {
 
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
@@ -96,7 +95,6 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070', Level.LEVEL0, async (don
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
@@ -117,7 +115,6 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090', Level.LEVEL0, async (don
     
       
   
-
 /**
      * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
      * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110

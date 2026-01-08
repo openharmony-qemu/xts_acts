@@ -81,8 +81,6 @@ export default function arkuiNodeTest() {
 
     
     
-
-
 /**
      * @tc.number   arkuinode_static_0100
      * @tc.name     arkuinode_static_0100

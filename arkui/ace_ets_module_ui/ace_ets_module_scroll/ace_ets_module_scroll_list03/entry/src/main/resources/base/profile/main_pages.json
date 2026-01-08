@@ -38,6 +38,14 @@
         "MainAbility/pages/List/ListFillPolicy",
         "MainAbility/pages/List/ListContentSize",
         "MainAbility/pages/List/listNoMakeObserved",
-        "MainAbility/pages/List/listCacheCount"
+        "MainAbility/pages/List/listCacheCount",
+        "MainAbility/pages/emptyBranch/listLazyTrue",
+        "MainAbility/pages/emptyBranch/listLazyFalse",
+        "MainAbility/pages/emptyBranch/listLazyUn",
+        "MainAbility/pages/emptyBranch/listLazyNull",
+        "MainAbility/pages/emptyBranch/listRepeatTrue",
+        "MainAbility/pages/emptyBranch/listRepeatFalse",
+        "MainAbility/pages/emptyBranch/listRepeatUn",
+        "MainAbility/pages/emptyBranch/listRepeatNull"
     ]
 }

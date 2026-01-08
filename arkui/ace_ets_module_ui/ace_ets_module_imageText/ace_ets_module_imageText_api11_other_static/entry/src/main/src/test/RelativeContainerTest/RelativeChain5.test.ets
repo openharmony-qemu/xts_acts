@@ -92,8 +92,6 @@ export default function RelativeChain5() {
     
 
     
-
-
 /**
      * @tc.number   RelativeChain5_static_001
      * @tc.name     RelativeChain5_static_001
@@ -122,8 +120,6 @@ it('RelativeChain5_static_001', Level.LEVEL3, async (done: () => void): Promise<
     
 
     
-
-
 /**
      * @tc.number   RelativeChain5_static_002
      * @tc.name     RelativeChain5_static_002

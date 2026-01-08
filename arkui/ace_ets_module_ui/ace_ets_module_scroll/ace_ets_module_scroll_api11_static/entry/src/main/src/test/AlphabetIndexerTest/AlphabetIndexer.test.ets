@@ -123,8 +123,7 @@ export default function ActsAlphabetIndexerUxTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0100
      * @tc.name     ArkUI_AlphabetIndexer_static_0100
      * @tc.desc     ArkUI_AlphabetIndexer_static_0100
@@ -148,8 +147,7 @@ it('ArkUI_AlphabetIndexer_static_0100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0600
      * @tc.name     ArkUI_AlphabetIndexer_static_0600
      * @tc.desc     ArkUI_AlphabetIndexer_static_0600
@@ -166,8 +164,7 @@ it('ArkUI_AlphabetIndexer_static_0600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0700
      * @tc.name     ArkUI_AlphabetIndexer_static_0700
      * @tc.desc     ArkUI_AlphabetIndexer_static_0700
@@ -183,8 +180,7 @@ it('ArkUI_AlphabetIndexer_static_0700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0800
      * @tc.name     ArkUI_AlphabetIndexer_static_0800
      * @tc.desc     ArkUI_AlphabetIndexer_static_0800
@@ -218,8 +214,7 @@ it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_0900
      * @tc.name     ArkUI_AlphabetIndexer_static_0900
      * @tc.desc     ArkUI_AlphabetIndexer_static_0900
@@ -253,8 +248,7 @@ it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1000
      * @tc.name     ArkUI_AlphabetIndexer_static_1000
      * @tc.desc     ArkUI_AlphabetIndexer_static_1000
@@ -287,8 +281,7 @@ it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1100
      * @tc.name     ArkUI_AlphabetIndexer_static_1100
      * @tc.desc     ArkUI_AlphabetIndexer_static_1100
@@ -322,8 +315,7 @@ it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1200
      * @tc.name     ArkUI_AlphabetIndexer_static_1200
      * @tc.desc     ArkUI_AlphabetIndexer_static_1200
@@ -356,8 +348,7 @@ it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1300
      * @tc.name     ArkUI_AlphabetIndexer_static_1300
      * @tc.desc     ArkUI_AlphabetIndexer_static_1300
@@ -390,8 +381,7 @@ it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1400
      * @tc.name     ArkUI_AlphabetIndexer_static_1400
      * @tc.desc     ArkUI_AlphabetIndexer_static_1400
@@ -425,8 +415,7 @@ it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1500
      * @tc.name     ArkUI_AlphabetIndexer_static_1500
      * @tc.desc     ArkUI_AlphabetIndexer_static_1500
@@ -460,8 +449,7 @@ it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1600
      * @tc.name     ArkUI_AlphabetIndexer_static_1600
      * @tc.desc     ArkUI_AlphabetIndexer_static_1600
@@ -494,8 +482,7 @@ it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1700
      * @tc.name     ArkUI_AlphabetIndexer_static_1700
      * @tc.desc     ArkUI_AlphabetIndexer_static_1700
@@ -529,8 +516,7 @@ it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1800
      * @tc.name     ArkUI_AlphabetIndexer_static_1800
      * @tc.desc     ArkUI_AlphabetIndexer_static_1800
@@ -563,8 +549,7 @@ it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_1900
      * @tc.name     ArkUI_AlphabetIndexer_static_1900
      * @tc.desc     ArkUI_AlphabetIndexer_static_1900
@@ -597,8 +582,7 @@ it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2600
      * @tc.name     ArkUI_AlphabetIndexer_static_2600
      * @tc.desc     ArkUI_AlphabetIndexer_static_2600
@@ -632,8 +616,7 @@ it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2700
      * @tc.name     ArkUI_AlphabetIndexer_static_2700
      * @tc.desc     ArkUI_AlphabetIndexer_static_2700
@@ -667,8 +650,7 @@ it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2800
      * @tc.name     ArkUI_AlphabetIndexer_static_2800
      * @tc.desc     ArkUI_AlphabetIndexer_static_2800
@@ -701,8 +683,7 @@ it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_2900
      * @tc.name     ArkUI_AlphabetIndexer_static_2900
      * @tc.desc     ArkUI_AlphabetIndexer_static_2900
@@ -736,8 +717,7 @@ it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_3000
      * @tc.name     ArkUI_AlphabetIndexer_static_3000
      * @tc.desc     ArkUI_AlphabetIndexer_static_3000
@@ -770,8 +750,7 @@ it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_AlphabetIndexer_static_3100
      * @tc.name     ArkUI_AlphabetIndexer_static_3100
      * @tc.desc     ArkUI_AlphabetIndexer_static_3100

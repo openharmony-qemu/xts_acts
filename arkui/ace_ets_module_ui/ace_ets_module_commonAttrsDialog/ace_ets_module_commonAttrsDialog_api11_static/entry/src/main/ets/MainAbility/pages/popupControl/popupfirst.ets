@@ -46,15 +46,7 @@ import testsuite from '../../../../src/test/List.test';
 struct popupFirstTest {
   @State handlePopup: boolean = false
 
-  aboutToAppear() {
-    let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs
-    abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-  }
+
 
   build() {
     Row() {

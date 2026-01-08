@@ -20,9 +20,8 @@ import ComponentSnapshotSync from './componentSnapshot/componentSnapshotSync.tes
 import UIContextApi1 from './UIContext/UIContextApi1.test'
 
 export default function testsuite() {
-  // UIContextTestCase(); //SDK12.9 pass 2
-  // UIContextComponentSnapshot(); //SDK 12.9 表格80行 1
-  // ComponentSnapshotSync();//SDK 12.9 表格80行 5
-  UIContextApi1();//SDK 12.9 表格84行 1
- // SDK11.25  Pass: 12
+  UIContextTestCase(); //SDK11.25 pass 2
+  UIContextComponentSnapshot(); //SDK 12.25 pass 4
+  ComponentSnapshotSync();//SDK 12.25 pass 5
+  UIContextApi1();//SDK 12.25 pass 1
 }

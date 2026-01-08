@@ -30,6 +30,7 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
 import display from '@ohos.display';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
@@ -41,13 +42,13 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
@@ -64,7 +65,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             hilog.info(domain, tag,`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e: BusinessError) {
@@ -76,16 +77,25 @@ export default function ErrorCode201() {
 
     describe("ErrorCode201", (): void => {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         let context: common.UIAbilityContext;
         let isPCStatus: string = '';
         beforeAll(() => {
-            
+            hilog.info(domain, tag, 'beforeAll start');
+            let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
                 isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
                 //isPCStatus == '' 非PC设备
                 //isPCStatus == '1' PC设备状态栏dock未融合
@@ -118,7 +128,7 @@ export default function ErrorCode201() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowPrivacyMode.');
                     expect().assertFail();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(201);
                     done()
@@ -185,7 +195,7 @@ export default function ErrorCode201() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     expect().assertFail();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the Window. Cause:' + JSON.stringify(err));
                     expect(err.code).assertEqual(201);
                     done();
@@ -249,7 +259,7 @@ export default function ErrorCode201() {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
                     expect(true).assertTrue();
                     done();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
                     if (err!.code === 801) {
                         done();
@@ -296,7 +306,7 @@ export default function ErrorCode201() {
                     hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err.code)+',msg:'+ JSON.stringify(err!.message));
                     expect(err!.code == 201).assertTrue();
                     expect(err!.message!=null).assertTrue();
@@ -333,7 +343,7 @@ export default function ErrorCode201() {
                     hilog.info(domain, tag,caseName + 'Succeeded in capture')
                     expect(false).assertTrue()
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
                      expect(err.code == 801 || err.code == 201).assertTrue()
                      done();
@@ -364,7 +374,7 @@ export default function ErrorCode201() {
                     hilog.info(domain, tag,`${caseName} Succeeded in calling setWindowShadowEnabled.`);
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
                     expect(err.message!=null).assertTrue();
                     if (err.code === 801) {

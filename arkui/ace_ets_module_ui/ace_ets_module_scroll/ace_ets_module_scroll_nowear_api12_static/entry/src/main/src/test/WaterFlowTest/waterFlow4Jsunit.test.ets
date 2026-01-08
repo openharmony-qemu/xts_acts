@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector'
 export default function waterFlow4Jsunit() {
   describe('waterFlow4Jsunit', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlow4Jsunit beforeEach start");

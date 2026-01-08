@@ -84,8 +84,7 @@ export default function tabs_IndexTest() {
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsIndexLessThanMin_static_01
      * @tc.name     testTabsIndexLessThanMin_static_01
      * @tc.desc     testTabsIndexLessThanMin_static_01
@@ -224,8 +223,7 @@ it('testTabsIndexLessThanMin_static_01', Level.LEVEL0, async (done: () => void):
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsIndexNormal_static_02
      * @tc.name     testTabsIndexNormal_static_02
      * @tc.desc     testTabsIndexNormal_static_02
@@ -353,8 +351,7 @@ it('testTabsIndexNormal_static_02', Level.LEVEL0, async (done: () => void): Prom
 
 
     
-    
-/**
+    /**
      * @tc.number   testTabsIndexMoreThanMax_static_03
      * @tc.name     testTabsIndexMoreThanMax_static_03
      * @tc.desc     testTabsIndexMoreThanMax_static_03

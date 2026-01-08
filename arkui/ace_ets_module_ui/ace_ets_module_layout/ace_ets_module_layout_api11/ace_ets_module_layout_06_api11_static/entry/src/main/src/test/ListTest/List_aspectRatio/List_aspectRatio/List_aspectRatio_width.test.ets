@@ -77,7 +77,7 @@ export default function List_aspectRatio_width() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
 
       console.info("List_aspectRatio_width after each called");
     });
@@ -105,8 +105,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () =
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.right - List01.left));
       console.info('[SUB_ACE_List_aspectRatio_width_0100]' + Math.round(List01.bottom - List01.top));
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(230))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(160))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(230))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_width_0100] END');
       done();
@@ -132,9 +132,9 @@ it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0200]' + Math.round(List01.bottom - List01.top));
-  console.info('[SUB_ACE_List_aspectRatio_width_0200] ' + Math.round(UIContext.getFocusedUIContext()!.vp2px(320)));
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(320))) <= 1).assertTrue();
+  console.info('[SUB_ACE_List_aspectRatio_width_0200] ' + Math.round(UIContext.resolveUIContext()!.vp2px(320)));
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(160))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(320))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_width_0200] END');
       done();
@@ -161,8 +161,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () =
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0300]' + Math.round(List01.bottom - List01.top));
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(160))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(80))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_width_0300] END');
       done();
@@ -188,8 +188,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0400', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(160))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(230))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(160))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(230))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_width_0400] END');
       done();

@@ -35,7 +35,7 @@ import { Callback } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 export enum ThreatType {
@@ -122,7 +122,7 @@ struct WebCookieManagerExistCookie {
                       let isCookie = webview.WebCookieManager.existCookie()
                       Utils.emitEvent(isCookie, 100304)
                     })
-                    .catch((error: BusinessError): void => {
+                    .catch((error: Error): void => {
                       console.log('error: ' + JSON.stringify(error));
                     })
                 } catch (error: BusinessError) {
@@ -171,7 +171,7 @@ struct WebCookieManagerExistCookie {
                       let isCookie = webview.WebCookieManager.existCookie()
                       Utils.emitEvent(isCookie, 100307)
                     })
-                    .catch((error: BusinessError): void => {
+                    .catch((error: Error): void => {
                       console.error("error: " + error);
                     });
                 } catch (error: BusinessError) {
@@ -219,7 +219,7 @@ struct WebCookieManagerExistCookie {
                       let isCookie = webview.WebCookieManager.existCookie()
                       Utils.emitEvent(isCookie, 100310)
                     })
-                    .catch((error: BusinessError): void => {
+                    .catch((error: Error): void => {
                       console.error("error: " + error);
                     });
                 } catch (error: BusinessError) {
@@ -265,7 +265,7 @@ struct WebCookieManagerExistCookie {
                       let isCookie = webview.WebCookieManager.existCookie()
                       Utils.emitEvent(isCookie, 100313)
                     })
-                    .catch((error: BusinessError): void => {
+                    .catch((error: Error): void => {
                       console.error("error: " + error);
                     });
                 } catch (error: BusinessError) {
@@ -311,7 +311,7 @@ struct WebCookieManagerExistCookie {
                       let isCookie = webview.WebCookieManager.existCookie()
                       Utils.emitEvent(isCookie, 100316)
                     })
-                    .catch((error: BusinessError): void => {
+                    .catch((error: Error): void => {
                       console.error("error: " + error);
                     });
                 } catch (error: BusinessError) {

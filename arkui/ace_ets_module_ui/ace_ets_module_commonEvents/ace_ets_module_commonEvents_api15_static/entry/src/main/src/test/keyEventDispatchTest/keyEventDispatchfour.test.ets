@@ -78,14 +78,14 @@ it('keyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void): 
 
       // test the  child component response
       let strJson = inspector.getInspectorByKey('childText4');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[keyEventDispatchTest4_static_0100] obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('childResponse');
 
       // parent component not response
       let strJson1 = inspector.getInspectorByKey('parentText4');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[keyEventDispatchTest4_010] obj is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('parentResponse');

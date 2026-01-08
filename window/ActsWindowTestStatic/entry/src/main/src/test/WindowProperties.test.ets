@@ -42,30 +42,34 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
         await Utils.msSleep(1000)
+        hilog.info(domain, tag, `${caseName}  get windowStageStart start .`);
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.`+windowStageStart);
         resolve(windowStageStart);
     })
 }
 async function terminateAbility(caseName: string) {
+    hilog.info(domain, tag,`${caseName} terminateSelf start..`);
     let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    hilog.info(domain, tag,`${caseName} pageContext :${pageContext}`);
     try {
         if (pageContext !== null && pageContext !== undefined) {
             hilog.info(domain, tag,`${caseName} terminateSelf begin`);
         }
         pageContext.terminateSelf().then(() => {
             hilog.info(domain, tag,`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e: BusinessError) {
@@ -106,6 +110,96 @@ export default function WindowPropertiesTest() {
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
         })
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
+         * @tc.name       test_testSetCustomDensity_1300002_static
+         * @tc.desc       test_testSetCustomDensity_1300002_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_testSetCustomDensity_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensity_1300002_static';
+            hilog.info(domain, tag,caseName + 'begin');
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            hilog.info(domain, tag,msgStr + 'startAbility success... ' );
+            await Utils.msSleep(300);
+            await terminateAbility(caseName);
+            hilog.info(domain, tag,msgStr + 'terminateAbility success... ' );
+            try {
+                windowStageStart.setCustomDensity(-1);
+                hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+        /**
+         * @tc.number     SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW_Static
+         * @tc.name       testSetWindowContainerColorwithDestroyedMainWindow_Static
+         * @tc.desc       验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('testSetWindowContainerColorwithDestroyedMainWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow_Static ';
+            hilog.info(domain, tag,caseName + 'begin');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await Utils.msSleep(200)
+            let windowClass:window.Window = windowStageStart.getMainWindowSync();
+            await terminateAbility(caseName)
+            try {
+                windowClass.setWindowContainerColor("#0099FF","#00000000");
+                hilog.info(domain, tag,caseName + 'success. ');
+                expect(false).assertTrue()
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.name        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.desc        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetDefaultDensityEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetDefaultDensityEnabledErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowStageStart = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.setDefaultDensityEnabled(true);
+                console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
+                if (e.code == 801) {
+                    expect(e.code).assertEqual(801);
+                } else if (e.code == 1300002) {
+                    expect(e.code).assertEqual(1300002);
+                } else {
+                    expect(false).assertTrue();
+                }
+                done()
+            }
+        })
 
         /**
          * @tc.number       testSetWindowPrivacyModePromiseErrCode1300002_0100
@@ -126,7 +220,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowPrivacyMode.');
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done()
@@ -230,7 +324,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in checking whether the window support WideGamut. Data: ' + JSON.stringify(data));
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to check whether the window support WideGamut. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002)
                     done();
@@ -298,7 +392,7 @@ export default function WindowPropertiesTest() {
                 await (win as window.Window).setWindowColorSpace(window.ColorSpace.DEFAULT).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting window colorspace.');
                     expect(false).assertTrue();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window colorspace. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002)
                     done();
@@ -395,7 +489,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the screen to be always on.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Failed to set the screen to be always on. Cause:  ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done();
@@ -594,7 +688,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -632,7 +726,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done()
@@ -671,7 +765,7 @@ export default function WindowPropertiesTest() {
                             done();
                         }
                     })
-                    .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    .catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.info(0x0000, '[ANI]',
                             msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                         expect(false).assertTrue();
@@ -738,7 +832,7 @@ export default function WindowPropertiesTest() {
                         done();
                     }
                 })
-                .catch((err:BusinessError):PromiseLike<void>|undefined => {
+                .catch((err:Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',
                         msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
@@ -843,7 +937,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -881,7 +975,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -1202,7 +1296,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling getStatusBarProperty, color: ' + res.contentColor);
                     expect(res.contentColor).assertEqual("#FF112233")
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setStatusBarColor. Cause: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -1234,7 +1328,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,msgStr +'Succeeded in setting the window to be exclusively highlight.');
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr +`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code == 801){
                         done();
@@ -1279,7 +1373,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,'Succeeded in setting the window to be exclusively highlight.');
                     expect(false).assertTrue();
                     done()
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`Failed to set the window to be exclusively highlight. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code == 801){
                         done();
@@ -1318,7 +1412,7 @@ export default function WindowPropertiesTest() {
                     expect(false).assertTrue();
                     await terminateAbility(caseName);
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
                     expect(err.code == 201 || err.code == 801).assertTrue();
                     await terminateAbility(caseName);
@@ -1373,7 +1467,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,`${caseName} Succeeded in getting window from point. Data: ` + JSON.stringify(data));
                     expect(data.length).assertEqual(2);
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     await subWindowClass.destroyWindow();
                     hilog.error(domain, tag,`${caseName} Failed to get window from point. Cause code: ${err.code}, message: ${err.message}`);
 
@@ -1420,7 +1514,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,`${caseName} :Succeeded in obtaining all window layout info. Data windowRect: ` + JSON.stringify(data[0].windowRect));
                     expect(data.length).assertLargerOrEqual(1);
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} :Failed to obtain all window layout info. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code == 801){
                         expect(err.message!=null).assertTrue();
@@ -1472,7 +1566,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -1530,7 +1624,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
                 expect(isGestureBackEnabled).assertFalse();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled`);
@@ -1562,7 +1656,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in setting gesture back enabled.`);
                 expect(false).assertTrue();
                 done();
-            }).catch(async (err: BusinessError) :PromiseLike<void>|undefined=> {
+            }).catch((err: Error) :PromiseLike<void>|undefined=> {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled.`);
@@ -1603,7 +1697,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in setting gesture back enabled.`);
                 expect(false).assertTrue();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled.`);
@@ -1640,7 +1734,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in setting gesture back enabled.`);
                 expect(false).assertTrue();
                 done();
-            }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled.`);
@@ -1722,7 +1816,7 @@ export default function WindowPropertiesTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -1746,7 +1840,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
                 expect(isGestureBackEnabled).assertTrue();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setGestureBackEnabled`);
@@ -1786,7 +1880,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting dialog window to ignore back gesture.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     if (err.code != 801) {
                         hilog.error(domain, tag,msgStr +
                             `Failed to set dialog window to ignore back gesture. Cause code: ${err.code}, message: ${err.message}`);
@@ -1799,7 +1893,7 @@ export default function WindowPropertiesTest() {
                         done();
                     }
                 });
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag,msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -1825,7 +1919,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'Succeeded in setting dialog window to ignore back gesture.');
                 expect(false).assertTrue();
                 done();
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 if (err.code != 801) {
                     hilog.error(domain, tag,msgStr +
                         `Failed to set dialog window to ignore back gesture. Cause code: ${err.code}, message: ${err.message}`);
@@ -1927,7 +2021,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting the brightness.');
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to set the brightness. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     done()
@@ -2018,7 +2112,7 @@ export default function WindowPropertiesTest() {
                         await subWindowClass.destroyWindow();
                         expect(false).assertTrue();
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                         expect(err.message!=null).assertTrue();
                         if (err.code == 801) {
@@ -2036,7 +2130,7 @@ export default function WindowPropertiesTest() {
                         }
 
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(err.message!=null).assertTrue();
                     await subWindowClass.destroyWindow();
@@ -2178,7 +2272,7 @@ export default function WindowPropertiesTest() {
                 subWindowClass.setWindowCornerRadius(1).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowCornerRadius.');
                     expect(false).assertTrue();
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code)+',errMessage: '+ err.message);
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
@@ -2211,7 +2305,7 @@ export default function WindowPropertiesTest() {
                 windowClass!.setWindowCornerRadius(1).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowCornerRadius.');
                     expect(false).assertTrue();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code)+',errMessage: '+ err.message);
                     if (err.code == 801) {
                         hilog.info(domain, tag,`${caseName} The current device type does not support to setWindowCornerRadius`);
@@ -2319,7 +2413,7 @@ export default function WindowPropertiesTest() {
                     expect(result).assertEqual(0)
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowCornerRadius.');
                     await subWindowClass!.destroyWindow();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code)+',errMessage: '+ err.message);
                     await subWindowClass!.destroyWindow();
                     if (err.code == 801) {
@@ -2382,32 +2476,7 @@ export default function WindowPropertiesTest() {
                 }
             }
         });
-        /**
-         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
-         * @tc.name       test_testSetCustomDensity_1300002_static
-         * @tc.desc       test_testSetCustomDensity_1300002_static
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 2
-         */
-        it('test_testSetCustomDensity_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test_testSetCustomDensity_1300002_static';
-            hilog.info(domain, tag,caseName + 'begin');
-            let msgStr :string = 'jsunittest ' + caseName + ' ';
-            let windowStageStart :window.WindowStage = await startAbility(caseName, context);
-            await terminateAbility(caseName);
-            try {
-                windowStageStart.setCustomDensity(-1);
-                hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
-                expect(false).assertTrue();
-                done();
-            } catch (exception) {
-                exception = exception as BusinessError;
-                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(1300002);
-                done()
-            }
-        });
+        
         /**
          * @tc.number     test_mainWindow_setWindowMask_ErrorCode1300002_0100
          * @tc.name       test_mainWindow_setWindowMask_ErrorCode1300002_0100
@@ -2449,7 +2518,7 @@ export default function WindowPropertiesTest() {
                     console.log(msgStr + 'Succeeded in setting the window mask.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + `Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(1300002);
                     done();
@@ -2500,7 +2569,7 @@ export default function WindowPropertiesTest() {
                     console.log(msgStr + 'Succeeded in setting the window mask.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + `Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(1300004);
                     done();
@@ -2548,7 +2617,7 @@ export default function WindowPropertiesTest() {
                  (subWin! as window.Window).setWindowGrayScale(1).then(() => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
                     expect(false).assertTrue();
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                 });
@@ -2585,7 +2654,7 @@ export default function WindowPropertiesTest() {
                     subWin.destroyWindow();
                     expect(true).assertTrue();
                     done();
-                }).catch(async (err: BusinessError):PromiseLike<void>|undefined  => {
+                }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(801);
                     await subWin!.destroyWindow();
@@ -2597,43 +2666,6 @@ export default function WindowPropertiesTest() {
                 done()
             }
 
-        })
-
-
-
-/**
-         * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.name        testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.desc        testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetDefaultDensityEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testSetDefaultDensityEnabledErrCode1300002_0100";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let windowStageStart = await startAbility(caseName, context);
-            await terminateAbility(caseName);
-            try {
-                const callback = () => {
-                };
-                windowStageStart.setDefaultDensityEnabled(true);
-                console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
-                expect(false).assertTrue();
-                done()
-            } catch (e) {
-                e = e as BusinessError;
-                console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
-                if (e.code == 801) {
-                    expect(e.code).assertEqual(801);
-                } else if (e.code == 1300002) {
-                    expect(e.code).assertEqual(1300002);
-                } else {
-                    expect(false).assertTrue();
-                }
-                done()
-            }
         })
 
         /**
@@ -2845,33 +2877,7 @@ export default function WindowPropertiesTest() {
             }
         });
 
-        /**
-         * @tc.number     SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW_Static
-         * @tc.name       testSetWindowContainerColorwithDestroyedMainWindow_Static
-         * @tc.desc       验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 2
-         */
-        it('testSetWindowContainerColorwithDestroyedMainWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow_Static ';
-            hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
-            await Utils.msSleep(200)
-            let windowClass:window.Window = windowStageStart.getMainWindowSync();
-            await terminateAbility(caseName)
-            try {
-                windowClass.setWindowContainerColor("#0099FF","#00000000");
-                hilog.info(domain, tag,caseName + 'success. ');
-                expect(false).assertTrue()
-                done();
-            } catch (err: BusinessError) {
-                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message!=null).assertTrue();
-                done();
-            }
-        });
+        
 
 
     })

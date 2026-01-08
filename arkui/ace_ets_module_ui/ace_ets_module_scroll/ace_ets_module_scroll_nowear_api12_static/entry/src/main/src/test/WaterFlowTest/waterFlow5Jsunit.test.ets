@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector'
 export default function waterFlow5Jsunit() {
   describe('waterFlow5Jsunit', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlow5Jsunit beforeEach start");
@@ -70,7 +70,7 @@ it('waterFlow5Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promis
       console.info("[waterFlow5Jsunit_static_001] content: " + JSON.stringify(obj.getElement('$attrs').getString('height')));
 	    let heightStr:string = obj.getElement('$attrs').getString('height').slice(0,6)
       console.info("[waterFlow5Jsunit_static_001] heightStr: " + heightStr);
-      expect(Math.abs(Math.round(Number(heightStr)) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Number(heightStr)) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.info('[waterFlow5Jsunit_static_001] END');
       done();
     });

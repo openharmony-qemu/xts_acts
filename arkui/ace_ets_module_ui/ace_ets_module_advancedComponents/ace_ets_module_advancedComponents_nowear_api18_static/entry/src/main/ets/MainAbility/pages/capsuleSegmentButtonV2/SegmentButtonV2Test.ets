@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { CapsuleSegmentButtonV2, SegmentButtonV2Items} from '@kit.ArkUI';
-import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign } from '@ohos.arkui.component';
-import { Local } from '@ohos.arkui.stateManagement';
 
+import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
+import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,$r } from '@ohos.arkui.component';
+import { Local } from '@ohos.arkui.stateManagement';
+import { SegmentButtonV2Items, CapsuleSegmentButtonV2, SegmentButtonV2ItemOptions } from '@ohos.arkui.advanced.SegmentButtonV2'
 @Entry
 @ComponentV2
 struct CapsuleSegmentButtonV2Example {
@@ -37,67 +37,67 @@ struct CapsuleSegmentButtonV2Example {
   @Local buttonBackgroundBlurStyle: BlurStyle = BlurStyle.Thin
   @Local buttonPadding: LengthMetrics = LengthMetrics.fp(20)
 
-  @Local textSelectedIndex: number = 0;
-  // @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { text: '语文' },
-  //   { text: '数学' },
-  //   { text: '英语' },
-  //   { text: '地理' },
-  // ]);
-  @Local hybridSelectedIndex: number = 0;
-  // @Local hybridItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { text: '手机', symbol: $r('sys.symbol.phone') },
-  //   { text: '平板', symbol: $r('sys.symbol.pad') },
-  //   { text: '2in1', symbol: $r('sys.symbol.matebook') },
-  //   { text: '智能穿戴', symbol: $r('sys.symbol.watch') },
-  // ]);
+  @Local textSelectedIndex: Int = 0;
+  @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { text: '语文' },
+    { text: '数学' },
+    { text: '英语' },
+    { text: '地理' },
+  ]);
+  @Local hybridSelectedIndex: Int = 0;
+  @Local hybridItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { text: '手机', symbol: $r('sys.symbol.phone') } as SegmentButtonV2ItemOptions,
+    { text: '平板', symbol: $r('sys.symbol.pad') } as SegmentButtonV2ItemOptions,
+    { text: '2in1', symbol: $r('sys.symbol.matebook') } as SegmentButtonV2ItemOptions,
+    { text: '智能穿戴', symbol: $r('sys.symbol.watch') } as SegmentButtonV2ItemOptions,
+  ]);
 
-  @Local imageSelectedIndex: number = 0;
-  // @Local imageItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { icon: $r('sys.media.ohos_ic_public_device_phone') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_pad') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_matebook') },
-  //   { icon: $r('sys.media.ohos_ic_public_device_watch') },
-  // ]);
+  @Local imageSelectedIndex: Int = 0;
+  @Local imageItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { icon: $r('sys.media.ohos_ic_public_device_phone') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_pad') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_matebook') } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_watch') } as SegmentButtonV2ItemOptions,
+  ]);
 
   build() {
     Scroll() {
       Column({ space: 12 } as ColumnOptions) {
-        // CapsuleSegmentButtonV2({
-        //   items: this.textItems,
-        //   selectedIndex: this.textSelectedIndex!!,
-        //   itemSelectedFontSize: this.itemSelectedFontSize,
-        //   itemSelectedFontWeight: this.itemSelectedFontWeight,
-        //   itemPadding: this.itemPadding,
-        //   itemShadow: this.itemShadow,
-        //   buttonBackgroundColor: this.buttonBackgroundColor,
-        //   buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
-        //   buttonBackgroundBlurStyleOptions: undefined,
-        //   buttonPadding: this.buttonPadding,
-        // }).key('TabSegmentButtonV2_01')
+        CapsuleSegmentButtonV2({
+          items: this.textItems,
+          selectedIndex: this.textSelectedIndex!!,
+          itemSelectedFontSize: this.itemSelectedFontSize,
+          itemSelectedFontWeight: this.itemSelectedFontWeight,
+          itemPadding: this.itemPadding,
+          itemShadow: this.itemShadow,
+          buttonBackgroundColor: this.buttonBackgroundColor,
+          buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
+          buttonBackgroundBlurStyleOptions: undefined,
+          buttonPadding: this.buttonPadding,
+        }).key('TabSegmentButtonV2_01')
 
-        // CapsuleSegmentButtonV2({
-        //   items: this.hybridItems,
-        //   selectedIndex: this.hybridSelectedIndex!!,
-        //   itemSymbolFontSize: this.itemSymbolFontSize,
-        // }).key('TabSegmentButtonV2_02')
+        CapsuleSegmentButtonV2({
+          items: this.hybridItems,
+          selectedIndex: this.hybridSelectedIndex!!,
+          itemSymbolFontSize: this.itemSymbolFontSize,
+        }).key('TabSegmentButtonV2_02')
 
-        // CapsuleSegmentButtonV2({
-        //   items: this.imageItems,
-        //   selectedIndex: this.imageSelectedIndex!!,
-        //   itemMinHeight: this.itemMinHeight,
-        //   itemIconSize: {
-        //     width: LengthMetrics.vp(30),
-        //     height: LengthMetrics.vp(30)
-        //   },
-        //   itemIconFillColor: this.itemIconFillColor,
-        //   itemSelectedIconFillColor: this.itemSelectedIconFillColor,
-        //   buttonBackgroundColor: this.itemSelectedIconFillColor,
-        //   buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
-        //   buttonBackgroundBlurStyleOptions: undefined,
-        //   buttonPadding: this.buttonPadding,
-        //
-        // }).key('TabSegmentButtonV2_02')
+        CapsuleSegmentButtonV2({
+          items: this.imageItems,
+          selectedIndex: this.imageSelectedIndex!!,
+          itemMinHeight: this.itemMinHeight,
+          itemIconSize: {
+            width: LengthMetrics.vp(30),
+            height: LengthMetrics.vp(30)
+          },
+          itemIconFillColor: this.itemIconFillColor,
+          itemSelectedIconFillColor: this.itemSelectedIconFillColor,
+          buttonBackgroundColor: this.itemSelectedIconFillColor,
+          buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
+          buttonBackgroundBlurStyleOptions: undefined,
+          buttonPadding: this.buttonPadding,
+
+        }).key('TabSegmentButtonV2_02')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

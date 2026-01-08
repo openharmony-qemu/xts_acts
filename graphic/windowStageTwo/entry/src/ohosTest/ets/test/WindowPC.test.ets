@@ -103,6 +103,7 @@ export default function windowPCTest() {
     let isPCStatus: string = '';
     let mainWindowClass:window.Window;
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -122,6 +123,7 @@ export default function windowPCTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -948,7 +950,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0200';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -998,7 +999,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0300';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING
@@ -1048,7 +1048,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0400';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING,
@@ -1100,7 +1099,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0500';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.FLOATING,
@@ -1152,7 +1150,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0600';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -1193,7 +1190,6 @@ export default function windowPCTest() {
     it('testStartOptionsSupportWindowModes_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0700';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -1593,7 +1589,6 @@ export default function windowPCTest() {
         let windowName = windowClassStart.getUIContext().getWindowName();
         if(isFreeWindowMode){
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
         await sleep(1000);
@@ -1649,7 +1644,6 @@ export default function windowPCTest() {
         let windowName = windowClassStart.getUIContext().getWindowName();
         if(isFreeWindowMode){
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
         await sleep(1000);
@@ -1717,7 +1711,6 @@ export default function windowPCTest() {
         let windowClassStart = windowStageStart.getMainWindowSync();
         if(isFreeWindowMode){
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
         await sleep(1000);
@@ -1765,7 +1758,6 @@ export default function windowPCTest() {
           let windowClassFind = windowStageStart.getMainWindowSync();
           let windowName = windowClassFind.getUIContext().getWindowName();
           windowClassFind.off('windowWillClose');
-          let driver: Driver = Driver.create();
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
@@ -1818,7 +1810,6 @@ export default function windowPCTest() {
         let windowName = windowClassStart.getUIContext().getWindowName();
         if(isFreeWindowMode){
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
         await sleep(1000);
@@ -1889,7 +1880,6 @@ export default function windowPCTest() {
           windowClassStart.on('windowWillClose', callback1);
           windowClassStart.on('windowWillClose', callback2);
           windowClassStart.off('windowWillClose', callback2);
-          let driver: Driver = Driver.create()
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           await sleep(1000);
@@ -1964,7 +1954,6 @@ export default function windowPCTest() {
           windowClassStart.on('windowWillClose', callback1);
           windowClassStart.on('windowWillClose', callback2);
           windowClassStart.off('windowWillClose');
-          let driver: Driver = Driver.create()
           let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           await button.click();
           await sleep(1000);
@@ -2042,7 +2031,6 @@ export default function windowPCTest() {
           await sleep(1000);
           if(isFreeWindowMode){
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'))
             await button.click()
             await sleep(1000);
@@ -2115,7 +2103,6 @@ export default function windowPCTest() {
           await sleep(1000);
           if(isFreeWindowMode){
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2186,7 +2173,6 @@ export default function windowPCTest() {
           await sleep(1000);
           if(isFreeWindowMode){
             subWindowClass.on('windowWillClose', callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2253,7 +2239,6 @@ export default function windowPCTest() {
         let windowName = windowClassStart.getUIContext().getWindowName();
         if(isFreeWindowMode){
           windowClassStart.on('windowWillClose', callback);
-        let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
         let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
@@ -2401,7 +2386,6 @@ export default function windowPCTest() {
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2474,7 +2458,6 @@ export default function windowPCTest() {
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
-            let driver: Driver = Driver.create();
             let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
             await button.click();
             await sleep(1000);
@@ -2948,7 +2931,6 @@ export default function windowPCTest() {
      */
     it('testOnwindowStatusDidChange_SPLIT_SCREEN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOnwindowStatusDidChange_SPLIT_SCREEN';
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -3755,7 +3737,6 @@ export default function windowPCTest() {
     it('testWindowStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0100';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
-      let driver = Driver.create()
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,

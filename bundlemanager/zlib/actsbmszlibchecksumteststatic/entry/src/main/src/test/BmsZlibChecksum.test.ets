@@ -41,13 +41,13 @@ export default function bmsZlibChecksumTest() {
           expect(data).not().assertUndefined();
           expect(data != null).assertTrue();
           done();
-        }, (err: BusinessError<void>): void => {
+        }, (err: Error): void => {
           hilog.info(Domain, TAG, 'createChecksum filed');
           hilog.info(Domain, TAG, 'createChecksum err：' + JSON.stringify(err));
           expect().assertFail();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0100 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
         done();
@@ -69,7 +69,7 @@ export default function bmsZlibChecksumTest() {
         expect(checksum).not().assertUndefined();
         expect(checksum != null).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0200 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
         done();
@@ -92,12 +92,12 @@ export default function bmsZlibChecksumTest() {
           hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_06 getCrcTable data : ` + JSON.stringify(data));
           expect(checksum).not().assertUndefined();
           done();
-        }).catch((e: BusinessError): void =>{
+        }).catch((e: Error): void =>{
           hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_06 error, error code is: ${e.code}, error message is: ${e.message}`);
           expect().assertFail();
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_06 error, error code is: ${e.code}, error message is: ${e.message}`);
         expect().assertFail();
         done();
@@ -121,13 +121,13 @@ export default function bmsZlibChecksumTest() {
             hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_08 getCrcTable data : ` + JSON.stringify(data));
             expect(data.length > 0).assertTrue();
             done();
-          }).catch((e: BusinessError): void => {
+          }).catch((e: Error): void => {
             hilog.info(Domain, TAG,
               `ACTS_ChecksumTest_static_08 error, error code is: ${e.code}, error message is: ${e.message}`);
             expect().assertFail();
             done();
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.info(Domain, TAG,
             `ACTS_ChecksumTest_static_08 error, error code is: ${e.code}, error message is: ${e.message}`);
           expect(e).assertFail();
@@ -151,13 +151,13 @@ export default function bmsZlibChecksumTest() {
             hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_07 getCrcTable data : ` + JSON.stringify(data));
             expect(data.length !== 0).assertTrue();
             done();
-          }).catch((e: BusinessError): void => {
+          }).catch((e: Error): void => {
             hilog.info(Domain, TAG,
               `ACTS_ChecksumTest_static_07 error, error code is: ${e.code}, error message is: ${e.message}`);
             expect().assertFail();
             done();
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.info(Domain, TAG,
             `ACTS_ChecksumTest_static_07 error, error code is: ${e.code}, error message is: ${e.message}`);
           expect(e).assertFail();

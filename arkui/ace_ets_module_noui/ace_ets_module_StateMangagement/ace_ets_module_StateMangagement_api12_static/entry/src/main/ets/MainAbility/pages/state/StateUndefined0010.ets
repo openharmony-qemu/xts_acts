@@ -31,7 +31,7 @@ import {
   Link,
   StorageLink,
   LocalStorage,
-  Prop,
+  PropRef,
   Consume,
   StoragePropRef,
   LocalStoragePropRef,
@@ -49,7 +49,7 @@ AppStorage.setOrCreate('storageLinkValue0010', undefined)
 @Component
 struct ChildStateUndefined0010 {
   @State private stateValue: undefined | null = null
-  @Prop private propValue: undefined | null = null
+  @PropRef private propValue: undefined | null = null
   @Link linkValue: undefined | null
   @Consume('stateUndefined0010') private comsumeValue: undefined | null
   @StoragePropRef('storagePropValue0010') private storagePropValue: undefined | null = null

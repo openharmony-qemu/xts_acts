@@ -75,8 +75,7 @@ export default function selectJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_Layout_static_0100
      * @tc.name     ArkUI_Stage_Select_Layout_static_0100
      * @tc.desc     ArkUI_Stage_Select_Layout_static_0100
@@ -94,8 +93,7 @@ it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL0, async (done: () => voi
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_Space_static_0100
      * @tc.name     ArkUI_Stage_Select_Space_static_0100
      * @tc.desc     ArkUI_Stage_Select_Space_static_0100
@@ -112,8 +110,7 @@ it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_selected_static_0100
      * @tc.name     ArkUI_Stage_Select_selected_static_0100
      * @tc.desc     ArkUI_Stage_Select_selected_static_0100
@@ -130,8 +127,7 @@ it('ArkUI_Stage_Select_selected_static_0100', Level.LEVEL0, async (done: () => v
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_value_static_0100
      * @tc.name     ArkUI_Stage_Select_value_static_0100
      * @tc.desc     ArkUI_Stage_Select_value_static_0100
@@ -148,8 +144,7 @@ it('ArkUI_Stage_Select_value_static_0100', Level.LEVEL0, async (done: () => void
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_font_static_0100
      * @tc.name     ArkUI_Stage_Select_font_static_0100
      * @tc.desc     ArkUI_Stage_Select_font_static_0100
@@ -168,8 +163,7 @@ it('ArkUI_Stage_Select_font_static_0100', Level.LEVEL0, async (done: () => void)
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_fontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_fontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_fontColor_static_0100
@@ -186,8 +180,7 @@ it('ArkUI_Stage_Select_fontColor_static_0100', Level.LEVEL0, async (done: () => 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFont_static_0100
@@ -222,8 +215,7 @@ it('ArkUI_Stage_Select_selectedOptionFontColor_static_0100', Level.LEVEL0, async
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_menuAlign_static_0100
      * @tc.name     ArkUI_Stage_Select_menuAlign_static_0100
      * @tc.desc     ArkUI_Stage_Select_menuAlign_static_0100
@@ -257,8 +249,7 @@ it('ArkUI_Stage_Select_selectedOptionBgColor_static_0100', Level.LEVEL0, async (
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionBgColor_static_0100
@@ -275,8 +266,7 @@ it('ArkUI_Stage_Select_optionBgColor_static_0100', Level.LEVEL0, async (done: ()
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_optionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFont_static_0100
@@ -295,8 +285,7 @@ it('ArkUI_Stage_Select_optionFont_static_0100', Level.LEVEL0, async (done: () =>
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_optionWidth_static_0100
      * @tc.name     ArkUI_Stage_Select_optionWidth_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionWidth_static_0100
@@ -313,8 +302,7 @@ it('ArkUI_Stage_Select_optionWidth_static_0100', Level.LEVEL0, async (done: () =
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_optionHeight_static_0100
      * @tc.name     ArkUI_Stage_Select_optionHeight_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionHeight_static_0100
@@ -331,8 +319,7 @@ it('ArkUI_Stage_Select_optionHeight_static_0100', Level.LEVEL0, async (done: () 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFontColor_static_0100
@@ -350,8 +337,7 @@ it('ArkUI_Stage_Select_optionFontColor_static_0100', Level.LEVEL0, async (done: 
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_Select_change_static_0101
      * @tc.name     ArkUI_Stage_Select_change_static_0101
      * @tc.desc     ArkUI_Stage_Select_change_static_0101

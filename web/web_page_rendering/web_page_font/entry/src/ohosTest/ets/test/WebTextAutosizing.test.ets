@@ -65,7 +65,6 @@ export default function webTextAutosizing() {
     it('TextAutosizing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0100", 150200)
       Utils.registerEvent("TextAutosizing0100", true, 150210, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
@@ -81,7 +80,6 @@ export default function webTextAutosizing() {
     it('TextAutosizing0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0200", 150200)
       Utils.registerEvent("TextAutosizing0200", true, 150220, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
@@ -97,7 +95,6 @@ export default function webTextAutosizing() {
     it('TextAutosizing0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0300", 150200)
       Utils.registerEvent("TextAutosizing0300", true, 150230, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
@@ -113,7 +110,6 @@ export default function webTextAutosizing() {
     it('TextAutosizing0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0400", 150200)
       Utils.registerEvent("TextAutosizing0400", true, 150240, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })

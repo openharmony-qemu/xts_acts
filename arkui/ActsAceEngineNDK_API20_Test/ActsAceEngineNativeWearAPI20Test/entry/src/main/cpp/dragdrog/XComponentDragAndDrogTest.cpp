@@ -93,9 +93,9 @@ void InitNode()
     ImageComponentThree.SetBorderRadius(PARAM_15_POINT_0, PARAM_15_POINT_0, PARAM_15_POINT_0, PARAM_15_POINT_0);
     SetDragAction(&ImageComponentThree);
     OH_ArkUI_SetNodeDraggable(ImageComponentThree.GetComponent(), true);
-    std::shared_ptr<ArkUICapiTest::Component> child = std::make_shared<ArkUICapiTest::XComponent>(ImageComponentOne);
+    std::shared_ptr<ArkUICapiTest::Component> child = std::make_shared<ArkUICapiTest::XComponent>(ImageComponentTwo);
     ColumnComponent.AddChild(child);
-    child = std::make_shared<ArkUICapiTest::XComponent>(ImageComponentTwo);
+    child = std::make_shared<ArkUICapiTest::XComponent>(ImageComponentOne);
     ColumnComponent.AddChild(child);
     child = std::make_shared<ArkUICapiTest::XComponent>(ImageComponentThree);
     ColumnComponent.AddChild(child);

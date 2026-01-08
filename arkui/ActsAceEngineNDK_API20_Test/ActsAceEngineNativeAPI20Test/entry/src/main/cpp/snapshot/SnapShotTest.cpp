@@ -44,6 +44,10 @@ napi_value CreateNodeSnapshot(napi_env env, napi_callback_info info)
     OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &nodeContentHandle);
     // 1. 获取ArkUI Native Node API接口
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    if (nodeAPI == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "nodeAPI is null");
+        return nullptr;
+    }
     snapshotcolumn = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ArkUI_NumberValue value[] = {{ .u32 = 0xFFFF0000 }};
     ArkUI_AttributeItem coloritem = {.value = value, .size = PARAM_1};

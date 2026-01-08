@@ -91,7 +91,7 @@ it('DatePickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       // await CommonFunc.sleep(1000);
-      // await (driver?.click(Math.round(AppStorage.get<number>("winLeft") + UIContext.getFocusedUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") + UIContext.getFocusedUIContext()!.vp2px(100)) as Int) as Promise<void>);
+      // await (driver?.click(Math.round(AppStorage.get<number>("winLeft") + UIContext.resolveUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") + UIContext.resolveUIContext()!.vp2px(100)) as Int) as Promise<void>);
       // await CommonFunc.sleep(1000);
       console.info('[DatePickerDialog_static_0100] END');
       done();

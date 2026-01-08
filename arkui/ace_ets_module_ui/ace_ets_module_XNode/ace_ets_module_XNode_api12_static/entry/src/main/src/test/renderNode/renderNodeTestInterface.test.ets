@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,14 @@ export default function renderNodeGetInterfaceTest() {
 
 
 
-/**
+    /**
      * @tc.number   renderNodeGetInterfaceTest_static_0100
      * @tc.name     renderNodeGetInterfaceTest_static_0100
      * @tc.desc     renderNodeGetInterfaceTest_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('renderNodeGetInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('enderNodeGetInterfaceTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -83,13 +84,14 @@ it('renderNodeGetInterfaceTest_static_0100', Level.LEVEL0, async (done: () => vo
 
 
 
-/**
+    /**
      * @tc.number   renderNodeGetInterfaceTest_static_0200
      * @tc.name     renderNodeGetInterfaceTest_static_0200
      * @tc.desc     renderNodeGetInterfaceTest_static_0200
      * @tc.level    Level.LEVEL0
      */
 it('renderNodeGetInterfaceTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('enderNodeGetInterfaceTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -99,7 +101,7 @@ it('renderNodeGetInterfaceTest_static_0200', Level.LEVEL0, async (done: () => vo
       let strJson: string = inspector.getInspectorByKey('bColor');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[renderNodeGetInterfaceTest_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('bColor:4278255598');//10进制
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('bColor:4278255598');//master22 bColor:-16711698 equals bColor:4278255598
       console.info('[renderNodeGetInterfaceTest_0200] END');
       done();
     });
@@ -108,13 +110,14 @@ it('renderNodeGetInterfaceTest_static_0200', Level.LEVEL0, async (done: () => vo
 
 
 
-/**
+    /**
      * @tc.number   renderNodeGetInterfaceTest_static_0300
      * @tc.name     renderNodeGetInterfaceTest_static_0300
      * @tc.desc     renderNodeGetInterfaceTest_static_0300
      * @tc.level    Level.LEVEL0
      */
 it('renderNodeGetInterfaceTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('renderNodeGetInterfaceTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -133,13 +136,14 @@ it('renderNodeGetInterfaceTest_static_0300', Level.LEVEL0, async (done: () => vo
 
 
 
-/**
+    /**
      * @tc.number   renderNodeGetInterfaceTest_static_0400
      * @tc.name     renderNodeGetInterfaceTest_static_0400
      * @tc.desc     renderNodeGetInterfaceTest_static_0400
      * @tc.level    Level.LEVEL0
      */
 it('renderNodeGetInterfaceTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('renderNodeGetInterfaceTest_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

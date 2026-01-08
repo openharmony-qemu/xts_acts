@@ -46,7 +46,7 @@ export default function SetMenuOptionsTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SetMenuOptionsTest state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("setMenuOptions" == pages.name)) {
           console.info("get SetMenuOptionsTest pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

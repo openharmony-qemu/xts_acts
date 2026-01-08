@@ -685,5 +685,23 @@ export default function btConnectionNopUiJsunit() {
       }
       done();
     })
+        /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_NOP_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_NOP_0100
+     * @tc.desc   Test setLocalName api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_NOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+      try {
+        connection.setLocalName('1111111111111111111');
+        expect(true).assertFalse();
+      } catch (e) {
+        hilog.error(Domain, TAG, `setLocalName promise error, error code is: ${e.code}, error message is: ${e.message}`);
+        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+      }
+      done();
+    })
   })
 }

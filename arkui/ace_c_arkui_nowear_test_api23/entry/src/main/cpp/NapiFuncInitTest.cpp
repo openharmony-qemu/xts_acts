@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "node/NodeAdoptChildTest.cpp"
+#include "touchTestInfo/ErrorCodeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -160,6 +161,16 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestNodeAdoptChild067", nullptr, TestNodeAdoptChild067, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"TestNodeAdoptChild068", nullptr, TestNodeAdoptChild068, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TestErrorCode001", nullptr, TestErrorCode001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TestErrorCode002", nullptr, TestErrorCode002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TestErrorCode003", nullptr, TestErrorCode003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TestErrorCode004", nullptr, TestErrorCode004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TestErrorCode005", nullptr, TestErrorCode005, nullptr, nullptr, nullptr,
             napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

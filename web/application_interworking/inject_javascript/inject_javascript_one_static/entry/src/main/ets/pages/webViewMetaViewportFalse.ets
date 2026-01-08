@@ -76,7 +76,7 @@ struct webViewOnMetaViewportFalse {
                       Utils.emitEvent( result , 10002)
                     }
                   })
-                } catch (error:BusinessError) {
+                } catch (error) {
                   console.error('ErrorCode: ${error.code}, Message: ${error.message}');
                 }
                 break;

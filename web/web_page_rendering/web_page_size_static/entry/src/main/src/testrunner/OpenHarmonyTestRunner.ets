@@ -31,7 +31,6 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
   public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
   public onRun: () => void = () => {

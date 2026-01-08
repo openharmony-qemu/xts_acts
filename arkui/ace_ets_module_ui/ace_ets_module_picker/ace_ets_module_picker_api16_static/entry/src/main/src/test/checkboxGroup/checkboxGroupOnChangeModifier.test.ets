@@ -1,5 +1,5 @@
 'use static';
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,11 @@ export default function CheckboxGroupOnChangeModifierTest() {
         console.info("get CheckboxGroupOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupOnChangeModifier" == pages.name)) {
           console.info("get CheckboxGroupOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CheckboxGroupOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push CheckboxGroupOnChangeModifierTest page error:" + err);
@@ -72,6 +72,7 @@ export default function CheckboxGroupOnChangeModifierTest() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Modifier_CheckboxGroup_OnChange_static_1001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+
     console.info('ArkUX_Modifier_CheckboxGroup_OnChange_static_1001 START');
     let driver = Driver.create();
     let checkbox = await driver.findComponent(ON.id('checkbosGroupOnchange'));

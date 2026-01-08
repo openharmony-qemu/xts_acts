@@ -21,6 +21,9 @@ import refreshResource from './Refresh/refreshResource.test';
 import refreshString from './Refresh/refreshString.test';
 import RefreshingContent from './Refresh/RefreshingContent.test';
 import maxDownRefresh from './Refresh/maxDownRefresh.test';
+import pullUpToCancelRefresh from './Refresh/pullUpToCancelRefresh.test';
+import pullUpToCancelRefreshModifier from './Refresh/pullUpToCancelRefreshModifier.test';
+
 
 export default function testsuite() {
   refreshJsunit()
@@ -31,4 +34,6 @@ export default function testsuite() {
   refreshString()
   RefreshingContent()
   maxDownRefresh()
+  pullUpToCancelRefresh()
+  pullUpToCancelRefreshModifier()
 }

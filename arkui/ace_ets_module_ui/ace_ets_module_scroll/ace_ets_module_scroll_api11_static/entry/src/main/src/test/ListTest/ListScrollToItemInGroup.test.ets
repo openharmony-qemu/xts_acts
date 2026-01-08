@@ -80,8 +80,7 @@ export default function ListScrollToItemInGroup() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0001
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0001
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0001
@@ -97,8 +96,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0001', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0100
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0100
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0100
@@ -118,8 +116,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0100', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0200
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0200
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0200
@@ -143,8 +140,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0200', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0300
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0300
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0300
@@ -165,8 +161,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0300', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0400
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0400
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0400
@@ -186,8 +181,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0400', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0500
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0500
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0500
@@ -206,8 +200,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0500', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0600
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0600
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0600
@@ -226,8 +219,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0600', Level.LEVEL1, async (done: 
     });
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_List_Scroll_To_Item_In_Group_static_0700
      * @tc.name     ArkUI_List_Scroll_To_Item_In_Group_static_0700
      * @tc.desc     ArkUI_List_Scroll_To_Item_In_Group_static_0700

@@ -24,7 +24,7 @@ import Utils from '../../src/test/Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 type OnProxyConfigChangeCallback = () => void
 @Entry

@@ -51,7 +51,7 @@ export default function SearchJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SearchJsunit state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SearchPage" == pages.name)) {
           console.info("get SearchJsunit pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

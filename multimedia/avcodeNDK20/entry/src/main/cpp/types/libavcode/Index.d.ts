@@ -555,6 +555,8 @@ export const EnumOHAVOutputFormat5: () => number;
 
 export const EnumOHAVOutputFormat6: () => number;
 
+export const EnumOHAVOutputFormat7: () => number;
+
 export const EnumOHAVColorPrimary1: () => number;
 
 export const EnumOHAVColorPrimary2: () => number;

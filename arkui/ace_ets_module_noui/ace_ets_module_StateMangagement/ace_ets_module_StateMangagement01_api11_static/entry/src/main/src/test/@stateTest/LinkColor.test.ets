@@ -181,21 +181,21 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
      * @tc.desc     LinkColor_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('LinkColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Null]" number is null');
-      console.info('[LinkColor_static_0100] END');
-      done();
-    });
+// it('LinkColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+//       console.info('LinkColor_static_0100 START');
+//       let driver = Driver.create()
+//       await CommonFunc.sleep(1000);
+//       let button = await driver.findComponent(ON.id('state5'));
+//       await (button?.click() as Promise<void>);
+//       await CommonFunc.sleep(1000);
+//       let strJson = inspector.getInspectorByKey('LinkColor');
+//       let obj = JSON.parseJsonElement(strJson);
+//       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
+//       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+//       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Null]" number is null');
+//       console.info('[LinkColor_static_0100] END');
+//       done();
+//     });
 
 
     

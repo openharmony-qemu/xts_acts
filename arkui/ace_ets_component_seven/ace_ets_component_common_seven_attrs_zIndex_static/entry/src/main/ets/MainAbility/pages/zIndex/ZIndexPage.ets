@@ -169,7 +169,7 @@ import {
   CommonMethod,
   applyStyles
 } from '@ohos.arkui.component'
-import { State, Link, Prop,StorageProp,AppStorage,Observed } from '@ohos.arkui.stateManagement'
+import { State, Link, PropRef,StoragePropRef,AppStorage,Observed } from '@ohos.arkui.stateManagement'
 import webview from '@ohos.web.webview';
 import { ItemState } from '@ohos.arkui.advanced.ToolBar'
 

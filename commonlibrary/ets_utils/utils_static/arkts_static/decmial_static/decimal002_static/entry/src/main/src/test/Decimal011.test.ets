@@ -70,7 +70,7 @@ export default function DecimalTest011() {
         maxE: 9e15
       });
       test_floor_001('0', 0);
-      test_floor_001('-0', -0);
+      test_floor_001('-0', -0.0);
       test_floor_002('0', '0.000');
       test_floor_001('Infinity', Infinity);
       test_floor_001('-Infinity', -Infinity);

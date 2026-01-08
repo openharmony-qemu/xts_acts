@@ -47,10 +47,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function calendarPickerJsunit() {
   describe('calendarPickerTest', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("calendarpicker beforeEach start");
@@ -74,8 +71,7 @@ export default function calendarPickerJsunit() {
 
 
     
-    
-/**
+    /**
      * @tc.number   ArkUI_Stage_CalendarPicker_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_static_0100
      * @tc.desc     ArkUI_Stage_CalendarPicker_static_0100

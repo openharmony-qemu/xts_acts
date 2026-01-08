@@ -1212,7 +1212,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6800';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(-0.0 as float)).assertEqual(0x80000000);
+        expect(Float.bitCastToInt(-0.0.toFloat())).assertEqual(0x80000000.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1246,7 +1246,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7000';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(Number.NEGATIVE_INFINITY as float)).assertEqual(0xFF800000);
+        expect(Float.bitCastToInt(Number.NEGATIVE_INFINITY.toFloat())).assertEqual(0xFF800000.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1280,7 +1280,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7200';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(-1.0 as float)).assertEqual(0xBF800000);
+        expect(Float.bitCastToInt(-1.0.toFloat())).assertEqual(0xBF800000.toInt());
         console.info(`${caseName}, test end`);
         Done();
       })

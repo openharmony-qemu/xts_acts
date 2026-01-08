@@ -87,6 +87,7 @@ export default function NavDestinationUIObserver() {
      * @tc.level    Level.LEVEL0
      */
 it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavDestinationUIObserver_0100 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -104,7 +105,7 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
 
       console.log('++++++++++++++get1')
   try{
-    let showText: string = AppStorage.get('showText')! as string
+    let showText: string = AppStorage.get<String>('showText')! as string
     console.log('++++++++++++++get2')
     console.log('NavDestinationUIObserver_0100 on showText value : ' + showText)
     expect(showText).assertEqual('on');
@@ -113,7 +114,7 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
         console.log('++++++++++++++err',err)
   }
 
-      let showUpdateText: string = AppStorage.get('showUpdateText')! as string
+      let showUpdateText: string = AppStorage.get<String>('showUpdateText')! as string
       console.log('NavDestinationUIObserver_0100 on showText value : ' + showUpdateText)
       expect(showUpdateText).assertEqual('on');
       AppStorage.delete('showUpdateText');
@@ -137,6 +138,7 @@ it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void
      * @tc.level    Level.LEVEL0
      */
 it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+
       console.info('NavDestinationUIObserver_0200 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
@@ -151,12 +153,12 @@ it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void
       console.info('[NavDestinationUIObserver_0200] btn2 click');
       await Utils.sleep(2000);
 
-      let showText: string = AppStorage.get('showText')! as string
+      let showText: string = AppStorage.get<String>('showText')! as string
       console.log('NavDestinationUIObserver_0200 on showText value : ' + showText)
       expect(showText).assertEqual('off');
       AppStorage.delete('showText');
 
-      let showUpdateText: string = AppStorage.get('showUpdateText')! as string
+      let showUpdateText: string = AppStorage.get<String>('showUpdateText')! as string
       console.log('NavDestinationUIObserver_0200 on showText value : ' + showUpdateText)
       expect(showUpdateText).assertEqual('off');
       AppStorage.delete('showUpdateText');

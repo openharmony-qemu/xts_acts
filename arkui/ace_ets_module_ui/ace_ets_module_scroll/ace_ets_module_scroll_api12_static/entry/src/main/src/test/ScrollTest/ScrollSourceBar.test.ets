@@ -75,7 +75,6 @@ export default function ScrollSourceBar() {
     
       
   
-
 /**
      * @tc.number   ScrollSourceBar_0100
      * @tc.name     ScrollSourceBar_0100

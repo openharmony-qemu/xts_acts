@@ -47,7 +47,7 @@ struct XtsFormProvider {
         hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime callback success');
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
 
@@ -58,7 +58,7 @@ struct XtsFormProvider {
         hilog.error(DOMAIN, TAG, `XtsFormProvider promise error, code: ${error?.code}, message: ${error?.message}`);
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
   }
@@ -83,7 +83,7 @@ struct XtsFormProvider {
               try {
                 formProvider.openFormManagerCrossBundle(want)
                 hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG, '%{public}s',
                   `openFormManagerCrossBundle error: ${error.code}, ${error.message}`);
               }
@@ -96,7 +96,7 @@ struct XtsFormProvider {
               try {
                 formProvider.openFormManagerCrossBundle(want)
                 hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${JSON.stringify(error)}`);
                 hilog.error(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
               }
@@ -115,7 +115,7 @@ struct XtsFormProvider {
                   hilog.info(DOMAIN, TAG, JSON.stringify(result));
                   hilog.info(DOMAIN, TAG, 'formProvider getFormsInfo with filter callback success.');
                 });
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getFormsInfo error, code: ${error?.code}, message: ${error?.message}`);
               }
@@ -128,7 +128,7 @@ struct XtsFormProvider {
                   hilog.error(DOMAIN, TAG,
                     `formProvider getFormsInfo without arguments error, code: ${error?.code}, message: ${error?.message}`);
                 });
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getFormsInfo without arguments error, code: ${error?.code}, message: ${error?.message}`);
               }
@@ -141,7 +141,7 @@ struct XtsFormProvider {
                   hilog.error(DOMAIN, TAG,
                     `formProvider getFormsInfo with filter error, code: ${error?.code}, message: ${error?.message}`);
                 });
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getFormsInfo with filter error, code: ${error?.code}, message: ${error?.message}`);
               }
@@ -152,7 +152,7 @@ struct XtsFormProvider {
                   hilog.info(DOMAIN, TAG, JSON.stringify(result));
                   hilog.info(DOMAIN, TAG, 'formProvider getFormsInfo without filter callback success.');
                 });
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getFormsInfo error, code: ${error?.code}, message: ${error?.message}`);
               }
@@ -206,7 +206,7 @@ struct XtsFormProvider {
                       `formProvider requestPublishForm without bindingData callback, formId: ${JSON.stringify(data)}`);
                   }
                 });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider requestPublishForm without bindingData error, code: ${error?.code}, message: ${error?.message}`);
             }
@@ -225,7 +225,7 @@ struct XtsFormProvider {
               formProvider.updateForm(this.formId, formBinding, () => {
                 hilog.info(DOMAIN, TAG, 'formProvider updateForm callback success');
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider updateForm error, code: ${error?.code}, message: ${error?.message}`);
             }
@@ -237,7 +237,7 @@ struct XtsFormProvider {
                 hilog.error(DOMAIN, TAG,
                   `formProvider updateForm promise error, code: ${error?.code}, message: ${error?.message}`);
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG, `formProvider updateForm catch error, code: ${error.code} message: ${error.message}`);
             }
           })
@@ -252,7 +252,7 @@ struct XtsFormProvider {
             try {
               formProvider.openFormManager(want);
               hilog.info(DOMAIN, TAG, `formProvider openFormManager success`);
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider openFormManager error, code: ${error?.code}, message: ${error?.message}`);
             }
@@ -271,7 +271,7 @@ struct XtsFormProvider {
                 hilog.error(DOMAIN, TAG,
                   `openFormEditAbility->NotifyVisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider openFormEditAbility error, code : ${error?.code}, message : ${error?.message}`);
             }
@@ -286,7 +286,7 @@ struct XtsFormProvider {
                 hilog.error(DOMAIN, TAG,
                   `formProvider IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported catch error, code: ${error.code} message: ${error.message}`);
             }
 
@@ -299,7 +299,7 @@ struct XtsFormProvider {
                   hilog.info(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported callback success`);
                 }
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
             }
@@ -314,7 +314,7 @@ struct XtsFormProvider {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getPublishedRunningFormInfos error, code: ${error?.code}, message: ${error?.message}`);
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider getPublishedRunningFormInfos error, code: ${error?.code}, message: ${error?.message}`);
             }
@@ -329,7 +329,7 @@ struct XtsFormProvider {
                 hilog.error(DOMAIN, TAG,
                   `formProvider getPublishedRunningFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
               });
-            } catch (error: Error) {
+            } catch (error) {
               hilog.error(DOMAIN, TAG,
                 `formProvider getPublishedRunningFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
             }
