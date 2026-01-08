@@ -26,7 +26,6 @@ export default function builtinsRegExpStaticPropTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })
