@@ -452,7 +452,7 @@ function setPlaybackStrategyDASH(avPlayer: media.AVPlayer | null, done: () => vo
         }
         avPlayer!!.surfaceId = surfaceID;
         setPlayerPlaybackStrategy(avPlayer!, playbackStrategy)
-        avPlayer!!.prepare()
+        done();
         break;
       case PREPARED:
         avPlayer?.play()
@@ -498,7 +498,7 @@ function setPlaybackStrategy(avPlayer: media.AVPlayer | null, done: () => void,
         }
         avPlayer!!.surfaceId = surfaceID;
         setPlayerPlaybackStrategy(avPlayer!, playbackStrategy)
-        avPlayer!!.prepare()
+        done();
         break;
       case PREPARED:
         avPlayer?.play()
@@ -568,6 +568,7 @@ function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
         break;
       case COMPLETED:
         setPlayerMediaMuted(avPlayer!)
+        await mediaTestBase.msleepAsync(1000);
         avPlayer?.release()
         break;
       case RELEASED:
