@@ -18,9 +18,9 @@
 #include "containerPicker/ContainerPickerSelectedIndexTest.cpp"
 #include "containerPicker/ContainerPickerSelectionIndicatorTest.cpp"
 #include "containerPicker/ContainerPickerSubComponentTest.cpp"
+#include "text/TextDirectionTest.cpp"
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
-#include "text/TextDirectionTest.cpp"
 
 
 namespace ArkUICapiTest {
@@ -97,6 +97,20 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSubComponent003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent004", nullptr,
          TestContainerPickerSubComponent004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextDirection_001", nullptr, TextDirection_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_002", nullptr, TextDirection_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_003", nullptr, TextDirection_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_004", nullptr, TextDirection_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_005", nullptr, TextDirection_005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_006", nullptr, TextDirection_006, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
+         napi_default, nullptr}, 
         {"testMotionPathOptions001", nullptr, MotionPathOptionsCreate, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testMotionPathOptions002", nullptr, MotionPathOptionsPath, nullptr, nullptr, nullptr,
@@ -116,21 +130,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testMotionPathOptions009", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
-         TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TextDirection_001", nullptr, TextDirection_001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextDirection_002", nullptr, TextDirection_002, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextDirection_003", nullptr, TextDirection_003, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextDirection_004", nullptr, TextDirection_004, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextDirection_005", nullptr, TextDirection_005, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextDirection_006", nullptr, TextDirection_006, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},        
+         TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},       
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
