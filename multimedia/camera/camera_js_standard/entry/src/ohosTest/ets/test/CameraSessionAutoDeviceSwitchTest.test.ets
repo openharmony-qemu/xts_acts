@@ -224,7 +224,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           if (foldScreenType != "7") {
             expect(isSupported === isFoldable).assertTrue();
           } else {
-            expect(isSupported === isFoldable).assertFail();
+            expect(isSupported != isFoldable).assertTrue();
           }
           await mCameraSession.start();
           await mCameraSession.stop();
