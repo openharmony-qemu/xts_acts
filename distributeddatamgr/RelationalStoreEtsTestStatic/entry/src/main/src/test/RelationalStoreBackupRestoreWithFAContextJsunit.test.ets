@@ -167,7 +167,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         const name = resultSet.getString(resultSet.getColumnIndex("name"))
         console.info("RdbBackupRestoreTest_0010 get dolumnindex name success")
         const blobType = resultSet.getBlob(resultSet.getColumnIndex("blobType"))
-        console.info(`RdbBackupRestoreTest_0010 id is ${id},name id ${name},blobType is ${blobType[0]}`)
+        console.info(`RdbBackupRestoreTest_0010 id is ${id},name id ${name}`)
         expect(1).assertEqual(id)
         expect("zhangsan").assertEqual(name)
         expect(1).assertEqual(blobType[0])

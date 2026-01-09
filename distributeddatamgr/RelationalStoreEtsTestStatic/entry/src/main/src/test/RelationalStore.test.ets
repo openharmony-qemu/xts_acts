@@ -462,7 +462,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getLong(resultSet.getColumnIndex("age"))
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);
@@ -497,7 +497,7 @@ export default function relationalStoreTest() {
           expect(true).assertEqual(resultSet.goToFirstRow());
           let res = await resultSet.getColumnType(resultSet.getColumnIndex("age"))
           console.log(tag + "res:" + res + typeof (res))
-          expect(typeof (valueNum)).assertEqual(typeof (res))
+          expect(res).assertEqual(relationalStore.ColumnType.INTEGER);
           let str = resultSet.getLong(resultSet.getColumnIndex("age"))
           expect(valueNum).assertEqual(str);
           console.log(tag + "str:" + str);

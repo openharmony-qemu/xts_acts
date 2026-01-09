@@ -151,15 +151,15 @@ export default function relationalStoreCloudCursor() {
                 return;
             }
             let cursor = 3;
-            let promise = rdbStore!.cleanDirtyData("query_tb", cursor);
-            await promise.then((err) => {
-                console.log(TAG + `testRdbCleanDirtyData0001 cleanDirtyData success`);
-                done();
-            }).catch((err) => {
-                console.log(TAG + `testRdbCleanDirtyData0001 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
-                expect().assertFail();
-                done();
-            });
+            try {
+              let promise = rdbStore!.cleanDirtyData("query_tb", cursor);
+              console.log(TAG + `testRdbCleanDirtyData0001 cleanDirtyData success`);
+              done();
+            } catch (err) {
+              console.log(TAG + `testRdbCleanDirtyData0001 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+              expect().assertFail();
+              done();
+            }
             console.log(TAG + "************* testRdbCleanDirtyData0001 end *************");
         })
     
@@ -178,15 +178,15 @@ export default function relationalStoreCloudCursor() {
                 expect().assertFail();
                 return;
             }
-            let promise = rdbStore!.cleanDirtyData("query_tb");
-            await promise.then((err) => {
-                console.log(TAG + `testRdbCleanDirtyData0002 cleanDirtyData success`);
-                done();
-            }).catch((err) => {
-                console.log(TAG + `testRdbCleanDirtyData0002 cleanDirtyData fail, errcode:${JSON.stringify(err)}.`);
-                expect().assertFail();
-                done();
-            });
+            try {
+              let promise = rdbStore!.cleanDirtyData("query_tb");
+              console.log(TAG + `testRdbCleanDirtyData0002 cleanDirtyData success`);
+              done();
+            } catch (err) {
+              console.log(TAG + `testRdbCleanDirtyData0002 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+              expect().assertFail();
+              done();
+            }
             console.log(TAG + "************* testRdbCleanDirtyData0002 end *************");
         })
 
