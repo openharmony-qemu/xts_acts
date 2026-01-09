@@ -87,3 +87,7 @@ export const testMotionPathOptions008: () => number;
 export const testMotionPathOptions009: () => number;
 
 export const TestAtomicServiceMenuBarSetVisible01: () => number;
+
+export const TestIsInRenderStateReturnValue001: () => number;
+
+export const TestIsInRenderStateReturnValue002: () => number;
