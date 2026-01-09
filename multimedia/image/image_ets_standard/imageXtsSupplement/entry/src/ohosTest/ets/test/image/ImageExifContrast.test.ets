@@ -44,6 +44,7 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
 
 let jpgImageSourceApi: image.ImageSource;
 let pngImageSourceApi: image.ImageSource;
+let webpImageSourceApi: image.ImageSource;
 
 export default function ImageContrastTypeSupp() {
   describe('ImageContrastTypeSupp', () => {
@@ -51,6 +52,7 @@ export default function ImageContrastTypeSupp() {
       console.info('beforeAll case');
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
+      webpImageSourceApi = await getImageSource('test_exif_v2.webp');
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -62,6 +64,7 @@ export default function ImageContrastTypeSupp() {
       console.info('afterAll case');
       await jpgImageSourceApi.release();
       await pngImageSourceApi.release();
+      await webpImageSourceApi.release();
     });
 
     /**
@@ -2697,6 +2700,180 @@ export default function ImageContrastTypeSupp() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = 50;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = 0;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = -1;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = undefined;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.focalLengthIn35mmFilm = 'abc' as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
