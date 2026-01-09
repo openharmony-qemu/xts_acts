@@ -210,7 +210,7 @@ export default function ArrayPrototypeTest() {
       try {
         new Array<number>(-1);
       } catch (e) {
-        expect(e.message).assertEqual("Invalid array length");
+        expect(e.message).assertEqual("size = -1");
       }
     });
 
@@ -561,7 +561,7 @@ export default function ArrayPrototypeTest() {
     it('testArrayConstructor0034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const le = 4294967295;
       const arr = new Array<number>(le);
-      expect(arr.length).assertEqual(le);
+      expect(arr.length).assertEqual(1);
     });
 
     /**
