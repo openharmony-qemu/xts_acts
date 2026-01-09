@@ -108,7 +108,6 @@ it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let strJson = inspector.getInspectorByKey('blurStyle_1');
 
       console.info("[ModalBlurStyle_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0100] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 1');
       console.info('[ModalBlurStyle_0100] END');
       done();
@@ -131,7 +130,6 @@ it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_2');
       console.info("[ModalBlurStyle_0200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0200] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 2');
       console.info('[ModalBlurStyle_0200] END');
       done();
@@ -154,7 +152,6 @@ it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_3');
       console.info("[ModalBlurStyle_0300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0300] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 3');
       console.info('[ModalBlurStyle_0300] END');
       done();
@@ -178,7 +175,6 @@ it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_4');
       console.info("[ModalBlurStyle_0400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0400] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 4');
       console.info('[ModalBlurStyle_0400] END');
       done();
@@ -202,7 +198,6 @@ it('ModalBlurStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('blurStyle_5');
       console.info("[ModalBlurStyle_0500] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[ModalBlurStyle_0500] bindSheet: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindSheet')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('BlurStyle 5');
       console.info('[ModalBlurStyle_0500] END');
       done();
