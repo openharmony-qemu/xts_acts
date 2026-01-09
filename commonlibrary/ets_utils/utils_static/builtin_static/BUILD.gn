@@ -34,7 +34,7 @@ group("builtin_static") {
       "regexp_standard_test_static:ActsRegExpStaticTest",
       "typeArray_standard_test_static:ActsTypeArrayStaticTest",
       "base_standard_test_static:ActsBaseStaticTest",
-	  "dataview_standard_test_static:ActsDataviewStaticTest",
+      "dataview_standard_test_static:ActsDataviewStaticTest",
     ]
   }
 }
